@@ -1,0 +1,442 @@
+{
+	"info": {
+		"_postman_id": "46a0e189-36ba-48f1-97d0-3e2da486475e",
+		"name": "enable_ssh",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "enable_ssh_by_digest",
+			"item": [
+				{
+					"name": "DigestAuthSetGlobals",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Get Digest Parameters\", function () {",
+									"",
+									"    pm.response.headers.all()",
+									"        .filter(headerObj => { return (headerObj.key == \"WWW-Authenticate\")&&(headerObj.value.has(\"Digest\")&&(headerObj.value.has(\"SHA-256\")));",
+									"        })",
+									"        .forEach(headerObj => {",
+									"            var ret = headerObj.value.replace('Digest ','');",
+									"            console.log (ret);",
+									"            var contents = ret.split(', ');",
+									"",
+									"            contents.forEach(function(entry, index) {",
+									"                contents[index] = entry.replace('=',':');",
+									"            });",
+									"  ",
+									"            var myString = \"{\" + contents.toString() + \"}\";",
+									"",
+									"            myString = myString.replace(\"algorithm\", '\"algorithm\"');",
+									"            myString = myString.replace(\"SHA-256\", '\"SHA-256\"');",
+									"            myString = myString.replace(\"realm\", '\"realm\"');",
+									"            myString = myString.replace(\"qop\", '\"qop\"');",
+									"            myString = myString.replace(\"nonce\", '\"nonce\"');",
+									"            myString = myString.replace(\"opaque\", '\"opaque\"');",
+									"            console.log(myString);",
+									"            ",
+									"            myObj = JSON.parse(myString);",
+									"            pm.globals.set(\"algorithm\",myObj.algorithm);",
+									"            pm.globals.set(\"realm\",myObj.realm);",
+									"            pm.globals.set(\"qop\",myObj.qop);",
+									"            pm.globals.set(\"nonce\",myObj.nonce);",
+									"            pm.globals.set(\"opaque\",myObj.opaque);",
+									"            pm.globals.set(\"cnonce\",\"MmU4M2FmNmM2OTUxZGI4YjE2YzY0ZThiOWMxMTM4YjU=\");",
+									"            pm.globals.set(\"nc\",\"00000001\");",
+									"        });",
+									"        ",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{auth_url}}",
+							"host": [
+								"{{auth_url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigestAuthLoginAdmin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify success response\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status.success).to.be.true;",
+									"    console.log(\"Login \" + jsonData.status.info[0].message);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"    var authInfo = {};",
+									" ",
+									"    authInfo.username = pm.variables.get(\"admin_name\");",
+									"    authInfo.password = pm.variables.get(\"admin_password\");",
+									"    authInfo.nonce = pm.globals.get(\"nonce\");",
+									"    authInfo.qop = pm.globals.get(\"qop\");",
+									"    authInfo.realm = pm.globals.get(\"realm\");",
+									"    authInfo.method = 'POST';",
+									"    authInfo.uri =  pm.variables.get(\"auth_uri\");",
+									"    authInfo.cnonce = pm.globals.get(\"cnonce\");",
+									"    authInfo.nc = pm.globals.get(\"nc\");",
+									"    ",
+									"    console.log( \"username:  \" + authInfo.username);",
+									"    console.log( \"password:  \" + authInfo.password);",
+									"    console.log( \"nonce:     \" + authInfo.nonce);",
+									"    console.log( \"qop:       \" + authInfo.qop);",
+									"    console.log( \"realm:     \" + authInfo.realm);",
+									"    console.log( \"method:    \" + authInfo.method);",
+									"    console.log( \"uri:       \" + authInfo.uri);",
+									"    console.log( \"cnonce:    \" + authInfo.cnonce);",
+									"    console.log( \"nc:        \" + authInfo.nc);",
+									" ",
+									"    var digestAuthObject = {};",
+									" ",
+									"    digestAuthObject.ha1 = CryptoJS.SHA256(authInfo.username + ':' + authInfo.realm + ':' + authInfo.password);",
+									" ",
+									"    digestAuthObject.ha2 = CryptoJS.SHA256(authInfo.method + ':' + authInfo.uri);",
+									"    ",
+									"    var resp = CryptoJS.SHA256([digestAuthObject.ha1, authInfo.nonce, authInfo.nc, authInfo.cnonce, authInfo.qop, digestAuthObject.ha2].join(':'));",
+									"    ",
+									"",
+									"    var response = \"\" + resp;",
+									"    ",
+									"    pm.globals.set(\"response\",response); ",
+									" ",
+									"    console.log( \"response: \" + response);",
+									"    console.log( \"Request body: \" + pm.request.headers + pm.request.body);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Digest username=\"{{admin_name}}\", realm=\"{{realm}}\", nonce=\"{{nonce}}\", uri=\"{{auth_uri}}\", cnonce=\"{{cnonce}}\", nc={{nc}}, qop={{qop}},  response=\"{{response}}\", opaque=\"{{opaque}}\", algorithm=\"{{algorithm}}\""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"override\":true\n}"
+						},
+						"url": {
+							"raw": "{{auth_url}}",
+							"host": [
+								"{{auth_url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Configure_Static_Interface",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Edit Static Interface: log response data\", function() {",
+									"   console.log(pm.response.text()); ",
+									"});",
+									"",
+									"pm.test(\"Edit Static Interface: verify post success\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status.success).to.be.true;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "S0nic@uto",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"interfaces\": [\n        {\n            \"ipv4\": {\n                \"name\": \"X0\",\n                \"ip_assignment\": {\n                    \"zone\": \"LAN\",\n                    \"mode\": {\n                        \"static\": {\n                            \"ip\": \"192.168.168.168\",\n                            \"netmask\": \"255.255.255.0\",\n                            \"gateway\": \"0.0.0.0\"\n                        }\n                    }\n                },\n                \"comment\": \"Default LAN\",\n                \"management\": {\n                    \"https\": true,\n                    \"ping\": true,\n                    \"snmp\": false,\n                    \"ssh\": true\n                },\n                \"user_login\": {\n                    \"http\": false,\n                    \"https\": true\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{ipv4_interface}}",
+							"host": [
+								"{{ipv4_interface}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit_Static_Interface_Commit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Commit the pending config: log response\", function () {",
+									"    console.log(pm.response.text()); ",
+									"});",
+									"",
+									"",
+									"pm.test(\"Commit the pending config: verify success is true\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status.success).to.be.true;",
+									"});",
+									"",
+									"pm.test(\"Commit the pending config: verify pending_config is false\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status.cli.pending_config).to.be.false;",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "S0nic@uto",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{pending_url}}",
+							"host": [
+								"{{pending_url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DigestAuthLogout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"   "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Digest username=\"{{admin_name}}\", realm=\"{{realm}}\", nonce=\"{{nonce}}\", uri=\"{{auth_uri}}\", cnonce=\"{{cnonce}}\", nc={{nc}}, qop={{qop}},  response=\"{{response}}\", opaque=\"{{opaque}}\", algorithm=\"{{algorithm}}\""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{auth_url}}",
+							"host": [
+								"{{auth_url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Authentication and login",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "lan_ip",
+			"value": "192.168.168.168"
+		},
+		{
+			"key": "admin_name",
+			"value": "admin"
+		},
+		{
+			"key": "admin_password",
+			"value": "S0nic@uto"
+		},
+		{
+			"key": "sonicadmin_name",
+			"value": "fulladmin"
+		},
+		{
+			"key": "auth_url",
+			"value": "https://{{lan_ip}}/api/sonicos/auth"
+		},
+		{
+			"key": "auth_uri",
+			"value": "/api/sonicos/auth"
+		},
+		{
+			"key": "pending_url",
+			"value": "https://{{lan_ip}}/api/sonicos/config/pending"
+		},
+		{
+			"key": "ipv4_interface",
+			"value": "https://{{lan_ip}}/api/sonicos/interfaces/ipv4"
+		}
+	]
+}

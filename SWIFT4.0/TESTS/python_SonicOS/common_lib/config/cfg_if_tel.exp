@@ -1,0 +1,113 @@
+#!/usr/bin/expect --
+#---------------------------------------------------
+# Description:
+#    This utility is used to modify firewall $zone port through console
+# Date: 4/14/2009      
+#--------------------------------------------------
+#-------- PREDEFINED VALUES -----------------
+set login admin
+set pwd password
+set fwTMO 600
+set consoleSleep 2
+set execFN /usr/local/bin/console
+set filename [ info script ]
+set logfileName [  file tail  [ file rootname  $filename ] ]
+set logfilePath "/tmp/logs/"
+append logfileName ".log"
+append logfilePath $logfileName
+#----------------------
+puts ">>>>>>>>>>>>>>>>    All logs were save to $logfilePath <<<<<<<<<<<<<<<<<<< "
+log_file $logfilePath
+set input ""
+if { $argc < 4  } {
+    puts "Error: Missing parameters\n";
+    exit 1;
+}
+set console_server [lindex $argv 0]
+set device_port [lindex $argv 1]
+set interface [lindex $argv 2]
+set zone [lindex $argv 3]
+set ip [lindex $argv 4]
+set gw [lindex $argv 5]
+set mask "255.255.255.0"
+puts ">>>>>>>>>> Console Server: $console_server   Device Port: $device_port >>>>>>>>>>\n";
+puts "launch telnet $console_server $device_port"
+
+set timeout 30
+set rc 0
+set a 0
+set b 0
+sleep $consoleSleep
+
+spawn telnet $console_server $device_port
+
+while {$a<2 && $b<6} {
+    expect  {
+        "*--MORE--" { send "q"; incr b 1 }
+        "*redisplay*" { send "yes\r"; incr b 1 }
+        "login" { puts "$login"; send "$login\r"; incr a 1 }
+        "Password" { puts "$pwd"; send "$pwd\r"; set rc 0; incr a 1 }
+        "Login" { puts "$login"; send "$login\r"; incr a 1 }
+        "password" { puts "$pwd"; send "$pwd\r"; set rc 0; incr a 1 }
+        timeout  { puts " TIMEOUT"; set rc -1; set a 2 }
+    }
+}
+
+if { $rc < 0 } {
+    puts "Failed to login console server"
+    exit 1;
+}
+
+
+if { $rc < 0 } {
+    puts "Failed to modify the $zone port IP.\n";
+    exit 1;
+}
+
+set timeout 60
+set rc 0
+set a 0
+set b 0
+set load 0
+set port 3
+set flag 0
+send "\r"
+sleep $consoleSleep
+while { $a < 13 } {
+puts "a value:$a\n"
+    expect  {
+        "telnet>" { puts "quit"; send "quit\r"; set a 13 }
+       "*--MORE--" { send "q"; incr b 1 }
+        "*redisplay*" { send "yes\r"; incr b 1 }	
+        "*-- MOTD -- New Connection*" {set a 0; send "\r"}
+        "*Connection closed by foreign host" {set a 0; send "\r"}
+        "*Escape character is" {set a 0; send "\r"}
+        "*User:" { if { $a == 0 } { puts "$login"; send "$login\r" ; incr a 1 } else { send "\035";set rc 0;sleep 2} }
+        "*Password:" { if { $a == 1 } { puts "--$pwd--" ; send "$pwd\r"; sleep 3 ; send "\r" ; sleep 2; incr a 1 } else { puts "--$pwd--" ; send "$pwd\r"; sleep 3 ; send "\r" ; sleep 2; } }
+        "*Do you wish to preempt them \[y\/n\]\? " { send "y\r"; set a 4 }
+        "*no\]\: " { send "y\r"; set a 4 }
+        "*cancel\]\: " { send "y\r"; incr a 1 }
+        "*\->" { send "exit\r"; sleep 2; send "\r\r"; sleep 2 }
+        "*\]\? " { if {$flag == 0} { send "y\r"; sleep 2 } }
+        "*)> " { if { $a < 4 } {send "\r"; set a 4} elseif { $a == 4 } { send "interface $interface\r"; sleep 2; incr port 1; incr a 1 } elseif { $a == 5 } { set zone [string tolower $zone]; sleep 2; send "zone $zone static\r"; sleep 2; incr a 1 } elseif { $a == 6 } { send "ip $ip netmask $mask\r"; sleep 2; send "dns primary 8.8.8.8\r"; sleep 2; send "dns secondary 10.50.129.148\r"; sleep 2; incr a 1 } elseif { $a == 7 } { send "finished\r"; sleep 2; send "end\r"; sleep 2; incr a 1 }  else { set a 8 } }
+       "*)\#" { if { $a < 4 } {send "y\r";set a 4} elseif { $a == 4 } { send "interface $interface\r"; sleep 2; incr port 1; incr a 1 } elseif { $a == 5 } { send "ip-assignment $zone static\r"; sleep 2; incr a 1 } elseif { $a == 6 } { send "ip $ip netmask $mask\r"; sleep 2; send "dns primary 8.8.8.8\r"; sleep 2; send "dns secondary 10.50.129.148\r"; sleep 2; incr a 1 } elseif { $a == 7 } { send "gateway $gw\r"; sleep 2; incr a 1 } elseif { $a == 8 } {send "exit\r"; sleep 2; send "management https\r"; sleep 2; send "management ping\r"; sleep 2; incr a 1 } elseif { $a == 9 } { send "commit\r"; sleep 2;send "end\r"; sleep 2; send "end\r"; sleep 2; incr a 1 }  else { set a 10 } }
+       "*config*# $" { if { $a < 4 } {send "y\r";set a 4} elseif { $a == 4 } { send "interface $interface\r"; sleep 2; incr port 1; incr a 1 } elseif { $a == 5 } { send "ip-assignment $zone static\r"; sleep 2; incr a 1 } elseif { $a == 6 } { send "ip $ip netmask $mask\r"; sleep 2; send "dns primary 8.8.8.8\r"; sleep 2; send "dns secondary 10.50.129.148\r"; sleep 2; incr a 1 } elseif { $a == 7 } { send "gateway $gw\r"; sleep 2; incr a 1 } elseif { $a == 8 } {send "exit\r"; sleep 2; send "management https\r"; sleep 2; send "management ping\r"; sleep 2; incr a 1 } elseif { $a == 9 } { send "commit\r"; sleep 2;send "end\r"; sleep 2; send "end\r"; sleep 2; incr a 1 }  else { set a 10 } }
+        "*w> " { if { $a == 3 } { send "configure\r"; incr a 1; sleep 3 } elseif { $a == 0 } { incr a 3; send "\r"; } elseif { $a >= 10 } { send "exit\r"; sleep 3; set rc 1; set a 12 } else { send "\r"; incr a 1 } }
+        "*0> " { if { $a == 3 } { send "configure\r"; incr a 1; sleep 3 } elseif { $a == 0 } { incr a 3; send "\r"; } elseif { $a >= 10 } { send "exit\r"; sleep 3; set rc 1; set a 12 } else { send "\r"; incr a 1 } }
+        "*N> " { if { $a == 3 } { send "configure\r"; incr a 1; sleep 3 } elseif { $a == 0 } { incr a 3; send "\r"; } elseif { $a >= 10 } { send "exit\r"; sleep 3; set rc 1; set a 12 } else { send "\r"; incr a 1 } }
+        "*> " { if { $a == 3 } { send "configure\r"; incr a 1; set flag 1; sleep 3 } elseif { $a == 0 } { incr a 3; send "\r"; } elseif { $a >= 10 } { send "exit\r";sleep 3; set rc 1; set a 10 ;send "\r"} else { send "\r"; incr a 1 } }
+#        "*no\]\: " { send "y\r"; set a 4 }
+         default {  puts "^]"; send "\035"; set a 10;set rc -1; puts "TIMEOUT !!!! Something wrong with console access !!!!" }       
+        timeout {
+            puts " TIMEOUT"; set rc -1 ; incr a 1 }
+    }
+    # puts " BUffer = $expect_out(buffer)" ;
+    sleep 1;
+}
+sleep 2;
+if { $rc < 0 } {
+    puts "Modify $zone port IP failed."
+    exit 1;
+}
+puts "Successfully modified $zone port IP."
+exit 0
