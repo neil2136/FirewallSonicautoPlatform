@@ -1,0 +1,23 @@
+{
+    "vpn": {
+        "l2tp_server": {
+            "enable": false,
+            "keep_alive": 60,
+            "dns": {
+                "primary": "0.0.0.0",
+                "secondary": "0.0.0.0"
+            },
+            "wins": {
+                "primary": "0.0.0.0",
+                "secondary": "0.0.0.0"
+            },
+            "ip_pool": {
+                "local": {
+                    "begin": "0.0.0.0",
+                    "end": "0.0.0.0"
+                }
+            },
+            "user_group": ""
+        }
+    }
+}

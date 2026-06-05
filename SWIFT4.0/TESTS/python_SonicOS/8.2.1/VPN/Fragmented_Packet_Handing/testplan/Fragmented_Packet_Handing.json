@@ -1,0 +1,37 @@
+{
+  "01": {
+    "steps": "1) Have the MTU on both VPN endpoinds set to default.\n2) Have the checkbox Enable Fragmented Packets Handling on the VPN>Advanced page turned off.\n3) Send 2000 byte packets through the VPN tunnel.\n4) Turn on the checkbox Enable Fragmented Packets Handling.\n5) Send 2000 byte packets through the VPN tunnel.",
+    "initial": "Ensure that jumbo frames are enabled on the source PC and the ingress firewall interface, otherwise the PC interface driver will drop any packets with MTU larger than the configured value!",
+    "id": "01",
+    "title": "Enable Fragmented Packets checkbox is turned off -> on",
+    "result": "The PC generates ICMP message Packet needs to be fragmented but DF set. Pings are returned. The firewall shows the log message ?Received fragmented packet or fragmentation needed. After steps 4 and 5 the pings are returned. "
+  },
+  "10": {
+    "steps": "Note: One thing to note is that PMTU is per interface. That means the decision to fragment the packet or not depends on the PMTU size of eventual egress interface(i.e. if the packet came through X0, but eventually destined for X1, the additional processing such as ICMP message or dropping packet occurs if the resulting (VPN)packet size is bigger than X1’s PMTU, not X0).\n\n1. Go to VPN-->Advanced GUI page on one of the FW\n\n2. Enable \"Enable Fragmented Packet Handling\" and Enable \"Ignore DF bit\"\n\n3. Note down the MTU size on the egress interface. If X1 is WAN for VPN then change the MTU to 1200 from 1500.\n\n4. Send packets larger than MTU with DF bit ON from the sender.\n\nTo send packets larger than MTU and DF bit ON, we can use ping utility in windows:\n\nPing some IP address on other side of the VPN using following command:\n\nping x.x.x.x -f -l 1300\n\nwhere, -l size send buffer size, and -f set Don't fragment flag in packets (IPv4 only)",
+    "initial": "Two FWs with test build and VPN connection",
+    "id": "10",
+    "title": "When Enable Fragmentation is ON (Ignore DF bit is ON in FW) and DF bit on from sender",
+    "result": "FW accept & handle ingress ICMP PMTU messages and since ignore DF bit on FW is on, the packets should be fragmented and go through the VPN tunnel\nPacket capture shows the fragmented packets\nAll pings should be successful via the VPN tunnel"
+  },
+   "11": {
+    "steps": "\n\nNote: One thing to note is that PMTU is per interface. That means the decision to fragment the packet or not depends on the PMTU size of eventual egress interface(i.e. if the packet came through X0, but eventually destined for X1, the additional processing such as ICMP message or dropping packet occurs if the resulting (VPN)packet size is bigger than X1’s PMTU, not X0).  \n\n1. Go to VPN-->Advanced GUI page on one of the FW\n\n2. Enable \"Enable Fragmented Packet Handling\" and Enable \"Ignore DF bit\"\n\n3. Note MTU size on the egress interface such as X1 WAN and change it to 1200 from 1500\n\n4. Send packets larger than MTU with DF bit OFF from sender\n\nTo send packets larger than MTU  and DF bit OFF, we can use ping utility in windows:\n\nPing some IP address on other side of the VPN using following command:\n\nping x.x.x.x -l 1400\n\nwhere, -l size send buffer size, -f set don't fragment flag in packet (IPV4 only). remove this option for off DF bit for sender\n",
+    "initial": "Two FWs with test build and VPN connection",
+    "id": "11",
+    "title": "When Enable Fragmentation is ON (Ignore DF bit is ON in FW) and DF bit off from sender",
+    "result": "FW accept & handle ingress ICMP PMTU messages and since ignore DF bit on FW is on, the packets should be fragmented and go through the VPN tunnel\n\nAll pings should be successfull"
+  },
+   "15": {
+    "steps": "Note: One thing to note is that PMTU is per interface. That means the decision to fragment the packet or not depends on the PMTU size of eventual egress interface(i.e. if the packet came through X0, but eventually destined for X1, the additional processing such as ICMP message or dropping packet occurs if the resulting (VPN)packet size is bigger than X1’s PMTU, not X0). \n\n1. Go to VPN-->Advanced GUI page on one of the FW\n\n2. Enable \"Enable Fragmented Packet Handling\" but disable \"Ignore DF bit \n\n3. Note MTU size on the egress interface such as X1 WAN and change it to 1200 from 1500\n\n4. Send Packets smaller than MTU which is configured on the FW\n\nPing an IP address on other side of the VPN by using following command \n\nping x.x.x.x -l 400 or ping x.x.x.x -l 400 -f ",
+    "initial": "Two FWs with test build and VPN connection",
+    "id": "15",
+    "title": "When Enable Fragmentation is ON (Ignore DF bit is OFF in FW) and DF bit from sender does not matter",
+    "result": "Packets should pass through VPN without fragmentation\n\nAll pings should be successful"
+  },
+   "18": {
+    "steps": "1. Go to VPN-->Advanced GUI page on one of the FW\n\n2. Disable \"Enable Fragmentation Handling\"\n\n3. Note MTU size on the egress interface\n\n4. Send packets smaller than MTU configured on the FW\n\nPing some IP address on other side of the VPN\n\nping x.x.x.x -l 400",
+    "initial": "Two FWs with test build and VPN connection",
+    "id": "18",
+    "title": "When Enable Fragmentation is OFF (DF bit from sender does not matter)",
+    "result": "The packets should pass through the VPN"
+  }
+}

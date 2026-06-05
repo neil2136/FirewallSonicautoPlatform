@@ -1,0 +1,118 @@
+[2024-08-09 16:57:48,231] [  INFO] [       setup.py: 17] [                      <module>] - opening C:\Users\Admin\PycharmProjects\FireWall_Authentication\results\csv\sonicos_authentication_test.csv file for writing test case results
+[2024-08-09 16:57:48,231] [  INFO] [       setup.py: 22] [                      <module>] - Loaded suite
+[2024-08-09 16:57:50,805] [  INFO] [       setup.py:132] [                    setUpClass] - ########## STARTING CASE: test_NonTC_configure ##########
+[2024-08-09 16:57:50,810] [  INFO] [       setup.py:149] [                         setUp] - 
+
+########## STARTING CASE: test_NonTC_configure ##########
+
+[2024-08-09 16:57:51,330] [  INFO] [  common_lib.py: 39] [            is_process_running] - Is process "chrome.exe" running - False
+[2024-08-09 16:57:51,830] [  INFO] [  common_lib.py: 39] [            is_process_running] - Is process "chromedriver.exe" running - False
+[2024-08-09 16:57:51,830] [  INFO] [     browser.py: 27] [                   get_browser] - Launching Google Chrome browser
+[2024-08-09 16:59:23,621] [  INFO] [    fw_login.py:155] [fw_enable_http_basic_access_authentication] - Logging in
+[2024-08-09 16:59:23,622] [  INFO] [    fw_login.py:156] [fw_enable_http_basic_access_authentication] - Configure - Setting username
+[20[2024-08-09 16:59:42,016] [  INFO] [       setup.py: 93] [                 move_log_file] -  Source file path to be copied : C:\Users\Admin\PycharmProjects\FireWall_Authentication\results\logs
+[2024-08-09 16:59:42,016] [  INFO] [       setup.py: 94] [                 move_log_file] -  Destination file path to copy logs :C:\Users\Admin\PycharmProjects\FireWall_Authentication\results\logs\sonicos_authentication_test_2024-08-09_16_57_44
+[2024-08-09 16:59:42,026] [  INFO] [       setup.py: 96] [                 move_log_file] -  Log files copied successfully to location : C:\Users\Admin\PycharmProjects\FireWall_Authentication\results\logs\sonicos_authentication_test_2024-08-09_16_57_44
+[2024-08-09 16:59:42,026] [  INFO] [       setup.py: 98] [                 move_log_file] -  *** Successfully deleted Source directory *** 
+py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [password]
+[2024-08-09 16:59:24,087] [  INFO] [    fw_login.py:160] [fw_enable_http_basic_access_authentication] - Action - Click Login
+[2024-08-09 16:59:24,087] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:24,088] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [class]
+[2024-08-09 16:59:24,088] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [sw-login__trigger]
+[2024-08-09 16:59:24,180] [  INFO] [     browser.py:100] [                 wait_for_text] - Waiting for text 	: Home
+[2024-08-09 16:59:24,206] [  INFO] [     browser.py: 72] [           does_page_have_text] - Checking if https://192.168.168.168/sonicui/7/login/#/ page is loaded.
+[2024-08-09 16:59:24,214] [  INFO] [     browser.py: 80] [           does_page_have_text] - page state is :complete...
+[2024-08-09 16:59:25,237] [  INFO] [     browser.py:106] [                 wait_for_text] - Timeout: 0 seconds elapsed waiting for "Home"
+[2024-08-09 16:59:25,895] [  INFO] [     browser.py: 72] [           does_page_have_text] - Checking if https://192.168.168.168/sonicui/7/m/dashboard/overview/status/device#retroVisit=true page is loaded.
+[2024-08-09 16:59:25,900] [  INFO] [     browser.py: 80] [           does_page_have_text] - page state is :complete...
+[2024-08-09 16:59:26,848] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:26,848] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:26,849] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div/div/div/div[2]/div[3]/div[2]/div[1]/div/section/div/div[1]/div[1]/div/div[2]/div[1]/div/ul/li[3]/div/span]
+[2024-08-09 16:59:27,558] [  INFO] [     browser.py:168] [                   get_element] - Getting element
+[2024-08-09 16:59:27,558] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:27,558] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:27,559] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div/div/div/div[2]/div[3]/div[2]/div[1]/div/section/div/div[1]/div[1]/div/div[2]/div[1]/div/ul/li[3]/div/span]
+[2024-08-09 16:59:27,806] [  INFO] [     browser.py:100] [                 wait_for_text] - Waiting for text 	: RFC-2617 HTTP Basic Access authentication
+[2024-08-09 16:59:27,823] [  INFO] [     browser.py: 72] [           does_page_have_text] - Checking if https://192.168.168.168/sonicui/7/m/mgmt/system/administrator page is loaded.
+[2024-08-09 16:59:27,829] [  INFO] [     browser.py: 80] [           does_page_have_text] - page state is :complete...
+[2024-08-09 16:59:27,927] [  INFO] [    fw_login.py:177] [fw_enable_http_basic_access_authentication] - 'HTTP Basic Access authentication' Toggle button is disabled, enabling it...
+[2024-08-09 16:59:27,927] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:27,927] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:27,927] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div/div/div/div[2]/div[3]/div[2]/div[1]/div/section/div/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div[12]/div/div[2]/div]
+[2024-08-09 16:59:27,947] [  INFO] [     browser.py:168] [                   get_element] - Getting element
+[2024-08-09 16:59:27,947] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:27,947] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:27,947] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div/div/div/div[2]/div[3]/div[2]/div[1]/div/section/div/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div[12]/div/div[2]/div]
+[2024-08-09 16:59:28,016] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:28,016] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:28,016] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div/div/div/div[2]/div[3]/div[2]/div[1]/div/section/div/div[2]/div/div/div[2]/span/div/div/button]
+[2024-08-09 16:59:28,037] [  INFO] [     browser.py:168] [                   get_element] - Getting element
+[2024-08-09 16:59:28,038] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:28,038] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:28,038] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div/div/div/div[2]/div[3]/div[2]/div[1]/div/section/div/div[2]/div/div/div[2]/span/div/div/button]
+[2024-08-09 16:59:28,129] [  INFO] [    fw_login.py:185] [fw_enable_http_basic_access_authentication] - Enabled 'HTTP Basic Access authentication'...
+[2024-08-09 16:59:28,129] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:28,129] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [class]
+[2024-08-09 16:59:28,129] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [sw-avatar__initials]
+[2024-08-09 16:59:28,164] [  INFO] [     browser.py:168] [                   get_element] - Getting element
+[2024-08-09 16:59:28,164] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:28,165] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [class]
+[2024-08-09 16:59:28,165] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [sw-avatar__initials]
+[2024-08-09 16:59:28,336] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:28,338] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:28,338] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div/div/div[2]/div[1]/div[1]/div[1]/div/div/div/div[4]/span/span]
+[2024-08-09 16:59:28,391] [  INFO] [     browser.py:168] [                   get_element] - Getting element
+[2024-08-09 16:59:28,391] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:28,391] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:28,391] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div/div/div[2]/div[1]/div[1]/div[1]/div/div/div/div[4]/span/span]
+[2024-08-09 16:59:29,495] [ ERROR] [     browser.py:189] [                 click_element] - Exception 	: Message: element click intercepted: Element <span style="color: rgb(71, 175, 232);">...</span> is not clickable at point (1377, 151). Other element would receive the click: <p class="sw-status-info__text__message__para" style="color: rgb(0, 0, 0);">...</p>
+  (Session info: chrome=127.0.6533.100)
+Stacktrace:
+	GetHandleVerifier [0x00608923+23283]
+	(No symbol) [0x005CE934]
+	(No symbol) [0x00500733]
+	(No symbol) [0x005491C7]
+	(No symbol) [0x005475D9]
+	(No symbol) [0x005454CB]
+	(No symbol) [0x00544AAF]
+	(No symbol) [0x005399EF]
+	(No symbol) [0x0056441C]
+	(No symbol) [0x00539485]
+	(No symbol) [0x005646B4]
+	(No symbol) [0x0057CB8D]
+	(No symbol) [0x005641B6]
+	(No symbol) [0x00538017]
+	(No symbol) [0x0053890D]
+	GetHandleVerifier [0x006FA5E3+1013683]
+	GetHandleVerifier [0x00703E3C+1052684]
+	GetHandleVerifier [0x006FD4A4+1025652]
+	GetHandleVerifier [0x0062EA2B+179195]
+	(No symbol) [0x005D6833]
+	(No symbol) [0x005D3198]
+	(No symbol) [0x005D3337]
+	(No symbol) [0x005CB4BE]
+	(No symbol) [0x758EFCC9]
+	RtlGetAppContainerNamedObjectPath [0x77AB80CE+286]
+	RtlGetAppContainerNamedObjectPath [0x77AB809E+238]
+
+[2024-08-09 16:59:29,495] [ ERROR] [     browser.py:190] [                 click_element] - Click Exception : Retrying action
+[2024-08-09 16:59:31,501] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:31,501] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:31,501] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div/div/div[2]/div[1]/div[1]/div[1]/div/div/div/div[4]/span/span]
+[2024-08-09 16:59:31,521] [  INFO] [     browser.py:168] [                   get_element] - Getting element
+[2024-08-09 16:59:31,521] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:31,521] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:31,521] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div/div/div[2]/div[1]/div[1]/div[1]/div/div/div/div[4]/span/span]
+[2024-08-09 16:59:31,600] [  INFO] [     browser.py:100] [                 wait_for_text] - Waiting for text 	: Do you want to continue logout?
+[2024-08-09 16:59:31,606] [  INFO] [     browser.py: 72] [           does_page_have_text] - Checking if https://192.168.168.168/sonicui/7/m/mgmt/system/administrator page is loaded.
+[2024-08-09 16:59:31,613] [  INFO] [     browser.py: 80] [           does_page_have_text] - page state is :complete...
+[2024-08-09 16:59:31,626] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:31,626] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:31,626] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div[2]/div/div/div[2]/div/div[2]/button]
+[2024-08-09 16:59:31,655] [  INFO] [     browser.py:168] [                   get_element] - Getting element
+[2024-08-09 16:59:31,655] [  INFO] [     browser.py: 60] [wait_for_element_to_be_visible] - Waiting for the element to be visible
+[2024-08-09 16:59:31,655] [  INFO] [     browser.py: 62] [wait_for_element_to_be_visible] - Selenium selector attribute 	: [xpath]
+[2024-08-09 16:59:31,655] [  INFO] [     browser.py: 63] [wait_for_element_to_be_visible] - Selenium selector value 	: [/html/body/div[2]/div/div/div[2]/div/div[2]/button]
+[2024-08-09 16:59:41,826] [  INFO] [       setup.py:143] [                 tearDownClass] - ########## Testcase: test_NonTC_configure   PASSED  ##########
+
+

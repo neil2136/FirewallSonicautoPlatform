@@ -1,0 +1,290 @@
+{
+  "1": {
+    "steps": " 1.Click the add button to add a NM policy<br />2.On the pop up window type in following characters in the name field; testPolicy Test12 !@$ 123456 <br />3.Choose a probe target and then click ok.\n\n",
+    "atm_id": "6CE58E0A-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "1",
+    "title": "GUI functionality - Format check for Name field.",
+    "description": "This case is to verify the format of the name field",
+    "result": " The first three characters can be accepted as the Name, while numbers should not be allowed, an error will come up Error: Network Object names cannot be numbers."
+  },
+  "10": {
+    "steps": " 1.Create a NM policy with explicit route as the probe type;\n2.Create an address object say AOtarget with host type of  lan zone  and ip 10.10.10.10/24 ;\n3.Create an address object say AOgateway with host type of lan zone and ip 192.168.168.10/24;\n4.Enter a policy name and then click ok;\n5.Go to Network->Address object page, click the edit icon of AOtarget, change the AO type to Range, and ip range from 10.10.10.10 to 10.10.10.15;\n6.Click the edit icon of AOgateway, change the ip address to 192.168.168.20;\n7.Back to network monitor policies page, put the mouse over the probe target and gateway.",
+    "atm_id": "6CC3E3EA-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a  ",
+    "id": "10",
+    "title": "GUI functionality- Edit an Object that is selected as the gateway or probe target.",
+    "description": "This case is to verify that an object that is in use as the gateway or probe target can be edited.",
+    "result": " The object should be updated accordingly on the Network monitor policies table.\n\n"
+  },
+  "11": {
+    "steps": "1.Create a NM policy with explicit route as the probe type;\n2.Create an address object say AOtarget with host type of lan zone;\n3.Create an address object say AOgateway with host type of lan zone;\n4.Enter a policy name and then click ok;\n5.Go to Network->Address object page, click the edit icon of AOtarget, change it form Host to Network object;\n6.Click the edit icon of AOgateway, change it to other types like Range, Network.",
+    "atm_id": "6CC75688-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a",
+    "id": "11",
+    "title": " Negative test- Change the AO that is in use by a policy to a wrong type.",
+    "description": "This case is to verify that firewall will report error when change the AO that is in use by a NM policy to a wrong type which is not accepted by the field.",
+    "result": "Step 5 and 6 should not be allowed. No crash happens and firewall will report error that the AO type is wrong."
+  },
+  "14": {
+    "steps": "1.Open the add NM policy window on Network Monitor Policies page;\n2.Enter a policy name, and select a probe target;\n\nSelect TCP or TCP-Explicit Route as probe type;\nEnter a port number as below:\n0\n65536\n65535\n80",
+    "atm_id": "6D4D7EF2-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "14",
+    "title": "GUI functionality - Boundary check for port option.",
+    "description": "This case is to check the boundary of port option.",
+    "result": " For value 0, firewall will reports an errorPlease specify a port number;\nFor value 65536, firewall will reports:Error: Probe Port: Data out of bounds (min = 0, max = 65535).\nValue 65535 and 80 should be accepted as the correct port number.\n\n"
+  },
+  "15": {
+    "steps": "1.Open the add NM policy window on Network Monitor Policies page;\n2.Enter a policy name, and select a probe target;\n3.Enter a value other than integer for following probe parameters and then click ok:\na)Port number\nb)Probe interval\nc)Reply timeout\nd)Failure threshold\ne)Success threshold\n4.Re-enter an integer for these parameters and click OK.\n\n",
+    "atm_id": "6D533E82-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "15",
+    "title": "GUI functionality - Format check for probe parameters.",
+    "description": "This case is to verify the format of the probe parameters should be Integer.",
+    "result": "For values other than integer, firewall will report error Data is incorrectly formatted."
+  },
+  "16": {
+    "steps": "Open the add NM policy window on Network Monitor Policies page;\nEnter a policy name, and select a probe target;\nEnter following value for probe intervals and then click the ok button.\n0\n9999\n60\n1\n3600\n\n",
+    "atm_id": "6D57693A-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "16",
+    "title": "GUI functionality - boundary check for probe intervals.",
+    "description": " This case is to verify the boundary value of probe intervals.",
+    "result": " For value 0, firewall will reportPlease specify a probe interval;\nFor value 9999, firewall will report Error: Probe Interval: Data out of bounds (min = 1, max = 3600);\nThe last three values will be accepted,"
+  },
+  "17": {
+    "steps": "Open the add NM policy window on Network Monitor Policies page;\nEnter a policy name, and select a probe target;\nLeave default value 5 as the probe interval, then enter following value for reply timeout:\n0\n10\n3\n1\n\nChange probe interval value to 100, then enter following value for reply timeout:\n60,\n80.",
+    "atm_id": "6D59E7FA-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "17",
+    "title": "GUI functionality-boundary check for reply timeout.",
+    "description": "This case is to verify the boundary value for reply timeout.\n\n",
+    "result": " For value 0, firewall will report Please specify a reply timeout;\nFor value 10, firewall will report The probe interval must be greater than the reply timeout.;\nFor value 80, firewall will report Error: Reply Time Out: Data out of bounds (min = 1, max = 60).\nValue 3, 1 and 60 will be accepted by firewall."
+  },
+  "18": {
+    "steps": "Open the add NM policy window on Network Monitor Policies page;\nEnter a policy name, and select a probe target;\nEnter following value for missed intervals and then click the ok button.\n0\n200\n1\n100\n\n",
+    "atm_id": "6D3E2240-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "18",
+    "title": "GUI functionality-boundary test for failure threshold.",
+    "description": "This case is to verify the boundary value of failure threshold.\n\n",
+    "result": " For value 0, firewall will report: Please specify a threshold for missed intervals.\nFor value200, firewall will report: Error: Missed Probes: Data out of bounds (min = 1, max = 100).\nValue1 and 100 will be accepted by firewall.\n\n "
+  },
+  "19": {
+    "steps": "Open the add NM policy window on Network Monitor Policies page;\nEnter a policy name, and select a probe target;\nEnter following value for missed intervals and then click the ok button.\n0\n200\n1\n100",
+    "atm_id": "6D447D7A-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "19",
+    "title": "GUI functionality-boundary test for success threshold.",
+    "description": " This case is to verify the boundary value of success threshold.\n\n",
+    "result": "For value 0, firewall will report: Please specify a threshold for successful intervals.\nFor value200, firewall will report: Error: Successful Probes: Data out of bounds (min = 1, max = 100).\nValue1 and 100 will be accepted by firewall. "
+  },
+  "2": {
+    "steps": "1.Try to add a NM policy with the name field empty;\n2.Click the ok button.\n\n",
+    "atm_id": "6CCAC976-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "2",
+    "title": "GUI functionality - Empty Name is not allowed.",
+    "description": "This case is to verify error handle when name field is empty.\n\n",
+    "result": "The policy should not be added; an error message should come up Please enter a policy name."
+  },
+  "20": {
+    "steps": "Open the add NM policy window on Network Monitor Policies page;\nEnter a policy name, select a range probe target and leave other fields as default;\nSelect the checkbox of All must respond and then click the OK button;\nOpen the TSR, check the value of allHostsMustRespond.\nOpen the configuration window of the policy, un-check All must respond option.",
+    "atm_id": "6D4A2D4C-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "20",
+    "title": " GUI functionality- All must respond option can be checked/unchecked.",
+    "description": "This case is to verify the option All must respond can be checked.\n\n",
+    "result": "All must respond can be selected and its value will set to 1 in the TSR once selected. "
+  },
+  "21": {
+    "steps": "Open the add NM policy window on Network Monitor Policies page;\nEnter a policy name, select a probe target and leave other fields as default;\nEnter some characters in the comments field and then click ok.\n",
+    "atm_id": "6D4BD732-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "21",
+    "title": " GUI functionality - comment field.",
+    "description": "This case is to verify the comment field.\n\n",
+    "result": "Policy added successfully and comments can be displayed correctly when put mouse over the comments icon."
+  },
+  "25": {
+    "steps": "1.Add several NM policies;\n2.Click the delete all button.",
+    "atm_id": "6D42DA06-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "25",
+    "title": " Button functionality- Delete all NM policies.",
+    "description": "This case is to verify delete all button works well to delete all the policies.",
+    "result": "All custom policies should be deleted successfully."
+  },
+  "26": {
+    "steps": "1.Add a NM policy;\n2.Add a static route and choose this NM policy;\n3.Back to NM policy page, try to delete this policy.",
+    "atm_id": "6D3C848A-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "26",
+    "title": " Negative test - Delete a policy that is in use by a route.",
+    "description": "This case is to verify a policy that is in use by a route can not be deleted.\n\n",
+    "result": "The policy can not be deleted, firewall will report following errors:\nObject is in use by a Route Policy.\nCannot delete this Network Monitor entry. "
+  },
+  "27": {
+    "steps": "1.Add several NM policies;\n2.Wait for the pseudo-LEDs turn green or red;\n\nPut the mouse over the pseudo-LEDs, check that following statistics are provided:\n1) Successful probe percentage;\n2) Number of Resolved probe targets;\n3) Total number of probes sent;\n4) Total number of successful probe responses received;\n5) A list of resolved probe targets and their status.\n\nClick the clear statistics button; check the statistics again.",
+    "atm_id": "6D31B96A-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a  ",
+    "id": "27",
+    "title": "Button functionality- Clear statistics.",
+    "description": "This case is to verify clear statistics button works well.",
+    "result": "Statistics 1 to 4 of all the policies should be cleared and set to zero.\n\n"
+  },
+  "3": {
+    "steps": "1.Click the add button on Network Monitor Policies page;\n2.Add a policy with name test, select a probe target and leave everything else as default, then click ok, verify policy test is added successfully;\n3.Click the add button again and try to add another policy with the same name test;\n\n",
+    "atm_id": "6D519AF0-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "3",
+    "title": "GUI functionality  Policy name must be unique.",
+    "description": "This case is to verify each NM policy must be given a unique name.\n\n",
+    "result": "The second policy should not be added and firewall should report error like policy already exists."
+  },
+    "31": {
+    "steps": "1.Add several NAT probe policies like case 30;\n2.Verify these policies are displayed in the NM policies table;\n3.Select a NAT probe policy, and then click the delete button, click the ok button on the pop up window;\n4.Click the delete all button, then click ok on the pop up window.",
+    "atm_id": "6CDBA5CA-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "31",
+    "title": "Auto-added policies can not be deleted by delete button or delete all button.",
+    "description": " This case is to verify delete or delete all button only take effects for custom policies.",
+    "result": " All the NAT probe policies should not be deleted."
+  },
+    "32": {
+    "steps": "1.Add a NAT probe policy like case 30;\n2.ON NAT policies page, click the edit icon of this NAT policy;\n3.Click the advanced tab, then make some changes like change probe type to TCP and port 80, then click the OK button;\n4.Back to NM policies page, check that the NAT probe policies has been updated and the policy name may change to NAT Probe2;\n5.Check the pseudo-LED and statistics of this policy.",
+    "atm_id": "6D2A6200-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "32",
+    "title": " Auto-added policies can be edited through Advanced settings of NAT policy.",
+    "description": "This case is to verify auto-added policies can be edited through advanced NAT.",
+    "result": " NAT probe polices can be edited successfully through advanced NAT.\nThe pseudo-LED turns yellow and all statistics of this policy has been cleared at first."
+  },
+    "33": {
+    "steps": "1.Create a NAT probe policy like case 30;\n2.Verify the policy is displayed correctly in NM policies table;\n3.Back to the configuration page of this NAT policy, click the advanced tab;\n4.Un-select the checkbox Enable probing.",
+    "atm_id": "6D28B9E6-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "33",
+    "title": "Auto-added policies can be deleted through Advanced settings of NAT policy.",
+    "description": "This case is to verify NAT probe policies will be deleted if enable probing is disabled on advanced NAT.",
+    "result": "The auto-added NAT probe policy is deleted on the NM policies table."
+  },
+    "4": {
+    "steps": "1.Click the add button on Network Monitor Policies page;\n2.In the Name field, try to enter more than 32 characters.\n",
+    "atm_id": "6D46DC8C-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "4",
+    "title": " GUI functionality - Max length of the Name field.",
+    "description": "This case is to verify max 32 characters can be entered in the Name field.\n\n",
+    "result": "Only 32 characters in maximum can be entered and this name can be displayed correctly in Name column."
+  },
+  "42": {
+    "steps": "Add a reachable address object of host type name hostAO;\nClick the add button on Network Monitor Policies page;\nEnter a policy name like hostProbe;\nExpand the probe target dropdown list, select the hostAO,\nSelect a probe type and do corresponding configuration, then click the ok button;\nWait for several seconds, check the policy status;\nDisconnect the egress interface, wait several seconds and check the policy status.\n",
+    "atm_id": "6CFD1FB6-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "42",
+    "title": " Functional test for probe target of Host type.",
+    "description": " This case is to verify Host object can be probed successfully.",
+    "result": "Policy status should be up after three successful intervals, and will change to down after three missed intervals when egress interface disconnected.\nMouse over of the policy status should show the probe statistics and the status of the host target: up or down.\n\n "
+  },
+  "43": {
+    "steps": "1.Add an address object of Range type name RangeAO;\n2.Click the add button on Network Monitor Policies page, enter a policy name like rangeProbe;\n\nSelect RangeAO as the probe target;\nSelect a probe type and do corresponding configuration, then click the ok button;\nWait for several seconds, check the policy status;\nDisconnect the egress interface, wait several seconds and check the policy status.\n",
+    "atm_id": "6D047176-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "43",
+    "title": "Functional test for probe target of Range type.",
+    "description": " This case is to verify Range object can be probed successfully.\n\n",
+    "result": "Policy status should be up if one of the host within the range is up. And will change to down when all the hosts status are down.\nMouse over of the policy status should show the probe statistics and the status of all the host targets within the RangeAO. "
+  },
+  "44": {
+    "steps": "1.Add an address object of FQDN type, enter a domain name baidu.com;\n2.Make sure firewall can access Internet correctly, verify baidu.com can be resolved to correct ip addresses;\n3.Click the add button on Network Monitor Policies page, enter a policy name like fqdnProbe;\n\nSelect the FQDN probe target;\nSelect TCP as the probe type, enter a port number 80, and then click the ok button;\nCheck the packets and log, verify all the resolved ip address are probed.\n",
+    "atm_id": "6D09BEC4-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "44",
+    "title": "Functional test for probe target of FQDN type.",
+    "description": " This case is to verify FQDN object can be probed successfully.",
+    "result": "All resolved ip address of the FQDN can be probed successfully.\n\n "
+  },
+  "45": {
+    "steps": "1.Add a group object say group1 including some hosts, range, or FQDN objects;\n2.Click the add button on Network Monitor Policies page, enter a policy name like groupProbe;\n3.Select group1 as the probe target, select a probe type and then click the ok button;\n4.Check the packets, log and the policy status.\n\n",
+    "atm_id": "6D0B636E-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "45",
+    "title": "Functional test for probe target of Group type.",
+    "description": " This case is to verify Group object(host, range, or FQDN objects only) can be probed successfully.",
+    "result": " Policy status should be up if one of the members in the group is up.\nMouse over of the policy status should show the probe statistics and the status of all the ip addresses in the group including host, range and FQDN.\n\n"
+  },
+  "47": {
+    "steps": "Open the add NM policy window on Network Monitor Policies page;\nEnter a policy name, select a range or group object that has at least one unreachable ip address;\nSelect the checkbox of All must respond and then click the OK button;\nCheck the policy status.\n",
+    "atm_id": "6D140B22-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "47",
+    "title": "Functional test for option All hosts must respond.",
+    "description": "This case is to verify the function of All hosts must respond.",
+    "result": " Policy status will be set to down as long as theres one host status is down. Only when all the probe hosts are up, policy status changes to UP."
+  },
+  "57": {
+    "steps": "1.From Network->Route Policies add a route with any connected egress interface;\n\nExpand the dropdown list of Network Monitor probe, select Create new network monitor object;\n3.On the pop-up window, add a new NM policy.",
+    "atm_id": "6CDA04D6-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "57",
+    "title": "Create a new monitor policy from the add route dialog.",
+    "description": "This case is to verify monitor policy can be added through the add route dialog.\n\n",
+    "result": "The NM policy can be added successfully and selected as the probe policy of the route. "
+  },
+  "58": {
+    "steps": "1.From Network->Route Policies add a custom route with any connected egress interface -DO NOT select the Disable route on interface-disconnect;\n2.Select a probe policy which status is UP from the network monitor probe dropdown list;\n3.Select the checkbox of Disable route when probe succeeds;\n4.Click the OK button, verify the static route status;\n5.Disconnect the egress interface of the selected probe policy, wait several seconds, check the static route again.",
+    "atm_id": "6CF8272C-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "58",
+    "title": "Functional test for option Disable route when probe succeeds.",
+    "description": "This case is to verify the static route will be disabled when the probe policy is up.",
+    "result": "The static route should be grayed-out when probe succeeds and active when the probe fails."
+  },
+  "59": {
+    "steps": "1.From Network->Route Policies add a route with any connected egress interface -DO NOT select the Disable route on interface-disconnect;\n2.Select a probe policy from the network monitor probe dropdown list;\n3.Select the checkbox of Probe default state is up;\n4.Edit the selected policy to make the status to unknown;\n5.Switch to the static route quickly, check the status of it;\n6.Disconnect the egress interface of the selected policy, wait till its status is down;\n7.Check the static route, it should be disabled.",
+    "atm_id": "6CE09800-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "59",
+    "title": "Functional test for option Probe default state is UP.",
+    "description": "This case is to verify the static route with an unknown status policy should be active when option Probe default state is up is selected.",
+    "result": "The static route should be active when policy is in unknown status if the option Probe default state is up is selected. "
+  },
+  "6": {
+    "steps": "1.Open the add NM policy window on Network Monitor Policies page;\n2.Enter a policy name, leave other fields as default, then click the ok button.",
+    "atm_id": "6D17780C-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "6",
+    "title": "GUI functionality - Empty probe target is not allowed.",
+    "description": "This case is to verify a probe target must be selected in a NM policy.",
+    "result": "Policy should not be added with an error message Please select a probe target.\n\n"
+  },
+  "72": {
+    "steps": "1.Add several NM policies; 2.Add some static route with probe policies selected; 3.On CLI, type the command: show tsr network,verify all the NM policies are displayed; 4.Type the command:show route,verify the pepbr can be displayed correctly.\n\n<span>Note: in step3, command is \"</span><span>show tech-support-report network-monitor</span><span>\" in 7.1.0, otherwise, it should be \"</span><span>show network-monitor policies</span><span>\". \"show tsr network\" can't be work.</span>",
+    "atm_id": "6CF4E260-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "72",
+    "title": " CLI support for NM policies configuration.",
+    "description": "This case is to verify PEPBR info can be viewed or configured on CLI. Currently, it hasn't been exploited to configure NM policy or PEPBR on CLI but these info can be viewed on CLI.",
+    "result": "NM policies and PEPBR info can be viewed from CLI.\n\n "
+  },
+  "8": {
+    "steps": "Open the add NM policy window on Network Monitor Policies page;\nEnter a policy name and choose a probe target;\nSelect Ping(ICMP)-Explicit Route or TCP-Explicit Route as the probe type;\nCheck the Next Hop Gateway and Outbound Interface option becomes enabled;\nSelect or create a new object as the gateway and select an interface from the dropdown list;\nClick the ok button.",
+    "atm_id": "6CCC6BFA-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "8",
+    "title": "GUI functionality  Gateway and Interface can be specified for explicit route probe.",
+    "description": "This case is to verify Interface option should be disabled when select Ping or TCP probe.",
+    "result": " Policy with specified gateway and Egress interface can be added successfully."
+  },
+  "9": {
+    "steps": "1.Create a NM policy with explicit route as the probe type:\n2.Select or create a new address object say AOtarget as the probe target;\n3.Select or create a new address object say AOgateway as the next hop gateway;\n4.Go to network ->address objects page., try to delete the object AOtarget;\n5.Try to delete the object AOgateway.",
+    "atm_id": "6CCE143C-6D77-11DE-8C38-5F3500F93527",
+    "initial": " n/a ",
+    "id": "9",
+    "title": "GUI functionality  Delete an Object that is selected as the Gateway or probe target.",
+    "description": "This case is to verify object can not be deleted when its selected as the Gateway or probe target.\n\n",
+    "result": " Operation should be denied with an error message: Error: Object is in use by a Network Monitor policy."
+  }
+}

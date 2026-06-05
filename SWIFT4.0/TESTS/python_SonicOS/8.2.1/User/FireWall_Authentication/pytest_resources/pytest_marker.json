@@ -1,0 +1,17 @@
+{
+    "smoke": {
+      "firewall_administration": [
+        "10001", "10002", "10003", "10004", "10005", "10006"
+      ]
+    },
+    "sanity": {
+      "firewall_administration": [
+        "456"
+      ]
+    },
+    "regression": {
+      "firewall_administration": [
+        "789"
+      ]
+    }
+}

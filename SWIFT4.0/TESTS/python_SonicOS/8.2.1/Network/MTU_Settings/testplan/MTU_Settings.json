@@ -1,0 +1,16 @@
+{
+    "01": {
+        "steps": "1. Send 1500 byte UDP packet while Ignore Don't Fragment Flag is disabled in X1. the packet do not be forwarded.\n    2. Send 1500 byte UDP packet while Ignore Don't Fragment Flag is enabled in X1. the packet will forwarded.\n    3. Send 512 byte UDP packet while Ignore Don't Fragment Flag is enabled in X1. the packet will forwarded.",
+        "initial": " PC1-LAN-DUT-WAN-PC2",
+        "id": "01",
+        "title": "Testing the MTU with different MTU values",
+        "result": "The DUT should work as design"
+    },
+    "02": {
+        "steps": "1. VPN tunnel is up\n    2. Send 1500 byte UDP packet while Ignore Don't Fragment Flag is disabled in VPN advanced. the packet do not be forwarded.\n    3. Send 1500 byte UDP packet while Ignore Don't Fragment Flag is enabled in VPN advanced. the packet will forwarded.\n    4. Send 512 byte UDP packet while Ignore Don't Fragment Flag is enabled in VPN advanced. the packet will forwarded.",
+        "initial": " PC1-LAN-DUT1-WAN-VPN-DUT2-LAN-PC2",
+        "id": "02",
+        "title": "Different MTUs on different Networking mode(VPN and Non-VPN traffics)",
+        "result": "The DUT should work as design."
+    }
+}

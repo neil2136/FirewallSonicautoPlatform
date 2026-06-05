@@ -1,0 +1,312 @@
+{
+   "1518493" : {
+      "steps" : "  1. Add Syslog Servers.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "157760c9-9025-4b6c-843c-165bff248065",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518493",
+      "title" : "Add Syslog Servers from CLI - Log Syslog",
+      "description" : "Original ID: 20\nOriginal Title: Add Syslog Servers from CLI - Log Syslog\nOriginal Description: This case is to verify that when Add Syslog Servers, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518485" : {
+      "steps" : "  1. Reset all event count.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "71afef38-6c60-4bb9-ab84-9d54f82b66b3",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518485",
+      "title" : "Reset All Event Count from CLI - Log Settings",
+      "description" : "Original ID: 13\nOriginal Title: Reset All Event Count from CLI - Log Settings\nOriginal Description: This case is to verify that when reset all event count, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518506" : {
+      "steps" : "  1. Config FTP Log Automation.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "98272f18-33bc-4732-a645-c48c6d4c509e",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518506",
+      "title" : "Config FTP Log Automation from CLI - Log Automation",
+      "description" : "Original ID: 33\nOriginal Title: Config FTP Log Automation from CLI - Log Automation\nOriginal Description: This case is to verify that when config FTP Log Automation, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518484" : {
+      "steps" : "  1. Edit attributes of all catetories.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "f8ab1ab7-5290-42e5-b921-fce75b47d0af",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518484",
+      "title" : "Edit Attributes of All Catetories from CLI - Log Settings",
+      "description" : "Original ID: 12\nOriginal Title: Edit Attributes of All Catetories from CLI - Log Settings\nOriginal Description: This case is to verify that when edit attributes of all catetories, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518511" : {
+      "steps" : "  1. Select/Unselect Display Options.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "04c810b1-ceb4-42b9-ace3-8657fe77643c",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518511",
+      "title" : "Select/Unselect Display Options from CLI - Log Log Monitor",
+      "description" : "Original ID: 8\nOriginal Title: Select/Unselect Display Options from CLI - Log Log Monitor\nOriginal Description: This case is to verify that when select/unselect Display Options, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518507" : {
+      "steps" : "  1. Manage the firewall with CLI from console.\n  2. Make some successful configurations in Capture ATP & Log.\n  3. Go to Log Settings/ Auditing Records page, check the records.",
+      "priority" : "Smoke",
+      "atm_id" : "63cede6a-c295-4212-a4e2-295fcd18751e",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "1518507",
+      "title" : "Makes changes in Capture ATP & Log via CLI(Console)",
+      "description" : "Original ID: 39\nOriginal Title: Makes changes in Capture ATP & Log via CLI(Console)\nOriginal Description: This case is to verify that when configuration is made via CLI, from console, Auditing Records should be correctly showed.",
+      "result" : "  When configuration is made via CLI from console, Auditing Records should be correctly showed."
+   },
+   "1518504" : {
+      "steps" : "  1. Config Mail Server advanced Settings.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "5ad01faa-e5d4-4712-a25b-f431123057c6",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518504",
+      "title" : "Config Mail Server Advanced Settings from CLI - Log Automation",
+      "description" : "Original ID: 31\nOriginal Title: Config Mail Server Advanced Settings from CLI - Log Automation\nOriginal Description: This case is to verify that when config Mail Server Advanced Settings, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518503" : {
+      "steps" : "  1. Config Mail Server Settings.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "9437b484-d559-4e81-bf98-c9d9385bb001",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518503",
+      "title" : "Config Mail Server Settings from CLI - Log Automation",
+      "description" : "Original ID: 30\nOriginal Title: Config Mail Server Settings from CLI - Log Automation\nOriginal Description: This case is to verify that when config Mail Server Settings, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518498" : {
+      "steps" : "  1. Reset Name Cache.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "8a4963e8-c606-4498-91ab-a3ce6dbcd4c0",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518498",
+      "title" : "Reset Name Cache from CLI - Log Name Resolution",
+      "description" : "Original ID: 25\nOriginal Title: Reset Name Cache from CLI - Log Name Resolution\nOriginal Description: This case is to verify that when Reset Name Cache, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518486" : {
+      "steps" : "  1. Save/Import template.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "7162b87b-d502-4279-bebb-ae1e6104ab41",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518486",
+      "title" : "Save/Import Template from CLI - Log Settings",
+      "description" : "Original ID: 14\nOriginal Title: Save/Import Template from CLI - Log Settings\nOriginal Description: This case is to verify that when Save/Import template, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518512" : {
+      "steps" : "  1. Export to file.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "2a356e5f-d91c-4ca6-a549-3afb78152c64",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518512",
+      "title" : "Export to file from CLI - Log Log Monitor",
+      "description" : "Original ID: 9\nOriginal Title: Export to file from CLI - Log Log Monitor\nOriginal Description: This case is to verify that when export to file, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518495" : {
+      "steps" : "  1. Modify Syslog Servers.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "6ac2fd52-f7bc-4161-8ccc-2a3d60cd09e4",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518495",
+      "title" : "Modify Syslog Servers from CLI - Log Syslog",
+      "description" : "Original ID: 22\nOriginal Title: Modify Syslog Servers from CLI - Log Syslog\nOriginal Description: This case is to verify that when Modify Syslog Servers, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518483" : {
+      "steps" : "  1. Modify alert level.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "54459789-cd56-4352-bb9e-e689f853cdd4",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518483",
+      "title" : "Modify Alert Level from CLI - Log Settings",
+      "description" : "Original ID: 11\nOriginal Title: Modify Alert Level from CLI - Log Settings\nOriginal Description: This case is to verify that when modifying alert level, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518490" : {
+      "steps" : "  1. Reset event count for each entry.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "785507d7-1d18-430e-92e0-e35aba01b902",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518490",
+      "title" : "Reset Event Count for each Entry from CLI - Log Settings",
+      "description" : "Original ID: 18\nOriginal Title: Reset Event Count for each Entry from CLI - Log Settings\nOriginal Description: This case is to verify that when Reset event count for each entry, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518509" : {
+      "steps" : "  1. Choose AO for exlcusion.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "6460dff0-4ee0-4b93-974d-0ea22ab23f94",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518509",
+      "title" : "Choose AO for exlcusion from CLI - Capture ATP Exclusions.",
+      "description" : "Original ID: 5\nOriginal Title: Choose AO for exlcusion from CLI - Capture ATP Exclusions.\nOriginal Description: This case is to verify that when choose AO for exlcusion, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Capture ATP is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518488" : {
+      "steps" : "  1. Edit log group.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "e0e2e0fe-0a63-4691-9a89-e60c70e040e5",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518488",
+      "title" : "Edit Log Group from CLI - Log Settings",
+      "description" : "Original ID: 16\nOriginal Title: Edit Log Group from CLI - Log Settings\nOriginal Description: This case is to verify that when edit log group, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518491" : {
+      "steps" : "  1. Config Syslog Settings.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "5ee1d5a4-1d2c-492e-be01-a52f1e9b5a7d",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518491",
+      "title" : "Config Syslog Settings from CLI - Log Syslog",
+      "description" : "Original ID: 19\nOriginal Title: Config Syslog Settings from CLI - Log Syslog\nOriginal Description: This case is to verify that when Config Syslog Settings, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518508" : {
+      "steps" : "  1. Modify the maximum file size for analysis.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "42c94ff2-8bcb-4869-a3b3-8ee726a45a09",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518508",
+      "title" : "Modify the maximum file size from CLI - Capture ATP Bandwidth Management.",
+      "description" : "Original ID: 4\nOriginal Title: Modify the maximum file size from CLI - Capture ATP Bandwidth Management.\nOriginal Description: This case is to verify that when modify the maximum file size, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Capture ATP is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518501" : {
+      "steps" : "  1. Config E-mail Log Automation.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "3a86fe1f-0410-40c8-9f91-e3466027549d",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518501",
+      "title" : "Config E-mail Log Automation from CLI - Log Automation",
+      "description" : "Original ID: 28\nOriginal Title: Config E-mail Log Automation from CLI - Log Automation\nOriginal Description: This case is to verify that when E-mail Log Automation, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518489" : {
+      "steps" : "  1. Edit log Event.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "2b599010-f539-4ad1-80e6-3416e3c018fd",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518489",
+      "title" : "Edit Log Event from CLI - Log Settings",
+      "description" : "Original ID: 17\nOriginal Title: Edit Log Event from CLI - Log Settings\nOriginal Description: This case is to verify that when edit log Event, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518497" : {
+      "steps" : "  1. Config DNS Settings.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "e83536ad-620c-4869-b44c-b72bd27f876f",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518497",
+      "title" : "Config DNS Settings from CLI - Log Name Resolution",
+      "description" : "Original ID: 24\nOriginal Title: Config DNS Settings from CLI - Log Name Resolution\nOriginal Description: This case is to verify that when Config DNS Settings, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518510" : {
+      "steps" : "  1. Config MD5 exclusion list.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "e9165e71-9679-491b-a184-9fb468d9e0e1",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518510",
+      "title" : "Config MD5 exclusion list from CLI - Capture ATP Exclusions.",
+      "description" : "Original ID: 6\nOriginal Title: Config MD5 exclusion list from CLI - Capture ATP Exclusions.\nOriginal Description: This case is to verify that when config MD5 exclusion list, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Capture ATP is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518500" : {
+      "steps" : "  1. Config View Data.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "881b76ad-8332-4875-8e1f-bb310bf9a6fe",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518500",
+      "title" : "Config View Data from CLI - Log Reports",
+      "description" : "Original ID: 27\nOriginal Title: Config View Data from CLI - Log Reports\nOriginal Description: This case is to verify that when Config View Data, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518496" : {
+      "steps" : "  1. Delete Syslog Servers.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "60aa51d5-c118-4ed7-8237-385128b6d77b",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518496",
+      "title" : "Delete Syslog Servers from CLI - Log Syslog",
+      "description" : "Original ID: 23\nOriginal Title: Delete Syslog Servers from CLI - Log Syslog\nOriginal Description: This case is to verify that when Delete Syslog Servers, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518492" : {
+      "steps" : "  1. Enable/Disable Capture ATP.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "69873f4c-f42b-4f15-8456-d45739beb743",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518492",
+      "title" : "Enable/Disable Capture ATP from CLI - Capture ATP Basic Setup Checklist",
+      "description" : "Original ID: 2\nOriginal Title: Enable/Disable Capture ATP from CLI - Capture ATP Basic Setup Checklist\nOriginal Description: This case is to verify that when enable/disable Capture ATP, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Capture ATP is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518505" : {
+      "steps" : "  1. Test settings for mail server.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "1f5ab105-05d0-4bae-ab59-a26a18162c82",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518505",
+      "title" : "Test Settings for Mail Server from CLI - Log Automation",
+      "description" : "Original ID: 32\nOriginal Title: Test Settings for Mail Server from CLI - Log Automation\nOriginal Description: This case is to verify that when Test settings for mail server, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518502" : {
+      "steps" : "  1. Select/Unselect the file type for analysis.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "2907bffb-910a-4674-baa1-39a736de2054",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518502",
+      "title" : "Select/Unselect the file type from CLI - Capture ATP Bandwidth Management.",
+      "description" : "Original ID: 3\nOriginal Title: Select/Unselect the file type from CLI - Capture ATP Bandwidth Management.\nOriginal Description: This case is to verify that when select/unselect the file type, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Capture ATP is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518487" : {
+      "steps" : "  1. Edit log category.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "c324cddd-9c31-4ad0-814b-acea9b2d22fb",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518487",
+      "title" : "Edit Log category from CLI - Log Settings",
+      "description" : "Original ID: 15\nOriginal Title: Edit Log category from CLI - Log Settings\nOriginal Description: This case is to verify that when edit log category, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518499" : {
+      "steps" : "  1. Start/Stop Data Collection.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "129961a6-d6f0-4f1e-9ef5-1d96f5ef1ed5",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518499",
+      "title" : "Start/Stop Data Collection from CLI - Log Reports",
+      "description" : "Original ID: 26\nOriginal Title: Start/Stop Data Collection from CLI - Log Reports\nOriginal Description: This case is to verify that when Start/Stop Data Collection, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518494" : {
+      "steps" : "  1. Enable/Disable Syslog Servers.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "d40c87b1-0164-4278-9448-705da8570937",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518494",
+      "title" : "Enable/Disable Syslog Servers from CLI - Log Syslog",
+      "description" : "Original ID: 21\nOriginal Title: Enable/Disable Syslog Servers from CLI - Log Syslog\nOriginal Description: This case is to verify that when enable/disable Syslog Servers, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1518482" : {
+      "steps" : "  1. Clear all log.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "d9344657-58dd-497b-ada0-bdb82aa42a8b",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1518482",
+      "title" : "Clear All Log from CLI - Log Log Monitor",
+      "description" : "Original ID: 10\nOriginal Title: Clear All Log from CLI - Log Log Monitor\nOriginal Description: This case is to verify that when clear all log, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with Log is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   }
+}

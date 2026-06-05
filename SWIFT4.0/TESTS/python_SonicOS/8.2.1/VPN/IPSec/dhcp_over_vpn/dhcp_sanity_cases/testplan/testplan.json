@@ -1,0 +1,30 @@
+{
+   "763" : {
+      "steps" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.1\", \"management_ip\": \"0.0.0.0\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}}3.Edit DHCP over VPN with the Relay IP Address in Remote Gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote{ \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.2\", \"management_ip\": \"10.0.0.3\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}5.Do pending changes.",
+      "initial" : "  Edit DHCP over VPN with the Relay IP Address in Remote Gateway",
+      "id" : "763",
+      "title" : "TBD",
+      "result" : "  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\"}]}}2.GUI settings is agree with API"
+   },
+   "757" : {
+      "steps" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/central .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"central\": { \"internal_dhcp\": false, \"global_vpn\": false, \"remote\": false, \"relay_ip\": \"0.0.0.0\", \"send_requests\": true } } }}3.Edit DHCP over VPN by disabling Send DHCP requests to the server addresses listed below in Central gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/central{ \"vpn\": { \"dhcp_over_vpn\": { \"central\": { \"internal_dhcp\": true, \"global_vpn\": false, \"remote\": true, \"relay_ip\": \"0.0.0.0\", \"send_requests\": false } }5.Do pending changes.",
+      "initial" : "  Edit DHCP over VPN by disabling Send DHCP requests to the server addresses listed below in Central gateway",
+      "id" : "757",
+      "title" : "TBD",
+      "result" : "  1.return success without any error code.\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\"}]}}"
+   },
+   "766" : {
+      "steps" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.2\", \"management_ip\": \"0.0.0.0\", \"block_spoof\": false, \"temp_lease\": false, \"lease_time\": 2 } } }}}3.Edit DHCP over VPN by enabling Obtain temporary lease from local DHCP server if tunnel is down Temporary Lease Time in Remote Gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote{ \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.1\", \"management_ip\": \"10.0.0.3\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}",
+      "initial" : "  Edit DHCP over VPN by enabling Obtain temporary lease from local DHCP server if tunnel is down Temporary Lease Time in Remote Gateway",
+      "id" : "766",
+      "title" : "TBD",
+      "result" : "  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\"}]}}2.GUI settings is agree with API"
+   },
+   "364" : {
+      "steps" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/central .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"central\": { \"internal_dhcp\": false, \"global_vpn\": false, \"remote\": false, \"relay_ip\": \"0.0.0.0\", \"send_requests\": false } } }}3.Edit DHCP over VPN by enabling Use Internal DHCP Server For Global VPN Client in Central gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/central{ \"vpn\": { \"dhcp_over_vpn\": { \"central\": { \"internal_dhcp\": true, \"global_vpn\": true, \"remote\": true, \"relay_ip\": \"0.0.0.0\", \"send_requests\": false } } }}5.Do pending changes .",
+      "initial" : "  Edit DHCP over VPN by enabling Use Internal DHCP Server For Global VPN Client in Central gateway",
+      "id" : "364",
+      "title" : "TBD",
+      "result" : "  1.return success without any error code.\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\"}]}}"
+   }
+}

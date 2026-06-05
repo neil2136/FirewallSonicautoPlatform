@@ -1,0 +1,37 @@
+{
+    "01" : {
+        "steps": "1) Go to the Network > ARP page and click on the Flush ARP cache Button. &2) Verify that in the ARP cache table no entry for the DMZ(OPT) interface. &3) Go to the Network > Settings page, configure OPT (DMZ) Interface. &4) Connect PC to the DMZ Interfce &5) Assign PC LAN settings.",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 DMZ) -- PC2", 
+        "id" : "01",
+        "title": "Box added new entries into the ARP cache table, include interface and host",
+        "result": "1) Verify that new entry was added into the ARP Cache table. &2) Verify that ARP cache table: Internet Address, Physical Address, Interface and Timeout settings for the OPT (DMZ) Interface are correct.&3) Go to ARP Cache table, verify ARP cache have internet address, physical address, interface and Timeout for this PC are correct."
+    },
+    "02" : {
+        "steps": "1) unplug pc from the DMZ Interface &2) go to network > settings page and unassigned DMZ interface",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 DMZ) -- PC2", 
+        "id" : "02",
+        "title": "Box deleted entries from the ARP cache table",
+        "result": "1) Verify DMZ interface entries deleted from the ARP Cache table." 
+    },
+    "03" : {
+        "steps": "1) On PC enter ipconfig /all to discover MAC address &2) On Network > ARP configuration click add &3) Enter correct IP and incorrect MAC address of PC &3) Click OK &4) verify that entry is listed correctly &5) verify that entry is listed in the ARP cache as Permanent &6) Ping the interface from the PC verify failure. &7) on Network -> ARP configuration click the Edit icon next to the entry created &8) change IP and MAC address of PC to be correct &9) click OK &10) verify that entry is listed correctly. &11) verify that entry is listed in the ARP cache as Permanent. &12) Ping the interface - verify success",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 DMZ) -- PC2", 
+        "id" : "03",
+        "title": "Edit Static ARP Entry",
+        "result" : "1) can edit static ARP entry"
+    },
+    "04" : {
+        "steps": "1) On PC enter ipconfig /all to discover MAC address &2) On Network > ARP configuration click Add &3) Enter correct IP and MAC address of PC &4) click OK &5) verify that entry is listed correctly. &6) verify that entry is listed in the ARP cache as Permanent. &7) Ping the interface IP that PC is connected to - verify success &8) change the IP address of the PC &9) ping the interface IP that PC is connected to - verify success &10) verify that dynamic entry has been created that had the same MAC address as the created static one. &11) click to edit the static entry. &12) check the bind MAC address checkbox and click OK &13) ping the interface IP that PC is connected to - verify failure &14) Attempt to add another static mapping to the same MAC address - verify failure &15) change the IP address back &16) ping the interfce - verify success", 
+        "initial": "PC1 -- (X0 LAN) DUT (X2 DMZ) -- PC2", 
+        "id" : "04",
+        "title": "Functional test for Bind MAC Address",
+        "result" : "1) once the MAC address is bound to an interface, the SonicWall will not respond to that MAC address on any other interface &2) it will also remove any dynamic cached references to that MAC address that might have been present &3) it will prohibit additinal static mappings of that MAC address"
+    },
+    "05" : {
+        "steps": "1) On PC enter ipconfig /all to discover MAC address &2) On Network > ARP configuration click Add &3) Enter correct IP and MAC address of PC &4) click OK &5) verify that entry is listed correctly. &6) verify that entry is listed in the ARP cache as Permanent &7) verify that it cannot e deleted from the ARP cache",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 DMZ) -- PC2", 
+        "id" : "05",
+        "title": "verify if the static ARP Entry is published in the ARP cache and is not deletetable",
+        "result" : "static ARP entry is published in the ARP Cache and is not deleteable"
+    }
+}

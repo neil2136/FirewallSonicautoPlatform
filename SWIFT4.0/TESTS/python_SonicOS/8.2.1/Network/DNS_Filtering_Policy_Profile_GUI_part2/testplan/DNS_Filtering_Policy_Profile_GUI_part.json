@@ -1,0 +1,359 @@
+{
+    "1521070": {
+        "steps": "1. Activate the license of DNS Filtering;\r\n2. Policy \\ Rules and Policies \\ DNS Rules, check the license icon;\r\n3. Deregister the user, then check the DNS Filtering license icon.",
+        "initial": "",
+        "id": "1521070",
+        "title": "[GUI] Verify the DNS Filtering license status icon displays correctly.",
+        "result": "In step 2, the icon is green and info \"Licensed\" displays when click it;\r\nIn step 3, the icon is yellow and info \"Not licensed\" displays when click it;"
+    },
+    "1521071": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, check the page;\n2. Add some policies with different items(name/action/schedule/Zone/...);\n3. Click every column( except PROFILE ), check the policies. Column PROFILE can not sort policies by design.",
+        "initial": "",
+        "id": "1521071",
+        "title": "[GUI] Verify the columns of DNS Policies can show and sort correctly.",
+        "result": "In step1, The default columns are PRIORITY, HITS, NAME, STATUS, ZONE/INTERFACE, ADDRESS, SERVICE, SCHEDULE, ACTION, PROFILE.\nIn step3, the policies can be sorted by the columns correctly."
+    },
+    "1521072": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add some enabled policies with different items (name/action/schedule/Zone\u00a6);\n2. Click search icon, enter any policy name, check the policies;\n3. Disable one policy, select Inactive Rules from Active & Inactive drop-down box;\n4. Select Active Rules;\n5. Send traffic to match one policy, select Used Rules from Used & Unused drop-down box;\n6. Select Unused Rules since last 60 seconds;\n7. Wait for 2 minutes, click Refresh.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521072",
+        "title": "[GUI] Verify the options to filter and refresh DNS Policy entries work.",
+        "result": "In step 2, The policy with specified name is filtered correctly;\n\nIn step 3, the disabled policy displays;\n\nIn step 4, the enabled policies display;\n\nIn step 5, the matched policy displays;\nIn step 6, the non-matched policies display;\nIn step 7, the all policies display."
+    },
+    "1521073": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add a policy named Test, Zone-LAN, Service-DNS Group, action-Proxy, Priority-manual 1, Enable;\n2. PC connect to LAN interface X0, set the DNS of PC as X0 IP;\n3. From PC, dig some domains;\n4. In DNS Policy page, check Test Policy HITS.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521073",
+        "title": "[GUI] Verify the HITS displays the correct counters when policy is hit.",
+        "result": "In step 1, the Test policy shows correctly;\n\nIn step 4, the HITS increases."
+    },
+    "1521074": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Click Add;\r\n2. Check the Add DNS Policy window;\r\n3. From CLI in config mode, enter 'dns-policy test'(test is a new name), 'commit', then 'show dns-policy test', check the action.",
+        "initial": "",
+        "id": "1521074",
+        "title": "[GUI] Verify the default Action of DNS Policy is Proxy in GUI and CLI.",
+        "result": "The Default Action is Proxy.\r\n\r\nAnd there is no 'Bypass' action."
+    },
+    "1521075": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, top add a policy named TestProxy, Action-Proxy, Tag-'Test1,test2,test3';\n2. Check the DNS Policy entries.",
+        "initial": "",
+        "id": "1521075",
+        "title": "[GUI] Verify add a DNS Policies with with Action 'Proxy'.",
+        "result": "The Proxy Policy is added correctly."
+    },
+    "1521076": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Bottom add a policy named TestFilter, Action-Filter, Description-Test;\n2. Check the DNS Policy entries;",
+        "initial": "",
+        "id": "1521076",
+        "title": "[GUI] Verify add a DNS Policies with with Action 'Filter'.",
+        "result": "The Filter Policy is added correctly."
+    },
+    "1521078": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add a policy named TestDup, Action-Filter, the other settings are default;\n2. Add a new policy, named TestDup.",
+        "initial": "",
+        "id": "1521078",
+        "title": "[GUI] Verify a duplicate DNS Policy name can not be added.",
+        "result": "In step 2, error prompt: Already exists."
+    },
+    "1521079": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules;\n2. Add 32/64/128 valid policy entries;\n3. Add one more policy.",
+        "initial": "",
+        "id": "1521079",
+        "title": "[GUI] Verify the Max count of Policy entries is correct.",
+        "result": "In step2, success;\nIn step3, error prompts.\nThe max count is not the same for different Platforms, refers to this page:<br />https://engineering.eng.sonicwall.com/pages/viewpage.action?pageId=153357828"
+    },
+    "1521085": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add a policy named TestEdit;\r\n2. Select TestEdit policy, click Edit icon on the bottom of page;\r\n3. Change some items(name/action/..), update;\r\n4. Mouse hovers on the entry, the Edit icon shows, then click it, repeat step3.",
+        "initial": "",
+        "id": "1521085",
+        "title": "[GUI] Verify the Edit buttons of DNS Policy work.",
+        "result": "In step 2-4, Editing page shows and policy can be update successfully."
+    },
+    "1521086": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules;\n2. Add a new policy which name length is 39 chars.",
+        "initial": "",
+        "id": "1521086",
+        "title": "[GUI] Verify the Max length of DNS Policy Name is 39 chars",
+        "result": "Success with no error.\n\n# Valid Value : 1-39"
+    },
+    "1521087": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add;\n2. Select 'Filter' action, check the page.",
+        "initial": "",
+        "id": "1521087",
+        "title": "[GUI] Verify the Filtering Profile drop-down box displays when Action 'Filter' is selected.",
+        "result": "The Filtering Profile drop-down box displays with \"Default Profile\"."
+    },
+    "1521088": {
+        "steps": "1. Object \\ Profile Object \\ DNS Filtering, add some different profiles;\n2. Policy \\ Rules and Policies \\ DNS Rules, click Add and select 'Filter' action;\n3. Check the Profile drop-down box and select a custom profile;\n4. Click Config icon of the box, change the profile items;\n5. Click Config icon of the box, add a new profile.",
+        "initial": "",
+        "id": "1521088",
+        "title": "[GUI] Verify Filtering Profile drop-down box and edit icon work.",
+        "result": "In step 3, the all profiles display and can be selected;\n\nIn step 4, the changes of the custom profile can be saved;\n\nIn step 5, the new profile can be added successfully and display in the box."
+    },
+    "1521089": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add, and mouse hovers on the proxy action;\n2. Mouse hovers on the Filter action.",
+        "initial": "",
+        "id": "1521089",
+        "title": "[GUI] Verify the correct info displays when mouse hovers on the Action buttons.",
+        "result": "In step 1, Firewall will proxy packets matching this rule.;\n\nIn step 2, Firewall will proxy connections matching this rule with 4to4 mode and take actions specified in the profile. Actions could be allow/block/negative/forged ip."
+    },
+    "1521090": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add;\n2. Select 'Proxy' action, check the page.",
+        "initial": "",
+        "id": "1521090",
+        "title": "[GUI] Verify the Mode options display when Action 'Proxy' is selected.",
+        "result": "The Mode options display with \"4to4\"."
+    },
+    "1521092": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add;\n2. Check the Schedule drop-down box and select a schedule;\n3. Click Config icon of the box, change the schedule items;\n4. Click Config icon of the box, add a new schedule.",
+        "initial": "",
+        "id": "1521092",
+        "title": "[GUI] Verify the Schedule drop-down box and edit icon work.",
+        "result": "In step 2, the all Schedules display and can be selected;\n\nIn step 3, the changes of the schedule can be saved;\n\nIn step 4, the new schedule can be added successfully and display in the box."
+    },
+    "1521093": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add;\r\n2. Check the Enable button.",
+        "initial": "",
+        "id": "1521093",
+        "title": "[GUI] Verify the default status of DNS Policy switch is enabled in GUI and CLI.",
+        "result": "The Enable button is enabled in default.\r\n\r\nRefer to GEN7-42611"
+    },
+    "1521094": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add some policies;\n2. Enable some policies.",
+        "initial": "",
+        "id": "1521094",
+        "title": "[GUI] Verify Enable the DNS Policy.",
+        "result": "Success with no error."
+    },
+    "1521095": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add and enable some policies;\n2. Disable some policies.",
+        "initial": "",
+        "id": "1521095",
+        "title": "[GUI] Verify Disable the DNS Policy.",
+        "result": "Success with no error."
+    },
+    "1521096": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add;\r\n2. Check the Zone/Interface drop-down box and select one.\r\n",
+        "initial": "",
+        "id": "1521096",
+        "title": "[GUI] Verify the Source Zone/Interface drop-down box works.",
+        "result": "Refer to GEN7-44764\uff0c WAN / Any / WAN interfaces will not show in the list.\r\n\r\nNon-WAN Zones and Interfaces show and can be selected.\r\n\r\n"
+    },
+    "1521097": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add;\r\n2. Check the Address drop-down box and select an address;\r\n3. Click Config icon of the box, add a new address A;\r\n4. Click Config icon of the box, add a new address group AG;\r\n5. Click Config icon of the box, edit the A and AG.\r\n(Default Address and Groups can not be edit)",
+        "initial": "",
+        "id": "1521097",
+        "title": "[GUI] Verify the Address drop-down box and edit icon work.",
+        "result": "In step 2, the all IPv4 address and address groups display and can be selected;\r\n**Refer to GEN7-44899, MAC Address or FQDN, and the address groups including them should be hidden in the drop down box**\r\n\r\nIn step 3-4, A and AG can be added successfully and display in the box;\r\n**Refer to GEN7-44899, MAC Address or FQDN, should be hidden in the adding address/address-group page**\r\n\r\nIn step 5,  the changes of A and AG can be saved."
+    },
+    "1521098": {
+        "steps": "1. Object \\ Match Objects \\ Zones, add a custom zone named TestZ;\n2. Policy \\ Rules and Policies \\ DNS Rules, click Add;\n3. Edit and select a New Schedule named TestS;\n4. Edit and select a New Address named TestA, and select Zone as TestZ, click Add;\n5. Match Objects \\ Zones page, try to delete TestZ;\n6.  Match Objects \\ Addresses page, try to delete TestA.\n7.  Match Objects \\ Schedules page, try to delete TestS.",
+        "initial": "",
+        "id": "1521098",
+        "title": "[GUI] Verify the custom Schedule/Zone/Address Object binded to a DNS policy can not be deleted.",
+        "result": "In step 4, the policy added successfully;\n\nIn step 5, error prompts : This zone object is in used by a DNS policy;\n\nIn step 6, error prompts : This address object is in used by a DNS policy;\n\nIn step 7, error prompts : This Schedule object is in used by a DNS policy."
+    },
+    "1521099": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add and select 'Proxy' action;\r\n2. Check the Service drop-down box and select;\r\n\r\n",
+        "initial": "",
+        "id": "1521099",
+        "title": "[GUI] Verify the Service drop-down box lists 3 entries and can be selected when Action is Proxy.",
+        "result": "In step 2, DNS/DNS TCP/DNS UDP lists and can be selected successfully."
+    },
+    "1521100": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add and select 'Filter' action;\n2. Check the Service drop-down box.",
+        "initial": "",
+        "id": "1521100",
+        "title": "[GUI] Verify the Service drop-down box only support UDP protocol when Action is Filter.",
+        "result": "Only DNS UDP lists and can be selected successfully."
+    },
+    "1521101": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add;\n2. To Optional Settings, edit a valid number in the textbox og Number of Connections allowed;\n3. Check the Enable Connection Threshold for each Source IP, enter a valid number, click Save.",
+        "initial": "",
+        "id": "1521101",
+        "title": "[GUI] Verify the connection thresholds settings.",
+        "result": "In step 2-3, the changes can be saved successfully.\n\n# Valid Value:\nConnection allowed: 1-100\nConnection Threshold: 1-65535"
+    },
+    "1521102": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, click Add Top;\n2. Enable Show Diagram;\n3. Change the configuration on the Add Page, check the Diagram.",
+        "initial": "",
+        "id": "1521102",
+        "title": "[GUI] Verify the Diagram shows correctly.",
+        "result": "Diagram is changed with the configuration."
+    },
+    "1521103": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Add a policy named Test;\n2. Mouse hovers on the policy, click the delete icon.",
+        "initial": "",
+        "id": "1521103",
+        "title": "[GUI] Verify Delete one DNS Policy.",
+        "result": "The policy Test can be delete successfully."
+    },
+    "1521104": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Add some policies;\n2. Select multiple policies, click Delete button on the bottom.",
+        "initial": "",
+        "id": "1521104",
+        "title": "[GUI] Verify Delete Multiple DNS Policies.",
+        "result": "The policies can be delete successfully."
+    },
+    "1521105": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Add some policies;\n2. Select one policy, click Move Up on the bottom;\n3. Select one policy, click Move Down on the bottom;\n4. Mouse hovers on the left Drag icon of one policy, then drag the policy up and down.",
+        "initial": "",
+        "id": "1521105",
+        "title": "[GUI] Verify the Move icons and drag policy work.",
+        "result": "In step 2, the policy moves up;\nIn step 3, the policy moves down;\nIn step 4, the policy can moves with mouse."
+    },
+    "1521106": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Add some policies;\n2. Click Live Counters on the bottom;\n3. Send traffic through the policies;\n4. Click Pause Counters on the bottom;\n5. Click Clear Counters on the bottom.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521106",
+        "title": "[GUI] Verify the Live/Clear Counters buttons work.",
+        "result": "In step 2, the Hit number changes to Green and update with the traffic, and the Live Counters changes to Pause Counters;\n\nIn step 4, the Hit number changes to Default black and keep stable without Refresh, and the Pause Counters changes to Live Counters;\n\nIn step 5, All Hit numbers change to 0."
+    },
+    "1521107": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Add a policy named TestClone;\n2. Select the TestClone, click Clone Up on the bottom;\n3. Select the TestClone_clone, click Clone Down on the bottom.",
+        "initial": "",
+        "id": "1521107",
+        "title": "[GUI] Verify the Clone buttons work.",
+        "result": "In step 2, a policy named TestClone_clone displays with the same configurations and up to the TestClone ;\n\nIn step 2, a policy named TestClone_clone_clone displays with the same configurations and down to the TestClone_clone."
+    },
+    "1521108": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Add some policies;\n2. Click the Export button.",
+        "initial": "",
+        "id": "1521108",
+        "title": "[GUI] Verify Export DNS Policies to CSV file.",
+        "result": "A csv File with policy data is exported successfully."
+    },
+    "1521109": {
+        "steps": "1. Change the mode to Non-Config;\n2. Policy \\ Rules and Policies \\ DNS Rules, Add one policy.",
+        "initial": "",
+        "id": "1521109",
+        "title": "[GUI] Verify DNS Policy cannot be configured when GUI is in Non-config mode.",
+        "result": "Error prompts: Non config mode."
+    },
+    "1521110": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Add some policies;\n2. Diagnostics \\ Tech Support Report, download TSR.",
+        "initial": "",
+        "id": "1521110",
+        "title": "[TSR] Verify DNS policies show correctly in TSR.",
+        "result": "The DNS policies display correctly."
+    },
+    "1521022": {
+        "steps": "1. Factory Default; <br />2. Object \\ Profile Objects \\ DNS Filtering Profile; <br />3. Check the profile section.",
+        "initial": "",
+        "id": "1521022",
+        "title": "[GUI] Verify the Default profile is provided with correct default status.",
+        "result": "In step 3, the default profile is provided and the default actions of category \r\n\"Malware\",\"Anonymous Proxies\",\"Spyware\",\"Ransomware\"are Negative Reply, \r\nthe others are Allow.\r\n\r\n-------Edit by Celia\r\nReferred to GEN7-42285, the default profile only allow the enterprise categories.\r\nThe action of other categories is negative reply."
+    },
+    "1521023": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering Profile; <br />2. Check the checkbox of the default profile.",
+        "initial": "",
+        "id": "1521023",
+        "title": "[GUI] Verify the checkbox of the Default profile is grey and not selected.",
+        "result": "In step 2, the checkbox is grey and can not selected."
+    },
+    "1521122": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ; <br />2. Add a new profile; <br />3. Click the black triangle before the profile name; <br />4. Click again.",
+        "initial": "",
+        "id": "1521122",
+        "title": "[GUI] Verify the profile can be expanded or collapsed by clicking the black triangle.",
+        "result": "In step 3, the profile is expended.\nIn step 4, the profile is collapsed."
+    },
+    "1521123": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ;\n2. Check the profile table.",
+        "initial": "",
+        "id": "1521123",
+        "title": "[GUI] Verify the profile table columns: Name, Allow Category, Block Category, Negative reply Category,Forged IP Reply Category.",
+        "result": "In step 2, the profile table columns are as following:\nName, Allow Category, Block Category, Negative reply Category,Forged IP Reply Category."
+    },
+    "1521124": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ;\n2. Click NAME column.",
+        "initial": "",
+        "id": "1521124",
+        "title": "[GUI] Verify the profile table entries can be sorted by name.",
+        "result": "In step 2, the table entries can be sorted by name."
+    },
+    "1521125": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ;\n2. Verify Profile Objects section.",
+        "initial": "",
+        "id": "1521125",
+        "title": "[GUI] Verify Add, Delete and Refresh buttons are provided at the top of the Profile Objects table.",
+        "result": "In step 2, Add, Delete and Refresh buttons should be provided at top of the Profile Objects table."
+    },
+    "1521126": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ;\r\n2. Click the Status icons.",
+        "initial": "",
+        "id": "1521126",
+        "title": "[GUI] Verify the details of DNS Filtering status icons are correctly displayed.",
+        "result": "A icon displays license status.\r\nAnother one displays DNS Rules page and dns filtering global settings page link.\r\n\r\nRefer to GEN7-42286."
+    },
+    "1521127": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ;\n2. Add 1024 profile entries.",
+        "initial": "",
+        "id": "1521127",
+        "title": "[GUI] Verify the MAX number of profile entries is 1024.",
+        "result": "In step 2, succeed with no error."
+    },
+    "1521128": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ; <br />2. Add a new profile by providing name which is 399 chars.",
+        "initial": "",
+        "id": "1521128",
+        "title": "[GUI] Verify the MAX length of profile name is 399, and the long name shows completely.",
+        "result": "In step 2, succeed with no error."
+    },
+    "1521129": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ;\n2. Add new profiles with different valid names and different actions.",
+        "initial": "",
+        "id": "1521129",
+        "title": "[GUI] Verify the Add button work on Profile.",
+        "result": "In step 2, succeed with no error."
+    },
+    "1521130": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ;\n2. Add a valid profile;\n3. Edit the existing profile, change the name and actions.",
+        "initial": "",
+        "id": "1521130",
+        "title": "[GUI] Verify the Edit button work on Profile.",
+        "result": "Succeed with no error."
+    },
+    "1521131": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ; <br />2. Add a profile with a duplicate name; <br />3. Edit a existing profile, change the name to a duplicate one.",
+        "initial": "",
+        "id": "1521131",
+        "title": "[GUI] Verify Add/Edit profile with duplicate name fail.",
+        "result": "In step 2-3, fail with \"Already exsit\" error."
+    },
+    "1521132": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ; <br />2. Add a valid profile; <br />3. Mouse hovers on the profile, click the Delete icon.",
+        "initial": "",
+        "id": "1521132",
+        "title": "[GUI] Verify the Delete icon work on Profile.",
+        "result": "The profile is deleted successfully."
+    },
+    "1521133": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering ; <br />2. Add some valid profiles(over 3 entries); <br />3. Select all entries, delete all.",
+        "initial": "",
+        "id": "1521133",
+        "title": "[GUI] Verify the Delete All button work on Profile.",
+        "result": "Succeed with no error."
+    },
+    "1521134": {
+        "steps": "1. Object \\ Profile Objects \\ DNS Filtering, add a valid profile named \"test\"; <br />2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\";<br />3. Delete \"test\" profile.",
+        "initial": "",
+        "id": "1521134",
+        "title": "[GUI] Verify when a profile is binded to a DNS Policy, the profile can not be deleted.",
+        "result": "The profile can not be deleted with an error \"The target DNS Filtering Object test is in used by a DNS policy.\"."
+    },
+    "2268491": {
+        "steps": "1.To DNS Rule page, click add button\r\n2.Check the name",
+        "initial": "",
+        "id": "2268491",
+        "title": "[GUI] Verify the DNS Policy is named as 'My Rule' by default",
+        "result": "The default name is 'My Rule'"
+    },
+    "1997309": {
+        "steps": "1. Add a vlan interface e.g. X20:v2027;\r\n2. Add a dns filtering policy, choose 'X20:v2027' as source zone/interface, then check show diagram for it\r\n\r\n",
+        "initial": "",
+        "id": "1997309",
+        "title": "[GUI]Show Diagram:It should display the right Zone/Interface for DNS filtering policy",
+        "result": "Show Diagram:It should display the right Zone/Interface for DNS filtering policy."
+    }
+}

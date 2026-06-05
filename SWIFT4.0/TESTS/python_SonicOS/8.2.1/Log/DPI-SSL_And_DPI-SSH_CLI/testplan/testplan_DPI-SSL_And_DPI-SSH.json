@@ -1,0 +1,93 @@
+{
+   "1516442": {
+       "id": "1516442",
+       "title": "Enable/Disable General Settings from CLI - Client SSL General",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Enable/Disable Client SSL General Settings' options.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3: Log message related with config DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516443": {
+       "id": "1516443",
+       "title": "Modify Content Filter Category Inclusions/Exclusions from CLI - Client SSL CFS Category-based Exclusion/Inclusion",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Modify Client SSL Content Filter Category Inclusions/Exclusions.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516444": {
+       "id": "1516444",
+       "title": "Enable/Disable General Settings from CLI - Server SSL General Settings",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Enable/Disable Server SSL General Settings' options.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3: Log message related with config DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516445": {
+       "id": "1516445",
+       "title": "Modify Object from CLI - Server SSL Exclusion/Inclusion",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Modify Client SSL AO/Service/User Exclusion/Inclusion Object.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516446": {
+       "id": "1516446",
+       "title": "Add SSL Servers from CLI -  Server SSL SSL Servers",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Add Server SSL Servers.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516447": {
+       "id": "1516447",
+       "title": "Modify SSL Servers from CLI - Server SSL SSL Servers",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Modify Server SSL Servers.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516448": {
+       "id": "1516448",
+       "title": "Delete SSL Servers from CLI - Server SSL SSL Servers",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Delete Server SSL Servers.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516449": {
+       "id": "1516449",
+       "title": "Enable/Disable General Settings from CLI - DPI-SSH General Settings",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Enable/Disable DPI-SSH General Settings' options.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3: Log message related with config DPI-SSH is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516450": {
+       "id": "1516450",
+       "title": "Modify Inclusion/Exclusion Object/Group from CLI - DPI-SSH Inclusion/Exclusion",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Modify DPI-SSH Inclusion/Exclusion Object/Group.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DPI-SSH is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516452": {
+       "id": "1516452",
+       "title": "Modify Certificate re-signing Authority from CLI - Client SSL Certificate",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Modify Client SSL Certificate.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516453": {
+       "id": "1516453",
+       "title": "Modify Exclusion/Inclusion from CLI - Client SSL Object",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Modify Client SSL AO/Service/User Exclusion/Inclusion Object.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516454": {
+       "id": "1516454",
+       "title": "Add Common Name Exclusions/Inclusions from CLI -  Client SSL Common Name",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Add Client SSL Common Name Exclusions/Inclusions on Common Name tab.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1516456": {
+       "id": "1516456",
+       "title": "Delete/Delete All Common Name Exclusions/Inclusions from CLI - Client SSL Common Name",
+       "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.\n2. SNMP tool is available and ready to use.\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n4. A syslog server is added on the firewall.",
+       "steps": "1. Delete/Delete All Client SSL Common Name Exclusions/Inclusions on Common Name tab.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n4.  Go to Event Logs page, check the corresponding logs. Result 3.\n5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DPI-SSL is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   }
+}

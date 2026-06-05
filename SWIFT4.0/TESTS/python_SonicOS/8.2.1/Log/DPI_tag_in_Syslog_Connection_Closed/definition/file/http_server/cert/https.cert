@@ -1,0 +1,59 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 4 (0x4)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=cn, ST=sh, L=sh, O=dell, OU=auto, CN=SSL Server
+        Validity
+            Not Before: Jul 14 10:19:42 2014 GMT
+            Not After : Jul 11 10:19:42 2024 GMT
+        Subject: C=cn, ST=sh, O=dell, OU=auto, CN=dpi-ssl-pc1
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:d6:58:b1:e5:31:08:91:35:f8:d8:9c:6a:d2:7e:
+                    60:fd:4e:8d:b1:c4:be:71:58:ee:46:f8:59:c7:a2:
+                    71:9e:bb:f5:8e:d4:1a:72:68:87:6b:f0:a8:cf:ca:
+                    4c:d6:c8:83:53:73:62:01:ef:e9:1d:81:d5:de:4f:
+                    00:e3:33:db:2e:32:33:b1:17:7b:00:4b:e1:24:fa:
+                    ec:32:2d:1b:83:d0:73:4f:3e:f1:6a:5d:93:d9:ed:
+                    44:02:28:ce:97:40:cf:8c:63:0e:37:9d:3e:a8:98:
+                    0e:fb:80:75:64:6b:8b:2d:cd:cd:46:45:fa:94:f0:
+                    93:5f:e0:6d:ed:5d:05:1e:ab
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                32:0D:01:B7:C4:DB:7D:BA:4C:22:F8:B3:1D:EB:25:80:C5:52:9D:55
+            X509v3 Authority Key Identifier: 
+                keyid:5E:B4:BB:8A:63:05:B7:48:E5:16:36:CD:97:F6:A9:F4:93:92:BF:B4
+
+    Signature Algorithm: sha1WithRSAEncryption
+        ab:34:54:fb:7b:5f:2a:1f:6d:3a:b4:1a:2b:73:f9:ad:7e:83:
+        e1:a9:47:9d:0c:f7:3e:36:21:34:48:aa:d9:8b:be:e4:f0:54:
+        55:32:82:c4:7f:3c:0c:9f:71:ab:ff:7d:25:3f:a3:a8:65:0b:
+        3e:ea:6f:6b:5b:01:6c:cc:c6:bc:33:e1:80:18:62:c9:f9:59:
+        f1:a6:cc:07:89:66:a0:e8:13:7d:19:8c:21:b7:80:21:f1:b3:
+        a2:ff:07:57:4a:cb:ef:f9:c4:95:9c:30:98:bf:90:ec:3b:ef:
+        3f:6a:e0:71:b4:d6:30:5c:bc:e8:a6:9a:f8:48:c3:2b:c7:f6:
+        7d:af
+-----BEGIN CERTIFICATE-----
+MIICmTCCAgKgAwIBAgIBBDANBgkqhkiG9w0BAQUFADBaMQswCQYDVQQGEwJjbjEL
+MAkGA1UECBMCc2gxCzAJBgNVBAcTAnNoMQ0wCwYDVQQKEwRkZWxsMQ0wCwYDVQQL
+EwRhdXRvMRMwEQYDVQQDEwpTU0wgU2VydmVyMB4XDTE0MDcxNDEwMTk0MloXDTI0
+MDcxMTEwMTk0MlowTjELMAkGA1UEBhMCY24xCzAJBgNVBAgTAnNoMQ0wCwYDVQQK
+EwRkZWxsMQ0wCwYDVQQLEwRhdXRvMRQwEgYDVQQDEwtkcGktc3NsLXBjMTCBnzAN
+BgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA1lix5TEIkTX42Jxq0n5g/U6NscS+cVju
+RvhZx6Jxnrv1jtQacmiHa/Coz8pM1siDU3NiAe/pHYHV3k8A4zPbLjIzsRd7AEvh
+JPrsMi0bg9BzTz7xal2T2e1EAijOl0DPjGMON50+qJgO+4B1ZGuLLc3NRkX6lPCT
+X+Bt7V0FHqsCAwEAAaN7MHkwCQYDVR0TBAIwADAsBglghkgBhvhCAQ0EHxYdT3Bl
+blNTTCBHZW5lcmF0ZWQgQ2VydGlmaWNhdGUwHQYDVR0OBBYEFDINAbfE2326TCL4
+sx3rJYDFUp1VMB8GA1UdIwQYMBaAFF60u4pjBbdI5RY2zZf2qfSTkr+0MA0GCSqG
+SIb3DQEBBQUAA4GBAKs0VPt7XyofbTq0Gitz+a1+g+GpR50M9z42ITRIqtmLvuTw
+VFUygsR/PAyfcav/fSU/o6hlCz7qb2tbAWzMxrwz4YAYYsn5WfGmzAeJZqDoE30Z
+jCG3gCHxs6L/B1dKy+/5xJWcMJi/kOw77z9q4HG01jBcvOimmvhIwyvH9n2v
+-----END CERTIFICATE-----

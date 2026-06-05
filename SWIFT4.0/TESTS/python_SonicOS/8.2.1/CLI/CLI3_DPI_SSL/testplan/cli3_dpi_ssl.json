@@ -1,0 +1,163 @@
+{
+    "1": {
+        "steps": "tbd",
+        "initial": "tbd",
+        "id": "1",
+        "title": "Client DPI-SSL: enable/ no enable.",
+        "result": "tbd"
+    },
+    "2": {
+        "steps": "tbd",
+        "initial": "tbd",
+        "id": "2",
+        "title": "client dpi-ssl: enable/disable application firewall.",
+        "result": "tbd"
+    },
+    "3": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "3",
+    "title": "client dpi-ssl: enable/disable content-filter",
+    "result": "tbd"
+    },
+    "4": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "4",
+    "title": "client dpi ssl: enable/disable GAV",
+    "result": "tbd"
+    },
+    "5": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "5",
+    "title": "client dpi ssl: enable/disable intrusion-prevention",
+    "result": "tbd"
+    },
+    "6": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "6",
+    "title": "client dpi ssl: set exclusion list.",
+    "result": "tbd"
+    },
+    "7": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "7",
+    "title": "client dpi ssl: set inclusion list.",
+    "result": "tbd"
+    },
+    "8": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "8",
+    "title": "client dpi ssl: resigning-authority",
+    "result": "tbd"
+    },
+    "9": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "9",
+    "title": "Server dpi-ssl: enable/disable server dpi ssl.",
+    "result": "tbd"
+    },
+    "10": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "10",
+    "title": "Server dpi-ssl: enable/disable application firewall.",
+    "result": "tbd"
+    },
+    "11": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "11",
+    "title": "Server dpi-ssl: enable/disable gateway.",
+    "result": "tbd"
+    },
+    "12": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "12",
+    "title": "server dpi-ssl: configure exclusion.",
+    "result": "tbd"
+    },
+    "13": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "13",
+    "title": "server dpi-ssl: configure inclusion.",
+    "result": "tbd"
+    },
+    "14": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "14",
+    "title": "Server dpi-ssl: enable/disable IPS.",
+    "result": "tbd"
+    },
+    "15": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "15",
+    "title": "server dpi-ssl: configure ssl-server.",
+    "result": "tbd"
+    },
+    "16": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "16",
+    "title": "client dpi ssl: add common name for override CFS category-based exclusion.",
+    "result": "tbd"
+    },
+    "17": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "17",
+    "title": "Client dpi ssl: enable/disable Block connections to sites with untrusted certificates",
+    "result": "tbd"
+    },
+    "18": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "18",
+    "title": "Client dpi-ssl:Enable/Disable IP based exclusion cache",
+    "result": "tbd"
+    },
+    "19": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "19",
+    "title": "Client dpi-ssl: Audit new built-in exclusion domain names prior to being added for exclusion",
+    "result": "tbd"
+    },
+    "20": {
+        "steps": "tbd",
+        "initial": "tbd",
+        "id": "20",
+        "title": "Client dpi ssl: enable/disable Always authenticate server before applying exclusion policy",
+        "result": "tbd"
+    },
+    "21": {
+        "steps": "tbd",
+        "initial": "tbd",
+        "id": "21",
+        "title": "client dpi ssl: configure category based exclusion, select several categories to include.",
+        "result": "tbd"
+    },
+    "22": {
+    "steps": "tbd",
+    "initial": "tbd",
+    "id": "22",
+    "title": "Client dpi ssl: configure category based exclusion, select several categories to exclude.",
+    "result": "tbd"
+    },
+    "23": {
+        "steps": "tbd",
+        "initial": "tbd",
+        "id": "23",
+        "title": "client dpi ssl: configure category based exclusion,enable/disable Exclude connection if Content Filter Category is not available",
+        "result": "tbd"
+    }
+}

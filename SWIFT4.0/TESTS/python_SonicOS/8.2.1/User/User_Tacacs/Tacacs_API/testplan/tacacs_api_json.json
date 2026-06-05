@@ -1,0 +1,198 @@
+{
+    "1516309": {
+        "id": "1516309",
+        "title": "Edit - PUT TACACS base settings",
+        "result": "Config change should be taken and displayed .",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to API settings under Device &gt; Administration ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\"\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. PUT configuration:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/base\nJSON:\n2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful,"
+    },
+    "1516310": {
+        "id": "1516310",
+        "title": "GET User TACACS base settings",
+        "result": "All tacacs settings should be displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to API settings in Device &gt; Administration( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\")\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "GET the settings .curl -k -i -H Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/user/tacacs/base"
+    },
+    "1516311": {
+        "id": "1516311",
+        "title": "Add - POST TACACS server",
+        "result": "Config change should be taken and displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to API settings under Device &gt; Administration ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\"\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. POST tacacs server configuration:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/base\nJSON:\n2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful."
+    },
+    "1516312": {
+        "id": "1516312",
+        "title": "Add - POST multiple TACACS servers",
+        "result": "Config change should be taken and displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. POST with multiple server configuration:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/base\nJSON:\n\n2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful,"
+    },
+    "1516313": {
+        "id": "1516313",
+        "title": "GET TACACS servers",
+        "result": "User tacacs servers should be displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "GET the server configuration:\ncurl -k -i -H \"Content-Type: application/json\" -X GET https://x.x.x.x/api/sonicos/user/tacacs/servers\n2. Ensure the above command returns Success = true"
+    },
+    "1516314": {
+        "id": "1516314",
+        "title": "Edit - PUT multiple TACACS servers",
+        "result": "Config change should be taken and displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. PUT to edit multiple servers:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/servers\nJSON:\n\"2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4.Commit pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful."
+    },
+    "1516315": {
+        "id": "1516315",
+        "title": "GET TACACS server by name",
+        "result": "The particular user object referred by name should be displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. GET the server configuration:\ncurl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/user/tacacs/servers/name/{NAME}"
+    },
+    "1516316": {
+        "id": "1516316",
+        "title": "Edit - PUT  TACACS server by name",
+        "result": "Config change should be taken and displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. PUT to edit the tacacs server configuration:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/servers/name/{NAME}\nJSON:\n2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful."
+    },
+    "1516317": {
+        "id": "1516317",
+        "title": "Delete TACACS server by name",
+        "result": "Specific User tacacs server should be deleted.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. DELETE to the tacacs server endpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/servers/name/{NAME} \n2. Ensure the above command returns Success = true i\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4. Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful."
+    },
+    "1516318": {
+        "id": "1516318",
+        "title": "Edit - PUT TACACS server with existing servers",
+        "result": "Config change should be taken and displayed. This should replace existing servers / configuration.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows\n5. Have existing TACACS Servers",
+        "steps": "1. PUT to add tacacs servers:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/servers\nJSON:\n\"2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4.Commit pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful."
+    },
+    "1516319": {
+        "id": "1516319",
+        "title": "Attempt PUT with TACACS server that does not exist",
+        "result": "Error is displayed",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows\n5. Have existing TACACS Servers",
+        "steps": "1. Attempt PUT with non-existant tacacs server configuration:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/servers/name/{NAME}\nJSON:"
+    },
+    "1516320": {
+        "id": "1516320",
+        "title": "Attempt GET with TACACS server that does not exist",
+        "result": "Error is displayed",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. GET the server configuration:\ncurl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/user/tacacs/servers/name/fake"
+    },
+    "1516321": {
+        "id": "1516321",
+        "title": "Attempt Delete with TACACS server that does not exist",
+        "result": "Error is displayed",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. Attempt to DELETE to the tacacs server endpoint:\n<span>https://x.x.x.x/api/sonicos/user/tacacs/servers/name/fake</span>"
+    },
+    "1516322": {
+        "id": "1516322",
+        "title": "Run test - POST to TACACS server",
+        "result": "TBD",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. Run POST to tacacs server endpoint:\n<span>https://x.x.x.x/api/sonicos/user/</span>tacacs/test"
+    },
+    "1516323": {
+        "id": "1516323",
+        "title": "Edit - PUT TACACS accounting base settings",
+        "result": "Config change should be taken and displayed .",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to API settings under Device &gt; Administration ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\"\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. PUT configuration:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/accounting/base\nJSON:\n2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful,"
+    },
+    "1516324": {
+        "id": "1516324",
+        "title": "GET TACACS accounting base settings",
+        "result": "All tacacs accounting settings should be displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to API settings in Device &gt; Administration( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\")\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1 GET the settings\n.curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/user/tacacs/accounting/base"
+    },
+    "1516325": {
+        "id": "1516325",
+        "title": "Add - POST TACACS accounting server",
+        "result": "Config change should be taken and displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to API settings under Device &gt; Administration ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\"\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. POST tacacs accounting server configuration:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/accounting/base\nJSON:\n2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful."
+    },
+    "1516326": {
+        "id": "1516326",
+        "title": "Add - POST multiple TACACS accounting servers",
+        "result": "Config change should be taken and displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. POST with multiple server configuration:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/accounting/base\nJSON:\n\n2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful,"
+    },
+    "1516327": {
+        "id": "1516327",
+        "title": "GET TACACS accounting servers",
+        "result": "User tacacs accounting servers should be displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. GET the server configuration:\ncurl -k -i -H \"Content-Type: application/json\" -X GET https://x.x.x.x/api/sonicos/user/tacacs/servers\n2. Ensure the above command returns Success = true"
+    },
+    "1516328": {
+        "id": "1516328",
+        "title": "Edit - PUT multiple TACACS accounting servers",
+        "result": "Config change should be taken and displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. PUT to edit multiple servers:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/accounting/servers\nJSON:\n\"2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4.Commit pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful."
+    },
+    "1516329": {
+        "id": "1516329",
+        "title": "GET TACACS accounting server by name",
+        "result": "The particular user object referred by name should be displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. GET the server configuration:\ncurl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/user/tacacs/accounting/servers/name/{NAME}"
+    },
+    "1516330": {
+        "id": "1516330",
+        "title": "Edit - PUT  TACACS accounting server by name",
+        "result": "Config change should be taken and displayed.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. PUT to edit the tacacs server configuration:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/servers/accounting/name/{NAME}\nJSON:\n2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful."
+    },
+    "1516331": {
+        "id": "1516331",
+        "title": "Delete TACACS accounting server by name",
+        "result": "Specific server should be deleted.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. DELETE to the tacacs server endpoint:\n<span>https://x.x.x.x/api/sonicos/user/tacacs/accounting/servers/name/{NAME}</span>\n2. Ensure the above command returns Success = true i\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4. Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful."
+    },
+    "1516332": {
+        "id": "1516332",
+        "title": "Edit - PUT TACACS accounting server with existing servers",
+        "result": "Config change should be taken and displayed. This should replace existing servers / configuration.",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows\n5. Have existing TACACS accounting Servers",
+        "steps": "1. PUT to add tacacs accounting servers:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/accounting/servers\nJSON:\n\"2. Ensure the above command returns Success = true\n3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n4.Commit pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n5. Verify commit is successful."
+    },
+    "1516333": {
+        "id": "1516333",
+        "title": "Attempt PUT with accounting TACACS server that does not exist",
+        "result": "Error is displayed",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows\n5. Have existing TACACS accouting Servers",
+        "steps": "1. Attempt PUT with non-existant tacacs server configuration:\nEndpoint:\nhttps://x.x.x.x/api/sonicos/user/tacacs/accounting/servers/name/{NAME}\nJSON:"
+    },
+    "1516334": {
+        "id": "1516334",
+        "title": "Attempt GET with TACACS accounting server that does not exist",
+        "result": "Error is displayed",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. GET the server configuration:\ncurl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/user/tacacs/accounting/servers/name/fake"
+    },
+    "1516335": {
+        "id": "1516335",
+        "title": "Attempt Delete with TACACS accounting server that does not exist",
+        "result": "Error is displayed",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. Attempt to DELETE to the tacacs server endpoint:\n<span>https://x.x.x.x/api/sonicos/user/tacacs/accounting/servers/name/fake</span>"
+    },
+    "1516336": {
+        "id": "1516336",
+        "title": "Run test - POST to TACACS accounting server",
+        "result": "TBD",
+        "initial": "1.Load the firmware under test\n2. Configure necessary LAN and WAN interfaces and Register the FW\n3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n4. Using Curl on linux or POSTMAN on windows",
+        "steps": "1. Run POST to tacacs server endpoint:\n<span>https://x.x.x.x/api/sonicos/user/</span>tacacs/accounting/test"
+    }
+}

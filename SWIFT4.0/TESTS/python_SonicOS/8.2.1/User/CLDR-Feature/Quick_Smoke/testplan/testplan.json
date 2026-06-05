@@ -1,0 +1,16 @@
+{
+    "4113636": {
+        "_case_id": "SOSAIOT-TC-77930",
+        "id": "4113636",
+        "result": "",
+        "steps": "Verify when CLDR is disabled, compromised passwords aren’t checked during setting them up and user login",
+        "title": "Verify when CLDR is disabled, compromised passwords aren’t checked during setting them up and user login"
+    },
+    "4113637": {
+        "_case_id": "SOSAIOT-TC-77932",
+        "id": "4113637",
+        "result": "",
+        "steps": "Verify when CLDR is enabled, compromised passwords are checked during setting them up and appropriate action either to block or allow with warning is taken",
+        "title": "Verify when CLDR is enabled, compromised passwords are checked during setting them up and appropriate action either to block or allow with warning is taken"
+    }
+}

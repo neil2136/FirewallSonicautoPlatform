@@ -1,0 +1,37 @@
+{
+    "01" : {
+        "steps": "1) get ip helper settings",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 WAN) -- PC2", 
+        "id" : "01",
+        "title": "get ip helper settings",
+        "result": "get ip helper response without error"
+    },
+    "02" : {
+        "steps": "1) login &2) create IP helper policy with destination with subnet AO &3) change dest AO is address object 4) check policy changed",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 WAN) -- PC2", 
+        "id" : "02",
+        "title":"post to create a new policy with destination as address host",
+        "result": "policy dst changed to address object" 
+    },
+    "03" : {
+        "steps": "1) post a new policy with dhcpv6 protocol, &2) destination set as global address &3) egress interface selected &4) comment with dhcpv6",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 WAN) -- PC2", 
+        "id" : "03",
+        "title": "create a new dhcpv6 policy",
+        "result" : "dhcpv6 policy can be created withour error"
+    },
+    "04" : {
+        "steps": "1) create a new disable policy 2) change it to enable",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 WAN) -- PC2", 
+        "id" : "04",
+        "title":"put to enable one policy",
+        "result": "the policy can be enabled" 
+    },
+    "05" : {
+        "steps": "1) create one protocol &2) delete one protocol",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 WAN) -- PC2", 
+        "id" : "05",
+        "title":"delete one created protocol with name",
+        "result": "new protocol can be deleted" 
+    }
+}

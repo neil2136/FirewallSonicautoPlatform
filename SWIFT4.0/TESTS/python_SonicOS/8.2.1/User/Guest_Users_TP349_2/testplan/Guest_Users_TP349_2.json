@@ -1,0 +1,100 @@
+{
+  "1": {
+    "steps": "1) From the Users>Guest Account, click the 'Add Guest' button to open the configure dialog;<br />\n2) Use the 'Generate' button to generate guest name and password automatically.<br />\n3) Go to the 'Guest Services' tab, check the boxes, and set the account,session expiration, and idle time.<br />\n4) Press OK, and make sure the guest is listed in Guest Account list.<br />\n5) Open the config dialog of it, verify all the settings isn't changed.\n\n",
+    "initial": "PC1 connected to X0 interface of the DUT, the X1 interface connected to lab network which can access Internet; PC2 is a wireless client.\n\n ",
+    "id": "1",
+    "title": "Create a guest user\n",
+    "result": "Wlan guest user can be created successfully.\n\n"  },
+
+  "2": {
+    "steps": "1).From Users>Local Users, add a local user 'test' with both Guest Services and SonicWALL Limited Administrators group\n\n2).Enable Wireless Guest Service in WLAN zone\n\n3).From a wireless client PC2, connect to the AP and authenticated as 'test' successfully\n\n4).Log the local user 'test' out\n\n5).Open the configure dialog of the local user, and remove the Guest Services from it, press OK\n\n6).From the wireless client, try to authenticated as users 'test', make sure it is not allowed, and corresponding log is printed: Guest account 'test' disabled. ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "2",
+    "title": "Edit the local user with Guest Services and other administrator privilege\n",
+    "result": "After authenticated as the user 'test' from Wireless client, then remove the guest services privilege, 'test' will not be allowed to login from WLAN client again.\n\n"  },
+  "3": {
+    "steps": "1). From Users>Guest Account, generate multiple guest users at one time<br />\n2). Click the 'Delete All' button, make sure all the guest users are deleted<br />\n3). Add multiple guest users manually<br />\n4). Check all guest users, and then click the \"Delete\" button, make sure all the guest users are deleted at one time. ",
+    "initial": "PC1 connected to X0 interface of the DUT\n\n ",
+    "id": "3",
+    "title": "Delete all guest users\n",
+    "result": ""  },
+  "4": {
+    "steps": " 1).From Users>Guest Account, add multiple guest users with different settings<br />\n2).Export the current preference file, open it with Word after decoding it with particular software, make sure all guest users are in it with correct info<br />\n3).Delete all guest users, and reboot the FW, make sure there isn't any the guest user<br />\n4).Importing the preference file, after the FW reboot, go to Users>Guest Account,make sure the settings of guest users is as same as previous.",
+    "initial": "PC1 connected to X0 interface of the DUT\n\n ",
+    "id": "4",
+    "title": "Prefs file support for guest user\n",
+    "result": "The prefs file is carrying correct settings of Guest Users, and can be imported usccessfully.\n\n"  },
+  "5": {
+    "steps": " 1). From Users>Guest Account, add a guest user<br />\n2). Enable Wireless Guest Service in WLAN zone<br />\n3). From a wireless client PC2, connect to the AP successfully <br />\n4)  Try to access an internet website, and enter the username and password of the guest user after the page is redirected to authentication page<br />\n5). Keep the guest user in login status for a while after it is authenticated successfully<br />\n6). When there is still some session time left, log out the guest user<br />\n7). Go to Users>Guest Account, make sure the 'Session Expiration' of the guest user equals to the total session time minus the used session time",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "5",
+    "title": "Check session time after guest logout\n",
+    "result": "The remaining session time equals to the total session time minus the used session time after guest logout.\n\n"  },
+  "6": {
+    "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""  },
+  "7": {
+    "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""  },
+  "8": {
+    "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""   },
+  "9": {
+    "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""   },
+  "10": {
+    "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""   },
+  "11": {
+    "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""   },
+  "12": {
+    "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""   },
+  "13": {
+    "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""   },
+  "14": {
+   "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""   },
+  "15": {
+    "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""   },
+  "16": {
+    "steps": "1). After finished the steps in test case 14, remember the value of Session Expiration of the guest user, and then reboot the FW<br />\n2). Login to the FW as admin, go to Users>Guest Accounts to check the Session Expiration, verify its value isn't changed after the reboo ",
+    "initial": "PC1 connected to X0 interface of the DUT; the X1 interface connected to lab network which can access Internet; PC2 is a wireless client\n\n ",
+    "id": "6",
+    "title": "Check session time after reboot\n",
+    "result": ""   }
+
+}

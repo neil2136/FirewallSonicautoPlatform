@@ -1,0 +1,149 @@
+{
+    "1515719": {
+        "steps": "1.Login to the Firewall from default LAN interface;\r\n2.Navigate to Network&gt;Interface page, make sure the interface table has 8 columns as following: - Name - Zone - IP Address - Subnet Mask - IP Assignment - Status - Comment - Configure \r\n3.For those columns, make sure the interface X0 has default settings as \"X0, LAN, 192.168.168.168, 255.255.255.0, static, (depending on the auto-negotiation result between PC and FW), Default LAN\";\r\n4.Make sure the interface X1 has default settings as \"X1, WAN, 0.0.0.0, 0.0.0.0, N/A, No link, Default WAN\"; \r\n5). As for other interfaces Xn, the values are \"Xn, Unassigned, 0.0.0.0, 0.0.0.0, N/A, No link, (No comment)\";",
+        "initial": "Firmware setting is restored to Factory Default Settings.&#160;",
+        "id": "1515719",
+        "title": "GUI: Default settings for Interfaces Table",
+        "result": "The default information of each interface is displayed correctly in interface table."
+    },
+    "1515727": {
+        "steps": "1).Login to the FW as admin from the default LAN interface;\r\n2).Navigate to Network&gt;Interfaces, open the configure dialog of the default LAN, select the transparent Mode from the IP assignment dropdown box, make sure the contents on the page change; \r\n3).Make sure there is a new dropdown box transparent Range, expand it and make sure there are some Address Objects and create new address object item; \r\n4).Make sure the IP Address and subnet Mask disappeared from the dialog; \r\n5).Go to the Advanced tab, make sure there are two new check-boxes enable Gratuitous ARP Forwarding Towards WAN and enable Gratuitous ARP Forwarding Towards WAN , verify they can be checked;",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network.&#160;",
+        "id": "1515727",
+        "title": "GUI: LAN in Transparent Modebjects for interfaces",
+        "result": "After assigning LAN to Transparent Mode, make sure there are particular changes on the configure dialog."
+    },
+    "1515728": {
+        "steps": "1).Login to the FW as admin from the default LAN interface; \r\n2).Open the configure dialog of the default LAN and choose the \"Transparent Mode\"; \r\n3).Expand the dropdown list of Transparent Range, and make sure there is an item called \"Create new address object...\"; \r\n4).Choose the \"Create new address object\", make sure there is a \"Add Address Object\" dialog popped up; \r\n5).Create a host address object, a range address object and a network address object, make sure the correct objects added in Address Objects.",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network.&#160;",
+        "id": "1515728",
+        "title": "Verify the \"Create new address object...\" works in Transparent Range",
+        "result": "User can make use of the \"Create new address object\" in the transparent range dropdown list to create address object successfully."
+    },
+    "1515730": {
+        "steps": "1).Login to the Firewall from default LAN interface;\u00c2\u00a0\r\n2).Navigate to Network&gt;Interface page, enter the configure dialog of interface X0, make sure there are 7 items in General tab: Zone, IP Assignment, IP Address, Subnet Mask, Comment, Management, and User Login;\r\n3).Make sure the zone of the interface X0 is unchangeable;\r\n4).Make sure there are 3 choice for the IP Assignment: Static, Transparent and Lay 2 Bridge Mode, and the default choice is Static;\r\n5).Make sure the default IP address is 192.168.168.168, and the default subnet mask is 255.255.255.0, and the comment is default LAN;\r\n6).Make sure the HTTP, hTTPS and ping are checked as default in Management, and no item is checked as default in User Login;\r\n7).Go to the Advance tab, and make sure there are 4 items: Link Speed, MAC Address, Multicast Support and 802.1p tagging;\r\n8).For Link Speed drop-down box, make sure there are 6 items: 10 Mbps-Half Duplex, 10 Mbps-Full Duplex, 100 Mbps-Half Duplex, 100 Mbps-Full Duplex, 1000Mbps-Full Duplex and Auto Negotiate, and the default choice is auto Negotiate;\r\n9).For MAC Address, there are two radios \u00c2\u00a1\u00c2\u00b0Use Default MAC Address\" and \"Override Default MAC Address\", the default choice is the first one;\r\n10).The checkboxes of Multicast Support and 802.1p tagging are unchecked as default.",
+        "initial": "Firmware setting is restored to Factory Default Settings.",
+        "id": "1515730",
+        "title": "GUI: Default settings for LAN interface configure dialog",
+        "result": "The default information of X0 interface is displayed correctly in configure dialog."
+    },
+    "1515732": {
+        "steps": "1).Login to the FW as admin from the default LAN interface;\r\n2).Navigate to Network&gt;Interfaces, open the configure dialog of the default LAN, select the Layer 2 Bridged Mode from the IP assignment dropdown box, make sure the contents on the page change;\r\n3).Make sure there is a new dropdown box Bridged to, expand it and make sure all interfaces listed in it;\r\n4).Make sure there are three new checkboxes Block all non-IPv4 traffic, Never route traffic on this bridge-pair and Only sniff traffic on this bridge-pair list below the dropdown box;\r\n5).Make sure there is a new tab VLAN Filtering appeared after switching to Layer2 Bridged Mode;",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network.",
+        "id": "1515732",
+        "title": "GUI: LAN in Layer 2 Bridged Mode",
+        "result": "After assigning Layer2 Bridged Mode, make sure there are particular changes on the configure dialog."
+    },
+    "1515741": {
+        "steps": "1).Login to the Firewall from default LAN interface; \r\n2).Navigate to Network&gt;Interface page, enter the configure dialog of interface X1, make sure the X1 interface is assigned to WAN zone, and there are 11 items in General tab: Zone, IP Assignment, IP Address, Subnet Mask, Default Gateway, DNS Server 1, DNS Server2, DNS Server3, Comment, Management, and User Login;\r\n3).Make sure the zone of the interface X1 can be changed, and the drop-down box includes 6 items: Unassigned, Create new Zone, LAN, WAN, DMZ and WLAN; \r\n4).Make sure there are 5 choice for the IP Assignment: Static, DHCP, PPPoE, PPTP and L2TP, the default choice is Static;\r\n(Note: During GEN7 test, the default choice is changed to DHCP)\r\n5).Make sure the default IP address is \"0.0.0.0\", the default Gateway is \"0.0.0.0\" and the default subnet mask is \"255.255.255.0\"; \r\n6).Make sure there are 3 DNS server fields, the default values are \"0.0.0.0\"; \r\n7).Make sure there is no item checked as default in Management in User Login, and the Comment is \"Default WAN\"; \r\n8).Go to the Advance tab, and make sure there are 2 sections: Advanced Settings and Bandwidth Management; \r\n9).In Advanced Settings section, make sure there are Link Speed, MAC Address, Multicast Support, 802.1p tagging, and MTU; \r\n10).For Link Speed drop-down box, make sure there are 6 items: 10 Mbps-Half Duplex, 10 Mbps-Full Duplex, 100 Mbps-Half Duplex, 100 Mbps-Full Duplex, 1000Mbps-Full Duplex and Auto Negotiate, and the default choice is \"Auto Negotiate\";\r\n11).For MAC Address, there are two radios \"Use Default MAC Address\" and \"Override Default MAC Address\", the default choice is the first one; \r\n12).The checkboxes of Multicast Support and 802.1p tagging are unchecked as default. \r\n13).For the MTU, the default value of Interface MTU field is 1500, and make sure there are 3 checkboxes for Interface MTU, the first one is checked by default; \r\n14).In Bandwidth Management section, there are two checkbox \"Enable Egress Bandwidth Management\" and \"Enable Ingress Bandwidth Management\", under each of them, there are two edit boxes \"Available Interface Egress Bandwidth\" and \"Available Interface Ingress Bandwidth\".",
+        "initial": "Firmware setting is restored to Factory Default Settings.",
+        "id": "1515741",
+        "title": "GUI: Default settings for WAN interface configure dialog",
+        "result": "The default information of X1 interface is displayed correctly in configure dialog."
+    },
+    "1515747": {
+        "steps": "1).Login to the FW as admin from the default LAN interface; \r\n2).Navigate to Network&gt;Interface, on the default WAN interface edit dialog, choose the DHCP from the IP Assignment list, and make sure the contents on the page displayed as expect results;",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network, the X2 interface connected to PC2.&#160;",
+        "id": "1515747",
+        "title": "GUI: WAN in DHCP mode",
+        "result": "A host name edit box is added; a checkbox \"Request renew of previous IP on startup\" is added; the IP Address, Subnet Mask, Gateway Address and DNS edit boxes are only for displaying DHCP info instead of setting; a Lease Expire edit box is added to display DHCP expire time; 3 buttons \"Renew\", \"Release\" and \"Refresh\" are added to control DHCP behavior;"
+    },
+    "1515749": {
+        "steps": "1).Login to the FW as admin from the default LAN interface; \r\n2).Navigate to Network&gt;Interfaces page, on the default WAN interface edit dialog, configure default WAN to DHCP mode and apply; \r\n3).After the WAN interface get DHCP IP address, press the Release button on WAN config dialog, make sure the FW sends DHCP release packets, the assigned IP info are reset to 0.0.0.0 and log prints \"Sending DHCP RELEASE\"; \r\n4).After the DHCP assigned info are released, press the Renew button on Interface setting table or WAN config dialog, make sure the FW sends DHCP Discover and Request packets, and receives DHCP assigned IP address again; \r\n5).Press the Refresh button, and make sure the old info displayed on WAN interface config dialog will be updated;",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a DHCP server with valid IP address pool.",
+        "id": "1515749",
+        "title": "Renew, Release and Refresh DHCP assignment",
+        "result": "The Renew, Release and Refresh buttons work well in DHCP mode."
+    },
+    "1515752": {
+        "steps": "1).Login to the Firewall from default LAN interface;\r\n2).Navigate to Network&gt;Interfaces page, and open the configure dialog of the default LAN interface; \r\n3).Change the default IP to \"0.0.0.0\", and make sure there is a dialog pop-up reminding to enter an IP address; \r\n4).Input a string into the \"IP Address\" field, make sure the change isn't applied with an error report as \"Error: Data is incorrectly formatted\"; \r\n5).Input invalid IP address with one of the octets larger than 255, such as \"1.1.1.256\", make sure the change isn't applied with an error report as \"Error: Data is incorrectly formatted\"\r\n6).Input an IP address with the first octet equal to 255, such a \"255.1.1.1\", make sure the change isn't applied with an error message \"Error: Invalid IP Address\"; \r\n7).Input an IP address with the last octet equal to 255, such a \"1.1.1.255\", make sure the change isn't applied with an error message \"Error: Invalid IP Address-Choose an address within the subnet\"; \r\n8).Input a valid IP address, and make sure the FW accept the change; \r\n9).Repeat the test steps on other interfaces assigned to WAN/DMZ/WLAN zone with static IP assignment.",
+        "initial": "Firmware setting is restored to Factory Default Settings.",
+        "id": "1515752",
+        "title": "Error and wrong inputs",
+        "result": "Invalid IP address will be detected and valid IP address will be accepted."
+    },
+    "1515756": {
+        "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network&gt;Interface, on the default WAN interface edit dialog, choose the PPTP from the IP Assignment list, and make sure the GUI changes as expect results; <br />3). Expand the drop down box \"PPTP IP Assignment\", make sure there are 2 items \"DHCP\" and \"Static\", when DHCP chosen, corresponding DHCP IP address settings will be shown at the bottom; when static chosen, there will be corresponding edit boxes such as IP address, gateway address and subnet mask listed below to be input.",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a PPTP server with valid IP address pool.",
+        "id": "1515756",
+        "title": "WAN in PPTP mode",
+        "result": "The IP Address, Subnet Mask, Gateway Address and DNS edit boxes are replaced by User Name, User Password, PPTP Server IP Address and PPTP (Client) Host Name edit boxes; there are a checkbox \"Inactivity Disconnect\" and a drop down box \"PPTP IP Assignment\" added at the bottom of the dialog; A \"Protocol\" tab appears beside \"Advanced\" tab and is used to display settings acquired via PPTP such as IP address gateway address and DNS servers."
+    },
+    "1515757": {
+        "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network&gt;Interface, on the default WAN interface edit dialog, choose the PPTP from the IP Assignment list; <br />3). Input an invalid IP address into \"PPTP server IP Address\" edit box, such as \"123465789\" or \"10.103.3.256\", make sure it isn't accepted by FW with an error \"Error: Invalid IP Address: 10.103.3.256\"; <br />4). Input a valid IP address as PPTP server IP Address, make sure it is accepted and also takes effect.",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a PPTP server and a DHCP server with valid IP address pools.&#160;",
+        "id": "1515757",
+        "title": "PPTP Server IP Address validation check",
+        "result": "Invalid PPTP server IP address will not be accepted by FW."
+    },
+    "1515758": {
+        "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network&gt;Interface, on the default WAN interface edit dialog, choose the PPTP from the IP Assignment list; <br />3). Choose \"Static\" in PPTP IP Assignment drop down box, and input an invalid IP address such as \"12345678\" or \"10.10.10.256\" and apply, make sure the invalid IP isn't accepted by FW, an error \"Error: Invalid IP Address: 1.2.3.256\" is reported; <br />4). Enter a valid IP address, input an invalid Subnet mask such as \"255.255.255.1\" and apply, make sure the invalid mask isn't accepted by FW, an error \"Error: Invalid Subnet Mask: 255.255.255.1\" is reported; <br />5). Enter a valid Subnet mask, input an invalid gateway address such as \"212313\" or \"10.10.256.1\" and apply, make sure it isn't accepted by FW, an error \"Error: Invalid IP Address: 10.10.256.1\" is reported; <br />6). Fill all the IP address, Subnet mask and Gateway Address with invalid addresses and apply, make sure none of the invalid IP address is accepted by FW and errors are reported with a Error List including all errors.",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a PPTP server and a DHCP server in lab network.&#160;",
+        "id": "1515758",
+        "title": "PPTP static IP Assignment validation check",
+        "result": "Invalid IP address and subnet mask will not be accepted by FW."
+    },
+    "1515762": {
+        "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network&gt;Interface, on the default WAN interface edit dialog, choose the L2TP from the IP Assignment list, and make sure the GUI changes as expect results; <br />3). Expand the drop down box \"L2TP IP Assignment\", make sure there are 2 items \"DHCP\"&#160;and \"Static, when DHCP chosen, corresponding DHCP IP address settings will be shown at the bottom; when static chosen, there will be corresponding edit boxes such as IP address, gateway address and subnet mask listed below to be input.",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a L2TP server with valid IP address pool.&#160;",
+        "id": "1515762",
+        "title": "GUI: WAN in L2TP mode",
+        "result": "The IP Address, Subnet Mask, Gateway Address and DNS edit boxes are replaced by User Name, User Password, L2TP Server IP Address, L2TP (Client) Host Name edit boxes and L2TP Shared Secret; there are a checkbox \"Inactivity Disconnect\" and a drop down box \"L2TP IP Assignment\" added at the bottom of the dialog; A \"Protocol\" tab appears beside \"Advanced\" tab and is used to display settings acquired via L2TP such as IP address, gateway address and DNS servers."
+    },
+    "1515763": {
+        "steps": "1). Login to the Firewall from default LAN interface; <br />2). Navigate to Network&gt;Interfaces page, and open the configure dialog of the default LAN interface; <br />3). Make sure the IP address is valid; <br />4). Delete the default Subnet Mask and click OK, make sure there is a pop-up dialog \"Please enter a subnet mask\"; <br />5). Input a string into the \"Subnet Mask\" field, make sure the change isn't applied with an error report as \"Error: Data is incorrectly formatted\"; <br />6). Input invalid mask with one of the octets larger than 255, such as \"1.1.1.256\", make sure the change isn't applied with an error report as \"Error: Data is incorrectly formatted\" <br />7). Input a valid Subnet Mask, and make sure the FW accept the change; <br />8). Repeat the test steps on other interfaces assigned to WAN/DMS/WLAN zone with static IP assignment.",
+        "initial": "Firmware setting is restored to Factory Default Settings.&#160;",
+        "id": "1515763",
+        "title": "Subnet Mask validation check",
+        "result": "Invalid Subnet Mask will be detected and valid IP address will be accepted."
+    },
+    "1515764": {
+        "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network&gt;Interface, on the default WAN interface edit dialog, choose the L2TP from the IP Assignment list; <br />3). Input an invalid IP address into \"L2TP server IP Address\" edit box, such as \"123465789\" or \"10.103.3.256\", make sure it isn't accepted by FW with an error \"Error: Invalid IP Address: 10.103.3.256\"; <br />4). Input a valid IP address as L2TP server IP Address, make sure it is accepted and also takes effect.",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a L2TP server and a DHCP server with valid IP address pools.&#160;",
+        "id": "1515764",
+        "title": "L2TP Server IP Address validation check",
+        "result": "Invalid L2TP server IP address will not be accepted by FW."
+    },
+    "1515765": {
+        "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network&gt;Interface, on the default WAN interface edit dialog, choose the L2TP from the IP Assignment list; <br />3). Choose \"Static\" in L2TP IP Assignment drop down box, and input an invalid IP address such as \"12345678\" or \"10.10.10.256\" and apply, make sure the invalid IP isn't accepted by FW, an error \"Error: Invalid IP Address: 1.2.3.256\" is reported; <br />4). Enter a valid IP address, input an invalid Subnet mask such as \"255.255.255.1\" and apply, make sure the invalid mask isn't accepted by FW, an error \"Error: Invalid Subnet Mask: 255.255.255.1\" is reported; <br />5). Enter a valid Subnet mask, input an invalid gateway address such as \"212313\" or \"10.10.256.1\" and apply, make sure it isn't accepted by FW, an error \"Error: Invalid IP Address: 10.10.256.1\" is reported; <br />6). Fill all the IP address, Subnet mask and Gateway Address with invalid addresses and apply, make sure none of the invalid IP address is accepted by FW and errors are reported with a Error List including all errors.",
+        "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a L2TP server and a DHCP server with valid IP address pools.&#160;",
+        "id": "1515765",
+        "title": "L2TP static IP Address validation check",
+        "result": "Invalid IP address and subnet mask will not be accepted by FW."
+    },
+    "1515776": {
+        "steps": "1). Login to the FW as admin from default LAN interface;<br /> 2). Navigate to Network&gt;Interface, configure the default WAN to other zone, make sure fail;",
+        "initial": "FW reboot from factory default settings.&#160;",
+        "id": "1515776",
+        "title": "Verify default WAN interface can be assigned to other Zone (not suitable for TZ serial)",
+        "result": "The default WAN interface can not be assigned to other zone."
+    },
+    "1515783": {
+        "steps": "1. enter into Network-&gt;Interface page, and under Interface Traffic Statistics tab , check the&#160;TX Errors and RX Errors column.",
+        "initial": "",
+        "id": "1515783",
+        "title": "Show TX Errors and RX Errors on Network > Interfaces page",
+        "result": "step 1: make sure that the column&#160;TX Errors and RX Errors are shown."
+    },
+    "1533417": {
+        "steps": "1.Navigate to Network&gt;System&gt;Interfaces&gt;X0 page\r\n2.Input \"1234567890abcd.corp.test.com\" into domain name and try to save the modificateion.\r\n3.Repate step 1-2 on WAN/DMZ/WLAN/MGMT interface\r\n4.Repeat step 1-3 in CLI",
+        "initial": "",
+        "id": "1533417",
+        "title": "Domain Name can be set numerical character as start character from left on interface page",
+        "result": "Domain Name supports numerical character as start character from left"
+    },
+    "3585634": {
+        "steps": "1.Configure interface X3 into wiremode,paired interface is X4;\r\n\r\n2.Try to change X3 into pppoe/dhcp/pppoe mode;\r\n\r\n3.From step1 try to unassign it.",
+        "initial": "pc--------FW",
+        "id": "3585634",
+        "title": "Wiremode interface can be changed into pppoe/dhcp/pppoe mode or unassigned",
+        "result": "For step 2&3, no error returned, no unexpected info output from console,\r\n\r\nwiremode interface can be changed into pppoe/dhcp/pppoe mode or unassigned."
+    },
+    "3750207": {
+        "steps": "1. Enable https management on wan interface.\r\n2. Attack the interface with curl command:\r\ncurl -k -X CONNECT -H \"\\r\\n\" \"https://{wan_IP}/(wxaappliance)-&gt;___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________\"\r\n\r\n\r\n",
+        "initial": "",
+        "id": "3750207",
+        "title": "[GEN7-52155]: Verify fw will not crash with curl command attack",
+        "result": "FW will not crash "
+    }
+}

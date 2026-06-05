@@ -1,0 +1,15 @@
+{
+    "user": {
+        "tacacs": {
+            "server": [
+                {
+                    "host": "10.5.67.160",
+                    "port": 49,
+                    "shared_secret": "sonicwall",
+                    "through_vpn": false,
+                    "enable": true
+                }
+            ]
+        }
+    }
+}

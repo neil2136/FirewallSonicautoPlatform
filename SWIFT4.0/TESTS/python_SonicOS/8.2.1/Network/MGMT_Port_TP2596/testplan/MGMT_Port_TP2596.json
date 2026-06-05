@@ -1,0 +1,252 @@
+{
+   "1516183" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.Disable safemode service on ChassisOS:\n  ChassisOS-1 &gt; configure\n  ChassisOS-1-config &gt; service-mgmt safemode off\n  3.try to login safemode : https://&lt;chassisip&gt;:65443",
+      "priority" : "Full_Regression",
+      "atm_id" : "0751ae0b-e4f8-45a7-914f-f18e7f63b22d",
+      "initial" : "  TBD",
+      "id" : "1516183",
+      "title" : "[NSsp]Verfiy Safemode service of Chassis should be able to disable via MGMT Port",
+      "description" : "Original ID: 8\nOriginal Title: [NSsp]Verfiy Safemode service of Chassis should be able to disable via MGMT Port\nOriginal Description:",
+      "result" : "  In step3:\n  login safemode should be failed"
+   },
+   "1516178" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.Enable ping service on ChassisOS:\n  ChassisOS-1 &gt; configure\n  ChassisOS-1-config &gt; service-mgmt ping on\n  3.ping chassis mgmt ip",
+      "priority" : "Sanity",
+      "atm_id" : "a9c63a6c-5fe3-4912-b6f0-e413fcb08052",
+      "initial" : "  TBD",
+      "id" : "1516178",
+      "title" : "[NSsp]Verfiy ping service of Chassis should be able to work via MGMT Port",
+      "description" : "Original ID: 3\nOriginal Title: [NSsp]Verfiy ping service of Chassis should be able to work via MGMT Port\nOriginal Description:",
+      "result" : "  In step3:\n  ping should be sucessful"
+   },
+   "1516164" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.try to set sonicos-ip and chassis ip in different networks\n  ChassisOS-1 &gt; configure\n  ChassisOS-1-config &gt; network-mgmt IPv4 sonicos-ip 192.168.1.10 netmask 255.255.255.255 chassis-ip 192.168.1.20 gateway 192.168.2.1",
+      "priority" : "Full_Regression",
+      "atm_id" : "691df399-6e86-4d3e-8ee4-a166ff58755a",
+      "initial" : "  TBD",
+      "id" : "1516164",
+      "title" : "[NSsp] Verify corresponding error message should be able to show when try to set gateway-ip and chassis ip in different networks",
+      "description" : "Original ID: 12\nOriginal Title: [NSsp] Verify corresponding error message should be able to show when try to set gateway-ip and chassis ip in different networks\nOriginal Description:",
+      "result" : "  In step2:\n  error massage should show:\n  error: gateway ip address is not reachable via chassis network"
+   },
+   "1516169" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "f142c6b4-fcf7-4d8e-b03a-9175db66d910",
+      "initial" : "  TBD",
+      "id" : "1516169",
+      "title" : "[NSsp] Verify all settings of MGMT Port should be able to restore when upgrade ChassisOS",
+      "description" : "Original ID: 17\nOriginal Title: [NSsp] Verify all settings of MGMT Port should be able to restore when upgrade ChassisOS\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1516179" : {
+      "steps" : "  1.PC connect to console port\n  2.Enable ssh service on ChassisOS:\n  ChassisOS-1 &gt; configure\n  ChassisOS-1-config &gt; service-mgmt ssh on\n  3.PC connect to MGMT port\n  4.try to ssh to chassis mgmt ip",
+      "priority" : "Smoke",
+      "atm_id" : "439dae44-cdfc-420a-b805-cd2f6511a96a",
+      "initial" : "  TBD",
+      "id" : "1516179",
+      "title" : "[NSsp]Verfiy SSH service of Chassis should be able to work via MGMT Port",
+      "description" : "Original ID: 4\nOriginal Title: [NSsp]Verfiy SSH service of Chassis should be able to work via MGMT Port\nOriginal Description:",
+      "result" : "  In step4:\n  user should be able to login ChassisOS"
+   },
+   "1516176" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip 2.try to restart sonicos: ChassisOS-1 &gt; restart-sonicos factory-settings true 3.ping the chassis ip , ssh to the chassis ip , access the safemode with aux chassis ip",
+      "priority" : "Smoke",
+      "atm_id" : "51937cf1-c767-4612-b179-270c313fb9a1",
+      "initial" : "  TBD",
+      "id" : "1516176",
+      "title" : "[NSsp] Verify all services of Chassis should still be able to work when SonicOS is starting/off",
+      "description" : "Original ID: 23\nOriginal Title: [NSsp] Verify all services of Chassis should still be able to work when SonicOS is starting/off\nOriginal Description:",
+      "result" : "  In step3 , all services of chassis should still be able to work"
+   },
+   "1516170" : {
+      "steps" : "  1.PC connect to MGMT port\n  2.try to access sonicOS GUI :\n  https://&lt;sonicos-ip&gt;",
+      "priority" : "Smoke",
+      "atm_id" : "5c71c3a0-11cc-47fc-80b0-468747ac4915",
+      "initial" : "  TBD",
+      "id" : "1516170",
+      "title" : "[NSsp]Verify SonicOS GUI should be able to access via MGMT Port",
+      "description" : "Original ID: 18\nOriginal Title: [NSsp]Verify SonicOS GUI should be able to access via MGMT Port\nOriginal Description:",
+      "result" : "  In step2:\n  access sonicOS GUI successful"
+   },
+   "1516171" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.try to access SonicOS console:\n  ChassisOS-1 &gt; smconsole 1\n  CONNECTED!\n  User:admin\n  Password:",
+      "priority" : "Full_Regression",
+      "atm_id" : "34ac6175-dfb7-492c-aed3-84dc3e75d3d0",
+      "initial" : "  TBD",
+      "id" : "1516171",
+      "title" : "[NSsp]Verify SonicOS console should be able to access via MGMT Port",
+      "description" : "Original ID: 19\nOriginal Title: [NSsp]Verify SonicOS console should be able to access via MGMT Port\nOriginal Description:",
+      "result" : "  In step2 :\n  access sonicOS console successful"
+   },
+   "1516173" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.try to reboot the SonicOS with factory-settings:\n  ChassisOS-1 &gt; restart-sonicos factory-settings true",
+      "priority" : "Sanity",
+      "atm_id" : "8616ad1b-13a2-4afa-9d40-2c240f4b9391",
+      "initial" : "  TBD",
+      "id" : "1516173",
+      "title" : "[NSsp]Verify SonicOS should be able to restart with factory-settings via MGMT Port",
+      "description" : "Original ID: 20\nOriginal Title: [NSsp]Verify SonicOS should be able to restart with factory-settings via MGMT Port\nOriginal Description:",
+      "result" : "  In step2:\n  SonicOS should restart with factory-settings successful"
+   },
+   "1516168" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.try to reboot the ChassisOS:\n  ChassisOS-1 &gt; reboot-system\n  3.check the network and services settings are restored",
+      "priority" : "Sanity",
+      "atm_id" : "2d2e334a-8197-4776-ad04-b462116123c2",
+      "initial" : "  TBD",
+      "id" : "1516168",
+      "title" : "[NSsp] Verify all settings of MGMT Port should be able to restore when restart ChassisOS",
+      "description" : "Original ID: 16\nOriginal Title: [NSsp] Verify all settings of MGMT Port should be able to restore when restart ChassisOS\nOriginal Description:",
+      "result" : "  In step3:\n  the network and services settings are restored"
+   },
+   "1516181" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.Disable ping service on ChassisOS:\n  ChassisOS-1 &gt; configure\n  ChassisOS-1-config &gt; service-mgmt ping off\n  3.ping chassis mgmt ip",
+      "priority" : "Full_Regression",
+      "atm_id" : "e06ef741-70c1-4d43-82ae-77c2dcabdea5",
+      "initial" : "  TBD",
+      "id" : "1516181",
+      "title" : "[NSsp]Verfiy ping service of Chassis should be able to disable via MGMT Port",
+      "description" : "Original ID: 6\nOriginal Title: [NSsp]Verfiy ping service of Chassis should be able to disable via MGMT Port\nOriginal Description:",
+      "result" : "  In step3:\n  ping should be failed"
+   },
+   "1516177" : {
+      "steps" : "  1. Login DUT GUI via MGMT interface IP\n  2. In Firmware and Settings page, try to upload a root firmware\n  3. In Multi-Instance-&gt;Firmware page try to upload a tenant firmware",
+      "priority" : "Smoke",
+      "atm_id" : "B5A835A0-64A0-11ED-BDB7-80229FE98C89",
+      "initial" : "  TBD",
+      "id" : "1516177",
+      "title" : "[NSSP] Verify firmware upload via MGMT port",
+      "description" : "Original ID: 24\nOriginal Title: [NSSP] Verify firmware upload via MGMT port\nOriginal Description:",
+      "result" : "  Result for Step2,3: The firmware upload for both root and tenant should be successful without error, the upload speed should be normal as other platform (e.g. NSa)."
+   },
+   "1516166" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.try to change the chassis mgmt ip\n  3.ping the new chassis ip , ssh to the chassis ip , access the safemode with new chassis ip",
+      "priority" : "Sanity",
+      "atm_id" : "55361283-14ca-4af8-ac19-6236827f0184",
+      "initial" : "  TBD",
+      "id" : "1516166",
+      "title" : "[NSsp] Verify all services of Chassis should still be able to work when change Chassis IP via MGMT Port",
+      "description" : "Original ID: 14\nOriginal Title: [NSsp] Verify all services of Chassis should still be able to work when change Chassis IP via MGMT Port \nOriginal Description:",
+      "result" : "  In step3 , all services of chassis should still be able to work"
+   },
+   "1516167" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip 2.try to reboot the ChassisOS: ChassisOS-1 &gt; reboot-system",
+      "priority" : "Sanity",
+      "atm_id" : "8f1f4928-344e-4190-97cf-1d80e281b8c6",
+      "initial" : "  TBD",
+      "id" : "1516167",
+      "title" : "[NSsp] Verify ChassisOS should be able to reboot via MGMT Port (chassis ip)",
+      "description" : "Original ID: 15\nOriginal Title: [NSsp] Verify ChassisOS should be able to reboot via MGMT Port (chassis ip)\nOriginal Description:",
+      "result" : "  In step2:\n  ChassisOS should reboot successful"
+   },
+   "1516180" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.Enable safemode service on ChassisOS:\n  ChassisOS-1 &gt; configure\n  ChassisOS-1-config &gt; service-mgmt safemode on\n  3.try to login safemode : https://&lt;chassisip&gt;:65443\n  4.try to download a log file on safemode",
+      "priority" : "Sanity",
+      "atm_id" : "a7ba2f90-6afe-4624-96f7-8feff8263a49",
+      "initial" : "  TBD",
+      "id" : "1516180",
+      "title" : "[NSsp]Verfiy Safemode service of Chassis should be able to work via MGMT Port",
+      "description" : "Original ID: 5\nOriginal Title: [NSsp]Verfiy Safemode service of Chassis should be able to work via MGMT Port\nOriginal Description:",
+      "result" : "  1.In step3 :\n  user should be able to login\n  safemode\n  2.In step4 :\n  download log file successful."
+   },
+   "1516184" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.try to set sonicos-ip and chassis ip to be same:\n  ChassisOS-1 &gt; configure\n  ChassisOS-1-config &gt; network-mgmt IPv4 sonicos-ip 192.168.1.10 netmask 255.255.255.255 chassis-ip 192.168.1.10 gateway 192.168.1.1",
+      "priority" : "Sanity",
+      "atm_id" : "823c6130-0797-4c09-9ae8-3cc54e467f42",
+      "initial" : "  TBD",
+      "id" : "1516184",
+      "title" : "[NSsp] Verify corresponding error message should be able to show when try to set sonicos-ip and chassis ip to be same",
+      "description" : "Original ID: 9\nOriginal Title: [NSsp] Verify corresponding error message should be able to show when try to set sonicos-ip and chassis ip to be same\nOriginal Description:",
+      "result" : "  In step2:\n  error massage should show:\n  error: chassis ip address cannot be 192.168.1.10 or 192.168.1.11"
+   },
+   "1516175" : {
+      "steps" : "  1.Pull out the cable of MGMT port\n  2.login SonicOS GUI , check the MGMT interface is no link status",
+      "priority" : "Full_Regression",
+      "atm_id" : "4857e06a-2c8e-4431-bdc1-e64be063975a",
+      "initial" : "  TBD",
+      "id" : "1516175",
+      "title" : "[NSsp]Verify SonicOS MGMT Interface should be no link status when Front MGMT Port is no link status",
+      "description" : "Original ID: 22\nOriginal Title: [NSsp]Verify SonicOS MGMT Interface should be no link status when Front MGMT Port is no link status\nOriginal Description:",
+      "result" : "  In step2 :\n  MGMT Interface is no link status"
+   },
+   "1516161" : {
+      "steps" : "  1.boot DUT with factory default settings\n  2.SSH to chassis mgmt ip.\n  3.input command \u00c5\u201cshow network\u00ef\u00bf\u00bd",
+      "priority" : "Full_Regression",
+      "atm_id" : "3404434b-01dc-47c0-a074-eb575f3be2e2",
+      "initial" : "  TBD",
+      "id" : "1516161",
+      "title" : "[NSsp]Verify default network settings of MGMT Port",
+      "description" : "Original ID: 1\nOriginal Title: [NSsp]Verify default network settings of MGMT Port\nOriginal Description:",
+      "result" : "  In step3 , output should be :\n  sonicos ip : 192.168.168.166\n  chassis ip (B1) : 192.168.168.168\n  chassis ip (B2) : 192.168.168.167\n  netmask : 255.255.255.0\n  gateway : 0.0.0.0\n  aux chassis ip (B1) : 0.0.0.0\n  aux chassis ip (B2) : 0.0.0.0\n  aux netmask : 255.255.255.0\n  aux gateway : 0.0.0.0\n  MGMT link : 1000\n  AUX link : 1000"
+   },
+   "1516174" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.try to reboot the SonicOS with factory-settings:\n  ChassisOS-1 &gt; restart-sonicos factory-settings false",
+      "priority" : "Full_Regression",
+      "atm_id" : "6048374b-09c7-4dfd-8483-b90dfc2c8d63",
+      "initial" : "  TBD",
+      "id" : "1516174",
+      "title" : "[NSsp]Verify SonicOS should be able to restart with current-settings via MGMT Port",
+      "description" : "Original ID: 21\nOriginal Title: [NSsp]Verify SonicOS should be able to restart with current-settings via MGMT Port\nOriginal Description:",
+      "result" : "  In step2:\n  SonicOS should restart with current-settings successful"
+   },
+   "1516165" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.try to set chassis ip to a illegal ip :\n  1).ChassisOS-1-config &gt; network-mgmt IPv4 sonicos-ip 192.168.1.10 netmask 255.255.255.255 chassis-ip 192.168.1.300 gateway 192.168.1.1\n  2).ChassisOS-1-config &gt; network-mgmt IPv4 sonicos-ip 192.168.1.10 netmask 255.255.255.255 chassis-ip 192.168.1.0 gateway 192.168.1.1\n  3).ChassisOS-1-config &gt; network-mgmt IPv4 sonicos-ip 192.168.1.10 netmask 255.255.255.255 chassis-ip 192.168.1.255 gateway 192.168.1.1",
+      "priority" : "Smoke",
+      "atm_id" : "b5afd162-64e1-4b50-a679-b30380549bd4",
+      "initial" : "  TBD",
+      "id" : "1516165",
+      "title" : "[NSsp] Verify corresponding error message should be able to show when try to set chassis IP to a illegal IP",
+      "description" : "Original ID: 13\nOriginal Title: [NSsp] Verify corresponding error message should be able to show when try to set chassis IP to a illegal IP\nOriginal Description:",
+      "result" : "  In step2:\n  error massage should show in all cases"
+   },
+   "1704022" : {
+      "steps" : "  1. Login DUT GUI via MGMT interface IP 2. In Firmware and Settings page, try to export exp file (export configuration) 3. Reset to factory-default 4. In Firmware and Settings page, try to import exp file (import configuration)",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1704022",
+      "title" : "[NSsp] Verify exp file export/import via MGMT port",
+      "description" : "TBD",
+      "result" : "  Result for Step 4: The exp file import should be successful without error "
+   },
+   "1516162" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.try to set sonicos-ip and chassis ip in different networks\n  ChassisOS-1 &gt; configure\n  ChassisOS-1-config &gt; network-mgmt IPv4 sonicos-ip 192.168.1.10 netmask 255.255.255.255 chassis-ip 192.168.20.10 gateway 192.168.1.1",
+      "priority" : "Full_Regression",
+      "atm_id" : "9b70dbb2-2db4-4f63-9d50-1f163069123f",
+      "initial" : "  TBD",
+      "id" : "1516162",
+      "title" : "[NSsp] Verify corresponding error message should be able to show when try to set sonicos-ip and chassis ip in different networks",
+      "description" : "Original ID: 10\nOriginal Title: [NSsp] Verify corresponding error message should be able to show when try to set sonicos-ip and chassis ip in different networks\nOriginal Description:",
+      "result" : "  In step2:\n  error massage should show:\n  error: sonicos ip and chassis ip are in different networks"
+   },
+   "1516182" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.Disable ssh service on ChassisOS:\n  ChassisOS-1 &gt; configure\n  ChassisOS-1-config &gt; service-mgmt ssh off\n  3.try to ssh to chassis mgmt ip again",
+      "priority" : "Full_Regression",
+      "atm_id" : "4763cce9-66cf-49a3-96e1-71b3be5b8049",
+      "initial" : "  TBD",
+      "id" : "1516182",
+      "title" : "[NSsp]Verfiy SSH service of Chassis should be able to disable via MGMT Port",
+      "description" : "Original ID: 7\nOriginal Title: [NSsp]Verfiy SSH service of Chassis should be able to disable via MGMT Port\nOriginal Description:",
+      "result" : "  In step2:\n  ssh connection should be broken\n  In step3: ssh to chassis mgmt ip should be failed"
+   },
+   "1516163" : {
+      "steps" : "  1.PC connect to MGMT port , ssh to chassis mgmt ip\n  2.try to set gateway-ip and chassis ip to be same:\n  ChassisOS-1 &gt; configure\n  ChassisOS-1-config &gt; network-mgmt IPv4 sonicos-ip 192.168.1.10 netmask 255.255.255.255 chassis-ip 192.168.1.1 gateway 192.168.1.1",
+      "priority" : "Full_Regression",
+      "atm_id" : "e1045ce3-6f7b-4def-a063-6d7a7f591543",
+      "initial" : "  TBD",
+      "id" : "1516163",
+      "title" : "[NSsp] Verify corresponding error message should be able to show when try to set gateway-ip and chassis ip to be same",
+      "description" : "Original ID: 11\nOriginal Title: [NSsp] Verify corresponding error message should be able to show when try to set gateway-ip and chassis ip to be same\nOriginal Description:",
+      "result" : "  In step2:\n  error massage should show:\n  error: gateway ip address and chassis ip address cannot be same"
+   },
+   "1516172" : {
+      "steps" : "  1.boot DUT with factory default settings\n  2.SSH to chassis mgmt ip.\n  3.input command \u00c5\u201cshow services\u00ef\u00bf\u00bd",
+      "priority" : "Full_Regression",
+      "atm_id" : "ebd7ff00-b12a-4cb9-baa3-6362ba80f757",
+      "initial" : "  TBD",
+      "id" : "1516172",
+      "title" : "[NSsp]Verify default services of MGMT Port",
+      "description" : "Original ID: 2\nOriginal Title: [NSsp]Verify default services of MGMT Port \nOriginal Description:",
+      "result" : "  In step3 , output should be :\n  services : safemode"
+   }
+}

@@ -1,0 +1,93 @@
+{
+    "06": {
+        "steps": "1. Config interface as WAN zone\n2. Choose 'PPPoE' in 'IP Assignment'\n3. Check 'Unnumbered interface:' checkbox, and choose 'Create new unnumber interface' in the drop-down list",
+        "initial": "",
+        "id": "06",
+        "title": "GUI: The unnumbered interface can be created via 'Create new unnumber interface' option in WAN PPPoE setting page",
+        "result": "In step3, a new page pop up and can create success"
+    },
+    "18": {
+        "steps": "1. Config X2 as unnumbered interface\n2. Config WAN X1 as PPPoE unnumbered interface and unnumber to X2, make sure X1 get connected\n3. Go to System->Diagnostic, choose 'Ping', ping the router IP\n4. Go to router, ping the PPPoE unnumbered interface IP",
+        "initial": "",
+        "id": "18",
+        "title": "Verify the ping between the router and unnumbered PPPoE interface be successful",
+        "result": "In step3&4, Ping traffic go through success"
+    },
+    "19": {
+        "steps": "1. Config X2 as unnumbered interface\n2. Config WAN X1 as PPPoE unnumbered interface and unnumber to X2, enable Management(ping/https/snmp/ssh)\n3. Enable SNMP in System->SNMP page\n4. WAN host ping PPPoE unnumbereed interface IP and visit X1 IP using Explorer and secureCRT, using MIB to get info",
+        "initial": "",
+        "id": "19",
+        "title": "Management (ping/https/snmp/ssh) from WAN host to PPPoE unnumbered interface should be fine",
+        "result": "In step4, all function work well"
+    },
+    "23": {
+        "steps": "1.Config X2 as unnumbered interface, disable Management(ping/https/snmp/ssh)\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2, disable Management(ping/https/snmp/ssh)\n3.PC connect to normal LAN/DMZ interface X2, PC ping X2 IP and visit X2 IP using Explorer and secureCRT, using MIB to get info\n4.WAN host ping X2 IP and visit X2 IP using Explorer and secureCRT, using MIB to get info",
+        "initial": "",
+        "id": "23",
+        "title": "After uncheck ping/https/snmp/ssh on the unnumbered interface or PPPoE unnumbered interface, verify it should not be allowed to manage",
+        "result": "In step3&4, all function fail"
+    },
+    "25": {
+        "steps": "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3.Click 'Connect' button\n4.Click 'Disconnect' button",
+        "initial": "",
+        "id": "25",
+        "title": "Disconnect/reconnect PPPoE unnumbered interface from GUI,check if work fine",
+        "result": "In step3, PPPoE can get IP\nIn step4, PPPoE disconnect"
+    },
+    "27": {
+        "steps": "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3.Shutdown PPPoE server\n4.No shut PPPoE server",
+        "initial": "",
+        "id": "27",
+        "title": "Verify PPPoE unnumbered can reconnect when PPPoE server is down and then Up",
+        "result": "In step3, PPPoE disconnect\nIn step4, PPPoE get IP"
+    },
+    "29": {
+        "steps": "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3.After X1 get IP, change X1 to another mode(Specify IP address/Obtiain IP address)",
+        "initial": "",
+        "id": "29",
+        "title": "If PPPoE unnumbered interface change from unnumbered mode to another mode(Specify Ip address/Obtiain Ip address), it should can reconnect successfully",
+        "result": "In step3, PPPoE reconnect"
+    },
+    "30": {
+        "steps": "1.Config X1 as Specify IP address/Obtiain IP address\n2.After X1 get IP, config X2 as unnumbered interface\n3.Change X1 to PPPoE unnumbered interface and unnumber to X2",
+        "initial": "",
+        "id": "30",
+        "title": "If PPPoE unnumbered interface change from other mode(Specify Ip address/Obtiain Ip address) to unnumbered mode, it should can reconnect successfully",
+        "result": "In step3, PPPoE reconnect"
+    },
+    "32": {
+        "steps": "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3.After X1 get the same IP with X2, change X2 IP, check log monitor and packet",
+        "initial": "",
+        "id": "32",
+        "title": "If change ip of unnumbered interface, PPPoE unnumbered should reconnect again and PPPoE ip should be the same with the unnumbered interface",
+        "result": "In step3, X1 IP become the same with the new X2 IP, log and packet show a new PPPoE negotiation"
+    },
+    "40": {
+        "steps": "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2, make sure X1 get connected\n3.Check the auto added NAT polices\n4.Change X2 netmask, check the auto added NAT polices",
+        "initial": "",
+        "id": "40",
+        "title": "Verify when the unnumbered interface subnet changed, after PPPoE unnumbered interface reconnected the auto added NAT polices should also get update",
+        "result": "In step3, the two NAT polices added in case 16\nIn step4, the two NAT polices update"
+    },
+    "71": {
+        "steps": "1.Config LAN unnumbered interface with PC connected, add avaiable DHCP server scope for this interface\n2.Config WAN PPPoE unnumbered interface, unnumber to LAN unnumbered interface\n3.Ping traffic from LAN PC to Internet website\n4.Restart the FW",
+        "initial": "",
+        "id": "71",
+        "title": "Restart the FW, verify PPPoE unnumbered can get connected again and traffic is back",
+        "result": "In step4, PC ping traffic success again"
+    },
+    "72": {
+        "steps": "1.Config LAN unnumbered interface\n2.Config WAN PPPoE unnumbered interface\n3.After WAN PPPoE unnumbered interface connected, download TSR",
+        "initial": "",
+        "id": "72",
+        "title": "Verify in TSR all the information for PPPoE unnumbered interface and unnumbered interface are correct",
+        "result": "All info about PPPoE unnumbered interface and unnumbered interface are correct in TSR"
+    },
+    "73": {
+        "steps": "1.Config several LAN unnumbered interfaces\n2.Config several WAN PPPoE unnumbered interfaces, unnumber to LAN unnumbered interfaces\n3.After WAN PPPoE unnumbered interface connected, export prefs\n4.Change some unnumbered interface settings and import prefs\n5.Factory default DUT, import the prefs",
+        "initial": "",
+        "id": "73",
+        "title": "Prefs exporting/importing test",
+        "result": "In step4&5, after DUT boot up, the settings are the same with the prefs"
+    }
+}

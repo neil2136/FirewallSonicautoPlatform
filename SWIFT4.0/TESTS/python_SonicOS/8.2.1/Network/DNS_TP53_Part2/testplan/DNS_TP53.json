@@ -1,0 +1,23 @@
+{
+   "3912897" : {
+      "steps" : "1.Bound to X0, add a static DHCP scope and a dynamic DHCP scope\n2.In a client behind X0, make sure it is in dynamic DHCP scope\n3.disable dynamic DHCP scope, from the client send DHCP INFORM to X0\n4.do packet capture at the same time, check DHCP ACK",
+      "initial" : "",
+      "id" : "3912897",
+      "title" : "Verify DHCP INFORM will not be replied when there is no valid DHCP scope",
+      "result" : "Firewall will not respond to the inform packet when the DHCP scope is static, and not respond when the scope is disabled"
+   },
+   "3932088" : {
+      "steps" : "1.Go to DNS Name LookUp, enter the domain 'ak.epicgames.comdatastudio.google.comdavidesperalta.comdc.services.visualstudio.comdealer.spotify.comdellupdater.dell.comdesign.google.comdesignguidelines.withgoogle.com', click GO\n2.Check packet monitor",
+      "initial" : "",
+      "id" : "3932088",
+      "title" : "Verify the whole domain can be send when the domain's name over 128 bytes",
+      "result" : "in step1, the domain can be resolved successfully\nin step2, check dns packet, the whole domain is send in dns query packet. "
+   },
+   "3830207" : {
+      "steps" : "1.Configure the firewall in the factory default settings.\n2.Configure WAN\n3.Do packet capture for ICMP,UDP for an IP address 1.1.1.1, 1.0.0.1 and 169.254.0.1\n4.In 10-15 min, check firewall interface IP generating traffic to the above IPs.",
+      "initial" : "",
+      "id" : "3830207",
+      "title" : "Verify no unwanted DNS traffic can be captured ",
+      "result" : "No suck unwanted traffic can be captured "
+   }
+}

@@ -1,0 +1,37 @@
+import os
+import sys
+import unittest
+from runner.unittest.suite import UnittestSuite
+
+sys.path.append(os.environ["PYTHON_COMMON_HOME"])
+sys.path.append(os.environ["PYTHON_SONICOS_HOME"]+'/VPN')
+sys.path.append(os.environ["PYTHON_SONICOS_HOME"]+'/VPN/IKEv2_Sec_GW')
+
+
+def suite():
+    testcases_list = [
+        'config.init_testbed.TestRestoreDUT',
+        'config.init_testbed.TestUploadFirmware',
+        'definition.setup_network',
+        'bin.conf_fw.TestConfigTB',
+        'definition.conf_env.TestConfigTB',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_01',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_02',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_04',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_05',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_07',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_08',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_10',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_11',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_19',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_22',
+        'testcases.IKEv2_Sec_GW_TC.TestIKEv2_Sec_GW_23',
+
+    ]
+    suites=unittest.TestLoader().loadTestsFromNames(testcases_list)
+    return suites
+
+
+if __name__ == '__main__':
+    st = UnittestSuite(sys.argv, suite())
+    st.run()

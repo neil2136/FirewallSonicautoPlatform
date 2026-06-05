@@ -1,0 +1,149 @@
+{
+   "11" : {
+      "steps" : "  1) Add a VPN policy on the firewall. 2) Set the Local IKE ID to Email Address. Type 10.10.10.10 in the field. Attempt to save the policy. 3) Set the Peer IKE ID to Email Address. Type test test in the field. Attempt to save the policy.",
+      "initial" : "  N/A",
+      "id" : "11",
+      "title" : "Invalid format for Email Address IKE ID",
+      "result" : "  10.10.10.10 and test test will not be accepted as Email Address type of IKE ID. After the attempt to save VPN policy having 10.10.10.10 as Local IKE ID the error message Phase1 local IKE ID is not valid will be displayed. After the attempt to save VPN policy having test test as Peer IKE ID the error message Phase1 peer IKE ID is not valid will be displayed."
+   },
+   "21" : {
+      "steps" : "  Try to ping a pc in local site to start the tunnel negotiation, check the log on firewall.",
+      "initial" : "  2 VPN policies on local firewall VPN1 == gw (0.0.0.0), remoteId -> vpn1, local network ->X0 subnet, remote network->remote1 VPN2 == gw (0.0.0.0), remoteId -> vpn2, local network ->X0 subnet, remote network->remote2 On the remote firewall configured a policy to VPN2 as RemoteVPN1 == gw( ip address of local firewall) , remoteId -> vpn2, local network ->remote1, remote network->remote X0 subnet. where remote X0 subnet is same as X0 subnet on local gateway",
+      "id" : "21",
+      "title" : "For 2 or more Zero gateway mis-configuard policy, Ph1 and Ph2 should establish with the same VPN policy.",
+      "result" : "  1.Phase 1 should get established to vpn2;\n  2.Firewall should report error for proposal not match in phase2 to vpn2."
+   },
+   "7" : {
+      "steps" : "  1) Add matching VPN policies on two firewalls. 2) Set the Local IKE ID ? to IP Address and Peer IKE ID to Email Address on the local firewall. 3) Set the Local IKE ID to Email Address and the Peer IKE ID to IP Address on the remote firewall. 4) Enter the WAN IP of the firewall to the Local IKE ID field and test@test.com to the Peer IKE ID field on the local firewall. 5) Enter test@test.com to the Local IKE ID field and WAN IP of a peer to the Peer IKE ID field on the remote firewall. 6) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "7",
+      "title" : "Local IKE ID is set to IP Address; Peer IKE ID is set to Email Address.",
+      "result" : "  The data entered in the fields is accepted as IP Address and Email Address types of IKE ID. The VPN tunnel is negotiated successfully when using Phase1 IDs of different types."
+   },
+   "2" : {
+      "steps" : "  1) Add matching VPN policies on two firewalls. Specify explicit IPSec gateways.\n  2) Set the Local IKE ID and Remote IKE ID fields on the local and remote firewalls to IP Addresses. 3) Leave the fields empty. 4) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "2",
+      "title" : "IKE IDs are set to IP Addresses on the local and remote firewalls, the fields are not filled in",
+      "result" : "  The empty fields are accepted with IP Addresses selected as IKE IDs. The VPN tunnel is negotiated successfully when using those Phase1 IDs."
+   },
+   "17" : {
+      "steps" : "  1) Use a firewall with Enhanced firmware as a local and a firewall with 6.x firmware (old interface) as a remote box. 2) Add matching VPN policies on two firewalls. Use Aggressive Mode. 3) Set the Local IKE ID and the Peer IKE ID fields on the local and remote firewalls to SonicWALL Identifier. 4) Enter the Unique Firewall Identifier of the local firewall to the Local IKE ID field. 5) Enter incorrect data (different from UFI of a remote firewall) to the Peer IKE ID field. 6) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "17",
+      "title" : "IKE ID is using invalid SonicWALL Identifier",
+      "result" : "  The negotiation will fail in Phase1 due to invalid IKE ID. The appropriate log message wil be generated.\n  Note: The term \u0093old interface\u0094 in this case refers to a firmware with an old GUI that was released prior to SonicOS2.0.\n  Since that is no longer applicable use remote firewalls with 5.9 and 6.1.x released firmware."
+   },
+   "1" : {
+      "steps" : "  1) Add matching VPN policies on two firewalls. 2) Set the Local IKE ID and Peer IKE ID fields on the local and remote firewalls to IP Address. 3) Enter the WAN IP of the firewall to the Local IKE ID field and the WAN IP of a peer to the Peer IKE ID field. 4) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "1",
+      "title" : "IKE IDs are set to IP Addresses on the local and remote firewalls, the fields are filled in",
+      "result" : "  The data entered in the fields is accepted as IP Address type of IKE ID. The VPN tunnel is negotiated successfully when using valid WAN IP addresses as Phase1 IDs."
+   },
+   "18" : {
+      "steps" : "  1) Add matching VPN policies on two firewalls. 2) Set the Local IKE ID and the Peer IKE ID fields on the local and remote firewalls to Domain Names. 3) Enter test1 to the Local IKE ID field and test2 to the Peer IKE ID field on the local firewall. 4) Enter test2 to the Local IKE ID field and test to the Peer IKE ID field on the remote firewall. 5) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "18",
+      "title" : "Mismatched Domain Names",
+      "result" : "  The negotiation will fail in Phase1 due to invalid IKE ID. The appropriate log message wil be generated."
+   },
+   "13" : {
+      "steps" : "  1) Add a VPN policy on the firewall. 2) Set the Local IKE ID and the Peer IKE ID to Email Address. 3) Leave the data field for Local IKE ID empty. Enter a proper data in the Peer IKE ID field. Attempt to save the VPN policy. 4) Enter a proper data in the Local IKE ID field. Leave the data field for Peer IKE ID empty. Attempt to save the VPN policy.",
+      "initial" : "  N/A",
+      "id" : "13",
+      "title" : "Empty field for Email Address IKE ID",
+      "result" : "  The firewall will not accept the empty field for IKE ID set to Email Address type. The error message Local IKE ID not configured will be displayed on the status bar after step3, the error message Peer IKE ID not configured will be displayed on the status bar after step4."
+   },
+   "16" : {
+      "steps" : "  1) Add matching VPN policies on two firewalls. 2) Set the Local IKE ID and the Peer IKE ID fields on the local and remote firewalls to IP Addresses. 3) Enter the IP address different from the WAN IP of the firewall to the Local IKE ID field on the local firewall. Enter the WAN IP of a peer to the Peer IKE ID field. 4) Enter the WAN IP of the firewall to the Local IKE ID field on the remote firewall. Enter the IP different from the WAN IP of a peer to the Peer IKE ID. 5) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "16",
+      "title" : "IKE ID is using invalid WAN IP address",
+      "result" : "  The negotiation will fail in Phase1 due to invalid IKE ID. The appropriate log message wil be generated."
+   },
+   "6" : {
+      "steps" : "  1) Add matching VPN policies on two firewalls. 2) Set the Local IKE ID to IP Address and the Peer IKE ID to Domain Name on the local firewall. 3) Set the Local IKE ID to Domain name and the Peer IKE ID to IP Address on the remote firewall. 4) Enter the WAN IP of the firewall to the Local IKE ID field and test to the Peer IKE ID field on the local firewall. 5) Enter test to the Local IKE ID field and WAN IP of a peer to the Peer IKE ID field on the remote firewall. 6) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "6",
+      "title" : "Local IKE ID is set to IP Address; Peer IKE ID is set to Domain Name.",
+      "result" : "  The data entered in the fields is accepted as IP Address and Domain Name types of IKE ID. The VPN tunnel is negotiated successfully when using Phase1 IDs of different types."
+   },
+   "3" : {
+      "steps" : "  1) Add matching VPN policies on two firewalls. 2) Set the Local IKE ID and Peer IKE ID fields on the local and remote firewalls to Domain Names. 3) Enter the valid data. Type test1 in the Local IKE ID field and test2 in the Peer IKE ID field on the local firewall. Type test2 in the Local IKE ID field and test1 in the Peer IKE ID field on the remote firewall. 4) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "IKE IDs are set to Domain Name on the local and remote firewalls",
+      "result" : "  The data entered in the fields is accepted as Domain Name type of IKE ID. The VPN tunnel is negotiated successfully when using those Phase1 IDs."
+   },
+   "9" : {
+      "steps" : "  1) Add a VPN policy on the firewall. 2) Set the Local IKE ID to IP Address. Type test in the field. Attempt to save the policy. 3) Set the Peer IKE ID to IP Address. Type test in the field. Attempt to save the policy.",
+      "initial" : "  N/A",
+      "id" : "9",
+      "title" : "Invalid format for IP Address IKE ID",
+      "result" : "  test will not be accepted as IP Address type of IKE ID. After the attempt to save VPN policy having test as Local IKE ID the error message Phase1 local IKE ID is not valid will be displayed. After the attempt to save VPN policy having test as Peer IKE ID the error message Phase1 peer IKE ID is not valid will be displayed."
+   },
+   "12" : {
+      "steps" : "  1) Add a VPN policy on the firewall. 2) Set the Local IKE ID and the Peer IKE ID to Domain Name. 3) Leave the field for the Local IKE ID empty. Enter a proper data in the Peer IKE ID field. Attempt to save the VPN policy. 4) Enter a proper data in the Local IKE ID field. Leave the field for the Peer IKE ID empty. Attempt to save the VPN policy.",
+      "initial" : "  N/A",
+      "id" : "12",
+      "title" : "Empty field for Domain Name IKE ID",
+      "result" : "  The firewall will not accept the empty field for IKE ID set to Domain Name type. The error message Local IKE ID not configured will be displayed on the status bar after step3. The error message Peer IKE ID not configured will be displayed on the status bar after step4."
+   },
+   "14" : {
+      "steps" : "  1) Add a VPN policy on the firewall. 2) Set the Local IKE ID and the Peer IKE ID to SonicWALL Identifier. 3) Leave the data field for Local IKE ID empty. Enter a proper data in the Peer IKE ID field. Attempt to save the VPN policy. 4) Enter a proper data in the Local IKE ID field. Leave the data field for Peer IKE ID empty. Attempt to save the VPN policy.",
+      "initial" : "  N/A",
+      "id" : "14",
+      "title" : "Empty field for SonicWALL Identifier IKE ID",
+      "result" : "  The firewall will not accept the empty field for IKE ID set to SonicWALL Identifier type. The error message Local IKE ID not configured will be displayed on the status bar after step3, the error message Peer IKE ID not configured will be displayed on the status bar after step4."
+   },
+   "15" : {
+      "steps" : "  1) Add a VPN policy on the firewall. Select Aggressive Mode and set IPSec Ga teway Address field to 0.0.0.0. 2) Set the Local IKE ID and the Peer IKE ID to IP Addresses. 3) Leave the field for Local IKE ID empty, enter a valid data in the Peer IKE ID field. Attempt to save the VPN Policy.",
+      "initial" : "  N/A",
+      "id" : "15",
+      "title" : "Empty field for IP Address IKE ID, VPN Policy uses Aggressive Mode and IPSec Gateway is 0.0.0.0",
+      "result" : "  The firewall will not accept the empty fields for IP Address type of Local IKE ID. The error message Local IKE ID not configured will be displayed on the status bar.\n  ------Now we support empty fields for IP Address type of Local IKE ID"
+   },
+   "20" : {
+      "steps" : "  1. Downgrade one of the firmware to lowver version, for example, if you are testing 5.6, you can downgrade one FW to 5.5.1.0_5o\n  2. Configure a S2S VPN policy, configure matched Local IKE ID and Peer IKE ID with IP Address Type\n  3. Start negotiation by Keep alive or traffic, make sure tunnel could be successfully set up between two diffenent firmware version\n  4. repeat step 2 and 3, this time using FQDN, Sonicwall Identifier, Key Identifier, email ip address as IKE ID, verify tunnel could be successfully set up between two different firmware version",
+      "initial" : "  None",
+      "id" : "20",
+      "title" : "Verify tunnel could be successfully set up between two different firmware version with matched IKE id configured",
+      "result" : "  see steps"
+   },
+   "8" : {
+      "steps" : "  1) Add matching VPN policies on two firewalls. 2) Set the Local IKE ID to Domain Name and the Peer IKE ID to Email Address on the local firewall. 3) Set the Local IKE ID to Email Address and the Peer IKE ID to Domain Name on the remote firewall. 4) Enter test to the Local IKE ID field and ?test@test.com? to the Peer IKE ID field on the local firewall. 5) Enter test@test.com to the Local IKE ID field and test to the Peer IKE ID field on the remote firewall. 6) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "8",
+      "title" : "Local IKE ID is set to Domain Name; Peer IKE ID is set to Email Adress.",
+      "result" : "  The data entered in the fields is accepted as Domain Name and Email Address types of IKE ID. The VPN tunnel is negotiated successfully when using Phase1 IDs of different types."
+   },
+   "4" : {
+      "steps" : "  1) Add matching VPN policies on two firewalls. 2) Set the Local IKE ID and Peer IKE ID fields on the local and remote firewalls to Email Addresses. 3) Enter the valid data. Type test1@test.com in the Local IKE ID field and test2@test.com in the Peer IKE ID field on the local firewall. Type test2@test.com in the Local IKE ID field and test1@test.com in the Peer IKE ID field on the remote firewall. 4) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "4",
+      "title" : "IKE IDs are set to Email Addresses on the local and remote firewalls",
+      "result" : "  The data entered in the fields is accepted as Email Address type of IKE ID. The VPN tunnel is negotiated successfully when using those Phase1 IDs."
+   },
+   "10" : {
+      "steps" : "  1) Add a VPN policy on the firewall. 2) Set the Local IKE ID to Domain Name. Type test test in the field. Attempt to save the policy. 3) Set the Peer IKE ID to Domain Name. Type test in the field. Attempt to save the policy.",
+      "initial" : "  N/A",
+      "id" : "10",
+      "title" : "Invalid format for Domain Name IKE ID",
+      "result" : "  test test and test will not be accepted as Domain Name type of IKE ID. After the attempt to save VPN policy having test test as Local IKE ID the error message ?Phase1 local IKE ID is not valid will be displayed. After the attempt to save VPN policy having test as Peer IKE ID the error message Phase1 peer IKE ID is not valid will be displayed."
+   },
+   "19" : {
+      "steps" : "  1) Add matching VPN policies on two firewalls. 2) Set the Local IKE ID and the Peer IKE ID fields on the local and remote firewalls to Email Address. 3) Enter test1@test.com to the Local IKE ID field and test2@test.com to the Peer IKE ID field on the local firewall. 4) Enter test@test.com to the Local IKE ID field and test1@test.com to the Peer IKE ID field on the remote firewall. 5) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "19",
+      "title" : "Mismatched Email Addresses",
+      "result" : "  The negotiation will fail in Phase1 due to invalid IKE ID. The appropriate log message wil be generated."
+   },
+   "5" : {
+      "steps" : "  1) Use a firewall with Enhanced firmware as a local and a firewall with 6.x firmware (old interface) as a remote box. 2) Add matching VPN policies on two firewalls. Use Aggressive Mode. 3) Set the Local IKE ID and Peer IKE ID on the local firewall to SonicWALL Identifier. 4) Enter the valid data: Unique Firewall Identifier of the local firewall as the Local IKE ID and Unique Firewall Identifier of the remote firewall as the Peer IKE ID. 5) Save the VPN policies and negotiate the tunnel.",
+      "initial" : "  N/A",
+      "id" : "5",
+      "title" : "IKE IDs are set to SonicWALL Identifier on the local and remote firewalls",
+      "result" : "  The data entered in the fields is accepted as SonicWALL Identifier type of IKE ID. The VPN tunnel is negotiated successfully when using those Phase1 IDs."
+   }
+}

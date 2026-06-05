@@ -1,0 +1,87 @@
+{
+    "1522527" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522527",
+       "title" : "Modify Signature Downloads Through a Proxy Server in Security Services->Summary via CLI.",
+       "result" : "  1. Modify Signature Downloads Through a Proxy Server in Security Services->Summary page via CLI.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1522522" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  8. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522522",
+       "title" : "Modify Block Web Features in Security Services->Content Filter when content filter type is Websense Enterprise via CLI.",
+       "result" : "  1. Modify websense Enterprise in Security Services->Content Filter page via CLI.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1522525" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  16. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522525",
+       "title" : "Delete Real-time Black List Services in Security Services->RBL Filter via CLI.",
+       "result" : "  1. Delete Real-time Black List Services in Security Services->RBL Filter page.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1522524" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  13. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522524",
+       "title" : "Modify Real-time Black List Settings in Security Services->RBL Filter via CLI.",
+       "result" : "  1. Modify Real-time Black List Settings in Security Services->RBL Filter page.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1522523" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  8. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522523",
+       "title" : "Modify CFS Exclusion in Security Services->Content Filter when content filter type is Websense Enterprise via CLI.",
+       "result" : "  1. Modify websense Enterprise in Security Services->Content Filter page via CLI.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1522528" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  28. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522528",
+       "title" : "Modify Custom Botnet List in Security Services->Botnet Filter via CLI.",
+       "result" : "  1. Modify Custom Botnet List in Security Services->Botnet Filter page.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1522526" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  21. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522526",
+       "title" : "Add Custom List in  Security Services->GEO-IP Filter via CLI.",
+       "result" : "  1. Add Custom List in Security Services->GEO-IP Filter page.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1522533" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.",
+       "initial" : "  When configuration is made via HTTP, standard port, Auditing Records should be correctly showed.",
+       "id" : "1522533",
+       "title" : "Makes changes in Security Services  via ssh.",
+       "result" : "  1. Manage the firewall via ssh.\n  2. Make some successful configurations in Security Services .\n  3. Go to Log Settings/ Auditing Records page, check the records."
+    },
+    "1522532" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  36. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522532",
+       "title" : "Modify Web Block Page in Security Services->Botnet Filter via CLI.",
+       "result" : "  1. Modify Web Block Page in Security Services->Botnet Filter page.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1522531" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  34. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522531",
+       "title" : "Flush dynamic botnet in Security Services->Botnet Filtervia CLI.",
+       "result" : "  1. Flush dynamic botnet in Security Services->Botnet Filter. page.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1522530" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  32. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522530",
+       "title" : "Delete Custom Botnet List in Security Services->Botnet Filter via CLI.",
+       "result" : "  1. Delete Custom Botnet List in Security Services->Botnet Filter page.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1522529" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  31. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the Tunnel Interface VPN policy creation are correctly showed.\n  Result 3: Log message is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609.",
+       "id" : "1522529",
+       "title" : "Modify Custom Botnet List in Security Services->Botnet Filter via CLI.",
+       "result" : "  1. Modify Custom Botnet List in Security Services->Botnet Filter page.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    }
+ }
+ 

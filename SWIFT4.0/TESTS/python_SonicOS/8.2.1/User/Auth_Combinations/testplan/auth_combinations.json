@@ -1,0 +1,702 @@
+{
+   "2477786" : {
+      "steps" : "  Verify valid Local UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify valid Local UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477786",
+      "title" : "0510: Verify valid Local UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477801" : {
+      "steps" : "  Verify invalid UNPW authentication with RADIUS Auth and NetExtender Client",
+      "initial" : "  Verify invalid UNPW authentication with RADIUS Auth and NetExtender Client",
+      "id" : "2477801",
+      "title" : "0660: Verify invalid UNPW authentication with RADIUS Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477749" : {
+      "steps" : "  Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "initial" : "  Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "id" : "2477749",
+      "title" : "0140: Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477824" : {
+      "steps" : "  Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "id" : "2477824",
+      "title" : "0890: Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477778" : {
+      "steps" : "  Verify valid UNPW authentication with LDAP Auth and SSLVPN Web Portal",
+      "initial" : "  Verify valid UNPW authentication with LDAP Auth and SSLVPN Web Portal",
+      "id" : "2477778",
+      "title" : "0430: Verify valid UNPW authentication with LDAP Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477773" : {
+      "steps" : "  Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "initial" : "  Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "id" : "2477773",
+      "title" : "0380: Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477792" : {
+      "steps" : "  Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477792",
+      "title" : "0570: Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477766" : {
+      "steps" : "  Verify valid Local UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "initial" : "  Verify valid Local UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "id" : "2477766",
+      "title" : "0310: Verify valid Local UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477832" : {
+      "steps" : "  Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "id" : "2477832",
+      "title" : "0970: Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477744" : {
+      "steps" : "  Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and ULA",
+      "initial" : "  Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and ULA",
+      "id" : "2477744",
+      "title" : "0090: Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477784" : {
+      "steps" : "  Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477784",
+      "title" : "0490: Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477748" : {
+      "steps" : "  Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "initial" : "  Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "id" : "2477748",
+      "title" : "0130: Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477831" : {
+      "steps" : "  Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "id" : "2477831",
+      "title" : "0960: Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477797" : {
+      "steps" : "  Verify invalid UNPW authentication with Local Auth and NetExtender Client",
+      "initial" : "  Verify invalid UNPW authentication with Local Auth and NetExtender Client",
+      "id" : "2477797",
+      "title" : "0620: Verify invalid UNPW authentication with Local Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477791" : {
+      "steps" : "  Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477791",
+      "title" : "0560: Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477808" : {
+      "steps" : "  Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "id" : "2477808",
+      "title" : "0730: Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477760" : {
+      "steps" : "  Verify valid UNPW authentication with RADIUS Auth and FW Management",
+      "initial" : "  Verify valid UNPW authentication with RADIUS Auth and FW Management",
+      "id" : "2477760",
+      "title" : "0250: Verify valid UNPW authentication with RADIUS Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477767" : {
+      "steps" : "  Verify invalid Local UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "initial" : "  Verify invalid Local UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "id" : "2477767",
+      "title" : "0320: Verify invalid Local UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477834" : {
+      "steps" : "  Verify valid Local UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify valid Local UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "id" : "2477834",
+      "title" : "0990: Verify valid Local UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477745" : {
+      "steps" : "  Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and ULA",
+      "initial" : "  Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and ULA",
+      "id" : "2477745",
+      "title" : "0100: Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477825" : {
+      "steps" : "  Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "id" : "2477825",
+      "title" : "0900: Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477822" : {
+      "steps" : "  Verify valid UNPW authentication with TACACs Auth and Mobile Connect Client",
+      "initial" : "  Verify valid UNPW authentication with TACACs Auth and Mobile Connect Client",
+      "id" : "2477822",
+      "title" : "0870: Verify valid UNPW authentication with TACACs Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477777" : {
+      "steps" : "  Verify invalid UNPW authentication with Local Auth and SSLVPN Web Portal",
+      "initial" : "  Verify invalid UNPW authentication with Local Auth and SSLVPN Web Portal",
+      "id" : "2477777",
+      "title" : "0420: Verify invalid UNPW authentication with Local Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477756" : {
+      "steps" : "  Verify valid UNPW authentication with Local Auth and FW Management",
+      "initial" : "  Verify valid UNPW authentication with Local Auth and FW Management",
+      "id" : "2477756",
+      "title" : "0210: Verify valid UNPW authentication with Local Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477805" : {
+      "steps" : "  Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "id" : "2477805",
+      "title" : "0700: Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477790" : {
+      "steps" : "  Verify valid Local UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify valid Local UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477790",
+      "title" : "0550: Verify valid Local UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477789" : {
+      "steps" : "  Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477789",
+      "title" : "0540: Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477820" : {
+      "steps" : "  Verify valid UNPW authentication with RADIUS Auth and Mobile Connect Client",
+      "initial" : "  Verify valid UNPW authentication with RADIUS Auth and Mobile Connect Client",
+      "id" : "2477820",
+      "title" : "0850: Verify valid UNPW authentication with RADIUS Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477819" : {
+      "steps" : "  Verify invalid UNPW authentication with LDAP Auth and Mobile Connect Client",
+      "initial" : "  Verify invalid UNPW authentication with LDAP Auth and Mobile Connect Client",
+      "id" : "2477819",
+      "title" : "0840: Verify invalid UNPW authentication with LDAP Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477794" : {
+      "steps" : "  Verify valid Local UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify valid Local UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477794",
+      "title" : "0590: Verify valid Local UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477738" : {
+      "steps" : "  User should be able to login to the network and access the internet\n  and User status page shows the user login information",
+      "initial" : "  Verify valid UNPW authentication with LDAP Auth and ULA",
+      "id" : "2477738",
+      "title" : "0030: Verify valid UNPW authentication with LDAP Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477823" : {
+      "steps" : "  Verify invalid UNPW authentication with TACACs Auth and Mobile Connect Client",
+      "initial" : "  Verify invalid UNPW authentication with TACACs Auth and Mobile Connect Client",
+      "id" : "2477823",
+      "title" : "0880: Verify invalid UNPW authentication with TACACs Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477781" : {
+      "steps" : "  Verify invalid UNPW authentication with RADIUS Auth and SSLVPN Web Portal",
+      "initial" : "  Verify invalid UNPW authentication with RADIUS Auth and SSLVPN Web Portal",
+      "id" : "2477781",
+      "title" : "0460: Verify invalid UNPW authentication with RADIUS Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477772" : {
+      "steps" : "  Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "initial" : "  Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "id" : "2477772",
+      "title" : "0370: Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477774" : {
+      "steps" : "  Verify valid Local UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "initial" : "  Verify valid Local UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "id" : "2477774",
+      "title" : "0390: Verify valid Local UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477783" : {
+      "steps" : "  Verify invalid UNPW authentication with TACACs Auth and SSLVPN Web Portal",
+      "initial" : "  Verify invalid UNPW authentication with TACACs Auth and SSLVPN Web Portal",
+      "id" : "2477783",
+      "title" : "0480: Verify invalid UNPW authentication with TACACs Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477807" : {
+      "steps" : "  Verify invalid Local UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify invalid Local UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "id" : "2477807",
+      "title" : "0720: Verify invalid Local UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477739" : {
+      "steps" : "  For both step4 and step5 users should not be able to login to the network and access the internet.",
+      "initial" : "  Verify invalid UNPW authentication with LDAP Auth and ULA",
+      "id" : "2477739",
+      "title" : "0040: Verify invalid UNPW authentication with LDAP Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477750" : {
+      "steps" : "  Verify valid Local UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "initial" : "  Verify valid Local UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "id" : "2477750",
+      "title" : "0150: Verify valid Local UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477761" : {
+      "steps" : "  Verify invalid UNPW authentication with RADIUS Auth and FW Management",
+      "initial" : "  Verify invalid UNPW authentication with RADIUS Auth and FW Management",
+      "id" : "2477761",
+      "title" : "0260: Verify invalid UNPW authentication with RADIUS Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477829" : {
+      "steps" : "  Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "id" : "2477829",
+      "title" : "0940: Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477802" : {
+      "steps" : "  Verify valid UNPW authentication with TACACs Auth and NetExtender Client",
+      "initial" : "  Verify valid UNPW authentication with TACACs Auth and NetExtender Client",
+      "id" : "2477802",
+      "title" : "0670: Verify valid UNPW authentication with TACACs Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477747" : {
+      "steps" : "  Verify invalid Local UNPW authentication with LDAP + Local Users Auth and ULA",
+      "initial" : "  Verify invalid Local UNPW authentication with LDAP + Local Users Auth and ULA",
+      "id" : "2477747",
+      "title" : "0120: Verify invalid Local UNPW authentication with LDAP + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477821" : {
+      "steps" : "  Verify invalid UNPW authentication with RADIUS Auth and Mobile Connect Client",
+      "initial" : "  Verify invalid UNPW authentication with RADIUS Auth and Mobile Connect Client",
+      "id" : "2477821",
+      "title" : "0860: Verify invalid UNPW authentication with RADIUS Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477803" : {
+      "steps" : "  Verify invalid UNPW authentication with TACACs Auth and NetExtender Client",
+      "initial" : "  Verify invalid UNPW authentication with TACACs Auth and NetExtender Client",
+      "id" : "2477803",
+      "title" : "0680: Verify invalid UNPW authentication with TACACs Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477753" : {
+      "steps" : "  Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and ULA",
+      "initial" : "  Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and ULA",
+      "id" : "2477753",
+      "title" : "0180: Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477828" : {
+      "steps" : "  Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "id" : "2477828",
+      "title" : "0930: Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477764" : {
+      "steps" : "  Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "initial" : "  Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "id" : "2477764",
+      "title" : "0290: Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477746" : {
+      "steps" : "  Verify valid Local UNPW authentication with LDAP + Local Users Auth and ULA",
+      "initial" : "  Verify valid Local UNPW authentication with LDAP + Local Users Auth and ULA",
+      "id" : "2477746",
+      "title" : "0110: Verify valid Local UNPW authentication with LDAP + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477800" : {
+      "steps" : "  Verify valid UNPW authentication with RADIUS Auth and NetExtender Client",
+      "initial" : "  Verify valid UNPW authentication with RADIUS Auth and NetExtender Client",
+      "id" : "2477800",
+      "title" : "0650: Verify valid UNPW authentication with RADIUS Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477751" : {
+      "steps" : "  Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "initial" : "  Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "id" : "2477751",
+      "title" : "0160: Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477788" : {
+      "steps" : "  Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477788",
+      "title" : "0530: Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477780" : {
+      "steps" : "  Verify valid UNPW authentication with RADIUS Auth and SSLVPN Web Portal",
+      "initial" : "  Verify valid UNPW authentication with RADIUS Auth and SSLVPN Web Portal",
+      "id" : "2477780",
+      "title" : "0450: Verify valid UNPW authentication with RADIUS Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477835" : {
+      "steps" : "  Verify invalid Local UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify invalid Local UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "id" : "2477835",
+      "title" : "1000: Verify invalid Local UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477814" : {
+      "steps" : "  Verify valid Local UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify valid Local UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "id" : "2477814",
+      "title" : "0790: Verify valid Local UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477795" : {
+      "steps" : "  Verify invalid Local UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify invalid Local UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477795",
+      "title" : "0600: Verify invalid Local UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477830" : {
+      "steps" : "  Verify valid Local UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify valid Local UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "id" : "2477830",
+      "title" : "0950: Verify valid Local UNPW authentication with RADIUS + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477755" : {
+      "steps" : "  Verify invalid Local UNPW authentication with TACACs + Local Users Auth and ULA",
+      "initial" : "  Verify invalid Local UNPW authentication with TACACs + Local Users Auth and ULA",
+      "id" : "2477755",
+      "title" : "0200: Verify invalid Local UNPW authentication with TACACs + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477775" : {
+      "steps" : "  Verify invalid Local UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "initial" : "  Verify invalid Local UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "id" : "2477775",
+      "title" : "0400: Verify invalid Local UNPW authentication with TACACs + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477816" : {
+      "steps" : "  User should be able to authenticate without any issues and able to access the LAN resources.",
+      "initial" : "  Verify valid UNPW authentication with Local Auth and Mobile Connect Client",
+      "id" : "2477816",
+      "title" : "0810: Verify valid UNPW authentication with Local Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477758" : {
+      "steps" : "  Verify valid UNPW authentication with LDAP Auth and FW Management",
+      "initial" : "  Verify valid UNPW authentication with LDAP Auth and FW Management",
+      "id" : "2477758",
+      "title" : "0230: Verify valid UNPW authentication with LDAP Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477813" : {
+      "steps" : "  Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "id" : "2477813",
+      "title" : "0780: Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477742" : {
+      "steps" : "  Verify valid UNPW authentication with TACACs Auth and ULA",
+      "initial" : "  Verify valid UNPW authentication with TACACs Auth and ULA",
+      "id" : "2477742",
+      "title" : "0070: Verify valid UNPW authentication with TACACs Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477765" : {
+      "steps" : "  Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "initial" : "  Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "id" : "2477765",
+      "title" : "0300: Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477798" : {
+      "steps" : "  Verify valid UNPW authentication with LDAP Auth and NetExtender Client",
+      "initial" : "  Verify valid UNPW authentication with LDAP Auth and NetExtender Client",
+      "id" : "2477798",
+      "title" : "0630: Verify valid UNPW authentication with LDAP Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477771" : {
+      "steps" : "  Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "initial" : "  Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "id" : "2477771",
+      "title" : "0360: Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477752" : {
+      "steps" : "  Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and ULA",
+      "initial" : "  Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and ULA",
+      "id" : "2477752",
+      "title" : "0170: Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477759" : {
+      "steps" : "  Verify invalid UNPW authentication with LDAP Auth and FW Management",
+      "initial" : "  Verify invalid UNPW authentication with LDAP Auth and FW Management",
+      "id" : "2477759",
+      "title" : "0240: Verify invalid UNPW authentication with LDAP Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477827" : {
+      "steps" : "  Verify invalid Local UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify invalid Local UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "id" : "2477827",
+      "title" : "0920: Verify invalid Local UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477804" : {
+      "steps" : "  Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "id" : "2477804",
+      "title" : "0690: Verify valid LDAP UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477793" : {
+      "steps" : "  Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477793",
+      "title" : "0580: Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477796" : {
+      "steps" : "  User should be able to authenticate without any issues and able to access the LAN resources.",
+      "initial" : "  Verify valid UNPW authentication with Local Auth and NetExtender Client",
+      "id" : "2477796",
+      "title" : "0610: Verify valid UNPW authentication with Local Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477833" : {
+      "steps" : "  Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "id" : "2477833",
+      "title" : "0980: Verify invalid TACACs UNPW authentication with TACACs + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477809" : {
+      "steps" : "  Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "id" : "2477809",
+      "title" : "0740: Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477812" : {
+      "steps" : "  Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "id" : "2477812",
+      "title" : "0770: Verify valid TACACs UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477811" : {
+      "steps" : "  Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "id" : "2477811",
+      "title" : "0760: Verify invalid Local UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477776" : {
+      "steps" : "  User should be able to login to the SSLVPN web portal page and connect to the resources available in the portal page.",
+      "initial" : "  Verify valid UNPW authentication with Local Auth and SSLVPN Web Portal",
+      "id" : "2477776",
+      "title" : "0410: Verify valid UNPW authentication with Local Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477785" : {
+      "steps" : "  Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477785",
+      "title" : "0500: Verify invalid LDAP UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477768" : {
+      "steps" : "  Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "initial" : "  Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "id" : "2477768",
+      "title" : "0330: Verify valid RADIUS UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477810" : {
+      "steps" : "  Verify valid Local UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify valid Local UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "id" : "2477810",
+      "title" : "0750: Verify valid Local UNPW authentication with RADIUS + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477762" : {
+      "steps" : "  User should be able to login and access the management UI",
+      "initial" : "  Verify valid UNPW authentication with TACACs Auth and FW Management",
+      "id" : "2477762",
+      "title" : "0270: Verify valid UNPW authentication with TACACs Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477736" : {
+      "steps" : "  User should be able to login to the network and access the internet",
+      "initial" : "  Verify valid UNPW authentication with Local Auth and ULA",
+      "id" : "2477736",
+      "title" : "0010: Verify valid UNPW authentication with Local Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477741" : {
+      "steps" : "  Verify invalid UNPW authentication with RADIUS Auth and ULA",
+      "initial" : "  Verify invalid UNPW authentication with RADIUS Auth and ULA",
+      "id" : "2477741",
+      "title" : "0060: Verify invalid UNPW authentication with RADIUS Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477826" : {
+      "steps" : "  Verify valid Local UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "initial" : "  Verify valid Local UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "id" : "2477826",
+      "title" : "0910: Verify valid Local UNPW authentication with LDAP + Local Users Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477817" : {
+      "steps" : "  Verify invalid UNPW authentication with Local Auth and Mobile Connect Client",
+      "initial" : "  Verify invalid UNPW authentication with Local Auth and Mobile Connect Client",
+      "id" : "2477817",
+      "title" : "0820: Verify invalid UNPW authentication with Local Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477757" : {
+      "steps" : "  Verify invalid UNPW authentication with Local Auth and FW Management",
+      "initial" : "  Verify invalid UNPW authentication with Local Auth and FW Management",
+      "id" : "2477757",
+      "title" : "0220: Verify invalid UNPW authentication with Local Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477743" : {
+      "steps" : "  Verify invalid UNPW authentication with TACACs Auth and ULA",
+      "initial" : "  Verify invalid UNPW authentication with TACACs Auth and ULA",
+      "id" : "2477743",
+      "title" : "0080: Verify invalid UNPW authentication with TACACs Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477779" : {
+      "steps" : "  Verify invalid UNPW authentication with LDAP Auth and SSLVPN Web Portal",
+      "initial" : "  Verify invalid UNPW authentication with LDAP Auth and SSLVPN Web Portal",
+      "id" : "2477779",
+      "title" : "0440: Verify invalid UNPW authentication with LDAP Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477806" : {
+      "steps" : "  Verify valid Local UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify valid Local UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "id" : "2477806",
+      "title" : "0710: Verify valid Local UNPW authentication with LDAP + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477763" : {
+      "steps" : "  Verify invalid UNPW authentication with TACACs Auth and FW Management",
+      "initial" : "  Verify invalid UNPW authentication with TACACs Auth and FW Management",
+      "id" : "2477763",
+      "title" : "0280: Verify invalid UNPW authentication with TACACs Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477799" : {
+      "steps" : "  Verify invalid UNPW authentication with LDAP Auth and NetExtender Client",
+      "initial" : "  Verify invalid UNPW authentication with LDAP Auth and NetExtender Client",
+      "id" : "2477799",
+      "title" : "0640: Verify invalid UNPW authentication with LDAP Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477818" : {
+      "steps" : "  Verify valid UNPW authentication with LDAP Auth and Mobile Connect Client",
+      "initial" : "  Verify valid UNPW authentication with LDAP Auth and Mobile Connect Client",
+      "id" : "2477818",
+      "title" : "0830: Verify valid UNPW authentication with LDAP Auth and Mobile Connect Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477815" : {
+      "steps" : "  Verify invalid Local UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "initial" : "  Verify invalid Local UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "id" : "2477815",
+      "title" : "0800: Verify invalid Local UNPW authentication with TACACs + Local Users Auth and NetExtender Client",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477782" : {
+      "steps" : "  Verify valid UNPW authentication with TACACs Auth and SSLVPN Web Portal",
+      "initial" : "  Verify valid UNPW authentication with TACACs Auth and SSLVPN Web Portal",
+      "id" : "2477782",
+      "title" : "0470: Verify valid UNPW authentication with TACACs Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477787" : {
+      "steps" : "  Verify invalid Local UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "initial" : "  Verify invalid Local UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "id" : "2477787",
+      "title" : "0520: Verify invalid Local UNPW authentication with LDAP + Local Users Auth and SSLVPN Web Portal",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477770" : {
+      "steps" : "  Verify valid Local UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "initial" : "  Verify valid Local UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "id" : "2477770",
+      "title" : "0350: Verify valid Local UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477740" : {
+      "steps" : "  Verify valid UNPW authentication with RADIUS Auth and ULA",
+      "initial" : "  Verify valid UNPW authentication with RADIUS Auth and ULA",
+      "id" : "2477740",
+      "title" : "0050: Verify valid UNPW authentication with RADIUS Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477769" : {
+      "steps" : "  Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "initial" : "  Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "id" : "2477769",
+      "title" : "0340: Verify invalid RADIUS UNPW authentication with RADIUS + Local Users Auth and FW Management",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477737" : {
+      "steps" : "  For both step4 and step5 users should not be able to login to the network and access the internet.",
+      "initial" : "  Verify invalid UNPW authentication with Local Auth and ULA",
+      "id" : "2477737",
+      "title" : "0020: Verify invalid UNPW authentication with Local Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   },
+   "2477754" : {
+      "steps" : "  Verify valid Local UNPW authentication with TACACs + Local Users Auth and ULA",
+      "initial" : "  Verify valid Local UNPW authentication with TACACs + Local Users Auth and ULA",
+      "id" : "2477754",
+      "title" : "0190: Verify valid Local UNPW authentication with TACACs + Local Users Auth and ULA",
+      "result" : "  Keep SonicWall Firewall, LDAP, RADIUS, TACACs servers installed and configured for user authentication ready\n  Have clients behind X0/X1 with NetExtender/Mobile Connect clients installed"
+   }
+}

@@ -1,0 +1,191 @@
+{
+   "11" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestVpnRange as the name, choose type as Range, enter an IP range, select Zone Assignment as VPN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "11",
+      "title" : "Create new Objects for VPN Range",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestVpnRange in the addrss objects list with proper information."
+   },
+   "21" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click delete button for an address object;\n  2) Click OK when \"Are you sure you wish to delete xxx?\" window pops up.",
+      "initial" : "  N/A",
+      "id" : "21",
+      "title" : "Delete Address Objects",
+      "result" : "  The address object should be deleted from the address object list; if it was part of any address groups, it won't be part of those groups any more."
+   },
+   "07" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestDmzHost as the name, choose type as Host, enter 172.16.3.1 as the IP address, select Zone Assignment as DMZ;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "7",
+      "title" : "Create new Objects for DMZ Host",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestDmzHost in the addrss objects list with proper information."
+   },
+   "26" : {
+      "steps" : "  The max address objects per gorup sould be equal to \"Max group depth\". ",
+      "initial" : "  1.go to System>Diagnostics page, Download TSR\n  2.open TSR and find the followed info:\n  --Address Object Table Info--\n  Object size: ***\n  Number of objects: ***\n  Max objects: ****\n  Max groups: ***\n  Max group depth: ****\n  and also find the info:\n  Max Address Objects Per Group: ****\n  3.see the result",
+      "id" : "26",
+      "title" : "The max address objects per group shoud be defined by \"Max group depth\"",
+      "result" : ""
+   },
+   "02" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestLanRange as the name, choose type as Range, enter an IP range, select Zone Assignment as LAN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "2",
+      "title" : "Create new Objects for LAN Range",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestLanRange in the addrss objects list with proper information."
+   },
+   "17" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestWLanRange as the name, choose type as Range, enter an IP range, select Zone Assignment as WLAN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "17",
+      "title" : "Create new Objects for WLAN Range",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestWLanRange in the addrss objects list with proper information."
+   },
+   "22" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click delete button for an address group;\n  2) Click OK when \"Are you sure you wish to delete xxx?\" window pops up.",
+      "initial" : "  N/A",
+      "id" : "22",
+      "title" : "Delete Address Group",
+      "result" : "  The address group should be deleted from the address group list; if it was part of any address groups, it won't be part of those groups any more."
+   },
+   "01" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestLanHost as the name, choose type as Host, enter 172.16.1.1 as the IP address, select Zone Assignment as LAN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "1",
+      "title" : "Create new Objects for LAN Host",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestLanHost in the addrss objects list: address is 172.16.1.1, type Host, Zone LAN, and configurable."
+   },
+   "18" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestWLanNet as the name, choose type as Network, enter network information, select Zone Assignment as WLAN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "18",
+      "title" : "Create new Objects for WLAN Network",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestWlanNet in the addrss objects list with proper information."
+   },
+   "23" : {
+      "steps" : "  1. Do factory default .\n  2. Enter into Network->Address Object page, check all default address objects are available and its value are correct.",
+      "initial" : "  N/A",
+      "id" : "23",
+      "title" : "Verify Default Address Objects",
+      "result" : "  Default Address Objects should be available, according to SonicWALL firware type."
+   },
+   "13" : {
+      "steps" : "  1) On the Firewall>Multicast page, enable Multicast.\n  2) On the Network -> Address Objects page, click Add button to add address object;\n  3) Enter TestMultiHost as the name, choose type as Host, enter 224.0.1.100 as the IP address, select Zone Assignment as MULTICAST;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "13",
+      "title" : "Create new Objects for Multicast Host",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestMultiHost in the addrss objects list with proper information."
+   },
+   "16" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestWLanHost as the name, choose type as Host, enter 172.16.6.1 as the IP address, select Zone Assignment as WLAN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "16",
+      "title" : "Create new Objects for WLAN Host",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestWLanHost in the addrss objects list with proper information."
+   },
+   "06" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestWanNet as the name, choose type as Network, enter network information, select Zone Assignment as WAN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "6",
+      "title" : "Create new Objects for WAN Network",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestWanNet in the addrss objects list with proper information."
+   },
+   "25" : {
+      "steps" : "  1. Go to Network->Address Object;\n  2. Open the edit dialog of the group object added in last case, change the name and member objects, press OK;\n  3. Re-open the edit dialog of the group, and verify the Expected result;",
+      "initial" : "  A PC connects to LAN interface of the FW; the WAN interface of the FW connects to lab network",
+      "id" : "25",
+      "title" : "Modify address group object",
+      "result" : "  The information of the address object can be modified successfully."
+   },
+   "28" : {
+      "steps" : "",
+      "initial" : "",
+      "id" : "28",
+      "title" : null,
+      "result" : ""
+   },
+   "03" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestLanNet as the name, choose type as Network, enter network information, select Zone Assignment as LAN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "Create new Objects for LAN Network",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestLanNet in the addrss objects list with proper information."
+   },
+   "09" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestDmzNet as the name, choose type as Network, enter network information, select Zone Assignment as DMZ;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "9",
+      "title" : "Create new Objects for DMZ Network",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestDmzNet in the addrss objects list with proper information."
+   },
+   "12" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestVpnNet as the name, choose type as Network, enter network information, select Zone Assignment as VPN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "12",
+      "title" : "Create new Objects for VPN Network",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestVpnNet in the addrss objects list with proper information."
+   },
+   "14" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestMultiRange as the name, choose type as Range, enter an IP range, select Zone Assignment as MULTICAST;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "14",
+      "title" : "Create new Objects for Multicast Range",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestMultiRange in the addrss objects list with proper information."
+   },
+   "15" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestMultiNet as the name, choose type as Network, enter network information, select Zone Assignment as MULTICAST;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "15",
+      "title" : "Create new Objects for Multicast Network",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestMultiNet in the addrss objects list with proper information."
+   },
+   "20" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add Group button to add address object group;\n  2) Enter TestAddressGroupB as the name, select groups that have confliction, such as Lan Interface IP and WAN Subnets;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "20",
+      "title" : "Create Addrss Group - Negative Test",
+      "result" : "  You will see error message such as Address object WAN Subnets overlaps with address object LAN Interface IP."
+   },
+   "08" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestDmzRange as the name, choose type as Range, enter an IP range, select Zone Assignment as DMZ;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "8",
+      "title" : "Create new Objects for DMZ Range",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestDmzRange in the addrss objects list with proper information."
+   },
+   "04" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestWanHost as the name, choose type as Host, enter 172.16.2.1 as the IP address, select Zone Assignment as WAN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "4",
+      "title" : "Create new Objects for WAN Host",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestWanHost in the addrss objects list with proper information."
+   },
+   "24" : {
+      "steps" : "  1. Go to Network ->Address Objects page, you should see three view styles:\n  All Address Objects, Custom Address Objects, and Default Address Objects. Choose one by one to see how the view changes",
+      "initial" : "  N/A",
+      "id" : "24",
+      "title" : "Address Object View",
+      "result" : "  Address group and address objects that are displayed should be according to the view style selection."
+   },
+   "10" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestVpnHost as the name, choose type as Host, enter 172.16.3.1 as the IP address, select Zone Assignment as VPN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "10",
+      "title" : "Create new Objects for VPN Host",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestVpnHost in the addrss objects list with proper information."
+   },
+   "19" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add Group button to add address group;\n  2) Enter TestAddressGroupA as the name, select Lan Interface IP and DMZ Interfance IP;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "19",
+      "title" : "Create Addrss Group",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestAddressGroupA in the addrss group list with proper information."
+   },
+   "05" : {
+      "steps" : "  1) Go to Network -> Address Objects page, click Add button to add address object;\n  2) Enter TestWanRange as the name, choose type as Range, enter an IP range, select Zone Assignment as WAN;\n  3) Click OK",
+      "initial" : "  N/A",
+      "id" : "5",
+      "title" : "Create new Objects for WAN Range",
+      "result" : "  In Network -> Address Objects page, you should be able to see TestWanRange in the addrss objects list with proper information."
+   }
+}

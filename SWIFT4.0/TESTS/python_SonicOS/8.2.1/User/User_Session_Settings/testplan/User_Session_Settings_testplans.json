@@ -1,0 +1,72 @@
+{
+"8":{
+  "ID": "8",
+  "Title": "TSR file",
+  "Expected Results": "All the configuration for User session settings is recorded correctly in TSR.",
+  "Initial Setup": "",
+  "Steps": "From FW GUI->Users->Settings page, configure the User sessions settings. Navigate to System->Diagnostics page, download the TSR file, and check the contents."
+},
+"7":{
+"ID": "7",
+"Title": "Inactivity timeout works fine",
+"Expected Results": "All users can be logged out of the DELL SONICWALL after a preconfigured inactivity time.",
+"Initial Setup": "",
+"Steps": "1. Navigate to GUI->Users->Settings page, in \"User session settings\" section, in the inactivity timeout field, enter the number of minutes or use the default value 5 minutes. 2. User login the firewall or authenticated through the DELL SONICWALL."
+},
+"10":{
+"ID": "10",
+"Title": "Don't allow traffic from these services to prevent user logout on inactivity",
+"Expected Results": "when the FTP traffic is timeout, the user status is logout on inactivity.",
+"Initial Setup": "",
+"Steps": "1. Navigate to GUI->Users->Settings page, in \"User session settings\" section, in the dropdown-list of \"Don't allow traffic from these services to prevent user logout on inactivity\". Select one of service from the dropdown-list, such as, FTP, click \"Accept\" button.  3. User login and generate the traffic from the selected service."
+},
+"9":{
+"ID": "9",
+"Title": "Empty the user log name",
+"Expected Results": "The is an alert messsage pops up\"You must enter a user name for logging with 'If SSO fails to identify the user\".'For connections that bypass sso', 'For connections originating externally', 'For other unidentified connections'.",
+"Initial Setup": "",
+"Steps": "1. navigate to GUI->Users->Settings page, in \"User session settings\" section,for logging of connections on which the user is not identified, select the log user name,the default user name is unknown(SSO failed), SSO Bypass, unknown(external) and unknown. 2. Delete the default log user name, then leave the field empty, click \"Accept\"."
+},
+"1":{
+"ID": "1",
+"Title": "Log user name\"Unknown(SSO fails)\" for connections which SSO fails to identify the user",
+"Expected Results": "when SSO fails to identify the user, user session created with user name(Unknown(SSO failed)",
+"Initial Setup": "",
+"Steps": "1. Navigate to GUI->Users->Settings page, in \"User session settings\" section, for logging of connections on which the user is not identified->If SSO fails to identify the user, tick the checkbox of Log user name: Unknown(SSO failed).2. Disable all the SSO Agents, From windowds client pc or generate traffic from a cellphone or tablet or from a Linux PC.3. Navigate to GUI->DashBoard->AppFlow Reports, view the session in Users."
+},
+"2":{
+"ID": "2",
+"Title": "No log user name for connections bypass SSO when unsetting \"create dummy user",
+"Expected Results": "1. For step2, in the enforcement page, the checkbox of \"Log user name SSO Bypass for SSO Bypass is ticked, when connections bypass sso, no user session is created",
+"Initial Setup": "",
+"Steps": "1. Navigate to GUI->Users->Settings page, in \"User session settings\" section, for logging of connections on which the user is not identified->For connections that bypass SSO, tick the checkbox of Log user name: SSO Bypass.2. Navigate to GUI->Users->Settings->Configure SSO->Enforcement page. 3. Add service or object to be bypassed sso, then in client pc, generate the traffic from the service."
+},
+"4":{
+"ID": "4",
+"Title": "Log \"unknown(external)\" user name for connections which originating externally",
+"Expected Results": "when connections originating externally, the session is created with user name: unknown(external).",
+"Initial Setup": "",
+"Steps": "1. Navigate to GUI->Users->Settings page, in \"User session settings\" section, for logging of connections on which the user is not identified->For connections originating externally, tick the checkbox of Log user name: unknown(external).2.Generate something from WAN side. E.g. web traffic to a LAN-side web server with access rules, NAT etc. set to allow it (can use the public server wizard to set that up).3. Navigate to GUI->DashBoard->AppFlow Report, view the session in Users."
+},
+"3":{
+"ID": "3",
+"Title": "Log \"unknown\" for other unidentified connections",
+"Expected Results": "when other connections are unidentified, the session is created with user name (unknown) logged.",
+"Initial Setup": "",
+"Steps": "1. Navigate to GUI->Users->Settings page, in \"User session settings\" section, for logging of connections on which the user is not identified->For other unidentified connections, tick the checkbox of Log user name(unknown).2.Enable SSO on the LAN only (set access rules to allow all users and check the LAN checkbox on the SSO enforcement tab) and then send traffic to the WAN from the DMZ. I think that should get this one used.3. Navigate to GUI->Dashboard->AppFlow Reports, view the sessions under 'Users'."
+},
+"5":{
+"ID": "5",
+"Title": "User connection logout: Inactivity authentication terminate keep-alive, inactivity other keep-alive",
+"Expected Results": "TBD",
+"Initial Setup": "",
+"Steps": "1. Navigate to GUI->Users->Settings page, in \"User session settings\" section, for any remaining user connections on logout, there are two actions users activity logging themselves out or user logout being reported to the DELL SONICWALL. 2. For \"connections requiring user authentication\", select \"Leave them alive\"; For \"other connections\", select \"Leave them alive\"."
+},
+"6":{
+"ID": "6",
+"Title": "User connection logout: Reported authentication keep-alive, reported other keep-alive",
+"Expected Results": "TBD",
+"Initial Setup": "",
+"Steps": "1. Navigate to GUI->Users->Settings page, in \"User session settings\" section, for any remaining user connections on logout, there are two actions users activity logging themselves out or user logout being reported to the DELL SONICWALL. 2. For \"connections requiring user authentication\", select \"Leave them alive\"; For \"other connections\", select \"Leave them alive\"."
+}
+}

@@ -1,0 +1,33 @@
+{
+    "user": {
+        "local": {
+            "user": [
+                {
+                    "name": "tacacs_user",
+                    "domain": "any",
+                    "display_name": "tacacs_user",
+                    "password": "S0nicwall",
+                    "force_password_change": false,
+                    "account_lifetime": {},
+                    "one_time_password": {},
+                    "email_address": "",
+                    "quota_cycle": {},
+                    "session_lifetime": {},
+                    "limit": {
+                        "receive": 0,
+                        "transmit": 0
+                    },
+                    "vpn_client_access": [],
+                    "member_of": [
+                        {
+                            "name": "Trusted Users"
+                        },
+                        {
+                            "name": "Everyone"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

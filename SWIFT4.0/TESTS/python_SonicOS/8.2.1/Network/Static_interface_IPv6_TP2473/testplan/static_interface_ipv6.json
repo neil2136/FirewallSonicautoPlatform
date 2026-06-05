@@ -1,0 +1,100 @@
+{
+   "01": {
+      "steps": "  1) Go to Network>Interface page.\n  2)Choose radio button in View IP Version IPv4 IPv6.",
+      "initial": "PC-----Firewall---Routers----WAN",
+      "id": "01",
+      "title": "GUI: IPv6 interface page display",
+      "result": "  1) By radio button clicking, it can switch between IPv4 interface page and IPv6 interface page.\n  2)IPv6 interface settings and status are displayed correctly, including Name / Zone / IP Assignment / IP Address (automatic, autonomous, static, DHCP)/Prefix length / IP Type / Status / Comment."
+   },
+   "10": {
+      "steps": "  1) Go to Network>Interface page and choose IPv6 radio button in View IP Version IPv4 IPv6, open configuration page of an interface.\n  2)Choose radio button in View IP Version IPv4 IPv6.",
+      "initial": "PC-----Firewall---Routers----WAN",
+      "id": "1",
+      "title": "Disable all IPv6 Traffic on the Interface option",
+      "result": "  1) When Disable all IPv6 Traffic on the Interface checkbox enabled, interface will stop handling all IPv6 traffic and it wont infect other interface.\n  2)When Disable all IPv6 Traffic on the Interface checkbox disabled, interface will handle IPv6 traffic."
+   },
+   "11": {
+      "steps": "  1) Go to Network>Interface page and choose IPv6 radio button in View IP Version IPv4 IPv6, open configuration page of an interface.\n  2)On Advanced page, enable/disable checkbox Enable Listening to Router Advertisement.",
+      "initial": "PC-----Firewall---Routers----WAN",
+      "id": "11",
+      "title": "Enable Listening to Router Advertisement option",
+      "result": "  1) When Enable Listening to Router Advertisement enabled, interface will receive all incoming Router Advertisement message.\n  2)When Enable Listening to Router Advertisement disabled, interface filter all incoming Router Advertisement message. All assigned autonomous IPv6 address will be removed from this interface.\n  3)This option is not visible for Auto mode. In Auto mode, it is always enabled."
+   },
+   "25": {
+      "steps": "  1) Go to Network>Interface page and choose IPv6 radio button in View IP Version IPv4 IPv6.\n  2)Open configuration page of an interface, say X1, X1 WAN IPv6 auto mode;\n  3)Enable HTTPS management, test HTTPS management via this auto IPv6 address;\n  4)Change IPv6 mode from auto to static, test step 3 again;  5)Change IPv6 mode to DHCPv6, test step 3 again;\n  6)Disable HTTPS management.",
+      "initial": "PC-----Firewall---Routers----WAN",
+      "id": "25",
+      "title": "HTTPS Management  interface filter all incoming Router Advertisement message. All assigned aufor interface",
+      "result": "  1) step 3, 4, 5, When HTTPs check box enabled, it is able to https manage firewall from this interface and related access rule auto added.\n  2)in step 6, When HTTPs check box disabled, it is not allowed https manage and related access rules are removed if exiting before."
+   },
+   "33": {
+      "steps": "  1) Go to Network>Interface page and choose IPv6 radio button in View IP Version IPv4 IPv6.\n  2)Open configuration page of the interface and do some configuration.\n  3)Import/Export of the preference.",
+      "initial": "PC-----Firewall---Routers----WAN",
+      "id": "33",
+      "title": "Preference support for Static Mode",
+      "result": "  1)Export and import is validated.\n  2)Configuration keeps intact."
+   },
+   "4": {
+      "steps": "  1) Go to Network>Interface page and choose IPv6 radio button in View IP Version IPv4 IPv6.\n  2)Click edit icon to open interface configuration page.\n  3)Choose static for IP assignment.\n  4)Assign legal/ wrong format/ conflicted IPv6 address.\n  5)Assign legal/wrong format/ incorrect Prefix.\n  6)For WAN zone interface, configuration default gateway and DNS servers.\n  7)Modify assigned IPv6 address and prefix.\n  8)Change IP assignment mode on IPv4 and IPv6 interface page.\n  9) Check interface related AO.",
+      "initial": "PC-----Firewall---Routers----WAN",
+      "id": "4",
+      "title": "IP assignment as Static mode",
+      "result": "  1)For step 3, it is able to choose static mode.\n  2)For step 4, only legal IPv6 address configuration is acceptable.\n  3) For step 5, only legal prefix configuration is acceptable.\n  4)For step 6, default gateway and DNS servers configuration are available and only available for WAN zone interface. After configuration, related info are shown on Network>Routing page and Network DNS page.\n  5)For step 7, IPv6 address and prefix are able to modify and interface info display will update accordingly.\n  6)For step 8, mode change is allowed. After mode change on IPv6 page, assigned static IP is no longer exists. On IPv4 page, when change mode to transparent mode, IPv6 settings wont change.\n  7)For step 9, interface related AO shows correct info."
+   },
+   "9": {
+      "steps": "  1) Go to Network>Interface page and choose IPv6 radio button in View IP Version IPv4 IPv6.\n  2)Open configuration page of the interface and do some configuration.\n  3)Import/Export of the preference.\n  3)On IPv6 address part, verify display of added additional static IPv6 address.\n  4)Verify Add Address / Delete / Delete All button.\n  5)On Add Static IPv6 Address page, input IPv6 address and Prefix Length.\n  6)Enable Advertise Subnet Prefix of Static IPv6 Address check box.\n  7)Add multiply address.",
+      "initial": "PC-----Firewall---Routers----WAN",
+      "id": "9",
+      "title": "IPv6 Address configuration on Advanced table",
+      "result": "  1)Verify IPv6 Address add part only available when interface works in static mode.\n  2)For step 3, all manually added IPv6 address could be displayed correctly.\n  3)For step 4, Add Address / Delete / Delete All button works correctly.\n  4) For step 5, only valid IPv6 address and Prefix Length are acceptable and there is error message for wrong put.\n  5)For step 6, if enabled, a default prefix is added into interface advertising prefix list. This prefix is the subnet prefix of this static address.\n  6)Able to add multiply address (maximum 9 addresses) and address will be display for this interface."
+   },
+   "36": {
+      "steps": "  1) Configure a WAN interface X1, it is the default WAN, and set its IPv6 ip-assignment as static, configure 4600::1 as static gateway, enable listen to RA, but do not connect it to router right now.\n  2)Check routing table, there will be a default route, use 4600::1 as gateway,and X1 is the output interface, metric is 20, check packets int FW, no RA received by now; \n  3)Connect it to a router, enable RA, check packets in FW, it received RA from router; \n  4)On IPv6 address part, verify display of added additional static IPv6 address.\n  4)Check routing table, it will generated another default route learned from RA, metric is 50, check its gateway, it should be RA message's source IP.",
+      "initial": "PC-----Firewall---Routers----WAN",
+      "id": "36",
+      "title": "Refer to DTS#140031: IPv6 default route learned from RA, check its gateway.",
+      "result": "  1) In steps 4) Check routing table, it will generated another default route learned from RA, metric is 50, check its gateway, it should be RA message's source IP."
+   },
+   "39": {
+      "steps": "  1) Configure IPv6 default WAN interface (e.g, X1) as static, set IPv6 address, prefix and gateway, e.g. IPv6 address: 2001:470:80b7:6732::2650:1 (take admin vlan's prefix as example), prefix: 64, gateway fills the global address in the same subnet, could be another FW's X1 dhcpv6 address which in the same admin vlan.\n  2) Check DUT IPv6 routing page, the default route should be generated with metric as 20, and the gateway should be the configured gateway address. \n  3)Send  LAN to WAN IPv6 traffic, WAN ipv6 address should be different ipv6 subnet, like '2001:470:80b7:8c8:2d83:a9a6:c048:c4c0'  (Note: need configure IPv6 LAN to WAN NAT policy if the LAN side used IP not advertised in WAN, source translated ip is X1 IPv6 Primary Static Address) Check the forwarded icmpv6 request packet. \n  4)On IPv6 address part, verify display of added additional static IPv6 address.\n  4)Edit WAN interface to modify the gateway address to fe80::1.\n  5)Repeat step2, verify the default route gateway address is also get updated.\n 6)Repeat step3, verify the traffic is successful. Check the forwarded icmpv6 request packet.",
+      "initial": "PC-----Firewall---Routers----WAN",
+      "id": "39",
+      "title": "[From DTS189811] Verify the function after change IPv6 WAN static gateway address",
+      "result": "  1) configuration saved successfully.\n  2)the default route is generated with metric as 20, and the gateway should be the configured gateway address.  3)LAN to WAN IPv6 traffic is fail. Check forwarded icmpv6 request packet, its destination mac should be other box's X1 MAC address.\n  4)changes saved successfully.\n  5) the default route gateway address get updated to the new configured gateway.\n  6)LAN to WAN IPv6 traffic is successful. Check the forwarded icmpv6 request packet, its destination mac should be router's MAC address."
+   },
+   "1511323": {
+      "steps": "\n\n    Go to Network>Interface page and choose IPv6 radio button in View IP Version IPv4 IPv6.\n    Open configuration page of an interface.\n    Enable HTTP management check box then disable it.\n\n",
+      "initial": "",
+      "id": "1511323",
+      "title": "HTTP Management for interface",
+      "result": "When HTTP check box enabled, it is able to http manage firewall from this interface and related access rule auto added.\nWhen HTTP check box disabled, it is not allowed http manage and related access rules are removed if exiting before."
+   },
+   "1511326": {
+      "steps": "\n\n    Go to Network>Interface page and choose IPv6 radio button in View IP Version IPv4 IPv6.\n    Open configuration page of the interface and do some configuration.\n    Check related address object: Xi IPv6 Link-Local Address / Xi IPv6 Primary Static Address / Xi IPv6 Primary Static Address Subnet.\n    Check related address object group: Firewalled IPv6 Subnets / Zone Interface IPv6 Addresses / Zone IPv6 Subnets / Xi IPv6 addresses / Xi Management IPv6 Addresses\n\n",
+      "initial": "",
+      "id": "1511326",
+      "title": "Address object and group info is correct.",
+      "result": "Address object/Group support for Static Mode"
+   },
+   "1511331": {
+      "steps": "1, configure IPV6 X0 LAN interface, and enable HTTPS management\n2, attempting to login in with admin credentials",
+      "initial": "",
+      "id": "1511331",
+      "title": "no errors with https management when managed IP is a temporary IPV6 address ",
+      "result": "no errors when login from X0 temporary IPV6 address"
+   },
+   "1533076": {
+      "steps": "\n\n    Go to Device/Settings/Administration page, Disable IPv6.\n    Go to Network/System/Interfaces page, select IPv6, check IPv6 interface status.\n    Go to Firmware &Local Backups page, Boot current firmware with Factory Default Configuration.\n    After FW bootup, check ipv6 status and ipv6 interface status\n    Restart System, after FW bootup, check ipv6 status and ipv6 interface status.\n    Configure X1 to DHCPv6 mode,  check if X1 can get ipv6 address.\n\n",
+      "initial": "",
+      "id": "1533076",
+      "title": "Check IPv6 Link-Local Address after disable/enable IPv6.",
+      "result": "1, Disable IPv6 successfully.\n2, IP ASSIGHMENT shows 'Disabled' and IP ADDRESS/PREFIX LENGTH shows null.\n3, FW do factory default successfully.\n4, IPv6 is enabled and IPv6 link local address works on Interfaces.\n5, IPv6 is enabled and IPv6 link local address works on Interfaces.\n6, X1 can get IPv6 address successfully."
+   },
+   "2370506": {
+      "steps": "\n\n    Interface X1, RA enabled, and has static IPv6 address configured.\n    2. MGMT interface are in the same network with X\n\n    Test traffic through X1.\n\n",
+      "initial": "",
+      "id": "2370506",
+      "title": " Verify traffic succeed interface when it is in the same network with MGMT interface. ",
+      "result": "in step 3, traffic through X1 should be succeed."
+   }
+}

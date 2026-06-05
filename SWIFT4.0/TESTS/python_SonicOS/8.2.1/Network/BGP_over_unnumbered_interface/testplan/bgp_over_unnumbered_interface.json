@@ -1,0 +1,173 @@
+{
+  "tc01": {
+    "steps": " \n\nInitial Environment\n\n    configure DUT1\n    X0:192.168.1.1\n    X1:WAN DHCP mode\n    X2:192.168.56.1\n\n    configure DUT1\n    X0:192.168.2.1\n    X1:WAN DHCP mode\n    X2:192.168.50.1\n\n    1.establish unnumbered vpn between DUT1 and DUT2,named BGP1 and BGP2\n    2.enable BGP and configured from CLI from DUT1\n    router bgp 56\n    neighbor 192.168.50.1 remote-as 56\n    neighbor 192.168.50.1 update-source 192.168.56.1\n    3.add static route on DUT1,to 192.158.50.1 from tunnel BGP1\n    4.enable BGP and configured from CLI from DUT2\n    router bgp 56\n    neighbor 192.168.56.1 remote-as 56\n    neighbor 192.168.56.1 update-source 192.168.50.1\n    5.add static route on DUT1,to 192.198.56.1 from tunnel BGP2\n    6.check if IBGP neighbor can be established\n\n",
+    "atm_id": " c5fc1012-a90b-46ff-9c6e-49b6c0c85dbe ",
+    "initial": "",
+    "id": "tc01",
+    "title": " IBGP over unnumbered VPN can established ",
+    "description": "",
+    "result": "IBGP over unnumbered VPN can established "
+  },
+  "tc02": {
+    "steps": "\n\nInitial Environment\n\n    configure DUT1\n    X0:192.168.1.1\n    X1:WAN DHCP mode\n    X2:192.168.56.1\n\n    configure DUT1\n    X0:192.168.2.1\n    X1:WAN DHCP mode\n    X2:192.168.50.1\n\n    1.establish unnumbered vpn between DUT1 and DUT2,named BGP1 and BGP2\n    2.enable BGP and configured from CLI from DUT1\n    router bgp 56\n    neighbor 192.168.50.1 remote-as 50\n    neighbor 192.168.50.1 update-source 192.168.56.1\n    3.add static route on DUT1,to 192.158.50.1 from tunnel BGP1\n    4.enable BGP and configured from CLI from DUT2\n    router bgp 50\n    neighbor 192.168.56.1 remote-as 56\n    neighbor 192.168.56.1 update-source 192.168.50.1\n    5.add static route on DUT1,to 192.198.56.1 from tunnel BGP2\n    6.check if EBGP neighbor can be established\n\n ",
+    "atm_id": "8c33b706-98c4-4a10-ba1c-f8406f6590af  ",
+    "initial": "",
+    "id": "tc02",
+    "title": " EBGP over unnumbered VPN can established ",
+    "description": "",
+    "result": "EBGP over unnumbered VPN can established"
+  },
+  "tc03": {
+    "steps": " 1.View the Route Policies on the Network > Routing page of the DUT. 2.in config-routing mode, use the \u001Cnsm \u001Dcommand. Then use the \u001Cshow ip route \u001D command.",
+    "atm_id": "a2ed2ea2-c5c9-4320-afd7-4646d0ec6458 ",
+    "initial": "",
+    "id": "tc03",
+    "title": " BGP establishes session on unnumbered interface – route for advertised network prefix is added in the GUI Route Policy table and NSM ip route database. ",
+    "description": "",
+    "result": " 1 Routing information is displayed in GUI route policy 2 Routing information is displayed in the console window."
+  },
+  "tc04": {
+    "steps": " in config-routing mode use CLI command:\nrouting->BGP>\"show ip BGP ipv4 unicast\"",
+    "atm_id": " 5cc51892-9c18-447d-868c-0ba3068e976d ",
+    "initial": "",
+    "id": "tc04",
+    "title": " BGP establishes session on unnumbered interface – ZebOS commands \"show ip BGP ipv4 unicast\" display routing information ",
+    "description": "",
+    "result": "BGP establishes session on unnumbered interface – ZebOS commands \"show ip BGP ipv4 unicast\"  display routing information "
+  },
+  "tc05": {
+    "steps": "Click the BGP Status button in the upper right corner of the Network > Routing page\nof the DUT.",
+    "atm_id": "4493fc61-d79b-443d-987e-aa3ad48f300a ",
+    "initial": "",
+    "id": "tc05",
+    "title": " BGP establishes session on unnumbered interface – BGP status Summary is shown after click \"show BGP\" button on GUI ",
+    "description": "",
+    "result": "The showBGPSummary popup window is displayed. It shows BGP Status Summary, neighbor , and info about established connection. "
+  },
+  "tc08": {
+    "steps": " \n\nInitial Environment\n\n    configure DUT1\n    X0:192.168.1.1\n    X1:WAN DHCP mode\n    X2:192.168.56.1\n\n    configure DUT1\n    X0:192.168.2.1\n    X1:WAN DHCP mode\n    X2:192.168.50.1\n\n    1.establish unnumbered vpn between DUT1 and DUT2,named BGP1 and BGP2\n    2.enable BGP and configured from CLI from DUT1,and redistribute connected route\n    router bgp 56\n    neighbor 192.168.50.1 remote-as 56\n    neighbor 192.168.50.1 update-source 192.168.56.1\n    3.add static route on DUT1,to 192.158.50.1 from tunnel BGP1\n    4.enable BGP and configured from CLI from DUT2,and redistribute connected route\n    router bgp 56\n    neighbor 192.168.56.1 remote-as 56\n    neighbor 192.168.56.1 update-source 192.168.50.1\n    5.add static route on DUT1,to 192.198.56.1 from tunnel BGP2\n    6.check if BGP neighbor can be established,and can learn connected route from each other\n    7.add related ACL,and ping from a PC on X0 subnet of  DUT1 to a PC on X0 subnet of DUT2.\n\n",
+    "atm_id": "eded370f-6b31-4add-b8e2-138c1b3bbad0",
+    "initial": "",
+    "id": "tc08",
+    "title": " Verify the traffic between DUT and the network prefix advertised by BGP over unnumbered interface ",
+    "description": "",
+    "result": "Verify the traffic between DUT and the network prefix advertised by BGP over unnumbered interface"
+  },
+  "tc11": {
+    "steps": "\n\n    follow test steps of case 2 to configure EBGP between DUT1 and DUT2,and redistribute static route from DUT2\n    Verify  route for advertised network prefix is added in GUI Route Policy table of DUT1\n    Verify  route for advertised network prefix is added in  NSM ip route database of DUT1\n    show ip BGP ipv4 unicast on both DUTs\n    send traffic match the learing route policy,check if hit the route\n    add a static routing,repeat step 2-5\n    delete a static routing,repeat step 2-5\n\n ",
+    "atm_id": "5dc1c514-37c6-403c-bdae-234e1b9db62d  ",
+    "initial": "",
+    "id": "tc11",
+    "title": " Verify static networks can be advertised via BGP over unnumbered tunnel interface ",
+    "description": "",
+    "result": "static networks can be advertised via BGP over unnumbered tunnel interface "
+  },
+  "tc13": {
+    "steps": " \n\n1.follow test steps of case 2 to configure EBGP between DUT1 and DUT2, redistribute connected route from DUT2\n\n    Verify other neighbor’s BGP tables\n    Verify other neighbor’s NSM tables.\n    Verify other neighbor’s PBR.\n    send traffic to the learned routing,check if hit the route\n    add a vlan interface,and configure static ip address,repeat step 2-4\n    delete the added vlan interface,repeat step 2-4\n\n",
+    "atm_id": "85b54357-441d-4f75-9c94-2394e9e2af02  ",
+    "initial": "",
+    "id": "tc13",
+    "title": " Verify connected networks can be advertised via BGP over unnumbered tunnel interface ",
+    "description": "",
+    "result": "connected networks can be advertised via BGP over unnumbered tunnel interface "
+  },
+  "tc15": {
+    "steps": " ",
+    "atm_id": "Verify redistribute ospf routes via BGP over unnumbered ",
+    "initial": "",
+    "id": "tc15",
+    "title": "Verify redistribute ospf routes via BGP over unnumbered  ",
+    "description": "",
+    "result": " "
+  },
+  "tc19": {
+    "steps": " \n\n    follow test steps of case 2 to configure EBGP between DUT1 and DUT2,\"network 192.168.56.0/24\" from DUT1,\"network 192.168.50.0/24\" from DUT2\n    Verify  route for advertised network prefix is added in GUI Route Policy table of both DUTs\n    Verify  route for advertised network prefix is added in  NSM ip route database of both DUTs\n    show ip BGP ipv4 unicast on both DUTs\n    send traffic match the learing route policy,check if hit the route\n\n",
+    "atm_id": "7ceae0f0-fe8e-438d-8b10-da55683e73be ",
+    "initial": "",
+    "id": "tc19",
+    "title": " Verify advertise a route via Network command over unnumbered tunnel interface ",
+    "description": "",
+    "result": " DUT1 will learn network 192.168.50.0/24\nDUT2 will learn network 192.168.56.0/24"
+  },
+  "tc22": {
+    "steps": "\n\n    after bgp over unnumbered interface established,change the VPN policy name\n    check related routing\n\n ",
+    "atm_id": "a74e597a-80fb-4453-b4d8-50d0416460a5 ",
+    "initial": "",
+    "id": "tc22",
+    "title": "Verify after VPN policy name being changed,the BGP related routes interface name also changed ",
+    "description": "",
+    "result": " \n\n    name of the added static routing for unnumbered interface changed\n    the BGP learned routes interface name also changed\n\n"
+  },
+  "tc23": {
+    "steps": "\n\n    diable the VPN policy\n    enable the VPN policy\n    check if BGP over unnumbered tunnel interface can be re-established\n\n ",
+    "atm_id": "46a5f1c8-aea7-467c-abb0-e463a734c25c ",
+    "initial": "",
+    "id": "tc23",
+    "title": " Verify BGP over unnumbered tunnel interface can be re-established afer disable and enable the VPN policy ",
+    "description": "",
+    "result": " BGP over unnumbered tunnel interface can be re-established afer disable and enable the VPN policy"
+  },
+  "tc28": {
+    "steps": " ",
+    "atm_id": "b3d1f0f0-5589-4358-8cab-5bc2eb29b019 ",
+    "initial": "",
+    "id": "tc28",
+    "title": " All BGP over unnumbered tunnel interface related settings are intact after FW restart. ",
+    "description": "",
+    "result": " "
+  },
+  "tc29": {
+    "steps": " ",
+    "atm_id": "67a92e2f-c593-4619-b1f3-1e6102981f28",
+    "initial": "",
+    "id": "tc29",
+    "title": "  All BGP over unnumbered tunnel interface related settings are intact after import prefs file. ",
+    "description": "",
+    "result": " "
+  },
+  "tc30": {
+    "steps": " 1.On Unit 1, configure your preferred BGP settings (as much as possible), then save all the BGP related settings via \u001Cwrite file \u001D.   2. Let Unit 2 as a BGP peer, configure both Unit 1 and Unit 2 properly to make sure Unit 1 can get several BGP routes from Unit 2.          3. Then login Unit 1 GUI to export the current TSR. Check if the TSR includes all configured BGP settings. Also verify that if the BGP route info can be found in the TSR. See Result 1.",
+    "atm_id": "5f58ae67-95d7-4718-85da-152cc4220307  ",
+    "initial": "",
+    "id": "tc30",
+    "title": " All BGP over unnumbered tunnel interface related settings and current BGP route info should be included in the exported TSR. ",
+    "description": "",
+    "result": " All BGP over unnumbered tunnel interface related settings and current BGP route info should be included in the exported TSR. All BGP related settings and current BGP route info should be included in the exported TSR."
+  },
+  "tc38": {
+    "steps": "\n\nInitial Environment\n\n    configure DUT1\n    X0:192.168.1.1\n    X1:WAN DHCP mode\n    X2:V56:192.168.56.1(which is normal VLAN interface)\n\n    configure DUT1\n    X0:192.168.2.1\n    X1:WAN DHCP mode\n    X2:V50:192.168.50.1(which is  normal VLAN interface)\n\n    1.establish unnumbered vpn between DUT1 and DUT2,named BGP1 and BGP2\n    2.enable BGP and configured from CLI from DUT1\n    router bgp 56\n    neighbor 192.168.50.1 remote-as 56\n    neighbor 192.168.50.1 update-source 192.168.56.1\n    3.add static route on DUT1,to 192.158.50.1 from tunnel BGP1\n    4.enable BGP and configured from CLI from the other dut\n    NSA5600\n    router bgp 56\n    neighbor 192.168.56.1 remote-as 56\n    neighbor 192.168.56.1 update-source 192.168.50.1\n    5.add static route on DUT1,to 192.198.56.1 from tunnel BGP2\n    6.check if BGP neighbor can be established\n\n ",
+    "atm_id": " 453799ed-d72b-4226-b983-87162b82dc33 ",
+    "initial": "",
+    "id": "tc38",
+    "title": " Verify BGP over unnumber tunnel interface function when update source interface is VLAN interface ",
+    "description": "",
+    "result": "BGP over unnumber tunnel interface function when update source interface is VLAN interface "
+  },
+  "tc40": {
+    "steps": "\n\n    configure multiple tunnel VPN\n    enable BGP over numbered tunnel interface\n    enable BGP over unnumbered tunnel interface\n    check if BGP over unnumbered and numbered interface function well\n\n ",
+    "atm_id": " c39fb216-e5ed-407d-ae88-3abff23243be ",
+    "initial": "",
+    "id": "tc40",
+    "title": " Verify BGP works well when have both BGP over numbered interface and BGP over unnumber interface configured ",
+    "description": "",
+    "result": " BGP works well when have both BGP over numbered interface and BGP over unnumber interface configured"
+  },
+  "tc43": {
+    "steps": " \n\n    connect interface x1 of Fw1 and interface x1 of Fw2 via Switch,not directly connected,may in different WAN subnet,need routing to reach each other\n    set up tunnel VPN between Fw1 and Fw2 via X1\n    enable BGP over  unnumbered interface\n    verify if BGP can establishes over unnumbered interface1\n\n",
+    "atm_id": " d961a633-fd56-46af-a906-0900eceae31f ",
+    "initial": "",
+    "id": "tc43",
+    "title": " Test distant neighbors topology: Fw1 ---- Switch --------Fw2,set up VPN Tunnel between fw1 and fw2,verify BGP can establishes over unnumbered interface ",
+    "description": "",
+    "result": " BGP can establishes over unnumbered interface"
+  },
+  "tc44": {
+    "steps": "\n\n    directly connect interface x1 of Fw1 and interface x1 of Fw2\n    set up tunnel VPN between Fw1 and Fw2 via X1\n    enable BGP over  unnumbered interface\n    verify if BGP can establishes over unnumbered interface\n\n ",
+    "atm_id": "2a53172e-5dc2-4d73-bcb3-454af03b82f7  ",
+    "initial": "",
+    "id": "tc44",
+    "title": "Test directly connected neighbors topology: Fw1 ---- Fw2,set up VPN Tunnel between fw1 and fw2,verify BGP can establishes over unnumbered interface ",
+    "description": "",
+    "result": "BGP can establishes over unnumbered interface"
+  }
+}

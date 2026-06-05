@@ -1,0 +1,6 @@
+# PPP options for the PPPoE server
+# LIC: GPL
+ms-dns 156.154.54.200
+local
+-pap
++chap

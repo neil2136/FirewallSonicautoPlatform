@@ -1,0 +1,112 @@
+{
+   "1511552" : {
+      "steps" : "  see title",
+      "priority" : "Smoke",
+      "atm_id" : "7d971131-1d1a-4968-adc9-8fe7b02553a2",
+      "initial" : "  see title",
+      "id" : "1511552",
+      "title" : "add a new VPN policy. Go to \u00c2\u00af\u00c2\u00bf\u00c2\u00bdIKE (Phase 1) Proposal\u00c2\u00af\u00c2\u00bf\u00c2\u00bd in \u00c2\u00af\u00c2\u00bf\u00c2\u00bdProposals\u00c2\u00af\u00c2\u00bf\u00c2\u00bd tab. Select \u00c2\u00af\u00c2\u00bf\u00c2\u00bdSHA256\u00c2\u00af\u00c2\u00bf\u00c2\u00bd for authentication. Save the policy and check the VPN policy table, \u00c2\u00af\u00c2\u00bf\u00c2\u00bdHMAC-SHA256-128\u00c2\u00af\u00c2\u00bf\u00c2\u00bd will been",
+      "description" : "Original ID: 1\nOriginal Title: add a new VPN policy. Go to \u00c2\u00af\u00c2\u00bf\u00c2\u00bdIKE (Phase 1) Proposal\u00c2\u00af\u00c2\u00bf\u00c2\u00bd in \u00c2\u00af\u00c2\u00bf\u00c2\u00bdProposals\u00c2\u00af\u00c2\u00bf\u00c2\u00bd tab. Select \u00c2\u00af\u00c2\u00bf\u00c2\u00bdSHA256\u00c2\u00af\u00c2\u00bf\u00c2\u00bd for authentication. Save the policy and check the VPN policy table, \u00c2\u00af\u00c2\u00bf\u00c2\u00bdHMAC-SHA256-128\u00c2\u00af\u00c2\u00bf\u00c2\u00bd will been shown.\nOriginal Description: see title",
+      "result" : "  see title"
+   },
+   "1511556" : {
+      "steps" : "  1. configure tunnel all vpn policy with SHA2 2. establish tunnel and check traffic",
+      "priority" : "Smoke",
+      "atm_id" : "f12f3ddc-9764-4e50-a93e-8e646ec49cbb",
+      "initial" : "  None",
+      "id" : "1511556",
+      "title" : "Add a tunnel all VPN policy with SHA2 as authentication, tunnel should be built and traffic works fine",
+      "description" : "Original ID: 24\nOriginal Title: Add a tunnel all VPN policy with SHA2 as authentication, tunnel should be built and traffic works fine\nOriginal Description: This case is designed to test tunnel all vpn policy with SHA2, verify feature works fine.",
+      "result" : "  it should work fine"
+   },
+   "1511562" : {
+      "steps" : "  1. Add a vpn policy with gw 0.0.0.0 and SHA256 as authentication method",
+      "priority" : "Smoke",
+      "atm_id" : "9479cca3-96a5-4397-8bc1-07c10e5a37d7",
+      "initial" : "  None",
+      "id" : "1511562",
+      "title" : "Add a global vpn policy with SHA256 as authentication method",
+      "description" : "Original ID: 8\nOriginal Title: Add a global vpn policy with SHA256 as authentication method\nOriginal Description: This case is designed to it could be able to add a global vpn policy with SHA256 as authentication method",
+      "result" : "  configuration should succeed."
+   },
+   "1511560" : {
+      "steps" : "  1. configure a S2S vpn policy, select 3rd mode with non-SHA256 certificate, select SHA256 as authentication method, select Main as Exchange Mode\n  2. establish tunnel\n  3. test traffic\n  4. repeat step 1 to 3, in step 3, select Aggressive and IKEv2 as Exchange Mode",
+      "priority" : "Smoke",
+      "atm_id" : "77e8d196-307e-4e59-bc7f-d34997231010",
+      "initial" : "  None",
+      "id" : "1511560",
+      "title" : "Add 3rd party policy with non-SHA256 certificate, select SHA2 as authenticate method, check tunnel and traffic",
+      "description" : "Original ID: 39\nOriginal Title: Add 3rd party policy with non-SHA256 certificate, select SHA2 as authenticate method, check tunnel and traffic\nOriginal Description: This case is designed to test IPSec traffic when policy is configured with SHA256 for S2S 3rd vpn policy with non-SHA256 certificate.",
+      "result" : "  tunnel should be able to be set up, and log displays correctly, traffic should work fine"
+   },
+   "1511553" : {
+      "steps" : "  1. configure a manual key vpn policy, select AES-XCBC as authentication method, and configure key length, click OK, there will be alert window prompt to tell you how long the key length should be, verify they are correct.",
+      "priority" : "Smoke",
+      "atm_id" : "ca37b394-f464-45f2-bc82-d15a0ddd8028",
+      "initial" : "  None",
+      "id" : "1511553",
+      "title" : "Add a new VPN policy with manual key, select \u00c2\u00af\u00c2\u00bf\u00c2\u00bdAES-XCBC\u00c2\u00af\u00c2\u00bf\u00c2\u00bd as authentication method, check key length and alert window.",
+      "description" : "Original ID: 10\r\nOriginal Title: Add a new VPN policy with manual key, select \u00c2\u00af\u00c2\u00bf\u00c2\u00bdAES-XCBC\u00c2\u00af\u00c2\u00bf\u00c2\u00bd as authentication method, check key length and alert window.\r\nOriginal Description: This case is designed to test SHA2 support with manual key vpn policy",
+      "result" : "  see steps"
+   },
+   "1511561" : {
+      "steps" : "  see title",
+      "priority" : "Full_Regression",
+      "atm_id" : "bbe0b458-9337-4140-a51e-f5a5251797df",
+      "initial" : "  see title",
+      "id" : "1511561",
+      "title" : "Check Wizard of VPN, SHA256 should be available",
+      "description" : "Original ID: 5\r\nOriginal Title: Check Wizard of VPN, SHA256 should be available\r\nOriginal Description: see title",
+      "result" : "  see title"
+   },
+   "1511554" : {
+      "steps" : "  1. configure a S2S vpn policy, select preshared mode, and select SHA256 as phase2 authentication method, select Main as Exchange Mode\n  2. establish tunnel\n  3. test traffic\n  4. repeat step 1 to 3, in step 3, select Aggressive and IKEv2 as Exchange Mode",
+      "priority" : "Smoke",
+      "atm_id" : "bb6887cf-f948-474f-abe0-4d544909f052",
+      "initial" : "  None",
+      "id" : "1511554",
+      "title" : "Add a S2S preshared VPN policy with SHA256 as phase2 authentication method, tunnel should be built and traffic works fine. (Test Main/Aggressive/IKEv2)",
+      "description" : "Original ID: 12\nOriginal Title: Add a S2S preshared VPN policy with SHA256 as phase2 authentication method, tunnel should be built and traffic works fine. (Test Main/Aggressive/IKEv2)\nOriginal Description: This case is designed to test IPSec traffic when policy is configured with SHA256 for S2S preshared vpn policy.",
+      "result" : "  tunnel should be able to be set up, and log displays correctly, traffic should work fine"
+   },
+   "1511555" : {
+      "steps" : "  1. configure a S2S vpn policy, select 3rd mode, and select SHA256 as phase1 authentication method, select Main as Exchange Mode\n  2. establish tunnel\n  3. test traffic\n  4. repeat step 1 to 3, in step 3, select Aggressive and IKEv2 as Exchange Mode",
+      "priority" : "Smoke",
+      "atm_id" : "99f392b0-db2f-4023-9da4-5f97051a1743",
+      "initial" : "  None",
+      "id" : "1511555",
+      "title" : "Add a S2S 3rd VPN policy with SHA256 as phase1 authentication method, tunnel should be built and traffic works fine. (Test Main/Aggressive/IKEv2)",
+      "description" : "Original ID: 21\nOriginal Title: Add a S2S 3rd VPN policy with SHA256 as phase1 authentication method, tunnel should be built and traffic works fine. (Test Main/Aggressive/IKEv2)\nOriginal Description: This case is designed to test IPSec traffic when policy is configured with SHA256 for S2S 3rd vpn policy.",
+      "result" : "  tunnel should be able to be set up, and log displays correctly, traffic should work fine"
+   },
+   "1511559" : {
+      "steps" : "  Please use TC11-14 to configure vpn policy, then export prefs and import prefs, verify that prefs saved the configuration for SHA2 vpn policy",
+      "priority" : "Full_Regression",
+      "atm_id" : "8ecac4d7-b6d3-4286-aed7-930a603660bb",
+      "initial" : "  None",
+      "id" : "1511559",
+      "title" : "Prefs: check prefs in TC11-14",
+      "description" : "Original ID: 33\r\nOriginal Title: Prefs: check prefs in TC11-14\r\nOriginal Description: This case is designed to check tsr records correct info for SHA2 configuration.",
+      "result" : "  see steps"
+   },
+   "1511557" : {
+      "steps" : "  1. configure WANGroupVPN policy with phase 1 authentication method set as SHA2, for example SHA256. Phase 2 authentication could be the same method. Under preshared secret way. 2. Add local user with VPN Access to LAN subnets. 3. Connect GVC client from WAN PC.",
+      "priority" : "Smoke",
+      "atm_id" : "84a1f56d-f000-4968-8d5e-646bb9cabf00",
+      "initial" : "  None",
+      "id" : "1511557",
+      "title" : "Connect a GVC client to WANGroup VPN which is configured with SHA2, check traffic",
+      "description" : "Original ID: 26\r\nOriginal Title: Connect a GVC client to WANGroup VPN which is configured with SHA2, check traffic\r\nOriginal Description: This case is designed to test WANGroupVPN with SHA2, GVC client could connect to FW when authentication method is configured with SHA2",
+      "result" : "  In step 3, the connection is up. WAN PC can ping LAN PC of FW."
+   },
+   "1511558" : {
+      "steps" : "  see title",
+      "priority" : "Sanity",
+      "atm_id" : "95b50fba-fba9-465c-b4cd-64332a827d40",
+      "initial" : "  see title",
+      "id" : "1511558",
+      "title" : "The same as TC-2, but choose \u00c2\u00af\u00c2\u00bf\u00c2\u00bdAES-XCBC\u00c2\u00af\u00c2\u00bf\u00c2\u00bd this time. \u00c2\u00af\u00c2\u00bf\u00c2\u00bdHMAC-AES-XCBC-96\u00c2\u00af\u00c2\u00bf\u00c2\u00bd will be shown in the list.",
+      "description" : "Original ID: 3\r\nOriginal Title: The same as TC-2, but choose \u00c2\u00af\u00c2\u00bf\u00c2\u00bdAES-XCBC\u00c2\u00af\u00c2\u00bf\u00c2\u00bd this time. \u00c2\u00af\u00c2\u00bf\u00c2\u00bdHMAC-AES-XCBC-96\u00c2\u00af\u00c2\u00bf\u00c2\u00bd will be shown in the list.\r\nOriginal Description: see title",
+      "result" : "  see title"
+   }
+}

@@ -1,0 +1,26 @@
+$TTL 86400
+@       IN      SOA     dns.baidu.com. dnsv6.baidu.com. (
+                                1       ;serial
+                                1D      ;refresh
+                                1H      ;retry
+                                1W      ;expire
+                                3H )    ;minimum
+@               IN      NS      dns.baidu.com.
+pc1.baidu.com. IN      A       192.168.168.10
+pc2.baidu.com. IN      A       12.12.1.169
+pc3.baidu.com. IN      A      12.12.1.30
+pc4.baidu.com. IN      A       192.168.2.40
+map.baidu.com. IN      A       192.168.3.40
+plus.baidu.com. IN      A       192.168.4.40
+www.baidu.com. IN      A       192.168.5.40
+dns.baidu.com.   IN      A       12.12.1.30
+server.baidu.com.        IN      A       10.6.0.69
+mail.baidu.com.  IN      MX 5    dns.test.com
+nginxl          IN      CNAME   www
+pc2v6             IN      AAAA    1001:2::20
+pc3v6            IN      AAAA    2001:20::30
+pc4v6            IN      AAAA    1001:2::40
+ipv6             IN      AAAA    2001:20::30
+dnsv6           IN      AAAA    2001:20::30
+mailv6          IN      AAAA    2001:20::30
+@               IN      MX      10      dnsv6.baidu.com.

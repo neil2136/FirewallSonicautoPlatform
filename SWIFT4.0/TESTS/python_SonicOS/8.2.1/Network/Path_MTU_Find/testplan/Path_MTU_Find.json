@@ -1,0 +1,51 @@
+{
+   "6" : {
+      "steps" : "  1. Create a Customer Zone to on the FW, and assocate a interface to the Customer zone\n  2. Create the access rule to make sure the PC1 and the FW could be reached for each other.\n  3. Go to the ''On the System > Diagnostics page, select PMTU Discovery for the Diagnostic Tool\n  4. In the Path MTU Discovery to this host or IP address, enter the IP address of the PC1. Select 'ANY' of 'Interface' poll down menu.\n  5. Click 'Go',the Path MTU Discovery results are displayed in a pop-up window",
+      "initial" : "  PC1-Customer Zone-DUT-WAN-PC2",
+      "id" : "6",
+      "title" : "Verify the PMTU discover work fine with Customer Zone",
+      "result" : "  5. The path MTU should be shown in the pop-up window, capture the PMTU discovery packet, the DF flag in the IP header should be set"
+   },
+   "4" : {
+      "steps" : "  1. Configure a interface to WLAN zone, and assocate a client to the SPN\n  2. Create the access rule to make sure the client and the FW could be reached for each other.\n  3. Go to the ''On the System > Diagnostics page, select PMTU Discovery for the Diagnostic Tool\n  4. In the Path MTU Discovery to this host or IP address, enter the IP address of the client. Select 'ANY' of 'Interface' poll down menu.\n  5. Click 'Go',the Path MTU Discovery results are displayed in a pop-up window",
+      "initial" : "  PC1-WLAN-DUT-WAN-PC2",
+      "id" : "4",
+      "title" : "Verify the PMTU discover work fine with WLAN Zone",
+      "result" : "  5. The path MTU should be shown in the pop-up window, capture the PMTU discovery packet, the DF flag in the IP header should be set"
+   },
+   "1" : {
+      "steps" : "  1. Send 1500 byte UDP packet with IP Don't Fragment Flag = 1\n  2. Check for an ICMP Destination unreachable packet with code = 4\n  3. Repeat process 2 more times until until an ICMP Destination unreachable is received, or all 3 packets are sent.\n  4. If an ICMP Destination unreachable was sent, verify the the code value is 4 and verify MTU value in the ICMP header.\n  5. Reduce the UDP packet size by 1 byte and repeat the process until no ICMP unreachable is sent.\n  6. When a packet size is found that does not generate an ICMP unreachable, verify packets can be forwarded using this packet size.\n  7. Verify the final MTU size is the same as the MTU size reported in the ICMP unreachable packet.",
+      "initial" : "  PC1-LAN-DUT-WAN-PC2",
+      "id" : "1",
+      "title" : "Verify router supports Path MTU Discovery over WAN interface",
+      "result" : "  The box should not allow any of the numbers to be entered in the GUI."
+   },
+   "3" : {
+      "steps" : "  1. Make sure the PC2 behind WAN zone and FW could be reached each other.\n  2. Go to the ''On the System > Diagnostics page, select PMTU Discovery for the Diagnostic Tool\n  3. In the Path MTU Discovery to this host or IP address, enter the IP address of the PC2. Select 'ANY' of 'Interface' poll down menu.\n  4. Click 'Go',the Path MTU Discovery results are displayed in a pop-up window",
+      "initial" : "  PC1-LAN-DUT-WAN-PC2",
+      "id" : "3",
+      "title" : "Verify the PMTU discover work fine with WAN Zone",
+      "result" : "  4. The path MTU should be shown in the pop-up window, capture the PMTU discovery packet, the DF flag in the IP header should be set."
+   },
+   "7" : {
+      "steps" : "  1. Configure a VPN tunnel between two DUTs\n  2. Create the access rules to make sure the PC1 and PC2 could be reached for each other.\n  3. Go to the ''On the System > Diagnostics page, select PMTU Discovery for the Diagnostic Tool\n  4. On the DUT1, In the Path MTU Discovery to this host or IP address, enter the IP address of the PC2. Select 'ANY' of 'Interface' poll down menu.\n  5. On the DUT2, In the Path MTU Discovery to this host or IP address, enter the IP address of the PC1. Select 'ANY' of 'Interface' poll down menu\n  6. Click 'Go',the Path MTU Discovery results are displayed in a pop-up window",
+      "initial" : "  PC1-LAN-DUT1-WAN---VPN----WAN-DUT2-LAN-PC2",
+      "id" : "7",
+      "title" : "Verify the PMTU discover work fine with VPN Zone",
+      "result" : "  6. The path MTU should be shown in the pop-up window, capture the PMTU discovery packet, the DF flag in the IP header should be set"
+   },
+   "2" : {
+      "steps" : "  1. Make sure the PC1 and FW could be reached each other.\n  2. Go to the ''On the System > Diagnostics page, select PMTU Discovery for the Diagnostic Tool\n  3. In the Path MTU Discovery to this host or IP address, enter the IP address of the PC1. Select 'ANY' of 'Interface' poll down menu.\n  4. Click 'Go',the Path MTU Discovery results are displayed in a pop-up window",
+      "initial" : "  PC1-LAN-DUT-WAN-PC2",
+      "id" : "2",
+      "title" : "Verify the PMTU discover work fine with LAN Zone",
+      "result" : "  4. The path MTU should be shown in the pop-up window, capture the PMTU discovery packet, the DF flag in the IP header should be set."
+   },
+   "5" : {
+      "steps" : "  1. Configure a interface to LAN zone\n  2. Create the access rule to make sure the PC1 and the FW could be reached for each other.\n  3. Go to the ''On the System > Diagnostics page, select PMTU Discovery for the Diagnostic Tool\n  4. In the Path MTU Discovery to this host or IP address, enter the IP address of the PC1 behind LAN. Select 'ANY' of 'Interface' poll down menu.\n  5. Click 'Go',the Path MTU Discovery results are displayed in a pop-up window",
+      "initial" : "  PC1-LAN-DUT-WAN-PC2",
+      "id" : "5",
+      "title" : "Verify the PMTU discover work fine with LAN Zone",
+      "result" : "  The path MTU should be shown in the pop-up window, capture the PMTU discovery packet, the DF flag in the IP header should be set"
+   }
+}

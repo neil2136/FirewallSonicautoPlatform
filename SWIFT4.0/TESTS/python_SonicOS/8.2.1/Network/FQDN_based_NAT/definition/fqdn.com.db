@@ -1,0 +1,13 @@
+$TTL 1H
+@       SOA     localhost.localdomain.  root.localhost.localdomain. (   3
+                                                3H
+                                                1H
+                                                1W
+                                                1H )
+        NS      localhost.localdomain.
+wanpc IN      1H      A       192.200.200.200
+x1ao IN      1H      A       192.200.200.160
+x1ao IN      1H      A       192.200.200.165
+
+
+

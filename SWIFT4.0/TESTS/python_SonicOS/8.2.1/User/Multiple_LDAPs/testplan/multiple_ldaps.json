@@ -1,0 +1,807 @@
+{
+   "" : {
+      "steps" : "  Steps",
+      "initial" : "  Initial Setup",
+      "id" : null,
+      "title" : "Title",
+      "result" : "  Expected Results"
+   },
+   "1825355" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one LDAP server.a. Under [Settings] tab: Enter the correct IP address or host name of the domain controller, role(default option primary LDAP server), port number 389, server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes), uncheck TLS option.b. Under [Schema] tab: Select [Microsoft Active Directory].c. Under [Directory] tab: Enter domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825355",
+      "title" : "Add primary LDAP server when AP is enabled",
+      "result" : "  1. LDAP configuration window is opened.2. A window prompted to assign the partition.3. Primary LDAP server is configured and saved successfully."
+   },
+   "1825341" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Directory tab of the LDAP Configuration window, have a new entry mydomain.com/unit1 added in the Trees containing users table.5. Highlight the mydomain.com/unit1 entry and click the Remove button under the table.",
+      "initial" : "  TBD",
+      "id" : "1825341",
+      "title" : "LDAP Configuration> Directory. DNs for user trees. Remove",
+      "result" : "  The mydomain.com/unit1 entry is deleted from the table."
+   },
+   "1529216" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one LDAP server.a. Under [Settings] tab: Enter the correct IP address or host name of the domain controller, role selects secondary LDAP server), port number 389, server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes), uncheck TLS option.b. Under [Schema] tab: Select [Microsoft Active Directory].c. Under [Directory] tab: Enter domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529216",
+      "title" : "Add secondary LDAP server when AP is not enabled",
+      "result" : "  1. LDAP configuration window is opened.2. Secondary LDAP server is configured and saved successfully."
+   },
+   "1825348" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the LDAP Users tab of the LDAP Configuration window, view the Allow only users listed locally check box.",
+      "initial" : "  TBD",
+      "id" : "1825348",
+      "title" : "LDAP Configuration> LDAP Users. Allow only users listed locally",
+      "result" : "  The Allow only users listed locally check box is turned off."
+   },
+   "1825338" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Directory tab of the LDAP Configuration window, change the default value mydomain in the Primary domain field to test. Apply.",
+      "initial" : "  TBD",
+      "id" : "1825338",
+      "title" : "LDAP Configuration> Directory. Primary domain field",
+      "result" : "  The popup window shows the following message: Also update domain in any user and group trees that are in the same domain? Select Cancel to change only the primary domain field. Select OK - DN is changed to test in the fields User tree to login to server, Trees containing users, and Trees containing user groups."
+   },
+   "1529217" : {
+      "steps" : "  1. Follow up the previous case.2. Add two or more Backup/replica LDAP servers for the primary server.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529217",
+      "title" : "Add two or more Backup/replica LDAP servers for the primary server when AP is not enabled",
+      "result" : "  1. LDAP configuration window is opened.2. Backup/replica LDAP servers are configured and saved successfully."
+   },
+   "1825374" : {
+      "steps" : "  1. Follow up the previous cases.2. Navigate [Test] tab.3. Select the configured LDAP server to do user authentication test in the child domain.4. Enter the correct user name and password.5.Click [Test] button.",
+      "initial" : "  TBD",
+      "id" : "1825374",
+      "title" : "Test LDAP server for child domain_user authentication test",
+      "result" : "  1. Test status displayed 'LDAP authentication succeeded'.2. Returned User Attributes displayed the correct child membership and DN info."
+   },
+   "1529222" : {
+      "steps" : "  1. Follow up the previous cases.2. Add a LDAP server with parent and child domain.a. Under [Settings] tab: Enter the correct IP address or host name of another domain controller, role selects default primary LDAP server), port number 389, server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes), uncheck TLS option.b. Under [Schema] tab: Select [Microsoft Active Directory].c. Under [Directory] tab: Enter the parent domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials of parent domain user and child domain user.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529222",
+      "title" : "Add a LDAP server with parent and child domain",
+      "result" : "  1. LDAP server is configured and saved successfully.2. Under [Directory] tab: Both parent and child domains are auto-configured successfully."
+   },
+   "1529219" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add more secondary LDAP servers in the same domain.a. Under [Settings] tab: Enter the correct IP address or host name of the domain controller, role selects secondary LDAP server), port number 389, server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes), uncheck TLS option.b. Under [Schema] tab: Select [Microsoft Active Directory].c. Under [Directory] tab: Enter domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529219",
+      "title" : "Add two or more secondary LDAP servers in the partition",
+      "result" : "  1. LDAP configuration window is opened.2. A window prompted to assign the partition.3. More LDAP servers are configured and saved successfully."
+   },
+   "1825400" : {
+      "steps" : "  1) Check \"Allow only users listed locally\"\n  2) From the joined domain client PC, e.g. win7, domain user name: abc, make sure abc is not imported in local user.\n  3) Try to visit website by win7, it should not be able to open public website.\n  4) Import abc into local user. Try to visit public website.",
+      "initial" : "  TBD",
+      "id" : "1825400",
+      "title" : "Allow only users listed locally' option work",
+      "result" : "  Now should be able to visit public website."
+   },
+   "1825358" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one LDAP server.a. Role selects Backup/replica LDAP server).b. Enter the IP address and select the primary LDAP server in the list.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825358",
+      "title" : "Add Backup/replica LDAP server  in the same partition",
+      "result" : "  1. LDAP configuration window is opened.2. A window prompted to assign the partition.3. Backup/replica LDAP server is configured and saved successfully."
+   },
+   "1825352" : {
+      "steps" : "  1. Follow up the previous case.2. Add two or more secondary LDAP servers.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825352",
+      "title" : "Add two or more secondary LDAP servers when AP is not enabled",
+      "result" : "  1. LDAP configuration window is opened.2. Secondary LDAP servers are configured and saved successfully."
+   },
+   "1529227" : {
+      "steps" : "  1. Click [Delete] button with one LDAP Server.2. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529227",
+      "title" : "Delete the LDAP server",
+      "result" : "  1. LDAP configuration window is opened.2. The LDAP server is deleted successfully."
+   },
+   "1825347" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Directory tab of the LDAP Configuration window, click the Add button under the Trees containing user groups table.5. In the New Tree window, type mydomain.com/unit1 and click OK.6. Repeat steps 4 and 5 adding unit2, unit3, and etc. for mydomain.com.",
+      "initial" : "  TBD",
+      "id" : "1825347",
+      "title" : "LDAP Configuration> Directory. DNs for user group trees. Limits",
+      "result" : "  16 new DNs for user trees are added in the Trees containing user groups table."
+   },
+   "1825370" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one LDAP Server with setting schema as default 'Microsoft Active Directory' for one partition.3. Add another LDAP with setting schema as other option(exclude 'Microsoft Active Directory').4. In 'Schema change' window,click 'Yes' or 'No',then navigate to 'Update other Servers' popup.",
+      "initial" : "  TBD",
+      "id" : "1825370",
+      "title" : "Set different schema with LDAP Servers in same partition",
+      "result" : "  1.when click 'Yes' in 'Update other Servers',schema with first LDAP Server will update to be same with later one.2.when click 'No' in 'Update other Servers',schema with first LDAP Server will remain as before.3.Test with LDAP Server,it should be successful."
+   },
+   "1825365" : {
+      "steps" : "  1.Follow up the previous cases.2.Try to edit the dynamiclly secondary LDAP server by click column value in the list directly.3. Check if 'Edit' button existed with dynamiclly secondary LDAP server.",
+      "initial" : "  TBD",
+      "id" : "1825365",
+      "title" : "dynamically learned secondary servers not editable",
+      "result" : "  1. The dynamically learned secondary servers cannot be editable."
+   },
+   "1529224" : {
+      "steps" : "  1. Add one LDAP Server as '192.168.57.131'(DC:SHCDPQA130.com).2. Install one sub domain 'subdomain.SHCDPQA130.com' under 'SHCDPQA130.com'.3. Edit with the LDAP Server '192.168.57.131',click [Auto-Configure] button in [LDAP Servers] - [Directory] tab.4. when popup 'User/Group Trees Auto Configure' window,click [Start].5. Check if a dynamically secondary LDAP server displays.",
+      "initial" : "  TBD",
+      "id" : "1529224",
+      "title" : "Verify dynamically learned secondary servers",
+      "result" : "  1. It will display \"Information:View List\" at bottom of page,click 'View List',display some info with dynamically created server.2. The dynamically learned secondary server created and displayed in page named \"subdomain.SHCDPQA130.com\"."
+   },
+   "1825354" : {
+      "steps" : "  1. Follow up the previous case.2. Add another same Backup/replica LDAP server for multiple LDAP servers.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825354",
+      "title" : "Add the same Backup/replica LDAP server for multiple LDAP servers",
+      "result" : "  1. LDAP configuration window is opened.2. Errors are showed as not allowed."
+   },
+   "1825367" : {
+      "steps" : "  1. Follow up previous cases,generate one dynamiclly learned LDAP server .2. Click 'Save' button with dynamiclly learned servers.",
+      "initial" : "  TBD",
+      "id" : "1825367",
+      "title" : "dynamiclly learned servers can be saved as permanent servers",
+      "result" : "  1. The server saved as a secondary server with same setting as primary server.2. After saving,it can be edited."
+   },
+   "1825349" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the LDAP Users tab of the LDAP Configuration window, view the User group memberships can be set locally by duplicating LDAP user names check box.",
+      "initial" : "  TBD",
+      "id" : "1825349",
+      "title" : "LDAP Configuration> LDAP Users. User group memberships can be set locally by duplicating LDAP user names",
+      "result" : "  The User group memberships can be set locally by duplicating LDAP user names check box is turned off."
+   },
+   "1825331" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Let mouse hovers over 'Host Name/IP Address' of dynamically learned secondary server.",
+      "initial" : "  TBD",
+      "id" : "1825331",
+      "title" : "it shows LDAP server learned by dynamically learned secondary server",
+      "result" : "  1. It shows like 'A secondary LDAP learned dynamically via a referal from 'x.x.x.x'"
+   },
+   "1825387" : {
+      "steps" : "  1. Configure two LDAP servers in the different domains.Partition 'SHCDPQA130': Domain 'SHCDPQA130.com'Partition 'WENLU': Domain 'WENLU.com'2. Navigate 'Users & Groups' tab, click [Import users] button.3. Select the specific partition to import users separately.4. Select the format: Simple name or domain\\name or name@domain.com.5. Check Users -> Local Users page.",
+      "initial" : "  TBD",
+      "id" : "1825387",
+      "title" : "Import users from all LDAP servers in a specified partition",
+      "result" : "  1. The users selected can be imported from all the LDAP servers in the specific partition.2. [Local Users] page displayed the users imported with the correct format."
+   },
+   "1825363" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one LDAP server.a. Under [Settings] tab: Enter the correct IP address or host name of the domain controller, role(default option primary LDAP server), port number 636, checked with TLS,server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes).b. Under [Schema] tab: Select [Microsoft Active Directory].c. Under [Directory] tab: Enter domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825363",
+      "title" : "Add a LDAP Server with TLS checked,X509 certificate from server is required",
+      "result" : "  1. In 'Test' tab,test LDAP Server with user credentails,connect successfully."
+   },
+   "1529215" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one Primary LDAP server.3. add another LDAP server and set the role as 'Primary'.4. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529215",
+      "title" : "Add the second primary LDAP server when AP is not enabled",
+      "result" : "  1. LDAP configuration window is opened.2. A tip window prompt to select:a. Click [OK] button, it is set as the primary server instead of the first primary.B. Click [cancel] button, it is set as the secondary server."
+   },
+   "1825408" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. Configure interfaces.3. On the System > Time page uncheck the Set time automatically using NTP check box and change date to have certificate expired.4. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.5. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.6. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.7. In the Directory tab, specify a primary domain.8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.9. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  TBD",
+      "id" : "1825408",
+      "title" : "X509 certificate from server is required, certificate on server is invalid",
+      "result" : "  The Test Status field displays a message: Bad LDAP server certificate; TLS error (fatal): certificate expired."
+   },
+   "1825404" : {
+      "steps" : "  1. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button. 2. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. 6. In the Directory tab, remove the Primary domain Primary domain and User tree for login to server fields and click Auto-configure",
+      "initial" : "  TBD",
+      "id" : "1825404",
+      "title" : "Auto-configure with blank fields for Primary domain and User tree for login",
+      "result" : "  1. Pop-up error is displayed"
+   },
+   "1825329" : {
+      "steps" : "  1. TLS is enable with one LDAP Server,then uncheck option 'TLS'. 2. Check the TLS with LDAP Server.",
+      "initial" : "  TBD",
+      "id" : "1825329",
+      "title" : "TLS' checkbox work for LDAP Server",
+      "result" : "  1.Port change to '636'.2.'Use TLS(SSL)' option has checked."
+   },
+   "1825334" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Schema tab of the LDAP Configuration window, view the LDAP Schema drop-down list.",
+      "initial" : "  TBD",
+      "id" : "1825334",
+      "title" : "LDAP Configuration> Schema. LDAP Schema list",
+      "result" : "  The following options are listed: Microsoft Active Directory, RFC2798 InetOrgPerson, and User defined. The Microsoft Active Directory is a default option."
+   },
+   "1825396" : {
+      "steps" : "  1. Add one new groups in LDAP server.2. Navigate 'Users & Groups' tab,set 'Refresh period' as 1min or other value.3. Wait for a refresh period,Check Users -> Local groups page.",
+      "initial" : "  TBD",
+      "id" : "1825396",
+      "title" : "Refresh period settings work for LDAP Mirror",
+      "result" : "  1.[Local groups] page displayed the new groups after a refresh period."
+   },
+   "1825398" : {
+      "steps" : "  1. Follow up the previous cases.2. Click [Edit] button,change the tree's name.3. Click [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825398",
+      "title" : "Edit trees configured for 'Exclude groups in specified sub-trees'",
+      "result" : "  1.Trees can be edited and saved successfully."
+   },
+   "1825377" : {
+      "steps" : "  1. Follow up the previous case.2. Navigate [Test] tab.3. Select the configured LDAP server to do LDAP search test.4. Search for a user/group with login name/login qualified name/common name with wildcard(like user*,group*) .",
+      "initial" : "  TBD",
+      "id" : "1825377",
+      "title" : "Test LDAP server_LDAP search test(Basic Search_user/group name with wildcard format)",
+      "result" : "  1. Test status displayed 'LDAP authentication succeeded'.2. Search results displayed all user/group matched,including the correct and detailed membership and DN info."
+   },
+   "1529225" : {
+      "steps" : "  1. Add all Primary/Secondary/backup server.2. Navigate [Test] tab.3. Select the configured LDAP server to do connectivity/bind test.4.Click [Test] button.",
+      "initial" : "  TBD",
+      "id" : "1529225",
+      "title" : "Test different LDAP servers_connectivity/bind test",
+      "result" : "  1. Test status displayed 'Success'.2. Returned Information displayed the correct bound domain\\user."
+   },
+   "1825399" : {
+      "steps" : "  1. Follow up the previous cases.2. Select the tree and click [Remove] button.",
+      "initial" : "  TBD",
+      "id" : "1825399",
+      "title" : "Remove trees configured for 'Exclude groups in specified sub-trees'",
+      "result" : "  1.Groups in deleted trees can be mirrored again."
+   },
+   "1825330" : {
+      "steps" : "  1. Click column value of Host Name/IP Address(Port,Timeout,Domain,Partition),then change the value.2. Click [OK] or [Apply] button.",
+      "initial" : "  TBD",
+      "id" : "1825330",
+      "title" : "LDAP server setting can be modify by click column value instead of [Edit] button",
+      "result" : "  1.Changes can be saved successfully."
+   },
+   "1825335" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Schema tab of the LDAP Configuration window, have Microsoft Active Directory selected in the LDAP Schema (default setting) and view the fields on the page.",
+      "initial" : "  TBD",
+      "id" : "1825335",
+      "title" : "LDAP Configuration> Schema. Microsoft Active Directory selected",
+      "result" : "  The following settings are displayed on the Schema tab: Object clas: user, Login name attribute: sAMAccountName, Qualified login name attribute: userPrincipalName, User group membership attribute: memberOf, Framed IP address attribute: msRADIUSFramedIPAddress, Object class: group, Member attribute: member. The only one field is editable, Qualified login name attribute. Other fields are dimmed."
+   },
+   "1825386" : {
+      "steps" : "  1. Configure two LDAP servers in the different domains.Partition 'SHCDPQA130': Domain 'SHCDPQA130.com'Partition 'WENLU': Domain 'WENLU.com'2. Navigate 'Users & Groups' tab, click [Import users] button.3. Select the specific LDAP server to import users separately.4. Select the format: Simple name or domain\\name or name@domain.com.5. Check Users -> Local Users page.",
+      "initial" : "  TBD",
+      "id" : "1825386",
+      "title" : "Import users from a specific LDAP server",
+      "result" : "  1. The users selected can be imported from the specific LDAP server in the partition.2. [Local Users] page displayed the users imported with the correct format."
+   },
+   "1825372" : {
+      "steps" : "  1. Follow up the previous cases.2. Add another LDAP server with the same ip or hostname.",
+      "initial" : "  TBD",
+      "id" : "1825372",
+      "title" : "Add another LDAP server with the same ip or hostname",
+      "result" : "  1. Errors are showed as not allowed."
+   },
+   "1825366" : {
+      "steps" : "  1. Follow up previous cases,generate one dynamiclly learned LDAP server .2. Reboot FW,then navigate to [Users] - [Settings] -> [Configure LDAP] -> [Settings] page.",
+      "initial" : "  TBD",
+      "id" : "1825366",
+      "title" : "dynamically learned secondary servers removed after rebooting",
+      "result" : "  1. The dynamically learned secondary servers has been removed successfully."
+   },
+   "1825373" : {
+      "steps" : "  1. Follow up the previous cases.2. Navigate [Test] tab.3. Select the configured LDAP server to do user authentication test in the parent domain.4. Enter the correct user name and password.5.Click [Test] button.",
+      "initial" : "  TBD",
+      "id" : "1825373",
+      "title" : "Test LDAP server for parent domain_user authentication test",
+      "result" : "  1. Test status displayed 'LDAP authentication succeeded'.2. Returned User Attributes displayed the correct parent membership and DN info."
+   },
+   "1825326" : {
+      "steps" : "  1. Check the configurations with Firefox/Chrome/IE.",
+      "initial" : "  TBD",
+      "id" : "1825326",
+      "title" : "configuration in different browsers",
+      "result" : "  1. All the pages should be displayed and work correctly."
+   },
+   "1529226" : {
+      "steps" : "  1. Click [Edit] button with one LDAP Server to modify any parameter(IP/Host name, port, etc).2. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529226",
+      "title" : "Edit the LDAP server",
+      "result" : "  1. LDAP configuration window is opened.2. The modified part is saved successfully."
+   },
+   "1529229" : {
+      "steps" : "  1. Configure two LDAP servers in the different domains.Partition 'SHCDPQA130': Domain 'SHCDPQA130.com'Partition 'WENLU': Domain 'WENLU.com'2. Navigate 'Users & Groups' tab, click [Import groups] button.3. Select all LDAP servers to import users.4. Select the format: Simple name or name@domain.com.5. Check Users -> Local groups page.",
+      "initial" : "  TBD",
+      "id" : "1529229",
+      "title" : "Import groups from all LDAP servers",
+      "result" : "  1. The groups selected can be imported from all the LDAP servers in all the partitions.2. [Local groups] page displayed the groups imported with the correct format."
+   },
+   "1825402" : {
+      "steps" : "  1. Add one primary LDAP Server for one partion,confirm that Primary LDAP server is up.2. Add one Backup/replica LDAP server for this Primary LDAP server.3.Let Primary LDAP is down or unreachable,check the status of Backup/replica LDAP server .",
+      "initial" : "  TBD",
+      "id" : "1825402",
+      "title" : "Backup/replica LDAP server can be  used when Primary LDAP Server  is down or unreachable",
+      "result" : "  1.Switch to Backup/replica LDAP server successfully when Primary LDAP server is down."
+   },
+   "1529231" : {
+      "steps" : "  1. Add one Secondary LDAP Server for one partion,confirm that Secondary LDAP server is up.2. Add one Backup/replica LDAP server for this Secondary LDAP server.3. Let Secondary LDAP is down or unreachable,check the status of Backup/replica LDAP server .",
+      "initial" : "  TBD",
+      "id" : "1529231",
+      "title" : "Backup/replica LDAP server can be  used when Secondary LDAP Server is down or unreachable",
+      "result" : "  1.Switch to Backup/replica LDAP server successfully when Secondary LDAP server is down."
+   },
+   "1825327" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. In [Users&Groups] tab,Unckeck 'Mirror LDAP user groups locally'.",
+      "initial" : "  TBD",
+      "id" : "1825327",
+      "title" : "mirror setting not allowed when uncheck 'Mirror LDAP user groups locally'",
+      "result" : "  2.Refresh or Mirror type changes cannot be operated."
+   },
+   "1825376" : {
+      "steps" : "  1. Follow up the previous case.2. Navigate [Test] tab.3. Select the configured LDAP server to do LDAP search test.4. Search for a user/group with login name/login qualified name/common name equal to the correct credential .",
+      "initial" : "  TBD",
+      "id" : "1825376",
+      "title" : "Test LDAP server_LDAP search test(Basic Search)",
+      "result" : "  1. Test status displayed 'LDAP authentication succeeded'.2. Search results displayed the correct and detailed membership and DN info."
+   },
+   "1529218" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one Primary LDAP server for one partition.3. Add another LDAP server with same partition, select the role as primary server in the same partition.4. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529218",
+      "title" : "Add the second primary LDAP server in the same partition",
+      "result" : "  1. LDAP configuration window is opened.2. A tip window prompt to select:a. Click [OK] button, it is set as the primary server instead of the first primary.B. Click [cancel] button, it is set as the secondary server."
+   },
+   "1825401" : {
+      "steps" : "  1. Add one sub-partition in [Users] -[Partitions] page.2. Add one LDAP server assigned with above sub-partition.",
+      "initial" : "  TBD",
+      "id" : "1825401",
+      "title" : "Add a LDAP Server for sub-partition",
+      "result" : "  1. LDAP Server with sub-partition is configured and saved successfully."
+   },
+   "1825412" : {
+      "steps" : "  1) In Login/Bind tab, choose \"Give bind distinguished name\".\n  2) Input name and password.\n  3) Save",
+      "initial" : "  TBD",
+      "id" : "1825412",
+      "title" : "LDAP functionality with Give bind distinguished name' selected in the configuration",
+      "result" : "  Test connectivity should succeed."
+   },
+   "1825368" : {
+      "steps" : "  1. Follow up previous cases,generate one dynamiclly learned LDAP server .2. Click 'x' button with dynamiclly learned servers.",
+      "initial" : "  TBD",
+      "id" : "1825368",
+      "title" : "dynamically learned servers can be deleted",
+      "result" : "  1. The server deleted successfully."
+   },
+   "1529220" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one LDAP server.a. Role selects Backup/replica LDAP server).b. Enter the IP address and select the primary LDAP server in the list.c.\"Use same bind credentials as the server that is a backup for\" checked as default3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529220",
+      "title" : "Add Backup/replica LDAP server  with using same bind credentials as server backup for",
+      "result" : "  1. LDAP configuration window is opened.2. A window prompted to assign the partition.3. Backup/replica LDAP server is configured and saved successfully.4.Test LDAP Settings with credential of server backup for successfully(under \"Use authentication test\")."
+   },
+   "1825407" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. Configure interfaces.3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.6. In the Directory tab, specify a primary domain.7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.8. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  TBD",
+      "id" : "1825407",
+      "title" : "X509 certificate from server is required, certificate on server doesn't exist",
+      "result" : "  The Test Status field displays a message: Bad LDAP server certificate; TLS error (fatal): unknown CA."
+   },
+   "1825361" : {
+      "steps" : "  1. Create two or more partitions.2. Navigate [Users] - [Settings] -> [Configure LDAP] button.3. Add the secondary LDAP server one by one assigned to the different partitions.a. Under [Settings] tab: Enter the correct IP address or host name of another domain controller, role selects secondary LDAP server), port number 389, server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes), uncheck TLS option.b. Under [Schema] tab: Select [Microsoft Active Directory].c. Under [Directory] tab: Enter domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials.4. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825361",
+      "title" : "Add a secondary LDAP server separately in multiple partitions",
+      "result" : "  1. LDAP configuration window is opened.2. A window prompted to assign the partition.3. LDAP server is configured and saved successfully assigned to the different partitions."
+   },
+   "1825382" : {
+      "steps" : "  1. Configure 2 LDAP Server with one partition.2. Add same user with these 2 LDAP Servers.3. Navigate [Test] tab.4. Select the 2 LDAP server to do LDAP search test with same login user name.",
+      "initial" : "  TBD",
+      "id" : "1825382",
+      "title" : "Test LDAP server_LDAP search test(Same user name in one partition with two different LDAP Server)",
+      "result" : "  1. Test status displayed 'LDAP authentication succeeded'.2. Search results displayed the correct and detailed membership and DN info."
+   },
+   "1825405" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. Configure interfaces.3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.6. In the Local certificate for TLS drop-down, select a local certificate that was imported during initial setup.7. In the Directory tab, specify a primary domain.8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.9. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  TBD",
+      "id" : "1825405",
+      "title" : "X509 certificate from server is required, local certificate for TLS is used",
+      "result" : "  The connection to LDAP server is successful. The Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@<domain name>.com, member of: group1."
+   },
+   "1825364" : {
+      "steps" : "  1. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.2. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.3. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.4. In the Directory tab, specify a primary domain.5. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.6. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  TBD",
+      "id" : "1825364",
+      "title" : "Add a LDAP Server with TLS checked,X509 certificate from server is not required",
+      "result" : "  1. The connection to LDAP server is successful."
+   },
+   "1825381" : {
+      "steps" : "  1. Add same group with 2 LDAP Servers.2.Navigate [Test] tab.3. Select the 2 LDAP server to do LDAP search test with same group name.",
+      "initial" : "  TBD",
+      "id" : "1825381",
+      "title" : "Test LDAP server_LDAP search test(Same Group name in two different LDAP Server)",
+      "result" : "  1. Test status displayed 'LDAP authentication succeeded'.2. Search results displayed the correct and detailed membership and DN info."
+   },
+   "1825346" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Directory tab of the LDAP Configuration window, have a new entry mydomain.com/unit1 added in the Trees containing user groups table.5. Highlight the mydomain.com/unit1 entry and click the Remove button under the table.",
+      "initial" : "  TBD",
+      "id" : "1825346",
+      "title" : "LDAP Configuration> Directory. DNs for user group trees. Remove",
+      "result" : "  The mydomain.com/unit1 entry is deleted from the table."
+   },
+   "1825323" : {
+      "steps" : "  1. Add a LDAP server, make sure server is responsive but binding to it fails.",
+      "initial" : "  TBD",
+      "id" : "1825323",
+      "title" : "Check the status indicator_red and warning",
+      "result" : "  1. The status indicator showed red by a message on a mouse-over on the warning icon."
+   },
+   "1825328" : {
+      "steps" : "  1. Confirm LDAP server is up,then uncheck 'Enable' for one LDAP Server.2. Click [OK] or [Apply] button.3. Check 'Status' of server and test with it.",
+      "initial" : "  TBD",
+      "id" : "1825328",
+      "title" : "Enable' checkbox work for LDAP Server",
+      "result" : "  1.'Status' changes from green to grey.2.server is not in test server dropdown list."
+   },
+   "1825380" : {
+      "steps" : "  1. Add same user with 2 LDAP Servers.2. Navigate [Test] tab.3. Select the 2 LDAP server to do LDAP search test with same login user name.",
+      "initial" : "  TBD",
+      "id" : "1825380",
+      "title" : "Test LDAP server_LDAP search test(Same user name in two different LDAP Server)",
+      "result" : "  1. Test status displayed 'LDAP authentication succeeded'.2. Search results displayed the correct and detailed membership and DN info."
+   },
+   "1825362" : {
+      "steps" : "  1. Create two or more partitions.2. Navigate [Users] - [Settings] -> [Configure LDAP] button.3. Add the Backup/replica LDAP server one by one assigned to the different partitions.a. Under [Settings] tab: Enter the correct IP address or host name of another domain controller, role selects secondary LDAP server), port number 389, server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes), uncheck TLS option.b. Under [Schema] tab: Select [Microsoft Active Directory].c. Under [Directory] tab: Enter domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825362",
+      "title" : "Add a Backup/replica LDAP server separately in multiple partitions",
+      "result" : "  1. LDAP configuration window is opened.2. A window prompted to assign the partition.3. LDAP server is configured and saved successfully assigned to the different partitions."
+   },
+   "1825337" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Schema tab of the LDAP Configuration window, select User defined in the LDAP Schema.",
+      "initial" : "  TBD",
+      "id" : "1825337",
+      "title" : "LDAP Configuration> Schema. User defined selected",
+      "result" : "  The following settings are displayed on the Schema page: Object clas: inetOrgPerson, Login name attribute: uid, Qualified login name attribute: mail, User group membership attribute: blank, Framed IP address attribute: blank, Object class: groupOfNames, Member attribute: member. All fields are editable."
+   },
+   "1825397" : {
+      "steps" : "  1. Add a tree under 'Exclude groups in specified sub-trees'.2. Add one group in the tree(or wildcards format like 'group*').3. Refresh the LDAP Mirror and check Users -> Local groups page.",
+      "initial" : "  TBD",
+      "id" : "1825397",
+      "title" : "Exclude groups in specified sub-trees work (including with wildcards format )",
+      "result" : "  1.In 'Groups Mirrored from LDAP',Groups matched in exclude trees cannot be mirrored."
+   },
+   "1825325" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Navigate 'Users & Groups' tab,enter a invalid Refresh period.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825325",
+      "title" : "Invalid  Refresh period for LDAP Mirror",
+      "result" : "  1. The illegal value are not allowed and the message prompts the error."
+   },
+   "1825351" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the LDAP Users tab of the LDAP Configuration window, select 'Create a new user group...' option in the Default LDAP User Group drop down box.5. Enter GroupTest in the Name field of the Settings tab of the Add Group window and click OK.",
+      "initial" : "  TBD",
+      "id" : "1825351",
+      "title" : "LDAP Configuration> LDAP Users. Default LDAP User Group. Create a new user group",
+      "result" : "  The GroupTest user group is added in the Default LDAP User Group list and selected as a default LDAP group in the LDAP Configuration window."
+   },
+   "1825322" : {
+      "steps" : "  1. Add a LDAP server, make sure server is unresponsive and down.",
+      "initial" : "  TBD",
+      "id" : "1825322",
+      "title" : "Check the status indicator_red",
+      "result" : "  1. The status indicator showed red."
+   },
+   "1529228" : {
+      "steps" : "  1. Configure two LDAP servers in the different domains.Partition 'SHCDPQA130': Domain 'SHCDPQA130.com'Partition 'WENLU': Domain 'WENLU.com'2. Navigate 'Users & Groups' tab, click [Import users] button.3. Select all LDAP servers to import users.4. Select the format: Simple name or domain\\name or name@domain.com.5. Check Users -> Local Users page.",
+      "initial" : "  TBD",
+      "id" : "1529228",
+      "title" : "Import users from all LDAP servers",
+      "result" : "  1. The users selected can be imported from all the LDAP servers in all the partitions.2. [Local Users] page displayed the users imported with the correct format."
+   },
+   "1825406" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. Configure interfaces.3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.6. In the Local certificate for TLS drop-down, select None.7. In the Directory tab, specify a primary domain.8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.9. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  TBD",
+      "id" : "1825406",
+      "title" : "X509 certificate from server is required, local certificate for TLS is not used",
+      "result" : "  The connection to LDAP server is successful. The Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@<domain name>.com, member of: group1."
+   },
+   "1825403" : {
+      "steps" : "  1. On the Users>Settings page, select LDAP from the Authentication Methods drop-down list and click the Configure button.2. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.3. Fill in the fields in the Setting tab of the LDAP Configuration window.4. In the Directory tab of the LDAP Configuration window, add one entry giving the primary domain name and click the auto-configure button.5. In the LDAP User/Group Trees Auto-Configure window, select Replace exisiting trees",
+      "initial" : "  TBD",
+      "id" : "1825403",
+      "title" : "Continuation references in Auto-configure",
+      "result" : "  1. Trees from sub-domains should appear on the Directory page."
+   },
+   "1825409" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. Configure interfaces.3. On the System > Time page uncheck the Set time automatically using NTP check box and change date to have certificate expired.4. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.5. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.6. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Uncheck the Require valid certificate from server check box. Check the Use TLS (SSL) check box.7. In the Directory tab, specify a primary domain.8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.9. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  TBD",
+      "id" : "1825409",
+      "title" : "X509 certificate from server is not required, certificate on server is invalid",
+      "result" : "  The Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@<domain name>.com, member of: group1."
+   },
+   "1825321" : {
+      "steps" : "  1. Add a LDAP server, make sure server is up and bind to it is successful.",
+      "initial" : "  TBD",
+      "id" : "1825321",
+      "title" : "Check the status indicator_green",
+      "result" : "  1. The status indicator showed green."
+   },
+   "1825333" : {
+      "steps" : "  1. Do Javascript/SQL injection with all text filed.",
+      "initial" : "  TBD",
+      "id" : "1825333",
+      "title" : "Javascript/SQL injection with all text field",
+      "result" : "  1. It should not affect by injection."
+   },
+   "1825410" : {
+      "steps" : "  When configure LDAP server on SonicOS, in Login/Bind tab, choose \"Anonymous login\", save.",
+      "initial" : "  TBD",
+      "id" : "1825410",
+      "title" : "LDAP functionality with 'Anonymous login' selected in the configuration",
+      "result" : "  Should save successfully. Test connectivity should succeed."
+   },
+   "1529221" : {
+      "steps" : "  1. Follow up the previous case.2. Add two or more Backup/replica LDAP servers for the primary server.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529221",
+      "title" : "Add two or more Backup/replica LDAP servers for the primary server in the same partition",
+      "result" : "  1. LDAP configuration window is opened.2. Backup/replica LDAP servers are configured and saved successfully."
+   },
+   "1529232" : {
+      "steps" : "  1) Configure a primary LDAP server and a secondary LDAP server in one partition.\n  2) Make primary server down.",
+      "initial" : "  TBD",
+      "id" : "1529232",
+      "title" : "Verify attempt to connect secondary LDAP server when connect to Primary LDAP Server fail within timeout period",
+      "result" : "  Switch to secondary LDAP server successfully when primary LDAP server is down."
+   },
+   "1825343" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. Configure interfaces.3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password.6. In the Directory tab, specify a primary domain.7. In the Directory tab of the LDAP Configuration window, click the Add button under the Trees containing users table.8. In the New Tree window, type elenaqa.com/unit1 and click OK.9. In the Test tab, enter test1 in the User field and a valid password in the Password field. Click the Test button.10. Edit the tree. Change format to ou=unit1,dc=elenaqa,dc=com and submit.11. Run the client test for test1 user again.",
+      "initial" : "  TBD",
+      "id" : "1825343",
+      "title" : "LDAP Configuration> Directory. The format for trees",
+      "result" : "  Both URL and distinguished name are accepted as a tree format. The client test is successful in steps 9 and 11 and returnes a group name that test1 is a member of."
+   },
+   "1825384" : {
+      "steps" : "  1. Navigate [Test] tab.2. Select the configured LDAP server to do LDAP search test.3. Enter one user/group name to search with 'User'/'User Group'.4. specified one or more Return attributes,like \"dn\" or \"dn,cn,name\" etc",
+      "initial" : "  TBD",
+      "id" : "1825384",
+      "title" : "specified Return attributes will return matched attribute",
+      "result" : "  1. Test status displayed 'LDAP authentication succeeded'.2. Search results only displayed the specified attribute of matched user/user group."
+   },
+   "1825371" : {
+      "steps" : "  1. Configure Novell eDirectory server.2. Add a LDAP server indicated to edirectory server.Under [Settings] tab: Enter the correct IP address or host name of edir server, role selects default primary LDAP server), port number 389, server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes), uncheck TLS option.b. Under [Schema] tab: Select [Novell eDirectory].c. Under [Directory] tab: Enter the edir domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give bind distinguished name', provide the correct credentials of novell edir.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825371",
+      "title" : "Add a LDAP server support Novell eDirectory",
+      "result" : "  1. The LDAP server is configured successfully to support Novell eDirectroy."
+   },
+   "1825394" : {
+      "steps" : "  1. Navigate 'Users & Groups' tab,Uncheck 'Mirror LDAP user groups locally' .2. Click [Yes] or [No] in alert window.3. Check [Users] -> [Local groups] page.",
+      "initial" : "  TBD",
+      "id" : "1825394",
+      "title" : "Uncheck 'Mirror LDAP user groups locally'",
+      "result" : "  1.When click 'Yes',All mirrored LDAP groups deleted.2.when click 'No',mirrord LDAP groups retain and change to be deletable."
+   },
+   "1825344" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Directory tab of the LDAP Configuration window, click the Add button under the Trees containing user groups table.5. In the New Tree window, type elenaqa.com/unit1 and click OK.",
+      "initial" : "  TBD",
+      "id" : "1825344",
+      "title" : "LDAP Configuration> Directory. DNs for user group trees. Add",
+      "result" : "  A new entry mydomain.com/unit1 is listed in the Trees containing user groups table along with a default entry mydomain.com/users."
+   },
+   "1825385" : {
+      "steps" : "  1. Follow up the previous cases.2. Make the LDAP server configured unresponsible and down.3. Test the LDAP server using the three methods.",
+      "initial" : "  TBD",
+      "id" : "1825385",
+      "title" : "Test LDAP server_Error testing",
+      "result" : "  1. Test fails."
+   },
+   "1825359" : {
+      "steps" : "  1. Follow up the previous case.2. Add two or more Backup/replica LDAP servers for the secondary server.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825359",
+      "title" : "Add two or more Backup/replica LDAP servers for one or more secondary server in the same partition",
+      "result" : "  1. LDAP configuration window is opened.2. Backup/replica LDAP servers are configured and saved successfully."
+   },
+   "1825369" : {
+      "steps" : "  TBD - From the func spec, it says \"Dynamically learning of backup servers will not be supported in the initial release but is something that may be added later.\"",
+      "initial" : "  TBD",
+      "id" : "1825369",
+      "title" : "Verify dynamically learned backup servers",
+      "result" : "  TBD - Pleake skip testing this case."
+   },
+   "1529223" : {
+      "steps" : "  1. Add some LDAP Servers with TLS checked refer to above case.2. Then Add some LDAP Servers with TLS unchecked refer to above case.3.Test with these all LDAP Servers. 4. Verify authentication.",
+      "initial" : "  TBD",
+      "id" : "1529223",
+      "title" : "Add multiple LDAP Servers with TLS and Non-TLS mixture",
+      "result" : "  1. Connect to all LDAP Server successfully. 2.Authentication should be successful."
+   },
+   "1825336" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Schema tab of the LDAP Configuration window, select RFC2798 InetOrgPerson in the LDAP Schema.",
+      "initial" : "  TBD",
+      "id" : "1825336",
+      "title" : "LDAP Configuration> Schema. RFC2798 InetOrgPerson selected",
+      "result" : "  The following settings are displayed on the Schema page: Object clas: inetOrgPerson, Login name attribute: uid, Qualified login name attribute: mail, User group membership attribute: blank, Framed IP address attribute: blank, Object class: groupOfNames, Member attribute: member. The only one field is editable, Qualified login name attribute."
+   },
+   "1825388" : {
+      "steps" : "  1. Follow up the previous cases.2. Select the format as 'Simple name'.",
+      "initial" : "  TBD",
+      "id" : "1825388",
+      "title" : "Import the users in different domains with the same name('Simple name' format)",
+      "result" : "  1. The same user name with the format 'Simple name' cannot be imported twice.2. [Local Users] page only displayed one user imported"
+   },
+   "1825320" : {
+      "steps" : "  1. Add a LDAP server and disable it.",
+      "initial" : "  TBD",
+      "id" : "1825320",
+      "title" : "Check the status indicator_grey",
+      "result" : "  1. The status indicator showed grey."
+   },
+   "1825360" : {
+      "steps" : "  1. Create two or more partitions.2. Navigate [Users] - [Settings] -> [Configure LDAP] button.3. Add the primary LDAP server one by one assigned to the different partitions.a. Under [Settings] tab: Enter the correct IP address or host name of another domain controller, role(default option primary LDAP server), port number 389, server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes), uncheck TLS option.b. Under [Schema] tab: Select [Microsoft Active Directory].c. Under [Directory] tab: Enter domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials.4. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825360",
+      "title" : "Add a primary LDAP server separately in multiple partitions",
+      "result" : "  1. LDAP configuration window is opened.2. A window prompted to assign the partition.3. LDAP server is configured and saved successfully assigned to the different partitions."
+   },
+   "1825357" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one LDAP server.a. Role selects Backup/replica LDAP server).b. Enter the IP address and select the primary LDAP server in the list.c.uncheck \"Use same bind credentials as the server that is a backup for\".3.Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials(different from server backup for). 4. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825357",
+      "title" : "Add Backup/replica LDAP server  with using different bind credentials from server backup for",
+      "result" : "  1. LDAP configuration window is opened.2. A window prompted to assign the partition.3. Backup/replica LDAP server is configured and saved successfully.4.Test LDAP Settings with credential specified for backup server successfully.(under \"Use authentication test\")."
+   },
+   "1825392" : {
+      "steps" : "  1. Follow up the previous cases.2. Select the format as 'Simple name'.",
+      "initial" : "  TBD",
+      "id" : "1825392",
+      "title" : "Import the groups in different domains with the same name('Simple name' format)",
+      "result" : "  1. The same group name with the format 'Simple name' cannot be imported twice.2. [Local groups] page only displayed onegroup imported"
+   },
+   "1825393" : {
+      "steps" : "  1. Follow up the previous cases.2. Select the format as 'name@domain.com'.",
+      "initial" : "  TBD",
+      "id" : "1825393",
+      "title" : "Import the groups in different domains with the same name( 'name@domain.com' format)",
+      "result" : "  1. The same group name with the format 'name@domain.com' can be imported.2. [Local groups] page displayed the users imported with the correct format."
+   },
+   "1825340" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Directory tab of the LDAP Configuration window, highlight mydomain.com/users entry in the Trees containing users table and click the Edit button under the table.5. In the New Tree window, change mydomain.com/users to mydomain.com/unit2 and click OK.",
+      "initial" : "  TBD",
+      "id" : "1825340",
+      "title" : "LDAP Configuration> Directory. DNs for user trees. Edit",
+      "result" : "  One entry mydomain.com/unit2 is listed in the Trees containing users table."
+   },
+   "1825411" : {
+      "steps" : "  1) Add a new LDAP server in a partition.\n  2) Input IP or host name and other settings.\n  3) In \"Login/Bind\" tab, choose \"Give login name/location tree\"\n  4) Input \"Login user name\" \"User tree for login to server\" \"Password\"\n  5) Save",
+      "initial" : "  TBD",
+      "id" : "1825411",
+      "title" : "LDAP functionality with 'Give login name/location in tree' selected in the configuration",
+      "result" : "  Could be saved successfully. After a while, light should be green."
+   },
+   "1529233" : {
+      "steps" : "  1) Configure a primary LDAP server (main domain) and a secondary LDAP server (sub domain) in one partition.\n  2) Create a sub domain user on secondary LDAP server.\n  3) Try to visit a public website by sub domain user.",
+      "initial" : "  TBD",
+      "id" : "1529233",
+      "title" : "Verify attempt to connect secondary LDAP server when a search is not known from Primary LDAP server",
+      "result" : "  If sub domain user cannot be searched by primary LDAP server, it should connect to secondary LDAP server."
+   },
+   "1529214" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one LDAP server.a. Under [Settings] tab: Enter the correct IP address or host name of the domain controller, role(default option primary LDAP server), port number 389, server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes), uncheck TLS option.b. Under [Schema] tab: Select [Microsoft Active Directory].c. Under [Directory] tab: Enter domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1529214",
+      "title" : "Add primary LDAP server when AP is not enabled",
+      "result" : "  1. LDAP configuration window is opened.2. Primary LDAP server is configured and saved successfully."
+   },
+   "1825324" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Click [Add] button,select one partion in list.3.Click delete icon in LDAP Configuration Window.",
+      "initial" : "  TBD",
+      "id" : "1825324",
+      "title" : "Check LDAP window can be closed without saving",
+      "result" : "  1.LDAP window can be closed without saving."
+   },
+   "1825345" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Directory tab of the LDAP Configuration window, highlight mydomain.com/users entry in the Trees containing user groups table and click the Edit button under the table.5. In the New Tree window, change mydomain.com/users to mydomain.com/unit2 and click OK.",
+      "initial" : "  TBD",
+      "id" : "1825345",
+      "title" : "LDAP Configuration> Directory. DNs for user group trees. Edit",
+      "result" : "  One entry mydomain.com/unit2 is listed in the Trees containing user groups table."
+   },
+   "1825379" : {
+      "steps" : "  1. Follow up the previous case.2. Navigate [Test] tab.3. Select the configured LDAP server to do LDAP search test.4. Click 'Advanced',then click 'More...' button,try to change the 'Search base' or 'Search scope' .5. Do Search Test with different setting of 'Search base' or 'Search scope'.",
+      "initial" : "  TBD",
+      "id" : "1825379",
+      "title" : "Test LDAP server_LDAP search test(Advanced Search->'More..')",
+      "result" : "  1.'Search base' or 'Search scope' can be changed.2.with different setting of 'Search base' or 'Search scope',it will return different results."
+   },
+   "1825375" : {
+      "steps" : "  1. Follow up the previous cases.2. Navigate [Test] tab.3. Select the configured LDAP server to do user authentication test in the parent/child domain.4. Enter an unexisted user name or correct user with wrong password.5.Click [Test] button.",
+      "initial" : "  TBD",
+      "id" : "1825375",
+      "title" : "Test LDAP server with wrong User/Password_user authentication test",
+      "result" : "  1.Credential is invalid,1. Test fails.test fails."
+   },
+   "1825332" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Once dynamically learned secondary server display,click info icon with server.",
+      "initial" : "  TBD",
+      "id" : "1825332",
+      "title" : "dynamically learned secondary server can save bind info and users/groups in trees",
+      "result" : "  1. It shows correct info learned from server ."
+   },
+   "1825390" : {
+      "steps" : "  1. Configure two LDAP servers in the different domains.Partition 'SHCDPQA130': Domain 'SHCDPQA130.com'Partition 'WENLU': Domain 'WENLU.com'2. Navigate 'Users & Groups' tab, click [Import Groups] button.3. Select the specific LDAP server to import users separately.4. Select the format: Simple name or name@domain.com.5. Check Users -> Local Groups page.",
+      "initial" : "  TBD",
+      "id" : "1825390",
+      "title" : "Import groups from a specific LDAP server",
+      "result" : "  1. The groups selected can be imported from the specific LDAP server in the partition.2. [Local Groups] page displayed the groups imported with the correct format."
+   },
+   "1825378" : {
+      "steps" : "  1. Follow up the previous case.2. Navigate [Test] tab.3. Select the configured LDAP server to do LDAP search test.4. Click 'Advanced',with some filter setting to filter with user/group.",
+      "initial" : "  TBD",
+      "id" : "1825378",
+      "title" : "Test LDAP server_LDAP search test(Advanced Search)",
+      "result" : "  1. The advanced configuration is displayed and can be made some changes.2.Search results displayed the correct and detailed membership and DN info."
+   },
+   "1825339" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Directory tab of the LDAP Configuration window, click the Add button under the Trees containing users table.5. In the New Tree window, type elenaqa.com/unit1 and click OK.",
+      "initial" : "  TBD",
+      "id" : "1825339",
+      "title" : "LDAP Configuration> Directory. DNs for user trees. Add",
+      "result" : "  A new entry mydomain.com/unit1 is listed in the Trees containing users table along with a default entry mydomain.com/users."
+   },
+   "1825383" : {
+      "steps" : "  1. Add one LDAP Server follow up previous cases.2. Navigate [Users] - [Settings] -> [Configure LDAP].3. In [Settings] - [General Settings] tab,select version \"LDAP version 2\",then test connectivity/bind or user authentication with server.4. Change the version as \"LDAP version 3\",then test connectivity/bind or user authentication with server.",
+      "initial" : "  TBD",
+      "id" : "1825383",
+      "title" : "Different LDAP Protocol version check with LDAP Server",
+      "result" : "  1. With both \"LDAP version 2\" and \"LDAP version 3\",test with LDAP server successfully."
+   },
+   "1825356" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure LDAP] button.2. Add one LDAP server.a. Under [Settings] tab: Enter the correct IP address or host name of the domain controller, role selects secondary LDAP server), port number 389, server timeout(default value 10 seconds), overall operation timeout(default value 5 minutes), uncheck TLS option.b. Under [Schema] tab: Select [Microsoft Active Directory].c. Under [Directory] tab: Enter domain name, then click [Auto-configure] button.d. Under [Login/Bind] tab: Check 'Give login name/location in tree', provide the correct credentials.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825356",
+      "title" : "Add secondary LDAP server when AP is enabled",
+      "result" : "  1. LDAP configuration window is opened.2. A window prompted to assign the partition.3. Secondary LDAP server is configured and saved successfully."
+   },
+   "1825342" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the Directory tab of the LDAP Configuration window, click the Add button under the Trees containing users table.5. In the New Tree window, type mydomain.com/unit1 and click OK.6. Repeat steps 4 and 5 adding unit2, unit3, and etc. for mydomain.com.",
+      "initial" : "  TBD",
+      "id" : "1825342",
+      "title" : "LDAP Configuration> Directory. DNs for user trees. Limits",
+      "result" : "  16 new DNs for user trees are added in the Trees containing users table."
+   },
+   "1825391" : {
+      "steps" : "  1. Configure two LDAP servers in the different domains.Partition 'SHCDPQA130': Domain 'SHCDPQA130.com'Partition 'WENLU': Domain 'WENLU.com'2. Navigate 'Users & Groups' tab, click [Import groups] button.3. Select the specific partition to import users separately.4. Select the format: Simple name or name@domain.com.5. Check Users -> Local Groups page.",
+      "initial" : "  TBD",
+      "id" : "1825391",
+      "title" : "Import groups from all LDAP servers in a specific partition",
+      "result" : "  1. The groups selected can be imported from all the LDAP servers in the specific partition.2. [Local groups] page displayed the groups imported with the correct format."
+   },
+   "1825389" : {
+      "steps" : "  1. Follow up the previous cases.2. Select the format as 'domain\\name' or 'name@domain.com'.",
+      "initial" : "  TBD",
+      "id" : "1825389",
+      "title" : "Import the users in different domains with the same name('domain\\name' or 'name@domain.com' format)",
+      "result" : "  1. The same user name with the format 'domain\\name' or 'name@domain.com' can be imported.2. [Local Users] page displayed the users imported with the correct format."
+   },
+   "1825395" : {
+      "steps" : "  1. Add one new groups in LDAP server.2. Navigate 'Users & Groups' tab, click [Refresh now] button.3. Check [Users] -> [Local groups] page.",
+      "initial" : "  TBD",
+      "id" : "1825395",
+      "title" : "'Refresh Now' work for LDAP Mirror",
+      "result" : "  1.[Local groups] page displayed the new groups insistantly."
+   },
+   "2212948" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "2212948",
+      "title" : "GEN7-42015: SonicUI7, both Contemporary and Classic UI truncates last 9 entries of LDAP Server IP\u00e2\u20ac\u2122s and renders only a list of 20 entries while it has 29 entries in total and shows in the TSR",
+      "result" : "  TBD"
+   },
+   "1529230" : {
+      "steps" : "  1. Add two or more LDAP servers indicated to different domains like 'SHCDPQA110.com' and 'SHCDPQA130.com'.2. Enable the option 'Mirror LDAP user groups locally' under 'Users & Groups' tab. Mirror all user groups or only have the menmber users/groups.3. Check 'Users' -> 'Local Groups' page.",
+      "initial" : "  TBD",
+      "id" : "1529230",
+      "title" : "LDAP mirrioring in different domains to the firewall",
+      "result" : "  1. 'Groups Mirrored from LDAP' lists all the groups from different domains correctly."
+   },
+   "1825353" : {
+      "steps" : "  1. Follow up the previous case.2. Add two or more Backup/replica LDAP servers for the secondary server.3. Click [Apply] or [OK] button.",
+      "initial" : "  TBD",
+      "id" : "1825353",
+      "title" : "Add two or more Backup/replica LDAP servers for one or more secondary server when AP is not enabled",
+      "result" : "  1. LDAP configuration window is opened.2. Backup/replica LDAP servers are configured and saved successfully."
+   },
+   "1825350" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.4. In the LDAP Users tab of the LDAP Configuration window, view options in the Default LDAP User Group drop down box.",
+      "initial" : "  TBD",
+      "id" : "1825350",
+      "title" : "LDAP Configuration> LDAP Users. Default LDAP User Group. Select",
+      "result" : "  The Default LDAP User Group drop down box displays the following items: 'None', 'Create a new users group...', 'Content Filtering Bypass', 'Everyone', 'Guest Services', 'Limited Administrators', and 'Trusted Users'."
+   }
+}

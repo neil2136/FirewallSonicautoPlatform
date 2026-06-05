@@ -1,0 +1,37 @@
+{
+   "12" : {
+      "steps" : " step 1: go to Network page, open configuration Window for primary WAN, select IP Assignment as PPPoE, fill in user name and password as appropriate, accept default settings for all other options, and click OK;\n step 2: verify from the GUI that primary WAN can receive correct IP address;\n step 3: verify Network -> Address Objects page that WAN subnets, WAN Interface IP, All WAN IP, and All WAN Management IP are shown the correct information",
+      "initial" : "Have PPPoE server configured and up running.",
+      "id" : "12",
+      "title" : "Assign Primary WAN IP through PPPoE",
+      "result" : " Primary WAN should receive correct IP address and Address Objects page should display the right information too."
+   },
+   "13" : {
+      "steps" : " step 1: go to Network page, open configuration Window for secondary WAN, select IP Assignment as PPPoE, fill in user name and password as appropriate, accept default settings for all other options, and click OK;\n step 2: verify from the GUI that secondary WAN can receive correct IP address",
+      "initial" : " Have PPPoE server configured and up running. ",
+      "id" : "13",
+      "title" : "Assign Secondary WAN IP through PPPoE and Primary as Static",
+      "result" : " Secondary WAN should receive correct IP address"
+   },
+   "14" : {
+      "steps" : " step 1: go to Network page, open configuration Window for primary WAN, select IP Assignment as PPPoE, fill in user name and password as appropriate, accept default settings for all other options, and click OK;\n step 2: go to Network page, open configuration Window for secondary WAN, select IP Assignment as PPPoE, fill in user name and password as appropriate, accept default settings for all other options, and click OK;\n step 3: verify from the GUI that both primary and secondary WAN can receive correct IP address",
+      "initial" : "  Have two separate PPPoE servers configured and up running, one for primary WAN, and the other for secondary WAN.",
+      "id" : "14",
+      "title" : "Assign both Primary and Secondary WAN IP through PPPoE",
+      "result" : "  Both primary and secondary WAN should receive correct IP address"
+   },
+   "19" : {
+      "steps" : " step 1: go to Network page, open configuration Window for WAN, select IP Assignment as PPPoE, fill in user name and password as appropriate, check Inactivity Disconnect and accept default setting (10 minutes), and click OK;\n step 2: verify from the GUI that primary WAN can receive correct IP address;\n step 3: keep SonicWALL inactive for 10 minutes without any traffic from LAN->WAN;\n step 4: verify that PPPoE connection is terminated;",
+      "initial" : " Have PPPoE server configured and up running.",
+      "id" : "19",
+      "title" : "Verify Inactivity Disconnection default setting",
+      "result" : " Verify that PPPoE connection is terminated"
+   },
+   "39" : {
+      "steps" : " step 1: setup a PPPoE connection;\n step 2: click disconnect button on Network -> Interfaces page for WAN that configured as PPPoE;",
+      "initial" : "  Have PPPoE server configured and up running. ",
+      "id" : "39",
+      "title" : " Verify disconnecting PPPoE connection from SonicWALL",
+      "result" : " Verify that WAN IP is reset to 0.0.0.0 on both Network -> Interfaces and System -> Status pages."
+   }
+}

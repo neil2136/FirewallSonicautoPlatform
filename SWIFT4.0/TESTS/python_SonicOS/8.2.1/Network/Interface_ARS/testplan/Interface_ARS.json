@@ -1,0 +1,243 @@
+{
+"1713737" : {
+      "steps" : "  1. set up a topology like this ,add relevant routes and access rules,enable Asymmetric_Route on all interfaces\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/1]----[X2] DUT[X4]----[E1/1] Router2 [E0/1]---server\n  2. set X0 L2 Bridge to X1,then send traffic from PC to server,check if it can pass through\n  3. change X2 as transparent mode,then send traffic from PC to server,check if it can pass through",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713737",
+      "title" : "[function]enable the option on L2B/ransparent  mode interfacstep",
+      "description" : "Original ID: 011\nOriginal Title: [function]enable the option on L2B/ransparent  mode interfacstep \nOriginal Description: verify the option Asymmetric_Route can work on L2B/ransparent mode interface",
+      "result" : "  step 2,the traffic can pass through\n  step 3,the traffic can pass through"
+   },
+    "1713741" : {
+      "steps" : "  1. set up a topology like this\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/1]----[X2] DUT[X4]----[E1/1] Router2 [E0/1]---server\n  2. set X0 and X2 as LAN zone,set X3 and X4 as WAN zone,add relevant static route and access rule ,send traffic from PC to server,check if traffic can pass through\n  3. change X3 and X4 as DMZ zone,add relevant access rule ,send traffic from PC to server,check if traffic can pass through\n  4. change X0 and X2 as DMZ zone,add relevant access rule ,send traffic from PC to server,check if traffic can pass through\n  5. change the interfaces to other zones,add relevant access rule,send traffic from PC to server, check if traffic can pass through",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713741",
+      "title" : "the option support different zones",
+      "description" : "Original ID: 015\nOriginal Title: the option support different zones\nOriginal Description:",
+      "result" : "  interfaces in different zones can enable this option,and the function works well"
+   },
+   "1713731" : {
+      "steps" : "  <a name=\"64\"></a>1. set up a topology like this ,and add relevant route and access rules\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/1]----[X2] DUT[X4]----[E1/1] Router2 [E0/1]---server 2. Configure HA on the device. (Make sure that the HA pair is connected to hubs and not switches)\n  3. Pass traffic from PC to the server\n  4. Initiate failover.\n  5. Verify that the Backup firewall becomes Active and that the traffic is still passing through.\n  6. Do Failback.\n  7. Verify that the Primary firewall becomes Active and that the traffic is still passing through.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713731",
+      "title" : "HA support",
+      "description" : "Original ID: 005\nOriginal Title: HA support\nOriginal Description:",
+      "result" : "  <a name=\"64\"></a>\n  Failover and Failback should work as defined"
+   },
+    "1713733" : {
+      "steps" : "  1. set up a topology like this ,use vlan interface as egress and ingress interface\n  pc ---[E0/1] Router1[E1/0]----[X0:V10] DUT[X3:V30]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/1]----[X2:V20] DUT[X4:V40]----[E1/1] Router2 [E0/1]---server\n  2. add relevant route in routers and DUT\n  from pc to server,\n  in router 1 add a static route through interface E1/0 to X0:v10 of DUT,\n  in DUT add a static route through X3:v30 to E1/0 of router2\n  from server to PC\n  in router 2 add a static route through interface E1/1 to X4:v40 of DUT,\n  in DUT add a static route through X2:v20 to E1/1 of router1\n  3. add relevant access rule\n  4. Enable Asymmetric Route Support of X0:v10,X2:v20,X3:v30,X4:v40.\n  5. send ping/http traffic from pc to server,download some large files from pc to server\n  6. check connection cache and captured packets,check if the traffic pass through specified interfaces without error\n  7. disable Asymmetric Route Support, check if the traffic can pass through",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713733",
+      "title" : "[function]enable/disable Asymmetric Route Support on VLAN interface",
+      "description" : "Original ID: 007\nOriginal Title: [function]enable/disable Asymmetric Route Support on VLAN interface\nOriginal Description:",
+      "result" : "  after step 5,6, the traffic is through specified interfaces without error\n  after step 7,the traffic can't pass through because the initial packets will be dropped by IP-SPOOF check or response packets will be dropped by cache lookup missing"
+   },
+   "1713735" : {
+      "steps" : "  1. set up topology like this\n  pc ---[X0]DUT1[X3]-----[X3] DUT 2[X0]---server\n  pc ---[X0]DUT1[X4]-----[X4] DUT 2[X0]---server\n  2. add 2 vpn tunnels between DUT1 and DUT2,named test1 and test2,and enable Asymmetric Route Support\n  3. add static route from PC to server through VPN tunnel test1,and from server to PC through VPN tunnel test2\n  4. add relevant access rule between PC's zone and VPN on DUT1 and add relevant access rule between server's zone and VPN on DUT2\n  5. send ping/http traffic from PC to server,and download large files from PC to server\n  6. check connection cache and captured packets,check if the traffic pass through specified interfaces without error 7.disable Asymmetric Route Support, check if the traffic can pass through ",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713735",
+      "title" : "[function]enable/disable Asymmetric Route Support on VPN tunnel interface",
+      "description" : "Original ID: 009\nOriginal Title: [function]enable/disable Asymmetric Route Support on VPN tunnel interface\nOriginal Description:",
+      "result" : "  N/A"
+   },
+   "1713730" : {
+      "steps" : "  <a name=\"39\"></a>\n  1. go to Network / interface -&gt; advance page 2. choose some interfaces enable \"Asymmetric_Route\", others disable \"Asymmetric_Route\"\n  3. Export preferences file\n  4.factory default,then re-import,the preference file",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713730",
+      "title" : "Export/import Exp file",
+      "description" : "Original ID: 004\nOriginal Title: Export/import Exp file\nOriginal Description:",
+      "result" : "  <a name=\"39\"></a>1 Export and import is validated\n  2 Configuration keeps intact."
+   },
+    "1713748" : {
+      "steps" : "  1. set x2 portshield to X0,then go to interface x2 -&gt; advance,check if this option could be configurable\n  2. interface x1 -&gt; advance tab,select the Link Aggregation from the drop down box ,and choose 2 unassigned interface e.g. x3,then click ok. check member interface x3 can not be editted\n  3. switch -&gt; vlan trunking,add a Vlan Trunk Port,choose a unassigned interface e.g. x4, and then enable vlan 100 ,and click OK. interface x4:v100-&gt; advance,check if option could be configurable",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713748",
+      "title" : "[GUI] Verify this option should not be configurable in some special interfaces: Portshield member/LAG member/VLAN Trunk",
+      "description" : "Original ID: 022\nOriginal Title: [GUI] Verify this option should not be configurable in some special interfaces: Portshield member/LAG member/VLAN Trunk \nOriginal Description:",
+      "result" : "  this option can't be configurable in some special interfaces: Portshield member/LAG member/VLAN Trunk"
+   },
+   "1713743" : {
+      "steps" : "  1. In the System-&gt;Administration page, enable management using GMS , then click the configure button . 2. In the Configure GMS Settings page, enter into the GMS IP Address and select SSL as Management Mode. 3. Use the GMS ip address to access GMS , and add the DUT and synchronize it, then check the status for the DUT. 4. On GMS, in the Network-&gt;Interfaces page,enable Asymmetric Route Support,check if the traffic can pass through. 5.\u00c3\u0192\u00c2\u00af\u00c3\u201a\u00c2\u00bf\u00c3\u201a\u00c2\u00bd0\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00be2On GMS, in the Network-&gt;Interfaces page,disable Asymmetric Route Support,check if the traffic can pass through.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713743",
+      "title" : "[GMS] enable /disable the option from GMS",
+      "description" : "Original ID: 017\nOriginal Title: [GMS] enable /disable the option from GMS\nOriginal Description:",
+      "result" : "  make sure that the option has been synchronized on DUT."
+   },
+    "1713740" : {
+      "steps" : "  1. set up a topology like this ,the traffic from/to PC with different interfaces,and from/To server with same interface\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/1]----[X2] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  2. add relevant route in routers and DUT\n  from pc to server,\n  in router 1 add a static route through interface E1/0 to X0 of DUT,\n  in DUT add a static route through X3 to E1/0 of router2\n  from server to PC\n  in DUT add a static routethrough X2 to E1/1 of router1\n  3. add relevant access rule\n  4. Enable Asymmetric Route Support of X0,X2,X3,X4.\n  5. send ping/http traffic from pc to server,download some large files from pc to server\n  6. check connection cache and captured packets,check if the traffic pass through specified interfaces without error\n  7. disable Asymmetric Route Support, check if the traffic can pass through",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713740",
+      "title" : "the traffic from/to PC with different interfaces,and from/To server with same interface",
+      "description" : "Original ID: 014\nOriginal Title: the traffic from/to PC with different interfaces,and from/To server with same interface\nOriginal Description:",
+      "result" : "  after step 5,6, the traffic is through specified interfaces without error\n  after step 7,the traffic can't pass through because the initial packets will be dropped by IP-SPOOF check or response packets will be dropped by cache lookup missing"
+   },
+    "1713746" : {
+      "steps" : "  1. set up a topology like this ,add relevant routes and access rules,enable Asymmetric_Route on all interfaces\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/1]----[X2] DUT[X4]----[E1/1] Router2 [E0/1]---server\n  2. send high load <span style=\"font-size: 10px;\">traffic from PC to server over 24 hours,check if DUT have crash or any error happen.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713746",
+      "title" : "Stress test, high load traffic running over 24 hours",
+      "description" : "Original ID: 020\nOriginal Title: Stress test, high load traffic running over 24 hours\nOriginal Description:",
+      "result" : "  send high load traffic from PC to server over 24 hours, DUT should have no crash or any error happen."
+   },
+   "1713742" : {
+      "steps" : "  1. set up a topology like this\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/1]----[X2] DUT[X4]----[E1/1] Router2 [E0/1]---server\n  2. set X0 and X2 as LAN zone,set X3 and X4 as WAN zone,add relevant static route\n  3. Be default, traffic is allowed from LAN to WAN\n  4. send traffic from PC to server,check if traffic can pass through\n  5.Change the access rule to deny from LAN to WAN\n  6. Verify traffic from LAN to WAN get blocked",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713742",
+      "title" : "Access rules for the interfaces enable this option",
+      "description" : "Original ID: 016\nOriginal Title: Access rules for the interfaces enable this option\nOriginal Description:",
+      "result" : "  4.Verify traffic from LAN to WAN is allowed 6.Verify traffic from LAN to WAN get blocked"
+   },
+    "1713750" : {
+      "steps" : "  1.Configure MGMT interface and observe the Advanced settings.\n  2.Verify this option should not be configurable in MGMTinterface",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713750",
+      "title" : "[GUI] Verify this option should not be configurable in MGMT interface",
+      "description" : "Original ID: 024\nOriginal Title: [GUI] Verify this option should not be configurable in MGMT interface\nOriginal Description:",
+      "result" : "  this option should not be configurable in MGMT interface"
+   },
+    "1713749" : {
+      "steps" : "  1. set x0 wiremode to X2\n  2. configure X0 interface,go to advance tab,check if this option could be configurable 3.configure X2 interface,go to\n  advance tab,check if this option could be configurable ",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713749",
+      "title" : "[GUI] Verify this option should not be configurable in some special interfaces:wiremode",
+      "description" : "Original ID: 023\nOriginal Title: [GUI] Verify this option should not be configurable in some special interfaces:wiremode\nOriginal Description:",
+      "result" : "  this option should not be configurable on wiremode interface"
+   },
+   "1713734" : {
+      "steps" : "  1.add a wlan interface which connect with SonicPoint ,or use interface w0\n  2. then enable this option,check if the configuration can be saved\n  3. then disable this option,check if the configuration can be saved",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713734",
+      "title" : "[GUI]the option \"Asymmetric Route Support\"can enable and disable on  WLAN interface",
+      "description" : "Original ID: 008\nOriginal Title: [GUI]the option \"Asymmetric Route Support\"can enable and disable on  WLAN interface\nOriginal Description:",
+      "result" : "  after step 4,5,6, the traffic is through specified interfaces without error\n  after step 7,the traffic can't pass through because the initial packets will be dropped by IP-SPOOF check or response packets will be dropped by cache lookup missing"
+   },
+    "1713727" : {
+      "steps" : "  1. interface Xn -&gt;advance, disable the option \"Enable Asymmetric Route Support\",then click OK 2. interface Xn-&gt;advance,enable the option \"Enable Asymmetric Route Support\",then click OK",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713727",
+      "title" : "[GUI] The option \"Enable Asymmetric Route Support\" can  disable / enable from GUI",
+      "description" : "Original ID: 001\nOriginal Title: [GUI] The option \"Enable Asymmetric Route Support\" can  disable / enable from GUI\nOriginal Description:",
+      "result" : "  the option \"Enable Asymmetric Route Support\" can disable / enable from GUI"
+   },
+     "1713729" : {
+      "steps" : "  <span style=\"font-size: 10px;\">1. go to Network / interface -&gt; advance page 2. choose some interfaces enable \"\n  Asymmetric_Route\", others disable \"Asymmetric_Route\" 3. Export TSR.",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713729",
+      "title" : "TSR support",
+      "description" : "Original ID: 003\nOriginal Title: TSR support\nOriginal Description:",
+      "result" : "  <span style=\"font-size: 10px;\">Info is correct and integrated in TSR for <span style=\"font-size: 10px;\">\"\n  <span style=\"font-size: 10px;\">Asymmetric_Route\" <span style=\"font-size: 10px;\">feature."
+   },
+   "1768196" : {
+      "steps" : "  1. set up a topology like this ,use physical interface as egress and ingress interface\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/1]----[X2] DUT[X4]----[E1/1] Router2 [E0/1]---server\n  2.from pc to server,\n  In router 1,add a static route through interface E1/0 to X0 of DUT,\n  in DUT add a static route through X3 to E1/0 of router2\n  from server to PC\n  in router 2 add a static route through interface E1/1 to X4 of DUT,\n  in DUT add a static router hrough X2 to E1/1 of router1\n  3. add relevant access rule\n  4. Enable Asymmetric Route Support of X0,X2,X3,X4.\n  5. send ping/http traffic from pc to server ,download some large files from pc to server\n  6. check connection cache and captured packets,check if the traffic pass through specified interfaces without error\n  7. disable Asymmetric Route Support, check if the traffic can pass through",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1768196",
+      "title" : "[function]enable/disable  Asymmetric Route Support on physical interface",
+      "description" : "Original ID: 006\nOriginal Title: [function]enable/disable  Asymmetric Route Support on physical interface\nOriginal Description:",
+      "result" : "  after step 5,6, the traffic is through specified Interfaces without error\n  after step 7,the traffic can't pass through because the initial packets will be dropped by IP-SPOOF check or response packets will be dropped by cache lookup missing"
+   },
+    "1713739" : {
+      "steps" : "  1. set up a topology like this ,the traffic from/to PC with SAME interface,and from/To server with different interfaces\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X4]----[E1/1] Router2 [E0/1]---server\n  2. add relevant route in routers and DUT\n  from pc to server,\n  in router 1 add a static route through interface E1/1 to X2 of DUT,\n  in DUT add a static route through X3 to E1/0 of router2\n  from server to PC\n  in router 2 add a static route through interface E1/1 to X4 of DUT,\n  in DUT add a static route through X2 to E1/1 of router1\n  3. add relevant access rule\n  4. Enable Asymmetric Route Support of X0,X2,X3,X4.\n  5. send ping/http traffic from pc to server,download some large files from pc to server\n  6. check connection cache and captured packets,check if the traffic pass through specified interfaces without error\n  7. disable Asymmetric Route Support, check if the traffic can pass through",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713739",
+      "title" : "the traffic from/to PC with SAME interface,and from/To server with different interfaces",
+      "description" : "Original ID: 013\nOriginal Title: the traffic from/to PC with SAME interface,and from/To server with different interfaces\nOriginal Description:",
+      "result" : "  after step 5,6, the traffic is through specified interfaces without error\n  after step 7,the traffic can't pass through because the initial packets will be dropped by IP-SPOOF check or response packets will be dropped by cache lookup missing"
+   },
+   "1713738" : {
+      "steps" : "  1. set up a topology like this\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/1]----[X2] DUT[X4]----[E1/1] Router2 [E0/1]---server\n  2. add relevant route in routers and DUT\n  from pc to server,\n  in router 1 add a static route through interface E1/0 to X0 of DUT,\n  in DUT add a static route through X3 to E1/0 of router2\n  from server to PC\n  in router 2 add a static route through interface E1/1 to X4 of DUT,\n  in DUT add a static route through X2 to E1/1 of router1\n  3. add relevant access rule\n  4. Enable Asymmetric Route Support of X0,X2,X3,X4.\n  5. send ping/http traffic from pc to server,download some large files from pc to server\n  6. check connection cache and captured packets,check if the traffic pass through specified interfaces without error\n  7. disable Asymmetric Route Support, check if the traffic can pass through",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713738",
+      "title" : "the traffic from/to PC with different interface,and from/To server with different interface",
+      "description" : "Original ID: 012\nOriginal Title: the traffic from/to PC with different interface,and from/To server with different interface\nOriginal Description:",
+      "result" : "  after step 5,6, the traffic is through specified interfaces without error\n  after step 7,the traffic can't pass through because the initial packets will be dropped by IP-SPOOF check or response packets will be dropped by cache lookup missing"
+   },
+   "1713744" : {
+      "steps" : "  1. go to Network / interface -&gt; advance page 2. choose some interfaces enable \"Asymmetric_Route\", others disable \"Asymmetric_Route\"\n  3. reboot the firewall.",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713744",
+      "title" : "enable/disable the option ,then Reboot the firewall.",
+      "description" : "Original ID: 018\nOriginal Title: enable/disable the option ,then Reboot the firewall. \nOriginal Description:",
+      "result" : "  Configuration keeps intact."
+   },
+    "1713747" : {
+      "steps" : "  1. factory default the firewall\n  2. interface X0/X1 -&gt; advance, check the default value of \"Enable Asymmetric Route Support\"\n  3. interface W0 -&gt; advance, check the default value of \"Enable Asymmetric Route Support\"\n  4 add a vlan interface,then check the default value of \"Enable Asymmetric Route Support\"\n  5. add a WLAN tunnel interface,then check the default value of \"Enable Asymmetric Route Support\"\n  6. add a VPN tunnel interface,then check the default value of \"Enable Asymmetric Route Support\"",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713747",
+      "title" : "[GUI] Verify the default value for this option should be \"Disabled\".",
+      "description" : "Original ID: 021\nOriginal Title: [GUI] Verify the default value for this option should be \"Disabled\".\nOriginal Description:",
+      "result" : "  the default value for this option is \"Disabled\"."
+   },
+   "1713736" : {
+      "steps" : "  1. add a WLAN tunnel interface,check if the default value of \"Enable Asymmetric Route Support\" is disable 2. then enable this option,check if the configuration can be saved 3. then disable this option,check if the configuration can be saved",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713736",
+      "title" : "[GUI]the option \"Asymmetric Route Support\"can enable and disable on WLAN tunnel interface",
+      "description" : "Original ID: 010\nOriginal Title: [GUI]the option \"Asymmetric Route Support\"can enable and disable on WLAN tunnel interface\nOriginal Description:",
+      "result" : "  N/A"
+   },
+    "1713728" : {
+      "steps" : "  1. log in CLI,and enter configure mode\n  2. edit interface XN, then type \u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b0asymmetric-route\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a3\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00acand commit,check if the option is enabled from GUI\n  3. eedit interface XN, then type \u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b0no asymmetric-route\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a3\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00acand commit, check if the option is disabled from GUI",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713728",
+      "title" : "[CLI] The option \"Enable Asymmetric Route Support\" can  disable / enable from CLI",
+      "description" : "Original ID: 002\nOriginal Title: [CLI] The option \"Enable Asymmetric Route Support\" can  disable / enable from CLI\nOriginal Description:",
+      "result" : "  the option \"Enable Asymmetric Route Support\" can disable / enable from CLI"
+   },
+   "1713745" : {
+      "steps" : "  1. set up a topology like this ,add relevant routes and access rules,enable Asymmetric_Route on all interfaces\n  pc ---[E0/1] Router1[E1/0]----[X0] DUT[X3]----[E1/0] Router2 [E0/1]---server\n  pc ---[E0/1] Router1[E1/1]----[X2] DUT[X4]----[E1/1] Router2 [E0/1]---server\n  2. send ping traffic between PC and server,check if traffic can pass through\n  3. from PC download large files from FTP /HTTPS server ,check if can download successfully without error",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1713745",
+      "title" : "run different traffic  [ping/http/ftp] between pc and server",
+      "description" : "Original ID: 019\nOriginal Title: run different traffic  [ping/http/ftp] between pc and server\nOriginal Description:",
+      "result" : "  all kinds of traffic can pass through"
+   }
+
+}

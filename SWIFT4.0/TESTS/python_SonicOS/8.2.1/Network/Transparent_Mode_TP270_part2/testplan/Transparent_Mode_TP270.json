@@ -1,0 +1,129 @@
+{
+    "Configure_TC02": {
+        "steps": "1)  Login to management interface through a web browser 2)  Go to Network/Interface page 3)  Click LAN (X0) Configure button to pop up Edit Interface - X0 windows 4)  Select Undefined or Static from IP Assignment pulldown list 5)  Click OK button to save this setting without errors 6)  Check if the Transparent Mode is unset on LAN (X0) interface from Network/Interface page 7)  Repeat Step 3) to Step 7) above to unset Transparent Mode for other Interfaces defined in LAN, DMZ or custome zone",
+        "initial": "",
+        "id": "Configure_TC02",
+        "title": "User Interface: Configuration - Unsetting Transparent mode",
+        "result": "All steps in Test Excution section above are passed without errors."
+    },
+    "Configure_TC03": {
+        "steps": "1)  Login to management interface through a web browser 2)  Go to Network/Address Object page 3)  Click the Configure button of the LAN (X0) transparent range created in TC-1 (Test Case 1) above to pop up Edit Address Object windows 4)  Change this range to different range out of WAN subnet 5)  Click OK button to save changes 6)  The step above is denied with an error message  Error: Transparent Range not in WAN subnet  is displayed 7)  Change this range to include WAN IP 8)  Click OK button to save changes 9)  The step above is denied with an error message  Error: Transparent Range includes WAN IP  is displayed 10)  Change this range to include WAN Gateway 11)  Click OK button to save changes 12)  The step above is denied with an error message  Error: Transparent Range includes WAN Gateway  is displayed 13)  Change this range to a valid range within WAN subnet 14)  Click OK button to save changes 15)  The step above is accepted",
+        "initial": "",
+        "id": "Configure_TC03",
+        "title": "User Interface: Configuration - Modifying an address object attached to interface",
+        "result": ""
+    },
+    "Configure_TC05": {
+        "steps": "1)  Login to management interface through a web browser 2)  Go to Network/Address Object page 3)  Click Add button for Address Object to pop up Edit Address Object windows 4)  Fill up a name called as DMZ transparent range and an IP address out of WAN subnet for Host 5)  Check to make sure DMZ transparent range is not displayed in a pulldown list of Transparent Range",
+        "initial": "",
+        "id": "Configure_TC05",
+        "title": "Error: Configuration - Invalid IP",
+        "result": "An IP address object out of WAN subnet should not be displayed in a pulldown list of Transparent Range when defining an interface in Transparent mode."
+    },
+    "Configure_TC06": {
+        "steps": "1)  Login to management interface through a web browser 2)  Go to Network/Address Object page 3)  Click Add button for Address Object to pop up Edit Address Object windows 4)  Fill up a name called as DMZ transparent range and an IP range address out of WAN subnet for Host 5)  Check to make sure DMZ transparent range is not displayed in a pulldown list of Transparent Range",
+        "initial": "",
+        "id": "Configure_TC06",
+        "title": "Error: Configuration - Invalid IP range",
+        "result": "An IP range object out of WAN subnet should not be displayed in a pulldown list of Transparent Range when defining an interface in Transparent mode."
+    },
+    "Configure_TC08": {
+        "steps": "1)  Login to management interface through a web browser 2)  Go to Network/Address Object page 3)  Create two address range objects as Range 1 10.0.30.206  10.0.30.207 and Range 2 10.0.30.207  10.0.30.208 and 10.0.30.207 is the overlaped IP address 4)  Use Range 1 as a Transparent range for X0 in Transparent mode 5)  Click X2 Configure button to pop up Edit X2 windows 6)  Select DMZ for Zone and Transparent Mode for IP Assignment 7)  Select Range 2 for Transparent Range 8)  Click OK button to save the changes 9)  An error message  Error: Transparent Range overlaps with other configured Transparent Interface  is displayed to force user to select an address range object not overlapped with Range 1 for Transparent Range",
+        "initial": "",
+        "id": "Configure_TC08",
+        "title": "Error: Configuration - Range overlap",
+        "result": "An error message will be displayed to let user has to select or create a Transparent range not overlapped with other configured Transparent Interface."
+    },
+    "Configure_TC09": {
+        "steps": "1)  Login to management interface through a web browser 2)  Go to Network/Address Object page 3)  Click Del ect button for an address object or an address group object attached to an interface as a Transparent Range 4)  An error message Error: View List for delecting an address object or  Error: Object is in use by Transparent Mode interface  for deleting an address group object is displayed in Status line at the buttom of this page 5)  Click View List for deleting an address abject to pop up an error message windows to see  Object is in use by Transparent Mode interface  is displayed",
+        "initial": "",
+        "id": "Configure_TC09",
+        "title": "Error: Configuration - Deleting an Address object or an Address Group object attached to an interface",
+        "result": "An error message will be displayed to deny this action."
+    },
+    "Configure_TC10": {
+        "steps": "1) Login to management interface through a web browser 2) ????? Go to Network/Interface page 3) ????? Configure an interface or X1 in Static WAN IP assignment 4) ????? Configure an interface in Transparent mode 5) ????? Change WA N IP assignment from Static to DHCP 6) ????? Click OK button to save changes 7) ????? An error message ? Error: Transparent shared link must have static IP assignment ? is displayed not to be allowed  8) ????? Go to Network/Interface page 9) ????? Change an interface in Transparent mode to Static mode 10) ? Change WAN interface from a Static WAN IP assignment to DHCP dynamic IP assignment 11) ? Change an interface in Static mode to Transparent mode 12) ? Click OK button to save changes 13) ? An error message ? Error: Transparent Shared Interface must be Static WAN type ? is displayed not to be allowed",
+        "initial": "",
+        "id": "Configure_TC10",
+        "title": "Negative: Configuration - Dynamic WAN IP",
+        "result": "The modification for this tansparent range is only allowed within WAN subnet (WAN IP excluded) , otherwise, it will be denied with an proper error message."
+    },
+    "Configure_TC11": {
+        "steps": "1)  Login to management interface through a web browser 2)  Go to Network/Interface page 3)  Configure an interface in Transparent mode with a Transparent range 10.0.30.206  10.0.30.209 4)  Select an IP address for a host connected on this interface with the following one at a time to access management interface and Internet from this host to chech the result: 10.0.30.205 (out of lower boundary in Transparent range) 10.0.30.206 (same as lower boundary in Transparent range) 10.0.30.207 or 10.0.30.208 (within the Transparent range) 10.0.30.209 (same as higher boundary in Transparent range) 10.0.30.210 (out of higner boundary in Transparent range)",
+        "initial": "",
+        "id": "Configure_TC11",
+        "title": "Boundary: Host IP with Transparent range for different zone",
+        "result": "Only the valid host IP address above is able to access the management interface and Internet."
+    },
+    "Zones_TC13": {
+        "steps": "1)  Login to management interface through a web browser 2)  Go to Network/Interface page 3)  Configure an interface (LAN Zone) in Transparent mode 4)  Make sure it is functional.",
+        "initial": "",
+        "id": "Zones_TC13",
+        "title": " Function: Zone and Interface - LAN zone",
+        "result": "The interface within LAN, DMZ or Custom zone (Trusted or Public) is able to be configured in Transparent mode."
+    },
+    "Interface_TC16": {
+        "steps": "1)  Login to management interface through a web browser 2)  Go to Network/Interface page 3)  Configure an interface in Transparent mode 4)  Click Configure button of this interface to pop up Edit windows 5)  Check the checkboxes of ping, HTTP ans HTTPS under management and User Login sections 6)  Make sure this interface is able to be ping or managed by administrator or user through HTTP or HTTPS",
+        "initial": "",
+        "id": "Interface_TC16",
+        "title": "Function: Interface Rules - Management and ping",
+        "result": "An interface in Transparent mode is able to be ping or managed through HTTP or HTTPS only when the related checkbox is checked, otherwise, it should fail."
+    },
+    "ARP_TC17": {
+        "steps": "1)  Go to the MS-DOS windows of a host  called as Host1 connected to X0 and delete ARP cache using  arp d command 2)  Configure a host called as Host2 which is connected to X1 (WAN) 3)  Go to the MS-DOS windows of Host2 and delete ARP cache using  arp d command 4)  Click Flush ARP Cache  button fromNetwork /ARP page 5)  Ping Host2 on WAN from Host1 on LAN using ping n 1 Host2 IP command 6)  Check the following:   The items in ARP Request and ARP Response stored in snifer are correct   All ARP entries in Host1, Host2 and ARP Table in Network/ARP page of the unit under testing",
+        "initial": "",
+        "id": "ARP_TC17",
+        "title": "Function: ARP Behavior - Transparent to/from WAN",
+        "result": "All ARP items designed for this test must be valid."
+    },
+    "ARP_TC18": {
+        "steps": "? 1) ????? Go to the MS-DOS windows of a host called as Host1 connected to X0 and delete ARP cache using ? arp ?d? command 2) ????? Configure a host called as Host2 which is connected to X2 (LAN zone) 3) ????? Go to the MS-DOS windows of Host2 and delete ARP cache using ? arp ?d? command 4) ????? Click ?Flush ARP Cache ?? button fromNetwork /ARP page 5) ????? Ping Host2 from Host1 using ?ping ?n 1 Host2 IP? command 6) ????? Check the following: ? ???????? The items in ARP Request and ARP Response stored in snifer are correct ? ???????? All ARP entries in Host1, Host2 and ARP Table in Network/ARP page of the unit under testing ?",
+        "initial": "",
+        "id": "ARP_TC18",
+        "title": "Function: ARP Behavior - Transparent to untransparent, same zone",
+        "result": "All ARP items designed for this test must be valid."
+    },
+    "ARP_TC19": {
+        "steps": " 1) ????? Go to the MS-DOS windows of a host called as Host1 connected to X0 and delete ARP cache using ? arp ?d? command 2) ????? Configure a host called as Host2 which is connected to X2 (DMZ zone) 3) ????? Go to the MS-DOS windows of Host2 and delete ARP cache using ? arp ?d? command 4) ????? Click ?Flush ARP Cache ?? button fromNetwork /ARP page 5) ????? Ping Host2 from Host1 using ?ping ?n 1 Host2 IP? command 6) ????? Check the following: ? ???????? The items in ARP Request and ARP Response stored in snifer are correct ? ???????? All ARP entries in Host1, Host2 and ARP Table in Network/ARP page of the unit under testing ?",
+        "initial": "",
+        "id": "ARP_TC19",
+        "title": "Function: ARP Behavior - Transparent to untransparent, different zone",
+        "result": "All ARP items designed for this test must be valid."
+    },
+    "Policy_TC22": {
+        "steps": "1)  Locate two web servers named as Server1 and Server2 connected on X0 (LAN) and X1 (WAN) correspondingly 2)  Create an address object named as Server1 in Network/Address Object page 3)  Add a firewall rule (WAN -> LAN) with HTTP service and destination Server1 from Firewall/Access Rule page 4)  Access the web server (Server1) or (Server2) from a host on WAN or a host on LAN using HTTP to check the result 5)  Repeat this test with the different services such as ping, FTP and Telnet from inbound or outbound direction to check the results",
+        "initial": "",
+        "id": "Policy_TC22",
+        "title": "Function: Connectivity and Policy Rules - Transparent to/from WAN",
+        "result": "All kinds of traffic with different directions defined in policy rules must go through for Transparent to/from WAN."
+    },
+    "Group_Func_TC01": {
+        "steps": "1.Create an address group includes some hosts or ranges which in WAN subnet\n2.Config LAN interface X3 transparent to X1, use the AO group in step1\n3.Check Network-> Routing page, all auto-added routes are created for the address group, include each AO host or AO range\n4.PC connect X3 which config IP as one of the AO group, traffic can pass through",
+        "initial": "",
+        "id": "Group_Func_TC01",
+        "title": "[Func]Verify the auto-added routes are created for transparent mode address group(DTS ID: 203323)",
+        "result": "The auto-added routes are created for transparent mode address group"
+    },
+    "DHCP_TC33": {
+        "steps": "1)  Connect a host to the interface in Transparent mode 2)  Open a DOS box of this host 3)  Get, release or renew a DHCP IP address using the related DOS commands 4)  Access the management interface or Internet after a DHCP lease is got or renewed\n\n",
+        "initial": "",
+        "id": "DHCP_TC33",
+        "title": "Function: DHCP Server for the interfaces in Transparent mode",
+        "result": "A DHCP lease a host gets are correct and it is able to access management interface and Internet."
+    },
+    "TSR_TC35": {
+        "steps": "1)  Configure X0 or other interfaces defined in LAN, DMZ or custom zone to Transparent mode 2)  Open the TSR from System/Diagnostics page 3)  Compare all transparent mode items with the real transparent mode settings",
+        "initial": "",
+        "id": "TSR_TC35",
+        "title": "Function: Log - TSR",
+        "result": "Both settings must be matched."
+    },
+    "Perf_TC38": {
+        "steps": "1)  Configure X0 or other interfaces defined in LAN, DMZ or custom zone to Transparent mode 2)  Export a preference file from System/Settings page 3)  Change this interface to NAT mode 4)  Import the preference file just saved with Transparent mode settings",
+        "initial": "",
+        "id": "Perf_TC38",
+        "title": "Function: Perference support - Import and export",
+        "result": "Check the settings after the box restarts to make sure the settings are matched with the previous transparent mode settings."
+    }
+
+}

@@ -1,0 +1,253 @@
+{
+    "1524548" : {
+       "steps" : "  1. On the VPN > Settings page of the firewallA (DUT), select IPv6 view and configure IPv6 VPN policy. Enter the name RemoteB and IPv6 X1 IP of the firewallB in IPSec Gateway address in the General tab. In the Network tab, create a new address object X0 IP",
+       "priority" : "Sanity",
+       "atm_id" : "563ad89f-e3f8-4058-b9c0-1b0e7a74c1bb",
+       "initial" : "  Host1 - X0 FirewallA X1---X1 FirewallB X0 - Host2",
+       "id" : "1524548",
+       "title" : "Co-existing site-to-site IPv4 and IPv6 active tunnels",
+       "description" : "Original ID: 55\nOriginal Title: Co-existing site-to-site IPv4 and IPv6 active tunnels\nOriginal Description: This test verifies that a firewall can have both IPv6 and IPv4 site-to-site active tunnels between the local and remote networks.",
+       "result" : "  The DUT shows IPv6 active tunnel between the local and remote IPv6 X0 subnets on the VPN > Settings > IPv6 page.\n  The DUT shows IPv4 active site-to-site tunnel between the local and remote IPv6 X0 subnets on the VPN > Settings > IPv4 page.\n  Traffic flows be"
+    },
+    "1524541" : {
+       "steps" : "  When configure secondary gateway, need to specify IKE ID, if not, when switch to secondary gateway, FW still use primary GW as IKE ID, negotiation will fail.\n  1. Configure a secondary WAN interface on X2 port of the firewallB. Assign IPv6 IP address. 2. On",
+       "priority" : "Smoke",
+       "atm_id" : "c6c3d25d-aca9-4b53-9dea-b7958c71f3de",
+       "initial" : "  Host1 --- X0 FirewallA X1 --- X1,X2 FirewallB X0 --- Host2",
+       "id" : "1524541",
+       "title" : "Use secondary IPSec Gateway to negotiate IPv6 VPN policy",
+       "description" : "Original ID: 39\nOriginal Title: Use secondary IPSec Gateway to negotiate IPv6 VPN policy\nOriginal Description: This test verifies that if secondary IPSec Gateway is configured in IPv6 VPN policy, the tunnel should be established using that Gateway in case",
+       "result" : "  First the firewallA starts IKE negotiation with the primary gateway and fails since the X1 link of the firewallB is down. Then the firewallA starts a new IKE negotiation using the secondary IPSec gateway and creates IKE SA and IPsec SA."
+    },
+    "1524550" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the firewall. 2. Go to the VPN > Settings page. 3. Under View IP Version: subsection, select IPv6 radio button.\n  4. Click the Add button. The VPN Policy window is displayed.\n  5. Enter a policy name and shared secr",
+       "priority" : "Smoke",
+       "atm_id" : "1e84fc38-0bc8-4073-a9fc-3a95e8e1dd88",
+       "initial" : "  PC --- X0 SonicWALL",
+       "id" : "1524550",
+       "title" : "IPv6 VPN Policy window: Invalid format for IPv6 Address Local IKE ID",
+       "description" : "Original ID: 60\nOriginal Title: IPv6 VPN Policy window: Invalid format for IPv6 Address Local IKE ID\nOriginal Description: This test verifies that if IPv6 Address is selected as Local IKE ID and invalid value is used, the error message will be shown on th",
+       "result" : "  The policy is not saved. The error message Error: Incorrect IP Address configured for Local IKE ID is shown on the status bar."
+    },
+    "1524535" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the firewall. 2. Go to the VPN > Settings page. 3. Under View IP Version: subsection, select IPv6 radio button. 4. Click the Add button. The VPN Policy window is displayed. Enter the name test1 and 2005::7 IPSe",
+       "priority" : "Smoke",
+       "atm_id" : "ed28ae20-e581-4a0d-9e7c-097cfbcbcbe6",
+       "initial" : "  PC --- X0 SonicWALL",
+       "id" : "1524535",
+       "title" : "Configuring IPv6 policy which local network overlaps with local networks of ANY_REMOTE network policy is not allowed",
+       "description" : "Original ID: 22\nOriginal Title: Configuring IPv6 policy which local network overlaps with local networks of ANY_REMOTE network policy is not allowed\nOriginal Description: This test verifies that the GUI doesn't allow to configure IPv6 policy that has over",
+       "result" : "  The error message Error: Protected network overlaps with other VPN policy is displayed. Adding the policy test2 is not allowed."
+    },
+    "1524537" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the firewall. 2. Go to the VPN > Settings page. 3. Under View IP Version: subsection, select IPv6 radio button. 4. Click the Add button. The VPN Policy window is displayed. 5. Enter the name test1 and 2005::7 ",
+       "priority" : "Smoke",
+       "atm_id" : "8319572c-d831-463c-90dc-82f7d53ce8c8",
+       "initial" : "  PC --- X0 SonicWALL",
+       "id" : "1524537",
+       "title" : "IPv6 VPN settings are saved in a preference file",
+       "description" : "Original ID: 30\nOriginal Title: IPv6 VPN settings are saved in a preference file\nOriginal Description: This test verifies that all settings configured in IPv6 VPN policy are saved in a preference file.",
+       "result" : "  All parameters in the VPN policy test1 are intact after exporting and importing the configuration file."
+    },
+    "1524531" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the firewall. 2. Go to the VPN > Settings page. 3. Under View IP Version: subsection, select IPv6 radio button.\n  4. Click the Add button. The VPN Policy window is displayed.\n  5. Enter a policy name and shared secr",
+       "priority" : "Smoke",
+       "atm_id" : "9a925d96-488d-463f-a792-7476bca13599",
+       "initial" : "  PC --- X0 SonicWALL",
+       "id" : "1524531",
+       "title" : "IPv6 VPN Policy window: secondary IPSec gateway is supported",
+       "description" : "Original ID: 13\nOriginal Title: IPv6 VPN Policy window: secondary IPSec gateway is supported\nOriginal Description: This test verifies that IPv6 VPN Policy window has Secondary IPSec Gateway Name or Address field the supported value is IPv6 address format.",
+       "result" : "  The policy is saved and displayed in the VPN Policies table with primary and secondary gateway addresses."
+    },
+    "1524546" : {
+       "steps" : "  1. On the firewallA (DUT), configure IPv6 VPN policy. Enter the name RemoteB and IPv6 X1 IP of the firewallB in IPSec Gateway address in the General tab. In the Network tab, create a new address object X0 IPV6 Network and select it in the local network. I",
+       "priority" : "Smoke",
+       "atm_id" : "01aa1302-32ef-49b8-a91b-44e29ba9d208",
+       "initial" : "  Host1 - X0 FirewallA X1---X1 FirewallB X0 - Host2",
+       "id" : "1524546",
+       "title" : "Send large size packet traffic through active IPv6 VPN tunnel",
+       "description" : "Original ID: 51\nOriginal Title: Send large size packet traffic through active IPv6 VPN tunnel\nOriginal Description: This test verifies that if the large size packet traffic is sent, a firewall should send path MTU packet to the sender and then the MTU siz",
+       "result" : "  The packet caprure shows that the DUT sends ICMPv6 Too big packet with MTU size to Host1. ICMPv6 Echo request packet from Host1 to Host2 is sent with fragments. The payload of both fragments is less than MTU size. Traffic flows between networks."
+    },
+    "1524543" : {
+       "steps" : "  1. On the firewallA (DUT), configure IPv6 VPN policy. Enter the name RemoteB and IPv6 X1 IP of the firewallB in IPSec Gateway address in the General tab. In the Network tab, select X0 IPv6 Primary Static Address Subnet in the local network. In the remote ",
+       "priority" : "Smoke",
+       "atm_id" : "4943f89a-6556-4dab-bf15-232e3bb9db49",
+       "initial" : "  Host1 - X0 FirewallA X1,X2---X1 FirewallB X0 - Host2",
+       "id" : "1524543",
+       "title" : "Outgoing IP address for the tunnel: Use Primary IP Address",
+       "description" : "Original ID: 45\nOriginal Title: Outgoing IP address for the tunnel: Use Primary IP Address\nOriginal Description: This test verifies that IKE and IPSec SAs should negotiate successfully and traffic should flow through the tunnel if the Primary IP address o",
+       "result" : "  IKE and IPSec SAs are negotiated successfully. VPN IKE log messages on the DUT show the primary IP address of X2 interface as the outgoing address for the tunnel."
+    },
+    "1524534" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the firewall. 2. Go to the VPN > Settings page. 3. Under View IP Version: subsection, select IPv6 radio button. 4. Click the Add button. The VPN Policy window is displayed. Enter the name test1 and 2005::7 IPSe",
+       "priority" : "Smoke",
+       "atm_id" : "7b11d048-7ee3-4e15-bf3b-f19c70734385",
+       "initial" : "  PC --- X0 SonicWALL",
+       "id" : "1524534",
+       "title" : "Configuring IPv6 policy which destination network overlaps with destination networks of ANY_LOCAL network policy is not allowed",
+       "description" : "Original ID: 21\nOriginal Title: Configuring IPv6 policy which destination network overlaps with destination networks of ANY_LOCAL network policy is not allowed\nOriginal Description: This test verifies that the GUI doesn't allow to configure IPv6 policy th",
+       "result" : "  The error message Error: Protected network overlaps with other VPN policy is displayed. Adding the policy test2 is not allowed."
+    },
+    "1265752" : {
+       "steps" : "  1.Created vlan interface such as X1:V165 with wan zone,configure an ipv4 and ipv6 addresses 2.On the firewallA (DUT), configure IPv6 VPN policy. Enter the name RemoteB and X1:V165 IPv6 address of the firewallB in IPSec Gateway address in the General ta",
+       "priority" : "Smoke",
+       "atm_id" : "TBD",
+       "initial" : "  Host1 - X0 FirewallA X1:V165---X1:V165 FirewallB X0 - Host2 ",
+       "id" : "1265752",
+       "title" : "IPv6 VPN works on vlan interface(one vpn policy)",
+       "description" : "this test verifies that a tunnel should be established through vlan interface between a local IPv6 host and a remote VPN IPv6 host.",
+       "result" : "  IKE and IPSec SAs are negotiated via vlan interface successfully. The active tunnel on the VPN &gt; Settibgs page (IPv6 view) is shown with host objects under the Local and Remote. The IKEv2 negotiation complete log message shows hosts IP addresses as the"
+    },
+    "1524532" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the firewall. 2. Go to the VPN > Settings page. 3. Under View IP Version: subsection, select IPv6 radio button.\n  4. Click the Add button. The VPN Policy window is displayed.\n  5. Enter a policy name and shared secr",
+       "priority" : "Full_Regression",
+       "atm_id" : "6bba6624-8e23-44e9-a6fb-202fb44a895d",
+       "initial" : "  PC --- X0 SonicWALL",
+       "id" : "1524532",
+       "title" : "IPv6 VPN Policy window: setting IPv4 IKE ID type to NULL is not allowed",
+       "description" : "Original ID: 15\nOriginal Title: IPv6 VPN Policy window: setting IPv4 IKE ID type to NULL is not allowed\nOriginal Description: This test verifies that if IPv4 Addresses is selected as IKE ID type, the value must be set.",
+       "result" : "  The policy is not saved. The error message Error: Local IKE ID not configured is shown on the status bar."
+    },
+    "1524551" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the firewall. 2. Go to the VPN > Settings page. 3. Under View IP Version: subsection, select IPv6 radio button. 4. Click the Add button. The VPN Policy window is displayed. 5. Enter a policy name and shared se",
+       "priority" : "Smoke",
+       "atm_id" : "98fa3202-1354-40a2-b67f-a628e0332028",
+       "initial" : "  PC --- X0 SonicWALL",
+       "id" : "1524551",
+       "title" : "IPv6 VPN Policy window: Invalid format for IPv4 Address Peer IKE ID",
+       "description" : "Original ID: 64\nOriginal Title: IPv6 VPN Policy window: Invalid format for IPv4 Address Peer IKE ID\nOriginal Description: This test verifies that if IPv4 Address is selected as Peer IKE ID in IPv6 VPN policy and invalid value is used, the error message wi",
+       "result" : "  The policy is not saved. The pop-up window shows the error message Phase1 Peer IKE ID is not valid."
+    },
+    "1524533" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the firewall. 2. Go to the VPN > Settings page. 3. Under View IP Version: subsection, select IPv6 radio button.\n  4. Click the Add button. The VPN Policy window is displayed.\n  5. Enter the name test1 and 2005::7 IP",
+       "priority" : "Smoke",
+       "atm_id" : "c2eb8bb4-46e4-4d07-b51a-ea805b85196f",
+       "initial" : "  PC --- X0 SonicWALL",
+       "id" : "1524533",
+       "title" : "Configuring IPv6 policy where both local and remote networks overlap with other policy is not allowed",
+       "description" : "Original ID: 18\nOriginal Title: Configuring IPv6 policy where both local and remote networks overlap with other policy is not allowed\nOriginal Description: This test verifies that the GUI doesn't allow to configure two IPv6 VPN policies with the same addr",
+       "result" : "  The second IPv6 VPN policy is not saved. The error message Error: Protected Network overlaps with other vpn policy is shown on the status bar."
+    },
+    "1265753" : {
+       "steps" : "  1.On the firewallA,created three vlan interface with wan zone such as X1:V100,X1:V101 and X1:V102,give them global IPv6 addresses. Configure X0,X2 and X3 as LAN zone with IPv6 address.Do same steps on firewallB 2.Add the first IPv6 VPN policy on Firew",
+       "priority" : "Full_Regression",
+       "atm_id" : "TBD",
+       "initial" : "  Host1 - X0 FirewallA X1:V100------X1:V100 FirewallB X0--- Host4 Host2---X2 FirewallA X1:V101---- -X1:V101 FirewallB X2----Host5 Host3---X3 FirewallA X1:V102---- -X1:V102 FirewallB X3----Host6 ",
+       "id" : "1265753",
+       "title" : "IPv6 VPN works on vlan interface(multiple vpn policy)",
+       "description" : "this test verifies that multiple ipv6 tunnels should be established on vlan interface between a local IPv6 host and a remote VPN IPv6 host.",
+       "result" : "  in step 2,3 and 4, IKE and IPSec SAs are negotiated via vlan interface successfully. Three active tunnels on the VPN &gt; Settibgs page (IPv6 view) are shown w in step 5,Pings from the Host1 to Host2,Host3 to Host5 and Host4 to Host6 are returned"
+    },
+    "1524540" : {
+       "steps" : "  1. On the firewallA (DUT), configure IPv6 VPN policy. Enter the name RemoteB and IPv6 X1 IP of the firewallB in IPSec Gateway address in the General tab. In the Network tab, add a new address object LAN IPv6 Subnet (X0 IPv6 subnet of the firewallA) and se",
+       "priority" : "Full_Regression",
+       "atm_id" : "a21ba401-67df-4791-ae11-e9126e8985b0",
+       "initial" : "  Host1 - X0 FirewallA X1---X1 FirewallB X0 - Host2, X3 - Host3",
+       "id" : "1524540",
+       "title" : "Select a group address object in local/destination network",
+       "description" : "Original ID: 38\nOriginal Title: Select a group address object in local/destination network\nOriginal Description: This test verifies that two tunnels should be established: between a local IPv6 subnet and two remote VPN IPv6 subnets if a remote network use",
+       "result" : "  IKE and two IPSec SAs are negotiated successfully. Two active tunnels on the VPN > Settibgs page (IPv6 view) are shown with subnet objects under the Local and Remote. The IKEv2 negotiation complete log messages show IPv6 subnets as the Local Net and Remot"
+    },
+    "2357388" : {
+       "steps" : "  1.Add multiple IPv6 VPN policies,they are enabled by default 2.Disable policies one by one,check if can be disabled 3.Then enable policies one by one,check is can be enabled",
+       "priority" : "Smoke",
+       "atm_id" : "TBD",
+       "initial" : "  TBD",
+       "id" : "2357388",
+       "title" : "Multiple IPv6 VPN policy can be disabled and enabled",
+       "description" : "TBD",
+       "result" : "  1.In step2,all vpn policies can be disabled without error message popping up 2.In step3,all vpn policies can be disabled without error message popping up Related jira:https://track.eng.sonicwall.com/browse/GEN7-42595 "
+    },
+    "1524536" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the firewall. 2. Go to the VPN > Settings page. 3. Under View IP Version: subsection, select IPv6 radio button. 4. Click the Add button. The VPN Policy window is displayed. 5. Enter the name test1 and 2005::7 ",
+       "priority" : "Smoke",
+       "atm_id" : "2558643a-a97c-461a-b37d-a732f014e3e3",
+       "initial" : "  PC --- X0 SonicWALL",
+       "id" : "1524536",
+       "title" : "IPv6 VPN settings are intact after reboot",
+       "description" : "Original ID: 29\nOriginal Title: IPv6 VPN settings are intact after reboot\nOriginal Description: This test verifies that all settings configured in IPv6 VPN policy are intact after reboot.",
+       "result" : "  All parameters in the VPN policy test1 are intact after the firewall has been restarted."
+    },
+    "1524530" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the firewall.\n  2. View the VPN > Settings page.",
+       "priority" : "Smoke",
+       "atm_id" : "c4c3c754-93a5-40d4-acd8-cdbcc0a5be57",
+       "initial" : "  PC --- X0 SonicWALL",
+       "id" : "1524530",
+       "title" : "VPN > Settings page displays View IP Version selection with IPv4 and IPv6 radio-buttons",
+       "description" : "Original ID: 1\nOriginal Title: VPN > Settings page displays View IP Version selection with IPv4 and IPv6 radio-buttons\nOriginal Description: This test verifies that the VPN > Settings page displays a new subsection above the VPN policy table. This new sub",
+       "result" : "  The VPN > Settings page displays a new subsection above the VPN policy table, View IP Version, which has two options (radio buttons) to chose from: IPv4 and IPv6."
+    },
+    "1524549" : {
+       "steps" : "  1. On the firewallA (DUT), load a firmware that doesn't have IPv6 support.\n  2. On the VPN > Settings page of the firewallA (DUT), configure two IPv4 VPN policies. In the first policy, select Site-to-Site type, enter the name RemoteB and IPv4 X1 IP of the f",
+       "priority" : "Full_Regression",
+       "atm_id" : "3f4acb23-b7aa-425c-b62c-999a4c946026",
+       "initial" : "  Host1 - X0 FirewallA X1,X2---X1,X2 FirewallB X0 - Host2",
+       "id" : "1524549",
+       "title" : "Upgrade from firmware that didn't have IPv6 support: all IPv4 policies are intact and can be negotiated",
+       "description" : "Original ID: 59\nOriginal Title: Upgrade from firmware that didn't have IPv6 support: all IPv4 policies are intact and can be negotiated\nOriginal Description: This test verifies that a firmware without IPv6 support upgraded to a firmware with IPv6 support ",
+       "result" : "  The VPN > Settings page of the DUT shows active site-to-site and tunnel interface IPv4 tunnels on IPv4 view page."
+    },
+    "1524542" : {
+       "steps" : "  1. On the firewallA (DUT), configure IPv6 VPN policy. Enter the name RemoteB and IPv6 X1 IP of the firewallB in IPSec Gateway address in the General tab. Select IPv6 Address as a Local IKE ID and enter 2001:1::1 value. Select IPv6 Address as a Peer IKE ID",
+       "priority" : "Smoke",
+       "atm_id" : "66c7a678-be1e-44bb-80dd-d0fe036db206",
+       "initial" : "  Host1 - X0 FirewallA X1---X1 FirewallB X0 - Host2",
+       "id" : "1524542",
+       "title" : "Use IPv6 IKE ID in IPv6 VPN policy",
+       "description" : "Original ID: 42\nOriginal Title: Use IPv6 IKE ID in IPv6 VPN policy\nOriginal Description: This test verifies that that the tunnel should be negotiated successfully with IPv6 addresses used as the local and peer IKE IDs.",
+       "result" : "  Pings are returned. The active IPv6 tunnel is shown on the VPN > Settings page. The firewall's logs show IKE and IPSec negotiation completion."
+    },
+    "1524538" : {
+       "steps" : "  1. On the firewallA (DUT), configure IPv6 VPN policy. Enter the name RemoteB and IPv6 X1 IP of the firewallB in IPSec Gateway address in the General tab. In the Network tab, select X0 IPv6 Primary Static Address Subnet in the local network. In the remote ",
+       "priority" : "Smoke",
+       "atm_id" : "41d42165-6e3e-4b39-bd10-5797ed80881b",
+       "initial" : "  Host1 - X0 FirewallA X1---X1 FirewallB X0 - Host2",
+       "id" : "1524538",
+       "title" : "Enable Keep Alive in IPv6 the policy",
+       "description" : "Original ID: 33\nOriginal Title: Enable Keep Alive in IPv6 the policy\nOriginal Description: This test verifies that IKE and IPSec SAs should negotiate successfully if the DUT has KeepAlive enabled.",
+       "result" : "  IKE negotiation is triggered by KeepAlive. The IPv6 tunnel is shown active on the VPN > Settings page. The firewall's logs show IKe and IPSec negotiation completion.\n  KeepAlive starts IKE negotiation on the DUT on startup. The tunnel becomes active."
+    },
+    "1524539" : {
+       "steps" : "  1. On the firewallA (DUT), configure IPv6 VPN policy. Enter the name RemoteB and IPv6 X1 IP of the firewallB in IPSec Gateway address in the General tab. In the Network tab, add a new address object LAN IPv6 Host (use Host1 IPv6 address) and select this ",
+       "priority" : "Smoke",
+       "atm_id" : "cf4e9ff4-b4f3-41c0-b703-181ee4ad7d9b",
+       "initial" : "  Host1 - X0 FirewallA X1---X1 FirewallB X0 - Host2, Host3",
+       "id" : "1524539",
+       "title" : "Select a host address object in local/destination network",
+       "description" : "Original ID: 36\nOriginal Title: Select a host address object in local/destination network\nOriginal Description: This test verifies that a tunnel should be established between a local IPv6 host and a remote VPN IPv6 host.",
+       "result" : "  IKE and IPSec SAs are negotiated successfully. The active tunnel on the VPN > Settibgs page (IPv6 view) is shown with host objects under the Local and Remote. The IKEv2 negotiation complete log message shows hosts IP addresses as the Local Net and Remote "
+    },
+    "2357391" : {
+       "steps" : "  In step3,Ipv6 VPN Policy configuration is changed according to the changes on edit window In step4,IPv6 vpn policy is displayed disabled since without any changes on edit window Related Jira:https://track.eng.sonicwall.com/browse/GEN7-41630",
+       "priority" : "Smoke",
+       "atm_id" : "TBD",
+       "initial" : "  1.Add one IPv6 VPN Policy,it's enabled by defaut 2.Edit policy,modify some values,click \"OK\",check the policy configuration 3.Disable this VPN policy by clicking Enable button 4.Edit Policy,do nothing,click \"OK\",check vpn policy configuration",
+       "id" : "2357391",
+       "title" : "Check IPv6 VPN policy configuration after edit IPv6 vpn policy",
+       "description" : "TBD",
+       "result" : "  TBD"
+    },
+    "1524545" : {
+       "steps" : "  1. Load 5.5.1.0_ipv6 or newer firmware on the DUT and the Remote Firewall. 2. Go to the VPN > Settings page. 3. Under View IP Version: subsection, select IPv6 radio button. 4. Add IKE VPN policy. Make sure that the policy gets displayed in the VPN Pol",
+       "priority" : "Smoke",
+       "atm_id" : "fa8498db-4973-4185-a4f6-5ab75c1b52e1",
+       "initial" : "  PC1 --- X0 DUT X1 --- X1 Remote FW X0 --- PC2",
+       "id" : "1524545",
+       "title" : "Only IPv6 active tunnels are displayed if IPv6 radio-button is selected on VPN > Settings page",
+       "description" : "Original ID: 5\nOriginal Title: Only IPv6 active tunnels are displayed if IPv6 radio-button is selected on VPN > Settings page\nOriginal Description: This test verifies that if IPv6 rudio button is selected on the VPN > Settings page, only IPv6 VPN active t",
+       "result" : "  The IPv6 VPN tunnel is shown in the Currently Active VPN Tunnels table when IPv6 radio buttin is selected. When IPv4 radio button is selected, the Currently Active VPN Tunnels table doesn't show this tunnel."
+    },
+    "1524544" : {
+       "steps" : "  1. On the firewallA (DUT), configure IPv6 VPN policy. Enter the name RemoteB and IPv6 X1 IP of the firewallB in IPSec Gateway address in the General tab. In the Network tab, select X0 IPv6 Primary Static Address Subnet in the local network. In the remote ",
+       "priority" : "Sanity",
+       "atm_id" : "d7cc9ba4-f1b5-4b90-8c44-1d860d3997bb",
+       "initial" : "  Host1 - X0 FirewallA X1---X1 FirewallB X0 - Host2",
+       "id" : "1524544",
+       "title" : "Use ANY_REMOTE address object in the destination for a Tunnel-all policy",
+       "description" : "Original ID: 47\nOriginal Title: Use ANY_REMOTE address object in the destination for a Tunnel-all policy\nOriginal Description: This test verifies that IKE and IPSec SAs should negotiate successfully and traffic should flow through the tunnel if ANY REMOTE",
+       "result" : "  IKE and IPSec SAs are negotiated. The active tunnel is shown on the VPN > Settings page of the DUT with X0 IPv6 subnet address as the Local network and 0:0:0:0:0:0:0:0-ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff address as the Remote network."
+    }
+ }
+ 

@@ -1,0 +1,152 @@
+{
+   "1522642" : {
+      "steps" : "  1. Login from GUI, add a Tunnel Interface VPN policy, Preshared Secret.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "0b64c954-d04b-4a60-ad63-8bf31cc4fb9c",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522642",
+      "title" : "Add a VPN policy - Tunnel Interface - Preshared Secret",
+      "description" : "Original ID: 02\nOriginal Title: Add a VPN policy - Tunnel Interface - Preshared Secret\nOriginal Description: This case is to verify that when a Tunnel Interface VPN policy is added, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522643" : {
+      "steps" : "  1. Login from GUI, edit a Tunnel Interface VPN policy with Authentication Method Manual Key, change the settings of Security Policy. 2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "43c44ef1-bcac-4f93-b11d-7cf3d376190f",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522643",
+      "title" : "Edit a VPN policy - Tunnel Interface - Manual Key -  Proposals",
+      "description" : "Original ID: 10\nOriginal Title: Edit a VPN policy - Tunnel Interface - Manual Key -  Proposals\nOriginal Description: This case is to verify that when modifying Proposals of Tunnel Interface VPN, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522653" : {
+      "steps" : "  1. Login from GUI, edit L2TP Server Settings.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "ed6b25eb-34c6-46f3-829b-0a82276e31a0",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522653",
+      "title" : "Configure L2TP Server - L2TP Server Settings",
+      "description" : "Original ID: 63\nOriginal Title: Configure L2TP Server - L2TP Server Settings\nOriginal Description: This case is to verify that when editing L2TP Server settings, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful L2TP Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522649" : {
+      "steps" : "  1. Login from GUI, edit a Auto Provisioning Client policy, change the settings of Security Policy.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "a8f242b8-9edf-4e43-bcfa-05ff403107ba",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522649",
+      "title" : "Edit a VPN policy - Auto Provisioning Client -  Security Policy",
+      "description" : "Original ID: 38\nOriginal Title: Edit a VPN policy - Auto Provisioning Client -  Security Policy \nOriginal Description: This case is to verify that when modifying Auto Provisioning Client VPN policy, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522648" : {
+      "steps" : "  1. Login from GUI, add a Site to Site VPN policy with Authentication Method 3rd Party Certificates.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "447532e1-4f21-4e45-89b1-4c3e56e61b08",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522648",
+      "title" : "Add a VPN policy - Site to Site - 3rd Party Certificates",
+      "description" : "Original ID: 30\nOriginal Title: Add a VPN policy - Site to Site - 3rd Party Certificates\nOriginal Description: This case is to verify that when modifying 3rd Party Certificates of Site to Site VPN, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522641" : {
+      "steps" : "  1. Login from GUI, disable/enable VPN. Change the Unique Firewall Identifier. Accept. 2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2. ........ 4. Go to Event Logs page, check the corresponding logs. Result 3.................\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "d9de24d4-fb54-4b99-af50-2ad4eb0a4d46",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522641",
+      "title" : "Modify VPN Global Settings",
+      "description" : "Original ID: 01\nOriginal Title: Modify VPN Global Settings\nOriginal Description: This case is to verify that when modifying VPN Global Settings, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522651" : {
+      "steps" : "  1. Login from GUI, edit Advanced VPN Settings.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "72bdd49f-783a-4d25-887e-ee03e45f0451",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522651",
+      "title" : "Edit Advanced VPN Settings",
+      "description" : "Original ID: 55\nOriginal Title: Edit Advanced VPN Settings \nOriginal Description: This case is to verify that when editing Advanced VPN Settings, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522644" : {
+      "steps" : "  1. Login from GUI, edit a Tunnel Interface VPN policy with Authentication Method 3rd Party Certificates, change the settings of Security Policy\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "a4e7b50e-23a3-4864-8a66-a34f6c655905",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522644",
+      "title" : "Edit a VPN policy - Tunnel Interface - 3rd Party Certificates -  Security Policy",
+      "description" : "Original ID: 13\nOriginal Title: Edit a VPN policy - Tunnel Interface - 3rd Party Certificates -  Security Policy \nOriginal Description: This case is to verify that when modifying  Security Policy of Tunnel Interface VPN, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522655" : {
+      "steps" : "  1.Make some successful configurations with VPN.\n  2. Check if the configuration success Alert event can be viewed in your mail box.",
+      "priority" : "Smoke",
+      "atm_id" : "1cead662-ce75-4c02-bc79-41a12cce009b",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. Go to Log Settings page, Edit Log>Configuration Auditing, change the Priority to Alert or above, select Alert for both Configuration Change Failed and Configuration Change Succeeded. 3. Edit the event Configuration Change Failed and Configuration Change Succeeded, input a correct email address in 'Send Alerts to E-mail Address' edit box.\n  4. On Log Automation page, input the corect Mail Server Settings info.",
+      "id" : "1522655",
+      "title" : "Verify the Auditing Records of configuration success can be sent via Email Alert",
+      "description" : "Original ID: 72\nOriginal Title: Verify the Auditing Records of configuration success can be sent via Email Alert\nOriginal Description: This case is to verify that when configuration of VPN succeeds, the Auditing Records can be sent as Alert to the specified Emai address.",
+      "result" : "  When configuration of VPN succeeds, the Auditing Records can be sent as Alert to the specified Emai address."
+   },
+   "1522645" : {
+      "steps" : "  1. Login from GUI, edit a Site to Site VPN policy with Authentication Method Preshared Secret, change the settings of IKE Authentication .\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "c5f47aed-a391-44e5-aaa4-70664f4b5220",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522645",
+      "title" : "Edit a VPN policy - Site to Site - Preshared Secret -   IKE Authentication",
+      "description" : "Original ID: 20\nOriginal Title: Edit a VPN policy - Site to Site - Preshared Secret -   IKE Authentication  \nOriginal Description: This case is to verify that when modifying IKE Authentication of Site to Site VPN, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522647" : {
+      "steps" : "  1. Login from GUI, add a Site to Site VPN policy with Authentication Method Manual Key.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "4b82225a-4400-44b4-b7e8-e3f991dc2e44",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522647",
+      "title" : "Add a VPN policy - Site to Site - Manual Key",
+      "description" : "Original ID: 25\nOriginal Title: Add a VPN policy - Site to Site - Manual Key\nOriginal Description: This case is to verify that when Adding Manual Key of Site to Site VPN, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522654" : {
+      "steps" : "  1. Make some successful configurations with VPN.\n  2. Download the TSR, and check if the auditing records are correctly displayed",
+      "priority" : "Smoke",
+      "atm_id" : "f054d882-48eb-46cb-a42a-18f7fffecd0e",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....",
+      "id" : "1522654",
+      "title" : "Verify the Auditing Records of configuration succeeds are reflected in TSR",
+      "description" : "Original ID: 69\nOriginal Title: Verify the Auditing Records of configuration succeeds are reflected in TSR\nOriginal Description: This case is to verify that when configuration of VPN succeeds, the Auditing Records will be reflected in TSR",
+      "result" : "  In TSR, auditing records of successful configuration should be correctly showed."
+   },
+   "1522650" : {
+      "steps" : "  1. Login from GUI, add a Auto Provisioning Server policy.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "2bf71381-459e-45dc-a76d-6d6beeba4cc2",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522650",
+      "title" : "Add a VPN policy - Auto Provisioning Server",
+      "description" : "Original ID: 41\nOriginal Title: Add a VPN policy - Auto Provisioning Server\nOriginal Description: This case is to verify that when adding Auto Provisioning Server VPN policy, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522646" : {
+      "steps" : "  1. Login from GUI, edit a Site to Site VPN policy with Authentication Method Preshared Secret, change the settings of IKE (Phase 2) Proposal .\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "72a91907-8ace-4d13-9b81-8a31c6e443ef",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522646",
+      "title" : "Edit a VPN policy - Site to Site - Preshared Secret -  IKE (Phase 2) Proposal",
+      "description" : "Original ID: 23\nOriginal Title: Edit a VPN policy - Site to Site - Preshared Secret -  IKE (Phase 2) Proposal \nOriginal Description: This case is to verify that when modifying IKE (Phase 2) Proposal of Site to Site VPN, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1522652" : {
+      "steps" : "  1. Login from GUI, edit DHCP Relay in DHCP over VPN, Central Gateway.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1........\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.........\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "efda86f3-8172-48d1-9cf3-cf774f419512",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.....\n  2. SNMP tool is available and ready to use......\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured......\n  4. A syslog server is added on the firewall.......\n  5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1522652",
+      "title" : "Configure DHCP over VPN - Central Gateway - DHCP Relay",
+      "description" : "Original ID: 57\nOriginal Title: Configure DHCP over VPN - Central Gateway - DHCP Relay\nOriginal Description: This case is to verify that when editing DHCP over VPN settings, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful VPN Settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   }
+}

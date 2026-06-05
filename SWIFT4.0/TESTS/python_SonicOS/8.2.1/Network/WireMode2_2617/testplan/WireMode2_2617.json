@@ -1,0 +1,172 @@
+{
+   "1524592" : {
+      "steps" : "  1.\tCreate two custom zones for each trusted zone and a public custom zone.\n  2.\tSelect any unassigned interface.\n  3.\tMove the interface to LAN zone, then pick the wiremode(2-port) option.\n  4.\tNow pick any other unassigned interface as the paired interface.\n  5.\tNow move the paired interface zone to LAN and click ok.\n  6.\tAfter clicking ok, check if both the interfaces show correct configurations by clicking on edit\u201d of both the paired interface.\n  7.\tRepeat this test for following combinations. (LAN-LAN, LAN-WAN,LAN-DMZ,LAN-Trust,LAN-Public,WAN-WAN,WAN-DMZ,WAN-Trust,WAN-Public,DMZ-DMZ,DMZ-Trust,DMZ-public, Trust-Trust,Trust-Public,Public-Public)",
+      "priority" : "Smoke",
+      "atm_id" : "d12750a3-1294-49cc-bc15-6f378f4b0fe5",
+      "initial" : "  DUT",
+      "id" : "1524592",
+      "title" : "All possible supported combinations of configurations are getting configured \u2013UI level.",
+      "description" : "Original ID: 2\nOriginal Title: All possible supported combinations of configurations are getting configured \u2013UI level.\nOriginal Description: To check if all possible supported combinations of configurations are getting configured without any issue.",
+      "result" : "  1.\tAfter clicking on edit section of both the interfaces , you should be able to see the correct configurations as was configured."
+   },
+   "1524604" : {
+      "steps" : "  1.Configure X2(WAN) wiremode-secure to X3(custom)\n  2.Running ftp traffic matching the app rule and downloading virus on PC2.\n  3.Now export the settings.\n  4.Edit X2 and change the wiremode type to LAN-LAN-bypass mode.\n  5.Now import the settings exported in step 3.\n  6.Running ftp traffic matching the app rule and downloading virus on PC2.",
+      "priority" : "Smoke",
+      "atm_id" : "f96073d7-7ceb-4298-a98e-66fc4d3ec900",
+      "initial" : "  PC1 ----------------- X2(WAN) DUT X3 Custom(Trusted,GAV enabled).-----PC2 1.\tTwo interfaces configured in WAN-Public-wiremode-Secure mode\n  2.\tPC1 connected to one interface and PC2 connected to another.\n  3.\tSecurity (GAV) services enabled, app rules enabled , rule configured denying file extension download through ftp.\n  4.\tOn custom ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524604",
+      "title" : "Export/import setting files check",
+      "description" : "Original ID: 76\nOriginal Title: Export/import setting files check\nOriginal Description: To check the functionality of wiremode-Secure mode after settings are imported/exported",
+      "result" : "  1.In step2, traffic are blocked with log generated for traffic matching the app rule and virus.\n  2.In step5, check gui, X2 anD X3 are wiremode type to LAN-LAN-bypass mode.\n  3.In step6, traffic are blocked with log generated for traffic matching the app rule and virus."
+   },
+   "1524597" : {
+      "steps" : "  1.ping PC2 on PC1\n  2.Running ftp traffic matching the app rule and downloading virus on PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "f84a1a04-5c72-4cb4-8ff1-0db48d66f410",
+      "initial" : "  PC1 ----------------- X2(Trust) DUT X3(WAN)-----PC2 1.Two interfaces configured in Trust-WAN-wiremode-secure mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.The default deny access rule for WAN&gt;Trust disabled\n  5.On trust ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524597",
+      "title" : "Wiremode-Secure test between Trust-WAN with default WAN>Trust deny rule disabled",
+      "description" : "Original ID: 47\nOriginal Title: Wiremode-Secure test between Trust-WAN with default WAN&gt;Trust deny rule disabled\nOriginal Description: To check the functionality of wiremode-secure mode when one interface is configured in Trust and other in WAN zone with default WAN&gt;Trust deny rule disabled",
+      "result" : "  In step1, ping succeeded\n  In step2, traffic are blocked with log generated for traffic matching the app rule and virus."
+   },
+   "1524596" : {
+      "steps" : "  1.Ping PC2 on PC1\n  2.Running ftp traffic matching the app rule and downloading virus on PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "bd9a9537-4ea5-4655-88ee-90b246b7780c",
+      "initial" : "  PC1 ---------------- X2(LAN) DUT X3(DMZ)-----PC2 1.Two interfaces configured in LAN-DMZ-wiremode-secure mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.The default deny access rule for DMZ&gt;LAN disabled\n  5.On DMZ ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524596",
+      "title" : "Wiremode-Secure test between LAN-DMZ with default DMZ>LAN deny rule disabled.",
+      "description" : "Original ID: 46\nOriginal Title: Wiremode-Secure test between LAN-DMZ with default DMZ&gt;LAN deny rule disabled.\nOriginal Description: To check the functionality of wiremode-secure mode when one interface is configured in LAN and other in DMZ zone with default DMZ&gt;LAN deny rule disabled",
+      "result" : "  In step1, ping succeeded\n  In step2, traffic are blocked with log generated for traffic matching the app rule and virus."
+   },
+   "1524593" : {
+      "steps" : "  1.\tTry running ftp traffic matching the app rule and downloading virus on PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "3f393e95-9467-4c2d-af44-954643031ce4",
+      "initial" : "  PC1 ----------------- X2(WAN) DUT X3(WAN)-----PC2 1.\tTwo interfaces configured in WAN-WAN-wiremode-secure mode\n  2.\tPC1 connected to one interface and PC2 connected to another\n  3.\tSecurity (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.",
+      "id" : "1524593",
+      "title" : "Wiremode-Secure test between  WAN-WAN.",
+      "description" : "Original ID: 22\nOriginal Title: Wiremode-Secure test between  WAN-WAN.\nOriginal Description: To check the functionality of wiremode-secure mode when two interfaces are in WAN zone.",
+      "result" : "  1.\tThe traffic should be blocked with log generated for traffic matching the app rule and virus."
+   },
+   "1524599" : {
+      "steps" : "  1.Configure X2(DMZ) wiremode-secure to X3(LAN);\n  2.Run ftp traffic download matching the rule configured and downloading virus on PC2;\n  3.Click the edit button of the X2 interface and change the paired interface zone to Trust;\n  4.Run ftp traffic download matching the rule configured and downloading virus on PC2;",
+      "priority" : "Smoke",
+      "atm_id" : "c05b9d86-b3ed-4cfb-b653-873cf5649729",
+      "initial" : "  PC1 ----------------- X2(DMZ) DUT X3(LAN)-----PC2 to PC1 ----------------- X2(DMZ) DUT X3(Trust)-----PC2 1.Two interfaces configured in DMZ-LAN-wiremode-secure mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.On DMZ ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service\n  5.On trust ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524599",
+      "title" : "Changing zones for wiremode-secure from DMZ-LAN to DMZ-Trust",
+      "description" : "Original ID: 63\nOriginal Title: Changing zones for wiremode-secure from DMZ-LAN to DMZ-Trust\nOriginal Description: To check the functionality of wiremode-secure mode when  one interfaces is configured in LAN and other in DMZ and then the zone of the first interface is moved from LAN to Trust zone",
+      "result" : "  1.Traffic are blocked with log generated for traffic matching the app rule and virus."
+   },
+   "1524589" : {
+      "steps" : "  1.\tTry downloading virus and running ftp traffic matching the app rule on PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "29e0b2c1-0f27-4e31-b25d-10d122f23138",
+      "initial" : "  PC1 ----------------- X2(LAN) DUT X3(DMZ)-----PC2 1.Two interfaces configured in LAN-DMZ-wiremode-Inspect mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled , rule configured denying file extension download through ftp.\n  4.On DMZ ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524589",
+      "title" : "Wiremode-Inspect test between LAN-DMZ.",
+      "description" : "Original ID: 12\nOriginal Title: Wiremode-Inspect test between LAN-DMZ.\nOriginal Description: To check the functionality of wiremode-inspect mode when one interface is configured in LAN and other in DMZ zone .",
+      "result" : "  1.\tThe traffic should be successful with log generated for traffic matching the app rule and virus."
+   },
+   "1524602" : {
+      "steps" : "  1.Configure X2(WAN) wiremode-secure to X3(trust)\n  2.Running ftp traffic matching the app rule and downloading virus on PC2.\n  3.Click the edit button of X3 and change the zone interface to public , paired interface zone to LAN and wiremode type to inspect.\n  4.Running ftp traffic matching the app rule and downloading virus on PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "38d92178-3f15-49ca-a8b8-fe03d18e209e",
+      "initial" : "  PC1 ----- X2(WAN) DUT X3(Trust)-----PC2 1.Two interfaces configured in WAN-Trust-wiremode-secure mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.On trust ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service\n  5.On public ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524602",
+      "title" : "Changing wiremode type from WAN-trust secure mode to LAN-Public inspect mode",
+      "description" : "Original ID: 72\nOriginal Title: Changing wiremode type from WAN-trust secure mode to LAN-Public inspect mode\nOriginal Description: To check the functionality of wiremode-inspect mode when two interfaces are configured in WAN-trust secure mode is moved to LAN-Public inspect .",
+      "result" : "  1.In step2, traffic are blocked with log generated for traffic matching the app rule and virus.\n  2.In step4, traffic pass successfully with log generated for traffic matching the app rule and virus."
+   },
+   "1524590" : {
+      "steps" : "  1.Try sending ping ON PC1;\n  1.Try sending ftp traffic matching the app rule and downloading virus on PC2.",
+      "priority" : "Smoke",
+      "atm_id" : "ed599656-f5ed-4e96-82f8-1d7e826d1e6e",
+      "initial" : "  PC1 ----------------- X2(WAN) DUT X3(DMZ)-----PC2 1.Two interfaces configured in WAN-DMZ-wiremode-secure mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.On DMZ ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524590",
+      "title" : "Wiremode-Secure test between WAN-DMZ",
+      "description" : "Original ID: 16\nOriginal Title: Wiremode-Secure test between WAN-DMZ\nOriginal Description: To check the functionality of wiremode-secure mode when one interface is configured in WAN and other in DMZ zone",
+      "result" : "  1.PING from PC1 (WAN side)to PC2(DMZ side) should be denied.\n  2.The traffic should be blocked when downloading virus or downloading ftp file on PC2, there is log generated for traffic matching the app rule and virus."
+   },
+   "1524603" : {
+      "steps" : "  1.Restart /power-off-on the firewall.\n  2.Check that the WAN-Trust wiremode secure configurations are intact.\n  3.Try running ftp traffic matching the app rule and downloading virus on PC2.",
+      "priority" : "Smoke",
+      "atm_id" : "1b2d2dcd-23ef-4c47-8bca-169c3fb2915a",
+      "initial" : "  PC1 ----------------- X2(WAN) DUT X3 Custom(Trusted,GAV enabled).-----PC2 1.\tTwo interfaces configured in WAN-custom-wiremode-Secure mode\n  2.\tPC1 connected to one interface and PC2 connected to another.\n  3.\tSecurity (GAV) services enabled, app rules enabled , rule configured denying file extension download through ftp.\n  4.\tOn custom ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524603",
+      "title" : "Restart/Power-off-on functionality check with wiremode-Secure test between WAN- Custom(Trusted,GAV enabled).",
+      "description" : "Original ID: 75\nOriginal Title: Restart/Power-off-on functionality check with wiremode-Secure test between WAN- Custom(Trusted,GAV enabled).\nOriginal Description: To check the functionality of WAN-Trust wiremode-Secure mode after restart/power-off-on of firewall",
+      "result" : "  Traffic are blocked with log generated for traffic matching the app rule and virus."
+   },
+   "1524601" : {
+      "steps" : "  1.Configure X2(LAN) as wiremode-bypass to X3(LAN)\n  2.Running ftp traffic matching the app rule and downloading virus on PC2.\n  3.Click the edit button of X2 and change the zone interface to WAN , wiremode type to Secure and paired interface zone to Trust .\n  4.Check the UI display on the Network&gt;Interface page and also check the configurations after clicking on edit of X2 and X3.\n  5.Running ftp traffic matching the app rule and downloading virus on PC2.",
+      "priority" : "Smoke",
+      "atm_id" : "06fa24a2-f94d-478b-8525-db3c10f5b231",
+      "initial" : "  PC1 ----------------- X2(LAN) DUT X3(LAN)-----PC2 1.Two interfaces configured in LAN-LAN-wiremode-bypass mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.On trust ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524601",
+      "title" : "Changing wiremode type from LAN-LAN bypass to WAN-Trust secure mode.",
+      "description" : "Original ID: 71\nOriginal Title: Changing wiremode type from LAN-LAN bypass to WAN-Trust secure mode.\nOriginal Description: To check the functionality of wiremode-secure in WAN-Trust mode when it is moved from LAN-LAN Bypass mode",
+      "result" : "  1.In step2, traffic pass successfully;\n  2.In step4, the UI should display X2 in WAN mode and X3 in Trust zone, both in wiremode-secure mode.\n  3.In step5, traffic are blocked with log generated for traffic matching the app rule and virus."
+   },
+   "1524595" : {
+      "steps" : "  Try running ftp traffic matching the app rule and downloading virus on PC2.",
+      "priority" : "Smoke",
+      "atm_id" : "c408cc68-29ad-46ce-9e52-bfb10468b642",
+      "initial" : "  PC1 ----------------- X2(DMZ) DUT X3(Custom,Trust, GAV enabled)-----PC2\n  1.Two interfaces configured in DMZ-Custom(Trusted-GAV)-wiremode-bypass mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.On DMZ ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service\n  5.On custom ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524595",
+      "title" : "Wiremode-bypass test between DMZ-Custom(Trusted,GAV enabled).",
+      "description" : "Original ID: 29\nOriginal Title: Wiremode-bypass test between DMZ-Custom(Trusted,GAV enabled).\nOriginal Description: To check the functionality of wiremode-bypass mode when one interface is configured in DMZ zone and other in trusted zone",
+      "result" : "  The traffic should be successful."
+   },
+   "1524587" : {
+      "steps" : "  1. Go to edit Network&gt;Interface edit section of any un assigned interface and move the interface to LAN/WAN/DMZ/Custom zone .\n  2. Check if wiremode (2-port) suboption is available for an interface belonging to any zone (LAN,WAN,DMZ, Custom zone) but not WLAN.\n  3. Check if the paired interface can be assigned to any zone (LAN,WAN,DMZ, Custom zone) but not WLAN from the parent interface.",
+      "priority" : "Smoke",
+      "atm_id" : "76bc8129-7202-47a0-a2e3-6b565b9625d3",
+      "initial" : "  DUT",
+      "id" : "1524587",
+      "title" : "All options availability-UI level",
+      "description" : "Original ID: 1\nOriginal Title: All options availability-UI level\nOriginal Description: Check at the UI level if all the options are available and can be selected.",
+      "result" : "  1. Wiremode (2-port) should be available to interfaces belonging to any zone (LAN,WAN,DMZ, Custom zone) but not WLAN.\n  2. From the parent interface , any unassigned interface can be selected as a paired interface and be assigned to any zone (LAN,WAN,DMZ, Custom zone) but not WLAN."
+   },
+   "1524594" : {
+      "steps" : "  1.Try running ftp traffic matching the app rule and downloading virus on PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "3b443aca-7be4-4711-aa48-56737443c88f",
+      "initial" : "  PC1 ----------------- X2(LAN) DUT X3(Custom,Public, GAV enabled)-----PC2 1. Two interfaces configured in LAN-Custom(Public-GAV)-wiremode-inspect mode 2. PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.On custom ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524594",
+      "title" : "Wiremode-Inspect test between LAN- Custom(Public,GAV enabled).",
+      "description" : "Original ID: 27\nOriginal Title: Wiremode-Inspect test between LAN- Custom(Public,GAV enabled).\nOriginal Description: To check the functionality of wiremode-inspect mode when one interface is configured in LAN zone and other in Public zone .",
+      "result" : "  1. The traffic should be successful and Virus should not be blocked, there is log generated for traffic matching the app rule and virus."
+   },
+   "1524591" : {
+      "steps" : "  1.Try running ftp traffic matching the app rule and downloading virus between on PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "fb7ea247-86a1-4fdd-b1c5-3e2dc1f55899",
+      "initial" : "  PC1 ----------------- X2(DMZ) DUT X3(DMZ)-----PC2 1.Two interfaces configured in DMZ-DMZ-wiremode-secure mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.On DMZ ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524591",
+      "title" : "Wiremode-Secure test between DMZ-DMZ.",
+      "description" : "Original ID: 19\nOriginal Title: Wiremode-Secure test between DMZ-DMZ.\nOriginal Description: To check the functionality of wiremode-secure mode when one interface is configured in DMZ and other in DMZ zone",
+      "result" : "  1.The traffic should be blocked with log generated for traffic matching the app rule and virus."
+   },
+   "1524600" : {
+      "steps" : "  1.Configure X2(LAN) as wiremode-secure to X3(trust)\n  2.Running ftp traffic matching the app rule and downloading virus on PC1.\n  3.Click the edit button of the X2 interface and change the paired interface zone to Public.\n  4.Running ftp traffic matching the app rule and downloading virus on PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "6f1af9c4-0360-4dfe-9671-6890954b1ce8",
+      "initial" : "  PC1 ----------------- X2(LAN) DUT X3(Trust)-----PC2 to PC1 ----------------- X2(LAN) DUT X3(Public)-----PC2 1.Two interfaces configured in LAN-Trust-wiremode-secure mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.On trust ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service\n  5.On public ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524600",
+      "title" : "Changing zones for wiremode-secure from LAN-Trust to LAN-Public.",
+      "description" : "Original ID: 65\nOriginal Title: Changing zones for wiremode-secure from LAN-Trust to LAN-Public.\nOriginal Description: To check the functionality of wiremode-secure mode when one interfaces is configured in LAN and other in Trust and then the zone of the second interface is moved from Trust to Public zone",
+      "result" : "  Traffic are blocked with log generated for traffic matching the app rule and virus."
+   },
+   "1524598" : {
+      "steps" : "  1. Ping PC2 on PC1\n  2. Running ftp traffic matching the app rule and downloading virus on PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "92100f17-372a-483c-b7fb-3c9f434805a6",
+      "initial" : "  PC1 ----------------- X2(LAN) DUT X3(Public)-----PC2 1.Two interfaces configured in LAN-Public-wiremode-secure mode\n  2.PC1 connected to one interface and PC2 connected to another\n  3.Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.The default deny access rule for Public&gt;LAN enabled.\n  5.One allow access rule created for PC2 (Public)&gt;PC1(LAN)\n  6.On public ZONE,Enable Gateway Anti-Virus Service,Enable IPS,Enable Anti-Spyware Service,Enable App Control Service",
+      "id" : "1524598",
+      "title" : "Wiremode-Secure test between LAN-public with user created allow access rule for Public>LAN",
+      "description" : "Original ID: 58\nOriginal Title: Wiremode-Secure test between LAN-public with user created allow access rule for Public&gt;LAN\nOriginal Description: To check the functionality of wiremode-secure mode when one interface is configured in LAN and other in Public zone with default Public&gt;LAN deny rule enabled and one user created allow access rule created for Public&gt;LAN",
+      "result" : "  In step1, ping succeeded\n  In step2, traffic are blocked with log generated for traffic matching the app rule and virus."
+   }
+}

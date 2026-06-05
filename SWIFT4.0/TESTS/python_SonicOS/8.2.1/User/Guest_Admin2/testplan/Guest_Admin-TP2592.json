@@ -1,0 +1,37 @@
+{
+   "1546406" : {
+      "steps" : "  PC\u2014X0 SonicWALL",
+      "initial" : "  <p align=\"left\">1) Login to firewall as admin.\n  <p align=\"left\">2) Login to firewall as guest admin on another pc.\n  <p align=\"left\">3) The messageAn administrator is already logged in for configuration\u201dis showed. Click Non-config\u201dicon.\n  <p align=\"left\">4) Click change mode\u201d.",
+      "id" : "1546406",
+      "title" : "Preempt:verify that guest admin is unablre to preempt Full Admin",
+      "result" : "  <p align=\"left\">The messageNot currently available\u201dis showed.The administrator is still in config mode."
+   },
+   "1546401" : {
+      "steps" : "  <p align=\"left\">PC\u2014X0 SonicWALL",
+      "initial" : "  <p align=\"left\">1) Have a user test1 (Password 111)with Guest Administrator\u201d previledges added in the local database.\n  <p align=\"left\">2) Login FW via local host as test1.",
+      "id" : "1546401",
+      "title" : "Update password in the login popup window after login as a guest admin",
+      "result" : "  <p align=\"left\">The popup window is showed, it is said please enter a new password\u201d."
+   },
+   "1546408" : {
+      "steps" : "  <p align=\"left\">PC\u2014X0 SonicWALL",
+      "initial" : "  <p align=\"left\">1) Login to firewall as guest admin1.\n  <p align=\"left\">2) Login to firewall as guest admin2 on another pc.\n  <p align=\"left\">3) Verify the previous guest administrator is dropped to non-config mode.",
+      "id" : "1546408",
+      "title" : "Preempt:try to preempt between two guest admin users",
+      "result" : "  <p align=\"left\">The previous guest admin is dropped to non-config mode or logged out. When clicking change mode\u201d, the message Not currently available\u201d is showed."
+   },
+   "1546409" : {
+      "steps" : "  TBD",
+      "initial" : "",
+      "id" : "1546409",
+      "title" : "TBD",
+      "result" : "  TBD"
+   },
+   "1546400" : {
+      "steps" : "  <p align=\"left\">PC\u2014X0 SonicWALL",
+      "initial" : "  <p align=\"left\">1) Go to the Users &gt; Local Users page and click the \"Add User\" button.\n  <p align=\"left\">2) Fill in the Nametest\u201d, Password1\u201d, and Confirm Password fields in the \"Add User\" dialog.\n  <p align=\"left\">3) Go to the Groups tab. Select Guest Administrators\u201d from the User groups\u201d pane. Click on the -&gt;\u201dbutton. Click the OK button.\n  <p align=\"left\">4) Go to System-Administration, change Enforce password complexity to Require alphabetic and numeric characters, and change \"Enforce a minimum password length of:\" to 5 , then apply\n  <p align=\"left\">5) Then try to change the password of test\u201d to 111.\n  <p align=\"left\">6) Then try to change the password of test\u201d to 1111111.",
+      "id" : "1546400",
+      "title" : "Test \"Apply  password constraints  for all local users\" on guest admin",
+      "result" : "  <p align=\"left\">1) After step 5, the password cannot be changed to 111, error message says: \"Error: Password is too short\".\n  <p align=\"left\">2) After step 6, the password cannot be changed to 1111111, warning message says:Password must contain letters and numbers(user will need to change it)\u201d."
+   }
+}

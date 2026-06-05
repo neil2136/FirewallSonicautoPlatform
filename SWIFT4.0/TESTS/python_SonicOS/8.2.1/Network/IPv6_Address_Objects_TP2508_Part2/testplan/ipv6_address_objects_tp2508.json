@@ -1,0 +1,107 @@
+{
+   "1527153" : {
+      "steps" : "1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. 2. Click on the 'Purge All' button<br /><br />In SonicOS 6.1.3.0 version, there are no&#160;'IPv6 only' ,&#160;'IPv4 only',&#160;'IPv4 and IPv6 ' &#160;radio buttons",
+      "initial" : "IPv6 address objects of the following type created -\n1. test1 - Type Host, Zone - LAN",
+      "id" : "1527153",
+      "title" : "Clicking the 'Purge All' button",
+      "result" : "Verify that the Address object page is refreshed and the address object 'test1' is still present."
+   },
+   "1527154" : {
+      "steps" : "1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on 'Add' under the Address Object column. <br />3. Enter the following details - Name - test Zone Assignment - WLAN Type - Host IP Address - 2004::2 <br />4. Click OK.\n",
+      "initial" : "LAN IP address configured to 2001::1 <br />WLAN IP address configured to 2004::1\n",
+      "id" : "1527154",
+      "title" : "Create an address object  Type - Host, Zone  WLAN",
+      "result" : "Verify that an address object 'test' of type 'Host' in zone WLAN has been created.\n"
+   },
+   "1527155" : {
+      "steps" : "1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on 'Add' under the Address Object column. <br />3. Enter the following details - Name - test Zone Assignment - VPN Type - Network Network - 2005::11 Netmask/Prefix length - 64 <br />4. Click OK.\n",
+      "initial" : "LAN IP address configured to 2001::1\n",
+      "id" : "1527155",
+      "title" : "Create an address object  Type - Network, Zone  VPN\n",
+      "result" : "Verify that an address object 'test' of type 'Network' in zone VPN has been created.\n"
+   },
+   "1527156" : {
+      "steps" : "1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on 'Add' under the Address Object column. <br />3. Enter the following details - Name - test Zone Assignment - MULTICAST Type - Host IP Address - ff08::43 <br />4. Click OK.\n",
+      "initial" : "LAN IP address configured to 2001::1\n",
+      "id" : "1527156",
+      "title" : "Create an address object  Type - Host, Zone  MULTICAST\n",
+      "result" : "Verify that an address object 'test' of type 'Host' in zone MULTICAST has been created.\n"
+   },
+   "1527157" : {
+      "steps" : "1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on 'Add' under the Address Object column. <br />3. Enter the following details - Name - test Zone Assignment - MULTICAST Type - Network Network - ff08::43 Netmask/Prefix length - 64 <br />4. Click OK.\n",
+      "initial" : "LAN IP address configured to 2001::1\n",
+      "id" : "1527157",
+      "title" : "Create an address object  Type - Network, Zone  MULTICAST\n",
+      "result" : "Verify that an address object 'test' of type 'Network' in zone MULTICAST has been created\n"
+   },
+   "1527158" : {
+      "steps" : "1. Under 'Network -&gt; Zones', click on 'Add'. <br />2. Enter 'NewZone' for the name and choose 'Trusted' as the'Security Type' and click OK. <br />3. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />4. Click on 'Add' under the Address Object column. <br />5. Enter the following details - Name - test Zone Assignment - NewZone Type - Host IP Address - 2007::2 <br />6. Click OK.\n",
+      "initial" : "LAN IP address configured to 2001::1\n",
+      "id" : "1527158",
+      "title" : "Create an address object  Type - Host, Zone  Custom Zone\n",
+      "result" : "Verify that an address object 'test' of type 'Host' in zone 'NewZone' has been created.\n"
+   },
+   "1527160" : {
+      "steps" : "1. Under 'Network -&gt; Zones', click on 'Add'. <br />2. Enter 'NewZone' for the name and choose 'Trusted' as the'Security Type' and click OK. <br />3. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />4. Click on 'Add' under the Address Object column. <br />5. Enter the following details - Name - test Zone Assignment - NewZone Type - Range Starting IP Address - 2007::2 Ending IP address - 2007::5 <br />6. Click OK.\n",
+      "initial" : "LAN IP address configured to 2001::1\n",
+      "id" : "1527160",
+      "title" : "Create an address object  Type - Range, Zone  Custom Zone\n",
+      "result" : "Verify that an address object 'test' of type 'Range' in zone 'NewZone' has been created.\n"
+   },
+   "1527162" : {
+      "steps" : "1. From the 'Address Groups' page, click on the 'IPv6 only' radio button. <br />2. Click on the 'Refresh All' button\n",
+      "initial" : "\"IPv6 address objects of the following type created -\n1. test1 - Type Host, Zone - LAN\"\n",
+      "id" : "1527162",
+      "title" : "Clicking the 'Refresh all' button\n",
+      "result" : "Verify that the Address object page is refreshed and the address object 'test1' is still present.\n"
+   },
+   "1527168" : {
+      "steps" : "",
+      "initial" : "",
+      "id" : "1527168",
+      "title" : "Verify that an address object cannot be deleted if used in a PB\n",
+      "result" : ""
+   },
+   "1527170" : {
+      "steps" : "1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on 'Add' under the Address Object column. <br />3. Enter the following details - Name - test Zone Assignment - WAN Type - Range Starting IP Address - 2002::2 Ending IP Address - 2002::5<br /> 4. Click OK.\n",
+      "initial" : "LAN IP address configured to 2001::1 <br />WAN IP address configured to 2002::1\n",
+      "id" : "1527170",
+      "title" : "Create an address object  Type - Range, Zone  WAN\n",
+      "result" : "Verify that an address object 'test' of type 'Range' in zone WAN has been created.\n"
+   },
+   "1527171" : {
+      "steps" : "1. From 'System -&gt; Settings', click on 'Export Settings' and save the file locally. <br />2. Set the firewall to factory defaults. <br />3. After the firewall comes up, go to 'System -&gt; Settings' and load the previously saved settings.\n",
+      "initial" : "IPv6 address objects of the following type created <br />&#160;-1. test1 - Type Host, Zone - LAN <br />&#160;-2.&#160;test2 - Type Range, Zone - LAN <br />Both test1 and test2 combined into a custom address object 'test' (as in Test case 28)\n",
+      "id" : "1527171",
+      "title" : "Export prefs, set to factory defaults and import the prefs and verify the address objects and address groups are still present\n",
+      "result" : "Verify that the address objects 'test1', 'test2' and the address group 'test' are still present on the firewall.\n"
+   },
+   "1527172" : {
+      "steps" : "1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on 'Add' under the Address Object column. <br />3. Enter the following details - Name - test Zone Assignment - DMZ Type - Host IP Address - 2003::2 <br />4. Click OK.\n",
+      "initial" : "LAN IP address configured to 2001::1 <br />DMZ IP address configured to 2003::1\n",
+      "id" : "1527172",
+      "title" : "Create an address object  Type - Host, Zone  DMZ\n",
+      "result" : "Verify that an address object 'test' of type 'Host' in zone DMZ has been created.\n"
+   },
+   "1527173" : {
+      "steps" : "1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on 'Add' under the Address Object column. <br />3. Enter the following details - Name - test Zone Assignment - DMZ Type - Network Network - 2003::11 Netmask/Prefix length - 64 <br />4. Click OK.\n",
+      "initial" : "LAN IP address configured to 2001::1<br /> DMZ IP address configured to 2003::1\n",
+      "id" : "1527173",
+      "title" : "Create an address object  Type - Network, Zone  DMZ\n",
+      "result" : "Verify that an address object 'test' of type 'Network' in zone DMZ has been created\n"
+   },
+   "2195470" : {
+      "steps" : "\"1.go to address object page,choose \"\"All\"\" for veiw and choose IPv4&IPv6,search an unassigned interface like X2 in the search bar,there are 7 defaut objects displayed:\n\"\"X1:V164 IP\"\",\n\"\"X1:V164 Subnet\"\",\n\"\"X1:V164 IPv6 Link-Local Address\"\",\n\"\"X1:V164 IPv6 Primary Dynamic Address\"\",\n\"\"X1:V164 IPv6 Primary Dynamic Address Subnet\"\",\n\"\"X1:V164 IPv6 Primary Static Address\"\",\n\"\"X1:V164 IPv6 Primary Static Address Subnet\"\"\n2.then set x2 as wan zone for ipv4,then check address object page,there are 9 default objects displayed,new created \"\"X2 Default Gateway\"\" and \"\"X2 IPv6 Default Gateway\"\".\n\"\n",
+      "initial" : "",
+      "id" : "2195470",
+      "title" : "Defaut IPv6 Gateway AO can be created when configure interface as WAN zone\n",
+      "result" : "see steps\n"
+   },
+   "2195471" : {
+      "steps" : "\"1.set one interface like X2 to WAN zone,go to address object page,choose \"\"All\"\" for veiw and choose IPv4&IPv6,search X2 in the search bar,there are 9 defaut objects displayed:\n\"\"X2 Default Gateway\"\",\n\"\"X2 IP\"\",\n\"\"X2 Subnet\"\",\n\"\"X2 IPv6 Link-Local Address\"\",\n\"\"X2 IPv6 Primary Dynamic Address\"\",\n\"\"X2 IPv6 Primary Dynamic Address Subnet\"\",\n\"\"X2 IPv6 Default Gateway\"\",\n\"\"X2 IPv6 Primary Static Address\"\",\n\"\"X2 IPv6 Primary Static Address Subnet\"\"\n2.unassin X2,then check address object page,there are 7 default objects displayed,\"\"X2 Default Gateway\"\" and \"\"X2 IPv6 Default Gateway\"\" are delete automatically\n\n\"\n",
+      "initial" : "",
+      "id" : "2195471",
+      "title" : "Default IPv6 Gateway AO can be deleted  automatically after unassign WAN  zone interface\n",
+      "result" : "see steps\n"
+   }
+}

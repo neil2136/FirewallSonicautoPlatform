@@ -1,0 +1,30 @@
+{
+  "16": {
+    "steps": "  N/A",
+    "initial": "  Phase1 and Phase2 are negotiated after the old SA was deleted due to life time expiration.",
+    "id": "16",
+    "title": "Main Mode. The tunnel is re-established after SA life time expired.",
+    "result": "  1) Configure IKE Main Mode VPN policies on the central and remote firewalls. Set Phase1 and Phase2 SA life time to 120 seconds. 2) Initiate the tunnel by pinging from the host on central network to a remote VPN host. 3) Stop the pings. 4) Let the time > 240 seconds to pass (additional Phase1 will be renegotiated even with no traffic). Clear the log. 5) Start pinging again."
+  },
+  "48": {
+    "steps": "  N/A",
+    "initial": "  The user will ensure that IKE rule will be auto-added and negotiation will start if VPN is re-enabled on the firewall. The appropriate log message will be generated.",
+    "id": "48",
+    "title": "Re-enable VPN",
+    "result": "  1. Configure IKE VPN policies on the central and remote firewalls. 2. Have VPN disabled on the local firewall. 3. Ping from the local host to remote VPN destination. Make sure that negotiation doesn't start. 4. Turn on the check box Enable VPN on the VPN > Settings page on the local firewall and push the Apply button. 5. Ping from the local host into the VPN destination."
+  },
+  "45": {
+    "steps": "  N/A",
+    "initial": "  The user will ensure that VPN tunnel will be established if a subnet specified as local and destination networks.",
+    "id": "45",
+    "title": "A tunnel between local network and remote network",
+    "result": "  1) Create address objects on the local firewall, Local Net (on DMZ zone) and Remote Net (on VPN zone). 2) Configure a VPN policy on the local firewall. Select Local Net as local network and Remote Net as destination network. 3) Repeat steps 1 and 2 on the remote firewall. 4) Ping into the Remote network from a local PC on the LAN subnet. Make sure that IKE doesnt start. 5) Ping into the Remote host from a local PC on the DMZ subnet."
+  },
+  "25": {
+    "steps": "  N/A",
+    "initial": "  Phase2 is renegotiated after the Renegotiate button on the initiator has been hit. Traffic continues to go through the tunnel",
+    "id": "25",
+    "title": "Aggressive Mode. Renegotiate the SA using the button on initiator.",
+    "result": "  1) Configure IKE Aggressive Mode VPN policies on the central and remote firewalls. 2) Initiate the tunnel by pinging from the central network to a remote VPN host. 3) Make sure that the tunnel is up. Clear the log. 4) Hit the Renegotiate button on the central firewall."
+  }
+}

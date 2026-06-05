@@ -1,0 +1,86 @@
+{
+   "1514130" : {
+      "steps" : "  1. Navigate to Network -> IPHelper section\n  2. Under Relay Protocol section check if DHCPv6 is listed\n  ",
+      "initial" : "",
+      "id" : "1514130",
+      "title" : "GUI-DHCPv6 listed under Relay Protocols field",
+      "result" : "DHCPv6 should be listed under Relay Protocols field"
+   },
+   "1514131" : {
+      "steps" : " 1. Navigate to Network -> IPHelper section\n  2. Under Relay Protocol section check if DHCPv6 relay protocol has correct info\n ",
+      "initial" : "",
+      "id" : "1514131",
+      "title" : "GUI-DHCPv6 relay protocol has correct related info on GUI",
+      "result" : "DHCPv6 relay protocol should have correct related info"
+   },
+   "1514132" : {
+      "steps" : " 1. Navigate to Network -> IPHelper section\n  2. Under Relay Protocol section check if DHCPv6 relay protocol can be enabled and disabled\n ",
+      "initial" : "",
+      "id" : "1514132",
+      "title" : "GUI-DHCPv6 relay protocols could be enabled and disabled",
+      "result" : "DHCPv6 relay protocols should be able to enabled and disabled"
+   },
+   "1514133" : {
+      "steps" : " 1. Navigate to Network -> IPHelper section\n  2. Check IP helper main switch can be enabled and disabled\n",
+      "initial" : "",
+      "id" : "1514133",
+      "title" : "Verify IP helper main switch could be enabled and disabled",
+      "result" : "Should be able to enable and disable IP helper main switch "
+   },
+   "1514134" : {
+      "steps" : " 1. Navigate to Network -> IPHelper section -> policies \n  2. Click add button \n 3. check DHCPv6 is listed in protocol dropdown list\n",
+      "initial" : "",
+      "id" : "1514134",
+      "title" : "GUI-DHCPv6 listed in Protocol dropdown list on Policy configuration page",
+      "result" : "DHCPv6 should be listed in protocol dropdown list"
+   },
+   "1514136" : {
+      "steps" : " 1. Navigate to Network -> IPHelper section -> policies \n  2. Click add button \n 3. add policy with DHCPv6 Protocol\n",
+      "initial" : "",
+      "id" : "1514136",
+      "title" : "GUI-DHCPv6 replay policy could be added",
+      "result" : " Policy with DHCPv6 protocol should be added successfully"
+   },
+   "1514135" : {
+      "steps" : " 1. Navigate to Network -> IPHelper section -> policies \n  2. Click add button \n 3. add policy with DHCPv6 Protocol\n 4. verify policy and check correct info is displayed\n",
+      "initial" : "",
+      "id" : "1514135",
+      "title" : "GUI-DHCPv6 replay policy shows correct info as configured",
+      "result" : "Policy details should be displayed with correct information"
+   },
+   "1514139" : {
+      "steps" : "1. Navigate to Network -> IPHelper section -> policies \n  2. Click add button \n 3. add policy with DHCPv6 Protocol\n 4. Try disabling the created policy \n",
+      "initial" : "",
+      "id" : "1514139",
+      "title" : "GUI-DHCPv6 replay policy could be disabled",
+      "result" : "Should be able to disable the policy"
+   },
+   "1514138" : {
+      "steps" : "1. Navigate to Network -> IPHelper section -> policies \n  2. Click add button \n 3. add policy with DHCPv6 Protocol\n 4. Try enabling the created policy \n",
+      "initial" : "",
+      "id" : "1514138",
+      "title" : "GUI-DHCPv6 replay policy could be enabled",
+      "result" : "Should be able to enable the policy"
+   },
+   "1514137" : {
+      "steps" : "1. Navigate to Network -> IPHelper section -> policies \n  2. Click add button \n 3. add policy with DHCPv6 Protocol\n 4. Try to delete the policy",
+      "initial" : "",
+      "id" : "1514137",
+      "title" : "GUI-DHCPv6 replay policy could be deleted",
+      "result" : "Should be able to delete the policy which is created"
+   },
+   "1514140" : {
+      "steps" : "1. Navigate to Network -> IPHelper section -> policies \n  2. Click add button \n 3. add policy with DHCPv6 Protocol\n ",
+      "initial" : "",
+      "id" : "1514140",
+      "title" : "GUI-DHCPv6 replay policy could be configured",
+      "result" : "Should be able to configure new policy"
+   },
+   "1514141" : {
+      "steps" : " 1. Navigate to Network -> IPHelper section -> policies \n  2. Click add button \n 3. Try adding policy with DHCPv6 Protocol with invalid input\n ",
+      "initial" : "",
+      "id" : "1514141",
+      "title" : "GUI-Invalid input check on protocol and policy configuration page",
+      "result" : "Should not be able to add policy with invalid input and appropriate message is shown"
+   }
+}

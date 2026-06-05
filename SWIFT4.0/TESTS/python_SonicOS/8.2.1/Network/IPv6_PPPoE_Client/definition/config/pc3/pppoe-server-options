@@ -1,0 +1,13 @@
+# PPP options for the PPPoE server
+# # LIC: GPL
+require-chap
+login
+lcp-echo-interval 10
+lcp-echo-failure 2
+ipcp-accept-local
+ipcp-accept-remote
+ms-dns 8.8.8.8
+ms-dns 8.8.4.4
++ipv6 ipv6cp-use-ipaddr
+logfile /var/log/pppoe.log
+

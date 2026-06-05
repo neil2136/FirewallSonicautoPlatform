@@ -1,0 +1,14 @@
+$TTL 1D
+@       IN SOA  @ rname.invalid. (
+                                        0       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+        NS      @
+        A       13.13.1.100
+        AAAA    2001:2013::100
+200     IN      PTR     arpa1.baidu.com.
+201     IN      PTR     arpa2.baidu.com.
+0.0.2   IN      PTR     arpa1.baidu.test.com
+1.0.2   IN      PTR     arpa2.baidu.test.com

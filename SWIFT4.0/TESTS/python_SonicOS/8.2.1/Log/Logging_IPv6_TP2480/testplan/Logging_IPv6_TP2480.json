@@ -1,0 +1,352 @@
+{
+   "1529982" : {
+      "steps" : "  Simulate situation that the firewall can not update time from NTP server",
+      "priority" : "Smoke",
+      "atm_id" : "810050f1-d784-401e-851a-6184910dd754",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "1529982",
+      "title" : "Firewall logs Failed on updating time from NTP server",
+      "description" : "Original ID: 7\nOriginal Title: Firewall logs Failed on updating time from NTP server\nOriginal Description: This case is to verify that firewall can log Failed on updating time from NTP server",
+      "result" : "  Firewall logs Failed on updating time from NTP server"
+   },
+   "1529974" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck VPN PKI; </li><li value=\"3\">Make some operations to trigger IPv6 VPN PKI messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "596c5163-bf90-4fd8-8e3a-8306fe328bec",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529974",
+      "title" : "VPN PKI checked/unchecked, simulate situation when one of VPN PKI Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 39\nOriginal Title: VPN PKI checked/unchecked, simulate situation when one of VPN PKI Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that VPN PKI checked/unchecked, simulate situation when one of VPN PKI Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 VPN PKI messages."
+   },
+   "1529951" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Attacks; </li><li value=\"3\">Make some operations to trigger IPv6 \" Attacks \" messages</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "8d888eb1-f255-4021-ab27-2a2214dfe1aa",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529951",
+      "title" : "Attacks checked/unchecked, simulate situation when one of Attacks Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 11\nOriginal Title: Attacks checked/unchecked, simulate situation when one of Attacks Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Attacks checked/unchecked, simulate situation when one of Attacks Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Attacks messages."
+   },
+   "1529984" : {
+      "steps" : "  Send NTP request from the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "71924b24-c2d3-42dd-a72f-3ee1d003ee56",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "1529984",
+      "title" : "Firewall logs NTP request sent",
+      "description" : "Original ID: 9\nOriginal Title: Firewall logs NTP request sent\nOriginal Description: This case is to verify that firewall can log NTP request sent",
+      "result" : "  Firewall logs NTP request sent"
+   },
+   "1529978" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; View page; </li><li value=\"2\">Select every option as Priority and Category filter, click Apply Filter;</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "92ad7a13-4871-49d6-90dd-09db45d60af8",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529978",
+      "title" : "Verify Priority and Category filter.",
+      "description" : "Original ID: 42\nOriginal Title: Verify Priority and Category filter.\nOriginal Description: This case is to verify Priority and Category filter.",
+      "result" : "  Firewall only displays the filtered log messages."
+   },
+   "1529975" : {
+      "steps" : "  Send valid ICMPv6 packet from LAN side pc.",
+      "priority" : "Smoke",
+      "atm_id" : "004e82f6-0e3b-4799-b65a-ace926435e55",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "1529975",
+      "title" : "Firewall logs ICMPv6 packet from LAN allowed",
+      "description" : "Original ID: 4\nOriginal Title: Firewall logs ICMPv6 packet from LAN allowed\nOriginal Description: This case is to verify that firewall can log ICMPv6 packet from LAN allowed.",
+      "result" : "  Firewall logs ICMPv6 packet from LAN allowed."
+   },
+   "1529950" : {
+      "steps" : "  Send invalid IPv6 link-local or multicast packet from Lan side pc.",
+      "priority" : "Smoke",
+      "atm_id" : "62cd0b4e-0a9e-446c-b70e-fdc6159e7682",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "1529950",
+      "title" : "Firewall logs Unhandled link-local or multicast IPv6 packet dropped",
+      "description" : "Original ID: 10\nOriginal Title: Firewall logs Unhandled link-local or multicast IPv6 packet dropped\nOriginal Description: This case is to verify that Firewall logs Unhandled link-local or multicast IPv6 packet dropped",
+      "result" : "  Firewall logs Unhandled link-local or multicast IPv6 packet dropped"
+   },
+   "1529957" : {
+      "steps" : "  <ol><li value=\"1\">Configure a 6to4 Tunnel Interface </li><li value=\"2\">Add an access rule to deny 6to4 traffic.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "4fdbd9dd-7362-4344-8dc6-6a86f6939973",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529957",
+      "title" : "Firewall logs IPv6 Tunnel packet dropped",
+      "description" : "Original ID: 2\nOriginal Title: Firewall logs IPv6 Tunnel packet dropped\nOriginal Description: This case is to test that Firewall can log IPv6 Tunnel packet dropped",
+      "result" : "  Firewall logs IPv6 Tunnel packet dropped"
+   },
+   "1529968" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Network Traffic; </li><li value=\"3\">Make some operations to trigger IPv6 Network Traffic messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "28970623-3718-4300-846b-fdeaefcfc423",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529968",
+      "title" : "Network Traffic checked/unchecked, simulate situation when one of Network Traffic Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 31\nOriginal Title: Network Traffic checked/unchecked, simulate situation when one of Network Traffic Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Network Traffic checked/unchecked, simulate situation when one of Network Traffic Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Network Traffic messages."
+   },
+   "1529954" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Denied LAN IP; </li><li value=\"3\">Make some operations to trigger IPv6 \"Denied LAN IP\" messages.</li></ol>",
+      "priority" : "Full_Regression",
+      "atm_id" : "a5dd6064-db86-44bd-ac92-c74e5beb9929",
+      "initial" : "  Box with IPv6 firmware\n  https://track.eng.sonicwall.com/browse/GEN7-37660\n  From Dev, Suggest deprecating this test case as there is no DP-&gt;CP schedule logic in GEN7 platform and all traffic can be handled in DP. So, we should never reach the DP-CP flood protection logic and no log will be triggered.",
+      "id" : "1529954",
+      "title" : "[Deprecate]Denied LAN IP checked/unchecked, simulate situation when one of Denied LAN IP Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 16\nOriginal Title: [Deprecate]Denied LAN IP checked/unchecked, simulate situation when one of Denied LAN IP Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Denied LAN IP checked/unchecked, simulate situation when one of Denied LAN IP Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Denied LAN IP messages."
+   },
+   "1529979" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; View page; </li><li value=\"2\">Click Clear Log and Email Log button;</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "5bd9c6d0-8fce-41b2-9299-b697e01aa997",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529979",
+      "title" : "Verify Clear Log and Email Log.",
+      "description" : "Original ID: 43\nOriginal Title: Verify Clear Log and Email Log.\nOriginal Description: This case is to verify Clear Log and Email Log.",
+      "result" : "  Firewall clears the log and send the log to the email box."
+   },
+   "1529977" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck WAN Availability; </li><li value=\"3\">Make some operations to trigger IPv6 WAN Availability messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "81ae6983-da8f-4e2e-9970-f4c39a05c2a8",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529977",
+      "title" : "WAN Availability checked/unchecked, simulate situation when one of WAN Availability Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 41\nOriginal Title: WAN Availability checked/unchecked, simulate situation when one of WAN Availability Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that WAN Availability checked/unchecked, simulate situation when one of WAN Availability Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 WAN Availability messages."
+   },
+   "1529961" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck IPv6 Tunnel; </li><li value=\"3\">Make some operations to trigger IPv6 \"IPv6 Tunnel\" messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "72d0b41a-c123-4d65-8516-802836705fd1",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529961",
+      "title" : "IPv6 Tunnel checked/unchecked, simulate situation when one of IPv6 Tunnel Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 25\nOriginal Title: IPv6 Tunnel checked/unchecked, simulate situation when one of IPv6 Tunnel Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that IPv6 Tunnel checked/unchecked, simulate situation when one of IPv6 Tunnel Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 IPv6 Tunnel messages."
+   },
+   "1529972" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck VPN IKE; </li><li value=\"3\">Make some operations to trigger IPv6 VPN IKE messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "f8348f38-1f2a-4acb-8962-8ae82e7af20e",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529972",
+      "title" : "VPN IKE checked/unchecked, simulate situation when one of VPN IKE Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 37\nOriginal Title: VPN IKE checked/unchecked, simulate situation when one of VPN IKE Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that VPN IKE checked/unchecked, simulate situation when one of VPN IKE Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 VPN IKE messages."
+   },
+   "1529960" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck High Availability; </li><li value=\"3\">Make some operations to trigger IPv6 \"High Availability\" messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "fc77a985-c1f0-4311-83a2-9e3f16ea68e3",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529960",
+      "title" : "High Availability checked/unchecked, simulate situation when one of High Availability Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 24\nOriginal Title: High Availability checked/unchecked, simulate situation when one of High Availability Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that High Availability checked/unchecked, simulate situation when one of High Availability Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 High Availability messages."
+   },
+   "1529970" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck SonicPoint; </li><li value=\"3\">Make some operations to trigger SonicPoint messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "c1b977a6-29c3-405e-af2b-23a2da3f630b",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529970",
+      "title" : "SonicPoint checked/unchecked, simulate situation when one of SonicPoint Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 34\nOriginal Title: SonicPoint checked/unchecked, simulate situation when one of SonicPoint Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that SonicPoint checked/unchecked, simulate situation when one of SonicPoint Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 SonicPoint messages."
+   },
+   "1529964" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Network Access; </li><li value=\"3\">Make some operations to trigger IPv6 \"Network Access\" messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "ffc9137d-2f0a-4a6c-a81b-2c890f11489e",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529964",
+      "title" : "Network Access checked/unchecked, simulate situation when one of Network Access Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 28\nOriginal Title: Network Access checked/unchecked, simulate situation when one of Network Access Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Network Access checked/unchecked, simulate situation when one of Network Access Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Network Access messages."
+   },
+   "1529983" : {
+      "steps" : "  <ol><li value=\"1\">Firewall successfully received a NTP reply from NTP server.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "b40662b7-3599-4569-8a7a-1f9125ed3fc8",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "1529983",
+      "title" : "Firewall logs Succeed in updating time from NTP server",
+      "description" : "Original ID: 8\nOriginal Title: Firewall logs Succeed in updating time from NTP server\nOriginal Description: This case it o verify that firewall can log Succeed in updating time from NTP server",
+      "result" : "  Firewall logs Succeed in updating time from NTP server"
+   },
+   "1529952" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Authenticated Access; </li><li value=\"3\">Make some operations to trigger IPv6 \"Authenticated Access\" messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "6bdb1d87-5388-4ac1-adb9-cb603f3192a9",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529952",
+      "title" : "Authenticated Access checked/unchecked, simulate situation when one of Authenticated Access Messages (IPv6 address) should be send",
+      "description" : "Original ID: 12\nOriginal Title: Authenticated Access checked/unchecked, simulate situation when one of Authenticated Access Messages (IPv6 address) should be send\nOriginal Description: Verify that Authenticated Access checked/unchecked, simulate situation when one of Authenticated Access Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Authenticated Access messages."
+   },
+   "1529973" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck VPN IPSec; </li><li value=\"3\">Make some operations to trigger IPv6 VPN IPSec messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "6243705f-de7b-45d1-8fc9-9c24756d8958",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529973",
+      "title" : "VPN IPSec checked/unchecked, simulate situation when one of VPN IPSec Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 38\nOriginal Title: VPN IPSec checked/unchecked, simulate situation when one of VPN IPSec Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that VPN IPSec checked/unchecked, simulate situation when one of VPN IPSec Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 VPN IPSec messages."
+   },
+   "1529959" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck FTP; </li><li value=\"3\">Make some operations to trigger IPv6 \"FTP\" messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "4826a907-6dd3-4083-ae3b-327cbce19df3",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529959",
+      "title" : "FTP checked/unchecked, simulate situation when one of FTP Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 21\nOriginal Title: FTP checked/unchecked, simulate situation when one of FTP Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that FTP checked/unchecked, simulate situation when one of FTP Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 FTP messages."
+   },
+   "1529956" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Dropped TCP; </li><li value=\"3\">Make some operations to trigger IPv6 \"Dropped TCP\" messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "8a5994dc-daad-4178-85e0-4059785cb082",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529956",
+      "title" : "Dropped TCP checked/unchecked, simulate situation when one of Dropped TCP Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 18\nOriginal Title: Dropped TCP checked/unchecked, simulate situation when one of Dropped TCP Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Dropped TCP checked/unchecked, simulate situation when one of Dropped TCP Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Dropped TCP messages."
+   },
+   "1529965" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Network Debug; </li><li value=\"3\">Make some operations to trigger IPv6 Network Debug messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "dcdc2e29-be9f-45b4-9df0-b47feb8dad99",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529965",
+      "title" : "Network Debug checked/unchecked, simulate situation when one of Network Debug Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 29\nOriginal Title: Network Debug checked/unchecked, simulate situation when one of Network Debug Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Network Debug checked/unchecked, simulate situation when one of Network Debug Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Network Debug messages."
+   },
+   "1529980" : {
+      "steps" : "  Initiate ICMPv6 packets which are forwarded, received or replied by firewall.",
+      "priority" : "Smoke",
+      "atm_id" : "ab2854db-3e61-42d5-8901-3c404ff571cd",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "1529980",
+      "title" : "Firewall logs ICMPv6 packet allowed",
+      "description" : "Original ID: 5\nOriginal Title: Firewall logs ICMPv6 packet allowed\nOriginal Description: This case is to verify that firewall can log ICMPv6 packet allowed",
+      "result" : "  Firewall logs ICMPv6 packet allowed"
+   },
+   "1529967" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Network Monitor; </li><li value=\"3\">Make some operations to trigger IPv6 Network Monitor messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "9a50f043-e276-4bb8-8b9b-4383ef850b39",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529967",
+      "title" : "Network Monitor checked/unchecked, simulate situation when one of Network Monitor Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 30\nOriginal Title: Network Monitor checked/unchecked, simulate situation when one of Network Monitor Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Network Monitor checked/unchecked, simulate situation when one of Network Monitor Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Network Monitor messages."
+   },
+   "1529981" : {
+      "steps" : "  <ol><li value=\"1\">Send ICMPv6 packet from Lan side pc </li><li value=\"2\">Add an access rule to deny ICMPv6 packet from lan zone</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "36f98c26-e0cb-4795-b491-e96c125f113f",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "1529981",
+      "title" : "Firewall logs ICMPv6 packet dropped due to policy",
+      "description" : "Original ID: 6\nOriginal Title: Firewall logs ICMPv6 packet dropped due to policy\nOriginal Description: This case is to verify that firewall can log ICMPv6 packet dropped due to policy",
+      "result" : "  Firewall logs ICMPv6 packet dropped due to policy"
+   },
+   "1529963" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Network; </li><li value=\"3\">Make some operations to trigger IPv6 Network messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "c0d3d60c-d852-496c-9069-bafcc5699e1d",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529963",
+      "title" : "Network checked/unchecked, simulate situation when one of Network Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 27\nOriginal Title: Network checked/unchecked, simulate situation when one of Network Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Network checked/unchecked, simulate situation when one of Network Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Network messages."
+   },
+   "1529962" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Intrusion Prevention; </li><li value=\"3\">Make some operations to trigger IPv6 Intrusion Prevention messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "40c404ca-c316-4b1a-869c-bd9929e65215",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529962",
+      "title" : "Intrusion Prevention checked/unchecked, simulate situation when one of Intrusion Prevention Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 26\nOriginal Title: Intrusion Prevention checked/unchecked, simulate situation when one of Intrusion Prevention Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Intrusion Prevention checked/unchecked, simulate situation when one of Intrusion Prevention Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Intrusion Prevention messages."
+   },
+   "1529953" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Blocked Web Sites; </li><li value=\"3\">Make some operations to trigger IPv6 \"Blocked Web Sites\" messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "850f39dd-5e2b-42f2-90b4-1a95d383d259",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529953",
+      "title" : "Blocked Web Sites checked/unchecked, simulate situation when one of Blocked Web Sites Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 13\nOriginal Title: Blocked Web Sites checked/unchecked, simulate situation when one of Blocked Web Sites Messages (IPv6 address) should be send.\nOriginal Description: Verify that Blocked Web Sites checked/unchecked, simulate situation when one of Blocked Web Sites Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Blocked Web Sites messages."
+   },
+   "1529971" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck User Activity; </li><li value=\"3\">Make some operations to trigger IPv6 User Activity messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "dd9f61da-6f51-45f9-9a2b-b11b10435477",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529971",
+      "title" : "User Activity checked/unchecked, simulate situation when one of User Activity Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 35\nOriginal Title: User Activity checked/unchecked, simulate situation when one of User Activity Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that User Activity checked/unchecked, simulate situation when one of User Activity Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 User Activity messages."
+   },
+   "1529958" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Dynamic Address Objects; </li><li value=\"3\">Make some operations to trigger IPv6 \"Dynamic Address Objects\" messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "6932ca61-65bd-4361-9d1e-e6a0213e1882",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529958",
+      "title" : "Dynamic Address Objects checked/unchecked, simulate situation when one of Dynamic Address Objects Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 20\nOriginal Title: Dynamic Address Objects checked/unchecked, simulate situation when one of Dynamic Address Objects Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Dynamic Address Objects checked/unchecked, simulate situation when one of Dynamic Address Objects Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Dynamic Address Objects messages."
+   },
+   "1529976" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck VPN Tunnel Status; </li><li value=\"3\">Make some operations to trigger IPv6 VPN Tunnel Status messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "2172cbaf-a400-4d29-a58d-5bb86bea5b89",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529976",
+      "title" : "VPN Tunnel Status checked/unchecked, simulate situation when one of VPN Tunnel Status Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 40\nOriginal Title: VPN Tunnel Status checked/unchecked, simulate situation when one of VPN Tunnel Status Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that VPN Tunnel Status checked/unchecked, simulate situation when one of VPN Tunnel Status Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 VPN Tunnel Status messages."
+   },
+   "1529966" : {
+      "steps" : "  Send invalid ICMPv6 packet from the LAN side pc.",
+      "priority" : "Smoke",
+      "atm_id" : "995c24ea-185f-4010-b4dc-aed5a18796ae",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "1529966",
+      "title" : "Firewall logs ICMPv6 packet from LAN dropped",
+      "description" : "Original ID: 3\nOriginal Title: Firewall logs ICMPv6 packet from LAN dropped\nOriginal Description: This case is to verify that firewall can log ICMPv6 packet from LAN dropped.",
+      "result" : "  Firewall logs ICMPv6 packet from LAN dropped."
+   },
+   "1529969" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Security Services; </li><li value=\"3\">Make some operations to trigger IPv6 Security Services messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "240168f9-891f-4c9f-af2e-4f6bc854f519",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529969",
+      "title" : "Security Services checked/unchecked, simulate situation when one of Security Services Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 33\nOriginal Title: Security Services checked/unchecked, simulate situation when one of Security Services Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Security Services checked/unchecked, simulate situation when one of Security Services Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Security Services messages."
+   },
+   "1529955" : {
+      "steps" : "  <ol><li value=\"1\">Go to Log &gt; Categories page; </li><li value=\"2\">Check/Uncheck Dropped ICMP; </li><li value=\"3\">Make some operations to trigger IPv6 \"Dropped ICMP\" messages.</li></ol>",
+      "priority" : "Smoke",
+      "atm_id" : "546f319e-f73b-48b5-9068-1e66a8c5df6b",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1529955",
+      "title" : "Dropped ICMP checked/unchecked, simulate situation when one of Dropped ICMP Messages (IPv6 address) should be send.",
+      "description" : "Original ID: 17\nOriginal Title: Dropped ICMP checked/unchecked, simulate situation when one of Dropped ICMP Messages (IPv6 address) should be send.\nOriginal Description: This case is to verify that Dropped ICMP checked/unchecked, simulate situation when one of Dropped ICMP Messages (IPv6 address) should be send.",
+      "result" : "  Firewall logs IPv6 Dropped ICMP messages."
+   }
+}

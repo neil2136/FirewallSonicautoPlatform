@@ -1,0 +1,692 @@
+{
+   "1526184" : {
+      "steps" : "  1. Go to Network-&gt;Routing,in RIP page,enable or disable RIP for one inteface.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "a2a3aaa0-09c9-43b7-99fd-6e0d63c7b7a4",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526184",
+      "title" : "Routing - Modify Interface RIP Configuration",
+      "description" : "Original ID: 123\nOriginal Title: Routing - Modify Interface RIP Configuration\nOriginal Description: This case is to verify that modify Interface RIP Configuration ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with RIP configuration are correctly showed.&#10;Result 3: Log messages related with RIP configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526208" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,delete Current DHCPv4 Leases via DELETE icon.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "4657d8af-6fa8-4dfa-9532-4f0a2f59224e",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526208",
+      "title" : "DHCP Server - Delete Current DHCPv4 Leases",
+      "description" : "Original ID: 191\nOriginal Title: DHCP Server - Delete Current DHCPv4 Leases\nOriginal Description: This case is to verify that delete Current DHCPv4 Leases ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with deleted DHCP info are correctly showed.&#10;Result 3: Log messages related with deleted DHCP info are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526191" : {
+      "steps" : "  1. Go to Network-&gt;ARP,add one Static Arp Entry.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "01b27e17-8436-4bf2-99c6-db366131ecad",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526191",
+      "title" : "ARP - Add Static ARP Entries",
+      "description" : "Original ID: 140\nOriginal Title: ARP - Add Static ARP Entries\nOriginal Description: This case is to verify that add Static ARP Entries,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Static Arp configuration are correctly showed.&#10;Result 3: Log messages related with Static Arp configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526149" : {
+      "steps" : "  1. Go to Network-&gt;Interfaces page,modify interface Advanced Settings,enable Multicast Support, enable DNS Proxy,select &quot;Link Aggregation&quot; for Redundant /Aggregate Ports,and check one interface,then click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "a74abcf4-778e-4d16-b7f6-216c6a6c2c0e",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526149",
+      "title" : "Interfaces - Modify Interface - Advanced Settings",
+      "description" : "Original ID: 003\nOriginal Title: Interfaces - Modify Interface - Advanced Settings\nOriginal Description: This case is to verify that when modifying interface Advanced Settings, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Reports related with the interface changed configuration are correctly showed.&#10;Result 3: Log message related with interface change configuration is correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526190" : {
+      "steps" : "  1. Go to Network-&gt;NAT Policies page,delete one or multiple IPv6 nat policies.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "4416d34f-d5da-4dbd-a944-00f32b575826",
+      "initial" : "  1. The option &quot;Enable Configuration Auditin&quot;' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526190",
+      "title" : "NAT Policy - Delete IPv6  Nat Policies",
+      "description" : "Original ID: 139\nOriginal Title: NAT Policy - Delete IPv6  Nat Policies\nOriginal Description: This case is to verify that delete one or multiple IPv6 nat policies about High Availability settings ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with nat policies settings are correctly showed.&#10;Result 3: Log messages related with nat policies settings are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526164" : {
+      "steps" : "  1. Delete one VLAN Translation entry in Network-&gt;VLAN Translation page.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "8f307c02-7088-4ba5-911f-f4a6659db7a9",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526164",
+      "title" : "Delete VLAN Translation",
+      "description" : "Original ID: 079\nOriginal Title: Delete VLAN Translation\nOriginal Description: This case is to verify that when delete VLAN Translation entries,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with vlan translation info are correctly showed.&#10;Result 3: Log messages related with vlan translation info are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526207" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,delete Dynamic and Staitc DHCPv4 Server Lease Scopes via DELETE icon.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "330e2892-fb0d-469c-a9f2-80858d514d48",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526207",
+      "title" : "DHCP Server - Delete  DHCPv4 Server Lease Scopes",
+      "description" : "Original ID: 190\nOriginal Title: DHCP Server - Delete  DHCPv4 Server Lease Scopes\nOriginal Description: This case is to verify that delete DHCPv4 Server Lease Scopes ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with deleted DHCP info are correctly showed.&#10;Result 3: Log messages related with deleted DHCP info are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526173" : {
+      "steps" : "  1. Go to Network-&gt;DNS Proxy,delete static DNS cache entry,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "bdbbfc85-8ff9-4c97-bd98-68fb84175ec9",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526173",
+      "title" : "DNS Proxy -Delete Static DNS Cache Entries",
+      "description" : "Original ID: 098\nOriginal Title: DNS Proxy -Delete Static DNS Cache Entries\nOriginal Description: This case is to verify that delete Static DNS Proxy Cache entry ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with DNS Proxy configuration are correctly showed.&#10;Result 3: Log messages related with DNS Proxy are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526214" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,delete Dynamic and Static DHCPv6 Server Lease Scopes via DELETE icon.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "dd3ee6bb-5b22-4c4d-a3f8-b9484d2e4af0",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526214",
+      "title" : "DHCP Server - Delete  DHCPv6 Server Lease Scopes",
+      "description" : "Original ID: 207\nOriginal Title: DHCP Server - Delete  DHCPv6 Server Lease Scopes\nOriginal Description: This case is to verify that delete DHCPv6 Server Lease Scopes ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with deleted DHCPv6 info are correctly showed.&#10;Result 3: Log messages related with deleted DHCPv6 info are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526159" : {
+      "steps" : "  1. Go to Network-&gt;Failover&amp;LB,switch to IPv6 Version View,in LB Group page,change LB Group IPv6 Type,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "387096f1-3e3c-4d74-8179-ee49c85d908f",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526159",
+      "title" : "Failover&amp;LB - Modify Default LB Group IPv6 - General settings",
+      "description" : "Original ID: 049\nOriginal Title: Failover&amp;LB - Modify Default LB Group IPv6 - General settings\nOriginal Description: This case is to verify that when modify LB Group IPv6 Type, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with LB group IPv6 configuration are correctly showed.&#10;Result 3: Log messages related with LB group IPv6 configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526169" : {
+      "steps" : "  1. Go to Network-&gt;DNS,in IPv6 view,delete IPv6 Split DNS entry.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "37650607-b07b-4c42-bd13-05c5f1b829df",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526169",
+      "title" : "DNS - Delete IPv6 Split DNS Entry",
+      "description" : "Original ID: 092\nOriginal Title: DNS - Delete IPv6 Split DNS Entry\nOriginal Description: This case is to verify that delete IPv6 split dns entry ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with IPv4 Split DNS entry configuration are correctly showed.&#10;Result 3: Log messages related with IPv4 Split DNS entry configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526174" : {
+      "steps" : "  1. Go to Network-&gt;DNS Security,click &quot;ADD&quot; button under Custom Malicious Domain Name List to add a domain name.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "d0246a51-069f-4699-a02b-8f9e29cd8833",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526174",
+      "title" : "DNS Security - Add  DNS Security - Custom Malicious Domain Name",
+      "description" : "Original ID: 102\nOriginal Title: DNS Security - Add  DNS Security - Custom Malicious Domain Name\nOriginal Description: This case is to verify that add Custom Malicious Domain Name,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Custom Malicious Domain Name configuration are correctly showed.&#10;Result 3: Log messages related with Custom Malicious Domain Name configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526197" : {
+      "steps" : "  1. Go to Network-&gt;MAC-IP Anti-Spoof,in IPv4 Version View,add one static anti-spoof cache entry.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "dcca8ad7-e381-4c55-9a10-6157103599fc",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526197",
+      "title" : "MAC-IP Anti-spoof - Add Static IPv4 Cache Entries",
+      "description" : "Original ID: 153\nOriginal Title: MAC-IP Anti-spoof - Add Static IPv4 Cache Entries\nOriginal Description: This case is to verify that add static MAC-IP Anti-Spoof Cache ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with static anti-spoof cache entry configuration are correctly showed.&#10;Result 3: Log messages related with static anti-spoof cache configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526196" : {
+      "steps" : "  1. Go to Network-&gt;MAC-IP Anti-Spoof,in IPv4 Version view,select one interface and click configure button to modify its settings.&#10;2. In Edit MAC-IP Anti-Spoof Settings page,check or uncheck all options under Anti-Spoof Settings,click &quot;OK&quot;&#10;3. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;4. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;5. Go to Event Logs page, check the corresponding logs. Result 3.&#10;6. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "acb72e57-dcf9-4b0f-8372-910d211b6274",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526196",
+      "title" : "MAC-IP Anti-spoof - Modify IPv4 Settings for Interface - Anti-Soof Settings",
+      "description" : "Original ID: 150\nOriginal Title: MAC-IP Anti-spoof - Modify IPv4 Settings for Interface - Anti-Soof Settings\nOriginal Description: This case is to verify that modify IPv4 MAC-IP Anti-Spoof Settings for Interface ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Mac-IP Spoof Interface configuration are correctly showed.&#10;Result 3: Log messages related with Mac-IP Spoof Interface configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526166" : {
+      "steps" : "  1. Go to Network-&gt;DNS,add ipv4 split dns,input &quot;mail.126.com&quot; for Domain Name and &quot;10.8.166.239&quot; for Primary Server (v4),others keep default,then clik &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "3095e149-669c-4bb2-911b-1354858eeac8",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526166",
+      "title" : "DNS - Add IPv4 Split DNS Entry",
+      "description" : "Original ID: 081\nOriginal Title: DNS - Add IPv4 Split DNS Entry\nOriginal Description: This case is to verify that add IPv4 split dns entry ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with IPv4 Split DNS entry configuration are correctly showed.&#10;Result 3: Log messages related with IPv4 Split DNS entry configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526163" : {
+      "steps" : "  1. Add one VLAN Translation entry in Network-&gt;VLAN Translation page.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "6af91d16-b008-419d-b951-f9f49b12ed90",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526163",
+      "title" : "Add  VLAN Translation",
+      "description" : "Original ID: 077\nOriginal Title: Add  VLAN Translation\nOriginal Description: This case is to verify that when add a VLAN Translation entry ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with vlan translation info are correctly showed.&#10;Result 3: Log messages related with vlan translation info are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526175" : {
+      "steps" : "  1. Go to Network-&gt;DNS Security, click &quot;ADD&quot; button under White List to add some Domain Names. &#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "a4fcff85-6d1a-4e06-a7e4-afe55a2f543a",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526175",
+      "title" : "DNS Security - Add  DNS Security - White Domain Name",
+      "description" : "Original ID: 104\nOriginal Title: DNS Security - Add  DNS Security - White Domain Name\nOriginal Description: This case is to verify that add White Domain Name,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with White Entry Name configuration are correctly showed.&#10;Result 3: Log messages related with White Entry Name configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526171" : {
+      "steps" : "  1. Go to Network-&gt;DNS Proxy,switch DNS Proxy Mode and check or uncheck option &quot; Enable DNS Proxy Cache&quot;,click &quot;ACCEPT&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "5851a353-24fc-4962-935e-2e5d65aad9ba",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526171",
+      "title" : "DNS Proxy - Modify DNS Proxy Settings",
+      "description" : "Original ID: 095\nOriginal Title: DNS Proxy - Modify DNS Proxy Settings\nOriginal Description: This case is to verify that modify DNS Proxy Settings ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with DNS Proxy configuration are correctly showed.&#10;Result 3: Log messages related with DNS Proxy are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526158" : {
+      "steps" : "  1.Go to Network-&gt;Failover&amp;LB,switch to IPv6 Version View,in LB Group IPv6 page,select one WAN interface on the left Group Members and add it to the right WLB group side,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "9efed153-e328-4d9b-abef-f9afc64a7136",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526158",
+      "title" : "Failover&amp;LB - Add WAN interface to WLB",
+      "description" : "Original ID: 047\nOriginal Title: Failover&amp;LB - Add WAN interface to WLB\nOriginal Description: This case is to verify that when add WAN interface to IPv6 WLB, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with IPv6 LB group configuration are correctly showed.&#10;Result 3: Log messages related with IPv6 LB group configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526157" : {
+      "steps" : "  1.Go to Network-&gt;Failover&amp;LB,in LB Group page,change LB Group Type,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "7f761c03-7587-454b-b3cc-ffbdef10391f",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526157",
+      "title" : "Failover&amp;LB - Modify Default LB Group - General settings",
+      "description" : "Original ID: 044\nOriginal Title: Failover&amp;LB - Modify Default LB Group - General settings\nOriginal Description: This case is to verify that when modify LB Group Type, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with LB group configuration are correctly showed.&#10;Result 3: Log messages related with LB group configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526167" : {
+      "steps" : "  1. Go to Network-&gt;DNS,delete IPv4 Split DNS entry.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "93e70e13-5cb3-4f00-b91e-0e071d859589",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526167",
+      "title" : "DNS - Delete IPv4 Split DNS Entry",
+      "description" : "Original ID: 084\nOriginal Title: DNS - Delete IPv4 Split DNS Entry\nOriginal Description: This case is to verify that delete IPv4 split dns entry ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with IPv4 Split DNS entry configuration are correctly showed.&#10;Result 3: Log messages related with IPv4 Split DNS entry configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526202" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,check or uncheck &quot;Enable DHCPv4 Server&quot;,click &quot;ACCEPT&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "10ba011b-1631-4934-bb94-460a5fc81375",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526202",
+      "title" : "DHCP Server - Modify DHCPv4 Server Settings -  Global General Settings",
+      "description" : "Original ID: 170\nOriginal Title: DHCP Server - Modify DHCPv4 Server Settings -  Global General Settings\nOriginal Description: This case is to verify that modify global general DHCPv4 Server Settings ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with DHCP Server are correctly showed.&#10;Result 3: Log messages related with DHCP Server are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526203" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,select Dynamic under DHCPv4 Server Lease Scopes and click &quot;ADD&quot; button.&#10;2. In Dynamic Range Configuration page, on General tab,check &quot;Interface Pre-Populate&quot; and select one interface,then other settings are configured automatically ,click &quot;OK&quot;&#10;3. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;4. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;5. Go to Event Logs page, check the corresponding logs. Result 3.&#10;6. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "c3ffa211-ec6f-4c89-a1d3-a56b95a57237",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526203",
+      "title" : "DHCP Server - Add Dynamic DHCPv4  Range",
+      "description" : "Original ID: 178\nOriginal Title: DHCP Server - Add Dynamic DHCPv4  Range\nOriginal Description: This case is to verify that add dynamic DHCP range ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Dynamic DHCP configuration are correctly showed.&#10;Result 3: Log messages related with Dynamic DHCP configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526195" : {
+      "steps" : "  1. Go to Network-&gt;Neighbor Discovery,delete Static NDP Entries.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "7e4e45b2-0b38-4cb3-8902-61c331efdfd8",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526195",
+      "title" : "Neighbor Discovery - Delete Static NDP Entries",
+      "description" : "Original ID: 147\nOriginal Title: Neighbor Discovery - Delete Static NDP Entries\nOriginal Description: This case is to verify that delete Static ARP Entries,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Static NDP configuration are correctly showed.&#10;Result 3: Log messages related with Static NDP configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526213" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,In IPv6 Version View,edit one Static DHCPv6 Lease Scope,make some changes on General tab.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "d84b8cb3-8a42-4fbb-aa25-e721818fb320",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526213",
+      "title" : "DHCP Server - Modify Static DHCPv6 Range - Genetal Settings",
+      "description" : "Original ID: 204\nOriginal Title: DHCP Server - Modify Static DHCPv6 Range - Genetal Settings\nOriginal Description: This case is to verify that modify Static DHCPv6 range about general settings ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Static DHCPv6 configuration are correctly showed.&#10;Result 3: Log messages related with Static DHCPv6 configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526210" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,In IPv6 Version View,add one Dynamic DHCPv6 Lease Scope.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "22077575-a123-4bc5-9d90-defcb6175781",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526210",
+      "title" : "DHCP Server - Add Dynamic DHCPv6  Range",
+      "description" : "Original ID: 199\nOriginal Title: DHCP Server - Add Dynamic DHCPv6  Range\nOriginal Description: This case is to verify that add dynamic DHCPv6 range ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Dynamic DHCPv6 configuration are correctly showed.&#10;Result 3: Log messages related with Dynamic DHCPv6 configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526148" : {
+      "steps" : "  1. Go to Network-&gt;Interfaces page,modify interface general settings,switch to other zone and change IP address,enable/disable SSH / Ping,then click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "94c4d614-63e0-412d-9ff4-df89651febc7",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526148",
+      "title" : "Interfaces - Modify Interface - General settings",
+      "description" : "Original ID: 002\nOriginal Title: Interfaces - Modify Interface - General settings\nOriginal Description: This case is to verify that when modifying interface general settings,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Reports related with the interface changed configuration are correctly showed.&#10;Result 3: Log message related with interface changed configuration is correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526186" : {
+      "steps" : "  1. Go to Network-&gt;Routing,in RIPng page,enable or disable RIPng for one inteface.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "de26f4a4-d4da-4f7e-aeb1-3b8e77d5011e",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526186",
+      "title" : "Routing - Modify Interface RIPng Configuration",
+      "description" : "Original ID: 127\nOriginal Title: Routing - Modify Interface RIPng Configuration\nOriginal Description: This case is to verify that modify Interface RIPng Configuration ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with RIPng configuration are correctly showed.&#10;Result 3: Log messages related with RIPng configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526155" : {
+      "steps" : "  1.Go to Network-&gt;PortShield Groups,in Port Configuration page,modfiy portsheid parameters by click edit botton for one interface,select disabled or enabled for &quot;Port Enable&quot;,change PortShield Interface,change Link Speed ,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "a0c185e2-19ba-405f-91b1-8ff2da2a0026",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526155",
+      "title" : "PortSheild Groups  - Modify switch port in Port Configuration page",
+      "description" : "Original ID: 038\nOriginal Title: PortSheild Groups  - Modify switch port in Port Configuration page\nOriginal Description: This case is to verify that when modify switch ports in Port Graphics page, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with the portsheild groups settings are correctly showed.&#10;Result 3: Log messages related with portsheild groups settings are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526170" : {
+      "steps" : "  1. Go to Network-&gt;DNS Proxy,check or uncheck &quot;Enable DNS Proxy&quot; option,click &quot;ACCEPT&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "2fe64e20-dbae-474b-8aac-2f637ff678d6",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526170",
+      "title" : "DNS Proxy - Modify DNS Proxy Global Settings",
+      "description" : "Original ID: 094\nOriginal Title: DNS Proxy - Modify DNS Proxy Global Settings\nOriginal Description: This case is to verify that modify global DNS Proxy Settings ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with DNS Proxy configuration are correctly showed.&#10;Result 3: Log messages related with DNS Proxy are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526194" : {
+      "steps" : "  1. Go to Network-&gt;Neighbor Discovery,add one Static NDP Entry.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "fc8eba0e-6218-4f55-a6e4-6984569bca9e",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526194",
+      "title" : "Neighbor Discovery - Add Static NDP Entries",
+      "description" : "Original ID: 145\nOriginal Title: Neighbor Discovery - Add Static NDP Entries\nOriginal Description: This case is to verify that add Static NDP Entries,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Static NDP configuration are correctly showed.&#10;Result 3: Log messages related with Static NDP Entries configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526180" : {
+      "steps" : "  1. Go to Network-&gt;Routing,in Route Policies page,delete one or multiple Route policies.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "68cdf181-b70d-400c-9ac7-79fffd359a6a",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526180",
+      "title" : "Routing - Delete Route Policies",
+      "description" : "Original ID: 115\nOriginal Title: Routing - Delete Route Policies\nOriginal Description: This case is to verify that delete one or multiple Route policies,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  TBD"
+   },
+   "1526178" : {
+      "steps" : "  1. Go to Network-&gt;Routing,in Route Policies page,add one Multi-Path Route policy.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "98fea564-abcd-4e2f-b780-12345e4ca7bc",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526178",
+      "title" : "Routing - Add Multi-Path Route Policy",
+      "description" : "Original ID: 111\nOriginal Title: Routing - Add Multi-Path Route Policy\nOriginal Description: This case is to verify that add Multi-Path Route policy,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  TBD"
+   },
+   "1526200" : {
+      "steps" : "  1. Go to Network-&gt;MAC-IP Anti-Spoof,in IPv6 Version View,add one static IPv6 anti-spoof cache entry.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "efec4582-ac54-4352-9887-e5d2852a7375",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526200",
+      "title" : "MAC-IP Anti-spoof - Add Static IPv6 Cache Entries",
+      "description" : "Original ID: 163\nOriginal Title: MAC-IP Anti-spoof - Add Static IPv6 Cache Entries\nOriginal Description: This case is to verify that add static IPv6 MAC-IP Anti-Spoof Cache ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with static IPv6 anti-spoof cache entry configuration are correctly showed.&#10;Result 3: Log messages related with static IPv6 anti-spoof cache configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526179" : {
+      "steps" : "  1. Go to Network-&gt;Routing,in Route Policies page,add one SD-WAN Route policy.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "80e39b5e-a32e-40a1-b72e-2e6bd0e5be3b",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526179",
+      "title" : "Routing - Add SD-WAN Route Policy",
+      "description" : "Original ID: 113\nOriginal Title: Routing - Add SD-WAN Route Policy\nOriginal Description: This case is to verify that add SD-WAN Route policies,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  TBD"
+   },
+   "1526152" : {
+      "steps" : "  1. Go to Network-&gt;Interfaces page,switch to IPv6 version view,on General Tab,change IP Assignment or change IPv6 address and User Login mode.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "d7a3da5a-5380-4965-b9ff-cc1c92b05efa",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526152",
+      "title" : "Interfaces - Modify ipv6 interface - General settings",
+      "description" : "Original ID: 022\nOriginal Title: Interfaces - Modify ipv6 interface - General settings\nOriginal Description: This case is to verify that when modify IPv6 interface general settings, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Reports related with IPv6 Interface settings are correctly showed.&#10;Result 3: Log message related with IPv6 Interface settings is correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526160" : {
+      "steps" : "  1. Go to Network-&gt;Zones page,click &quot;Add&quot; button to add a custom zone,input zone's name,select &quot;Public&quot; for Security Type,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "a0127d05-3e48-440f-a333-f1953f36f408",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526160",
+      "title" : "Add Custom Zones",
+      "description" : "Original ID: 054\nOriginal Title: Add Custom Zones\nOriginal Description: This case is to verify that when add a custom zone,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with custom zone configuration are correctly showed.&#10;Result 3: Log messages related with custom zone configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526192" : {
+      "steps" : "  1. Go to Network-&gt;ARP,delete Static Arp Entries.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "3dadba57-27be-4c28-b230-0d8ed6a34514",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526192",
+      "title" : "ARP - Delete Static ARP Entries",
+      "description" : "Original ID: 142\nOriginal Title: ARP - Delete Static ARP Entries\nOriginal Description: This case is to verify that delete Static ARP Entries,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Static Arp configuration are correctly showed.&#10;Result 3: Log messages related with Static Arp configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526147" : {
+      "steps" : "  1.Configure a static IP address with LAN zone. &#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "f6a32beb-3d68-4f58-b06e-d4c3fcdebede",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526147",
+      "title" : "Interfaces - Configure one interface - LAN zone and static mode",
+      "description" : "Original ID: 001\nOriginal Title: Interfaces - Configure one interface - LAN zone and static mode\nOriginal Description: This case is to verify that when a LAN zone interface with static IP address configured, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Reports related with the interface changed configuration are correctly showed.&#10;Result 3: Log message related with interface changed configuration VPN policy creation is correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526168" : {
+      "steps" : "  1. Go to Network-&gt;DNS,in IPv6 Version page,add ipv6 split dns,input &quot;mail.126.com&quot; for Ipv6 Domain Name and &quot;33::33&quot; for Primary Server (v6),others keep default,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "1eee0561-6682-4b43-8ac2-499284526851",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526168",
+      "title" : "DNS - Add IPv6 Split DNS Entry",
+      "description" : "Original ID: 089\nOriginal Title: DNS - Add IPv6 Split DNS Entry\nOriginal Description: This case is to verify that add IPv6 split dns entry ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with IPv6 Split DNS entry configuration are correctly showed.&#10;Result 3: Log messages related with IPv6 Split DNS entry configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526177" : {
+      "steps" : "  1. Go to Network-&gt;Routing,in Route Policies page,add one Standard Route policy.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "0f3865ac-8b6c-44e5-92d6-c58b27313aab",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526177",
+      "title" : "Routing - Add Standard Route Policy",
+      "description" : "Original ID: 109\nOriginal Title: Routing - Add Standard Route Policy\nOriginal Description: This case is to verify that add Standard route policy,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with route policy configuration are correctly showed.&#10;Result 3: Log messages related with route policy configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526199" : {
+      "steps" : "  1. Go to Network-&gt;MAC-IP Anti-Spoof,in IPv6 Version view,select one interface and click configure button to modify its settings.&#10;2. In Edit MAC-IP Anti-Spoof Settings page,check or uncheck all options under Anti-Spoof Settings,click &quot;OK&quot;&#10;3. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;4. Go to Log Settings-&gt;Auditing Records page, check the records. Result 2.&#10;5. Go to Event Logs page, check the corresponding logs. Result 3.&#10;6. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "6b5ec5dd-44b6-491a-918a-fc5f3948d2e4",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526199",
+      "title" : "MAC-IP Anti-spoof - Modify IPv6 Settings for Interface - Anti-Soof Settings",
+      "description" : "Original ID: 160\nOriginal Title: MAC-IP Anti-spoof - Modify IPv6 Settings for Interface - Anti-Soof Settings\nOriginal Description: This case is to verify that modify IPv6 MAC-IP Anti-Spoof Settings for Interface ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Mac-IP Spoof Interface configuration are correctly showed.&#10;Result 3: Log messages related with Mac-IP Spoof Interface configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526182" : {
+      "steps" : "  1. Go to Network-&gt;Routing,in Route Policies page,delete one added route policy.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "f8f63cf8-a00b-4a8e-bb1f-a4f13cc54cad",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526182",
+      "title" : "Routing - Delete IPv6 Route policies",
+      "description" : "Original ID: 120\nOriginal Title: Routing - Delete IPv6 Route policies\nOriginal Description: This case is to verify that delete one or multiple Route policies,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with route policy configuration are correctly showed.&#10;Result 3: Log messages related with route policy configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526154" : {
+      "steps" : "  1.Go to Network-&gt;PortShield Groups,in Port Graphics page,modfiy portsheid parameters by clicking on two ports manully,select disabled or enabled for &quot;Port Enable&quot;,change PortShield Interface,change Link Speed ,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "0c6a8e17-7610-4fab-a6c6-75de641c68b1",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526154",
+      "title" : "PortSheild Groups - Modify switch ports by click on ports in Port Graphics",
+      "description" : "Original ID: 037\nOriginal Title: PortSheild Groups - Modify switch ports by click on ports in Port Graphics\nOriginal Description: This case is to verify that when modify switch ports by click on ports in Port Graphics page, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with the portsheild groups settings are correctly showed.&#10;Result 3: Log messages related with portsheild groups settings are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526176" : {
+      "steps" : "  1. Go to Network-&gt;DNS Security,click &quot;ADD&quot; button under White List for DNS Tunnel Detection to add some white entries.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "2ff63f33-2a1a-4c19-9b24-6b5d160b8b9b",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526176",
+      "title" : "DNS Security - Add DNS Security - White List for DNS Tunnel Detection",
+      "description" : "Original ID: 107\nOriginal Title: DNS Security - Add DNS Security - White List for DNS Tunnel Detection\nOriginal Description: This case is to verify that add White entry for DNS Tunnel Detection,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with DNS Tunnel White Entry configuration are correctly showed.&#10;Result 3: Log messages related with DNS Tunnel White Entry configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526201" : {
+      "steps" : "  1. Go to Network-&gt;MAC-IP Anti-Spoof,in IPv6 Version View,delete one static IPv6 anti-spoof cache entry.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "af0ab91f-ecf8-4715-aac7-84c850bb9ec8",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526201",
+      "title" : "MAC-IP Anti-spoof - Delete  Static IPv6 Cache Entries",
+      "description" : "Original ID: 166\nOriginal Title: MAC-IP Anti-spoof - Delete  Static IPv6 Cache Entries\nOriginal Description: This case is to verify that delete static IPv6 MAC-IP Anti-Spoof Cache ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with static IPv6 anti-spoof cache entry configuration are correctly showed.&#10;Result 3: Log messages related with static IPv6 anti-spoof cache configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526209" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,in IPv6 version View,check or uncheck &quot;Enable DHCPv6 Server&quot;,click &quot;ACCEPT&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "2cbc59f4-8c9b-4878-a7f6-eb79b665359c",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526209",
+      "title" : "DHCP Server - Modify DHCPv6 Server Settings -  Global General Settings",
+      "description" : "Original ID: 192\nOriginal Title: DHCP Server - Modify DHCPv6 Server Settings -  Global General Settings\nOriginal Description: This case is to verify that modify global general DHCPv6 Server Settings ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with DHCPv6 Server are correctly showed.&#10;Result 3: Log messages related with DHCPv6 Server are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526151" : {
+      "steps" : "  1. Go to Network-&gt;Interfaces page,switch to IPv6 version view,configure Static IP Assignment and IPv6 global address,enable HTTPS and SSH for Management,click &quot;OK&quot;. &#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there is SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "6279346d-aaff-48c0-bd9b-b58c48aa7504",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526151",
+      "title" : "Interfaces - Configure one ipv6 interface - global static mode",
+      "description" : "Original ID: 018\nOriginal Title: Interfaces - Configure one ipv6 interface - global static mode\nOriginal Description: This case is to verify that when a LAN zone interface with IPv6 static address configured, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Reports related with the 4to6 Tunnel interface deleted message are correctly showed.&#10;Result 3: Log message related with interface changed configuration is correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526204" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,select Dynamic under DHCPv4 Server Lease Scopes and click &quot;ADD&quot; button.&#10;2. In Dynamic Range Configuration page,on General tab,change the Range Start IP and Range End IP,check or uncheck &quot;Allow BOOTP Clients to use Range&quot;,click &quot;OK&quot;&#10;3. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;4. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;5. Go to Event Logs page, check the corresponding logs. Result 3.&#10;6. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "5240f85c-91fb-48ce-9536-d128f64c3a50",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526204",
+      "title" : "DHCP Server - Modify Dynamic DHCPv4 Range - Genetal Settings",
+      "description" : "Original ID: 179\nOriginal Title: DHCP Server - Modify Dynamic DHCPv4 Range - Genetal Settings\nOriginal Description: This case is to verify that modify dynamic DHCP range about general settings ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Dynamic DHCP configuration are correctly showed.&#10;Result 3: Log messages related with Dynamic DHCP configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526165" : {
+      "steps" : "  1. Go to Network-&gt;DNS,check &quot;Specify IPv4 DNS Servers Manually&quot; and input IP address for three DNS Server,then click &quot;ACCEPT&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "b1df18d5-3e1b-4a3b-a96a-e9d0db4b5cb3",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526165",
+      "title" : "DNS - Modify IPv4 DNS Settings",
+      "description" : "Original ID: 080\nOriginal Title: DNS - Modify IPv4 DNS Settings\nOriginal Description: This case is to verify that when modify IPv4 DNS Settings ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with IPv4 DNS configuration are correctly showed.&#10;Result 3: Log messages related with IPv4 DNS configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526181" : {
+      "steps" : "  1. Go to Network-&gt;Routing,in Route Policies page,add one IPv6 Standard Route policy.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "b006c270-552e-43ca-b159-205cf231cda1",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526181",
+      "title" : "Routing - Add IPv6 Standard Route Policy",
+      "description" : "Original ID: 116\nOriginal Title: Routing - Add IPv6 Standard Route Policy\nOriginal Description: This case is to verify that add IPv6 Standard route policies,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  TBD"
+   },
+   "1526198" : {
+      "steps" : "  1. Go to Network-&gt;MAC-IP Anti-Spoof,in IPv4 Version View,delete one static anti-spoof cache entry.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "1bf1f654-ae47-4930-ad32-4ef77564b50b",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526198",
+      "title" : "MAC-IP Anti-spoof - Delete Static IPv4 Cache Entries",
+      "description" : "Original ID: 156\nOriginal Title: MAC-IP Anti-spoof - Delete Static IPv4 Cache Entries\nOriginal Description: This case is to verify that delete static MAC-IP Anti-Spoof Cache ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with static anti-spoof cache entry configuration are correctly showed.&#10;Result 3: Log messages related with static anti-spoof cache configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526215" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,delete Current DHCPv6 Leases via DELETE icon.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "ce7140da-359c-40dd-8ed7-44fcd772d5a4",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526215",
+      "title" : "DHCP Server - Delete Current DHCPv6 Leases",
+      "description" : "Original ID: 208\nOriginal Title: DHCP Server - Delete Current DHCPv6 Leases\nOriginal Description: This case is to verify that delete Current DHCPv6 Leases ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with deleted DHCPv6 info are correctly showed.&#10;Result 3: Log messages related with deleted DHCPv6 info are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526162" : {
+      "steps" : "  1. Go to Network-&gt;Zones page,modify one zone's general settings,change its name and Security Type ,check or uncheck some options like &quot;Enable SSL Client Inspection&quot;,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "1dede642-029e-4c83-99b0-0a458fcda07e",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526162",
+      "title" : "Modify Zones- General Settings",
+      "description" : "Original ID: 056\nOriginal Title: Modify Zones- General Settings\nOriginal Description: This case is to verify that when modify zone's general settings,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with the zone configuration are correctly showed.&#10;Result 3: Log messages related with the zone configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526187" : {
+      "steps" : "  1. Add one IPv4 nat policy in Network-&gt;NAT Policies page.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "28a7941a-f280-43ec-bf5e-9d66a83531cf",
+      "initial" : "  1. The option &quot;Enable Configuration Auditin&quot;' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526187",
+      "title" : "NAT Policy - Add  IPv4 Nat Policies",
+      "description" : "Original ID: 130\nOriginal Title: NAT Policy - Add  IPv4 Nat Policies\nOriginal Description: This case is to verify that add IPv4 nat policies ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with nat policies settings are correctly showed.&#10;Result 3: Log messages related with nat policies settings are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526211" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,In IPv6 Version View,edit one Dynamic DHCPv6 Lease Scope,make some changes on General tab.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "0511ea5c-a5ef-4142-9539-f8fead56c401",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526211",
+      "title" : "DHCP Server - Modify Dynamic DHCPv6 Range - Genetal Settings",
+      "description" : "Original ID: 200\nOriginal Title: DHCP Server - Modify Dynamic DHCPv6 Range - Genetal Settings\nOriginal Description: This case is to verify that modify dynamic DHCPv6 range about general settings ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Dynamic DHCPv6 configuration are correctly showed.&#10;Result 3: Log messages related with Dynamic DHCPv6 configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526161" : {
+      "steps" : "  1. Go to Network-&gt;Zones page,select &quot;Delete&quot; button to delete a custom zone.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "e260f730-fac7-485c-b93a-f5e06c898bfe",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526161",
+      "title" : "Delete Custom Zones",
+      "description" : "Original ID: 055\nOriginal Title: Delete Custom Zones\nOriginal Description: This case is to verify that when delete a custom zone,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with custom zone configuration are correctly showed.&#10;Result 3: Log messages related with custom zone configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526205" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,add static DHCPv4 Server Lease Scope.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "998b5391-f50a-4391-9f0f-951f332aef90",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526205",
+      "title" : "DHCP Server - Add  Static DHCPv4  Range",
+      "description" : "Original ID: 184\nOriginal Title: DHCP Server - Add  Static DHCPv4  Range\nOriginal Description: This case is to verify that add static DHCP range ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Dynamic DHCP configuration are correctly showed.&#10;Result 3: Log messages related with Dynamic DHCP configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526172" : {
+      "steps" : "  1. Go to Network-&gt;DNS Proxy,add static DNS cache entry,input a name for Domain Name and an IP address for IPv4 Address1,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "0238f6a5-4dda-4cf8-8cbb-eee2b1a4dc01",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526172",
+      "title" : "DNS Proxy - Add Static DNS Proxy Cache Entry",
+      "description" : "Original ID: 096\nOriginal Title: DNS Proxy - Add Static DNS Proxy Cache Entry\nOriginal Description: This case is to verify that add Static DNS Proxy Cache entry ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with DNS Proxy configuration are correctly showed.&#10;Result 3: Log messages related with DNS Proxy are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526183" : {
+      "steps" : "  1. Go to Network-&gt;Routing,in OSPFv2 page,enable or disable OSPFv2 for one inteface.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "bc97a39e-dacc-49d9-ba60-be9fda6c38a9",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526183",
+      "title" : "Routing - Modify Interface OSPFv2 Configuration",
+      "description" : "Original ID: 121\nOriginal Title: Routing - Modify Interface OSPFv2 Configuration\nOriginal Description: This case is to verify that modify Interface OSPFv2 Configuration ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with OSPFv2 configuration are correctly showed.&#10;Result 3: Log messages related with OSPFv2 configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526153" : {
+      "steps" : "  1. Go to Network-&gt;Interfaces page,switch to IPv6 version view,add an IPv6 Tunnel VPN Interface with Manual Tunnel Type.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "62c63345-9767-42ab-a86d-eb51ff0d3665",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526153",
+      "title" : "Interfaces - Add IPv6 Manual Tunnel Inteface",
+      "description" : "Original ID: 028\nOriginal Title: Interfaces - Add IPv6 Manual Tunnel Inteface\nOriginal Description: This case is to verify that when add IPv6 Manual Tunnle Interface,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Reports related with IPv6 Interface settings are correctly showed.&#10;Result 3: Log message related with IPv6 Interface settings is correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526156" : {
+      "steps" : "  1.Go to Network-&gt;Failover&amp;LB,in LB Group page,select one WAN interface on the left Group Members and add it to the right WLB group side,click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "1e86e2cc-28ce-4b5a-bc6f-d398081384ab",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526156",
+      "title" : "Failover&amp;LB - Add WAN interface to WLB",
+      "description" : "Original ID: 042\nOriginal Title: Failover&amp;LB - Add WAN interface to WLB\nOriginal Description: This case is to verify that when add WAN interface to WLB, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with LB group configuration are correctly showed.&#10;Result 3: Log messages related with LB group configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526188" : {
+      "steps" : "  1. Go to Network-&gt;NAT Policies page,delete one or multiple IPv4 nat policies.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "3f9e47d3-05b4-4cbc-81bc-53cb2e850d59",
+      "initial" : "  1. The option &quot;Enable Configuration Auditin&quot;' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526188",
+      "title" : "NAT Policy - Delete IPv4  Nat Policies",
+      "description" : "Original ID: 134\nOriginal Title: NAT Policy - Delete IPv4  Nat Policies\nOriginal Description: This case is to verify that delete one or multiple IPv4 nat policies about High Availability settings ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with nat policies settings are correctly showed.&#10;Result 3: Log messages related with nat policies settings are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526189" : {
+      "steps" : "  1. Add one IPv6 nat policy in Network-&gt;NAT Policies page.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "8d42026b-95cb-4258-9c57-10f9fd5ecb65",
+      "initial" : "  1. The option &quot;Enable Configuration Auditin&quot;' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526189",
+      "title" : "NAT Policy - Add  IPv4 Nat Policies",
+      "description" : "Original ID: 135\nOriginal Title: NAT Policy - Add  IPv4 Nat Policies\nOriginal Description: This case is to verify that add IPv6 nat policies ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with nat policies settings are correctly showed.&#10;Result 3: Log messages related with nat policies settings are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609."
+   },
+   "1526150" : {
+      "steps" : "  1. Go to Network-&gt;Interfaces page,create new Virtual Interface,select one physical interface as its Parent Interface,select WAN zone,select DHCP mode,enable Management HTTPS,then click &quot;OK&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "beeaba58-9144-4515-8a70-340f06dea3cc",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526150",
+      "title" : "Interfaces - Create Virtual Interface",
+      "description" : "Original ID: 006\nOriginal Title: Interfaces - Create Virtual Interface\nOriginal Description: This case is to verify that when creating Virtual interface,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Reports related with the newVirtaul interface configuration are correctly showed.&#10;Result 3: Log message related with interface changed configuration is correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526206" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,edit static DHCPv4 Server Lease Scope,make some changes on General tab.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "45dd19ec-eaca-4714-ab16-0d28ae06810f",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526206",
+      "title" : "DHCP Server - Modify  Static DHCPv4 Range - Genetal Settings",
+      "description" : "Original ID: 185\nOriginal Title: DHCP Server - Modify  Static DHCPv4 Range - Genetal Settings\nOriginal Description: This case is to verify that modify static DHCP range ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with static DHCP configuration are correctly showed.&#10;Result 3: Log messages related with static DHCP configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526212" : {
+      "steps" : "  1. Go to Network-&gt;DHCP Server,In IPv6 Version View,add one Static DHCPv6 Lease Scope.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings-&gt; Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "688d4f74-3b20-46cf-99f4-799d2e48d1c3",
+      "initial" : "  1. The option &quot;Enable Configuration Auditing&quot; is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526212",
+      "title" : "DHCP Server - Add Static DHCPv6  Range",
+      "description" : "Original ID: 203\nOriginal Title: DHCP Server - Add Static DHCPv6  Range\nOriginal Description: This case is to verify that add Static DHCPv6 range ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Static DHCPv6 configuration are correctly showed.&#10;Result 3: Log messages related with Static DHCPv6 configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526193" : {
+      "steps" : "  1. Go to Network-&gt;ARP,modify the value of the ARP Cache entry timeout(miniutes) under ARP Settings,click &quot;ACCEPT&quot;.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "a04dde54-2be3-43cb-b18e-d017097bc118",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526193",
+      "title" : "ARP - Modify ARP Settings",
+      "description" : "Original ID: 143\nOriginal Title: ARP - Modify ARP Settings\nOriginal Description: This case is to verify that modify the time value of ARP Cache entry timeout,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with Arp configuration are correctly showed.&#10;Result 3: Log messages related with Arp configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1526185" : {
+      "steps" : "  1. Go to Network-&gt;Routing,in OSPFv3 page,enable or disable OSPFv3 for one inteface.&#10;2. Go to Syslog server, check the corresponding syslog message. Result 1.&#10;3. Go to Log Settings/ Auditing Records page, check the records. Result 2.&#10;4. Go to Event Logs page, check the corresponding logs. Result 3.&#10;5. Go to SNMP tool, check if there are SNMP trap sent.",
+      "priority" : "Smoke",
+      "atm_id" : "da4e8104-8787-4d2a-9416-36c6562ce99f",
+      "initial" : "  1. The option 'Enable Configuration Auditing' is checked on diag page.&#10;2. SNMP tool is available and ready to use.&#10;3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.&#10;4. A syslog server is added on the firewall.",
+      "id" : "1526185",
+      "title" : "Routing - Modify Interface OSPFv3 Configuration",
+      "description" : "Original ID: 125\nOriginal Title: Routing - Modify Interface OSPFv3 Configuration\nOriginal Description: This case is to verify that modify Interface OSPFv3 Configuration ,correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: Syslog message m=1382 is received on the server. And the message is correctly displayed.&#10;Result 2: Records related with OSPFv3 configuration are correctly showed.&#10;Result 3: Log messages related with OSPFv3 configuration are correctly displayed.&#10;Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   }
+}

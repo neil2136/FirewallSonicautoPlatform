@@ -1,0 +1,14 @@
+{
+    "log": {
+        "automation": {
+            "mail_server": "10.5.67.160",
+            "mail_from": "supinfirewall@blrsonicosqa.com",
+            "authentication_method": "none",
+            "mail_server_advanced": {
+                "smtp_port": 25,
+                "connection_security_method": {},
+                "smtp_authentication": false
+            }
+        }
+    }
+}

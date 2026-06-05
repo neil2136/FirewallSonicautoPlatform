@@ -1,0 +1,149 @@
+{
+   "1" : {
+      "steps" : "  1,use CLI assign x2 interface\n  2,use CLI unassgin x2 interface\n  3,use CLI add tunnel interface",
+      "initial" : "  TBD",
+      "id" : "1",
+      "title" : "use the CLI command to configure the interface",
+      "result" : "  1, step1 assign x2 interface success\n  2, step2 unassgin x2 interface success\n  3, step3 add tunnel interface success"
+   },
+   "2" : {
+      "steps" :  "  1, use CLI add a custom zone\n  2, use CLI edit th custom zone\n  3, use CLI delete the added custom zone",
+      "initial" :"  TBD",
+      "id" : "2",
+      "title" : "use CLI command to configure the zone",
+      "result" : "  1, step1 add success\n  2, step 2 edit success\n  3, step 3 delete success"
+   },
+   "3" : {
+      "steps" : "  1, use CLI edit the default WLB\n  2, check it can be edited success",
+      "initial" : "  TBD",
+      "id" : "3",
+      "title" : "use CLI command to configure the WLB",
+      "result" : "  1, use CLI configure default WLB success\n"
+   },
+   "4" : {
+      "steps" : "  1, use CLI add a static ipv4 dhcp server scope\n  2, use CLI add a dynamic ipv4 dhcp server scope\n  3, use CLI edit the added dynaminc scope\n  4, use CLI delete the added dynamic scope",
+      "initial" : "  TBD",
+      "id" : "4",
+      "title" : "use CLI command to configure the DHCP",
+      "result" : "  1, configure step 1-4 success"
+   },
+   "5" : {
+      "steps" : "  1, use CLI add a host type ao\n  2, use CLI add a range type ao\n  3, use CLI add a network type ao\n  4, use CLI add a mac type ao\n  5, use CLI add a fqdn type ao",
+      "initial" : "  TBD",
+      "id" : "5",
+      "title" : "use CLI command to configure the AO/AO group",
+      "result" : "  1, configure steps 1-5 success"
+   },
+   "6" : {
+      "steps" : "  1, use CLI add a dynamic dns profile\n  2, use CLI edit the added ddns profile",
+      "initial" : "  TBD",
+      "id" : "6",
+      "title" : "use CLI command to configure the DDNS",
+      "result" : "  1, configure steps 1-2 success"
+   },
+   "7" : {
+      "steps" : "  1, use CLI add a route policy\n  2, use CLI edit the added route policy\n  3, use CLI delete the added route policy",
+      "initial" : "  TBD",
+      "id" : "7",
+      "title" : "use CLI command to configure the route",
+      "result" : "  1, configure steps 1-3 success"
+   },
+   "8" : {
+      "steps" : "  1, use CLI enable iphelper\n  2, use CLI add a relay protocol\n  3, use CLI add a iphelper policy",
+      "initial" : "  TBD",
+      "id" : "8",
+      "title" : "use CLI command to configure the IP-Helper",
+      "result" : "  1, configure step 1-3 success"
+   },
+   "9" : {
+      "steps" :"  1, use CLI add a ipv4 nat policy\n  2, use CLI edit the added nat policy\n  3, use CLI delete the added nat policy\n  4, use CLI add a ipv6 nat policy\n  5, use CLI add a nat64 policy",
+      "initial" :  "  TBD",
+      "id" : "9",
+      "title" : "use CLI command to configure the NAT policy",
+      "result" : "  1, configure steps 1-5 successfully"
+   },
+   "10" : {
+      "steps" : "  use CLI add a network monitor policy",
+      "initial" : "  TBD",
+      "id" : "10",
+      "title" : "use the CLI command to configure the network monitot",
+      "result" : "  1, add the network monitor policy success"
+   },
+   "11" : {
+      "steps" : "  Use the CLI command to configure the interface IPv6 settings",
+      "initial" :"  TBD", 
+      "id" : "11",
+      "title" : "use the CLI command to configure the interface IPv6 settings",
+      "result" : "  1,  The CLI command for interface IPv6 settings can be successfully committed"
+   },
+   "12" : {
+      "steps" : "  use CLI add a vlan interface",
+      "initial" : "  TBD", 
+      "id" : "12",
+      "title" : "Create VLAN interface using CLI",
+      "result" : "  1, VLAN interface can be created success"
+   },
+   "13" : {
+      "steps" : "use CLI and edit a vlan interface\nconfig(2CB8EDA3780B)# interface x0 vlan 834<br />(edit-interface[X0:V834])# management https<br />(edit-interface[X0:V834])# management ping<br />(edit-interface[X0:V834])# commit",
+      "initial" : "  TBD",
+      "id" : "13",
+      "title" : "Edit VLAN interface using CLI",
+      "result" : "VLAN interface can be edited successfully and lan host can https/ping access vlan interface."
+   },
+   "14" : {
+      "steps" : "\n\nuse CLI to delete a vlan interface\n\nconfig(2CB8ED694678)# no interface x0 vlan 100\n",
+      "initial" : "  TBD",
+      "id" : "14",
+      "title" : "Delete VLAN interface using CLI",
+      "result" : "VLAN interface can be deleted successfully"
+   },
+   "15" : {
+      "steps" : "use CLI to delete multiple vlan interfaces",
+      "initial" : "  TBD",
+      "id" : "15",
+      "title" : "Delete multiple VLAN interfaces using CLI",
+      "result" : " VLAN interfaces can be deleted successfully"
+   },
+   "16" : {
+      "steps" : "use CLI to delete all vlan interfaces:\nconfig(2CB8EDA3780B)# no interfaces vlan<br />config(2CB8EDA3780B)# commit",
+      "initial" : " TBD",
+      "id" : "16",
+      "title" : " Delete all VLAN interfaces using CLI",
+      "result" : "All VLAN interfaces can be deleted successfully"
+   },
+   "17" : {
+      "steps" : "TBD",
+      "initial" : " TBD",
+      "id" : "17",
+      "title" : " Create ARP entry",
+      "result" : "ARP Entry can be created successfully"
+   },
+   "18" : {
+      "steps" : "TBD",
+      "initial" : " TBD",
+      "id" : "17",
+      "title" : "Edit ARP entry",
+      "result" : "ARP Entry can be edited successfully"
+   },
+   "19" : {
+      "steps" : "TBD",
+      "initial" : " TBD",
+      "id" : "17",
+      "title" : "",
+      "result" : "ARP Entry can be deleted successfully"
+   },
+   "20": {
+      "steps" : "TBD",
+      "initial" : " TBD",
+      "id" : "17",
+      "title" : "Deleting all ARP entries",
+      "result" : "All ARP Entries can be deleted successfully"
+   },
+   "2025633": {
+      "steps" : "\n\n    Configure X3 for IPv4\n\n    Configure X3 as static for IPv6\n\n    Add Advertising Prefix For X3 in RA page\n    Prefix 1::/64\n    Valid Lifetime 12345 minute\n    Preferred Lifetime 12345 minute\n    On-link\n    Autonomous\n\n    Prefix 2::/64\n    Valid Lifetime 12345 minute\n    Preferred Lifetime 12345 minute\n    On-link\n    Autonomous\n\n    Use CLI commands to show the interface ipv6 prefixes\n    show advertising-prefixes\n    show advertising-prefixes interface X3\n    show advertising-prefix interface X3 prefix 1::\n    show advertising-prefixes match valid\n    show advertising-prefixes except valid\n\n",
+      "initial" : " TBD",
+      "id" : "2025633",
+      "title" : "Use CLI commands to show the interface ipv6 prefixes",
+      "result" : "\n\nStep4 Each instruction correspond result:\n\nshow advertising-prefixes (show all interfaces' prefixes):\nadvertising-prefix interface X3 prefix 1::\n    valid-lifetime 12345\n    preferred lifetime 12345\n    on-link\n    autonomous\n    exit\n\nadvertising-prefix interface X3 prefix 2::\n    valid-lifetime 12345\n    preferred lifetime 12345\n    on-link\n    autonomous\n    exit\n\nshow advertising-prefixes interface X3 (show interface X3's prefixes):\nadvertising-prefix interface X3 prefix 1::\n    valid-lifetime 12345\n    preferred lifetime 12345\n    on-link\n    autonomous\n    exit\n\nadvertising-prefix interface X3 prefix 2::\n    valid-lifetime 12345\n    preferred lifetime 12345\n    on-link\n    autonomous\n    exit\n\nshow advertising-prefix interface X3 prefix 1:: (show specified prefix)\nadvertising-prefix interface X3 prefix 1::\n    valid-lifetime 12345\n    preferred lifetime 12345\n    on-link\n    autonomous\n    exit\n\nshow advertising-prefixes match valid (show matched prefix)\nadvertising-prefix interface X3 prefix 1::\n    valid-lifetime 12345\n    exit\n\nadvertising-prefix interface X3 prefix 2::\n    valid-lifetime 12345\n    exit\n\nshow advertising-prefixes except valid (show other prefix)\nadvertising-prefix interface X3 prefix 1::\n    preferred lifetime 12345\n    on-link\n    autonomous\n    exit\n\nadvertising-prefix interface X3 prefix 2::\n    preferred lifetime 12345\n    on-link\n    autonomous\n    exit\n"
+   }
+}

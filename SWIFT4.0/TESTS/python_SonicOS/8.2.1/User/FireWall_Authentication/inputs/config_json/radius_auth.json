@@ -1,0 +1,18 @@
+{
+    "user": {
+        "radius": {
+            "server": [
+                {
+                    "host": "10.5.67.160",
+                    "port": 1812,
+                    "shared_secret": "sonicwall",
+                    "send_through_vpn_tunnel": false,
+                    "user_name_format": {
+                        "down_level_logon": true
+                    },
+                    "enable": true
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,9 @@
+$TTL 1D
+@   IN    SOA    localhost.  root (
+                 2007042801
+                 1H
+                 15M
+                 1W
+                 1D )
+    IN   NS   @
+    IN   A    127.0.0.1

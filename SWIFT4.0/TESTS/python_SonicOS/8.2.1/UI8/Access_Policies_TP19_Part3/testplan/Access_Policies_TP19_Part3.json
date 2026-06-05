@@ -1,0 +1,135 @@
+{
+    "1508438": {
+        "steps": "1. Go to access rule table, in grid settins to select all fields to be disaplayed.\n2. Click the heading in each field (in below categories) column to sort, check the rules are sorted by the clicked field\nGeneral<br />Zone<br />Address<br />Service<br />User<br />Schedule<br />Security Profiles<br />Logging<br />Statistics<br />Miscellaneous",
+        "initial": "",
+        "id": "1508438",
+        "title": "Verify access rule table is sortable by each column field",
+        "result": "The access rules are sorted by the clicked field"
+    },
+    "1520972": {
+        "steps": "1.Go to Firewall/Access Rules, configure LAN to WAN rule,  click  advanced tab, check \"\"Allow TCP Urgent Packets\"\" option is added, check/uncheck it, click accept.\n2. Repeat step with other Access Rules,  LAN/DMZ/WAN/WLAN/VPN/SSLVPN/Custom to LAN/DMZ/WAN/WLAN/VPN/SSLVPN/Custom\n\n----------Edited by Celia\nIn Policy mode, this option is in Action Profiles/Security Action Profile/Miscellaneous tab",
+        "initial": "",
+        "id": "1520972",
+        "title": "GUI: \"\"Allow TCP Urgent Packets\"\" is added into access Rules",
+        "result": "Result:  \"\"Allow TCP Urgent Packets\"\" is checked/unchecked."
+    },
+    "1526070": {
+        "steps": "1.at bottom bar,click policy-add-top-button to create a new rule at the top\n2.verify new rule can be added at the top",
+        "initial": "",
+        "id": "1526070",
+        "title": "Bottom bar - create a new rule at the top via bottom bar",
+        "result": "new rule can be added at the top"
+    },
+    "1526071": {
+        "steps": "1.at bottom bar,click policy-add-bottom-button to create a new rule at the top\n2.verify new rule can be added at the bottom",
+        "initial": "",
+        "id": "1526071",
+        "title": "Bottom bar - create a new rule at the bottom via bottom bar",
+        "result": "new rule can be added at the bottom"
+    },
+    "1526072": {
+        "steps": "select one rule ,then click policy-add-before-button to create a new rule insert above it",
+        "initial": "",
+        "id": "1526072",
+        "title": "Bottom bar - create a new rule insert above the selected rule via bottom bar",
+        "result": "a new rule insert above the selected rule"
+    },
+    "1526073": {
+        "steps": "select one rule ,then click policy-add-after-button to create a new rule insert below it",
+        "initial": "",
+        "id": "1526073",
+        "title": "Bottom bar - create a new rule insert below the selected rule via bottom bar",
+        "result": ""
+    },
+    "1526085": {
+        "steps": "1 from bottom bar click Live counter button, it will Start Counters of all Rules\n2 from bottom bar click Live counter button, it will stop Counters of all Rules\n3 select mutiple rules, then from bottom bar click Reset counter button, it will Reset selected rule(s) Counters",
+        "initial": "",
+        "id": "1526085",
+        "title": "Bottom bar - Live/Pause/Clear counter via bottom bar",
+        "result": "the counter number can be start/stop/clear correctly"
+    },
+    "1526086": {
+        "steps": "on the policy -> acl page, click the All Zones -> All Zones, and click lan/wan/dmz/vpn/sslvpn/MULTICAST/WLAN -> lan/wan/dmz/vpn/sslvpn/MULTICAST/WLAN, then apply",
+        "initial": "",
+        "id": "1526086",
+        "title": "Top bar - check the new filter Zones -> Zones format",
+        "result": "the page will show policies from the specified zone to specified zone according to the chosen zones"
+    },
+    "1526087": {
+        "steps": "click the policy for more detail",
+        "initial": "",
+        "id": "1526087",
+        "title": "Check the hit count/diagram/connection number of the policy",
+        "result": "the detail of a policy is combined of three sections:hit numbers on the left, diagram and connection numbers on the right, check all the number data are correct"
+    },
+    "1526088": {
+        "steps": "when editing one access policy, on the popup window1, enable the 'Show Diagram', then there should popup another window2, then enable 'Dock Diagram' on the right bottom corner, then this window2 will stick to the top of window1",
+        "initial": "",
+        "id": "1526088",
+        "title": "Verify Dock Diagram when editing one access rule",
+        "result": "see as test steps"
+    },
+    "1526090": {
+        "steps": "click policy-export-button t export rules in a CSV file",
+        "initial": "",
+        "id": "1526090",
+        "title": "Top bar - click Settings-Export-button to export rules in a CSV file",
+        "result": ""
+    },
+    "1526091": {
+        "steps": "click policy-refresh-button to reload rules from devices",
+        "initial": "",
+        "id": "1526091",
+        "title": "Top bar - click Settings-refresh-button to reload rules from devices",
+        "result": ""
+    },
+    "1526092": {
+        "steps": "-----Edit by Celia\n1.click Settings / Grid button\n2.click any place on group columns, can show or hide Columns, and using drag and drop to Rearrange the items\n",
+        "initial": "",
+        "id": "1526092",
+        "title": "Top bar - Settings-Grid: Click any place on group columns, can show or hide Columns, and using drag and drop to Rearrange the items",
+        "result": ""
+    },
+    "1526094": {
+        "steps": "1. mouse over  each column of a policy\n2. check if corresponding info will be showed",
+        "initial": "",
+        "id": "1526094",
+        "title": "Verify as your mouse over each column of a policy, corresponding info is correctly showed",
+        "result": "corresponding info is correctly showed"
+    },
+    "1526095": {
+        "steps": "1.when mouse over the column \"\"HITS\"\"\n2. check if it can show hits count and hits usage",
+        "initial": "",
+        "id": "1526095",
+        "title": "Verify mouse hovers the Hit Count in each rule to show hit Count and the percentage",
+        "result": "mention in steps"
+    },
+    "1526099": {
+        "steps": "add some custom policies",
+        "initial": "",
+        "id": "1526099",
+        "title": "Verify the drag-icon of custom policies is green.",
+        "result": "the drag-icon of custom policies is displayed with green icon on left"
+    },
+    "1526109": {
+        "steps": "click the 'Grid setting' button on the right top corner, and click 'select all columns', and drag the different columns to rearrange their order",
+        "initial": "",
+        "id": "1526109",
+        "title": "Top bar - Settings-Grid:rearrange the columns",
+        "result": ""
+    },
+    "1552687": {
+        "steps": "1. Log into a Gen 7 firewall, navigate to Policy &gt; Rules and Policies &gt; Access rules\n2. Click Grid settings and enable options (DPI client and DPI server) apply the filter\n3. Add some access rules\n4. Search a custom policy with the name and see if ther policy is displayed correctly\n5. Add additional more grid settings and search for a custom policy\n6. Try sorting the rules on the additional columns",
+        "initial": "",
+        "id": "1552687",
+        "title": "Verify filtering the access rules works fine after adding custom columns under Grid Settings",
+        "result": "Step 4 & 5: The policy is displayed correctly\nStep 6: Able to sort the rules on additional columns.\n\n"
+    },
+    "3638302": {
+        "steps": "1. Assign two interfaces like X3(LAN), X4(WLAN)\n2. Go to access rule page\n3. Try to create a custom access rule with interface based, e.g. from X3 to X4\n4. in optional settings page, enable 'Create Reflexive Rule'\n5. Check the created policies",
+        "initial": "",
+        "id": "3638302",
+        "title": "Verify correct reflexive rule can be added when option 'Create Reflexive Rule' is enabled",
+        "result": "Reflexive rule should be reversed, e.g. (from X4 to X3)."
+    }
+}

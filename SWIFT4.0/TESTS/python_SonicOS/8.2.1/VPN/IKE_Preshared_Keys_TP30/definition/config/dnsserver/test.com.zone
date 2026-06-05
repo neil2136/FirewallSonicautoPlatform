@@ -1,0 +1,18 @@
+$TTL 86400
+@       IN      SOA     test.com. pc2.test.com. (
+                                1       ;serial
+                                1D      ;refresh
+                                1H      ;retry
+                                1W      ;expire
+                                3H )    ;minimum
+@                       IN      NS      pc2.test.com.
+pc1.test.com.           IN      A       192.168.168.10
+pc2.test.com.           IN      A       12.12.1.20
+dns.test.com.           IN      A       12.12.1.201
+autoserver.test.com.    IN      A       10.6.0.69
+mail.test.com.          IN      MX 5    pc2.test.com.
+nginxl                  IN      CNAME   www
+pc2                     IN      AAAA    2001:20::20
+dns                     IN      AAAA    2001:20::201
+dnsv6                   IN      AAAA    2001:20::201
+mailv6                  IN      AAAA    2001:20::202

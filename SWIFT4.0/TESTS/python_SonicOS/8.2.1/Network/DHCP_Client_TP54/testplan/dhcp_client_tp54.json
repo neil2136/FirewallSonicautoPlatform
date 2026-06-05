@@ -1,0 +1,177 @@
+{
+   "11" : {
+      "steps" : "  step 1. Change the dns domain name to a longer domain name\n  step 2. Initiate LAN client renew\u0081",
+      "initial" : "  N/A",
+      "id" : "11",
+      "title" : "Verify LAN clients learn new longer domain name during LAN side renew",
+      "result" : "  Verify LAN client receives new domain name ."
+   },
+   "21" : {
+      "steps" : "  1. Go to Network->Interfaces\n  2. Configure X1 interface\n  3. Set the zone to wan zone, select ip assignment as DHCP\n  4. Click OK button\n  5. After X1 interface got an ip address from the DHCP server, click the release button",
+      "initial" : "  pc--x0 sonicwall x1--dhcp server",
+      "id" : "21",
+      "title" : "Verify NAT with DHCP IP release button",
+      "result" : "  The ip address is succussfully released."
+   },
+   "07" : {
+      "steps" : "  step 1. Configure DHCP server to send DHCP packets with corrupt UDP checksum\n  step 2. Wait for DHCP lease to expire for WAN DHCP client\n  step 3. Verify WAN client sends DHCPREQUEST\n  step 4. Verify server responds with invalid udp checksum\n  step 5. Verify WAN client resends DHCPREQUEST\n  step 6. Verify WAN client eventually sends DHCPDISCOVER\n  step 7. Configure DHCP server to send valid UDP checksums",
+      "initial" : "  N/A",
+      "id" : "7",
+      "title" : "CDR:DHCP client ignores DHCP packets with corrupt UDP checksum",
+      "result" : "  Verify WAN client can now obtain an IP address"
+   },
+   "02" : {
+      "steps" : "  step 1. Wait for DHCP lease to expire\n  step 2. Reassign the same IP address",
+      "initial" : "  N/A",
+      "id" : "2",
+      "title" : "CDR:DHCP client renews lease when current lease expires",
+      "result" : "  Verify WAN client sends DHCP REQUEST for same IP address ."
+   },
+   "17" : {
+      "steps" : "  1. Go to Network->Interfaces\n  2. Configure X1 interface\n  3. Set the zone to wan zone, select ip assignment as DHCP\n  4. Configure X2 interface\n  5. Set the zone to wan zone, select ip assignment as DHCP\n  6. Click OK button",
+      "initial" : "  pc--x0 sonicwall x1 x2--dhcp server",
+      "id" : "17",
+      "title" : "DHCP client as both Primary and Secondary WAN Interfaces",
+      "result" : "  Both the Primary and Secondary Wan interfaces can get dhcp lease from the dhcp server, and traffic is working."
+   },
+   "22" : {
+      "steps" : "  1. Go to Network->Interfaces\n  2. Configure X1 interface\n  3. Set the zone to wan zone, select ip assignment as DHCP\n  4. Click OK button\n  5. After X1 interface got an ip address from the DHCP server, click the release button\n  6. Then click the renew button",
+      "initial" : "  pc--x0 sonicwall x1--dhcp server",
+      "id" : "22",
+      "title" : "Verify NAT with DHCP IP renew button",
+      "result" : "  X1 interface can get a new ip address after click the renew button."
+   },
+   "01" : {
+      "steps" : "  step 1. Send ARP request for routers WAN IP address",
+      "initial" : "  N/A",
+      "id" : "01",
+      "title" : "CDR:Router responds to ARP request on WAN interface (DHCP mode)",
+      "result" : "  Verify valid ARP response is returned ."
+   },
+   "18" : {
+      "steps" : "  1. Go to Network->Interfaces\n  2. Configure X1 interface\n  3. Set the zone to wan zone, select ip assignment as DHCP\n  4. Type a word in Host Name\n  5. Click OK button",
+      "initial" : "  pc--x0 sonicwall x1--dhcp server",
+      "id" : "18",
+      "title" : "Host Name",
+      "result" : "  The Host Name is changed successfully."
+   },
+   "23" : {
+      "steps" : "  1. Go to Network->Interfaces\n  2. Configure X1 interface\n  3. Set the zone to wan zone, select ip assignment as DHCP\n  4. Click OK button\n  5. After X1 interface got an ip address from the DHCP server, click the refresh button",
+      "initial" : "  pc--x0 sonicwall x1--dhcp server",
+      "id" : "23",
+      "title" : "Verify NAT with DHCP IP refresh button",
+      "result" : "  The ip settings are refreshed after click the refresh button."
+   },
+   "13" : {
+      "steps" : "  step 1. Initiate TCP connection from LAN to WAN\n  step 2. Change the WanIspAssignIp address to a new address\n  step 3. Wait for DHCP lease to expire on WAN interface\n  step 4. Verify WAN client sends DHCPREQUEST for same IP address\n  step 5. Send DHCPNAK for that address\n  step 6. Verify DHCP WAN client restarts DHCPDISCOVERY and learns new IP\n  step 7. Initiate same TCP connection from LAN to WAN",
+      "initial" : "  N/A",
+      "id" : "13",
+      "title" : "CDR:Verify WAN side switches to new gateway after renumber",
+      "result" : "  Verify TCP connection works"
+   },
+   "16" : {
+      "steps" : "  1. Go to Network->Interfaces\n  2. Configure X2 interface\n  3. Set the zone to wan zone, select ip assignment as DHCP\n  4. Click OK button",
+      "initial" : "  pc--x0 sonicwall x1--dhcp server",
+      "id" : "16",
+      "title" : "Dhcp client as Secondary WAN interface",
+      "result" : "  The Second Wan interface can get dhcp lease from the dhcp server, and traffic is working."
+   },
+   "06" : {
+      "steps" : "  step 1. Disable DHCP server to force client back to DISCOVERY mode\n  step 2. Wait for DHCP lease to expire for WAN DHCP client\n  step 3. Verify WAN client sends DHCPREQUEST for same IP address\n  step 4. Do not respond to request\n  step 5. Verify WAN client resends DHCPREQUEST for same IP address\n  step 6. Verify WAN client eventually sends DISCOVER\n  step 7. Enable DHCP server\n  step 8. Add site specific option with length 0\u00810\u00842",
+      "initial" : "  N/A",
+      "id" : "6",
+      "title" : "CDR:Verify DHCP client handles server option with length 0",
+      "result" : "  Verify client is able to obtain new IP address"
+   },
+   "25" : {
+      "steps" : "  step 1. Disable the DHCP server and any ICMP or ARP responses\n  step 2. Wait for the WAN lease to expire\n  step 3. Forward packets from LAN client to WAN destination\n  step 4. Verify the packets are not forwarded out the WAN interface\n  step 5. Enable DHCP, ICMP, and ARP\n  NOTE: ARP/ICMP responses are also disabled on the WAN interface for this test. Some routers use ARP or ICMP to verify that the WAN is still operational.",
+      "initial" : "  N/A",
+      "id" : "25",
+      "title" : "CDR: No packets are forwarded if WAN lease expires",
+      "result" : "  No packets are forwarded if WAN lease expires"
+   },
+   "03" : {
+      "steps" : "  step 1. Wait for DHCP lease to expire\n  step 2. Verify WAN client sends DHCPREQUEST for same IP address\n  step 3. DO not respond to request\n  step 4. Respond to request",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "CDR:DHCP client resends DHCPREQUEST if server does not respond",
+      "result" : "  Verify WAN client resends DHCPREQUEST for same IP address ."
+   },
+   "09" : {
+      "steps" : "  step 1. Initiate TCP connection from LAN to WAN\n  step 2. Change the WanIspAssignIp address to a new address\n  step 3. Wait for DHCP lease to expire on WAN interface\n  step 4. Verify WAN client sends DHCPREQUEST for same IP address\n  step 5. Send DHCPNAK for that address\n  step 6. Verify DHCP WAN client restarts DHCPDISCOVERY and learns new IP\n  step 7. Verify new address responds to ICMP ping from LAN\n  step 8. Verify the old address no longer responds to ICMP ping from LAN\n  step 9. Initiate same TCP connection from LAN to WAN",
+      "initial" : "  N/A",
+      "id" : "9",
+      "title" : "CDR:Verify existing TCP connections can be reestablished after WAN renumber",
+      "result" : "  Verify TCP connection works ."
+   },
+   "12" : {
+      "steps" : "  step 1. Change the dns domain name to a shorter name\n  step 2. Initiate LAN client renew",
+      "initial" : "  N/A",
+      "id" : "12",
+      "title" : "Verify LAN clients learn new shorter domain name during LAN side renew",
+      "result" : "  The Verify LAN client receives new domain name"
+   },
+   "14" : {
+      "steps" : "  step 1. Add 2 more DNS servers to WAN side DHCP server\n  step 2. Wait for WAN client to renew lease and learn new DNS servers\n  step 3. Initiate LAN client renew",
+      "initial" : "  N/A",
+      "id" : "14",
+      "title" : "CDR:Verify LAN clients learn additional DNS servers",
+      "result" : "  Verify LAN client receives 2 new DNS servers"
+   },
+   "15" : {
+      "steps" : "  1. Go to Network->Interfaces\n  2. Configure X1 interface\n  3. Set the zone to wan zone, select ip assignment as DHCP\n  4. Click OK button",
+      "initial" : "  pc--x0 sonicwall x1--dhcp server",
+      "id" : "15",
+      "title" : "Dhcp client as Primary WAN interface",
+      "result" : "  Verify X1 interface can get dhcp lease from the dhcp server."
+   },
+   "20" : {
+      "steps" : "  1. Go to Network->Interfaces\n  2. Configure X1 interface\n  3. Set the zone to wan zone, select ip assignment as DHCP\n  4. Select http, https, ping, snmp, ssh\n  5. Click OK button\n  6. On a wan side pc, try to manage X1 interface from http, https, ssh, and it is pingable",
+      "initial" : "  pc--x0 sonicwall x1--dhcp server",
+      "id" : "20",
+      "title" : "Management of NAT with DHCP interface from WAN",
+      "result" : "  It is ok to manage X1 interface from http, https, ssh, and it is pingable"
+   },
+   "08" : {
+      "steps" : "  step 1. Change the WanIspAssignIp address to a new address\n  step 2. Wait for DHCP lease to expire on WAN interface\n  step 3. Verify WAN client sends DHCPREQUEST for same IP address\n  step 4. Send DHCPNAK for that address\n  step 5. Verify DHCP WAN client restarts DHCPDISCOVERY and learns new IP\n  step 6. Verify new address responds to ICMP ping from LAN\n  step 7. Restore original IP address",
+      "initial" : "  N/A",
+      "id" : "8",
+      "title" : "CDR:Verify WAN client learns new IP address when WAN server renumbers",
+      "result" : "  Verify the old address no longer responds to ICMP ping from LAN ."
+   },
+   "04" : {
+      "steps" : "  step 1. Disable DHCP server\n  step 2. Wait for DHCP lease to expire for WAN DHCP client\n  step 3. Verify WAN client sends DHCPREQUEST for same IP address\n  step 4. Do not respond to request",
+      "initial" : "  N/A",
+      "id" : "4",
+      "title" : "CDR:DHCP client drops back into DISCOVER mode if original server stops responding",
+      "result" : "  . Verify WAN client resends DHCPREQUEST for same IP address. Verify WAN client eventually sends DISCOVER ."
+   },
+   "24" : {
+      "steps" : "  1. Go to Network->Interfaces\n  2. Configure X1 interface\n  3. Set the zone to wan zone, select ip assignment as DHCP\n  4. Click OK button\n  5. Go to System->Diagnostics\n  6. Click the Download Report button\n  7. Verify the TSR file has the configuration of the NAT with DHCP interface",
+      "initial" : "  pc--x0 sonicwall x1--dhcp server",
+      "id" : "24",
+      "title" : "Verify the TSR for the NAT with DHCP interface settings",
+      "result" : "  TSR file has the configuration of the NAT with DHCP interface."
+   },
+   "10" : {
+      "steps" : "  step 1. Change the DNS server address\n  step 2. Wait for WAN client to renew lease and learn new DNS Server\n  step 3. Initiate LAN client renew",
+      "initial" : "  N/A",
+      "id" : "10",
+      "title" : "CDR:Verify LAN clients learn new DNS server during LAN side renew",
+      "result" : "  Verify LAN client receives new DNS server address"
+   },
+   "19" : {
+      "steps" : "  1. Go to Network->Interfaces\n  2. Configure X1 interface\n  3. Set the zone to wan zone, select ip assignment as DHCP\n  4. Type a word in Comments\n  5. Click OK button",
+      "initial" : "  pc--x0 sonicwall x1--dhcp server",
+      "id" : "19",
+      "title" : "Comments field",
+      "result" : "  The Comments is changed successfully and displayed correctly."
+   },
+   "05" : {
+      "steps" : "  \u00810\u00842step 1. Disable DHCP server to force client back to DISCOVERY mode\n  step 2. Wait for DHCP lease to expire for WAN DHCP client\n  step 3. Verify WAN client sends DHCPREQUEST for same IP address\n  step 4. Do not respond to request\n  step 5.Enable DHCP server with site specific options\u00810\u00842",
+      "initial" : "  N/A",
+      "id" : "5",
+      "title" : "CDR:DHCP client ignores site-specific DHCP options",
+      "result" : "  1.Verify WAN client resends DHCPREQUEST for same IP address.\n  2.Verify WAN client eventually sends DISCOVER .\n  3.Verify client is able to obtain new IP address."
+   }
+}

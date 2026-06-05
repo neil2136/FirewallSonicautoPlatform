@@ -1,0 +1,14 @@
+$TTL 1D
+@       IN SOA  @ rname.invalid. (
+                                        0       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+        NS      @
+        A       12.12.1.20
+        AAAA    2001:20::20
+200     IN      PTR     arpa1.test.com.
+201     IN      PTR     arpa2.test.com.
+0.0.2   IN      PTR     arpa1.ipv6.test.com
+1.0.2   IN      PTR     arpa2.ipv6.test.com

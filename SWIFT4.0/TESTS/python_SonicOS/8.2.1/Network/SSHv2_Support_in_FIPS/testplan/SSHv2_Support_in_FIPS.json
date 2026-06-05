@@ -1,0 +1,182 @@
+{
+   "1524805" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6CFDBAFE-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524805",
+      "title" : "Verify when firewall is in FIPS mode,  IPv4 management of interfaces via SSHv2  succeeds",
+      "description" : "In FIPS mode, IPv4 management of interfaces via SSHv2  should succeed",
+      "result" : "  TBD"
+   },
+   "1524815" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D1BEBC8-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524815",
+      "title" : "[FIPS mode]Verify SSH management with ciphers ecdh-sha2-nistp521,rsa-sha2-256,aes256-gcm@openssh.com,hmac-sha1",
+      "description" : "<span>The SSH management on MGMT interface succeeds</span>",
+      "result" : "  TBD"
+   },
+   "1524810" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D0D2462-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524810",
+      "title" : "[Non-FIPS mode] Verify SSH management when a client use ciphers ecdh-sha2-nistp256, rsa-sha2-256, aes128-ctr, hmac-sha1",
+      "description" : "The SSH management on X0 interface succeeds",
+      "result" : "  TBD"
+   },
+   "1524817" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D212FCA-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524817",
+      "title" : "Reboot the DUT and check if the status of the new ciphers retains",
+      "description" : "After reboot, these ciphers are still enabled.",
+      "result" : "  TBD"
+   },
+   "1524806" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D005034-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524806",
+      "title" : "Verify when firewall is in FIPS mode,  IPv6 management of interfaces via SSHv2  succeeds",
+      "description" : "In FIPS mode, IPv6 management of interfaces via SSHv2 should succeed",
+      "result" : "  TBD"
+   },
+   "1524802" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6CF0AB70-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524802",
+      "title" : "Verify that to enable FIPS mode, these SSH Ciphers should be disabled",
+      "description" : "FIPS Mode Setting Verification page is prompted. These SSH Ciphers are in the compliance checklist that should be disabled:\ndiffie-hellman-group1-sha1, diffie-hellman-group14-sha1, diffie-hellman-group-exchange-sha1, diffie-hellman-group-exchange-sha256, aes128-ctr, aes192-ctr, aes256-ctr, chacha20-poly1305@openssh.com, ssh-rsa",
+      "result" : "  TBD"
+   },
+   "1524804" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6CFB2BD6-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524804",
+      "title" : "Verify when firewall is in FIPS mode,  management of interfaces via SSHv1  are not allowed",
+      "description" : "In FIPS mode,  management of interfaces via SSHv1  shouldn't be allowed",
+      "result" : "  TBD"
+   },
+   "1524803" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6CF876E8-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524803",
+      "title" : "Verify when firewall is in FIPS mode, enable these SSH Ciphers are not allowed",
+      "description" : "These  SSH Ciphers shouldn't be allowed to enable in FIPS mode:\ndiffie-hellman-group1-sha1, diffie-hellman-group14-sha1, diffie-hellman-group-exchange-sha1, diffie-hellman-group-exchange-sha256, aes128-ctr, aes192-ctr, aes256-ctr, chacha20-poly1305@openssh.com, ssh-rsa",
+      "result" : "  TBD"
+   },
+   "1524811" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D0FAC78-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524811",
+      "title" : "[Non-FIPS mode] Verify SSH management with ciphers ecdh-sha2-nistp384, rsa-sha2-256, aes256-gcm@openssh.com, hmac-sha2-256",
+      "description" : "The SSH management on X0 interface succeeds",
+      "result" : "  TBD"
+   },
+   "1524814" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D18E888-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524814",
+      "title" : "[FIPS mode]Verify SSH management with ciphers ecdh-sha2-nistp384,rsa-sha2-512,aes128-gcm@openssh.com,hmac-sha2-512",
+      "description" : "<span>The SSH management on X0 interface succeeds</span>",
+      "result" : "  TBD"
+   },
+   "1524816" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D1E9D32-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524816",
+      "title" : "Check status of the new ciphers are reflected in TSR.",
+      "description" : "Status of the new ciphers are reflected correctly in TSR.",
+      "result" : "  TBD"
+   },
+   "1524819" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D289ADA-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524819",
+      "title" : "Disable/enable the new SSH ciphers via CLI",
+      "description" : "<span>ecdh ciphers can be enabled/disable from CLI correctly.</span>",
+      "result" : "  TBD"
+   },
+   "1524807" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D03A3B0-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524807",
+      "title" : "Verify when firewall is in FIPS mode,  SSH terminal emulation  succeeds",
+      "description" : "SSH session can be opened successfully.\nConfigurations can be done via the SSH session and saved.",
+      "result" : "  TBD"
+   },
+   "1524813" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D160D70-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524813",
+      "title" : "[FIPS mode]Verify SSH management with ciphers ecdh-sha2-nistp256,rsa-sha2-256,aes128-gcm@openssh.com,hmac-sha2-256",
+      "description" : "The SSH management on X1 interface succeeds",
+      "result" : "  TBD"
+   },
+   "1524818" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D24CD10-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524818",
+      "title" : "Export pref, disable/enable new SSH ciphers and re-import the pref",
+      "description" : "After pref import and reboot, ecdh-sha2-nistp256 and ecdh-sha2-nistp521 is enabled, ecdh-sha2-nistp384 is disabled.",
+      "result" : "  TBD"
+   },
+   "1524812" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D122692-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524812",
+      "title" : "[Non-FIPS mode] Verify SSH management with ciphers ecdh-sha2-nistp521, rsa-sha2-512, chacha20-poly1305@openssh.com, hmac-sha2-512",
+      "description" : "The SSH management on X0 interface succeeds",
+      "result" : "  TBD"
+   },
+   "1524809" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D08D8BC-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524809",
+      "title" : "In FIPS mode, try to enable these SSH Ciphers  on CLI",
+      "description" : "The commands can not be commited, error is prompted:\r\nError: SSH Control Cipher Config: FIPS does not allow diffie-hellman-group1-sha1, diffie-hellman-group14-sha1,\r\n diffie-hellman-group-exchange-sha1, diffie-hellman-group-exchange-sha256, ssh-rsa, aes128-ctr, aes192-ctr,\r\n aes256-ctr, chacha20-poly1305@openssh.com",
+      "result" : "  TBD"
+   },
+   "1524808" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6D06162C-8B0C-11ED-BA6E-C9CEA1E98C89",
+      "initial" : "  N/A",
+      "id" : "1524808",
+      "title" : "Enable FIPS mode on CLI when these SSH Ciphers are selected",
+      "description" : "FIPS is not allowed to enable while these ciphers are enabled.",
+      "result" : "  TBD"
+   }
+}

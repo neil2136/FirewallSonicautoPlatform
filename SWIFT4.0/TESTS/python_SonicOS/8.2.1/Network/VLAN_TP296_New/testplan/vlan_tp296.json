@@ -1,0 +1,464 @@
+{
+  "33": {
+    "steps": "  1. In the System->Administration page, enable management using GMS , then click the configure button .\n  2. In the Configure GMS Settings page, enter into the GMS IP Address and select SSL as Management Mode.\n  3. Use the GMS ip address to access GMS , and add the DUT and synchronize it, then check the status for the DUT.\n  4. On GMS, in the Network->Interfaces page, click Add VLAN Interface button to add a sub interface.\n  5. On DUT, check the sub interface created at step 4.",
+    "initial": "  TBD",
+    "id": "33",
+    "title": "GMS Server on VLAN",
+    "result": "  step 3: the DUT is available to use.\n  step 5: make sure that the sub interface has been synchronized on DUT."
+  },
+  "32": {
+    "steps": "  1. In the Network->Interfaces page, and add a Sub interfaces with trust zone , like X0:V100 and enable HTTPS but HTTP disable for User Login , then click OK button.\n  2 .In the Users->Local Users page, add a user and add it to the Sonicwall Administrators group.\n  3. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  4. Login with HTTPS from the connected PC to X0:V100 .\n  5. Login with HTTP from the connected PC to X0:V100.",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100)DUT",
+    "id": "32",
+    "title": "User Log in HTTPS",
+    "result": "  step 4: enter into the Login page successfully.\n  step 5: fail to enter into the Login page."
+  },
+  "63": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface with ip address , like X0:V100.\n  2. In the System->Diagnostics page, click Download Report button.\n  3. Check the corresponding info about X0:V100 in the downloaded TSR",
+    "initial": "  TBD",
+    "id": "63",
+    "title": "VLAN items in TSR",
+    "result": "  step 3: the configured info about X0:V100 are all recorded in the TSR"
+  },
+  "21": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with static ip assignment and assign it static ip address.\n  2. Config the sub interface and modify the IP Address/Subnet Mask and save config.",
+    "initial": "  TBD",
+    "id": "21",
+    "title": "[GUI]Modifying IP Address/Subnet Mask",
+    "result": "  step 2: it can modify successfully"
+  },
+  "71": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface with ip address , like X2:V200.\n  2. In the Network->Routing page, config RIP for X2:V200 with Send and Receive mode and check the option \" Redistribute Connected Networks\".\n  3. Config FW and also enable \"Send and Receive\" mode for X2:V200.\n  4. Check the learned rip of FW by the following CLI:\n  ARS RIP>show ip rip database",
+    "initial": "  (X0 ip 192.168.168.x)DUT(X2:V200)------(X2:V200)FW",
+    "id": "71",
+    "title": "Routing Suite (RIP) for VLAN",
+    "result": "  step 4: it should can learn the advertised routes by peer, below is an example:\n  R 192.168.168.0 X2:V200 2 0 02:53"
+  },
+  "7": {
+    "steps": "  1. In the Network->Interfaces page, Config X2 and set the zone as WLAN.\n  2. Add a Sub interface with LAN/WAN/DMZ zone and with X2 Parent Interface, like X2:V100.",
+    "initial": "  TBD",
+    "id": "7",
+    "title": "Parent interface in WLAN zone",
+    "result": "  step 2: it can add successfully."
+  },
+  "26": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with VLAN 100 and with X0 Parent interface and enable HTTPS for Management.\n  2. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  3. PC1 use the IP address of X0:V100 with HTTPS to manage the DUT .",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100)DUT",
+    "id": "26",
+    "title": "[GUI]Management traffic - HTTPS",
+    "result": "  step 3: manage successfully"
+  },
+  "18": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with vlan 100 and with X0 parent interface.\n  2. Config the sub interface X0:V100 and check the status of the VLAN Tag.",
+    "initial": "  TBD",
+    "id": "18",
+    "title": "[GUI]Modifying VLAN Tag",
+    "result": "  step 2: the VLAN Tag is gray and can not be modified."
+  },
+  "72": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface with ip address , like X2:V200.\n  2. Login to the console and enter into BGP mode , and config terminal by \"config t\" , enter router bpg by \"router bgp 1\", enable BGP peering FW by \"neighbor 192.168.1.100 remote-as 2\" ,save the config.\n  3. Config FW with the similar setting.\n  4. Check the BGP status in the Network->Routing page by click the button \"BGP\".",
+    "initial": "  DUT(X2:V200 with ip 192.168.1.50)------(X2:V200 with ip 192.168.1.100)FW",
+    "id": "72",
+    "title": "BGP for VLAN",
+    "result": "  step 4: in the neighbor session summary, the BGP state of the neighbor will finally reach \u00a1\u00b0Established\u00a1\u00b1 "
+  },
+  "16": {
+    "steps": "  1. In the Network ->interface page, add the maximum numbers`s sub interfaces(refer to the corresponding spec) to different parent interface .(automation is recommended)\n  2. Add another sub interface to any interface.",
+    "initial": "  TBD",
+    "id": "16",
+    "title": "[GUI]Maximum numbers of VLAN in different parent interface",
+    "result": "  step 1: it can add the maximum numbers` sub interfaces in different parent interface.\n  Step 2: fail to add."
+  },
+  "44": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface with ip address , like X2:V200.\n  2. In the Network->Routing page, config OSPFv2 for X2:V200 with OSPFv2 enabled and other infor.\n  3. Config FW and enable OSPFv2 for X2:V200 with the same area and dead interval and hello interval.\n  4. Check the OSPFv2 Neighbor Status.",
+    "initial": "  PC 1---DUT(X2:V200)------(X2:V200)FW",
+    "id": "44",
+    "title": "Routing Suite (OSPF) for VLAN",
+    "result": "  step 4: when the neigbour relationship is bulit , the status LED turns from Red to Green , and the neighbor is shown and staus is shown as FULL after click the status LED."
+  },
+  "55": {
+    "steps": "  1. In the Network->Interfaces page, add two Sub interfaces with static IP address,X2:V871 and X3:V872.\n  2. In the Firewall->Access Rules page, config the access rule (From: LAN ;To: LAN; Source:any ;Destination:any ;Service: any;Action: allow).\n  3. On the QoS tab of the rule, select Explicit for DSCP Marking Action and set Explicit DSCP Value as 46 -Expendited Forwarding, and select Explicit for 802.1p Marking Action and set Explicit 802.1p Value as 6-Voice.\n  4. Ping from PC 1 to PC2 and capture packets on DUT.",
+    "initial": "  PC1-----Switch---(X2:V871 with LAN)DUT(X3:V872 with LAN)------Switch------PC2",
+    "id": "55",
+    "title": "Quality of Service (QoS) for VLAN",
+    "result": "  step 4: the packets received at X2:V871 has vlan ID 871 and user priority 0 and DSCP Default.\n  The packets forwarded out of X3:V872 has vlan ID 871 and user priority 6 and DSCP Expendited Forwarding."
+  },
+  "27": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface , like X0:V100.\n  2. In the System->SNMP page , check the option \"Enable SNMP\".\n  3. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  4. Use the SNMP management tools , like Mid-browser to manage the DUT from the PC1.",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100)DUT",
+    "id": "27",
+    "title": "[GUI]Management traffic--SNMP",
+    "result": "  step 4: manage successfully"
+  },
+  "57": {
+    "steps": "  1. In the Network->Interfaces page, add two Sub interfaces with static IP address,X1:V155 and X2:V156.\n  2. Navigae to Network-> Failover&LB page, enable Load Balancing and edit Default LB group.\n  3. In the Edit LB Group page, select \"Basic Failover\" from the Type drop-down list, and add X1:V155 and X2:V156 from the \"Group Members:\" column to the \"Selected:\" column by clicking Add button.\n  4. Send continous ICMP traffic to the website and check the traffic statistics for X1:V155 and X2:V156.\n  5. Shut down X1 from GUI.\n  6. Send continous ICMP traffic to the website and check the traffic statistics for X1:V155 and X2:V156.\n  7. Repeat above test with other Load balance method, including Round Robin, Spill-over, Ratio.",
+    "initial": "  PC-----(X0)DUT (X1:V155/X2:V156 with WAN )----Switch------Internet",
+    "id": "57",
+    "title": "WAN FO & LB for VLAN",
+    "result": "  step 4: the Tx Bytes for X1:V155 is increasing ,but X2:V156 not.\n  step 6: the Tx Bytes for X2:V155 is increasing , but X1:V155 not.\n  Step 7: works properly under all configured LB method."
+  },
+  "61": {
+    "steps": "  1. In the Network->Interfaces page, add two Sub interfaces with static IP address,X0:V875 and X7:V333.\n  2. Send fragmented TCP packets destinated to PC1 by PC(running script) or let packets forwarded out from FW, and then capture packets on DUT.",
+    "initial": "  PC1----(X0:V875 with LAN)DUT(X7:V333 with LAN)----(X7:V333)FW(or PC)",
+    "id": "61",
+    "title": "Fragmentations for VLAN (Large TCP>1500)",
+    "result": "  step 2: the fragmented packets consumed at X7:V333 and then forwarded out on X0:V875."
+  },
+  "20": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with DMZ zone and with X0 Parent interface, like X0:V100\n  2. Config the interface X0 and modify its settings and save config.",
+    "initial": "  TBD",
+    "id": "20",
+    "title": "[GUI]Modifying parent interface",
+    "result": "  step 2: it can modify successfully."
+  },
+  "10": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface with LAN/DMZ/WAN zone and with X0 Parent Interface, like X0:V100.\n  2. Config X0:V100 with Static IP Assignment and click OK button.\n  3. Config Switch1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  4. Config PC1 IP as the same subnet with X0:V100.\n  5. Ping from the PC1 to the X0:V100 IP address.",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100)DUT(X1)",
+    "id": "10",
+    "title": "Static IP Assignment (mode)",
+    "result": "  step 2: config static ip successfully.\n  step 5: ping successfully."
+  },
+  "31": {
+    "steps": "  1. In the Network->Interfaces page, and add a Sub interfaces with trust zone , like X0:V100 and enable HTTP but HTTPS disable for User Login , then click OK button.\n  2 .In the Users->Local Users page, add a user and add it to the Sonicwall Administrators group.\n  3. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  4. Login with HTTP from the connected PC to X0:V100 .\n  5. Login with HTTPS from the connected PC to X0:V100.",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100)DUT",
+    "id": "31",
+    "title": "User Log in HTTP",
+    "result": "  step 4: enter into the Login page successfully.\n  step 5: fail to enter into the Login page."
+  },
+  "35": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface, like X0:V100 and X2:V200.\n  2. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100, so does Switch2.\n  3. Enable global multicast in Firewall Settings page, and uncheck \"Require IGMP Membership reports for multicast data forwarding\" option, check \"Enable reception of all multicast addresses \" option.\n  4. Enable multicast option in both X0:V100 and X2:V200 interfaces.\n  5. Send multicast traffic from PC1. (e.g., dest to 225.1.1.1)\n  6. Capture packets in DUT and PC2.",
+    "initial": "  PC1---(g0/0)Switch(g0/1)---(X0:V100 ip 2.2.2.2) DUT(X2:V200 ip 3.3.3.x)---Switch 2----PC 2",
+    "id": "35",
+    "title": "Multicast traffic in VLAN",
+    "result": "  step 6: DUT and PC2 can receive the multicast traffic"
+  },
+  "11": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface with LAN/DMZ zone and with X0 Parent Interface, like X0:V100.\n  2. Config X0:V100 with Transparent IP Assignment and set the Transparent range which is the same subnet with the primary WAN but not contain it, then click OK button.\n  3. Config Switch1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  4. Config PC1 IP which is within the range defined at step 2 and set its gateway as X1`s gateway.\n  5. Ping from the PC1 to the Internet.",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100)DUT(X1)",
+    "id": "11",
+    "title": "[GUI]Transparent IP Assignment (mode)",
+    "result": "  step 2: config ip successfully.\n  step 5: ping successfully."
+  },
+  "48": {
+    "steps": "  1. In the Network->Interfaces page, add two subinterfaces with static ip address, like X0:V100 and X2:V200.\n  2. Make sure that the DHCP server for X0:V100 is not enabled.\n  3. In the Network->IP Helper page, enable IP Helper under IP Helper Settings table and enable DHCP under Relay Protocols table.\n  4. Add a IP Helper policy with the following setting:\n  Protocol : DHCP ; From: Interface X0:V100; To: X2:V200 ip of Server.\n  5. For server, add a dynamic address scope for X0:V100 of DUT and set gateway as 192.168.15.168 (X0:V100`s ip).\n  6. For server, add a static route:\n  source :any; destination : X0:V100 subnet of DUT; Gateway : X2:V200 ip of DUT; Interface: X2:V200.\n  7. Check the PC if get dynmaic address has the same subnet with X0:V100.",
+    "initial": "  PC------(g0/0)Switch(g0/1)------(X0:V100 with ip 192.168.15.168)DUT(X2:V200 with ip 192.168.16.50)-----(X2:V200 with ip 192.168.16.100)Server",
+    "id": "48",
+    "title": "IP Helper for VLAN",
+    "result": "  step 7: PC can get dynamic address."
+  },
+  "65": {
+    "steps": "  1. In the Network->Interfaces page, add two Sub interfaces , like X0:V200 with LAN zone and X1:V100 with WAN zone.\n  2. Config X0:V200 and X1:V100 with ip address and click OK button.\n  3. In the VPN->Settings page, click Add button to add a site-to-site VPN policy:\n  set Authentication Method as IKE using Preshared Secret,\n  set IPsec Primary Gateway Adress as FW`s X1:V300 address, choose X0:V200 subnet as Local network and the X0:V400 subnet of FW as Destination network and VPN policy bound to X1:V100 and the option\"Enable Keep Alive\" is checked .\n  4.Config the FW with the similar setting.\n  5. Ping from PC1 to the PC2.",
+    "initial": "  PC 1----Switch1----(X0:V200)DUT(X1:V100)---Switch2-Internet---Switch3--(X1:V300 )FW(X0:V400)---Switch4----PC2",
+    "id": "65",
+    "title": "VPN for VLAN",
+    "result": "  step 5: when the vpn relationship is built , the status LED will appear as green, and the traffic is reachable."
+  },
+  "29": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interfaces , like X0:V100, and enable Redirect from HTTP to HTTPS with HTTP disable and HTTPS enabled.\n  2. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  3. Login with HTTP from PC1 to X0:V100 .",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100)DUT",
+    "id": "29",
+    "title": "Management traffic HTTPS redirect",
+    "result": "  step 3: it will successfully redirect from HTTP to HTTPs"
+  },
+  "50": {
+    "steps": "  1. In the Network->Interfaces page, add one Sub interface with WAN zone and with static ip address, like X1:V155, and add another sub interface with LAN zone and with static ip address, like X0:V100.\n  2. Set the interface X1:V155 as default WAN and apply Gateway Anti-Virus protection to LAN zone.\n  3. Get the GAV liscense .\n  4. In the Security Services ->Gateway Anti-Virus page, make sure that Signature Database has been downloaded and enable Gateway Anti-Virus, and then check the Enable Inbound Inspection and Enable Outbound Inspection for FTP traffic.\n  5. Download virus by FTP from PC and check the log.",
+    "initial": "  PC(FTP client)--Switch--(X0:V100)DUT(X1:V155)----Switch---FTP server",
+    "id": "50",
+    "title": "Security services for VLAN (AV)",
+    "result": "  step 5: the virus failed to download and a block log is generated."
+  },
+  "39": {
+    "steps": "  1. In the Network->Interfaces page, two Sub interfaces , like X0:V100 and X0:V200.\n  2. Config X0:V100 and X0:V200 with address respectivly.\n  3. Config Switch 1 with tagged vlan 100 and tagged vlan 200.\n  4. PC 1 is on the same VLAN with X0:V100 and PC2 is in the same VLAN with X0:V200.\n  5. Ping from PC 1 to PC 2.",
+    "initial": "  PC 1---Switch 1---(X0:V100)DUT(X0:V200)---Switch 1----PC 2",
+    "id": "39",
+    "title": "Passing traffic (VLAN -> VLAN, same physical interface)",
+    "result": "  step 5: the traffic is reachable."
+  },
+  "64": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface with ip address, like X0:V100.\n  2. In the System->Settings page, export settings.\n  3. Do factory default to the DUT.\n  4. In the System->Settings page, import the settings.\n  5. Check the config about the X0:V100.",
+    "initial": "  TBD",
+    "id": "64",
+    "title": "VLAN Preference support",
+    "result": "  step5: the config about X0:V100 is intact and the same with the config before factory default."
+  },
+  "58": {
+    "steps": "  1. In the Network->Interfaces page, add one Sub interface with WAN zone and with static ip address, like X1:V155.\n  2. In the VPN->Settings page, enable the WAN GroupVPN policy, and config the policy with IKE using Preshared Secret as the Authentication Method and with a shared secret passphrase.\n  3. In the VPN->L2TP Server page, enable L2TP Server and config it with the following settings:\n  DNS server 1: 8.8.8.8;Use the local L2TP IP Pool:enabled;start IP: 12.12.12.12;End IP: 12.12.12.254\n  select Everyone as the User group for L2TP users.\n  4. In the Users->Local Users page, add a local user and specify a user name and password, and in the VPN Access tab, add the desired network address object(s) that the L2TP clients can access,eg , LAN subnet.\n  5.In the Network->NAT policies page, make sure that the following policy exists , or add it :\n  Original Source: L2TP IP Pool ; Translated Source: X1:V155 IP;Original Destination:any;Translated Destination:any; Inbound interface:any;Outbound interface: X1:V155.\n  6. In the Firewall->Access Rules page, make sure that the following policy exists, or add it:\n  From: VPN; To: LAN; Source: L2TP IP Pool;Destination:any;Service:any; Action:allow.\n  7. On PC2, config L2TP VPN Client and set the IP of x1:v155 as the IP address of destination and set Layer 2 Tunneling Protocol with IPset as type of VPN and enter the pre-shared secret and enter the username and password, then connect to the L2TP server, check the ip PC2 got.\n  8. Ping from PC2 to PC1.",
+    "initial": "  PC1-----(X0:LAN)DUT(X1:V155 : WAN)------Switch---------internet---------------PC",
+    "id": "58",
+    "title": "L2TP Server for VLAN",
+    "result": "  step 7: pc can connect to the L2TP server, and get ip from the L2TP IP Pool.\n  step 8: the traffic is reachable."
+  },
+  "41": {
+    "steps": "  1. In the Network->Interfaces page, click the \"Add Interface\" button to add a Sub interface with LAN/DMZ zone and with X0 Parent Interface, like X0:V100.\n  2. Config X0:V100 with Transparent IP Assignment and set the Transparent range which is the same subnet with the primary WAN but not contain it, then click OK button.\n  3. Config Switch1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  4. Config PC1 IP which is within the range defined at step 2 and set its gateway as X1`s gateway.\n  5. Ping from the PC1 to the Internet.",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100)DUT(X1)",
+    "id": "41",
+    "title": "Transparent mode in VLAN",
+    "result": "  step 2: config ip successfully.\n  step 5: ping successfully."
+  },
+  "12": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with vlan 100 and with X0 Parent Interface.\n  2. Add a sub interface with vlan 100 and with the same interface X0.\n  3. Add a sub interface with vlan 100 and with X2 Parent interface.",
+    "initial": "  TBD",
+    "id": "12",
+    "title": "Using duplicate VLAN Tag",
+    "result": "  step 2: fail to add with error message.\n  step 3: add successfully"
+  },
+  "15": {
+    "steps": "  1. In the Network ->interface page, add the maximum numbers` sub interfaces (refer to the corresponding spec) to the same parent interface, like X0.(automation is recommended)\n  2. Add another sub interface to the X0, too.",
+    "initial": "  TBD",
+    "id": "15",
+    "title": "[GUI]Maximum numbers of VLAN in same parent interface",
+    "result": "  step 1: it can add the maximum numbers` sub interfaces in the same parent interface.\n  step2 : fail to add."
+  },
+  "52": {
+    "steps": "  1. In the Network->Interfaces page, add one Sub interface with WAN zone and with static ip address, like X1:V155, and add another sub interface with LAN zone and with static ip address, like X0:V100.\n  2. Set the interface X1:V155 as default WAN and apply IPS to LAN zone.\n  3. Get the IPS liscense.\n  4. In the Security Services ->Intrusion Prevention page, make sure that Signature Database has been downloaded and enable IPS.\n  5. Configure ICMP category under IPS Policies table , and set the Detection as Enable.\n  6. Send ICMP traffic from PC1 to PC2.\n  7. Check the log in the Log->Log Monitor page.",
+    "initial": "  PC1--Switch--(X0:V100)DUT(X1:V155)----Switch---PC2",
+    "id": "52",
+    "title": "Security services for VLAN (IDS)",
+    "result": "  step 7: a alert message is generated about the IPS Detection alert."
+  },
+  "60": {
+    "steps": "  1. In the Network->Interfaces page, add two Sub interfaces with static IP address,X0:V875 and X7:V333.\n  2. Send fragmented UDP packets destinated to PC1 by PC(running script) or let packets forwarded out from FW, and then capture packets on DUT.",
+    "initial": "  PC1----(X0:V875 with LAN)DUT(X7:V333 with LAN)----(X7:V333)FW(or PC)",
+    "id": "60",
+    "title": "Fragmentations for VLAN (Large UDP > 1500)",
+    "result": "  step 2: the fragmented packets consumed at X7:V333 and then forwarded out on X0:V875."
+  },
+  "56": {
+    "steps": "  1. In the Network->Interfaces page, add two Sub interfaces with static IP address,X14:V100 and X15:V200.\n  2. Navigate to Firewall Settings->BWM page , select Advanced as Bandwidth Management Type.\n  3. Navigate to Firewall->Access Rules page, add a ACL with LAN->WAN :\n  From: X14:V100; To: X15:V200;Source port: any; Service:FTP; Source:X14:V100 Subnet; X15:V200 Subnet; Action: allow.\n  4.Switch to BWM tab, check the option \"Enable Egress Bandwidth Management\" and create a Bandwidth object with GBW as 100000kbps and MBW as 200000kbps and Violation Action as Delay.\n  5. Send continous FTP traffic with 1000Mbps from IXIA port 2 and check the received traffic at IXIA port 3.",
+    "initial": "  IXIA port 2---(X14:V100 with LAN)DUT(X15:V200 with WAN)------IXIA port 3",
+    "id": "56",
+    "title": "Bandwidth management for VLAN",
+    "result": "  step 5: IXIA port 3 receives 200Mbps traffic."
+  },
+  "66": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface , like X0:V100 , config IP and allow management.\n  2. In the High Availability->Settings page, select Active /Standby mode, and enter the serial numbers of two unites, click Apply\n  3. In the High Availability->Monitoring page, config per-unit IP address for DUT1 and DUT2 on X0:V100 to be managed.\n  4.Check the Allow Management on DUT1 and DUT2.\n  5. From the PC access both of the IP addresses and browse the web pages.\n  6. Attempt to make some configuration changes.\n  7. Ping from the PC to the Internet.\n  8. In the High Availability ->Advanced page, click the button \"Force Active /Standby Failover\".\n  9. Ping from the PC to the Inernet.",
+    "initial": "  PC--Switch (g0/0 v:100)----(X0:V100)DUT1\n  Swithch(g0/1 v:100)----(X0:V100)DUT2\n  DUT1----ha-----DUT2",
+    "id": "66",
+    "title": "HA for VLAN",
+    "result": "  step 5: manage DUT 1 and DUT2 successfully.\n  step 6: the active unit should be able to be configured, the idle unit should be read only\n  step 7: the traffic is reachable.\n  step 9: the traffic is reachable."
+  },
+  "45": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface , like X1:V100.\n  2. Create a DDNS account by access www.changeip.com.\n  3. In the Network-> Dynamic DNS page, add a profile with the created account and domain name and bound to interface X1:V100.\n  4. Then use the donmain name to access the FW.\n  5. Check the profile in the Network-> Dynamic DNS page.",
+    "initial": "  DUT(X1:V100)---Switch----Internet",
+    "id": "45",
+    "title": "DDNS for VLAN",
+    "result": "  step 4: it can access the FW successfully.\n  step 5: the status for the profile is On-line : X1:V100`ip as of ."
+  },
+  "19": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with DMZ zone and with X0 parent interface,like X0:V100.\n  2. Config the sub interface X0:V100 and modify the Zone to LAN, and save config.",
+    "initial": "  TBD",
+    "id": "19",
+    "title": "Modifying zone assignment",
+    "result": "  step 2: it can modify successfully."
+  },
+  "67": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface with WLAN zone , like X0:V100 , config IP and allow management.\n  2. Enter into SonicPoint->SonicPoints page, synchronize SonicPoint on SonicPoint->SonicPoints page,waiting till the device `s status becomes operational under SonicPointNs table.\n  3. Click configure icon and on the Settings tab, make sure that the option \"Enable SonicPoint \" is checked, and on the 802.11n Radio page, make sure that the option \"Enable Radio\" is checked.\n  4. Use a wireless client to connect the SonicPoint and access the internet.",
+    "initial": "  Sonicpoint----Switch(g0/1 v:100)---(X0:V100 WLAN)DUT(x1)------Internet",
+    "id": "67",
+    "title": "Wireless and WLAN for VLAN",
+    "result": "  step 4: sonicpoint can be searched and the Internet can be accessed successfully."
+  },
+  "70": {
+    "steps": "  1. In the Network->Interfaces page, add two Sub interfaces with static IP address,X14:V100 and X15:V200.\n  2. Send contious UDP packets from Ixia port 2 to Ixia port 3 for 24 hours.\n  3. Then check the DUT if it still works well or not after 24 hours.",
+    "initial": "  IXIA port 2---(X14:V100 with LAN)DUT(X15:V200 with WAN)------IXIA port 3",
+    "id": "70",
+    "title": "Throughput testing",
+    "result": "  step 3: it should still work well."
+  },
+  "68": {
+    "steps": "  1. In the Network->Interfaces page, add one Sub interface with ip address and enable Ping, like X0:V100.\n  2. Config Switch with tagged vlan id 100.\n  3. Ping from the Switch to the Management IP for X0:V100.",
+    "initial": "  (Juniper/Extreme/Force10)Switch(g0/0)------(X0:V100)DUT",
+    "id": "68",
+    "title": "Compatibility (different vendors switches)",
+    "result": "  step 3: the traffic is reachable."
+  },
+  "2": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with DMZ zone and with X0 Parent interface, like X0:V100\n  2. Add another sub interface with DMZ zone and with the Parent interface X2, like X2:200.",
+    "initial": "  TBD",
+    "id": "2",
+    "title": "[GUI]Different parent interface and same zone",
+    "result": "  step 1: add successfully.\n  step 2: add successfully."
+  },
+  "1": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with DMZ zone and with X0 Parent interface, like X0:V100\n  2. Add another sub interface with LAN zone and with the same interface X0, like X0:V200.",
+    "initial": "  TBD",
+    "id": "1",
+    "title": "[GUI]Same parent interface and different zone",
+    "result": "  step 1: add successfully.\n  step 2: add successfully."
+  },
+  "25": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with VLAN 100 and with X0 Parent interface and enable HTTP for Management.\n  2. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  3. PC1 use the IP address of X0:V100 with HTTP to manage the DUT .",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100)DUT",
+    "id": "25",
+    "title": "[GUI]Management traffic - HTTP",
+    "result": "  step 3: manage successfully"
+  },
+  "28": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interfaces , like X0:V100 and enable Ping.\n  2. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  3. Ping from the PC1 to the IP address of the X0:V100.",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100)DUT",
+    "id": "28",
+    "title": "[GUI]Management traffic - PING",
+    "result": "  step 3: the traffic is reachable."
+  },
+  "40": {
+    "steps": "  1. In the Network->Interfaces page, two Sub interfaces , like X0:V100 and X2:V200.\n  2. Config X0:V100 and X2:V200 with address respectivly.\n  3. Config Switch 1 and Switch 2 respectivly.\n  4. PC 1 is on the same VLAN with X0:V100 and PC2 is in the same VLAN with X2:V200.\n  5. Ping from PC 1 to PC 2.",
+    "initial": "  PC 1---Switch 1---(X0:V100)DUT(X2:V200)---Switch 2----PC 2",
+    "id": "40",
+    "title": "[FUNC] Passing traffic (VLAN -> VLAN, different physical interface)",
+    "result": "  step 5: the traffic is reachable."
+  },
+  "14": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with \"Static\" IP Assignment and fill in the IP address /Subnet Mask which is overlapped with other interface and save config.",
+    "initial": "  TBD",
+    "id": "14",
+    "title": "[GUI]Overlap networks",
+    "result": "  step 1: fail to add subinterface"
+  },
+  "59": {
+    "steps": "  1. In the Network->Interfaces page, add two Sub interfaces with static IP address,X0:V200 and X1:V100.\n  2. Send continous ICMP traffic from PC1 to PC2 by the following commad :\n  ping IP(PC2) -t -l 2000\n  3. Capture packets on DUT.\n  4. Navigate to Firewall->Access Rule page, and make sure that the ACL from any to X0:V100 with service ping has default enable \"allow fragmented packets\".\n  5. Send contiounou ICMP traffic from PC1 to X0:V200.",
+    "initial": "  PC 1----Switch1----(X0:V200 with LAN )DUT(X1:V100 with WAN)---Switch2-PC2",
+    "id": "59",
+    "title": "Fragmentations for VALN (Large ICMP > 1500)",
+    "result": "  step 2: Ping is successful\n  step 3: the traffic is reachable , and the fragmented packets consumed at X0:V200 and forwared out from X1:V100.\n  step 5: the traffic is reachable, and consumed fragmented packets at X0:V200 and generated ICMP reply at X0:V200."
+  },
+  "69": {
+    "steps": "  1. In the Network->Interfaces page, add two Sub interface with ip address and , like X0:V100 and X2:V100.\n  2. Ping from the Switch( (VLAN aware) to X0:V100.\n  3. Ping from the Switch(non-VLAN aware) to X2:V100.",
+    "initial": "  DUT(X0:V100)------Switch(VLAN aware)\n  DUT(X2:V100)------Switch(non-VLAN aware)",
+    "id": "69",
+    "title": "Compatibility (VLAN aware or non-VLAN aware devices)",
+    "result": "  step 2: it should be reachable.\n  step 3: it should not be reachable."
+  },
+  "49": {
+    "steps": "  1. In the Network->Interfaces page, add one Sub interface with WAN zone and with static ip address, like X1:V155.\n  2. In the Network->Web Proxy page, under Automatic Proxy Forwarding (Web Only), enter the IP address of the proxy server in the Proxy Web Server field and the proxy IP port in the Proxy Web Server Port.\n  3.Config Proxy Server with HTTP 8080 enabled ,eg . CCProxy.\n  4. Acess web from the PC, eg, www.baidu.com .\n  5. Capture the packets on the DUT.",
+    "initial": "  PC----DUT(X1:V155)-----Switch---Internet-----Proxy Server ",
+    "id": "49",
+    "title": "Web Proxy for VLAN",
+    "result": "  step 4: the web can be accessed.\n  step 5: the packets destined to the web are all forwarded to the proxy server."
+  },
+  "24": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface ,like X0:V100.\n  2. Delete the sub interface X0:V100.",
+    "initial": "  TBD",
+    "id": "24",
+    "title": "[GUI]VLAN sub-interface deletion",
+    "result": "  step 2: it can delete successfully."
+  },
+  "22": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface and enable HTTP /HTTPS/PING /SNMP /SSH.\n  2. Config the sub interface and disable HTTP /HTTPS/PING /SNMP /SSH and save config.",
+    "initial": "  TBD",
+    "id": "22",
+    "title": "[GUI] Modifying management rules",
+    "result": "  step 2: it can modify successfully."
+  },
+  "42": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interfaces , like X0:V100 .\n  2. In the Network->ARP page, add a static arp with pc1 ip and pc1 mac address and select interface X0:V100.\n  3. Check the entry in the ARP cache.\n  4. Ping from the PC1 to the interface X0:V100.",
+    "initial": "  PC 1---Switch 1---(X0:V100 with ip address 192.168.16.168)DUT(X1)--Internet",
+    "id": "42",
+    "title": "Static ARP in VLAN",
+    "result": "  step 2: the entry is listed correctly.\n  step 3: the entry is listed in the ARP cache as permanent.\n  step 4: it succeeds."
+  },
+  "46": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface , like X0:V100.\n  2. In the Network->Nat Policies page, add the following policy :\n  original source(X0:V100 subnet)--translated source(x1address)--original destination(any)---translated destinaiton(any)---origianl service(ping)---translated service(any)----inbound interface (X0:V100) ---outbound interface(X1).\n  3.Ping from PC1 to the internet.\n  4.Check the packets captured by the DUT.",
+    "initial": "  PC 1---Switch 1---(X0:V100)DUT(X1)",
+    "id": "46",
+    "title": "NAT policy for VLAN",
+    "result": "  step 3: Ping is successful\n  step 4: the source address will be translate to the x1 address."
+  },
+  "23": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface and enable HTTP /HTTPS.\n  2. Config the sub interface and disable HTTP /HTTPS and save config.",
+    "initial": "  TBD",
+    "id": "23",
+    "title": "[GUI]Modifying user login rules",
+    "result": "  step 2: it can modify successfully."
+  },
+  "13": {
+    "steps": "  1. in the Network->Interfaces page, add a sub interface with VLAN Tag which is out of 1~4094, eg. 0 or 4095 and save config.",
+    "initial": "  TBD",
+    "id": "13",
+    "title": "Using invalid VLAN Tag (out of 1 ~ 4095)",
+    "result": "  step 1: fail to add sub interface"
+  },
+  "6": {
+    "steps": "  1. In the Network->Interfaces page, Config X1 and set the IP Assignment as DHCP .\n  2. Add a Sub interface with LAN/WAN/DMZ zone and with X1 Parent Interface, like X1:V873.",
+    "initial": "  TBD",
+    "id": "6",
+    "title": "Parent interface in dynamic client mode",
+    "result": "  step 2: subinterface X1:V873 can configure successfully."
+  },
+  "36": {
+    "steps": "  1. In the Network->Interfaces page, add two Sub interfaces , like X0:V100 and X2:V200.\n  2. In the Network->Routing page, check the route policies table.\n  3. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100, so does Switch2.\n  4. PC 1 is on the same VLAN with X0:V100 and PC2 is in the same VLAN with X2:V200.\n  5. Ping between PC2 to PC1.",
+    "initial": "  PC 1---(g0/0)Switch 1(g0/1)---(X0:V100 ip 2.2.2.x)DUT(X2:V200 ip 3.3.3.x)---Switch 2----PC 2",
+    "id": "36",
+    "title": "Routing between different VLAN",
+    "result": "  step 2: make sure that two connected route for X0:V100 and X2:V200 respectively by default are added. Like\n  (source)Any----- (destination)x0:v100 subnet -----(service)Any----(gateway)0.0.0.0-------(interface) X0:V100---(metric) 20----(priority)21\n  step 5: the traffic is reachable."
+  },
+  "3": {
+    "steps": "  1. In the Network->Interfaces page, add a sub interface with DMZ zone and with X0 Parent interface, like X0:V100\n  2. Add another sub interface with LAN zone and with the interface X2, like X2:200.",
+    "initial": "  TBD",
+    "id": "3",
+    "title": "[GUI]Different parent interface and different zone",
+    "result": "  step 1: add successfully.\n  step 2: add successfully."
+  },
+  "51": {
+    "steps": "  1. In the Network->Interfaces page, add one Sub interface with WAN zone and with static ip address, like X1:V155, and add another sub interface with LAN zone and with static ip address, like X0:V100.\n  2. Set the interface X1:V155 as default WAN.\n  3. Get the CFS liscense.\n  4. In the Security Services ->Content Filter page, make sure that the Content Filter Server is ready and select \"Via User and Zones Screens\" from the CFS Policy Assignment drop-down list, and select \"SonicWALL CFS\" from Content Filter Type drop-down list.\n  5. Click the Confige button to enter into SonicWALL Filter Properties page , then switch to Plicy tab and add a policy named custom , and select the categories \"shopping\" as forbidden categories.\n  6. Navigate to Network->Zones page, check the option \"Enforce Content Filtering Service\" for LAN zone and select the custom policy.\n  7.Access the website from PC, like www.amazon.com, and check the log.",
+    "initial": "  PC--Switch--(X0:V100)DUT(X1:V155)----Switch---Internet",
+    "id": "51",
+    "title": "Security services for VLAN (CFS)",
+    "result": "  step 7: it will pop up alert message \"this site has been blocked by the network administrator\" and give the block reason \"Forbidden category \"shopping\"\". A log \"web site access denied\" is generated in the Log->Log Monitor page."
+  },
+  "47": {
+    "steps": "  1. In the Network->Interfaces page, add one Sub interface with LAN/DMZ zone and with static ip address, like X0:V100.\n  2. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  3. Config DHCP server and add dynamic address scope for X0:V100 and enabled.\n  4. Check that if the PC can get the adress dynamically.",
+    "initial": "  PC------(g0/0)Switch(g0/1)------(X0:V100)DUT",
+    "id": "47",
+    "title": "[GUI]DHCP server for VLAN",
+    "result": "  step 4: PC can get IP in the range of the X0:V100."
+  },
+  "8": {
+    "steps": "  1. In the Network->Interfaces page, Config X2 and create a custome zone and assign it to x2 .\n  2. Add a Sub interface with LAN/WAN/DMZ zone and with X2 Parent Interface, like X2:V100.",
+    "initial": "  TBD",
+    "id": "8",
+    "title": "Parent interface in custom zone",
+    "result": "  step 2: it can add successfully."
+  },
+  "38": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interfaces , like X0:V100.\n  2. Config X0:V100 and X0 with address respectivly.\n  3. Config Switch 1 and set the port g0/0 as hybrid.\n  4. PC 1 is on the same VLAN with X0:V100 and PC2 is in the same VLAN with X0.\n  5. Ping from PC 1 to PC 2",
+    "initial": "  PC 1--(g0/1)Switch 1(g0/0)--(X0:V100)DUT(X0)--(g0/0)Switch 1(g0/2)--PC 2",
+    "id": "38",
+    "title": "[FUNC]Passing traffic (VLAN -> Non-VLAN, same physical interface)",
+    "result": "  step 5: the traffic is reachable."
+  },
+  "4": {
+    "steps": "  1. In the Network->Interfaces page, make sure that X3 interface is in unassigned state.\n  2. Add a Sub interface with LAN/WAN/DMZ zone and with X3 Parent Interface, like X3:V100.\n  3. Send ping traffic from PC1 to PC2 and capture packets on DUT.\n  4. Send ping traffic from PC1 to X3:V100.",
+    "initial": "  PC 1---Switch 1---(X3:V100)DUT(X2)-----PC 2",
+    "id": "4",
+    "title": "Parent interface in Unassigned state",
+    "result": "  step 2: Sub interface X3:V100 can configure successfully.\n  step 3: the traffic is reachable and on packets monitor it received at X0:V100 and forwarded out at X2.\n  step 4: the traffic is reachable."
+  },
+  "34": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface, like X0:V100.\n  2. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  3. Send broadcast traffic from PC1.\n  4. Capture packets from DUT.",
+    "initial": "  PC1---(g0/0)Switch(g0/1)---(X0:V100 ip 2.2.2.2) DUT",
+    "id": "34",
+    "title": "Broadcast traffic in VLAN",
+    "result": "  step 4: DUT can receive the broadcast traffic."
+  },
+  "37": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interface , like X0:V100.\n  2. Config X0:V100 and X2 with address.\n  3. Config Switch 1 and set g0/1 as tagged vlan 100 and g0/0 as untagged vlan 100.\n  4. PC 1 is on the same VLAN with X0:V100 and PC2 is in the same VLAN with X2.\n  5. Ping from PC 1 to PC 2",
+    "initial": "  PC 1--(g0/1)Switch 1(g0/0)--(X0:V100)DUT(X2)--(g0/2)Switch 1(g0/3)--PC 2",
+    "id": "37",
+    "title": "[FUNC]Passing traffic (VLAN -> Non-VLAN, different physical interface)",
+    "result": "  step 5: the traffic is reachable."
+  },
+  "43": {
+    "steps": "  1. In the Network->Interfaces page, add a Sub interfaces , like X6:V100.\n  2. In the Network->Routing page, add the following policy:\n  source(any)---destination(192.168.16.0/24)--service(any)--gateway(192.168.15.100)---interface(X6:V100)---metric(12)\n  3. Send traffic from the PC1 to the address 192.168.16.x and check the packets captured on the DUT.",
+    "initial": "  PC 1--(X0)DUT(X6:V100 ip 192.168.15.50)----(X6:V100 ip 192.168.15.100)FW(X3 ip 192.168.16.x)",
+    "id": "43",
+    "title": "Static Route for VLAN",
+    "result": "  step3: the traffic out of the DUT destinated to the address 192.168.16.x will forward out by the X6:V100."
+  },
+  "5": {
+    "steps": "  1. In the Network->Interfaces page, make sure that X2 interface is in transparent mode.\n  2. Add a Sub interface with LAN/WAN/DMZ zone and with X2 Parent Interface, like X2:V100.\n  3. Send ping traffic from PC1 to PC2.",
+    "initial": "  PC1-----Switch------(X0:V100)DUT(X2)-----PC2",
+    "id": "5",
+    "title": "Parent interface in Transparent mode",
+    "result": "  step 2: Sub interface X2:V100 can configure successfully.\n  step 3: it is reachable."
+  }
+}

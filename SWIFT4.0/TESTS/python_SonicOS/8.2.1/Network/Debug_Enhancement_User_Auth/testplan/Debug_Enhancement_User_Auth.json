@@ -1,0 +1,233 @@
+{
+    "1515230": {
+        "id": "1515230",
+        "title": "Verify user dbg commands added in CLI",
+        "result": "2. the output should be like below:\nconfig(2CB8ED4ACFF4)# dbg (config-dbg)# user &lt;cr&gt; (config-dbg)# user (config-dbg-user)# System Commands: cancel Cancel current changes and return to the previous mode. clear Reset functions. cli CLI configuration. commit Commit configuration changes. end Exits current mode and returns to global configuration mode. exit Exit the current mode. export Export system status or configuration. help Display command help. no Negate a command or set its defaults. show Show system status or configuration. USER Commands: auth-level Set user auth debug level(0 ~ 10). conn-level Set user conn debug level(0 ~ 10). ha-level Set user ha debug level(0 ~ 10). ip-level Set user ip debug level(0 ~ 10). 3. user dbg commands could be commit successfully\n4. \"show dbg user\" can return all current user dbg settings, including the enabled settings in step3.",
+        "initial": "",
+        "steps": "1. Go to CLI, enter config mode\n2. input \"dbg\" to enter debug mode, input \"user\" to enter user debug mode, input \"?\" to check whether user dbg commands are list there\n3. configure some user debug commands and commit\n4. use command \"show dbg user\" to check curent user dbg settings."
+    },
+    "1515231": {
+        "id": "1515231",
+        "title": "Verify user dbg command: auth-level",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nAUTH: 02/20 17:23:32.368: Admin user admin logged in from 10.103.50.209<br />AUTH: 02/20 17:23:32.368: User admin logged in from 10.103.50.209,0<br />AUTH: 02/20 17:23:32.368: Admin user admin login completed from 10.103.50.209, mode Full-Config\n4. Output stopped",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"user auth\" by fllowing commands:\n(config-dbg-user)# auth-level &lt;0 10&gt;\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\nauth_debug=&lt;0..10&gt;\n3. Login FW via GUI, observe the console output in both Gen7 and Gen6\n4. Disable \"auth_debug\", login FW via GUI, observe the console output in both Gen7 and Gen6 Gen6:\nauth_debug=0\nGen7:\nauth_level=0\ncommit"
+    },
+    "1515236": {
+        "id": "1515236",
+        "title": "Verify auth ldap commands added in CLI",
+        "result": "2.the output should be like below:\n(config-dbg-auth)# ldap \n all enable all ldap debug\n args enable ldap arguments debug\n ber enable ldap ber debug\n client enable ldap client debug\n conns enable ldap conns debug\n daemon enable ldap daemon debug\n filter enable ldap filter debug\n nameresolve enable ldap nameresolve debug\n packets enable ldap packets debug\n parse enable ldap parse debug\n pktdump enable ldap pktdump debug\n relay enable ldap relay debug\n socketdump enable ldap socketdump debug\n tool enable ldap tool debug\n toolverbose enable ldap toolverbose debug\n trace enable ldap trace debug\n4.\"show dbg auth\" can return all current auth ldap dbg settings, including the enabled settings in step3.\n",
+        "initial": "",
+        "steps": "1. Go to CLI, enter config mode\n2. input \"dbg\" to enter debug mode, input \"auth\" to enter auth debug mode, then input \"ldap\", input \"?\" to check whether user dbg commands are list there\n3. configure some ldap debug commands and commit\n4. use command \"show dbg auth\" to check curent auth ldap dbg settings."
+    },
+    "1708674": {
+        "id": "1708674",
+        "title": "Verify auth dbg command: log-to console",
+        "result": "Debug trace messages should be in console,a huge amount of text being printed prefixed by \"AUTH:\".",
+        "initial": "",
+        "steps": "1.Go to CLI, enter into config mode,then put into the following commands\nconfig(serial number)# dbg\n(config-dbg)# general-settings\n(config-dbg-general)# log-to console\n(config-dbg-general)# commit\n(config-dbg-general)# exit\n(config-dbg)# user\n(config-dbg-user)# auth-level 0\n(config-dbg-user)# commit\n(config-dbg-user)# exit"
+    },
+    "1708675": {
+        "id": "1708675",
+        "title": "Verify auth dbg command: log-to file",
+        "result": "Download system logs, go to /data/sonicwall/sonicos/logs/dbg-trace.log\nCheck dbg-trace.log,debug trace messages should be in it,a huge amount of text being printed prefixed by \"AUTH:\".",
+        "initial": "",
+        "steps": "1.Go to CLI, enter into config mode,then put into the following commands\nconfig(serial number)# dbg\n(config-dbg)# general-settings\n(config-dbg-general)# log-to file\n(config-dbg-general)# commit\n(config-dbg-general)# exit\n(config-dbg)# user\n(config-dbg-user)# auth-level 6\n(config-dbg-user)# commit\n(config-dbg-user)# exit\n\n2.Go to Diagnostics/Tech Support Report page, download the systemlog file.\n3. Decrypt the systemlog file on page http://10.202.6.105:8888/\n Select Coredump File: Local, select the systemlog file\n SonicCore Version:Decryption only.\nA decrypted file with suffix .tar.zxt will be downloaded automatically.\n\n4. On a linux pc, install zstd. Then unzip file with command zstd, like:\n   zstd -d scsystemlogs_18C2417F57A8_2024-8-13_17-24-56.tar.zst  -o systemlog.tar\n\n5. Run tar command to unzip the .tar file like:\n    tar -xvf systemlog.tar\n\n6. View the the dbg-trace.log file:\n    cat ./logs/dbg-trace.log\n"
+    },
+    "1708676": {
+        "id": "1708676",
+        "title": "Verify auth dbg command: log-to syslog",
+        "result": "1.In syslog server, all syslog servers can received the logs,a huge amount of text being printed prefixed by \"AUTH:\".\n2.In syslog server, only server profile=1 can received the logs,a huge amount of text being printed prefixed by \"AUTH:\".",
+        "initial": "Add syslog servers from 0 to 23 in syslog page",
+        "steps": "1.Go to CLI, enter into config mode,then put into the following commands.Make sure no server profile was set before\nconfig(serial number)# dbg\n(config-dbg)# general-settings\n(config-dbg-general)# log-to syslog\n(config-dbg-general)# commit\n(config-dbg-general)# exit\n(config-dbg)# user\n(config-dbg-user)# auth-level 6\n(config-dbg-user)# commit\n(config-dbg-user)# exit \n\n2.Go to CLI, enter into config mode,Make sure syslog server profile was set as 1 previouly.\nconfig(serial number)# dbg\n(config-dbg)# general-settings\n(config-dbg-general)# log-to syslog\n(config-dbg-general)# commit\n(config-dbg-general)# exit\n(config-dbg)# user\n(config-dbg-user)# auth-level 6\n(config-dbg-user)# commit\n(config-dbg-user)# exit"
+    },
+    "1515232": {
+        "id": "1515232",
+        "title": "Verify user dbg command: conn-level",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nUSRCON: 02/20 01:56:44.320: Added conn handle 0xffff3806e3e0 with tag 0x4af7ce61 to flow-rep table of user admin @ 10.103.50.209,0<br />USRCON: 02/20 01:56:44.320: Added conn handle 0xffff4008bd60 with tag 0x3a49fab4 to flow-rep table of user admin @ 10.103.50.209,0\n\n<span>4. Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"user conn\" by fllowing commands:\n(config-dbg-user)# conn-level &lt;0 10&gt;<br />(config-dbg-user)# commi\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\nUser_conn_debug=&lt;0..10&gt;\n3. Login FW via GUI, observe the console output in both Gen7 and Gen6\n4. Disable \"auth_debug\", login FW via GUI, observe the console output in both Gen7 and Gen6 Gen6:\nuser_conn_debug=0\nGen7:\nconn_debug=0\ncommit"
+    },
+    "1515233": {
+        "id": "1515233",
+        "title": "Verify user dbg command: ha-level",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nadmin@2CB8ED4ACFF4&gt; USER HA: 02/20 02:10:06.896: - User is managing as a rd-only admin<br />USER HA: 02/20 02:10:19.944: - User is managing as a rd-only admin<br />USER HA: 02/20 02:10:32.208: - User is managing as a rd-only admin<br />USER HA: 02/20 02:11:41.160: - User is managing as a rd-only admin\n4<span>. Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"user ha\" by fllowing commands:\n(config-dbg-user)# ha-level &lt;0 10&gt;\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\nuser_ha_debug=&lt;0..10&gt;\n3. Login FW via GUI, observe the console output in both Gen7 and Gen6\n4. Disable \"ha_debug\", login FW via GUI, observe the console output in both Gen7 and Gen6 Gen6:\nGen6:\nuser_ha_debug=0\nGen7:\nha_level=0\ncommit"
+    },
+    "1515234": {
+        "id": "1515234",
+        "title": "Verify user dbg command: ip-level",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nUSRIP: 02/20 02:29:15.896: newUserIp: 10.103.50.209,0 lognType 3, event 2<br />USRIP: 02/20 02:29:15.896: ### newUserIp(), Setting user group bit mask Null ####\nUSRIP: 02/20 02:29:15.896: Added entry (0xaaaaca619c20, 0xaaaaca6192c0) (10.103.50.209,0) to main tree<br />USRIP: 02/20 02:29:15.896: Added logn entry type 3 to 10.103.50.209,0 (sessType 0)<br />USRIP: 02/20 02:29:15.896: updateUserIp: (0xaaaaca619c20, 0xaaaaca6192c0): 10.103.50.209,0 type=2 (PwdPending)<br />USRIP: 02/20 02:29:15.896: - flags 0x00001001\n4<span>. Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"user ip\" by fllowing commands:\n(config-dbg-user)# ip-level &lt;0 10&gt;\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\nuserip_debug=&lt;0..10&gt;\n3. Login FW via GUI, observe the console output in both Gen7 and Gen6\n4. Disable \"ip_debug\", login FW via GUI, observe the console output in both Gen7 and Gen6 Gen6:\nGen6\nuserip_debug=0\nGen7:\nip-level=0\ncommit"
+    },
+    "1515235": {
+        "id": "1515235",
+        "title": "Verify auth dbg command: cia",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nUser:CIA: 02/20 18:54:16.800: Ping to agent 3.3.3.3 timed out, retries left 0<br />CIA: 02/20 18:54:16.800: Returning ping reply, errCode -5<br />CIA: 02/20 18:54:16.800: ciaDeadAgentCallBk: rslt -5 for id 1<br />CIA: 02/20 18:54:16.800: Removing node 0xffff58044130<br />CIA: 02/20 18:54:20.800: ciaCheckDeadAgents: fromTimer 1, timer running<br />CIA: 02/20 18:54:20.800: ciaCheckDeadAgents: checking agent 3.3.3.3:2258\n<span>4. Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"cia\" by fllowing commands:\nconfig-dbg-auth)# cia 9\ncommit\n<span>2. In Gen6 firewall (for compare), enable the same debug command in vxshell:</span>\n-&gt; cia_debug=9<br />cia_debug = 0x86970eb0: value = 9 = 0x9\n<span>3. User=&gt;settings, enable \"SSO agent</span><span>\" on \"Single-sign-on method(s):\" line, config SSO</span><span>, </span><span>add sso agent</span><span>, Observe the console output in both Gen7 and Gen6</span>\n4. Disable \"cia\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt;cia_debug=0\nGen7:\nconfig-dbg-auth)# cia 0\ncommit"
+    },
+    "1515237": {
+        "id": "1515237",
+        "title": "Verify auth dbg command: ldap all",
+        "result": "1. Gen7 debug commands could be commited successfully\n2. Log printed\n3.<span>Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap all\" by fllowing commands:\nconfig-dbg-auth)# ldap all\ncommit\n2. User=&gt;settings=&gt;configure ldap, add ldap server then enable it, Observe the console output\n3. Disable \"ldap all\", Observe the console output\nGen7:\nno ldap all\ncommit"
+    },
+    "1515238": {
+        "id": "1515238",
+        "title": "Verify auth dbg command: ldap args",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nldap_build_search_req ATTRS: dn<br />ldap_build_search_req ATTRS: dn<br />ldap_build_search_req ATTRS: subschemaSubentry supportedExtension<br />ldap_build_search_req ATTRS: matchingRules matchingRuleUse\n<span>4. Output stopped</span>",
+        "initial": "",
+        "steps": "<span>1. In Gen7 DUT, enable debug for \"ldap args\" by fllowing commands:</span>\n<span>config-dbg-auth)# ldap args</span>\n<span>commit</span>\n<span>2. In Gen6 firewall (for compare), enable the same debug command in vxshell:</span>\n<span>-&gt; Shell task 'tShell0' started...</span>\n<span>Type another &lt;Enter&gt; to enter the vxWorks shell.</span>\n<span>-&gt; ldap_debug=4</span>\n3. User=&gt;settings=&gt;configure ldap, disable ldap server then enable it, Observe the console output in both Gen7 and Gen6\n<span>4. Disable \"ldap args\", Observe the console output in both Gen7 and Gen6</span>\n<span>Gen6:</span>\n<span>-&gt; ldap_debug=0</span>\n<span>Gen7:</span>\n<span>no ldap args</span>\n<span></span>commit"
+    },
+    "1515239": {
+        "id": "1515239",
+        "title": "Verify auth dbg command: ldap ber",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nldapAsyncGotSrchResult: Size limit exceeded (4)\n<span>4. Output stopped</span>",
+        "initial": "setup ldap server",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap ber\" by fllowing commands:\nconfig-dbg-auth)# ldap ber\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\n-&gt; Shell task 'tShell0' started...\nType another &lt;Enter&gt; to enter the vxWorks shell.\n-&gt; ldap_debug=0x0010\n<span>3. User=&gt;settings=&gt;configure ldap, config ldap server, click schema tab and read it from server or edit it, Observe the console output in both Gen7 and Gen6</span>\n4. Disable \"ldap ber\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt; ldap_debug=0\nGen7:\nno ldap ber\ncommit"
+    },
+    "1515240": {
+        "id": "1515240",
+        "title": "Verify auth dbg command: ldap clients",
+        "result": "1. Gen7 debug commands could be commited successfully\n2. In Gen7 should be able to see console output:\nLDAP: 03/11 18:56:50.352: ldapReadUsrsOrGrpsBegin: Starting full import of users from server 10.8.128.194<br />LDAP: 03/11 18:56:50.352: ldapHandleRqstMessage: Got Get Users request<br />LDAP: 03/11 18:56:50.352: ldapDoGetUsrsOrGrpsRequest: searching for all users\n<span>3.</span><span>Output stopped</span>",
+        "initial": "<span>Set up ldap server</span>",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap clients\" by fllowing commands:\nconfig-dbg-auth)# ldap clients\ncommit\n2. User=&gt;settings=&gt;configure ldap, import users, Observe the console output\n(config-user-ldap)# import type user-list from server 10.8.128.194\n\n3. Disable \"ldap clients\", Observe the console output\nGen7:\nno ldap clients\ncommit"
+    },
+    "1515241": {
+        "id": "1515241",
+        "title": "Verify auth dbg command: ldap conns",
+        "result": "1. Gen7 debug commands could be commited successfully\n2. In Gen7 should be able to see console output:\n(config-user-ldap)# test 10.8.128.194 type ldap-search basic ldap1 use user login-name <br />Unable to chase referral \"ldap://ForestDnsZones.ldapqa.com/DC=ForestDnsZones,DC=ldapqa,DC=com\" (-1: Can't contact LDAP server)<br />Unable to chase referral \"ldap://DomainDnsZones.ldapqa.com/DC=DomainDnsZones,DC=ldapqa,DC=com\" (-1: Can't contact LDAP server)<br />Unable to chase referral \"ldap://ldapqa.com/CN=Configuration,DC=ldapqa,DC=com\" (-1: Can't contact LDAP server)\n\n3.<span>Output stopped</span>",
+        "initial": "Set up ldap server",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap conns\" by fllowing commands:\nconfig-dbg-auth)# ldap conns\ncommit\n2. User=&gt;settings=&gt;configure ldap, click test tab and perform <span>LDAP search</span>, Observe the console output\n<span>(config-user-ldap)# test 10.8.128.194 type ldap-search basic ldap1 use user login-name</span>\n3. Disable \"ldap conns\", Observe the console output\n\nGen7:\nno ldap conns\ncommit"
+    },
+    "1515242": {
+        "id": "1515242",
+        "title": "Verify auth dbg command: ldap filter",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nldapAsyncGotSrchResult: Size limit exceeded (4)\n4. Output stopped",
+        "initial": "<span>setup ldap server</span>",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap filter\" by fllowing commands:\nconfig-dbg-auth)# ldap filter\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\n-&gt; Shell task 'tShell0' started...\nType another &lt;Enter&gt; to enter the vxWorks shell.\n-&gt; ldap_debug=0x0020\n3. User=&gt;settings=&gt;configure ldap, config ldap server, click schema tab and read it from server or edit it, Observe the console output in both Gen7 and Gen6\n4. Disable \"ldap ber\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt; ldap_debug=0\nGen7:\nno ldap filter\ncommit"
+    },
+    "1515243": {
+        "id": "1515243",
+        "title": "Verify auth dbg command: ldap daemon",
+        "result": "1. Gen7 debug commands could be commited successfully\n2. In Gen7 should be able to see console output:\nLDAP: 03/11 19:15:00.832: Sending Get Users/Groups request # 944 on /pipe/ldap-async<br />LDAP: 03/11 19:15:00.832: ldapHandlePipeRqsts: read 48 bytes from /pipe/ldap-async: request type Get Users/Groups # 944<br />LDAP: 03/11 19:15:00.832: ldapHandlePipeRqsts: reading 40 more bytes from /pipe/ldap-async<br />LDAP: 03/11 19:15:00.832: ldapHandlePipeRqsts: read 40 more bytes from /pipe/ldap-async<br />LDAP: 03/11 19:15:00.832: Got a Get Users/Groups request length 88 # 944 on /pipe/ldap-async?N}??, server 10.8.128.194<br />LDAP: 03/11 19:15:00.832: ldapHandleRqstMessage: tLdapAsyncTask starting new request to server 10.8.128.194:389<br />LDAP: 03/11 19:15:00.832: ldapHandleRqstMessage: Got Get Users request<br />LDAP: 03/11 19:15:00.832: Sending Daemon Re-listen for server 'any' to tLdapAsyncTask<br />LDAP: 03/11 19:15:00.832: Sending Daemon Re-listen request # 945 on /pipe/ldap-async<br />LDAP: 03/11 19:15:00.832: ldapSendToPipe: written 48 bytes to /pipe/ldap-async<br />LDAP: 03/11 19:15:00.832: ldapHandleRqstMessage: Request completed\n3.Output stopped",
+        "initial": "<span>Set up ldap server</span>",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap daemon\" by fllowing commands:\nconfig-dbg-auth)# ldap daemon\ncommit\n2. User=&gt;settings=&gt;configure daemon, import users, Observe the console output\n(config-user-ldap)# import type user-list from server 10.8.128.194\n\n3. Disable \"ldap daemon\", Observe the console output\nGen7:\nno ldap daemon\ncommit"
+    },
+    "1515244": {
+        "id": "1515244",
+        "title": "Verify auth dbg command: ldap nameresolve",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nLDAP_gethostbyname_r failed to resolve 'ForestDnsZones.ldapqa.com'<br />swLdapResolveHostName: resolved 'DomainDnsZones.ldapqa.com' to <br />LDAP_gethostbyname_r failed to resolve 'DomainDnsZones.ldapqa.com'<br />swLdapResolveHostName: resolved 'ldapqa.com' to <br />LDAP_gethostbyname_r failed to resolve 'ldapqa.com'\n4.<span>Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap nameresolve\" by fllowing commands:\nconfig-dbg-auth)# ldapnameresolve\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\n3. User=&gt;settings=&gt;configure ldap, click \"test\" tab, perform <span>\"</span><label for=\"ldapTstType2\" title=\"\">LDAP search\"</label>, Observe the console output in both Gen7 and Gen6\n4. Disable \"ldap nameresolve\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt; ldap_debug=0\nGen7:\nno ldap nameresolve\ncommit"
+    },
+    "1515245": {
+        "id": "1515245",
+        "title": "Verify auth dbg command: ldap packets",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nSending Bind Request, len=0x38<br />Sending Bind Request, len=0x38<br />Sending Bind Request, len=0x38<br />Got bind response, len=0x10<br />Sending Search Request, len=0x55<br />Got bind response, len=0x10<br />Sending Search Request, len=0x55<br />Got bind response, len=0x10<br />Sending Search Request, len=0x44<br />Got search-entry response, len=0xf0<br />Got search-result response, len=0x10<br />Sending Search Request, len=0xe7<br />Got search-entry response, len=0x33<br />Got search-result response, len=0x10<br />Got search-entry response, len=0x2a<br />Got search-result response, len=0x10<br />Sending Search Request, len=0x44<br />Got search-entry response, len=0x49<br />Got search-result response, len=0x10<br />Got search-entry response, len=0x2a<br />Got search-result response, len=0x10<br />Sending Search Request, len=0x46<br />Got search-entry response, len=0x2c<br />Got search-result response, len=0x10<br />Sending Unbind Request, len=0x07<br />Sending Unbind Request, len=0x07<br />Sending Unbind Request, len=0x07\n4. Output stopped",
+        "initial": "setup ldap server",
+        "steps": "<span style=\"font-size: 10px;\">1. In Gen7 DUT, enable debug for \"ldap packet\" by fllowing commands:</span>\n<span style=\"font-size: 10px;\">config-dbg-auth)# ldap packets</span>\n<span style=\"font-size: 10px;\">commit</span>\n<span style=\"font-size: 10px;\">2. In Gen6 firewall (for compare), enable the same debug command in vxshell:</span>\n<span style=\"font-size: 10px;\">-&gt; Shell task 'tShell0' started...</span>\n<span style=\"font-size: 10px;\">Type another &lt;Enter&gt; to enter the vxWorks shell.</span>\n<span style=\"font-size: 10px;\">-&gt; ldap_debug=2</span>\n<span style=\"font-size: 10px;\">ldap_debug = 0x869c14c8: value = 2 = 0x2</span><span></span>\n<span style=\"font-size: 10px;\">3. User=&gt;settings=&gt;configure ldap, disable ldap server then enable it, Observe the console output in both Gen7 and Gen6</span><span></span>\n<span style=\"font-size: 10px;\">4. Disable \"ldap packets\", Observe the console output in both Gen7 and Gen6</span>\n<span style=\"font-size: 10px;\">Gen6:</span>\n<span style=\"font-size: 10px;\">-&gt; ldap_debug=0</span>\n<span style=\"font-size: 10px;\">Gen7:</span>\n<span style=\"font-size: 10px;\">no ldap packets</span>\n<span style=\"font-size: 10px;\"></span><span>commit</span>"
+    },
+    "1515246": {
+        "id": "1515246",
+        "title": "Verify auth dbg command: ldap parse",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nUnable to chase referral \"ldap://DomainDnsZones.ldapqa.com/DC=DomainDnsZones,DC=ldapqa,DC=com\" (-1: Can't contact LDAP server)<br />Unable to chase referral \"ldap://ldapqa.com/CN=Configuration,DC=ldapqa,DC=com\" (-1: Can't contact LDAP server)<br />Unable to chase referral \"ldap://ForestDnsZones.ldapqa.com/DC=ForestDnsZones,DC=ldapqa,DC=com\" (-1: Can't contact LDAP server)<br />Unable to chase referral \"ldap://DomainDnsZones.ldapqa.com/DC=DomainDnsZones,DC=ldapqa,DC=com\" (-1: Can't contact LDAP server)<br />Unable to chase referral \"ldap://ldapqa.com/CN=Configuration,DC=ldapqa,DC=com\" (-1: Can't contact LDAP server)\n4.<span>Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap parse\" by fllowing commands:\nconfig-dbg-auth)# ldap parse\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\n\n3. User=&gt;settings=&gt;configure ldap, click \"test\" tab, test <span></span><label for=\"ldapTstType2\" title=\"\">LDAP search</label>, Observe the console output in both Gen7 and Gen6\n4. Disable \"ldap packets\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt; ldap_debug=0\nGen7:\nno ldap parse\ncommit"
+    },
+    "1515247": {
+        "id": "1515247",
+        "title": "Verify auth dbg command: ldap pktdump",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\n0000: 30 36 02 01 02 60 31 02 01 03 04 22 63 6e 3d 6c 06...`1....\"cn=l <br /> 0010: 64 61 70 31 2c 63 6e 3d 55 73 65 72 73 2c 64 63 dap1,cn=Users,dc <br /> 0020: 3d 6c 64 61 70 71 61 2c 64 63 3d 63 6f 6d 80 08 =ldapqa,dc=com.. <br /> 0030: 2a 2a 2a 2a 2a 2a 2a 2a ******** <br /> 0000: 30 36 02 01 02 60 31 02 01 03 04 22 63 6e 3d 6c 06...`1....\"cn=l <br /> 0010: 64 61 70 31 2c 63 6e 3d 55 73 65 72 73 2c 64 63 dap1,cn=Users,dc <br /> 0020: 3d 6c 64 61 70 71 61 2c 64 63 3d 63 6f 6d 80 08 =ldapqa,dc=com.. <br /> 0030: 2a 2a 2a 2a 2a 2a 2a 2a ********\n<span>4. Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap pktdump\" by fllowing commands:\nconfig-dbg-auth)# ldap pktdump\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\n3. User=&gt;settings=&gt;configure ldap, disable ldap server then enable it, Observe the console output in both Gen7 and Gen6\n4. Disable \"ldap pktdump\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt; ldap_debug=0\nGen7:\nno ldap pktdump\ncommit"
+    },
+    "1515248": {
+        "id": "1515248",
+        "title": "Verify auth dbg command: ldap relay",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6\nHA: TaskId : tWebMain02 (setIfHaSnmpMgmtNatPolicy 1819 4826148)02/18 19:40:40.000: firewall not configured for HA<br />LDAP: 02/18 19:40:40.000: ldapRelayOnIf: relay is enabled on if X1<br />HA: TaskId : tWebMain02 (setIfHaSnmpMgmtNatPolicy 1819 4826148)02/18 19:40:40.000: firewall not configured for HA<br />LDAP: 02/18 19:40:40.000: ldapRelayOnIf: relay is not enabled on if X2<br />HA: TaskId : tWebMain02 (setIfHaSnmpMgmtNatPolicy 1819 4826148)02/18 19:40:40.000: firewall not configured for HA<br />LDAP: 02/18 19:40:40.000: ldapRelayOnIf: relay is not enabled on if X3\n\n<span>4. Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap relay\" by fllowing commands:\nconfig-dbg-auth)# ldap relay\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\n<span>3. User=&gt;settings=&gt;configure ldap, click \"ldap relay\" tab,enale ldap relay</span><span>, Observe the console output in both Gen7 and Gen6</span>\n4. Disable \"ldap relay\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt; ldap_debug=0\nGen7:\nno ldap relay\ncommit"
+    },
+    "1515249": {
+        "id": "1515249",
+        "title": "Verify auth dbg command: ldap socketdump",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nldap_write: want=56, written=56<br /> 0000: 30 36 02 01 02 60 31 02 01 03 04 22 63 6e 3d 6c 06...`1....\"cn=l <br /> 0010: 64 61 70 31 2c 63 6e 3d 55 73 65 72 73 2c 64 63 dap1,cn=Users,dc <br /> 0020: 3d 6c 64 61 70 71 61 2c 64 63 3d 63 6f 6d 80 08 =ldapqa,dc=com.. <br /> 0030: 74 65 73 74 40 30 30 30 test@000 <br />ldap_read: want=8, got=8<br /> 0000: 30 84 00 00 00 10 02 01 0....... <br />ldap_read: want=14, got=14<br /> 0000: 02 61 84 00 00 00 07 0a 01 00 04 00 04 00 .a............ <br />ldap_write: want=85, written=85<br /> 0000: 30 53 02 01 03 63 4e 04 22 63 6e 3d 6c 64 61 70 0S...cN.\"cn=ldap <br /> 0010: 31 2c 63 6e 3d 55 73 65 72 73 2c 64 63 3d 6c 64 1,cn=Users,dc=ld <br /> 0020: 61 70 71 61 2c 64 63 3d 63 6f 6d 0a 01 00 0a 01 apqa,dc=com..... <br /> 0030: 00 02 01 00 02 01 0a 01 01 00 87 0b 6f 62 6a 65 ............obje <br /> 0040: 63 74 63 6c 61 73 73 30 0c 04 0a 61 64 6d 69 6e ctclass0...admin <br /> 0050: 43 6f 75 6e 74 Count\n<span>4. Output stopped</span>",
+        "initial": "",
+        "steps": "<span>1. In Gen7 DUT, enable debug for \"ldap socketdump\" by fllowing commands:</span>\n<span>config-dbg-auth)# ldap socketdump</span>\n<span>commit</span>\n<span>2. In Gen6 firewall (for compare), enable the same debug command in vxshell:</span>\n<span>3. User=&gt;settings=&gt;configure ldap, disable ldap server then enable it, Observe the console output in both Gen7 and Gen6</span>\n<span>4. Disable \"ldap socket-dump\", Observe the console output in both Gen7 and Gen6</span>\n<span>Gen6:</span>\n<span>-&gt; ldap_debug=0</span>\n<span>Gen7:</span>\n<span>no ldap socketdump</span>\n<span></span>commit"
+    },
+    "1515250": {
+        "id": "1515250",
+        "title": "Verify auth dbg command: ldap tool",
+        "result": "1. Gen7 debug commands could be commited successfully\n2. In Gen7 should be able to see console output:\nLDAP: 03/11 22:44:06.848: ldapAsyncGotSrchResult: Referral (10)<br />LDAP: 03/11 22:44:06.848: Referral: ldap://mydomain.com/cn=Users,dc=mydomain,dc=com<br />LDAP: 03/11 22:44:06.880: ldapSyncConnDelCB: pLd 0xffff2012b360, expecting (nil)!\n\n<span>3.</span><span>Output stopped</span>",
+        "initial": "<span>Set up ldap server</span>",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap tool\" by fllowing commands:\nconfig-dbg-auth)# ldap tool\ncommit\n2. User=&gt;settings=&gt;configure ldap, click test tab and perform u<span>ser authentication test</span>, Observe the console output\n(config-user-ldap)# test 10.8.128.194 type user-authentication ldap1 test@000\n\n3. Disable \"ldap tool\", Observe the console output\nGen7:\nno ldap tool\ncommit"
+    },
+    "1515251": {
+        "id": "1515251",
+        "title": "Verify auth dbg command: ldap toolverbose",
+        "result": "1. Gen7 debug commands could be commited successfully\n2. In Gen7 should be able to see console output:\nLDAP: 03/11 22:47:47.544: ldapAsyncGotSrchResult: Referral (10)<br />LDAP: 03/11 22:47:47.576: ldapSyncConnDelCB: pLd 0xffff201376f0, expecting (nil)!\n\n3.Output stopped",
+        "initial": "<span>Set up ldap server</span>",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap tool-verbose\" by fllowing commands:\nconfig-dbg-auth)# ldaptool-verbose\ncommit\n2. User=&gt;settings=&gt;configure ldap, click test tab and perform user authentication test, Observe the console output\n(config-user-ldap)# test 10.8.128.194 type user-authentication ldap1 test@000\n\n3. Disable \"ldap tool-verbose\", Observe the console output\nGen7:\nno ldaptool-verbose\ncommit"
+    },
+    "1515252": {
+        "id": "1515252",
+        "title": "Verify auth dbg command: ldap trace",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nadmin@2CB8ED4ACFF4&gt; ldap_create<br />ldap_url_parse_ext(ldap://10.8.128.194:389)<br />ldap_sasl_bind<br />ldap_send_initial_request<br />ldap_new_connection 1 1 0<br />ldap_int_open_connection<br />ldap_connect_to_host: TCP 10.8.128.194:389<br />ldap_new_socket: 233<br />ldap_prepare_socket: 233<br />ldap_connect_to_host: Trying 10.8.128.194:389<br />ldap_pvt_connect: fd: 233 tm: 10 async: -1<br />ldap_ndelay_on: 233<br />attempting to connect: <br />connect errno: 115<br />ldap_int_poll: fd: -1 tm: 0<br />ldap_sasl_bind<br />ldap_send_initial_request<br />ldap_int_poll: fd: 233 tm: 0<br />ldap_is_sock_ready: 233<br />ldap_ndelay_off: 233<br />ldap_open_defconn: successful<br />ldap_send_server_request<br />ldap_result ld 0xffff180599f0 msgid 2<br />wait4msg ld 0xffff180599f0 msgid 2 (timeout 0 usec)<br />wait4msg continue ld 0xffff180599f0 msgid 2 all 1<br />** ld 0xffff180599f0 Connections:<br />* host: 10.8.128.194 port: 389 (default)<br /> refcnt: 2 status: Connected<br /> last used: Tue Feb 18 12:47:44 2020\n<br />** ld 0xffff180599f0 Outstanding Requests:<br /> * msgid 2, origid 2, status InProgress<br /> outstanding referrals 0, parent count 0<br /> ld 0xffff180599f0 request count 1 (abandoned 0)<br />** ld 0xffff180599f0 Response Queue:<br /> Empty<br /> ld 0xffff180599f0 response count 0<br />ldap_chkResponseList ld 0xffff180599f0 msgid 2 all 1<br />ldap_chkResponseList returns ld 0xffff180599f0 NULL<br />ldap_int_select<br />read1msg: ld 0xffff180599f0 msgid 2 all 1<br />read1msg: ld 0xffff180599f0 msgid 2 message type bind<br />read1msg: ld 0xffff180599f0 0 new referrals<br />read1msg: mark request completed, ld 0xffff180599f0 msgid 2<br />request done: ld 0xffff180599f0 msgid 2<br />res_errno: 0, res_error: &lt;&gt;, res_matched: &lt;&gt;<br />ldap_free_request (origid 2, msgid 2)<br />ldap_parse_result<br />ldap_msgfree<br />ldap_extended_operation<br />ldap_send_initial_request<br />ldap_send_server_request<br />ldap_result ld 0xffff180599f0 msgid -1<br />wait4msg ld 0xffff180599f0 msgid -1 (timeout 0 usec)<br />wait4msg continue ld 0xffff180599f0 msgid -1 all 0<br />** ld 0xffff180599f0 Connections:<br />* host: 10.8.128.194 port: 389 (default)<br /> refcnt: 2 status: Connected<br /> last used: Tue Feb 18 12:47:44 2020\n<br />** ld 0xffff180599f0 Outstanding Requests:<br /> * msgid 3, origid 3, status InProgress<br /> outstanding referrals 0, parent count 0<br /> ld 0xffff180599f0 request count 1 (abandoned 0)<br />** ld 0xffff180599f0 Response Queue:<br /> Empty<br /> ld 0xffff180599f0 response count 0<br />ldap_chkResponseList ld 0xffff180599f0 msgid -1 all 0<br />ldap_chkResponseList returns ld 0xffff180599f0 NULL<br />ldap_int_select<br />read1msg: ld 0xffff180599f0 msgid -1 all 0<br />read1msg: ld 0xffff180599f0 msgid 3 message type extended-result<br />read1msg: ld 0xffff180599f0 0 new referrals<br />read1msg: mark request completed, ld 0xffff180599f0 msgid 3<br />request done: ld 0xffff180599f0 msgid 3<br />res_errno: 0, res_error: &lt;&gt;, res_matched: &lt;&gt;<br />ldap_free_request (origid 3, msgid 3)<br />ldap_parse_extended_result<br />ldap_parse_result<br />ldap_msgfree<br />ldap_free_connection 1 1<br />ldap_send_unbind<br />ldap_free_connection: actually freed\n<br /><br /><br />\n4. Output stopped",
+        "initial": "",
+        "steps": "<span>1. In Gen7 DUT, enable debug for \"ldap trace\" by fllowing commands:</span>\n<span>config-dbg-auth)# ldap trace</span>\n<span>commit</span>\n<span>2. In Gen6 firewall (for compare), enable the same debug command in vxshell:</span>\n<span>-&gt; Shell task 'tShell0' started...</span>\n<span>Type another &lt;Enter&gt; to enter the vxWorks shell.</span>\n-&gt; ldap_debug=1<br />ldap_debug = 0x869c14c8: value = 1 = 0x1\n<span>3. User=&gt;settings=&gt;configure ldap, click \"test\" tab, test<span>Connectivity / bind test</span>, Observe the console output in both Gen7 and Gen6</span>\n<span>4. Disable \"ldap packets\", Observe the console output in both Gen7 and Gen6</span>\n<span>Gen6:</span>\n<span>-&gt; ldap_debug=0</span>\n<span>Gen7:</span>\n<span>no ldap trace</span>\n<span>commit</span>"
+    },
+    "1515253": {
+        "id": "1515253",
+        "title": "Verify auth dbg command: rad-acct",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nRADSRVR: 02/20 13:48:34.880: Spawning tRadAcctSrvr<br />RADSRVR:RAD-ACCT: 02/20 13:48:34.89602/20 13:48:34.896: : tRadAcctSrvrInitializing client : running44.4.4.4\nRAD-ACCT: 02/20 13:48:34.896: Alloc client 44.4.4.4 @ 0x2d117d88<br />RAD-ACCT: 02/20 13:48:34.912: Starting client 0.0.0.0\n<span>4. Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"rad-acct\" by fllowing commands:\nconfig-dbg-auth)# rad-acct 10\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\n-&gt; rad_acct_debug=10<br />rad_acct_debug = 0x86a2f240: value = 10 = 0xa\n\n3. User=&gt;settings, enable \"<span>RADIUS Accounting\" on \"<span>Single-sign-on method(s):\" line, config SSO</span></span>, click\"<span>RADIUS Accounting \" tab, add accounting client</span>, Observe the console output in both Gen7 and Gen6\n4. Disable \"rad_acct\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt; rad_acct_debug=0\nGen7:\nconfig-dbg-auth)# rad-acct 0\ncommit"
+    },
+    "1515254": {
+        "id": "1515254",
+        "title": "Verify auth dbg command: radius",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nadmin@2CB8ED4ACFF4&gt; RADIUS: 02/19 00:52:49.208: authFindSrvrByHostName find RadAuth 10.8.128.101<br />RADIUS: 02/19 00:52:49.208: authServerIpAddr find RadAuth 10.8.128.101 ret 0xffff0c086430<br />RADIUS: 02/19 00:52:49.208: _RadMakeReq: entry username status-check<br />RADIUS: 02/19 00:52:49.208: _RadMakeReq: server 10.8.128.101, timeout/retries 5/3<br />RADIUS: 02/19 00:52:49.208: _RadMakeReq:3946 username status-check<br />RADIUS: 02/19 00:52:49.208: reqWrite: writing into pipe 142<br />RADIUS: 02/19 00:52:49.208: reqWrite: written uiBytes 952<br />RADIUS: 02/19 00:52:49.208: reqRead: allocated context pointer 60002400<br />RADIUS: 02/19 00:52:49.208: reqRead:1510 reading pipe 142<br />RADIUS: 02/19 00:52:49.208: reqRead: read bytes 952<br />RADIUS: 02/19 00:52:49.208: RadReqProcess: Read user name status-check<br />RADIUS: 02/19 00:52:49.224: authFindSrvr RadAuth servers @ partition -1292568744(Default)<br />RADIUS: 02/19 00:52:49.224: RadFirstSrvr: found RadAuth server 10.8.128.101<br />RADIUS: 02/19 00:52:49.224: RadReqProcess: server IP 10.8.128.101 <br />RADIUS: 02/19 00:52:49.224: rcRequestHelper: entry<br />RADIUS: 02/19 00:52:49.224: rc_auth:entry<br />RADIUS: 02/19 00:52:49.224: rc_auth: server 10.8.128.101:1812 @ 0xffff0c086430<br />RADIUS: 02/19 00:52:49.224: RadAddCont: Rad Cont header ident 2 timeout 5<br />RADIUS: 02/19 00:52:49.224: rc_send_server: RadAuth_ipaddr 10.8.128.101 port 1812 context id 2 socket FD 145<br />RADIUS: 02/19 00:52:49.224: rc_send_server:bytes sent 87<br />RADIUS: 02/19 00:52:49.224: radiusRequest:returning 0<br />RADIUS: 02/19 00:52:49.224: RadReqProcess: returning success<br />RADIUS: 02/19 00:52:49.224: RadDemon: Response for server ip 10.8.128.101 socket 145<br />RADIUS: 02/19 00:52:49.224: RadRespProc: received length 20 from RadAuth server 10.8.128.101<br />RADIUS: 02/19 00:52:49.224: RadRespProc: rcvd RadAuth reply, ident 2<br />RADIUS: 02/19 00:52:49.224: RadAuthRespProc: Reply msg type is Reject<br />RADIUS: 02/19 00:52:49.224: RadAuthRespProc: found cont ident 2<br />RADIUS: 02/19 00:52:49.224: RadAuthRespProc: Authentication failed<br />RADIUS: 02/19 00:52:49.224: RadRmvCont: Removing context 0x60002400 with ident 2<br />RADIUS: 02/19 00:52:49.224: RadRmvCont: Cancelling timeout for context 0xFFFF60002400\n4.<span>Output stopped</span>",
+        "initial": "setup radius server",
+        "steps": "1. In Gen7 DUT, enable debug for \"ldap radius\" by fllowing commands:\nconfig-dbg-auth)# ldap radius\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\n3. User=&gt;settings=&gt;configure radius, click \"test\" tab, testConnectivity, Observe the console output in both Gen7 and Gen6\n4. Disable \"ldap radius\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt; ldap_debug=0\nGen7:\nno ldap radius\ncommit"
+    },
+    "1515255": {
+        "id": "1515255",
+        "title": "Verify auth dbg command: sso-api",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\n-&gt; SSO-API: 02/20 14:42:33.240: Initializing client 3.4.3.3<br />SSO-API: 02/20 14:42:33.256: Alloc client 3.4.3.3 @ 0x2cb72a20<br />SSO-API: 02/20 14:42:33.256: Starting client 3.4.3.3\n\n<span>4. Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"sso-api\" by fllowing commands:\nconfig-dbg-auth)# sso-api 10\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\n-&gt; sso_api_debug=10<br />sso_api_debug = 0x86a34810: value = 10 = 0xa\n\n<span>3. User=&gt;settings, enable \"<span>3rd-Party API</span></span><span>\" on \"Single-sign-on method(s):\" line, config SSO</span><span>, click\"3r<span>d-Party API</span></span><span>\" tab, add api client</span><span>, Observe the console output in both Gen7 and Gen6</span>\n4. Disable \"sso-api\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt;sso_api_debug=0\nGen7:\nconfig-dbg-auth)# sso-api 0\ncommit\n<span></span>"
+    },
+    "1515256": {
+        "id": "1515256",
+        "title": "Verify auth dbg command: tacas",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\n% Configuration session preempted by admin via GUI from 10.103.50.209.<br />admin@2CB8ED4ACFF4&gt; TACACS+: 02/20 19:48:26.768: completeTacacs: tacacsEnabled 1<br />TACACS+: 02/20 19:48:26.768: uiTimeOut 25 retryCount 3<br />TACACS+: 02/20 19:48:26.768: startTacacsDaemon: obtained timeout 25<br />TACACS+: 02/20 19:48:26.784: TacMyClientConfigure:entry<br />TACACS+: 02/20 19:48:26.784: in TacMyClientConfigure, alterSvrTime:25, retry:3, singleConn:0, encrypt:0<br />TACACS+: 02/20 19:48:26.784: TacMyClientConfigure:entry<br />TACACS+: 02/20 19:48:26.784: in TacMyClientConfigure, alterSvrTime:5, retry:3, singleConn:0, encrypt:1<br />TACACS+: 02/20 19:48:26.784: initTacServer: Alloc TacAuth server 12.12.12.12 @ 0xffff1c23c290<br />TACACS+: 02/20 19:48:26.784: initTacServer: obtained IP 12.12.12.12<br />TACACS+: 02/20 19:48:26.784: initTacServer: host 12.12.12.12 port 49 isNew 1<br />TACACS+: 02/20 19:48:26.784: Linked TacAuth server 12.12.12.12 into partition Default<br />TACACS+: 02/20 19:48:26.784: startTacacsDaemon: taskSpawn tTacTask\n<span>4. Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"tacas\" by fllowing commands:\nconfig-dbg-auth)# tacas\ncommit\n2. In Gen6 firewall (for compare), enable the same debug command in vxshell:\n-&gt; tacacs_debug=1<br />tacacs_debug = 0x86970c18: value = 1 = 0x1\n3. User=&gt;settings, config <span>TACACS+</span>, add <span>TACACS+ server</span>, Observe the console output in both Gen7 and Gen6\n4. Disable \"tacas\", Observe the console output in both Gen7 and Gen6\nGen6:\ntacacs_debug=0\nGen7:\nconfig-dbg-auth)# no tacas\ncommit"
+    },
+    "1515257": {
+        "id": "1515257",
+        "title": "Verify auth dbg command: tsa",
+        "result": "1. Gen7 debug commands could be commited successfully\n3. In Gen7 should be able to see similar console output as Gen6:\nadmin@2CB8ED4ACFF4&gt; SSO-API: 02/20 19:21:14.096: Removing client 3.3.3.3<br />TSA: 02/20 19:21:37.176: tsaInitAgent: 22.2.2.2 agent=(nil)<br />TSA: 02/20 19:21:37.176: Alloc agent 22.2.2.2 @ 0xffff201115f0\n<span>4. Output stopped</span>",
+        "initial": "",
+        "steps": "1. In Gen7 DUT, enable debug for \"tsa\" by fllowing commands:\nconfig-dbg-auth)# tsa 8\ncommit\n<span>2. In Gen6 firewall (for compare), enable the same debug command in vxshell:</span>\n-&gt; tsa_debug=8<br />tsa_debug = 0x86971354: value = 8 = 0x8\n<span>3. User=&gt;settings, enable \"<span>Terminal Services Agent</span></span><span>\" on \"Single-sign-on method(s):\" line, config SSO</span><span>, click\"<span>Terminal Services</span></span><span>\" tab, add <span>Terminal Services Agent</span></span><span>, Observe the console output in both Gen7 and Gen6</span>\n4. Disable \"sso-api\", Observe the console output in both Gen7 and Gen6\nGen6:\n-&gt;tsa_debug=0\nGen7:\nconfig-dbg-auth)# tsa 0\ncommit"
+    },
+    "1708677": {
+        "id": "1708677",
+        "title": "Verify auth dbg command: log-to syslog any-server",
+        "result": "All syslog servers can receive the logs,a huge amount of text being printed prefixed by \"AUTH:\".",
+        "initial": "Add syslog servers from 0 to 23 in syslog page",
+        "steps": "1.Go to CLI, enter into config mode,then put into the following commands\nconfig(serial number)# dbg\n(config-dbg)# general-settings\n(config-dbg-general)# log-to syslog any-server\n(config-dbg-general)# commit\n(config-dbg-general)# exit\n(config-dbg)# user\n(config-dbg-user)# auth-level 6\n(config-dbg-user)# commit\n(config-dbg-user)# exit"
+    },
+    "1708678": {
+        "id": "1708678",
+        "title": "Verify auth dbg command: log-to syslog server-profile",
+        "result": "In syslog server, only server profile=10 can received the logs,a huge amount of text being printed prefixed by \"AUTH:\".\nServer-profile can only be set from 0 to 23.",
+        "initial": "Add syslog servers from 0 to 23 in syslog page",
+        "steps": "1.Go to CLI, enter into config mode,then put into the following commands\nconfig(serial number)# dbg\n(config-dbg)# general-settings\n(config-dbg-general)# log-to syslog server-profile 10\n(config-dbg-general)# commit\n(config-dbg-general)# exit\n(config-dbg)# user\n(config-dbg-user)# auth-level 6\n(config-dbg-user)# commit\n(config-dbg-user)# exit"
+    }
+}

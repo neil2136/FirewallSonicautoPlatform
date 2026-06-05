@@ -1,0 +1,1076 @@
+{
+   "1993756": {
+      "steps": "  Ian added two LAN to WAN UPE policies as follows:\n  1. Allow everything to bentley.eng.sonicwall.com using an FQDN address object, with no ULA requirement.\n  2. The default policy to allow everything else, with users allowed set to Trusted Users\n  I have all SSO mechanisms disabled apart from RADIUS Accounting SSO.\n  The issue here is that when I try to browse to http://bentley.eng.sonicwall.com I see different behavior depending on whether or not RADIUS Accounting SSO is enabled.\n  RADIUS Accounting SSO enabled: the connection fails reporting that the site can’t be reached.\n  RADIUS Accounting SSO disabled: the connection gets redirected to the login page.\n  Both of these are wrong - the connection should be allowed straight out (there is no ULA requirement in the Bentley rule). The fact that it is getting redirected is due to what is reported in GEN7-23452, so ignoring that here, the question is why does enabling/disabling RADIUS Accounting SSO affect the redirection?\n  Things like RADIUS Accounting SSO, Endpoint Security SSO and 3rd Party SSO API are passive in that they send notifications of logins/logouts, and the firewall can do nothing to send requests to them or to wait for anything from them. So having the policy code try to trigger/wait for SSO when only RADIUS Accounting is enabled, as it’s apparently doing here, does not make sense.\n  The only SSO mechanisms that are applicable for the policy code to decide that it needs to request/wait for SSO are:\n  SSO agent authentication is enabled.\n  TSA is enabled and the connection is coming from a user at a terminal server.\n  NTLM is enabled and the connection is HTTP.",
+      "id": "1993756",
+      "title": "GEN7-23395 - UPE: Enabling RADIUS Accounting SSO affects redirection to login",
+      "result": "  TBD"
+   },
+   "1524291": {
+      "steps": "  Original ID: 53\n  Original Title: User logout by administrator\n  Original Description: The user will ensure that he will be logged out from the firewall if admin deletes the user's entry from the Currently active sessions table on the Users > Status page.",
+      "id": "1524291",
+      "title": "User logout by administrator",
+      "result": "  The entry for the user test is removed from the Currently active sessions table on the Users > Status page on the firewall. The log message User logged out is shown on the firewall. When the user test refreshes the UserLoginStatus window, the window gets closed and the login page is displayed in the main browser window."
+   },
+   "1524261": {
+      "steps": "  Original ID: 26\n  Original Title: Access the VPN from the LAN, allow a super-group\n  Original Description: The user will ensure that only users-members of a group that belong to the super-group can access the VPN from the LAN when the access rule specifies that super-group in the Users Allowed field. ?",
+      "id": "1524261",
+      "title": "Access the VPN from the LAN, allow a super-group",
+      "result": "  The Users Allowed column for the auto-added access rule for the VPN connection in the LAN &gt; VPN table shows \"group2\". When \"test2\" is logged in from the LAN and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test1\" logged to the firewall from the LAN can access the VPN. Pings go through."
+   },
+   "1524217": {
+      "steps": "  Original ID: 120\n  Original Title: User Session Settings for Web Login-enable Enable login session limit for web logins\n  Original Description:",
+      "id": "1524217",
+      "title": "User Session Settings for Web Login-enable Enable login session limit for web logins",
+      "result": "  v"
+   },
+   "1524289": {
+      "steps": "  Original ID: 51\n  Original Title: User Logout, select the Close button\n  Original Description: The user will ensure that he will be logged out from the firewall if he selects the Close button in the UserLogin Status window and pushes the OK button in the following popup message.",
+      "id": "1524289",
+      "title": "User Logout, select the Close button",
+      "result": "  When the user test selects the Close button, the popup message is displayed. The message shows Are you sure you want to navigate away from this page? If you leave this page you will be logged out from the SonicWALL! Press OK to continue, or Cancel to stay on the current page. When the user test pushes the OK button in the message, the UserLoginStatus window gets closed and the login page is displayed in the main window. The log message ?User logged out? is shown on the firewall. The entry for the user test is removed from the Currently active sessions table on the Users > Status page on the firewall."
+   },
+   "1524321": {
+      "steps": "  Original ID: 80\n  Original Title: Acceptable Use Policy is displayed on login from the Custom Zone\n  Original Description: The user will ensure that the Acceptable Use Policy window will be displayed upon user's login from the Custom zone.",
+      "id": "1524321",
+      "title": "Acceptable Use Policy is displayed on login from the Custom Zone",
+      "result": "  When the user \"test\" types his user name and password and, pushes the Login button, the Acceptable Use Policy window gets displayed. It shows test and the following text: Click I Accept to accept these terms and continue, or otherwise select Cancel. Two buttons, Accept and Cancel, are displayed in the window. When the user selects the Accept button, he is logged in to the firewall. The UserLoginStatus window gets displayed."
+   },
+   "1524286": {
+      "steps": "  Original ID: 49\n  Original Title: Access the Internet from the remote end of the tunnel, deny All\n  Original Description: TBD",
+      "id": "1524286",
+      "title": "Access the Internet from the remote end of the tunnel, deny All",
+      "result": "  TBD"
+   },
+   "1524213": {
+      "steps": "  Original ID: 117\n  Original Title: User Web Login Settings-Policy Banner preview\n  Original Description:",
+      "id": "1524213",
+      "title": "User Web Login Settings-Policy Banner preview",
+      "result": "  v"
+   },
+   "1524247": {
+      "steps": "  Original ID: 148\n  Original Title: user status page-filter with type/name/ip\n  Original Description:",
+      "id": "1524247",
+      "title": "user status page-filter with type/name/ip",
+      "result": "  type/name/ip users will be display"
+   },
+   "1524238": {
+      "steps": "  Original ID: 14\n  Original Title: Deny access to the Internet from the DMZ\n  Original Description: The user will ensure that no one can access the Internet from the DMZ when Deny action is selected in the access rule.",
+      "id": "1524238",
+      "title": "Deny access to the Internet from the DMZ",
+      "result": "  The Users Allowed field in the access rule shows All and not available for editing. The Action column in the DMZ &gt; WAN table shows Deny. Admin and \"test1\" cannot access the Internet."
+   },
+   "1524213": {
+      "steps": "  Original ID: 117\n  Original Title: User Web Login Settings-Policy Banner preview\n  Original Description:",
+      "id": "1524213",
+      "title": " User Web Login Settings-Policy Banner preview",
+      "result": "  n"
+   },
+   "1524303": {
+      "steps": "  Original ID: 64\n  Original Title: Login Redirect upon the Internet access from the DMZ\n  Original Description: The user will ensure that LoginRedirect page will be displayed if he attempts to access the Internet from the DMZ without authentication when it is required.",
+      "id": "1524303",
+      "title": "Login Redirect upon the Internet access from the DMZ",
+      "result": "  The browser is redirected to LoginRedirect page and the user is presented with the following screen: Authentication Required. The policy set by your network administrator requires that you authenticate yourself before you can have access to the Internet. To authenticate yourself click on the following link and enter your user name and password to log in to the firewall. Click here to log in. When the user clicks the Click here to log in?link, he is redirected to the login page and can log in from the DMZ."
+   },
+   "1524211": {
+      "steps": "  Original ID: 115\n  Original Title: User Web Login Settings-Policy Banner content edit\n  Original Description:",
+      "id": "1524211",
+      "title": "User Web Login Settings-Policy Banner content edit",
+      "result": "  Should be editable the field of Policy Banner content."
+   },
+   
+   
+      "1524235" : {
+         "steps" : "  Original ID: 137\n  Original Title: Other Global User Settings-function test for http websites\n  Original Description:",
+         "id" : "1524235",
+         "title" : "Other Global User Settings-function test for http websites",
+         "result" : "  User can visit website directly without being asked to provide a credential"
+      },
+      "1524288" : {
+         "steps" : "  Original ID: 50\n  Original Title: User Logout, select the Logout button\n  Original Description: The user will ensure that he will be logged out from the firewall when the Logout button in the User Login Status window is pushed.",
+         "id" : "1524288",
+         "title" : "User Logout, select the Logout button",
+         "result" : "  When the user \"test\" pushes the Logout button, he is logged out from the firewall. The User Login Status window is closed, and the login page is displayed in the main window. The log message User logged out is shown on the firewall. The entry for the user test is removed from the Currently active sessions table on the Users &gt; Status page on the firewall."
+      },
+      "1524265" : {
+         "steps" : "  Original ID: 3\n  Original Title: Access the Internet from the LAN, allow Everyone\n  Original Description: The user will ensure that only authenticated users can access the Internet from the LAN when the access rule specifies Everyone in the Users Allowed field.",
+         "id" : "1524265",
+         "title" : "Access the Internet from the LAN, allow Everyone",
+         "result" : "  The Users Allowed column in the LAN &gt; WAN table shows Everyone. Admin logged to the firewall can access the Internet. When admin is logged out and unauthenticated user tries to access the Internet, the access is not allowed. Login Redirect page is displayed. User \"test1\" can access the Internet after login. The User Login Status page is displayed. It shows test1 name, user privileges, Limit login time field with the Update button, Login Session time remaining field, and Logout button. The log message Local user login allowed with test1 in Notes column is shown on the Log &gt; View page. The entry for test1 user is shown in the Active User Sessions on the Users &gt; Status page. The entry shows IP address, Session time, Time remaining, and Inactivity remaining. test2 user can login and access the Internet. Unauthenticated user cannot access the Internet. Login Redirect page is displayed."
+      },
+      "1524209" : {
+         "steps" : "  Original ID: 113\n  Original Title: User Web Login Settings-enable Start With Policy Banner Before Login Window\n  Original Description: user will get a policy banner before login page show up",
+         "id" : "1524209",
+         "title" : "User Web Login Settings-enable Start With Policy Banner Before Login Window",
+         "result" : "  Policy Banner show up and click ok will display the login page"
+      },
+      "1524296" : {
+         "steps" : "  Original ID: 58\n  Original Title: Inactivity timer is not reset, the Cancel button is selected in the warning message\n  Original Description: The user will ensure that inactivity timer will not be reset if he selects the Cancel button in the inactivity timer warning message.",
+         "id" : "1524296",
+         "title" : "Inactivity timer is not reset, the Cancel button is selected in the warning message",
+         "result" : "  While the user \"test\" stays logged in and idles, his Inactivity Remaining is decreasing in the Currently active sessions table. 1-2 minutes before inactivity time expiration the following message pops up over the UserLoginStatus window: Warning: your inactivity timer will expire in less than a minute, at which point you will be logged out by the SonicWALL. Select OK to reset the inactivity timer and stay logged in. When the user test pushes the Cancel button, he is still logged, but his Inactivity Remaining keeps decreasing. When it reaches 0, the user's entry is removed from the Currently active sessions table. The log message shows User logged out inactivity timer expired. The UserLoginStatus window gets closed in a minute and the login page gets displayed in the main browser window."
+      },
+      "1524244" : {
+         "steps" : "  Original ID: 145\n  Original Title: user status page-logout selected users\n  Original Description:",
+         "id" : "1524244",
+         "title" : "user status page-logout selected users",
+         "result" : "  User will be logged out"
+      },
+      "1524197" : {
+         "steps" : "  Original ID: 102\n  Original Title: User Web Login Settings-Boundary and negative test for Show authentication pag input\n  Original Description:",
+         "id" : "1524197",
+         "title" : "User Web Login Settings-Boundary and negative test for Show authentication pag input",
+         "result" : "  Should be Able to enter the (min = 1, max = 255) values only."
+      },
+      "1524317" : {
+         "steps" : "  Original ID: 77\n  Original Title: Acceptable Use Policy is displayed on login from the WAN\n  Original Description: The user will ensure that the Acceptable Use Policy window will be displayed upon user's login from the WAN.",
+         "id" : "1524317",
+         "title" : "Acceptable Use Policy is displayed on login from the WAN",
+         "result" : "  When the user \"test\" types his username and password and, pushes the Login button, the Acceptable Use Policy window gets displayed. It shows test and the following text: Click I Accept to accept these terms and continue, or otherwise select Cancel. Two buttons, Accept and Cancel, are displayed in the window. When the user selects the Accept button, he is logged in to the firewall. The UserLoginStatus window gets displayed."
+      },
+      "1524285" : {
+         "steps" : "  Original ID: 48\n  Original Title: Access the VPN from remote end of the tunnel, allow a user\n  Original Description: The user will ensure that only the user specified in the Users Allowed field can access the VPN from the remote end of the tunnel.",
+         "id" : "1524285",
+         "title" : "Access the VPN from remote end of the tunnel, allow a user",
+         "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the VPN &gt; LAN table shows \"test2\". When \"test1\" is logged in from the remote end of the tunnel and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test2\" logged to the firewall from the remote end of the tunnel can access the VPN. Pings go through."
+      },
+      "1524307" : {
+         "steps" : "  Original ID: 68\n  Original Title: Login Redirect upon the VPN access from the Custom Zone\n  Original Description: The user will ensure that LoginRedirect page will be displayed if he attempts to access the web server from the Custom zone across the VPN tunnel without authentication when it is required.",
+         "id" : "1524307",
+         "title" : "Login Redirect upon the VPN access from the Custom Zone",
+         "result" : "  The browser is redirected to LoginRedirect page and the user is presented with the following screen: Authentication Required. The policy set by your network administrator requires that you authenticate yourself before you can have access to the VPN. To authenticate yourself click on the following link and enter your user name and password to log in to the firewall. Click here to log in. When the user clicks the Click here to log in link, he is redirected to the login page and can log in to the remote firewall from the Zone1. The UserLoginStatus window is displayed. The main browser window is redirected to the remote web server's IP address."
+      },
+      "1524229" : {
+         "steps" : "  Original ID: 131\n  Original Title: User Session Settings for Web Login-disable Open user's login status window in the same window rather than in a popup\n  Original Description:",
+         "id" : "1524229",
+         "title" : "User Session Settings for Web Login-disable Open user's login status window in the same window rather than in a popup",
+         "result" : "  After login, status window will pop up"
+      },
+      "1524311" : {
+         "steps" : "  Original ID: 71\n  Original Title: Login session unlimited by administrator\n  Original Description: The user will ensure that limit remaining login time can be unlimited by administrator.",
+         "id" : "1524311",
+         "title" : "Login session unlimited by administrator",
+         "result" : "  The Currently active sessions table on the Users > Status page shows Unlimited in Time Remaining column for the user's entry. When the UserLoginStatus window is refreshed, it shows only Limit remaining login time that is set to 0. The check box is displayed next to the Limit remaining login time."
+      },
+      
+         "1524254" : {
+            "steps" : "  Original ID: 2\n  Original Title: Access the Internet from the LAN, allow Administrator\n  Original Description: The user will ensure that only administrator can access the Internet from the LAN when the access rule specifies Administrator in the Users Allowed field.",
+            "id" : "1524254",
+            "title" : "Access the Internet from the LAN, allow Administrator",
+            "result" : "  The Users Allowed column in the LAN > WAN table shows Administrator. Admin logged to the firewall can access the Internet. When admin is logged out and unauthenticated user tries to access the Internet, the access is not allowed. Login Redirect page is displayed."
+         },
+         "1524335" : {
+            "steps" : "  Original ID: 93\n  Original Title: user authentincation settings-enable Case-sensitive user names\n  Original Description:",
+            "id" : "1524335",
+            "title" : "user authentincation settings-enable Case-sensitive user names",
+            "result" : "  3login failed\n  4login succeeds"
+         },
+         "1524308" : {
+            "steps" : "  Original ID: 69\n  Original Title: Login session limit changed by administrator\n  Original Description: The user will ensure that remaining time for his login session will be changed if administrator modifies login session limit on the Users > Settings page.",
+            "id" : "1524308",
+            "title" : "Login session limit changed by administrator",
+            "result" : "  After step 5 the Session time in the Currently active sessions table on the Users > Status page shows 2, Time Remaining shows 28. The User Login Status window shows 28 for the Limit remaining login time and Login session time remaining. After step 6 the Session time in the Currently active sessions table on the Users > Status page shows 2, Time Remaining shows 20. The User Login Status window shows 20 for the Limit remaining login time and Login session time remaining. After step 7 the Session time in the Currently active sessions table on the Users > Status page shows 2, Time Remaining shows 38 (delta between a new value of Login session limit and Session time). The User Login Status window shows 38 for the Limit remaining login time and Login session time remaining."
+         },
+         "2768579" : {
+            "steps" : "  This test case is to verify no errors returned when switched the user auth method from drop-down lists:\n  local users/radius/radius+local users/ldap/ldap+local users/tacacs+/tacacs+ +local users",
+            "id" : "2768579",
+            "title" : "[GEN8-2027]No errors returned when switched the user auth method from drop-down lists",
+            "result" : "  No error returned."
+         },
+         "1524259" : {
+            "steps" : "  Original ID: 24\n  Original Title: Access the VPN from the LAN, allow Everyone\n  Original Description: The user will ensure that only authenticated users can access the VPN from the LAN when the access rule specifies ?Everyone? in the Users Allowed field.",
+            "id" : "1524259",
+            "title" : "Access the VPN from the LAN, allow Everyone",
+            "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the LAN > VPN table shows ?Everyone?. When admin is logged out and unauthenticated user tries to access the VPN from the LAN, the access is not allowed. Pings are dropped. Test1 logged to the firewall from the LAN can access the VPN. Pings go through."
+         },
+         "1524219" : {
+            "steps" : "  Original ID: 122\n  Original Title: User Session Settings for Web Login-function test for Login session limit Original Description:",
+            "id" : "1524219",
+            "title" : "User Session Settings for Web Login-function test for Login session limit",
+            "result" : "  v"
+         },
+         "1524312" : {
+            "steps" : "  Original ID: 72\n  Original Title: Login session limited by user\n  Original Description: The user will ensure that he will be able to limit the remaining login time that is unlimited previously by administrator.",
+            "id" : "1524312",
+            "title" : "Login session limited by user",
+            "result" : "  The UserLoginStatus window shows Login session time remaining with 20 in its counter field. The Currently active sessions table on the Users > Status page shows 20 in Time Remaining column for the user's entry."
+         },
+         "1524298" : {
+            "steps" : "  Original ID: 6\n  Original Title: Access the Internet from the LAN, allow a user\n  Original Description: The user will ensure that only the user specified in the Users Allowed field can access the Internet from the LAN.",
+            "id" : "1524298",
+            "title" : "Access the Internet from the LAN, allow a user",
+            "result" : "  The Users Allowed column in the LAN &gt; WAN table shows \"test1\". \"Test2\" logged to the firewall can't access the Internet. When \"test1\" is logged in, he can access the Internet."
+         },
+         "1524340" : {
+            "steps" : "  Original ID: 98\n  Original Title: user authentincation settings-disable Force relogin after password change\n  Original Description:",
+            "id" : "1524340",
+            "title" : "user authentincation settings-disable Force relogin after password change",
+            "result" : "  v"
+         },
+         "1524333" : {
+            "steps" : "  Original ID: 91\n  Original Title: User relogin after unlock\n  Original Description: The user will ensure that he will be able to login to the firewall after unlock.",
+            "id" : "1524333",
+            "title" : "User relogin after unlock",
+            "result" : "  After the lockout time has passed and the user refreshed the browser, the Auth.html page is displayed. The user test is logged in to the firewall after step 8. The UserLoginStatus window is displayed."
+         },
+         "1524314" : {
+            "steps" : "  Original ID: 74\n  Original Title: User's login status page refresh set to minimum\n  Original Description: User's login status window sends heartbeat every 1 minutes",
+            "id" : "1524314",
+            "title" : "User's login status page refresh set to minimum",
+            "result" : "  Heartbeat packet will be sent every 1 minutes"
+         },
+         "1524277" : {
+            "steps" : "  Original ID: 40\n  Original Title: Access the VPN from the Custom Zone, allow a super-group\n  Original Description: The user will ensure that only users-members of a group that belong to the super-group can access the VPN from the Custom zone when the access rule specifies that super-group in the Users Allowed field. ?",
+            "id" : "1524277",
+            "title" : "Access the VPN from the Custom Zone, allow a super-group",
+            "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the Zone1 &gt; VPN table shows \"group2\". When \"test2\" is logged in from the Zone1 and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test1\" logged to the firewall from the Zone1 can access the VPN. Pings go through."
+         },
+         "1524203" : {
+            "steps" : "  Original ID: 108\n  Original Title: User Web Login Settings-redirect the browser to this appliance via The name from the administration certificate\n  Original Description:",
+            "id" : "1524203",
+            "title" : "User Web Login Settings-redirect the browser to this appliance via The name from the administration certificate",
+            "result" : "  v"
+         }
+      
+      
+   ,
+   "1524336" : {
+      "steps" : "  Original ID: 94\n  Original Title: user authentincation settings-disable enable Case-sensitive user names\n  Original Description:",
+   
+      "id" : "1524336",
+      "title" : "user authentincation settings-disable enable Case-sensitive user names",
+      "result" : "  n"
+   },
+   "1524220" : {
+      "steps" : "  Original ID: 123\n  Original Title: User Session Settings for Web Login-disable Show user login status window\n  Original Description:",
+     
+      "id" : "1524220",
+      "title" : "User Session Settings for Web Login-disable Show user login status window",
+      "result" : "  v"
+   },
+   "1524273" : {
+      "steps" : "  Original ID: 37\n  Original Title: Access the VPN from the Custom Zone, allow Administrator\n  Original Description: The user will ensure that only administrator can access the VPN from the Custom zone when the access rule specifies ?Administrator? in the Users Allowed field.",
+      
+      "id" : "1524273",
+      "title" : "Access the VPN from the Custom Zone, allow Administrator",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the Zone1 > VPN table shows Administrator. When admin is logged out and unauthenticated user tries to access the VPN from the Zone1, the access is not allowed. Pings are dropped. Admin logged to the firewall from the Zone1 can access the VPN. Pings go through."
+   },
+   "1524196" : {
+      "steps" : "  Original ID: 101\n  Original Title: User Web Login Settings-check default settings\n  Original Description:",
+      "initial" : "  97578448-501f-4e63-a917-25acb108049b",
+      "id" : "1524196",
+      "title" : "User Web Login Settings-check default settings",
+      "result" : "  Check the default settings"
+   },
+   "1524205" : {
+      "steps" : "  Original ID: 11\n  Original Title: Access the Internet from the DMZ, allow a group\n  Original Description: The user will ensure that only users-members of a group can access the Internet from the DMZ when the access rule specifies that group in the Users Allowed field.",
+      "initial" : "  8B7F31DA-0464-11DE-860E-445A00F93527",
+      "id" : "1524205",
+      "title" : "Access the Internet from the DMZ, allow a group",
+      "result" : "  The Users Allowed column in the DMZ &gt; WAN table shows \"group1\". \"Test2\" logged to the firewall can not access the Internet. When \"test1\" is logged in, he can access the Internet."
+   },
+   "1524341" : {
+      "steps" : "  Original ID: 99\n  Original Title: user authentincation settings-enable Display user login info since last login\n  Original Description:",
+      "initial" : "  c40ec688-e18a-485d-bf8a-13355b4d1a70",
+      "id" : "1524341",
+      "title" : "user authentincation settings-enable Display user login info since last login",
+      "result" : "  v"
+   },
+   "1524260" : {
+      "steps" : "  Original ID: 25\n  Original Title: Access the VPN from the LAN, allow a group\n  Original Description: The user will ensure that only users-members of a group can access the VPN from the LAN when the access rule specifies that group in the Users Allowed field.",
+      "initial" : "  8BA6369A-0464-11DE-860E-445A00F93527",
+      "id" : "1524260",
+      "title" : "Access the VPN from the LAN, allow a group",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the LAN > VPN table shows group1. When test2 is logged in from the LAN and tries to access the VPN, the access is not allowed. Pings are dropped. Test1 logged to the firewall from the LAN can access the VPN. Pings go through."
+   },
+   "1524338" : {
+      "steps" : "  Original ID: 96\n  Original Title: user authentincation settings-disable Enforce login uniqueness\n  Original Description:",
+      "initial" : "  be89f68d-acdc-4e80-bfc2-c58a2f429a6d",
+      "id" : "1524338",
+      "title" : "user authentincation settings-disable Enforce login uniqueness",
+      "result" : "  n"
+   },
+   "1524253" : {
+      "steps" : "  Original ID: 19\n  Original Title: Access the Internet from the Custom Zone, allow a super-group\n  Original Description: The user will ensure that only users-members of a group that belong to the super-group can access the Internet from the Custom zone when the access rule specifies that super-group in the Users Allowed field.",
+      "initial" : "  8B885D5A-0464-11DE-860E-445A00F93527",
+      "id" : "1524253",
+      "title" : "Access the Internet from the Custom Zone, allow a super-group",
+      "result" : "  The Users Allowed column in the Zone1 &gt; WAN table shows \"group2\". Test2 logged to the firewall from Zone1 can't access the Internet. When \"test1\" is logged in, he can access the Internet."
+   },
+   "1524223" : {
+      "steps" : "  Original ID: 126\n  Original Title: User Session Settings for Web Login-function test for User's login status window sends heartbeat\n  Original Description:",
+      "initial" : "  f0e4a2ab-a7f2-4987-89b5-ac13f002165b",
+      "id" : "1524223",
+      "title" : "User Session Settings for Web Login-function test for User's login status window sends heartbeat",
+      "result" : "  v"
+   },
+   "1524249" : {
+      "steps" : "  Original ID: 15\n  Original Title: Access the Internet from the Custom Zone, allow All\n  Original Description: The user will ensure that only users-members of a group can access the Internet from the Custom Zone when the access rule specifies that group in the Users Allowed field.",
+      "initial" : "  8B20DAD6-0464-11DE-860E-445A00F93527",
+      "id" : "1524249",
+      "title" : "Access the Internet from the Custom Zone, allow All",
+      "result" : "  The Users Allowed column in the Zone1 &gt; WAN table shows \"group1\". \"Test2\" logged to the firewall can't access the Internet. When \"test1\" is logged in, he can access the Internet."
+   },
+   "1524251" : {
+      "steps" : "  Original ID: 17\n  Original Title: Access the Internet from the Custom Zone, allow Everyone\n  Original Description: The user will ensure that only authenticated users can access the Internet from the Custom zone when the access rule specifies ?Everyone? in the Users Allowed field.",
+      "initial" : "  8B45C224-0464-11DE-860E-445A00F93527",
+      "id" : "1524251",
+      "title" : "Access the Internet from the Custom Zone, allow Everyone",
+      "result" : "  The Users Allowed column in the Zone1 > WAN table shows Everyone. Admin logged to the firewall from Zone1 can access the Internet. When admin is logged out and unauthenticated user tries to access the Internet, the access is not allowed. Login Redirect page is displayed. User test1 can access the Internet after login. The User Login Status page is displayed. It shows test1 name, user privileges, Limit login time field with the Update button, Loginsession time remaining field, and Logout button. The log message Local user login allowed with test1 in Notes column is shown on the Log > View page. The entry for test1 user is shown in the Active User Sessions on the Users > Status page. The entry shows IP address, Session time, Time remaining, and Inactivity remaining. test2 user can login and access the Internet. Unauthenticated user cannot access the Internet. LoginRedirect page is displayed."
+   },
+   "1524322" : {
+      "steps" : "  Original ID: 81\n  Original Title: User attempts to bypass Acceptable Use Policy\n  Original Description: The user will ensure that a browser will be redirected to Auth.html page if he selects the Cancel button in the AUP window upon login.",
+      "initial" : "  8BBF92E8-0464-11DE-860E-445A00F93527",
+      "id" : "1524322",
+      "title" : "User attempts to bypass Acceptable Use Policy",
+      "result" : "  When the user \"test\" types his user name and password and, pushes the Login button, the Acceptable Use Policy window gets displayed. It shows test and the following text: Click I Accept to accept these terms and continue, or otherwise select Cancel. Two buttons, Accept and Cancel, are displayed in the window. When the user selects the Cancel button, the browser gets redirected to Auth.html page."
+   },
+   "1945854" : {
+      "steps" : "  Verify for HTTP and HTTPS protocol ULA Login page should be consistent i.e same UI should be seen for both the pages.",
+      "initial" : "  TBD",
+      "id" : "1945854",
+      "title" : "GEN7-40475 - User Redirection consistency",
+      "result" : "  For HTTP Testing:-\n  1. When we try to access any HTTP Websites then ULA login page should be popup observe the UI of the Authentication page it should be proper.\n  2. User should be successfully able to login and access HTTP Websites.\n  For HTTPS Testing:-\n  1. When we try to access any HTTPS Websites then ULA login page should be popup observe the UI of the Authentication page it should be proper.\n  2. User should be successfully able to login and access HTTPS Websites.\n  For HTTPS Testing using DPI-SSL:-\n  1. When we try to access any HTTPS Websites then ULA login page should be popup observe the UI of the Authentication page it should be proper.\n  2. User should be successfully able to login and access HTTPS Websites.\n  3. In the browser certificate DPI-SSL Certificate should be visible in HTTPS websites certificate.\n  Important Result:-\n  Observe that in all the authentication pages for HTTP, For HTTPS and HTTPS using DPI-SSL authentication page should be same for all the cases with proper UI."
+   },
+   "1524193" : {
+      "steps" : "  Original ID: 1\n  Original Title: Access the Internet from the LAN, allow All\n  Original Description: The user will ensure that he can access the Internet from the LAN without authentication when the access rule specifies All in the Users Allowed field.",
+      "initial" : "  8B93EBAC-0464-11DE-860E-445A00F93527",
+      "id" : "1524193",
+      "title" : "Access the Internet from the LAN, allow All",
+      "result" : "  Unauthenticated user can access the Internet."
+   },
+   "1524320" : {
+      "steps" : "  Original ID: 8\n  Original Title: Access the Internet from the DMZ, allow All\n  Original Description: The user will ensure that he can access the Internet from the DMZ without authentication when the access rule specifies ?All? in the Users Allowed field.",
+      "initial" : "  8B684614-0464-11DE-860E-445A00F93527",
+      "id" : "1524320",
+      "title" : "Access the Internet from the DMZ, allow All",
+      "result" : "  Unauthenticated user can access the Internet f rom DMZ"
+   },
+   "1524318" : {
+      "steps" : "  Original ID: 78\n  Original Title: Acceptable Use Policy is displayed on login from the DMZ\n  Original Description: The user will ensure that the Acceptable Use Policy window will be displayed upon user's login from the DMZ.",
+      "initial" : "  8B30F5CE-0464-11DE-860E-445A00F93527",
+      "id" : "1524318",
+      "title" : "Acceptable Use Policy is displayed on login from the DMZ",
+      "result" : "  When the user \"test\" types his username and password and, pushes the Login button, the Acceptable Use Policy window gets displayed. It shows test and the following text: Click I Accept to accept these terms and continue, or otherwise select Cancel. Two buttons, Accept and Cancel, are displayed in the window. When the user selects the Accept button, he is logged in to the firewall. The UserLoginStatus window gets displayed."
+   },
+   "1524299" : {
+      "steps" : "  Original ID: 60\n  Original Title: Relogin after Inactivity timer expired\n  Original Description: The user will ensure that he will be able to login in the firewall after logout due to inactivity time expiration.",
+      "initial" : "  8B10CD30-0464-11DE-860E-445A00F93527",
+      "id" : "1524299",
+      "title" : "Relogin after Inactivity timer expired",
+      "result" : "  The user \"test\" is logged in to the firewall. Log shows the message Local user login allowed. The user's entry is shown in the Currently active sessions table."
+   },
+   "1524302" : {
+      "steps" : "  Original ID: 63\n  Original Title: Login Redirect upon the Internet access from the LAN\n  Original Description: The user will ensure that LoginRedirect page will be displayed if he attempts to access the Internet from the LAN without authentication when it is required.",
+      "initial" : "  8B3593F4-0464-11DE-860E-445A00F93527",
+      "id" : "1524302",
+      "title" : "Login Redirect upon the Internet access from the LAN",
+      "result" : "  The browser is redirected to LoginRedirect page and the user is presented with the following screen: Authentication Required. The policy set by your network administrator requires that you authenticate yourself before you can have access to the Internet. To authenticate yourself click on the following link and enter your user name and password to log in to the firewall. Click here to log in. When the user clicks the Click here to log in link, he is redirected to the login page and can log in from the LAN."
+   },
+   "1524324" : {
+      "steps" : "  Original ID: 83\n  Original Title: User Lockout, login attempts per minute set to minimum\n  Original Description: The user will ensure that he will be locked out from access to the firewall if he fails to authenticate himself one time during a minute.",
+      "initial" : "  8B131446-0464-11DE-860E-445A00F93527",
+      "id" : "1524324",
+      "title" : "User Lockout, login attempts per minute set to minimum",
+      "result" : "  The browser on the user's PC is redirected to the loginLockout.html page. It displays the message Too many failed login attempts. You are currently out from access to the SonicWALL. Try again later or contact your firewall administrator. One log message User login denied is displayed with the name user in the Notes column on the Log>View page on the firewall. The following log message is User login failure rate exceeded logins from user IP address denied. The Locked Out User IP Address table is displayed on the Users > Status page. It shows User Name Tried - user, IP Address the IP address of the PC on the DMZ, Lockout Time Remaining - 2, and Unlock icon."
+   },
+   "1524221" : {
+      "steps" : "  Original ID: 124\n  Original Title: User Session Settings for Web Login-Show user login status window\n  Original Description:",
+      "initial" : "  e3e601be-9837-4273-8e4b-a625b80bb82c",
+      "id" : "1524221",
+      "title" : "User Session Settings for Web Login-Show user login status window",
+      "result" : "  1. User status windows shows up after user successfully log in to firewall"
+   },
+   "1524306" : {
+      "steps" : "  Original ID: 67\n  Original Title: Login Redirect upon the VPN access from the DMZ\n  Original Description: The user will ensure that LoginRedirect page will be displayed if he attempts to access the web server from the DMZ across the VPN tunnel without authentication when it is required.",
+      "initial" : "  8B3C89CA-0464-11DE-860E-445A00F93527",
+      "id" : "1524306",
+      "title" : "Login Redirect upon the VPN access from the DMZ",
+      "result" : "  The browser is redirected to LoginRedirect page and the user is presented with the following screen: Authentication Required. The policy set by your network administrator requires that you authenticate yourself before you can have access to the VPN. To authenticate yourself click on the following link and enter your user name and password to log in to the firewall. Click here to log in. When the user clicks the Click here to log in link, he is redirected to the login page and can log in to the remote firewall from the DMZ. The UserLoginStatus window is displayed. The main browser window is redirected to the remote web server's IP address."
+   },
+   "1533414" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "1533414",
+      "title" : "GEN7-40046: Modify username, removes all networks from VPN Access",
+      "result" : "  TBD"
+   },
+   "1524237" : {
+      "steps" : "  Original ID: 139\n  Original Title: user status page-check default settings\n  Original Description:",
+      "initial" : "  9ece3923-2586-4400-975f-16289ee881c7",
+      "id" : "1524237",
+      "title" : "user status page-check default settings",
+      "result" : "  v"
+   },
+   "1524199" : {
+      "steps" : "  Original ID: 104\n  Original Title: User Web Login Settings-redirect the browser to this appliance via The interface IP address\n  Original Description: verify upon access control. user will be redirect to the interface IP of firewall",
+      "initial" : "  e88c04a8-1f92-4a35-af86-a8889e3e8c93",
+      "id" : "1524199",
+      "title" : "User Web Login Settings-redirect the browser to this appliance via The interface IP address",
+      "result" : "  If user login from X0 with Ip 192.168.168.168, then user will be redirect to login to 192.168.168.168"
+   },
+   "1524232" : {
+      "steps" : "  Original ID: 134\n  Original Title: Other Global User Settings-edit urls for allow HTTP url to bypass acl\n  Original Description:",
+      "initial" : "  cb3160b6-fdb0-468e-829e-eb93c7b84794",
+      "id" : "1524232",
+      "title" : "Other Global User Settings-edit urls for allow HTTP url to bypass acl",
+      "result" : "  Should be edit URLs to allow HTTP URL to bypass acl"
+   },
+   "1524313" : {
+      "steps" : "  Original ID: 73\n  Original Title: 'User's login status window sends heartbeat' set to default\n  Original Description: User's login status window sends heartbeat every 2 minutes",
+      "initial" : "  8AFE51B4-0464-11DE-860E-445A00F93527",
+      "id" : "1524313",
+      "title" : "'User's login status window sends heartbeat' set to default",
+      "result" : "  Heartbeat packet (post userHeartbeat.cgi) will be sent every 2 minutes"
+   },
+   "1524243" : {
+      "steps" : "  Original ID: 144\n  Original Title: user status page-check user status for logined users\n  Original Description:",
+      "initial" : "  fd9007b7-14e6-4c8b-b5ce-5f16a54cec67",
+      "id" : "1524243",
+      "title" : "user status page-check user status for logined users",
+      "result" : "  Username, Ip, session time, remaining time, inactive time, type and settings are all displayed correctly."
+   },
+   "2391633" : {
+      "steps" : "  GEN7-45390 : Web server incorrectly closes connections from users when it is overloaded",
+      "initial" : "  TBD",
+      "id" : "2391633",
+      "title" : "GEN7-45390 : Web server incorrectly closes connections from users when it is overloaded",
+      "result" : "   Admin who is managing the firewall should not get disrupted."
+   },
+   "1524256" : {
+      "steps" : "  Original ID: 21\n  Original Title: Deny access to the Internet from the Custom Zone\n  Original Description: The user will ensure that no one can access the Internet from the Custom zone when Deny action is selected in the access rule.",
+      "initial" : "  8B962F48-0464-11DE-860E-445A00F93527",
+      "id" : "1524256",
+      "title" : "Deny access to the Internet from the Custom Zone",
+      "result" : "  The Users Allowed field in the access rule shows All and not available for editing. The Action column in the Zone1 &gt; WAN table shows Deny. Admin and \"test1\" cannot access the Internet from Zone1."
+   },
+   "1524278" : {
+      "steps" : "  Original ID: 41\n  Original Title: Access the VPN from the Custom Zone, allow a user\n  Original Description: The user will ensure that only the user specified in the Users Allowed field can access the VPN from the Custom zone. ?",
+      "initial" : "  8B6F32E4-0464-11DE-860E-445A00F93527",
+      "id" : "1524278",
+      "title" : "Access the VPN from the Custom Zone, allow a user",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the Zone1 &gt; VPN table shows \"test2\". When \"test1\" is logged in from the Zone1 and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test2\" logged to the firewall from the Zone1 can access the VPN. Pings go through."
+   },
+   "1524267" : {
+      "steps" : "  Original ID: 31\n  Original Title: Access the VPN from the DMZ, allow Everyone\n  Original Description: The user will ensure that only authenticated users can access the VPN from the DMZ when the access rule specifies ?Everyone? in the Users Allowed field.",
+      "initial" : "  8B4A68C4-0464-11DE-860E-445A00F93527",
+      "id" : "1524267",
+      "title" : "Access the VPN from the DMZ, allow Everyone",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the DMZ &gt; VPN table shows Everyone. When admin is logged out and unauthenticated user tries to access the VPN from the DMZ, the access is not allowed. Pings are dropped. \"Test1\" logged to the firewall from the DMZ can access the VPN. Pings go through."
+   },
+   "1524227" : {
+      "steps" : "  Original ID: 13\n  Original Title: Access the Internet from the DMZ, allow a user\n  Original Description: The user will ensure that only the user specified in the Users Allowed field can access the Internet from the DMZ.",
+      "initial" : "  8B1C4606-0464-11DE-860E-445A00F93527",
+      "id" : "1524227",
+      "title" : "Access the Internet from the DMZ, allow a user",
+      "result" : "  The Users Allowed column in the DMZ > WAN table shows test1. Test2 logged to the firewall can not access the Internet. When test1 is logged in, he can access the Internet."
+   },
+   "1524283" : {
+      "steps" : "  Original ID: 46\n  Original Title: Access the VPN from remote end of the tunnel, allow a group\n  Original Description: The user will ensure that only users-members of a group can access the VPN from the remote end of the tunnel when the access rule specifies that group in the Users Allowed field.",
+      "initial" : "  8BA1A36E-0464-11DE-860E-445A00F93527",
+      "id" : "1524283",
+      "title" : "Access the VPN from remote end of the tunnel, allow a group",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the VPN &gt; LAN table shows group1. When \"test2\" is logged in from the remote end of the tunnel and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test1\" logged to the firewall from the remote end of the tunnel can access the VPN. Pings go through."
+   },
+   "1524275" : {
+      "steps" : "  Original ID: 39\n  Original Title: Access the VPN from the Custom Zone, allow a group\n  Original Description: The user will ensure that only users-members of a group can access the VPN from the Custom zone when the access rule specifies that group in the Users Allowed field.",
+      "initial" : "  8B76132A-0464-11DE-860E-445A00F93527",
+      "id" : "1524275",
+      "title" : "Access the VPN from the Custom Zone, allow a group",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the Zone1 &gt; VPN table shows group1. When \"test2\" is logged in from the Zone1 and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test1\" logged to the firewall from the Zone1 can access the VPN. Pings go through."
+   },
+   "1524225" : {
+      "steps" : "  Original ID: 128\n  Original Title: User Session Settings for Web Login-disable disconnected user detection\n  Original Description:",
+      "initial" : "  5acf9f97-24ef-4e3e-9a7c-507cea0e9790",
+      "id" : "1524225",
+      "title" : "User Session Settings for Web Login-disable disconnected user detection",
+      "result" : "  v"
+   },
+   "1524329" : {
+      "steps" : "  Original ID: 88\n  Original Title: User Lockout, lockout period set within boundaries\n  Original Description: The user will ensure that he will be locked out from access to the firewall during 5 minutes if he fails to authenticate himself.",
+      "initial" : "  8B8F41BA-0464-11DE-860E-445A00F93527",
+      "id" : "1524329",
+      "title" : "User Lockout, lockout period set within boundaries",
+      "result" : "  The browser on the user's PC is redirected to the loginLockout.html page. It displays the message Too many failed login attempts. You are currently out from access to the SonicWALL. Try again later or contact your firewall administrator. One log message User login denied is displayed with the name user in the Notes column on the Log&gt;View page on the firewall. The following log message is User login failure rate exceeded logins from user IP address denied. The Locked Out User IP Address table is displayed on the Users &gt; Status page. It shows User Name Tried - user, IP Address the IP address of the PC on the DMZ, Lockout Time Remaining - 5, and Unlock icon."
+   },
+   "1524287" : {
+      "steps" : "  Original ID: 5\n  Original Title: Access the Internet from the LAN, allow a super-group\n  Original Description: The user will ensure that only users-members of a group that belong to the super-group can access the Internet from the LAN when the access rule specifies that super-group in the Users Allowed field.",
+      "initial" : "  8B861428-0464-11DE-860E-445A00F93527",
+      "id" : "1524287",
+      "title" : "Access the Internet from the LAN, allow a super-group",
+      "result" : "  The Users Allowed column in the LAN &gt; WAN table shows \"group2\". \"Test2\" logged to the firewall can't access the Internet. When \"test1\" is logged in, he can access the Internet."
+   },
+   "1524327" : {
+      "steps" : "  Original ID: 86\n  Original Title: User Lockout, lockout period set to minimum\n  Original Description: The user will ensure that he will be locked out from access to the firewall during one minute if he fails to authenticate himself.",
+      "initial" : "  8AFC0256-0464-11DE-860E-445A00F93527",
+      "id" : "1524327",
+      "title" : "User Lockout, lockout period set to minimum",
+      "result" : "  The browser on the user?s PC is redirected to the loginLockout.html page. It displays the message ?Too many failed login attempts. You are currently out from access to the SonicWALL. Try again later or contact your firewall administrator?. One log message ?User login denied? is displayed with the name ?user? in the Notes column on the Log>View page on the firewall. The following log message is ?User login failure rate exceeded ? logins from user IP address denied?. The Locked Out User IP Address table is displayed on the Users > Status page. It shows User Name Tried - user, IP Address ? the IP address of the PC on the DMZ, Lockout Time Remaining - 1, and Unlock icon."
+   },
+   "1524214" : {
+      "steps" : "  Original ID: 118\n  Original Title: User Session Settings for Web Login-check default settings\n  Original Description:",
+      "initial" : "  ffe39382-af5e-4743-a0b9-b587938c9564",
+      "id" : "1524214",
+      "title" : "User Session Settings for Web Login-check default settings",
+      "result" : "  v"
+   },
+   "1524271" : {
+      "steps" : "  Original ID: 35\n  Original Title: Access the VPN from the DMZ, deny All\n  Original Description: TBD",
+      "initial" : "  8B6A9932-0464-11DE-860E-445A00F93527",
+      "id" : "1524271",
+      "title" : "Access the VPN from the DMZ, deny All",
+      "result" : "  TBD"
+   },
+   "1524304" : {
+      "steps" : "  Original ID: 65\n  Original Title: Login Redirect upon the Internet access from the Custom Zone\n  Original Description: The user will ensure that LoginRedirect page will be displayed if he attempts to access the Internet from the Custom Zone without authentication when it is required.",
+      "initial" : "  8B9ABED2-0464-11DE-860E-445A00F93527",
+      "id" : "1524304",
+      "title" : "Login Redirect upon the Internet access from the Custom Zone",
+      "result" : "  The browser is redirected to LoginRedirect page and the user is presented with the following screen: Authentication Required. The policy set by your network administrator requires that you authenticate yourself before you can have access to the Internet. To authenticate yourself click on the following link and enter your user name and password to log in to the firewall. Click here to log in. When the user clicks the Click here to log in link, he is redirected to the login page and can log in from the Zone1."
+   },
+   "1524231" : {
+      "steps" : "  Original ID: 133\n  Original Title: Other Global User Settings-add urls to allow HTTP url to bypass acl\n  Original Description:",
+      "initial" : "  ab691e4f-cb99-4ffc-87cf-7df368600ddd",
+      "id" : "1524231",
+      "title" : "Other Global User Settings-add urls to allow HTTP url to bypass acl",
+      "result" : "  Should be Add URLs to allow HTTP URL to bypass acl"
+   },
+   "1524331" : {
+      "steps" : "  Original ID: 9\n  Original Title: Access the Internet from the DMZ, allow Administrator\n  Original Description: The user will ensure that only administrator can access the Internet from the DMZ when the access rule specifies Administrator in the Users Allowed field.",
+      "initial" : "  8B257532-0464-11DE-860E-445A00F93527",
+      "id" : "1524331",
+      "title" : "Access the Internet from the DMZ, allow Administrator",
+      "result" : "  The Users Allowed column in the DMZ > WAN table shows Administrator. Admin logged to the firewall can access the Internet. When admin is logged out and unauthenticated user tries to access the Internet, the access is not allowed. Login Redirect page is displayed."
+   },
+   "1524201" : {
+      "steps" : "  Original ID: 106\n  Original Title: User Web Login Settings-redirect the browser to this appliance show cache button\n  Original Description:",
+      "initial" : "  6a91d0ac-cf1f-4d07-b549-235f1a289dce",
+      "id" : "1524201",
+      "title" : "User Web Login Settings-redirect the browser to this appliance show cache button",
+      "result" : "  v"
+   },
+   "1524210" : {
+      "steps" : "  Original ID: 114\n  Original Title: User Web Login Settings-disable Start With Policy Banner Before Login Window\n  Original Description:",
+      "initial" : "  bec4a19a-458c-4658-a082-19fa1626719c",
+      "id" : "1524210",
+      "title" : "User Web Login Settings-disable Start With Policy Banner Before Login Window",
+      "result" : "  Display the login page"
+   },
+   "1524204" : {
+      "steps" : "  Original ID: 109\n  Original Title: User Web Login Settings-enable Redirect users from HTTPS to HTTP on completion of login\n  Original Description:",
+      "initial" : "  4c530f06-d3a1-42f4-aca0-c5e580a0b555",
+      "id" : "1524204",
+      "title" : "User Web Login Settings-enable Redirect users from HTTPS to HTTP on completion of login",
+      "result" : "  v"
+   },
+   "1524234" : {
+      "steps" : "  Original ID: 136\n  Original Title: Other Global User Settings-function test for https websites\n  Original Description: verify https websites won't be bypassed even matched in the entries",
+      "initial" : "  6fd990b8-9bca-4dd1-8a79-cc716b612900",
+      "id" : "1524234",
+      "title" : "Other Global User Settings-function test for https websites",
+      "result" : "  User will be redirect to firewall login page to authenticate before access https://www.baidu.com"
+   },
+   "3030021" : {
+      "steps" : "  User Session login status does not display correctly when HTTPS Management is disabled on interface.\n  When \"HTTPS Management\" is disabled on X0:\n  user is redirected to firewall login page on X0 IP\n  the background of the page is is not displayed correctly, it's blank.\n  pop-up window shows \"The page is redirecting! click here\".\n  Customer requirement is to disable HTTPS Management on the interface.",
+      "initial" : "  TBD",
+      "id" : "3030021",
+      "title" : "User Session login status does not display correctly when HTTPS Management is disabled on interface.",
+      "result" : "  user should login"
+   },
+   "1524295" : {
+      "steps" : "  Original ID: 57\n  Original Title: Inactivity timer is reset by generating traffic\n  Original Description: The user will ensure that he will stay logged and inactivity timer will be reset if he generates traffic.",
+      "initial" : "  8B6CE2E6-0464-11DE-860E-445A00F93527",
+      "id" : "1524295",
+      "title" : "Inactivity timer is reset by generating traffic",
+      "result" : "  While the user \"test\" stays logged in and idles, his Inactivity Remaining is decreasing from 5 to 3 minutes in the Currently active sessions table. When make some activity his Inactivity Remaining gets reset to 5 minutes."
+   },
+   "1524262" : {
+      "steps" : "  Original ID: 27\n  Original Title: Access the VPN from the LAN, allow a user\n  Original Description: The user will ensure that only the user specified in the Users Allowed field can access the VPN from the LAN. ?",
+      "initial" : "  8B539E12-0464-11DE-860E-445A00F93527",
+      "id" : "1524262",
+      "title" : "Access the VPN from the LAN, allow a user",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the LAN &gt; VPN table shows \"test2\". When \"test1\" is logged in from the LAN and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test2\" logged to the firewall from the LAN can access the VPN. Pings go through."
+   },
+   "1524212" : {
+      "steps" : "  Original ID: 116\n  Original Title: User Web Login Settings-Policy Banner content example template\n  Original Description:",
+      "initial" : "  8c57216f-332f-4b79-8066-388f2fa48c45",
+      "id" : "1524212",
+      "title" : "User Web Login Settings-Policy Banner content example template",
+      "result" : "  Should be work Policy Banner content \"example template\""
+   },
+   "1524216" : {
+      "steps" : "  Original ID: 12\n  Original Title: Access the Internet from the DMZ, allow a super-group\n  Original Description: The user will ensure that only users-members of a group that belong to the super-group can access the Internet from the DMZ when the access rule specifies that super-group in the Users Allowed field.",
+      "initial" : "  8B1E8F56-0464-11DE-860E-445A00F93527",
+      "id" : "1524216",
+      "title" : "Access the Internet from the DMZ, allow a super-group",
+      "result" : "  The Users Allowed column in the DMZ &gt; WAN table shows \"group2\". \"Test2\" logged to the firewall can not access the Internet. When \"test1\" is logged in, he can access the Internet."
+   },
+   "1524264" : {
+      "steps" : "  Original ID: 29\n  Original Title: Access the VPN from the DMZ, allow All\n  Original Description: The user will ensure that he can access the VPN from the DMZ without authentication when the access rule specifies ?All? in the Users Allowed field.",
+      "initial" : "  8B4CB868-0464-11DE-860E-445A00F93527",
+      "id" : "1524264",
+      "title" : "Access the VPN from the DMZ, allow All",
+      "result" : "  Unauthenticated user on the local DMZ can access VPN. Ping goes through the tunnel."
+   },
+   "1524242" : {
+      "steps" : "  Original ID: 143\n  Original Title: user status page-flip the page when mulitple users are logged in\n  Original Description:",
+      "initial" : "  3118ea6a-92ab-4121-8cd6-80cd4c3da347",
+      "id" : "1524242",
+      "title" : "user status page-flip the page when mulitple users are logged in",
+      "result" : "  v"
+   },
+   "1524310" : {
+      "steps" : "  Original ID: 70\n  Original Title: Login session limit changed by user\n  Original Description: The user will ensure that he will be able to change Limit remaining login time in the UserLoginStatus window to a new value that is smaller than the value set by admin on the Users > Settings page.",
+      "initial" : "  8B9D05E8-0464-11DE-860E-445A00F93527",
+      "id" : "1524310",
+      "title" : "Login session limit changed by user",
+      "result" : "  After step 5 the message Remaining session time cannot be set greater than 30 pops up. After step 6 the Limit remaining login time is updated and shows 20. Time Remaining in the Currently active sessions table on the Users > Status page shows 20."
+   },
+   "1524297" : {
+      "steps" : "  Original ID: 59\n  Original Title: Inactivity timer is not reset, the Close button is selected in the warning message\n  Original Description: The user will ensure that inactivity timer will not be reset if he selects the Close button in the inactivity timer warning message.",
+      "initial" : "  8B3ED9AA-0464-11DE-860E-445A00F93527",
+      "id" : "1524297",
+      "title" : "Inactivity timer is not reset, the Close button is selected in the warning message",
+      "result" : "  While the user \"test\" stays logged in and idles, his Inactivity Remaining is decreasing in the Currently active sessions table. 1-2 minutes before inactivity time expiration the following message pops up over the UserLoginStatus window: Warning: your inactivity timer will expire in less than a minute, at which point you will be logged out by the SonicWALL. Select OK to reset the inactivity timer and stay logged in. When the user test pushes the Close button, he is still logged, but his Inactivity Remaining keeps decreasing. When it reaches 0, the user's entry is removed from the Currently active sessions table. The log message shows User logged out inactivity timer expired. The UserLoginStatus window gets closed in a minute and the login page gets displayed in the main browser window."
+   },
+   "1524292" : {
+      "steps" : "  Original ID: 54\n  Original Title: Relogin after logout\n  Original Description: The user will ensure that he will be able to login in the firewall after logout.",
+      "initial" : "  8BC1DE0E-0464-11DE-860E-445A00F93527",
+      "id" : "1524292",
+      "title" : "Relogin after logout",
+      "result" : "  When the user is logged out, the login page is displayed in the main browser window. The user test is able to login again. The UserLoginStatus window is displayed. The log message Local user login allowed is shown on the firewall. The entry for the user test is displayed in the Currently active sesstions table on the Users > Status page."
+   },
+   "1524339" : {
+      "steps" : "  Original ID: 97\n  Original Title: user authentincation settings-enable Force relogin after password change\n  Original Description:",
+      "initial" : "  aae71033-c169-49e5-af27-b8974686efb8",
+      "id" : "1524339",
+      "title" : "user authentincation settings-enable Force relogin after password change",
+      "result" : "  user will be forced to login again after password is changed successfully"
+   },
+   "1524316" : {
+      "steps" : "  Original ID: 76\n  Original Title: Acceptable Use Policy is displayed on login from the LAN\n  Original Description: The user will ensure that the Acceptable Use Policy window will be displayed upon user's login from the LAN.",
+      "initial" : "  8AF9A8E4-0464-11DE-860E-445A00F93527",
+      "id" : "1524316",
+      "title" : "Acceptable Use Policy is displayed on login from the LAN",
+      "result" : "  When the user \"test\" types his username and password and, pushes the Login button, the Acceptable Use Policy window gets displayed. It shows test and the following text: Click I Accept to accept these terms and continue, or otherwise select Cancel. Two buttons, Accept and Cancel, are displayed in the window. When the user selects the Accept button, he is logged in to the firewall. The UserLoginStatus window gets displayed."
+   },
+   "1524325" : {
+      "steps" : "  Original ID: 84\n  Original Title: User Lockout, login attempts per minute set to maximum\n  Original Description: The user will ensure that he will be locked out from access to the firewall if he fails to authenticate himself 99 times during a minute.",
+      "initial" : "  8B2A0020-0464-11DE-860E-445A00F93527",
+      "id" : "1524325",
+      "title" : "User Lockout, login attempts per minute set to maximum",
+      "result" : "  The browser on the user's PC is redirected to the loginLockout.html page. It displays the message Too many failed login attempts. You are currently out from access to the SonicWALL. Try again later or contact your firewall administrator. 99 log messages User login denied are displayed with the name user in the Notes column on the Log>View page on the firewall. The following log message is User login failure rate exceeded logins from user IP address denied. The Locked Out User IP Address table is displayed on the Users > Status page. It shows User Name Tried - user, IP Address the IP address of the PC on the DMZ, Lockout Time Remaining - 2, and Unlock icon."
+   },
+   "1524252" : {
+      "steps" : "  Original ID: 18\n  Original Title: Access the Internet from the Custom Zone, allow a group\n  Original Description: The user will ensure that only users-members of a group can access the Internet from the Custom zone when the access rule specifies that group in the Users Allowed field.",
+      "initial" : "  8B8AA876-0464-11DE-860E-445A00F93527",
+      "id" : "1524252",
+      "title" : "Access the Internet from the Custom Zone, allow a group",
+      "result" : "  The Users Allowed column in the Zone1 &gt; WAN table shows \"group1\". \"Test2\" logged to the firewall from Zone1 can not access the Internet. When test1 is logged in from Zone1, he can access the Internet."
+   },
+   "1524206" : {
+      "steps" : "  Original ID: 110\n  Original Title: User Web Login Settings-disable Redirect users from HTTPS to HTTP on completion of login\n  Original Description:",
+      "initial" : "  d1ff7224-50b3-464f-b7cb-046c5b18d1c2",
+      "id" : "1524206",
+      "title" : "User Web Login Settings-disable Redirect users from HTTPS to HTTP on completion of login",
+      "result" : "  v"
+   },
+   "1524195" : {
+      "steps" : "  Original ID: 100\n  Original Title: user authentincation settings-disable Display user login info since last login\n  Original Description:",
+      "initial" : "  009210ec-b142-48d4-8dc3-8957bc9b9bee",
+      "id" : "1524195",
+      "title" : "User authentication settings-disable Display user login info since last login",
+      "result" : "  should be able disable the Display user login info since last login button"
+   },
+   "1524241" : {
+      "steps" : "  Original ID: 142\n  Original Title: user status page-set different start value for items to view\n  Original Description:",
+      "initial" : "  0d7977e2-3889-4cdf-a0ea-ef57c09f857c",
+      "id" : "1524241",
+      "title" : "user status page-set different start value for items to view",
+      "result" : "  v"
+   },
+   "1524255" : {
+      "steps" : "  Original ID: 20\n  Original Title: Access the Internet from the Custom Zone, allow a user\n  Original Description: The user will ensure that only the user specified in the Users Allowed field can access the Internet from the Custom zone. ?",
+      "initial" : "  8B9F5D8E-0464-11DE-860E-445A00F93527",
+      "id" : "1524255",
+      "title" : "Access the Internet from the Custom Zone, allow a user",
+      "result" : "  The Users Allowed column in the Zone1 &gt; WAN table shows \"test1\". \"Test2\" logged to the firewall from Zone1 can't access the Internet. When \"test1\" is logged in from Zone1, he can access the Internet."
+   },
+   "1524281" : {
+      "steps" : "  Original ID: 44\n  Original Title: Access the VPN from remote end of the tunnel, allow Administrator\n  Original Description: The user will ensure that only administrator can access the VPN from the remote end of the tunnel when the access rule specifies ?Administrator? in the Users Allowed field.",
+      "initial" : "  8B786120-0464-11DE-860E-445A00F93527",
+      "id" : "1524281",
+      "title" : "Access the VPN from remote end of the tunnel, allow Administrator",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the VPN > LAN table shows Administrator. When unauthenticated user tries to access the VPN from the remote end of the tunnel, the access is not allowed. Pings are dropped. Admin logged to the firewall from the remote end of the tunnel can access the VPN. Pings go through."
+   },
+   "1524309" : {
+      "steps" : "  Original ID: 7\n  Original Title: Deny access to the Internet from the LAN\n  Original Description: The user will ensure that no one can access the Internet from the LAN when Deny action is selected in the access rule.",
+      "initial" : "  8B27B932-0464-11DE-860E-445A00F93527",
+      "id" : "1524309",
+      "title" : "Deny access to the Internet from the LAN",
+      "result" : "  The Users Allowed field in the access rule shows All and not available for editing. The Action column in the LAN > WAN table shows Deny. Admin and test1 cannot access the Internet."
+   },
+   "1524248" : {
+      "steps" : "  Original ID: 149\n  Original Title: user status page-filter with complicated combinatios\n  Original Description:",
+      "initial" : "  d3220e36-ef22-4273-8d25-eb34d0336d2c",
+      "id" : "1524248",
+      "title" : "user status page-filter with complicated combinatios",
+      "result" : "  v"
+   },
+   "1524276" : {
+      "steps" : "  Original ID: 4\n  Original Title: Access the Internet from the LAN, allow a group\n  Original Description: The user will ensure that only users-members of a group can access the Internet from the LAN when the access rule specifies that group in the Users Allowed field.",
+      "initial" : "  8B156782-0464-11DE-860E-445A00F93527",
+      "id" : "1524276",
+      "title" : "Access the Internet from the LAN, allow a group",
+      "result" : "  The Users Allowed column in the LAN &gt; WAN table shows \"group1\".\n  \"Test2\" logged to the firewall can't access the Internet.\n  When \"test1\" is logged in, he can access the Internet."
+   },
+   "1524337" : {
+      "steps" : "  Original ID: 95\n  Original Title: user authentincation settings-enable Enforce login uniqueness\n  Original Description:",
+      "initial" : "  3d63b467-c297-4ea6-8996-83afde308988",
+      "id" : "1524337",
+      "title" : "user authentincation settings-enable Enforce login uniqueness",
+      "result" : "  1 login fails"
+   },
+   "2649994" : {
+      "steps" : "  ULA Redirection fails on all browsers when using custom port for HTTPS Management",
+      "initial" : "  TBD",
+      "id" : "2649994",
+      "title" : "ULA Redirection fails on all browsers when using custom port for HTTPS Management",
+      "result" : "  Accessing the internet should redirect to ULA page with custom HTTPS port"
+   },
+   "1524332" : {
+      "steps" : "  Original ID: 90\n  Original Title: User unlocked, lockout time expired\n  Original Description: The user will ensure that he will have access to the firewall after his lockout time expires.",
+      "initial" : "  8B0E82A0-0464-11DE-860E-445A00F93527",
+      "id" : "1524332",
+      "title" : "User unlocked, lockout time expired",
+      "result" : "  While the user is locked out, the Lockout Time Remaining for his entry in the Locked Out User IP Addresses table is decreasing from 3 to 0. When it reaches 0, the user's entry gets removed from the table. The log message Locked-out user login allowed lockout period expired is shown on the Log > View page. When the user refreshes the browser window, it gets redirected to Auth.html page. The user can login again."
+   },
+   "1524258" : {
+      "steps" : "  Original ID: 23\n  Original Title: Access the VPN from the LAN, allow Administrator\n  Original Description: The user will ensure that only administrator can access the VPN from the LAN when the access rule specifies ?Administrator? in the Users Allowed field.",
+      "initial" : "  8B412822-0464-11DE-860E-445A00F93527",
+      "id" : "1524258",
+      "title" : "Access the VPN from the LAN, allow Administrator",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the LAN > VPN table shows Administrator. When admin is logged out and unauthenticated user tries to access the VPN from the LAN, the access is not allowed. Pings are dropped. Admin logged to the firewall from the LAN can access the VPN. Pings go through."
+   },
+   "1524272" : {
+      "steps" : "  Original ID: 36\n  Original Title: Access the VPN from the Custom Zone, allow All\n  Original Description: The user will ensure that he can access the VPN from the Custom zone without authentication when the access rule specifies ?All? in the Users Allowed field.",
+      "initial" : "  8B61697A-0464-11DE-860E-445A00F93527",
+      "id" : "1524272",
+      "title" : "Access the VPN from the Custom Zone, allow All",
+      "result" : "  Unauthenticated user on the local Zone1 can access VPN. Ping goes through the tunnel."
+   },
+   "1524315" : {
+      "steps" : "  Original ID: 75\n  Original Title: User's login status page refresh set to maximum\n  Original Description: The user will ensure that the UserLoginStatus window will be refreshed every 10 minutes.",
+      "initial" : "  8BC8CF3E-0464-11DE-860E-445A00F93527",
+      "id" : "1524315",
+      "title" : "User's login status page refresh set to maximum",
+      "result" : "  Limit remaining login time to (min) counter field decreases its value every 10 minutes. Login session time remaining (min) counter decreases its value every minute."
+   },
+   "1524228" : {
+      "steps" : "  Original ID: 130\n  Original Title: User Session Settings for Web Login-User Session Settings for Web Login-function test for Timeout on heartbeat from user's login status window\n  Original Description:",
+      "initial" : "  58c56616-2220-402b-bcd6-469638f9025b",
+      "id" : "1524228",
+      "title" : "User Session Settings for Web Login-User Session Settings for Web Login-function test for Timeout on heartbeat from user's login status window",
+      "result" : "  v"
+   },
+   "1524294" : {
+      "steps" : "  Original ID: 56\n  Original Title: Inactivity timer is reset by selecting \"click here\" in the warning message\n  Original Description: The user will ensure that he will stay logged and inactivity timer will be reset if he selects the OK button in the inactivity timer warning message.",
+      "initial" : "  8BB19CE2-0464-11DE-860E-445A00F93527",
+      "id" : "1524294",
+      "title" : "Inactivity timer is reset by selecting \"click here\" in the warning message",
+      "result" : "  While the user \"test\" stays logged in and idles, his Inactivity Remaining is decreasing in the Currently active sessions table. 1-2 minutes before inactivity time expiration the following message pops up over the UserLoginStatus window: Warning: your inactivity timer will expire in less that a minute, at which point you will be logged out by the SonicWALL. Select OK to reset the inactivity timer and stay logged in. When the user test pushes the OK button, he stays logged in. His Inactivity Remaining is reset to 5 minutes in the Currently active sessions table."
+   },
+   "1524245" : {
+      "steps" : "  Original ID: 146\n  Original Title: user status page-user counts button\n  Original Description:",
+      "initial" : "  1650f36c-89ab-43dd-80ec-c72d7f7d6c4a",
+      "id" : "1524245",
+      "title" : "user status page-user counts button",
+      "result" : "  Login users count will be displayed"
+   },
+   "1524222" : {
+      "steps" : "  Original ID: 125\n  Original Title: User Session Settings for Web Login-Boundry/negative test for User's login status window sends heartbeat\n  Original Description:",
+      "initial" : "  5b72aba7-aac1-4e35-97a3-22447e251ddf",
+      "id" : "1524222",
+      "title" : "User Session Settings for Web Login-Boundry/negative test for User's login status window sends heartbeat",
+      "result" : "  v"
+   },
+   "1524246" : {
+      "steps" : "  Original ID: 147\n  Original Title: user status page-filter with simple strings\n  Original Description:",
+      "initial" : "  a43626fa-a273-4e7a-a3ad-b00e87a01f17",
+      "id" : "1524246",
+      "title" : "User status page-filter  with simple strings",
+      "result" : "  Only user \"a\" will be displayed"
+   },
+   "1524280" : {
+      "steps" : "  Original ID: 43\n  Original Title: Access the VPN from remote end of the tunnel, allow All\n  Original Description: The user will ensure that he can access the VPN from the remote end of the tunnel without authentication when the access rule specifies ?All? in the Users Allowed field.",
+      "initial" : "  8B717FF4-0464-11DE-860E-445A00F93527",
+      "id" : "1524280",
+      "title" : "Access the VPN from remote end of the tunnel, allow All",
+      "result" : "  Unauthenticated user can access VPN from the remote network. Ping goes through the tunnel."
+   },
+   "1524328" : {
+      "steps" : "  Original ID: 87\n  Original Title: User Lockout, lockout period set to maximum\n  Original Description: The user will ensure that he will be locked out from access to the firewall during 60 minutes if he fails to authenticate himself.",
+      "initial" : "  8B2E9DEC-0464-11DE-860E-445A00F93527",
+      "id" : "1524328",
+      "title" : "User Lockout, lockout period set to maximum",
+      "result" : "  The browser on the user's PC is redirected to the loginLockout.html page. It displays the message Too many failed login attempts. You are currently out from access to the SonicWALL. Try again later or contact your firewall administrator. One log message User login denied is displayed with the name user in the Notes column on the Log>View page on the firewall. The following log message is User login failure rate exceeded logins from user IP address denied. The Locked Out User IP Address table is displayed on the Users > Status page. It shows User Name Tried - user, IP Address the IP address of the PC on the DMZ, Lockout Time Remaining - 60, and Unlock icon."
+   },
+   "1524218" : {
+      "steps" : "  Original ID: 121\n  Original Title: User Session Settings for Web Login-Boundry/negative test for Login session limit\n  Original Description:",
+      "initial" : "  74cec1b7-c5d2-496a-bf02-aa42f19d7b8b",
+      "id" : "1524218",
+      "title" : "User Session Settings for Web Login-Boundry/negative test for Login session limit",
+      "result" : "  v"
+   },
+   "1524301" : {
+      "steps" : "  Original ID: 62\n  Original Title: Relogin after Login session limit expired\n  Original Description: The user will ensure that he will be able to login in the firewall after logout due to session time expiration.",
+      "initial" : "  8B02FF98-0464-11DE-860E-445A00F93527",
+      "id" : "1524301",
+      "title" : "Relogin after Login session limit expired",
+      "result" : "  The user \"test\" is logged in to the firewall. Log shows the message Local user login allowed. The user's entry is shown in the Currently active sessions table."
+   },
+   "1524239" : {
+      "steps" : "  Original ID: 140\n  Original Title: user status page-enable inlcude inactive users\n  Original Description:",
+      "initial" : "  0a36d43b-820e-4a56-8559-0cf41b40e184",
+      "id" : "1524239",
+      "title" : "user status page-enable inlcude inactive users",
+      "result" : "  v"
+   },
+   "1524293" : {
+      "steps" : "  Original ID: 55\n  Original Title: User Logout, Inactivity timer expired\n  Original Description: The user will ensure that he will be logged out from the firewall when inactivity timer expires.",
+      "initial" : "  8BB88CA0-0464-11DE-860E-445A00F93527",
+      "id" : "1524293",
+      "title" : "User Logout, Inactivity timer expired",
+      "result" : "  While the user test stays logged in and idle, his Inactivity Remaining is decreasing from 5 to 0 in the Currently active sessions table. When 5 minutes expires, the entry for the user test is removed from the table. The log message shows User logged out inactivity time expired."
+   },
+   "1524284" : {
+      "steps" : "  Original ID: 47\n  Original Title: Access the VPN from remote end of the tunnel, allow a super-group\n  Original Description: The user will ensure that only users-members of a group that belong to the super-group can access the VPN from the remote end of the tunnel when the access rule specifies that super-group in the Users Allowed field. ?",
+      "initial" : "  8B919172-0464-11DE-860E-445A00F93527",
+      "id" : "1524284",
+      "title" : "Access the VPN from remote end of the tunnel, allow a super-group",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the VPN &gt; LAN table shows group2. When test2 is logged in from the remote end of the tunnel and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test1\" logged to the firewall from the remote end of the tunnel can access the VPN. Pings go through."
+   },
+   "1524198" : {
+      "steps" : "  Original ID: 103\n  Original Title: User Web Login Settings-set show authentication page for different minutes and test function\n  Original Description:",
+      "initial" : "  a9958fb9-dea3-4954-9257-ae7b971c004b",
+      "id" : "1524198",
+      "title" : "User Web Login Settings-set show authentication page for different minutes and test function",
+      "result" : "  Test function works for (min = 1, max = 255) values only."
+   },
+   "1524300" : {
+      "steps" : "  Original ID: 61\n  Original Title: User Logout, Login session limit expired\n  Original Description: The user will ensure that he will be logged out from the firewall when login session limit time expires.",
+      "initial" : "  8B8CF784-0464-11DE-860E-445A00F93527",
+      "id" : "1524300",
+      "title" : "User Logout, Login session limit expired",
+      "result" : "  While the user \"test\" stays logged, his Session time increases and Time Remaining decreases in the Currently active sessions table. One minute before the session expiration, the following message pops up over the UserLoginStatus window: Warning: you are about to be logged out by the SonicWALL. When Time Remaining reaches 0, the user's entry is removed from the Currently active sessions table. Log shows User logged out session time expired. The UserLoginStatus window is closed."
+   },
+   "1524215" : {
+      "steps" : "  Original ID: 119\n  Original Title: User Session Settings for Web Login-disable Enable login session limit for web logins\n  Original Description:",
+      "initial" : "  d3823aea-1167-4d35-828f-194cee486a3f",
+      "id" : "1524215",
+      "title" : "User Session Settings for Web Login-disable Enable login session limit for web logins",
+      "result" : "  v"
+   },
+   "1524268" : {
+      "steps" : "  Original ID: 32\n  Original Title: Access the VPN from the DMZ, allow a group\n  Original Description: The user will ensure that only users-members of a group can access the VPN from the DMZ when the access rule specifies that group in the Users Allowed field.",
+      "initial" : "  8B5F1684-0464-11DE-860E-445A00F93527",
+      "id" : "1524268",
+      "title" : "Access the VPN from the DMZ, allow a group",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the DMZ &gt; VPN table shows \"group1\". When \"test2\" is logged in from the DMZ and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test1\" logged to the firewall from the DMZ can access the VPN. Pings go through."
+   },
+   "1524323" : {
+      "steps" : "  Original ID: 82\n  Original Title: Acceptable Use Policy preview\n  Original Description: The user will ensure that the Acceptable User Policy window will be displayed when he selects the Preview button on the Users > Settings page.",
+      "initial" : "  8B3A2FAE-0464-11DE-860E-445A00F93527",
+      "id" : "1524323",
+      "title" : "Acceptable Use Policy preview",
+      "result" : "  The Accepable Use Policy window is displayed over the main browser window. The AUP window shows test message and the following text: Click I Accept to accept these terms and continue, or otherwise select Cancel. Two buttons, Accept and Cancel, are displayed in the window."
+   },
+   "1524270" : {
+      "steps" : "  Original ID: 34\n  Original Title: Access the VPN from the DMZ, allow a user\n  Original Description: The user will ensure that only the user specified in the Users Allowed field can access the VPN from the DMZ. ?",
+      "initial" : "  8B65FBCA-0464-11DE-860E-445A00F93527",
+      "id" : "1524270",
+      "title" : "Access the VPN from the DMZ, allow a user",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the DMZ &gt; VPN table shows test2. When \"test1\" is logged in from the DMZ and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test2\" logged to the firewall from the DMZ can access the VPN. Pings go through."
+   },
+   "1524226" : {
+      "steps" : "  Original ID: 129\n  Original Title: User Session Settings for Web Login-Boundry/negative test for Timeout on heartbeat from user's login status window\n  Original Description:",
+      "initial" : "  64c3d6ea-1ff4-4b6d-a2cb-b18328f0cd11",
+      "id" : "1524226",
+      "title" : "User Session Settings for Web Login-Boundry/negative test for Timeout on heartbeat from user's login status window",
+      "result" : "  v"
+   },
+   "1524282" : {
+      "steps" : "  Original ID: 45\n  Original Title: Access the VPN from remote end of the tunnel, allow Everyone\n  Original Description: The user will ensure that only authenticated users can access the VPN from the remote end of the tunnel when the access rule specifies ?Everyone? in the Users Allowed field.",
+      "initial" : "  8B7CE718-0464-11DE-860E-445A00F93527",
+      "id" : "1524282",
+      "title" : "Access the VPN from remote end of the tunnel, allow Everyone",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the VPN &gt; LAN table shows Everyone. When unauthenticated user tries to access the VPN from the remote end of the tunnel, the access is not allowed. Pings are dropped. \"Test1\" logged to the firewall from the remote end of the tunnel can access the VPN. Pings go through."
+   },
+   "1524290" : {
+      "steps" : "  Original ID: 52\n  Original Title: Cancel logout\n  Original Description: The user will ensure that he will stay logged in the firewall if he selects the Close button in the UserLoginStatus window and then pushed the Cancel button in the following popup message.",
+      "initial" : "  8BB3EFBA-0464-11DE-860E-445A00F93527",
+      "id" : "1524290",
+      "title" : "Cancel logout",
+      "result" : "  When the user test selects the Close button, the popup message is displayed. The message shows Are you sure you want to navigate away from this page? If you leave this page you will be logged out from the SonicWALL! Press OK to continue, or Cancel to stay on the current page. When the user test pushes the Cancel button in the message, the UserLoginStatus window still displayed and the user test stays logged in the firewall. The entry for the user test is displayed in the Currently active sessions table on the Users > Status page on the firewall ?"
+   },
+   "1524202" : {
+      "steps" : "  Original ID: 107\n  Original Title: User Web Login Settings-redirect the browser to this appliance via Its configured domain name\n  Original Description:",
+      "initial" : "  e92283fc-9c75-4d16-9da2-6a93115575c4",
+      "id" : "1524202",
+      "title" : "User Web Login Settings-redirect the browser to this appliance via Its configured domain name",
+      "result" : "  v"
+   },
+   "1524330" : {
+      "steps" : "  Original ID: 89\n  Original Title: User unlocked by administrator\n  Original Description: The user will ensure that he will have access to the firewall if administrator re-enables login after the user lockout.",
+      "initial" : "  8BA886F2-0464-11DE-860E-445A00F93527",
+      "id" : "1524330",
+      "title" : "User unlocked by administrator",
+      "result" : "  When administrator clicks on the Unlock icon, the message ?This will re-enable login from the locked out address <IP address>. OK to continue? pops up. When admin pushes the OK button, the user's entry gets removed from the Locked Out User IP Addresses table. The log message Locked-out user logins allowed by administrator is shown on the Log > View page. When the user refreshes the browser window, it gets redirected to Auth.html page. The user can login again."
+   },
+   "1969080" : {
+      "steps" : "  when the user has gone to an inactive state, log in with the same IP with a different user name then the user is logged in and the user who was in the inactive tab should get deleted No Critical log was reported on the logs page.",
+      "initial" : "  TBD",
+      "id" : "1969080",
+      "title" : "GEN7-41106: Critical Log reporting Inactive User Add Blade Sync failed messages",
+      "result" : "  TBD"
+   },
+   "1524236" : {
+      "steps" : "  Original ID: 138\n  Original Title: Other Global User Settings-Auto-configuration of URLs to bypass user authentication in firewall rule\n  Original Description:",
+      "initial" : "  ff800cb1-bc65-475f-8f7f-4614e18cb4ca",
+      "id" : "1524236",
+      "title" : "Other Global User Settings-Auto-configuration of URLs to bypass user authentication in firewall rule",
+      "result" : "  v"
+   },
+   "1524224" : {
+      "steps" : "  Original ID: 127\n  Original Title: ser Session Settings for Web Login-Enable disconnected user detection\n  Original Description:",
+      "initial" : "  10549de7-6195-4ccf-8304-9d2658c55407",
+      "id" : "1524224",
+      "title" : "ser Session Settings for Web Login-Enable disconnected user detection",
+      "result" : "  n"
+   },
+   "1524233" : {
+      "steps" : "  Original ID: 135\n  Original Title: Other Global User Settings-remove urls from allow HTTP url to bypass acl\n  Original Description:",
+      "initial" : "  d86ad06c-146d-4a9f-adb6-4beadd526567",
+      "id" : "1524233",
+      "title" : "Other Global User Settings-remove urls from allow HTTP url to bypass acl",
+      "result" : "  Should be remove URLs to allow HTTP URL to bypass acl"
+   },
+   "1524269" : {
+      "steps" : "  Original ID: 33\n  Original Title: Access the VPN from the DMZ, allow a super-group\n  Original Description: The user will ensure that only users-members of a group that belong to the super-group can access the VPN from the DMZ when the access rule specifies that super-group in the Users Allowed field.",
+      "initial" : "  8B63B1D0-0464-11DE-860E-445A00F93527",
+      "id" : "1524269",
+      "title" : "Access the VPN from the DMZ, allow a super-group",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the DMZ &gt; VPN table shows group2. When \"test2\" is logged in from the DMZ and tries to access the VPN, the access is not allowed. Pings are dropped. \"Test1\" logged to the firewall from the DMZ can access the VPN. Pings go through."
+   },
+   "1524250" : {
+      "steps" : "  Original ID: 16\n  Original Title: Access the Internet from the Custom Zone, allow Administrator\n  Original Description: The user will ensure that only administrator can access the Internet from the Custom zone when the access rule specifies ?Administrator? in the Users Allowed field.",
+      "initial" : "  8B817BF2-0464-11DE-860E-445A00F93527",
+      "id" : "1524250",
+      "title" : "Access the Internet from the Custom Zone, allow Administrator",
+      "result" : "  The Users Allowed column in the Zone1 > WAN table shows Administrator. Admin logged to the firewall from Zone1 can access the Internet. When admin is logged out and unauthenticated user tries to access the Internet, the access is not allowed. Login Redirect page is displayed."
+   },
+   "1524257" : {
+      "steps" : "  Original ID: 22\n  Original Title: Access the VPN from the LAN, allow All\n  Original Description: The user will ensure that he can access the VPN from the LAN without authentication when the access rule specifies ?All? in the Users Allowed field.",
+      "initial" : "  8B5A7DC2-0464-11DE-860E-445A00F93527",
+      "id" : "1524257",
+      "title" : "Access the VPN from the LAN, allow All",
+      "result" : "  Unauthenticated user on the local LAN can access VPN. Ping goes through the tunnel."
+   },
+   "1524334" : {
+      "steps" : "  Original ID: 92\n  Original Title: user authentincation settings-check default settings\n  Original Description:",
+      "initial" : "  6a9acff0-b19c-4a09-9fff-5dac54e8aa60",
+      "id" : "1524334",
+      "title" : "user authentincation settings-check default settings",
+      "result" : "  n"
+   },
+   "1524240" : {
+      "steps" : "  Original ID: 141\n  Original Title: user status page-enable show unauthneticated users\n  Original Description:",
+      "initial" : "  c940daf5-e829-4a03-9ff4-bd3317e315df",
+      "id" : "1524240",
+      "title" : "user status page-enable show unauthneticated users",
+      "result" : "  unauthneticated users table will display"
+   },
+   "1524266" : {
+      "steps" : "  Original ID: 30\n  Original Title: Access the VPN from the DMZ, allow Administrator\n  Original Description: The user will ensure that only administrator can access the VPN from the DMZ when the access rule specifies ?Administrator? in the Users Allowed field.",
+      "initial" : "  8B5CC3C0-0464-11DE-860E-445A00F93527",
+      "id" : "1524266",
+      "title" : "Access the VPN from the DMZ, allow Administrator",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the DMZ > VPN table shows Administrator. When admin is logged out and unauthenticated user tries to access the VPN from the DMZ, the access is not allowed. Pings are dropped. Admin logged to the firewall from the DMZ can access the VPN. Pings go through."
+   },
+   "1533415" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "1533415",
+      "title" : "GEN7-39401: User login status window should not pop up, if \"Show user login status window\" field is disabled",
+      "result" : "  TBD"
+   },
+   "1524194" : {
+      "steps" : "  Original ID: 10\n  Original Title: Access the Internet from the DMZ, allow Everyone\n  Original Description: The user will ensure that only authenticated users can access the Internet from the DMZ when the access rule specifies Everyone in the Users Allowed field.",
+      "initial" : "  8B232444-0464-11DE-860E-445A00F93527",
+      "id" : "1524194",
+      "title" : "Access the Internet from the DMZ, allow Everyone",
+      "result" : "  The Users Allowed column in the DMZ > WAN table shows Everyone. Admin logged to the firewall can access the Internet. When admin is logged out and unauthenticated user tries to access the Internet, the access is not allowed. Login Redirect page is displayed. User test1 can access the Internet after login. The User Login Status page is displayed. It shows test1 name, user privileges, Limit login time field with the Update button, Loginsession time remaining field, and Logout button. The log message Local user login allowed with test1 in Notes column is shown on the Log > View page. The entry for test1 user is shown in the Active User Sessions on the Users > Status page. The entry shows IP address, Session time, Time remaining, and Inactivity remaining. test2 user can login and access the Internet. Unauthenticated user cannot access the Internet. LoginRedirect page is displayed."
+   },
+   "2036848" : {
+      "steps" : "  ULA page must restrict local users with invalid password login when ldap+local authentication method is selected",
+      "initial" : "  TBD",
+      "id" : "2036848",
+      "title" : "GEN7-43484 - Local User able to login with incorrect password when LDAP+Local user authentication method is selected",
+      "result" : "  Local users must be restricted to login with invalid credentials when invalid credentials are entered into the ULA page"
+   },
+   "1524326" : {
+      "steps" : "  Original ID: 85\n  Original Title: User Lockout, login attempts per minute set within boundaries\n  Original Description: The user will ensure that he will be locked out from access to the firewall if he fails to authenticate himself 10 times during a minute.",
+      "initial" : "  8B00992E-0464-11DE-860E-445A00F93527",
+      "id" : "1524326",
+      "title" : "User Lockout, login attempts per minute set within boundaries",
+      "result" : "  The browser on the user's PC is redirected to the loginLockout.html page. It displays the message Too many failed login attempts. You are currently out from access to the SonicWALL. Try again later or contact your firewall administrator. 10 log messages User login denied are displayed with the name user in the Notes column on the Investigate&gt;Event Logs page on the firewall. The following log message is User login failure rate exceeded logins from user IP address denied. The Locked Out User IP Address table is displayed on the Users &gt; Status page. It shows User Name Tried - user, IP Address the IP address of the PC on the DMZ, Lockout Time Remaining - 2, and Unlock icon."
+   },
+   "1524230" : {
+      "steps" : "  Original ID: 132\n  Original Title: User Session Settings for Web Login-enable Open user's login status window in the same window rather than in a popup\n  Original Description:",
+      "initial" : "  543e7f16-4919-407c-aff4-64100991f12c",
+      "id" : "1524230",
+      "title" : "User Session Settings for Web Login-enable Open user's login status window in the same window rather than in a popup",
+      "result" : "  After login, status window will pop up"
+   },
+   "1524279" : {
+      "steps" : "  Original ID: 42\n  Original Title: Access the VPN from the Custom Zone, deny All\n  Original Description: TBD",
+      "initial" : "  8B7AAD54-0464-11DE-860E-445A00F93527",
+      "id" : "1524279",
+      "title" : "Access the VPN from the Custom Zone, deny All",
+      "result" : "  TBD"
+   },
+   "1524263" : {
+      "steps" : "  Original ID: 28\n  Original Title: Access the VPN from the LAN, deny All\n  Original Description: TBD",
+      "initial" : "  8B58419C-0464-11DE-860E-445A00F93527",
+      "id" : "1524263",
+      "title" : "Access the VPN from the LAN, deny All",
+      "result" : "  TBD"
+   },
+   "1524305" : {
+      "steps" : "  Original ID: 66\n  Original Title: Login Redirect upon the VPN access from the LAN\n  Original Description: The user will ensure that LoginRedirect page will be displayed if he attempts to access the web server from the LAN across the VPN tunnel without authentication when it is required.",
+      "initial" : "  8BB640C6-0464-11DE-860E-445A00F93527",
+      "id" : "1524305",
+      "title" : "Login Redirect upon the VPN access from the LAN",
+      "result" : "  The browser is redirected to LoginRedirect page and the user is presented with the following screen: Authentication Required. The policy set by your network administrator requires that you authenticate yourself before you can have access to the VPN. To authenticate yourself click on the following link and enter your user name and password to log in to the firewall. Click here to log in. When the user clicks the Click here to log in link, he is redirected to the login page and can log in to the remote firewall from the LAN. The UserLoginStatus window is displayed. The main browser window is redirected to the remote web server?s IP address."
+   },
+   "1524319" : {
+      "steps" : "  Original ID: 79\n  Original Title: Acceptable Use Policy is displayed on login from the VPN\n  Original Description: The user will ensure that the Acceptable Use Policy window will be displayed upon user's login from across the VPN tunnel.",
+      "initial" : "  8B2C5096-0464-11DE-860E-445A00F93527",
+      "id" : "1524319",
+      "title" : "Acceptable Use Policy is displayed on login from the VPN",
+      "result" : "  When the user \"test\" types his username and password and, pushes the Login button, the Acceptable Use Policy window gets displayed. It shows test and the following text: Click I Accept to accept these terms and continue, or otherwise select Cancel. Two buttons, Accept and Cancel, are displayed in the window. When the user selects the Accept button, he is logged in to the firewall. The UserLoginStatus window gets displayed."
+   },
+   "1524274" : {
+      "steps" : "  Original ID: 38\n  Original Title: Access the VPN from the Custom Zone, allow Everyone\n  Original Description: The user will ensure that only authenticated users can access the VPN from the Custom zone when the access rule specifies ?Everyone? in the Users Allowed field.",
+      "initial" : "  8B48184E-0464-11DE-860E-445A00F93527",
+      "id" : "1524274",
+      "title" : "Access the VPN from the Custom Zone, allow Everyone",
+      "result" : "  The Users Allowed column for the auto-added access rule for the VPN connection in the Zone1 &gt; VPN table shows Everyone. When admin is logged out and unauthenticated user tries to access the VPN from the Zone1, the access is not allowed. Pings are dropped. \"Test1\" logged to the firewall from the Zone1 can access the VPN. Pings go through."
+   },
+   "1524200" : {
+      "steps" : "  Original ID: 105\n  Original Title: User Web Login Settings-redirect the browser to this appliance via Its domain name from a reverse DNS lookup of the interface IP address\n  Original Description:",
+      "initial" : "  da9cad22-a825-4940-a351-3282d8bdfcb1",
+      "id" : "1524200",
+      "title" : "User Web Login Settings-redirect the browser to this appliance via Its domain name from a reverse DNS lookup of the interface IP address",
+      "result" : "  n"
+   }
+}

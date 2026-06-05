@@ -1,0 +1,30 @@
+{
+    "01": {
+        "steps": "1.Login to the box, go to network->interface page\n\n2.edit the MGMT interface",
+        "initial": "PC1 -- (X0 LAN) DUT (X1 WAN)",
+        "id": "01",
+        "title": "the zone of MGMT interface is MGMT, it can't be changed",
+        "result": "you will find the ZONE of the MGMT interface is MGMT"
+    },
+    "02": {
+        "steps": "1.Login to the box, go to network->interface page\n\n2.edit the MGMT interface",
+        "initial": "PC1 -- (X0 LAN) DUT (X1 WAN)",
+        "id": "02",
+        "title": "the ip assigment is only one mode---static ip mode",
+        "result": "the mode is static ip mode"
+    },
+    "03": {
+        "steps": "None",
+        "initial": "PC2 -- (MGMT) DUT (X1 WAN)",
+        "id": "03",
+        "title": "Traffic to SonicOS via MGMT interface is only allowed for the configured IPs",
+        "result": "Traffic to SonicOS via MGMT interface is only allowed for the configured IPs"
+    },
+    "04": {
+        "steps": "None",
+        "initial": "PC1 -- (X0 LAN) DUT (MGMT) -- PC2",
+        "id": "04",
+        "title": "Traffic cannot be routed via MGMT interface",
+        "result": "Traffic cannot be routed via MGMT interface"
+    }
+}

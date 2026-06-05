@@ -1,0 +1,44 @@
+{
+    "1": {
+        "steps": "1.  Config /Add a NAT policy.\n  2. In the advanced tab, verify the checkbox \"disable source port remap\".",
+        "initial" : "",
+        "title" : "[GUI]Verify the checkbox \"disable source port remap\" is added in the advanced tab for nat policy and disabled as default",
+        "result" : "  2. the checkbox is added and disabled by default."
+    },
+    "11": {
+        "steps": "1.  Add a NAT policy with source address translation and have the \"disable Source Port Remap\" option enabled. Policy:  Orig [Any->Server] Trans [X1_IP -> ORIG] Svc [ANY->ORIG]\n  2. Send ICMP traffic from PC to the Server and verify that the translated packet is using the original identifier /ID.",
+        "initial" : "PC-------(X0:V940)DUT(X1)----Server",
+        "title" : "[FUN]Verify the checkbox \"disable source port remap\" works for ICMP traffic(IPv4 /IPv6)",
+        "result" : "2. the translated packet should use the original identifier /ID. "
+    },
+    "16": {
+        "steps": "1.  Add a NAT policy with source address translation and have the \"disable Source Port Remap\" option enabled. Policy:  Orig [Any->Server] Trans [X1_IP -> ORIG] Svc [ANY->ORIG]\n  2. Restart DUT.\n  Verify the option \"disable Source Port Remap\" is enabled.\n  4. Send ICMP traffic from PC to the Server and verify that the translated packet is using the original identifier /ID.",
+        "initial" : "PC-------(X0:V940)DUT(X1)----Server",
+        "title" : "[FUN]Verify the option value is kept intact and function is still working after a reboot",
+        "result" : "3. After Restart,  the option \"disable Source Port Remap\" is enabled. \n 4. The translated packet should use the original port."
+    },
+    "2": {
+        "steps": "1.  Config /Add one nat policy which the \"Translated Source\" is \"Original\". Policy:  Orig [Any->Server] Trans [X1_IP -> ORIG] Svc [ANY->ORIG]\n  2.  Verify the checkbox \"disable source port remap\" if it is editable or not. ",
+        "initial" : "",
+        "title" : "[GUI]Verify the checkbox \"disable source port remap\" cannot be selected (grey out) in the advanced tab if the \"Translated Source\" is \"Original\"",
+        "result" : "2. the checkbox can not be selected "
+    },
+    "3": {
+        "steps": "1.  Config /Add a NAT policy (IPv4 /IPv6) which the \"Translated Source\" is is not \"Original\"\n  2.  Try to enable the checkbox \"disable source port remap\" for the NAT policy. ",
+        "initial" : "",
+        "title" : "[GUI]Verify the checkbox \"disable source port remap\" can be enabled for both IPv4 and IPv6 NAT policy",
+        "result" : "2. it can be enabled. "
+    },
+    "5": {
+        "steps": "1.  Add a NAT policy with source address translation and have the \"disable Source Port Remap\" option enabled. Policy : Orig [Any->Server] Trans [X1_IP -> ORIG] Svc [ANY->ORIG]\n  2. Send traffic from PC:1111-> Server:80 and verify that the translated packet is using the original port. ",
+        "initial" : "PC-------(X0:V940)DUT(X1)----Server",
+        "title" : "[FUN]Verify the checkbox \"disable source port remap\" works for IPv4 NAT policy",
+        "result" : "2. The translated packet should use the original port and the translated IP should be X1_IP:1111-> Server:80 "
+    },
+    "6": {
+        "steps": "1.  Add a NAT policy with source address translation and have the \"disable Source Port Remap\" option enabled. Policy: Orig [Any->Server] Trans [X1_IPv6 address -> ORIG] Svc [ANY->ORIG]\n  2. Send traffic from PC:1111-> Server:80 and verify that the translated packet is using the original port. ",
+        "initial" : "PC-------(X0:V940)DUT(X1)----Server",
+        "title" : "[FUN]Verify the checkbox \"disable source port remap\" works for IPv6 NAT policy",
+        "result" : "2. The translated packet should use the original port and the translated IP should be X1_IP:1111-> Server:80 "
+    }
+}

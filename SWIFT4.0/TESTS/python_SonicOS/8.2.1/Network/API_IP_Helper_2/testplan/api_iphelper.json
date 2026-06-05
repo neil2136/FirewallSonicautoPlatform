@@ -1,0 +1,44 @@
+{
+    "1508716" : {
+      "steps" : "  1. Auth with FW with admin/password.\n  2. Use postman send GET ip helper setting:\"<span data-offset-key=\"1emmt-0-0\">https://</span><span class=\"resolvedVariable\">{{ip}}</span><span data-offset-key=\"1emmt-2-0\">/api/sonicos/ip-helper/settings</span>\".\n  3. Copy the response body and change the enable item to true.\n  4. Use this body to send PUT\"<span data-offset-key=\"1emmt-0-0\">https://</span><span class=\"resolvedVariable\">{{ip}}</span><span data-offset-key=\"1emmt-2-0\">/api/sonicos/ip-helper/settings</span>\". Then post pending \"<span data-offset-key=\"5s95n-0-0\"><span data-text=\"true\">https://</span></span><span class=\"resolvedVariable\"><span data-offset-key=\"5s95n-1-0\"><span data-text=\"true\">{{ip}}</span></span></span><span data-offset-key=\"5s95n-2-0\"><span data-text=\"true\">/api/sonicos/config/pending</span></span>\".\n  5. Get ip helper setting again check the response body.",
+      "initial" : "  2. Response body shows ip helper is disable. enable item shows false.\n  5. Response body shows enable item as true.",
+      "id" : "1508716",
+      "title" : "Enable ip helper with Put command.",
+      "result" : "Response body shows ip helper is disabl enable item shows false Response body shows enable item as true"
+   },
+    "1508719" : {
+      "steps" : "  IP-helper has some policies include DHCPv6. This policy also set Egress Interface.\n  1. Auth to FW with admin/password using postman.\n  2. Postman uses GET to check response body.",
+      "initial" : "  Response body should contain all policies include DHCPv6 policy. Check DHCPv6 policy shows complete parameters such as destination has address or Egress Interface has right value.",
+      "id" : "1508719",
+      "title" : "Get ip helper's policies which include DHCPv6 policy and other policy.",
+      "result" : "Response body should contain all policies include DHCPv6 policy Check DHCPv6 policy shows complete parameters such as destination has address or Egress Interface has right value"
+   },
+    "1508721" : {
+      "steps" : "  1. Auth with FW using admin/password.\n  2. Postman use Get method to send API \"<span data-offset-key=\"9t6jt-0-0\">https://</span><span class=\"resolvedVariable\">{{ip}}</span><span data-offset-key=\"9t6jt-2-0\">/api/sonicos/ip-helper/<span>protocols</span></span>\".\n  3. Check response body.",
+      "initial" : "  <span>Response body should contain all protocols and related values are right.</span>",
+      "id" : "1508721",
+      "title" : "Get ip helper's protocols.",
+      "result" : "Response body should contain all protocols and related values are righ"
+   },
+     "1508722" : {
+      "steps" : "  DHCP protocol is disable.\n  1. Auth to FW with admin/password using postman.\n  2. Get DHCP protocol. Edit in its response body, change enable to true.\n  \"enable\": true, Use this body to send PUT \"<span data-offset-key=\"7j0m2-0-0\">https://</span><span class=\"resolvedVariable\">{{ip}}</span><span data-offset-key=\"7j0m2-2-0\">/api/sonicos/ip-helper/protocols</span>\".Then post pending \"<span data-offset-key=\"5s95n-0-0\">https://</span><span class=\"resolvedVariable\">{{ip}}</span><span data-offset-key=\"5s95n-2-0\">/api/sonicos/config/pending</span>\".\n  3. Get DHCP protocol again.",
+      "initial" : "  <span>In step3, get response shows DHCP protocol enable.</span>",
+      "id" : "1508722",
+      "title" : "Put to enable DHCP protocol through command \"/ip-helper/protocols\"",
+      "result" : "get response shows DHCP protocol enable"
+   },
+    "1508723" : {
+      "steps" : "  1. Auth to FW with admin/password using postman.\n  2. Get DHCP protocol. Edit in its response body, change timeout to a different value.\n  \"timeout\": \"50\", Use this body to send PUT for the specific protocol \"<span data-offset-key=\"bjs8l-0-0\"><span data-text=\"true\">https://</span></span><span class=\"resolvedVariable\"><span data-offset-key=\"bjs8l-1-0\"><span data-text=\"true\">{{ip}}</span></span></span><span data-offset-key=\"bjs8l-2-0\"><span data-text=\"true\">/api/sonicos/ip-helper/protocols/name/DHCP</span></span>\".Then post pending \"<span data-offset-key=\"5s95n-0-0\">https://</span><span class=\"resolvedVariable\">{{ip}}</span><span data-offset-key=\"5s95n-2-0\">/api/sonicos/config/pending</span>\".\n  3. Get DHCP protocol again.",
+      "initial" : "  <span>In step3, get response shows DHCP protocol timeout to the changed value.</span>",
+      "id" : "1508723",
+      "title" : "Put to change DHCP protocol timeout through command \"/ip-helper/protocols/name/DHCP\".",
+      "result" : "get response shows DHCP protocol timeout to the changed value"
+   },
+    "1508724" : {
+      "steps" : "  1. Auth to FW with admin/password using postman.\n  2. Get all protocols. Choose one protocol. Copy and edit in body, change name, port1 to an unused port, port2 as 0, timeout item removed and source_translation as true, raw set as false. If mode and ip can be changed, pls set it. Use this body to send POST \"<span data-offset-key=\"bjs8l-0-0\">https://</span><span class=\"resolvedVariable\">{{ip}}</span><span data-offset-key=\"bjs8l-2-0\">/api/sonicos/ip-helper/protocols</span>\". Then post pending \"<span data-offset-key=\"5s95n-0-0\">https://</span><span class=\"resolvedVariable\">{{ip}}</span><span data-offset-key=\"5s95n-2-0\">/api/sonicos/config/pending</span>\".\n  3. Get all protocols again.",
+      "initial" : "  In step 3, response body shows timeout auto set as 30, other items same with the set value.",
+      "id" : "1508724",
+      "title" : "Post a new protocol with new port1 as a new port and port2 as 0, source_translation is true and raw set as false, mode Broadcast and no ip.",
+      "result" : "response body shows timeout auto set as 30, other items same with the set value"
+   }
+}

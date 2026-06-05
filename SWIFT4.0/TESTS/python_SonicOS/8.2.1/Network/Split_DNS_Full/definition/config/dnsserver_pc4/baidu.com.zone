@@ -1,0 +1,16 @@
+$TTL 86400
+@       IN      SOA     dns.baidu.com. dnsv6.baidu.com. (
+                                1       ;serial
+                                1D      ;refresh
+                                1H      ;retry
+                                1W      ;expire
+                                3H )    ;minimum
+@               IN      NS      dns.baidu.com.
+dns             IN    A       12.12.3.100
+dns             IN   AAAA    2001:2103::101
+pc1.baidu.com. IN      A       192.16.2.100
+pc2.baidu.com. IN      A       192.16.2.110
+pc3.baidu.com. IN      A       192.16.2.120
+pc4.baidu.com. IN      A       192.16.2.130
+pc5.baidu.com. IN      A       192.16.2.140
+pc6.baidu.com. IN      A       192.16.2.150

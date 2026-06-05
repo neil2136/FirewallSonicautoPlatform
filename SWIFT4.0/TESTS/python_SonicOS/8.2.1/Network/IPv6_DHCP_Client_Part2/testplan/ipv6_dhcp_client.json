@@ -1,0 +1,452 @@
+{
+   "1512428" : {
+      "steps" : "  <p align=\"left\">Test case 2",
+      "priority" : "Smoke",
+      "atm_id" : "b015b4d7-d040-46d8-8992-336a436dfe9a",
+      "initial" : "  <p align=\"left\">Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "1512428",
+      "title" : "LAN/DMZ/Customer zone---DHCPv6 Mode as Automatic , Enable Stateless Address Autoconfiguration",
+      "description" : "Original ID: 14\nOriginal Title: LAN/DMZ/Customer zone---DHCPv6 Mode as Automatic , Enable Stateless Address Autoconfiguration\nOriginal Description:",
+      "result" : "  pass"
+   },
+   "1512436" : {
+      "steps" : "  <p align=\"left\">1) Repeat the steps in above case%2c only make sure the \u00e2\u0080\u0098Use Rapid Commit Option\u00e2\u0080\u0099 is clicked",
+      "priority" : "Sanity",
+      "atm_id" : "2acfa652-099d-4f8f-8723-55e3c3bb8cb9",
+      "initial" : "  <p align=\"left\">Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "1512436",
+      "title" : "LAN/DMZ/Customer zone ---DHCP v6 Mode as manual, Rapid commit",
+      "description" : "Original ID: 21\nOriginal Title: LAN/DMZ/Customer zone ---DHCP v6 Mode as manual, Rapid commit\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  Form the captured packet, you will notice the Solicit message, and there is 'Rapid commit' option,and reply packet send to DHCPv6 client directly after Solicit message"
+   },
+   "1512438" : {
+      "steps" : "  <p align=\"left\">1) Set the interface X1 as WAN zone%2c interface X2 as LAN/DMZ/ Customer zone. And IP Assignment as DHCPv6 . 2) Using router or windows 2008 as DHCPv6 Server. Connected to interface X1 and interface X2. 3) Input the valid value",
+      "priority" : "Sanity",
+      "atm_id" : "51b7b928-14d1-495c-ac8e-6596923e474e",
+      "initial" : "  TBD",
+      "id" : "1512438",
+      "title" : "Comments field",
+      "description" : "Original ID: 23\nOriginal Title: Comments field\nOriginal Description: <span lang=\"EN-US\">Verify can input valid value in Comments field</span>",
+      "result" : "  <p align=\"left\">Verify the user can input valid value in Comments field."
+   },
+   "1512463" : {
+      "steps" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server 2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&amp;LB. 3) In the configuration page of interface X1%2c Set I",
+      "priority" : "Smoke",
+      "atm_id" : "0c7260bc-a1e7-4dcf-a89d-4b18dacce02c",
+      "initial" : "  <p align=\"left\">DUT-----DHCP Server",
+      "id" : "1512463",
+      "title" : "WAN interface--DHCP v6 Mode as Automatic, make sure can't only Request Stateless Information",
+      "description" : "Original ID: 5\nOriginal Title: WAN interface--DHCP v6 Mode as Automatic, make sure can't only Request Stateless Information\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performanc",
+      "result" : "  step3 Make sure the Request Stateless Information button is gray,the user can't enable it."
+   },
+   "1512454" : {
+      "steps" : "  <p align=\"left\">Customzied some interface as DHCPv6 Mode. Restart the firewall.",
+      "priority" : "Smoke",
+      "atm_id" : "48633378-fac2-4868-ab1c-e74bcc7e0af1",
+      "initial" : "  TBD",
+      "id" : "1512454",
+      "title" : "Restart the firewall, the configuration are saved.",
+      "description" : "Original ID: 38\nOriginal Title: Restart the firewall, the configuration are saved.\nOriginal Description: <p align=\"left\">The user must make sure the customized settings are saved after restart the firewall",
+      "result" : "  <p align=\"left\">All the configuration are saved."
+   },
+   "1512461" : {
+      "steps" : "steps:\n1)Configure X1, DHCPv6 automatic mode, connect to a DHCPv6 server 1,X1 can acquire IPv6 address from DHCPv6 server 1;\n2)Configure X2,DHCPv6 automatic mode, connect to a DHCPv6 server 2, X2 can acquire IPv6 address from DHCPv6 server 2;\n3)Enable debug ipv6 dhcp on DHCPv6 server 2;\n4)Change X1 to static mode, check DHCPv6 server 2 debug log.",
+      "priority" : "Full_Regression",
+      "atm_id" : "b117f852-1d77-4ffa-88fb-739b0b9645b7",
+      "initial" : "  DHCPv6 server 2----------(X2 DHCPv6 mode)DUT(X1 DHCPv6 mode)----------DHCPv6 server 1",
+      "id" : "1512461",
+      "title" : "Disable one DHCPv6 client will not take any effect to other DHCPv6 clients.",
+      "description" : "Original ID: 44\nOriginal Title: Disable one DHCPv6 client will not take any effect to other DHCPv6 clients.\nOriginal Description: Disable one DHCPv6 client will not take any effect to other DHCPv6 clients.",
+      "result" : "in step 4,DHCPv6 server 2 should not receive any DHCPv6 packets such as solicit message from X2, means that disable client X1 won't take any effect to client X2's behavior."
+   },
+   "1512425" : {
+      "steps" : "  <p align=\"left\">1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X2. Set X2 as Alternate WAN in WAN Failover &amp; Load Balancing 2) Repeat test (primary WAN zone)above.",
+      "priority" : "Smoke",
+      "atm_id" : "34e221d8-38c5-472b-82f5-7853253b6695",
+      "initial" : "  <p align=\"left\">1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X2.",
+      "id" : "1512425",
+      "title" : "WAN interface---DHCP client as Alternate WAN zone",
+      "description" : "Original ID: 11\nOriginal Title: WAN interface---DHCP client as Alternate WAN zone\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  N/A"
+   },
+   "1512450" : {
+      "steps" : "  <p align=\"left\">1. set the interface x0 as auto mode. 2. then change it as DHCP mode. 3. change back to auto mode.",
+      "priority" : "Sanity",
+      "atm_id" : "a8c2ebd3-d77c-4bd3-b63b-0fa09f9bbc92",
+      "initial" : "  TBD",
+      "id" : "1512450",
+      "title" : "Exchanging between auto mode and DHCP mode",
+      "description" : "Original ID: 34\nOriginal Title: Exchanging between auto mode and DHCP mode\nOriginal Description: <p align=\"left\">Verify exchanging betwen auto mode and DHCP mode, it take effect immediatly.",
+      "result" : "  <p align=\"left\">Verify exchanging betwen auto mode and DHCP mode, it take effect immediatly."
+   },
+   "1512453" : {
+      "steps" : "  1. Set interface X1 as DHCPV6 mode%2c get dynamic address from DHCPV6 server.\n  2. Try to set another interface transparent or L2 bridged to interface X",
+      "priority" : "Full_Regression",
+      "atm_id" : "21cd015b-5774-4e16-811f-07aeed7719bd",
+      "initial" : "  TBD",
+      "id" : "1512453",
+      "title" : "An Interface in transparent mode/ L2 bridge mode don't support DHCP",
+      "description" : "Original ID: 37\nOriginal Title: An Interface in transparent mode/ L2 bridge mode don't support DHCP\nOriginal Description: <p align=\"left\">the user make sure an interface can't transparent/ L2 bridged to another interface in DHCP mode(have dynmaic address)",
+      "result" : "  <p align=\"left\">the user make sure an interface can't transparent/ L2 bridged to interface X1"
+   },
+   "1512427" : {
+      "steps" : "  <p align=\"left\">Test case 1",
+      "priority" : "Smoke",
+      "atm_id" : "c9caf521-1563-45ac-8f1e-9514c37d034c",
+      "initial" : "  <p align=\"left\">Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "1512427",
+      "title" : "LAN/DMZ/Custom zone---DHCP v6 Mode as Automatic,Don't click Enable Stateless Address Autoconfiguration",
+      "description" : "Original ID: 13\nOriginal Title: LAN/DMZ/Custom zone---DHCP v6 Mode as Automatic,Don't click Enable Stateless Address Autoconfiguration\nOriginal Description:",
+      "result" : "  <p align=\"left\">pass&#12289;"
+   },
+   "1512431" : {
+      "steps" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server 2) In the configuration page of interface X2%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u00e2\u0080\u0098Automatic\u00e2\u0080\u0099.",
+      "priority" : "Smoke",
+      "atm_id" : "106609c9-7609-4682-9b81-d3546b47e44e",
+      "initial" : "  <p align=\"left\">DUT-----DHCP Server and Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "1512431",
+      "title" : "LAN/DMZ/Customer zone --DHCP v6 Mode as Automatic, make sure can't only Request Stateless Information",
+      "description" : "Original ID: 17\nOriginal Title: LAN/DMZ/Customer zone --DHCP v6 Mode as Automatic, make sure can't only Request Stateless Information\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the ",
+      "result" : "  step2 Make sure the Request Stateless Information button is gray,the user can't enable it."
+   },
+   "1512424" : {
+      "steps" : "  1.Get a ip address from DHCPV6 sever\n  2.restart FW\n  3.capture packet from FW",
+      "priority" : "Sanity",
+      "atm_id" : "e5a0912b-8723-442d-a4f6-da9ed4f90be9",
+      "initial" : "  <span lang=\"EN-US\">Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1.",
+      "id" : "1512424",
+      "title" : "WAN interface---Send hints for renewing previous IP on startup",
+      "description" : "Original ID: 10\nOriginal Title: WAN interface---Send hints for renewing previous IP on startup\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  Form the captured packet, you will notice the Solicit message, and there is IANA option, and IA address have previous IP info"
+   },
+   "1512464" : {
+      "steps" : "  <p align=\"left\">1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server. 2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&amp;LB. 3) In the configuration page of inte",
+      "priority" : "Smoke",
+      "atm_id" : "f8ba9fa1-11ca-402f-8dc1-d5f5201d1b23",
+      "initial" : "  <span lang=\"EN-US\">1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server.",
+      "id" : "1512464",
+      "title" : "WAN interface--DHCPv6 Mode as manual, Only Request Stateless Information",
+      "description" : "Original ID: 6\r\nOriginal Title: WAN interface--DHCPv6 Mode as manual, Only Request Stateless Information\r\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  Form the captured packet, you will notice the DHCP client only set Information_request message to DHCP server. The DHCP client only get networkinfo without IP address Note: DHCPv6 manual mode is NOT supported yet in Gen7 7.0.1/7.1.1 release."
+   },
+   "1512432" : {
+      "steps" : "  <p align=\"left\">1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X2. Disable RA in DHCP Server. 2) In the configuration page of interface X2%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u00e2\u0080\u0098Manually\u00e2\u0080\u0099.Check Request ",
+      "priority" : "Smoke",
+      "atm_id" : "556895d8-3dbf-4bbc-b16d-39afb561db55",
+      "initial" : "  <p align=\"left\">Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "1512432",
+      "title" : "LAN/DMZ/Customer zone --DHCPv6 Mode as manual, Only Request Stateless Information",
+      "description" : "Original ID: 18\nOriginal Title: LAN/DMZ/Customer zone --DHCPv6 Mode as manual, Only Request Stateless Information\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act righ",
+      "result" : "  Form the captured packet, you will notice the DHCP client only set Information_request message to DHCP server. The DHCP client only get networkinfo without IP address"
+   },
+   "1512465" : {
+      "steps" : "  <p align=\"left\">1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server. 2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&amp;LB. 3) In the configuration page of inte",
+      "priority" : "Smoke",
+      "atm_id" : "400c0162-b5d9-40b4-9258-daeb080b41c4",
+      "initial" : "  <p align=\"left\">Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server.",
+      "id" : "1512465",
+      "title" : "WAN interface--DHCPv6 Mode as manual, Don't Click 'Only Request Stateless Information'",
+      "description" : "Original ID: 7\r\nOriginal Title: WAN interface--DHCPv6 Mode as manual, Don't Click 'Only Request Stateless Information'\r\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance ac",
+      "result" : "  the DHCP client can get IP address and other info from DHCP server. Note: DHCPv6 manual mode is NOT supported yet in Gen7 7.0.1/7.1.1 release. "
+   },
+   "1512435" : {
+      "steps" : "  <p align=\"left\">1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X2. Disable RA in DHCP Server 2) In the configuration page of interface X2%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as 'Manually'. Click Enable Liste",
+      "priority" : "Smoke",
+      "atm_id" : "116f031e-23e2-4c12-aedc-57e305fa07c6",
+      "initial" : "  <p align=\"left\">Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "1512435",
+      "title" : "LAN/DMZ/Customer zone --DHCP v6 Mode as manual, (Don't) click Enable Listening to Router Advertisement",
+      "description" : "Original ID: 20\nOriginal Title: LAN/DMZ/Customer zone --DHCP v6 Mode as manual, (Don't) click Enable Listening to Router Advertisement\nOriginal Description:",
+      "result" : "  step3 and step5 the client in stateful mode, can get ip info and network paramaters from dhcp server"
+   },
+   "1512457" : {
+      "steps" : "  <p align=\"left\">1) Set the interface X1 as primary WAN zone%2c interface X2/X3\u00e2\u0080\u00a6 as LAN/DMZ/Custom zone. 2) Using router or windows 2008 as DHCPv6 Server. Connected to interface X1/X2/X3\u00e2\u0080\u00a6. 3) Capture the packets for those interfaces. ",
+      "priority" : "Full_Regression",
+      "atm_id" : "10d9a44c-1a9b-4f19-a11f-cfb8b627a730",
+      "initial" : "  <p align=\"left\">PC1 Firewall----HUB----DHCP server",
+      "id" : "1512457",
+      "title" : "Verify TSR",
+      "description" : "Original ID: 40\nOriginal Title: Verify TSR\nOriginal Description: <p align=\"left\">Verify TSR display the correct info for each DHCP client.",
+      "result" : "  <p align=\"left\">Verify TSR display the correct info for each DHCP client."
+   },
+   "1512467" : {
+      "steps" : "  <p align=\"left\">1) Repeat the steps in above case%2c only make sure the \u00e2\u0080\u0098Use Rapid Commit Option\u00e2\u0080\u0099 is clicked",
+      "priority" : "Smoke",
+      "atm_id" : "562a71b3-f543-4ade-aa79-4c23758ce27e",
+      "initial" : "  TBD",
+      "id" : "1512467",
+      "title" : "WAN interface---DHCP v6 Mode as manual, Rapid commit",
+      "description" : "Original ID: 9\r\nOriginal Title: WAN interface---DHCP v6 Mode as manual, Rapid commit\r\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  Form the captured packet, you will notice the Solicit message, and there is 'Rapid commit' option,and reply packet send to DHCPv6 client directly after Solicit message Note: DHCPv6 manual mode is NOT supported yet in Gen7 7.0.1/7.1.1 release. "
+   },
+   "1512448" : {
+      "steps" : "  <p align=\"left\">1) Set the interface X2 as WAN/LAN/DMZ/Custom zone 2) Using router or windows 2008 as DHCPv6 Server. Set the valid time as 300s%2cpref time as 200s 3) Connected DHCP server to interface X2%2c 4) Capture the packets for th",
+      "priority" : "Full_Regression",
+      "atm_id" : "2f39df27-6fc1-4664-95c3-45d516638855",
+      "initial" : "  <p align=\"left\">PC1 Firewall----HUB----DHCP server",
+      "id" : "1512448",
+      "title" : "DHCP client rebind lease when current time reached.",
+      "description" : "Original ID: 32\nOriginal Title: DHCP client rebind lease when current time reached.\nOriginal Description: <p align=\"left\">Verify all interfaces in different zone work as DHCP client would work fine.",
+      "result" : "  <p align=\"left\">The client initiates a Rebind/Reply message exchange with any available Server. The client includes an IA option with all addresses currently assigned to the IA in its Rebind message."
+   },
+   "1512441" : {
+      "steps" : "  <p align=\"left\">1) repeat the test case above%2c make sure the \u00e2\u0080\u0098Disable all IPv6 Traffic on the interface\u00e2\u0080\u0099 is clicked.",
+      "priority" : "Sanity",
+      "atm_id" : "88c43706-24bf-42d8-b49b-9b4fd1179daf",
+      "initial" : "  <p align=\"left\">Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1.",
+      "id" : "1512441",
+      "title" : "Disable all IPv6 Traffic on the Interface",
+      "description" : "Original ID: 26\nOriginal Title: Disable all IPv6 Traffic on the Interface\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  <p align=\"left\">The firewall as DHCP client can\u00e2\u0080\u0099t get IP address info from DHCP server."
+   },
+   "1512466" : {
+      "steps" : "  <p align=\"left\">1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server 2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&amp;LB. 3) In the configuration page of inter",
+      "priority" : "Smoke",
+      "atm_id" : "86e9b724-b40f-4f5c-89be-ff3dc63c7916",
+      "initial" : "  TBD",
+      "id" : "1512466",
+      "title" : "WAN interface--DHCP v6 Mode as manual, (Don't) click Enable Listening to Router Advertisement",
+      "description" : "Original ID: 8\r\nOriginal Title: WAN interface--DHCP v6 Mode as manual, (Don't) click Enable Listening to Router Advertisement\r\nOriginal Description:",
+      "result" : "  step4 and step6 the client in stateful mode, can get ip info and network paramaters from dhcp server Note: DHCPv6 manual mode is NOT supported yet in Gen7 7.0.1/7.1.1 release. "
+   },
+   "1512430" : {
+      "steps" : "  <p align=\"left\">Test case 4",
+      "priority" : "Smoke",
+      "atm_id" : "bdbdb3c5-2c1b-4101-b26f-aec64a3c4380",
+      "initial" : "  <p align=\"left\">Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "1512430",
+      "title" : "LAN/DMZ/Customer zone DHCP v6 Mode as Automatic, using Rapid Commit Option",
+      "description" : "Original ID: 16\nOriginal Title: LAN/DMZ/Customer zone DHCP v6 Mode as Automatic, using Rapid Commit Option\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  pass"
+   },
+   "1512455" : {
+      "steps" : "  <p align=\"left\">1. Customized some interface as DHCPv6 mode 2. Export the exp file. 3. clear the custom configuration for the interface. 4. import the exp file in step2.",
+      "priority" : "Full_Regression",
+      "atm_id" : "333229b0-9df7-4b2d-ae72-e4a614fda26f",
+      "initial" : "  TBD",
+      "id" : "1512455",
+      "title" : "Export/import Exp file",
+      "description" : "Original ID: 39\nOriginal Title: Export/import Exp file\nOriginal Description: <p align=\"left\">the user should make sure import or export the exp file would not affect the old configuration .",
+      "result" : "  <p align=\"left\">step2. the action don't affect all the cusom configuration . step4. the old configuration back."
+   },
+   "1512437" : {
+      "steps" : "  1.Get a ip address from DHCPV6 sever\n  2.restart FW\n  3.capture packet from FW",
+      "priority" : "Sanity",
+      "atm_id" : "7e05bec9-8251-431c-bcee-81e38d57b1c9",
+      "initial" : "  <p align=\"left\">Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "1512437",
+      "title" : "LAN/DMZ/Customer zone ---Send hints for renewing previous IP on startup",
+      "description" : "Original ID: 22\nOriginal Title: LAN/DMZ/Customer zone ---Send hints for renewing previous IP on startup\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  Form the captured packet, you will notice the Solicit message, and there is IANA option, and IA address have previous IP info"
+   },
+   "1512440" : {
+      "steps" : "  <p align=\"left\">1) Set the interface X1 as primary WAN zone%2c interface X2 as LAN/DMZ/Custom zone. 2) Using router or windows 2008 as DHCPv6 Server. Connected to interface X1/X2. 3) Capture the packets for those interfaces. 4) WAN/DMZ /",
+      "priority" : "Sanity",
+      "atm_id" : "eea6ee0e-5b5f-4b85-ad95-bd34391f04cc",
+      "initial" : "  TBD",
+      "id" : "1512440",
+      "title" : "Lease time info",
+      "description" : "Original ID: 25\nOriginal Title: Lease time info\nOriginal Description: <p align=\"left\">Verify Firewall as DHCP Client learn Lease time info form DHCP server",
+      "result" : "  <p align=\"left\">From the packets captured, the DHCP client got Valid time and Preferred time form DHCP server. There is Lease time info in GUI."
+   },
+   "1512452" : {
+      "steps" : "  <p align=\"left\">1) Set the interface X2 as WAN/LAN/DMZ/Custom zone 2) Using more than one router or windows 2008 as DHCPv6 Server. Set the DHCP server only can send the same IP address as PC1 to DHCP client. 3) Connected DHCP server to interfa",
+      "priority" : "Sanity",
+      "atm_id" : "0d11d7fe-cab9-436b-90ae-18943574e67d",
+      "initial" : "  <p align=\"left\">PC1 Firewall----HUB----DHCP server",
+      "id" : "1512452",
+      "title" : "Duplicate Address Detection",
+      "description" : "Original ID: 36\nOriginal Title: Duplicate Address Detection\nOriginal Description: <span lang=\"EN-US\">Verify all interfaces in different zone work as DHCP client would work fine.</span>",
+      "result" : "  <p align=\"left\">Verify the client will detect the IP address is duplicate , and don\u00e2\u0080\u0099t use this IP address."
+   },
+   "1512446" : {
+      "steps" : "  <p align=\"left\">N/A",
+      "priority" : "Full_Regression",
+      "atm_id" : "a548a5e9-2db6-4a06-befe-a6e48b4817ff",
+      "initial" : "  <p align=\"left\">N/A",
+      "id" : "1512446",
+      "title" : "IP refresh button",
+      "description" : "Original ID: 30\nOriginal Title: IP refresh button\nOriginal Description: <p align=\"left\">N/A",
+      "result" : "  <p align=\"left\">N/A"
+   },
+   "1512459" : {
+      "steps" : "  step 1: config one interface x2 and set the IP assignment as DHCPV6.&#160; step 2: config the DHCP Server .&#160; step 3: change the mode to the non-config.&#160; step 4: click release/renew butt",
+      "priority" : "Full_Regression",
+      "atm_id" : "e5afa02f-16e9-4405-98eb-7a3c0bf4346c",
+      "initial" : "  DUT(x2)------(DHCP Server)FW&#160;",
+      "id" : "1512459",
+      "title" : "click release/renew button when in non-config mode",
+      "description" : "Original ID: 42\nOriginal Title: click release/renew button when in non-config mode\nOriginal Description: <span>it should not be allowed to do release or renew when the mode is non-config&#160;</span>",
+      "result" : "  <span class=\"messageRed\">it will show Error: Not allowed in current mode &#160;"
+   },
+   "1512456" : {
+      "steps" : "  <p align=\"left\">1) Repeat the steps in above case%2c only make sure the \u00e2\u0080\u0098Use Rapid Commit Option\u00e2\u0080\u0099 is clicked",
+      "priority" : "Smoke",
+      "atm_id" : "dfe78373-1ed5-42e0-8b05-6882bd0335b0",
+      "initial" : "  TBD",
+      "id" : "1512456",
+      "title" : "WAN interface DHCP v6 Mode as Automatic, using Rapid Commit Option",
+      "description" : "Original ID: 4\nOriginal Title: WAN interface DHCP v6 Mode as Automatic, using Rapid Commit Option\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  Form the captured packet, you will notice the Solicit message, and there is 'Rapid commit' option,and reply packet send to DHCPv6 client directly after Solicit message"
+   },
+   "1512449" : {
+      "steps" : "  <p align=\"left\">N/A",
+      "priority" : "Full_Regression",
+      "atm_id" : "dd415f41-4c90-458f-8b04-fc56ee312633",
+      "initial" : "  <p align=\"left\">N/A",
+      "id" : "1512449",
+      "title" : "Exchanging between static mode and DHCP mode",
+      "description" : "Original ID: 33\nOriginal Title: Exchanging between static mode and DHCP mode\nOriginal Description: <p align=\"left\">N/A",
+      "result" : "  <p align=\"left\">N/A"
+   },
+   "1512443" : {
+      "steps" : "  <p align=\"left\">1) Set the interface X1 as primary WAN zone%2c interface X2/X3\u00e2\u0080\u00a6 as LAN/DMZ/Custom zone. 2) Using router or windows 2008 as DHCPv6 Server. Connected to interface X1/X2/X3\u00e2\u0080\u00a6. 3) Capture the packets for those interfaces. ",
+      "priority" : "Smoke",
+      "atm_id" : "a818ee47-ad65-4092-af63-746bcc8d1e29",
+      "initial" : "  TBD",
+      "id" : "1512443",
+      "title" : "IP release button",
+      "description" : "Original ID: 28\nOriginal Title: IP release button\nOriginal Description: <p align=\"left\">Verify all interfaces in different zone work as DHCP client would work fine.",
+      "result" : "  <p align=\"left\">The client can release the IP info form DHCP server. And the firewall receive the reply message from the DHCPv6 server"
+   },
+   "1512429" : {
+      "steps" : "  Test3",
+      "priority" : "Smoke",
+      "atm_id" : "4da3b02f-eecd-4324-bc84-f99db0239836",
+      "initial" : "  <p align=\"left\">Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "1512429",
+      "title" : "LAN/DMZ/Customer zone --DHCP v6 Mode as Automatic, (don't) click 'Enable Listening to Router Advertisement '",
+      "description" : "Original ID: 15\nOriginal Title: LAN/DMZ/Customer zone --DHCP v6 Mode as Automatic, (don't) click 'Enable Listening to Router Advertisement '\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuratio",
+      "result" : "  pass"
+   },
+   "1512423" : {
+      "steps" : "  <p align=\"left\">(1)Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Enable RA in DHCP Server.Set M=1%2c O=1. (2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&amp;LB. (3) In the configurat",
+      "priority" : "Smoke",
+      "atm_id" : "18b90f5d-d86f-48f3-9af3-1cd627f1a7da",
+      "initial" : "  TBD",
+      "id" : "1512423",
+      "title" : "WAN interface-DHCP v6 Mode as Automatic, Don't click Enable Stateless Address Autoconfiguration",
+      "description" : "Original ID: 1\nOriginal Title: WAN interface-DHCP v6 Mode as Automatic, Don't click Enable Stateless Address Autoconfiguration\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the perform",
+      "result" : "  <p align=\"left\">Step5 DHCP get IP address from DHCP server. Step7 DHCP get IP address from DHCP server\n  <p align=\"left\">Step8 DHCPv6 infrastucture is disabled on the network\n  Step9 Form the captured packet , you will notice the DHCP client only set In"
+   },
+   "1512444" : {
+      "steps" : "  <p align=\"left\">1) Set the interface X1 as primary WAN zone%2c interface X2/X3\u00e2\u0080\u00a6 as LAN/DMZ/Custom zone. 2) Using router or windows 2008 as DHCPv6 Server. Connected to interface X1/X2/X3\u00e2\u0080\u00a6. 3) Capture the packets for those interfaces. ",
+      "priority" : "Smoke",
+      "atm_id" : "933c7f12-4d7f-45f4-8ec7-4593bf8dbcf4",
+      "initial" : "  TBD",
+      "id" : "1512444",
+      "title" : "IP renew button",
+      "description" : "Original ID: 29\nOriginal Title: IP renew button\nOriginal Description: <span lang=\"EN-US\">Verify all interfaces in different zone work as DHCP client would work fine.</span>",
+      "result" : "  <span lang=\"EN-US\">Verify all interfaces in different zone work as DHCP client would work fine"
+   },
+   "1512458" : {
+      "steps" : "  <p align=\"left\">1. Set the interface X1 as primary WAN zone%2c interface X2/X3\u00e2\u0080\u00a6 as LAN/DMZ/Custom zone. 2. Using router or windows 2008 as DHCPv6 Server. Connected to interface X1/X2/X3\u00e2\u0080\u00a6. 3. Capture the packets for those interfaces. ",
+      "priority" : "Sanity",
+      "atm_id" : "081d368b-d6aa-4808-b484-15c5a45d9041",
+      "initial" : "  <p align=\"left\">PC1 Firewall----HUB----DHCP server",
+      "id" : "1512458",
+      "title" : "Plug out/in the cable of DHCP client.",
+      "description" : "Original ID: 41\nOriginal Title: Plug out/in the cable of DHCP client.\nOriginal Description: <p align=\"left\">Verify DHCP client work correctly after the cable was plugged in/out .",
+      "result" : "  <p align=\"left\">Verify DHCP client work correctly after the cable was plugged in/out ."
+   },
+   "1512462" : {
+      "steps" : "  1: Factory default DUT;\n  2: Configure X1 in IPv6 interface page, select its ip-assignment as DHCPv6, connect it to a DHCPv6 server;\n  3: Click edit button of X1, switch to protocol tab, check the DHCPv6 DUID under DHCPv6 General Information;\n  4",
+      "priority" : "Full_Regression",
+      "atm_id" : "5fb65683-4ddd-46a1-b8bc-fe890febf3fd",
+      "initial" : "  TBD",
+      "id" : "1512462",
+      "title" : "The DHCPv6 DUID can not be manually modified or changed by other means.",
+      "description" : "Original ID: 45\nOriginal Title: The DHCPv6 DUID can not be manually modified or changed by other means.\nOriginal Description: The DHCPv6 DUID can not be manually modified or changed by other means.",
+      "result" : "  in step 3, the DHCPv6 DUID can not be manually modified;\n  in step 4, change X0's MAC address, DHCPv6 DUID won't be changed.&#160;"
+   },
+   "1512434" : {
+      "steps" : "  <p align=\"left\">1)Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Enable RA in DHCP Server.Set M=1%2c O=1. (2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&amp;LB. (3) In the configurati",
+      "priority" : "Smoke",
+      "atm_id" : "150637c0-4875-411b-be78-f125c5c4ac9e",
+      "initial" : "  TBD",
+      "id" : "1512434",
+      "title" : "WAN interface-DHCPv6 Mode as Automatic , Enable Stateless Address Autoconfiguration",
+      "description" : "Original ID: 2\nOriginal Title: WAN interface-DHCPv6 Mode as Automatic , Enable Stateless Address Autoconfiguration\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act rig",
+      "result" : "  <p align=\"left\">Step5 DHCP get IP address from DHCP server. Step7 DHCP get IP address from DHCP server\n  <p align=\"left\">Step8 DHCPv6 infrastucture is disabled on the network\n  Step9 Form the captured packet , you will notice the DHCP client only set In"
+   },
+   "1512445" : {
+      "steps" : "  <p align=\"left\">This test ensures that interface act as DHCP client %2cusing some configuration%2c the performance act right",
+      "priority" : "Smoke",
+      "atm_id" : "afbc35bd-68aa-4c5a-90f7-7a2f2cc158ff",
+      "initial" : "  TBD",
+      "id" : "1512445",
+      "title" : "WAN interface--DHCP v6 Mode as Automatic, (don't) click 'Enable Listening to Router Advertisement '",
+      "description" : "Original ID: 3\nOriginal Title: WAN interface--DHCP v6 Mode as Automatic, (don't) click 'Enable Listening to Router Advertisement '\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the per",
+      "result" : "  SonicOS display error message:Listening to Router Advertisement option must be enabled when DHCPV6 is in automatic mode"
+   },
+   "1512433" : {
+      "steps" : "  <p align=\"left\">1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X2. Disable RA in DHCP Server. 2) In the configuration page of interface X2%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u00e2\u0080\u0098Manually\u00e2\u0080\u0099. Don't Click '",
+      "priority" : "Smoke",
+      "atm_id" : "5cd8f683-3890-425c-9d38-f0c1045ada9c",
+      "initial" : "  <p align=\"left\">Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "1512433",
+      "title" : "LAN/DMZ/Customer zone --DHCPv6 Mode as manual, Don't Click 'Only Request Stateless Information'",
+      "description" : "Original ID: 19\nOriginal Title: LAN/DMZ/Customer zone --DHCPv6 Mode as manual, Don't Click 'Only Request Stateless Information'\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the perfor",
+      "result" : "  <span lang=\"EN-US\">the DHCP client can get IP address and other info from DHCP server."
+   },
+   "1512426" : {
+      "steps" : "  1.config X1 is Primary WAN X2 is secondary WAN\n  2.retest 1-10",
+      "priority" : "Smoke",
+      "atm_id" : "ecae07bf-0223-4d16-818a-116f7c5a2224",
+      "initial" : "  TBD",
+      "id" : "1512426",
+      "title" : "WAN interface--DHCP client as primary WAN and Alternate WAN.",
+      "description" : "Original ID: 12\nOriginal Title: WAN interface--DHCP client as primary WAN and Alternate WAN.\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  N/A"
+   },
+   "1512439" : {
+      "steps" : "  <p align=\"left\">1) Set the interface X1 as primary WAN zone%2c interface X2 as LAN/DMZ/Custom zone. 2) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. for WAN client to renew lease and learn new DNS servers 3) Using",
+      "priority" : "Sanity",
+      "atm_id" : "14c88024-5749-4320-a606-de405c33f254",
+      "initial" : "  TBD",
+      "id" : "1512439",
+      "title" : "DNS info",
+      "description" : "Original ID: 24\nOriginal Title: DNS info\nOriginal Description: <p align=\"left\">Verify Firewall as DHCP Client learn DNS servers info form DHCP server.",
+      "result" : "  <p align=\"left\">Verify LAN client receives 2 new DNS servers"
+   },
+   "1512451" : {
+      "steps" : "  <p align=\"left\">1) Set the interface X2 as WAN/LAN/DMZ/Custom zone 2) Using more than one router or windows 2008 as DHCPv6 Server. Connected to interface X2\u00e2\u0080\u00a6. 3) Capture the packets for those interfaces. 4) Click Renew button for the C",
+      "priority" : "Full_Regression",
+      "atm_id" : "bec17536-0c5d-49f0-80fc-bc70d0365770",
+      "initial" : "  TBD",
+      "id" : "1512451",
+      "title" : "More than one DHCP server",
+      "description" : "Original ID: 35\nOriginal Title: More than one DHCP server\nOriginal Description: <p align=\"left\">Verify all interfaces in different zone work as DHCP client would work fine.",
+      "result" : "  <p align=\"left\">Verify the client can get IP info form one of the DHCPv6 servers(The first recevied)."
+   },
+   "1512447" : {
+      "steps" : "  1) Set the interface X2 as WAN/LAN/DMZ/Custom zone 2) Using router or windows 2008 as DHCPv6 Server. Set the valid time as 300s%2cpref time as 200s 3) Connected DHCP server to interface X2%2c 4) Capture the packets for those interfaces.<",
+      "priority" : "Full_Regression",
+      "atm_id" : "597b49f9-9960-4a15-b380-c08ed5ff0df1",
+      "initial" : "  <span lang=\"EN-US\">PC1 Firewall----HUB----DHCP server",
+      "id" : "1512447",
+      "title" : "DHCP client renews lease when current time reached.",
+      "description" : "Original ID: 31\nOriginal Title: DHCP client renews lease when current time reached.\nOriginal Description: Verify all interfaces in different zone work as DHCP client would work fine.",
+      "result" : "  <h3><span lang=\"EN-US\">The client initiates a Renew/Reply message exchange to extend the lifetimes on any addresses in the IA.\n  </h3>"
+   },
+   "1512442" : {
+      "steps" : "  <p align=\"left\">1.add a vlan interface is wan/lan/dmz zone\n  <p align=\"left\">2.config vlan interface ipv6 assign mode is dhcp",
+      "priority" : "Smoke",
+      "atm_id" : "9e262a2a-bd2f-43fb-ba8f-2fbd9a486076",
+      "initial" : "  <p align=\"left\">DUT---SWITCH----DHCP SERVER",
+      "id" : "1512442",
+      "title" : "vlan interface can set as DHCP client",
+      "description" : "Original ID: 27\nOriginal Title: vlan interface can set as DHCP client\nOriginal Description: <p align=\"left\">This test ensures that interface act as DHCP client ,using some configuration, the performance act right.",
+      "result" : "  <p align=\"left\">pass"
+   },
+   "1512460" : {
+      "steps" : "  1) Configure an interface X1, enable DHCPv6, and connect it to a DHCPv6 server,&#160;\n  make sure it can acquire IANA from that server;&#160; 2) Switch to Protocol tab, check its DUID, it is generated according to X0's MA",
+      "priority" : "Full_Regression",
+      "atm_id" : "716ebbe1-6528-4c72-8751-060bcbbed88e",
+      "initial" : "  DUT(DHCPv6 client)------------DHCPv6 server",
+      "id" : "1512460",
+      "title" : "Refer to DTS#139486: When change X0's MAC address , DHCPv6 client's DUID should change immediately.",
+      "description" : "Original ID: 43\nOriginal Title: Refer to DTS#139486: When change X0's MAC address , DHCPv6 client's DUID should change immediately.\nOriginal Description: When change X0's MAC address , DHCPv6 client's DUID change immediately both in GUI and its generated ",
+      "result" : "  in step 4) Do release and renew process on X1, do packet capture on FW, check the&#160;\n  packets, check the release message and solicit message etc, FW should filled Client&#160;\n  Identifier option with the new DUID."
+   }
+}

@@ -1,0 +1,996 @@
+{
+   "127" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the parameters in the json body is changed correspondingly on GUI",
+      "id" : "127",
+      "title" : "[PUT]Configure the Advanced Management with settings that lack parameters",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"gms_management\": { \"ipsec_tunnel\": { \"spi\": \"C0EAE4CCF5E8\", \"encryption_type\": \"des-md5\", \"encryption_key\": \"1234567891234567\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } },"
+   },
+   "32" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"password minimum-length 33\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }\n  2.1.verify the response of step2 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: property 'minimum_length' must be configured\\n \\\"minimum_length\\\": 0, \\\"complexity\\\": {}\\n ^\\n\" } ] }\n  }",
+      "id" : "32",
+      "title" : "[PUT] Set the password minimun_length to a value exceeds the maximum value <32>",
+      "result" : "  1.Using postman,edit the uniqueness count by API,\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"minimum_length\": 33, (the default parameters) }\n  2.Using postman,edit the aging count by API,\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"minimum_length\": 0, (the default parameters) }"
+   },
+   "90" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }",
+      "id" : "90",
+      "title" : "[PUT] Add the \"form_delay\",\"button_delay\",\"text_delay\" with a proper value",
+      "result" : "  1.Using postman,edit the tooltip by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  \"tooltip\": { \"form_delay\": 555, \"button_delay\": 555, \"text_delay\": 555 }"
+   },
+   "118" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: invalid format\\n \\\"ip\\\": \\\"22222\\\" } \\n ^\\n\" } ] }\n  }",
+      "id" : "118",
+      "title" : "[PUT]Configure the 'NAT Device IP Address' to an invalid value",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"11.1.1.1\", \"port\": 521 }, \"host_name\":\"1.1.1.1\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": { \"ip\": \"22222\" } } (the default parameters) }"
+   },
+   "71" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }",
+      "id" : "71",
+      "title" : "[PUT]Set the inter_admin_messaging  to a valid number",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"inter_admin_messaging\": 9, (the default parameters) }"
+   },
+   "102" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"gms_management\": {}, (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "102",
+      "title" : "[GET] Retrieve the Advanced Management settings while GMS MGMT is disabled",
+      "result" : "  1.Using postman,get the the Advanced Management settings using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "18" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] } }\n  2.verify the response of commit pending config in step2 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": false, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Changes made.\" } ] } }\n  3.The login POST command should as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_UNAUTHORIZED\", \"message\": \"Need two factor code to finish login. Please post sonicos/tfa with user name, two factor code and override options\" } ] } }\n  4.Verify in the SonicOS GUI,the second login interface should as follows:\n  Install Google Authenticator or Duo on your phone Scan with app or enter text code Enter code from app 2FA Code: Your emergency scratch code is: 27885374 Note: It is recommended to store the emergency scratch code safely (print it out and keep it in a safe location) as it is your only way to log in when you lost your mobile phone",
+      "id" : "18",
+      "title" : "[Func][PUT] Set the One-time Passwords Method to TOTP mode",
+      "result" : "  1.Using postman,edit the Administrator Name &amp; Password by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"one_time_password\": { \"totp\": true }, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.commit GET command using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result.\n  4.relogin the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST)."
+   },
+   "125" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: invalid format\\n \\\"encryption_key\\\": \\\"@@@\\\", \\\"authenticat\\n ^\\n\" } ] }\n  }",
+      "id" : "125",
+      "title" : "[PUT]Configure the 'Authentication Key' to a value that includes special characters",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"gms_management\": { \"ipsec_tunnel\": { \"spi\": \"aaa\", \"encryption_type\": \"des-md5\", \"encryption_key\": \"@@@\", \"authentication_key\": \"ef1f180a865b552c052c3c0b295e2458\", \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } },"
+   },
+   "16" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"admin name #\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_INCOMPLETE_CMD\", \"message\": \"Incomplete command.\" } ] }\n  }",
+      "id" : "16",
+      "title" : "[PUT] Configure the confirm-password is different from the new-password",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD to 654321,and the CONFIRMPSWD to 765432"
+   },
+   "44" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed: \"complexity\": { \"type\": \"alpha-and-numeric-and-symbols\", \"upper_case\": 1, \"lower_case\": 1, \"digital\": 1, \"symbolic\": 1 }, (the default parameters) }\n  4.Verify in the SonicOS GUI that the password setting is edited as mentioned above in the json file.",
+      "id" : "44",
+      "title" : "[PUT] Set the password complexity to 'alpha-and-numeric-and-symbols' with the Upper/Lower Case and Number Characters and Symbolic Characters all have a valid interger value",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"complexity\": { \"type\": \"alpha-and-numeric-and-symbols\", \"upper_case\": 1, \"lower_case\": 1, \"digital\": 1, \"symbolic\": 1 }, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "55" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  { (the default parameters) \"idle_logout_time\": 5555, (the default parameters) }\n  4.Verify in the SonicOS GUI that the setting is edited as mentioned above in the json file.",
+      "id" : "55",
+      "title" : "[PUT]Set the  idle_logout_time to a a valid number",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"idle_logout_time\": 5555, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "84" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"default_table_size\\\": aaa, \\\"refresh_inter\\n ^\\n\" } ] }\n  }",
+      "id" : "84",
+      "title" : "[PUT] Set the default_table_size to a non-numeric character",
+      "result" : "  1.Using postman,edit the default_table_size by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"default_table_size\": aaa, (the default parameters) }"
+   },
+   "27" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  {\n  \"admin\": { \"name\": \"admin\", (the default parameters) }\n  4.Verify in the SonicOS GUI that the aging count is edited as mentioned above in the json file.",
+      "id" : "27",
+      "title" : "[PUT] Set the password aging count to a a valid number",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"password\": { \"aging\": { \"duration\": 10 (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "95" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"web-management tooltip text_delay 55\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }\n  2.verify the response of step2 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"web-management tooltip text_delay 5555\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "95",
+      "title" : "[PUT] Set the text_delay to a value that exceeds the minimum <500>/maximum value <5000>",
+      "result" : "  1.Using postman,edit the tooltip by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  \"tooltip\": { \"text_delay\": 55,\n  }\n  2.Using postman,edit the tooltip by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  \"tooltip\": { \"text_delay\": 5555,\n  }"
+   },
+   "57" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"user-lockout failures-rate 100\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "57",
+      "title" : "[PUT]Set the failures_rate to a value that exceeds the maximum value <99>",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"user_lockout\": { \"failures_rate\": 100, (the default parameters) }"
+   },
+   "20" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": false }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }",
+      "id" : "20",
+      "title" : "[PUT] Unbind admin totp key API endpoint by url administration-unbind-totp-key",
+      "result" : "  1.commit PUT command using url: https://{{wan_ip}}/api/sonicos/administration/unbind-totp-key,the Authentication type should choose Bearer Token,the token should be got from last case"
+   },
+   "109" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify that the 'Enable management using GMS' on GUI will be checked",
+      "id" : "109",
+      "title" : "[PUT]Configure Advanced Management with GMS MGMT Mode 'IPSEC Management Tunnel'",
+      "result" : "  1.uncheck the 'Enable management using GMS' on GUI\n  2..Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"ipsec_tunnel\": { \"spi\": \"C0EAE4CCF5E8\", \"encryption_type\": \"des-md5\", \"encryption_key\": \"0cf224ea209c87c8\", \"authentication_key\": \"ef1f180a865b552c052c3c0b295e2458\", \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "89" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no errors\n  4.Verify in the SonicOS GUI that the setting is changed correspondingly",
+      "id" : "89",
+      "title" : "[PUT] Set the dashboard_as_starting_page to true",
+      "result" : "  1.Using postman,edit the dashboard_as_starting_page by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"dashboard_as_starting_page\": true, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "31" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  { \"enforce_character_difference\": true, (the default parameters) }\n  4.Verify in the SonicOS GUI that the setting is edited as mentioned above in the json file.",
+      "id" : "31",
+      "title" : "[PUT] Set the password enforce-character-difference to 'true'",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"enforce_character_difference\": true, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "35" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"password complexity upper-case 1\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_NO_MATCH\", \"message\": \"No matching command found.\" } ] }\n  }",
+      "id" : "35",
+      "title" : "[PUT] Set the 'upper_case' or 'lower_case' or 'digital' or 'symbolic' with a valid number when the complexity is None",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"complexity\": { \"upper_case\": 1, \"lower_case\": 1, \"digital\": 1, \"symbolic\": 1 },"
+   },
+   "11" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return faliure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"admin-password old-password {OLDPSWD} new-password {NEWPSWD} confirm-password {CONFIRMPSWD}\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_NO_MATCH\", \"message\": \"No matching command found.\" } ] }\n  }\n  2.verify the response of step2 will return faliure with errors as followed:\n  DTS 215021",
+      "id" : "11",
+      "title" : "[PUT] Configure the new Password to a string that exceeds the minimun <5>/maximum length <32>",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to 1111\n  2.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to 1111111111111111111111111111111111"
+   },
+   "78" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"web_management\": { \"allow_http\": false, \"certificate\": { \"use_self_signed\": true }, (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "78",
+      "title" : "[GET] Retrieve the Certificate Selection of the Web Management Settings",
+      "result" : "  1.Using postman,get the Web Management Settings using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "93" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"web-management tooltip button_delay 55\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }\n  2.verify the response of step2 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"web-management tooltip button_delay 5555\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "93",
+      "title" : "[PUT] Set the button_delay to a value that exceeds the minimum <500>/maximum value <5000>",
+      "result" : "  1.Using postman,edit the tooltip by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  \"tooltip\": { \"button_delay\": 55,\n  }\n  2.Using postman,edit the tooltip by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  \"tooltip\": { \"button_delay\": 5555,\n  }"
+   },
+   "106" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify the result should be the same with the GUI",
+      "id" : "106",
+      "title" : "[PUT]Configure GMS settings while GMS MGMT is disabled",
+      "result" : "  1.uncheck the 'Enable management using GMS' on GUI\n  2..Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": {}, \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "65" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  { (the default parameters) \"user_lockout\": { \"lockout_duration\": 55, (the default parameters) }\n  4.Verify in the SonicOS GUI that the lockout_duration is changed correspondingly",
+      "id" : "65",
+      "title" : "[PUT]Set the lockout_duration to a valid number",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"user_lockout\": { \"lockout_duration\": 55, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "29" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n { \\t \\\"duration\\\": aaa@ }, \\n ^\\n\" } ] }\n  }",
+      "id" : "29",
+      "title" : "[PUT] Set the password uniqueness count to a alphabet/special characters",
+      "result" : "  1.Using postman,edit the aging count by API,\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"password\": { \"uniqueness\": { \"count\": aaa@ (the default parameters) }"
+   },
+   "138" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the parameters in the json body is changed correspondingly on GUI",
+      "id" : "138",
+      "title" : "[PUT] Set the ssh_port to a valid number",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"ssh\": { \"port\": 222 }"
+   },
+   "114" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }",
+      "id" : "114",
+      "title" : "[PUT]Set the 'host_name' value to a valid IP address",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"123\", \"port\": 521 }, \"host_name\": \"1.1.1.1\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "58" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"failures_rate\\\": a, \\\"failures_durati\\n ^\\n\" } ] }\n  }",
+      "id" : "58",
+      "title" : "[PUT]Set the failures_rate to a a non-numeric character",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"user_lockout\": { \"failures_rate\": a, (the default parameters) }"
+   },
+   "15" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.Verify in the SonicOS GUI that the Password is edited as mentioned above",
+      "id" : "15",
+      "title" : "[PUT] Configure the new Password to a valid alphanumeric/number string",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to passw0rd\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)"
+   },
+   "137" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"ssh\\\": { \\\"port\\\": a } } }\\n ^\\n\" } ] }\n  }",
+      "id" : "137",
+      "title" : "[PUT] Set the ssh_port to a non-numeric character",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"ssh\": { \"port\": a }"
+   },
+   "81" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"web-management certificate name 123456\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_NO_MATCH\", \"message\": \"No matching command found.\" } ] }\n  }",
+      "id" : "81",
+      "title" : "[PUT] Set the Certificate name to a certificate that doesnt exist on the firewall",
+      "result" : "  1.Using postman,edit the password aging by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"web_management\": { \"allow_http\": false, \"certificate\": { \"name\": \"123456\" }, (the default parameters) }"
+   },
+   "60" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"user-lockout failures-duration 241\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "60",
+      "title" : "[PUT]Set the failures_duration to a value that exceeds the maximum value <240>",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"user_lockout\": { \"failures_duration\": 241, (the default parameters) }"
+   },
+   "101" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW",
+      "initial" : "  1.it should popup a window as followed:\n  Select a certificate to authenticate yourself to {wan_ip}:443\n  choose the imported certificate before,the webpage should login the firewall successfully",
+      "id" : "101",
+      "title" : "[Func] Client Certificate Check Authentication",
+      "result" : "  1.Go to System--&gt;Certificates,import a valid CA certificate\n  2.Go to User--&gt;Local Users&amp;Groups,add a local user,the name must be the same with the CN of the certificate,add this user into group \"SonicWALL Administrators\"\n  3.Go to System--&gt;Administration--&gt;Client Certificate Check, (1) check 'Enable Client Certificate Check' ,check 'Enable Client Certificate Cache' (2) User Name Field--&gt;Subject:Common Name, (3) Client Certificate Issuer--&gt;the certificate imported before\n  4.import the certificate to Chrome/Firefox(don't support IE)\n  5.login the firewall with ip https://{wan_ip}"
+   },
+   "73" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"",
+      "id" : "73",
+      "title" : "[PUT] Set the Enchanced Audit Logging Support to true",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"enhanced_audit_logging\": true, (the default parameters) }"
+   },
+   "86" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"web-management refresh-interval 301\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "86",
+      "title" : "[PUT] Set the refresh_interval to a value that exceeds the maximum value <300>",
+      "result" : "  1.Using postman,edit the refresh_interval by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"refresh_interval\": 301, (the default parameters) }"
+   },
+   "76" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }",
+      "id" : "76",
+      "title" : "[PUT] Set the Wireless Controller mode to 'Wireless-Controller-Only'",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"wireless_controller_mode\": \"non-wireless-controller\", (the default parameters) }"
+   },
+   "62" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  { (the default parameters) \"user_lockout\": { \"failures_duration\": 24, (the default parameters) }\n  4.Verify in the SonicOS GUI that the failures_duration is changed correspondingly",
+      "id" : "62",
+      "title" : "[PUT]Set the failures_duration to a valid number",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"user_lockout\": { \"failures_duration\": 24, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "67" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  { (the default parameters) \"log_without_lockout\": false, (the default parameters) }\n  4.Verify in the SonicOS GUI that the setting is changed correspondingly",
+      "id" : "67",
+      "title" : "[PUT] Set the log_without_lockout to true",
+      "result" : "  1.Using postman,edit the password aging count by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is: { (the default parameters) \"log_without_lockout\": true, (the default parameters) } 2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST) 3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "139" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_UNAUTHORIZED\", \"message\": \"Unauthorized.\" } ] }\n  }",
+      "id" : "139",
+      "title" : "[No Auth][GET]/administration/global",
+      "result" : "  1.Using postman,get the Port Number of https_port using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "129" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of commit pending config in step1 will return success with no error as followed:\n  {\n  \u00c2\u00a6\u00c2\u00a6(the default parameters) \"language_override\": { \"english\": true }, \u00c2\u00a6\u00c2\u00a6(the default parameters) } verify the result should be the same with the GUI",
+      "id" : "129",
+      "title" : "[GET] Retrieve the Language",
+      "result" : "  1.Using postman,get the Language information using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "2" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  {\n  \"administration\": { \"firewall_domain_name\": \"\", (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "2",
+      "title" : "[GET] Retrieve the Firewall's Domain Name",
+      "result" : "  1.Using postman,get Firewall name of administration using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "17" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { \"one_time_password\": {}, (the default parameters) },\n  verify the result should be the same with the GUI",
+      "id" : "17",
+      "title" : "[GET] Retrieve the One-time Passwords Method",
+      "result" : "  1.Using postman,get the One-time Passwords Method using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "110" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify that the 'Enable management using GMS' on GUI will be checked",
+      "id" : "110",
+      "title" : "[PUT]Configure Advanced Management with GMS MGMT Mode 'HTTPS'",
+      "result" : "  1.uncheck the 'Enable management using GMS' on GUI\n  2..Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": {}, \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "82" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"default_table_size\": 50, (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "82",
+      "title" : "[GET] Retrieve the Web Management Settings(Table parameter)",
+      "result" : "  1.Using postman,get the Table parameter using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "135" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of commit pending config in step1 will return success with no error as followed:\n  {\n  (the default parameters) \"ssh\": { \"port\": 22 }\n  (the default parameters) } verify the result should be the same with the GUI",
+      "id" : "135",
+      "title" : "[GET] Retrieve the Port Number of ssh_port",
+      "result" : "  1.Using postman,get the Port Number of https_port using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "14" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return faliure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"admin name #\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_INCOMPLETE_CMD\", \"message\": \"Incomplete command.\" }\n  2.verify the response of step2 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" }",
+      "id" : "14",
+      "title" : "[PUT] Configure the new Password to a string that includes special characters",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to !@#$%^&amp;*\n  2.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to !@$%^&amp;*"
+   },
+   "112" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the result should be the same with the GUI",
+      "id" : "112",
+      "title" : "[PUT]Set the 'host_name' value to a valid domain name",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"123\", \"port\": 521 }, \"host_name\": \"hello\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "69" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"inter-admin-messaging 999\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "69",
+      "title" : "[PUT] Set the inter_admin_messaging  to a value that exceeds the maximum length <99>",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"inter_admin_messaging\": 999, (the default parameters) }"
+   },
+   "49" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no error 3.verify the GET command should return success with no errors\n  4.login the firewall in GUI,verify the setting of multiple_admin is changed correspondingly on GUI",
+      "id" : "49",
+      "title" : "[PUT] Set the 'multiple_admin' to true",
+      "result" : "  1.Using postman,edit the Login Security and Multiple Administrators information by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"constraints_apply_to\": { \"builtin_admin\": true, \"full_admins\": true, \"limited_admins\": true, \"local_users\": true, \"guest_admins\": true, \"system_admins\": true, \"crypto_admins\": true, \"audit_admins\": true } \"multiple_admin\": true, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.commit GET command using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "24" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { \"password\": { \"aging\": {}, \"uniqueness\": {}, \"enforce_character_difference\": false, \"minimum_length\": 8, \"complexity\": {}, \"constraints_apply_to\": { \"builtin_admin\": true, \"full_admins\": true, \"limited_admins\": true, \"local_users\": true, \"guest_admins\": true } },\n  verify the result should be the same with the GUI",
+      "id" : "24",
+      "title" : "[GET] Retrieve the Password settings with default parameter",
+      "result" : "  1.First disable TOTP,and Go to Manage--&gt;Appliance--&gt;Enable SonicOS API,uncheck the 'Enable Two-Factor and Bearer Token Authentication (applies to built-in admin and local user with TOTP only, post sonicos/tfa directly instead of sonicos/auth)' 2.login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).\n  3.Using postman,get the Password settings information using url: https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "140" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_UNAUTHORIZED\", \"message\": \"Unauthorized.\" } ] }\n  }",
+      "id" : "140",
+      "title" : "[No Auth][PUT]/administration/global",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"ssh\": { \"port\": 222 }"
+   },
+   "124" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"gms_ipsec_management_mode\", \"depth\": 3, \"command\": \"encryption-key 123456\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_ERROR\", \"message\": \"The encryption key must be 16 hex characters for DES.\" } ] }\n  }",
+      "id" : "124",
+      "title" : "[PUT]Configure the 'Encryption Key' to a value which the length is not 16",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is: \"gms_management\": { \"ipsec_tunnel\": { \"spi\": \"C0EAE4CCF5E8\", \"encryption_type\": \"des-md5\", \"encryption_key\": \"123456\", \"authentication_key\": \"aa\", \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } },"
+   },
+   "104" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"gms_management\": { \"ipsec_tunnel\": { \"spi\": \"C0EAE4CCF5E8\", \"encryption_type\": \"des-md5\", \"encryption_key\": \"0cf224ea209c87c8\", \"authentication_key\": \"ef1f180a865b552c052c3c0b295e2458\", \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "104",
+      "title" : "[GET] Retrieve Advanced Management settings while GMS MGMT mode is 'IPSEC Management Tunnel'",
+      "result" : "  1.choose the GMS MGMT mode to 'IPSET Management Tunnel' on GUI\n  2.Using postman,get the the Advanced Management settings using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "131" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of commit pending config in step1 will return success with no error as followed:\n  {\n  (the default parameters) \"https_port\": 443,\n  (the default parameters) } verify the result should be the same with the GUI",
+      "id" : "131",
+      "title" : "[GET] Retrieve the Port Number of https_port",
+      "result" : "  1.Using postman,get the Port Number of https_port using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "121" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"gms_https_management_mode\", \"depth\": 3, \"command\": \"reporting-server port 66666\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }\n  2.verify the response of step2 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"port\\\": a }, \\n ^\\n\" } ] }\n  }",
+      "id" : "121",
+      "title" : "[PUT]Configure 'reporting_server' port to an invalid value (out of bound <65535>;, non-numerical)",
+      "result" : "  1.Using postman,edit the gms_management by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is: { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"1.2.3.4\", \"port\": 66666 }, \"host_name\":\"1.1.1.1\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": { \"ip\": \"2.2.2.2\" } (the default parameters) } 2.Using postman,edit the gms_management by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is: { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"1.2.3.4\", \"port\": a }, \"host_name\":\"1.1.1.1\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": { \"ip\": \"2.2.2.2\" } (the default parameters) }"
+   },
+   "79" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"",
+      "id" : "79",
+      "title" : "[PUT] Set the Certificate Common Name to alphabets/special characters",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"cert_common_name\": \"aaa\", (the default parameters) }"
+   },
+   "23" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.there is no information related Feature Visibility yet",
+      "id" : "23",
+      "title" : "[GET] Retrieve the Feature Visibility (Not support yet)",
+      "result" : "  1.Using postman,get the Feature Visibility using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "96" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"text_delay\\\": a } }, \\n ^\\n\" } ] }\n  }",
+      "id" : "96",
+      "title" : "[PUT] Set the text_delay to a non-numeric character",
+      "result" : "  1.Using postman,edit the tooltip by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  \"tooltip\": { \"text_delay\": a,"
+   },
+   "126" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"gms_ipsec_management_mode\", \"depth\": 3, \"command\": \"authentication-key 1111111111111111111111111111111\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_ERROR\", \"message\": \"The authentication key must be 32 hex characters for MD5.\" } ] }\n  }",
+      "id" : "126",
+      "title" : "[PUT]Configure the 'Authentication Key' to a value which the length is not 32",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"gms_management\": { \"ipsec_tunnel\": { \"spi\": \"C0EAE4CCF5E8\", \"encryption_type\": \"des-md5\", \"encryption_key\": \"1234567891234567\", \"authentication_key\": \"1111111111111111111111111111111\", \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } },"
+   },
+   "47" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failures",
+      "id" : "47",
+      "title" : "[PUT] Set the new password to a string that doesn't meet the setting in case44",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to 123"
+   },
+   "8" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { \"admin\": { \"name\": \"admin\", \"one_time_password\": {}, (the default parameters) },\n  verify the result should be the same with the GUI",
+      "id" : "8",
+      "title" : "[GET] Retrieve the Administrator Name & Password",
+      "result" : "  1.Using postman,get Administrator Name &amp; Password using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "98" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no errors\n  4.Verify in the SonicOS GUI that the setting is changed correspondingly",
+      "id" : "98",
+      "title" : "[PUT] Set the out_of_band_management to true",
+      "result" : "  1.Using postman,edit the dashboard_as_starting_page by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"out_of_band_management\": true, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "37" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"password complexity symbolic 1\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_NO_MATCH\", \"message\": \"No matching command found.\" } ] }\n  }",
+      "id" : "37",
+      "title" : "[PUT] Set the password complexity to 'alpha-and-numeric' with symbolic isn't zero",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"complexity\": { \"type\": \"alpha-and-numeric\", \"upper_case\": 3, \"lower_case\": 1, \"digital\": 1, \"symbolic\": 1 },"
+   },
+   "117" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify that the option 'GMS behind NAT Device' on GUI will be checked,and the NAT Device IP Address is set",
+      "id" : "117",
+      "title" : "[PUT]Try to configure the 'NAT Device IP Address' while option 'GMS behind NAT Device' is disabled",
+      "result" : "  1.uncheck the option 'GMS behind NAT Device'\n  2.Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"11.1.1.1\", \"port\": 521 }, \"host_name\":\"1.1.1.1\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": { \"ip\": \"2.2.2.2\" } (the default parameters) }"
+   },
+   "43" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: property 'lower_case' must be configured\\n \\\"lower_case\\\": 0, \\\"digital\\\": 1\\n ^\\n\" } ] }\n  }\n  2.verify the response of step2 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: property 'symbolic' must be configured\\n \\\"symbolic\\\": 0 }, \\\"c\\n ^\\n\" } ] }\n  }",
+      "id" : "43",
+      "title" : "[PUT] Set the password complexity to 'alpha-and-numeric-and-symbols' with any of Upper or Lower Case or Number Characters or Symbolic Characters is zero",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"complexity\": { \"type\": \"alpha-and-numeric-and-symbols\", \"upper_case\": 1, \"lower_case\": 0, \"digital\": 1, \"symbolic\": 1 }, (the default parameters) }\n  2.1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"complexity\": { \"type\": \"alpha-and-numeric-and-symbols\", \"upper_case\": 1, \"lower_case\": 1, \"digital\": 1, \"symbolic\": 0 }, (the default parameters) }"
+   },
+   "5" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  {\n  \"administration\": { \"firewall_name\": \"mia_112358**\", (the default parameters) }\n  4.Verify in the SonicOS GUI that Firewall Name is edited as mentioned above in the json file.",
+      "id" : "5",
+      "title" : "[PUT] Set the Firewall Name value a valid name",
+      "result" : "  1.Using postman,edit the firewall_name and firewall_domain_name by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"administration\": { \"firewall_name\": \"mia_112358**\", (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "33" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"minimum_length\\\": abc, \\\"complexity\\\":\\n ^\\n\" } ] }\n  }",
+      "id" : "33",
+      "title" : "[PUT] Set the password minimun_length to alphabets/special characters",
+      "result" : "  1.Using postman,edit the aging count by API,\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"minimum_length\": abc%, (the default parameters) }"
+   },
+   "21" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows",
+      "initial" : "  1.verify the response of step3 will return failure with errors as followed:\n  ERROR: login fail",
+      "id" : "21",
+      "title" : "[POST] Auth the firewall with url api/sonicos/tfa with TOTP is disabled",
+      "result" : "  1.Two-Factor and Bearer token Authentication method applies to local user with TOTP option only. Remote users and local user but not TOTP are denied.\n  2.To turn on this functionality,HTTP management has to be disabled,Administrator password method must be TOTP,and Go to Manage--&gt;Appliance--&gt;Enable SonicOS API,check the 'Enable Two-Factor and Bearer Token Authentication (applies to built-in admin and local user with TOTP only, post sonicos/tfa directly instead of sonicos/auth)' 3.login in the firewall by POSTMAN using url:https://ip/api/sonicos/tfa(POST), to get bearer token,the Authentication type should choose Bearer Token, the json body is:\n  { \"user\": \"admin\", \"password\": \"password\", \"tfa\": \"567675\", \"override\": false\n  }"
+   },
+   "63" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"user-lockout lockout-duration 62\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "63",
+      "title" : "[PUT]Set the lockout_duration to a value that exceeds the maximum value <60>",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"user_lockout\": { \"lockout_duration\": 62 (the default parameters) }"
+   },
+   "7" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": false, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Changes made.\" } ] }\n  }\n  3.GET command should return success with no error as followed:\n  {\n  \"administration\": { \"firewall_domain_name\": \"112358GJL\", (the default parameters) }\n  4.Verify in the SonicOS GUI that Firewall Name is edited as mentioned above in the json file.",
+      "id" : "7",
+      "title" : "[PUT] Set the Firewall's Domain Name to a valid domain name",
+      "result" : "  1.Using postman,edit the firewall_name and firewall_domain_name by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"administration\": { \"firewall_domain_name\": \"112358GJL\", (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "26" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n { \\t \\\"duration\\\": aaa@ }, \\n ^\\n\" } ] }\n  }",
+      "id" : "26",
+      "title" : "[PUT] Set the password aging count to a alphabet/special characters",
+      "result" : "  1.Using postman,edit the aging count by API,\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"password\": { \"aging\": { \"duration\": aaa@ (the default parameters) }"
+   },
+   "80" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no errors\n  4.Verify in the SonicOS GUI that the Certificate Selection is changed to mia,the Certificate Common Name entry is vanished",
+      "id" : "80",
+      "title" : "[PUT] Set the Certificate name to other certificates imported into the firewall before",
+      "result" : "  1.import a valid certificate(mia) to the firewall\n  2.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"web_management\": { \"allow_http\": false, \"certificate\": { \"name\": \"mia\" }, (the default parameters) }\n  3.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  4.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "119" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify that the option 'Send Syslog Message..' on GUI will be checked,and the GMS Reporting Server IP Address and the GMS Reporting Server Port is set",
+      "id" : "119",
+      "title" : "[PUT]Configure 'reporting_server' settings while the option 'Send Syslog Message..' is disabled",
+      "result" : "  1.uncheck the option 'Send Syslog Message..'\n  2..Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"11.1.1.1\", \"port\": 521 }, \"host_name\":\"1.1.1.1\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": { \"ip\": \"2.2.2.2\" } (the default parameters) }"
+   },
+   "99" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of commit pending config in step1 will return success with no error as followed:\n  { (the default parameters) \"client_certificate_check\": false, (the default parameters) } verify the result should be the same with the GUI",
+      "id" : "99",
+      "title" : "[GET] Retrieve the Client Certificate Check is false",
+      "result" : "  1.Using postman,get the Client Certificate Check using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "72" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"enhanced_audit_logging\": false, (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "72",
+      "title" : "[GET] Retrieve the Enchanced Audit Logging Support",
+      "result" : "  1.Using postman,get the Enchanced Audit Logging Support using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "74" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"wireless_controller_mode\": \"normal-firewall\", (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "74",
+      "title" : "[GET] Retrieve the Wireless LAN Controller",
+      "result" : "  1.Using postman,get the Wireless LAN Controller using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "61" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"failures_duration\\\": a, \\\"lockout_duratio\\n ^\\n\" } ] }\n  }",
+      "id" : "61",
+      "title" : "[PUT]Set the failures_duration to a non-numeric character",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"user_lockout\": { \"failures_duration\": a, (the default parameters) }"
+   },
+   "108" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify the result should be the same with the GUI",
+      "id" : "108",
+      "title" : "[PUT]Configure each Advanced Management setting with proper values",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"123\", \"port\": 521 }, \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "115" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"gms_https_management_mode\", \"depth\": 3, \"command\": \"syslog-server-port 99999\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } }",
+      "id" : "115",
+      "title" : "[PUT]Set the 'Syslog_Sever_Port' to a value out of bound <65535>",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"123\", \"port\": 521 }, \"host_name\": \"111\", \"syslog_server_port\": 99999, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "92" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"form_delay\\\": 5a5, \\\"button_del\\n ^\\n\" } ] }\n  }",
+      "id" : "92",
+      "title" : "[PUT] Set the form_delay to a non-numeric character",
+      "result" : "  1.Using postman,edit the tooltip by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  \"tooltip\": { \"form_delay\": 5a5,\n  }"
+   },
+   "103" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": {}, \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "103",
+      "title" : "[GET] Retrieve Advanced Management settings while GMS MGMT mode is 'HTTPS'",
+      "result" : "  1.choose the GMS MGMT mode to 'HTTPS' on GUI\n  2.Using postman,get the the Advanced Management settings using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "10" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  {\n  \"admin\": { \"name\": \"admin\", (the default parameters) }\n  4.Verify in the SonicOS GUI that the Administration Name is edited as mentioned above in the json file.",
+      "id" : "10",
+      "title" : "[PUT] Set the Administration Name to a valid name",
+      "result" : "  1.Using postman,edit the Administration Name by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  {\n  \"admin\": { \"name\": \"admin\", (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "113" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid character inside string.\\n \\\"host_name\\\": \\\"111 \\\", \\n ^\\n\" } ] }\n  }",
+      "id" : "113",
+      "title" : "[PUT]Set the 'host_name' value to a numeric domain name",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"123\", \"port\": 521 }, \"host_name\": \"111\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "142" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_UNAUTHORIZED\", \"message\": \"Unauthorized.\" } ] }\n  }",
+      "id" : "142",
+      "title" : "[No Auth][PUT]/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD}",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to passw0rd"
+   },
+   "91" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"web-management tooltip form-delay 55\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }\n  2.verify the response of step2 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"web-management tooltip form-delay 5555\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "91",
+      "title" : "[PUT] Set the form_delay to a value that exceeds the minimum <500>/maximum value <5000>",
+      "result" : "  1.Using postman,edit the tooltip by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  \"tooltip\": { \"form_delay\": 55,\n  }\n  2.Using postman,edit the tooltip by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  \"tooltip\": { \"form_delay\": 5555,\n  }"
+   },
+   "48" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { \"constraints_apply_to\": { \"builtin_admin\": true, \"full_admins\": true, \"limited_admins\": true, \"local_users\": true, \"guest_admins\": true, } \"multiple_admin\": false, (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "48",
+      "title" : "[GET] Retrieve the 'multiple_admin' is false",
+      "result" : "  1.Using postman,get the Multiple Administrators information using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "107" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: invalid object key (must be a string)\\n \\\"reporting_server\\\": {11}, \\\"host_name\\\"\\n ^\\n\" } ] }\n  }",
+      "id" : "107",
+      "title" : "[PUT]Configure each Advanced Management setting with improper values",
+      "result" : "  1.check the 'Enable management using GMS' on GUI\n  2..Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": {123}, \"host_name\": \"123\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "87" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"refresh_interval\\\": awe, \\\"tooltip\\\": { \\n ^\\n\" } ] }\n  }",
+      "id" : "87",
+      "title" : "[PUT] Set the refresh_interval to a non-numeric character",
+      "result" : "  1.Using postman,edit the refresh_interval by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"refresh_interval\": awe, (the default parameters) }"
+   },
+   "77" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }",
+      "id" : "77",
+      "title" : "[PUT] Set the Wireless Controller mode to 'normal-firewall'",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"wireless_controller_mode\": \"normal-firewall\", (the default parameters) }"
+   },
+   "133" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n }, \\\"https_port\\\": a, \\\"ssh\\\": { \\n ^\\n\" } ] }\n  }",
+      "id" : "133",
+      "title" : "[PUT] Set the https_port to a non-numeric character",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"https_port\": a,"
+   },
+   "123" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: invalid format\\n \\\"encryption_key\\\": \\\"@@@\\\", \\\"authenticat\\n ^\\n\" } ] }\n  }",
+      "id" : "123",
+      "title" : "[PUT]Configure the 'Encryption Key' to a value that includes special characters",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"gms_management\": { \"ipsec_tunnel\": { \"spi\": \"aaa\", \"encryption_type\": \"des-md5\", \"encryption_key\": \"@@@\", \"authentication_key\": \"ef1f180a865b552c052c3c0b295e2458\", \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } },"
+   },
+   "50" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }",
+      "id" : "50",
+      "title" : "[PUT] Set the any of the parameter under 'constraints_apply_to' to  false",
+      "result" : "  1.Using postman,edit the Login Security and Multiple Administrators information by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is: { (the default parameters) \"constraints_apply_to\": { \"builtin_admin\": true, \"full_admins\": true, \"limited_admins\": false, \"local_users\": false, \"guest_admins\": false, \"system_admins\": false, \"crypto_admins\": false, \"audit_admins\":false } \"multiple_admin\": false, (the default parameters) }"
+   },
+   "39" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { \"complexity\": { \"type\": \"alpha-and-numeric\", \"upper_case\": 3, \"lower_case\": 1, \"digital\": 1 }, verify the result should be the same with the GUI",
+      "id" : "39",
+      "title" : "[GET] Retrieve the password complexity",
+      "result" : "  1.Using postman,get the Password settings information using url: https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "64" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"lockout_duration\\\": a }, \\\"local_use\\n ^\\n\" } ] }\n  }",
+      "id" : "64",
+      "title" : "[PUT]Set the lockout_duration to a non-numeric character",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"user_lockout\": { \"lockout_duration\": a (the default parameters) }"
+   },
+   "97" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no errors\n  4.Verify in the SonicOS GUI that the setting is changed correspondingly",
+      "id" : "97",
+      "title" : "[PUT] Set the tls_and_above to true",
+      "result" : "  1.Using postman,edit the dashboard_as_starting_page by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"tls_and_above\": true, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "12" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.Verify in the SonicOS GUI that the Password is edited as mentioned above",
+      "id" : "12",
+      "title" : "[PUT] Configure the new Password to a valid string",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to 123456\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)"
+   },
+   "41" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"password complexity symbolic 1\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_NO_MATCH\", \"message\": \"No matching command found.\" } ] }\n  }\n  DTS",
+      "id" : "41",
+      "title" : "[PUT] Set the new password to a string with special characters/alphabet",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to Aa111@"
+   },
+   "52" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"idle_logout_time\": 60, (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "52",
+      "title" : "[GET] Retrieve the default idle_logout_time",
+      "result" : "  1.Using postman,get the idle_logout_time using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "56" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  { (the default parameters) \"user_lockout\": { \"failures_rate\": 99, \"failures_duration\": 10, \"lockout_duration\": 10 }, (the default parameters) }\n  4.Verify in the SonicOS GUI that the 'user_lockout' will be checked",
+      "id" : "56",
+      "title" : "[PUT] Set the any of the 'failures_rate' or 'failures_duration' or 'lockout_duration' to a valid number",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"user_lockout\": { \"failures_rate\": 99, \"failures_duration\": 10, \"lockout_duration\": 10 }, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "45" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { \"complexity\": { \"type\": \"alpha-and-numeric-and-symbols\", \"upper_case\": 1, \"lower_case\": 1, \"digital\": 1, \"symbolic\": 1 },\n  verify the result should be the same with the GUI",
+      "id" : "45",
+      "title" : "[GET] Retrieve the password complexity",
+      "result" : "  1.Using postman,get the password complexity using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "66" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"log_without_lockout\": true, (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "66",
+      "title" : "[GET] Retrieve the log_without_lockout",
+      "result" : "  1.Using postman,get the log_without_lockout using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "19" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows",
+      "initial" : "  1.verify the response of step3 will return success with no error as followed:\n  INFO: Success. BearToken: QIvfotQCGercCd02xVSHHg2fvB12mnoa2XHqFNx9a5OltOFKcyL/BE8YC1rLYDRe2Q==",
+      "id" : "19",
+      "title" : "[POST] Auth the firewall with url api/sonicos/tfa to get bearer token",
+      "result" : "  1.Two-Factor and Bearer token Authentication method applies to local user with TOTP option only. Remote users and local user but not TOTP are denied.\n  2.To turn on this functionality,HTTP management has to be disabled,Administrator password method must be TOTP,and Go to Manage--&gt;Appliance--&gt;Enable SonicOS API,check the 'Enable Two-Factor and Bearer Token Authentication (applies to built-in admin and local user with TOTP only, post sonicos/tfa directly instead of sonicos/auth)' 3.login in the firewall by POSTMAN using url:https://ip/api/sonicos/tfa(POST), to get bearer token,the Authentication type should choose Bearer Token, the json body is:\n  { \"user\": \"admin\", \"password\": \"password\", \"tfa\": \"567675\", \"override\": false\n  }"
+   },
+   "54" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"idle_logout_time\\\": a, \\\"user_lockout\\\": { \\n ^\\n\" } ] }\n  }",
+      "id" : "54",
+      "title" : "[PUT]Set the  idle_logout_time to alphabet/special characters",
+      "result" : "  1.Using postman,edit the idle_logout_time by API,the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"idle_logout_time\": a%, (the default parameters) }"
+   },
+   "70" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"inter_admin_messaging\\\": a, \\\"multiple_admin\\\": tr\\n ^\\n\" } ] }\n  }",
+      "id" : "70",
+      "title" : "[PUT]Set the inter_admin_messaging  to a non-numeric character",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"inter_admin_messaging\": a, (the default parameters) }"
+   },
+   "68" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"inter_admin_messaging\": 99, (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "68",
+      "title" : "[GET] Retrieve the inter_admin_messaging",
+      "result" : "  1.Using postman,get the inter_admin_messaging using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "1" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.The login POST command should return success\n  2.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { \"administration\": { \"firewall_name\": \"(serial number)\", (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "1",
+      "title" : "[GET] Retrieve the Firewall Name",
+      "result" : "  1.Using postman,get Firewall name of administration using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "136" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"ssh port 66666\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "136",
+      "title" : "[PUT] Set the ssh_port to a value that exceeds the maxmium value <65535>",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"ssh\": { \"port\": 66666 }"
+   },
+   "88" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no errors\n  4.Verify in the SonicOS GUI that the setting is changed correspondingly",
+      "id" : "88",
+      "title" : "[PUT]Set the refresh_interval to a valid number",
+      "result" : "  1.Using postman,edit the refresh_interval by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"refresh_interval\": 299, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "116" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"syslog_server_port\\\": aaaa, \\\"heartbea\\n ^\\n\" } ] }\n  }",
+      "id" : "116",
+      "title" : "[PUT]Set the 'Syslog_Sever_Port' to a none-numerical value",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"123\", \"port\": 521 }, \"host_name\": \"111\", \"syslog_server_port\": aaaa, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "141" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_UNAUTHORIZED\", \"message\": \"Unauthorized.\" } ] }\n  }",
+      "id" : "141",
+      "title" : "[No Auth][PUT]/administration/unbind-totp-key",
+      "result" : "  1.commit PUT command using url: https://{{wan_ip}}/api/sonicos/administration/unbind-totp-key"
+   },
+   "30" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  { \"password\": { \"uniqueness\": { \"count\": 32 (the default parameters) }\n  4.Verify in the SonicOS GUI that the aging count is edited as mentioned above in the json file.",
+      "id" : "30",
+      "title" : "[PUT] Set the password uniqueness count to a a valid number",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"password\": { \"uniqueness\": { \"count\": 32 (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "100" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no errors\n  4.Verify in the SonicOS GUI that the setting is changed correspondingly",
+      "id" : "100",
+      "title" : "[PUT] Set the client_certificate_check to true",
+      "result" : "  1.Using postman,edit the client_certificate_check by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"client_certificate_check\": true, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "25" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"password aging duration 99999\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }\n  2.1.verify the response of step2 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: property 'duration' must be configured\\n { \\t \\\"duration\\\": 0 }, \\\"u\\n ^\\n\" } ] }\n  }",
+      "id" : "25",
+      "title" : "[PUT] Set the password aging count to a value exceeds the maximum value <9999>",
+      "result" : "  1.Using postman,edit the aging count by API,\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"password\": { \"aging\": { \"duration\": 99999 (the default parameters) }\n  2.Using postman,edit the aging count by API,\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"password\": { \"aging\": { \"duration\": 0 (the default parameters) }"
+   },
+   "128" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: unknown property 'ip'\\n 1234567\\\", \\\"ip\\\":\\\"1.1.1.1\\\" \\n ^\\n\" } ] }\n  }",
+      "id" : "128",
+      "title" : "[PUT]Configure the Advanced Management with settings that have redundant parameters",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"gms_management\": { \"ipsec_tunnel\": { \"spi\": \"C0EAE4CCF5E8\", \"encryption_type\": \"des-md5\", \"encryption_key\": \"1234567891234567\", \"ip\":\"1.1.1.1\" \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} }"
+   },
+   "28" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"password uniqueness count 33\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }\n  2.1.verify the response of step2 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: property 'count' must be configured\\n ss\\\": { \\t\\\"count\\\": 0 }, \\\"e\\n ^\\n\" } ] }\n  }",
+      "id" : "28",
+      "title" : "[PUT] Set the password uniqueness count to a value exceeds the maximum value <32>",
+      "result" : "  1.Using postman,edit the uniqueness count by API,\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"password\": { \"uniqueness\": { \"count\": 33 (the default parameters) }\n  2.Using postman,edit the aging count by API,\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"password\": { \"uniqueness\": { \"count\": 0 (the default parameters) }"
+   },
+   "120" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid character inside string.\\n \\t \\\"ip\\\": \\\"1234 \\t \\\", \\n ^\\n\" } ] }\n  }",
+      "id" : "120",
+      "title" : "[PUT]Configure 'reporting_server' to an invalid IP address",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"https\": { \"reporting_server\": { \"ip\": \"1234\", \"port\": 521 }, \"host_name\":\"1.1.1.1\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": { \"ip\": \"2.2.2.2\" } (the default parameters) }"
+   },
+   "134" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the parameters in the json body is changed correspondingly on GUI",
+      "id" : "134",
+      "title" : "[PUT] Set the https_port to a valid number",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"https_port\": 514,"
+   },
+   "40" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"password complexity symbolic 1\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_NO_MATCH\", \"message\": \"No matching command found.\" } ] }\n  }",
+      "id" : "40",
+      "title" : "[PUT] Set the Symbolic Characters with a value with the password complexity is 'alpha-and-numeric'",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"complexity\": { \"type\": \"alpha-and-numeric\", \"upper_case\": 1, \"lower_case\": 1, \"digital\": 1, \"symbolic\": 1 }, (the default parameters) }"
+   },
+   "75" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }",
+      "id" : "75",
+      "title" : "[PUT] Set the Wireless Controller mode to 'Non-Wireless'",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"wireless_controller_mode\": \"non-wireless-controller\", (the default parameters) }"
+   },
+   "83" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"web-management default-table-size 49999\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "83",
+      "title" : "[PUT] Set the default_table_size to a value that exceeds the maximum value <5000>",
+      "result" : "  1.Using postman,edit the default_table_size count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"default_table_size\": 49999, (the default parameters) }"
+   },
+   "59" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  { (the default parameters) \"user_lockout\": { \"failures_rate\": 5555, (the default parameters) }\n  4.Verify in the SonicOS GUI that the failures_rate is changed correspondingly",
+      "id" : "59",
+      "title" : "[PUT]Set the failures_rate to a valid number",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"user_lockout\": { \"failures_rate\": 5555, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "130" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: property 'english' must be configured\\n { \\\"english\\\": false }, \\\"gms_manag\\n ^\\n\" } ] }\n  }",
+      "id" : "130",
+      "title" : "[PUT] Configure the Language",
+      "result" : "  1.Using postman,edit the Language by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"language_override\": { \"english\": false },"
+   },
+   "53" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"idle-logout-time 99999\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "53",
+      "title" : "[PUT]Set the  idle_logout_time to a value exceeds the maximum length <9999>",
+      "result" : "  1.Using postman,edit the idle_logout_time by API,the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"idle_logout_time\": 99999, (the default parameters) }"
+   },
+   "122" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"gms_ipsec_management_mode\", \"depth\": 3, \"command\": \"spi aaa\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_READ_ONLY\", \"message\": \"Read only.\" } ] }\n  }",
+      "id" : "122",
+      "title" : "[PUT]Configure the 'Inbound/Outbound SPI' when GMS MGMT mode is 'IPSEC Management Tunnel'",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"gms_management\": { \"ipsec_tunnel\": { \"spi\": \"aaa\", \"encryption_type\": \"des-md5\", \"encryption_key\": \"0cf224ea209c87c8\", \"authentication_key\": \"ef1f180a865b552c052c3c0b295e2458\", \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } },"
+   },
+   "42" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failures",
+      "id" : "42",
+      "title" : "[PUT] Set the new password to a string that doesn't meet the setting in case38",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to 123456"
+   },
+   "22" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows",
+      "initial" : "  1.verify the response of step3 will return failure with errors as followed:\n  ERROR: login fail",
+      "id" : "22",
+      "title" : "[POST] Auth the firewall with url api/sonicos/tfa with the wrong tfa code",
+      "result" : "  1.Two-Factor and Bearer token Authentication method applies to local user with TOTP option only. Remote users and local user but not TOTP are denied.\n  2.To turn on this functionality,HTTP management has to be disabled,Administrator password method must be TOTP,and Go to Manage--&gt;Appliance--&gt;Enable SonicOS API,check the 'Enable Two-Factor and Bearer Token Authentication (applies to built-in admin and local user with TOTP only, post sonicos/tfa directly instead of sonicos/auth)' 3.login in the firewall by POSTMAN using url:https://ip/api/sonicos/tfa(POST), to get bearer token,the Authentication type should choose Bearer Token, the json body is:\n  { \"user\": \"admin\", \"password\": \"password\", \"tfa\": \"555555\", \"override\": false\n  }"
+   },
+   "46" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success",
+      "id" : "46",
+      "title" : "[PUT] Set the new password to a string with special characters/alphabet",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to Aa111@"
+   },
+   "13" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"admin name #\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_INCOMPLETE_CMD\", \"message\": \"Incomplete command.\" } ] } }",
+      "id" : "13",
+      "title" : "[PUT] Configure the new Password to a string that used before",
+      "result" : "  1.Using postman,edit the Password by API,the url is: https://{{wan_ip}}/api/sonicos/administration/password/old-password/{OLDPSWD}/new-password/{NEWPSWD}/confirm-password/{CONFIRMPSWD},set the NEWPSWD and the CONFIRMPSWD to 123456"
+   },
+   "105" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.GET command should return success,and compare the get firewall name part information with GUI,such as:\n  { (the default parameters) \"gms_management\": { \"existing_tunnel\": { \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }\n  verify the result should be the same with the GUI",
+      "id" : "105",
+      "title" : "[GET] Retrieve Advanced Management settings while GMS MGMT mode is 'Existing Tunnel'",
+      "result" : "  1.choose the GMS MGMT mode to 'Existing Tunnel' on GUI\n  2.Using postman,get the the Advanced Management settings using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "6" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return faliure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"firewall-domain-name ######\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_INCOMPLETE_CMD\", \"message\": \"Incomplete command.\" } ] } }\n  2.verify the response of step2 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] } }",
+      "id" : "6",
+      "title" : "[PUT] Set the Firewall's Domain Name to a value that includes special characters",
+      "result" : "  1.Using postman,edit the firewall_name and firewall_domain_name by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"administration\": { \"firewall_domain_name\": \"######\", (the default parameters) }\n  2.Using postman,edit the firewall_name and firewall_domain_name by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"administration\": { \"firewall_domain_name\": \"!@$%^&amp;*()_+\", (the default parameters) }"
+   },
+   "85" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no errors\n  4.Verify in the SonicOS GUI that the setting is changed correspondingly",
+      "id" : "85",
+      "title" : "[PUT]Set the default_table_size to a valid number",
+      "result" : "  1.Using postman,edit the default_table_size by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"default_table_size\":5000, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "36" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Schema validation error at '^' marker: property 'upper_case' must be configured\\n , \\t\\\"upper_case\\\": 0, \\\"lower_case\\\": 1, \\n ^\\n\" } ] }\n  }",
+      "id" : "36",
+      "title" : "[PUT] Set the password complexity to 'alpha-and-numeric' with any of Upper or Lower Case or Number Characters is zero",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"complexity\": { \"type\": \"alpha-and-numeric\", \"upper_case\": 0, \"lower_case\": 1, \"digital\": 0, \"symbolic\": 1 },"
+   },
+   "3" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return faliure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"firewall-name 1234567\", \"configuring\": true, \"pending_config\": false, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }\n  2.verify the response of step2 will return faliure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"firewall-name 1234567891234567891234567891234567891234567891234567891234567891\", \"configuring\": true, \"pending_config\": false, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "3",
+      "title" : "[PUT] Set the Firewall Name value to a name that exceeds the minimum&lt;8&gt;/maximum length <63>",
+      "result" : "  1.Using postman,edit the firewall_name and firewall_domain_name by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"administration\": { \"firewall_name\": \"1234567\", (the default parameters) }\n  2.Using postman,edit the firewall_name and firewall_domain_name by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"administration\": { \"firewall_name\": \"1234567891234567891234567891234567891234567891234567891234567891\", (the default parameters) }"
+   },
+   "94" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"info\": [ { \"level\": \"error\", \"code\": \"E_SYNTAX\", \"message\": \"Parse error at '^' marker: invalid char in json text.\\n \\\"button_delay\\\": a, \\\"text_delay\\\"\\n ^\\n\" } ] }\n  }",
+      "id" : "94",
+      "title" : "[PUT] Set the button_delay to a non-numeric character",
+      "result" : "  1.Using postman,edit the tooltip by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  \"tooltip\": { \"button_delay\": a,"
+   },
+   "51" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }",
+      "id" : "51",
+      "title" : "[PUT] Set the any of the parameter under 'constraints_apply_to' to true",
+      "result" : "  1.Using postman,edit the Login Security and Multiple Administrators information by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is: { (the default parameters) \"constraints_apply_to\": { \"builtin_admin\": false, \"full_admins\": true, \"limited_admins\": true, \"local_users\": true, \"guest_admins\": true, \"system_admins\": true, \"crypto_admins\": true, \"audit_admins\": true } \"multiple_admin\": true, (the default parameters) }"
+   },
+   "9" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return faliure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"admin name #\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_INCOMPLETE_CMD\", \"message\": \"Incomplete command.\" } ] } }\n  2.verify the response of step2 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] } }",
+      "id" : "9",
+      "title" : "[PUT] Set the Administration Name to a value that includes special characters",
+      "result" : "  1.Using postman,edit the Administrator Name &amp; Password by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"admin\": { \"name\": \"#\", (the default parameters) }\n  2.Using postman,edit the Administrator Name &amp; Password by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"admin\": { \"name\": \"!@$%^&amp;*()GJL\", (the default parameters) }"
+   },
+   "111" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no errors as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  verify the \"restart_required\" should be \"TRUE\"\n  2.verify that the 'Enable management using GMS' on GUI will be checked",
+      "id" : "111",
+      "title" : "[PUT]Configure Advanced Management with GMS MGMT Mode 'Existing Tunnel'",
+      "result" : "  1.uncheck the 'Enable management using GMS' on GUI\n  2..Using postman,edit the gms_management by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { (the default parameters) \"gms_management\": { \"existing_tunnel\": { \"host_name\": \"mia\", \"syslog_server_port\": 514, \"heartbeat_status_only\": false, \"behind_nat_device\": {} } (the default parameters) }"
+   },
+   "38" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  { \"complexity\": { \"type\": \"alpha-and-numeric\", \"upper_case\": 3, \"lower_case\": 1, \"digital\": 1 }, (the default parameters) }\n  4.Verify in the SonicOS GUI that the minimum_length is edited as mentioned above in the json file.",
+      "id" : "38",
+      "title" : "[PUT] Set the password complexity to 'alpha-and-numeric' with the Upper/Lower Case and Number Characters have a valid interger value",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"complexity\": { \"type\": \"alpha-and-numeric\", \"upper_case\": 3, \"lower_case\": 1, \"digital\": 1 }, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "4" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return faliure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\":2, \"command\": \"firewall-name !@#$%^&amp;*\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_INCOMPLETE_CMD\", \"message\": \"Incomplete command.\" } ] } }\n  2.verify the response of step2 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] } }",
+      "id" : "4",
+      "title" : "[PUT] Set the Firewall Name value to a value that includes special characters",
+      "result" : "  1.Using postman,edit the firewall_name and firewall_domain_name by API the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"administration\":{ \"firewall_name\": \"!@#$%^&amp;*\", }\n  2.Using postman,edit the firewall_name and firewall_domain_name by API the url is(without '#'): https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"administration\": { \"firewall_name\": \"!@$%^&amp;*()\", (the default parameters) }"
+   },
+   "34" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return success with no error as followed:\n  { \"status\": { \"success\": true, \"cli\": { \"mode\": \"config_mode\", \"depth\": 1, \"configuring\": true, \"pending_config\": true, \"restart_required\": \"FALSE\" }, \"info\": [ { \"level\": \"info\", \"code\": \"E_OK\", \"message\": \"Success.\" } ] }\n  }\n  2.verify the response of commit pending config in step2 will return success with no errors\n  3.GET command should return success with no error as followed:\n  { \"minimum_length\": 30, (the default parameters) }\n  4.Verify in the SonicOS GUI that the minimum_length is edited as mentioned above in the json file.",
+      "id" : "34",
+      "title" : "[PUT] Set the password minimun_length to a a valid number",
+      "result" : "  1.Using postman,edit the password aging count by API\n  the url is: https://{{wan_ip}}/api/sonicos/administration/global(PUT),the json body is:\n  { \"minimum_length\": 30, (the default parameters) }\n  2.commit pending config with api url:https://ip/api/sonicos/config/pending(POST)\n  3.GET the Firewall name using url:https://{{wan_ip}}/api/sonicos/administration/global(GET),see the result."
+   },
+   "132" : {
+      "steps" : "  1.Load the firmware under test\n  2.Configure necessary LAN and WAN interfaces and Register the FW\n  3.Go to Manage--&gt;Appliance--&gt;Enable SonicOS API( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4.Using postman on windows\n  5.Frist login in the firewall by POSTMAN using url:https://ip/api/sonicos/auth(POST).",
+      "initial" : "  1.verify the response of step1 will return failure with errors as followed:\n  { \"status\": { \"success\": false, \"cli\": { \"mode\": \"administration_mode\", \"depth\": 2, \"command\": \"https-port 66666\", \"configuring\": true, \"pending_config\": true, \"restart_required\": \"TRUE\" }, \"info\": [ { \"level\": \"error\", \"code\": \"E_RANGE\", \"message\": \"Out of bounds condition.\" } ] }\n  }",
+      "id" : "132",
+      "title" : "[PUT] Set the https_port to a value that exceeds the maxmium value <65535>",
+      "result" : "  1.Using postman,edit the gms_management by API\n  the url is:https://{{wan_ip}}/api/sonicos/administration/global(PUT), the json body is:\n  \"https_port\": 66666,"
+   }
+}

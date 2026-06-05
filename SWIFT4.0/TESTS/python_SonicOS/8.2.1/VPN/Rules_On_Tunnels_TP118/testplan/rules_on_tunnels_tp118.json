@@ -1,0 +1,38 @@
+{
+  "tc01": {
+    "steps": " 1) Have a VPN policy for the tunnel between local LAN and remote network RemoteNet.\n2) Add address objects: RemoteNet host a host on the remote VPN destination, and Loc Web 1 a Web server on the local LAN.\n3) Go to the Firewall >Access Rules page and select the configure icon for VPN to LAN.\n4) Click Add to create a new rule. In the Add Rule: VPN>LAN dialog select Deny action, HTTP service, RemoteNet host source, and Loc Web 1 destination. Hit the OK button.\n5) Try to browse to the Web server on the local LAN from the remote VPN host.",
+    "atm_id": "8F739B5A-0464-11DE-860E-445A00F93527",
+    "initial": "N/A ",
+    "id": "tc01",
+    "title": "Deny service on incoming traffic to the LAN zone ",
+    "description": "The user will ensure that the rule will prevent HTTP access from a remote VPN host to a Web server on the local LAN.",
+    "result": "The remote VPN host cannot access the Web server on the local LAN.\n\nContains 1970 sections and 36180 cases."
+  },
+  "tc13": {
+    "steps": "1) Have a VPN policy for the tunnel between local DMZ and remote network RemoteNet.\n2) Add address objects: RemoteNet host a host on the remote VPN destination, and Loc Web 3 a Web server on the local DMZ.\n3) Go to the Firewall >Access Rules page and select the configure icon for VPN to DMZ.\n4) Click Add to create a new rule. In the Add Rule: VPN>DMZ dialog select Deny action, HTTP service, RemoteNet host source, and Loc Web 3 destination. Hit the OK button.\n5) Try to browse to the Web server on the local DMZ from the remote VPN host.\n\n ",
+    "atm_id": "8F714AF8-0464-11DE-860E-445A00F93527",
+    "initial": "N/A",
+    "id": "tc13",
+    "title": "Deny service on incoming traffic to the DMZ zone",
+    "description": "The user will ensure that the rule will prevent HTTP access from a remote VPN host to a Web server on the local DMZ.\n\n",
+    "result": "The remote VPN host cannot access the Web server on the local DMZ.\n\nContains 1970 sections and 36180 cases."
+  },
+  "tc03": {
+    "steps": "1) Have a VPN policy for the tunnel between local LAN and remote network RemoteNet.\n2) Add address objects: RemoteNet host a host on the remote VPN destination and Loc FTP1 a FTP server on the local LAN.\n3) Go to the Firewall >Access Rules? page and select the configure icon for VPN to LAN.\n4) Modify the Users Allowed field in the access rule for the VPN connection from RemoteNet to the local LAN. Set the Everyone group in the field.\n5)  Click Add to create a new rule. In the Add Rule: VPN>LAN dialog select Allow action, FTP service, RemoteNet host source, and Loc FTP1 destination. Hit the OK button.\n6) Make sure that ping and HTTP are not allowed from a remote unauthenticated host to the local LAN.\n7) Try to connect to the FTP server on the local LAN from the remote unauthenticated VPN host.\n\n ",
+    "atm_id": "8F7D0050-0464-11DE-860E-445A00F93527",
+    "initial": "N/A ",
+    "id": "tc03",
+    "title": "Allow service on incoming traffic to the LAN zone ",
+    "description": " The user will ensure that the rule will provide FTP access from a remote unauthenticated VPN host to a server on the local LAN zone while authentication is required for incoming traffic.\n\n",
+    "result": "The remote VPN host can connect to FTP server on the local LAN zone.\n\nContains 1970 sections and 36180 cases. "
+  },
+  "tc07": {
+    "steps": "1) Have a VPN policy for the tunnel between local LAN and remote network RemoteNet.\n2) Add address objects: RemoteFTP the FTP server on the remote VPN destination, and Local host a host on the local LAN.\n3) Go to the Firewall >Access Rules page and select the configure icon for LAN toVPN.\n4) Click Add to create a new rule. In the Add Rule: LAN>VPN dialog select Deny action, FTP service, Local host source, and Remote FTP destination. Hit the OK button.\n5) Try to connect to the FTP server on the remote LAN from the local LAN host.\n\n",
+    "atm_id": "8F7AAE36-0464-11DE-860E-445A00F93527",
+    "initial": "N/A",
+    "id": "tc07",
+    "title": "Deny service on outgoing traffic from the LAN zone",
+    "description": "The user will ensure that the rule will prevent an access from a local LAN host to a FTP server on the remote LAN.\n\n",
+    "result": "The local LAN host cannot connect to the FTP server on the remote LAN.\n\nContains 1970 sections and 36180 cases. "
+  }
+}

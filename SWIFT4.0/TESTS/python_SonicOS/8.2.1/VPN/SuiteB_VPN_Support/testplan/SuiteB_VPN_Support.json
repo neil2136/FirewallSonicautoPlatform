@@ -1,0 +1,240 @@
+{
+   "35" : {
+      "steps" : "  1. Add a S2S VPN policy with SuiteB algorithm.\n  2. Add matching policy on remote side\n  3. Check tunnel negotiation and VPN traffic, make sure tunnel is up and traffic works fine\n  4. delete VPN policy on local side",
+      "initial" : "  ECDSA certificate is supported and imported into FW. SuiteB algorithm is added to VPN.",
+      "id" : "35",
+      "title" : "Delete VPN policy when SuiteB VPN policy is configured and tunnel is up",
+      "result" : "  Deleting vpn policy on local side works fine and it does not introduce other issue."
+   },
+   "33" : {
+      "steps" : "  1. Add a S2S IKEv2 3rd VPN policy, select ECDSA certificate as local IKE, properly configure peer IKE. Enable OCSP on Advanced tab and fill in correct OCSP Responder URL. Select Local and Remote Subnet.\n  2. Add matching policy on remote side\n  3. Check tunnel negotiation and VPN traffic",
+      "initial" : "  ECDSA certificate is supported and imported into FW. SuiteB algorithm is added to VPN.",
+      "id" : "33",
+      "title" : "IKEv2 3rd party VPN with OCSP enabled, using ECDSA certificate",
+      "result" : "  VPN tunnel should be established and traffic works fine"
+   },
+   "32" : {
+      "steps" : "  1. Add a S2S Main Preshared VPN policy, on Proposal tab, select ESP as IPSec Protocal, select SuiteB for DH Group and IPSec Encryption, properly configure other parameters\n  2. Add matching policy on remote side\n  3. Check tunnel negotiation and VPN traffic\n  4. Repeat Step1-3, try some other vpn policy like Aggressive, IKEv2, also please try TI policy.",
+      "initial" : "  ECDSA certificate is supported and imported into FW. SuiteB algorithm is added to VPN.",
+      "id" : "32",
+      "title" : "ESP VPN policy with SuiteB algorithm",
+      "result" : "  VPN tunnel should be established and traffic works fine."
+   },
+   "11" : {
+      "steps" : "  1. Go to the VPN->Settings, add a VPN policy, select TI, Preshare Secret, fill in Policy Name and Primary GW on General Tab;\n  2. On Proposal Tab, Select Aggressive as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  3. Apply configuration\n  4. On Network->Routings, add a route policy with X0_Subnet as Src, Remote_VPN subnet as Dst and TI policy as interface\n  5. start vpn traffic, check tunnel negotiation and vpn traffic.\n  6. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "11",
+      "title" : "TI,Aggressive Mode,Preshared Secret, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "21" : {
+      "steps" : "  1. On VPN->Settings, add a VPN policy with SuiteB algorithm\n  2. Export the prefs\n  3. Set firmware to factory default, then import prefs",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "21",
+      "title" : "Prefs check for SuiteB support",
+      "result" : "  The SuiteB VPN policy is there after importing prefs"
+   },
+   "7" : {
+      "steps" : "  1. Go to the VPN->Settings, add a VPN policy, select S2S, Manual Key, fill in Policy Name and Primary GW on General Tab;\n  2. On Network Tab, select X0 Subnet as Local and properly configure Remote_VPN network\n  3. On Proposal Tab, select each SuiteB algorithm and properly configure other parameters.\n  4. configure matching policy on remote side\n  5. Test VPN traffic",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "7",
+      "title" : "S2S, Manual Key, test SuiteB combination one by one",
+      "result" : "  VPN traffic should work fine."
+   },
+   "26" : {
+      "steps" : "  1. Add a DHCP over VPN policy with SuiteB algorithm configured, make sure it works fine\n  2. Add a Tunnel All VPN policy with SuiteB algorithm configured, make sure it works fine\n  3. Add a Zero GW VPN policy with SuiteB algorithm configured, make sure it works fine. Both Aggressive and IKEv2 zero gw need to be covered.\n  4. Add a Hub&Spoke VPN policy with SuiteB algorithm configured, make sure it works fine.\n  5. Add a MobIKE VPN policy with SuiteB algorithms, make sure it works fine. (Not Supported now)",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "26",
+      "title" : "Different VPN topology with Suite B including DHCP over VPN, Tunnel All, Zero GW, Hub&Spoke, MobIKE",
+      "result" : "  See steps ."
+   },
+   "2" : {
+      "steps" : "  1. Go to the VPN->Settings, add a VPN policy, select S2S, 3rd party, fill in Policy Name and Primary GW on General Tab;\n  2. On Network Tab, select X0 Subnet as Local and properly configure Remote_VPN network\n  3. On Proposal Tab, Select Main as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  4. Apply configuration and start vpn traffic, check tunnel negotiation, vpn traffic.\n  5. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "2",
+      "title" : "S2S,Main Mode,3rd party, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "17" : {
+      "steps" : "  1. Go to the VPN->Advanced, click on \u00a1\u00aeConfigure\u00a1\u00af button beside \u00a1\u00aeIKEv2 Dynamic Client Proposal\u00a1\u00af, check DH Group, make sure SuiteB algorithm is added to DH Group.\n  2. Select SuiteB algorithm in Dynamic Client Proposal, make sure it can SuiteB algorithm can be configured..\n  3. Add an IKEv2 TI VPN policy with zero gw\n  4. Configure matching policy on remote FW\n  5. start vpn traffic, verify vpn tunnel and vpn traffic works fine with SuiteB \u00a1\u00aeIKEv2 Dynamic Client Proposal\u00a1\u00af configured.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "17",
+      "title" : "SuiteB Support for IKEv2 Dynamic Client Protocal",
+      "result" : "  Vpn tunnel and vpn traffic works fine with SuiteB \u00a1\u00aeIKEv2 Dynamic Client Proposal\u00a1\u00af configured."
+   },
+   "22" : {
+      "steps" : "  1. In TC1-TC16, check VPN negotiation log, make sure it displays SuiteB algorithms correctly",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "22",
+      "title" : "Log check for SuiteB support",
+      "result" : "  VPN negotiation log displays correct SuiteB algorithms."
+   },
+   "1" : {
+      "steps" : "  1. Go to the VPN->Settings, add a VPN policy, select S2S, Preshare Secret, fill in Policy Name and Primary GW on General Tab;\n  2. On Network Tab, select X0 Subnet as Local and properly configure Remote_VPN network\n  3. On Proposal Tab, Select Main as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  4. Apply configuration and start vpn traffic, check tunnel negotiation, vpn traffic.\n  5. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "1",
+      "title" : "S2S,Main Mode,Preshared Secret, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "18" : {
+      "steps" : "  1. Set Firmware to factory default, and lauch the Startup Setup wizard\n  2. Choose VPN Setup Wizard and configure a S2S VPN policy with SuiteB algorithm configured, make sure it works fine.\n  3. On VPN->Settings page, lauch VPN setup Wizard, configure a S2S VPN policy with SuiteB algorithm configured, make sure it works fine.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "18",
+      "title" : "SuiteB Support for VPN Setup Wizard",
+      "result" : "  On GUI, there are five SuiteB DH Group algorithm newly added in S2S VPN setup wizard. We can configure SuiteB parameters for a VPN policy through VPN Setup Wizard."
+   },
+   "30" : {
+      "steps" : "  1. Add a S2S/TI Main/Aggressive/IKEv2 vpn policy, select SuiteB algorithm in DH Groups, then select non-SuiteB algorithms for IPSec Encryption, make sure VPN tunnel negotiation and traffic works fine.\n  2. Add a S2S/TI Main/Aggressive/IKEv2 vpn policy, select non-SuiteB algorithm in DH Groups, then select SuiteB algorithms for IPSec Encryption, make sure VPN tunnel negotiation and traffic works fine.",
+      "initial" : "  ECDSA certificate is supported and imported into FW. SuiteB algorithm is added to VPN.",
+      "id" : "30",
+      "title" : "SuiteB combined with non-SuiteB algorithm for a VPN policy",
+      "result" : "  See steps"
+   },
+   "23" : {
+      "steps" : "  1. Add a VPN policy with SuiteB algothms\n  2. Add mismatch VPN policy on remote side, you need to test errors with different DH Group/ IPSec Encryption/PFS\n  3. Check VPN negotiaon and mismatching log when error happens ",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "23",
+      "title" : "Log should display correct mismatch algorithm if error happens",
+      "result" : "  VPN negotiation should fail and log should displays correct mismatching algorithms."
+   },
+   "13" : {
+      "steps" : "   1. Go to the VPN->Settings, add a VPN policy, select TI, Preshare Secret, fill in Policy Name and Primary GW on General Tab;\n  2. On Proposal Tab, Select IKEv2 as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  3. Apply configuration\n  4. On Network->Routings, add a route policy with X0_Subnet as Src, Remote_VPN subnet as Dst and TI policy as interface\n  5. start vpn traffic, check tunnel negotiation and vpn traffic.\n  6. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested. ",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "13",
+      "title" : "TI,IKEv2 Mode,Preshared Secret, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "16" : {
+      "steps" : "  1. Go to the VPN->Settings, add a VPN policy, select TI, 3rd party, fill in Policy Name and Primary GW on General Tab;\n  2. On Proposal Tab, Select Aggressive as Exchange, disable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select one SuiteB algorithm;\n  For IPSec Encryption, select one item from SuiteB algorithm.\n  3. Apply configuration\n  4. On Network->Routings, add a route policy with X0_Subnet as Src, Remote_VPN subnet as Dst and TI policy as interface\n  5. start vpn traffic, check tunnel negotiation, vpn traffic.\n  5. Repeat Step1-4, in step 2, try Main and IKEv2",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "16",
+      "title" : "PFS disabled, test TI in Main/Aggressive/IKEv2 with SuiteB algorithm",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "6" : {
+      "steps" : "  1. Go to the VPN->Settings, add a VPN policy, select S2S, 3rd party, fill in Policy Name and Primary GW on General Tab;\n  2. On Network Tab, select X0 Subnet as Local and properly configure Remote_VPN network\n  3. On Proposal Tab, Select IKEv2 as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  4. Apply configuration and start vpn traffic, check tunnel negotiation, vpn traffic.\n  5. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested. ",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "6",
+      "title" : "S2S, IKEv2 Mode,3rd party, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "27" : {
+      "steps" : "  1. Add a S2S IKEv2 policy, select 3rd party and select ECDSA certificate\n  2. On Proposal tab, select SuiteB algorithm, properly configure other parameters\n  3. configure matching policy on remote side\n  4. trigger negotiaon and check vpn traffic\n  5. repeat step 1-4, in step2, use non-SuiteB algorithm.",
+      "initial" : "  ECDSA certificate is supported and imported into FW. SuiteB algorithm is added to VPN.",
+      "id" : "27",
+      "title" : "S2S, IKEv2, 3rd party with ECDSA certificate",
+      "result" : "  VPN tunnel should be able to establish and VPN traffic should work fine."
+   },
+   "25" : {
+      "steps" : "  1. From CLI, try to add a VPN policy with SuiteB algorithm, make sure it works, you need to test TI/S2S in Main/Aggressive/IKEv2 mode, also need to try each SuiteB configuration in this case.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "25",
+      "title" : "CLI Support for SuiteB algorithms",
+      "result" : "  It should be able to configure VPN policy with SuiteB algorithms fron CLI, just like GUI support."
+   },
+   "28" : {
+      "steps" : "  1. Add a TI IKEv2 policy, select 3rd party and select ECDSA certificate\n  2. On Proposal tab, select SuiteB algorithm, properly configure other parameters\n  3. On Network routing, add a route with X0 subnet as Src, Remote_VPN_Network as Dst, and TI policy as interface\n  4. configure matching policy on remote side\n  5. trigger negotiaon and check vpn traffic\n  6. repeat step 1-4, in step2, use non-SuiteB algorithm.",
+      "initial" : "  ECDSA certificate is supported and imported into FW. SuiteB algorithm is added to VPN.",
+      "id" : "28",
+      "title" : "TI, IKEv2, 3rd party with ECDSA certificate",
+      "result" : "  VPN tunnel should be able to establish and VPN traffic should work fine."
+   },
+   "3" : {
+      "steps" : "  1. Go to the VPN->Settings, add a VPN policy, select S2S, Preshare Secret, fill in Policy Name and Primary GW on General Tab;\n  2. On Network Tab, select X0 Subnet as Local and properly configure Remote_VPN network\n  3. On Proposal Tab, Select Aggressive as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  4. Apply configuration and start vpn traffic, check tunnel negotiation, vpn traffic.\n  5. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested. ",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "3",
+      "title" : "S2S,Aggressive Mode,Preshared Secret, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "9" : {
+      "steps" : "   1. Go to the VPN->Settings, add a VPN policy, select TI, Preshare Secret, fill in Policy Name and Primary GW on General Tab;\n  2. On Proposal Tab, Select Main as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  3. Apply configuration\n  4. On Network->Routings, add a route policy with X0_Subnet as Src, Remote_VPN subnet as Dst and TI policy as interface\n  5. start vpn traffic, check tunnel negotiation and vpn traffic.\n  6. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "9",
+      "title" : "TI, Main Mode, Preshared Secret, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "12" : {
+      "steps" : "   1. Go to the VPN->Settings, add a VPN policy, select TI, 3rd party, fill in Policy Name and Primary GW on General Tab;\n  2. On Proposal Tab, Select Aggressive as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  3. Apply configuration\n  4. On Network->Routings, add a route policy with X0_Subnet as Src, Remote_VPN subnet as Dst and TI policy as interface\n  5. start vpn traffic, check tunnel negotiation and vpn traffic.\n  6. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested. ",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "12",
+      "title" : "TI, Aggressive Mode, 3rd party, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "14" : {
+      "steps" : "   1. Go to the VPN->Settings, add a VPN policy, select TI, 3rd party, fill in Policy Name and Primary GW on General Tab;\n  2. On Proposal Tab, Select IKEv2 as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  3. Apply configuration\n  4. On Network->Routings, add a route policy with X0_Subnet as Src, Remote_VPN subnet as Dst and TI policy as interface\n  5. start vpn traffic, check tunnel negotiation and vpn traffic.\n  6. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "14",
+      "title" : "TI, IKEv2 Mode, 3rd party, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "15" : {
+      "steps" : "   1. Go to the VPN->Settings, add a VPN policy, select TI, Manual Key, fill in Policy Name and Primary GW on General Tab;\n  2. On Proposal Tab, Select SuiteB algorithm and properly configure other parameters.\n  3. Apply configuration\n  4. One Network->Routings, add a route policy with X0_Subnet as Src, Remote_VPN subnet as Dst and TI policy as interface\n  5. start vpn traffic, check vpn traffic.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "15",
+      "title" : "TI, Manual Key, test SuiteB combination one by one",
+      "result" : "  VPN traffic should work fine."
+   },
+   "20" : {
+      "steps" : "  1. On VPN->Settings, add a VPN policy with SuiteB algorithm\n  2. Download TSR and check SuiteB support in TSR\n  At least select one from ECP Group, AESGCM, AESGMAC during test.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "20",
+      "title" : "TSR check for SuiteB support",
+      "result" : "  SuiteB algorithm should be displayed correctly in TSR."
+   },
+   "8" : {
+      "steps" : "   1. Go to the VPN->Settings, add a VPN policy, select S2S, 3rd party, fill in Policy Name and Primary GW on General Tab;\n  2. On Network Tab, select X0 Subnet as Local and properly configure Remote_VPN network\n  3. On Proposal Tab, Select Aggressive as Exchange, disable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select one SuiteB algorithm;\n  For IPSec Encryption, select one item from SuiteB algorithm.\n  4. Apply configuration and start vpn traffic, check tunnel negotiation, vpn traffic.\n  5. Repeat Step1-4, in step 2, try Main and IKEv2",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "8",
+      "title" : "PFS disabled, test S2S in Main/Aggressive/IKEv2 with SuiteB algorithm",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "4" : {
+      "steps" : "  1. Go to the VPN->Settings, add a VPN policy, select S2S, 3rd party, fill in Policy Name and Primary GW on General Tab;\n  2. On Network Tab, select X0 Subnet as Local and properly configure Remote_VPN network\n  3. On Proposal Tab, Select Aggressive as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  4. Apply configuration and start vpn traffic, check tunnel negotiation, vpn traffic.\n  5. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested. ",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "4",
+      "title" : "S2S, Aggressive Mode,3rd party, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "34" : {
+      "steps" : "  1. Add a S2S VPN policy with SuiteB algorithm.\n  2. Add matching policy on remote side\n  3. Check tunnel negotiation and VPN traffic, make sure tunnel is up and traffic works fine\n  4. reboot FW\n  5. after FW startup, check VPN policy, tunnel and vpn traffic",
+      "initial" : "  ECDSA certificate is supported and imported into FW. SuiteB algorithm is added to VPN.",
+      "id" : "34",
+      "title" : "Restart FW when SuiteB vpn policy is configured and tunnel is up",
+      "result" : "  VPN policy is still there, tunnel could be re-established and traffic works fine"
+   },
+   "24" : {
+      "steps" : "  1. Add a VPN policy, check each option on Proposal tab, make sure there are 5 ECP Group added into DH Group listbox, 6 SuiteB algorithm newly added into IPSec Encryption listbox, other options stay the same.\n  2. If SuiteB algorithm is selected as IPSec Encryption, IPSec Authentication should be grey out.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "24",
+      "title" : "GUI check for SuiteB algorithms",
+      "result" : "  See steps"
+   },
+   "10" : {
+      "steps" : "  1. Go to the VPN->Settings, add a VPN policy, select TI, 3rd party, fill in Policy Name and Primary GW on General Tab;\n  2. On Proposal Tab, Select Main as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  3. Apply configuration\n  4. On Network->Routings, add a route policy with X0_Subnet as Src, Remote_VPN subnet as Dst and TI policy as interface\n  5. start vpn traffic, check tunnel negotiation and vpn traffic.\n  6. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "10",
+      "title" : "TI , Main Mode, 3rd party, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   },
+   "19" : {
+      "steps" : "  1. On VPN->Settings, open the configuration window of a GroupVPN, check proposal tab, make sure that SuiteB algorithm is not added to GroupVPN\n  2. If CLI support SuiteB, also check CLI does not provide SuiteB parameters for GroupVPN policy.",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "19",
+      "title" : "GroupVPN check for SuiteB support",
+      "result" : "  Both GUI and CLI does not support SuiteB algorithm now."
+   },
+   "31" : {
+      "steps" : "  1. Add a S2S Main Preshared VPN policy, on Proposal tab, select AH as IPSec Protocal, select SuiteB for DH Group and IPSec Encryption, properly configure other parameters\n  2. Add matching policy on remote side\n  3. Check tunnel negotiation and VPN traffic\n  4. Repeat Step1-3, try some other vpn policy like Aggressive, IKEv2, also please try TI policy.",
+      "initial" : "   SuiteB algorithm is added to VPN.",
+      "id" : "31",
+      "title" : "This case is designed to test that AH VPN policy works fine when SuiteB is used.",
+      "result" : "  VPN tunnel should be established and traffic works fine."
+   },
+   "5" : {
+      "steps" : "  1. Go to the VPN->Settings, add a VPN policy, select S2S, Preshare Secret, fill in Policy Name and Primary GW on General Tab;\n  2. On Network Tab, select X0 Subnet as Local and properly configure Remote_VPN network\n  3. On Proposal Tab, Select IKEv2 as Exchange, enable PFS;\n  IPSec Protocal select ESP;\n  For IKE and IPSec DH Group, select the first item (256-bit Random ECP Group) from EC DH Group;\n  For IPSec Encryption, select the first item (AESGCM16-128).\n  4. Apply configuration and start vpn traffic, check tunnel negotiation, vpn traffic.\n  5. Repeat Step1-4, in step 3, select the next SuiteB item for EC DH algorithm and IPSec Encryption until each one is tested. ",
+      "initial" : "  SuiteB algorithm is added to VPN.",
+      "id" : "5",
+      "title" : "S2S,IKEv2 Mode,Preshared Secret, PFS enabled, test SuiteB combination one by one",
+      "result" : "  Tunnel negotiation will be successful, and traffic works fine. VPN negotiation log displays correct SuiteB algorithm."
+   }
+}

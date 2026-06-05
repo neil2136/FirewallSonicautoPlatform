@@ -1,0 +1,37 @@
+{
+   "1" : {
+      "steps" : " 1. Go to Network->Neighbor Discovery, try to add a static NDP entry with proper IP/MAC/interface, also make sure the IPv6 address belongs to the interface subnet. For example, just add an entry with IP 2000:2401::1:1111, a proper MAC and interface X0.See Result 1.",
+      "initial" : " 1. Boot FW to factory default settings.\n 2. Connect a host to X0, then configure X0 with proper ipv6 IP, e.g. static IP 2000:2401::1:1/64.",
+      "id" : "1",
+      "title" : "Add a static NDP entry with valid MAC/Interface and matched IP",
+      "result" : " 1. Such an NDP entry can be added successfully. And after adding it, the related NDP cache will be added too with STATIC state."
+   },
+   "9" : {
+      "steps" : " 1. Go to Network->Neighbor Discovery, add a static NDP entry with proper IP/MAC/interface.\n  2. Then try to delete it by clicking Delete this entry icon at the right side of this entry. See Result 1. ",
+      "initial" : " 1. Boot FW to factory default settings.\n  2. Connect a host to X0, then configure X0 with proper ipv6 IP, e.g. static IP 2000:2401::1:1/64. ",
+      "id" : "9",
+      "title" : "Delete a static NDP entry via 'Delete this entry' icon",
+      "result" : " 1. You could delete a static NDP entry in this way. And the related NDP cache will be removed too. "
+   },
+   "11" : {
+      "steps" : " 1. Go to Network->Neighbor Discovery, add multiple static NDP entries (e.g more than 3 entries) with proper IP/MAC/interface.\n  2. Try to delete them by selecting all those entries then clicking the Delete button. See Result 1. ",
+      "initial" : "1. Boot FW to factory default settings.\n  2. Connect a host to X0, then configure X0 with proper ipv6 IP, e.g. static IP 2000:2401::1:1/64.",
+      "id" : "11",
+      "title" : "Delete multiple static NDP entries via the Delete button",
+      "result" : " 1. You could delete all the selected static NDP entries in this way. And the related NDP caches will be removed too. "
+      },
+   "13" : {
+      "steps" : " 1. Edit the NDP entry which has already been created. Try to modify its IP to another IP which is still within the same subnet. See Result 1.\n  2. Edit the NDP entry which has already been created. Try to modify its IP to another IP which is NOT within the same subnet. See Result 1. ",
+      "initial" : " 1. Boot FW to factory default settings.\n  2. Connect a host to X0, then configure X0 with proper ipv6 IP, e.g. static IP 2000:2401::1:1/64.\n  3. Go to Network->Neighbor Discovery, try to add a static NDP entry with proper IP/MAC/interface, also make sure to the IPv6 address belongs to the interface subnet. For example, just add an entry with IP 2000:2401::1:1111, a proper MAC and interface X0. ",
+      "id" : "13",
+      "title" : "Edit a static NDP entry, modify IP",
+      "result" : " 1. You should modify a static NDP entry successfully. And after that, the related NDP cache will be correctly updated to the new NDP entry. "
+      },
+   "16" : {
+      "steps" : " 1. Go to Network->Neighbor Discovery, add multiple static NDP entries with proper IP/MAC/interface, also make sure to the IPv6 address belongs to the interface subnet and the interface is well connected.\n  2. Then reboot FW. Check static NDP entries and NDP cache after FW restart. See Result 1. ",
+      "initial" : " 1. Boot FW to factory default settings.\n  2. Connect a host to X0, then configure X0 with proper ipv6 IP, e.g. static IP 2000:2401::1:1/64. ",
+      "id" : "16",
+      "title" : "All static NDP entries are intact after FW resart.",
+      "result" : " 1. All static NDP entries and NDP caches should be intact and correct after FW restart "
+      }
+}

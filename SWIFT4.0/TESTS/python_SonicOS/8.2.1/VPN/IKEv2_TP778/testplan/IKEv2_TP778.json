@@ -1,0 +1,205 @@
+{
+   "11" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "11",
+      "title" : "Re-keying. Mismatched lifetime settings. Peer is configured with longer lifetimes. Ping initiated from peer side.",
+      "result" : "  TBD"
+   },
+   "21" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings.\n  2. Configure LAN and WAN interfaces on the firewalls.\n  3. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select Group1-3DES-SHA1.\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select Group2-DES-MD5, unmathced with the initiator.\n  5. Send ping from PC1 to PC3. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "21",
+      "title" : "Error conditions simulation. Non-Matching Proposals.",
+      "result" : "  The VPN > Settings page can not show the active tunnel between SonicWALL1 and SonicWALL2.\n  The firewall's log shows messages:\n  IKEv2 Payload processing error\n  IKEv2 IKE proposal does not match"
+   },
+   "7" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings.\n  2. Configure LAN and WAN interfaces on the firewalls.\n  3. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select 3DES-SHA1,set the Life Time of Phase 1 as 120 second,Life time of Phase2 as 300 second .\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select 3DES-SHA1,set the Life Time as the default value.\n  5. Send ping from PC3 to PC1. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "7",
+      "title" : "Initiator uses matching DH Group in CREATE_CHILD_SA exchange",
+      "result" : "  The VPN > Settings page shows the active tunnel between SonicWALL1 and SonicWALL2.\n  The firewall's log shows messages:\n  IKEv2 Accept IKE SA Proposal\n  IKEv2 Accept IPsec SA Proposal\n  IKEv2 negotiation complete. \n  After the life time expired, they will negotiate again ,in initiator ,we will see log :IKEv2 Initiator: Send CREATE_CHILD_SA response,  IKEv2 Responder :Received CREATE_CHILD_SA response"
+   },
+   "26" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "26",
+      "title" : "Error conditions simulation. Non-Matching Types3 - Integrity",
+      "result" : "  TBD"
+   },
+   "2" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings.\n  2. Configure LAN and WAN interfaces on the firewalls.\n  3. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select 3DES-SHA1.\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select 3DES-SHA1.\n  5. Send ping from PC3 to PC1. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "2",
+      "title" : "Basic IKE Negotiation with Preshared Key and simple proposals/selectors. Serve as Responder.",
+      "result" : "  ISAKMP packet trace on the WAN shows: IKE_SA_INIT packet (Initiator's Request) is sent from SonicWALL2's X1 to SonicWALL1's X1. It shows Next Payload: Security Association; Version: 2.0. IKE_SA_INIT (Responder's Response) is sent from SonicWALL1's X1 to SonicWALL2's X1. IKE_AUTH (Initiator's Request) is sent from SonicWALL2's X1 to SonicWALL1's X1. It shows Next Payload: Encrypted; Version: 2.0. IKE_AUTH (Responder's Response) is sent from SonicWALL1's X1 to SonicWALL2's X1. The VPN > Settings page shows the active tunnel between SonicWALL1 and SonicWALL2. The firewall's log shows messages: IKEv2 Accept IKE SA Proposal IKEv2 Accept IPsec SA Proposal IKEv2 negotiation complete. The Notes column of the log shows VPN Policy name; 3DES; HMAC_SHA1_96; IKEv2 InitSPI; IKEv2 RespSPI; Local Net: Remote Net:."
+   },
+   "17" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "17",
+      "title" : "DPD. Peer initiates liveness check. Local is dead.",
+      "result" : "  TBD"
+   },
+   "22" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "22",
+      "title" : "Error conditions simulation. Non-Matching Protocols",
+      "result" : "  TBD"
+   },
+   "1" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings.\n  2. Configure LAN and WAN interfaces on the firewalls.\n  3. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select 3DES-SHA1.\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select 3DES-SHA1.\n  5. Send ping from PC1 to PC3. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "1",
+      "title" : "Basic IKE Negotiation with Preshared Key and simple proposals/selectors. Serve as Initiator.",
+      "result" : "  ISAKMP packet trace on the WAN shows: IKE_SA_INIT packet (Initiator's Request) is sent from SonicWALL1's X1 to SonicWALL2's X1. It shows Next Payload: Security Association; Version: 2.0. IKE_SA_INIT (Responder's Response) is sent from SonicWALL2's X1 to SonicWALL1's X1. IKE_AUTH (Initiator's Request) is sent from SonicWALL1's X1 to SonicWALL2's X1. It shows Next Payload: Encrypted; Version: 2.0. IKE_AUTH (Responder's Response) is sent from SonicWALL2's X1 to SonicWALL1's X1. The VPN > Settings page shows the active tunnel between SonicWALL1 and SonicWALL2. The firewall's log shows messages: IKEv2 Accept IKE SA Proposal IKEv2 Accept IPsec SA Proposal IKEv2 negotiation complete. The Notes column of the log shows VPN Policy name; 3DES; HMAC_SHA1_96; IKEv2 InitSPI; IKEv2 RespSPI; Local Net: Remote Net:."
+   },
+   "18" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings. \n  2. Configure LAN and WAN interfaces on the firewalls.\n  3. Connect the WAN interface of the local firewall to the LAN of a NAT device (any SonicWALL box).   \n  4. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select 3DES-SHA1.\n  5. Configure IKEv2 VPN policy on SonicWALL2. Use the WAN IP address of the NAT device as IPSec Gateway address in the VPN policy. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select 3DES-SHA1. \n  6. Send ping from PC1 to PC3. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- X0 NAT device X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "18",
+      "title" : "NAT Traversal. Local behind NAT device.",
+      "result" : "  Make sure that the NAT device in front of the local firewall is detected during negotiation and the appropriate log is shown on the firewalls. The DPD exchange will occur every 20 seconds for NAT traversal."
+   },
+   "23" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings.\n  2. Configure LAN and WAN interfaces on the firewalls.\n  3. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select Group1-3DES-SHA1,Main mode.\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select Group1-3DES-SHA1,IKEv2 mode,unmatched with the initiator.\n  5. Send ping from PC1 to PC3. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "23",
+      "title" : "Error conditions simulation. Non-Matching Transforms",
+      "result" : "  Tunnel can not be established because of the unmatched the exchange method,with such logs: IKEv2 VPN Policy not found, IKEv2 Payload processing error,Received notify. NO_PROPOSAL_CHOSEN."
+   },
+   "13" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "13",
+      "title" : "Re-keying. Mismatched lifetime settings. Peer is configured with shorter lifetimes. Ping initiated from peer side",
+      "result" : "  TBD"
+   },
+   "16" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "16",
+      "title" : "DPD. Peer initiates liveness check. Local is alive.",
+      "result" : "  TBD"
+   },
+   "29" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "29",
+      "title" : "SNMP reports the tunnel status through traps",
+      "result" : "  TBD"
+   },
+   "6" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "6",
+      "title" : "DH Group wrong guess in initial exchange. Responder is configured with a subset of initiators.",
+      "result" : "  TBD"
+   },
+   "27" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings.\n  2. Configure LAN and WAN interfaces on the firewalls.\n  3. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select Group1-3DES-SHA1.\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select Group2-3DES-SHA1,unmatched with the initiator.\n  5. Send ping from PC1 to PC3. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "27",
+      "title" : "Error conditions simulation. Non-Matching Types4 DH Group",
+      "result" : "  Tunnel can not be established because of the unmatched the DH group,with such logs:IKEv2 IKE proposal does not match (DH Group mismatch. Local: 1; Peer: \n  2)"
+   },
+   "25" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "25",
+      "title" : "Error conditions simulation. Non-Matching Types2 - PRF",
+      "result" : "  TBD"
+   },
+   "28" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "28",
+      "title" : "IKEv1 and IKEv2 compatibility",
+      "result" : "  TBD"
+   },
+   "3" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings.\n  2. Configure LAN and WAN interfaces on the firewalls.\n  3. Add IKEv2 VPN policy on SonicWALL1. create X2 subnet as the DMZ subnet,Select X0 subnet and X2 subnet as local network and SonicWALL2's X0 subnet as destination network. Select 3DES-SHA1.\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination networks. Select 3DES-SHA1.\n  5. Send ping from PC3 to PC1. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- Hub/Switch/Router -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "3",
+      "title" : "Basic IKE Negotiation with non-simple selectors. Serve as Initiator.",
+      "result" : "  The VPN > Settings page can't show show the active tunnel between SonicWALL1 and SonicWALL2.\n  The firewall's log shows messages: \n  Initiator's : SENDING>>>> ISAKMP OAK IKE_SA_INIT\n  IKEv2 Responder: Send IKE_SA_INIT response\n  SENDING>>>> ISAKMP OAK IKE_AUTH (InitCookie:0x470dfd01fffa34fd RespCookie:0x20427a252ee52215, MsgID: 0x\n  1) *(NOTIFY: Traffic Selectors Unacceptable)\n  Responder: \n  IKEv2 Initiator: Send IKE_AUTH request"
+   },
+   "9" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings. \n  2. Configure LAN and WAN interfaces on the firewalls. \n  3. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select 3DES-SHA1. Set Phase1 lifetime to 270 seconds and Phase2 lifetime to 180 seconds.\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select 3DES-SHA1. Set Phase1 lifetime to 270 seconds and Phase2 lifetime to 180 seconds \n  5. Send ping from PC1 to PC3. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "9",
+      "title" : "Re-keying. Matched lifetime settings.",
+      "result" : "  The initial tunnel is negotiated, you will see two INIT packets and two AUTH packets. After 180 seconds CREATE_CHILD_SA request packet will be sent from initiator. Responder will send CREATE_CHILD_SA  response packet. Either side can be initiator since they both have the same lifetime. This will be Phase2 (IPSec) re-key. The same will happen in another 90 seconds, when Phase1 (IKE) expires. You will see another CREATE_CHILD_SA  packet exchange. The DELETE messages will be sent following each re-key event, the old SA will be deleted."
+   },
+   "12" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings. \n  2. Configure LAN and WAN interfaces on the firewalls. \n  3. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select 3DES-SHA1. Set Phase1 lifetime to 360 seconds and Phase2 lifetime to 270 seconds.\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select 3DES-SHA1. Set Phase1 lifetime to 270 seconds and Phase2 lifetime to 180 seconds.\n  5. Send ping from PC1 to PC3. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "12",
+      "title" : "Re-keying. Mismatched lifetime settings. Peer is configured with shorter lifetimes. Ping initiated from local side.",
+      "result" : "  The initial tunnel is negotiated, you will see two INIT packets and two AUTH packets. After 180 seconds CREATE_CHILD_SA request packet will be sent from initiator. Responder will send CREATE_CHILD_SA  response packet. In this case, since the remote has a shorter lifetime, it will always initiate re-key and send CREATE_CHILD_SA request upon IPSec and IKE lifetime expiration. The appropriate DELETE messages will be sent after IKE or IPSec renegotiation. Those DELETE requests can be sent from either side."
+   },
+   "14" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings. \n  2. Configure LAN and WAN interfaces on the firewalls. \n  3. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select 3DES-SHA1. Set Phase1 lifetime to 600 seconds and Phase2 lifetime to 600 seconds.\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select 3DES-SHA1. Set Phase1 lifetime to 600 seconds and Phase2 lifetime to 600 seconds \n  5. On the local firewall, check the 'Enable Dead Peer Detection for Idle VPN sessions' check box on the VPN > Advanced page and set 'Dead Peer Detection Interval for Idle VPN sessions (seconds)' to 60. \n  6. Capture ISAKMP packets on the WAN. Send a single ping from the local. The tunnel is negotiated. After that make sure that there is no traffic sent during 60 seconds. \n  7. When 60 seconds pass, send a ping from the local to the remote.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "14",
+      "title" : "DPD. Local initiates liveness check. Peer is alive.",
+      "result" : "  The local firewall should check if the peer is alive in case if no traffic is sent through the active tunnel.  You will see the DPD packets exchange."
+   },
+   "15" : {
+      "steps" : "  Establish a tunnel between SW1 and SW2 .\n  Tunnel params: IKEv2, 3des-sha1, all others default\n  Enable DPD for IDLE VPN sessions and set the value to 60 secs.\n  Send ping from SW1 -> SW2 to bring up the tunnel.\n  Power off SW2 , to simulate a dead peer.\n  MOnitor the log and packets sent out of SW1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "15",
+      "title" : "DPD. Local initiates liveness check. Peer is dead.",
+      "result" : "  DPD messages should be sent out from SW1 after the peer is dead.\n  After three failures the tunnel satus should change to disdabled and the SAs should be deleted."
+   },
+   "20" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings.\n  2. Configure LAN and WAN interfaces on the firewalls.\n  3. Connect the WAN interface of the local firewall to the the NAT device1 (anySonicWALL box or Router),in the NAT device, translated the the WAN interface of the local firewall into another IP address.\n  4. Connect the WAN interface of the peer firewall to the the NAT device1 (any SonicWALL box or Router),in the NAT device, translated the the WAN interface of the peer firewall into another IP address which in the same network with the local nated ip address.\n  5. Add IKEv2 VPN policy on SonicWALL1.Use the WAN IP address of the nated ip address of the WAN IP address of Sonicwall2 as IPSec Gateway address in the VPN policy Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select 3DES-SHA1.\n  6. Configure IKEv2 VPN policy on SonicWALL2. Use the WAN IP address of the nated  WAN IP address of sONICWALL2 as IPSec Gateway address in the VPN policy. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select 3DES-SHA1.\n  6. Send ping from PC1 to PC3. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 - X0 SonicWALL1 X1 -- NAT device1 -- PC2 -- NAT device2 --X1 SonicWALL2 X0 - PC3",
+      "id" : "20",
+      "title" : "NAT Traversal. Both behind NAT device.",
+      "result" : "  Make sure that the NAT device in front of the local and peer firewall is detected during negotiation and the appropriate log is shown on the firewalls, tunnel can established successfully although there're NAT device between the two firewalls."
+   },
+   "8" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "8",
+      "title" : "DH Group wrong guess in CREATE_CHILD_SA exchange",
+      "result" : "  TBD"
+   },
+   "4" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "4",
+      "title" : "Basic IKE Negotiation with non-simple selectors Serve as Responder.",
+      "result" : "  TBD"
+   },
+   "24" : {
+      "steps" : "  1. Load 3.2e or newer firmware on SonicWALL1 and SonicWALL2 and boot with default settings.\n  2. Configure LAN and WAN interfaces on the firewalls.\n  3. Add IKEv2 VPN policy on SonicWALL1. Select X0 subnet as local network and SonicWALL2's X0 subnet as destination network. Select Group2-3DES-SHA1.\n  4. Configure IKEv2 VPN policy on SonicWALL2. Select X0 subnet as local network and SonicWALL1's X0 subnet as destination network. Select Group2-DES-SHA1,unmatched with the initiator.\n  5. Send ping from PC1 to PC3. Capture packets on PC2 using Ethereal. Set Capture Filter to ISAKMP. View the Logs and VPN > Settings page on SonicWALL1.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "24",
+      "title" : "Error conditions simulation. Non-Matching Types1 - Encrypt",
+      "result" : "  Tunnel can not be established because of the unmatched the exchange method,with such logs:IKEv2 Payload processing error(Encryption algorithm mismatch. Local: DES; Peer: 3DES ),IKEv2 Payload processing error."
+   },
+   "10" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "10",
+      "title" : "Re-keying. Mismatched lifetime settings. Peer is configured with longer lifetimes. Ping initiated from local side.",
+      "result" : "  TBD"
+   },
+   "19" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 NAT device X0 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "19",
+      "title" : "NAT Traversal. Peer behind NAT device.",
+      "result" : "  TBD"
+   },
+   "5" : {
+      "steps" : "  TBD",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "id" : "5",
+      "title" : "Initiator uses matching DH Group in initial exchange",
+      "result" : "  TBD"
+   }
+}

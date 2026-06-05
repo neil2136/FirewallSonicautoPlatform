@@ -1,0 +1,107 @@
+{
+    "01": {
+        "steps": "1.Login firewall and go to network/Interfaces, edit a LAN zone interface like x0;\n\nOpen mode/ip assignment, select \"Static one arm mode\"\nFill in peer IP on One Arm Peer textbox;\nClick OK",
+        "initial": "",
+        "id": "01",
+        "title": "GUI check, configure one arm mode on LAN interfaces.",
+        "result": "One arm mode should be available for IP assignment mode,  and lan zone interface can be configured to one arm mode correctly."
+    },
+    "02": {
+        "steps": "1.Login firewall and go to network/Interfaces, edit a WAN zone interface like x1;\n\nOpen mode/ip assignment, select \"Static one arm mode\"\nFill in peer IP on One Arm Peer textbox;\nClick OK",
+        "initial": "",
+        "id": "02",
+        "title": "GUI check, configure static one arm mode on WAN interfaces.",
+        "result": "One arm mode should be available for IP assignment mode,  and wan zone interface can be configured to one arm mode correctly."
+    },
+    "05": {
+        "steps": "1.Login firewall and go to network/Interfaces, edit a LAN zone interface like x0;\n\nOpen mode/ip assignment, select \"Static one arm mode\"\nFill in peer IP on One Arm Peer textbox;\nClick OK\nOpen the configure window for x0 again, edit some option like peer IP, enable management, enable user login etc, then click OK.",
+        "initial": "",
+        "id": "05",
+        "title": "GUI check, edit one arm mode interfaces.",
+        "result": "One arm interfaces can be edit successfully."
+    },
+    "06": {
+        "steps": "Login firewall and go to network/Interfaces, edit a LAN zone interface like x0;\nOpen mode/ip assignment, select \"Static one arm mode\"\nFill in peer IP on One Arm Peer textbox, click OK;\nOpen the configure window for x0 again, change ip assignment to other modes, click OK.\nDo same operation on wan interface, switch between one arm mode and other modes like pppoe, dhcp etc.",
+        "initial": "",
+        "id": "06",
+        "title": "GUI check, switch interface between one arm mode to other ip assignment modes.",
+        "result": "Interface can be switched between one arm mode to other modes."
+    },
+    "07": {
+        "steps": "Login firewall and go to network/Interfaces, confgiure an interface as one arm mode;\nGo to routing pages, check that a route should be added automatically for the one arm interface  from any to any, gateway is One arm peer, and metric should be lower than default route..",
+        "initial": "",
+        "id": "07",
+        "title": "GUI check, PBR should be added automatically for one arm mode interface.",
+        "result": ""
+    },
+    "08": {
+        "steps": "Configure firewall x0 as one-arm mode, and set peer ip correctly to ubuntu eth1;\nFrom a pc that connects to ubuntu eth0, ping a host of eth2 subnet;\nCapture packet on firewall x0, check the icmp packet send to x0 and then sent out via x0;\nCapture packet on ubuntu eth1 and eth2, check the icmp packet send from eth1 to firewall x0 and after x0 send it back to eth1, it send to eth2 finally.",
+        "initial": "Configure an ubuntu vm as the Gateway as below, there're three network adptors on Ubuntu, suppose they are eth0, eth1, and eth2,   traffic comes from eth0, eth1 connects to Firewall one arm interface.\n1.Enable ip forward:\nvi /etc/sysctl.conf  uncomment net.ipv4.ip_forward=1\nrun command to make the change take effect right away: sysctl -p\n\n2.add a custom route table:\necho \"200 my\" >> /etc/iproute2/rt_tables\n\nadd rules to the route table:\nip rule add iif eth0 pri 10000 table my\nip rule add iif eth2 pri 10001 table my\nip route add default via FW_IP table my\n4.From a host in eth2 subnet, add route to eth0 via gateway eth1",
+        "id": "08",
+        "title": "Static one arm mode should work fine on lan interface.",
+        "result": "Traffic should pass over the one-arm interface."
+    },
+    "11": {
+        "steps": "Configure firewall x0 as one-arm mode, and set peer ip correctly to ubuntu eth1;\nEnable GAV on firewall lan zone, and enable inbound and outbound inspection for all protocols;\nFrom a pc that connects to ubuntu eth0, try access the virus server in eth2 subnet and download some virus samples via http/ftp/pop3, or send some virus sample via smtp.",
+        "initial": "Configure an ubuntu vm as the Gateway as below, there're three network adptors on Ubuntu, suppose they are eth0, eth1, and eth2,   traffic comes from eth0, eth1 connects to Firewall one arm interface.\n1.Enable ip forward:\nvi /etc/sysctl.conf  uncomment net.ipv4.ip_forward=1\nrun command to make the change take effect right away: sysctl -p\n\n2.add a custom route table:\necho \"200 my\" >> /etc/iproute2/rt_tables\n\nadd rules to the route table:\nip rule add iif eth0 pri 10000 table my\nip rule add iif eth2 pri 10001 table my\nip route add default via FW_IP table my\n4.From a host in eth2 subnet, add route to eth0 via gateway eth1",
+        "id": "11",
+        "title": "Security check, GAV should work fine under one arm mode.",
+        "result": "The virus should be detected and blocked by GAV."
+    },
+    "12": {
+        "steps": "Configure firewall x0 as one-arm mode, and set peer ip correctly to ubuntu eth1;\nEnable spyware on firewall lan zone for all priorities;\nFrom a pc that connects to ubuntu eth0, try access the spyware server in eth2 subnet and download some samples via http/ftp/pop3.",
+        "initial": "Configure an ubuntu vm as the Gateway as below, there're three network adptors on Ubuntu, suppose they are eth0, eth1, and eth2,   traffic comes from eth0, eth1 connects to Firewall one arm interface.\n1.Enable ip forward:\nvi /etc/sysctl.conf  uncomment net.ipv4.ip_forward=1\nrun command to make the change take effect right away: sysctl -p\n\n2.add a custom route table:\necho \"200 my\" >> /etc/iproute2/rt_tables\n\nadd rules to the route table:\nip rule add iif eth0 pri 10000 table my\nip rule add iif eth2 pri 10001 table my\nip route add default via FW_IP table my\n4.From a host in eth2 subnet, add route to eth0 via gateway eth1",
+        "id": "12",
+        "title": "Security check, Anti-Spyware should work fine under one arm mode.",
+        "result": "The spyware should be detected and blocked by Anti-spyware engine."
+    },
+    "13": {
+        "steps": "Configure firewall x0 as one-arm mode, and set peer ip correctly to ubuntu eth1;\nEnable IPS on firewall lan zone and all priorities;\nFrom a pc that connects to ubuntu eth0, ping a wan ip;\nFrom the pc that connects to ubuntu eth0, try download some IPS exploit samples from virus server.",
+        "initial": "Configure an ubuntu vm as the Gateway as below, there're three network adptors on Ubuntu, suppose they are eth0, eth1, and eth2,   traffic comes from eth0, eth1 connects to Firewall one arm interface.\n1.Enable ip forward:\nvi /etc/sysctl.conf  uncomment net.ipv4.ip_forward=1\nrun command to make the change take effect right away: sysctl -p\n\n2.add a custom route table:\necho \"200 my\" >> /etc/iproute2/rt_tables\n\nadd rules to the route table:\nip rule add iif eth0 pri 10000 table my\nip rule add iif eth2 pri 10001 table my\nip route add default via FW_IP table my\n4.From a host in eth2 subnet, add route to eth0 via gateway eth1",
+        "id": "13",
+        "title": "Security check, IPS should work fine under one arm mode.",
+        "result": "On step3, Ping should failed.\nOn step4, ips exploits should be detected and blocked by firewall."
+    },
+    "14": {
+        "steps": "Configure firewall x0 as one-arm mode, and set peer ip correctly to ubuntu eth1;\nEnable GAV/IPS/Anti-spyware on firewall lan zone, and enable inbound and outbound inspection for all protocols;\nEnable client dpi ssl for GAV/IPS/Anti-spyware;\n4.From a pc that connects to ubuntu eth0, try access the virus server in eth2 subnet and download some malware samples via https.",
+        "initial": "Configure an ubuntu vm as the Gateway as below, there're three network adptors on Ubuntu, suppose they are eth0, eth1, and eth2,   traffic comes from eth0, eth1 connects to Firewall one arm interface.\n1.Enable ip forward:\nvi /etc/sysctl.conf  uncomment net.ipv4.ip_forward=1\nrun command to make the change take effect right away: sysctl -p\n\n2.add a custom route table:\necho \"200 my\" >> /etc/iproute2/rt_tables\n\nadd rules to the route table:\nip rule add iif eth0 pri 10000 table my\nip rule add iif eth2 pri 10001 table my\nip route add default via FW_IP table my\n4.From a host in eth2 subnet, add route to eth0 via gateway eth1",
+        "id": "14",
+        "title": "Security check, dpi-ssl should work fine under one arm mode.",
+        "result": "The malware samples should be blocked by firewall."
+    },
+    "16": {
+        "steps": "1.Enter configure mode on console, and configure x0 as one arm mode per below commands:\n(edit-interface[X0])# one-arm-mode\n(edit-interface[X0])# one-arm-p\n(edit-interface[X0])# one-arm-peer 192.168.168.1\n(edit-interface[X0])# commit\n% Applying changes...\n% Status returned processing command:\n    commit\n% Changes made.\n2.Check the interface, acl and routing table on GUI, corresponding entries should be added for one arm mode interface.\n3.Unassign one arm mode for interface x0:\n(edit-interface[X0])# no one-arm-mode\n(edit-interface[X0])# commit\n% Applying changes...\n% Status returned processing command:\n    commit\n% Changes made.\n4.Check the interface, acl and routing table again on GUI, the interface should be back to static mode, and corresponding acl, route should be deleted.",
+        "initial": "",
+        "id": "16",
+        "title": "CLI check, one arm mode can be configured and work fine via console.",
+        "result": "Step2 and Step4."
+    },
+    "23": {
+        "steps": "1.Configure x0, x1 as one arm mode;\n\nCheck on policy/access rules, there should be auto added rules to allow traffic from x0 to x0, x1 to x1.",
+        "initial": "",
+        "id": "23",
+        "title": "GUI check¯¼Œaccess rules should be added automatically for one arm mode interfaces.",
+        "result": "Step2"
+    },
+    "25": {
+        "steps": "",
+        "initial": "",
+        "id": "25",
+        "title": "DHCP one arm mode should work fine on wan interface.",
+        "result": ""
+    },
+    "30": {
+        "steps": "Configure firewall x0 as one-arm mode, and set peer ip correctly to ubuntu eth1;\nEdit the Security Rule Action of auto added acl to enforce security check for gav/spyware/IPS.\nEnable SSL Client Inspection on Policy /settings page;\nAdd a decrption policy for client ssl, from source ubuntu eth0 subnet to Any;\nFrom pc connecting to eth0, access the virus server via https, then download some malware samples of virus, spyware or ips exploit.",
+        "initial": "Configure an ubuntu vm as the Gateway as below, there're three network adptors on Ubuntu, suppose they are eth0, eth1, and eth2,   traffic comes from eth0, eth1 connects to Firewall one arm interface and Eth2 is in same subnet with virus server.\n1.Enable ip forward:\nvi /etc/sysctl.conf  uncomment net.ipv4.ip_forward=1\n2.add a custom route table:\necho \"200 my\" >>/etc/iproute2/rt_tables\n\nadd rules to the route table:\nip rule add iif eth0 pri 10000 table my\nip rule add iif eth2 pri 10001 table my\nip route add default via FW_IP table my\n\nOn the virus server, add a route to eth0 subnet via gateway eth2",
+        "id": "30",
+        "title": "Policy mode,  check ssl traffic works fine with decrption policy under one arm mode.",
+        "result": "The malware download via ssl should be blocked. And Decryption policy should be hit."
+    },
+    "31": {
+        "steps": "From pc1, using hping to trigger SYN flood attack to pc2, like hping3 -S -i u500 pc2_ip\nCheck packet capture on firewall one arm mode interface and log messages.",
+        "initial": "Configure an ubuntu vm as the Gateway as below, there're three network adptors on Ubuntu, suppose they are eth0, eth1, and eth2,   traffic comes from eth0, eth1 connects to Firewall one arm interface and Eth2 is in same subnet with virus server.\n1.Enable ip forward:\nvi /etc/sysctl.conf  uncomment net.ipv4.ip_forward=1\n2.add a custom route table:\necho \"200 my\" >>/etc/iproute2/rt_tables\n\nadd rules to the route table:\nip rule add iif eth0 pri 10000 table my\nip rule add iif eth2 pri 10001 table my\nip route add default via FW_IP table my\n\nOn the virus server, add a route to eth0 subnet via gateway eth2",
+        "id": "31",
+        "title": "Global mode, TCP SYN flood through one arm mode interface can be detected by firewall.",
+        "result": "SYN flood packets are captured on one arm mode interface, and log messages generated for syn flood detected."
+    }
+}

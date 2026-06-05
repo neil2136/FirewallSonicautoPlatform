@@ -1,0 +1,162 @@
+{
+   "1526120" : {
+      "steps" : "  TBD",
+      "priority" : "Smoke",
+      "atm_id" : "b5e201b4-d202-4dc9-b36f-df42188c111c",
+      "initial" : "  TBD",
+      "id" : "1526120",
+      "title" : "[CLI]E-mail Address can be added in right value.",
+      "description" : "Original ID: 4\nOriginal Title: [CLI]E-mail Address can be added in right value.\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1526117" : {
+      "steps" : "  Period of sending Audit Records can be added with right format via Log-&gt;Automation-&gt;E-mail Audit Records Automation page.",
+      "priority" : "Smoke",
+      "atm_id" : "228dba2a-2c11-4d90-b830-1d907030df62",
+      "initial" : "  TBD",
+      "id" : "1526117",
+      "title" : "[GUI]Period of sending Audit Records can be configured.",
+      "description" : "Original ID: 2\nOriginal Title: [GUI]Period of sending Audit Records can be configured.\nOriginal Description:",
+      "result" : "  1. a user can configure E-mail Audit Records Automation to email the records based on settings of: Daily,Weekly,When Full.\n  2.When period is daily , you can set time quantum, 0-24 .\n  3.When period is Weekly, you can choose the day of the week.Sun-Sat\n  4.When period is Full, you can just set peoriod.\n  5.When wrong format, it will show error."
+   },
+   "1526114" : {
+      "steps" : "  Email address can be added with right value via Log-&gt;Automation-&gt;E-mail Audit Records Automation page",
+      "priority" : "Smoke",
+      "atm_id" : "0a1fa54c-131f-4cad-8b4c-894a9a982af1",
+      "initial" : "  TBD",
+      "id" : "1526114",
+      "title" : "[GUI]E-mail Address can be added in right value.",
+      "description" : "Original ID: 1\nOriginal Title: [GUI]E-mail Address can be added in right value.\nOriginal Description:",
+      "result" : "  1.Configuration success. 2.if wrong format , it will show error :\"Send Audit Record to\" e-mail address \"xxx\" must be a valid email address or blank"
+   },
+   "1526122" : {
+      "steps" : "  TBD",
+      "priority" : "Smoke",
+      "atm_id" : "5d2d8a23-4376-41ea-8678-587e469f72e4",
+      "initial" : "  TBD",
+      "id" : "1526122",
+      "title" : "[CLI]Email format can be configured",
+      "description" : "Original ID: 6\nOriginal Title: [CLI]Email format van be configured \nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1526115" : {
+      "steps" : "  Set period to weekly , and configure a specific day.",
+      "priority" : "Smoke",
+      "atm_id" : "46d43ec3-6c31-4bbf-9c84-4eb2b459170f",
+      "initial" : "  1.Email address added via Log-&gt;Automation-&gt;E-mail Audit Records Automation page\n  2.Choose Email format to HTML\n  3.Configure mail server and mail address via Log-&gt;Automation-&gt;Mail Server Settings",
+      "id" : "1526115",
+      "title" : "[Function]Email auditing records when period is Weekly with HTML format",
+      "description" : "Original ID: 12\nOriginal Title: [Function]Email auditing records when period is Weekly with HTML format\nOriginal Description:",
+      "result" : "  Email will be received with HMTL format at the specific day."
+   },
+   "1526123" : {
+      "steps" : "  Set period to daily , and configure a specific time.",
+      "priority" : "Smoke",
+      "atm_id" : "c18eb9f3-836f-40e8-8e78-048658c618bc",
+      "initial" : "  1.Email address added via Log-&gt;Automation-&gt;E-mail Audit Records Automation page\n  2.Choose Email format to Plain Text.\n  3.Configure mail server and mail address via Log-&gt;Automation-&gt;Mail Server Settings",
+      "id" : "1526123",
+      "title" : "[Function]Email auditing records when period is Daily with Plain Text format",
+      "description" : "Original ID: 8\nOriginal Title: [Function]Email auditing records when period is Daily with Plain Text format\nOriginal Description:",
+      "result" : "  Email will be received with plain text format at the specific time."
+   },
+   "1526119" : {
+      "steps" : "  Email format van be configured via Log-&gt;Automation-&gt;E-mail Audit Records Automation page.",
+      "priority" : "Smoke",
+      "atm_id" : "5e18c58e-ca59-4477-9ce6-dc33482d3470",
+      "initial" : "  TBD",
+      "id" : "1526119",
+      "title" : "[GUI]Email format can be configured",
+      "description" : "Original ID: 3\nOriginal Title: [GUI]Email format van be configured \nOriginal Description:",
+      "result" : "  Plain Text, HTML, CSV attachment."
+   },
+   "1526116" : {
+      "steps" : "  Set period to When Full.",
+      "priority" : "Smoke",
+      "atm_id" : "f3608103-4bf2-4675-9b35-883356441c82",
+      "initial" : "  1.Email address added via Log-&gt;Automation-&gt;E-mail Audit Records Automation page\n  2.Choose Email format to CSV attachment\n  3.Configure mail server and mail address via Log-&gt;Automation-&gt;Mail Server Settings",
+      "id" : "1526116",
+      "title" : "[Function]Email auditing records when period is When Full with CSV attachment format",
+      "description" : "Original ID: 16\nOriginal Title: [Function]Email auditing records when period is When Full with CSV attachment format\nOriginal Description: Maximum Size of Audit Records\n\nThe maximum numbers of records are defined in the product's matrix file for Gen 6 platforms, according to the platforms' RAM and flash size.\n\nTZ: 600, 600W, 500, 500W, 400, 400W, 300, 300W\nSOHOW:500 \n\nTZ: 350, 350W, 300P:500 \n\nSuperMassive: 9650:2500 \n\nSuperMassive: 9600, 9450 :2500\n\nSuperMassive: 9400, 9250,\nNSA6650\n:2500 \nSuperMassive: 9200       2500\nSOHO, SOHO 250, SOHO 250 W,   500 \nNSA: 6600, 5600, 2650P, 2650   2000 \nNSA: 5650, 4650, 3650, 8GB   2000 \nNSA: 4600, 3600, 2600 2GB    2000 \n\nNSA: 240, 210, 210W  500",
+      "result" : "  Email will be received with CSV attachment format when log audit records is full"
+   },
+   "1526118" : {
+      "steps" : "  1.Export prefs that support E-mail Audit Records Automation.\n  2.Change some configurations.\n  3.Import prefs in step 1.",
+      "priority" : "Smoke",
+      "atm_id" : "d2f04b60-78b6-474f-83ca-e3829b1d4d6c",
+      "initial" : "  1.Email address added via Log-&gt;Automation-&gt;E-mail Audit Records Automation page\n  2.Choose Email format\n  3.Configure mail server and mail address via Log-&gt;Automation-&gt;Mail Server Settings",
+      "id" : "1526118",
+      "title" : "[Pref]Import Prefs that support E-mail Audit Records Automation.",
+      "description" : "Original ID: 22\nOriginal Title: [Pref]Import Prefs that support E-mail Audit Records Automation.\nOriginal Description:",
+      "result" : "  The function still work and configuration is the same as step1."
+   },
+   "1526121" : {
+      "steps" : "  TBD",
+      "priority" : "Smoke",
+      "atm_id" : "497737e0-14fe-4363-bde1-b5febd209213",
+      "initial" : "  TBD",
+      "id" : "1526121",
+      "title" : "[CLI]Period of sending Audit Records can be configured.",
+      "description" : "Original ID: 5\nOriginal Title: [CLI]Period of sending Audit Records can be configured.\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1514955" : {
+      "steps" : "   From the very top of CLI CLI mode admin@C0EAE46A0DB6> conf config(C0EAE49CE84C)# export audit csv ftp ftp://user:password@10.10.10.10/auditRecords.csv /* export file called auditRecords.csv */config(C0EAE49CE84C)# export audit csv ftp ftp://user:password@10.10.10.10/ /* if no file name specified, this will export a file using auditRecords_with-part-of serial-number_with-time */",
+      "priority" : "Smoke",
+      "atm_id" : "48497707-032a-408c-be91-ebcfb66b2558",
+      "initial" : "  TBD",
+      "id" : "1514955",
+      "title" : "export audit csv ftp ftp://user:password@SERVER-IP/auditRecords.csv",
+      "description" : "Original ID: 13\nOriginal Title: export audit csv ftp ftp://user:password@SERVER-IP/auditRecords.csv \nOriginal Description:",
+      "result" : "  tbd"
+   },
+   "1514956" : {
+      "steps" : "   TBD",
+      "priority" : "Sanity",
+      "atm_id" : "df0ec86e-e57f-476b-8632-7a50dec4cce6",
+      "initial" : "  TBD",
+      "id" : "1514956",
+      "title" : "export audit txt ftp ftp://user:password@SERVER-IP/auditRecords.txt",
+      "description" : "Original ID: 14\nOriginal Title: export audit txt ftp ftp://user:password@SERVER-IP/auditRecords.txt\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1514957" : {
+      "steps" : "   config(C0EAE49CE84C)#config(C0EAE49CE84C)# export audit csv scp scp://user@10.10.10.10/auditRecords.wri",
+      "priority" : "Full_Regression",
+      "atm_id" : "a123d077-b221-4233-bcb6-f86a97faae41",
+      "initial" : "  TBD",
+      "id" : "1514957",
+      "title" : "export audit csv scp scp://user@SERVER-IP/auditRecords.wri",
+      "description" : "Original ID: 15\nOriginal Title: export audit csv scp scp://user@SERVER-IP/auditRecords.wri\nOriginal Description:",
+      "result" : "  The file auditRecords.wri is uploaded to the folder /home/user of your linux server."
+   },
+   "2403291" : {
+      "steps" : " 1 Login from CLI2 Then to check the multicore info via CLI command 'diag show cpu' ",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "2403291",
+      "title" : "To check the CLI command ' diag show cpu.'",
+      "description" : "",
+      "result" : " 2 append the history traffic in kbps of aggreged DP core statistics in last 1 hour, to monitor DP load--MultiCore Process History for Last Hour (60 minutes ago --> now, kbps)"
+   },
+   "3128242" : {
+      "steps" : "  ",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "3128242",
+      "title" : "To check the output of CLI command ' diag show memory verbose.'",
+      "description" : "",
+      "result" : " "
+   },
+   "2403290" : {
+      "steps" : " 1 Login from CLI2 Then to check the multicore info via CLI command 'diag show multicore' ",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "2403290",
+      "title" : "",
+      "description" : "",
+      "result" : " There are 2 new columns Packet Rate and Bit Rate to diag show multicore command to reflect the per-core raw packet processing state."
+   }
+}

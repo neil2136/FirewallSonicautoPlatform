@@ -1,0 +1,58 @@
+{
+    "3928645": {
+        "id": "3928645",
+        "title": "Verify that \"\"Enforce password complexity\"\" is enabled by default and set to \"\"Alphanumeric and symbolic characters\"\" with complexity requirement of Upper Case Characters = 1, Lower Case Characters = 1, Number Characters =1, and Symbolic Characters =1\u00a0on",
+        "result": "Verify that \"\"Enforce password complexity\"\" is enabled by default and set to \"\"Alphanumeric and symbolic characters\"\" with complexity requirement of Upper Case Characters = 1, Lower Case Characters = 1, Number Characters =1, and Symbolic Characters =1\u00a0on factory default configuration",
+        "setup": "",
+        "step": "Verify that \"\"Enforce password complexity\"\" is enabled by default and set to \"\"Alphanumeric and symbolic characters\"\" with complexity requirement of Upper Case Characters = 1, Lower Case Characters = 1, Number Characters =1, and Symbolic Characters =1\u00a0on"
+    },
+    "3928646": {
+        "id": "3928646",
+        "title": "Verify that any settings related to \"\"Enforce password complexity\"\" doesn't change during upgrade/rollback, config export/import/reimport, config backup/recovery, settings export/import",
+        "result": "Verify that any settings related to \"\"Enforce password complexity\"\" doesn't change during upgrade/rollback, config export/import/reimport, config backup/recovery, settings export/import",
+        "setup": "",
+        "step": "Verify that any settings related to \"\"Enforce password complexity\"\" doesn't change during upgrade/rollback, config export/import/reimport, config backup/recovery, settings export/import"
+    },
+    "3928647": {
+        "id": "3928647",
+        "title": "Verify that on upgrade with \"\"Enforce password complexity\"\" set to None, a POP up saying that our recommendation is to Enforce Password complexity to Alphanumeric and symbolic characters and set the requirements like\u2026",
+        "result": "Verify that on upgrade with \"\"Enforce password complexity\"\" set to None, a POP up saying that our recommendation is to Enforce Password complexity to Alphanumeric and symbolic characters and set the requirements like\u2026",
+        "setup": "",
+        "step": "Verify that on upgrade with \"\"Enforce password complexity\"\" set to None, a POP up saying that our recommendation is to Enforce Password complexity to Alphanumeric and symbolic characters and set the requirements like\u2026"
+    },
+    "3928648": {
+        "id": "3928648",
+        "title": "Verify that on upgrade with \"\"Enforce password complexity\"\" set to None, and admin set the password complexity to Alphanumeric and symbolic characters, a POP to change the password appear with recommendations",
+        "result": "Verify that on upgrade with \"\"Enforce password complexity\"\" set to None, and admin set the password complexity to Alphanumeric and symbolic characters, a POP to change the password appear with recommendations",
+        "setup": "",
+        "step": "Verify that on upgrade with \"\"Enforce password complexity\"\" set to None, and admin set the password complexity to Alphanumeric and symbolic characters, a POP to change the password appear with recommendations"
+    },
+    "3928649": {
+        "id": "3928649",
+        "title": "Verify that when \"\"Enforce password complexity\"\" is enabled and set to \"\"Alphanumeric and symbolic characters\"\",  the complexity requirement should be Upper Case Characters = 1, Lower Case Characters = 1, Number Characters =1, and Symbolic Characters =1",
+        "result": "Verify that when \"\"Enforce password complexity\"\" is enabled and set to \"\"Alphanumeric and symbolic characters\"\",  the complexity requirement should be Upper Case Characters = 1, Lower Case Characters = 1, Number Characters =1, and Symbolic Characters =1",
+        "setup": "",
+        "step": "Verify that when \"\"Enforce password complexity\"\" is enabled and set to \"\"Alphanumeric and symbolic characters\"\",  the complexity requirement should be Upper Case Characters = 1, Lower Case Characters = 1, Number Characters =1, and Symbolic Characters =1"
+    },
+    "3928650": {
+        "id": "3928650",
+        "title": "Verify password creation is successful when \"\"Enforce password complexity\"\" is enabled and set to \"\"Alphanumeric and symbolic characters\"\", with the complexity requirement as Upper Case Characters = 1, Lower Case Characters = 1, Number Characters =1, and",
+        "result": "Verify password creation is successful when \"\"Enforce password complexity\"\" is enabled and set to \"\"Alphanumeric and symbolic characters\"\", with the complexity requirement as Upper Case Characters = 1, Lower Case Characters = 1, Number Characters =1, and Symbolic Characters =1 for Admin, Other full admin, Limited admin, Guest admin, Other local users, System admin, Crypto admin, Audit admin",
+        "setup": "",
+        "step": "Verify password creation is successful when \"\"Enforce password complexity\"\" is enabled and set to \"\"Alphanumeric and symbolic characters\"\", with the complexity requirement as Upper Case Characters = 1, Lower Case Characters = 1, Number Characters =1, and"
+    },
+    "3928651": {
+        "id": "3928651",
+        "title": "Verify successful login with newly created password for Admin, Other full admin, Limited admin, Guest admin, Other local users, System admin, Crypto admin, Audit admin",
+        "result": "Verify successful login with newly created password for Admin, Other full admin, Limited admin, Guest admin, Other local users, System admin, Crypto admin, Audit admin",
+        "setup": "",
+        "step": "Verify successful login with newly created password for Admin, Other full admin, Limited admin, Guest admin, Other local users, System admin, Crypto admin, Audit admin"
+    },
+    "3928652": {
+        "id": "3928652",
+        "title": "Verify that the password change is enforced to meet complexity requirements on booting the FW with factory default configuration",
+        "result": "Verify that the password change is enforced to meet complexity requirements on booting the FW with factory default configuration",
+        "setup": "",
+        "step": "Verify that the password change is enforced to meet complexity requirements on booting the FW with factory default configuration"
+    }
+}

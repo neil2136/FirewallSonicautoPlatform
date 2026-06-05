@@ -1,0 +1,142 @@
+{
+    "1": {
+        "steps": "1. CLI commend: show service-objects",
+        "initial": "",
+        "id": "1",
+        "title": "Services-show service",
+        "result": "All service objects display correctly"
+    },
+    "2": {
+        "steps": "1. CLI commend: show service-object <object name>",
+        "initial": "",
+        "id": "2",
+        "title": "Services-show service<service name>",
+        "result": "The specific service object displays correctly"
+    },
+    "3": {
+        "steps": "1. Enter config mode \n 2. Add a service object via CLI commends",
+        "initial": "",
+        "id": "3",
+        "title": "Services-configure commands of add <service name>",
+        "result": "The specific service object is added successfully"
+    },
+    "4": {
+        "steps": "1. CLI commend: show service-groups",
+        "initial": "",
+        "id": "4",
+        "title": "Services group-show service-groups",
+        "result": "All service groups display correctly"
+    },
+    "5": {
+        "steps": "1. CLI commend: show service-group <group name>",
+        "initial": "",
+        "id": "5",
+        "title": "Services group-show service-groups<group name>",
+        "result": "The specific service group displays correctly"
+    },
+    "6": {
+        "steps": "1. Enter config mode \n 2. Add a service group via CLI commends",
+        "initial": " ",
+        "id": "6",
+        "title": "Services group-configure command of add <group-name>",
+        "result": "The specific service group is added successfully"
+    },
+    "7": {
+        "steps": "1. CLI commend: show nat-policies",
+        "initial": " ",
+        "id": "7",
+        "title": "NAT-show commands: show nat",
+        "result": "All nat policies display correctly"
+    },
+    "8": {
+        "steps": "1. Enter config mode \n 2. Add a nat policy via CLI commends",
+        "initial": " ",
+        "id": "8",
+        "title": "NAT-configure commands of add",
+        "result": "The specific nat policy is added successfully"
+    },
+    "9": {
+        "steps": "1. Enter config mode \n 2. Modify a nat policy via CLI commends, like translated-source",
+        "initial": " ",
+        "id": "9",
+        "title": "NAT- configure commands of modify",
+        "result": "The policy is Modified successfully"
+    },
+    "10": {
+        "steps": "1. Enter config mode \n 2. Delete a nat policy via CLI commend: no nat-policy <parameters>",
+        "initial": " ",
+        "id": "10",
+        "title": "NAT-configure commands of delete",
+        "result": "The policy is Deleted successfully"
+    },
+    "11": {
+        "steps": "1. CLI commend: show access-rules",
+        "initial": " ",
+        "id": "11",
+        "title": "Access rules-show access-rules",
+        "result": "All access rules display correctly"
+    },
+    "12": {
+        "steps": "1. Enter config mode \n 2. Modify a access rule from and to zones via CLI commends: from<zone> to<zone>",
+        "initial": " ",
+        "id": "12",
+        "title": "Access rules-configure commands of access-rules <from-zone> <to-zone>",
+        "result": "The policy is modified successfully"
+    },
+    "13": {
+        "steps": "1. Enter config mode \n 2. CLI commend: access-rule ? ",
+        "initial": " ",
+        "id": "13",
+        "title": "Access rules-configure commands of list",
+        "result": "Show correctly"
+    },
+    "14": {
+        "steps": "1. Enter config mode \n 2. Add an access-rule via CLI commend",
+        "initial": " ",
+        "id": "14",
+        "title": "Access rules-configure commands of add",
+        "result": "Added successfully"
+    },
+    "15": {
+        "steps": "1. Enter config mode \n 2. Modify an access-rule via CLI commends, like from, to, source, destination,...",
+        "initial": " ",
+        "id": "15",
+        "title": "Access rules-configure commands of modify",
+        "result": "Modified successfully"
+    },
+    "16": {
+        "steps": "1. Enter config mode \n 2. Delete an access-rule via CLI commend: no access-rule <parameters>",
+        "initial": " ",
+        "id": "16",
+        "title": "Access rules-configure commands of delete <index>",
+        "result": "Deleted successfully"
+    },
+    "17": {
+        "steps": "1. Enter config mode \n 2. Modify a service object via CLI commends",
+        "initial": " ",
+        "id": "17",
+        "title": "Services-configure commands of modify <service name>",
+        "result": "Modified successfully"
+    },
+    "18": {
+        "steps": "1. Enter config mode \n 2. Delete a service object via CLI commends: no service-object <name>",
+        "initial": " ",
+        "id": "18",
+        "title": "Services-configure commands of delete <service name>",
+        "result": "Deleted successfully"
+    },
+    "19": {
+        "steps": "1. Enter config mode \n 2. Modify a service group via CLI commends, like add a object/group to the group,delete object/group from group, change name,..",
+        "initial": " ",
+        "id": "19",
+        "title": "Services group-configure command of modify <group-name>",
+        "result": "Modified successfully"
+    },
+    "20": {
+        "steps": "1. Enter config mode \n 2. Delete a service group via CLI commends: no service-group <name>",
+        "initial": " ",
+        "id": "20",
+        "title": "Services group-configure command of delete <service-group>",
+        "result": "Deleted successfully"
+    }
+}

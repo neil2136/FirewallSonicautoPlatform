@@ -1,0 +1,155 @@
+{
+  "2": {
+    "steps": "step 1: try to add a nat64 policy:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64",
+    "initial": "",
+    "id": "2",
+    "title": "Verify that it can add NAT64 Policy successfullly",
+    "result": "step 1: it can add successfully"
+  },
+  "7": {
+    "steps": "step 1: add a nat64 policy :<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64<br />step 2: try to edit the nat64 policy, eg change the source original as LAN IPv6 Subnets or change the Pre64 as another customized AO, and then save it",
+    "initial": "",
+    "id": "7",
+    "title": " Verify that it can edit NAT64 Policy successfully",
+    "result": "step 2: it can save successfully"
+  },
+  "15": {
+    "steps": "step 1:add a nat64 policy with network /address size of original source and translated source as many-to -one: <br />source original: LAN IPv6 Subnets; source translated:host ;Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: ping from Client to Server with IPv4-embedded IPv6 address",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "15",
+    "title": " Verify the traffic works when configure network /address size of original source and translated source to be many-to-one",
+    "result": "step 3: traffic is reachable"
+  },
+  "18": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: X1 IP; Pref64: customized ao with prefix length n=32/40/48/56/64/96 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: ping from client to server with IPv4-embedded IPv6 address for n=32/40/48/56/64/96 respectively<br />step 4: capture packets on DUT",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "18",
+    "title": "Verify the embedded IPv4 address from IPv4-converted IPv6 address can be recognized and translated ",
+    "result": "step 3: traffic is reachable<br />step 4: the embedded IPv4 address from IPv4-converted IPv6 address are recoginized correctly"
+  },
+  "19": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: ping from Client to Server with IPv4-embedded IPv6 address<br />step 4: capture packets on DUT and check that the value of Version, Priority, payload length, Hop Limit,Next header, SA, DA are translated from IPv6 to IPv4 successfully or not",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "19",
+    "title": " Verify the IP header field from IPv6 to IPv4 can translated successfully when no fragmentation happen",
+    "result": "tep 4: Verison from 6 to 4<br />payload length (x)->total length (x+20)<br />hop limit->TTL<br />priority->tos<br />Next header->protocal<br />source address from ipv6 to ipv4<br />destination address from ipv6 to ipv4\ndestination address from ipv6 to ipv4"
+  },
+  "20": {
+    "steps": "add a nat64 policy and enable it:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: ping from Server to Client with IPv4-embedded IPv6 address<br />step 4: capture packets on DUT and check that the value of Version, TOS, total length, TTL, Protocol, SA, DA are translated from IPv4 to IPv6 successfully or not",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "20",
+    "title": "Verify the IP header field from IPv4 to IPv6 can translated successfully when no fragmentation happen",
+    "result": " Verison from 4 to 6<br />total length (x)-> payload length (x-20)<br />tos->priority<br />TTL->hop limit<br />protocal->Next header<br />source address from ipv4 to ipv6<br />destination address from ipv4 to ipv6"
+  },
+  "21": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: ping from Client to Server with IPv4-embedded IPv6 address with big packet<br />step 4: capture packets on DUT and check that the value of Next Header, Fragment offset, Identification, M flag are translated from IPv6 to IPv4 successfully or not",
+    "initial": "Need cover:<br />Next Header, Fragment offset, Identification, M flag.<br />Client----(X0)DUT(X1)----Server",
+    "id": "21",
+    "title": "Verify the IP header field from IPv6 to IPv4 can translated successfully when fragmentation happen",
+    "result": "step 4: Next Header->protocal<br /> offset->fragment offset <br /> identification->identification<br /> M flag->M flag"
+  },
+  "79": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: send UDP traffic from Client to Server with big packets by Xcap<br />step 4: capture packets on DUT",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "79",
+    "title": "Verify that fragmented UDP traffic can translate successfully from ipv6 host",
+    "result": "step 4: fragmented TCP traffic are translated from ipv6 to ipv4"
+  },
+  "80": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: send ICMP traffic from Client to Server with big packets by Xcap<br />step 4: capture packets on DUT",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "80",
+    "title": "Verify that fragmented ICMP traffic can translate successfully from ipv6 host",
+    "result": "step 4: fragmented TCP traffic are translated from ipv6 to ipv4"
+  },
+  "50": {
+    "steps": "step 1: add a nat64 policy and enable it:\nsource original : any ; source translated: X2 IP; Pref64: 64:9999::/96\n<br />step 2: allow IPv6<strong> WAN->WAN</strong> access rule and allow IPv6 <strong>WAN->LAN/DMZ</strong> access rule\nstep 3:add route policy on client PC:\n<strong>route -6 add 64:9999::/96 2001:480:1:1::100</strong><br />step 4: ping from client to server or download file with filezilla by client\n<strong>ping 64:9999::1402:02F4 from client PC</strong>\n<strong>Notice:</strong>\n<strong>wan pc direct connected to WAN interface,put them in the same VLAN</strong>",
+    "initial": "Server(20.2.2.244)----(LAN/DMZ X2:20.2.2.2)DUT(WAN X3: 2001:480:1:1::100/64)----Client (2001:480:1:1::1/64)",
+    "id": "50",
+    "title": " Verify that it translate successfully and traffic is reachable when it match NAT64 policy from WAN->LAN /DMZ",
+    "result": "step 3: traffic is reachable"
+  },
+  "51": {
+    "steps": "step 1: set X2 as LAN /DMZ/WLAN zone and assign ipv6 static address for it<br />step 2: add a nat64 policy and enable it :<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64 <br />step 3: ping from client to server with IPv4-embedded IPv6 address",
+    "initial": "Client----(X2)DUT(X1)----Server",
+    "id": "51",
+    "title": "Verify that it translate successfully and traffic is reachable when it match NAT64 policy from LAN /DMZ/WLAN->WAN",
+    "result": "step 3: ping successfully"
+  },
+  "56": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: ALL WAN IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: send ICMP traffic from client to server<br />step 4: capture packets on DUT",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "56",
+    "title": "Verify that it can translate unicast ICMP traffic successfully",
+    "result": "step 4: ICMP traffic can translate successfully"
+  },
+  "57": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: ALL WAN IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: send UDP traffic from client to server<br />step 4: capture packets on DUT",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "57",
+    "title": "Verify that it can translate unicast UDP traffic successfully",
+    "result": "step 4: UDP traffic can translate successfully"
+  },
+  "58": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: ALL WAN IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: send TCP traffic from client to server<br />step 4: capture packets on DUT",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "58",
+    "title": "Verify that it can translate unicast TCP traffic successfully",
+    "result": "step 4: TCP traffic can translate successfully"
+  },
+  "61": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: ALL WAN IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: use filezila client to access filezila server with active /passive mode and try to download big files",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "61",
+    "title": "Verify FTP (active/passive) traffic works with NAT64 ",
+    "result": "step 3:it can login and downlaod files successfully"
+  },
+  "71": {
+    "steps": "step 1: set X1 as WAN zone and assign static ip address for it, and then switch to IPv6 view and set X1 as auto mode and assign static ipv6 address to X0 interface<br />step 2: add a nat64 policy and enable it:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64 <br />step 3: add a ipv6 nat policy and enable it:<br />source original : any; source translated: X1 IPv6 Primary<br />Dynamic Address; destination original :any; destination translated: original<br />step 4: allow IPv4 WAN->WAN access rule<br />step 5: On client, set DNS as 2001:4860:4860::6464 and get ipv6 address, then access webistes with https",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "71",
+    "title": " Verify HTTPS traffic works with NAT64 translation",
+    "result": "step 5: access successfully"
+  },
+  "73": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: on System->Diagnostics page, select Diagnostic tool as Ping, and then ping Server with IPv4-embedded IPv6 address",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "73",
+    "title": " Verify that NAT64 policy works for the traffic initiated by Sonicwall box",
+    "result": "step 3: ping successfully"
+  },
+  "74": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: make sure that connection NAT mapping has been enabled to display events in Log monitor<br />step 4: send icmp /tcp/udp packets from client to server<br />step 5: check if the nat mapping for the nat64 traffic has been shown in the log monitor",
+    "initial": "Client----(X0)DUT(X1)----Server",
+    "id": "74",
+    "title": "Log test for NAT64",
+    "result": "step 5: the log monitor shows the nat mapping for nat64 traffic"
+  },
+  "87": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: X2 IP; Pref64: 64:9999::/96<br />step 2: allow IPv6 WAN->WAN access rule and allow IPv6 WAN->LAN/DMZ access rule<br />step 3: ping from client to server with data length 2000<br />step 4: capture packets and check the reply packets from server\nps: you can also change the WAN MTU to test",
+    "initial": "Server(20.2.2.244)----(LAN/DMZ X2:20.2.2.2)DUT(WAN X3: 2001:480:1:1::100/64)----Client (2001:480:1:1::1/64)",
+    "id": "87",
+    "title": " Verify that the Translated IPv6 packet will include IPV6 fragment header when ipv4 packet is fragment and DF=0",
+    "result": "step 4: when its total length vaule of the first packet of ipv4 reply plus 20 is more than the MTU of next -hop interface ,it need to be fragemented . And after translated into ipv6 pakcet ,it will include ipv6 fragment header"
+  },
+  "88": {
+    "steps": "step 1: add a nat64 policy and enable it:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64 <br />step 2: allow IPv4 WAN->WAN access rule<br />step 3: ping the WAN IP of Sonicewall box with IPv4-converted IPv6 address",
+    "id": "88",
+    "title": "Verify that it can ping a Sonicwall box with the IPv4-converted IPv6 address successfully",
+    "result": "step 3: ping successfully"
+  },
+  "92": {
+    "steps": "step 1: add multiple NAT64 policies and make sure that all policies are working<br />step 2: restart <br />step 3: check that all addedd NAT64 policies keep intact and still work",
+    "initial": "Client----(X0)DUT(X1)----Server/Internet",
+    "id": "92",
+    "title": "Verify that the NAT64 policies keep intact and still work after restart DUT",
+    "result": "step 3: all NAT64 policies are completely intact and working"
+  },
+  "3": {
+    "steps": "step 1: add a nat64 policy:<br />source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64<br />step 2: try to delet it",
+    "initial": "",
+    "id": "3",
+    "title": "Verify that it can delete NAT64 Policy successfully",
+    "result": "step 2: it can delete successfully"
+  }
+}

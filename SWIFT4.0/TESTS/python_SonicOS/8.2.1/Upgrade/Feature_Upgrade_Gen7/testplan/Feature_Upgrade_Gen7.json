@@ -1,0 +1,170 @@
+{
+    "CFS_TC015": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "CFS_TC015",
+        "title": "Verify settings after upgrade of specific feature",
+        "result": "Settings are complete after upgrade"
+    },
+    "CFS_TC016": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "CFS_TC016",
+        "title": "Verify functionality after upgrade of specific feature",
+        "result": "Feature functions after upgrade"
+    },
+    "TC023": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "TC023",
+        "title": "Settings GAV/IPS/Anti-Spyware",
+        "result": "Settings are complete after upgrade"
+    },
+    "TC024": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "TC024",
+        "title": "Functionality GAV/IPS/Anti-Spyware",
+        "result": "Feature functions after upgrade"
+    },
+    "TC027": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "TC027",
+        "title": "Settings Interfaces / Zones",
+        "result": "Settings are complete after upgrade"
+    },
+    "TC028": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "TC028",
+        "title": "Functionality Interfaces / Zones",
+        "result": "Feature functions after upgrade"
+    },
+    "TC035": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "TC035",
+        "title": "Settings NAT Policies",
+        "result": "Settings are complete after upgrade"
+    },
+    "TC036": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "TC036",
+        "title": "Functionality NAT Policies",
+        "result": "Feature functions after upgrade"
+    },
+    "TCACL01": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "TCACL01",
+        "title": "Settings for Access rules/App rules",
+        "result": "Settings are complete after upgrade"
+    },
+    "TCACL02": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "TCACL02",
+        "title": "Settings for Access rules/App rules",
+        "result": "Feature functions after upgrade"
+    },
+    "DPISSL01": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "DPISSL01",
+        "title": "Settings for Access rules/App rules",
+        "result": "Settings are complete after upgrade"
+    },
+    "DPISSL02": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "DPISSL02",
+        "title": "Settings for Access rules/App rules",
+        "result": "Feature functions after upgrade"
+    },
+    "DNS_TC021": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "DNS_TC021",
+        "title": "Verify settings after upgrade of specific",
+        "result": "Settings are complete after upgrade"
+    },
+    "DNS_TC022": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "DNS_TC022",
+        "title": "Verify functions after upgrade of specific",
+        "result": "Feature functions after upgrade"
+    },
+    "Syslog_TC063": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "Syslog_TC063",
+        "title": "Settings for Syslog",
+        "result": "Settings are complete after upgrade"
+    },
+    "Syslog_TC064": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "Syslog_TC064",
+        "title": "Functionality for Syslog",
+        "result": "Feature functions after upgrade"
+    },
+    "Time_TC065": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "Time_TC065",
+        "title": "Settings for Time",
+        "result": "Settings are complete after upgrade"
+    },
+    "Time_TC066": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "Time_TC066",
+        "title": "Functionality for Time",
+        "result": "Feature functions after upgrade"
+    },
+    "Logging_TC033": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "Logging_TC033",
+        "title": "Logging for Time",
+        "result": "Settings are complete after upgrade"
+    },
+    "Logging_TC034": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "Logging_TC034",
+        "title": "Functionality for Logging",
+        "result": "Feature functions after upgrade"
+    },
+    "SNMP_TC067": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "SNMP_TC067",
+        "title": "Logging for SNMP",
+        "result": "Settings are complete after upgrade"
+    },
+    "SNMP_TC068": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "SNMP_TC068",
+        "title": "Functionality for SNMP",
+        "result": "Feature functions after upgrade"
+    },
+    "DHCP_TC019": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "DHCP_TC019",
+        "title": "Settings DHCP Server",
+        "result": "Settings are complete after upgrade"
+    },
+    "DHCP_TC020": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "DHCP_TC020",
+        "title": "Functionality for DHCP Server",
+        "result": "Feature functions after upgrade"
+    }
+}

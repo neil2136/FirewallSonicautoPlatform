@@ -1,0 +1,156 @@
+{
+   "152" : {
+      "steps" : "  1. Configure DUT X1 and peer router interface to be in same subnet. 2. Configure DUT X1 interface MTU as 1400, peer router G0/0 MTU kept as 1500.\n  3. Enable OSPF in both DUT and peer router.\n  4. Check the OSPF neighbor status and OSPF debug output (in CLI) in DUT.\n  5. Enable the check box \"Enable MTU compatibility (mtu-ignore)\" in DUT\n  6. Check the OSPF neighbor status and OSPF debug output in DUT.",
+      "initial" : "  DUT(X1) --- (G0/0) Router",
+      "id" : "152",
+      "title" : "Verify the function of check box \"Enable MTU compatibility (mtu-ignore)\"",
+      "result" : "  In Step 4, OSPF neighbor status cannot be FULL, it will stay in ExStart (or Down) status. In DUT's OSPF debug output (in CLI), it will print peer MTU size is too large, as below example:\n  RECV[DD]: From 200.1.1.1 via X1:10.8.145.244: MTU size is too large (1500)\n  In Step 6. OSPF status will changed to FULL, and in OSPF debug output it won't print any MTU related error."
+   },
+   "155" : {
+      "steps" : "  1. Configure DUT X1 and peer router interface to be in same subnet.\n  2. Configure DUT X1 interface MTU as 1400, peer router G0/0 MTU kept as 1500.\n  3. Enable OSPF in both DUT and peer router.\n  4. Check the OSPF neighbor status and OSPF debug output (in CLI) in DUT.\n  5. In CLI OSPF prompt to enable the option \"IP OSPF mtu-ignore\" in X1 interface, like below:\n  interface X1\n  ip ospf authentication null\n  ip ospf mtu-ignore\n  6. Check the OSPF neighbor status and OSPF debug output in DUT.",
+      "initial" : "  DUT(X1) --- (G0/0) Router",
+      "id" : "155",
+      "title" : "Verify the function of \"OSPF mtu-ignore\" configured via CLI",
+      "result" : "  In Step 4, OSPF neighbor status cannot be FULL, it will stay in ExStart (or Down) status. In DUT's OSPF debug output (in CLI), it will print peer MTU size is too large, as below example:\n  RECV[DD]: From 200.1.1.1 via X1:10.8.145.244: MTU size is too large (1500)\n  In Step 6. OSPF status will changed to FULL, and in OSPF debug output it won't print any MTU related error."
+   },
+   "131" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 .\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Originate Default Route: When WAN is up .\n  5. Make sure that load balancing is disabled on the Network>WAN Failover & Load Balancing page of the SonicWALL.\n  6. Disconnect the cable on the WAN interface of the SonicWALL.\n  7. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf database command on the Router.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "131",
+      "title" : "When WAN is up is selected for default route origination. LB is disabled. No Primary WAN link.",
+      "result" : "  in step 7, The Router's database should not show 0.0.0.0 link when using show ip ospf database command."
+   },
+   "130" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 .\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Originate Default Route: Always .\n  5. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf database command on the Router to show Link ID 0.0.0.0 advertised by router 10.0.0.1 (SonicWALL). .\n  6. Reboot the SonicWALL.\n  7. Use the show ip ospf database command on the Router.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "130",
+      "title" : "Originate Default Route check box is enabled. Reboot the firewall.",
+      "result" : "  in step 7, The Router's database shows 0.0.0.0 and ADV router: 10.0.0.1."
+   },
+   "127" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 Enable message digest password: Router>ip ospf authentication message-digest Router>ip ospf message-digest-key 10 md5 1234 .\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Authentication: Message Digest Password: 1234 .\n  5. Define Key ID 10 in the CLI interface of the SonicWALL: SW> configure > route ars-ospf ARS OSPF> conf t ARS OSPF >router ospf ARS OSPF >area 0 authentication message-digest; In Under interface X2 to configure: \"ip ospf authentication message-digest\", \"ip ospf message-digest-key 10 md5 1234\n  6. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf neighbor command on the Router to show the neighbor status.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "127",
+      "title" : "Message Digest Key ID with value other than 1",
+      "result" : "  in step 6, Within 40 seconds the SonicWALL should re-establish full adjacency with the Router.\n  OSPF Hello packet trace shows Auth Key ID:10 in the OSPF Header."
+   },
+   "139" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router. Configure secondary WAN interface.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 , originate default-information always on the Router.\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 ;\n  5. Change the metric of default route received from advanced routing protocols from 110 to 10;\n  6. Click on the Neighbor Status LED to see full adjacency with the Router. Check FW's routing table.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "139",
+      "title" : "Default routes received from advanced routing protocols is changed by SonicWALL",
+      "result" : "  in step 6, Default routes received from advanced routing protocols will be added into DUT's routing table with metric 10."
+   },
+   "129" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router.\n  3. Configure OSPF on Router1 and Router2 (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X0 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Authentication: Message Digest Password: 1234 .\n  5. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Authentication: Simple Password Password: sonicwall .\n  6. On Router1, enable the same message digest password as set on X0 interface of the SonicWALL: ip ospf authentication message-digest ip ospf message-digest-key 1 md5 1234 .\n  7. On Router2, enable the same simple password as set on X2 interface of the SonicWALL: ip ospf authentication-key sonicwall .\n  8. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf neighbor command on the Router to show the neighbor status.",
+      "initial" : "  PC1---Router1---X0 SonicWALL X2---Router2---PC2",
+      "id" : "129",
+      "title" : "Heterogeneous OSPF authentication within an area",
+      "result" : "  in step 8, The SonicWALL should establish full adjacency with Router1 and Router2."
+   },
+   "154" : {
+      "steps" : "  1. In DUT and peer firewall to add VPN tunnel policy (bound to X1) to establish the VPN tunnel\n  2. In DUT and peer firewall Interface page to add a VPN tunnel interface, use the above created VPN policy, and IP address set as in same subnet.\n  3. In DUT to change X1 MTU to 1400, and peer firewall X1 MTU kept as 1500\n  4. In DUT and peer firewall to enable OSPF in the VPN tunnel interface.\n  5. Check the OSPF neighbor status and OSPF debug output (in CLI) in DUT.\n  6. Enable the check box \"Enable MTU compatibility (mtu-ignore)\" in DUT for the VPN tunnel interface\n  7. Check the OSPF neighbor status and OSPF debug output (in CLI) in DUT.",
+      "initial" : "  DUT (X1) ----(X1) Firewall",
+      "id" : "154",
+      "title" : "Verify the function of check box \"Enable MTU compatibility (mtu-ignore)\" in the VPN tunnel interface",
+      "result" : "  In Step 5, OSPF neighbor status cannot be FULL, it will stay in ExStart (or Down) status. In DUT's OSPF debug output (in CLI), it will print peer MTU size is too large.\n  In Step 7. OSPF status will changed to FULL, and in OSPF debug output it won't print any MTU related error."
+   },
+   "136" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router. Configure secondary WAN interface.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0.\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Originate Default Route: When WAN is up\n  5. Enable load balancing on the Network>WAN Failover & Load Balancing page of the SonicWALL. Enable Probe Monitoring and configure. Select Probe succeeds when Main Target responds. Set primary and secondary Main Targets to unreachable addresses.\n  6. Make sure that the cables on the primary and secondary WAN interfaces of the SonicWALL are connected and links are present.\n  7. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf database command on the Router.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "136",
+      "title" : "When WAN is up is selected for default route origination. Lb is enabled, Probing is enabled. Primary or Secondary link is present. Probe target is not found.",
+      "result" : "  in step 7, The Router's database should not show 0.0.0.0 link when using show ip ospf database command."
+   },
+   "141" : {
+      "steps" : "  step 1, Configure a new interface X3 with zone LAN and IP 28.1.1.2 in IPv4 interface page, interface X3's interface speed is 1Gbps;\n  step 2, Navigate to Network->Routing, enable OSPF on X3;\n  step 3, X3 OSPF interface cost is in auto mode;\n  step 4, Change Auto-Cost Reference BW to 40000 Mb/sec;\n  step 5, Connect a router to interface X3, and config OSPF on router;\n  step 6, Check X3 Interface Cost, it should be 40;\n  step 7, Repeat step 1 to step 6 on a 10Gbps interface;\n  step 8, Repeat step 1 to step 6 on a 10Mbps interface;\n  step 9, Repeat step 1 to step 6 on a 100Mbps interface;\n  step 10, Repeat step 1 to step 9 on a vlan sub-interface.\ufffd",
+      "initial" : "  DUT----Router",
+      "id" : "141",
+      "title" : "OSPF interface Auto-Cost. Use a custom value of Auto-Cost Reference Bandwidth.",
+      "result" : "  in step 6, the interface cost displayed on OSPF edit page should be 40.\n  CLI output will show details about DUT router-lsa, the metric = Auto-Cost Reference BW/Real Bandwidth, in this case, it should be 40;\n  in step 7, when interface real bandwidth is 10Gbps, then the interface cost calculated by the default reference bandwidth should be 4;\n  in step 8, when interface real bandwidth is 10Mbps, then the interface cost calculated by the default reference bandwidth should be 4000;\n  in step 9, when interface real bandwidth is 100Mbps, then the interface cost calculated by the default reference bandwidth should be 400;\n  in step 10, the vlan sub interface should inherit its parent interface' link speed to caculate the ospf cost, so the test results should be same as above.\ufffd"
+   },
+   "133" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router.Configure secondary WAN interface.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 .\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Originate Default Route: When WAN is up .\n  5. Enable load balancing on the Network>WAN Failover & Load Balancing page of the SonicWALL. Make sure that Probing is disabled.\n  6. Disconnect the cables on the primary and secondary WAN interfaces of the SonicWALL.\n  7. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf database command on the Router.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "133",
+      "title" : "When WAN is up is selected for default route origination. LB is enabled, Probing is disabled. No Primary or Secondary link.",
+      "result" : "  in step 7, The Router's database should not show 0.0.0.0 link when using show ip ospf database command."
+   },
+   "126" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 .\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1.\n  5. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf neighbor command on the Router to show the neighbor status.\n  6. Edit OSPF settings for X2: Authentication: Message Digest Password: 1234\n  7. Monitor the SonicWALL's neighbor status - the Router should disappear within 40 seconds.\n  8. Modify the Router to enable the same message digest password: ip ospf authentication message-digest ip ospf message-digest-key 1 md5 1234",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "126",
+      "title" : "Message Digest Key ID with value 1",
+      "result" : "  in step 8, Within 40 seconds the SonicWALL should re-establish full adjacency with the Router.\n  OSPF Hello packet trace shows Auth Key ID:1 in the OSPF Header."
+   },
+   "128" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 Enable message digest password: Router>ip ospf authentication message-digest Router>ip ospf message-digest-key 1 md5 1234 .\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Authentication: Message Digest Password: 1234 .\n  5. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf neighbor command on the Router to show the neighbor status.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "128",
+      "title" : "SonicOS 3.2. Crypto Sequence Number",
+      "result" : "  in step 5, OSPF Hello packet trace shows that Auth Crypto Sequence Number value in the OSPF Header increases in each packet."
+   },
+   "156" : {
+      "steps" : "  1. Add site to site VPN policy on local and remote FW, and use an AO Group as the local and remote network;\n  2. Enable OSPF/RIP on DUT, redistribute the remote VPN network;\n  3. Use command \"show ip route ospf\" on router;\n  4. Disable site to site VPN policy, check router \"show ip route ospf\".",
+      "initial" : "  Router------Local FW(DUT)--site to site VPN established---Remote FW",
+      "id" : "156",
+      "title" : "AO Group used in site to site VPN",
+      "result" : "  in step 1, make sure the VPN policy is established;\n  in step 2, make sure OSPF neighbor established;\n  in step 3, make sure router learned the remote VPN network from DUT;\n  in step 4, make sure when the VPN is down, the remote VPN network routes disappeared on router."
+   },
+   "134" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router. Configure secondary WAN interface.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 .\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Originate Default Route: When WAN is up .\n  5. Enable load balancing on the Network>WAN Failover & Load Balancing page of the SonicWALL. Make sure that Probing is disabled.\n  6. Disconnect the cable on the primary WAN interface of the SonicWALL. Make sure that secondary WAN is connected and the link is present.\n  7. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf database command on the Router.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "134",
+      "title" : "When WAN is up is selected for default route origination. LB is enabled, Probing is disabled. Link on Primary or Secondary.",
+      "result" : "  in step 7, The Router's database should show 0.0.0.0 link when using show ip ospf database command."
+   },
+   "138" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router. Configure secondary WAN interface.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 , originate default-information always on the Router.\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 ;\n  5. Click on the Neighbor Status LED to see full adjacency with the Router. Check FW's routing table.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "138",
+      "title" : "The metric of default routes received from advanced routing protocols is 110 by default",
+      "result" : "  in step 5, Defaule route received from advanced routing protocols will be added into DUT's routing table with default metric 110."
+   },
+   "153" : {
+      "steps" : "  1. Configure DUT X1:V145 and peer router interface G0/0.145 to be in same subnet.\n  2. Configure DUT X1:V145 interface MTU as 1400, peer router G0/0 MTU kept as 1500.\n  3. Enable OSPF in both DUT and peer router.\n  4. Check the OSPF neighbor status and OSPF debug output (in CLI) in DUT.\n  5. Enable the check box \"Enable MTU compatibility (mtu-ignore)\" in DUT X1:V145 interface\n  6. Check the OSPF neighbor status and OSPF debug output in DUT.",
+      "initial" : "  DUT(X1:V145) --- (G0/0.145) Router",
+      "id" : "153",
+      "title" : "Verify the function of check box \"Enable MTU compatibility (mtu-ignore)\" in the VLAN interface",
+      "result" : "  In Step 4, OSPF neighbor status cannot be FULL, it will stay in ExStart (or Down) status. In DUT's OSPF debug output (in CLI), it will print peer MTU size is too large, as below example:\n  RECV[DD]: From 200.1.1.1 via X1:V145:10.8.145.244: MTU size is too large (1500)\n  In Step 6. OSPF status will changed to FULL, and in OSPF debug output it won't print any MTU related error"
+   },
+   "135" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router.Configure secondary WAN interface.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 .\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Originate Default Route: When WAN is up .\n  5. Enable load balancing on the Network>WAN Failover & Load Balancing page of the SonicWALL. Enable Probe Monitoring and configure. Select Probe succeeds when Main Target responds. Set primary and secondary Main Targets to primary and secondary default gateway addresses respectively.\n  6. Disconnect the cables on the primary and secondary WAN interfaces of the SonicWALL.\n  7. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf database\n  command on the Router.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "135",
+      "title" : "When WAN is up is selected for default route origination. LB is enabled, Probing is enabled. No Primary or secondary link.",
+      "result" : "  in step 7, The Router's database should not show 0.0.0.0 link when using show ip ospf database command."
+   },
+   "137" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router. Configure secondary WAN interface.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 .\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Originate Default Route: When WAN is up .\n  5. Enable load balancing on the Network>WAN Failover & Load Balancing page of the SonicWALL. Enable Probe Monitoring and configure. Select Probe succeeds when Main Target responds. Set primary and secondary Main Targets to the primary and secondary default gateway addresses respectively.\n  6. Make sure that the cables on the primary and secondary WAN interfaces of the SonicWALL are connected and links are present.\n  7. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf database command on the Router.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "137",
+      "title" : "SonicOS 3.2. When WAN is up is selected for default route origination. LB is enabled, Probing is enabled. Primary or Secondary link is present. Probe target is found.",
+      "result" : "  in step 7, The Router's database should show 0.0.0.0 link when using show ip ospf database command."
+   },
+   "151" : {
+      "steps" : "  In Step 1. The option exists\n  In Step 2,3, the change is saved successfully.",
+      "initial" : "  1. In GUI Routing page, to configure OSPF in an interface, check if there has a check box named \"Enable MTU compatibility (mtu-ignore)\".\n  2. Enable this option and then click OK button, verify the change is saved successfully\n  3. Disable this option and then click OK button, verify the change is saved successfully",
+      "id" : "151",
+      "title" : "GUI: Verify the check box \"Enable MTU compatibility (mtu-ignore)\" being added in OSPF configuration page",
+      "result" : ""
+   },
+   "132" : {
+      "steps" : "  1. Load the firmware on the SonicWALL and boot with default settings.\n  2. Configure interface X2 LAN, connect to Router.\n  3. Configure OSPF on the Router (don't use 10.0.0.1 router-ID): Router>router ospf Router>network area 0 .\n  4. On the Network>Routing page of SonicWALL, select Advanced Routing mode. Configure OSPF for X2 interface: OSPFv2: Enabled Area: 0 Area Type: Normal Router-ID: 10.0.0.1 Originate Default Route: When WAN is up .\n  5. Make sure that load balancing is disabled on the Network>WAN Failover & Load Balancing page of the SonicWALL.\n  6. Make sure that the cable is connected on the primary WAN interface of the SonicWALL and the WAN link is present on the interface.\n  7. Click on the Neighbor Status LED to see full adjacency with the Router. Use the show ip ospf database command on the Router.",
+      "initial" : "  PC1---X0 SonicWALL X2---Hub---Router",
+      "id" : "132",
+      "title" : "When WAN is up is selected for default route origination. LB is disabled. Primary WAN link is present.",
+      "result" : "  in step 7, The Router's database should show 0.0.0.0 link when using show ip ospf database command."
+   },
+   "140" : {
+      "steps" : "  step 1, Configure a new interface X3 with zone LAN and IP 28.1.1.2 in IPv4 interface page, interface X3's interface speed is 1Gbps;\n  step 2, Navigate to Network->Routing, enable OSPF on X3;\n  step 3, X3 OSPF interface cost is in auto mode;\n  step 4, Auto-Cost Reference BW default value is 100 Mb/sec;\n  step 5, Connect a router to interface X3, and config OSPF on router;\n  step 6, Check X3 Interface Cost, it should be 1;\n  step 7, Repeat step 1 to step 6 on a 10Gbps interface;\n  step 8, Repeat step 1 to step 6 on a 10Mbps interface;\n  step 9, Repeat step 1 to step 6 on a 100Mbps interface;\n  step 10, Repeat step 1-9 on vlan sub-interface.\ufffd",
+      "initial" : "  DUT----Router",
+      "id" : "140",
+      "title" : "OSPF interface Auto-Cost. Use the default value of Auto-Cost Reference Bandwidth.",
+      "result" : "  in step 6, the interface cost displayed on OSPF edit page should be 1.\n  CLI output will show details about DUT router-lsa, the metric = Auto-Cost Reference BW/Real Bandwidth, in this case, it should be 1;\n  in step 7, when interface real bandwidth is 10Gbps, then the interface cost calculated by the default reference bandwidth should be 1;\n  in step 8, when interface real bandwidth is 10Mbps, then the interface cost calculated by the default reference bandwidth should be 10;\n  in step 9, when interface real bandwidth is 100Mbps, then the interface cost calculated by the default reference bandwidth should be 1;\n  in step 10, vlan sub-interface should inherit its parent interface' link speed to caculate the ospf cost, the test results should be same as above."
+   }
+}

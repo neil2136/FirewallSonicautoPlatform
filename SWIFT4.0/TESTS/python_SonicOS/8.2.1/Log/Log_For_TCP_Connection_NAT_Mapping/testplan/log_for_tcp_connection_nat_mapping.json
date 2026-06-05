@@ -1,0 +1,79 @@
+{
+  "1529557": {
+    "steps": "In Log settings, enable GUI option for<span>Network->NAT->Connection NAT Mapping, set<span>\"Display Events in Log Monitor\" as 0 for log monitor</span></span>\n<span><span>2. From LAN PC to generate some TCP traffic to WAN, e.g. open some well known web sites in a web browser, or run iperf test</span></span>\n<span><span>3. Observe log monitor page</span></span>",
+    "initial": "",
+    "id": "1529557",
+    "title": " [Log Monitor] Verify the NAT mapping log could be generated when having LAN to WAN TCP new connection opened",
+    "result": "Step 3. it should generate NAT mapping log and the protocol field should shown as TCP for each new oepned TCP connection."
+  },
+  "1529558": {
+    "steps": "\n\n    In Log settings, enable GUI option for Network->NAT->Connection NAT Mapping, set \"Display Events in Log Monitor\" as 0 for log monitor\n    From DMZ PC to generate some TCP traffic to WAN, e.g. open some well known web sites in a web browser, or run iperf test\n    Observe log monitor page\n\n",
+    "initial": "",
+    "id": "1529558",
+    "title": "[Log Monitor] Verify the NAT mapping log could be generated when having DMZ to WAN TCP new connection opened",
+    "result": "Step 3. it should generate NAT mapping log and the protocol field should shown as TCP for each new oepned TCP connection"
+  },
+  "1529559": {
+    "steps": "\n\n    In Log settings, enable GUI option for Network->NAT->Connection NAT Mapping, set \"Display Events in Log Monitor\" as 0 for log monitor\n    Add a WAN-to-LAN inbound NAT policy to map WAN IP to a DMZ PC IP for FTP service\n    From a WAN PC to generate FTP traffic (dest IP is DUT WAN interface IP)\n    Observe log monitor page\n\n",
+    "initial": "",
+    "id": "1529559",
+    "title": " [Log Monitor] Verify the NAT mapping log could be generated when having WAN to DMZ TCP new connection opened",
+    "result": "Step 4. it should generate NAT mapping log and the protocol field should shown as TCP for each new oepned TCP connection."
+  },
+  "1529560": {
+    "steps": "\n\n    In Log settings, enable GUI option for Network->NAT->Connection NAT Mapping, keep the\"Frequency Filter Interval\" timeras default value 60 for log monitor\n    From LAN PC to generate some TCP traffic to WAN, e.g. open some well known web sites in a web browser, or run iperf test\n    Observe log monitor page\n    Repeat step 1-3, but change the\"Frequency Filter Interval\" timer to 10s/30s/120s\n\n",
+    "initial": "",
+    "id": "1529560",
+    "title": " [Log Monitor] Verify the \"Frequency Filter Interval\" timer for TCP NAT mapping log",
+    "result": "Step 3. it only generate one NAT mapping log within 60s no matter how many new TCP connections be opened\nStep 4. itonly generate one NAT mapping log within10s/30s/120s no matter how many new TCP connections be opened"
+  },
+  "1529561": {
+    "steps": "\n\n    In Log settings, enable Syslog option for Network->NAT->Connection NAT Mapping log entry, set the \"Frequency Filter Interval\" as 0 for Syslog\n    Add a syslog server in Log->Syslog page.\n    From LAN PC to generate some TCP traffic to WAN, e.g. open some well known web sites in web browser, or run iperf test\n    Observe syslog in the syslog server\n\n",
+    "initial": "",
+    "id": "1529561",
+    "title": " [Syslog]  Verify the NAT mapping log could be generated when having LAN to WAN TCP new connection opened",
+    "result": "Step 4. it should generate NAT mapping log and the protocol field should shown as TCP for each new oepned TCP connection."
+  },
+  "1529562": {
+    "steps": "\n\n    In Log settings, enable Syslog option for Network->NAT->Connection NAT Mapping log entry, set the \"Frequency Filter Interval\" as 0 for Syslog\n    Add a syslog server in Log->Syslog page.\n    From DMZ PC to generate some TCP traffic to WAN, e.g. open some well known web sites in web browser, or run iperf test\n    Observe syslog message in the syslog server\n\n",
+    "initial": "",
+    "id": "1529562",
+    "title": " [Syslog] Verify the NAT mapping log could be generated when having DMZ to WAN TCP new connection opened",
+    "result": "Step 4. it should generate NAT mapping log message and the protocol field should shown as TCP for each new oepned TCP connection."
+  },
+  "1529564": {
+    "steps": "\n\n    In Log settings, enable Syslog option for Network->NAT->Connection NAT Mapping log entry, set the \"Frequency Filter Interval\" as 0 for Syslog\n    Add a syslog server in Log->Syslog page.\n    From LAN PC to generate hige rate TCP connections to WAN, e.g. run iperf or Ixia/BP test\n    Observe syslog message in the syslog server\n\n",
+    "initial": "",
+    "id": "1529564",
+    "title": " [Stress] Verify the NAT mapping log still could be generated normally when the TCP new connection rate is high",
+    "result": "Step 4. it should generate NAT mapping log message and the protocol field should shown as TCP for each new oepned TCP connection."
+  },
+  "1529563": {
+    "steps": "\n\n    In Log settings, enable Syslog option for Network->NAT->Connection NAT Mapping log entry, set the \"Frequency Filter Interval\" as 0 for Syslog\n    Add a WAN-to-DMZ inbound NAT policy to map WAN inteface IP to a DMZ PC IP for FTP service.\n    Add a syslog server in Log->Syslog page.\n    From a WAN PC to generate FTP traffic to WAN interface IP\n    Observe syslog message in the syslog server\n\n",
+    "initial": "",
+    "id": "1529563",
+    "title": "[Syslog] Verify the NAT mapping log could be generated when having WAN to DMZ TCP new connection opened",
+    "result": "Step 5. it should generate NAT mapping log message and the protocol field should shown as TCP for each new oepned TCP connection."
+  },
+  "1529565": {
+    "steps": "",
+    "initial": "",
+    "id": "1529565",
+    "title": "",
+    "result": ""
+  },
+  "1529566": {
+    "steps": "\n\n    In Log settings, enable GUI option for Network->NAT->Connection NAT Mapping, set the \"Frequency Filter Interval\" as 0 for Log Monitor\n    From LAN PC to generate some IPv6 TCP traffic to WAN, e.g. open some well known IPv6 web sites in web browser\n    Observe log monitor page\n\n",
+    "initial": "",
+    "id": "1529566",
+    "title": "Verify the NAT mapping log could be generated when having IPv6 TCP new connection opened",
+    "result": "Step 3. it should generate NAT mapping log and the protocol field should shown as TCP for each new oepned TCP connection."
+  },
+  "1529567": {
+    "steps": "\n\n    Make sure there has default NAT policy for LAN to WAN traffic, check the hit counter number for this NAT policy\n    From a LAN PC to generate multiple TCP connecitons, e.g. use iperf to generate 20 connections (iperf -c x.x.x.x -P 20)\n    Check the hit counter number again for NAT policy in step1\n\n",
+    "initial": "",
+    "id": "1529567",
+    "title": "Verify the NAT policy counter will be increased when have new LAN to WAN TCP connections opened ",
+    "result": "Step 3, the hit counter should be increased at least 20."
+  }
+}

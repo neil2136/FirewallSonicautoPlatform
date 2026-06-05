@@ -1,0 +1,14 @@
+$TTL 1D
+@    IN    SOA     http.test.com.      root (
+                 2007042801
+                 1H
+                 15M
+                 1W
+                 1D )
+              IN   NS      ns.http.test.com.
+              IN   MX  10  mail.http.test.com.
+              IN   A       10.1.1.60
+www           IN   A       10.1.1.60
+ns            IN   A       10.1.1.60
+mail          IN   A       10.1.1.60
+db            IN   A       10.1.1.60

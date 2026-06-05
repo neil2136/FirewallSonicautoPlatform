@@ -1,0 +1,51 @@
+{
+    "1521032": {
+        "steps": "In step 4, DNS query generated and sent by DUT keeps same as the query which LAN client PC sent to DUT.\nIn step 5, category information shows in DNS response -Additional records,like: <br />Option Unknown(15)  <br />Option Code: Unknown(15)  <br />Option Length: 2  <br />Option Data: cf01 <br />the DNS response forwarded to Client keeps same as the response from Neustar Server.",
+        "initial": "1. Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n2. PC connected to X0, set DNS server as X0 IP, do dig adultswim.com;\n3. Do packet capture on DUT, export packets;\n4. Check DNS query generated and sent by DUT;\n5. Check DNS response received from DNS Server and forwarded to Client.",
+        "id": "1521032",
+        "title": "[FUNC] When DNS Filtering is enabled, verify DNS query and DNS response captured on DUT packet monitor.",
+        "result": "Smoke"
+    },
+    "1521033": {
+        "steps": "In step 5, DNS response contains category information;\nIn step 6, the id of category name(check with profile) is the same as the id of Option Data in DNS response packet, like 1(1=Adult).",
+        "initial": "1. DNS \\ DNS Proxy, enable DNS Proxy cache;\n2. Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n3. PC connected to X0, set DNS server as X0 IP, do dig adultswim.com;\n4. Do packet capture on DUT, export packets;\n5. Check DNS response received from DNS server;\n6. Check DNS proxy cache table",
+        "id": "1521033",
+        "title": "[FUNC] When DNS filtering is enabled, verify category shown in DNS proxy cache is correct.",
+        "result": "Sanity"
+    },
+    "1521034": {
+        "steps": "In step 4, DNS response generated and sent by DUT contains Additional Records.",
+        "initial": "1. Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n2. PC connected to X0, set dns server as X0 IP, do dig adultswim.com;\n3. Do packet capture on DUT, export packets;\n4. Check DNS response generated and sent by DUT.",
+        "id": "1521034",
+        "title": "[FUNC] When DNS filtering is enabled, verify DNS response sent from DUT to LAN Client contains Additional Records.",
+        "result": "Smoke"
+    },
+    "1521035": {
+        "steps": "In step 6, DNS response contains category information;\nIn step 7, category shown in DNS proxy cache table is null.",
+        "initial": "1. DNS \\ DNS Proxy, enable DNS Proxy cache;\n2. Rules and Policies \\ DNS Rules, enable a DNS Policy : Name-Filter, Action-Filter, Profile-Default Profile, Interface-X0;\n3. Enable a DNS Policy : Name-Proxy, Action-Proxy, Mode-4to4, Interface-X0, disable the Filter policy in step2; \n4. PC connected to X0, set DNS server as X0 IP, do dig adultswim.com;\n5. Do packet capture on DUT, export packets;\n6. Check DNS response received from DNS server;\n7. Check DNS proxy cache table",
+        "id": "1521035",
+        "title": "[FUNC] When DNS filtering is disabled, verify category shown in DNS proxy cache is null.",
+        "result": "Smoke"
+    },
+    "1521036": {
+        "steps": "DNS response generated and sent by DUT does not contain Additional Recoreds.",
+        "initial": "1. Rules and Policies \\ DNS Rules, enable a DNS Policy : Name-Filter, Action-Filter, Profile-Default Profile, Interface-X0; \n2. Enable a DNS Policy : Name-Proxy, Action-Proxy, Mode-4to4, Interface-X0, disable the Filter policy in step1; \n3. PC connected to X0, set dns server as X0 IP, do dig adultswim.com(domain in categories);\n4. Do packet capture on DUT, export packets;\n5. Check DNS response generated and sent by DUT.",
+        "id": "1521036",
+        "title": "[FUNC] When DNS filtering is disabled, verify DNS response sent from DUT to LAN client PC does not contain Additional Recoreds.",
+        "result": "Full_Regression"
+    },
+    "1521037": {
+        "steps": "In step 4, the Additional RRs is 0.\nIn step 5, the Additional RRs is not 0, an Additional records code with type(41) is added to DNS query generated and sent by DUT, the Queries code keeps same as the query which LAN client PC sent to DUT.",
+        "initial": "1. Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n2. PC connected to X0, set dns server as X0 IP, access adultswim.com from browser or nslookup adultswim.com;\n3. Do packet capture on DUT, export packets;\n4.Check DNS query sent from Client PC;\n5. Check DNS query generated and sent by DUT.",
+        "id": "1521037",
+        "title": "[FUNC] When DNS Filtering is enabled, verify DNS query without Additional Options will be added with an Additional records by DUT.",
+        "result": "Smoke"
+    },
+    "1521038": {
+        "steps": "In step 5, the Additional RRs is 0.\nIn step 6, the Additional RRs is 0.",
+        "initial": "1. Rules and Policies \\ DNS Rules, enable a DNS Policy : Name-Filter, Action-Filter, Profile-Default Profile, Interface-X0; \n2. Enable a DNS Policy : Name-Proxy, Action-Proxy, Mode-4to4, Interface-X0, then disable the Filter policy in step1; \n3. PC connected to X0, set dns server as X0 IP, access adultswim.com via browser or nslookup adultswim.com;\n4. Do packet capture on DUT, export packets;\n5. Check DNS query sent from Client PC;\n6. Check DNS query generated and sent by DUT.",
+        "id": "1521038",
+        "title": "[FUNC] When DNS Filtering is disabled, verify the DNS query without Additional Options is forwarded as original by DUT.",
+        "result": "Full_Regression"
+    }
+}

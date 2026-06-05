@@ -1,0 +1,135 @@
+{
+   "11" : {
+      "steps" : "  1 go to local group page\n  2 edit group1\n  3 go to membership tab\n  4 select multiple users\n  5 use the remove arrow to remove users\n  6 click ok",
+      "initial" : "  1 cerate group1\n  2 create multiple users, add to group1",
+      "id" : "11",
+      "title" : "Remove multiple members from the group",
+      "result" : "  expand the info for this group, and these users no longer belongs to this group"
+   },
+   "63" : {
+      "steps" : "  1 go to local groups page\n  2 click the add group button\n  3 input correct group name \"group1\" and click ok\n  4 click the edit button for sslvpn group\n  5 on membership tab, add group1\n  6 click the edit button for the group1\n  7 go to bookmark tab\n  8 click the add bookmark tab, input name and ip for bookmark\n  9 click ok to close the edit user window",
+      "initial" : "  TBD",
+      "id" : "63",
+      "title" : "bookmarks tab-with sslvpn service group membership, add one bookmark",
+      "result" : "  bookmark is succefully added"
+   },
+   "26" : {
+      "steps" : "  1 go to user groups page\n  2 click the add group button\n  3 input the correct group name\n  4 click ok",
+      "initial" : "  TBD",
+      "id" : "26",
+      "title" : "Add group on the Users>Local groups page",
+      "result" : "  group is successfully created"
+   },
+   "72" : {
+      "steps" : "  1 go to local groups page\n  2 click on the edit button for sonicwall administrator\n  3 go to administration tab\n  4 enable Sonicwall administrator-login goes straight to manage UI and click ok\n  5 go to local user page\n  6 click add user button, input user name \"a\" and password\n  7 go to group tab, add sonicwall administrator and click ok\n  8 from a lan pc .login to firewall as a",
+      "initial" : "  TBD",
+      "id" : "72",
+      "title" : "administration tab-Sonicwall administrator-login goes straight to manage UI enabled",
+      "result" : "  no user status window pops up after user login"
+   },
+   "30" : {
+      "steps" : "  1 click the edit button for read-only administrator group\n  2 in membership button, use the right arrow to move group2 to the right\n  3 click ok\n  4 login from WAN interface ,input user a2 and password for a2",
+      "initial" : "  1 create a user \"a2\" and a group \"group2\", add the user to the group",
+      "id" : "30",
+      "title" : "Add Read-Only Management Capabilities privilege to the group.",
+      "result" : "  a2 can log in and has read-only management capability on firewall"
+   },
+   "13" : {
+      "steps" : "  1 go to local group page\n  2 click add group button\n  3 input group name\n  4 go to vpn tab. select LAN subnets, WLAN subnets\n  5 use the left arrow to add objects to vpn access list\n  6 click ok",
+      "initial" : "  TBD",
+      "id" : "13",
+      "title" : "VPN access. Add multiple network objects to Access List",
+      "result" : "  mouse move to the VPN access column for this group will show the added address ojects for vpn access"
+   },
+   "29" : {
+      "steps" : "  1 click the edit button for sonicwall administrator\n  2 use the right arrow to remove group1 on the right 3 login from WAN as user a1",
+      "initial" : "  see case 28",
+      "id" : "29",
+      "title" : "Remove Full Management Capabilities privilege to the group.",
+      "result" : "  a1 can no longer login"
+   },
+   "28" : {
+      "steps" : "  1 click the edit button for sonicwall administrator group\n  2 in membership button, use the right arrow to move group1 to the right\n  3 click ok\n  4 login from WAN interface ,input user a1 and password for a1",
+      "initial" : "  1 create a user \"a1\" and a group \"group1\", add the user to the group",
+      "id" : "28",
+      "title" : "Add Full Management Capabilities privilege to the group.",
+      "result" : "  a1 can log in and has full management capability on firewall"
+   },
+   "85" : {
+      "steps" : "  1 go to local groups page\n  2 add group1 with user a\n  3 add group2 and has llimite admin priviledge\n  4 add group3 with vpn access lan subnet\n  5 add grouo4 with sslvpn service and 3 bookmarks\n  6 go to system diagnostic page and download TSR\n  7 check the Users : Local Groups section",
+      "initial" : "  TBD",
+      "id" : "85",
+      "title" : "Group settings inTSR",
+      "result" : "  the settings are correct in TSR"
+   },
+   "9" : {
+      "steps" : "  1 go to local group page\n  2 click on sonicwall adminitrator's edit button\n  3 go to mebership tab.\n  4 add a1, a2 group1 group2 to the membership\n  5 click ok",
+      "initial" : "  add user a1, a2, add group group1 group2",
+      "id" : "9",
+      "title" : "Add multiple members to the group",
+      "result" : "  expand the info for sonicwall administrator, a1, a2 group1 group2 are listed there"
+   },
+   "12" : {
+      "steps" : "  1 go to local group page\n  2 click add group button\n  3 input group name\n  4 go to vpn tab. select X0 subnet\n  5 use the left arrow to add this object to vpn access list\n  6 click ok",
+      "initial" : "  TBD",
+      "id" : "12",
+      "title" : "VPN access. Add a network object to Access List",
+      "result" : "  mouse move to the VPN access column for this group will show the added address oject for vpn access"
+   },
+   "14" : {
+      "steps" : "  1 go to local users page\n  2 click add user button\n  3 input user name and matching password\n  4 go to vpn tab, select X0 subnet\n  5 click the right arrow to add this network oject\n  6 click ok\n  7 click the edit button for this user\n  8 go to vpn tab\n  9 click X0 subnet on the right\n  10 use the left arrow to remove the object\n  11 click ok",
+      "initial" : "  TBD",
+      "id" : "14",
+      "title" : "VPN access. Remove a network object from Access List",
+      "result" : "  mouse moves over to the vpn column for this user ,and X0 subnet is no longer there"
+   },
+   "15" : {
+      "steps" : "  1 go to local group page\n  2 click add group button\n  3 input group name\n  4 go to vpn tab. select LAN subnets, WLAN subnets,DMZ subnets\n  5 use the left arrow to add objects to vpn access list\n  6 click ok\n  7 click the edit button for this usr\n  8 go to vpn tab\n  9 click on WLAN subnet and DMZ subnet\n  10 user the left arrow to remove these two network objects\n  11 click ok",
+      "initial" : "  TBD",
+      "id" : "15",
+      "title" : "VPN access. Remove multiple network objects from Access List",
+      "result" : "  mouse move to the VPN access column for this group will show on LAN subnet in the vpn access list"
+   },
+   "8" : {
+      "steps" : "  1 create a user \"a\" on local user page\n  2 go to local group page, add the create group button\n  3 input group name\n  4 on membership, add user a to the right\n  5 click ok",
+      "initial" : "  TBD",
+      "id" : "8",
+      "title" : "Add a member to the group",
+      "result" : "  expand the info for the group, user a is on the list"
+   },
+   "4" : {
+      "steps" : "  1 go to local grop page\n  2 click the add group button , input the group name and click ok\n  3 click the delete button for this group\n  4 click ok on the pop up ",
+      "initial" : "  TBD",
+      "id" : "4",
+      "title" : "Delete group. Use the trash can icon",
+      "result" : "  group is deleted"
+   },
+   "66" : {
+      "steps" : "  1 click the edit button for group1\n  2 go to bookmark tab\n  3 click the delete button for the bookmark\n  4 click the ok button",
+      "initial" : "  see case 63",
+      "id" : "66",
+      "title" : "bookmarks tab-with sslvpn service group membership, delete one bookmark",
+      "result" : "  bookmark is deleted"
+   },
+   "73" : {
+      "steps" : "  1 go to local groups page\n  2 click on the edit button for sonicwall administrator\n  3 go to administration tab\n  4 disable Sonicwall administrator-login goes straight to manage UI and click ok\n  5 go to local user page\n  6 click add user button, input user name \"a\" and password\n  7 go to group tab, add sonicwall administrator and click ok\n  8 from a lan pc .login to firewall as a",
+      "initial" : "  TBD",
+      "id" : "73",
+      "title" : "administration tab-Sonicwall administrator-login goes straight to manage UI disabled",
+      "result" : "  user status window pops up after user login"
+   },
+   "10" : {
+      "steps" : "  1 go to local users page\n  2 edit limited admin group\n  3 go to membership tab, remove user a\n  4 click ok",
+      "initial" : "  1 local user a created and alreay in group limited admin",
+      "id" : "10",
+      "title" : "Remove a member from the group",
+      "result" : "  expand the info for limit admin group, user a is no longer there"
+   },
+   "31" : {
+      "steps" : "  1 click the edit button for sonicwall readonly administrator\n  2 use the right arrow to remove group2 on the right\ufffd\n  3 login from WAN as user a2",
+      "initial" : "  see case 30",
+      "id" : "31",
+      "title" : "Remove Read-Only Management Capabilities privilege to the group.",
+      "result" : "  a2 can no longer login"
+   }
+}

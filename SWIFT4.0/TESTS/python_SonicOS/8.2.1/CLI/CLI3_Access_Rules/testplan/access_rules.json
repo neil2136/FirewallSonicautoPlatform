@@ -1,0 +1,114 @@
+{
+    "01": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the from option using zones any,DMZ,WAN,WLAN,X0,LAN",
+        "initial": "",
+        "id": "01",
+        "title": " access-rule from",
+        "result": "verify access rule form is successfully edited without error."
+    },
+    "02": {
+        "steps": "1 in CLI type \"show access-rule ipv4 uuid xxxxxxxx\"",
+        "initial": "",
+        "id": "02",
+        "title": "access-rule ipv4 uuid",
+        "result": "access rule with uuid 4 will show up in console, verify the access rule info is correct"
+    },
+    "03": {
+        "steps": "1 enter configure mode in CLI\n2 type \"access-rule restore-defaults\" and enter \"yes\"",
+        "initial": "",
+        "id": "03",
+        "title": "access-rule restore-defaults",
+        "result": "CLI returns \"Firewall Access Rule defaults restored\", and the manully added access rule \"access-rule from LAN to WAN action deny source address host 192.168.168.10 destination address host 10.10.10.10\" is deleted."
+    },
+    "04": {
+        "steps": "1 enter configure mode in CLI\n2 type \"access-rule from LAN to WAN action deny source address host 192.168.168.10 destination address host 10.10.10.10\"\n3 type \"action discard\"\n4 type \"users excluded administrator\"\n5 type \"flow-reporting\"\n6 type \"packet-monitoring\"\n7 type \"commit\"",
+        "initial": "",
+        "id": "04",
+        "title": "Modify access-rule",
+        "result": "All the changed should be successfully apply."
+    },
+    "05": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the to option using zones any,DMZ,WAN,WLAN",
+        "initial": "",
+        "id": "05",
+        "title": "access-rule to",
+        "result": "verify access rule is successfully edited without error"
+    },
+    "06": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the flow priority option to 42",
+        "initial": "",
+        "id": "06",
+        "title": "access-rule priority",
+        "result": "verify access rule priority is successfully modified."
+    },
+    "07": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the source option using ranges,network,host",
+        "initial": "",
+        "id": "07",
+        "title": "access-rule source",
+        "result": "Verify the source address is successfully change."
+    },
+    "08": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the destination option using ranges,network,host",
+        "initial": "",
+        "id": "08",
+        "title": "access-rule destination",
+        "result": "Verify the destination address is successfully change."
+    },
+    "09": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the service option using SSH,Telnet,HTTP",
+        "initial": "",
+        "id": "09",
+        "title": "access-rule dst service",
+        "result": "Verify the dst service is successfully change."
+    },
+    "10": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the action option using allow,discard,deny",
+        "initial": "",
+        "id": "10",
+        "title": "access-rule action",
+        "result": "Verify access rule action is successfully changed"
+    },
+    "11": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the user option use include and exclude guests,administrator,group Everyone",
+        "initial": "",
+        "id": "11",
+        "title": "access-rule user",
+        "result": "Verify access rule action is successfully changed"
+    },
+    "13": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the flow report option to enable",
+        "initial": "",
+        "id": "13",
+        "title": "access-rule flow report",
+        "result": "Verify flow-reporting is enable for access rule"
+    },
+    "15": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the botnet filter option to enable",
+        "initial": "",
+        "id": "15",
+        "title": "access-rule botnet filter",
+        "result": "Verify botnet-filter is enable for access rule"
+    },
+    "16": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the packet monitor option to enable",
+        "initial": "",
+        "id": "16",
+        "title": "access-rule packet monitor",
+        "result": "Verify comment is added for access rule"
+    },
+    "17": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule with the comment option to AutoACLCLITest",
+        "initial": "",
+        "id": "17",
+        "title": "access-rule comment",
+        "result": "Verify comment is added for access rule"
+    },
+    "18": {
+        "steps": "1 enter configure mode in CLI\n2 add a access rule and edit the enable option to no enable and enable",
+        "initial": "",
+        "id": "18",
+        "title": "access-rule enable",
+        "result": "verify access rule is successfully enabled"
+    }
+}

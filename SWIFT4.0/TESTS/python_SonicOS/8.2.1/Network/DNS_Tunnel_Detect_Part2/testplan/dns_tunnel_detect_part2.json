@@ -1,0 +1,268 @@
+{
+  "1": {
+    "steps": "  1) Enable the option DNS tunnel detection",
+    "initial": "",
+    "id": "1",
+    "title": "[GUI] Enable the option \"Enable DNS Tunnel Detection\"",
+    "result": "  enable successfully."
+  },
+  "2": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n   2)Enable option \"Block All The Clients DNS Traffic \"",
+    "initial": "",
+    "id": "2",
+    "title": "[GUI] Enable option \"Block All The Clients DNS Traffic \"",
+    "result": "  enable successfully."
+  },
+  "3": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n   2)Enable option \"Block All The Clients DNS Traffic \";\n   3)Disable the option DNS tunnel detection",
+    "initial": "",
+    "id": "3",
+    "title": "[GUI] Disable the option \"Enable DNS Tunnel Detection\"",
+    "result": "  Option must be disabled, and option \"Block All The Clients DNS Traffic \" must be grayed out."
+  },
+  "4": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n   2)Enable option \"Block All The Clients DNS Traffic \";\n   3)Disable the option DNS tunnel detection;\n   4)Enable DNS tunnel detection again;\n   5)Disable option Block All The Clients DNS Traffic ;\n   6)Disable DNS tunnel detection.",
+    "initial": "",
+    "id": "4",
+    "title": "[GUI] Disable option \"Block All The Clients DNS Traffic\" and disable option \"Enable DNS Tunnel Detection\"",
+    "result": ""
+  },
+  "7": {
+    "steps": "",
+    "initial": "",
+    "id": "7",
+    "title": "[GUI-White list] Add button test: White List",
+    "result": ""
+  },
+  "8": {
+    "steps": "",
+    "initial": "",
+    "id": "8",
+    "title": "[GUI-White list] Delete button test: Delete the selected White List",
+    "result": ""
+  },
+  "9": {
+    "steps": "",
+    "initial": "",
+    "id": "9",
+    "title": "[GUI-White list] Delete All button test: Delete All White List",
+    "result": ""
+  },
+  "21": {
+    "steps": "1) Disable the option DNS tunnel detection;\n   2)Disable option \"Block All The Clients DNS Traffic\";\n   3)Run tool DNS2TCP on LAN PC;\n  4)After about 5 mins, check \"Detected Suspicious Clients Information\" table and tunnel connectivity;\n   5)Check logs;\n   6)Run nslookup on this LAN PC,check DNS traffic;",
+    "initial": "",
+    "id": "21",
+    "title": "[FC:Detect/Block] Option \"DNS tunnel detection\" disabled, option \"Block All The Clients DNS Traffic \" disabled",
+    "result": "in step 3, traffic transfer succeed between LAN PC and server;\n   in step 4, nothing should be displayed in \"Detected Suspicious Clients Information\" table and DNS Tunnel traffic keep passing through.\n   in step 5, no logs generated;\n   in step 6, dns traffic won't be affected on dns tunnel client."
+  },
+  "22": {
+    "steps": "1) Disable the option DNS tunnel detection;\n   2)Enable option \"Block All The Clients DNS Traffic\";\n   3)Run tool DNS2TCP on LAN PC;\n  4)After about 5 mins, check \"Detected Suspicious Clients Information\" table and tunnel connectivity;\n   5)Check logs;\n   6)Run nslookup on this LAN PC,check DNS traffic;",
+    "initial": "",
+    "id": "22",
+    "title": " [FC:Detect/Block] Option \"DNS tunnel detection\" disabled, option \"Block All The Clients DNS Traffic\" enabled",
+    "result": "in step 3, traffic transfer succeed between LAN PC and server;\n   in step 4, nothing should be displayed in \"Detected Suspicious Clients Information\" table and DNS Tunnel traffic keep passing through.\n   in step 5, no logs generated;\n   in step 6, dns traffic won't be affected on dns tunnel client."
+  },
+  "23": {
+    "steps": "1) Enable the option DNS tunnel detection;\n   2)Disable option \"Block All The Clients DNS Traffic\";;\n   3)Run tool DNS2TCP on LAN PC;\n  4)After about 5 mins, check \"Detected Suspicious Clients Information\" table and tunnel connectivity;\n   5)Check logs;\n   6)Run nslookup on this LAN PC,check DNS traffic;",
+    "initial": "",
+    "id": "23",
+    "title": "[FC:Detect/block] Option \"DNS tunnel detection\" enabled, option \"Block All The Clients DNS Traffic\" disabled",
+    "result": "in step 3, traffic transfer succeed between LAN PC and server;\n   in step 4, correct information must be displayed in \"Detected Suspicious Clients Information\" table and detected method is Corner DNS Type; DNS Tunnel traffic pass through.\n   in step 5, logs generated:\nFind DNS tunnel attack;\n   in step 6, dns traffic won't be affected on dns tunnel client."
+  },
+  "24": {
+    "steps": "1) Enable the option DNS tunnel detection;\n   2)Enable option \"Block All The Clients DNS Traffic\";;\n   3)Run tool DNS2TCP on LAN PC;\n  4)After about 5 mins, check \"Detected Suspicious Clients Information\" table and tunnel connectivity;\n   5)Check logs;\n   6)Run nslookup on this LAN PC,check DNS traffic;",
+    "initial": "",
+    "id": "24",
+    "title": "[FC:Detect/block] Option \"DNS tunnel detection\" enabled, option \"Block All The Clients DNS Traffic\" disabled",
+    "result": "in step 3, traffic transfer succeed between LAN PC and server;\n   in step 4, correct information must be displayed in \"Detected Suspicious Clients Information\" table and detected method is Corner DNS Type; DNS Tunnel traffic pass through.\n   in step 5, logs generated:\nFind DNS tunnel attack;\n   in step 6, all DNS traffic send from dns tunnel client are blocked."
+  },
+  "25": {
+    "steps": "1) Enable the option DNS tunnel detection;\n   2)Enable option \"Block All The Clients DNS Traffic\";;\n   3)Run tool DNS2TCP on LAN PC;\n  4)After about 5 mins, check \"Detected Suspicious Clients Information\" table and tunnel connectivity;\n   5)Check Block checkbox status of all detected clients;\n   6)Run nslookup on this LAN PC,check DNS traffic;\n   7)Disable the Block checkbox of  one selected client;\n    8)Check tunnel connectivity of this client;\n   9)Check logs;\n   10)Run nslookup on this client.\n   Enable the Block checkbox on this selected client again, repeat step 8-10",
+    "initial": "",
+    "id": "25",
+    "title": "[FC:Detect/block] Option \"DNS tunnel detection\" enabled, option \"Block All The Clients DNS Traffic\" disabled",
+    "result": "in step 3, traffic transfer succeed between LAN PC and server;\n   in step 4, correct information must be displayed in \"Detected Suspicious Clients Information\" table and detected method is Corner DNS Type; DNS Tunnel traffic pass through.\n   in step 5, Block checkbox should be enabled on all detected clients;\n   in step 6, DNS traffic failed;\n   in step 8, after disable the block checkbox, DNS tunnel connectivity will be restored;\n   in step 9, logs generated: Find DNS tunnel attack.\n   in step 10, dns traffic will not be blocked anymore.\n   in step 11, dns tunnel will be blocked and logs generated:\nFind DNS tunnel attack and\nDrop DNS Packets Via Suspicious DNS Tunnel;\nAll DNS traffic send from dns tunnel client will be blocked"
+  },
+  "26": {
+    "steps": "1) Enable the option DNS tunnel detection;\n   2)Disable option \"Block All The Clients DNS Traffic\";;\n   3)Run tool DNS2TCP on LAN PC;\n  4)After about 5 mins, check \"Detected Suspicious Clients Information\" table and tunnel connectivity;\n   5)Check Block checkbox status of all detected clients;\n   6)Run nslookup on LAN PCs;\n   7)Enable Block checkbox on one of the detected clients;\n    8)Verify the DNS tunnel traffic and DNS traffic on this client.",
+    "initial": "",
+    "id": "26",
+    "title": "[FC: Block checkbox] Test the Block checkbox on \"Detected Suspicious Clients Information\" table: Option \"Block All The Clients DNS Traffic\" disabled.",
+    "result": "in step 3, traffic transfer succeed between LAN PC and server;\n   in step 4, correct information must be displayed in \"Detected Suspicious Clients Information\" table and detected method is Corner DNS Type; DNS Tunnel traffic pass through.\n   in step 5, Block checkbox should be enabled on all detected clients;\n   in step 7, Block checkbox could be enabled seperately;\n   in step 8, DNS tunnel traffic and DNS traffic must be blocked on this client."
+  },
+  "30": {
+    "steps": "",
+    "initial": "",
+    "id": "30",
+    "title": "[FC: Block test] Verify only DNS traffic will be blocked",
+    "result": ""
+  },
+  "31": {
+    "steps": "",
+    "initial": "",
+    "id": "31",
+    "title": "[FC: White list] Add the dns tunnel client into white list at first",
+    "result": ""
+  },
+  "34": {
+    "steps": "",
+    "initial": "",
+    "id": "34",
+    "title": "[FC: White list] Maximum add: add 128 IP into white list and simulate DNS tunnel traffic from these IP",
+    "result": ""
+  },
+  "35": {
+    "steps": "",
+    "initial": "",
+    "id": "35",
+    "title": "[FC: White list] Maximum delete: add 128 IP into white list and simulate DNS tunnel traffic from these IP, then delete all white list",
+    "result": ""
+  },
+  "36": {
+    "steps": "",
+    "initial": "",
+    "id": "36",
+    "title": "[Error test] Add two duplicate IP address into white list",
+    "result": ""
+  },
+  "37": {
+    "steps": "",
+    "initial": "",
+    "id": "37",
+    "title": " [Boundary test] Test boundary of IP address when add IP address into white list",
+    "result": ""
+  },
+  "38": {
+    "steps": "",
+    "initial": "",
+    "id": "38",
+    "title": " [Error test] Add a whilte list with invalid IP address",
+    "result": ""
+  },
+  "39": {
+    "steps": "",
+    "initial": "",
+    "id": "39",
+    "title": " [Navigate test] Add a white list but leave IP empty",
+    "result": ""
+  },
+  "45": {
+    "steps": "Simulate tremendous DNS traffic to verify if DNS tunnel verdict go wrong",
+    "initial": "",
+    "id": "45",
+    "title": " [Verdict verify] Simulate tremendous DNS traffic to seduce wrong verdict",
+    "result": ""
+  },
+  "47": {
+    "steps": "",
+    "initial": "",
+    "id": "47",
+    "title": " [Pcap simulate] Send malformed DNS pkts ratio test",
+    "result": ""
+  },
+  "65": {
+    "steps": "",
+    "initial": "",
+    "id": "65",
+    "title": " Enable detect",
+    "result": ""
+  },
+  "66": {
+    "steps": "",
+    "initial": "",
+    "id": "66",
+    "title": "Enable block",
+    "result": ""
+  },
+  "68": {
+    "steps": "",
+    "initial": "",
+    "id": "68",
+    "title": "White list add",
+    "result": ""
+  },
+  "69": {
+    "steps": "",
+    "initial": "",
+    "id": "69",
+    "title": "White list delete",
+    "result": ""
+  },
+  "70": {
+    "steps": "",
+    "initial": "",
+    "id": "70",
+    "title": "White list delete all",
+    "result": ""
+  },
+  "72": {
+    "steps": "",
+    "initial": "",
+    "id": "72",
+    "title": " CLI: diag dns security settings: The minimum DNS packet number for DNS Tunnel detection",
+    "result": ""
+  },
+  "73": {
+    "steps": "",
+    "initial": "",
+    "id": "73",
+    "title": " CLI: diag dns security settings: The ratio threshold for corner",
+    "result": ""
+  },
+  "74": {
+    "steps": "",
+    "initial": "",
+    "id": "74",
+    "title": "CLI: diag dns security settings: The number threshold for normal DNS types ",
+    "result": ""
+  },
+  "75": {
+    "steps": "",
+    "initial": "",
+    "id": "75",
+    "title": "[Diag page settings] Modify the value of option: The minimum DNS packet number for DNS Tunnel detection ",
+    "result": ""
+  },
+  "76": {
+    "steps": "",
+    "initial": "",
+    "id": "76",
+    "title": "[Diag page settings] Modify the value of option: The ratio threshold for corner DNS types",
+    "result": ""
+  },
+  "77": {
+    "steps": "",
+    "initial": "",
+    "id": "77",
+    "title": "[Diag page settings] Modify the value of option: The number threshold for normal DNS types",
+    "result": ""
+  },
+  "84": {
+    "steps": "",
+    "initial": "",
+    "id": "84",
+    "title": "TSR: Check DNS Tunnel part in TSR",
+    "result": ""
+  },
+  "57": {
+    "steps": "",
+    "initial": "",
+    "id": "57",
+    "title": "[Integrated] Test with DMZ zone",
+    "result": ""
+  },
+  "46": {
+    "steps": "1.Enable the option DNS tunnel detection;\n  2)Enable option \"Block All The Clients DNS Traffic\";\n  3)Run tool DNS2TCP on LAN PC;\n  4)After about 5 mins, check \"Detected Suspicious Clients Information\" table and tunnel connectivity;\n  5)Check logs;\n  6)Modify LAN interface IP\n  7)Check \"Detected Suspicious Clients Information\" table",
+    "initial": "",
+    "id": "46",
+    "title": " [FC: IP and interface binding] Test the IP and Interface binding",
+    "result": ""
+  },
+  "59": {
+    "steps": "",
+    "initial": "",
+    "id": "59",
+    "title": " WAN zone does not support",
+    "result": ""
+  }
+}

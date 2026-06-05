@@ -1,0 +1,296 @@
+{
+   "33" : {
+      "steps" : "  1.Add a static DNS cache entry in DNS proxy;\n  2.Add a FQDN_PBR,the dst FQDN is the added static DNS cache entry's domian name,X3 is the outgoing interface;\n  3.On PC,ping the FQDN and capture the packet;\n  4.Change the static DNS cache entry's ip,on PC,flush dns cache and then ping the FQDN again,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "33",
+      "title" : "After change satic DNS cache entry IP the matched FQDN PBR should also be updated.",
+      "result" : "  In step 3,check the resolved ip is the added ip and in the packet,the outgoing interface is X3.\n  In step 4,check the resolved ip is the changed ip and in the packet,the outgoing interface is X3."
+   },
+   "32" : {
+      "steps" : "  1.Add a split DNS entry in DNS proxy;\n  2.Add a FQDN_PBR,the dst FQDN is the added split DNS entry's domian name,X3 is the outgoing interface;\n  3.On PC,ping the FQDN and capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "32",
+      "title" : "Verify the FQDN PBR funciton works fine when the FQDN AO matched DNS proxy split DNS entry",
+      "result" : "  In step 3,check the packet,the outgoing interface is X3."
+   },
+   "21" : {
+      "steps" : "  After step 2,there should pop up the error message and the group can't be deleted.",
+      "initial" : "  1.Add a FQDN_PBR,the dst is FQDN group;\n  2.Try to delete the FQDN group.",
+      "id" : "21",
+      "title" : "Verfiy if a group is used by a PBR, It would don't allow any user delete the group",
+      "result" : ""
+   },
+   "05" : {
+      "steps" : "  The ipv4 FQDN_PBR can be added.",
+      "initial" : "  In ipv4 view page,add a FQDN_PBR.",
+      "id" : "05",
+      "title" : "[GUI] Add an IPv4 FQDN_PBR",
+      "result" : ""
+   },
+   "26" : {
+      "steps" : "  1.Add a FQDN_PBR,X3 is the outgoing interface;\n  2.On PC,ping a host IP,such as 1.1.1.1,capture the packet;\n  3.Add the host IP 1.1.1.1 into the server,after this IP is resolved,ping 1.1.1.1 and capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "26",
+      "title" : "Verify when FQDN AO has new IP resolved, the traffic dst to the new IP should hit this FQDN PBR.",
+      "result" : "  In step 2,check the packet,the outgoing interface is X1(the default WAN);\n  In step 3,check the packet,the outgoing interface is X3."
+   },
+   "17" : {
+      "steps" : "  1.Add a FQDN_PBR,the dst is the FQDN AO including wildcard,X3 is the outgoing interface;\n  2.On PC,ping a FQDN,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "17",
+      "title" : "Function test of FQDN_PBR when the FQDN AO include wildcard.",
+      "result" : "  In step 2,check the packet,the outgoing interface is X3."
+   },
+   "04" : {
+      "steps" : "  In step 3,verify the group can be selected and the PBR can be added.",
+      "initial" : "  1.Add several FQDN AOs,host AOs and network AOs;\n  2.Add a group with FQDN AOs,host AOs and network AOs;\n  3.Add a PBR,select the added mixed AO group as the dst.",
+      "id" : "04",
+      "title" : "[GUI]Add a FQDN based PBR with mixed AO Group(include both FQDN AOs and Normal AOs)",
+      "result" : ""
+   },
+   "02" : {
+      "steps" : "  Verify the FQDN AO can be created and the PBR can be added.",
+      "initial" : "  Add a PBR,creat a FQDN AO as the dst.",
+      "id" : "02",
+      "title" : "[GUI] Add a FQDN based PBR with newly created FQDN AOs",
+      "result" : ""
+   },
+   "18" : {
+      "steps" : "  1.Add a FQDN_PBR,ensure no host can be resolved,X3 is the outgoing interface;\n  2.On PC,ping the FQDN,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "18",
+      "title" : "Verify the PBR should be gray out when no host can be resolved,the traffic dst to this AO should not hit this PBR.",
+      "result" : "  In step 1,verify the PBR should be gray out when no host can be resolved;\n  In step 2,check the packet,the outgoing interface is X1(the default WAN)."
+   },
+   "03" : {
+      "steps" : "  In step 3,verify the group can be selected and the PBR can be added.",
+      "initial" : "  1.Add several FQDN AOs;\n  2.Add a group with several FQDN AOs;\n  3.Add a PBR,select the added group as the dst.",
+      "id" : "03",
+      "title" : "[GUI] Add a FQDN based PBR with FQDN AO Group",
+      "result" : ""
+   },
+   "30" : {
+      "steps" : "  FQDN_PBR can be added successfully.",
+      "initial" : "  Add FQDN_PBR in CLI\n  command example:\n  policy interface X1 metric 20 source any destination fqdn www.google.com service any gateway default ",
+      "id" : "30",
+      "title" : "Add FQDN_PBR in CLI",
+      "result" : ""
+   },
+   "16" : {
+      "steps" : "  1.Add a VPN tunnel;\n  2.Add a FQDN_PBR,select the tunnel interface as the outgoing interface,check the ACL;\n  3.On PC,ping the FQDN,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "16",
+      "title" : "Function test of FQDN_PBR bind with VPN tunnel interface",
+      "result" : "  In step 2,In ACL,there are auto-added ACLs for VPN tunnel interface.\n  In step 3,check the packet,the packet out through the VPN tunnel interface."
+   },
+   "06" : {
+      "steps" : "  The ipv6 FQDN_PBR can be added.",
+      "initial" : "  In ipv6 view page,add a FQDN_PBR.",
+      "id" : "06",
+      "title" : "Add an IPv6 FQDN_PBR",
+      "result" : ""
+   },
+   "27" : {
+      "steps" : "  1.Add a FQDN_PBR;\n  2.Enable RIP or OSPF on X2 and router,check \"Redistribute Static Routes\";\n  3.Check the router's NSM.",
+      "initial" : "  DUT(X2)---ROUTER",
+      "id" : "27",
+      "title" : "Function test when option \"Advertise FQDN based policy route to dynamic routing protocol \" in diag page is disabled.",
+      "result" : "  In step 3,verify in router's NSM doesn't include the FQDN_PBR."
+   },
+   "25" : {
+      "steps" : "  1.Add a FQDN_PBR,X3 is the outgoing interface;\n  2.On PC,ping an resolved host IP continuously,check the corresponding connection cache;\n  3.Delete this host IP from server,wait until the IP expired and the offset time elapsed,check the connection cache.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "25",
+      "title" : "Verify when resolved host IP changed, the previous connection cache for the expired IP should be flushed automatically.",
+      "result" : "  In step 2, the corresponding connection cache's dst interface is X3;\n  In step 3,after offset time,the previous connection cache is flushed and the new connection cache's dst interface is X1."
+   },
+   "28" : {
+      "steps" : "  1.Add a FQDN_PBR;\n  2.Enable RIP or OSPF on X2 and router,check \"Redistribute Static Routes\";\n  3.In diag page,enable the option \"Advertise FQDN based policy route to dynamic routing protocol\";\n  4.Check the router's NSM;\n  5.In DNS server,add a new resolved host ip ,after the host ip is resolved,check the router's NSM again.",
+      "initial" : "  DUT(X2)---ROUTER",
+      "id" : "28",
+      "title" : "Function test when option \"Advertise FQDN based policy route to dynamic routing protocol \" in diag page is enabled.",
+      "result" : "  In step 4,verify in router's NSM includes the FQDN_PBR.\n  In step 5,verify in router's NSM includes the new resolved ip PBR."
+   },
+   "01" : {
+      "steps" : "  In step 2,verify the FQDN AO can be selected and the PBR can be added.",
+      "initial" : "  1.Add a FQDN AO;\n  2.Add a PBR,select the added FQDN AO as the dst.",
+      "id" : "01",
+      "title" : "[GUI] Add a FQDN based PBR with exsited FQDN AOs",
+      "result" : ""
+   },
+   "40" : {
+      "steps" : "  In step 2,check the tsr,there are corresponding PBRs.",
+      "initial" : "  1.Add several FQDN_PBRs;\n  2.Download TSR.",
+      "id" : "40",
+      "title" : "TSR test",
+      "result" : ""
+   },
+   "20" : {
+      "steps" : "  After step 2,there should pop up the error message and the AO can't be deleted.",
+      "initial" : "  1.Add a FQDN_PBR,the dst is FQDN AO;\n  2.Try to delete the FQDN AO.",
+      "id" : "20",
+      "title" : "Verify if a FQDN is used by a PBR, It don't allow any user delete the FQDN object.",
+      "result" : ""
+   },
+   "14" : {
+      "steps" : "  1.Add a FQDN_PBR,the dst is FQDN AO group,X3 is the outgoing interface;\n  2.On PC,ping a FQDN AO included in the group,capture the packet;\n  3.Delete this FQDN AO from the group,then ping this FQDN AO,capture the packet.\n  Note:In step 3,before ping the FQDN AO,need to manually flush connection cache or stop traffic and wait the connction cache expired.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "14",
+      "title" : "AO Group is used in PBR, then delete one FQDN AO, traffic dst to this AO should not hit this PBR again.",
+      "result" : "  In step 2,check the packet,the outgoing interface is X3;\n  In step 3,check the packet,the outgoing interface is X1(the default WAN)."
+   },
+   "07" : {
+      "steps" : "  The FQDN_PBR can be added in corresponding view page.",
+      "initial" : "  1.In ipv4 view page,add a FQDN_PBR;\n  2.Change to ipv6 view page,add a FQDN_PBR;\n  3.Change to ipv4 and ipv6 view page,add a FQDN_PBR,select ip version.",
+      "id" : "07",
+      "title" : "[GUI] Add a FQDN PBR on different IP version view page.",
+      "result" : ""
+   },
+   "24" : {
+      "steps" : "  1.Add a FQDN_PBR,X3 is the outgoing interface;\n  2.On PC,ping the dst FQDN continuously,capture the packet;\n  3.Wait until the resolved IP expired but before the offset time,check the packet;\n  4.After the offset time elapsed,check the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "24",
+      "title" : "Verify the traffic that match FQDN PBR won't be interrupted in the offset time after FQDN AO host IP address getting expired.",
+      "result" : "  In step 2,check the resolved ip is going out through interface X3.\n  In step 3,check the resolved ip is still going out through interface X3.\n  In step 4,the resolved ip is going out through interface X1."
+   },
+   "10" : {
+      "steps" : "  1.Add a FQDN_PBR,the dst is FQDN AO,X3 is the outgoing interface;\n  2.On PC,ping the FQDN AO,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "10",
+      "title" : "Function test of FQDN_PBR: type FQDN AO",
+      "result" : "  In step 2,check the packet,the outgoing interface is X3."
+   },
+   "31" : {
+      "steps" : "  1.Add a static DNS cache entry in DNS proxy;\n  2.Add a FQDN_PBR,the dst FQDN is the added static DNS entry's domian name,X3 is the outgoing interface;\n  3.On PC,ping the FQDN and capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "31",
+      "title" : "Verify the FQDN PBR funciton works fine when the FQDN AO matched DNS proxy static cache entry.",
+      "result" : "  In step 3,check the packet,the outgoing interface is X3."
+   },
+   "35" : {
+      "steps" : "  1.Add a FQDN_PBR,the outgoing interface is X3;\n  2.Download TSR;\n  3.On PC,ping any of the resolved host ip and capture the packet.\n  Note:In DNS server,there are at least 256 resolved host ip.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "35",
+      "title" : "Verify FQDN PBR works fine when the FQDN AO resolved maximum 256 hosts",
+      "result" : "  In step 2,check the tsr,there are 256 resolved host ip;\n  In step 3,check the packet,all traffic go out through x3."
+   },
+   "11" : {
+      "steps" : "  1.Add a FQDN_PBR,the dst is FQDN AO group,X3 is the outgoing interface;\n  2.On PC,ping the FQDN AOs included in the group,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "11",
+      "title" : "Function test of FQDN_PBR: type FQDN AO Group",
+      "result" : "  In step 2,check the packet,the outgoing interface is X3."
+   },
+   "42" : {
+      "steps" : "  In step 2,the route with AO1 should has higher priority (priority value is smaller);\n  In step 4, , the route with AO2 now should has higher priority (priority value is smaller).",
+      "initial" : "  1.Add two FQDN AO, e.g. AO1, AO2, make sure AO1 can resolve one address, AO2 can resolve two addresses at first;\n  2.Adding two FQDN routing entries, one dst as AO1, another dst as AO2, gateway, interface, metric values are all same,check routing table;\n  3.Update DNS server configurations to make AO1 can resolve two addresses, AO2 can resolve only one;\n  4.In GUI AO page check AO1,AO2 resolved addresses get updated,check routing table.",
+      "id" : "42",
+      "title" : "Verify the FQDN route entry's priority will be changed dynamically if resolved address count changed",
+      "result" : ""
+   },
+   "22" : {
+      "steps" : "  The PBR can't be added and pop up error message.",
+      "initial" : "  Add a PBR and try to select FQDN as the source.",
+      "id" : "22",
+      "title" : "FQDN address object cannot be used as source in PBR",
+      "result" : ""
+   },
+   "08" : {
+      "steps" : "  1.Add an IPv4 FQDN_PBR,X3 is the outgoing interface;\n  2.On PC,ping the dst FQDN,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "08",
+      "title" : "Function test of IPv4 FQDN_PBR",
+      "result" : "  In step 2,check the packet,the outgoing interface is X3."
+   },
+   "13" : {
+      "steps" : "  The PBR can be deleted.",
+      "initial" : "  1.Add a FQDN_PBR;\n  2.Delete the added PBR.",
+      "id" : "13",
+      "title" : "Delete a FQDN PBR",
+      "result" : ""
+   },
+   "23" : {
+      "steps" : "  1.Add a FQDN_PBR,the dst is FQDN AO,X3 is the outgoing interface;\n  2.On PC,ping the FQDN,capture the packet;\n  3.Modify the FQDN AO,change its name or zone or hostname,ping the changed FQDN,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "23",
+      "title" : "Modify FQDN AO when it is used in PBR.",
+      "result" : "  In step 2,check the packet,the outgoing interface is X3;\n  In step 3,verify the resolved host ip changed and the outgoing interface is X3."
+   },
+   "29" : {
+      "steps" : "  1.Add a FQDN_PBR;\n  2.Enable RIP or OSPF on X2 and router,check \"Redistribute Static Routes\";\n  3.In diag page,enable the option \"Advertise FQDN based policy route to dynamic routing protocol\";\n  4.Check the router's NSM.\n  5.In diag page,disable the option \"Advertise FQDN based policy route to dynamic routing protocol\";\n  6.Check the router's NSM again.",
+      "initial" : "  DUT(X2)---ROUTER",
+      "id" : "29",
+      "title" : "Function test when option \"Advertise FQDN based policy route to dynamic routing protocol \" in diag page was enabled at first and then being disabled.",
+      "result" : "  In step 4,verify in router's NSM includes the FQDN_PBR.\n  In step 6,verify FQDN_PBR is deleted from NSM."
+   },
+   "39" : {
+      "steps" : "  After step 2,check the FQDN_PBRs exist and work fine.",
+      "initial" : "  1.Add several FQDN_PBRs;\n  2.Restart the DUT.",
+      "id" : "39",
+      "title" : "Restart test",
+      "result" : ""
+   },
+   "36" : {
+      "steps" : "  1.Configure HA;\n  2.On active unit,add a FQDN_PBR,the dst is FQDN AO,X3 is the outgoing interface;\n  3.Change any option of the FQDN_PBR or delete this FQDN_PBR in the active unit;\n  4.On PC,ping the dst FQDN,capture the packet in the active unit;\n  5.Force active/standby failover,on PC,ping the dst FQDN,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "36",
+      "title" : "HA support- non-stateful test for FQDN PBR",
+      "result" : "  After step 2,in back-up unit,the same FQDN_PBR is added.\n  After step 3,in back-up unit,the same change has been done.\n  In step 4,check the packet,the outgoing interface is X3.In the back-up unit,the resolved ip doesn't sync.\n  After step 5,the back-up unit becomes the active one and check the packet,the outgoing interface is X3.In the back-up unit,the resolved ip doesn't sync."
+   },
+   "41" : {
+      "steps" : "  The TTL is the set value.",
+      "initial" : "  1.Add a FQDN AO,enable \"Manually set DNS entries' TTL\" and set TTL to 150;\n  2.Add a PBR,select the added FQDN AO as the dst;\n  3.On PC,ping the dst FQDN and check if resolved hosts with TTL 150;\n  4. Wait for TTL expired and offset time elapsed,ping the dst FQDN again,check if resolved hosts with TTL 150.",
+      "id" : "41",
+      "title" : "Manually set TTL works with FQDN_PBR.",
+      "result" : ""
+   },
+   "12" : {
+      "steps" : "  1.Add a FQDN_PBR,the dst is mixed AO group,X3 is the outgoing interface;\n  2.On PC,ping the AOs included in the group,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "12",
+      "title" : "Function test of FQDN_PBR: type mixed AO Group",
+      "result" : "  In step 2,check the packet,the outgoing interface is X3."
+   },
+   "15" : {
+      "steps" : "  1.Add a PBR,the dst is AO group,X3 is the outgoing interface;\n  2.Add another FQDN AO;\n  3.On PC,ping the added FQDN,capture the packet;\n  4.Add this added FQDN AO into the group,then ping the FQDN again,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "15",
+      "title" : "AO Group is used in PBR, then add one FQDN AO into this Group, traffic dst to this AO should hit this PBR",
+      "result" : "  In step 3,check the packet,the outgoing interface is X1(the default WAN).\n  In step 4,check the packet,the outgoing interface is X3."
+   },
+   "38" : {
+      "steps" : "  In step 3,check the FQDN_PBRs exist and work fine.",
+      "initial" : "  1.Add several FQDN_PBRs;\n  2.Export prefs and restart the DUT with factory default;\n  3.Import the prefs.",
+      "id" : "38",
+      "title" : "Prefs export and import test",
+      "result" : ""
+   },
+   "34" : {
+      "steps" : "  1.Add a split DNS entry in DNS proxy;\n  2.Add a FQDN_PBR,the dst FQDN is the added split DNS entry's domian name,X3 is the outgoing interface;\n  3.On PC,ping the FQDN and capture the packet;\n  4.Change the split DNS entry's server,after the dns cache expired,on PC,ping the FQDN again and capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "34",
+      "title" : "After change split DNS entry the matched FQDN PBR should also be updated.",
+      "result" : "  In step 3,check the resolved ip is consistent with the ip in the DNS server and in the packet,the outgoing interface is X3.\n  In step 4,check the resolved ip is consistent with the ip in the changed DNS server and in the packet,the outgoing interface is X3."
+   },
+   "37" : {
+      "steps" : "  1.Configure HA and enable stateful synchronization;\n  2.On active unit,add a FQDN_PBR,the dst is FQDN AO,X3 is the outgoing interface;\n  3.Change any option of the FQDN_PBR or delete this FQDN_PBR in the active unit;\n  4.On PC,ping the dst FQDN,capture the packet in the active unit;\n  5.Force active/standby failover,on PC,ping the dst FQDN,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "37",
+      "title" : "HA support- stateful test for FQDN PBR",
+      "result" : "  After step 2,in back-up unit,the same FQDN_PBR is added.\n  After step 3,in back-up unit,the same change has been done.\n  In step 4,check the packet,the outgoing interface is X3.In the back-up unit,the resolved ip synced.\n  After step 5,the back-up unit becomes the active one and check the packet,the outgoing interface is X3.In the back-up unit,the resolved ip synced."
+   },
+   "19" : {
+      "steps" : "  1.Add a FQDN_PBR,ensure no host can be resolved,X3 is the outgoing interface;\n  2.On PC,ping the FQDN,capture the packet;\n  3.In DNS server add a host,after the FQDN AO get resolved,ping the FQDN and capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "19",
+      "title" : "Verify the grayed FQDN PBR could change active again once the FQDN AO get resolved.",
+      "result" : "  In step 1,verify the PBR should be gray out when no host can be resolved;\n  In step 2,check the packet,the outgoing interface is X1(the default WAN);\n  In step 3,verify the grayed FQDN PBR could change active again once the FQDN AO get resolved and check the packet,the outgoing interface is X3."
+   },
+   "09" : {
+      "steps" : "  1.Add an IPv6 FQDN_PBR,X3 is the outgoing interface;\n  2.On PC,ping the dst FQDN,capture the packet.",
+      "initial" : "  PC---(X0)DUT",
+      "id" : "09",
+      "title" : "Function test of IPv6 FQDN_PBR",
+      "result" : "  In step 2,check the packet,the outgoing interface is X3."
+   }
+}

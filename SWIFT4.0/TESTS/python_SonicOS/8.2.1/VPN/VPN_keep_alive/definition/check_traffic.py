@@ -1,0 +1,46 @@
+from definition.settings import *
+
+
+def ping_from_local_to_remote():
+    logger.info(" {} ".center(20, '-').format('Initiate pings'))
+    rc = False
+    for i in range(10):
+        out = os.system("ping {} -c 1".format(PC2_eth0))
+        if '100% packet loss' not in str(out):
+            logger.info('Successfully initiated continuous traffic from remote to local NAT.')
+            rc = True
+            break
+        elif i == 9:
+            logger.info('Ping failed')
+            logger.info(out)
+            rc = False
+    return rc
+
+
+def check_test_log():
+    logger.info(" {} ".center(20, '-').format('Test log'))
+    time.sleep(2)
+    log = LogObj.export_log_txt(log_switch=False)
+    if re.search('IKE\s+negotiation\s+complete', log, re.I):
+        rc = True
+        logger.info('Test log passed.')
+    else:
+        logger.info(log)
+        rc = False
+    return rc
+
+
+def ping_traffic_blocked():
+    logger.info(" {} ".center(20, '-').format('Initiate pings'))
+    rc = False
+    for i in range(10):
+        out = os.system("ping {} -c 1".format(PC2_eth0))
+        if '100% packet loss' not in str(out):
+            logger.info('Ping from local to remote failed')
+            rc = True
+            break
+        elif i == 9:
+            logger.info('Ping from local to remote passed')
+            logger.info(out)
+            rc = False
+    return rc

@@ -1,0 +1,362 @@
+{
+   "1507703" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A5F72798-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.",
+      "id" : "1507703",
+      "title" : "VPN with 3rd party Cert in Aggresssive Mode with Enable Perfect Forward Secrecy",
+      "description" : "Yes",
+      "result" : "  Original ID: 22\n  Original Title: VPN with 3rd party Cert in Aggresssive Mode with Enable Perfect Forward Secrecy\n  Original Description: This case is designed to test 3rd party in AggresssiveModewith Enable Perfect Forward Secrecy."
+   },
+   "1507720" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A60DBD3C-0464-11DE-860E-445A00F93527",
+      "initial" : "  The Certificate should be Exported.",
+      "id" : "1507720",
+      "title" : "Export Local Certificate",
+      "description" : "No",
+      "result" : "  Original ID: 5\n  Original Title: Export Local Certificate\n  Original Description: This test case is designed to test if the certificate can be exported."
+   },
+   "1507694" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "A6093B22-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1507694",
+      "title" : "Local Certificate Requests with Different Subject Alternative",
+      "description" : "No",
+      "result" : "  Original ID: 14\n  Original Title: Local Certificate Requests with Different Subject Alternative\n  Original Description: TBD"
+   },
+   "1507689" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "A5E092DA-0464-11DE-860E-445A00F93527",
+      "initial" : "  TheLocal Certificate should be imported.",
+      "id" : "1507689",
+      "title" : "Import Local Certificate",
+      "description" : "Yes",
+      "result" : "  Original ID: 1\n  Original Title: Import Local Certificate\n  Original Description: This case is designed to verify if the Local Certificate is importable in the UTM."
+   },
+   "1507723" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A5EBE25C-0464-11DE-860E-445A00F93527",
+      "initial" : "  The deleted certificate should be imported.",
+      "id" : "1507723",
+      "title" : "Restore Remove Certificate",
+      "description" : "No",
+      "result" : "  Original ID: 8\n  Original Title: Restore Remove Certificate\n  Original Description: This test case is to verify that theRemoved Certificate can be restored."
+   },
+   "1507716" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "da43c7a6-34dc-441a-89b2-0ef77a5a552f",
+      "initial" : "  The Certificate should be Exported.",
+      "id" : "1507716",
+      "title" : "Export level 2 Local Certificate",
+      "description" : "Yes",
+      "result" : "  Original ID: 34\n  Original Title: Export level 2 Local Certificate\n  Original Description:"
+   },
+   "1507724" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A6027ED6-0464-11DE-860E-445A00F93527",
+      "initial" : "  We should see this error: \"Local Certificate has expired\".",
+      "id" : "1507724",
+      "title" : "Expiry Local Certificate",
+      "description" : "No",
+      "result" : "  Original ID: 9\n  Original Title: Expiry Local Certificate\n  Original Description: This case is designed to verify if the expiry Local Certificate can't be imported in the UTM."
+   },
+   "1507715" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "a062c2be-a03e-4677-baa7-e7bae4269816",
+      "initial" : "  Level 2 certificate can be imported.",
+      "id" : "1507715",
+      "title" : "Import level 2 certificate",
+      "description" : "Yes",
+      "result" : "  Original ID: 33\n  Original Title: Import level 2 certificate\n  Original Description:"
+   },
+   "1507699" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "A6003FE0-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.\n  The log shows theLife Time21600in Phase I and 28800in Phase ii.",
+      "id" : "1507699",
+      "title" : "VPN with 3rd party cert in Main Mode with Phase I Life Time < Phase II Life Time",
+      "description" : "Yes",
+      "result" : "  Original ID: 19\n  Original Title: VPN with 3rd party cert in Main Mode with Phase I Life Time < Phase II Life Time\n  Original Description: This case is designed to test 3rd party in MainMode vpn policy withPhase I Life Time &lt; Phase II Life Time."
+   },
+   "1507717" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "28d1ace3-6a93-4130-be4c-3bba84589b06",
+      "initial" : "  Tunnel should be successful and there should be correct log, vpn traffic should work fine. Fragmented packets can be captured when it negotiate the vpn tunnel. VPN traffic is successful",
+      "id" : "1507717",
+      "title" : "Use level 2 3rd certificate with IKEv2/Main/Aggressive Mode for site-to-site VPN tunnel",
+      "description" : "Yes",
+      "result" : "  Original ID: 35\n  Original Title: Use level 2 3rd certificate with IKEv2/Main/Aggressive Mode for site-to-site VPN tunnel\n  Original Description:"
+   },
+   "1507696" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "A5F96AF8-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.",
+      "id" : "1507696",
+      "title" : "VPN with 3rd Party cert in Aggressive Mode with Same Life Time in Phase I and Phase ii",
+      "description" : "Yes",
+      "result" : "  Original ID: 16\n  Original Title: VPN with 3rd Party cert in Aggressive Mode with Same Life Time in Phase I and Phase ii\n  Original Description: This case is designed to test 3rd party inAggressive Mode with Same Life Time in Phase I and Phase ii"
+   },
+   "1507695" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A5E762CC-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.",
+      "id" : "1507695",
+      "title" : "VPN with 3rd party cert in Main Mode with Same Life Time in Phase I and Phase II",
+      "description" : "Yes",
+      "result" : "  Original ID: 15\n  Original Title: VPN with 3rd party cert in Main Mode with Same Life Time in Phase I and Phase II\n  Original Description: This case is designed to test 3rd party inMain Mode with Same Life Time in Phase I and Phase ii"
+   },
+   "1507702" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A5FDFB90-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.",
+      "id" : "1507702",
+      "title" : "VPN with 3rd party Cert in Main Mode with Enable Perfect Forward Secrecy",
+      "description" : "Yes",
+      "result" : "  Original ID: 21\n  Original Title: VPN with 3rd party Cert in Main Mode with Enable Perfect Forward Secrecy\n  Original Description: This case is designed to test 3rd party in Main Modewith Enable Perfect Forward Secrecy."
+   },
+   "1507693" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A606FBA0-0464-11DE-860E-445A00F93527",
+      "initial" : "  TheLocal Certificate with different Key Sizesshould be imported.",
+      "id" : "1507693",
+      "title" : "Local Certificate Requests with different Key Sizes",
+      "description" : "No",
+      "result" : "  Original ID: 13\n  Original Title: Local Certificate Requests with different Key Sizes\n  Original Description: This case is designed to verify theLocal Certificate Requests with different Key Sizes."
+   },
+   "1507707" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A5F2A45C-0464-11DE-860E-445A00F93527",
+      "initial" : "  vpn traffic should work fine.",
+      "id" : "1507707",
+      "title" : "VPN with 3rd Party Cert in Global VPN",
+      "description" : "No",
+      "result" : "  Original ID: 26\n  Original Title: VPN with 3rd Party Cert in Global VPN\n  Original Description: This test case is designed to verified thatGlobal VPN client is working with the 3rd Party Cert."
+   },
+   "1507704" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A5E518AA-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.",
+      "id" : "1507704",
+      "title" : "VPN with 3rd Party Cert with VPN in Main Mode Termicated Option",
+      "description" : "No",
+      "result" : "  Original ID: 23\n  Original Title: VPN with 3rd Party Cert with VPN in Main Mode Termicated Option\n  Original Description: This case is designed to test 3rd party in Main Mode."
+   },
+   "1507719" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "A6101366-0464-11DE-860E-445A00F93527",
+      "initial" : "  We should see error message.",
+      "id" : "1507719",
+      "title" : "Import Expired Certificate",
+      "description" : "No",
+      "result" : "  Original ID: 4\n  Original Title: Import Expired Certificate\n  Original Description: This case is designed to verify that theExpired Certificate can't be imported."
+   },
+   "1507705" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A5EE1F40-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.",
+      "id" : "1507705",
+      "title" : "VPN with 3rd Party Cert with VPN in Aggressive Mode with VPN Termincated Option",
+      "description" : "No",
+      "result" : "  Original ID: 24\n  Original Title: VPN with 3rd Party Cert with VPN in Aggressive Mode with VPN Termincated Option\n  Original Description: This case is designed to test 3rd party in AggressiveMode."
+   },
+   "1507708" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A5F4E91A-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.",
+      "id" : "1507708",
+      "title" : "Multiple VPN Tunnels with IKE with 3rd Party Certs",
+      "description" : "No",
+      "result" : "  Original ID: 27\n  Original Title: Multiple VPN Tunnels with IKE with 3rd Party Certs\n  Original Description: This test case verify theMultiple VPN Tunnels with IKE with 3rd Party Certs."
+   },
+   "1507718" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "20e13bb0-83b0-4384-b517-47b0c4b04c29",
+      "initial" : "  Tunnel should be successful and there should be correct log, vpn traffic should work fine. Fragmented packets can be captured when it negotiate the vpn tunnel\n  . VPN traffic is successful.",
+      "id" : "1507718",
+      "title" : "Use level 2 3rd certificate with IKEv2/Main/Aggressive Mode for Tunnel VPN policy",
+      "description" : "Yes",
+      "result" : "  Original ID: 36\n  Original Title: Use level 2 3rd certificate with IKEv2/Main/Aggressive Mode for Tunnel VPN policy\n  Original Description:"
+   },
+   "1507691" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "A604BB38-0464-11DE-860E-445A00F93527",
+      "initial" : "  adding more than 4 local certifcate shouldn't be possible.",
+      "id" : "1507691",
+      "title" : "Import Max number of Local Certificates",
+      "description" : "No",
+      "result" : "  Original ID: 11\n  Original Title: Import Max number of Local Certificates\n  Original Description: verify importing the Maxnumber of Local Certificates"
+   },
+   "1507706" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "A5F06142-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1507706",
+      "title" : "VPN with 3rd Party Cert in DHCP Relay",
+      "description" : "No",
+      "result" : "  Original ID: 25\n  Original Title: VPN with 3rd Party Cert in DHCP Relay\n  Original Description: TBD"
+   },
+   "1507713" : {
+      "steps" : "  Full_Regression",
+      "priority" : "<div class=\"wysiwyg2_on\">\nLAN Subnet----FW(X1) --(NAT Device)-- (X1)FW2---LAN Subnet\n | |\n  OCSP_____________Server\n</div>",
+      "atm_id" : "1455af43-d059-4a78-8780-a6d4bcec25bc",
+      "initial" : "  tunnel should be successful and there should be log saying 'Remote FW behind NAT'.",
+      "id" : "1507713",
+      "title" : "3rd party in Aggressive/Main Mode with OCSP enabled, remote FW is behind NAT",
+      "description" : "No",
+      "result" : "  Original ID: 31\n  Original Title: 3rd party in Aggressive/Main Mode with OCSP enabled, remote FW is behind NAT\n  Original Description: <div class=\"wysiwyg2_on\">\n  This case is designed to test tunnel negotiation for 3rd party in Main/Aggressive Mode vpn policy when OCSP is enabled and remote FW is behind NAT\n  </div>"
+   },
+   "1507698" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A6191966-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.\n  The log shows theLife Time 28800 in Phase I and 21600 in Phase ii.",
+      "id" : "1507698",
+      "title" : "VPN with 3rd party cert in Aggressive Mode with Phase I Life Time > Phase II Life Time",
+      "description" : "Yes",
+      "result" : "  Original ID: 18\n  Original Title: VPN with 3rd party cert in Aggressive Mode with Phase I Life Time > Phase II Life Time\n  Original Description: This case is designed to test 3rd party in AggressiveMode vpn policy withPhase I Life Time &gt; Phase II Life Time."
+   },
+   "1507722" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "A5E9A384-0464-11DE-860E-445A00F93527",
+      "initial" : "  The Certificates should be deleted.",
+      "id" : "1507722",
+      "title" : "deletedCertificate",
+      "description" : "Yes",
+      "result" : "  Original ID: 7\n  Original Title: deletedCertificate\n  Original Description: This test case is designed to verify that the importedCertificate can be deleted."
+   },
+   "1507701" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "A5FBBB8C-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.\n  The log shows theLife Time21600in Phase I and 28800in Phase ii.",
+      "id" : "1507701",
+      "title" : "VPN with 3rd party cert in Aggressive Mode with Phase I Life Time < Phase II Life Time",
+      "description" : "Yes",
+      "result" : "  Original ID: 20\n  Original Title: VPN with 3rd party cert in Aggressive Mode with Phase I Life Time < Phase II Life Time\n  Original Description: This case is designed to test 3rd party in AggressiveMode vpn policy withPhase I Life Time &lt; Phase II Life Time."
+   },
+   "1507697" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A61256E4-0464-11DE-860E-445A00F93527",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.\n  The log shows theLife Time 28800 in Phase I and 21600 in Phase ii.",
+      "id" : "1507697",
+      "title" : "VPN with 3rd party cert in Main Mode with Phase I Life Time > Phase II Life Time",
+      "description" : "Yes",
+      "result" : "  Original ID: 17\n  Original Title: VPN with 3rd party cert in Main Mode with Phase I Life Time > Phase II Life Time\n  Original Description: This case is designed to test 3rd party in Main Mode vpn policy withPhase I Life Time &gt; Phase II Life Time."
+   },
+   "1507700" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A60B7A9A-0464-11DE-860E-445A00F93527",
+      "initial" : "  TheCA Certificate should be imported.",
+      "id" : "1507700",
+      "title" : "Import CA Certificates",
+      "description" : "No",
+      "result" : "  Original ID: 2\n  Original Title: Import CA Certificates\n  Original Description: This case is designed to verify if the CA Certificate is importable in the UTM."
+   },
+   "1507709" : {
+      "steps" : "  Smoke",
+      "priority" : "LAN Subnet----FW(X1) ---- (X1)FW2---LAN Subnet\n | |\n  OCSP_Server",
+      "atm_id" : "6fc9e0e6-0086-4f26-a623-cce4295bceae",
+      "initial" : "  tunnel should be successful and there should be correct log, vpn traffic should work fine.",
+      "id" : "1507709",
+      "title" : "3rd party in Main Mode with OCSP enabled, no NAT between",
+      "description" : "No",
+      "result" : "  Original ID: 28\n  Original Title: 3rd party in Main Mode with OCSP enabled, no NAT between\n  Original Description: This case is designed to test 3rd party in Main Mode vpn policy with OCSP enabled, tunnel negotiation is trigged by KeepAlive, tunnel should be successful."
+   },
+   "1507712" : {
+      "steps" : "  Full_Regression",
+      "priority" : "<div class=\"wysiwyg2_on\">\nLAN Subnet----FW(X1) --(NAT Device)-- (X1)FW2---LAN Subnet\n | |\n  OCSP_____________Server\n</div>",
+      "atm_id" : "80f1fcf7-cdc6-4ec8-a6f6-7575d856bdd4",
+      "initial" : "  tunnel should be successful and there should be log saying 'Local FW behind NAT'.",
+      "id" : "1507712",
+      "title" : "3rd party in Aggressive/Main Mode with OCSP enabled, local FW is behind NAT",
+      "description" : "No",
+      "result" : "  Original ID: 30\n  Original Title: 3rd party in Aggressive/Main Mode with OCSP enabled, local FW is behind NAT\n  Original Description: <div class=\"wysiwyg2_on\">\n  This case is designed to test tunnel negotiation for 3rd party in Main/Aggressive Mode vpn policy when OCSP is enabled and local FW is behind NAT\n  </div>"
+   },
+   "1507710" : {
+      "steps" : "  Full_Regression",
+      "priority" : "<div class=\"wysiwyg2_on\">\nLAN Subnet----FW(X1) ---- (X1)FW2---LAN Subnet\n | |\n  OCSP_Server\n</div>",
+      "atm_id" : "7961ebec-1c77-431a-8c60-7aeb7793c136",
+      "initial" : "  <div class=\"wysiwyg2_on\">\n  tunnel should be successful and there should be correct log, vpn traffic should work fine.\n  </div>",
+      "id" : "1507710",
+      "title" : "3rd party in Aggressive Mode with OCSP enabled, no NAT between",
+      "description" : "No",
+      "result" : "  Original ID: 29\n  Original Title: 3rd party in Aggressive Mode with OCSP enabled, no NAT between\n  Original Description: This case is designed to test 3rd party in Main Mode vpn policy with OCSP enabled, tunnel negotiation is trigged by KeepAlive or traffic, tunnel should be successful."
+   },
+   "1507714" : {
+      "steps" : "  Full_Regression",
+      "priority" : "<div class=\"wysiwyg2_on\">\nLAN Subnet----FW(X1) --(NAT Device)-- (X1)FW2---LAN Subnet\n | |\n  OCSP_____________Server\n</div>",
+      "atm_id" : "9e1dd57c-3c4b-4e49-a5e9-5f0c17001e97",
+      "initial" : "  tunnel should be successful and there should be log saying 'Local FW behind NAT'.",
+      "id" : "1507714",
+      "title" : "3rd party in Aggressive/Main Mode with OCSP enabled, both FWs are behind NAT",
+      "description" : "No",
+      "result" : "  Original ID: 32\n  Original Title: 3rd party in Aggressive/Main Mode with OCSP enabled, both FWs are behind NAT\n  Original Description: <div class=\"wysiwyg2_on\">\n  This case is designed to test tunnel negotiation for 3rd party in Main/Aggressive Mode vpn policy when OCSP is enabled and local FW is behind NAT\n  </div>"
+   },
+   "1507690" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "A616D98A-0464-11DE-860E-445A00F93527",
+      "initial" : "  We should see this error: \"CA Certificate has expired\".",
+      "id" : "1507690",
+      "title" : "Expiry CA Certificate",
+      "description" : "Yes",
+      "result" : "  Original ID: 10\n  Original Title: Expiry CA Certificate\n  Original Description: This case is designed to verify that theExpired CA Certificate can't be imported."
+   },
+   "1507692" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "A5DE4318-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1507692",
+      "title" : "Import Max numbers of CA Certificates",
+      "description" : "No",
+      "result" : "  Original ID: 12\n  Original Title: Import Max numbers of CA Certificates\n  Original Description: TBD"
+   },
+   "1507721" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A5E2D2DE-0464-11DE-860E-445A00F93527",
+      "initial" : "  The Certificate should be Exported.",
+      "id" : "1507721",
+      "title" : "Export CA Certificate",
+      "description" : "No",
+      "result" : "  Original ID: 6\n  Original Title: Export CA Certificate\n  Original Description: This test case is designed to test if the certificate can be exported."
+   },
+   "1507711" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "A614979C-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1507711",
+      "title" : "Import Certificate Tree",
+      "description" : "No",
+      "result" : "  Original ID: 3\n  Original Title: Import Certificate Tree\n  Original Description: TBD"
+   }
+}

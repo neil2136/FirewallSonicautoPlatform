@@ -1,0 +1,107 @@
+{
+    "1531393": {
+        "steps": "Check the ospfv2 drop-down list's content.",
+        "initial": "N/A",
+        "id": "1531393",
+        "title": "GUI: Verify the OSPFv2 drop-down list's content.",
+        "result": "Three choice must be included in the drop-down list, \"\"Enabled\"\" \"\"Disabled\"\" \"\"Passive\"\""
+    },
+    "1531397": {
+        "steps": "1. Enable OSPFv2;\n2. Check the drop-down list content of authentication;",
+        "initial": "N/A",
+        "id": "1531397",
+        "title": "GUI: Verify the Authentication drop-down list's content.",
+        "result": "in step 2, the drop-down list should contain three items: \"\"Disabled\"\" \"\"Simple Password\"\" \"\"Message Digest\"\""
+    },
+    "1531402": {
+        "steps": "1. enable OSPFv2;\n2. Check the drop-down list of ABR type.",
+        "initial": "N/A",
+        "id": "1531402",
+        "title": "GUI: Verify the ABR Type drop-down list's content.",
+        "result": "in step 2, The drop-down list's content of ABR Type should contain below four items:\nstandard, cisco, ibm, shortcut."
+    },
+    "1531406": {
+        "steps": "1. Enable OSPFv2;\n2.&#160;Verify the Metric Type drop-down list's content when the Original Default Route is used.",
+        "initial": "N/A",
+        "id": "1531406",
+        "title": "GUI: Verify the Metric Type drop-down list's content when the Original Default Route is used.",
+        "result": "in step 2, there are two metric type, external type 1 and external type 2."
+    },
+    "1531408": {
+        "steps": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Static Routes check box is turned on.",
+        "initial": "N/A",
+        "id": "1531408",
+        "title": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Static Routes check box is turned on.",
+        "result": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Static Routes check box is turned on."
+    },
+    "1531411": {
+        "steps": "GUI: Verify the Metric Type drop-down list's content when the Advertise Static Routes is used.",
+        "initial": "N/A",
+        "id": "1531411",
+        "title": "GUI: Verify the Metric Type drop-down list's content when the Advertise Static Routes is used.",
+        "result": "GUI: Verify the Metric Type drop-down list's content when the Advertise Static Routes is used."
+    },
+    "1531412": {
+        "steps": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Connected Networks check box is turned on.",
+        "initial": "N/A",
+        "id": "1531412",
+        "title": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Connected Networks check box is turned on.",
+        "result": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Connected Networks check box is turned on."
+    },
+    "1531415": {
+        "steps": "GUI: Verify the Metric Type drop-down list's content when the Advertise Connected Networks is used.",
+        "initial": "N/A",
+        "id": "1531415",
+        "title": "GUI: Verify the Metric Type drop-down list's content when the Advertise Connected Networks is used.",
+        "result": "GUI: Verify the Metric Type drop-down list's content when the Advertise Connected Networks is used."
+    },
+    "1531416": {
+        "steps": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Redistribute RIP Routes check box is turned on.",
+        "initial": "N/A",
+        "id": "1531416",
+        "title": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Redistribute RIP Routes check box is turned on.",
+        "result": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Redistribute RIP Routes check box is turned on."
+    },
+    "1531420": {
+        "steps": "GUI: Verify the Metric Type drop-down list's content when the Redistribute RIP Routes is used.",
+        "initial": "N/A",
+        "id": "1531420",
+        "title": "GUI: Verify the Metric Type drop-down list's content when the Redistribute RIP Routes is used.",
+        "result": "GUI: Verify the Metric Type drop-down list's content when the Redistribute RIP Routes is used."
+    },
+    "1531421": {
+        "steps": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Remote VPN Networks check box is turned on.",
+        "initial": "N/A",
+        "id": "1531421",
+        "title": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Remote VPN Networks check box is turned on.",
+        "result": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Remote VPN Networks check box is turned on."
+    },
+    "1531437": {
+        "steps": "<span>GUI: Verify the RIP drop-down list's content.&#160;</span>",
+        "initial": "N/A",
+        "id": "1531437",
+        "title": "GUI: Verify the RIP drop-down list's content.",
+        "result": "<span>GUI: Verify the RIP drop-down list's content. &#160;there should be \"\"enable\"\" \"\"disable\"\" and \"\"passive\"\" three mode.</span>"
+    },
+    "1531446": {
+        "steps": "<span>GUI: Verify that the Use Password check box is not available with RIPv1 selection.</span>",
+        "initial": "N/A",
+        "id": "1531446",
+        "title": "GUI: Verify that the Use Password check box is not available with RIPv1 selection.",
+        "result": "<span>GUI: Verify that the Use Password check box is not available with RIPv1 selection.</span>"
+    },
+    "1531454": {
+        "steps": "<span>GUI: Verify that the Global RIP Configuration section is not available when Receive Only mode is used.</span>",
+        "initial": "N/A",
+        "id": "1531454",
+        "title": "GUI: Verify that the Global RIP Configuration section is not available when Receive Only mode is used.",
+        "result": "<span>GUI: Verify that the Global RIP Configuration section is not available when Receive Only mode is used.</span>"
+    },
+    "1531462": {
+        "steps": "<span>GUI: Verify that the Poisoned Reverse check box is not availabe if Split Horizon is turned off.&#160;</span>",
+        "initial": "N/A",
+        "id": "1531462",
+        "title": "GUI: Verify that the Poisoned Reverse check box is not availabe if Split Horizon is turned off.",
+        "result": "<span>GUI: Verify that the Poisoned Reverse check box is not availabe if Split Horizon is turned off.&#160;</span>"
+    }
+}

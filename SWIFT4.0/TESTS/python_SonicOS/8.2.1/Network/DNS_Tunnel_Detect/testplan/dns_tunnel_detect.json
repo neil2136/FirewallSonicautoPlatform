@@ -1,0 +1,129 @@
+{
+    
+   "13": {
+    "steps": "  1) Naviate to Log/Log settings page;\n  2)Enable GUI display for 'Drop DNS Packets Via Suspicious DNS Tunnel' and 'DNS Tunnel Attack'",
+    "initial": "",
+    "id": "13",
+    "title": "[Log Setting] Enable GUI display for 'Drop DNS Packets Via Suspicious DNS Tunnel' and 'DNS Tunnel Attack'",
+    "result": "  in step 2, 'Drop DNS Packets Via Suspicious DNS Tunnel' and 'DNS Tunnel Attack' are listed under DNS Security category."
+    },
+ "14": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2) Enable option 'Block All The Clients DNS Traffic' ;\n   3) Run tools on LAN PC;\n    4)After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity;\n  5)Check logs in log monitor.",
+    "initial": "",
+    "id": "14",
+    "title": "[FC:Tool test] DNS2TCP tool test",
+    "result": "  in step 3, traffic transfer succeed between LAN PC and server;\n  in step 4, correct information must be displayed in 'Detected Suspicious Clients Information' table and detected method is Corner DNS Type and dns tunnel must be suspended;\n  in step 5, two logs generated:Find DNS tunnel attack and Drop DNS Packets Via Suspicious DNS Tunnel"
+    },
+ "16": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2) Enable option 'Block All The Clients DNS Traffic';\n   3)  Run tools on LAN PC: ./dnscat --dns    4) After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity;\n  5)Check logs in log monitor.",
+    "initial": "",
+    "id": "16",
+    "title": "[FC:Tool test] DNSCAT2 tool test: Conner DNS Type",
+    "result": "  in step 3, traffic transfer succeed between LAN PC and server;\n  in step 4, correct information must be displayed in 'Detected Suspicious Clients Information' table and detected method is Corner DNS Type and dns tunnel must be suspended;\n  in step 5, two logs generated:Find DNS tunnel attack and Drop DNS Packets Via Suspicious DNS Tunnel"
+    },
+ "18": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2) Enable option 'Block All The Clients DNS Traffic';\n   3)   Run tools on LAN PC: java -jar tcp-over-dns-client.jar --domain aaa.networks.cn--listen-port 60022 --interval 100 query-type TXT;\n    4) After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity;\n  5)Check logs in log monitor.",
+    "initial": "",
+    "id": "18",
+    "title": "[FC:Tool test] TCP-OVER-DNS tool test: Conner DNS Type",
+    "result": "  in step 3, traffic transfer succeed between LAN PC and server;\n  in step 4, correct information must be displayed in 'Detected Suspicious Clients Information' table and detected method is Corner DNS Type and dns tunnel must be suspended;\n  in step 5, two logs generated:Find DNS tunnel attack and Drop DNS Packets Via Suspicious DNS Tunnel"
+    },
+ "19": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2) Enable option 'Block All The Clients DNS Traffic';\n   3)  Run tools on LAN PC;\n    4) After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity;\n  5)Check logs in log monitor.",
+    "initial": "",
+    "id": "19",
+    "title": "[FC:Tool test] ozymanDNS tool test",
+    "result": "  in step 3, traffic transfer succeed between LAN PC and server;\n  in step 4, correct information must be displayed in 'Detected Suspicious Clients Information' table and detected method is Corner DNS Type and dns tunnel must be suspended;\n  in step 5, two logs generated:Find DNS tunnel attack and Drop DNS Packets Via Suspicious DNS Tunnel"
+    },
+ "20": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2) Enable option 'Block All The Clients DNS Traffic';\n   3)  Run tools on LAN PC;\n    4) After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity;\n  5)Check logs in log monitor.",
+    "initial": "",
+    "id": "20",
+    "title": "[FC:Tool test] Iodine tool test",
+    "result": "  in step 3, traffic transfer succeed between LAN PC and server;\n  in step 4, correct information must be displayed in 'Detected Suspicious Clients Information' table and detected method is Corner DNS Type and dns tunnel must be suspended;\n  in step 5, two logs generated:Find DNS tunnel attack and Drop DNS Packets Via Suspicious DNS Tunnel"
+    },
+ "27": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2) Enable option 'Block All The Clients DNS Traffic';\n   3)  Run tool DNS2TCP on several LAN PCs;\n    4) After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity and DNS traffic send from detected clients;\n  5)Check Block checkbox status of all detected clients;\n   6)Disable option 'Block All The Clients DNS Traffic';\n   7)Check the Block checkbox status of all detected clients;\n    8)Check DNS tunnel connectivity and DNS traffic send from detected clients.",
+    "initial": "",
+    "id": "27",
+    "title": "[FC: Block test] Test the main control of option 'Block All The Clients DNS Traffic': Enable all",
+    "result": "  in step 3, traffic transfer succeed between LAN PC and server;\n  in step 4, correct information must be displayed in 'Detected Suspicious Clients Information' table: LAN PC IP, MAC, interface X0, detected method is Corner DNS Type, and Block checkbox is checked by default; dns tunnel traffic must be suspended; All DNS traffic send from detected clients must be dropped; \n  in step 5, all Block checkbox should be enabled;\n   in step 7, all Block checkbox should be disabled;\n   in step 8, all DNS tunnel traffic and DNS traffic must not be blocked anymore."
+    },
+ "28": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2) Enable option 'Block All The Clients DNS Traffic';\n   3)  Run tool DNS2TCP on several LAN PCs;\n    4) After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity and DNS traffic send from detected clients;\n  5)Check Block checkbox status of all detected clients;\n   6)Disable option 'Block All The Clients DNS Traffic';\n   7)Check the Block checkbox status of all detected clients;\n    8)Check DNS tunnel connectivity and DNS traffic send from detected clients.",
+    "initial": "",
+    "id": "28",
+    "title": "[FC: Block test] Test the main control of option 'Block All The Clients DNS Traffic': disable all",
+    "result": "  in step 3, traffic transfer succeed between LAN PC and server;\n  in step 4, correct information must be displayed in 'Detected Suspicious Clients Information' table: LAN PC IP, MAC, interface X0, detected method is Corner DNS Type, and Block checkbox is checked by default;\n   All DNS tunnel traffic and DNS traffic must not be blocked. \n  in step 5, all Block checkbox should be disabled;\n   in step 7, all Block checkbox should be enabled;\n   in step 8, dns tunnel traffic must be suspended; All DNS traffic send from detected clients must be dropped."
+    },
+ "29": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2) Enable option 'Block All The Clients DNS Traffic';\n   3)  Run tool DNS2TCP on several LAN PCs;\n    4) After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity and DNS traffic send from detected clients;\n  5)Check Block checkbox status of all detected clients;\n   6)Disable option 'Block All The Clients DNS Traffic';\n   7)Verify DNS tunnel and DNS traffic on these Disable Block checkbox clients;\n    8) Dsiable option 'Block All The Clients DNS Traffic';\n    9)Check the Block checkbox status of all detected clients;\n   10)Check DNS tunnel connectivity and DNS traffic send from detected clients;\n   11)Enable option 'Block All The Clients DNS Traffic';\n    12)Check the Block checkbox status of all detected clients;\n   13)Check DNS tunnel connectivity and DNS traffic send from detected clients.",
+    "initial": "",
+    "id": "29",
+    "title": "[FC: Block test] Disable option 'Block All The Clients DNS Traffic' when some clients are 'Blocking'  and some clients are not, and then enable option 'Block All The Clients DNS Traffic' again",
+    "result": "  1)in step 4, correct information must be displayed in 'Detected Suspicious Clients Information' table: LAN PC IP, MAC, interface X0, detected method is Corner DNS Type, and Block checkbox is checked by default; All DNS tunnel traffic and DNS traffic must not be blocked.\n   2)in step 5, all Block checkbox should be enabled;\n   3)\n  in step 5, all Block checkbox should be disabled;\n   4)in step 6, Block checkbox could be disabled seperately;\n     5)in step 7, After disable Block checkbox, DNS tunnel and DNS traffic should be restored on these clients;\n   6)in step 9, all Block checkbox should be disabled;\n    7)in step 10, DNS Tunnel and DNS traffic should not be dropped on all clients;\n    8)in step 12, all Block checkbox should be enabled;\n   9)in step 13, All DNS tunnel traffic and DNS traffic must not be blocked."
+ },
+ "32": {
+    "steps": "  1) 1. Enable the option DNS tunnel detection;\n  2)Enable option 'Block All The Clients DNS Traffic ';\n  3)Run tools on LAN PC;\n  4)After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity;\n  5) Add this client IP into white list entry table;\n  6) Check 'Detected Suspicious Clients Information' table;\n  7)Run DNS traffic from this client to WAN site.",
+    "initial": "",
+    "id": "32",
+    "title": "[FC: White list] Add the dns tunnel client into white list after it has been detected",
+    "result": "  in step 3, traffic transfer succeed between LAN PC and server;\n   in step 4, correct information must be displayed in 'Detected Suspicious Clients Information' table and detected method is Corner DNS Type and dns tunnel must be suspended; \n  in step 6, this client has been removed from 'Detected Suspicious Clients Information' table immediately;\n    in step 7, DNS traffic won't be dropped anymore."
+    },
+"33": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2)Enable option 'Block All The Clients DNS Traffic ';\n  3)Run tools on LAN PC;\n  4)After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity;\n  5) Add this client IP into white list entry table;\n  6) Keep tools running on this client PC;\n  7)Delete the client IP from white list entry table;\n  8)After about 5 mins,check 'Detected Suspicious Clients Information' table and tunnel connectivity;",
+    "initial": "",
+    "id": "33",
+    "title": "[FC: White list] Delete the dns tunnel client from white list when dns tunnel is running on this client PC",
+    "result": "  in step 4, this client must be detected and tunnel must be suspended;\n   in step 5, this client must be removed from 'Detected Suspicious Clients Information' table and tunnel restored;   in step 8, after about 5 mins, this client must be detected again and tunnel must be suspended and all DNS traffic must be dropped."
+    },
+"40": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2)Enable option 'Block All The Clients DNS Traffic ';\n  3)Run tools on LAN PC;\n  4)After about 5 mins, check 'Detected Suspicious Clients Information' table and tunnel connectivity;\n  5)  Check logs in log monitor and check DNS traffic sent from client PC;\n   6) Stop all DNS traffic on this client PC;\n   7) After 15 mins, check 'Detected Suspicious Clients Information' table and check DNS traffic sent from client PC. ",
+    "initial": "",
+    "id": "40",
+    "title": "[FC: Node aging] Flushed if it deactivates in 15 mins. Stop sending DNS pkt",
+    "result": "  in step 7, after 15 mins, or there would be a margin of error about 5 mins, this client must be released and DNS traffic sent from this client must not be dropped anymore."
+    },
+"42": {
+      "steps": "  1) Enable the option DNS tunnel detection;\n  2)Enable option 'Block All The Clients DNS Traffic ';\n  3) Use Xcap to send DNS packets, typeA, AAAA, CNAME and guarantee each one client IPsend at least 1000 normal types DNS packet in 5 mins to seduce a DNS tunnel verdict;\n  4)Check 'Detected Suspicious Clients Information' table; ",
+      "initial": "",
+      "id": "42",
+      "title": " [Verdict verify] The number threshold for normal DNS types :  A, AAAA, CNAME default value is 1000",
+      "result": " in step 3, DNS tunnel verdict must judge this client IP as a suspicious dns tunnel client;\n    in step 4, this client IP and MAC info must be recorded in 'Detected Suspicious Clients Information' table."
+      },
+"43": {
+      "steps": "  1) Enable the option DNS tunnel detection;\n  2)Enable option 'Block All The Clients DNS Traffic ';\n  3) Use Xcap to send DNS packets, typeA, AAAA, CNAME and guarantee each one client IPsend at least 1000 normal types DNS packet in 5 mins to seduce a DNS tunnel verdict;\n  4)Check 'Detected Suspicious Clients Information' table; ",
+      "initial": "",
+      "id": "43",
+      "title": " [Verdict verify] The ratio threshold for corner DNS types: TXT, MX  default ratio is 10%",
+      "result": " in step 3, DNS tunnel verdict must judge this client IP as a suspicious dns tunnel client;\n    in step 4, this client IP and MAC info must be recorded in 'Detected Suspicious Clients Information' table."
+      },
+"44": {
+      "steps": "  Guarantee one client send at most 100 all types DNS packet in 5 mins to seduce a DNS tunnel verdict which should not happen..\n    1) Enable the option DNS tunnel detection;\n  2)Enable option 'Block All The Clients DNS Traffic ';\n  3) Use Xcap to send DNS packets, typeA, AAAA, CNAME, SOA, SRV, TXT, MX, PTR etc, and guarantee each one client IPsend atat most 100 all types DNS packets in 5 mins;;\n  4)Check 'Detected Suspicious Clients Information' table; ",
+      "initial": "",
+      "id": "44",
+      "title": " [Verdict verify] The minimum DNS packet number for DNS Tunnel detection: 100",
+      "result": " in step 4, all clients must not be judged as suspicious dns tunnel clients."
+      },
+"64": {
+      "steps": "  1. Enable the option DNS tunnel detection;\n    2. Enable option \"Block All The Clients DNS Traffic \"\n  3)Enable CFS and update CFS Server Status;\n  4)Verify CFS basic function;\n   5)Use CFS Tool to query different URLs in Diagnostic Tool; ",
+      "initial": "",
+      "id": "64",
+      "title": " [Integrated] Verify CFS basic function when DNS tunnel is enabled",
+      "result": " in step 4 CFS basic function well;\n  in step 5.CFS Tool works;"
+      },
+"83": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2)Enable option 'Block All The Clients DNS Traffic ';\n  3. Add 128White List entries;\n   4. Export Prefs;\n   5.  Factory default FW;\n   6.   Import prefs;\n  7.  Check settings about DNS Tunnel",
+    "initial": "",
+    "id": "83",
+    "title": "Prefs export and import test",
+    "result": "  in step 7, DNS tunnel detection settings must keep intact before."
+    },
+"82": {
+    "steps": "  1) Enable the option DNS tunnel detection;\n  2)Enable option 'Block All The Clients DNS Traffic ';\n  3. Add 128White List entries;\n   4.Restart FW;\n   5.Use tools to test function.",
+    "initial": "",
+    "id": "82",
+    "title": "Restart: After rebooting, DNS tunnel function well",
+    "result": "  in step 5, DNS tunnel detection function well after restart, and white list entries take effect after restart"
+    }
+}

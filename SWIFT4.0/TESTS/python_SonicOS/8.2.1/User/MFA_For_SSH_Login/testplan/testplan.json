@@ -1,0 +1,108 @@
+{
+   "SOSAIOT-TC-75557" : {
+      "steps" : " 1.Login GUI\n2.Create a local user with SonicWALL Administrators\n3.Enable OTP via mail method \n4.input mail IP and enbale SMTP server on Log->Automation->Mail Server Settings\n5.Via client to  SSH login FW",
+      "initial" : " Verify OTP via mail for SSH login use Local users belonging to SonicWALL Administrators",
+      "id" : "SOSAIOT-TC-75557",
+      "title" : "Verify OTP via mail for SSH login use Local users belonging to SonicWALL Administrators",
+      "result" : "can send code via mail and Login successfully via SSH"
+   },
+   "SOSAIOT-TC-75559" : {
+      "steps" : "1. Login GUI\n2.Create a local user with Limited Administrator\n3.Enable OTP via mail method and save\n4.Via client to  SSH login FW only via LAN interface",
+      "initial" : " Verify OTP via mail for SSH login use Local users belonging to Limited Administrator",
+      "id" : "SOSAIOT-TC-75559",
+      "title" : "Verify OTP via mail for SSH login use Local users belonging to Limited Administrator",
+      "result" : "can send code via mail and Login successfully via SSH"
+   },
+   "SOSAIOT-TC-75561" : {
+      "steps" : " 1.Login GUI\n2.Create a local user with Guest Administrator\n3.Enable OTP via mail method and save\n4.Via client to SSH login FW",
+      "initial" : " Verify OTP via mail for SSH login use Local users belonging to Guest Administrators",
+      "id" : "SOSAIOT-TC-75561",
+      "title" : "Verify OTP via mail for SSH login use Local users belonging to Guest Administrator",
+      "result" : "can send code via mail and Login successfully via SSH"
+   },
+   "SOSAIOT-TC-75563" : {
+      "steps" : " 1.Login GUI\n2.Create a local user with Read-only Admin\n3.Enable OTP via mail method and save\n4.Via client to SSH login FW",
+      "initial" : " Verify OTP via mail for SSH login use Local users belonging to Read-only Admin",
+      "id" : "SOSAIOT-TC-75563",
+      "title" : "Verify OTP via mail for SSH login use Local users belonging to Read-only Admin",
+      "result" : "can receive the code in mail,  Login successfully via SSH "
+   },
+   "SOSAIOT-TC-75556" : {
+      "steps" : "1.Login GUI\n2.Create a local user with SonicWALL Administrators\n3.Enable TOTP method and save\n4.Via client to SSH login FW",
+      "initial" : " Verify TOTP for SSH login use Local users belonging to SonicWALL Administrators",
+      "id" : "SOSAIOT-TC-75556",
+      "title" : "Verify TOTP for SSH login use Local users belonging to SonicWALL Administrators",
+      "result" : " can scan QAcode via an authenticator apps,  Login successfully via SSH"
+   },
+   "SOSAIOT-TC-75558" : {
+      "steps" : " 1.Login GUI\n2.Create a local user with Limited Administrator\n3.Enable TOTP method and save\n4.Via client to SSH login FW only via LAN interface",
+      "initial" : "Verify TOTP for SSH login use Local users belonging to Limited Administrator",
+      "id" : "SOSAIOT-TC-75558",
+      "title" : "Verify TOTP for SSH login use Local users belonging to Limited Administrator",
+      "result" : "can scan QAcode via an authenticator apps,  Login successfully via SSH"
+   },
+   "SOSAIOT-TC-75560" : {
+      "steps" : "1.Login GUI\n2.Create a local user with Guest Administrator\n3.Enable TOTP method and save\n4.Via client to SSH login FW",
+      "initial" : "Verify TOTP for SSH login use Local users belonging to Guest Administrator",
+      "id" : "SOSAIOT-TC-75560",
+      "title" : "Verify TOTP for SSH login use Local users belonging to Guest Administrator",
+      "result" : "can scan QAcode via an authenticator apps,  Login successfully via SSH"
+   },
+   "SOSAIOT-TC-75562" : {
+      "steps" : "1.Login GUI\n2.Create a local user with Read-only Admin\n3.Enable TOTP method and save\n4.Via client to SSH login FW",
+      "initial" : "Verify TOTP for SSH login use Local users belonging to Read-only Admin",
+      "id" : "SOSAIOT-TC-75562",
+      "title" : "Verify TOTP for SSH login use Local users belonging to Read-only Admin",
+      "result" : "can scan QAcode via an authenticator apps,  Login successfully via SSH"
+   },
+   "SOSAIOT-TC-75564" : {
+      "steps" : "1.Login GUI\n2.Enable One-time Passwords Method as TOTP on Administration page\n3.Via client to SSH login FW",
+      "initial" : "Verify TOTP for SSH login use build in admin",
+      "id" : "SOSAIOT-TC-75564:",
+      "title" : "Verify TOTP for SSH login use build in admin",
+      "result" : "can scan QAcode via an authenticator apps,  Login successfully via SSH"
+   },
+   "SOSAIOT-TC-75565" : {
+      "steps" : " 1.Login GUI\n2.Create a local user with SonicWALL Administrators\n3.Enable TOTP method and save\n4.Via SSH client to login and scan the QR code and bind successfully",
+      "initial" : "Emergency scratch code should be displayed on the first login;",
+      "id" : "SOSAIOT-TC-75565",
+      "title" : "Emergency scratch code should be displayed on the first login;",
+      "result" : "Emergency scratch code should be displayed on the first login;"
+   },
+   "SOSAIOT-TC-75566" : {
+      "steps" : "1.Login GUI\n2.Create a local user with SonicWALL Administrators\n3.Enable TOTP method and save\n4.Via SSH client to login and scan the QR code and bind successfully\n5.Do the unbind action\n6.Re-login FW via SSH",
+      "initial" : "Emergency scratch code should be displayed after an unbinding action;",
+      "id" : "SOSAIOT-TC-75566",
+      "title" : "Emergency scratch code should be displayed after an unbinding action;",
+      "result" : "Emergency scratch code should be displayed after an unbinding action;"
+   },
+   "SOSAIOT-TC-75569" : {
+      "steps" : "1.Login GUI\n2.Create a local user with SonicWALL Administrators\n3.change OTP method from 'Disabled' to 'TOTP', and save\n4.Input an correct 2FA code on SSH client.",
+      "initial" : "OTP method change from Disabled to TOTP",
+      "id" : "SOSAIOT-TC-75569",
+      "title" : "OTP method change from Disabled to TOTP",
+      "result" : "TOTP Auth works fine;"
+   },
+   "SOSAIOT-TC-75570" : {
+      "steps" : "1.Login GUI\n2.Create a local user with SonicWALL Administrators\n3.change OTP method from 'OTP via Mail' to 'TOTP', and save\n4.Input an correct 2FA code on SSH client.",
+      "initial" : "OTP method OTP method from 'OTP via Mail' to 'TOTP'",
+      "id" : "SOSAIOT-TC-75570",
+      "title" : "OTP method OTP method from 'OTP via Mail' to 'TOTP'",
+      "result" : "TOTP Auth works fine"
+   },
+   "SOSAIOT-TC-75571" : {
+      "steps" : "1.Login GUI\n2.Create a local user with SonicWALL Administrators\n3.change OTP method from 'TOTP' to 'Disabled'; and save\n4.Login via SSH on client.",
+      "initial" : "OTP method from 'TOTP' to 'Disabled'",
+      "id" : "SOSAIOT-TC-75571",
+      "title" : "OTP method from 'TOTP' to 'Disabled'",
+      "result" : "No need to auth when SSH login"
+   },
+   "SOSAIOT-TC-75572" : {
+      "steps" : "1.Login GUI\n2.Create a local user with SonicWALL Administrators\n3.change OTP method from 'TOTP' to 'OTP via Mail'; and save\n4.Login via SSH on client.Input an correct 2FA code from mail on SSH client.",
+      "initial" : "OTP method from 'TOTP' to 'OTP via Mail'",
+      "id" : "SOSAIOT-TC-75572",
+      "title" : "OTP method from 'TOTP' to 'OTP via Mail'",
+      "result" : "OTP via Mail auth works fine"
+   }
+   
+}

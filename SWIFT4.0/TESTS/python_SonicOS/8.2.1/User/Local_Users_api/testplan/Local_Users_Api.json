@@ -1,0 +1,233 @@
+{
+   "1546948" : {
+      "steps" : "  VPN access should be removed from user",
+      "initial" : "  Original ID: 31\n  Original Title: Remove VPN access from user object\n  Original Description: Remove VPN access from user object",
+      "id" : "1546948",
+      "title" : "Remove VPN access from user object",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546931" : {
+      "steps" : "  <span>Specific User local group should be deleted.</span>",
+      "initial" : "  Original ID: 14\n  Original Title: DELETE User local group per name\n  Original Description: delete a User localgroupwithin a domain per name",
+      "id" : "1546931",
+      "title" : "DELETE User local group per name",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546923" : {
+      "steps" : "  Config change should be taken and displayed , functionality of the user local object should change accordingly.",
+      "initial" : "  Original ID: 06\n  Original Title: PUT User Local account per name\n  Original Description: Edit an existing object based on name",
+      "id" : "1546923",
+      "title" : "PUT User Local account per name",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546949" : {
+      "steps" : "  Group membership should be removed from group",
+      "initial" : "  Original ID: 32\n  Original Title: Remove group membership from group\n  Original Description: Remove group membership from group",
+      "id" : "1546949",
+      "title" : "Remove group membership from group",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546930" : {
+      "steps" : "  Config change should be taken and displayed.",
+      "initial" : "  Original ID: 13\n  Original Title: PUT User local group\n  Original Description: Edit an exisiting User Local group account",
+      "id" : "1546930",
+      "title" : "PUT User local group",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546935" : {
+      "steps" : "  Config change should be taken and displayed.",
+      "initial" : "  Original ID: 18\n  Original Title: PUT User Local group account per name\n  Original Description: Edit an existing group object based on name",
+      "id" : "1546935",
+      "title" : "PUT User Local group account per name",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546941" : {
+      "steps" : "  PUT command for user local object with new name should be denied.",
+      "initial" : "  Original ID: 24\n  Original Title: PUT User Local account per name with non-existent name\n  Original Description: Edit an existing object based on name",
+      "id" : "1546941",
+      "title" : "PUT User Local account per name with non-existent name",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546922" : {
+      "steps" : "  <span>Config change should be taken and displayed , functionality of the user local object should change accordingly.</span>",
+      "initial" : "  Original ID: 05\n  Original Title: PUT User Local account per name\n  Original Description: <span>PUT User Local account per name</span>",
+      "id" : "1546922",
+      "title" : "PUT User Local account per name",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546946" : {
+      "steps" : "  PUT command for non-existent user group should be denied.",
+      "initial" : "  Original ID: 29\n  Original Title: Attempt PUT User Local group account per name with non-existent name\n  Original Description: Attempt PUT User Local group account per name with non-existent name",
+      "id" : "1546946",
+      "title" : "Attempt PUT User Local group account per name with non-existent name",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546929" : {
+      "steps" : "  The particular user object referred by name should be displayed, it should match the gui display.",
+      "initial" : "  Original ID: 12\n  Original Title: GET user local groups\n  Original Description: GET user local groups",
+      "id" : "1546929",
+      "title" : "GET user local groups",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546951" : {
+      "steps" : "  The particular user group referred by uuid should be displayed, it should match the gui display.",
+      "initial" : "  Original ID: 34\n  Original Title: GET user local group per uuid\n  Original Description: GET a specific User group per uuid",
+      "id" : "1546951",
+      "title" : "GET user local group per uuid",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546940" : {
+      "steps" : "  Command should return error if the name does not exist.",
+      "initial" : "  Original ID: 23\n  Original Title: Attempt DELETE User local object that was already deleted\n  Original Description: delete a User local object",
+      "id" : "1546940",
+      "title" : "Attempt DELETE User local object that was already deleted",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546919" : {
+      "steps" : "  POST command should return success, GUI should show the newly addedd user account, pneding config should be empty after post. Usert login with the newly added account functionality should work as expected.",
+      "initial" : "  Original ID: 01\n  Original Title: POST User-Local\n  Original Description: POST a Local User",
+      "id" : "1546919",
+      "title" : "POST User-Local",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546925" : {
+      "steps" : "  Specific User local object should be deleted.",
+      "initial" : "  Original ID: 08\n  Original Title: DELETE User local object using name\n  Original Description: delete a User local object",
+      "id" : "1546925",
+      "title" : "DELETE User local object using name",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546942" : {
+      "steps" : "  Command should return error if the name does not exist.",
+      "initial" : "  Original ID: 25\n  Original Title: Attempt to DELETE User local object using uuid that was already deleted\n  Original Description: delete a User local object based on uuid",
+      "id" : "1546942",
+      "title" : "Attempt to DELETE User local object using uuid that was already deleted",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546924" : {
+      "steps" : "  All User Local objects being edited shold be updated and changes should reflect in GUI. Other User Local objects should remain unchanged. Reserved objects should remain unchanged.",
+      "initial" : "  Original ID: 07\n  Original Title: PUT multiple User local objects at same time\n  Original Description: edit multiple User local objects",
+      "id" : "1546924",
+      "title" : "PUT multiple User local objects at same time",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546926" : {
+      "steps" : "  TSR should show all the user objects added via API",
+      "initial" : "  Original ID: 09\n  Original Title: User local objects in TSR\n  Original Description: check user objects in TSR",
+      "id" : "1546926",
+      "title" : "User local objects in TSR",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546938" : {
+      "steps" : "  Config change should be taken and displayed.",
+      "initial" : "  Original ID: 21\n  Original Title: PUT User local settings\n  Original Description: PUT new User Local settings",
+      "id" : "1546938",
+      "title" : "PUT User local settings",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546928" : {
+      "steps" : "  POST command should return success, GUI should show the newly added user group, pending config should be empty after post.",
+      "initial" : "  Original ID: 11\n  Original Title: POST User-Local group\n  Original Description: POST a Local User groups",
+      "id" : "1546928",
+      "title" : "POST User-Local group",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546932" : {
+      "steps" : "  The particular user object referred by name should be displayed, it should match the gui display.",
+      "initial" : "  Original ID: 15\n  Original Title: GET user local account per uuid\n  Original Description: GET a specific User account per uuid",
+      "id" : "1546932",
+      "title" : "GET user local account per uuid",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546933" : {
+      "steps" : "  Config change should be taken and displayed , functionality of the user local object should change accordingly. PUT command for same user local object with new name should be denied.",
+      "initial" : "  Original ID: 16\n  Original Title: PUT User Local account per uuid\n  Original Description: Edit an existing object based on uuid",
+      "id" : "1546933",
+      "title" : "PUT User Local account per uuid",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546944" : {
+      "steps" : "  Command should return error if the name does not exist.",
+      "initial" : "  Original ID: 27\n  Original Title: Attempt DELETE User local group per name of group already deleted\n  Original Description: delete a User localgroupwithin a domain per name",
+      "id" : "1546944",
+      "title" : "Attempt DELETE User local group per name of group already deleted",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546927" : {
+      "steps" : "  Specific User local object should be deleted",
+      "initial" : "  Original ID: 10\n  Original Title: DELETE User local object using uuid\n  Original Description: delete a User local object based on uuid",
+      "id" : "1546927",
+      "title" : "DELETE User local object using uuid",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546921" : {
+      "steps" : "  The particular user object referred by name should be displayed, it should match the gui display.",
+      "initial" : "  Original ID: 04\n  Original Title: GET user local account per name\n  Original Description: GET a specific User account",
+      "id" : "1546921",
+      "title" : "GET user local account per name",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546937" : {
+      "steps" : "  Config change should be taken and displayed , functionality of the User Local object should change accordingly.",
+      "initial" : "  Original ID: 20\n  Original Title: PUT User local settings\n  Original Description: Edit an exisiting User Local settings",
+      "id" : "1546937",
+      "title" : "PUT User local settings",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546936" : {
+      "steps" : "  The user local settings should be displayed.",
+      "initial" : "  Original ID: 19\n  Original Title: GET user local settings\n  Original Description: GET a user local settings",
+      "id" : "1546936",
+      "title" : "GET user local settings",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546920" : {
+      "steps" : "  All user local accounts should be displayed including reserved ones. Display shoud match the display using GUI.",
+      "initial" : "  Original ID: 03\n  Original Title: GET User local\n  Original Description: GET all User Local objects",
+      "id" : "1546920",
+      "title" : "GET User local",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546945" : {
+      "steps" : "  Built in user groups should not be allowed to be deleted.",
+      "initial" : "  Original ID: 28\n  Original Title: Attempt DELETE User local group per name of built-in groups\n  Original Description: Attempt DELETE User local group per name of built-in groups",
+      "id" : "1546945",
+      "title" : "Attempt DELETE User local group per name of built-in groups",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546947" : {
+      "steps" : "  Group membership should be removed from user",
+      "initial" : "  Original ID: 30\n  Original Title: Remove group membership from user object\n  Original Description: Remove group membership from user object",
+      "id" : "1546947",
+      "title" : "Remove group membership from user object",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546934" : {
+      "steps" : "  The particular user object referred by name should be displayed, it should match the gui display.",
+      "initial" : "  Original ID: 17\n  Original Title: GET usergroup by name\n  Original Description: GET a specific User group account per name",
+      "id" : "1546934",
+      "title" : "GET usergroup by name",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546950" : {
+      "steps" : "  VPN access should be removed from group",
+      "initial" : "  Original ID: 33\n  Original Title: Remove VPN access from group\n  Original Description: Remove VPN access from group",
+      "id" : "1546950",
+      "title" : "Remove VPN access from group",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546943" : {
+      "steps" : "  POST command should return error.",
+      "initial" : "  Original ID: 26\n  Original Title: Attempt POST with duplicate user group\n  Original Description: Attempt POST with duplicate user group",
+      "id" : "1546943",
+      "title" : "Attempt POST with duplicate user group",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1546939" : {
+      "steps" : "  If an object is posted with a name that already exists command should return error.",
+      "initial" : "  Original ID: 22\n  Original Title: Attempt POST with duplicate user\n  Original Description: POST a Local User",
+      "id" : "1546939",
+      "title" : "Attempt POST with duplicate user",
+      "result" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   }
+}

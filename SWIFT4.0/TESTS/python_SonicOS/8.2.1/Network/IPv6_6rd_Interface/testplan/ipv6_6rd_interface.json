@@ -1,0 +1,317 @@
+{
+   "33" : {
+      "steps" : "  1.Start a DHCP server on X2's subnet, providing OPTION_6RD(212), filled with the four options' values. Start capturing DHCP packets on the PC connecting to the subnet.\n  2.Turn to IPv4 view, set interface X2 as a WAN DHCP interface, renew the interface.\n  3.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  4.On the popup page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to DHCP, bound to interface X2, set other elements proper, click OK button, see Result 1.\n  5.Enter 6rd Tunnel configure page, Protocol tab, see Result 2.",
+      "initial" : "  FW(X2)---|---DHCP server | PC(WireShark)",
+      "id" : "33",
+      "title" : "[Func] [DHCP] DUT MUST include a Parameter Request List Option [RFC2132] for the OPTION_6RD when sending DHCP requests",
+      "result" : "  1.DHCP request from X2 contains OPTION_6RD(212) in the option field.\n  2.6rd Tunnel General Information is shown on the page, the four parameters \"6rd Prefix\", \"6rd Prefix Length\", \"Active BR\" and \"IPv4 Mask Length\" are set as defined in DHCP server's OPTION_6RD(212)."
+   },
+   "32" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X1.\n  2.Turn to IPv4 view, set X2 as a LAN Static interface, give it a proper IP, then turn back to IPv6 view, set X2 as a LAN Static interface, too. Check the radio \"Enable Router Advertisement\" on General tab.\n  3.Enter interface X2's editing page, Advanced tab, click Add Address button, on the popup Add IPv6 Address page, select \"Add IPv6 Address with 6rd Delegated Prefix\", set the two parameters \"Preferred IPv6 address\"(ex.1::1) and \"Preferred Prefix Length\"(ex.64).\n  4.Check the radio \"Advertise Subnet Prefix of Static IPv6 Address\", then click OK button.\n  5.Capture the RAs received on the PC conecting to X2, see Result 1.\n  6.Bound 6rd Tunnel to an unassigned interface, say X4, or make X1's IP unavailable, or to make 6rd Delegated Prefix unavailable, keep capturing RAs from X2 on the PC, see Result 2.\n  7.Test both Manual and DHCP mode.",
+      "initial" : "  FW(X2)---PC(Wireshark)",
+      "id" : "32",
+      "title" : "[GUI] The interface MUST stop advertising the prefix when the related 6rd delegated address is not available",
+      "result" : "  1.6rd Prefix is released in the RAs.\n  2.6rd Prefix isn't released in the RAs any more."
+   },
+   "21" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, select Configure Mode as Manual, set all the elements proper, click OK button, see Result 1.\n  3.Click the delete button, see Result 2.\n  4.Change Configure Mode to DHCP, repeat steps 2~3",
+      "initial" : "  N/A",
+      "id" : "21",
+      "title" : "[GUI] DUT MUST support to delete the 6rd tunnel interface",
+      "result" : "  1.On IPv6 Interfaces Settings page, there are two available buttons at the rightmost of the 6rd Tunnel Interface, one is for editing and one is for deleting.\n  2.The 6rd Tunnel Interface is deleted successfully."
+   },
+   "05" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup page, select Tunnel Type as 6rd Tunnel Interface, then check the drop-down box: Configure Mode, see Result 1.\n  3.Select Configure Mode as Manual, See Result 2.\n  4.Set other elements proper, then configure \"6rd Prefix\" to normal values(ex.6666::), click OK button, see Result 3.\n  5.Configure \"6rd Prefix\" to wrong format values(ex.1::1::), click OK button, see Result 4.\n  6.Configure \"6rd Prefix\" to link-local(ex.fe80::) or multicast(ex.ff02::) addresses, click OK button, see Result 5.",
+      "initial" : "  N/A",
+      "id" : "05",
+      "title" : "[GUI] Manual config for 6rdPrefix MUST be supported",
+      "result" : "  1.There are two modes: Manual and DHCP.\n  2.The four option \"6rd Prefix\", \"6rd Prefix Length\", \"BR IPv4 Address\" and \"IPv4 Mask Length\" are editable for users.\n  3.6rd Prefix can be configured successfully.\n  4.Error: : Data is incorrectly formatted.\n  5.Error: Invalid 6rd Prefix, only non-link-local unicast address is allowed."
+   },
+   "26" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X1.\n  2.On Network->Address Objects page, see Result 1.\n  3.On Network->Interfaces page, IPv4 view, change interface X1's IP address, then see Result 2 on Network->Address Objects page.",
+      "initial" : "  N/A",
+      "id" : "26",
+      "title" : "[GUI] The address of the 6rd delegated prefix AO MUST be updated when the outbound interface's IPv4 address is changed",
+      "result" : "  1.There is an AO named \"6rd Tunnel Delegated Prefix\" in the Address Objects table.\n  2.The Address Detail of the AO \"6rd Tunnel Delegated Prefix\" has also changed depending on X1's IP.\n  For example, if 6rd Prefix is 6060::/56, X1's IP is 10.8.164.227, IPv4 Mask Length is 24, then the 6rd Tunnel Delegated Prefix should be 6060:0:0:00e3::/64(0xe3=227).Now change X1's IP to 10.9.165.228, the 6rd Tunnel Delegated Prefix should be 6060:0:0:00e4::/64(0xe4=228)."
+   },
+   "17" : {
+      "steps" : "  1.Start a DHCP server on X2's subnet, providing option 212, filled with the four parameters' values, special two BRs(ex.10.103.51.78 and 10.103.51.88).\n  2.On Network->Interfaces page, IPv4 view, set interface X2 as a WAN DHCP interface, renew the interface.\n  3.Turn to IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  4.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to DHCP, bound to interface X2, set other elements proper, click OK button.\n  5.Turn to 6rd Tunnel Protocol tab, see Result 1.\n  6.Run some traffic(ex.ping 1234::1, which will go according to 6rd default route and encapsulate BR as its IPv4 dest address) through the 6rd Tunnel, start Capture Monitor, see Result 2.",
+      "initial" : "  FW(X2)---DHCP server",
+      "id" : "17",
+      "title" : "[GUI] [DHCP] Only one 6rdBRIPv4Address should be displayed in 6rd Tunnel Config page",
+      "result" : "  1.Only one \"BR IPv4 Address\"(the first one 10.103.51.78) is shown on the page.\n  2.All packets are forwarded to the BR 10.103.51.78."
+   },
+   "04" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then check the drop-down box: Bound to, see Result 1.",
+      "initial" : "  N/A",
+      "id" : "04",
+      "title" : "[GUI] An outbound interface MUST be selected for 6rd Tunnel Interface",
+      "result" : "  1.Interfaces and sub VLAN interfaces(if exist) are all listed in the box, X0(in SonicOS 5.9) or X1( in SonicOS 6.2) will be selected as default."
+   },
+   "02" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then check the drop-down box: Zone, see Result 1.\n  3.Select each of the Zone type, or create a new Zone for the 6rd Tunnel Interface, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "02",
+      "title" : "[GUI] Zone selection for 6rd tunnel interface MUST be supported",
+      "result" : "  1.LAN, WAN, DMZ and WLAN are all listed in the box and users can create new zone by manual.\n  2.6rd Tunnel Interface can be bound to all of the Zones successfully."
+   },
+   "18" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, bound to X1, check if there is an option for configuring 6rd Tunnel's MTU, see Result 1.\n  3.Turn to IPv4 view, enter the editing page of interface X1, Advanced tab, check if the interface MTU can be edited, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "18",
+      "title" : "[GUI] DUT MUST support to configure MTU of 6rd tunnel interface, or the MTU is derived from the outbound interface (interface's IPv4 MTU \u00a8C 20bytes)",
+      "result" : "  1.There is an editable option for configuring 6rd Tunnel's MTU on the page and its default value is 1280.\n  2.The interface MTU is editable"
+   },
+   "03" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then check the drop-down box: Zone, see Result 1.\n  3.Set other elements proper, leave the Zone type default as Unassigned, Click OK button, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "03",
+      "title" : "[GUI] DUT MUST support to set 6rd tunnel interface into UNASSIGNED",
+      "result" : "  1.The Zone type is set to Unassigned by default.\n  2.The 6rd Tunnel Interface can be created successfully with Unassigned Zone type."
+   },
+   "30" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X1.\n  2.Turn to IPv4 view, set X2 as a WAN Static interface, give it a proper IP, then turn back to IPv6 view, set X2 as a WAN Static interface, too.\n  3.Enter interface X2's editing page, Advanced tab, click Add Address button, on the popup Add IPv6 Address page, select \"Add IPv6 Address with 6rd Delegated Prefix\", set the two parameters \"Preferred IPv6 address\"(ex.1::1) and \"Preferred Prefix Length\"(ex.64), click OK button, see Result 1.\n  4.Bound 6rd Tunnel to an unassigned interface(ex.X4) to make its Status Interface Down, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "30",
+      "title" : "[GUI] All the interface's IPv6 address that are configured as a 6rd delegated address MUST be marked as not available when the related 6rd delegated prefix AO is not available",
+      "result" : "  1.Interface X2 now has an IPv6 address using the 6rd Prefix with IP Type 6rd.\n  2.The IPv6 address using the 6rd Prefix of interface X2 is unavailable and not displayed in the interface settings page."
+   },
+   "16" : {
+      "steps" : "  1.Start a DHCP server on X2's subnet, providing option 212, filled with the four parameters' values.\n  Any DHCP server can be used for this purpose.\n  windows/linux/even another sonicwall device can be used as a dhcp server\n  Below is an example of the DHCP server setup for option 212:\n  Windows server example: Add option 212 to the predefined options ( right click on predefined options on the DHCP server)\n  Select data-type as \"Byte\", enable the checkbox \"array\", select code = 212\n  Now, select the DHCP scope and scope options.\n  Add option 212 to the current scope.\n  Enter the value of the option 212 as below:\n  IPv4 mask length = 24, 6rd prefix length = 16, 6rd prefix = 4444::, BR iopv4 address = 4.4.4.4\n  In the DHCP option the above values can be enterd as decimal as below:\n  24,16,68(decimalvalue of 44),68,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,4\n  2.On Network->Interfaces page, IPv4 view, set interface X2 as a WAN DHCP interface, renew the interface.\n  3.Turn to IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  4.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to DHCP, bound to interface X2, set other elements proper, click OK button.\n  5.Turn to 6rd Tunnel Protocol tab, see Result 1.",
+      "initial" : "  FW(X2)---DHCP server",
+      "id" : "16",
+      "title" : "[GUI] [DHCP] The four 6rd elements should be displayed in 6rd Tunnel Config page",
+      "result" : "  1.6rd Tunnel General Information is shown on the page, the four parameters \"6rd Prefix\", \"6rd Prefix Length\", \"Active BR\" and \"IPv4 Mask Length\" are set as defined in DHCP server's option 212."
+   },
+   "06" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then check the drop-down box: Configure Mode, see Result 1.\n  3.Select Configure Mode as Manual, See Result 2.\n  4.Set other elements proper, then configure \"6rd Prefix Length\" to different values, click OK button, see Result 3.",
+      "initial" : "  N/A",
+      "id" : "06",
+      "title" : "[GUI] Manual config for 6rdPrefixLen MUST be supported",
+      "result" : "  1.There are two modes: Manual and DHCP.\n  2.The four option \"6rd Prefix\", \"6rd Prefix Length\", \"BR IPv4 Address\" and \"IPv4 Mask Length\" are editable for users.\n  3.6rd Prefix Length can be configured successfully with proper values(ex.32,64...) and show error message(Error: : Data out of bounds (min = 0, max = 128).) with bad values(ex.-1, 129...)."
+   },
+   "44" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X2, check the radio button\"Add Default Route Automatically\".\n  2.Start capturing 6over4 packets on PC2.\n  2.Ping several different IPv6 addresses whose prefixes don't match with the 6rd Tunnel Prefix from PC1.\n  3.Stop capturing on PC2, check the packets received, see Result 1.\n  Example config for 6rd prefix:\n  1.create WAN interface X6 and assign static IPv4 address = 4.4.4.1\n  2. On Network->Interfaces page, IPv6 view, add a manual 6rd Tunnel Interface,\n  bound to interface X6.\n  Interface '6rdTunnel' Settings for IPv6\n  Zone: WAN\n  Interface Type: Tunnel interface\n  Tunnel Type: 6rd tunnel Interface\n  Name: 6rd tunnel\n  Tunnel Interface IPv6 Address: 2222::2\n  Prefix Length: 64\n  Bound to: x6\n  Configure Mode: Manual\n  6rd Prefix: 4444::\n  6rd Prefix Length: 16\n  BR IPv4 Address: 4.4.4.4\n  IPv4 Mask Length: 24\n  Tunnel Interface Link MTU: 1280\n  3. check the interface status is up\n  4. create X0 LAN interface , set X0 IPv6 address as below:\n  Note: the X0 v6 address shoudl advertise the 6rd delegated prefix, obtain the delegated prefix fromt he AO that are automatically created upon creating the tunnel.\n  static IPv6: 4444:100::2/64, enable Router Advertisement, advertise subnet prefix\n  5. Let the PC connected to X0 obtain IPv6 address automatically ( It will get a v6 address with 6rd prefix)\n  ping below addresses from X0 PC:\n  4444:1020::7 ------ This is encapsulated in v4 as 4.4.4.2 and sent out on X6\n  4445:2080::9 ---------This should be sent to the BR address ( 4.4.4.4) since the prefix does nto match 6rd\n  7777::9 ---- Should be sent 6over4 to BR address",
+      "initial" : "  PC1---(X0)FW(X2)---PC2(WireShark)",
+      "id" : "44",
+      "title" : "[Func] If the 6rd tunnel interface receives the IPv6 packets with dest address not match the 6rdPrefix, DUT MUST use the 6rdBRIPv4Address as the IPv4 dest address",
+      "result" : "  1.The dest IPv4 addresses in the exterior header are all the BR IPv4 address.\n  For example, if 6rd Prefix is 6060::/64, BR address is 10.103.51.78, we should ping IPv6 addresses like 7070::1, then the dest IPv4 address should be 10.103.51.78, same with BR."
+   },
+   "27" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X1.\n  2.Turn to IPv4 view, set X2 as a LAN Static interface, give it a proper IP, then turn back to IPv6 view, set X2 as a LAN Static interface, too.\n  3.Enter interface X2's editing page, Advanced tab, click Add Address button, on the popup Add IPv6 Address page, select \"Add IPv6 Address with 6rd Delegated Prefix\", set the two parameters \"Preferred IPv6 address\"(ex.1::1) and \"Preferred Prefix Length\"(ex.64), click OK button, see Result 1.\n  4.Change Interface X1's IP, or 6rd Prefix, or the prefix length and the IPv4 mask length to make 6rd Delegated Prefix update, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "27",
+      "title" : "[GUI] Once the 6rd delegated prefix is updated, all interface's IPv6 addresses that are configured as 6rd delegated addresses MUST be updated",
+      "result" : "  1.Interface X2 now has an IPv6 address using the 6rd Prefix with IP Type 6rd.\n  2.On Network->Interfaces page, IPv6 view, now the interface X2's address has been updated, too."
+   },
+   "25" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X1.\n  2.On Network->Address Objects page, see Result 1.",
+      "initial" : "  N/A",
+      "id" : "25",
+      "title" : "[GUI] The AO for 6rd Delegated Prefix MUST be created after 6rd tunnel interface is created",
+      "result" : "  1.There is an AO named \"6rd Tunnel Delegated Prefix\" in the Address Objects table and its value is right.\n  For example, if 6rd Prefix is 6060::/56, X1's IP is 10.8.164.227, IPv4 Mask Length is 24, then the 6rd Tunnel Delegated Prefix should be 6060:0:0:00e3::/64(0xe3=227)."
+   },
+   "28" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X1.\n  2.Turn to IPv4 view, set X2 as a LAN Static interface, give it a proper IP, then turn back to IPv6 view, set X2 as a LAN Static interface, too. Check the radio \"Enable Router Advertisement\" on General tab.\n  3.Enter interface X2's editing page, Advanced tab, click Add Address button, on the popup Add IPv6 Address page, select \"Add IPv6 Address with 6rd Delegated Prefix\", set the two parameters \"Preferred IPv6 address\"(ex.1::1) and \"Preferred Prefix Length\"(ex.64).\n  4.Check the radio \"Advertise Subnet Prefix of Static IPv6 Address\", then click OK button.\n  5.Capture the RAs received on the PC conecting to X2, see Result 1.\n  6.Change Interface X1's IP, or 6rd Prefix, or the prefix length and the IPv4 mask length to make 6rd Delegated Prefix update, keep capturing RAs from X2 on the PC, see Result 2.\n  7.Test both Manual and DHCP mode.",
+      "initial" : "  FW(X2)---PC(Wireshark)",
+      "id" : "28",
+      "title" : "[GUI] Once the 6rd delegated address of the interface is updated, the advertised prefix in Router Advertisement MUST be updated, if 'Advertise Subnet' is enabled",
+      "result" : "  1.6rd Prefix is released in the RAs.\n  2.6rd Prefix released in the RAs has been updated depending on the changes of X1's IP or 6rd parameters."
+   },
+   "01" : {
+      "steps" : "  1.Restart FW with factory default settings.\n  2.On Network->Interfaces page, IPv6 view, check if there is any 6rd Tunnel Interface by default, see Result 1.",
+      "initial" : "  N/A",
+      "id" : "01",
+      "title" : "[GUI] 6rd Tunnel MUST be disabled by default",
+      "result" : "  1.No 6rd Tunnel Interfaces exist."
+   },
+   "40" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to static interface X2.\n  2.From PC1, ping an IPv6 address with the 6rd Tunnel Prefix, capture 6over4 packets on PC2, see Result 1.\n  3.Edit the 6rd Tunnel Interface, bound to static interface X3.\n  4.From PC1, ping an IPv6 address with the 6rd Tunnel Prefix again, capture 6over4 packets on PC3, see Result 2.\n  5.Change interfaces X2 and X3's mode to DHCP or PPPOE, getting proper IPs, repeat the test.",
+      "initial" : "   (X2)---PC2(WireShark)\n  PC1---(X0)FW (X3)---PC3(WireShark)",
+      "id" : "40",
+      "title" : "[Func] DUT MUST use the outbound interface's IPv4 address as the source address to send and receive 6rd traffic",
+      "result" : "  1.The 6over4 packets' source address is interface X2's IPv4 address.\n  2.The 6over4 packets' source address is interface X3's IPv4 address."
+   },
+   "20" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, select Configure Mode as Manual, set all the elements proper, click OK button, see Result 1.\n  3.On Network->Routing page, IPv6 view, check if there is a route with Destination \"6rd Tunnel Prefix\" and interface \"6rdTunnel\" in the PBR table, see Result 2.\n  4.Change Configure Mode to DHCP, repeat steps 2~3.",
+      "initial" : "  FW -> X2 ->PC",
+      "id" : "20",
+      "title" : "[GUI] After getting the four 6rd elements, DUT MUST add a route for the 6rdPrefix destined to the 6rd tunnel interface",
+      "result" : "  1.On IPv6 interfaces settings page, the 6rd Tunnel's Status is Interface Up.\n  2.The route is in the PBR table."
+   },
+   "14" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to Manual.\n  3.Confirm how many \"BR IPv4 Address\" options can be set on the page, see Result 1.",
+      "initial" : "  N/A",
+      "id" : "14",
+      "title" : "[GUI] [Manual] Only one 6rdBRIPv4Address can be configured for one 6rd tunnel interface",
+      "result" : "  1.Only one \"BR IPv4 Address\" option can be set on the page."
+   },
+   "07" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then check the drop-down box: Configure Mode, see Result 1.\n  3.Select Configure Mode as Manual, See Result 2.\n  4.Set other elements proper, then configure \"IPv4 Mask Length\" to different values, click OK button, see Result 3.",
+      "initial" : "  N/A",
+      "id" : "07",
+      "title" : "[GUI] Manual config for IPv4MaskLen MUST be supported",
+      "result" : "  1.There are two modes: Manual and DHCP.\n  2.The four option \"6rd Prefix\", \"6rd Prefix Length\", \"BR IPv4 Address\" and \"IPv4 Mask Length\" are editable for users.\n  3.IPv4 Mask Length can be configured successfully with proper values(ex.8,24...) and show error message(Error: : Data out of bounds (min = 0, max = 32).) with bad values(ex.-1, 33...)."
+   },
+   "24" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X1.\n  2.On Firewall->Access Rules page, IPv6 view, add a access rule from WAN to 6rdTunnel, Source Port and Service: Any, Action:Allow, see Result 1.\n  3.On Network->Interfaces page, IPv6 view, delete the 6rd Tunnel Interface. Then check the from WAN access rules on Firewall->Access Rules page, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "24",
+      "title" : "[GUI] After deleting the 6rd tunnel interface, all manual and auto-added access rules that is destined to it MUST be deleted",
+      "result" : "  1.The access rule from WAN to 6rdTunnel is in the Access Rules table, and the auto added access rules destined to 6rdTunnel are there, too.\n  2.There isn't any 6rd realated access rules, neither the auto added nor the manual configured, 6rdTunnel is no longer in the list when selecting From or To Zone/Interface."
+   },
+   "10" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to Manual.\n  3.Set \"BR IPv4 Address\" to a unicast IPv4 address(ex.10.103.51.78) and other elements proper, click OK button, see Result 1.\n  4.Set \"BR IPv4 Address\" to a multicast(ex.225.1.1.1) or broadcast(ex.255.255.255.255) IPv4 address and other elements proper, click OK button, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "10",
+      "title" : "[GUI] [Manual] The 6rdBRIPv4Address MUST be a unicast IPv4 address",
+      "result" : "  1.The value of \"BR IPv4 Address\" can be set successfully.\n  2.The value of \"BR IPv4 Address\" can't be set and related error message will be shown(Error: Invalid BR IPv4 Address.)."
+   },
+   "31" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X1.\n  2.On Network->Address Objects page, check the AO table, see Result 1.\n  3.On Network->Interfaces page, IPv6 view, delete the 6rd Tunnel Interface. Then check the AO table on Network->Address Objects page, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "31",
+      "title" : "[GUI] After deleting the 6rd tunnel interface, all auto-added AO for 6rd Delegated Prefix MUST be deleted",
+      "result" : "  1.AO \"6rd Tunnel Prefix\", \"6rd Tunnel Delegated Prefix\", \"6rdTunnel IPv6 Primary Static Address\" and \"6rdTunnel IPv6 Primary Static Address Subnet\" are auto added.\n  2.The four AOs are deleted, too."
+   },
+   "35" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to DHCP, bound to interface X2, set other elements proper, click OK button.\n  3.Start a DHCP server on X2's subnet, providing OPTION_6RD(212), filled with the four options' values, and the 6rd Prefix is set to a link-local or multicast IPv6 address.\n  4.Turn to IPv4 view, set interface X2 as a WAN DHCP interface, renew the interface.\n  5.Turn to IPv6 view, 6rd Tunnel configure page, Protocol tab, see Result 1.",
+      "initial" : "  FW(X2)---DHCP server",
+      "id" : "35",
+      "title" : "[Func] [DHCP] DUT MUST ignore the OPTION_6RD if the 6rdPrefix is not a unique local or global IPv6 unicast prefix",
+      "result" : "  1.The \"6rd Tunnel General Information\" is not available because FW ignores the OPTION_6RD."
+   },
+   "11" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to Manual.\n  3.Set \"IPv4 Mask Length\" to a proper value(0~32, ex.0, 8, 32...) and other elements proper, click OK button, see Result 1.\n  4.Set \"IPv4 Mask Length\" to an invalid value(ex.33, -1...) and other elements proper, click OK button, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "11",
+      "title" : "[GUI] [Manual] The IPv4MaskLen MUST be limited between 0 and 32",
+      "result" : "  1.The value of \"IPv4 Mask Length\" can be set successfully.\n  2.The value of \"IPv4 Mask Length\" can't be set and related error message will be shown(Error: : Data out of bounds (min = 0, max = 32).)."
+   },
+   "42" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X2.\n  2.On PC1, construct an IPv6 packet whose destination prefix is same with the 6rd Tunnel Prefix, send the packets continuously.\n  3.Capture 6over4 packets on PC2, record the exterior IPv4 header's dest address(IP1) and the inner IPv6 header's dest address(IP2).\n  4.On PC2, construct an 6over4 packet, set the inner source IPv6 address same with IP2 but the exterior IPv4 source address different with IP1, the exterior IPv4 dest address is X2's IP, send the packets continuously.\n  5.On System->Packet Monitor page, start capture, see Result 1.",
+      "initial" : "  PC1(XCAP)---(X0)FW(X2)---PC2(XCAP,WireShark)",
+      "id" : "42",
+      "title" : "--------[ONHOLD] [Func] DUT MUST drop the packets if the embedded IPv4 source address of the encapsulated IPv6 packet is not the same as the IPv4 source address according to the configured parameters",
+      "result" : "  1.The 6over4 packets coming from X2 are dropped by FW."
+   },
+   "22" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X1.\n  2.Turn to IPv4 view, set X2 as a LAN Static interface, give it a proper IP, then turn back to IPv6 view, set X2 as a LAN Static interface, too.\n  3.Enter interface X2's editing page, Advanced tab, click Add Address button, on the popup Add IPv6 Address page, select \"Add IPv6 Address with 6rd Delegated Prefix\", set the two parameters \"Preferred IPv6 address\"(ex.1::1) and \"Preferred Prefix Length\"(ex.64).\n  4.Click OK button, see Result 1.\n  5.Delete the 6rd Tunnel Interface, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "22",
+      "title" : "[GUI] After deleting the 6rd tunnel interface, all 6rd delegated address configured on any other interface MUST be deleted",
+      "result" : "  1.Interface X2 now has an IPv6 address using the 6rd Prefix with IP Type 6rd.\n  2.The IPv6 address using the 6rd Prefix of interface X2 is deleted, too."
+   },
+   "08" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then check the drop-down box: Configure Mode, see Result 1.\n  3.Select Configure Mode as Manual, See Result 2.\n  4.Set other elements proper, then configure \"BR IPv4 Address\" to different values, click OK button, see Result 3.",
+      "initial" : "  N/A",
+      "id" : "08",
+      "title" : "[GUI] Manual config for 6rdBRIPv4Address MUST be supported",
+      "result" : "  1.There are two modes: Manual and DHCP.\n  2.The four option \"6rd Prefix\", \"6rd Prefix Length\", \"BR IPv4 Address\" and \"IPv4 Mask Length\" are editable for users.\n  3.BR IPv4 Address can be configured successfully with proper IPv4 address(ex.10.103.51.78) and show error message(Error: Invalid BR IPv4 Address.) with invalid IP values(ex.225.1.1.1)."
+   },
+   "13" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to Manual.\n  3.Confirm how many \"6rd Prefix\" options can be set on the page, see Result 1",
+      "initial" : "  N/A",
+      "id" : "13",
+      "title" : "[GUI] [Manual] Only one 6rd domain (6rdPrefix) can be configured for one 6rd tunnel interface",
+      "result" : "  1.Only one \"6rd Prefix\" option can be set on the page."
+   },
+   "23" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, Tunnel Interface IPv6 Address 6000::1/64, bound to interface X1.\n  2.On Network->Routing page, IPv6 view, add a PBR with Destination 1::1 and Interface 6rdTunnel, see Result 1.\n  3.On Network->Interfaces page, IPv6 view, delete the 6rd Tunnel Interface. Then check the PBR table on Network->Routing page, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "23",
+      "title" : "[GUI] After deleting the 6rd tunnel interface, all manual and auto-added routes that are destined to it MUST be deleted",
+      "result" : "  1.The route with Destination 1::1 and interface 6rdTunnel is in the PBR table, and the auto added 6rd routes are there, too.\n  The four auto added 6rd routes are:\n  Destination Interface Metric\n  6rd Tunnel Delegated Prefix Drop_TunnelIf 255\n  6rd Tunnel Prefix 6rdTunnel 20\n  6000::/64 6rdTunnel 20\n  Any 6rdTunnel 20\n  2.There isn't any 6rd realated route, neither the auto added nor the manual configured."
+   },
+   "29" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X2, who is a WAN DHCP, LAN/WAN/DMZ static or PPPOE interface with a proper IP.\n  2.On Network->Address Objects page, check the Address Detail of AO \"6rd Tunnel Delegated Prefix\", see Result 1.\n  3.On Network->Interfaces page, IPv4 view, set X2's Zone to Unassigned/shut down interface X2/release IP when X2 is a DHCP client(or remove DHCP server)/disconnect when X2 is a PPPOE interface to make its IP unavailable.\n  4.On Network->Address Objects page, check the Address Detail of AO \"6rd Tunnel Delegated Prefix\" again, see Result 2.\n  Note: When a tunnel is bound to an interface system does not allow to unassign the interface, also when the v4 interface is shutdown administratively, the tunnel goes down but AO remains unaltered.",
+      "initial" : "  N/A",
+      "id" : "29",
+      "title" : "[GUI] The address of the 6rd delegated prefix AO MUST be updated to ::/128 when the outbound interface's IPv4 address is not available",
+      "result" : "  1.Address Detail of AO \"6rd Tunnel Delegated Prefix\" is a proper IPv6 prefix.\n  2.Address Detail of AO \"6rd Tunnel Delegated Prefix\" is ::/128."
+   },
+   "39" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to DHCP, bound to interface X2, set other elements proper, click OK button.\n  3.Start a DHCP server on X2's subnet, providing OPTION_6RD(212), filled with the four options' values, and the the sum of (32 - IPv4MaskLen) + 6rdPrefixLen is set to larger than 128(ex.IPv4MaskLen=8, 6rePrefixLen=120, 32-8+120=144>128).\n  4.Turn to IPv4 view, set interface X2 as a WAN DHCP interface, renew the interface.\n  5.Turn to IPv6 view, 6rd Tunnel configure page, Protocol tab, see Result 1.",
+      "initial" : "  FW(X2)---DHCP server",
+      "id" : "39",
+      "title" : "[Func] [DHCP] DUT MUST ignore the OPTION_6RD if the the sum of (32 - IPv4MaskLen) + 6rdPrefixLen is larger than 128",
+      "result" : "  1.The \"6rd Tunnel General Information\" is not available because FW ignores the OPTION_6RD."
+   },
+   "36" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to DHCP, bound to interface X2, set other elements proper, click OK button.\n  3.Start a DHCP server on X2's subnet, providing OPTION_6RD(212), filled with the four options' values, and the BR address is set to a broadcast or multicast IPv4 address.\n  4.Turn to IPv4 view, set interface X2 as a WAN DHCP interface, renew the interface.\n  5.Turn to IPv6 view, 6rd Tunnel configure page, Protocol tab, see Result 1.",
+      "initial" : "  FW(X2)---DHCP server",
+      "id" : "36",
+      "title" : "[Func] [DHCP] DUT MUST ignore the OPTION_6RD if the 6rdBRIPv4Address is not a unicast IPv4 address",
+      "result" : "  1.The \"6rd Tunnel General Information\" is not available because FW ignores the OPTION_6RD."
+   },
+   "41" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, add a 6rd Tunnel Interface, bound to interface X2.\n  2.On PC1, construct an IPv6 packet whose destination prefix is same with the 6rd Tunnel Prefix, set the IPv6 Traffic Class field to a particular value, send the packets continuously.\n  3.Capture 6over4 packets on PC2, compare the exterior IPv4 header's ToS field and the inner IPv6 header's Traffic Class field, see Result 1.",
+      "initial" : "  PC1(XCAP)---(X0)FW(X2)---PC2(WireShark)",
+      "id" : "41",
+      "title" : "--------[ONHOLD] [Func] When encapsulating IPv6 into IPv4 header, the DUT MUST copy IPv6 Traffic Class field to the IPv4 ToS (Type of Service) field",
+      "result" : "  1.The IPv4 ToS field is copied from the IPv6 Traffic Class field."
+   },
+   "12" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to Manual.\n  3.Set \"IPv4 Mask Length\" to 24 and \"6rd Prefix Length\" to 32(32-24+32=40<64), click OK button, see Result 1.\n  4.Set \"IPv4 Mask Length\" to 16 and \"6rd Prefix Length\" to 48(32-16+48=64=64), click OK button, see Result 1.\n  5.Set \"IPv4 Mask Length\" to 16 and \"6rd Prefix Length\" to 64(32-16+64=80>64), click OK button, see Result 1.\n  6.Set \"IPv4 Mask Length\" to 8 and \"6rd Prefix Length\" to 120(32-8+120=144>128), click OK button, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "12",
+      "title" : "[GUI] [Manual] The sum of (32 - IPv4MaskLen) + 6rdPrefixLen MUST be less than or equal to 128",
+      "result" : "  1.The values can be set successfully.\n  2.The values can't be set and related error message will be shown(Error: Invalid 6rd Delegated Prefix Length which is based on composite attributes 6rd Prefix Length and IPv4 Mask Length.)."
+   },
+   "15" : {
+      "steps" : "  1.Start a DHCP server on X2's subnet, providing option 212, filled with the four parameters' values.\n  Any DHCP server can be used for this purpose.\n  windows/linux/even another sonicwall device can be used as a dhcp server\n  Below is an example of the DHCP server setup for option 212:\n  Windows server example: Add option 212 to the predefined options ( right click on predefined options on the DHCP server)\n  Select data-type as \"Byte\", enable the checkbox \"array\", select code = 212\n  Now, select the DHCP scope and scope options.\n  Add option 212 to the current scope.\n  Enter the value of the option 212 as below:\n  IPv4 mask length = 24, 6rd prefix length = 16, 6rd prefix = 4444::, BR iopv4 address = 4.4.4.4\n  In the DHCP option the above values can be enterd as decimal as below:\n  24,16,68(decimalvalue of 44),68,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,4\n  2.On Network->Interfaces page, IPv4 view, set interface X2 as a WAN DHCP interface, renew the interface, see Result 1.\n  3.Turn to IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  4.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to DHCP, bound to interface X2, set other elements proper, click OK button, see Result 2.",
+      "initial" : "  FW(X2)---DHCP server",
+      "id" : "15",
+      "title" : "[GUI] [DHCP] DHCP client MUST be enabled and getting a valid address on the outbound interface before the 6rd tunnel interface is UP",
+      "result" : "  1.Interface X2 get an IP in the DHCP server's scope.\n  2.On Interfaces IPv6 view, the 6rd Tunnel's Status is \"Interface Up\".\n  3. 6rd interface should be populated with the 4 parameters obtained from DHCP server."
+   },
+   "38" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to DHCP, bound to interface X2, set other elements proper, click OK button.\n  3.Start a DHCP server on X2's subnet, providing OPTION_6RD(212), filled with the four options' values, and the IPv4 Mask Length is set to a value not between 0-32, say 50.\n  4.Turn to IPv4 view, set interface X2 as a WAN DHCP interface, renew the interface.\n  5.Turn to IPv6 view, 6rd Tunnel configure page, Protocol tab, see Result 1.",
+      "initial" : "  FW(X2)---DHCP server",
+      "id" : "38",
+      "title" : "[Func] [DHCP] DUT MUST ignore the OPTION_6RD if the IPv4MaskLen is not the value between 0 and 32",
+      "result" : "  1.The \"6rd Tunnel General Information\" is not available because FW ignores the OPTION_6RD."
+   },
+   "34" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to DHCP, bound to interface X2, set other elements proper, click OK button.\n  3.Start a DHCP server on X2's subnet, providing two OPTION_6RD(212), both filled with the four options' values, but different from each other.\n  4.Turn to IPv4 view, set interface X2 as a WAN DHCP interface, renew the interface.\n  5.Turn to IPv6 view, 6rd Tunnel configure page, Protocol tab, see Result 1.",
+      "initial" : "  FW(X2)---DHCP server",
+      "id" : "34",
+      "title" : "[Func] [DHCP] DUT MUST only accept one OPTION_6RD (usually the first one in the list), DUT MUST silently ignore other OPTION_6RD in the DHCP option list",
+      "result" : "  1.6rd Tunnel General Information is shown on the page, the four parameters \"6rd Prefix\", \"6rd Prefix Length\", \"Active BR\" and \"IPv4 Mask Length\" are set as defined in DHCP server's first OPTION_6RD(212)."
+   },
+   "45" : {
+      "steps" : "  1) Add a 6rd tunnel interface, zone WAN,configure mode as DHCP, bound to interface X2, keep all other configurations as default; 2) Configure X2 , WAN zone, DHCP mode, and connect it to a DHCPv4 server; 3) Configure that DHCPv4 server, add 6rd DHCPv4 option 212; 4) Check the 6rd interface status, it is UP, and IPv6 traffic from LAN to WAN could be forwarded by this 6rd tunnel interface; 5) Unassigned this 6rd tunnel interface, check its status,it should be down.",
+      "initial" : "  DUT---------6rd BR",
+      "id" : "45",
+      "title" : "Unassigned a 6rd interface, the tunnel should be down immediately.",
+      "result" : "  in step 5, after unassigned a 6rd tunnel interface, its status should be down."
+   },
+   "37" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to DHCP, bound to interface X2, set other elements proper, click OK button.\n  3.Start a DHCP server on X2's subnet, providing OPTION_6RD(212), filled with the four options' values, and containing two BR IPv4 address.\n  4.Turn to IPv4 view, set interface X2 as a WAN DHCP interface, renew the interface.\n  5.Turn to IPv6 view, 6rd Tunnel configure page, Protocol tab, see Result 1.\n  6.Run some IPV6 traffic from LAN to WAN, with different destination but all go through BR, start Capture Monitor, see Result 2.",
+      "initial" : "  FW(X2)---DHCP server",
+      "id" : "37",
+      "title" : "[Func] [DHCP] DUT should only use the first 6rdBRIPv4Address in the OPTION_6RD if it has more than one 6rdBRIPv4Addresses",
+      "result" : "  1.6rd Tunnel General Information is shown on the page, the \"Active BR\" is set to the same value of the first BR address in DHCP server's OPTION_6RD(212).\n  2.The traffic are all forwarded to the first BR, no traffic is forwarded to the second."
+   },
+   "43" : {
+      "steps" : "  1.create WAN interface X6 and assign static IPv4 address = 4.4.4.1\n  2. On Network->Interfaces page, IPv6 view, add a manual 6rd Tunnel Interface,\n  bound to interface X6.\n  Interface '6rdTunnel' Settings for IPv6\n  Zone: WAN\n  Interface Type: Tunnel interface\n  Tunnel Type: 6rd tunnel Interface\n  Name: 6rd tunnel\n  Tunnel Interface IPv6 Address: 2222::2\n  Prefix Length: 64\n  Bound to: x6\n  Configure Mode: Manual\n  6rd Prefix: 4444::\n  6rd Prefix Length: 16\n  BR IPv4 Address: 4.4.4.4\n  IPv4 Mask Length: 24\n  Tunnel Interface Link MTU: 1280\n  3. check the interface status is up\n  4. create X0 LAN interface , set X0 IPv6 address as below:\n  Note: the X0 v6 address shoudl advertise the 6rd delegated prefix, obtain the delegated prefix fromt he AO that are automatically created upon creating the tunnel.\n  static IPv6: 4444:100::2/64, enable Router Advertisement, advertise subnet prefix\n  5. Let the PC connected to X0 obtain IPv6 address automatically ( It will get a v6 address with 6rd prefix)\n  5.Start capturing 6over4 packets on PC2 and firewall packet capture\n  6.Ping several different IPv6 addresses whose prefixes match with the 6rd Tunnel\n  Prefix from PC1.\n  ex:\n  4444:1020::7 ------ This is encapsulated in v4 as 4.4.4.2 and sent out on X6\n  4445:2080::9 ---------This should be sent to the BR address ( 4.4.4.4) since the prefix does nto match 6rd\n  7777::9 ---- Should be sent 6over4 to BR address\n  4.Stop capturing on PC2, check the packets received\n  5. check the packet captures on the firewall",
+      "initial" : "  PC1---(X0)FW(X2)---PC2(WireShark)",
+      "id" : "43",
+      "title" : "[Func]If the 6rd tunnel interface receives the IPv6 packets with dest address match the 6rdPrefix, DUT MUST use the address derived from the dest IPv6 address according to the configured parameters of the 6rd domain as the IPv4 dest address",
+      "result" : "  1.The dest IPv4 addresses in the exterior header are all derived from the dest IPv6 addresses according to the configured parameters of the 6rd domain.\n  For example, if 6rd Prefix is 6060::/64, BR address is 10.103.51.78, IPv4 Mask Length is 24, we should ping IPv6 addresses like 6060::a000:0:0:1, then the derived dest IPv4 address should be 10.103.51.160(first 24 bits same with BR, latter 8 bits 0xa0=160)."
+   },
+   "19" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, select Configure Mode as Manual, set all the elements proper, click OK button, see Result 1.\n  3.On Network->Routing page, IPv6 view, check if there is a route with Destination \"6rd Tunnel Delegated Prefix\" and interface \"Drop_TunnelIf\" in the PBR table, see Result 2.\n  4.Change Configure Mode to DHCP, repeat steps 2~3.",
+      "initial" : "  N/A",
+      "id" : "19",
+      "title" : "[GUI] After getting the four 6rd elements, DUT MUST add a null route for its 6rd delegated prefix",
+      "result" : "  1.On IPv6 interfaces settings page, the 6rd Tunnel's Status is Interface Up.\n  2.The route is in the PBR table."
+   },
+   "09" : {
+      "steps" : "  1.On Network->Interfaces page, IPv6 view, click \"Add Interface\" button to create a Tunnel interface.\n  2.On the popup configure page, select Tunnel Type as 6rd Tunnel Interface, then set Configure Mode to Manual.\n  3.Set \"6rd Prefix\" to a unique local(ex.fec0::/10) or global IPv6 unicast(2001::/64) prefix, then set other elements proper, click OK button, see Result 1.\n  4.Set \"6rd Prefix\" to a link-local(ex.fe80::/10) or muticast(ff00::/8) IPv6 prefix and other elements proper, click OK button, see Result 2.",
+      "initial" : "  N/A",
+      "id" : "09",
+      "title" : "[GUI] [Manual] The 6rdPrefix MUST be limited as a unique local or global IPv6 unicast prefix",
+      "result" : "  1.The value of \"6rd Prefix\" can be set successfully.\n  2.The value of \"6rd Prefix\" can't be set and related error message will be shown(Error: Invalid 6rd Prefix, only non-link-local unicast address is allowed.)."
+   }
+}

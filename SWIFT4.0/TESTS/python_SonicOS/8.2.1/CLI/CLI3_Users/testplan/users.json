@@ -1,0 +1,408 @@
+{
+    "3937374": {
+        "steps": "admin@2CB8ED4AD094>configure\nconfig(2CB8ED4AD094)# user ldap\nconfig(2CB8ED4AD094)#test 10.8.141.175 type ldap-search basic ldap1 use user login-name\nnote:10.8.141.175 is not added in LDAP server(not in this list)",
+        "initial": "",
+        "id": "3937374",
+        "title": "GEN7-51992:The firmware will not crash when try to test not added ldap server via command test 10.8.141.175 type ldap-search basic test use user login-name",
+        "result": "The firewall will not crash"
+    },
+    "1": {
+        "steps": "1 Input the command'user ?' on config mode",
+        "initial": "",
+        "id": "1",
+        "title": "Verify commands after typing ‘user?‘on CLI",
+        "result": "The command \"authentication, ldap, local-users,radius,sso\" would be displayed"
+    },
+    "10": {
+        "steps": "1 Input the command\"user authentication\" on config mode\n\n2 Input the command \"login-uniqueness\"\n\n3 Input the command \"commit",
+        "initial": "",
+        "id": "10",
+        "title": "enable login-uniqueness",
+        "result": "It would enable enforcing a single login per user name."
+    },
+    "11": {
+        "steps": "1 Input the command \"user authentication\" on config mode\n\n2 Input the command \"method ldap/ldap +local/local/radius/radius+local\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "11",
+        "title": "config authentication method",
+        "result": "It would set the user authentication method."
+    },
+    "12": {
+        "steps": "1 Input the command \"user authentication\" on config mode\n\n2 Input the command \"rule-auth-bypass-http-url *.windowsupdate.com\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "12",
+        "title": "authentication: rule-auth-bypass-http-url",
+        "result": "It would add a URL(*.windowsupdate.com)to bypass authentication in access rules"
+    },
+    "13": {
+        "steps": "1 Input the command \"user authentication\" on config mode\n\n2 Input the command\"show-user-status-windows\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "13",
+        "title": "authentication: show-user-status-window",
+        "result": "It would enable showing the status window after web login"
+    },
+    "14": {
+        "steps": "1 Input the command \"user authentication\" on config mode\n\n2 Input the command \"status-window-heartbeat period 60\"\n\n3 Input the command \"status-window-heartbeat timeout 123\"\n\n4 Input the command \"commit\"",
+        "initial": "",
+        "id": "14",
+        "title": "authentication: status-window-heartbeat",
+        "result": "1 To step 2, it set the period time of user's login status window sends heartbeat to 60\n\n2 To step 3 ,it set timeout on heartbeat from user's login status windows to 123"
+    },
+    "15": {
+        "steps": "1 Input the command \"user authentication\" on config mode\n\n2 Input the command \"web-login-session-limit 123\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "15",
+        "title": "authentication: web-login-session-limit",
+        "result": "It would set the maximum login session time for web users to 123"
+    },
+    "16": {
+        "steps": "1 Input the command \"user ldap\" on config mode",
+        "initial": "",
+        "id": "16",
+        "title": "ldap: allow-references",
+        "result": "It would config LDAP settings"
+    },
+    "17": {
+        "steps": "1 Input the command \"user ldap\" on config mode\n\n2 Input the command \"allow-referrals\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "17",
+        "title": "ldap: allow-referrals",
+        "result": "It would enable allow referrals"
+    },
+    "2": {
+        "steps": "1 Input the command'user authentication' on config mode\n\n2 Input the command'acceptable-use-policy'",
+        "initial": "",
+        "id": "2",
+        "title": "authentication: acceptable-use-policy",
+        "result": "It would set the acceptable use policy."
+    },
+    "3": {
+        "steps": "1 Input the command\"user authentication\" on config mode\n\n2 Input the command\"aup-on-zones public\"",
+        "initial": "",
+        "id": "3",
+        "title": "authentication: aup-on-zones",
+        "result": "It would enable the AUP on login from public zone"
+    },
+    "4": {
+        "steps": "1 Input the command\"user authentication\" on config mode\n\n2 Input the command\"auth-page-timeout 2\"",
+        "initial": "",
+        "id": "4",
+        "title": "authentication: auth-page-timeout",
+        "result": "It would set the timeout to 2 for showing the web login page."
+    },
+    "5": {
+        "steps": "1 Input the command\"user authentication\" on config mode\n\n2 Input the command\"case-sensitive-names\"\n\n3 Input the command\"commit\"",
+        "initial": "",
+        "id": "5",
+        "title": "authentication: case-sensitive-names",
+        "result": "It would enable treating user names as case-sensitive. \n\nApplying changes."
+    },
+    "6": {
+        "steps": "1 Input the command \"user authentication\" on config mode\n\n2 Input the command \"cli ?\"",
+        "initial": "",
+        "id": "6",
+        "title": "authentication: cli",
+        "result": "It would config cli"
+    },
+    "7": {
+        "steps": "1 Input the command \"user authentication\" on config mode\n\n2 Input the command\"disconnected-user-detect\"\n\n3 Input the command\"commit\"",
+        "initial": "",
+        "id": "7",
+        "title": "authentication: disconnected-user-detect",
+        "result": "It would enable detecting disconnected web  users.\n\nApplying changes"
+    },
+    "8": {
+        "steps": "1 Input the command\"user authentication\" on config mode\n\n2 Input the command\"http-redirect-after-login\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "8",
+        "title": "authentication: http-redirect-after-login",
+        "result": "It would enable redirect from HTTPS to HTTP after login\n\nApplying changes"
+    },
+    "9": {
+        "steps": "1 Input the command \"user authentication\" on config mode\n\n2 Input the command \"inactivity-timeout 40\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "9",
+        "title": "authentication: inactivity-timeout",
+        "result": "It would set the user inactivity timeout for 40"
+    },
+    "18": {
+        "steps": "1 Input the command \"user ldap\" on config mode\n\n2 Input the command 'default-user-group\"Trusted Users\"'\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "18",
+        "title": "ldap: default-user-group",
+        "result": "It would select a default user group(Trusted Users) for LDAP users."
+    },
+    "19": {
+        "steps": "1 Input the command \"user ldap\" on config mode\n\n2 Input the command \"directory\"",
+        "initial": "",
+        "id": "19",
+        "title": "ldap: directory",
+        "result": "It would configure the LDAP directory"
+    },
+    "20": {
+        "steps": "1 Input the command\"user ldap\" on config mode\n\n2 Input the command \"local-tls-certificate my_ldap_server\"",
+        "initial": "",
+        "id": "20",
+        "title": "ldap: local-tls-certificate",
+        "result": "It would select a local certificate for TLS"
+    },
+    "22": {
+        "steps": "1 Input the command \"user ldap\" on config mode\n\n2 Input the command \"local-users-only\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "22",
+        "title": "ldap: local-users-only",
+        "result": "It would allow only LDAP users with local accounts."
+    },
+    "23": {
+        "steps": "1 Input the command \"user ldap\" on config mode\n\n2 Input the command \"operation-timeout 123\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "23",
+        "title": "ldap: operation-timeout",
+        "result": "It would set the overall timeout on an LDAP operation to 123"
+    },
+    "24": {
+        "steps": "1 Input the command \"user ldap\" on config mode\n\n2 Input the command \"relay\"",
+        "initial": "",
+        "id": "24",
+        "title": "ldap: relay",
+        "result": "It woulde configure the RADIUS to LDAP relay"
+    },
+    "25": {
+        "steps": "",
+        "initial": "",
+        "id": "25",
+        "title": "ldap: schema",
+        "result": ""
+    },
+    "26": {
+        "steps": "1 Input the command \"user ldap\" on config mode\n\n2 Input the command \"server 192.168.168.1\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "26",
+        "title": "ldap: server",
+        "result": "It would configure an LDAP server(192.168.168.1)"
+    },
+    "27": {
+        "steps": "1 Input the command \"user ldap\" on config mode\n\n2 Input the command \"test user1 pwd1234\"",
+        "initial": "",
+        "id": "27",
+        "title": "ldap: test",
+        "result": "It would run the LDAP test"
+    },
+    "28": {
+        "steps": "1 Input the command \"user local-users\" on config mode\n\n2 Input the command \"apply-password-constraints\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "28",
+        "title": "local-users: apply-password-constraints",
+        "result": "It would apply the password constraints for local users."
+    },
+    "29": {
+        "steps": "1 Input the command \"user local-users\" on config mode\n\n2 Input the command 'group \"Special Users\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "29",
+        "title": "local-users: group",
+        "result": "It would add a local user group(Special Users)."
+    },
+    "30": {
+        "steps": "1 Input the command \"user local-users\" on config mode\n\n2 Input the command \"prune-on-expiry\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "30",
+        "title": "local-users: prune-on-expiry",
+        "result": "It would enable \"Prune expired user accounts\""
+    },
+    "31": {
+        "steps": "1 Input the command \"user local-users\" on config mode\n\n2 Input the command \"user johndoe\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "31",
+        "title": "local-users: user",
+        "result": "It would add or update l local user account"
+    },
+    "32": {
+        "steps": "1 Input the command \"user radius\" on config mode\n\n2 Input the command 'default-user-group \"special users\"'\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "32",
+        "title": "radius: default-user-group",
+        "result": "It would select a default user group(special users) for RADIUS users"
+    },
+    "34": {
+        "steps": "1 Input the command \"user radius\" on config mode\n\n2 Input the command \"local-users-only\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "34",
+        "title": "radius: local-users-only",
+        "result": "It would allow only RADIUS users with local accounts"
+    },
+    "35": {
+        "steps": "1 Input the command \"user radius\" on config mode\n\n2 Input the command \"retries 4\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "35",
+        "title": "radius: retires",
+        "result": "It would set the number of retries for the RADIUS servers to 4"
+    },
+    "36": {
+        "steps": "1 Input the command\"user radius\" on config mode.\n\n2 Input the command\"server host 1.2.3.4/primary/secondary\"",
+        "initial": "",
+        "id": "36",
+        "title": "radius: server",
+        "result": "It would config a  RADIUS server"
+    },
+    "37": {
+        "steps": "1 Input the command \"user radius\" on config mode\n\n2 Input the command \"test user1 pwd1234\"",
+        "initial": "",
+        "id": "37",
+        "title": "radius: test",
+        "result": "It's ok"
+    },
+    "38": {
+        "steps": "1 Input the command \"user radius\" on config mode\n\n2 Input the command \"timeout 10\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "38",
+        "title": "radius: timeout",
+        "result": "It would set the timeout for the RADIUS servers to 10."
+    },
+    "39": {
+        "steps": "1 Input the command \"user radius\" on config mode\n\n2 Input the command \"user-group-mechanism radius-attribute vendor-specific\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "39",
+        "title": "radius: user-group-mechanism",
+        "result": "It would set the user group mechanism for RADIUS users"
+    },
+    "40": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"agent 172.168.168.168\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "40",
+        "title": "sso: agent",
+        "result": "It would configure SSO agent, like host ,max-requests,port....."
+    },
+    "41": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"cli ?\"",
+        "initial": "",
+        "id": "41",
+        "title": "sso: cli",
+        "result": "It would config cli"
+    },
+    "42": {
+        "steps": "1 Input the command \"user sso\"  on config mode\n\n2 Input the command 'default-user-group \"special users\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "42",
+        "title": "sso: default-user-group",
+        "result": "It woulde select a default user group for SSO users"
+    },
+    "43": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"enforce-on-zone LAN\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "43",
+        "title": "sso: enforce-on-zone",
+        "result": "It would select to always enforce SSO on LAN"
+    },
+    "44": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"hold-time-after-failure 10\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "44",
+        "title": "sso: hold-time-after-failure",
+        "result": "It would set time to 10 after an sso failure"
+    },
+    "45": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"local-user-groups-apply\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "45",
+        "title": "sso: local-user-groups-apply",
+        "result": "It would apply user group memberships set locally"
+    },
+    "46": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"local-users-only \"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "45",
+        "title": "sso: local-users-only",
+        "result": "It would enable only SSO users with local accounts"
+    },
+    "47": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"method sso-agent\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "47",
+        "title": "sso: method",
+        "result": "It would enable the single-sign-on Mechanism to sso-agent"
+    },
+    "48": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"non-domain-ltd-access\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "48",
+        "title": "sso: non-domain-ltd-access",
+        "result": "It would allow limited access for non-domain users"
+    },
+    "49": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"poll-rate 10\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "49",
+        "title": "sso: poll-rate",
+        "result": "It would set the rate to 10 to check if users are still logged in"
+    },
+    "50": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"probe netapi\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "50",
+        "title": "sso: probe",
+        "result": "It would probe user for netapi"
+    },
+    "51": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"security-svc-bypass-ip \"test1\"'\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "51",
+        "title": "sso: security-svc-bypass-ip",
+        "result": "It would select sources \"test1\" to bypass sso for security services"
+    },
+    "52": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"security-svc-bypass-svc ICMP\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "52",
+        "title": "sso: security-svc-bypass-svc",
+        "result": "It would select services ICMP to bypass SSO"
+    },
+    "53": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"simple-local-user-names\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "53",
+        "title": "sso: simple-local-user-names",
+        "result": "It would enable to user simple user names in local database"
+    },
+    "54": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"terminal-services-agent 192.168.168.1\"",
+        "initial": "",
+        "id": "54",
+        "title": "sso: terminal-services-agent",
+        "result": "It would config  a Terminal Services agent,like enable,host ,port,shared-key,test."
+    },
+    "55": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"test agent 172.168.168.1\"",
+        "initial": "",
+        "id": "55",
+        "title": "sso: test",
+        "result": "It would run the sso test,,like agent,user-ip,terminal-services-agent"
+    },
+    "56": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"tsa-services-bypass\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "56",
+        "title": "sso: tsa-services-bypass",
+        "result": "It woulde  allow traffic from services on the terminal server to bypass user authentication in access rules."
+    },
+    "57": {
+        "steps": "1 Input the command \"user sso \" on config mode\n\n2 Input the command \"user-group-mechanism ldap\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "57",
+        "title": "sso: user-group-mechanism",
+        "result": "It would set the user group mechanism(ldap) for SSO users."
+    },
+    "58": {
+        "steps": "1 Input the command \"user sso\" on config mode\n\n2 Input the command \"windows-svc-user-name someservice\"\n\n3 Input the command \"commit\"",
+        "initial": "",
+        "id": "58",
+        "title": "sso: windows-svc-user-name",
+        "result": "It would a name(someservice) user by windows services"
+    },
+    "59": {
+        "steps": "",
+        "initial": "",
+        "id": "6",
+        "title": "",
+        "result": ""
+    }
+}

@@ -1,0 +1,65 @@
+{
+   "6" : {
+      "steps" : "ARP Entry can be created successfully",
+      "initial" : "Original ID: 17\n  Original Title: Create ARP entry\n  Original Description: Verifiy creating arp entry using CLI",
+      "id" : "6",
+      "title" : "Create ARP entry",
+      "result" : "ARP Entry can be created successfully"
+   },
+   "3" : {
+      "steps" : "VLAN interface can be deleted successfully",
+      "initial" : "Original ID: 14\n  Original Title: Delete VLAN interface using CLI\n  Original Description: Verifiy Deleting VLAN interface using CLI",
+      "id" : "3",
+      "title" : "Delete VLAN interface using CLI",
+      "result" : "VLAN interface can be deleted successfully"
+   },
+   "7" : {
+      "steps" : "ARP Entry can be edited successfully",
+      "initial" : "Original ID: 18\n  Original Title: Edit ARP entry\n  Original Description: Verifiy editing arp entry using CLI",
+      "id" : "7",
+      "title" : "Edit ARP entry",
+      "result" : "ARP Entry can be edited successfully"
+   },
+   "9" : {
+      "steps" : "All ARP Entries can be deleted successfully",
+      "initial" : "Original ID: 20\n  Original Title: Deleting all ARP entries\n  Original Description: Verifiy deleting all arp entries using CLI",
+      "id" : "9",
+      "title" : "Deleting all ARP entries",
+      "result" : "All ARP Entries can be deleted successfully"
+   },
+   "2" : {
+      "steps" : "VLAN interface can be edited successfully and lan host can https/ping access vlan interface.",
+      "initial" : "Original ID: 13\n  Original Title: Edit VLAN interface using CLI\n  Original Description: Verifiy Editing VLAN interface using CLI",
+      "id" : "2",
+      "title" : "Edit VLAN interface using CLI",
+      "result" : "VLAN interface can be edited successfully and lan host can https/ping access vlan interface."
+   },
+   "8" : {
+      "steps" : "ARP Entry can be deleted successfully",
+      "initial" : "Original ID: 19\n  Original Title: Delete ARP entry\n  Original Description: Verifiy deleting arp entry using CLI",
+      "id" : "8",
+      "title" : "Delete ARP entry",
+      "result" : "ARP Entry can be deleted successfully"
+   },
+   "1" : {
+      "steps" : "VLAN interface can be created successfully",
+      "initial" : "Original ID: 12\n  Original Title: Create VLAN interface using CLI\n  Original Description: Verifiy Creating VLAN interface using CLI",
+      "id" : "1",
+      "title" : "Create VLAN interface using CLI",
+      "result" : "VLAN interface can be created successfully"
+   },
+   "4" : {
+      "steps" : "VLAN interfaces can be deleted successfully",
+      "initial" : "Original ID: 15\n  Original Title: Delete multiple VLAN interfaces using CLI\n  Original Description: Verifiy deleting multiple VLAN interfaces using CLI",
+      "id" : "4",
+      "title" : "Delete multiple VLAN interfaces using CLI",
+      "result" : "VLAN interfaces can be deleted successfully"
+   },
+   "5" : {
+      "steps" : "All VLAN interfaces can be deleted successfully",
+      "initial" : "Original ID: 16\n  Original Title: Delete all VLAN interfaces using CLI\n  Original Description: Verifiy deleting all VLAN interfaces using CLI",
+      "id" : "5",
+      "title" : "Delete all VLAN interfaces using CLI",
+      "result" : "All VLAN interfaces can be deleted successfully"
+   }
+}

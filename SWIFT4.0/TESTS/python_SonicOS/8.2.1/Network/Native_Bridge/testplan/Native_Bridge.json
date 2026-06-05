@@ -1,0 +1,212 @@
+{
+   "1525911" : {
+      "steps" : "  step 1: add a vlan interface , eg.x0:v100.\n  step 2: make another interface (eg,x2) nativebridge to x0:v100\n  step 3: try to delelte vlan interface x0:v100",
+      "priority" : "Smoke",
+      "atm_id" : "d736c8d7-07cc-463b-ba7d-eed518f05cec",
+      "initial" : "  TBD",
+      "id" : "1525911",
+      "title" : "[Negative] Verify that the Virtual interface as nativebridged host can not be deleted",
+      "description" : "Original ID: 074\nOriginal Title: [Negative] Verify that the Virtual interface as nativebridged host can not be deleted\nOriginal Description:",
+      "result" : "  step 3: failed with the message: Error: Index of the interface.: This interface is used as NativeBridge host"
+   },
+   "1525904" : {
+      "steps" : "  step 1: config X2 with static ip address step 2: make X3 and X4 nativebridge to x2\n  step 3: send TCP traffic from PC1 to PC or PC2 or to internet\n  step 4: verify that traffic works",
+      "priority" : "Smoke",
+      "atm_id" : "653f7d73-e7fb-4f52-946e-6e3fa5ca3f4b",
+      "initial" : "  PC---(X2)DUT(X3/X4)----PC1/PC2",
+      "id" : "1525904",
+      "title" : "[Function] Verify that TCP traffic works among nativebridge member or through native host",
+      "description" : "Original ID: 051\nOriginal Title: [Function] Verify that TCP traffic works among nativebridge member or through native host\nOriginal Description:",
+      "result" : "  step 4: TCP traffic works"
+   },
+   "1525914" : {
+      "steps" : "  step 1: config some nativebridge group and make sure that they all work\n  step 2: reboot step 3: verify that the configuration keeps intact and all work",
+      "priority" : "Smoke",
+      "atm_id" : "282dfd5c-8e9a-4031-8774-19bd29d829e0",
+      "initial" : "  TBD",
+      "id" : "1525914",
+      "title" : "[Intergration] Reboot with NativeBridge settings",
+      "description" : "Original ID: 090\nOriginal Title: [Intergration] Reboot with NativeBridge settings\nOriginal Description:",
+      "result" : "  the configuration keeps intact and all work"
+   },
+   "1525910" : {
+      "steps" : "  step 1: config X2 with static ip address (eg: LAN zone)\n  step 2: config X3 native bridge to X2 step 3: config another interface X4 as DMZ zone\n  step 4: PC under X3 interface try to ping PC2 under X4 interface",
+      "priority" : "Smoke",
+      "atm_id" : "9afd9351-117f-499c-904b-a1bf5e7ab1df",
+      "initial" : "  TBD",
+      "id" : "1525910",
+      "title" : "[Function] Verify that hosts under nativebridged interfaces can access hosts belong to other zones",
+      "description" : "Original ID: 073\nOriginal Title: [Function] Verify that hosts under nativebridged interfaces can access hosts belong to other zones\nOriginal Description:",
+      "result" : "  step 4: it can be reachable"
+   },
+   "1525894" : {
+      "steps" : "  step 1: config one interface (eg, X2)as LAN/DMZ/WLAN/WAN zone and with ip address\n  step 2: config another interface as native bridge mode and native bridge to the interface X2.",
+      "priority" : "Smoke",
+      "atm_id" : "83653fb4-f2e0-49d7-9f89-20e28b2fd9be",
+      "initial" : "  TBD",
+      "id" : "1525894",
+      "title" : "[GUI] Verifty that it can create a nativebrige group",
+      "description" : "Original ID: 005\nOriginal Title: [GUI] Verifty that it can create a nativebrige group\nOriginal Description:",
+      "result" : "  step 2: it can config successfully"
+   },
+   "1525913" : {
+      "steps" : "  step 1: config X2 as static address and make X3 native brige to X2\n  step 2: add static arp entry with X2 interface and mac address &amp;ip with PC/PC2\n  step 3: send traffic from PC/PC2 to internet /interface X2",
+      "priority" : "Smoke",
+      "atm_id" : "904fcb8b-f722-43fe-a224-03c9aef794aa",
+      "initial" : "  TBD",
+      "id" : "1525913",
+      "title" : "[Integration] Static ARP works for NativeBridge host /member",
+      "description" : "Original ID: 084\nOriginal Title: [Integration] Static ARP works for NativeBridge host /member\nOriginal Description:",
+      "result" : "  step 3: traffic are reachable"
+   },
+   "1525907" : {
+      "steps" : "  case 1: 1:add a vlan interface under W0, eg, W0:v100. 2:set W0 nativebridge to W0:v100 or W0:v100 nativebridge to W0. 3:on the wireless&gt;Base Settings page, enable WLAN Radio. 4:select Internal AP Group in the Virtual Access Point Group, the internal AP Group contain vap with interface W0:V100 and vap binded to W0. 5:connect a PC1 to W0 and another PC2 to W0:V100. 6:send traffic from PC1 to PC2 or PC2 to PC1, or both access interface from PC1 and PC2, or try to management interfaces from PC1 and PC2. case 2: 1:add a vlan interface under W0,eg,W0:v100. 2:config the AP1 and make sure that the sonicpoint object has enabled the option \"Enable WDS AP\". 3:config W0:V100 as WLAN zone and assign static ip address which is in the same subnet with X5 of AP1, and set W0 nativebridge to W0:V100. 4:on the Wireless-&gt;Settings page, set Radio Role as Access point & Station and enable WLAN Radio and enable Station mode and fill in the AP ssid and AP authentication and select the VLAN id 100 and enable WDS station, then accept (ps, if need restart, please restart). 5:go to the Wireless-&gt;Status page, switch to Station tab, make sure that link status is Connected. 6:pc try to connect to the ssid of DUT and get dynamic address and access websites.",
+      "priority" : "Full_Regression",
+      "atm_id" : "648d06c4-5a12-47d6-afa0-d14d3138fc04",
+      "initial" : "  case 1: PC1 ----------------(W0)DUT(W0:V100)------------PC2 case 2: pc(wireless client: 192.9.5.205, gateway 192.9.5.1)-----(W0)DUT(W0:V100: wlan 192.9.5.5)---(X5: wlan 192.9.5.1/24)AP1",
+      "id" : "1525907",
+      "title" : "[Function] Verify that the traffic works when set nativebridge host as W0 or VAP",
+      "description" : "Original ID: 058\r\nOriginal Title: [Function] Verify that the traffic works when set nativebridge host as W0 or VAP\r\nOriginal Description: CASE 1 AND CASE 2 are independent",
+      "result" : "  case 1:step 6: traffic is reachable. And can manage interfaces case 2:step 6: traffic is reachable"
+   },
+   "1525906" : {
+      "steps" : "  step 1: config X2 with static ip address step 2: make X3 and X4 nativebridge to x2\n  step 3: send ICMP traffic from PC1 to PC or PC2 or to internet\n  step 4: verify that traffic works",
+      "priority" : "Smoke",
+      "atm_id" : "81caaa9d-4871-463b-942f-28ead2e06daf",
+      "initial" : "  PC---(X2)DUT(X3/X4)----PC1/PC2",
+      "id" : "1525906",
+      "title" : "[Function] Verify that ICMP traffic works among nativebridge member or through native host",
+      "description" : "Original ID: 053\nOriginal Title: [Function] Verify that ICMP traffic works among nativebridge member or through native host\nOriginal Description:",
+      "result" : "  step 4: ICMP traffic works"
+   },
+   "1525909" : {
+      "steps" : "  step 1: config an interface (eg x2 with LAN zone)with static address step 2: set x3 nativebridge to x2\n  step 3: PC/PC2 try to get dyanmic address from x2 dhcp server\n  step 4: ping from PC to PC2 or PC2 to PC, or access websites from PC /PC2",
+      "priority" : "Smoke",
+      "atm_id" : "095de2a4-5fb1-489b-9fd0-fad9950a0e86",
+      "initial" : "  TBD",
+      "id" : "1525909",
+      "title" : "[Function] Verify that traffic works when set NativeBridge host as LAN",
+      "description" : "Original ID: 063\nOriginal Title: [Function] Verify that traffic works when set NativeBridge host as LAN\nOriginal Description:",
+      "result" : "  step 4: traffic is reachable."
+   },
+   "1525912" : {
+      "steps" : "  step 1: config X2 as static address and make X3 native brige to X2\n  step 2: enable RIP/OSPF /BGP on X2\n  step 3: on connected Router/Sonicwall Box ,enable RIP/OSPF/BGP\n  step 4: verify that RIP/OSPF/BGP can work",
+      "priority" : "Smoke",
+      "atm_id" : "eb7a7e68-209d-4c3b-bd2e-6b436f86ae74",
+      "initial" : "  TBD",
+      "id" : "1525912",
+      "title" : "[Integration] Routing protocol(RIP /OSPF /BGP) on NativeBridge host",
+      "description" : "Original ID: 076\nOriginal Title: [Integration] Routing protocol(RIP /OSPF /BGP) on NativeBridge host\nOriginal Description:",
+      "result" : "  step 4: they all work"
+   },
+   "1525896" : {
+      "steps" : "  step 1: config an interface (eg x2)with static address step 2: set x3 nativebridge to x2 step 3: PC/PC2 try to get dyanmic address from x2 dhcp server step 4: enter vxshell, and input \"show_br(2)\" step 5: make PC2 connected to x2, and PC connected to x3 step 6: re-enter vxshell, and inptu \"show_br(2)\"",
+      "priority" : "Full_Regression",
+      "atm_id" : "3f8376a4-22eb-4592-84bb-644850be0721",
+      "initial" : "  DUT(X2/X3)---PC/PC2",
+      "id" : "1525896",
+      "title" : "[Function] Verify that the mac entry will be updated after change the corresponding port of a existing mac address",
+      "description" : "Original ID: 028\r\nOriginal Title: [Function] Verify that the mac entry will be updated after change the corresponding port of a existing mac address\r\nOriginal Description:",
+      "result" : "  step 6: the corresponding port of a existing mac is changed eg, the original mac address pc is corresponding to port 2,now it turns out to be port 3"
+   },
+   "1525902" : {
+      "steps" : "  step 1: config an interface (eg x2)with static address step 2: set x3 and X4 nativebridge to x2\n  step 3: on PC1, capture packets and ping PC step 4: on PC and PC2, capture packets and see if it receive arp broadcast packets",
+      "priority" : "Smoke",
+      "atm_id" : "7570d34e-1f0a-4edb-ba3e-2108b546a002",
+      "initial" : "  PC---(X2)DUT(X3/X4 )--PC1/PC2",
+      "id" : "1525902",
+      "title" : "[Function] Verify that ARP traffic can flood among nativebridged member",
+      "description" : "Original ID: 047\nOriginal Title: [Function] Verify that ARP traffic can flood among nativebridged member\nOriginal Description:",
+      "result" : "  step 4: PC and PC2 are receving arp broadcast packets"
+   },
+   "1525898" : {
+      "steps" : "  step 1: config an interface (eg x2)with static address step 2: set x3 nativebridge to x2\n  step 3: PC/PC2 try to get dyanmic address from x2 dhcp server\n  step 4: ping from PC to PC2 or PC2 to PC, or access websites from PC /PC2",
+      "priority" : "Smoke",
+      "atm_id" : "0d1eab5d-0d6a-41fa-a87c-e99c7ef7551f",
+      "initial" : "  TBD",
+      "id" : "1525898",
+      "title" : "[FunctionI] Verify that physical interface can be nativebridged to physical interface and traffic work",
+      "description" : "Original ID: 034\nOriginal Title: [FunctionI] Verify that physical interface can be nativebridged to physical interface and traffic work\nOriginal Description:",
+      "result" : "  step 4: traffic is reachable."
+   },
+   "1525899" : {
+      "steps" : "  step 1: set X3 as static ip address and enable DHCP server for X3\n  step 2: set X2:V100 nativebridge to X3\n  step 3: make sure that PC1 and PC2 can get dynamic address\n  step 4: from PC1 and PC2 ,send traffic to internet , or ping between PC1 and PC2",
+      "priority" : "Smoke",
+      "atm_id" : "591067a5-3a37-410d-ad5a-2db7457bd5d2",
+      "initial" : "  TBD",
+      "id" : "1525899",
+      "title" : "[FunctionI] Verify that Virtual interface can be nativebridged to physical interface which is different to its parent and traffic work",
+      "description" : "Original ID: 036\nOriginal Title: [FunctionI] Verify that Virtual interface can be nativebridged to physical interface which is different to its parent and traffic work\nOriginal Description:",
+      "result" : "  step 4: traffic is reachable."
+   },
+   "1525908" : {
+      "steps" : "  step 1: config an interface (eg x2 with wlan zone)with static address step 2: set x3 nativebridge to x2 step 3: PC/PC2 try to get dyanmic address from x2 dhcp server\n  step 4: ping from PC to PC2 or PC2 to PC, or access websites from PC /PC2",
+      "priority" : "Smoke",
+      "atm_id" : "e092db44-62e7-46e1-8e16-10c182697bf6",
+      "initial" : "  TBD",
+      "id" : "1525908",
+      "title" : "[Function] Verify that traffic works when set NativeBridge host as WLAN zone",
+      "description" : "Original ID: 059\nOriginal Title: [Function] Verify that traffic works when set NativeBridge host as WLAN zone\nOriginal Description:",
+      "result" : "  n"
+   },
+   "1525897" : {
+      "steps" : "  step 1: set X2:V100 as static ip address and enable DHCP server for X2:V100\n  step 2: set X3 nativebridge to X2:V100\n  step 3: make sure that PC1 and PC2 can get dynamic address\n  step 4: from PC1 and PC2 ,send traffic to internet , or ping between PC1 and PC2",
+      "priority" : "Smoke",
+      "atm_id" : "d810d5c0-bb28-483d-84f1-716a48717811",
+      "initial" : "  TBD",
+      "id" : "1525897",
+      "title" : "[FunctionI] Verify that physical interface can be nativebridged to Virtual interface which parent interface is different to the physical interface and traffic work",
+      "description" : "Original ID: 032\nOriginal Title: [FunctionI] Verify that physical interface can be nativebridged to Virtual interface which parent interface is different to the physical interface and traffic work\nOriginal Description:",
+      "result" : "  n"
+   },
+   "1525905" : {
+      "steps" : "  step 1: config X2 with static ip address step 2: make X3 and X4 nativebridge to x2\n  step 3: send UDP traffic from PC1 to PC or PC2 or to internet\n  step 4: verify that traffic works",
+      "priority" : "Smoke",
+      "atm_id" : "7c3a7b06-e43f-4b1e-9b7e-c44585346195",
+      "initial" : "  PC---(X2)DUT(X3/X4)----PC1/PC2",
+      "id" : "1525905",
+      "title" : "[Function] Verify that UDP traffic works among nativebridge member or through native host",
+      "description" : "Original ID: 052\nOriginal Title: [Function] Verify that UDP traffic works among nativebridge member or through native host\nOriginal Description:",
+      "result" : "  step 4: UDP traffic works"
+   },
+   "1525901" : {
+      "steps" : "  step 1: config an interface (eg x2)with static address step 2: set x3 nativebridge to x2\n  step 3: PC/PC2 try to get dyanmic address from x2 dhcp server\n  step 4: add a access rule from LAN->LAN with service ping deny step 5: ping from PC to PC2 or PC2 to PC\n  step 6: config x3 and enable the options \"Enable firewalling with other bridge members \"\n  step 7: ping from PC to PC2 or PC2 to PC",
+      "priority" : "Smoke",
+      "atm_id" : "d332c8e3-26e0-4be0-9956-ab37c257fd72",
+      "initial" : "  DUT(X2/X3)---PC/PC2",
+      "id" : "1525901",
+      "title" : "[Function] Verify that access rule for the traffic through nativebridge members can work after enable firewalling on this bridge interface",
+      "description" : "Original ID: 041\nOriginal Title: [Function] Verify that access rule for the traffic through nativebridge members can work after enable firewalling on this bridge interface\nOriginal Description:",
+      "result" : "  step 5: traffic is reachable\n  step 7: traffic is not reachable"
+   },
+   "1525895" : {
+      "steps" : "  step 1: config x2 with static ip address and make x3 nativebridge to x2\n  step 2: try to unassign x2",
+      "priority" : "Smoke",
+      "atm_id" : "48774cf8-a556-4bd6-b935-b60eb1704114",
+      "initial" : "  TBD",
+      "id" : "1525895",
+      "title" : "[GUI] Verify that nativebridge host should not be allowed to unassign when has at least one nativebridge member",
+      "description" : "Original ID: 011\nOriginal Title: [GUI] Verify that nativebridge host should not be allowed to unassign when has at least one nativebridge member\nOriginal Description:",
+      "result" : "  step 2: failed with message: Error: Native bridge host interface can't be unassigned"
+   },
+   "1525903" : {
+      "steps" : "  step 1: config an interface (eg x2)with static address step 2: set x3 and X4 nativebridge to x2\n  step 3: on PC1, do ipconfig /renew operation and capture packets that it send out dhcp discover packets step 4: on PC and PC2, capture packets and see if it receive dhcp packets",
+      "priority" : "Smoke",
+      "atm_id" : "b558c145-073f-433b-b40c-0ada54b4912d",
+      "initial" : "  PC---(X2)DUT(X3/X4 )--PC1/PC2",
+      "id" : "1525903",
+      "title" : "[Function] Verify that dhcp traffic can flood among nativebridged member",
+      "description" : "Original ID: 048\nOriginal Title: [Function] Verify that dhcp traffic can flood among nativebridged member\nOriginal Description:",
+      "result" : "  step 4: PC and PC2 are receving dhcp packets"
+   },
+   "1525900" : {
+      "steps" : "  step 1: config one interface with static ip address\n  step 2: set multiple interface nativebridge to the interface at step 1\n  step 3: ping among the clients under multiple interfaces,or access websites from PCs under multiple interfacs",
+      "priority" : "Smoke",
+      "atm_id" : "772a8a82-082e-4233-97a9-5114b26731ee",
+      "initial" : "  TBD",
+      "id" : "1525900",
+      "title" : "[Function] Verify that multi-interfaces are all nativebridged to the same nativebridge host and all traffic work",
+      "description" : "Original ID: 039\nOriginal Title: [Function] Verify that multi-interfaces are all nativebridged to the same nativebridge host and all traffic work\nOriginal Description:",
+      "result" : "  step 3: traffic are reachable"
+   }
+}

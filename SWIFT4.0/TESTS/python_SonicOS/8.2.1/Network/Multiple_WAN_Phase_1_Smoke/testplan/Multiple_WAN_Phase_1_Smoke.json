@@ -1,0 +1,252 @@
+{
+   "1524051" : {
+      "steps" : "  1) Go to the Network > Interfaces page.\n  2) Edit an interface, assign to WAN zone, and configure, configure gateway.\n  3) Click OK.\n  4) Look at Network > Routes page\n  5) Repeat for different interfaces and vlan interfaces.",
+      "priority" : "Smoke",
+      "atm_id" : "65112202-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Default",
+      "id" : "1524051",
+      "title" : "WAN Interface Configured - Route Xn IP to Any via Xn Default Gateway using Xn Interface",
+      "description" : "Original ID: 26\nOriginal Title: WAN Interface Configured - Route Xn IP to Any via Xn Default Gateway using Xn Interface\nOriginal Description: Verify that Route Xn IP to Any is created when WAN interface is configured. VLAN equivalent object is of the form Xn:Vm IP",
+      "result" : "  Route is created Xn IP to Xn Any where n corresponds to the interface number and indicates Xn Default Gateway for the Gateway and Xn for the interface."
+   },
+   "1524063" : {
+      "steps" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.",
+      "priority" : "Smoke",
+      "atm_id" : "6577F37E-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  4 Physical WAN interfaces defined\n  WAN Load Balancing Enabled.\n  Percentage Based Load Balancing Selected.\n  4 different percentages set for the interfaces.\n  PBR with 'Disable Route when interface is disconnected' defined for a different target using each of the WAN interfaces.",
+      "id" : "1524063",
+      "title" : "4 interfaces Percentage Based Load Balancing",
+      "description" : "Original ID: 95\nOriginal Title: 4 interfaces Percentage Based Load Balancing\nOriginal Description: Verify traffic when Percentage Based Load Balancing is used.",
+      "result" : "  Connections go to the four interfaces according to set percentages except for PBR defined connections."
+   },
+   "1524049" : {
+      "steps" : "  1) Go to the Network > Interfaces page.\n  2) Edit an interface, assign to WAN zone, and configure, configure gateway.\n  3) Click OK.\n  4) Look at Network > Routes page\n  5) Repeat for different interfaces and vlan interfaces.",
+      "priority" : "Smoke",
+      "atm_id" : "66010CCC-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Default",
+      "id" : "1524049",
+      "title" : "WAN Interface Configured -  Route for Xn Default Gateway is auto-added",
+      "description" : "Original ID: 24\nOriginal Title: WAN Interface Configured -  Route for Xn Default Gateway is auto-added\nOriginal Description: Verify that Route Xn Default Routet is created when WAN interface is configured. VLAN equivalent object is of the form Xn:Vm IP",
+      "result" : "  Route is created that contains the gateway of the interface Xn Interface Default Gateway where n corresponds to the interface number and indicates Xn IP for the source and Xn for the interface."
+   },
+   "1524047" : {
+      "steps" : "  1) Access site configured in PBR using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug the non WLB interfaces\n  4) Access site configured in PBR using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.\n  6) Unplug Primary Interface\n  7) Access site using in PBR using HTTP, FTP, or other protocol.\n  8) Observe the Connection Monitor page and/or packet captures\n  9) Plug back in non WLB interface\n  10) Access site using in PBR using HTTP, FTP, or other protocol.\n  11) Observe the Connection Monitor page and/or packet captures",
+      "priority" : "Smoke",
+      "atm_id" : "66077904-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  5 or more Physical WAN interfaces defined\n  WAN Load Balancing Enabled with 4 interfaces\n  Active Passive Failover configured.\n  Preempt mode enabled\n  The WAN-VLAN interface is set to the 1st Alternate\n  Active Passive Failover Selected\n  PBR with 'Disable Route when interface is disconnected' defined on WAN interface that is not part of WLB",
+      "id" : "1524047",
+      "title" : "WAN interface goes down for PBR WAN that is not part of WLB",
+      "description" : "Original ID: 126\nOriginal Title: WAN interface goes down for PBR WAN that is not part of WLB\nOriginal Description: Verify failover to WLB interfaces after PBR goes down",
+      "result" : "  Connections use the interface configured in the PBR. After the interface is down the connections use the Primary interface in WLB. After the primary has failed over the connections use the 1st alternate in the WLB configuration. After the PBR interface has been plugged back in old connections will continue but new connections will use that interface."
+   },
+   "1524041" : {
+      "steps" : "  1) Go to the Network > Interfaces page\n  2) Configure all unassigned interfaces in WAN zone.",
+      "priority" : "Smoke",
+      "atm_id" : "65FC9958-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Default",
+      "id" : "1524041",
+      "title" : "Assign all configurable physical interfaces to the WAN zone",
+      "description" : "Original ID: 1\nOriginal Title: Assign all configurable physical interfaces to the WAN zone\nOriginal Description: Verify all physical interfaces can be configured in WAN zone.",
+      "result" : "  Able to configure all unassigned interfaces in WAN zone."
+   },
+   "1524057" : {
+      "steps" : "  1) Go to the Network > WAN Failover and Load Balancing page.\n  2) Select 3 WAN interfaces\n  3) Select a VLAN-WAN interface.\n  4) Check the box to Enable Load Balancing\n  5) Click Accept.\n  6) Repeat using VLAN-WAN for Primary and different alternates",
+      "priority" : "Smoke",
+      "atm_id" : "65F1B178-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  3 or more WAN interfaces defined\n  1 VLAN-WAN interface defined.",
+      "id" : "1524057",
+      "title" : "WLB Configuration: VLAN-WAN configured in WLB",
+      "description" : "Original ID: 54\nOriginal Title: WLB Configuration: VLAN-WAN configured in WLB\nOriginal Description: Verify that a VLAN-WAN interface can be configured in WLB.",
+      "result" : "  WLB can use VLAN-WAN interfaces. The VLAN-WAN interfaces show up in the Statistics table."
+   },
+   "1524044" : {
+      "steps" : "  1) Start an FTP download from a server on the WAN.\n  2) Access several sites using HTTP, FTP, or other protocol.\n  3) Observe the Connection Monitor page and/or packet captures.\n  4) Unplug 3rd Alternate interface.\n  5) Access several sites using HTTP, FTP, or other protocol.\n  6) Observe the Connection Monitor page and/or packet captures.",
+      "priority" : "Smoke",
+      "atm_id" : "655C2E32-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  4 Physical WAN interfaces defined\n  WAN Load Balancing Enabled.\n  Spillover Based Load Balancing Selected.\n  Spillover Bandwidth set to 100 Kbps.\n  PBR with 'Disable Route when interface is disconnected' defined for a different target using each of the WAN interfaces.",
+      "id" : "1524044",
+      "title" : "4 interfaces Spillover Based - 3rd alternate interface down",
+      "description" : "Original ID: 109\nOriginal Title: 4 interfaces Spillover Based - 3rd alternate interface down\nOriginal Description: Verify traffic when Spillover Based Load Balancing is used.",
+      "result" : "  First connection should reach the bandwidth. Connections go to the other three interfaces in a round robin fashion except for PBR defined connections.\n  After 3rd Alternate is in failover connections go to 2 remaining alternate interfaces in a round robin fashion. PBR connections will go to the configured interface except for the 3rd Alternate configured one which will be handled like a regular connection."
+   },
+   "1524058" : {
+      "steps" : "  1) Go to the Network > Interfaces page using LAN login.\n  2) Set all WAN interfaces to Unassigned\n  3) Attempt to set last WAN interface to Unassigned",
+      "priority" : "Smoke",
+      "atm_id" : "64C335F6-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Default",
+      "id" : "1524058",
+      "title" : "Error when unassigning the last WAN",
+      "description" : "Original ID: 8\nOriginal Title: Error when unassigning the last WAN\nOriginal Description: Verify error and cannot unassign the last WAN.",
+      "result" : "  Verify error. Last WAN cannot be set to Unassigned."
+   },
+   "1524061" : {
+      "steps" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug Primary interface.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.",
+      "priority" : "Smoke",
+      "atm_id" : "6585541A-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  4 Physical WAN interfaces defined\n  WAN Load Balancing Enabled.\n  Round Robin Load Balancing Selected.\n  PBR with 'Disable Route when interface is disconnected' defined for a different target using each of the WAN interfaces.",
+      "id" : "1524061",
+      "title" : "4 interfaces Round Robin - Primary interface down",
+      "description" : "Original ID: 88\nOriginal Title: 4 interfaces Round Robin - Primary interface down\nOriginal Description: Verify traffic when Round Robin Load Balancing is used.",
+      "result" : "  Connections go to the four interfaces in a round robin fashion except for PBR defined connections. After primary is in failover connections go to 3 remaining interfaces in a round robin fashion. PBR connections for Primary should now be handled in round robin fashion."
+   },
+   "1524060" : {
+      "steps" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug the 1st alternate interface.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.\n  6) Unplug the 2nd Alternate interface.\n  7) Access several sites using HTTP, FTP, or other protocol.\n  8) Observe the Connection Monitor page and/or packet captures.\n  9) Plug back in the the 2nd Alternate interface.\n  10) Access several sites using HTTP, FTP, or other protocol.\n  11) Observe the Connection Monitor page and/or packet captures\n  12) Plug back in the the 1st Alternate interface.\n  13) Access several sites using HTTP, FTP, or other protocol.\n  14) Observe the Connection Monitor page and/or packet captures",
+      "priority" : "Smoke",
+      "atm_id" : "65B3172E-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  4 Physical WAN interfaces.\n  2nd Alternate Interface and 3rd alternate interface set for PPPoE.\n  PPPoE server on each Appropriate links\n  WAN Load Balancing Enabled.\n  Active Passive Failover Selected\n  Preempt is enabled.\n  Primary interface is disconnected.",
+      "id" : "1524060",
+      "title" : "4 interfaces Active Passive - 2nd and 3rd Alternate are PPPoE",
+      "description" : "Original ID: 84\nOriginal Title: 4 interfaces Active Passive - 2nd and 3rd Alternate are PPPoE\nOriginal Description: Verify WLB with 2nd and 3rd Alternate configured as PPPoE.",
+      "result" : "  All connections use the 1st Alternate interface. When the 1st Alternate is unplugged, after failover, the 2nd alternate is used. When the 2nd Alternate is unplugged, after failover, the 3rd alternate is used. When the 2nd Alternate is plugged back in it is used for the connections. When the 1st Alternate is plugged back in it is used for the connections."
+   },
+   "1524059" : {
+      "steps" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug the primary interface.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.\n  6) Unplug the 1st Alternate interface.\n  7) Access several sites using HTTP, FTP, or other protocol.\n  8) Observe the Connection Monitor page and/or packet captures.\n  9) Unplug the 2nd Alternate interface.\n  10) Access several sites using HTTP, FTP, or other protocol.\n  11) Observe the Connection Monitor page and/or packet captures",
+      "priority" : "Smoke",
+      "atm_id" : "6598566E-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  4 Physical WAN interfaces defined all DHCP\n  DHCP server on each WAN link.\n  WAN Load Balancing Enabled.\n  Active Passive Failover Selected\n  PBR with 'Disable Route when interface is disconnected' defined for a different target using each of the WAN interfaces.",
+      "id" : "1524059",
+      "title" : "4 interfaces Active Passive - DHCP Interfaces go down in order Primary, 1st Alternate, 2nd Alternate",
+      "description" : "Original ID: 80\nOriginal Title: 4 interfaces Active Passive - DHCP Interfaces go down in order Primary, 1st Alternate, 2nd Alternate\nOriginal Description: Verify traffic with 4 interfaces as the interfaces go down one by one.",
+      "result" : "  All connections use the Primary interface except for those defined for a different interface in the PBR. When the Primary is unplugged, after failover, the 1st alternate is used. When the 1st Alternate is unplugged, after failover, the 2nd alternate is used. When the 2nd Alternate is unplugged, after failover, the 3rd alternate is used. PBR will use the interface configured. If the interface is down it will use the current preferred interface. If interface is not down session will continue."
+   },
+   "1524062" : {
+      "steps" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.",
+      "priority" : "Smoke",
+      "atm_id" : "6573770E-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  3 Physical WAN interfaces defined\n  WAN Load Balancing Enabled.\n  Percentage Based Load Balancing Selected.\n  3 different percentages set for the interfaces.\n  PBR with 'Disable Route when interface is disconnected' defined for a different target using each of the WAN interfaces.",
+      "id" : "1524062",
+      "title" : "3 interfaces Percentage Based",
+      "description" : "Original ID: 94\nOriginal Title: 3 interfaces Percentage Based\nOriginal Description: Verify traffic when Percentage Based Load Balancing is used.",
+      "result" : "  Connections go to the three interfaces according to set percentages except for PBR defined connections."
+   },
+   "1524046" : {
+      "steps" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug the WLB interfaces\n  4) Attempt to access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.\n  6) Plug back in the WLB interfaces\n  7) Access several sites using HTTP, FTP, or other protocol.\n  8) Observe the Connection Monitor page and/or packet captures\n  9) Repeat using different Load Balancing methods",
+      "priority" : "Smoke",
+      "atm_id" : "64A6CC5E-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  5 or more Physical WAN interfaces defined\n  WAN Load Balancing Enabled with 4 interfaces\n  The WAN-VLAN interface is set to the 1st Alternate\n  Active Passive Failover Selected",
+      "id" : "1524046",
+      "title" : "All the interfaces go down in Active Passover but there are still WAN interfaces",
+      "description" : "Original ID: 125\nOriginal Title: All the interfaces go down in Active Passover but there are still WAN interfaces\nOriginal Description: Verify WAN is not used that is not part of WLB if all other WLB interfaces have gone down.",
+      "result" : "  WANs not participating in WLB are not used even if all WLB interfaces are down."
+   },
+   "1524043" : {
+      "steps" : "  1) Start an FTP download from a server on the WAN.\n  2) Access several sites using HTTP, FTP, or other protocol.\n  3) Observe the Connection Monitor page and/or packet captures.\n  4) Unplug Primary interface and wait for the interface to go to Failover.\n  5) Access several sites using HTTP, FTP, or other protocol.\n  6) Observe the Connection Monitor page and/or packet captures.\n  7) Unplug the 1st Alternate interface and wait for the interface to go to failover.\n  8) Access several sites using HTTP, FTP, or other protocol.\n  9) Observe the Connection Monitor page and/or packet captures.\n  10) Unplug the 2nd Alternate interface and wait for the interface to go to failover.\n  11) Access several sites using HTTP, FTP, or other protocol.\n  12) Observe the Connection Monitor page and/or packet captures.",
+      "priority" : "Smoke",
+      "atm_id" : "65EE1662-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  4 Physical WAN interfaces defined\n  WAN Load Balancing Enabled.\n  Spillover Based Load Balancing Selected.\n  Spillover Bandwidth set to 100 Kbps.\n  PBR with 'Disable Route when interface is disconnected' defined for a different target using each of the WAN interfaces.",
+      "id" : "1524043",
+      "title" : "4 interfaces Spillover Based - Primary interface down",
+      "description" : "Original ID: 106\nOriginal Title: 4 interfaces Spillover Based - Primary interface down\nOriginal Description: Verify traffic when Spillover Based Load Balancing is used.",
+      "result" : "  First connection should reach the bandwidth. Connections go to the other three interfaces in a round robin fashion except for PBR defined connections. After primary is in failover connections go to the 1st alternate interface. PBR connections for Primary should now be sent to 1st Alternate. After 1st Alternate is in failover connections are sent to the 2nd alternate interface."
+   },
+   "1524064" : {
+      "steps" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug Primary interface.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.",
+      "priority" : "Smoke",
+      "atm_id" : "657A3922-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  4 Physical WAN interfaces defined\n  WAN Load Balancing Enabled.\n  Percentage Based Load Balancing Selected.\n  4 different percentages set for the interfaces.\n  PBR with 'Disable Route when interface is disconnected' defined for a different target using each of the WAN interfaces.",
+      "id" : "1524064",
+      "title" : "4 interfaces Percentage Based - Primary interface down",
+      "description" : "Original ID: 96\nOriginal Title: 4 interfaces Percentage Based - Primary interface down\nOriginal Description: Verify traffic when Percentage Based Load Balancing is used.",
+      "result" : "  Connections go to the four interfaces according to percentage except for PBR defined connections. After primary is in failover connections go to 3 remaining interfaces in according to left over percentage adjusted. PBR connections for Primary should now be handled in within the percentages."
+   },
+   "1524056" : {
+      "steps" : "  1) Go to the Network > Interfaces page.\n  2) Edit an interface, assign to WAN zone, and configure.\n  3) Click OK.\n  4) Go to the Network > NAT Policies page\n  5) Repeat for different interfaces and vlan interfaces.",
+      "priority" : "Smoke",
+      "atm_id" : "64CD9F0A-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Default",
+      "id" : "1524056",
+      "title" : "WAN Interface Configured - LAN  to WAN Outbound NAT Policies are auto added for each WAN interface",
+      "description" : "Original ID: 34\nOriginal Title: WAN Interface Configured - LAN  to WAN Outbound NAT Policies are auto added for each WAN interface\nOriginal Description: Verify that LAN  to WAN Outbound NAT Policies are auto added when WAN interface is configured. VLAN equivalent object is of the form Xn:Vm IP",
+      "result" : "  LAN to WAN Outbound NAT policy is created for each LAN interface for the WAN interface and each LAN interface."
+   },
+   "1524045" : {
+      "steps" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Plug back in interfaces except primary.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.\n  6) Plug back in primary.\n  7) Start ftp download of a large file.\n  8) Access several sites using HTTP, FTP, or other protocol.\n  9) Observe the Connection Monitor page and/or packet captures",
+      "priority" : "Smoke",
+      "atm_id" : "6540228C-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  4 Physical WAN interfaces defined\n  WAN Load Balancing Enabled.\n  Spillover Based Load Balancing Selected.\n  Spillover Bandwidth set to 100 Kbps.\n  PBR with 'Disable Route when interface is disconnected' defined for a different target using each of the WAN interfaces. Primary, 1st Alternate, and 2nd Alternate are initially unplugged.",
+      "id" : "1524045",
+      "title" : "4 interfaces Spillover Based - down interfaces restored with Primary down",
+      "description" : "Original ID: 112\nOriginal Title: 4 interfaces Spillover Based - down interfaces restored with Primary down\nOriginal Description: Verify traffic when Spillover Based Load Balancing is used.",
+      "result" : "  Connections go to 3rd Alternate. PBR connections for down interfaces should also be routed to 3rd alternate. After the other altnerate interfaces are connected, existing flows should still go to the 3rd alternate. New flows will be directed to 1st alternate except for PBR defined connections which are sent to the interface for which they are configured. When the primary is connected existing flows will remain on their current interface. After traffic is started on the primary new flows will occur in round robin format on the alternate interfaces."
+   },
+   "1524053" : {
+      "steps" : "  1) Go to the Network > Interfaces page.\n  2) Edit an interface, assign to WAN zone, and configure, configure gateway.\n  3) Click OK.\n  4) Go to the WAN Load Balancing and Failover page.\n  5) Assign the Primary Interface to the new interface\n  6) Assign 1st Alterneate Interface to another interface\n  7) Unplug the Primary Interface.\n  8) Look at Network > Routes page\n  9) Repeat for different interfaces and vlan interfaces.",
+      "priority" : "Smoke",
+      "atm_id" : "656A7A64-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Default",
+      "id" : "1524053",
+      "title" : "WAN Interface Configured - Route Any to 0/0 (default route) indicates the next alternate interface with Primary down",
+      "description" : "Original ID: 28\nOriginal Title: WAN Interface Configured - Route Any to 0/0 (default route) indicates the next alternate interface with Primary down\nOriginal Description: Verify that WAN Interface Configured - Route Any to 0/0 (default route) indicates the next alternate interface with Primary down",
+      "result" : "  Route Any to 0/0 (default route) indicates the newly assigned 1st Alternate Interface."
+   },
+   "1524050" : {
+      "steps" : "  1) Go to the Network > Interfaces page.\n  2) Edit an interface, assign to WAN zone, and configure, configure gateway.\n  3) Click OK.\n  4) Look at Network > Routes page\n  5) Repeat for different interfaces and vlan interfaces.",
+      "priority" : "Smoke",
+      "atm_id" : "6518604E-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Default",
+      "id" : "1524050",
+      "title" : "WAN Interface Configured  Route Any to Xn Subnet is auto-added and indicates Interface Xn",
+      "description" : "Original ID: 25\nOriginal Title: WAN Interface Configured  Route Any to Xn Subnet is auto-added and indicates Interface Xn\nOriginal Description: Verify that Route Any to Xn Subnet is created when WAN interface is configured. VLAN equivalent object is of the form Xn:Vm IP",
+      "result" : "  Route is created Any to Xn Subnet where n corresponds to the interface number and indicates Xn IP for the source and Xn for the interface."
+   },
+   "1524065" : {
+      "steps" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug 1st Alternate interface.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.",
+      "priority" : "Smoke",
+      "atm_id" : "655F4284-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  4 Physical WAN interfaces defined\n  WAN Load Balancing Enabled.\n  Percentage Based Load Balancing Selected.\n  4 different percentages set for the interfaces.\n  PBR with 'Disable Route when interface is disconnected' defined for a different target using each of the WAN interfaces.",
+      "id" : "1524065",
+      "title" : "4 interfaces Percentage Based  - 1st alternate interface down",
+      "description" : "Original ID: 97\nOriginal Title: 4 interfaces Percentage Based  - 1st alternate interface down\nOriginal Description: Verify traffic when Percentage Based Load Balancing is used.",
+      "result" : "  Connections go to the four interfaces in according to set percentages except for PBR defined connections. After 1st Alternate is in failover connections go to 3 remaining interfaces according to left over percentage adjusted. PBR connections should now be handled in within the percentages."
+   },
+   "1524055" : {
+      "steps" : "  1) Go to the Network > Interfaces page.\n  2) Edit an interface, assign to WAN zone, and configure, configure gateway.\n  3) Click OK.\n  4) Look at Network > Routes page\n  5) Repeat for different interfaces and vlan interfaces.\n  6) Repeat by assigning interfaces to different zone.\n  7) Repeat by removing VLAN interface.",
+      "priority" : "Smoke",
+      "atm_id" : "65A593E2-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Default",
+      "id" : "1524055",
+      "title" : "WAN Interface unassigned, reassigned, or removed - Route to Xn Subnet is removed",
+      "description" : "Original ID: 30\nOriginal Title: WAN Interface unassigned, reassigned, or removed - Route to Xn Subnet is removed\nOriginal Description: Verify that Route Any to Xn Subnet is removed when WAN interface is unassigned, reassigned, or removed. VLAN equivalent object is of the form Xn:Vm IP",
+      "result" : "  Route is removed Any to Xn Subnet where n corresponds to the interface number and indicates Xn IP for the source and Xn for the interface."
+   },
+   "1524054" : {
+      "steps" : "  1) Go to the Network > Interfaces page.\n  2) Edit an interface, assign to WAN zone, and configure, configure gateway.\n  3) Click OK.\n  4) Look at Network > Routes page\n  5) Repeat for different interfaces and vlan interfaces.\n  6) Repeat by assigning interfaces to different zone.\n  7) Repeat by removing VLAN interface.",
+      "priority" : "Smoke",
+      "atm_id" : "65426D30-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Default",
+      "id" : "1524054",
+      "title" : "WAN Interface unassigned, reassigned, or removed - Route to Xn Default Gateway is removed",
+      "description" : "Original ID: 29\nOriginal Title: WAN Interface unassigned, reassigned, or removed - Route to Xn Default Gateway is removed\nOriginal Description: Verify that Route Xn Default Routet is removed when WAN interface is unassigned, reassigned, or removed VLAN equivalent object is of the form Xn:Vm IP",
+      "result" : "  Route is removed that contains the gateway of the interface Xn Interface Default Gateway where n corresponds to the interface number and indicates Xn IP for the source and Xn for the interface."
+   },
+   "1524052" : {
+      "steps" : "  1) Go to the Network > Interfaces page.\n  2) Edit an interface, assign to WAN zone, and configure, configure gateway.\n  3) Click OK.\n  4) Go to the WAN Load Balancing and Failover page.\n  5) Assign the Primary Interface to the new interface\n  6) Look at Network > Routes page\n  7) Repeat for different interfaces and vlan interfaces.",
+      "priority" : "Smoke",
+      "atm_id" : "650A73B2-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Default",
+      "id" : "1524052",
+      "title" : "WAN Interface Configured  Route Any to 0/0 (default route) indicates the Primary WAN Interface with Primary WAN on different interfaces",
+      "description" : "Original ID: 27\nOriginal Title: WAN Interface Configured  Route Any to 0/0 (default route) indicates the Primary WAN Interface with Primary WAN on different interfaces\nOriginal Description: Verify that Route Any to 0/0 (default route) indicates the Primary WAN Interface with Primary WAN on different interfaces",
+      "result" : "  Route Any to 0/0 (default route) indicates the newly assigned Primary WAN Interface."
+   },
+   "1524048" : {
+      "steps" : "  1) Go to the Network > WAN Failover and Load Balancing Page\n  2) Click to configure the Probes.\n  3) Check the box Use SNWL global probing.\n  4) Click Accept\n  5) Make it so the probes fail for the interfaces one at a time can disconnect the far side of the firewall or create a firewall rule.\n  6) Wait for the probes to fail the configured number of times.",
+      "priority" : "Smoke",
+      "atm_id" : "65CDA044-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  3 or more Physical WAN interfaces defined\n  2 or more VLAN-WAN interfaces defined\n  WAN Load Balancing Enabled with 4 interfaces\n  Active Passive Failover configured.\n  Preempt mode enabled\n  The WAN-VLAN interface is set to the 1st Alternate",
+      "id" : "1524048",
+      "title" : "Verify state when SNWL global responder does not respond for each interface",
+      "description" : "Original ID: 131\nOriginal Title: Verify state when SNWL global responder does not respond for each interface\nOriginal Description: Verify correct state shows when SNWL global responder does not respond.",
+      "result" : "  When the probes fail the target shows Not Available. After the configured number of probes failed the interface Load Balanced State is marked Failover. The interface with probes still succeeding with the highest rank at the time will be marked Active."
+   },
+   "1524042" : {
+      "steps" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug Primary interface and 2nd Alternate interface.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.\n  6) Repeat as necessary for other combinations.",
+      "priority" : "Smoke",
+      "atm_id" : "6565F516-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  4 Physical WAN interfaces defined\n  WAN Load Balancing Enabled.\n  Percentage Based Load Balancing Selected.\n  4 different percentages set for the interfaces.\n  PBR with 'Disable Route when interface is disconnected' defined for a different target using each of the WAN interfaces.",
+      "id" : "1524042",
+      "title" : "4 interfaces Percentage Based - multiple interface down",
+      "description" : "Original ID: 100\nOriginal Title: 4 interfaces Percentage Based - multiple interface down\nOriginal Description: Verify traffic when Percentage Based Load Balancing is used.",
+      "result" : "  Connections go to the four interfaces in according to set percentages except for PBR defined connections. After interfaces are unplugged connections go to remaining interfaces according to left over percentage adjusted.. PBR connections now be handled in within the percentages."
+   }
+}

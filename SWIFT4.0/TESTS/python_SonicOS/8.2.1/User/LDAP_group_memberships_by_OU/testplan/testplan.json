@@ -1,0 +1,156 @@
+{
+   "1825596" : {
+      "steps" : "  1. Enable High Availability on the Firewall.\n  2. Now in the Primary Device configure below settings.\n  3. Navigate to Device -&gt; Users -&gt; Local Users & Groups -&gt; Local Groups.\n  4 Add local group name : testgp1 5 Enable \"Memberships are set by user's location in the LDAP directory\"\n  6 Under LDAP Location select : At or under the given location\n  7 LDAP Location: shvl.com/qa\n  8 User test1 at the location shvl.com/qa , user test1 Login in from one PC 9 Create one Access rules such as LAN--WAN Deny , Users Included :testgp1",
+      "initial" : "  S15",
+      "id" : "1825596",
+      "title" : "HA support",
+      "result" : "  1. All the Settings in Primary Firewall should reflect in the Secondary Device also.\n  2. The user should not able to access the firewall with Deny LAN-WAN Security Policy."
+   },
+   "1825605" : {
+      "steps" : "  1 Add local group name : testgp1 <br />2 Enable \"Memberships are set by user's location in the LDAP directory\"<br />3 For users select : at or under the given location<br />4 LDAP Location: shvl.com/qa<br />5 User test1 at the location shvl.com/qa , user test1 Login in from one PC <br />6 Enable IPS/GAV/Anti-Spyware .",
+      "initial" : "  S15",
+      "id" : "1825605",
+      "title" : "Groups with LDAP locations configured used in IPS/GAV/Anti-Spyware",
+      "result" : "  IPS/GAV/Anti-Spyware &#160;is valid ."
+   },
+   "1507159" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Local Users & Groups -&gt; Local Groups\n  2. Click on Add Group\n  3. Select the option \"Memberships are set by the user's location in the LDAP directory\".\n  4. Set Ldap Location as shvl.com/qa.\n  5. Set LDAP locaton: ou=qa,dc=shvl,dc=com",
+      "initial" : "  S15",
+      "id" : "1507159",
+      "title" : "Use different format to set LDAP location(shvl.com/qa OR ou=qa, dc=shvl,dc=com)",
+      "result" : "  LDAP location : shvl.com/qa set success.\n  LDAP locaton: ou=qa,dc=shvl,dc=com set success."
+   },
+   "1825606" : {
+      "steps" : "  1 Add local group name : testgp1 <br />2 Enable \"Memberships are set by user's location in the LDAP directory\"<br />3 For users select : at or under the given location<br />4 LDAP Location: shvl.com/qa<br />5 User test1 at the location shvl.com/qa , user test1 SSL-VPN &#160;login in .<br /><br />",
+      "initial" : "  S15",
+      "id" : "1825606",
+      "title" : "Groups with LDAP locations configured used in SSL-VPN",
+      "result" : "  User Test1 login in success through &#160;SSL-VPN\u00c2\u00a3\u00c2\u00ae"
+   },
+   "1825598" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Local Users & Groups -&gt; Local Group\n  2 Add local group name : testgp1 3 Enable \"Memberships are set by user's location in the LDAP directory\"\n  4 Under LDAP Location select : At or under the given location\n  4 LDAP Location: shvl.com/qa\n  5 Export TSR\u00c2\u00a0",
+      "initial" : "  S15",
+      "id" : "1825598",
+      "title" : "TSR support",
+      "result" : "  The &#160;config in TSR &#160;is correct ."
+   },
+   "1825610" : {
+      "steps" : "  1 Add local group name : testgp1 <br />2 Enable \"Memberships are set by user's location in the LDAP directory\"<br />3 For users select : at or under the given location<br />4 LDAP Location: shvl.com/qa<br />5&#160;<span>User authentication method:Radius and Local&#160;<br />6 Radius user setting : select &#160;<span>&#160;</span><label for=\"radiusUserGroupMethod2\" title=\"\">&#160;Use LDAP to retrieve user group information</label><br />7&#160;&#160;Create &#160;one Access rules such as LAN--WAN &#160;Deny &#160;, Users Included :testgp1&#160;</span>",
+      "initial" : "  S15",
+      "id" : "1825610",
+      "title" : "Groups with LDAP locations configured used with Radius",
+      "result" : "  User test1 be deny ."
+   },
+   "1825603" : {
+      "steps" : "  1 Add local group name : testgp1 <br />2 Enable \"Memberships are set by user's location in the LDAP directory\"<br />3 For users select : at or under the given location<br />4 LDAP Location: shvl.com/qa<br />5 User test1 at the location shvl.com/qa , user test1 Login in from one PC <br />6 Create one CFS &#160;rule , Users Included :testgp1&#160;",
+      "initial" : "  S15",
+      "id" : "1825603",
+      "title" : "Groups with LDAP locations configured used in CFS",
+      "result" : "  CFS rule is valid ."
+   },
+   "1507160" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Settings -&gt; Select user authentication method as LDAP.\n  2. Now Navigate to \"Local Users & Group\" -&gt; Local Groups -&gt; Create one Group called Testgrp1\n  3 Enable \"Memberships are set by user's location in the LDAP directory\"\n  4 In the Group select the Checkbox \"At or under the given location\".\n  4 LDAP Location: shv1.com/qa\n  5 User test1 not at the location shvl.com/qa , user test1 Login in from one PC 6 Create one Access rules such as LAN--WAN allow , Users Included :testgp1",
+      "initial" : "  S15",
+      "id" : "1507160",
+      "title" : "Log support",
+      "result" : "  1 User test1 be deny .<br />2 Event log show inform message of user has no privileges for login from that location."
+   },
+   "1507161" : {
+      "steps" : "  1 Navigate to Devices -&gt; Users -&gt; Local Users & Groups -&gt; Local Groups -&gt; Create one Local Group\n  2 Enable \"\u00c2\u00a0Memberships are set by user's location in the LDAP directory\"\n  3 select LDAP Location as \"At the given location\".\n  4. Save the Group.",
+      "initial" : "  S15",
+      "id" : "1507161",
+      "title" : "For users at the given location",
+      "result" : "  Select &#160;\"&#160;For users at the given location\" Success ."
+   },
+   "1825602" : {
+      "steps" : "  1 Add local group name : testgp1&#160;<br />2 Enable \"Memberships are set by user's location in the LDAP directory\"<br />3 For users select : at or under the given location<br />4 LDAP Location: shvl.com/qa<br />5 SSO setting :&#160;\n  <table align=\"center\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\" summary=\"\">\n  <tbody>\n  <tr>\n  <td class=\"label\" colspan=\"2\">Mechanism for setting user group memberships:</td>\n  </tr>\n  <tr>\n  <td align=\"left\" class=\"label\" colspan=\"2\" nowrap=\"nowrap\"><input checked=\"checked\" class=\"label\" id=\"autoLognUsrGrpMethod0\" name=\"autoLognUsrGrpMethod\" title=\"\" type=\"radio\" value=\"0\" />&#160;<label for=\"autoLognUsrGrpMethod0\" title=\"\">&#160;Use LDAP to retrieve user group information</label>&#160;</td>\n  </tr>\n  </tbody>\n  </table>\n  <br />6 User test1 at the location shvl.com/qa , user test1 Login in from one PC&#160;<br />7 Create one Access rules such as LAN--WAN Deny , Users Included :testgp1",
+      "initial" : "  S15",
+      "id" : "1825602",
+      "title" : "Groups with LDAP locations configured used with NTLM",
+      "result" : "  User test1 be Deny ."
+   },
+   "1768401" : {
+      "steps" : "  1. Configure LDAP and Radius Server in AD.\n  2. Create one AD Group.\n  3. Configure LDAP and Radius in Firewall.\n  4. Import the LDAP Group which we have created in the AD to Firewall.\n  5. Now Set the Default LDAP Group to the AD Group which we have created.\n  6. Repeat the same step 5 with Radius.",
+      "initial" : "  S15",
+      "id" : "1768401",
+      "title" : "GEN7-41799 - Clone:[NSv 270] Error message while selecting Default LDAP/RADIUS user group as AD group {INTEGRATED IT SOLUTIONS DBA SOURCE CODE CORP} [HOTFIX]",
+      "result" : "  1. In LDAP and Radius Default Group Section imported group should be visible as Domain_Name\\Group_name.\n  2. Error should not be thrown by the firewall when we select Default LDAP\\Radius Group with AD Group."
+   },
+   "1825608" : {
+      "steps" : "  1 Add local group name : testgp1 <br />2 Enable \"Memberships are set by user's location in the LDAP directory\"<br />3 For users select : at or under the given location<br />4 LDAP Location: shvl.com/qa<br />5 User test1 at the location shvl.com/qa , user test1 Login in from one PC <br />6 Enale DPI-SSL , Select CFS , Create one &#160;CFS policy &#160;included user group &#160;testgp1 .",
+      "initial" : "  S15",
+      "id" : "1825608",
+      "title" : "Groups with LDAP locations configured used in DPI-SSL",
+      "result" : "  CFS policy is valid ."
+   },
+   "1825611" : {
+      "steps" : "  1 Users---Local Groups --Click &#160;\"Import from LDAP...\" button .<br />2 Select one group and Click Save Selected .&#160;<br />3 Edit the group which be selected from ldap .&#160;",
+      "initial" : "  S15",
+      "id" : "1825611",
+      "title" : "Imported Groups from LDAP will be auto filled with LDAP location",
+      "result" : "  3 Group's The Locations will be auto filled with LDAP location ."
+   },
+   "1825597" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Local Users & Groups -&gt; Local Groups\n  2. Add local group name : testgp1 3. Enable \"Memberships are set by user's location in the LDAP directory\"\n  4. Select LDAP Location : At or under the given location\n  4 LDAP Location: shvl.com/qa\n  5 Export /import preference .",
+      "initial" : "  S15",
+      "id" : "1825597",
+      "title" : "export/import preference",
+      "result" : "  After import preference the configuration is still on ."
+   },
+   "1507158" : {
+      "steps" : "  1. Navigate to Devices -&gt; Users -&gt; Local users & Group -&gt; Local Group.\n  2. Click on Add button or edit any group except Default Groups.\n  3. Observe the result.",
+      "initial" : "  S15",
+      "id" : "1507158",
+      "title" : "Enable memberships set by OU Can be enable and Disable",
+      "result" : "  1. When we click on Add Group Button then by Default \"Memberships are set by the user's location in the LDAP directory\" is not selected.\n  2. We can select the option \"Memberships are set by the user's location in the LDAP directory\" and also can deselect the option."
+   },
+   "1825601" : {
+      "steps" : "  1 Add local group name : testgp1 2 Enable \"Memberships are set by user's location in the LDAP directory\"\n  3 For users select : at or under the given location\n  4 LDAP Location: shvl.com/qa\n  5 SSO setting : Mechanism for setting user group memberships: Use LDAP to retrieve user group information 6 User test1 at the location shvl.com/qa , user test1 Login in from one PC 7 Create one Access rules such as LAN--WAN Deny , Users Included :testgp1",
+      "initial" : "  S15",
+      "id" : "1825601",
+      "title" : "Groups with LDAP locations configured used with SSO",
+      "result" : "  User test1 be deny ."
+   },
+   "1825604" : {
+      "steps" : "  1 Add local group name : testgp1 <br />2 Enable \"Memberships are set by user's location in the LDAP directory\"<br />3 For users select : at or under the given location<br />4 LDAP Location: shvl.com/qa<br />5 Restart FW .",
+      "initial" : "  S15",
+      "id" : "1825604",
+      "title" : "Restart FW",
+      "result" : "  After reboot FW , The configuration is still on ."
+   },
+   "1825600" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Local Users & Groups -&gt; Local Groups.\n  2. Add one local group testgp1\n  3 Enable \"\u00c2\u00a0\u00c2\u00a0Memberships are set by user's location in the LDAP directory\"\n  4 Select \u00c2\u00a0\"For users at or under the given location .\u00c2\u00a0\n  5. Provide the Ldap Location.\n  6. Save the Group.",
+      "initial" : "  S15",
+      "id" : "1825600",
+      "title" : "For users at or under the given location",
+      "result" : "  Select&#160;\"For users at or under the given location success.&#160;"
+   },
+   "1825607" : {
+      "steps" : "  1 Add local group name : testgp1 <br />2 Enable \"Memberships are set by user's location in the LDAP directory\"<br />3 For users select : at or under the given location<br />4 LDAP Location: shvl.com/qa<br />5 User test1 at the location shvl.com/qa , user test1 Login in from one PC <br />6 Create one Access rules such as LAN--WAN Deny , Users Included :testgp1",
+      "initial" : "  S15",
+      "id" : "1825607",
+      "title" : "AA support",
+      "result" : "  &#160;User test1 be deny ."
+   },
+   "1825599" : {
+      "steps" : "  1 Add local group name : testgp1 2 Enable \"Memberships are set by user's location in the LDAP directory\"\n  3 Select LDAP Location : At or under the given location\n  4 LDAP Location: shvl.com/qa\n  5 User test1 at the location shvl.com/qa , user test1 Login in from one PC 6 Create one App rules , Users Included :testgp1",
+      "initial" : "  S15",
+      "id" : "1825599",
+      "title" : "Groups with LDAP locations configured used in App rules",
+      "result" : "  App rules is valid for testgp1 ."
+   },
+   "1825594" : {
+      "steps" : "  1 Add local group name : testgp1 2 Enable \"Memberships are set by user's location in the LDAP directory\"\n  3 Under LDAP Location select : at or under the given location\n  4 LDAP Location: shvl.com/qa\n  5 User test1 at the location shvl.com/qa , user test1 Login in from one PC \u00c2\u00a0by GVC .",
+      "initial" : "  S15",
+      "id" : "1825594",
+      "title" : "Groups with LDAP locations configured used in GVC",
+      "result" : "  GVC client connect success ."
+   },
+   "1507162" : {
+      "steps" : "  1 Add local group \u00c2\u00a0name : testgp1\u00c2\u00a0\n  2 Enable \u00c2\u00a0\"Memberships are set by user's location in the LDAP directory\"\n  3 Select LDAP Location \u00c2\u00a0:\u00c2\u00a0\u00c2\u00a0At or under the given location\n  4 \u00c2\u00a0LDAP Location: shvl.com/qa\n  5 User test1 at the location shvl.com/qa \u00c2\u00a0, user test1 \u00c2\u00a0Login in from one PC\u00c2\u00a0\n  6 Create \u00c2\u00a0one Access rules such as LAN--WAN \u00c2\u00a0Deny \u00c2\u00a0, Users Included :testgp1\u00c2\u00a0",
+      "initial" : "  S15",
+      "id" : "1507162",
+      "title" : "Groups with LDAP locations configured used in Access rules",
+      "result" : "  The Access rules is valid for user test1 and testgp1 group ."
+   }
+}

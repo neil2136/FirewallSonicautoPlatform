@@ -1,0 +1,50 @@
+{
+    "1": {
+        "steps": "1- Go to Network > interface page and click on interface edit button (any switch port interface i.e X2 - X8).\n  2- Set 'Zone' to LAN.\n  3- verify that 'IP Assignment' drop down box has 'PortShield Switch Mode' option available.\n  4- verify that only that interfaces belongs to LAN Zone are available under available 'PortShiled to' drop down box.\n  5- Select any interface which is already a mamber of LAN zone e.g X0.\n  6- Click OK and verify that the interface can be portshield to X0 (or any other selected interface).\n  7- Edit any other interface, set the zone to WAN and verify that 'PortShield Switch Mode' option is not available under 'IP Assignment' drop down box.\n  8- Try to portshield to DMZ, WLAN, trusted, public and wireless zone.",
+        "initial" : "",
+        "title" : "Testing Portshield eligibility of an interface",
+        "result" : "  1.Only switch ports are eligible to be grouped.  \n  2.You can add PortShield interfaces only to Trusted, Public, and Wireless zones."
+    },
+    "2": {
+        "steps": "1- First decide which eligible interface is going to represent the Portshield Group, this interface would be Portshield group interface or portshield host.\n  2- Configure Portshield group interface: - Zone must be set to LAN/DMZ - Portshield group interface cannot be a member of another Portshield Group. - Configure IP address etc. for the interface.\n  3- Configure additional Portshield member interfaces: - Zone must be set to LAN /DMZ. - IP setting must be set to Portshield Switch Mode. - Select the configured Portshield group interface using 'Portshield To' drop down box.",
+        "initial" : "",
+        "title" : "Creating a Portshield Group",
+        "result" : "  Verify the creation of Portshield Group and Group Interface IP address should be pinged from any of the member interfaces."
+    },
+    "6": {
+        "steps": "Following Configuration Restrictions need to be checked.\n  1- Zone setting on Portshield group interface cannot be changed as long as there is at least one interface that has 'Portshield To' interface pointing to it.\n  2- Once an interface is set to Portshield Switch Mode, it cannot be configured for routing\n  3- VLAN sub-interfaces cannot be added on Portshield Member interfaces except the group interface iself.\n  4- If routing is already enabled on the interface , any attempt to set the IP setting to Portshield Switch Mode will result in an error message.\n  5- If there are VLAN sub-interfaces already attached to an interface, there are no 'Portshield Switch Mode' for the interface.\n  6- Once an interface is set to Portshield Switch Mode, its address objects should not be available for use when configuring different policies.",
+        "initial" : "",
+        "title" : "Configuration restrictions after an interface is configured in Portshield Switch Mode",
+        "result" : "  Verify that all the above mentioned configurations are restricted."
+    },
+    "7": {
+        "steps": "1- Reconfigure IP setting of any portshield member interface from Portshield Switch Mode to Static and configure IP address etc.\n  2- Go to Network/Address Objects page and verify that default address objects are added back.\n  3- Go to Network/NAT Policy page and verify that default NAT policies are added back.\n  4- Go to Network/Route page and verify that default interface route is added back.",
+        "initial" : "",
+        "title" : "Removing an interface from a Portshield Group",
+        "result" : "  Verify that all the above mentioned configurations are restricted."
+    },
+    "12": {
+        "steps": "1- Portshield X3 & X4 to X5 AND X6 & X7 to X8\n  2- Connect PC-A to X3, PC-B to X5, PC-C to X4 and PC-D to X6\n  3- Flush arp table on PC-A\n  4- Run ethreal on PC-C and PC-D\n  5- From PC-A ping PC-B",
+        "initial" : "",
+        "title" : "Verify that broadcast frames are flooded to all portshield group member interfaces",
+        "result" : "  Arp frames for PC-B should be seen on PC-C and not on PC-D."
+    },
+    "14": {
+        "steps": "1- Portshield X3 to X5.\n  2- Connect a router (sonicwall device can also be used if router is not available) to X5.\n  3- Connect a PC A to X3 and PC-B to router's other interface.\n  4- Enable Routing on X5.",
+        "initial" : "",
+        "title" : "Routing on a Portshield Group interface",
+        "result" : "  Verify IP connectivity from PC-A connected to X3 to PC-B behind the router"
+    },
+    "15": {
+        "steps": "1- Portshield X3, X4 and X5 to X6.\n  2- Configure DHCP server on a Portshield Group Interface X6.\n   3- Connect PC-A, PC-B and PC-C to X3, X4 and X5 interfaces",
+        "initial" : "",
+        "title" : "DHCP on a Portshield Group",
+        "result" : "  Verify that PC-A, PC-B and PC-C obtain IP addresses via DHCP."
+    },
+    "17": {
+        "steps": "1. Configure X2 and X3 portshield to X0;\n  2. DHCP server enabled on X0;\n  3. PC1, PC2, PC3 connected to X0, X2, X3;\n  4. Test traffic type 1: ping between PC2 and PC3;\n  5. Test traffic type 2: ping and https management FW via X0 IP from PC2 and PC3;\n  6. Test traffic type 3: ping to a reachable internet IP from PC2 and PC3;\n  7. Unplug cable on X0;\n  8. Retest step 4, 5, 6; ",
+        "initial" : "",
+        "title" : "Verify traffic connectivity after portshield host interface link down.",
+        "result" : "  in step 4, 5, 6, both forwarding and management traffic must be succeed;\n  in step 8, both forwarding and management traffic must be succeed from PC2 and PC3."
+    }
+}

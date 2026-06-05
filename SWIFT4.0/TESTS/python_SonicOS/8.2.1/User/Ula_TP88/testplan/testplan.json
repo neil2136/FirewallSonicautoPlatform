@@ -1,0 +1,150 @@
+{
+   "33" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled) 4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "33",
+      "title" : "Remove VPN access from group",
+      "result" : "Remove VPN access from group should give success message"
+   },
+   "32" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "32",
+      "title" : "Remove group membership from group",
+      "result" : "Remove group membership from group should give success message"
+   },
+   "11" : {
+      "steps" : "  1.Load the firmware under test 2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "11",
+      "title" : "POST User-Local group",
+      "result" : "Create a User-Local group should give success message"
+   },
+   "05" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "05",
+      "title" : "PUT User Local account per name",
+      "result" : "Edit user local account per name should give success message"
+   },
+   "26" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "26",
+      "title" : "Attempt POST with duplicate user group",
+      "result" : "Attempt Post with duplicate user should throw error"
+   },
+   "17" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "17",
+      "title" : "GET usergroup by name",
+      "result" : "Should Get user group by name"
+   },
+   "04" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "04",
+      "title" : "GET user local account per name",
+      "result" : "Should get local account per name"
+   },
+   "22" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "22",
+      "title" : "Attempt POST with duplicate user",
+      "result" : "Attempt POST with duplicate user should throw an error"
+   },
+   "18" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "18",
+      "title" : "PUT User Local group account per name",
+      "result" : "Edit user local group account per name should give success message"
+   },
+   "30" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "30",
+      "title" : "Remove group membership from user object",
+      "result" : "Remove group membership from user object should give success message"
+   },
+   "13" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "13",
+      "title" : "PUT User local group",
+      "result" : "Edit user local group should give success message"
+   },
+   "16" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "16",
+      "title" : "PUT User Local account per uuid",
+      "result" : "Edit User local account per uuid should give success message"
+   },
+   "29" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "29",
+      "title" : "Attempt PUT User Local group account per name with non-existent name",
+      "result" : "Attempt PUT User Local group account per name with non-existent name should throw error"
+   },
+   "01" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "01",
+      "title" : "POST User-Local",
+      "result" : "Creating User local account should give success message"
+   },
+   "12" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "12",
+      "title" : "GET user local groups",
+      "result" : "Should get user local groups"
+   },
+   "15" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows ",
+      "initial" : "  TBD",
+      "id" : "15",
+      "title" : "GET user local account per uuid",
+      "result" : "Should get user local account per uuid"
+   },
+   "20" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "20",
+      "title" : "PUT User local settings",
+      "result" : "Edit local user settings should give success message"
+   },
+   "34" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "34",
+      "title" : "GET user local group per uuid",
+      "result" : "SHould get user local group per uuid"
+   },
+   "24" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "24",
+      "title" : "PUT User Local account per name with non-existent name",
+      "result" : "Edit user local account per name with non-existent name should throw error"
+   },
+   "19" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "19",
+      "title" : "GET user local settings",
+      "result" : "Should get user local settings"
+   },
+   "31" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "31",
+      "title" : "Remove VPN access from user object",
+      "result" : "Remove VPN access from user object should give success message"
+   }
+}
+

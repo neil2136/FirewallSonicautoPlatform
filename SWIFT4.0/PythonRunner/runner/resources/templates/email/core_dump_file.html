@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<body style="background-color: #F4F4F4;">
+    <p style="color: #555; padding: 3px 6px; font-size: .9em;">
+        Hello {{ testsuite_owner }},
+        <br><br>
+        Your testsuite generated a coredump file, please check and file a JIRA ticket accordingly.
+        In addition, the CoreDump file and its related files are all located in the core dump URL.
+        <br><br>To decode a coredump file:
+    </p>
+    <ol style="padding-left: 20px; color: #555; font-size: .9em; list-style-position: inside;">
+        <li>Visit <a href="https://decode.eng.sonicwall.com/" target="_blank">https://decode.eng.sonicwall.com/</a></li>
+        <li>Under "Select Coredump File," choose "URL"</li>
+        <li>Paste the Coredump URL from the "Coredump details" into the input box</li>
+        <li>Click "Start GDB Decode"</li>
+    </ol>
+    <p style="color: #555; padding: 3px 6px; font-size: .9em;">
+        To decode a syslog,
+        visit <a href="https://soniccore-tools.eng.sonicwall.com/decryptor/" target="_blank">https://soniccore-tools.eng.sonicwall.com/decryptor/</a>,
+        and then upload the file.
+    </p>
+    <hr>
+    <p style="color: #555; padding: 3px 6px; font-size: .9em;">Coredump details:</p>
+    <table style="width: 90%; color: #555; padding: 3px 6px; font-size: .9em;" align="center">
+        {% for key, val in core_dump_info.items() %}
+        <tr>
+            <td style="width: 240px">{{ key }}:</td>
+            <td>
+                {% if key == 'Coredump URL' %}
+                    {{ val }}
+                    (<a href="{{ val }}" target="_blank">Download</a>)
+                {% else %}
+                    {{ val }}
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% if filtered_dup_notice %}
+    <hr>
+    <p style="color: #555; padding: 3px 6px; font-size: .9em;">Duplicated coredump suspected:</p>
+    <pre style="background-color: #EEE; padding: 10px; border: 1px solid #CCC; font-size: .9em; white-space: pre-wrap; word-wrap: break-word;">
+        {{ filtered_dup_notice | tojson(indent=4) }}
+    </pre>
+    {% endif %}
+    {% if dup_notice and dup_notice.stacktrace %}
+    <p style="color: #555; padding: 3px 6px; font-size: .9em;">Stacktrace:</p>
+    <pre style="background-color: #EEE; padding: 10px; border: 1px solid #CCC; font-size: .9em; white-space: pre-wrap; word-wrap: break-word;">
+        {{ dup_notice.stacktrace | replace("\n", "<br>") | safe }}
+    </pre>
+    {% endif %}
+    {% if log_location %}
+    <hr>
+    <p style="color: #555; padding: 3px 6px; font-size: .9em;">Test Logs:</p>
+    <table style="width: 90%; color: #555; padding: 3px 6px; font-size: .9em;" align="center">
+        {% for key, val in log_location.items() %}
+        <tr>
+            <td style="width: 240px; padding: 4px;">{{ key }}:</td>
+            <td style="padding: 4px;">
+                <a href="{{ val }}" target="_blank">{{ val.strip().rsplit('/', 1)|last if '/' in val else val }}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <hr>
+    {% if manual_operations_info %}
+    <p style="color: #555; padding: 3px 6px; font-size: .9em;">Manual Operations Info:</p>
+    <pre style="background-color: #EEE; padding: 10px; border: 1px solid #CCC; font-size: .9em;">
+        {{ manual_operations_info | tojson(indent=4) }}
+    </pre>
+    {% endif %}
+</body>
+
+{% endblock %}

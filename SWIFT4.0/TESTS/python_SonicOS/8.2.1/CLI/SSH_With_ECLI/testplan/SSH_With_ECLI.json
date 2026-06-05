@@ -1,0 +1,352 @@
+{
+    "001": {
+        "steps": "1) Intiate SSH to device: ssh ip_address\n 2) Verify that cannot connect",
+        "initial": "Device setup with IP but with ssh disabled on the port.",
+        "id": "001",
+        "title": "Connection to port with SSH disabled",
+        "result": "Should not be able to connect when SSH disabled."
+    },
+    "010": {
+        "steps": "1) Initiate SSH to device: ssh ip_addr\n 2) Wait for connection.\n 3) Repeat steps 1-2 creating additional sessions until the maximum(4) is reached.\n 4) Initiate a aditional SSH to device: ssh ip_addr\n 5) Verify that this is rejected.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "010",
+        "title": "Multiple SSH sessions attempts",
+        "result": "Unsuccessful connection."
+    },
+    "011": {
+        "steps": "1) Initiate SSH to device: ssh ip_addr and go to config level.\n 2) Wait for connection.\n 3) Initiate web management session with browser choose to not preempt.\n 4) Verify that all sessions are functioning properly by entering commands.\n 5) Go to config level.\n 6) Verify configuration in GUI while SSH active.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "011",
+        "title": "Web session with SSH",
+        "result": "Successful sessions."
+    },
+    "012": {
+        "steps": "1) Initiate SSH to device: ssh ip_addr\n 2) Wait for connection.\n 3) Go to the configuration level: configure\n 4) Intiate another SSH session.\n 5) Attempt to go to the configuration level: configure\n 6) Verify preempt message.\n 7) Choose OK\n 8) Verify that the other session is put at top level and that this session enters configuration level.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "012",
+        "title": "Config Session Lock SSH",
+        "result": "Only one config level session can be present at the same time."
+    },
+    "013": {
+        "steps": "1) In Serial Console go to configuration level:configure\n 2) Initiate SSH to device: ssh ip_addr\n 3) Wait for connection.\n 4) Attempt to go to the configuration level in SSH session: configure\n 6) Verify preempt message.\n 7) Choose OK\n 8) Verify that the other session is put at top level and that this session enters configuration level.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "013",
+        "title": "Config Session Lock Serial Console",
+        "result": "Only one config level session can be present at the same time."
+    },
+    "014": {
+        "steps": "1) Initiate SSH to device using protocol 1: ssh -1 ip_addr\n 2) Connection should be rejected.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "014",
+        "title": "Connection with SSH Protocol Version 1",
+        "result": "Unsuccessful connection."
+    },
+    "015": {
+        "steps": "1) Initiate SSH to device using compression 1: ssh -C ip_addr\n 2) Wait for connection\n 3) Do some commands to verify session.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "015",
+        "title": "Connection with Zlib compression",
+        "result": "Successful connection and session."
+    },
+    "016": {
+        "steps": "1) Initiate SSH to device using aes128-ctr encryption: ssh -c aes128-ctr ip_addr\n 2) Wait for connection\n 3) Do some commands to verify session.\n \n Note:\n \n If you want to test this on an Ubuntu terminal, need to add cipher aes128-ctr on /etc/ssh/ssh_config (example on Ubuntu 18)",
+        "initial": "Device setup with SSH enabled",
+        "id": "016",
+        "title": "Connection with aes128-ctr Encryption",
+        "result": "Successful connection and session."
+    },
+    "017": {
+        "steps": "1) Initiate SSH to device using aes192-ctr encryption: ssh -c aes192-ctr ip_addr",
+        "initial": "Device setup with SSH enabled",
+        "id": "017",
+        "title": "Connection with aes192-ctr Encryption",
+        "result": "Connection is rejected."
+    },
+    "018": {
+        "steps": "1) Initiate SSH to device using aes256-ctr encryption: ssh -c aes256-ctr ip_addr\n 2) Wait for connection\n 3) Do some commands to verify session.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "018",
+        "title": "Connection with aes256-ctr Encryption",
+        "result": "Successful connection and session."
+    },
+    "019": {
+        "steps": "1) Initiate SSH to device using arcfour128 encryption: ssh -c arcfour128 ip_addr\n \n If you want to test this on an Ubuntu terminal, need to add cipher arcfour128 on /etc/ssh/ssh_config (example on Ubuntu 18)",
+        "initial": "Device setup with SSH enabled",
+        "id": "019",
+        "title": "Connection with arcfour128 Encryption",
+        "result": "Unsuccessful connection:  Unable to negotiate with 10.190.6.100: no matching cipher found."
+    },
+    "002": {
+        "steps": "1) Enable ssh on a port using CLI.\n 2) Intiate SSH to device: ssh ip_address\n 3) Verify that can connect\n 4) Logon\n 5) Type several show commands.\n 6) Exit.\n 7) Verify above steps with other interfaces\n 8) Verify above steps enabling with GUI.",
+        "initial": "Device setup with IP but and ssh enabled on the port.",
+        "id": "002",
+        "title": "Connection to port with SSH enabled",
+        "result": "Should not be able to connect when SSH disabled."
+    },
+    "020": {
+        "steps": "1) Initiate SSH to device using 3DES encryption: ssh -c 3des-cbc ip_addr",
+        "initial": "Device setup with SSH enabled",
+        "id": "020",
+        "title": "Connection with 3des-cbc Encryption",
+        "result": "Connection is rejected."
+    },
+    "021": {
+        "steps": "1) Initiate SSH to device using arcfour encryption: ssh -c arcfour ip_addr\n 2) Wait for connection\n 3) Do some commands to verify session",
+        "initial": "Device setup with SSH enabled",
+        "id": "021",
+        "title": "Connection with arcfour encryption",
+        "result": "Successful connection and session."
+    },
+    "022": {
+        "steps": "1) Initiate SSH to device using DES encryption: ssh -c aes128-gcm@openssh.com ip_addr\n 2) Wait for connection\n 3) Do some commands to verify session.",
+        "initial": "Device setup with SSH enabled",
+        "id": "022",
+        "title": "Connection with aes128-gcm@openssh.com Encryption",
+        "result": "Successful connection and session."
+    },
+    "023": {
+        "steps": "1) Initiate SSH to device using aes256-gcm@openssh.com encryption: ssh -c aes256-gcm@openssh.com ip_addr\n \n 2) Wait for connection\n \n 3) Do some commands to verify session.",
+        "initial": "Device setup with SSH enabled",
+        "id": "023",
+        "title": "Connection with aes256-gcm@openssh.com encryption",
+        "result": "Successful connection and session"
+    },
+    "024": {
+        "steps": "1) Initiate SSH to device using blowfish-cbc authentication: ssh -c blowfish-cbc ip_addr",
+        "initial": "Device setup with SSH enabled",
+        "id": "024",
+        "title": "Connection with blowfish-cbc",
+        "result": "Connection is rejected"
+    },
+    "025": {
+        "steps": "1) Initiate SSH to device using hmac-md5 authentication:\n ssh -m hmac-md5 ip_addr",
+        "initial": "Device setup with SSH enabled",
+        "id": "025",
+        "title": "Connection with hmac-md5",
+        "result": "Connection is rejected"
+    },
+    "026": {
+        "steps": "1) Initiate SSH to device using hmac-sha1 authentication:\n ssh -m hmac-sha1 ip_addr\n 2) Wait for connection\n 3) Do some commands to verify session.",
+        "initial": "Device setup with SSH enabled ",
+        "id": "026",
+        "title": "Connection with hmac-sha1",
+        "result": "Successful connection and session"
+    },
+    "027": {
+        "steps": "1) Initiate SSH to device:\n ssh ip_addr\n 2) Wait for connection\n 3) Do some commands to verify session.",
+        "initial": "Device setup with SSH enabled",
+        "id": "027",
+        "title": "Connection with Cygwin openssh client",
+        "result": "Successful connection and session."
+    },
+    "028": {
+        "steps": "1) Initiate SSH to device:\n ssh ip_addr\n 2) Wait for connection\n 3) Do some commands to verify session.",
+        "initial": "Device setup with SSH enabled",
+        "id": "028",
+        "title": "Connection with Linux openssh client",
+        "result": "Successful connection and session."
+    },
+    "029": {
+        "steps": "1) Start putty application and initiate SSH to device.\n 2) Wait for connection\n 3) Do some commands to verify session.",
+        "initial": "Device setup with SSH enabled",
+        "id": "029",
+        "title": "Connection with putty ssh client",
+        "result": "Successful connection and session."
+    },
+    "003": {
+        "steps": "1) Intiate SSH to device: ssh ip_address\n 2) Verify that can connect\n 3) Attempt to logon with incorrect user name and password.\n 4) Verify that name and password are asked for multiple times\n 5) Verify that no login occurs.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "003",
+        "title": "Connection with incorrect credentials",
+        "result": "User entering incorrect credentials is not allowed access."
+    },
+    "030": {
+        "steps": "1) Start Tera Term Pro application and initiate SSH to device.\n 2) Wait for connection\n 3) Do some commands to verify session.",
+        "initial": "Device setup with SSH enabled",
+        "id": "030",
+        "title": "Connection with Tera Term Pro ssh client",
+        "result": "Successful connection and session."
+    },
+    "031": {
+        "steps": "1) Intiate Telnet session to ssh port: telnet ip_addr ssh_port\n 2) Wait for SSH version to be returned.\n 3) Connection should not succeed.",
+        "initial": "Device setup with SSH enabled",
+        "id": "031",
+        "title": "Connection with telnet to ssh port",
+        "result": "SSH version is displayed and no problems result."
+    },
+    "032": {
+        "steps": "1) Initiate SSH to device using ssh-dss host key algorithm:\n ssh -o HostKeyAlgorithms=ssh-dss ip_addr",
+        "initial": "Device setup with SSH enabled",
+        "id": "032",
+        "title": "Connection with ssh-dss",
+        "result": "Connection is rejected"
+    },
+    "033": {
+        "steps": "1) Start SecureCRT application and initiate SSH to device.\n 2) Wait for connection\n 3) Do some commands to verify session.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "033",
+        "title": "Connection with SecureCRT ssh client",
+        "result": "Successful connection and session"
+    },
+    "034": {
+        "steps": "Monitor system resources during test to verify that there are no memory leaks.\n 1) Initiate SSH to device:\n ssh ip_addr\n 2) Wait for connection\n 3) Go to configuration level.\n 4) Paste a large configuration into the SSH window.\n 5) Wait until the commands finish.\n 6) Verify that the running configuration has been changed appropriately.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "034",
+        "title": "Pasting Commands",
+        "result": "Paste should happen with no memory leaks or other problems.  Performance should not be greatly effected."
+    },
+    "035": {
+        "steps": "1)Set administrative timeout to 1\n 2)On serial console do \"diag show processes\" continuous\n 3)Connect ssh session.\n 4)Do \"diag show processes\" continuous\n 5))Allow timeout to occur.\n 6)SSH session should be disconnected.\n 7)Reconnect with an SSH session.\n 9)Do several shows.\n 10)Verify no extra data is displayed.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "035",
+        "title": "Verify PTY Cleanup",
+        "result": "PTY buffer is cleaned up after sessions"
+    },
+    "036": {
+        "steps": "1) Initiate SSH to device: ssh ip_addr\n 2) Wait for connection.\n 3) From GUI disable ssh connection\n 4) From serial console verify ssh session has been removed with \"diag show processes\" (There should be a tSshC process for each ssh session or not if disconnected)\n 5) Verify ssh session is still there.\n 6) From SSH session enter some commands.\n 7) Verify disconnect\n 8) Initiate SSH to device: ssh\n 9) Verify that cannot connect.",
+        "initial": "Device with SSH enabled.",
+        "id": "036",
+        "title": "Disable SSH using GUI with connection",
+        "result": "Disabling remove current session and prevents future connections.   Disabling does not cause any problems."
+    },
+    "037": {
+        "steps": "1) Start putty application.\n 2) Turn on check for miscomputed encryption key.\n 3) Connect to the device.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "037",
+        "title": "Putty with miscomputed encryption key",
+        "result": "Device should recover from this without problems."
+    },
+    "038": {
+        "steps": "1) From Serial Console set timeout to 1\n 2) Initiate SSH to device: ssh ip_address\n 3) Wait for connection.\n 4) Type configure\n 5) Wait for the timeout\n 5) From serial console verify ssh session has been removed with \"diag show processes\" (There should be a tSshC process for each ssh session or not if disconnected)\n 6) Try to go to config level from CLI\n 7) Verify success.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "038",
+        "title": "Timeout of SSH session that is at config level.",
+        "result": "Timeout of ssh session at config level clears the session and allows other session to go to config level."
+    },
+    "039": {
+        "steps": "1. Setup wireless to wireless device.\n 2. Intiate SSH to device.\n 3. Verify connection\n 4. Type some commands",
+        "initial": "Only applicable to Wireless hardware.",
+        "id": "039",
+        "title": "Connect to WLAN",
+        "result": "Successful connection"
+    },
+    "004": {
+        "steps": "1) Set SSH port on System > Administration page to 54022\n 2) Initiate SSH to device on port 22: ssh ip_address\n 2) Verify cannot connect\n 3) Initiate SSH to device on new port : ssh ip_address -p 54022\n 4) Verify can connect\n 5) Reset port to default using GUI.\n 6) Initiate SSH to device: ssh ip_address -p 54022\n 7) Verify cannot connect\n 8) Initiate SSH to device: ssh ip_address\n 9) Verify can connect",
+        "initial": "Device setup with SSH enabled.\\n\\nSsh port assigned to non-standard such as 54022.",
+        "id": "004",
+        "title": "Connection on non-standard TCP port",
+        "result": "Refusal of  SSH connection on previously assigned ports  and successful connection on assigned port."
+    },
+    "040": {
+        "steps": "In WLAN GroupVPN policy on Advanced Tab disable SSH Management via this SA.\n 1. Connect with GVC client.\n 2. Log in.\n 3. Start SSH session to WLAN port.\n 4. Verify failure",
+        "initial": "Only applicable to Wireless hardware.  Device setup for wireless connection with WiFiSec enforcement on.",
+        "id": "040",
+        "title": "Connection to WLAN over IPSec with SSH disabled in WLAN group VPN policy",
+        "result": "Unsuccessful connection when disabled at Wlan group VPN policy."
+    },
+    "041": {
+        "steps": "In WLAN GroupVPN policy on Advanced Tab enable SSH Management via this SA.\n 1. Connect with GVC client.\n 2. Log in.\n 3. Start SSH session to WLAN port.\n 4. Verify success.",
+        "initial": "Only applicable to Wireless hardware.  Device setup for wireless connection with WiFiSec enforcement on.",
+        "id": "041",
+        "title": "Connection to WLAN interface over IPSEC with SSH enabled in WLAN Group VPN policy",
+        "result": "Successful connection."
+    },
+    "042": {
+        "steps": "\"1) Initiate SSH to device: ssh ip_address\n 2) Wait for connection.\n 3) Type configure\n 4) Close the console window\n 5) Open another console window.\n 6) Intiate SSH to device\n 7) Wait for Connection\n 8) Type 'configure'\n 9) Verify configure level is achieved without preempt message.\n 10) Repeat steps using GUI and Serial console in Steps 5-9 (GUI enter configuration mode )\"",
+        "initial": "Device setup with SSH enabled.",
+        "id": "042",
+        "title": "Attempt to access config level after console window was closed of SSH session at config level",
+        "result": "User able to go to config mode or level."
+    },
+    "043": {
+        "steps": "1.  Moniotor Serial Console\n \n 2.  Attempt to execute a command when connecting:\n \n ssh ip_address -l admin show status\n \n 3.  Supply password",
+        "initial": "SSH enabled and configured.",
+        "id": "043",
+        "title": "Command when trying to connect with SSH",
+        "result": "Command is not able to execute.  No issues occur."
+    },
+    "044": {
+        "steps": "1. Configure a user with Sonicwall Administrator priviliges and enable User must change password. \n \n 2.  Set CLI session timeout to 1 minute.\n \n 3. SSH to device and log in as user \n \n 4. Please Enter a New Password is displayed. \n \n 5. Wait for 1 minute",
+        "initial": "Device setup with SSH enabled.",
+        "id": "044",
+        "title": "Timeout of CLI session when change of password is required",
+        "result": "User is logged out without issues"
+    },
+    "045": {
+        "steps": "1) From Serial Console set timeout to 1\n 2) Initiate SSH to device: ssh ip_address\n 3) Wait for connection.\n 4) Type configure\n 5) Wait for the timeout\n 5) Verify session is cleared with diag show processses from CLI\n 6) Try to go to config level from CLI\n 7) Verify success.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "045",
+        "title": "Timeout of SSH session that is at config level.",
+        "result": "Timeout of ssh session at config level clears the session and allows other session to go to config level."
+    },
+    "046": {
+        "steps": "1. Enable SSH Management on X0 port. \n 2. Create a Address Object range of addresses in X0 subnet,\n \n 3, In SSL-VPN Client settings default device profile set this address on the Settings tab and add X0 subnet in Client Routes, \n \n 4. In SSL-VPN Server enable SSLVPN access on WAN and LAN.\n \n 5. Enable SSH Management over SSL-VPN on SSL-VPN server page.\n \n 6.  Create access rule SSLVPN > LAN to allow SSH access to X0 IP. \n 7. Create user that is member of SSL-VPN services and Sonicwall administrators, \n also allow VPN access to  user to X0 IP. \n 8. Make a NetExtender connection to X1 and log in as user.\n 9. Make SSH connection over SSL-VPN. ",
+        "initial": "Client on WAN with NetExtender installed",
+        "id": "046",
+        "title": "Connection through SSL-VPN with SSH management enabled",
+        "result": "Successful SSH connection"
+    },
+    "047": {
+        "steps": "1. Enable SSH Management on X0 port. \n 2. Create a matching VPN policy and enable SSH management.\n \n 3. Make SSH  connection over VPN. ",
+        "initial": "Remote box setup with VPN and client.",
+        "id": "047",
+        "title": "Connection through VPN with SSH management enabled",
+        "result": "Successful SSH connection"
+    },
+    "048": {
+        "steps": "1. Make  NetExtender connection to X1 and log in as user.\n 2. Make 4 SSH connection over SSL-VPN to X0. \n \n 3. Disconnect NetExtender\n \n 4. Using serial console do \"diag show processes\"\n \n 5. Reconnect NetExtender\n \n 6.  Attempt SSH connection over SSL-VPN to X0.",
+        "initial": "1. Enable SSH Management on X0 port. \\n\\n2. Create a Address Object range of addresses in X0 subnet,\\n\\n3, In SSL-VPN Client settings default device profile set this address on the Settings tab and add X0 subnet in Client Routes, \\n\\n4. In SSL-VPN Server enable SSLVPN access on WAN and LAN.\\n\\n5. Enable SSH Management over SSL-VPN on SSL-VPN server page.\\n\\n6.  Create access rule SSLVPN > LAN to allow SSH access to X0 IP. \\n\\n\\n7. Create user that is member of SSL-VPN services and Sonicwall administrators, \\nalso allow VPN access to  user to X0 IP. \\n\\n8.  Client PC on WAN",
+        "id": "048",
+        "title": "Connection through SSL-VPN and disconnect NetExtender",
+        "result": "SSH processes over SSL-VPN are not there after SSL-VPN termination.  Successful SSH connection after reconnection.  No maximum number of client messages."
+    },
+    "049": {
+        "steps": "1. Make  NetExtender connection to X1 and log in as user.\n 2. Make SSH connection over SSL-VPN to X0. \n \n 3. Disable SSH management on X0\n \n 4. Attempt to make SSH connection over SSL-VPN to X0. ",
+        "initial": "1. Enable SSH Management on X0 port. \\n\\n2. Create a Address Object range of addresses in X0 subnet,\\n\\n3, In SSL-VPN Client settings default device profile set this address on the Settings tab and add X0 subnet in Client Routes, \\n\\n4. In SSL-VPN Server enable SSLVPN access on WAN and LAN.\\n\\n5. Enable SSH Management over SSL-VPN on SSL-VPN server page.\\n\\n6.  Create access rule SSLVPN > LAN to allow SSH access to X0 IP. \\n\\n\\n7. Create user that is member of SSL-VPN services and Sonicwall administrators, \\nalso allow VPN access to  user to X0 IP. \\n\\n8.  Client PC on WAN",
+        "id": "049",
+        "title": "Connection through SSL-VPN and disable SSH management",
+        "result": "SSH session not able to be made over SSL-VPN when SSH management is disabled."
+    },
+    "005": {
+        "steps": "Monitor system resources\n 1) Initiate SSH to device: ssh ip_address\n 2) Wait for connection.\n 3) Abort session by entering the command exit.\n 4) Initiate SSH to device: ssh ip_address\n 5) Wait for connection.\n 6) Abort session by closing SSH application or killing the process.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "005",
+        "title": "Abort SSH connection",
+        "result": "Successful abort without leaks or other problems."
+    },
+    "050": {
+        "steps": "1. Make  NetExtender connection to X1 and log in as user.\n 2. Make SSH connection over SSL-VPN to X0. \n \n 3. Disable SSH management on X0\n \n 4. Attempt to make SSH connection over SSL-VPN to X0. ",
+        "initial": "1. Enable SSH Management on X0 port. \\n\\n2. Create a Address Object range of addresses in X0 subnet,\\n\\n3, In SSL-VPN Client settings default device profile set this address on the Settings tab and add X0 subnet in Client Routes, \\n\\n4. In SSL-VPN Server enable SSLVPN access on WAN and LAN.\\n\\n5. Enable SSH Management over SSL-VPN on SSL-VPN server page.\\n\\n6.  Create access rule SSLVPN > LAN to allow SSH access to X0 IP. \\n\\n\\n7. Create user that is member of SSL-VPN services and Sonicwall administrators, \\nalso allow VPN access to  user to X0 IP. \\n\\n8.  Client PC on WAN",
+        "id": "050",
+        "title": "Connection through SSL-VPN and disable SSH management",
+        "result": "SSH session not able to be made over SSL-VPN when SSH management is disabled."
+    },
+    "006": {
+        "steps": "1) Initiate SSH to device: ssh ip_addr\n 2) Wait for connection.\n 3) From Serial Console at Configure > Interface level: no management ssh.\n 4) Verify ssh session has been removed with \"diag show processes\" (There should be a tSshC process for each ssh session or not if disconnected)\n 6) From SSH session verify disconnect.\n 7) Initiate SSH to device: ssh ip_addr\n 8) Verify that cannot connect.",
+        "initial": "Device setup with SSH enabled",
+        "id": "006",
+        "title": "Disable SSH using Serial with connection",
+        "result": "Disabling remove current session and prevents future connections."
+    },
+    "007": {
+        "steps": "1) Initiate SSH to device: ssh ip_addr\n 2) Wait for connection.\n 3) Login.\n 4) Type configure\n 5) Edit the interface and shows \"no management ssh\" and commit. - SSH session is disconnected\n 6) From serial console verify ssh session has been removed with \"diag show processes\" (There should be a tSshC process for each ssh session or not if disconnected)\n 7) Attempt SSH connection to device: ssh ip_addr",
+        "initial": "Device setup with SSH enabled.",
+        "id": "007",
+        "title": "Disable SSH using SSH",
+        "result": "Disabling disconnects user and removes SSH session.  Subsequent connections are not allowed."
+    },
+    "008": {
+        "steps": "1) Initiate SSH to device: ssh ip_addr\n 2) Wait for connection.\n 3) Change the IP of the device:\n >configure\n >interface X0\n >ip-assignment LAN static\n >ip address new_ip\n >exit\n >commit\n 4) From Serial Console type show sessions\n 5)  From serial console verify ssh session has been removed with \"diag show processes\" (There should be a tSshC process for each ssh session or not if disconnected)\n 6) Initiate SSH to device: ssh new_ip\n 7) Verify that can connect.",
+        "initial": "Device setup with SSH enabled.",
+        "id": "008",
+        "title": "Change IP using SSH",
+        "result": "Changing IP disconnects current session.  Changing IP now allows connection at new IP."
+    },
+    "009": {
+        "steps": "1) Initiate SSH to device: ssh ip_address.\n 2) Change the SSH port of the device from configuration > administration: ssh port 54022 - user is disconnected.\n 3) Initiate SSH to device on port 22: ssh ip_address\n 4) Verify cannot connect\n 5) Initiate SSH to device on new port : ssh ip_address -p 54022\n 6) Verify can connect\n 7) Change the SSH port of the device to default: ssh port 22 - user is disconnected\n 8) Initiate SSH to device: ssh ip_address -p 54022\n 9) Verify cannot connect\n 10) Initiate SSH to device: ssh ip_address\n 11) Verify can connect",
+        "initial": "Device setup with SSH enabled.",
+        "id": "009",
+        "title": "Change SSH port using SSH",
+        "result": "User cannot connect on previous port but can on port that was changed to."
+    }
+}

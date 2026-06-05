@@ -1,0 +1,44 @@
+{
+   "1516142" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. stop AD services. Test status was LDAP authentication error.<br />Refresh Groups Mirrored From LDAP list.",
+      "id" : "1516142",
+      "title" : "If LDAP communication error, groups remained as Mirrored from LDAP",
+      "result" : ""
+   },
+   "1516124" : {
+      "steps" : "",
+      "initial" : "  1. Enable \"Additional user group ID\" through click use and save it in LDAP Schema page.\n  2. go to Users/ Settings, choose LDAP+Local Users on User authentication method.<br />3. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Choose \"Only groups that have member users or groups \" and apply it.<br />4. go to Local Groups page. check the mirrored LDAP groups list.<br />5. add users from LDAP Server named user02. choose Password never expires on password types.<br /> add groups form LDAP Server named group1 and group2.<br />6. add user02 to group1 and group2. Set group2 as primary group.<br />7.test user02 on Test page.\n  8. Refresh the mirror group list and check in mirror groups.",
+      "id" : "1516124",
+      "title" : "Enable primary group attribute(AD only)",
+      "result" : ""
+   },
+   "1516159" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add users from LDAP Server named user02. choose Rassword never expires on password types. enable Create an Exchange mailbox.<br /> add groups form LDAP Server named group1. enable Create an Exchange e-mail address.<br /> add user02 to group1. Refresh Groups Mirrored From LDAP list.<br />5. add test user for Local Users.<br /> go to Groups Mirrored From LDAP list. configure group1.<br /> add test to Member Users and Groups. save it<br />6. go to Firewall /Access Rules, on LAN to WAN policy, set Users Included to group1@ex2003.com.<br /> add a allowed LAN to WAN DNS prolicy if needed.<br /> 1 LAN &gt; WAN 1 Any Any DNS (Name Service) Allow All None <br /> 2 LAN &gt; WAN 2 Any Any Any Allow group1@ex2003.com None <br />7. access internet from PC1. it will redirect to FW log in page. login it using user02.",
+      "id" : "1516159",
+      "title" : "Only users can be added to mirrored groups",
+      "result" : ""
+   },
+   "1516151" : {
+      "steps" : "",
+      "initial" : "  for FW1\n  1. go to Users/ Settings, choose LDAP on User authentication method.\n  2. go to Users&Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.\n  3. go to Local Groups page. check the mirrored LDAP groups list.\n  4. add a Local Groups\n  Name: gptest\n  Member Users and Groups: group1@lei.com\n  5. add group1 to Limited Administrators/Guest Services/SSLVPN Services.\n  edit/delete some Mirrored groups set.\n  6. failover FW1. Test status on configure LDAP page.",
+      "id" : "1516151",
+      "title" : "AA support",
+      "result" : ""
+   },
+   "1516148" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. go to Log Settings. Open Gui events contain LDAP Mirroring.<br /> LDAP Mirroring Overflow<br /> LDAP User Group Nesting Not Being Mirrored<br /> LDAP Mirror User Group Member Add Failure<br /> LDAP Mirror User Group Add Failure<br /> LDAP Mirror Deleted Member<br /> LDAP Mirror Added Member<br /> LDAP Mirror Deleted<br /> LDAP Mirror Added<br />5. add/delete members and groups on mirror list. Refresh Groups Mirrored From LDAP list.",
+      "id" : "1516148",
+      "title" : "Log support",
+      "result" : ""
+   },
+   "1516150" : {
+      "steps" : "",
+      "initial" : "  for FW1<br />1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add a Local Groups<br />Name: gptest<br />Member Users and Groups: group1@lei.com<br />5. add group1 to Limited Administrators/Guest Services/SSLVPN Services.<br />edit/delete some Mirrored groups set.<br />6. failover FW1. Test status on configure LDAP page.",
+      "id" : "1516150",
+      "title" : "HA Support",
+      "result" : ""
+   }
+}

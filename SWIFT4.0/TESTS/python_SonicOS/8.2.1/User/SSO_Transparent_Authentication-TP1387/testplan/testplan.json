@@ -1,0 +1,247 @@
+{
+   "33" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "When 0 or 301 is entered in the Timeout field, the status bar shows an error message Timeout. Data out of bounds (min=1, max=300). The values 1, 10, and 300 are accepted and saved in the Sonicwall SSO Agent Configuration.",
+      "id" : "33",
+      "title" : "Settings tab. The Timeout (seconds) field boudaries.",
+      "result" : "Original ID: 9 Original Title: Settings tab. The Timeout (seconds) field boudaries. Original Description: This test verifies that the minimum value accepted in the Timeout field is 1 and maximum is 30."
+   },
+   "20" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "It should be there and three buttons 'add', 'edit', 'remove' are listed below.",
+      "id" : "20",
+      "title" : "User tab: UseR name used by Windows Services",
+      "result" : "Original ID: 58 Original Title: User tab: User name used by Windows Services Original Description: This case verifies that GUI of User name used by Windows services display correctly"
+   },
+   "18" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The agent name in FQDN format is accepted and saved in the Sonicwall SSO Agent Configuration.",
+      "id" : "18",
+      "title" : "Settings tab. Set Authentication Agent Name.",
+      "result" : "Original ID: 4 Original Title: Settings tab. Set Authentication Agent Name. Original Description: This test verifies that the agent name can be set in FQDN format."
+   },
+   "14" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The Configure button for the Single-sign-on method is enabled.",
+      "id" : "14",
+      "title" : "The Configure button is enabled",
+      "result" : "Original ID: 3 Original Title: The Configure button is enabled Original Description: This test verifies that the Configure button is enabled."
+   },
+   "16" : {
+      "steps" : "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\n  The other PC is a workstation where a domain user should log in to the domain.",
+      "initial" : "The user that is logged in to the domain is allowed to access the Internet without logging in to the SonicWALL. The firewall prints a log message User login allowed. The user is shown on the Users>Settings page of the SonicWALL.",
+      "id" : "16",
+      "title" : "A user is logged in to a network and accessing resources within the network.",
+      "result" : "Original ID: 31\n  Original Title: A user is logged in to a network and accessing resources within the network.\n  Original Description: This test verifies that a user logged in to the domain will automatically be identified and recognized as authenticated by the SonicWALL."
+   },
+   "10" : {
+      "steps" : "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\n  The other PC is a workstation where a domain user should log in to the domain.",
+      "initial" : "The user that is logged in to the domain is allowed to access the Internet. The firewall prints a log message User login allowed. The user is shown on the Users>Settings page of the SonicWALL.",
+      "id" : "10",
+      "title" : "Use an IP address to define the authentication agent.",
+      "result" : "Original ID: 26\n  Original Title: Use an IP address to define the authentication agent.\n  Original Description: This test verifies that an IP address can be used to define the Sonicwall SSO Agent."
+   },
+   "19" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The agent name in IP Address format is accepted and saved in the Sonicwall SSO Agent",
+      "id" : "19",
+      "title" : "Settings tab. Set Authentication Agent IP Address",
+      "result" : "Original ID: 5 Original Title: Settings tab. Set Authentication Agent IP Address Original Description: This test verifies that the agent name can be set in IP Address format."
+   },
+   "17" : {
+      "steps" : "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\n  The other PC is a workstation where a domain user should log in to the domain.",
+      "initial" : "The user that is not logged in to the domain is not allowed to access the Internet. The firewall prints a log message Access is denied by policy.\n  The user is presented with a page prompting to log in to the network.",
+      "id" : "17",
+      "title" : "A user is not logged in to a network and accessing resources within the network.",
+      "result" : "Original ID: 32\n  Original Title: A user is not logged in to a network and accessing resources within the network.\n  Original Description: This test verifies that a user that is not logged in to the domain will be presented with a page prompting to log in to the network. Traffic from that user will be blocked."
+   },
+   "32" : {
+      "steps" : "TBD",
+      "initial" : "1) After 10 minutes, this inactive user should disappear in Users &gt; Status.",
+      "id" : "32",
+      "title" : "'Age out inactive users after (minutes)' input box",
+      "result" : "Original ID: 80\n  Original Title: 'Age out inactive users after (minutes)' input box\n  Original Description:"
+   },
+   "28" : {
+      "steps" : "TBD",
+      "initial" : "windows services users should be successfully removed from appliance and the change should be updated to the agent.",
+      "id" : "28",
+      "title" : "User tab: remove user name and click OK",
+      "result" : "Original ID: 65 Original Title: User tab: remove user name and click OK Original Description: This case verifies that remove user name and click OK works fine"
+   },
+   "29" : {
+      "steps" : "TBD",
+      "initial" : "Remove windows user name, click apply should work fine on the appliance and the change should be updated to the agent.",
+      "id" : "29",
+      "title" : "User tab: remove windows services user name and click apply",
+      "result" : "Original ID: 66 Original Title: User tab: remove windows services user name and click apply Original Description: This case verifies that remove windows services user names, click apply first and then click OK works fine."
+   },
+   "34" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The Allow only users listed locally check box is enabled.",
+      "id" : "34",
+      "title" : "Users tab. Enable the Allow only users listed locally check box.",
+      "result" : "Original ID: 13 Original Title: Users tab. Enable the Allow only users listed locally check box. Original Description: This test verifies that the Allow only users listed locally check box in the Users tab can be enabled and the modification is saved in the Sonicwall SSO Agent Configuration."
+   },
+   "2" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The characters #, %, and n are not accepted in the Retries field. The status bar shows an error message: Retries.Data is incorrectly formatted.",
+      "id" : "2",
+      "title" : "Settings tab. Incorrectly formatted data in the Retries field.",
+      "result" : "Original ID: 12\n  Original Title: Settings tab. Incorrectly formatted data in the Retries field.\n  Original Description: This test verifies that only numeric characters are accepted in the Retries field."
+   },
+   "4" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The Configure button in the Users tab is dimmed.",
+      "id" : "4",
+      "title" : "Users tab. LDAP Configuration window is not available when local configuration is selected for setting user group memberships.",
+      "result" : "Original ID: 17\n  Original Title: Users tab. LDAP Configuration window is not available when local configuration is selected for setting user group memberships.\n  Original Description: This test verifies that the Configure button in the Users tab is dimmed if the Local configuration radio button is selected."
+   },
+   "1" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The Single-sign-on selection is available on the Users&gt;Settings page with four options: SSO Agent, Terminal Services Agent, Browser NTLM Authentication and RADIUS Accounting.",
+      "id" : "1",
+      "title" : "Single-sign-on method selection on the Users>Settings page.",
+      "result" : "Original ID: 1\n  Original Title: Single-sign-on method selection on the Users>Settings page.\n  Original Description: This test verifies that the Single-sign-on method selection is available in the Users>Settings page of the firewall with 4.0e or newer image."
+   },
+   "7" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The IP address is set in the Workstation IP Address field.",
+      "id" : "7",
+      "title" : "Test tab. Set Workstation IP Address.",
+      "result" : "Original ID: 21\n  Original Title: Test tab. Set Workstation IP Address.\n  Original Description: This test verifies that an IP address can be entered in the Workstation IP Address field of the Test tab."
+   },
+   "35" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The configured parameters in the Settings and Users tabs of the Sonicwall SSO Agent Configuration window are intact after export/import preferences.",
+      "id" : "35",
+      "title" : "Sonicwall SSO Agent Authentication configuration is saved in a preference file.",
+      "result" : "Original ID: 24 Original Title: Sonicwall SSO Agent Authentication configuration is saved in a preference file. Original Description: This test verifies that settings configured in the Sonicwall SSO Agent window are saved in a preference file."
+   },
+   "27" : {
+      "steps" : "TBD",
+      "initial" : "edit special user name should work fine and the change should be updated to the agent.",
+      "id" : "27",
+      "title" : "User tab: edit special windows services user name",
+      "result" : "Original ID: 64 Original Title: User tab: edit special windows services user name Original Description: This case verifies edit special windows services user name such as user name which contain '\\' character works fine."
+   },
+   "24" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "user name should be successfully added and displayed, and it should be successfully pushed to the agent.",
+      "id" : "24",
+      "title" : "User tab: add special windows user name",
+      "result" : "Original ID: 61 Original Title: User tab: add special windows user name Original Description: This case verifies add speical user names such as 'yili\\test' which contain '\\' character works fine"
+   },
+   "9" : {
+      "steps" : "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the PC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\n  The other PC is a workstation where a domain user should log in to the domain.",
+      "initial" : "The packets trace on the agent shows the request from the SonicWALL and response from the agent. The Test Status on the SonicWALL returns the user name in the <domain>/<user-name> format.",
+      "id" : "9",
+      "title" : "User name test.",
+      "result" : "Original ID: 23\n  Original Title: User name test.\n  Original Description: This test verifies that the Test Status returns a user name in the <domain>/<user-name> format when Check user test is selected and Workstation IP address is entered."
+   },
+   "31" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The shared key is saved in the Sonicwall SSO Agent Configuration window.",
+      "id" : "31",
+      "title" : "Settings tab. Set Shared Key.",
+      "result" : "Original ID: 7\n  Original Title: Settings tab. Set Shared Key.\n  Original Description: This test verifies that a shared key can be set in the Sonicwall SSO Agent Configuration window."
+   },
+   "5" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The characters #, %, and n are not accepted in the Polling rate (minutes) field. The status bar shows an error message Polling rate. Data is incorrectly formatted.",
+      "id" : "5",
+      "title" : "Users tab. Incorrectly formatted data in the Polling rate (minutes) field.",
+      "result" : "Original ID: 19\n  Original Title: Users tab. Incorrectly formatted data in the Polling rate (minutes) field.\n  Original Description: This test verifies that only numeric characters are accepted in the Polling rate (minutes) field."
+   },
+   "25" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "Edit windows services user name should works fine and the change should be updated to the agent.",
+      "id" : "25",
+      "title" : "User tab: edit Windows services user names and click OK",
+      "result" : "Original ID: 62 Original Title: User tab: edit Windows services user names and click OK Original Description: This case verifies edit user name and click Ok works fine"
+   },
+   "15" : {
+      "steps" : "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the other PC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.",
+      "initial" : "The packet trace on the agent shows UDP messages that go in one direction, these are request messages sent from the firewall. The Test Status in the Test tab of the Sonicwall SSO Agent window on the SonicWALL returns the message Agent is not responding.",
+      "id" : "15",
+      "title" : "The Shared Key doesn't match.",
+      "result" : "Original ID: 30\n  Original Title: The Shared Key doesn't match.\n  Original Description: This test verifies that the Test Status on the firewall returns the message Agent is not responding if a shared key entered on the firewall doesn't match the one defined on the agent."
+   },
+   "30" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "agent should delete names it has when receiving no service user names notification sent by the appliance",
+      "id" : "30",
+      "title" : "agent should delete names it has when receiving no service user names notification sent by the appliance",
+      "result" : "Original ID: 69\n  Original Title: agent should delete names it has when receiving no service user names notification sent by the appliance\n  Original Description: If all the user names are removed from the appliance, the appliance will send a special variant of the service user names notification to the agent which means there are no names, delete any that you have. This case verifies that if that no service user names does get sent to the agent, the agent should delete names it has after receiving this notification."
+   },
+   "6" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The Test tab of the Sonicwall SSO Agent Configuration window displays two test selections: Check agent connectivity and Check user.",
+      "id" : "6",
+      "title" : "Test tab. Two options for test.",
+      "result" : "Original ID: 20\n  Original Title: Test tab. Two options for test.\n  Original Description: This test verifies that the Test tab of the Sonicwall SSO Agent Configuration window displays two test selections: Check agent connectivity and Check user."
+   },
+   "26" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "edit user name, click apply fist and then click OK, it should works fine on the appliance and the change should be updated to the agent.",
+      "id" : "26",
+      "title" : "User tab: edit windows services user name, click apply and then click OK",
+      "result" : "Original ID: 63 Original Title: User tab: edit windows services user name, click apply and then click OK Original Description: This case is designed to test edit windows services name, click apply first and then click OK, it works fine."
+   },
+   "23" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "user name should be successfully added and displayed, and it should be successfully pushed to the agent.",
+      "id" : "23",
+      "title" : "User tab: add windows services user names and click apply",
+      "result" : "Original ID: 60 Original Title: User tab: add windows services user names and click apply Original Description: This case verifies that add simple windows user names and click apply works fine."
+   },
+   "22" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The value of the port number is accepted and saved in the Sonicwall SSO Agent Configuration.",
+      "id" : "22",
+      "title" : "Settings tab. Set Port Number",
+      "result" : "Original ID: 6\n  Original Title: Settings tab. Set Port Number\n  Original Description: This test verifies that a numeric value can be accepted in the Port Number field of the Sonicwall SSO Agent Configuration."
+   },
+   "8" : {
+      "steps" : "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the other PC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.",
+      "initial" : "The packets trace on the agent's PC shows a request from the SonicWALL and response from the agent. The test status in the Test tab of the Sonicwall SSO Agent Configuration window returns Agent is ready message.",
+      "id" : "8",
+      "title" : "Connectivity test.",
+      "result" : "Original ID: 22\n  Original Title: Connectivity test.\n  Original Description: This test verifies that the test status returns Agent is ready message if SonicWALL can communicate with the Sonicwall SSO Agent."
+   },
+   "12" : {
+      "steps" : "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the other PC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.",
+      "initial" : "The packet trace on the agent shows request messages sent from the SonicWALL with the interval of 5 seconds when running the connectivity test first time.\n  When the connectivity test is running second time, the request messages from the SonicWALL are sent with interval 10 seconds.",
+      "id" : "12",
+      "title" : "The timeout on the reply from the agent.",
+      "result" : "Original ID: 28\n  Original Title: The timeout on the reply from the agent.\n  Original Description: This test verifies that the request messages from the firewall to the Sonicwall SSO Agent will be sent with the time interval defined in the Timeout (seconds) field."
+   },
+   "11" : {
+      "steps" : "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\n  The other PC is a workstation where a domain user should log in to the domain.",
+      "initial" : "The user that is logged in to the domain is allowed to access the Internet. The firewall prints a log message User login allowed. The user is shown on the Users>Settings page of the SonicWALL.",
+      "id" : "11",
+      "title" : "Use an FQDN to define the authentication agent.",
+      "result" : "Original ID: 27\n  Original Title: Use an FQDN to define the authentication agent.\n  Original Description: This test verifies that a domain name can be used to define the Sonicwall SSO Agent agent."
+   },
+   "3" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "The Configure button in the Users tab is not dimmed.",
+      "id" : "3",
+      "title" : "Users tab. LDAP Configuration window is available when LDAP is selected for setting user group memberships.",
+      "result" : "Original ID: 16\n  Original Title: Users tab. LDAP Configuration window is available when LDAP is selected for setting user group memberships.\n  Original Description: This test verifies that the Configure button in the Users tab becomes available when Use LDAP to retrieve user group information is selected."
+   },
+   "12" : {
+      "steps" : "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the other PC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.",
+      "initial" : "The packet trace on the agent shows 3 request messages sent from the SonicWALL when running the connectivity test first time.\n  When the connectivity test is running second time, The SonicWALL sends 6 request messages to the agent.",
+      "id" : "12",
+      "title" : "Retry timed-out requests to the agent.",
+      "result" : "Original ID: 29\n  Original Title: Retry timed-out requests to the agent.\n  Original Description: This test verifies that the number of request messages that the firewall sends to the Sonicwall SSO Agent in case of timed out connection will be the one defined in the Retries field."
+   },
+   "21" : {
+      "steps" : "PC --- X0 SonicWALL",
+      "initial" : "user name should be successfully added and displayed, and it should be successfully pushed to the agent.",
+      "id" : "21",
+      "title" : "User tab: 'add' Windows services user name and click OK",
+      "result" : "Original ID: 59 Original Title: User tab: 'add' Windows services user name and click OK Original Description: The case verifies 'add' Windows Services user name button works fine."
+   }
+}

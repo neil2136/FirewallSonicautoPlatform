@@ -1,0 +1,65 @@
+{
+   "1" : {
+      "steps" : " 1.Go to Network->Interface, configure one interface such as X0 or X2 with proper ipv6 address and subnet.\n  2.Then go to Network->Routing, check the current ipv6 route policy, verify if the default PBR route for this newly added interface can be added correctly. See Result 1.\n  3.Modify that interface (e.g X2) IP address or subnet. Then check the related default PBR route can be updated correctly. See Result 2.\n  4.Now unassign this interface, or configure it portshield to another interface. Verfiy that the related default PBR route will be removed from the PBR table accordingly. See Result 3.",
+      "initial" : " 1.Boot FW to factory default settings. ",
+      "id" : "1",
+      "title" : "Verify default ipv6 route policy can be added, updated and removed correctly.",
+      "result" : " 1. The default PBR route for this newly added interface can be added correctly.\n  2.The related default PBR route can be updated correctly.\n  3.The related default PBR route will be removed from the PBR table accordingly."
+   },
+   "11" : {
+      "steps" : " 1.Go to Network->Interface, configure multiple interfaces with proper ipv6 addresses assigned, such as X0, X1, W0.\n  2.Go to Network->Address Object, create ipv6 AO properly which will be used in a ipv6 PBR route .\n  3.Then go to Network->Routing, try to add an IPV6 PBR entry, choose proper Source/Destination/Serive/Gateway/Metric, also make sure to select an regular interface such as X0, X1 or W0 then Apply. See Result 1.\n  4.Send ipv6 traffic which intends to choose this PBR, verify if the added PBR works properly. See Result 2.\n  5.Go to Diagnostic Tool->Find Network Path, enter an address within the destination network of the PBR and try to find its location. See Result 3. ",
+      "initial" : " 1.Boot FW to factory default settings. ",
+      "id" : "11",
+      "title" : "Add ipv6 PRB with regular interface",
+      "result" : " 1.Such a PBR route should be added successfully. And you can also check it in the PRB route table.\n  2.Related ipv6 traffic can successfully pass through FW directed by this PBR route.\n  3.The result will correctly show the correct network path including a correct next hop interface, if it is behind a router or not and its Ethernet address if found. "
+   },
+   "19" : {
+      "steps" : " 1.Then go to Network->Routing, try to edit an existing IPV6 PBR entry, make sure to modify its Source/Destination to another valid ipv6 address or subnet, or change its metric or comment. See Result 1. ",
+      "initial" : " 1.Boot FW to factory default settings.\n  2.Add an ipv6 PBR route. ",
+      "id" : "19",
+      "title" : " Edit ipv6 PBR entry: positive test. ",
+      "result" : " 1.You should be able to edit an ip6 PBR entry by modifying it to another valid ipv6 address/subnet/metric/comment etc. "
+      },
+   "24" : {
+      "steps" : " 1.Go to Network->Routing to add multiple ipv6 PBR routes.\n  2.Then reboot FW. Check if all these ipv6 PBR routes are intact after FW rebooting. See Result 1. ",
+      "initial" : " 1.Boot FW to factory default settings. ",
+      "id" : "24",
+      "title" : "Verify IPV6 PBR routes are intact after FW rebooting",
+      "result" : " 1.All these ipv6 PBR routes are intact after FW rebooting. See Result 1. "
+      },
+   "25" : {
+      "steps" : " 1.Go to Network->Routing to add multiple ipv6 PBR routes.\n  2.Export the current pref file and save it.\n  3.Then boot FW to factory default settings and import the previous saved prefs file after that. See Result 1. ",
+      "initial" : " 1.Boot FW to factory default settings. ",
+      "id" : "25",
+      "title" : "Exporting/Importing prefs file when there is IPv6 PBR route configured.",
+      "result" : " 1.After importing the pefs file and FW rebooting, all ipv6 PBR routes should be intact. "
+      },
+   "28" : {
+      "steps" : " 1.Add multiple different ipv6 PBR routes whose destination will cover host2's IP, and whose source will cover host1's IP, but those routes are totally different entries with different Source/Destination/GW IP/nexthop interface.For example, 2001:2001:2100:4111:5111:6111:7111:0/112 2002:2001:2100:4111:5111:6111:7111:8111/128 X2 Any 2002:2001:2100:4111:5111::0/80 X3 Any 2002:2001:2100:4111::0/64 X4\n  2.Then check ipv6 PBR table to see which route has higher priority. See result 1.\n  3.Then try to send traffic from host1 to host2/host3, verify if which route entry will be selected when forwarding traffic, verify if it comply with the longest prefix match rule. See Result 2. ",
+      "initial" : " host1---------DUT(FW)-------Router----host2 |---host3 \n Make sure DUT FW is connecting multiple routers via different interfaces, and there are multiple paths from host1 to host2/host3 through FW and routers. ",
+      "id" : "28",
+      "title" : "Verify that ipv6 PBR respects the longest prefix match rule",
+      "result" : " 1.The route which with the longest prefix match will has higher priority.\n  2.Traffic should be sent followed by the route which match the longest prefix match rule.  "
+      },
+   "6" : {
+      "steps" : " 1.Go to Network->Interface, configure one interface such as X0 with proper ipv6 address.\n  2.Go to Network->Address Object, add one ipv6 AO with proper ipv6 subnet. Also add another AO with IPv6 host address for the GW IP.\n  3.Then go to Network->Routing, try to add an IPV6 PBR entry, make sure to select the network type AO address as its Destination, select the host type AO as its GW. Configure other necessary settings then Apply. See Result 1.\n  4.Send ipv6 traffic which intends to choose this PBR, verify if the added PBR works properly. See Result 2. ",
+      "initial" : " 1.Boot FW to factory default settings. ",
+      "id" : "6",
+      "title" : "Add a PBR entry with valid ipv6 network: destination AO type: network",
+      "result" : " 1.Such a PBR route should be added successfully. And you can also check it in the PRB route table.\n  2.Related ipv6 traffic can successfully pass through FW directed by this PBR route. "
+      },
+   "7" : {
+      "steps" : " 1.Go to Network->Interface, configure one interface such as X0 with proper ipv6 address.\n  2.Go to Network->Address Object, add one ipv6 AO with proper ipv6 range. Also add another AO with IPv6 host address for the GW IP.\n  3.Then go to Network->Routing, try to add an IPV6 PBR entry, make sure to select the range type AO address as its Destination, select the host type AO as its GW. Configure other necessary settings then Apply. See Result 1.\n  4.Send ipv6 traffic which intends to choose this PBR, verify if the added PBR works properly. See Result 2. ",
+      "initial" : " 1.Boot FW to factory default settings. ",
+      "id" : "7",
+      "title" : "Add a PBR entry with valid ipv6 network: destination AO type: Range",
+      "result" : " 1.Such a PBR route should be added successfully. And you can also check it in the PRB route table.\n  2.Related ipv6 traffic can successfully pass through FW directed by this PBR route. "
+      },
+   "8" : {
+      "steps" : " 1.Go to Network->Interface, configure one interface such as X0 with proper ipv6 address.\n  2.Go to Network->Address Object, add one ipv6 AO with proper ipv6 host IP. Also add another AO with IPv6 host address for the GW IP.\n  3.Then go to Network->Routing, try to add an IPV6 PBR entry, make sure to select the HOST type AO address as its Destination, select the host type AO as its GW. Configure other necessary settings then Apply. See Result 1.\n  4.Send ipv6 traffic which intends to choose this PBR, verify if the added PBR works properly. See Result 2. ",
+      "initial" : " 1.Boot FW to factory default settings. ",
+      "id" : "8",
+      "title" : " Add a PBR entry with valid ipv6 network: destination AO type: Host ",
+      "result" : " 1.Such a PBR route should be added successfully. And you can also check it in the PRB route table.\n  2.Related ipv6 traffic can successfully pass through FW directed by this PBR route. "
+      }
+}

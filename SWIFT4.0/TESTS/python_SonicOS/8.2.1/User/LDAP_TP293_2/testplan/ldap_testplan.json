@@ -1,0 +1,695 @@
+{
+   "1503652" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Configure interfaces.\n  3. On the Users&gt;Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.\n  5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server). Enter login user name and a password that is invalid for that name.\n  6. In the Directory tab, specify a primary domain.\n  7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.\n  8. In the Test tab, enter qatest in the User field and a valid password in the Password field. Click the Test button.",
+      "initial" : "  The Test Status field displays the message Credentials not valid at LDAP server.",
+      "id" : "1503652",
+      "title" : "Functional. Login password is using incorrect value",
+      "result" : ""
+   },
+   "1503642" : {
+      "steps" : "  1. Load a firmware and boot with factiry default settings.<br />2. On the Users>Settings page, select LDAP+Local Users from the Authentication Methods drop-down list. Apply.<br />3. Restsrt the firewall.",
+      "initial" : "  LDAP+Local Users is selected as authentication method on the Users>Settings page.",
+      "id" : "1503642",
+      "title" : "GUI: Select LDAP + Local Users",
+      "result" : ""
+   },
+   "1503670" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings. 2. Configure interfaces. 3. On the Users&gt;Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button. 4. In the Settings tab\u00a3\u00acenter the IP address of the PC connected to X0 (LDAP server) login user name and password.\n  5. In the Schema tab, select Microsoft Active Directory LDAP Schema.\n  6. In the Directory tab, specify a primary domain. 7. In the LDAP Users tab, select 'Guest Services' as a default LDAP user group.",
+      "initial" : "  Go to Users-&gt;Local Group,Guest Services group contain All LDAP Users.",
+      "id" : "1503670",
+      "title" : "Functional. Default user group is Guest Services",
+      "result" : ""
+   },
+   "1503682" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. Enter an IP address for the eDirectory server. Click radio button Give login name/location in tree. Enter LDAP administrators name and password.<br />5. In the Schema tab of the LDAP Configuration window, select Novell eDirectory in the LDAP Schema and view the fields on the page. <br />6. Create a user in the NDS. Add the user to a group.<br />7. In the Directory tab, put the value of the o= attribute in NDS in Primary Domain and User Tree for Login to Server. Click Apply<br />8. On the Firewall > Access Rules page go to LAN>WAN and set the User Allowed field to Trusted Users in the rule. Add a new rule to allow DNS service. <br />9. Run a test on the Test tab of LDAP Configuration window. Enter the name and password of the user specified in the NDS.<br />10. Login to the SonicWALL as the NDS user.",
+      "initial" : "  When Novell eDirectory is selected in the Schema tab, the warning message is displayed: Warning: you have entered directory information that will be lost by switching to the Novell schema. Click OK in the message - the Schema tab is set to Novell eDirectory. The Directory tab displays o=<domain name> in the fields. The test on the Test page returns the group memberships for the specified user. The NDS user's login to the SonicWALL is successful.",
+      "id" : "1503682",
+      "title" : "Novell eDirectory schema is used",
+      "result" : ""
+   },
+   "1533400" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select \"Give login name/location in tree\" and specify user (Administrator/AD user).\n  7. Under User tree for login to server provide the domain name.\n  8. Under password type the password for the Administrator/AD user.\n  9. On the Schema tab, configure LDAP Schema: Microsoft Active Directory\n  10. Under Directory tab specify the domain name and click \"Auto Configure\" and save.\n  11. Once the LDAP server is populated. On the Test tab, select the LDAP server from the drop down list and select any authentication type to test the successful connection.\n  12. Go to Users/Local user page, click the button 'Import from LDAP..'.\n  13. Select all and click 'Save selected'\n  14. Go to the Users & Groups under Ldap configuration and select the service like SSLVPN services.\n  15.Click Apply.",
+      "initial" : "  For all ldap users Default ldap user group will reflect the same services selected under step 14.",
+      "id" : "1533400",
+      "title" : "GEN7-39183 : Validate Default user group is an imported domain user group",
+      "result" : ""
+   },
+   "1503640" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Directory tab of the LDAP Configuration window, click the Add button under the Trees containing users table.<br />5. In the New Tree window, type elenaqa.com/unit1 and click OK.",
+      "initial" : "  A new entry mydomain.com/unit1 is listed in the Trees containing users table along with a default entry mydomain.com/users.",
+      "id" : "1503640",
+      "title" : "GUI: LDAP Configuration> Directory. DNS for user trees. Add",
+      "result" : ""
+   },
+   "1503689" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "1503689",
+      "title" : "GUI: Overall operation timeout boundaries",
+      "result" : ""
+   },
+   "1503657" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Settings page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Setting tab of the LDAP Configuration window, enter <FQDN> in the Name or IP Address field and click OK.",
+      "initial" : "  The DNS name is accepted in the Name or IP Address field.",
+      "id" : "1503657",
+      "title" : "GUI: LDAP Configuration >Settings. Name or IP Address field. Use Name",
+      "result" : ""
+   },
+   "2913938" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Configure interfaces.\n  3. On the Users&gt;Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.\n  5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password.\n  6. In the Directory tab, specify a primary domain.\n  7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.\n  8. In the Test tab, enter a correct user name&password but wrong domain name on Active Directory in the User field and a password in the Password field. Click the Test button.",
+      "initial" : "  The Test Status field displays a message LDAP Client Authentication Failed.\n  Error returned 'Authentication failed due to wrong domain name. ",
+      "id" : "2913938",
+      "title" : "[Gen8-3585]Correct user&password with the wrong domain should not be authed successfully",
+      "result" : ""
+   },
+   "2736079" : {
+      "steps" : "  1) Configure LDAP in the firewall, make sure LDAP is up and running.\n  2) Create a user with email address in the active directory(AD) server.\n  3) Import the LDAP user with the email attribute to the firewall in Local users page.\n  4) Edit the user and check for the email address details.",
+      "initial" : "  Email details should get imported when the user is imported.",
+      "id" : "2736079",
+      "title" : "GEN7-48755: Imported user doesn't show Email attribute details.",
+      "result" : ""
+   },
+   "1503663" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the System > Time page uncheck the Set time automatically using NTP check box and change date to have certificate expired.<br />4. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />5. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />6. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Uncheck the Require valid certificate from server check box. Check the Use TLS (SSL) check box.<br />7. In the Directory tab, specify a primary domain.<br />8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />9. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  The Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@<domain name>.com, member of: group1.",
+      "id" : "1503663",
+      "title" : "Functional. X509 certificate from server is not required, certificate on server is invalid",
+      "result" : ""
+   },
+   "1503647" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the IP address of the PC connected to X0 (LDAP server), login user name and password. Uncheck the Require valid certificate from server check box.<br />6. In the Directory tab, specify a primary domain.<br />7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />8. On the Firewall > Access Rules page go to LAN>WAN and set the User Allowed field to Trusted Users in the rule. Add a new rule to allow DNS service.<br />9. Logout from the management screen and attempt to access the Internet. When a browser gets re-directed to <LAN IP>/auth.html page, login as qatest entering a valid password.",
+      "initial" : "  Qatest is logged in. The User Login Status window is displayed.",
+      "id" : "1503647",
+      "title" : "Functional. Use IP address for LDAP server",
+      "result" : ""
+   },
+   "1503648" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Have the Require valid certificate from server check box turned on.<br />6. In the Directory tab, specify a primary domain.<br />7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />8. On the Firewall > Access Rules page go to LAN>WAN and set the User Allowed field to Trusted Users in the rule. Add a new rule to allow DNS service.<br />9. Logout from the management screen and attempt to access the Internet. When a browser gets re-directed to <LAN IP>/auth.html page, login as qatest entering a valid password.",
+      "initial" : "  Qatest is logged in. The User Login Status window is displayed.",
+      "id" : "1503648",
+      "title" : "Functional. Use Name for LDAP server",
+      "result" : ""
+   },
+   "1503681" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Schema tab of the LDAP Configuration window, select RFC2307 Network Information Service in the LDAP Schema and view the fields on the page. <br />5. Run a test on the Test tab of LDAP Configuration window. Enter the name and password of the Open LDAP account.<br />6. On the Firewall > Access Rules page go to LAN>WAN and set the User Allowed field to Trusted Users in the rule. Add a new rule to allow DNS service. <br />7. Login to the SonicWALL as Open LDAP user.",
+      "initial" : "  When RFC2307 Network Information Service is selected in the Schema tab, Member Attribute field selects UserID. Object class field for user group is set to posixGroup.<br />The test on the Test page returns the group memberships for the specified user. The Open LDAP user's login to the SonicWALL is successful.",
+      "id" : "1503681",
+      "title" : "RFC2307 Network Information Service schema is used",
+      "result" : ""
+   },
+   "1503646" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password.<br />6. In the Directory tab, specify a primary domain.<br />7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />8. In the Test tab, enter a user name that doesn't exist on Active Directory in the User field and a password in the Password field. Click the Test button.",
+      "initial" : "  The Test Status field displays a message LDAP Client Authentication Failed.",
+      "id" : "1503646",
+      "title" : "Functional. LDAP Configuration> Test LDAP User with invalid name/password",
+      "result" : ""
+   },
+   "1503635" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. On the Users&gt;Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.\n  4. In the Setting tab of the LDAP Configuration window, view the Local certificate for TLS box.\n  5. On the System&gt;Certificates page, install CA and local certificates (for details, see the Design of Microsoft Active Directory Access and LDAP for SonicWALL's written by Ian Puleston).\n  6. View the Local certificate for TLS drop-down box.",
+      "initial" : "  After step 4, the Local certificate for TLS drop-down box shows None, as there are no local certificates are on the firewall. After step 6, the drop-down box shows all local certificates that have been installed on the firewall.",
+      "id" : "1503635",
+      "title" : "GUI: LDAP Configuration> Settings. Local certificate for TLS",
+      "result" : ""
+   },
+   "1503624" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select \"Give login name/location in tree\" and specify user (Administrator/AD user).\n  7. Under User tree for login to server provide the domain name.\n  8. Under password type the password for the Administrator/AD user.\n  9. On the Schema tab, configure LDAP Schema: Microsoft Active Directory\n  10. Under Directory tab specify the domain name and click \"Auto Configure\" and save.\n  11. Once the LDAP server is populated. On the Test tab, select the LDAP server from the drop down list and select any authentication type to test the successful connection.\n  12. Go to Users/Local user page, click the button 'Import from LDAP..'.\n  13. select users \"at\" MyDomain.com/Users\n  14. click on include only, in pop up, select ok.",
+      "initial" : "  only the selected user/users at MyDomain.com/Users will be displayed.",
+      "id" : "1503624",
+      "title" : "Import user: select specific user at/under from the LDAP server path.",
+      "result" : ""
+   },
+   "1503668" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings. <br />2. Configure interfaces. <br />3. On the Users&gt;Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button. <br />4. In the Settings tab, enter the IP address of the PC connected to X0 (LDAP server), login user name and password.<br />5. In the Schema tab, select Microsoft Active Directory LDAP Schema.<br />6. In the Directory tab, specify a primary domain. <br />7. In the LDAP Users tab, make sure default LDAP user group is not defined.",
+      "initial" : "  Go to Users-&gt;Local Group,Only everyone and Trusted Users contain All LDAP Users,and other groups can not contain All LDAP Users.",
+      "id" : "1503668",
+      "title" : "Functional. Default user group is not defined",
+      "result" : ""
+   },
+   "1503680" : {
+      "steps" : "  1. go to user settings page and set ldap as authentication method\n  2. edit ldap and input ip, input correct bind user and deselect TLS\n  3. go to directory tab and input domain name, auto config the trees\n  4. go to test tab ,and use a ldap user to test",
+      "initial" : "  test succeeds",
+      "id" : "1503680",
+      "title" : "Functional. LDAP server on Custom zone subnet",
+      "result" : ""
+   },
+   "1503688" : {
+      "steps" : "  1. go to user settings page and set ldap as authentication method\n  2. input ldap server ip and select 3268 as port\n  3. input Give login name/location in tree\n  4. go to directory tab and put test.com in primary domain, in user and group tress section, only input test.com\n  5. go to certificate page and import root ca for ldap server\n  6. go to ldap test tab and test with user a and b",
+      "initial" : "  tests are successful",
+      "id" : "1503688",
+      "title" : "LDAP functionality with port 3269 selected in the configuration",
+      "result" : ""
+   },
+   "2348535" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select \"Give login name/location in tree\" and specify user (Administrator/AD user).\n  7. Under User tree for login to server provide the domain name.\n  8. Under password type the password for the Administrator/AD user.\n  9. On the Schema tab, configure LDAP Schema: Microsoft Active Directory\n  10. Under Directory tab specify the domain name and click \"Auto Configure\" and save.\n  11. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.\n  12. Once the LDAP server is populated. On the Test tab, select the LDAP server from the drop down list and select any authentication type to test the successful connection.",
+      "initial" : "  Test status information should be : Test result, SuccessInformation returned: Successfully bound as domain\\Administrator ",
+      "id" : "2348535",
+      "title" : "LDAP Connectivity / bind test : Verify Connection is successful.",
+      "result" : ""
+   },
+   "1503694" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select \"Give login name/location in tree\" and specify user (Administrator/AD user).\n  7. Under User tree for login to server provide the domain name.\n  8. Under password type the password for the Administrator/AD user.\n  9. On the Schema tab, configure LDAP Schema: Microsoft Active Directory\n  10. Under Directory tab specify the domain name and click \"Auto Configure\" and save.\n  11. Once the LDAP server is populated. On the Test tab, select the LDAP server from the drop down list and select any authentication type to test the successful connection.\n  12. From LAN PC access X0 IP and provide the credentials of LDAP user in the login page.",
+      "initial" : "  Ldap user login should be successfull",
+      "id" : "1503694",
+      "title" : "LDAP user should be able to login successfully with correct login page",
+      "result" : ""
+   },
+   "2797797" : {
+      "steps" : "  1.Add 3 LDAP servers and add some users(not duplicated) for auth.\n  2.Make sure LDAP servers are UP and running.\n  3.Test the primary LDAP server with the user present in secondary server and check the test status box\n  4.Repeat the step3 for remaining servers as well.",
+      "initial" : "  Result should not be successful since the selected server and the user is different.",
+      "id" : "2797797",
+      "title" : "GEN8-3585: LDAP user with wrong domain should not be authed successfully",
+      "result" : ""
+   },
+   "1503629" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.",
+      "initial" : "  Observed that the UI of the DUT won't hang.",
+      "id" : "1503629",
+      "title" : "When LDAP server doesn't support TLS, using TLS on firewall won't cause UI hanging",
+      "result" : ""
+   },
+   "1503637" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Schema tab of the LDAP Configuration window, have Microsoft Active Directory selected in the LDAP Schema (default setting) and view the fields on the page.",
+      "initial" : "  The following settings are displayed on the Schema tab: Object clas: user, Login name attribute: sAMAccountName, Qualified login name attribute: userPrincipalName, User group membership attribute: memberOf, Framed IP address attribute: msRADIUSFramedIPAddress, Object class: group, Member attribute: member. The only one field is editable, Qualified login name attribute. Other fields are dimmed.",
+      "id" : "1503637",
+      "title" : "GUI: LDAP Configuration> Schema. Microsoft Active Directory selected",
+      "result" : ""
+   },
+   "2284672" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "2284672",
+      "title" : "JumpCloud: Issue with LDAP Authentication for firmware after 6.5.4.7",
+      "result" : ""
+   },
+   "2895885" : {
+      "steps" : "  1. Login and navigate to FW/Users.\n  2. Click on import user from LDAP ,select accented characters user upon importing accented characters will be removed.\n  3. Navigate to users/groups click on import group from LDAP group we can see accented characters are shown as normal characters.",
+      "initial" : "  Importing Accented characters for Local users is different than local groups from AD/LDAP.",
+      "id" : "2895885",
+      "title" : "Importing Accented characters for Local users is different than local groups from AD/LDAP.",
+      "result" : ""
+   },
+   "1503630" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Select Global Catalog over TLS port (3269)",
+      "initial" : "  Configuration can be successfully saved with Global Catalog over TLS port (3269).",
+      "id" : "1503630",
+      "title" : "use global catalog over tls port",
+      "result" : ""
+   },
+   "1503639" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Directory tab of the LDAP Configuration window, change the default value mydomain in the Primary domain field to test. Apply.",
+      "initial" : "  The popup window shows the following message: Also update domain in any user and group trees that are in the same domain? Select Cancel to change only the primary domain field. Select OK - DN is changed to test in the fields User tree to login to server, Trees containing users, and Trees containing user groups.",
+      "id" : "1503639",
+      "title" : "GUI: LDAP Configuration> Directory. Primary domain field",
+      "result" : ""
+   },
+   "2214125" : {
+      "steps" : "  1. Configure HA pair on Firewalls\n  2. Configure LDAP on primary FW with port-636(TLS)\n  3. Import a LDAP user from configured AD server\n  4. Add this Imported LDAP user to any existing 'User Group' on FW",
+      "initial" : "  1. User should be Imported from Configured AD server.\n  2. Imported user can be added to any existing user group on FW\n  3. Firewall should not reboot after adding ",
+      "id" : "2214125",
+      "title" : "Device reboot when an imported LDAP user is added to an existing user group under HA",
+      "result" : ""
+   },
+   "1503693" : {
+      "steps" : "  1. go to user settings page and set ldap as authentication method\n  2. open config ldap window, input ldap server ip or fqdn, Give login name/location in tree\n  3. go to directory tab and input primary domain, manually input user and group trees in both primary and sub domain\n  4. go to test tab and test with user b",
+      "initial" : "  test succeed",
+      "id" : "1503693",
+      "title" : "Allow referrals",
+      "result" : ""
+   },
+   "2716308" : {
+      "steps" : "  1. Configured LDAP on firewall, LDAP server should be root domain is 'bpbtld.com' while netbios name is 'BPBMAIN'\n  2. Configured CFS with an LDAP group on firmware 7.0.1-5145\n  3. Test everything applies correctly\n  4. Upgrade firmware to 7.1.1-7040 5. Check CFS policies. 6. Reboot unit 7. User would be set to Administrator rather than the correct group",
+      "initial" : "  After firewall reboots user/group names should not reset to 'Administrator' instead of respective user/group names in CFS policies.",
+      "id" : "2716308",
+      "title" : "User/group names were reset to 'Administrator' instead of respective user/group names in CFS policies after firewall reboots.",
+      "result" : ""
+   },
+   "1503683" : {
+      "steps" : "  1. On an LDAP server create a user group named Test,Group and add a user as a member of that group.<br />2. Load a firmware on the SonicWALL and boot with factory default settings.<br />3. On the Users > Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. Fill in the fields in the Settings tab and enter the domain name in the Directory tab of the LDAP Configuration window. Apply. <br />6. In the Test tab of the LDAP configuration enter the user's name and password and click Test.<br />7. On the Firewall > Access Rules page go to LAN>WAN and set the User Allowed field to Trusted Users in the rule. Add a new rule to allow DNS service. <br />8. Make sure that the above user in the Test,Group user group does not <br />already get the Limited Administration privilege. <br />9. Create a matching Test,Group user group on the SonicWALL and add it as a <br />member of the Limited Administrators group. <br />10. Try to log in as that user from the LAN.",
+      "initial" : "  1. In the Returned User Attributes the group is reported as: memberOf: Test,Group.\n  2. The user should get the Limited Administration privilege through this user group and hence should be able to login and get the Manage button.",
+      "id" : "1503683",
+      "title" : "User group names containing a comma",
+      "result" : ""
+   },
+   "1503679" : {
+      "steps" : "  1. go to user settings page and set ldap as authentication method\n  2. edit ldap and input ip, input correct bind user and disselct TLS\n  3. go to directory tab and input domain name, auto config the trees\n  4. go to test tab ,and use a ldap user to test",
+      "initial" : "  test succeeds",
+      "id" : "1503679",
+      "title" : "Functional. LDAP server on DMZ",
+      "result" : ""
+   },
+   "3017388" : {
+      "steps" : "  Allocate the memory only for the CHAP case so that it is freed after acknowledgment is received from the LDAP server. ",
+      "initial" : "  Allocate the memory only for the CHAP case so that it is freed after acknowledgment is received from the LDAP server. ",
+      "id" : "3017388",
+      "title" : "GEN6-4301 : Potential LDAP non-CHAP authentication (buf-16) memory leak in authClientUser()",
+      "result" : ""
+   },
+   "2736082" : {
+      "steps" : "  1. Configure LDAP / RADIUS authentication on firewall\n  2. Enabled \"Allow only users listed locally\"\n  3. Try to authenticate with a user that is not listed locally\n  4. Firewall still sends auth request to server for non locally listed user",
+      "initial" : "  Firewall should not send the auth request to the server.",
+      "id" : "2736082",
+      "title" : "GEN7-46611: Allow only users listed locally\" is enabled request to LDAP / RADIUS server is still send to server.",
+      "result" : ""
+   },
+   "1503649" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Settings page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Setting tab of the LDAP Configuration window, enter <IP address> in the Name or IP Address field and click OK.",
+      "initial" : "  The IP address is accepted in the Name or IP Address field.",
+      "id" : "1503649",
+      "title" : "GUI: LDAP Configuration> Settings. Name or IP Address field. Use IP address",
+      "result" : ""
+   },
+   "1503618" : {
+      "steps" : "  1. On firewall1, in user settings page, open the ldap config window.\n  2. input user ip and bind user pass, uncheck use tls.\n  3. in directory tab, input domain name and user group trees.\n  4. in ldap relay tab ,enable Enable RADIUS to LDAP Relay, via vpn is enabled by default.\n  5. input shared secret and click ok.\n  6. go to vpn page, create a site to site vpn, with local network X0 subnet, and remote network 192.168.2.0/24\n  7. on firewall2, create a site to site vpn ,with local network X0 subnet, and remote network 192.168.1.0/24\n  8. go to user setting page ,and open edit radius window.\n  9. input 192.168.1.1 for radius server ip and type the correct shared secret.\n  10. go to test tab and use a ladp user to test.",
+      "initial" : "  test succeeds",
+      "id" : "1503618",
+      "title" : "Allow RADIUS clients to connect via VPN Zone",
+      "result" : ""
+   },
+   "1503641" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Directory tab of the LDAP Configuration window, have a new entry mydomain.com/unit1 added in the Trees containing users table.<br />5. Highlight the mydomain.com/unit1 entry and click the Remove button under the table.",
+      "initial" : "  The mydomain.com/unit1 entry is deleted from the table.",
+      "id" : "1503641",
+      "title" : "GUI: LDAP Configuration> Directory. DNs for user trees. Remove",
+      "result" : ""
+   },
+   "1503613" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Settings page, view the Authentication Methods drop-down list.",
+      "initial" : "  LDAP and LDAP+Local Users options are listed in the Authentication Methods drop-down.",
+      "id" : "1503613",
+      "title" : "GUI: LDAP is included in Authentication Method list",
+      "result" : ""
+   },
+   "1503632" : {
+      "steps" : "  1. In the lab firewall, went to Device &gt; Users &gt; Settings page.\n  2. On the Authentication tab, changed User authentication method to LDAP or LDAP+ Local Users.\n  3. Clicked the LDAP configure button.\n  4. Entered \"2016asdf.local\" or \"2016asdf.amc.com\" in the Name or IP Address field.\n  5. This will produce the error Please enter Host/IP address\u201d directly under the Name or IP Address field.",
+      "initial" : "  Firewall should accept LDAP server name that begins with a number.",
+      "id" : "1503632",
+      "title" : "GEN7-37403 Firewall is not accepting LDAP server name that begins with a number",
+      "result" : ""
+   },
+   "1503684" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Schema tab of the LDAP Configuration window, select RFC2798 InetOrgPerson.<br />5. In the Settings tab, enter the LDAP server name, Administrator as Login user name, and password. Uncheck Use TLS check box. Apply. Run the client test and trace LDAP packets using Ethereal to make sure that password is returned by the LDAP server.<br />6. Enable and configure WAN GroupVPN on the VPN>settings page.<br />7. Enable L2TP server on the VPN>L2TP Server page. Configure the server. Enter DNS servers addresses, Start IP and End IP.<br />8. On the PC (WinXP) connected to the WAN interface of the SonicWALL, create a new network connection. Select Connect to the network at my workplace and Virtual Private Network connection in the New Connection Wizard. Enter a name. Select Do not dial in the initial connection. Enter IP address (WAN IP of the SonicWALL). When connection is created, open Properties and go to Security tab. Click IPSec Settings button and enter pre-shared key to match the key in the WAN GroupVPN of the SonicWALL. Click OK. In the Security tab, click Settings button and select CHAP. Click OK.<br />9. Start Open LDAP on the server.<br />10. Connect L2TP Client. Use the name/password of the user configured on LDAP server.",
+      "initial" : "  L2TP client is connected. The active connection is shown on the VPN > L2TP Server page of the SonicWALL. The log on the SonicWALL shows successful LDAP/RADIUS authentication using CHAP.",
+      "id" : "1503684",
+      "title" : "L2TP with CHAP authentication.  LDAP is selected, RADIUS is configured. LDAP returns user passwords.",
+      "result" : ""
+   },
+   "1503654" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.<br />6. In the Directory tab, specify a primary domain.<br />7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />8. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  The connection to LDAP server is successful. The Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@<domain name>.com, member of: group1.",
+      "id" : "1503654",
+      "title" : "Functional. Connection to LDAP server. TLS is used, X509 certificate from server is required",
+      "result" : ""
+   },
+   "1503669" : {
+      "steps" : "  1. go to user setting page, choose authentication method to ldap\n  2. click configure ldap button\n  3. input ldap ip, input correct user name and pass to login, use tls without require valid cert from sever\n  4. go to directory tab, input domain name then auto read user and group tree from server\n  5. on user's tab\ufffd for Default LDAP User Group, choose everyone\n  6. go to local groups page and check everyone group",
+      "initial" : "  All ldap user is in everyone group",
+      "id" : "1503669",
+      "title" : "Functional. Default user group is Everyone",
+      "result" : ""
+   },
+   "1503687" : {
+      "steps" : "  1. go to user settings page and set ldap as authentication method\n  2. input ldap server ip and select 3268 as port\n  3. input Give login name/location in tree\n  4. deselect TLS\n  5. go to directory tab and put test.com in primary domain, in user and group tress section, only input test.com\n  6. go to test tab and test with user a and b",
+      "initial" : "  both tests are successful",
+      "id" : "1503687",
+      "title" : "LDAP functionality with port 3268 selected in the configuration",
+      "result" : ""
+   },
+   "1503622" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select \"Give login name/location in tree\" and specify user (Administrator/AD user).\n  7. Under User tree for login to server provide the domain name.\n  8. Under password type the password for the Administrator/AD user.\n  9. On the Schema tab, configure LDAP Schema: Microsoft Active Directory\n  10. Under Directory tab specify the domain name and click \"Auto Configure\" and save.\n  11. Once the LDAP server is populated. On the Test tab, select the LDAP server from the drop down list and select any authentication type to test the successful connection.\n  12. Go to Users tab of the LDAP configuration, click the button 'Import from LDAP..'. 13. Select all and click 'Save selected'",
+      "initial" : "  1. All the users on LDAP server will be listed on import page 2. All the users from LDAP will be listed on local user page",
+      "id" : "1503622",
+      "title" : "Import user from LDAP on Users tab of the LDAP configuration",
+      "result" : ""
+   },
+   "1503676" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users&gt;Settings page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. Fill in the fields in the Setting tab of the LDAP Configuration window.<br />5. In the Directory tab of the LDAP Configuration window, add one entry giving the primary domain name, auto config should show primary domain and sub domain tree.<br />6. On the Test page, enter the name and password of the user on the Sub LDAP server and click Test.",
+      "initial" : "  1. The Sub LDAP server can auto show in the LDAP server list.\n  2. The test pass. The primary LDAP server returns LDAP continuation references to the Sub LDAP server.",
+      "id" : "1503676",
+      "title" : "Functional. References on LDAP server",
+      "result" : ""
+   },
+   "1503667" : {
+      "steps" : "  1. go to user authentication page, open the window to edit ldap\n  2. input ip and user login info. select use ldap without TLS\n  3. go to directory tab, input domain name, use auto configure to read user and group trees, multiple trees will display including test\n  4. go to test tab and put user t1 and pass to test",
+      "initial" : "  User info will return from ldap server",
+      "id" : "1503667",
+      "title" : "Functional. User groups in multiple User group trees",
+      "result" : ""
+   },
+   "1503655" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Uncheck the Require valid certificate from server check box. Check the Use TLS (SSL) check box.<br />6. In the Directory tab, specify a primary domain.<br />7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />8. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  When the Require valid certificate from server check box is unchecked, the following popup message is displayed: Warning - User passwords will be sent to the LDAP server for authentication, and so it is recommended that a certificate be used to confirm its identity.<br />When the client test is performed, the connection to the LDAP server is established; the Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@<domain name>.com, member of: group1.",
+      "id" : "1503655",
+      "title" : "Functional. Connection to LDAP server. TLS is used, X509 certificate from server is not required",
+      "result" : ""
+   },
+   "1503634" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Setting tab of the LDAP Configuration window, view the Require valid certificate from server check box.<br />5. Uncheck the Require valid certificate from server check box.",
+      "initial" : "  The Require valid certificate from server check box is checked by default. When the check box is unchecked, the following warning message is shown: Warning - User passwords will be sent to the LDAP server for authentication, and so it is recommended that a certificate be used to confirm its identity.",
+      "id" : "1503634",
+      "title" : "GUI: LDAP Configuration> Settings. Require valid certificate from server",
+      "result" : ""
+   },
+   "1503678" : {
+      "steps" : "  1. go to user settings page and set ldap as authentication method\n  2. edit ldap and input 192.168.6.1 as ip, input correct bind user and deselect TLS\n  3. go to directory tab and input domain name, auto config the trees\n  4. go to test tab ,and use a ldap user to test",
+      "initial" : "  test successfully",
+      "id" : "1503678",
+      "title" : "Functional. LDAP server on secondary LAN",
+      "result" : ""
+   },
+   "1503690" : {
+      "steps" : "  1. user authentication to LDAP\n  2. input ip and choose use tls with verify server certificate\n  3. choose 'Give login name/location in tree', ipnut user neme\n  4. verify on directory tab, set User tree for login to server to the correct location (i.e.test.com/Users)\n  5. input the correct domain on directory tab\n  6. auto config trees for user and group",
+      "initial" : "  user and groups trees can be read from ldap server",
+      "id" : "1503690",
+      "title" : "LDAP functionality with 'Give login name/location in tree' selected in the configuration",
+      "result" : ""
+   },
+   "2338514" : {
+      "steps" : "  1. Import one or more users or user groups from LDAP.\n  2. Re-open the import dialog - the imported ones are in the list to select.\n  3. Since the customer has like 100+ new users we selected \"select/deselect all\" After selecting save we got an error as \"Cannot read properties of undefined\" and import was unsuccessful.",
+      "initial" : "  Ldap list should not show the already imported users",
+      "id" : "2338514",
+      "title" : "[NSa 4700] LDAP user import show users that were previously imported (JOHN BOOS & CO)",
+      "result" : ""
+   },
+   "1503650" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Have the Require valid certificate from server check box turned on. Have LDAP version 3 selected in the Protocol version field.<br />6. In the Directory tab, specify a primary domain.<br />7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />8. On the Firewall > Access Rules page go to LAN>WAN and set the User Allowed field to Trusted Users in the rule. Add a new rule to allow DNS service.<br />9. Logout from the management screen and attempt to access the Internet. When a browser gets re-directed to <LAN IP>/auth.html page, login as qatest entering a valid password.",
+      "initial" : "  Qatest is logged in. The User Login Status window is displayed.",
+      "id" : "1503650",
+      "title" : "Functional. LDAP version 3 is used",
+      "result" : ""
+   },
+   "1503660" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.<br />6. In the Local certificate for TLS drop-down, select None.<br />7. In the Directory tab, specify a primary domain.<br />8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />9. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  The connection to LDAP server is successful. The Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@<domain name>.com, member of: group1.",
+      "id" : "1503660",
+      "title" : "Functional. X509 certificate from server is required, local certificate for TLS is not used",
+      "result" : ""
+   },
+   "2341941" : {
+      "steps" : "  1. Configure AD server with option \"Give bind distinguished name\" by providing DN and password.",
+      "initial" : "  Observe that child servers are added automatically and displayed both under LDAP server list and under Test tab servers list",
+      "id" : "2341941",
+      "title" : "Configure AD server using \"Give bind distinguished name\"",
+      "result" : ""
+   },
+   "1503628" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select Anonymous login and attempt to enter password in the user password field.\n  7. Uncheck the Anonymous login check box and enter test in the Login password field.",
+      "initial" : "  1. With step 6, password field is greyed out.\n  2. With step 7, password can be entered in the password field when the Anonymous login check box is un-selected.",
+      "id" : "1503628",
+      "title" : "GUI: LDAP Configuration> Settings. Login Password field",
+      "result" : ""
+   },
+   "1503664" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password.<br />6. In the Schema tab, select Microsoft Active Directory LDAP Schema. Use userPrincipalName as Qualified login name attribute.<br />7. In the Directory tab, specify a primary domain.<br />8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />9. In the Test tab, enter qatest in the User field and a valid password in the Password field. Click the Test button.",
+      "initial" : "  The Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@<domain name>.com, member of: group1.",
+      "id" : "1503664",
+      "title" : "Functional. Microsoft Active Directory schema is used",
+      "result" : ""
+   },
+   "1993708" : {
+      "steps" : "  1. Navigate to Device--&gt;Setting---&gt;Set Authentication Method as LDAP\n  2. Configure LDAP server\n  3. Import LDAP user in local users & groups\n  4. Assign the imported user as a member of the Guest Administrator group\n  5. Login to WAN IP as Guest Administrator with imported user",
+      "initial" : "  LDAP user able to login to management X1 ip as Guest Administrator",
+      "id" : "1993708",
+      "title" : "GEN7-43165 : [users] remote user has no privileges for login mgmt",
+      "result" : ""
+   },
+   "1503638" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. On the Users&gt;Settings page, select LDAP from Authentication Methods drop-down list. Apply.\n  3. Restart the firewall.",
+      "initial" : "  LDAP is selected as authentication method on the Users>Settings page.",
+      "id" : "1503638",
+      "title" : "GUI: Select LDAP",
+      "result" : ""
+   },
+   "1503627" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select \"Give login name/location in tree\" and specify user (Administrator/AD user).\n  7. Under User tree for login to server provide the domain name.\n  8. Under password type the password for the Administrator/AD user.\n  9. On the Schema tab, configure LDAP Schema: Microsoft Active Directory\n  10. Under Directory tab specify the domain name and click \"Auto Configure\" and save.\n  11. Once the LDAP server is populated. On the Test tab, select the LDAP server from the drop down list and select any authentication type to test the successful connection.\n  12. in users and groups tab, select default group as Sonicwall administrator.\n  13. from console, login as ldap user.",
+      "initial" : "  Failure to login.",
+      "id" : "1503627",
+      "title" : "LDAP login of Sonicwall Administrator using empty password",
+      "result" : ""
+   },
+   "2635947" : {
+      "steps" : "  1.Configure LDAP in the firewall.\n  2.Add a user with Accented characters in Active directory server\n  3.In firewall go to Test tab and test the user\n  4.Patch a client behind the X0 of the firewall, access the internet, it redirects to authentication page.\n  5.Login with the user having Accented characters in Active directory server.",
+      "initial" : "  1.Test should be successful in the firewall, firewall should not reboot\n  2.User should be able to login to the network and access the internet",
+      "id" : "2635947",
+      "title" : "GEN7-47756: tLdapAsyncTask Crash",
+      "result" : ""
+   },
+   "1503659" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.<br />6. In the Local certificate for TLS drop-down, select a local certificate that was imported during initial setup.<br />7. In the Directory tab, specify a primary domain.<br />8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />9. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  The connection to LDAP server is successful. The Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@<domain name>.com, member of: group1.",
+      "id" : "1503659",
+      "title" : "Functional. X509 certificate from server is required, local certificate for TLS is used.",
+      "result" : ""
+   },
+   "1503685" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, make sure that RADIUS is not configured.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Schema tab of the LDAP Configuration window, select RFC2798 InetOrgPerson.<br />6. In the Settings tab, enter the LDAP server name, a non-Administrator user as Login user name, and password. Uncheck Use TLS check box. Apply. Run the client test and trace LDAP packets using Ethereal to make sure that password is not returned by the LDAP server.<br />7. Enable and configure WAN GroupVPN on the VPN>settings page.<br />8. Enable L2TP server on the VPN>L2TP Server page. Configure the server. Enter DNS servers addresses, Start IP and End IP.<br />9. On the PC (WinXP) connected to the WAN interface of the SonicWALL, create a new network connection. Select Connect to the network at my workplace and Virtual Private Network connection in the New Connection Wizard. Enter a name. Select Do not dial in the initial connection. Enter IP address (WAN IP of the SonicWALL). When connection is created, open Properties and go to Security tab. Click IPSec Settings button and enter pre-shared key to match the key in the WAN GroupVPN of the SonicWALL. Click OK. In the Security tab, click Settings button and select CHAP. Click OK.<br />10. Start Open LDAP on the server.<br />11. Connect L2TP Client. Use the name/password of the user configured on LDAP server.",
+      "initial" : "  The connection of L2TP Client fails. The log on SonicWALL shows LDAP/RADIUS authentication failure.",
+      "id" : "1503685",
+      "title" : "L2TP with CHAP authentication.  LDAP is selected, RADIUS is not configured. LDAP doesn't return user passwords.",
+      "result" : ""
+   },
+   "1503675" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings. <br />2. Configure interfaces. <br />3. On the Users&gt;Setting page, select LDAP + Local Users from the Authentication Methods drop-down list and click the Configure button. <br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message. <br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. <br />6. In the Schema tab, select Microsoft Active Directory LDAP Schema. Use userPrincipalName as Qualified login name attribute. <br />7. In the Directory tab, specify a primary domain. <br />8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />9. On the Firewall &gt; Access Rules page go to LAN&gt;WAN and set the User Allowed field to Trusted Users in the rule. Add a new rule to allow DNS service. <br />10. In Users &gt; Local Users add user 'qatest1' with different password of LDAP 'qatest1'.<br />11. Enable HTTPS login for X0 interface.<br />12. Attempt to login as qatest1 with password set by local user.<br />13. Attempt to login as qatest2.",
+      "initial" : "  qatest1 and qatest2 are allowed to log in.",
+      "id" : "1503675",
+      "title" : "Functional. LDAP + Local Users authentication",
+      "result" : ""
+   },
+   "1503619" : {
+      "steps" : "  1. On firewall1, in user settings page, open the ldap config window.\n  2. input user ip and bind user pass, uncheck use tls.\n  3. in directory tab, input domain name and user group trees.\n  4. in ldap relay tab ,enable Enable RADIUS to LDAP Relay.\n  5. input shared secret common to all remote SonicWalls.\n  6. in User group for legacy VPN users, provide the group details.\n  7. click ok.\n  8. on firewall1 go to vpn page, create a site to site vpn, with local network X0 subnet, and remote network 192.168.2.0/24\n  9. on firewall2, create a site to site vpn ,with local network X0 subnet, and remote network 192.168.1.0/24\n  10. go to user setting page ,and open edit radius window. 11. input 192.168.1.1 for radius server ip and type the correct shared secret.",
+      "initial" : "  1. configuration can be saved.\n  2. When a user from this user group under firewall1 is authenticated, the remote SonicWall2 is notified to give the user the relevant privileges.",
+      "id" : "1503619",
+      "title" : "User group for legacy VPN users",
+      "result" : ""
+   },
+   "1503692" : {
+      "steps" : "  1. go to user setting page and click config ldap button\n  2. input ldap ip\n  3. go to referrals tab enable allow referrals and click ok\n  4. open the config ldap window again and disable allow referrals and click ok\n  5. repeat 3 and 4 for other 3 options",
+      "initial" : "  checkboxes can be checked and unchecked and settings saved",
+      "id" : "1503692",
+      "title" : "GUI: LDAP Referrals and References in the Referrals tab",
+      "result" : ""
+   },
+   "1503677" : {
+      "steps" : "  1. on firewall1 go to use settings page , choose user authentication to ldap\n  2. click the ldap edit button, input ldap server FQDN name, bind user\n  3. go to directory tab and input domain name and user group tree\n  4. go to ldap relay tab, enable radius to ldap relay and input radius shared secret\n  5. go to system certificate page and import the root ca for ldap's server certificate\n  6. on firewall 2, go to user setting page ,choose radius as authentication method\n  7. click the edit radius button, input firewall1's WAN ip for radius server ip, input correct shared secret\n  8. go to test tab and input user to test",
+      "initial" : "  test returns user info correctly",
+      "id" : "1503677",
+      "title" : "Functional. RADIUS authentication with LDAP",
+      "result" : ""
+   },
+   "1503621" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select \"Give login name/location in tree\" and specify user (Administrator/AD user).\n  7. Under User tree for login to server provide the domain name.\n  8. Under password type the password for the Administrator/AD user.\n  9. On the Schema tab, configure LDAP Schema: Microsoft Active Directory\n  10. Under Directory tab specify the domain name and click \"Auto Configure\" and save.\n  11. Once the LDAP server is populated. On the Test tab, select the LDAP server from the drop down list and select any authentication type to test the successful connection.\n  12.Go to Users/Local user page, click the button 'Import from LDAP..'.\n  13.Select all and click 'Save selected'",
+      "initial" : "  1. All the users on LDAP server will be listed on import page.\n  2. All the users from LDAP will be listed on local user page.",
+      "id" : "1503621",
+      "title" : "Import user from LDAP on the Local Users page",
+      "result" : ""
+   },
+   "1503636" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Schema tab of the LDAP Configuration window, view the LDAP Schema drop-down list.",
+      "initial" : "  The following options are listed: Microsoft Active Directory, RFC2798 InetOrgPerson, and User defined. The Microsoft Active Directory is a default option.",
+      "id" : "1503636",
+      "title" : "GUI: LDAP Configuration> Schema. LDAP Schema list",
+      "result" : ""
+   },
+   "1503633" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Setting tab of the LDAP Configuration window, view the Use TLS (SSL) check box. <br />5. Uncheck the Use TLS (SSL) check box.",
+      "initial" : "  The Use TLS (SSL) check box is checked by default. When the check box gets unchecked, the following warning message is shown: Warning - LDAP should not be used without TLS other than for diagnostic purposes. This is highly insecure.",
+      "id" : "1503633",
+      "title" : "GUI: LDAP Configuration> Settings. Use TLS (SSL)",
+      "result" : ""
+   },
+   "2338515" : {
+      "steps" : "  1. Change the DNS on firewall one that can resolve your LDAP servers.\n  2. Add a LDAP server with subdomains, on Directory tab, click Auto Configure button. Make sure tree on the subdomains are added. And sub domains are added as dynamic LDAP servers.\n  3. On Test tab, select a subdomain to test, choose LDAP search, enter a username in your subdomain in the edit box next to 'equal to'.",
+      "initial" : "  The Test Status field displays a message LDAP Client Authentication Succeeded. Attributes of this user are displayed.",
+      "id" : "2338515",
+      "title" : "Test a user located in a subdomain",
+      "result" : ""
+   },
+   "1503625" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select Anonymous login and attempt to enter username in the Login user name field.\n  7. Uncheck the Anonymous login check box and select either \"Give login name/location in tree\" or \"Give bind distinguished name\" ",
+      "initial" : "  1. With step 6, Login user name field is greyed out.\n  2. With step 7, Username can be entered in the Login user name field when the Anonymous login check box is un-selected.",
+      "id" : "1503625",
+      "title" : "GUI: LDAP Configuration> Settings. Login user name",
+      "result" : ""
+   },
+   "1503671" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings. <br />2. Configure interfaces. <br />3. On the Users&gt;Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button. <br />4. In the Settings tab&#65292;enter the IP address of the PC connected to X0 (LDAP server)&#65292;login user name and password.<br />5. In the Schema tab, select Microsoft Active Directory LDAP Schema.<br />6. In the Directory tab, specify a primary domain. <br />7. In the LDAP Users tab, select Limited Administrators as a default LDAP user group.",
+      "initial" : "  Go to Users-&gt;Local Group,Limited admingroup contain All LDAP Users.",
+      "id" : "1503671",
+      "title" : "Functional. Default user group is Limited Administrators",
+      "result" : ""
+   },
+   "1503644" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the LDAP Users tab of the LDAP Configuration window, select 'Create a new user group...' option in the Default LDAP User Group drop down box.<br />5. Enter GroupTest in the Name field of the Settings tab of the Add Group window and click OK.",
+      "initial" : "  The GroupTest user group is added in the Default LDAP User Group list and selected as a default LDAP group in the LDAP Configuration window.",
+      "id" : "1503644",
+      "title" : "GUI: LDAP Configuration> LDAP Users. Default LDAP User Group. Create a new user group",
+      "result" : ""
+   },
+   "1503661" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.<br />6. In the Directory tab, specify a primary domain.<br />7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />8. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  The Test Status field displays a message: Bad LDAP server certificate; TLS error (fatal): unknown CA.",
+      "id" : "1503661",
+      "title" : "Functional. X509 certificate from server is required, certificate on server doesn't exist",
+      "result" : ""
+   },
+   "1503672" : {
+      "steps" : "  1. go to user setting page, choose authentication method to ldap\n  2. click configure ldap button\n  3. input ldap ip, input correct user name and pass to login, use tls without require valid cert from sever\n  4. go to directory tab, input domain name then auto read user and group tree from server\n  5. on user's tab for Default LDAP User Group,choose create a new group\n  6. input group name and click ok\n  7. click ok for ldap configration windows\n  8. go to local groups page anc check the newly created group",
+      "initial" : "  ldap user is in the custom group",
+      "id" : "1503672",
+      "title" : "Functional. Default user group is a custom group",
+      "result" : ""
+   },
+   "1503643" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the LDAP Users tab of the LDAP Configuration window, view options in the Default LDAP User Group drop down box.",
+      "initial" : "  The Default LDAP User Group drop down box displays the following items: 'None', 'Create a new users group...', 'Content Filtering Bypass', 'Everyone', 'Guest Services', 'Limited Administrators', and 'Trusted Users'",
+      "id" : "1503643",
+      "title" : "GUI: LDAP Configuration> LDAP Users. Default LDAP User Group. Select",
+      "result" : ""
+   },
+   "1503623" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select \"Give login name/location in tree\" and specify user (Administrator/AD user).\n  7. Under User tree for login to server provide the domain name.\n  8. Under password type the password for the Administrator/AD user.\n  9. On the Schema tab, configure LDAP Schema: Microsoft Active Directory\n  10. Under Directory tab specify the domain name and click \"Auto Configure\" and save.\n  11. Once the LDAP server is populated. On the Test tab, select the LDAP server from the drop down list and select any authentication type to test the successful connection.\n  12. Go to Users/Local user page, click the button 'Import from LDAP..'.\n  13. Select all and click 'Save selected'.",
+      "initial" : "  1. All the selected users on LDAP server will be listed on import page.\n  2. All the selected users from LDAP will be listed on local user page.",
+      "id" : "1503623",
+      "title" : "Import user: All selected users",
+      "result" : ""
+   },
+   "1503616" : {
+      "steps" : "  1. go to user setting page and click config ldap button\n  2. input ldap ip\n  3. go to ldap relay tab can check Enable RADIUS to LDAP Relay\n  4. click ok",
+      "initial" : "  configuration can be saved",
+      "id" : "1503616",
+      "title" : "GUI: Enable RADIUS to LDAP Relay",
+      "result" : ""
+   },
+   "1503686" : {
+      "steps" : "  1. go to user setting page and click on config ldap button\n  2. set ip for ldap server\n  3. 'Standard port choices' to 389 and apply\n  4. repeat step 3 for other 3 choices",
+      "initial" : "  <table class=\"smallerbordered\" style=\"width: 100%; background-color: #e6e5e4; border: #57524b 1px solid;\">\n  <tbody>\n  <tr>\n  <td colspan=\"4\" style=\"background-color: #ffffff;\">\n  <div class=\"wysiwyg2_on\">Each item can be selected and the settings saved.</div>\n  <span style=\"font-size: small;\"><textarea class=\"suppress\" id=\"description\" name=\"SCHEMA_description\" rows=\"3\" style=\"width: 98%;\">This test verifies that the 'Standard port choices' in the Settings tab of the LDAP Configuration window displays four items: Default LDAP port (389), Default LDAP over TLS port (636), Windows Global Catalog port (3268), and Global Catalog over TLS port (3269). Each item can be selected and the settings saved.</textarea></span></td>\n  </tr>\n  <tr>\n  <td colspan=\"4\" style=\"background-color: #ffffff;\"><span style=\"font-size: small;\"><span class=\"fieldLabel\"></span></span></td>\n  </tr>\n  </tbody>\n  </table>",
+      "id" : "1503686",
+      "title" : "GUI: Standard port choices in the Settings tab",
+      "result" : ""
+   },
+   "1503656" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Configure interfaces.\n  3. On the Users&gt;Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.\n  5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.",
+      "initial" : "  The connection to LDAP server is successful. The Test Status field displays a message LDAP Client Authentication Succeeded. ",
+      "id" : "1503656",
+      "title" : "Functional: TLS id used, sending 'Start TLS' request is required",
+      "result" : ""
+   },
+   "1503653" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the IP address of the PC connected to X0 (LDAP server), login user name and password. Uncheck the Require valid certificate from server check box. Uncheck the Use TLS (SSL) check box and click OK in the popup message.<br />6. In the Directory tab, specify a primary domain.<br />7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />8. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  1. When the Use TLS (SSL) check box is unchecked, the following popup message is displayed: Warning - LDAP should not be used without TLS other than for diagnostics purposes. This is highly insecure.\n  2. The Port Number is changed to 389.\n  3. When the client test is performed without TLS, the connection to the LDAP server is established; the Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@.com, member of: group1.",
+      "id" : "1503653",
+      "title" : "Functional. Connection to LDAP server. TLS is not used",
+      "result" : ""
+   },
+   "1503666" : {
+      "steps" : "  1. go to user authentication page, open the window to edit ldap\n  2. input ip and user login info. select use ldap without TLS\n  3. go to directory tab, input domain name, use auto configure to read user and group trees, multiple trees will display including test\n  4. go to test tab and put user t1 and pass to test",
+      "initial" : "  Correct user info will return from ldap server",
+      "id" : "1503666",
+      "title" : "Functional. Users in multiple User trees",
+      "result" : ""
+   },
+   "1503626" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Navigate to Device&gt;Users&gt;Settings page.\n  3. In the authentication method for login drop-down list, select LDAP and Click Configure LDAP.\n  4. On the Settings tab of the LDAP Configuration window, configure Primary LDAP server with the FQDN name or IP address.\n  5. The default LDAP over TLS port number is TCP 636. Uncheck the TLS so the default LDAP (unencrypted) port number is TCP 389.\n  6. Under login/bind tab select \"Give login name/location in tree\" and specify user (Administrator/AD user).\n  7. Under User tree for login to server provide the domain name.\n  8. Under password type the password for the Administrator/AD user.\n  9. On the Schema tab, configure LDAP Schema: Microsoft Active Directory\n  10. Under Directory tab specify the domain name and click \"Auto Configure\" and save.\n  11. Once the LDAP server is populated. On the Test tab, select the LDAP server from the drop down list and select any authentication type to test the successful connection.\n  12. Go to Users/Local user page, click the button 'Import from LDAP..'.\n  13. From the list select some users/groups and click 'Save Selected'.\n  14. From Local Users & Groups list select any user/group and click 'Delete User' button.",
+      "initial" : "  1. With step 13, all the users/groups will be saved under Local Users & Groups.\n  2. With step 14, selected users/groups will be removed from list.",
+      "id" : "1503626",
+      "title" : "Import group: verify 'Remove from list' button",
+      "result" : ""
+   },
+   "1503620" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />4. In the Setting tab of the LDAP Configuration window, view the Protocol version drop-down list.",
+      "initial" : "  The Protocol version drop-down list has two items: LDAP version 2 and LDAP version 3. LDAP version 3 is a default setting.",
+      "id" : "1503620",
+      "title" : "GUI: LDAP Configuration> Settings. Protocol version list",
+      "result" : ""
+   },
+   "1503631" : {
+      "steps" : "  1. Go to Users-&gt;Local Users & Groups. In the Local Groups tab, edit the group QA1\\vpn. In VPN Access tab, add a network to the Access list.\n  2. Check group QA1\\vpn, QA2\\vpn and QA\\vpn's VPN Client Access Networks.\n  3. Edit the group QA2\\vpn and QA\\vpn, then repeat step 1 and 2.\n  4. Go to VPN-&gt;Settings. Edit WAN GroupVPN policy. Then try to connect VPN by GVC with the users in group QA1\\vpn, QA2\\vpn and QA\\vpn.",
+      "initial" : "  1. After changing theVPN Client Access Networks in QA1\\vpn, QA2\\vpn and QA\\vpn'sVPN Client Access Networks are not changed and vice versa.\n  2. Users from different same named groups can connect VPN successfully.",
+      "id" : "1503631",
+      "title" : "Verify the same named group from different domains don't share VPN Client Access Networks information",
+      "result" : ""
+   },
+   "1503614" : {
+      "steps" : "  1. go to user settings page and set ldap as authentication method.\n  2. open config ldap window, input ldap server ip or fqdn, Give login name/location in tree.\n  3. go to directory tab and input primary domain, click on auto configure.\n  4. input the primary domain in the popup and select replace existing trees to get user and group trees in both primary and sub domain.",
+      "initial" : "  sub domain trees will be auto configured.",
+      "id" : "1503614",
+      "title" : "Allow continuation references during directory auto-configuration",
+      "result" : ""
+   },
+   "1503674" : {
+      "steps" : "  1. set user authentication to LDAP\n  2. import a user \"a\"form ldap server\n  3. create a local group name grouplocal, set member to user a\n  4. set access rule from lan to wan to allow all for DNS service and allow only group local to all service\n  5. from a lan pc, visit a wan website and login as user a\n  6. from a lan pc. visit a wan website and login as user b",
+      "initial" : "  Only user a can visit the website, b is blocked",
+      "id" : "1503674",
+      "title" : "Functional. User group memberships can be set locally by duplicating LDAP user names",
+      "result" : ""
+   },
+   "1503691" : {
+      "steps" : "  1. user authentication to LDAP\n  2. input ip and choose use tls with verify server certificate\n  3. choose give bind distinguished name, input user (i.e. CN=administrator,CN=Users,DC=qa3,DC=com)\n  4. verify on directory tab, User tree for login to server is greyed out, no input is needed there\n  5. input the correct domain on directory tab\n  6. auto config trees for user and group",
+      "initial" : "  user and groups trees can be read from ldap server",
+      "id" : "1503691",
+      "title" : "LDAP functionality with Give bind distinguished name' selected in the configuration",
+      "result" : ""
+   },
+   "1503615" : {
+      "steps" : "  1. import root CA in certificate page.\n  2. set user authentication method to LDAP.\n  3. input the fqdn name of the server, enable TLS ,verify server ceritifate, Give bind distinguished name.\n  4. choose the correct schema.\n  5. input the primary domain , use auto config to setup trees for users and groups.\n  6. in users and groups tab, click the import groups button.\n  7. select Import user groups from the LDAP directory.\n  8. select the groups to import.",
+      "initial" : "  user groups can be imported and displayed in local groups page.",
+      "id" : "1503615",
+      "title" : "LDAP Users: Import user groups",
+      "result" : ""
+   },
+   "1503645" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password.<br />6. In the Directory tab, specify a primary domain.<br />7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />8. In the Test tab, enter qatest in the User field and a valid password in the Password field. Click the Test button.",
+      "initial" : "  The Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@<domain name>.com, member of: group1.",
+      "id" : "1503645",
+      "title" : "Functional. LDAP Configuration> Test Ldap user for valid name/password",
+      "result" : ""
+   },
+   "1503617" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings. 2. Configure interfaces. 3. On the Users&gt;Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button. 4. In the Settings tab\uff0center the IP address of the PC connected to X0 (LDAP server)\uff0clogin user name and password\uff0cUncheck the Use TLS (SSL) check box and click OK in the popup message.\n  5. In the Schema tab, select Microsoft Active Directory LDAP Schema.\n  6. In the Directory tab, specify a primary domain. 7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group. 8. In the LDAP Relay tab,check Enable RADIUS to LDAP Relay,Allow RADIUS clients to connect via WAN Zone,enter RADIUS shared secret:password.\n  9. Go to UTM2,On the Users&gt;Setting page,select RADIUS from the Authentication Methods drop-down list and click the Configure button.\n  10. In the Settings tab on UTM2\uff0center the WAN IP address of UTM1 as RADIUS Server IP Address and the shared secret:password, click Apply.\n  11. In the test tab on UTM2, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  The connection to LDAP server is successful. The Test Status field displays a message \"Radius Client Authentication Succeeded\".",
+      "id" : "1503617",
+      "title" : "Allow  Radius client(LDAP Relay) to connect via WAN Zone",
+      "result" : ""
+   },
+   "1503651" : {
+      "steps" : "  1. Go to user settings page\n  2. Select authentication to LDAP and apply\n  3. Click the edit ldap button\n  4. Input ldap ip, select ldap version 2, disselect use tls, choose use anonymous login\n  5. Go to schema tab ,choose RFC2798InetOrgPerson\n  6. Go to directory tab, input correct domian name,use auto configure to read user and group tree\n  7. Go to Test tab, input correct user name and pass. Click test button",
+      "initial" : "  User info will return from LDAP server",
+      "id" : "1503651",
+      "title" : "Functional. LDAP version 2 is used",
+      "result" : ""
+   },
+   "1503665" : {
+      "steps" : "  1. go to user settings page\n  2. select authentication to LDAP and apply\n  3. click the edit ldap button\n  4. input ldap ip, select ldap version 2,choose use anonymous login, use tls without verify valid cert from server\n  5. go to schema tab ,choose RFC2798 InetOrgPerson\n  6. go to directory tab, input correct domian name,use auto configure to read user and group tree\n  7. go to Test tab, input correct user name and pass. click test button",
+      "initial" : "  user info is return from ldap server",
+      "id" : "1503665",
+      "title" : "Functional. RFC2798 InetOrgPerson schema is used",
+      "result" : ""
+   },
+   "1503673" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings. 2. Configure interfaces. 3. On the Users&gt;Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button. 4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message. 5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. 6. In the Schema tab, select Microsoft Active Directory LDAP Schema. Use userPrincipalName as Qualified login name attribute. 7. In the Directory tab, specify a primary domain. 8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group and select Allow only users listed locally. 9. On the Firewall &gt; Access Rules page go to LAN&gt;WAN and set the User Allowed field to Trusted Users in the rule. Add a new rule to allow DNS service. 10. In Users &gt; Local Users Import the AD user 'qatest1'.\n  11. Enable HTTPS login for X0 interface.\n  12. Attempt to login as qatest1.\n  13. Attempt to login as qatest2.",
+      "initial" : "  qatest1 is allowed to log in. qatest2 is denied login.",
+      "id" : "1503673",
+      "title" : "Functional. Allow only users listed locally",
+      "result" : ""
+   },
+   "1503658" : {
+      "steps" : "  1. import root CA in certificate page,\n  2. set user authentication method to LDAP\n  3. input the fqdn name of the server, enable TLS ,verify server ceritifate, Give bind distinguished name\n  4. do not enable start TLS\n  5. input the primary domain , use auto config to setup trees for users and groups\n  6. in the test tab, put the correct user and pass to test",
+      "initial" : "  test successfully return user info from LDAP server",
+      "id" : "1503658",
+      "title" : "Functional. TLS id used, sending 'Start TLS' request is not required",
+      "result" : ""
+   },
+   "2284667" : {
+      "steps" : "  1. Browse to Device/Users/Settings &gt; Configure LDAP &gt; LDAP Server to view the list of IP's to show a count of 20 IP's\n  2. Swap between Contemporary and Classic to view the same issue\n  3. Browse to Diag Page and disable 'SonicUI7 as default management GUI'\n  4. Close out of diag page, re-login and browse to Device/Users/Settings &gt; Configure LDAP &gt; LDAP Server to view the list of IP's to show a count of 29 IP's",
+      "initial" : "  LDAP entries totaling 30 can be added successfully.",
+      "id" : "2284667",
+      "title" : "GEN7-42015 LDAP Server IP\u2019s and renders a list of 29 entries in total",
+      "result" : ""
+   },
+   "1503662" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.<br />2. Configure interfaces.<br />3. On the System > Time page uncheck the Set time automatically using NTP check box and change date to have certificate expired.<br />4. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.<br />5. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.<br />6. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Check the Require valid certificate from server check box. Check the Use TLS (SSL) check box.<br />7. In the Directory tab, specify a primary domain.<br />8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.<br />9. In the Test tab, enter qatest in the Name field and a valid password in the Password field.",
+      "initial" : "  The Test Status field displays a message: Bad LDAP server certificate; TLS error (fatal): certificate expired.",
+      "id" : "1503662",
+      "title" : "Functional. X509 certificate from server is required, certificate on server is invalid",
+      "result" : ""
+   }
+}

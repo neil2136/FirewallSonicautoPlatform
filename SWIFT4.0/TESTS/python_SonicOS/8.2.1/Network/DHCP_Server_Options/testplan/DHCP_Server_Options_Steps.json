@@ -1,0 +1,107 @@
+{
+   "06" : {
+      "steps" : "  1. Execute Test case 1.\n  2. Boot the Firmware with factory default.",
+      "initial" : "  Test case 1",
+      "id" : "06",
+      "title" : "Restoring configuration to Factory default truncate DHCP lease file in the Flash.",
+      "result" : "  1. No DHCP leases displayed on the current DHCP Leases section in the DHCP server page."
+   },
+   "11" : {
+      "steps" : "  1. configure DHCP server with dynamic and static setting across multiple interfaces/zones\n  2. Clients get DHCP leases\n  3. Reboot server\n  4. Client sents Discover after reboot",
+      "initial" : "  1. DHCP Server Enabled\n  2. DHCP Persistence is set.",
+      "id" : "11",
+      "title" : "Client sends discover after reboot",
+      "result" : "  1. Clients should still get leases."
+   },
+   "03" : {
+      "steps" : "  1. Disable the dynamic range\n  2. Have multiple client to make DHCP request",
+      "initial" : "  1. Enable DHCP server. Configure both static and dynamic ranges.\n  2. Enable DHCP server persistence.\n  3. Have multiple DHCP clients on the LAN. ",
+      "id" : "03",
+      "title" : "Disable Dynamic range",
+      "result" : "  1. Client should not get dynamic IP;\n  2. Client should still get static IPs."
+   },
+   "07" : {
+      "steps" : "  1. Corrupt dhcplea.dat file in the Flash.\n  2. Reboot the Firewall.",
+      "initial" : "   N/A ",
+      "id" : "07",
+      "title" : "Error messages are logged properly when reading/writing DHCP leases from/to the Flash",
+      "result" : "  1. Reading DHCP leases from Flash Failed and an error message is logged."
+   },
+   "09" : {
+      "steps" : "  1. set DHCP lease time = 24 hrs.\n  2. Do a DHCP renew\n  3. Check the DHCP Flash writes count in the TSR.",
+      "initial" : "  N/A",
+      "id" : "09",
+      "title" : "DHCP leases are saved in to the Flash only when it is necessary.",
+      "result" : "  1. Make sure DHCP lease flash writes count gets incremented only when there is a change in the network caused by DHCP Release/DHCP Renew.\n  2. DHCP lease time expiry, DHCP server configuration change in the GUI/UI."
+   },
+   "02" : {
+      "steps" : "  1. Disable the static range\n  2. Have multiple client to make DHCP request",
+      "initial" : "  1. Enable DHCP server. Configure both static and dynamic ranges.\n  2. Enable DHCP server persistence.\n  3. Have multiple DHCP clients on the LAN. ",
+      "id" : "2",
+      "title" : "Disable Static range",
+      "result" : "  Client should not get Static IP; client should still get dynamic IPs."
+   },
+   "12" : {
+      "steps" : "  1. configure DHCP server with dynamic and static setting across multiple interfaces/zones\n  2. Configure dhcp server lease time to 2 mins\n  3. All clients get leases\n  4. Remove all other clients except client1\n  5. Wait after 2 mins\n  6. Client1 to release its current IP by sending DHCP release message then to request for a new IP (send DHCP Discovery with the requested IP address option, in which the requested IP set to an IP which is previously used by other clients).",
+      "initial" : "  DHCP Server Enabled, DHCP Persistence is set.",
+      "id" : "12",
+      "title" : "After lease time expire client should get new IP which used to assigned to others.",
+      "result" : "  1. Client1 should get a new IP."
+   },
+   "15" : {
+      "steps" : "  1. Set the value for DHCP Server Persistence Monitoring Interval as the number between 5 and 1440\n  2. Make sure clients got DHCP leases from the server.\n  3. Dowload TSR file.\n  4. Wait for DHCP Server Persistence Monitoring Interval + delta (max 5mts)\n  5. Reboot the firewall.\n  6. Do DHCP renew.",
+      "initial" : "  DHCP Server enabled. DHCP presistence is configured.",
+      "id" : "15",
+      "title" : "Funciton for DHCP Server Persistence Monitoring Interval testing",
+      "result" : "  1. Check the TSR file,the Total dhcp lease flash writes after reboot so far\n  2. After rebooting the Firewall, check  Current DHCP Leases in the DHCP server page.\n  3. Verify that the lease information is preserved across reboot.\n  4. After DHCP renew make sure that the client gets the same DHCP lease it got before reboot."
+   },
+   "14" : {
+      "steps" : "  1. Set the value for DHCP Server Persistence Monitoring Interval as 4 or 1441\n  2. Set the value for DHCP Server Persistence Monitoring Interval as @,a\n  3. Set the value for DHCP Server Persistence Monitoring Interval as the number between 5 and 1440",
+      "initial" : "  DHCP Server enabled. DHCP presistence is configured.",
+      "id" : "14",
+      "title" : "Boudary for DHCP Server Persistence Monitoring Interval testing",
+      "result" : "  1. The configuration in step1 and step2 should be failed and error reported.\n  2. The configuration in step3 should be successful without any error reported."
+   },
+   "08" : {
+      "steps" : "  1. Do a DHCP renew, immediately import prefs\n  2. Restart the Firewall",
+      "initial" : "  N/A ",
+      "id" : "08",
+      "title" : "DHCP leases are saved in to Flash whenever a soft restart is needed and network change happened after the previous DHCP persistence probe.",
+      "result" : "  1. DHCP leases preserved across reboots caused by importing preferences or user initiated restart in the GUI/CLI."
+   },
+   "04" : {
+      "steps" : "  1. Enable DHCP persistence and configure Persistence probing interval.\n  2. Do Export the configuration",
+      "initial" : "  This test is to make sure export works with DHCP persistence configuration.",
+      "id" : "4",
+      "title" : "export works with DHCP Persistence configuration",
+      "result" : "  1. Configuration exported properly.\n  2. Make sure DHCP persistence configuration preserved across reboots."
+   },
+   "01" : {
+      "steps" : "  1. Make sure clients got DHCP leases from the server.\n  2. Wait for DHCP Server Persistence Monitoring Interval (default 5mts) + delta (max 5mts)\n  3. Reboot the firewall.\n  4. Do DHCP renew.",
+      "initial" : "  1. Enable DHCP server. Configure both static and dynamic ranges.\n  2. Enable DHCP server persistence.\n  3. Have multiple DHCP clients on the LAN. ",
+      "id" : "01",
+      "title" : "Dynamic Lease renew with reboot",
+      "result" : "  1. After rebooting the Firewall, check Current DHCP Leases in the DHCP server page.\n  2. Verify that the lease information is preserved across reboot.\n  3. After DHCP renew make sure that the client gets the same DHCP lease it got before reboot"
+   },
+   "10" : {
+      "steps" : "  1. configure DHCP server with dynamic setting across multiple interfaces\n  2. set client1 gets lease IP1, and client2 gets lease IP2\n  3. Reboot server\n  4. Client1 request IP2",
+      "initial" : "  1. DHCP Server enabled\n  2. DHCP Presistance is set ",
+      "id" : "10",
+      "title" : "renew IP that is is leased to another client after reboot server",
+      "result" : "  1. Client1 should not get IP2, because it already lease to client2."
+   },
+   "13" : {
+      "steps" : "  1. Set dhcp lease for multiple interfaces and multiple zones\n  2. Clients get dhcp leases.\n  3. reboot server\n  4. Verify DHCP bindings.",
+      "initial" : "  DHCP Server enabled. DHCP persistence is configured. ",
+      "id" : "13",
+      "title" : "Verify DHCP bindings",
+      "result" : "  1. Bindings shows correct info."
+   },
+   "05" : {
+      "steps" : "   1. Do import the configuration",
+      "initial" : "  after test case 4",
+      "id" : "05",
+      "title" : "import works with DHCP Persistence configuration",
+      "result" : "  1. Configuration import properly.\n  2. Make sure DHCP persistence configuration preserved across reboots."
+   }
+}

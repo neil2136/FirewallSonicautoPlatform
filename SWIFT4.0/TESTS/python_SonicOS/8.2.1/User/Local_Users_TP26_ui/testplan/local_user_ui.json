@@ -1,0 +1,149 @@
+{
+   "1514460" : {
+      "initial" : "  1. Click on add user button.\n  2. Input name and matching password\n  3. On member ship tab. add sslvpn service\n  4. On bookmark tab, click on add bookmark\n  5. Input Ip and name for the bookmark\n  6. Click ok",
+      "id" : "1514460",
+      "title" : "Book mark tab-with sslvpn service group membership, add one bookmark"
+   },
+   "1514454" : {
+      "initial" : "  1. Click on add user button.\n  2. Input name and matching password\n  3. Set lifetime to 1 day and disable prune expired user accounts",
+      "id" : "1514454",
+      "title" : "Settings tab-set account life time-days and disable prune expired user accounts"
+   },
+   "1514445" : {
+      "initial" : "  1) On the Users &gt; Settings page, select RADIUS/LDAP as authentication method.\n  2) Move the mouse over the balloon icon in \"VPN Access\" column for All RADIUS Users/All LDAP Users on the Users &gt; Local Users page and make sure that a pop-up tip shows \"No Entries\".\n  3) On the Users &gt; Local Groups page, click the Edit icon next to the \"Limited Administrators\" group.\n  4) In the Edit Group dialog, Go to the Members tab and select \"All RADIUS Users\"/\"All LDAP Users\" in the \"Non-member Users and Groups\" pane. Click on the \"-&gt;\" button.\n  5) In the VPN Access tab, select \"Firewalled Subnets\" in the \"Networks\" pane and click on the \"-&gt;\" button.\n  6) Click the OK button.\n  7) Move the mouse over the balloon icon in \"VPN Access\" column for All RADIUS Users/All LDAP Users on the Users &gt; Local Users page.",
+      "id" : "1514445",
+      "title" : "Adding VPN Access objects for All RADIUS Users/All LDAP Users."
+   },
+   "1514441" : {
+      "initial" : "  1) On the Users &gt; Local Users page, have a user with \"Firewall Subnets\" in VPN Access (see TC-18).<br />\n  2) Move the mouse over the balloon icon in the \"VPN Access\" column next to that user and make sure that the pop-up tip displays \"Firewall Subnets\".<br />\n  3) Click the Edit icon next to the user.<br />\n  4) In the Edit User dialog, go to the VPN Access tab. Select \"Firewalled Subnets\" in the \"Access List\" pane. Click on the \"&lt;-\" button.<br />\n  5) Click the OK button.<br />\n  6) Move the mouse over the balloon icon in the \"VPN Access\" column next to that user.",
+      "id" : "1514441",
+      "title" : "VPN Access for user. Removing a Network Object from Access List."
+   },
+   "1514437" : {
+      "initial" : "  1) Have a user added in the local database.\n  2) On the Users &gt; Local Users page and click the Edit icon next to the user in the Local Users table.\n  3) In the Edit User dialog, go to the Groups tab. Select \"SonicWALL Administrators\" from the \"User Groups\" pane. Click on the \"-&gt;\" button.\n  4) Click the OK button.\n  5) Enable HTTPS user login on X1.\n  6) Try login from X1 with the local user.",
+      "id" : "1514437",
+      "title" : "Edit user, Add SonicWALL Administrators privilege."
+   },
+   "1532785" : {
+      "initial" : "  1. To create a local user--test and Enable the User must change password\n  2. Enable the HTTP and HTTPS user login on the x0 interface\n  3. Edit the LAN-WAN access rule, include the users group: Everyone\n  5. Login the test from LAN client\n  6. Try to change the password of user - test",
+      "id" : "1532785",
+      "title" : "GEN7-30560:Change the local user password after user login"
+   },
+   "1969006" : {
+      "initial" : "  1. Configure LDAP in firewall\n  2. Import the AD user to firewall\n  3. Add the AD user to any an existing user group",
+      "id" : "1969006",
+      "title" : "GEN7-40913:[NSA 4700] Device reboot when an imported LDAP user is added to an existing user group"
+   },
+   "1514446" : {
+      "initial" : "  1) Have several users added on the Users &gt; Local Users page. 2) Click on the triangle icon next to the \"Name\" column title in the Local Users table.",
+      "id" : "1514446",
+      "title" : "Expand the view for all users."
+   },
+   "1514439" : {
+      "initial" : "  1) Have a user with SonicWALL Administrators privilege added in the local database. <br />\n  2) On the Users &gt; Local Users page, click the Edit icon next to the user in the Local Users table. <br />\n  3) In the Edit User dialog, go to the Groups tab. Select \"SonicWALL Administrators\" in the \"Member Of\" pane. Click on \"&lt;-\" button.<br />\n  4) Click the OK button.",
+      "id" : "1514439",
+      "title" : "Edit user, Remove SonicWALL Administrators privilege."
+   },
+   "1514452" : {
+      "initial" : "  1. Click add user button\n  2. Input name and matching password\n  3. Set the lifetime to never expires",
+      "id" : "1514452",
+      "title" : "Settings tab-set account life time-never expires"
+   },
+   "1514461" : {
+      "initial" : "  1. Click on add user button.\n  2. Input name and matching password.\n  3. On member ship tab. add sslvpn service\n  4. On bookmark tab, click on add bookmark\n  5. Input ip and name for the bookmark\n  6. Click ok\n  7. Click edit user button\n  8. Delete the bookmark",
+      "id" : "1514461",
+      "title" : "Book mark tab-with sslvpn service group membership, delete one bookmark"
+   },
+   "1514448" : {
+      "initial" : "  1. On the Users &gt; Local Users page &gt; Settings\n  2. Disable the button (apply password constrains for all local users) ",
+      "id" : "1514448",
+      "title" : "local user page-disable apply password constrains for all local users"
+   },
+   "1514455" : {
+      "initial" : "  1. Click on add user button\n  2. Input name and matching password.\n  3. On groups tab. add sslvpn service\n  4. Click ok\n  5. Click the expand button for this user",
+      "id" : "1514455",
+      "title" : "Groups tab-Add SSL vpn service group"
+   },
+   "1514443" : {
+      "initial" : "  1) On the Users &gt; Local Users page, add a user.\n  2) Move the mouse over the balloon icon in the \"VPN Access\" column next to that user and make sure that the pop-up tip displays \"No Entries\".\n  3) Click the Edit icon next to the user.\n  4) In the Edit User dialog, go to the VPN Access tab. Select \"LAN Interface IP\" and \"WAN Interface IP\" in the \"Networks\" pane. Click on the \"-&gt;\" button.\n  5) Click the OK button.\n  6) Move the mouse over the balloon icon in the \"VPN Access\" column next to that user.",
+      "id" : "1514443",
+      "title" : "VPN access for user. Adding multiple Network objects to Access List."
+   },
+   "1532786" : {
+      "initial" : "  1.To create a local user--test and Enable the User must change password\n  2. Enable the HTTP and HTTPS user login on the x0 interface\n  3. Edit the LAN-WAN access rule, include the users group: Everyone\n  4. Login the test from LAN client\n  5. Try to change the password of user - test",
+      "id" : "1532786",
+      "title" : "GEN7-30560:Change the local user password after user login via UI6"
+   },
+   "1514453" : {
+      "initial" : "  1. Click on add user button\n  2. Input name and matching password\n  3. Set lifetime to 1 hour and enable prune expired user accounts",
+      "id" : "1514453",
+      "title" : "Settings tab-set account life time-hours and enable prune expired user accounts"
+   },
+   "1514442" : {
+      "initial" : "  1) Have a user added in the local database. 2) Go to the Users &gt; Local Users page and click the trash can icon next to the user. 3) A warning message \"Are you sure you wish to delete the user &lt;username&gt;\" is displayed. Click the OK button in the message.",
+      "id" : "1514442",
+      "title" : "Delete user. Use the trash can icon."
+   },
+   "1514438" : {
+      "initial" : "  1) Have a user added in the local database.\n  2) On the Users &gt; Local Users page and click the Edit icon next to the user in the Local Users table.\n  3) In the Edit User dialog, go to the Groups tab. Select \"SonicWALL Administrators\" from the \"User Groups\" pane. Click on the \"-&gt;\" button.\n  4) Click the OK button.\n  5) Enable HTTPS user login on X1.\n  6) Try login from X1 with the local user.",
+      "id" : "1514438",
+      "title" : "Full local user should able to preempt and take config mode while admin already logged in"
+   },
+   "1514457" : {
+      "initial" : "  1. Click on add user button\n  2. Input name and matching password.\n  3. On member ship tab. add guest service\n  4. Click ok",
+      "id" : "1514457",
+      "title" : "Guest service tab-with guest service group membership, guest services tab shows up"
+   },
+   "1514440" : {
+      "initial" : "  1) On the Users &gt; Local Users page, add a user.\n  2) Move the mouse over the balloon icon in the \"VPN Access\" column next to that user and make sure that the pop-up tip displays \"No Entries\".\n  3) Click the Edit icon next to the user.\n  4) In the Edit User dialog, go to the VPN Access tab. Select \"Firewalled Subnets\" in the \"Networks\" pane. Click on the \"-&gt;\" button\n  5) Click the OK button.\n  6) Move the mouse over the balloon icon in the \"VPN Access\" column next to that user.",
+      "id" : "1514440",
+      "title" : "VPN Access for user, Adding a network object to Access List."
+   },
+   "1514436" : {
+      "initial" : "  1) Go to the Users &gt; Local Users page and click the \"Add\" button.\n  2) Fill in the Name, Password, and Confirm Password fields in the \"Add User\" dialog. 3) Click the save button.",
+      "id" : "1514436",
+      "title" : "Add user"
+   },
+   "1514449" : {
+      "initial" : "  1. Go to users page and enable prun expired user accounts\n  2. Create a user with 1 minute life time",
+      "id" : "1514449",
+      "title" : "local user page-enable prune expired user accounts"
+   },
+   "1514451" : {
+      "initial" : "  1. Click add user button\n  2. Put name and matching password\n  3. Enable one time password, input correct email address\n  4. Click ok",
+      "id" : "1514451",
+      "title" : "Settings tab-enable require one-time passwords"
+   },
+   "1514447" : {
+      "steps" : "",
+      "initial" : "  1) Have a user added in the local database. <br />\n  2) On the Users &gt; Local Users page, select a check box next to the user's name in the Local Users table. <br />\n  3) Click the Delete button under the table. <br />\n  4) A warning message \"Are you sure you wish to delete the selected entries?\" is displayed. Click the OK button in the message.",
+      "id" : "1514447",
+      "title" : "Delete user. Use the Delete button.",
+      "result" : ""
+   },
+   "1514444" : {
+      "initial" : "  1) On the Users &gt; Local Users page, have a user with \"LAN Interface IP\" and \"WAN Interface IP\" network objects in VPN Access (see TC-20).<br />\n  2) Move the mouse over the balloon icon in the \"VPN Access\" column next to that user and make sure that the pop-up tip displays \"LAN Interface IP\" and \"WAN Interface IP\".<br />\n  3) Click the Edit icon next to the user.<br />\n  4) In the Edit User dialog, go to the VPN Access tab. Click the \"Remove All\" button.<br />\n  5) Click the OK button.<br />\n  6) Move the mouse over the balloon icon in the \"VPN Access\" column next to that user.",
+      "id" : "1514444",
+      "title" : "VPN access for user. Removing multiple Network objects from Access List."
+   },
+   "1514450" : {
+      "initial" : "  1. Create a user, input matching password\n  2. Add user to group SonicWALL administrator and click ok\n  3. Check user's table.",
+      "id" : "1514450",
+      "title" : "Local users page-User info display when user in sonicwall administrator group"
+   },
+   "1514459" : {
+      "initial" : "  1. Click on add user button.\n  2. Input name and matching password\n  3. Go to bookmark tab.",
+      "id" : "1514459",
+      "title" : "Book mark tab-With no sslvpn service group membership, no bookmark can be added"
+   },
+   "1514456" : {
+      "initial" : "  1. Click on add user button.\n  2. Input name and matching password\n  3. On member ship tab. add sslvpn service\n  4. Click ok\n  5. Click the edit button for this user.\n  6. Remove the ssl vpn service in group tab\n  7. Click ok",
+      "id" : "1514456",
+      "title" : "Groups tab-Remove SSL vpn service group"
+   },
+   "1514458" : {
+      "initial" : "  1. Click on add user button.\n  2. Input name and matching password\n  3. On member ship tab. add guest service\n  4. On guest service tab. set idle time out to 10 minutes\n  5. Click ok.",
+      "id" : "1514458",
+      "title" : "Guest service tab-idle time out minutes"
+   }
+}

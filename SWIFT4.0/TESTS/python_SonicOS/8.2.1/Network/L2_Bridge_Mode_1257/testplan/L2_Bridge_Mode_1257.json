@@ -1,0 +1,548 @@
+{
+   "33" : {
+      "steps" : "  1. Configure L2 bridged mode between X0 and X2 (LAN and DMZ).\n  2. On a PC on the LAN, set the default gateway to be the firewalls LAN IP address (192.168.168.168).\n  3. Send traffic from the LAN PC to the internet.\n  4. Verify that the default route is used to send packets out through the WAN.",
+      "initial" : "  TBD",
+      "id" : "33",
+      "title" : "Traffic is forwarded through the default gateway configured on the firewall, if the PC on the LAN has the default gateway as the firewalls IP.",
+      "result" : "  Verify that the firewalls default route is used to send packets out through the WAN."
+   },
+   "32" : {
+      "steps" : "  1. Bridge the LAN and DMZ.\n  2. Add a 121 NAT policy between the WAN and the LAN.\n  3. Under Firewall -> Access Rules, click on WAN-LAN and add an access policy which allows ICMP traffic from the WAN to the LAN.\n  4. Initiate a ping from the WAN PC to the LAN PC.\n  5. Verify success.\n  6. Verify traffic from LAN to WAN is allowed (by default)\n  7. Change the access rule to deny from LAN to WAN\n  8. Verify traffic from LAN to WAN get blocked",
+      "initial" : "  N/A",
+      "id" : "32",
+      "title" : "Access rules for WAN-LAN (Mixed mode)",
+      "result" : "  (As mentioned in the test steps.)"
+   },
+   "63" : {
+      "steps" : "  1. Configure LAN-DMZ in bridged mode.\n  2. Configure a 121 NAT between the WAN and the LAN.\n  3. Access a Telnet client on the WAN and telnet to the LAN PC.\n  4. Verify that the telnet session should be successful.",
+      "initial" : "  A telnet server on the LAN.",
+      "id" : "63",
+      "title" : "Telnet",
+      "result" : "  Verify that the Telnet session should be successful when LAN-DMZ/WAN-LAN are in bridged mode"
+   },
+   "21" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface)\n  2) Configure interface X2 as LAN, bridging it to the X1 interface. (Secondary bridged interface).\n  3) Go to Network -> Routing and try to configure OSPF on X1 or X2.\n  4) Verify that OSPF cannot be enabled on X1 or X2.",
+      "initial" : "  N/A",
+      "id" : "21",
+      "title" : "Verify that OSPF cannot be configured on any of the bridged interfaces",
+      "result" : "  OSPF cannot be configured on any of the bridged interfaces."
+   },
+   "71" : {
+      "steps" : "  1. Configured X3 as WAN interface;\n  2. Configure X2 bridge to X3;\n  3. Attempt to change x2 and x4 as a wiremode pair directly;\n  4. Attempt to configure x2 to Tapmode directly;",
+      "initial" : "  None",
+      "id" : "71",
+      "title" : "L2 Bridge with CLI",
+      "result" : "  There should be no error coming up in cli."
+   },
+   "7" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN with any Dynamic Addressing (Primary bridged Interface)\n  2) Configure interface X2 as LAN and try bridging it to interface X1.\n  3) Verify that an error message appears.",
+      "initial" : "  N/A",
+      "id" : "7",
+      "title" : "Verify that only static addressing should be used for the Primary Bridged interface",
+      "result" : "  Only static addressing should be used for the Primary Bridge interface."
+   },
+   "26" : {
+      "steps" : "  1. Configure WLAN and associate a SonicPoint to it.\n  2. Bridge the WLAN to the LAN/DMZ.\n  3. Connect from a wireless client to the wireless network specified by the SSID of the SonicPoint.\n  4. Access the servers/PCs on LAN/DMZ.\n  5. Verify success.",
+      "initial" : "  Sonicpoint---(WLAN)FW(LAN/DMZ)---PCs/Servers",
+      "id" : "26",
+      "title" : "Wireless services with SonicPoints with communications occurring between wireless clients and hosts on the bridge pair",
+      "result" : "  The wireless client can access the servers/PCs on LAN/DMZ successfully."
+   },
+   "18" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface).\n  2) Configure interface X2 as LAN, bridging it to the X1 interface. (Secondary bridged interface).\n  3) Go to Network -> Interfaces and click on X1 and X2.\n  4) Verify that the checkbox Enable Multicast should be grayed out for interfaces X1 and X2.\n  5) Configure X2 as a normal interface as LAN.\n  6) Repeat steps 3 and 4.\n  7) Verify that the checkbox should not be grayed out for X1 and X2.",
+      "initial" : "  TBD",
+      "id" : "18",
+      "title" : "Verify that IGMP/Multicast is not supported on bridged interfaces",
+      "result" : "  IGMP is not supported on bridged interfaces."
+   },
+   "72" : {
+      "steps" : "  1.X6 L2 bridge to x7;\n  2.add a vlan sub-interface X7:v20 to x7 interface;\n  3.Pass traffic(ping)from X6 to x7:V20;\n  4.Traffic coming from X6 with vlan 20 tag can be forwarded to the x7:V20 with the vlan 20 tag;\n  5.Icmp reply coming from x7:v20 can be forwarded to x6 with the vlan 20 tag;",
+      "initial" : "  pc1----(access vlan 20)sw1(tagged vlan 20)----x7:v20--FW--x6----(tagged vlan 20)sw2(access vlan 20)----pc2",
+      "id" : "72",
+      "title" : "Traffic coming from a VLAN on a bridged interface can be forwarded to the correct vlan sub-interface by FW",
+      "result" : "  pc2 can access pc1"
+   },
+   "16" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface).\n  2) Configure interface X2 as LAN, bridging it to the X1 interface. (Secondary bridged interface).\n  3) Go to Network -> DHCP server and configure a dynamic range. On Dynamic Range Configuration window, X2 should not be listed in the interface drop-down list.\n  4) Configure X2 as a normal interface as LAN.\n  5) Repeat steps 3.\n  6) Verify that X2 is shown in the interface drop-down list and DHCP range can be created.\n  7) Bridge X3 to X0 without disabling X0 DHCP range.\n  8) You should get error message: DHCP Server enabled on primary bridged interface - not supported.",
+      "initial" : "  N/A",
+      "id" : "16",
+      "title" : "Verify that DHCP server is not supported on bridged interfaces",
+      "result" : "  As mentioned in above steps, DHCP server is not supported on bridged interfaces."
+   },
+   "44" : {
+      "steps" : "  1. Configure the LAN and WAN as normal interfaces with static addresses.\n  2. Export prefs.\n  3. Configure a bridged pair between the WAN and the LAN.\n  4. Import prefs.\n  5. Verify that after the box restarts, the LAN and WAN should be configured as normal interfaces with static IP addresses.",
+      "initial" : "  TBD",
+      "id" : "44",
+      "title" : "Normal interfaces export prefs, Bridged pair interface, import prefs.",
+      "result" : "  The LAN and the WAN are normal interfaces with static IP addresses after the box restarts."
+   },
+   "55" : {
+      "steps" : "  1. Configure WAN-LAN in bridged mode.\n  2. Configure GAV. (Verifying that GAV is enabled on the LAN and WAN interfaces and configure other parameters like low attack)\n  3. On the virus server, try to access/download a Virus.\n  4. Verify that the first time, a prompt for downloading the virus. The second time, an error page is displayed, stating that GAV blocks the virus.\n  5. Verify that a log message comes up, under Log stating that GAV blocks the virus.",
+      "initial" : "  A Virus server (containing viruses) present on the WAN.",
+      "id" : "55",
+      "title" : "GAV - WAN-LAN Web server",
+      "result" : "  GAV blocks any virus, even if WAN-LAN is configured in bridged mode."
+   },
+   "74" : {
+      "steps" : "  1. Set interface X2 as WAN static, bridge LAN interface X3 to X2, set interface X4 as LAN static.\n  2. Add a PBR with source: any, destination: 8.8.8.8, gateway: X2 Default Gateway, interface: X2, metric: 10.\n  3. On PC3, set its gateway as X4's IP, ping 8.8.8.8 on PC3.\n  4. Capture packets on PC1.",
+      "initial" : "  PC1---(X2)FW(X3)---PC2\n  ________(X4)---PC3",
+      "id" : "74",
+      "title" : "PBR policy via a L2B interface",
+      "result" : "  Ping packets from PC3 to 8.8.8.8 can be captured on PC1."
+   },
+   "27" : {
+      "steps" : "  1. Configure DMZ-LAN bridge.\n  2. Configure DMZ interface.\n  3. By default, traffic is denied from DMZ to LAN, but allowed from LAN to DMZ.\n  4. Verify traffic from DMZ to LAN is blocked, and from LAN to DMZ succeeds.\n  5. Change the access rule to allow from DMZ to LAN, but deny from LAN to DMZ.\n  6. Verify traffic from DMZ to LAN succeeds, but from LAN to DMZ is blocked.",
+      "initial" : "  N/A",
+      "id" : "27",
+      "title" : "Access rules for DMZ-LAN (Pure L2 mode)",
+      "result" : "  (As mentioned in test instructions.)"
+   },
+   "57" : {
+      "steps" : "  1. Configure WAN-LAN in bridged mode.\n  2. Configure AV. (Verifying that AV is enabled on the LAN and WAN interfaces and configure other parameters like low attack)\n  3. On the web server, try to access/download a spyware file.\n  4. Verify that the first time, a prompt for downloading the virus. The second time, an error page is displayed, stating that AV blocks the spyware file.\n  5. Verify that a log message comes up, under Log stating that AV blocks the spyware file.",
+      "initial" : "  A Virus server (containing viruses) present on the WAN",
+      "id" : "57",
+      "title" : "Anti Spyware - WAN-LAN Web server",
+      "result" : "  AV blocks any spyware file, even if WAN-LAN is configured in bridged mode."
+   },
+   "61" : {
+      "steps" : "  1. Configure LAN-DMZ in bridged mode.\n  2. Configure a 121 NAT between the WAN and the LAN.\n  3. Access a VNC listener/client on the WAN and VNC to the LAN PC.\n  4. Verify that the VNC session should be successful.",
+      "initial" : "  A VNC system on the LAN.",
+      "id" : "61",
+      "title" : "VNC",
+      "result" : "  Verify that the VNC session should be successful when LAN-DMZ/WAN-LAN are in bridged mode"
+   },
+   "20" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface)\n  2) Configure interface X2 as LAN, bridging it to the X1 interface. (Secondary bridged interface).\n  3) Go to Network -> Routing and try to configure RIP on X1 or X2.\n  4) Verify that RIP cannot be enabled on X1 or X2.",
+      "initial" : "  TBD",
+      "id" : "20",
+      "title" : "Verify that RIP (Advanced Routing) cannot be configured on any of the bridged interfaces",
+      "result" : "  RIP (Advanced Routing) cannot be configured on any of the bridged interfaces."
+   },
+   "10" : {
+      "steps" : "  1) Configure a VPN tunnel between the LAN of the local firewall (one of the bridged interfaces) and the LAN of the remote firewall.\n  2) Start a continuous ping from the local LAN PC to the remote LAN PC IP address.\n  3) Verify from the VPN page that the tunnel is up.",
+      "initial" : "  A bridged interface LAN-LAN or LAN-DMZ on the local firewall\n  See DTS:51789\n  For Gen5 a route must be added since it is abiguous which addresses may be on the WAN and which may be on the LAN:\n  Source: ANY Dest: &lt;custom address object of addresses on the LAN &gt:\n  Service: ANY Gateway: 0.0.0.0 Interface: X0",
+      "id" : "10",
+      "title" : "Verify that a VPN tunnel can be established on a firewall having bridged interface",
+      "result" : "  A VPN tunnel can be initiated from the bridged interface."
+   },
+   "31" : {
+      "steps" : "  1. Set interface X1 as WAN static, bridge LAN interface X2 to X1, set interface X3 as DMZ static.\n  2. Connect PC2 to X1, gateway X1's IP, connect PC2 to X3, gateway X3's IP.\n  3. By default, traffic is denied from WAN to DMZ, but allowed from DMZ to WAN.\n  4. Ping PC2 from PC3 to verify traffic from DMZ to WAN is allowed, ping PC3 from PC2 to verify traffic from WAN to DMZ is blocked.\n  5. Change the access rule to allow from WAN to DMZ, but deny from DMZ to WAN.\n  6. Ping PC2 from PC3 to verify traffic from DMZ to WAN is blocked, ping PC3 from PC2 to verify traffic from WAN to DMZ is allowed.",
+      "initial" : "  PC1---(X2)FW(X1)---PC2\n  __________(X3)---PC3",
+      "id" : "31",
+      "title" : "Access rules for WAN-DMZ (Mixed mode)",
+      "result" : "  (As mentioned in the test steps)"
+   },
+   "152" : {
+      "steps" : "  1. Add an AP Server policy, set 192.168.40.0/25 as 'choose destination network' AO\n  2. Add AP Client policy named 'test1'\n  3. verify that phase1 negotiation completed successfully\n  4. check auto-added 'test1 Local Grp' AO Group, verify that 192.168.40.0/25 is added into the group\n  5. make vpn traffic to trigger phase2 negotiation, verify success.\n  6. repeat step1-5, in step1, we can try 192.168.40.0/24, 192.168.40.0/28 etc, verify phase2 negotiation can succeed.",
+      "initial" : "  AP Client X0: 192.168.40.0/24",
+      "id" : "152",
+      "title" : "AP Server configure an equal or smaller subnet than AP Client as Remote network, verify phase2 negotiation can be established successfully",
+      "result" : "  see step1"
+   },
+   "35" : {
+      "steps" : "  1. Configure L2 bridged mode between X0 and X2 (LAN and DMZ). 2. On a PC on the LAN, set the default gateway to be the firewalls LAN IP address (192.168.168.168). 3. Edit LAN > WAN policy and change group to Everyone. 4. Log into firewall from LAN 5. Access the WAN.",
+      "initial" : "  Radius authentication enabled and server setup.",
+      "id" : "35",
+      "title" : "Radius",
+      "result" : "  WAN is accessed through the default route."
+   },
+   "11" : {
+      "steps" : "  1. Configure a bridged pair between LAN and DMZ.\n  2. Enable HA on the firewall.\n  3. Pass traffic from LAN to WAN.\n  4. Do failover.\n  5. Verify traffic still flows through.\n  6. Do failback.\n  7. Verify traffic still flows through.",
+      "initial" : "  A bridged pair between LAN and DMZ",
+      "id" : "11",
+      "title" : "Verify that HA can be configured when a bridged pair is configured.",
+      "result" : "  HA should be fully functional."
+   },
+   "48" : {
+      "steps" : "  1. Enable all the logging in Log -> Categories.\n  2. Configure WAN and LAN in bridged mode.\n  3. Verify that the logs mention this assignment.",
+      "initial" : "  TBD",
+      "id" : "48",
+      "title" : "Check logs when a bridged pair is configured",
+      "result" : "  There should be a log like this:\n  02/07/2010 21:43:30.624\tInfo\tFirewall Event\tInterface IP Assignment"
+   },
+   "77" : {
+      "steps" : "  1 Configure X2 as LAN zone with IP 192.1.1.1/24 2 Add a DHCP scope 192.1.1.2-192.1.1.254 by interface pre-populated 3 Configure X3 as WLAN zone an bridge to X2 , suppose SonicPoint/SonicWave Limit as 128\n  4 Repeat step 1-3 but configure X2 IP as different subnet, for e.g. 192.1.1.1/21",
+      "initial" : "  TBD",
+      "id" : "77",
+      "title" : "DHCP scope change for different subnet interface when it bridged by a wireless type zone interface",
+      "result" : "  1 Verify DHCP scope changes after step 3 and 4, check though SonicPoint/SonicWave Limit number are both 128, changed DHCP scope are different, it will based on different subnet mask to reserve last 128 address for SonicPoint.\n  2 DUT has maximum DHCP support entry. If you use a very small subnet mask like /16, it maybe impossible to change to whole DHCP lease according to its subnet mask. In this case, it will reserve last 128 before DUT limit. "
+   },
+   "65" : {
+      "steps" : "  1. Connect a PC on the LAN and WAN to two ports of IXIA.\n  2. Check that the checkbox Block NonIPV4 traffic on the secondary bridged interface is not checked.\n  3. Open Ethereal on both LAN and WAN PCs.\n  4. Send IPX traffic from LAN to WAN.\n  5. Verify that the WAN receives the IPX packets.",
+      "initial" : "  A bridged pair between LAN and WAN and IXIA configured to send IPX traffic.",
+      "id" : "65",
+      "title" : "Non IPV4 traffic - forwarded - WAN-LAN bridged pair",
+      "result" : "  Non IPV4 traffic is forwarded through the WAN-LAN Bridged pair"
+   },
+   "29" : {
+      "steps" : "  1) Configure WAN\n  2) Configure WAN-LAN bridge; 3) Verify traffic from LAN to WAN is allowed (by default)\n  4) Change the access rule to deny from LAN to WAN\n  5) Verify traffic from LAN to WAN get blocked",
+      "initial" : "  N/A",
+      "id" : "29",
+      "title" : "Access rules for WAN-LAN (Pure L2 mode)",
+      "result" : "  (As mentioned in the test steps.)"
+   },
+   "50" : {
+      "steps" : "  1. Configure LAN-DMZ as bridged mode.\n  2. Make any other configuration changes and run any tests.\n  3. Load the newest available firmware.\n  4. Upgrade the firewall with this firmware with current settings.\n  5. When the firewall completes reboot after loading the image, verify that the bridged mode configuration alongwith all other configurations is intact.",
+      "initial" : "  TBD",
+      "id" : "50",
+      "title" : "Upgrade the Firewall from a previously released firmware version",
+      "result" : "  After a firmware upgrade, all the configurations alongwith bridged mode configurations is intact."
+   },
+   "39" : {
+      "steps" : "  1. Configure LAN-WAN in bridged mode.\n  2. Enable WAN GroupVPN, set the Authentication Method to be IKE using Preshared Secret and put a appropriate Shared Secret.\n  3. On LAN side, setup servers providing various services such as HTTP, FTP and so on.\n  4. On a WAN side PC, setup GVC configuration to connect to the WAN interface, try to access the services provided by the LAN side servers.",
+      "initial" : "  N/A",
+      "id" : "39",
+      "title" : "GVC from WAN to LAN and testing different services",
+      "result" : "  All the services can be accessed successfully by the GVC client."
+   },
+   "64" : {
+      "steps" : "  1. Configure WAN-LAN in bridged mode.\n  2. Configure HA on the device. (Make sure that the HA pair is connected to hubs and not switches)\n  3. Pass traffic from the LAN PC to the WAN PC.\n  3. Initiate failover.\n  4. Verify that the Backup firewall becomes Active and that the traffic is still passing through.\n  5. Do Failback.\n  6. Verify that the Primary firewall becomes Active and that the traffic is still passing through.",
+      "initial" : "  The HA pair should be connected to hubs and not switches. The PC on the LAN should have the default gateway configured as the default gateway of the WAN interface of the firewall and not the LAN IP of the firewall.",
+      "id" : "64",
+      "title" : "HA - WAN-LAN bridged pair",
+      "result" : "  Failover and Failback should work as defined, when WAN-LAN are configured in Bridged mode."
+   },
+   "58" : {
+      "steps" : "  1. Configure WAN-LAN in bridged mode.\n  2. Make sure firewall is licensed for CFS. Enable CFS on WAN and LAN zone.\n  3. Go to page Security Services > Content Filter. In the drop-down list of CFS Policy Assignment, select Via App Rules.\n  4. Create a match object: cfs_ob1 - CFS Category List - 30: E-Mail & 38: Shopping.\n  5. Create an action object: cfs_act_ob1 - HTTP Block Page - You are not allowed to visit the website.\n  6. Add an App Rule: cfs_policy1 -- CFS -- cfs_ob1 -- cfs_act_ob1.\n  7. From a LAN PC, try to visit www.hotmail.com, www.amazon.com and www.google.com.",
+      "initial" : "  N/A",
+      "id" : "58",
+      "title" : "CFS",
+      "result" : "  Traffic to hotmail and amazon will be blocked by cfs-poli-1, Traffic to google will be successed."
+   },
+   "41" : {
+      "steps" : "  1. Reboot the firewall from factory defaults.\n  2. Configure the LAN and WAN.\n  3. Bridge the WAN and the LAN.\n  4. Click on Register the unit under System -> Status page.\n  5. Enter the username and password.\n  6. Verify that the box can be registered.",
+      "initial" : "  TBD",
+      "id" : "41",
+      "title" : "Verify that the box can be registered when X1 is the Primary bridge interface",
+      "result" : "  The box can be registered."
+   },
+   "12" : {
+      "steps" : "  1. Configure a bridged pair between LAN and DMZ.\n  2. Connect two Ixia ports to both of the pair interfaces.\n  3. Make sure that the checkbox Block NonIPV4 traffic on the secondary bridged interface is not checked.\n  4. Send IPX traffic from the Ixia port on LAN to DMZ.\n  5. Verify if the Ixia port on DMZ receives the IPX packets.\n  6.Repeat steps 4 and 5 with other types of nonIPv4 traffics, such as STP BPDU, LADP, PPPOE Discovery, LLTD, LLDP, CDP, QinQ, PAgP and so on.",
+      "initial" : "  Ixia(port1)---(LAN)FW(DMZ)---(port2)Ixia",
+      "id" : "12",
+      "title" : "Non IPV4 traffic is forwarded through the Bridged pair",
+      "result" : "  NonIPV4 traffic is forwarded through the bridged pair."
+   },
+   "15" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface).\n  2) Configure interface X2 as LAN, bridging it to the X1 interface. (Secondary bridged interface)\n  3) Try enabling Wan Failover and Load Balancing.\n  4) The checkbox for enabling Wan Failover should be grayed out.",
+      "initial" : "  TBD",
+      "id" : "15",
+      "title" : "Verify that Wan Failover and Load Balancing cannot be configured if a bridged interface already exists",
+      "result" : "  Wan Failover and Load Balancing cannot be configured if a bridged interface already exists"
+   },
+   "52" : {
+      "steps" : "  1. Configure LAN-DMZ in bridged mode.\n  2. Configure GMS settings under System -> Administration and choose the GMS management using HTTPs tunnel.\n  3. Login the GMS server, connect to firewall using HTTPs tunnel.\n  4. Manage the firewall using the GMS server. Make some configuration changes, verify if the interfaces can be unconfigured from bridged mode and can be reconfigured as bridged mode.",
+      "initial" : "  GMS server present, which is able to communicate to the firewall. It should be conifigured for HTTPs management.",
+      "id" : "52",
+      "title" : "GMS management using HTTPs tunnel",
+      "result" : "  GMS management of the firewall is possible and interfaces can be configured in and out of bridged mode from the GMS server."
+   },
+   "60" : {
+      "steps" : "  1. Configure LAN-DMZ in bridged mode.\n  2. Configure a 121 NAT between the WAN and the LAN.\n  3. Access a RDP client on the WAN and RDP to the LAN PC.\n  4. Verify that the RDP session should be successful.",
+      "initial" : "  An RDP system on the LAN.",
+      "id" : "60",
+      "title" : "RDP",
+      "result" : "  Verify that the RDP session should be successful when LAN-DMZ/WAN-LAN are in bridged mode"
+   },
+   "56" : {
+      "steps" : "  1. configure WAN-LAN L2B ;\n  2. Enable IPS, detect and prevent all low , medium , high priority attacks;\n  3. Ping WAN site server from LAN site client;",
+      "initial" : "  TBD",
+      "id" : "56",
+      "title" : "IPS - WAN-LAN Web server",
+      "result" : "  in step 3, ping failed, FW detect this kind of intrusion, log generated. 609 Security Services Alert IPS Prevention Alert: ICMP Echo Reply, SID: 316, Priority: Low"
+   },
+   "73" : {
+      "steps" : "  1. Set interface X2 as WAN static, bridge LAN interface X3 to X2.\n  2. On X3's edit page, leave the checkboxes for management options HTTPS/Ping/SNMP/SSH unchecked, try to manage FW through X3 using HTTPS/Ping/SNMP/SSH.\n  3. Enable the management options on X3, try to manage FW again.\n  4. Verify the management functions on X2, make sure the management options on primary and secondary interfaces are independent from each other.",
+      "initial" : "  N/A",
+      "id" : "73",
+      "title" : "Management functions for L2B interfaces",
+      "result" : "  In step 2, manage on X3 failed.\n  In step 3, manage on X3 succeed.\n  In step 4, manage on X2 succeed, and enable/disable management on X2 doesn't affect the fuctions of X3."
+   },
+   "66" : {
+      "steps" : "  1. Connect a PC on the LAN and WAN to two ports of IXIA.\n  2. Check that the checkbox Block Non IPV4 traffic on the secondary bridged interface is checked.\n  3. Open Ethereal on both LAN and WAN PCs.\n  4. Send IPX traffic from LAN to WAN.\n  5. Verify that the WAN does not receive the IPX packets.",
+      "initial" : "  A bridged pair between LAN and WAN and IXIA configured to send IPX traffic.",
+      "id" : "66",
+      "title" : "Non IPV4 traffic - blocked - WAN-LAN bridged pair",
+      "result" : "  Non IPV4 traffic is blocked by the WAN-LAN Bridged pair."
+   },
+   "45" : {
+      "steps" : "  1. Configure the WAN with DHCP/PPPoE.\n  2. Export prefs.\n  3. Configure a bridged pair between the WAN and the LAN.\n  4. Import prefs.\n  5. Verify that after the box restarts, the LAN and WAN should not be bridged and that WAN should have a Dynamic IP address(DHCP/PPPoE).",
+      "initial" : "  N/A",
+      "id" : "45",
+      "title" : "WAN with Dynamic IP \u0013 export prefs, Bridged pair interface, import prefs.",
+      "result" : "  The LAN and the WAN are not bridged, and the WAN should still be DHCP/PPPoE type with a dynamic IP address after the box restarts."
+   },
+   "76" : {
+      "steps" : "  1. Set interface X2 as WAN static, IP 192.1.1.10, bridge LAN interface X3 to X2.\n  2. Connect PC1 to X2, set PC1's IP to 192.1.1.1, start a FTP server on PC1, connect PC2 to X3, set PC2's IP to 192.1.1.2.\n  3. Open stateful packet inspection on FW, try to FTP download a file on PC1 from PC2.\n  4. On X3's edit page, check the checkbox for option \"Disable stateful-inspection on this bridge-pair\", click OK button, then try to FTP download a file on PC1 from PC2 again.",
+      "initial" : "  PC1---(X2)FW(X3)---PC2",
+      "id" : "76",
+      "title" : "Test the function for option \"Disable stateful-inspection on this bridge-pair\"",
+      "result" : "  In step 3, FTP download fails.\n  In step 4, FTP download succeeds."
+   },
+   "19" : {
+      "steps" : "  1. Configure LAN-DMZ as a bridged pair.\n  2. Enable Multicasting on the LAN and DMZ interfaces and also under Firewall -> Access Rules.\n  3. Have a mpeg file in the same folder where VLC is installed.\n  4. Go to Firewall -> Access Rules and set the rules for LAN -> Multicast and DMZ -> Multicast to Allow.\n  5. On the LAN PC, configure the Multicast server. (For setting up the VLC server, we need to run the wizard. Using the Open Network Stream tab does not work). Point the mpeg file and set the Multicast IP address on the server.\n  6. On the DMZ PC, open the Multicast client using Open Network Stream and enter the same Multicast IP address as on the server.\n  7. Go to Firewall -> Access Rules and set the rules for LAN -> Multicast and DMZ -> Multicast to Allow.\n  6. Verify that the the same mpeg file which is streamed from the LAN server should be streamed to the DMZ client.\n  7. Change the Firewall -> Access Rules to Deny LAN -> Multicast and DMZ -> Multicast.\n  8. Verify that the DMZ client should not be able to stream the mpeg file from the server.",
+      "initial" : "  A Multicast server and a client (VLC media playe should be installed on two PCs)",
+      "id" : "19",
+      "title" : "Verify that IGMP/Multicast packets are forwarded/dropped by bridged interfaces, depending on the access rules configured for Multicast",
+      "result" : "  Depending on the Multicast rules, IGMP/Multicast packets are forwarded/dropped by bridged interfaces."
+   },
+   "62" : {
+      "steps" : "  1. Configure LAN-DMZ in bridged mode.\n  2. Configure a 121 NAT between the WAN and the LAN.\n  3. Access an SSH client on the WAN and SSH to the LAN PC.\n  4. Verify that the SSH session should be successful.",
+      "initial" : "  An SSH server on the LAN",
+      "id" : "62",
+      "title" : "SSH",
+      "result" : "  Verify that the SSH session should be successful when LAN-DMZ/WAN-LAN are in bridged mode."
+   },
+   "54" : {
+      "steps" : "  1. Configure LAN-WAN in bridged mode.\n  2. On a LAN PC, set the default gateway to be the bridged pair's IP address, use a mail tool like outlook, configure its Mail server to a server on WAN side .\n  3. Try to sending or reciving mails on the LAN PC.",
+      "initial" : "  N/A",
+      "id" : "54",
+      "title" : "Accessing a Mail server on the WAN",
+      "result" : "  LAN PC can send and receive mails successfully."
+   },
+   "67" : {
+      "steps" : "  1. From pc1 on the secondary bridged interface x5, try to access remote site pc3, verify it succeed;\n  2. From remote site pc3, try to access pc2, verify it succeed;\n  3. From remote site pc3, try to access pc1,verify it succeed.",
+      "initial" : "  PC1---(X5)FW(X1)---PC2\n  _______(WAN)---VPN tunnel---(WAN)FW(LAN)---PC3",
+      "id" : "67",
+      "title" : "Verify VPN traffic can pass to the correct bridged interface.",
+      "result" : "  Remote network and local network, including primary bridged interface and secondary bridged interface, can access each other successfully."
+   },
+   "70" : {
+      "steps" : "  1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.\n  2. Cause failover by rebooting the primary.",
+      "initial" : "  Two devices configured in stateful failover with management set on an interface not being used for L2 bridge Mode.\n  Interfaces configured in L2 bridge.\n  PC on one interface.\n  Other interface connect to Server or to router which is connected to Server.",
+      "id" : "70",
+      "title" : "L2 bridge with HA",
+      "result" : "  Traffic continues after failover - no broadcast storms should result."
+   },
+   "68" : {
+      "steps" : "  1.Config a L2 bridge pair between x2 and x3;\n  2.Send traffic with vlan tagged from ixia port1 to ixia port2;\n  3.For the vlan filtering tab,select Block listed VLANs from the Filering mode;\n  4.Select the relevant vlan id in the VLANs not in the list,and put it in the VLANs included in the list;\n  5.For the vlan filtering tab,select Allow listed VLANs from the Filering mode;\n  6.Select the relevant vlan id in the VLANs not in the list,and put it in the VLANs included in the list;\n  7.Delete the relevant vlan id from the VLANs included in the list;",
+      "initial" : "  ixia port1----x2(lan)--DUT--x3(lan)----ixia port2",
+      "id" : "68",
+      "title" : "Verify L2B works well with vlan filtering tab",
+      "result" : "  1.In step 2,ixia port2 can receive the vlan tagged traffic from ixia3;\n  2.In step 4,ixia port2 cann't receive the vlan tagged traffic from ixia3;\n  3.In step 6,ixia port2 can receive the vlan tagged traffic from ixia3;\n  4.In step 7,ixia port2 cann't receive the vlan tagged traffic from ixia3;"
+   },
+   "17" : {
+      "steps" : "  1. Configure the LAN and WAN as normal interfaces.\n  2. Let the LAN PC act as a DHCP client getting a lease from the SonicWALL which acts as a DHCP server.\n  3. Once the PC gets an IP address from the DHCP server, verify it under the lease present under Network -> DHCP server.\n  4. Then try to change the IP assignment of the LAN and the WAN and try to configure bridged interfaces between WAN and LAN.\n  5. Verify that an error is got, stating that DHCP server is configured and hence bridging is not possible.\n  6. Under Network -> DHCP server, disable DHCP server.\n  7. Verify that the lease got by the SonicWALL DHCP server is lost.\n  8. Assign a different IP to the LAN PC and configure WAN-LAN to be in bridged mode.",
+      "initial" : "  N/A",
+      "id" : "17",
+      "title" : "Verify that an already existing lease got from X0 should be released as soon as X0 is configured as a bridge interface.",
+      "result" : "  An already got lease is released when X0 is configured as a bridge interface."
+   },
+   "2" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface)\n  2) Configure interface X2 as LAN, bridging it to the X1 interface. (Secondary bridged interface).\n  3) Verify that the Network -> Interfaces page displays X1 and X2 sharing the same IP. 4) Configure interface X3 as DMZ and try to bridge it to X1.\n  5) Verify that an error message is shown.",
+      "initial" : "  N/A",
+      "id" : "2",
+      "title" : "Verifying only 2 interfaces can be made a part of the Bridge pair",
+      "result" : "  An error message should be shown."
+   },
+   "1" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface) 2) Configure interface X2 as LAN, bridging it to the X1 interface. (Secondary bridged interface) 3) Verify that the Network -> Interfaces page displays X1 and X2 sharing the same IP.\n  note: WAN zone should be used static ip .",
+      "initial" : "  N/A",
+      "id" : "1",
+      "title" : "Configuring a bridge pair",
+      "result" : "  The Network -> Interfaces page should display both X1 and X2 with the same IP address.\n  The comment for X1 should read as Bridged to X2.\n  The comment for X2 should read as Bridged to X1."
+   },
+   "30" : {
+      "steps" : "  1. Set interface X1 as WAN static, bridge LAN interface X2 to X1, set interface X3 as DMZ static.\n  2. Connect PC1 to X2, gateway X2's IP, connect PC2 to X3, gateway X3's IP.\n  3. By default, traffic is denied from DMZ to LAN, but allowed from LAN to DMZ.\n  4. Ping PC1 from PC3 to verify traffic from DMZ to LAN is blocked, ping PC3 from PC1 to verify traffic from LAN to DMZ is allowed.\n  5. Change the access rule to allow from DMZ to LAN, but deny from LAN to DMZ.\n  6. Ping PC1 from PC3 to verify traffic from DMZ to LAN is allowed, ping PC3 from PC1 to verify traffic from LAN to DMZ is blocked.",
+      "initial" : "  PC1---(X2)FW(X1)---PC2\n  ___________(X3)---PC3",
+      "id" : "30",
+      "title" : "Access rules for DMZ-LAN (Mixed mode)",
+      "result" : "  (As mentioned in the test steps.)"
+   },
+   "25" : {
+      "steps" : "  1. Configure interface X2 as LAN static, bridge LAN interface X3 to X2.\n  2. Connect two Ixia ports to both of the pair.\n  3. Send two tagged traffics from Ixia port1(e.x. ping Ixia port2's IP), one tagged with 100 and the other tagged with 200. Try to capture the packets on Ixia port2.",
+      "initial" : "  Ixia(port1)---(X2)FW(X3)---(port2)Ixia",
+      "id" : "25",
+      "title" : "Verify that sending traffic from multiple subnets/VLANs configured on the bridged pair should be possible",
+      "result" : "  Both traffics succeed."
+   },
+   "28" : {
+      "steps" : "  1) Configure WAN-DMZ bridge.\n  2) Configure DMZ interface.\n  3) By default, traffic is allowed from DMZ to WAN.\n  4) Verify traffic from DMZ to WAN is allowed.\n  5) Change the access rule to deny from DMZ to WAN.\n  6) Verify traffic from DMZ to WAN get blocked.",
+      "initial" : "  N/A",
+      "id" : "28",
+      "title" : "Access rules for WAN-DMZ (Pure L2 mode)",
+      "result" : "  (As mentioned in the test steps.)"
+   },
+   "75" : {
+      "steps" : "  1. Set interface X2 as WAN static, bridge LAN interface X3 to X2, set interface X4 as LAN static.\n  2. Add a PBR with source: any, destination: 8.8.8.8, gateway: X4 Default Gateway, interface: X4, metric: 10.\n  3. Keep capturing packets on PC2 and PC3.\n  3. On PC1, set its gateway as X2's IP, then send continuous ping to 8.8.8.8. Verify packets captured on PC2 and PC3.\n  5. Open X3's edit page, check the checkbox for option \"Never route traffic on this bridge-pair\" , click OK. Verify packets captured on PC2 and PC3 again.",
+      "initial" : "  PC1---(X2)FW(X3)---PC2\n  ________(X4)---PC3",
+      "id" : "75",
+      "title" : "Test the function for option \"Never route traffic on this bridge-pair\"",
+      "result" : "  Ping packets from PC1 to 8.8.8.8 can only be captured on PC3 when the option \"Never route traffic on this bridge-pair\" is not enabled.\n  Ping packets from PC1 to 8.8.8.8 can only be captured on PC2 when the option \"Never route traffic on this bridge-pair\" is enabled."
+   },
+   "40" : {
+      "steps" : "  1. Configure LAN-WAN in bridged mode.\n  2. On a LAN side PC, set its gateway to be the bridged pair's IP, setup GVC configuration to connect to the remote office.\n  3. Send some packets from the PC, then captue the packets received on remote office.",
+      "initial" : "  N/A",
+      "id" : "40",
+      "title" : "GVC from LAN to a remote office and checking if ESP packets are intact",
+      "result" : "  The packets sent and received on both side are exactly the same."
+   },
+   "14" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface).\n  2) Enable Wan Failover\n  2) Configure interface X2 as LAN, bridging it to the X1 interface. (Secondary bridged interface)\n  3) Verify that an error message should show up.",
+      "initial" : "  N/A",
+      "id" : "14",
+      "title" : "Verify that a bridged pair cannot be configured if Wan Failover and Load balancing is enabled",
+      "result" : "  When Wan Failover and Load balancing is configured, bridged pair cannot be configured."
+   },
+   "69" : {
+      "steps" : "  1.access Internet from a lan pc of firewall;\n  2.select another two interfaces,and config them to a L2 bridge pair;\n  3.pcap on the firewall,verify the traffic from the lan pc to the interface is still forwared as before;",
+      "initial" : "  TBD",
+      "id" : "69",
+      "title" : "LAN bridged to default WAN doesn't affect other interfaces\u0092 traffic",
+      "result" : "  After congfig a lan->wan bridge pair(default WAN interface),other interfaces\u0092 traffic is still forwarded as before."
+   },
+   "59" : {
+      "steps" : "  Case1: Put the LAN and WAN interfaces as L2 bridge mode, no VLAN interfaces are created.\n  Send VLAN tagged traffic from the Hosts connected to the LAN and WAN interfaces. ( Same VLAN is used from both the hosts )\n  Case2:\n  Create VLAN subinterfaces for LAN and WAN with different VLAN IDs and different static IP subnets.\n  Send traffic from hosts connected to LAN and WAN with these different VLAN IDs.",
+      "initial" : "  Create a LAN and WAN interfaces and put them in L2 bridge mode with static IP.\n  Either use Ixload with perr-peer traffic or just simple ICMP with LAN and WAN hosts to verify the data path.",
+      "id" : "59",
+      "title" : "Bump in the VLAN",
+      "result" : "  In both case 1 and case2 bi-directional traffic should suceed."
+   },
+   "49" : {
+      "steps" : "  1. Configure the WAN-LAN as a bridged pair.\n  2. Under System -> Diagnostics, click the button Download TSR.\n  3. You will be prompted to save the TSR.\n  4. Open the TSR before/after saving it. Verify that the interfaces WAN and LAN are shown as bridged.\n  5. Repeat the above testcases for LAN-DMZ bridged.",
+      "initial" : "  TBD",
+      "id" : "49",
+      "title" : "Download the TSR",
+      "result" : "  The TSR should show that the interfaces WAN-LAN/LAN-DMZ as bridged to each other."
+   },
+   "24" : {
+      "steps" : "  1. Configure interface X2 as WAN static(Primary bridged Interface).\n  2. Configure interface X3 as LAN, bridging to interface X2. (Secondary bridged interface).\n  3. On X3's edit page, VLAN Filtering tab, set filtering mode to Block listed VLANs, then move VLAN 100 to the right box which containing the listed VLANs.\n  4. Send two tagged traffics from Ixia port1(e.x. ping Ixia port2's IP), one tagged with 100 and the other tagged with 200. Try to capture the packets on Ixia port2.",
+      "initial" : "  Ixia(port1)---(X2)FW(X3)---(port2)Ixia",
+      "id" : "24",
+      "title" : "Access rules denying traffic to/from a particular VLAN",
+      "result" : "  Traffic tagged with 100 failed, and traffic tagged with 200 succeed."
+   },
+   "53" : {
+      "steps" : "  1. Configure LAN-DMZ in bridged mode.\n  2. Configure GMS settings under System -> Administration and choose the GMS management using existing tunnel.\n  3. Login the GMS server, connect to firewall using existing tunnel.\n  4. Manage the firewall using the GMS server. Make some configuration changes, verify if the interfaces can be unconfigured from bridged mode and can be reconfigured as bridged mode.",
+      "initial" : "  N/A",
+      "id" : "53",
+      "title" : "GMS management using existing tunnel",
+      "result" : "  GMS management of the firewall is possible and interfaces can be configured in and out of bridged mode from the GMS server."
+   },
+   "22" : {
+      "steps" : "  1. Create a subinterface for X1 with VLAN ID 100.\n  2. Create a subinterface for X2 with VLAN ID 100.\n  3. Verify success.",
+      "initial" : "  A bridged pair WAN-LAN(X1-X2)",
+      "id" : "22",
+      "title" : "Verify that primary and secondary interfaces can have sub-interfaces configured with same VLAN ID",
+      "result" : "  Primary and secondary interfaces can have subinterfaces configured with same VLAN ID."
+   },
+   "42" : {
+      "steps" : "  1. Reboot the firewall from factory defaults.\n  2. Configure the LAN, WAN and DMZ.\n  3. Bridge the LAN and the DMZ.\n  4. Click on Register the unit under System -> Status page.\n  5. Enter the username and password.\n  6. Verify that the box can be registered.",
+      "initial" : "  TBD",
+      "id" : "42",
+      "title" : "Verify that the box can be registered when X1 is not the Primary bridge interface.",
+      "result" : "  The box can be registered."
+   },
+   "46" : {
+      "steps" : "  1. Configure a bridged pair between the WAN and the LAN.\n  2. Export prefs.\n  3. Configure the WAN with DHCP/PPPoE.\n  4. Import prefs.\n  5. Verify that after the box restarts, the LAN and WAN should be bridged. The WAN should not have Dynamic addressing.",
+      "initial" : "  N/A",
+      "id" : "46",
+      "title" : "Bridged pair export prefs, WAN IP to Dynamic Addressing, import prefs.",
+      "result" : "  The WAN and the LAN are bridged after the box restarts."
+   },
+   "23" : {
+      "steps" : "  1. Configure interface X2 as LAN static, bridge LAN interface X3 to X2.\n  2. Connect a PC to X2 as the DHCP client, start a DHCP server on the side of X3.\n  3. Set the PC's NIC's mode as Obtain an IP address automatically, try to get a DHCP lease from the server.",
+      "initial" : "  PC---(X2)FW(X3)---DHCP server",
+      "id" : "23",
+      "title" : "Verify that DHCP can be passed through the bridged interfaces",
+      "result" : "  The PC on X2 can obtain DHCP lease from DHCP server on X3 successfully."
+   },
+   "13" : {
+      "steps" : "  1. Configure a bridged pair between LAN and DMZ.\n  2. Connect two Ixia ports to both of the pair interfaces.\n  3. Check the checkbox Block NonIPV4 traffic on the secondary bridged interface.\n  4. Send IPX traffic from the Ixia port on LAN to DMZ.\n  5. Verify if the Ixia port on DMZ receives the IPX packets.\n  6. Repeat steps 4 and 5 with other types of nonIPv4 traffics, such as STP BPDU, LADP, PPPOE Discovery, LLTD, LLDP, CDP, QinQ, PAgP and so on.",
+      "initial" : "  Ixia(port1)---(LAN)FW(DMZ)---(port2)Ixia",
+      "id" : "13",
+      "title" : "Non IPV4 traffic is blocked by the Bridged pair",
+      "result" : "  NonIPV4 traffic is blocked by the bridged pair."
+   },
+   "6" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface)\n  2) Configure interface X2 as LAN\n  3) Add a sub-interface to X2.\n  4) Try bridging the sub-interface configured above to X1.\n  5) Verify that an error message appears.",
+      "initial" : "  N/A",
+      "id" : "6",
+      "title" : "Verify that a sub-interface cannot be configured as a bridged pair.",
+      "result" : "  A sub-interface cannot be configured as a bridge interface."
+   },
+   "36" : {
+      "steps" : "  1. Set interface X1 as WAN static, bridge X0 to X1.\n  2. Connect a PC to X0, set its NIC to obtain an IP addresss automatically; connect X1 to the Internet.\n  3. Try to access the Internet on the PC.\n  4. On Firewall->Access Rules page, change LAN->WAN default ACL's \"Users Included\" from ALL to Administrator, try to access the Internet on the PC again.\n  5. Login FW using administrator account from X0 on the PC, then try to access the Internet once more.\n  6. Try the controllability of ULA for other users such as Guests, Trusted Users and so on.",
+      "initial" : "  PC---(X0)FW(X1)---Internet",
+      "id" : "36",
+      "title" : "ULA",
+      "result" : "  In step 3, the Internet can be accessed.\n  In step 4, the Internet can't be accessed.\n  In step 5, the Internet can be accessed."
+   },
+   "3" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface)\n  2) Configure interface X2 as LAN, bridging it to the X1 interface. (Secondary bridged interface).\n  3) Verify that the Network -> Interfaces page displays X1 and X2 sharing the same IP. 4) Configure X3 as LAN.\n  5) Configure X4 as WAN. When trying to bridge it to X3 interface, verify that there is no such option available for the WAN interface.",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "Verifying that the WAN cannot be configured as the secondary interface",
+      "result" : "  No option for bridging the WAN interface to any other interface should be available."
+   },
+   "9" : {
+      "steps" : "  1. Initiate an FTP session between 2 PCs.\n  2. Configure LAN-DMZ as a bridged pair.\n  3. Connect the 2 PCs into the respective LAN and DMZ hubs.\n  4. Initiate an FTP session again.\n  5. Verify that the FTP session is successful.",
+      "initial" : "  2 PCs having an FTP session",
+      "id" : "9",
+      "title" : "Stream based connections",
+      "result" : "  The FTP session should be successfully established between the 2 PCs."
+   },
+   "51" : {
+      "steps" : "  1. Configure LAN-DMZ in bridged mode.\n  2. Configure GMS settings under System -> Administration and choose the GMS management using IPSec tunnel.\n  3. Login the GMS server, connect to firewall using Ipsec tunnel.\n  4. Manage the firewall using the GMS server. Make some configuration changes, verify if the interfaces can be unconfigured from bridged mode and can be reconfigured as bridged mode.\n  Enable the GMS admin using IPsec Management Tunnel\n  Copy the Encryption Key and Authentication Key so that they can be entered into the GMS GUI.\n  On the GMS GUI , click add unit.\n  Specify the serial number of the firewall to be managed, sepcify the managed address manually( wan ip )\n  management mode = using management tunnel\n  paste the encryption key and authentcation kjey here obtained from the DUT.\n  After the node is synced( i.e. turns blue) check the system -> status -> management -> Management Mode : Should show as \"Management Tunnel \"",
+      "initial" : "  GMS server present, which is able to communicate to the firewall. It should be configured for IPSec management\n  In order to configure GMS server for IPsec management, GMS server agent needs to be connected to a GMS gateway ( i.e. any sonicwall firewall) .\n  Specify the gateway information ( Firewall IP and login info ) under the following on GMS server:\n  In the GMS admin GUI -> Console -> Management -> Agents -> gateway configuration.\n  Give the firewall IP that is serving as the gateway.",
+      "id" : "51",
+      "title" : "GMS management using IPSec tunnel",
+      "result" : "  GMS management of the firewall is possible and interfaces can be configured in and out of bridged mode from the GMS server."
+   },
+   "47" : {
+      "steps" : "  1. Configure WAN and LAN in bridged mode.\n  2. Send traffic from the LAN to the WAN.\n  3. Verify success.\n  4. Reboot the box.\n  5. After the box comes back up, verify that traffic can be successfully sent from the LAN to the WAN.",
+      "initial" : "  N/A",
+      "id" : "47",
+      "title" : "Bridged pair \u0013 Reboot box.",
+      "result" : "  The traffic can be successfully sent from the LAN to the WAN."
+   },
+   "8" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN (Primary bridged Interface)\n  2) Configure interface X2 as LAN, bridging it to the X1 interface. (Secondary bridged interface)\n  3) Verify that the Network -> Interfaces page displays X1 and X2 sharing the same IP.\n  4) Change the IP address of X1.\n  5) Verify that the Network -> Interfaces page displays X1 and X2 sharing the same IP(the new IP address configured in Step 4).",
+      "initial" : "  N/A",
+      "id" : "8",
+      "title" : "Verify that changing the IP address of the Primary bridge interface should also be reflected in the Secondary bridge interface",
+      "result" : "  Changing the IP address of the Primary bridge interface should be reflected in the Secondary bridge interface."
+   },
+   "38" : {
+      "steps" : "  1. Configure LAN-DMZ as a bridged pair. 2. Configure 2 policy based routes Destination - service - ping Interface - X1 and Destination - Connections Monitor, verify that the Destination interfaces for yahoo and dell show up as X1 and X2 respectively.\n  Please refer to DTS133759 for test config:\n  1.factory default Firewall 2600;\n  2.connect the default wan interface X1 of 2600 to the internet;\n  3.config X2 and X3 of 2600 as a bridged pair,config X7 of 2600 as wan\n  interface and it connect to the lan interface of TZ205, and the wan interface\n  of TZ205 access the internet;\n  4.add one static routing (source:any,destination:61.135.169.105,service:any\n  Gateway:X7 default gateway,Interface:X7);\n  5.pc1 connect X3 of 2600,and pc1 ping 61.135.169.105;\n  6.the traffic should be forworded by X7 of 2600\n  7.Delete the static routing,and the traffic should be forworded by X1 of\n  2600",
+      "initial" : "  2 WANs present. (Do I need to test it with WAN - LAN bridged pair. If it is WAN-LAN bridged pair, then the LAN PC will have the default gateway as X1s default gateway. So would it actually work?)",
+      "id" : "38",
+      "title" : "Bridged pair does not interfere with PBR.",
+      "result" : "  The Policy based routes are not affected when LAN and DMZ are configured as bridged pair.\n  According to the PBR,the traffic should be forwarded to the correct interface\n  of the DUT"
+   },
+   "4" : {
+      "steps" : "  1. Bridge DMZ interface X2 to LAN static interface X0.\n  2. Bridge LAN interface X3 to WAN static interface X1.\n  3. Bridge other interfaces in different zones as many as possible, check the status of the FW and the function of the pairs.",
+      "initial" : "  N/A",
+      "id" : "4",
+      "title" : "Verifying Maximum number of pairings for a specific platform Eg NSA6600",
+      "result" : "  The number of Bridged interface is not limited, make sure no exception occurs when there are a number of bridged interfaces configured."
+   },
+   "34" : {
+      "steps" : "  1. Configure L2 bridged mode between X0 and X2 (LAN and DMZ).\n  2. On a PC on the LAN, set the default gateway to be a bogus IP address (1.1.1.1).\n  3. Configure a static arp entry on the LAN PC (arp -s 1.1.1.1 00-b0-d0-e6-d0-65) where the MAC address is the PC on the DMZ side. 3. Send traffic from the LAN PC to the internet.\n  4. Verify that the firewall acts as a bridge than a router and the packets travel through the other bridged interface.",
+      "initial" : "  TBD",
+      "id" : "34",
+      "title" : "Traffic gets forwarded to the bridged other interface, when the PC on the LAN has the default gateway configured on it as a bogus IP address",
+      "result" : "  Verify that the traffic gets forwarded to the other bridged interface, if the LAN PC has a bogus IP configured as its default gateway."
+   },
+   "37" : {
+      "steps" : "  1. Configure L2 bridged mode between X0 and X2 (LAN and DMZ).\n  2. On a PC on the LAN, set the default gateway to be the X0's IP address.\n  3. On DMZ side, setup a LDAP server. On FW, set User authentication method to be LDAP on Users->Settings page and create a new user.\n  4. Log into firewall from the LAN using the new created user.\n  5. Access the WAN.",
+      "initial" : "  N/A",
+      "id" : "37",
+      "title" : "LDAP",
+      "result" : "  The user can login FW successfully and WAN can be accessed through the bridge from the LAN PC."
+   },
+   "43" : {
+      "steps" : "  1. Configure a bridged pair between the WAN and the LAN.\n  2. Export prefs.\n  3. Configure the LAN and WAN as normal interfaces with static addresses.\n  4. Import prefs.\n  5. Verify that after the box restarts, the WAN and LAN should be bridged.",
+      "initial" : "  TBD",
+      "id" : "43",
+      "title" : "Bridged pair export prefs, Normal interfaces, import prefs",
+      "result" : "  The WAN and the LAN are bridged after the box restarts."
+   },
+   "5" : {
+      "steps" : "  1) Configure an interface eg X1 as WAN with IP 1.1.1.1 (Primary bridged interface)\n  2) Configure X2 as LAN and bridge it to X1 (Secondary bridged interface).\n  3) Configure interface X3 as DMZ and try giving it the IP 1.1.1.1\n  4) Verify that an error is got.",
+      "initial" : "  N/A",
+      "id" : "5",
+      "title" : "Verify that any other interface on the firewall cannot have the same IP as that of the bridged pair",
+      "result" : "  Any other interface on the firewall cannot have the same IP as that of the bridged pair."
+   }
+}

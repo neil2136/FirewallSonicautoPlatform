@@ -1,0 +1,373 @@
+{
+   "33" : {
+      "steps" : "  5 or more Physical/Virtual WAN interfaces\n  DHCP server on each WAN link.\n  Load Balancing Enabled using 5 or more interfaces.\n  Active Passive Failover Selected\n  Preemption enabled.\n  Primary, 1st Alternate, 2nd Alternate, 3rd Alternate, etc. interfaces are initially unplugged.",
+      "initial" : "  Full",
+      "id" : "33",
+      "title" : "Active Passive Preempt - 5 or more interfaces",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Plug back in the 3rd alternate interface.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.\n  6) Plug back in the 2nd alternate interface.\n  7) Access several sites using HTTP, FTP, or other protocol.\n  8) Observe the Connection Monitor page and/or packet captures.\n  9) Plug back in the 1st alternate interface.\n  10) Access several sites using HTTP, FTP, or other protocol.\n  11) Observe the Connection Monitor page and/or packet captures.\n  12) Plug back in the Primary interface.\n  13) Access several sites using HTTP, FTP, or other protocol.\n  14) Observe the Connection Monitor page and/or packet captures."
+   },
+   "32" : {
+      "steps" : "  5 or more Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Active Passive Failover Selected",
+      "initial" : "  Full",
+      "id" : "32",
+      "title" : "Active Passive Failover - 5 or more interfaces go down in order",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug the primary interface.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.\n  6) Unplug the 1st Alternate interface.\n  7) Access several sites using HTTP, FTP, or other protocol.\n  8) Observe the Connection Monitor page and/or packet captures.\n  9) Unplug the 2nd Alternate interface.\n  10) Access several sites using HTTP, FTP, or other protocol.\n  11) Observe the Connection Monitor page and/or packet captures.\n  12) Unplug the 3rd Alternate interface.\n  13) Access several sites using HTTP, FTP, or other protocol.\n  14) Observe the Connection Monitor page and/or packet captures."
+   },
+   "21" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Round Robin Load Balancing Selected\n  Final Backup interface configured.",
+      "initial" : "  Full",
+      "id" : "21",
+      "title" : "Failover/ Failback using Final Backup Ethernet interface with Round Robin WLB",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug all Primary and Alternate interfaces.\n  4) Wait for failover\n  5) Access several sites using HTTP, FTP, or other protocol.\n  6) Observe the Connection Monitor page and/or packet captures.\n  7) Plug in all Primary and Alternate interfaces.\n  8) Wait for failback\n  9) Access several sites using HTTP, FTP, or other protocol.\n  10) Observe the Connection Monitor page and/or packet captures."
+   },
+   "7" : {
+      "steps" : "  Several WAN interfaces configured.\n  WLB enabled with WAN interfaces selected for Primary, Alternates, and Final Backup.",
+      "initial" : "  Full",
+      "id" : "7",
+      "title" : "Changing interface rank",
+      "result" : "  1) Go to Network > Failover and LB page.\n  2) Select the edit icon next to the Default LB Group.\n  3) Select an interface in the right pane and click the up and down arrows to change the rank.\n  4) Click OK\n  5) Repeat for all interfaces."
+   },
+   "26" : {
+      "steps" : "  WLB enabled and configured on firmware running 5.5",
+      "initial" : "  TBD",
+      "id" : "26",
+      "title" : "Upgrade from 5.5.0.0 (other upgrade paths in other test plans)",
+      "result" : "  1) On System > Settings page load lastest firmware.\n  2) Boot the uploaded firmware with current settings."
+   },
+   "2" : {
+      "steps" : "  Several WAN interfaces configured.\n  LB enabled with WAN interfaces selected for Primary, Alternates, and Final Backup.",
+      "initial" : "  TBD",
+      "id" : "2",
+      "title" : "Verify comments for Default LB group",
+      "result" : "  1) Go to the Network >Failover and LB page\n  2) Mouse over comments next to Group."
+   },
+   "17" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Default LB group contains the four interfaces.\n  Active Passive Failover Selected\n  Preempt disabled.\n  Final Backup interface configured.\n  All Primary and Alternate interfaces disconnected initially.",
+      "initial" : "  Full",
+      "id" : "17",
+      "title" : "Failback to WLB from Final Backup Ethernet interface, Active Passive Failover(Preempt disabled)",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Wait for failback to occur.\n  4) Plug back in an alternate interface.\n  5) Access several sites using HTTP, FTP, or other protocol.\n  6) Observe the Connection Monitor page and/or packet captures.\n  7) Repeat for other interaces including the Primary."
+   },
+   "1" : {
+      "steps" : "  Default",
+      "initial" : "  Smoke",
+      "id" : "1",
+      "title" : "Enable Load Balancing not checked",
+      "result" : "  1) Go to the Network > Failover and LB page\n  2) Uncheck Enable Load Balancing."
+   },
+   "18" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Round Robin Load Balancing Selected\n  Final Backup interface configured.",
+      "initial" : "  Full",
+      "id" : "18",
+      "title" : "Final Backup Ethernet interface is not used in Round Robin WLB",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures."
+   },
+   "30" : {
+      "steps" : "  Load Balancing Enabled with 4 interfaces for Default LB Group.\n  Round Robin LB configured.",
+      "initial" : "  Smoke",
+      "id" : "30",
+      "title" : "Probing set on interfaces other than Primary and 2nd in rank.",
+      "result" : "  1) Configure Probing on each interface.\n  2) Select Probes succeed when both targets respond.\n  3) Configure the Primary and Alternate targets for each interface.Observe the Connection Monitor page and/or packet captures.\n  4) Do a packet capture.\n  5) Verify probing is being done for each interface.\n  6) Unplug the interface.\n  7) Wait for the failover\n  8) Access several sites using HTTP, FTP, or other protocol.\n  9) Observe the Connection Monitor page and/or packet captures."
+   },
+   "16" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Default LB group contains the four interfaces.\n  Active Passive Failover Selected\n  Preempt enabled.\n  Final Backup interface configured.\n  All Primary and Alternate interfaces disconnected initially.",
+      "initial" : "  Smoke",
+      "id" : "16",
+      "title" : "Failback to WLB from Final Backup Ethernet interface, Active Passive Failover(Preempt enabled)",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Wait for failback to occur.\n  4) Plug back in an alternate interface.\n  5) Access several sites using HTTP, FTP, or other protocol.\n  6) Observe the Connection Monitor page and/or packet captures.\n  7) Repeat for other interaces including the Primary."
+   },
+   "44" : {
+      "steps" : "  5 or more Physical/Virtual WAN interfaces",
+      "initial" : "  Full",
+      "id" : "44",
+      "title" : "Multiple unassigning of interfaces that are members of the Default LB Group.",
+      "result" : "  1) Go to Network > Failover and LB page.\n  2) Select the edit icon next to the Default LB Group.\n  3) Add interface so there are two interfaces.\n  4) Click OK\n  5) On the Network Interface page edit the interface and set it to unassigned.\n  6) Select the edit icon next to the Default LB Group.\n  7) Add interface so there are two interfaces.\n  8) Click OK\n  9) On the Network Interface page edit the interface and set it to unassigned.\n  10) Configure the previously set interface back to WAN.\n  11) Click OK\n  12) Continue pattern for at least 10 times."
+   },
+   "27" : {
+      "steps" : "  Default",
+      "initial" : "  Full",
+      "id" : "27",
+      "title" : "Settings are saved after reboot",
+      "result" : "  1) Configure the Default LB group.\n  2) Add Primary, Alternates, and Final Backup interfaces.\n  3) Enable Failover and LB\n  4) Configure Probing.\n  5) On System > Restart page click resart.\n  6) After restart log back in and go to LB and Failover configuration page."
+   },
+   "25" : {
+      "steps" : "  Default Have several of interfaces Unassigned, Assigned to LAN, DMZ, WAN etc. Make a tunnel interface.",
+      "initial" : "  Full",
+      "id" : "25",
+      "title" : "Only WAN VLAN-WAN interfaces can be added into default LB Group.",
+      "result" : "  1. Click to edit the default LB group"
+   },
+   "28" : {
+      "steps" : "  Load Balancing Enabled with 4 interfaces for Default LB Group.\n  Round Robin LB configured.\n  Probing is configured for each interface and all targets are up.",
+      "initial" : "  Full",
+      "id" : "28",
+      "title" : "Probing set to Succeed Always after probing was configured",
+      "result" : "  1) Observe the Connection Monitor page and/or packet captures.\n  2) Edit one the probing on one of the interfaces.\n  3) Select Succeed Always.\n  4) Do a packet capture.\n  5) Verify no probing is being done for the interface.\n  6) Unplug the interface.\n  7) Wait for the normal failover interval.\n  8) Repeat steps for other interfaces."
+   },
+   "40" : {
+      "steps" : "  All Physical interfaces except X0 configured as WAN.\n  Maxiumum number VLAN-WANs created.\n  Percentate Based LB selected.",
+      "initial" : "  TBD",
+      "id" : "40",
+      "title" : "Percentage Based Load Balancing with maximum number of interfaces verify setting percentages",
+      "result" : "  1) Navigate to the Network > Failover and LB page.\n  2) Click to edit the default LB Group.\n  3) Select all WAN interfaces and click the Add arrow button.\n  4) Click to edit each interface a set the percentage for each.\n  5) Set percentages so less and greater than 100% for total\n  6) Set percentages total equals 100%.\n  7) Click OK"
+   },
+   "14" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Default LB group contains the four interfaces.\n  Active Passive Failover Selected\n  Preempt enabled.\n  Final Backup interface configured.",
+      "initial" : "  Smoke",
+      "id" : "14",
+      "title" : "Failover to Ethernet Final Backup interface, Active Passive Failover(Preempt enabled)",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug all Primary and Alternate interfaces.\n  4) Wait for failover to occur.\n  5) Access several sites using HTTP, FTP, or other protocol.\n  6) Observe the Connection Monitor page and/or packet captures."
+   },
+   "20" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Percentage Based Load Balancing Selected.\n  4 different percentages set for the interfaces.\n  Final Backup interface configured.",
+      "initial" : "  TBD",
+      "id" : "20",
+      "title" : "Final Backup Ethernet interface is not used in Percentage based WLB",
+      "result" : "  1) Access site using Xenu Link Sleuth\n  2) Observe the Connection Monitor page and/or packet captures"
+   },
+   "49" : {
+      "steps" : "  5 Physical WAN interfaces defined Load Balancing Enabled. Default LB group contains the four interfaces. Interface selected as Final Backup interface. Active Passive Failover Selected Preempt enabled.",
+      "initial" : "  Full",
+      "id" : "49",
+      "title" : "Unassigning interface that is being used as a Final Backup interface.",
+      "result" : "  1) On the Network > Interfaces page click to edit the interface that is assigned as Final Backup.\n  2) Set the interface to Unassigned.\n  3) Observe what occurs on Network > Failover and LB page."
+   },
+   "24" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Default LB group contains the four interfaces.\n  Active Passive Failover Selected\n  Preempt enabled.\n  Final Backup interface configured.",
+      "initial" : "  Full",
+      "id" : "24",
+      "title" : "Final Backup Ethernet interfaces will be used by PBR.",
+      "result" : "  1) Configure PBR using Final Backup interface.\n  2) Access several sites using HTTP, FTP, or other protocol.\n  3) Observe the Connection Monitor page and/or packet captures."
+   },
+   "10" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Spillover Based Load Balancing Selected.\n  Spillover Bandwidth set to 100 Kbps.",
+      "initial" : "  Full",
+      "id" : "10",
+      "title" : "Changed rank of interfaces in the Default LB Group for Spillover Based",
+      "result" : "  1) Start an FTP download of a large file from a server on the WAN and wait 10 seconds or so.\n  2) Access several sites using HTTP, FTP, or other protocol.\n  3) Observe the Connection Monitor page and/or packet captures\n  4) Change the rank of a couple of interfaces including the Primary.\n  5) Start an FTP download of a large file from a server on the WAN and wait 10 seconds or so.\n  6) Access several sites using HTTP, FTP, or other protocol.\n  7) Observe the Connection Monitor page and/or packet captures"
+   },
+   "31" : {
+      "steps" : "  Load Balancing Enabled with 4 interfaces for Default LB Group.\n  Round Robin LB configured.\n  Probing enabled for each interface with configured Targets.",
+      "initial" : "  TBD",
+      "id" : "31",
+      "title" : "From Startup, the starting state of Primary and Alternates on Link-Up(with IP) is Available prior to probing completion",
+      "result" : "  1) Restart the device.\n  2) As soon as the device is up observe the LB Statistics page.\n  3) Access several sites using HTTP, FTP, or other protocol.\n  4) Observe the Connection Monitor page and/or packet captures."
+   },
+   "35" : {
+      "steps" : "  5 or more Physical/Virtual WAN interfaces defined\n  Load Balancing Enabled using 5 or more interfaces.\n  Spillover Based Load Balancing Selected.\n  Spillover Bandwidth set to 100 Kbps.",
+      "initial" : "  Full",
+      "id" : "35",
+      "title" : "Spillover Based - 5 or more interfaces",
+      "result" : "  1) Start an FTP download from a server on the WAN.\n  2) Access several sites using HTTP, FTP, or other protocol.\n  3) Observe the Connection Monitor page and/or packet captures"
+   },
+   "11" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Percentage Based Load Balancing Selected.\n  4 different percentages set for the interfaces.",
+      "initial" : "  Full",
+      "id" : "11",
+      "title" : "Changed ratio of interfaces in the Default LB Group for Ratio Based",
+      "result" : "  1) Access site using Xenu Link Sleuth\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Change the ratio of a couple interfaces.\n  4) Access site using Xenu Link Sleuth\n  5) Observe the Connection Monitor page and/or packet captures."
+   },
+   "53" : {
+      "steps" : "  5 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Basic Failover selected for LB method.\n  Final Backup interface configured.",
+      "initial" : "  Full",
+      "id" : "53",
+      "title" : "Changing the Final Backup Interface using the add arrow",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Unplug all LB interfaces except the Final Backup interface.\n  3) Access several sites using HTTP, FTP, or other protocol.\n  4) Plug back in all LB interfaces.\n  5) Change the Final Backup interface by using the add arrow.\n  6) Access several sites using HTTP, FTP, or other protocol.\n  7) Unplug all LB interfaces except the Final Backup interface.\n  8) Access several sites using HTTP, FTP, or other protocol.\n  9) Plug back in all LB interfaces."
+   },
+   "48" : {
+      "steps" : "  4 Physical WAN interfaces defined VLAN-WAN interface defined. Load Balancing Enabled. Default LB group contains the four interfaces. VLAN-WAN interface selected as Final Backup interface. Active Passive Failover Selected Preempt enabled.",
+      "initial" : "  Full",
+      "id" : "48",
+      "title" : "VLAN interface removed that is being used as a Final Backup interface.",
+      "result" : "  1) On the Network > Interfaces page click to delete the VLAN interface.\n  2) Observe what occurs on Network > Failover and LB page."
+   },
+   "42" : {
+      "steps" : "  5 or more Physical/Virtual WAN interfaces\n  Load Balancing Enabled using 5 or more interfaces.\n  Active Passive Failover Selected\n  Preemption enabled.\n  Probing configured for each interface with targets set.",
+      "initial" : "  Full",
+      "id" : "42",
+      "title" : "Configuration is shown in TSR",
+      "result" : "  1) On the System > Diagnostics page download the TSR."
+   },
+   "22" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Spillover Based Load Balancing Selected.\n  Spillover Bandwidth set to 100 Kbps.\n  Final Backup interface configured.",
+      "initial" : "  Full",
+      "id" : "22",
+      "title" : "Failover/ Failback using Final Backup Ethernet interface with Spillover based WLB",
+      "result" : "  1) Start an FTP download of a large file from a server on the WAN and wait 10 seconds or so.\n  2) Access several sites using HTTP, FTP, or other protocol.\n  3) Observe the Connection Monitor page and/or packet captures\n  4) Unplug all Primary and Alternate interfaces.\n  5) Wait for failover\n  6) Access several sites using HTTP, FTP, or other protocol.\n  7) Observe the Connection Monitor page and/or packet captures.\n  8) Plug in all Primary and Alternate interfaces.\n  9) Wait for failback\n  10) Start an FTP download of a large file from a server on the WAN and wait 10 seconds or so.\n  11) Access several sites using HTTP, FTP, or other protocol."
+   },
+   "46" : {
+      "steps" : "  4 Physical WAN interfaces defined PPPoE WAN interface configured. Load Balancing Enabled. Default LB group contains the four interfaces. Active Passive Failover Selected Preempt enabled.",
+      "initial" : "  Full",
+      "id" : "46",
+      "title" : "DHCP inteface used as a Final Backup interface.",
+      "result" : "  1) Configure LB Group with the PPPoE interface as Final Backup.\n  2) Access several sites using HTTP, FTP, or other protocol.\n  3) Observe the Connection Monitor page and/or packet captures.\n  4) Wait for failback to occur.\n  5) Plug back in an other LB interfaces\n  6) Access several sites using HTTP, FTP, or other protocol.\n  7) Observe the Connection Monitor page and/or packet captures.\n  8) Plug back in an alternate interface.\n  9) Access several sites using HTTP, FTP, or other protocol.\n  10) Observe the Connection Monitor page and/or packet captures"
+   },
+   "13" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Percentage Based Load Balancing Selected.\n  4 different percentages set for the interfaces.",
+      "initial" : "  Full",
+      "id" : "13",
+      "title" : "Removing a Final Backup interface",
+      "result" : "  1) Go to the Network > Failover and LB page.\n  2) Click to edit the default LB Group.\n  3) Select none for the Final Backup interface.\n  4) Click OK"
+   },
+   "23" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Percentage Based Load Balancing Selected.\n  4 different percentages set for the interfaces.\n  Final Backup interface configured.",
+      "initial" : "  TBD",
+      "id" : "23",
+      "title" : "Failover/ Failback using Final Backup Ethernet interface with Percentage based WLB",
+      "result" : "  1) Access site using Xenu Link Sleuth\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug all Primary and Alternate interfaces.\n  4) Wait for failover\n  5) Continue using Xenu\n  6) Observe the Connection Monitor page and/or packet captures.\n  7) Plug in all Primary and Alternate interfaces.\n  8) Wait for failback\n  9) Continue using Xenu"
+   },
+   "29" : {
+      "steps" : "  Load Balancing Enabled with 4 interfaces for Default LB Group.\n  Round Robin LB configured.\n  Probing is configured for each interface and all targets are up.",
+      "initial" : "  Full",
+      "id" : "29",
+      "title" : "Probing set to Physical Monitoring only",
+      "result" : "  1) Observe the Connection Monitor page and/or packet captures.\n  2) Edit one the probing on one of the interfaces.\n  3) Select Physical Monitoring only.\n  4) Do a packet capture.\n  5) Verify no probing is being done for the interface.\n  6) Unplug the interface.\n  7) Wait for the failover\n  8) Access several sites using HTTP, FTP, or other protocol.\n  9) Observe the Connection Monitor page and/or packet captures."
+   },
+   "6" : {
+      "steps" : "  WLB enabled with WAN interfaces selected for Primary in, Alternates, and Final Backup in default LB Group.",
+      "initial" : "  Smoke",
+      "id" : "6",
+      "title" : "Removing interfaces from Default LB Group",
+      "result" : "  1) Go to Network > Failover and LB page.\n  2) Select the edit icon next to the Default LB Group.\n  3) Select an interface in the right pane and click the Remove arrow.\n  4) Repeat selecting multiple interfaces at once and click the Remove arrow.\n  5) Click OK"
+   },
+   "50" : {
+      "steps" : "  4 Physical WAN interfaces defined Load Balancing Enabled. Default LB group contains the four interfaces. Active Passive Failover Selected Preempt enabled.",
+      "initial" : "  TBD",
+      "id" : "50",
+      "title" : "Upgrade with out of order interfaces.",
+      "result" : "  1) Change the order (rank) of the interfaces to X3, X2, X4, X1.\n  2) From the System > Settings page upload the firmware upgrading to.\n  3) Select Boot Uploaded with Current Settings."
+   },
+   "39" : {
+      "steps" : "  All Physical interfaces except X0 configured as WAN.\n  Maxiumum number VLAN-WANs created.\n  Round Robin selected.",
+      "initial" : "  Full",
+      "id" : "39",
+      "title" : "WLB with maximum number of interfaces with probing enabled - physical plus VLAN",
+      "result" : "  1) Navigate to the Network > Failover and LB page.\n  2) Click to edit the default LB Group.\n  3) Select all WAN interfaces and click the Add arrow button.\n  4) Edit each interface, configure probing targets, and enable probing.\n  5) Click OK\n  6) Take a packet capture.\n  7) If possible run traffic."
+   },
+   "3" : {
+      "steps" : "  Several WAN interfaces configured.\n  WLB enabled with WAN interfaces selected for Primary, Alternates, and Final Backup.",
+      "initial" : "  TBD",
+      "id" : "3",
+      "title" : "Verify comments for LB Group member interfaces",
+      "result" : "  1) Go to the Network >Failover and LB page\n  2) Mouse over comments next to LB Group Interfaces."
+   },
+   "36" : {
+      "steps" : "  5 or more Physical/Virtual WAN interfaces defined\n  Load Balancing Enabled using 5 or more interfaces.\n  Percentage Based Load Balancing Selected.\n  Different percentages set for the interfaces.",
+      "initial" : "  TBD",
+      "id" : "36",
+      "title" : "Percentage Based - 5 or more interfaces",
+      "result" : "  1) Use Xenu against a test web site\n  2) Observe the Connection Monitor page and/or packet captures."
+   },
+   "9" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Round Robin Load Balancing Selected.",
+      "initial" : "  Smoke",
+      "id" : "9",
+      "title" : "Changed rank of interfaces in the Default LB Group for Round Robin",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Change the rank of a couple interfaces.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures."
+   },
+   "51" : {
+      "steps" : "  4 Physical WAN interfaces defined Load Balancing Enabled. Default LB group contains the four interfaces. Percentage Based Load Balancing Selected Percentages set with 100% total.",
+      "initial" : "  TBD",
+      "id" : "51",
+      "title" : "Percentage based indication that percentages do not add up to 100%.",
+      "result" : "  1) Navigate to Network > LB and Failover page.\n  2) Click to edit default LB Group.\n  3) Set percentage so less than 100%.\n  4) Attempt click OK.\n  5) Set percentages to more than 100%\n  6) Attempt to click OK.\n  7) Set percentages back to 100%.\n  8) Click OK"
+   },
+   "41" : {
+      "steps" : "  4 Physical/Virtual WAN interfaces\n  Load Balancing Enabled",
+      "initial" : "  Full",
+      "id" : "41",
+      "title" : "Cannot remove last member of the Default LB Group with LB enabled.",
+      "result" : "  1) Go to the Network > Failover and LB page.\n  2) Click to edit the default LB group.\n  3) Select all interfaces in the right pane and click the Remove arrow.\n  4) Click OK"
+   },
+   "12" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Percentage Based Load Balancing Selected.\n  4 different percentages set for the interfaces.",
+      "initial" : "  Smoke",
+      "id" : "12",
+      "title" : "Adding a Final Backup interface.",
+      "result" : "  1) Go to the Network > Failover and LB page.\n  2) Click to edit the default LB Group.\n  3) Select an interface for the Final Backup interface.\n  4) Click OK"
+   },
+   "47" : {
+      "steps" : "  4 Physical WAN interfaces defined PPPoE WAN interface configured. Load Balancing Enabled. Default LB group contains the four interfaces. Active Passive Failover Selected Preempt enabled.",
+      "initial" : "  TBD",
+      "id" : "47",
+      "title" : "PPPoE inteface used as a Final Backup interface.",
+      "result" : "  1) Configure LB Group with the PPPoE interface as Final Backup.\n  2) Access several sites using HTTP, FTP, or other protocol.\n  3) Observe the Connection Monitor page and/or packet captures.\n  4) Wait for failback to occur.\n  5) Plug back in an other LB interfaces\n  6) Access several sites using HTTP, FTP, or other protocol.\n  7) Observe the Connection Monitor page and/or packet captures.\n  8) Plug back in an alternate interface.\n  9) Access several sites using HTTP, FTP, or other protocol.\n  10) Observe the Connection Monitor page and/or packet captures"
+   },
+   "15" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Default LB group contains the four interfaces.\n  Active Passive Failover Selected\n  Preempt disabled.\n  Final Backup interface configured.",
+      "initial" : "  Full",
+      "id" : "15",
+      "title" : "Failover to Ethernet Final Backup interface, Active Passive Failover(Preempt disabled)",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Unplug all Primary and Alternate interfaces.\n  4) Wait for failover to occur.\n  5) Access several sites using HTTP, FTP, or other protocol.\n  6) Observe the Connection Monitor page and/or packet captures."
+   },
+   "8" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Default LB group contains the four interfaces.\n  Active Passive Failover Selected",
+      "initial" : "  Full",
+      "id" : "8",
+      "title" : "Changed rank of interfaces in the Default LB Group for Active-Passive Failover",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Change the rank of the primary interface so another assumes the role.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.\n  6) Unplug the Active interface.\n  7) Access several sites using HTTP, FTP, or other protocol.\n  8) Observe the Connection Monitor page and/or packet captures."
+   },
+   "52" : {
+      "steps" : "  4 Physical WAN interfaces defined Load Balancing Enabled. Default LB group contains the four interfaces. Percentage Based Load Balancing Selected Percentages set different values with 100% total.",
+      "initial" : "  TBD",
+      "id" : "52",
+      "title" : "Auto-Adjust for Percentage based LB",
+      "result" : "  1) Navigate to Network > LB and Failover page.\n  2) Click to edit default LB Group.\n  3) Remove one of the interfaces.\n  4) Click Auto adjust"
+   },
+   "38" : {
+      "steps" : "  All Physical interfaces except X0 configured as WAN.\n  Maxiumum number VLAN-WANs created.\n  Round Robin selected.",
+      "initial" : "  Full",
+      "id" : "38",
+      "title" : "WLB with maximum number of interfaces selected - physical + VLAN",
+      "result" : "  1) Navigate to the Network > Failover and LB page.\n  2) Click to edit the default LB Group.\n  3) Select all WAN interfaces and click the Add arrow button.\n  4) Click OK\n  5) If possible run traffic."
+   },
+   "4" : {
+      "steps" : "  Several WAN interfaces configured.\n  WLB enabled with WAN interfaces selected for Primary, Alternates, and Final Backup.",
+      "initial" : "  TBD",
+      "id" : "4",
+      "title" : "Verify Statistics for Default LB Group",
+      "result" : "  1) Go to Network > Failover and LB page.\n  2) Observe statistics"
+   },
+   "34" : {
+      "steps" : "  5 or more Physical WAN interfaces defined\n  Load Balancing Enabled using 5 or more interfaces.\n  Round Robin Load Balancing Selected.",
+      "initial" : "  Smoke",
+      "id" : "34",
+      "title" : "Round Robin - 5 or more interfaces",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures."
+   },
+   "45" : {
+      "steps" : "  4 Physical WAN interfaces defined VLAN-WAN interface defined. Load Balancing Enabled. Default LB group contains the four interfaces. Active Passive Failover Selected Preempt enabled.",
+      "initial" : "  Smoke",
+      "id" : "45",
+      "title" : "VLAN interface used as a Final Backup interface.",
+      "result" : "  1) Configure LB Group with VLAN-WAN interface as Final Backup.\n  2) Access several sites using HTTP, FTP, or other protocol.\n  3) Observe the Connection Monitor page and/or packet captures.\n  4) Wait for failback to occur.\n  5) Plug back in an other LB interfaces\n  6) Access several sites using HTTP, FTP, or other protocol.\n  7) Observe the Connection Monitor page and/or packet captures.\n  8) Plug back in an alternate interface.\n  9) Access several sites using HTTP, FTP, or other protocol.\n  10) Observe the Connection Monitor page and/or packet captures"
+   },
+   "37" : {
+      "steps" : "  5 or more Physical/Virtual WAN interfaces\n  Load Balancing Enabled using 5 or more interfaces.\n  Active Passive Failover Selected\n  Preemption enabled.\n  Probing configured for each interface with targets set.",
+      "initial" : "  Full",
+      "id" : "37",
+      "title" : "Probing using 5 or more interfaces",
+      "result" : "  1) Access several sites using HTTP, FTP, or other protocol.\n  2) Observe the Connection Monitor page and/or packet captures.\n  3) Make it so probing fails for the Primary interface.\n  4) Access several sites using HTTP, FTP, or other protocol.\n  5) Observe the Connection Monitor page and/or packet captures.\n  6) Make it so probing fails for the 1st alternate interface.\n  7) Access several sites using HTTP, FTP, or other protocol.\n  8) Observe the Connection Monitor page and/or packet captures.\n  9) Make it so probing fails for the 2nd alternate interface.\n  10) Access several sites using HTTP, FTP, or other protocol.\n  11) Observe the Connection Monitor page and/or packet captures.\n  12) Make it so probing fails for the 3rd alternate interface.\n  13) Access several sites using HTTP, FTP, or other protocol.\n  14) Observe the Connection Monitor page and/or packet captures."
+   },
+   "43" : {
+      "steps" : "  5 or more Physical/Virtual WAN interfaces",
+      "initial" : "  Full",
+      "id" : "43",
+      "title" : "Multiple removal and addition of interfaces to Default LB Group.",
+      "result" : "  1) Go to Network > Failover and LB page.\n  2) Select the edit icon next to the Default LB Group.\n  3) Add interface so there are two interfaces.\n  4) Click OK\n  5) Select the edit icon next to the Default LB Group.\n  6) Select 1st interface in list and click Remove arrow removing from list.\n  7) Click OK\n  8) Select the edit icon next to the Default LB Group.\n  9) Add interface so there are two interfaces.\n  10) Click OK\n  11) Select the edit icon next to the Default LB Group.\n  12) Select 1st interface in list and click Remove arrow removing from list.\n  13) Click OK\n  14) Continue pattern for at least 10 times."
+   },
+   "19" : {
+      "steps" : "  4 Physical WAN interfaces defined\n  Load Balancing Enabled.\n  Spillover Based Load Balancing Selected.\n  Spillover Bandwidth set to 100 Kbps.\n  Final Backup interface configured.",
+      "initial" : "  Full",
+      "id" : "19",
+      "title" : "Final Backup Ethernet interfaces is not used in Spill-over based WLB",
+      "result" : "  1) Start an FTP download of a large file from a server on the WAN and wait 10 seconds or so.\n  2) Access several sites using HTTP, FTP, or other protocol.\n  3) Observe the Connection Monitor page and/or packet captures"
+   },
+   "5" : {
+      "steps" : "  Several WAN interfaces configured.\n  WLB enabled with WAN interfaces selected for Primary, Alternates, and Final Backup.",
+      "initial" : "  Smoke",
+      "id" : "5",
+      "title" : "Adding interfaces to Default LB Group",
+      "result" : "  1) Go to Network > Failover and LB page.\n  2) Select the edit icon next to the Default LB Group.\n  3) Select an interface in the left pane and click the Add arrow.\n  4) Repeat selecting multiple interfaces at once and click the Add arrow.\n  5) Click OK"
+   }
+}

@@ -1,0 +1,170 @@
+{
+   "1519624" : {
+      "steps" : "after guest run out of his receive traffic bandwidth resource, the guest cannot access network,then after 0 clock tomorrow, he have quota again",
+      "initial" : "  Original ID: 23  Original Title: [Function]verify quota setting of receive traffic bandwidth could be used only once in every day when quota cycle is 'Per Day' Original Description: quota setting of receive traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'",
+      "id" : "1519624",
+      "title" : "[Function]verify quota setting of receive traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'",
+      "result" : "  N/A"
+   },
+   "1519628" : {
+      "steps" : "Box will pop error info about invalid receive limit",
+      "initial" : "  Original ID: 41  Original Title: [Error]invalid value about session lifetime of quota cycle setting  Original Description: invalid value about session lifetime of quota cycle setting",
+      "id" : "1519628",
+      "title" : "[Error]invalid value about session lifetime of quota cycle setting",
+      "result" : "  n/a"
+   },
+   "1519614" : {
+      "steps" : "  WGS(wlan guest service) in wlan zone can be disabled",
+      "initial" : "  Original ID: 06  Original Title: [GUI]Disable WGS(wlan guest service) in wlan zone  Original Description: WGS(wlan guest service) in wlan zone can be disabled",
+      "id" : "1519614",
+      "title" : "[GUI]Disable WGS(wlan guest service) in wlan zone",
+      "result" : "  N/A"
+   },
+   "1519611" : {
+      "steps" : "  Quota Cycle Type Setting' can be configured in Guest Service Tab",
+      "initial" : "  Original ID: 03  Original Title: [GUI]verify quota cycle type setting can be configured in guest accounts Original Description: verify quota cycle type setting can be configured in guest accounts",
+      "id" : "1519611",
+      "title" : "[GUI]verify quota cycle type setting can be configured in guest accounts",
+      "result" : "  N/A"
+   },
+   "1519617" : {
+      "steps" : "  quota cycle type setting can be configured by guest profile in CLI mode",
+      "initial" : "  Original ID: 13 Original Title: [CLI]verify quota cycle type setting can be configured by guest profile in CLI mode  Original Description: quota cycle type setting can be configured by guest profile in CLI mode",
+      "id" : "1519617",
+      "title" : "[CLI]verify quota cycle type setting can be configured by guest profile in CLI mode",
+      "result" : "  n/a"
+   },
+   "1519610" : {
+      "steps" : "  Quota Cycle Type Setting' can be configured in Guest Profile",
+      "initial" : "  Original ID: 02 Original Title: [GUI]verify quota cycle type setting can be configured in guest profile  Original Description: verify quota cycle type setting can be configured in guest profile",
+      "id" : "1519610",
+      "title" : "[GUI]verify quota cycle type setting can be configured in guest profile",
+      "result" : "  N/A"
+   },
+   "1519621" : {
+      "steps" : "after guest run out of his receive traffic, the guest cannot access network",
+      "initial" : "  Original ID: 20  Original Title: [Function]verify quota setting of receive traffic bandwidth only could be used once when quota cycle is 'Non Cyclic' Original Description: verify quota setting of receive traffic bandwidth only could be used once when quota cycle is 'Non Cyclic'",
+      "id" : "1519621",
+      "title" : "[Function]verify quota setting of receive traffic bandwidth only could be used once when quota cycle is 'Non Cyclic'",
+      "result" : "  n/a"
+   },
+   "1519616" : {
+      "steps" : "  when configure quota cycle type setting select None Cycle,session lifetime, receive limit, transmit limit should have postfix string&#160; 'Per Week'",
+      "initial" : "  Original ID: 11 Original Title: [GUI]when configure quota cycle type setting select Per Week,session lifetime, receive limit, transmit limit should have postfix string 'Per Week'  Original Description: when configure quota cycle type setting select None Cycle,session lifetime, receive limit, transmit limit should have postfix string&#160; 'Per Week'",
+      "id" : "1519616",
+      "title" : "[GUI]when configure quota cycle type setting select Per Week,session lifetime, receive limit, transmit limit should have postfix string  'Per Week'",
+      "result" : "  n/a"
+   },
+   "1519615" : {
+      "steps" : "  when configure quota cycle type setting select None Cycle,session lifetime, receive limit, transmit limit should have postfix string&#160; ' Per Day'",
+      "initial" : "  Original ID: 10 Original Title: [GUI]when configure quota cycle type setting select \"Per Day\",session lifetime, receive limit, transmit limit should have postfix string ' Per Day'  Original Description: when configure quota cycle type setting select \"None Cycle\",session lifetime, receive limit, transmit limit should have postfix string&#160; ' Per Day'",
+      "id" : "1519615",
+      "title" : "[GUI]when configure quota cycle type setting select \"Per Day\",session lifetime, receive limit, transmit limit should have postfix string  ' Per Day'",
+      "result" : "  N/A"
+   },
+   "1519609" : {
+      "steps" : "  Quota Cycle Type Setting' can be configured in Guest Service Tab",
+      "initial" : "  Original ID: 01 Original Title: [GUI]verify quota cycle type setting can be configured in local users  Original Description: verify quota cycle type setting can be configured in local users",
+      "id" : "1519609",
+      "title" : "[GUI]verify quota cycle type setting can be configured in local users",
+      "result" : "  N/A"
+   },
+   "1519622" : {
+      "steps" : "  <span>after guest run out of his transmit traffic resource, the guest cannot access network</span>",
+      "initial" : "  Original ID: 21 Original Title: [Function]verify quota setting of transmit traffic bandwidth only could be used once when quota cycle is 'Non Cyclic'  Original Description: verify quota setting of transmit traffic bandwidth only could be used once when quota cycle is 'Non Cyclic'",
+      "id" : "1519622",
+      "title" : "[Function]verify quota setting of transmit traffic bandwidth only could be used once when quota cycle is 'Non Cyclic'",
+      "result" : "  n/a"
+   },
+   "1519632" : {
+      "steps" : " TSR include quota cycle type setting information",
+      "initial" : "  Original ID: 48 Original Title: [TSR]verify TSR include quota cycle type setting information Original Description: TSR include quota cycle type setting information",
+      "id" : "1519632",
+      "title" : "[TSR]verify TSR include quota cycle type setting information",
+      "result" : "  n/a"
+   },
+   "1519630" : {
+      "steps" : "Guest traffic quota exceeded",
+      "initial" : "Original ID: 44 Original Title: [log]log guest traffic quota exceeded appear, when user run out of his transmit traffic bandwidth  Original Description: log guest traffic quota exceeded appear, when user run out of his transmit traffic bandwidth",
+      "id" : "1519630",
+      "title" : "[log]log guest traffic quota exceeded appear, when user run out of his transmit traffic bandwidth",
+      "result" : "  n/a"
+   },
+   "1519631" : {
+      "steps" : " Guest traffic quota exceeded",
+      "initial" : "  Original ID: 45 Original Title: [log]log guest traffic quota exceeded appear when user run out of his receive traffic bandwidth Original Description: log guest traffic quota exceeded appear when user run out of his receive traffic bandwidth",
+      "id" : "1519631",
+      "title" : "[log]log guest traffic quota exceeded appear when user run out of his receive traffic bandwidth",
+      "result" : "  n/a"
+   },
+   "1519618" : {
+      "steps" : "  quota cycle type setting can be configured by guest account in CLI mode",
+      "initial" : "  Original ID: 14  Original Title: [CLI]verify quota cycle type setting can be configured by guest account in CLI mode Original Description: quota cycle type setting can be configured by guest account in CLI mode",
+      "id" : "1519618",
+      "title" : "[CLI]verify quota cycle type setting can be configured by guest account in CLI mode",
+      "result" : "  n/a"
+   },
+   "1519623" : {
+      "steps" : " after guest run out of his session lifetime resource, the guest cannot access network today, then after 0 clock tomorrow, he have quota again",
+      "initial" : "  Original ID: 22  Original Title: [Function]verify quota setting of session lifetime could be used only once in every day when quota cycle is 'Per Day'  Original Description: quota setting of session lifetime could be used only once in every day when quota cycle is 'Per Day'",
+      "id" : "1519623",
+      "title" : "[Function]verify quota setting of session lifetime could be used only once in every day when quota cycle is 'Per Day'",
+      "result" : "  N/A"
+   },
+   "1519629" : {
+      "steps" : "Guest Session Timeout",
+      "initial" : "  Original ID: 43 Original Title: [log]log User Session Quota Exceeded appear, when user run out of his session life time Original Description: log appear, when user run out of his session life time",
+      "id" : "1519629",
+      "title" : "[log]log User Session Quota Exceeded appear, when user run out of his session life time",
+      "result" : "  n/a"
+   },
+   "1519620" : {
+      "steps" : "  quota setting of session lifetime only could be used once when quota cycle is 'Non Cyclic'",
+      "initial" : "  Original ID: 19  Original Title: [Function]verify quota setting of session lifetime only could be used once when quota cycle is 'Non Cyclic' Original Description: quota setting of session lifetime only could be used once when quota cycle is 'Non Cyclic'",
+      "id" : "1519620",
+      "title" : "[Function]verify quota setting of session lifetime only could be used once when quota cycle is 'Non Cyclic'",
+      "result" : "  user --- box"
+   },
+   "1519619" : {
+      "steps" : "  guest service allow guest users to have access through your network directly to the internet without access to access your protected network",
+      "initial" : "  Original ID: 18  Original Title: [Function]verify guest service allow guest users to have access through your network directly to the internet without access to access your protected network\n  Original Description: guest service allow guest users to have access through your network directly to the internet without access to access your protected network",
+      "id" : "1519619",
+      "title" : "[Function]verify guest service allow guest users to have access through your network directly to the internet without access to access your protected network",
+      "result" : "  user --- box --- network --- LAN network"
+   },
+   "1519626" : {
+      "steps" : "Box will pop error info about invalid receive limit",
+      "initial" : "  Original ID: 39  Original Title: [Error]invalid value about receive limit of quota cycle setting Original Description: invalid value about receive limit of quota cycle setting",
+      "id" : "1519626",
+      "title" : "[Error]invalid value about receive limit of quota cycle setting",
+      "result" : "  n/a"
+   },
+   "1519633" : {
+      "steps" : "  unit of traffic bandwidth is only M",
+      "initial" : "  Original ID: 57 Original Title: [Function]verify unit of traffic bandwidth is only M Original Description: unit of traffic bandwidth is only M",
+      "id" : "1519633",
+      "title" : "[Function]verify unit of traffic bandwidth is only M",
+      "result" : "  n/a"
+   },
+   "1519613" : {
+      "steps" : "  WGS(wlan guest service) in wlan zone can be enabled",
+      "initial" : "  Original ID: 05  Original Title: [GUI]Enable WGS(wlan guest service) in wlan zone  Original Description: WGS(wlan guest service) in wlan zone can be enabled",
+      "id" : "1519613",
+      "title" : "[GUI]Enable WGS(wlan guest service) in wlan zone",
+      "result" : "  N/A"
+   },
+   "1519627" : {
+      "steps" : " Box will pop error info about invalid receive limit",
+      "initial" : "  Original ID: 40  Original Title: [Error]invalid value about transmit limit of quota cycle setting Original Description: invalid value about transmit limit of quota cycle setting",
+      "id" : "1519627",
+      "title" : "[Error]invalid value about transmit limit of quota cycle setting",
+      "result" : "  n/a"
+   },
+   "1519612" : {
+      "steps" : "  quota cycle type setting' dropdown have four value 'Non Cyclic', 'Per Week', 'Per Month','Per Day'",
+      "initial" : "  Original ID: 04 Original Title: [GUI]verify quota cycle type setting have 4 item to select None Cycle, Per Day,per Week, Per Month Original Description: verify quota cycle type setting have 4 item to select \"None Cycle\", \"Per Day\", \"Per Week\", \"Per Month\"",
+      "id" : "1519612",
+      "title" : "[GUI]verify quota cycle type setting have 4 item to select None Cycle, Per Day, Per Week, Per Month",
+      "result" : "  N/A"
+   }
+}

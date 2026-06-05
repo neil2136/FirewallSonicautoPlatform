@@ -1,0 +1,618 @@
+{
+   "33" : {
+      "steps" : "  1. Go to DHCP Server, Dynamic Tab Add multiple static entries Click Delete All button",
+      "initial" : "  N/A",
+      "id" : "33",
+      "title" : "Delete Single Dynamic Entry",
+      "result" : "  1. Multiple static entries can be deleted."
+   },
+   "32" : {
+      "steps" : "  1. Go to DHCP Server, Static Tab Add multiple static entries Click Delete All button",
+      "initial" : "  N/A",
+      "id" : "32",
+      "title" : "Delete Multiple Static Entries",
+      "result" : "  1. Multiple static entries can be deleted."
+   },
+   "63" : {
+      "steps" : "  1. After following steps in Test Case 62;\n  2. From DHCP server, choose one interface (x0) and reduce range to a single lease on this interface;\n  3. Place two clients on the interface;\n  4. Verify only one client could get lease on this interface;\n  5. Verify all clients on other interfaces could get leases successfully;\n  6. Do release/renew on each client, verify clients get leases correctly;\n  7. perform step 2) on other NAT interfaces each time and followed by steps 3) to 6), verify DHCP server behave health",
+      "initial" : "  N/A",
+      "id" : "63",
+      "title" : "DHCP Server enhanced: update to a single lease IP range on each interface",
+      "result" : "  1. Verify DHCP client on each interface get leases succuessfully"
+   },
+   "21" : {
+      "steps" : "  1. Go to the DHCP Server page, Dynamic tab\n  2. Go to Add/Edit pop-up page, DNS/WINS tab\n  3. Set a domain name and a dynamic range\n  4. Client gets static DHCP lease from SonicWALL",
+      "initial" : "  N/A",
+      "id" : "21",
+      "title" : "Client gets Domain Name Info with Dynamic lease",
+      "result" : "  1. DHCP client's domain name settings match SonicWALL DNS settings when using dynamic IPs ."
+   },
+   "71" : {
+      "steps" : "  1. Configure a DHCP range on one interface that exceeds max DHCP leases, which is 1024 for TZ and PRO2040, and 4096 for PRO4060 and 5060",
+      "initial" : "  N/A",
+      "id" : "71",
+      "title" : "DHCP server enhanced: Invalid DHCP range to exceeds max DHCP leases",
+      "result" : "  1. Make sure the configuration failed."
+   },
+   "07" : {
+      "steps" : "  1. Go to the DHCP Server page.\n  2. Go to configuration pop-up page, In the DNS Server section, try to enter the following IPs : 260.1.1.1 1.260.1.1 1.1.260.1 1.1.1.260 Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "7",
+      "title" : "Invalid DNS Server Values",
+      "result" : "  1. The box should not allow these values to be updated in the GUI."
+   },
+   "80" : {
+      "steps" : "  1. Configure X1 as WAN interface with proper IP. For example 10.103.10.10.\n  2. Configure X2 as LAN/DMZ, IP assignment as Transparent Mode. In transparent range, create a new address object in WAN subnet. For example from 10.103.10.100-110. Click OK to confirm.\n  3. On DHCP Server page, click Add Dynamic to add DHCP scope. Select X2 interface in the interface dropdown list. Verify configured X2 range was auto filled into the start ip and end ip fileds correctly. Click OK to confirm.\n  4. Edit the added range, change the start ip from 10.103.10.100 to 10.103.10.99 and click OK.\n  5. Verify error message returned 'Range scope error.(Please check start and end ip)'\n  6. Change start ip back to 10.103.10.100. Then change end ip to 10.103.10.111. Click OK.\n  7. Verify error message returned 'Range scope error.(Please check start and end ip)'\n  8. Change end ip to 10.103.10.105 and click OK.\n  9. Verify succeed.",
+      "initial" : "  FW has WAN interface configured with a valid ip.",
+      "id" : "80",
+      "title" : "Edit DHCP scope of interface in Transparent mode-5.5 firmware",
+      "result" : "  1. Verify the DHCP scope of transparent mode interface can be edited correctly."
+   },
+   "26" : {
+      "steps" : "  1. Go to the DHCP Server page, and Static Tab\n  2. Go to Add or Edit pop-up page, DNS/WINS tab Set WINS servers settings and a static range Client gets static DHCP lease from SonicWALL",
+      "initial" : "  N/A",
+      "id" : "26",
+      "title" : "Client gets Lease Time Settings with Static Lease",
+      "result" : "  1. DHCP client's Lease Time settings match SonicWALL settings when using static IPs ."
+   },
+   "18" : {
+      "steps" : "  1. Go to the DHCP Server page, Go to Static configuration pop-up page, Specify valid IP address and Mac-address.\n  2. Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "18",
+      "title" : "Valid Static Entry",
+      "result" : "  1. The box should allow the value to be updated in the GUI."
+   },
+   "72" : {
+      "steps" : "  1. Configure dynamic DHCP entry;\n  2. Send DHCP request continuously to see if DHCP server crashed",
+      "initial" : "  N/A",
+      "id" : "72",
+      "title" : "DHCP server enhanced: DHCP flood",
+      "result" : "  1. DHCP server should behave healthy."
+   },
+   "16" : {
+      "steps" : "  1. Go to the DHCP Server page, Static Tab, Go to Add pop-up page, DNS/WINS tab Choose option of specify manually, and set DNS settings.\n  2. Set Static range Client gets static DHCP lease from SonicWALL",
+      "initial" : "  N/A",
+      "id" : "16",
+      "title" : "DNS Manual Settings For Static Entry",
+      "result" : "  1. DHCP client&#8217;s DNS settings match the settings specified in DHCP server when using static IPs ."
+   },
+   "44" : {
+      "steps" : "  1. Configure a new DHCP client using the same hostname.\n  2. Start new DHCP client on LAN interface. ? ? ?",
+      "initial" : "  NA",
+      "id" : "44",
+      "title" : "CDR:DHCP Option 12",
+      "result" : "  1. Verify new client obtains lease for IP address.\n  2. Note: This test checks that two DHCP clients configured with the same hostname can still received a DHCP address.\n  3. The hostname is set using DHCP option 12."
+   },
+   "55" : {
+      "steps" : "  1. Determine the size of the client DHCP address pool\n  2. NOTE: This is configured in your configuration file using dhcpClientStart and dhcpClientEnd.\n  3. One of the addresses remains in use through the test run for a host on the LAN side.\n  4. This test will attempt to create clients for the pool size - 1. If you are using multiple LAN interfaces, the number of DHCP clients from each interface will also be subtracted from the DHCP pool size.\n  5. Determine the maximum number of TCP connections to create for each DHCP client\n  6. NOTE: This is configured in your configuration file using the testvar scaleTcpConnsPerHost.\n  7. If this entry is not included in your configuration file, it defaults to 5.\n  8. Create a DHCP client for each available IP address Verify the client obtains an IP address within the range Verify there are no address conflicts Verify each client can establish X outbound HTTP connections to port 80, where X is the number of TCP connections per DHCP client to create.\n  9. Each connection is to a unique IP address.\n  10. Verify each client can send/receive data over each connection Close each TCP connection Release all new DHCP client leases",
+      "initial" : "  None",
+      "id" : "55",
+      "title" : "CDR:Verify all DHCP clients with multiple TCP connections",
+      "result" : "  1. It is verified all DHCP clients with multiple TCP connections work properly"
+   },
+   "84" : {
+      "steps" : "  1. Configure X1 as WAN interface with proper IP. For example 10.103.10.100.\n  2. Configure X2 as LAN/DMZ, IP assignment to Transparent Mode. In transparent range, create a new address object in WAN subnet. For example 10.103.10.150-160. Click OK to confirm.\n  3. On DHCP Server page, click Add Dynamic to add DHCP scope. Select X2 interface in the interface dropdown list. Verify configured X2 range was auto filled into the start ip and end ip fileds correctly. Click OK to confirm.\n  4. Edit X2 interface, change IP assignment to static. For example 10.0.0.1. 5.Switch back to DHCP Server page",
+      "initial" : "  FW has WAN interface configured with a valid ip.",
+      "id" : "84",
+      "title" : "Reassign interface from transparent mode to static mode-5.5 firmware",
+      "result" : "  1. Verify the DHCP scope for X2 has been updated to new configured static range."
+   },
+   "74" : {
+      "steps" : "  1. Start new DHCP client on LAN interface\n  2. Watch all ARP and ICMP echo requests from the router's LAN interface\n  3. Verify DHCP client receives new IP address\n  4. Verify router sends ARP requet for assigned IP address or ICMP echo for IP address before DHCP ACK is sent with client IP address. NOTE: Each DHCP server may use a different technique to probe a IPv4 address before assigning it to a client. For example, send an ARP Request, ICMP ping, etc. This test verifies that the router attempts to resolve an ARP request for the IPv4 address or send an ICMP echo before the address is assigned to a DHCP client. Reference: RFC 2131 Section 3.1 Client-Server Interaction",
+      "initial" : "  None",
+      "id" : "74",
+      "title" : "CDR:Verify DHCP server probes IPv4 client address before assigning",
+      "result" : "  1. It is verified DHCP server probes IPv4 client address before assigning"
+   },
+   "27" : {
+      "steps" : "  1. Go to the DHCP Server page.\n  Go to Dynamic Tab\n  2. Set lease time to 2 and dynamic range Client gets dynamic DHCP lease from SonicWALL\n  3. Open Etherpeak and monitor the traffic between client and server Disconnect client Wait for 2 minutes again Connect back a different client.",
+      "initial" : "  N/A",
+      "id" : "27",
+      "title" : "Dynamic Lease expiry",
+      "result" : "  1. DHCP client sends DHCP request after 2 minutes, and the client gets the lease successfully after being connected again."
+   },
+   "57" : {
+      "steps" : "  1. Determine the size of the client DHCP address pool NOTE: This is configured in your configuration file using dhcpClientStart and dhcpClientEnd. One of the addresses remains in use through the test run for a host on the LAN side. If you are using multiple LAN interfaces, the number of DHCP clients from each interface will also be subtracted from the DHCP pool size.\n  2. Create a DHCP client for each available IP address\n  3. Verify the client obtains an IP address within the range\n  4. Continue to create additional DHCP clients with unique MAC addresses.\n  5. Verify the new clients fail to obtain an IP address.\n  6. Release all DHCP client leases the number of DHCP clients from each interface will also be subtracted from the DHCP pool size.",
+      "initial" : "  None",
+      "id" : "57",
+      "title" : "CDR:No duplicate IP addresses are assigned when DHCP address pool is exhausted",
+      "result" : "  1. It is verified that No duplicate IP addresses are assigned when DHCP address pool is exhausted"
+   },
+   "61" : {
+      "steps" : "  1. Following steps in Test Case 60;\n  2. Edit each interface networks to smaller subnets;\n  3. Verify DHCP ranges changes accordingly;\n  4. Add a static DHCP entry to each interface;\n  5. Change lease expire time to 3 minutes;\n  6. Verify clients on each interface get leases successfully;\n  7. Do release/renew on each client, verify all clients get leases successfully",
+      "initial" : "  N/A",
+      "id" : "61",
+      "title" : "DHCP Server enhanced: update to shorter expire time and smaller subnets on multiple zones",
+      "result" : "  1. Verify DHCP client on each interface get leases succuessfully"
+   },
+   "20" : {
+      "steps" : "  1. Go to the DHCP Server page, Static Tab, Go to Add pop-up page, configure a static entry PC as a DHCP client attempts to get DHCP lease",
+      "initial" : "  N/A",
+      "id" : "20",
+      "title" : "Single Static Lease",
+      "result" : "  1. Client successful gets the specific IP lease set on the SonicWALL DHCP server."
+   },
+   "10" : {
+      "steps" : "  1. Go to the DHCP Server page.\n  2. Go to configuration pop-up page, In the domain name section, try to a value of 255 character. Hit Update after input.",
+      "initial" : "  N/A",
+      "id" : "10",
+      "title" : "Valid Domain Value",
+      "result" : "  1. The box should allow the value to be updated in the GUI."
+   },
+   "31" : {
+      "steps" : "  1. Go to DHCP Server, Static Tab\n  2. Add a proper static entry\n  High light the entry and click the delete button",
+      "initial" : "  N/A",
+      "id" : "31",
+      "title" : "Delete Single Static Entry",
+      "result" : "  1. The specific entry can be deleted."
+   },
+   "35" : {
+      "steps" : "  1. Go to DHCP Server, Dynamic Tab Add a dynamic entry with x0 interface, Then go back and add an other entry to all the other interfaces,except WAN Configure multiple interfaces with different zone type, for example, set x2 to LAN and x4 to DMZ.",
+      "initial" : "  N/A",
+      "id" : "35",
+      "title" : "Clients on Multiple Interfaces with Dynamic Leases",
+      "result" : "  1. Clients on each interface gets correct DHCP lease."
+   },
+   "11" : {
+      "steps" : "  1. Go to the DHCP Server page. Go to configuration pop-up page, In the Client gateway section, input an valid IP address such as sonicwall&#8217;\n  2. s LAN management IP address. Hit Update after input.",
+      "initial" : "  N/A",
+      "id" : "11",
+      "title" : "Valid Client Gateway",
+      "result" : "  1. The box should allow the value to be updated in the GUI."
+   },
+   "78" : {
+      "steps" : "  1. Booted firewall with the factory default settings, added the following DHCP Ranges: 1) Interface: LAN Dynamic Range: 192.168.168.170 - 192.168.168.172 Dynamic Range: 192.168.168.175 - 192.168.168.179 Static IP Lease: 192.168.168.200 for MAC: 00:0d:56:8d:4e:ca Static IP Lease: 192.168.168.201 for MAC: 00:0d:56:8d:4e:cc Dynamic range 192.168.168.1 - 192.168.168.167 exists by default2) Interface: DMZ 172.16.31.2 - 172.16.31.25 172.16.31.31 - 172.16.31.101\n  2. Exported the above pref's file;\n  3. Booted the unit with the factory default;\n  4. Imported the pref's file exported earlier and when the unit came up",
+      "initial" : "  N/A",
+      "id" : "78",
+      "title" : "DHCP ranges should be imported back",
+      "result" : "  1. After a restart, check the unit, all DHCP ranges that configured in step 1 should be available."
+   },
+   "48" : {
+      "steps" : "  1. Configure a new host stack not to use minimum size DHCP packets Start new DHCP client on LAN interface",
+      "initial" : "  NA",
+      "id" : "48",
+      "title" : "CDR: Verify DHCP Server accepts DHCP client packets with IP Length < 576",
+      "result" : "  1. Verify new client obtains lease for IP address."
+   },
+   "87" : {
+      "steps" : "  1. Configure X1 as WAN interface with proper IP\n  2. Configure X2 as LAN/DMZ, IP assignment as static IP.\n  3. On DHCP Server page, click Add Dynamic to add DHCP scope. In the interface list select X2, verify the start ip and end ip was correctly filled in. Click OK to confirm.\n  4. Configure X2, reassign it to L2Bridge Mode. Select birdge to X1. Click OK to confirm.\n  5. Verify error returned 'DHCP Server enabled on secondary bridged interface - not supported '",
+      "initial" : "  FW has one interface configured with a valid ip.",
+      "id" : "87",
+      "title" : "Reassign an interface to L2B mode when the DHCP scope of the interface is enabled-5.5 firmware",
+      "result" : "  1. Verify the DHCP scope is not allowed to be configured to a L2B mode interface."
+   },
+   "77" : {
+      "steps" : "  1. Determine the size of the client DHCP address pool NOTE: This is configured in your configuration file using dhcpClientStart and dhcpClientEnd. One of the addresses remains in use through the test run for a host on the LAN side. This test will attempt to create clients for the pool size - 1. If you are using multiple LAN interfaces, the number of DHCP clients from each interface will also be subtracted from the DHCP pool size.\n  2. Create a DHCP client for each available IP address\n  3. Verify the client obtains an IP address within the range\n  step 4. Verify there are no address conflicts\n  5. Verify each client can establish an outbound PPTP tunnel to a unique IP destination address on the WAN side\n  6. Release all new DHCP client leases NOTE: If the maximum number of PPTP tunnels supported is less than the DHCP address pool size, not all DHCP clients will be used. The maximum number of PPTP tunnels is configured using the pptpMaxTunnels variable.",
+      "initial" : "  None",
+      "id" : "77",
+      "title" : "CDR:Verify all DHCP clients can create a PPTP tunnel",
+      "result" : "  1. It is verified that all DHCP clients can create a PPTP tunnel"
+   },
+   "65" : {
+      "steps" : "  1. After Test Case 64;\n  2. Add a single range each time to the DHCP server settings;\n  3. Verify client on this interface get lease correctly and successfully;\n  4. Do release/renew on the client, verify client get lease successfully;\n  5. Repeat step 2) to 3) on each interface with both dynamic and static entries;\n  6. Verify all clients get lease correctly and successfully",
+      "initial" : "  N/A",
+      "id" : "65",
+      "title" : "DHCP Server enhanced: add back both DHCP range on each interface",
+      "result" : "  1. Verify DHCP server behaves healthy"
+   },
+   "29" : {
+      "steps" : "  1. Go to DHCP Server, Static Tab\n  2. Add multiple static entries on the same SonicWALL test interface.",
+      "initial" : "  N/A",
+      "id" : "29",
+      "title" : "Multiple Static Entries",
+      "result" : "  1. Multiple static entries can be added, multiple clients get correct leases."
+   },
+   "50" : {
+      "steps" : "  1. Go to the DHCP Server page, Dynamic Tab Go to Add or Edit pop-up page, DNS/WINS tab Set WINS Servers and a dynamic range Client gets a dynamic DHCP lease from SonicWALL",
+      "initial" : "  N/A",
+      "id" : "50",
+      "title" : "Client gets WINS Servers Settings with Dynamic Lease",
+      "result" : "  1. DHCP client's WINS servers settings match SonicWALL DNS settings when using dynamic IPs ."
+   },
+   "39" : {
+      "steps" : "  1. Renew DHCP lease from the client on the SonicWALL interface.",
+      "initial" : "  Sonicwall network mode set as DHCP Client mode.",
+      "id" : "39",
+      "title" : "Renew lease",
+      "result" : "  1. Verify dhcp server sends DHCPACK"
+   },
+   "64" : {
+      "steps" : "  1. After Test Case 63;\n  2. From DHCP server, delete a single DHCP range each time;\n  3. Verify clients on this interface could not get lease;\n  4. Verify clients on other interface get leases successfully;\n  5. Repeat step 2) to 4) until all ranges have been removed from the DHCP server",
+      "initial" : "  N/A",
+      "id" : "64",
+      "title" : "DHCP Server enhanced: delete DHCP range on each interface",
+      "result" : "  1. Verify DHCP server behaves healthy"
+   },
+   "58" : {
+      "steps" : "  1. Maximum number of leases supported can be obtained from the field DHCPS Leases in productMatrix.",
+      "initial" : "  CDRouter",
+      "id" : "58",
+      "title" : "Maximum number of leases",
+      "result" : "  1. Maximum number of leases given by DHCP Server matches the maximum value defined for the product."
+   },
+   "41" : {
+      "steps" : "  1. Configure a new host stack not to use minimum size DHCP packets.\n  2. Start new DHCP client on LAN interface.",
+      "initial" : "  N/A",
+      "id" : "41",
+      "title" : "CDR:IP length",
+      "result" : "  1. Verify new client obtains lease for IP address. Note:rfc2131 allows clients to send DHCP packets that are not padded out to a minimum length.\n  2. Older servers based on rfc1541 may require a minimum IP length of 576 for DHCP packets.\n  3. This test verifies that the DHCP server will interoperate with newer clients based on rfc2131."
+   },
+   "12" : {
+      "steps" : "  1. Go to the DHCP Server page.\n  2. Go to configuration pop-up page, DNS/WINS Tab\n  Choose DNS->Specify manually option.\n  3. In the DNS section, valid IP addresses in DNS Servers fields.\n  4. Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "12",
+      "title" : "DNS Values",
+      "result" : "  1. The box should allow the value to be updated in the GUI."
+   },
+   "15" : {
+      "steps" : "  1. Go to the DHCP Server page, Static Tab, Go to Add pop-up page, DNS/WINS tab Choose option of Inherit DNS settings from the SonicWALL DNS settings\n  2. Set Static range Client gets static DHCP lease from SonicWALL",
+      "initial" : "  N/A",
+      "id" : "15",
+      "title" : "DNS Inherit Settings for Static Entry",
+      "result" : "  1. DHCP client&#8217;s DNS settings match SonicWALL DNS settings when using static IPs ."
+   },
+   "81" : {
+      "steps" : "  1. Configure X1 as WAN interface with proper IP. For example 10.103.10.10.\n  2. Configure X2 as LAN/DMZ, IP assignment as Transparent Mode. In transparent range, create a new address object in WAN subnet. For example from 10.103.10.100-110. Click OK to confirm.\n  3. On DHCP Server page, click Add Dynamic to add DHCP scope. Select X2 interface in the interface dropdown list. Verify configured X2 range was auto filled into the start ip and end ip fileds correctly. Click OK to confirm.\n  4. Click the delete button of the added scope. Click OK to confirm the deletion.",
+      "initial" : "  FW has WAN interface configured with a valid ip.",
+      "id" : "81",
+      "title" : "Delete DHCP scope of interface in Transparent mode-5.5 firmware",
+      "result" : "  1. Verify the DHCP scope of transparent mode interface can be deleted correctly."
+   },
+   "52" : {
+      "steps" : "  1. Configure Sonicwall as relay agent, enable IP helper.\n  2. Place a DHCP server on the WAN side of sonicwall,add an router in server if the relay agent don't in transparent mode.\n  3. Disable DHCP server and add policy in IP helper.",
+      "initial" : "  NA",
+      "id" : "52",
+      "title" : "DHCP Passthrough with Dynamic Lease",
+      "result" : "  1. Verify DHCP client on the LAN is able to get DHCP lease from WAN."
+   },
+   "60" : {
+      "steps" : "  1. Configure interface to zone LAN, DMZ, and WLAN with different subnet classes;\n  2. Verify that under DHCP Server, LAN and WLAN ranges were added correctly;\n  3. Add DHCP range for DMZ;\n  4. Change expire time to 5 minutes;\n  5. Verify clients on each interface get leases successfully;\n  6. Do release/renew on each client, verify all clients get leases successfully;",
+      "initial" : "  N/A",
+      "id" : "60",
+      "title" : "DHCP Server enhanced: expire time on multiple zones",
+      "result" : "  1. Verify DHCP client on each interface get leases succuessfully"
+   },
+   "56" : {
+      "steps" : "  1. Determine the size of the client DHCP address pool NOTE: This is configured in your configuration file using dhcpClientStart and dhcpClientEnd. One of the addresses remains in use through the test run for a host on the LAN side. This test will attempt to create clients for the pool size - 1. If you are using multiple LAN interfaces, the number of DHCP clients from each interface will also be subtracted from the DHCP pool size.\n  2. Create a DHCP client for each available IP address\n  3. Verify the client obtains an IP address within the range\n  4. Verify there are no address conflicts\n  5. Verify each client can establish an outbound IPSEC tunnel to a unique IP destination address on the WAN side\n  6. Verify IKE session is established\n  7. Verify IPSEC/ESP packets pass through\n  8. Release all new DHCP client leases NOTE: If the maximum number of IPSEC tunnels supported is less than the DHCP address pool size, not all DHCP clients will be used. The maximum number of IPSEC tunnels is configured using the ipsecMaxTunnels variable.",
+      "initial" : "  None",
+      "id" : "56",
+      "title" : "CDR:Verify all DHCP clients can create an IPSEC tunnel",
+      "result" : "  1. It is verified that all DHCP clients can create an IPSEC tunnel"
+   },
+   "73" : {
+      "steps" : "  1. configure dynamic DHCP entry;\n  2. Create two DHCP clients 1 and 2 for LAN, using CDRouter;\n  3. Change the request IP for client 1 to be out of DHCP range but still in the same subnet;\n  4. Do DHCP renew for client 1;\n  5. The renew should be failed;\n  6. Change the request IP for client 2 to be out of DHCP range and not in the same subnet;\n  7. Do DHCP renew for client 2;\n  8. The renew should be failed too",
+      "initial" : "  N/A",
+      "id" : "73",
+      "title" : "CDR: DHCP server enhanced: request IP that out of DHCP range",
+      "result" : "  1. DHCP server should behave healthy."
+   },
+   "66" : {
+      "steps" : "  1. Configure DHCP Entry with address IP1 with a short lease time of 2 mins;\n  2. Configure a client to get the lease with IP1;\n  3. Disconnect the client as soon as the lease is obtained;\n  4. Now configure another client in the network;\n  5. IP1 must be leased to the new client after the 2 mins lease time\n  NOTE:in diag.html,you should configure as below\n  1. set \"Time interval of DHCP lease database to be refreshed\" to 60 Seconds\n  2. enable \"Aggressively recycle expired DHCP leases in advance\"",
+      "initial" : "  N/A",
+      "id" : "66",
+      "title" : "DHCP Server enhanced: address reuseability",
+      "result" : "  1. Verify DHCP server behaves healthy"
+   },
+   "45" : {
+      "steps" : "  1. Configure a new host stack to send DHCP packets with the broadcast flag set.\n  2. Start new DHCP client on LAN interface.",
+      "initial" : "  NA",
+      "id" : "45",
+      "title" : "CDR:IPv4 Broadcast",
+      "result" : "  1. Verify DHCP server sends DHCP packets to 255.255.255.255 instead of sending unicast IPv4 packets."
+   },
+   "86" : {
+      "steps" : "  1. Configure X1 as WAN interface with proper IP\n  2. Configure X2 as LAN/DMZ, IP assignment as L2Bridge Mode. Select birdge to X1. Click OK to confirm.\n  3. On DHCP Server page, click Add Dynamic to add DHCP scope. In the interface list verify there is on X2 interface.",
+      "initial" : "  FW has one interface configured with a valid ip.",
+      "id" : "86",
+      "title" : "Add DHCP scope of interface in L2B mode-5.5 firmware",
+      "result" : "  1. Verify the DHCP scope is not allowed to be configured to a L2B mode interface."
+   },
+   "76" : {
+      "steps" : "  1. Load new firmware and reboot from factory default;\n  2. Configure SonicWALL through setup wizard, accept default settings as much as possible;\n  3. Once setup finished, go to Network > DHCP Server page, check if default WLAN DHCP range is available; by default, it should be from 172.16.31.2 to 172.16.31.254;\n  4. Check if wireless DHCP client can get WLAN DHCP lease",
+      "initial" : "  N/A",
+      "id" : "76",
+      "title" : "Verify default WLAN DHCP range auto-created by setup wizard",
+      "result" : "  1. Default WLAN DHCP range should be available, and wireless DHCP client should be able to get WLAN DHCP lease."
+   },
+   "19" : {
+      "steps" : "  1. Go to the DHCP Server page, Dynamic Tab, Go to Add pop-up page, configure a Dynamic entry\n  2. PC as a DHCP client attempts to get DHCP lease",
+      "initial" : "  N/A",
+      "id" : "19",
+      "title" : "Single Dynamic Lease",
+      "result" : "  1. Client successful gets the specific IP lease set on the SonicWALL DHCP server."
+   },
+   "62" : {
+      "steps" : "  1. After following steps in Test Case 61;\n  2. Edit each interface networks to bigger subnets;\n  3. Verify DHCP ranges changes accordingly;\n  4. Add a static DHCP entry to each interface;\n  5. Change lease expire time to 2 minutes;\n  6. Verify clients on each interface get leases successfully;\n  7. Do release/renew on each client, verify all clients get leases successfully",
+      "initial" : "  N/A",
+      "id" : "62",
+      "title" : "DHCP Server enhanced: update to greater expire time and greater subnets on multiple zones",
+      "result" : "  1. Verify DHCP client on each interface get leases succuessfully"
+   },
+   "54" : {
+      "steps" : "  1. Configure a new DHCP client using site specific option with length 0\n  2. Start new DHCP client on LAN interface\n  3. Verify new client obtains lease for IP address",
+      "initial" : "  N/A",
+      "id" : "54",
+      "title" : "CDR:Verify DHCP server handlers client option with length 0",
+      "result" : "  1. DHCP server handles client option with length 0 properly"
+   },
+   "67" : {
+      "steps" : "  1. Configure a few DHCP entries(5 entries, each with 1 or 2 lease address pool) with lease time less than 30 minutes;\n  2. Configure multiple clients to use up all the IP addresses;\n  3. DHCP Server should show no available leases;\n  4. Disconnect all clients after the lease is obtained;\n  5. Approx. after 30 minutes, available leases should show number of IP address in the DHCP entry",
+      "initial" : "  N/A",
+      "id" : "67",
+      "title" : "DHCP Server enhanced: Automatic Database Refresh",
+      "result" : "  1. Verify DHCP server behaves healthy"
+   },
+   "70" : {
+      "steps" : "  1. Configure dynamic DHCP entry with IP address that has been statically allocated\n  2. Create DHCP client to request the DHCP entry\n  3. Make sure client DHCP request failed\n  4. Keep sending the same DHCP request",
+      "initial" : "  N/A",
+      "id" : "70",
+      "title" : "DHCP server enhanced: IP conflicts",
+      "result" : "  1. Verify DHCP server behaves healthy"
+   },
+   "68" : {
+      "steps" : "  1. Configure a few DHCP entries(5 entries, each with 1 or 2 lease address pool) with lease time less than 5 minutes;\n  2. Do Steps 2 4 from test case 67;\n  3. Connect new clients in the network after 10 mins;\n  4. Newer clients should be able to get leases, due to manual refresh",
+      "initial" : "  N/A",
+      "id" : "68",
+      "title" : "DHCP Server enhanced: Manually Database Refresh",
+      "result" : "  1. Verify DHCP server behaves healthy"
+   },
+   "17" : {
+      "steps" : "  1. Go to the DHCP Server page, Dynamic Tab, Go to Add pop-up page, DNS/WINS tab Choose option of specify manually, and set DNS settings.\n  2. Set DHCP Dynamic range Client gets dynamic DHCP lease from SonicWALL.",
+      "initial" : "  N/A",
+      "id" : "17",
+      "title" : "DNS Manual Settings for Dynamic Entry",
+      "result" : "  1. DHCP client&#8217;s DNS settings match the settings specified in DHCP server when using dynamic IPs ."
+   },
+   "02" : {
+      "steps" : "  1. Go to the DHCP Server page, Dynamic Tab\n  2. In the Dynamic Entry Range section, try to enter the following IPs : 260.1.1.1\n  1.260.1.1 1.1.260.1\n  1.1.1.260 Hit Update after each IP address.",
+      "initial" : "  N/A",
+      "id" : "2",
+      "title" : "Dynamic Address Value",
+      "result" : "  1. The box should not allow any of the numbers to be entered in the GUI."
+   },
+   "01" : {
+      "steps" : "  1. Go to the DHCP Server page.\n  2. Check Enable DHCP server option\n  3. Hit Update.",
+      "initial" : "  N/A",
+      "id" : "1",
+      "title" : "Enable DHCP Server",
+      "result" : "  1. DHCP Server option is being enabled."
+   },
+   "88" : {
+      "steps" : "  1. DHCP client acquired IP address from DHCP Server, lease time is 2 min\n  2. check DHCP lease table at lease time\n  3. capture packet on client,after request/ack packet,lease time should add 1/2 lease time (eg:1 min)",
+      "initial" : "  n/a",
+      "id" : "88",
+      "title" : "verify DHCP lease time under network>DHCP Server",
+      "result" : "  1. check lease time"
+   },
+   "088" : {
+      "steps" : "  n/a",
+      "initial" : "   1. Factory defaulted unit, basic wan/lan configuration\u00810\u00842 2. Create a couple of subinterfaces on X2,and set them as transparent mode 3. Create DHCP scopes \u00810\u00842for each subinterface 4. Edit one subinterface, changing it from transparent mode to Static mode then check the DHCP scopes",
+      "id" : "088",
+      "title" : "[ DTS 161680]add dhcp server for transparent mode interface",
+      "result" : ""
+   },
+   "30" : {
+      "steps" : "  1. Go to DHCP Server, Dynamic Tab\n  2. Add multiple dynamic entries on a single interface.",
+      "initial" : "  N/A",
+      "id" : "30",
+      "title" : "Multiple Dynamic Entries",
+      "result" : "  1. Multiple dynamic entries can be added and multiple clients can get correct leases."
+   },
+   "82" : {
+      "steps" : "  1. Configure X1 as WAN interface with proper IP. For example 10.103.10.10.\n  2. Configure X2 as LAN/DMZ, IP assignment as Transparent Mode. In transparent range, create a new address object in WAN subnet. For example from 10.103.10.100-110. Click OK to confirm.\n  3. On DHCP Server page, click Add Dynamic to add DHCP scope. Select X2 interface in the interface dropdown list. Verify configured X2 range was auto filled into the start ip and end ip fileds correctly. Click OK to confirm.\n  4.From a client connect to X2 interface, do DHCP renew.",
+      "initial" : "  FW has WAN interface configured with a valid ip.",
+      "id" : "82",
+      "title" : "DHCP client in subnet of interface in Transparent mode can obtain DHCP lease-5.5 firmware",
+      "result" : "  1. Verify the DHCP client could get the DHCP lease in the scope correctly."
+   },
+   "25" : {
+      "steps" : "  1. Go to the DHCP Server page, Dynamic Tab;\n  2. Go to Add or Edit pop-up page, DNS/WINS tab;\n  3. Set lease time and a dynamic range;\n  4. Client gets a dynamic DHCP lease from SonicWALL",
+      "initial" : "  N/A",
+      "id" : "25",
+      "title" : "Client gets Lease Time Settings with Dynamic Lease",
+      "result" : "  1. DHCP client's lease time settings match SonicWALL settings when using dynamic IPs ."
+   },
+   "28" : {
+      "steps" : "  1. Go to DHCP Server, Static Tab Set lease time to 2 minutes and static range\n  2. Client1 gets static DHCP lease from SonicWALL\n  3. Disconnect the client1 wait for 2 minutes\n  4. Connect Client1 back.\n  Disconnect the client1 again and wait for 2 minutes. Connect the client2 first then Client1 again.",
+      "initial" : "  N/A",
+      "id" : "28",
+      "title" : "Static Lease Expiry",
+      "result" : "  1. Client1 always get the correct lease time."
+   },
+   "83" : {
+      "steps" : "  1. Configure X1 as WAN interface with proper IP. For example 10.103.10.100.\n  2. Configure X2 as LAN/DMZ, IP assignment as static. For example 10.0.0.1.\n  3. On DHCP Server page, click Add Dynamic to add DHCP scope. Select X2 interface in the interface dropdown list. Verify configured X2 range was auto filled into the start ip and end ip fileds correctly. Click OK to confirm.\n  4. Edit X2 interface, change IP assignment to Transparent Mode. In transparent range, create a new address object in WAN subnet. For example 10.103.10.150-160. Click OK to confirm.\n  5. Switch back to DHCP Server page",
+      "initial" : "  FW has WAN interface configured with a valid ip.",
+      "id" : "83",
+      "title" : "Reassign interface from static mode to transparent mode-5.5 firmware",
+      "result" : "  1. Verify the DHCP scope for X2 has been updated to new configured transparent range."
+   },
+   "75" : {
+      "steps" : "  1) Load new firmware and reboot from factory default;\n  2) Configure SonicWALL through setup wizard, accept default settings as much as possible;\n  3) Once setup finished, go to Network > DHCP Server page, check if default LAN DHCP range is available; by default, it should be from 192.168.168.1 to 192.168.168.167;\n  4) Connect a DHCP client to LAN to see if the client can get DHCP lease",
+      "initial" : "  N/A",
+      "id" : "75",
+      "title" : "Verify default LAN DHCP range auto-created by setup wizard",
+      "result" : "  1. Default LAN DHCP range should be available, and DHCP client should be able to get DHCP lease."
+   },
+   "40" : {
+      "steps" : "  1. Start new DHCP client on LAN interface.\n  2. Verify new client obtains lease for IP address. Attempt to renew the lease with a different IP address",
+      "initial" : "  N/A",
+      "id" : "40",
+      "title" : "CDR:DHCPRequest with Non-Offered IP",
+      "result" : "  1. Verify dhcp server sends DHCPNAK for request."
+   },
+   "14" : {
+      "steps" : "  1. Go to the DHCP Server page, Dynamic Tab, Go to Add pop-up page, DNS/WINS tab Choose option of Inherit DNS settings from the SonicWALL DNS settings Set DHCP Dynamic range Client gets dynamic DHCP lease from SonicWALL.",
+      "initial" : "  N/A",
+      "id" : "14",
+      "title" : "DNS Inherit Setting Option For Dynamic Entry",
+      "result" : "  1. DHCP client&#8217;s DNS settings match SonicWALL DNS settings when using dynamic IPs ."
+   },
+   "69" : {
+      "steps" : "  1. DHCP client gets a lease;\n  2. Set lease time 5 minutes;\n  3. Disconnect the first client;\n  4. Staticly assigned the old IP to another DHCP client;\n  5. Before the least time expire, connect back the first DHCP client.",
+      "initial" : "  N/A",
+      "id" : "69",
+      "title" : "Test to see if IP addresses that are already in the network (statically assigned) are not offered by the server to any of the DHCP clients.",
+      "result" : "  1. Verify the first DHCP client should not get the same lease."
+   },
+   "59" : {
+      "steps" : "  1. Set lease time to 1 minute\n  2. Acquire 10 DHCP leases (2a) Disconnect the 10 clients that have acquired the lease. That is to make sure that they are not renewing the lease.\n  3. Wait 1 minute an 1 second\n  4. Allocate a new set of DHCP leases (using different client eth addrs than in step 2).",
+      "initial" : "  CD Router",
+      "id" : "59",
+      "title" : "CDRouter:multiple clients are trying to get lease at the same time",
+      "result" : "  1. We should receive the same IPs as provided in step 2"
+   },
+   "49" : {
+      "steps" : "  1. Configure a new DHCP client with site specific DHCP options.\n  2. Start new DHCP client on LAN interface",
+      "initial" : "  NA",
+      "id" : "49",
+      "title" : "CDR: Verify DHCP server ignores site-specific DHCP options",
+      "result" : "  1. Verify new client obtains lease for IP address"
+   },
+   "24" : {
+      "steps" : "  1. Go to the DHCP Server page, Dynamic Tab;\n  2. Go to Add/Edit pop-up page;\n  3. Set a client gateway address and a network mask with a static range;\n  4. Client gets static DHCP lease from SonicWALL",
+      "initial" : "  N/A",
+      "id" : "24",
+      "title" : "Client Gets Network Settings with Static lease",
+      "result" : "  1. DHCP client's network settings match SonicWALL settings when using static IPs ."
+   },
+   "53" : {
+      "steps" : "  1. Determine the size of the client DHCP address pool NOTE: This is configured in your configuration file using dhcpClientStart and dhcpClientEnd. One of the addresses remains in use through the test run for a host on the LAN side. This test will attempt to create clients for the pool size - 1. If you are using multiple LAN interfaces, the number of DHCP clients from each interface will also be subtracted from the DHCP pool size.\n  2. Create a DHCP client for each available IP address\n  3. Verify the client obtains an IP address within the range\n  4. Verify there are no address conflicts\n  5. Verify each client can establish an outbound http connection\n  6. Verify each client can send/receive data over the connection\n  7. Close each tcp connection 8. Release all new DHCP client leases",
+      "initial" : "  None",
+      "id" : "53",
+      "title" : "CDR:Verify all DHCP clients are operational",
+      "result" : "  1. It is verified that all DHCP clients are operational"
+   },
+   "79" : {
+      "steps" : "  1. Configure X1 as WAN interface with proper IP\n  2. Configure X2 as LAN/DMZ, IP assignment as Transparent Mode. In transparent range, create a new address object in WAN subnet. Click OK to confirm.\n  3. On DHCP Server page, click Add Dynamic to add DHCP scope. Select X2 interface in the interface dropdown list. Verify configured X2 range was auto filled into the start ip and end ip fileds correctly. Click OK to confirm.",
+      "initial" : "  FW has WAN interface configured with a valid ip.",
+      "id" : "79",
+      "title" : "Add DHCP scope of interface in Transparent mode-5.5 firmware",
+      "result" : "  1. Verify the DHCP scope for a transparent mode interface can be configured correctly."
+   },
+   "22" : {
+      "steps" : "  1. Go to the DHCP Server page, Static Tab Go to Add/Edit pop-up page, DNS/WINS tab Set a domain name and a static range Client gets static DHCP lease from SonicWALL",
+      "initial" : "  N/A",
+      "id" : "22",
+      "title" : "Client gets Domain Name Info with Static lease",
+      "result" : "  1. DHCP client's domain name settings match SonicWALL DNS settings when using static IPs ."
+   },
+   "42" : {
+      "steps" : "  1. Start new DHCP client on LAN interface.\n  2. Verify new client obtains lease for IP address.\n  3. Attempt to renew the lease with a IP address of other client.",
+      "initial" : "  N/A",
+      "id" : "42",
+      "title" : "CDR:DHCPRequest with Other Client&#8217;s IP",
+      "result" : "  1. Verify dhcp server sends DHCPNAK for request."
+   },
+   "23" : {
+      "steps" : "  1. Go to the DHCP Server page, Dynamic Tab\n  2. Go to Add/Edit pop-up page Set a client gateway and network mask and dynamic range\n  3. Client gets dynamic DHCP lease from SonicWALL",
+      "initial" : "  N/A",
+      "id" : "23",
+      "title" : "Client gets Network Setting with Dynamic Lease",
+      "result" : "  1. DHCP client's network settings match SonicWALL settings when using dynamic IPs ."
+   },
+   "13" : {
+      "steps" : "  1. Go to the DHCP Server page, Go to configuration pop-up page, DNS/WINS Tab In the Win server section, input valid IP addresses in WINS Servers fields.\n  2. Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "13",
+      "title" : "Valid WinServer Value",
+      "result" : "  1. The box should allow the value to be updated in the GUI."
+   },
+   "06" : {
+      "steps" : "  1. Go to the DHCP Server page.\n  2. Go to configuration pop-up page, In the Client Gateway section, try to enter the following IPs : 260.1.1.1 1.260.1.1 1.1.260.1 1.1.1.260 Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "6",
+      "title" : "Invalid Client Gateway Value",
+      "result" : "  1. The box should not allow these values to be updated in the GUI."
+   },
+   "85" : {
+      "steps" : "  1. Configure X1 as WAN interface with proper IP. For example 10.103.10.10.\n  2. Configure X2 as LAN/DMZ, IP assignment as Transparent Mode. In transparent range, create a new address object in WAN subnet. For example from 10.103.10.100-110. Click OK to confirm.\n  3. Configure X3 as LAN/DMZ, IP assignment as Transparent Mode. In transparent range, create a new address object in WAN subnet. For example from 10.103.10.120-130. Click OK to confirm.\n  4. On DHCP Server page, click Add Dynamic to add DHCP scope. Select X2 interface in the interface dropdown list. Verify configured X2 range was auto filled into the start ip and end ip fileds correctly. Click OK to confirm.\n  5. On DHCP Server page, click Add Dynamic to add DHCP scope. Select X3 interface in the interface drop down list. Verify configured X3 range was auto filled into the start ip and end ip fileds correctly. Click OK to confirm.\n  6. Edit X2 scope, change start ip from 10.103.10.100 to 10.103.10.105 and end ip change to 10.103.10.109. Click OK to confirm.\n  7. Verify X3 scope remain the same.\n  8.Edit X3 scope, change ip to 10.103.10.122-10.103.10.128. Click OK.\n  9.Veirfy X3 scope remain the same.",
+      "initial" : "  FW has WAN interface configured with a valid ip.",
+      "id" : "85",
+      "title" : "Two transparent interface DHCP scope-5.5 firmware",
+      "result" : "  1. Verify two transparent interface DHCP scope wont take effect to each other when modification."
+   },
+   "36" : {
+      "steps" : "  1. Go to DHCP Server, static Tab\n  2. Add a static entry with x0 interface,\n  3. Then go back and add an other entry to x2\n  4. Do the same for x3 and x4 Configure multiple interfaces with different zone type.",
+      "initial" : "  N/A",
+      "id" : "36",
+      "title" : "Clients on Multiple Interfaces with Static Leases",
+      "result" : "  1. Client on each interface gets correct DHCP lease."
+   },
+   "03" : {
+      "steps" : "  1. Go to the DHCP Server page, Static Tab\n  2. In the Static Entry Range section, try to enter a Mac address with the following IPs :\n  260.1.1.1 1.260.1.1 1.1.260.1 1.1.1.260 Hit Update after each IP address.",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "Static IP Address Values",
+      "result" : "  1. The box should not allow any of the numbers to be entered in the GUI."
+   },
+   "09" : {
+      "steps" : "  1. Go to the DHCP Server page.\n  2. Go to configuration pop-up page, In the Domain name section, try to enter a value with 256 characters: Hit Update after input.",
+      "initial" : "  N/A",
+      "id" : "9",
+      "title" : "Invalid Domain",
+      "result" : "  1. The box should not the value to be updated in the GUI."
+   },
+   "51" : {
+      "steps" : "  1. Go to the DHCP Server page, and Static Tab, Go to Add or Edit pop-up page, DNS/WINS tab Set WINS servers settings and a static range Client gets static DHCP lease from SonicWALL",
+      "initial" : "  N/A",
+      "id" : "51",
+      "title" : "Client gets WINServer Settings with Static Lease",
+      "result" : "  1. DHCP client's WINS Servers settings match SonicWALL DNS settings when using static IPs ."
+   },
+   "47" : {
+      "steps" : "  1. Configure Sonicwall as DHCP relay\n  2. Place a DHCP server on the WAN side of sonicwall Add Client's Mac address to the DHCP server for static entry, and add a router entry in DHCP server if DHCP relay don't in transparent mode.\n  3. Disable DHCP server and Enable IP helper,add policy in IP helper.",
+      "initial" : "  NA",
+      "id" : "47",
+      "title" : "DHCP Passthrough with Static Lease",
+      "result" : "  1. Verify DHCP client on the LAN is able to get correct static DHCP lease from WAN."
+   },
+   "08" : {
+      "steps" : "  1. Go to the DHCP Server page. Go to configuration pop-up page, In the Win Server section, try to enter the following IPs : 260.1.1.1 1.260.1.1 1.1.260.1 1.1.1.260 Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "8",
+      "title" : "Invalid WinServer Values",
+      "result" : "  1. The box should not allow these values to be updated in the GUI."
+   },
+   "38" : {
+      "steps" : "  1. Set a DNS Server on the WAN Set DHCP server DNS settings according to DNS server.\n  2. Start new DHCP client on sonicwall test interface",
+      "initial" : "  Sonicwall network mode set as DHCP Client mode.",
+      "id" : "38",
+      "title" : "DNS info pass from the WAN",
+      "result" : "  1. Verify the received DHCP options match the WAN configuration, network mask matches configured network mask, gateway is router's LAN IP address and DNS server is configured WAN isp DNS server (NOTE: This check is only done if the router supports the DNStoDHCP option. Some router announce their own LAN side IP address as the DNS server and then forward requests to the WAN side DNS server. If the WAN is running DHCP, verify domain is WAN isp domain name"
+   },
+   "04" : {
+      "steps" : "  1. Go to the DHCP Server page, Dynamic Tab\n  2. Go to Add pop-up page, Set lease time to 0, -5 with other proper lease settings Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "4",
+      "title" : "Invalid Lease Time Value",
+      "result" : "  1. The box should not allow zero or negative value to be entered in the GUI."
+   },
+   "34" : {
+      "steps" : "  1. Go to DHCP Server, Dynamic Tab Add a dynamic entry. High light the entry and click del ete button",
+      "initial" : "  N/A",
+      "id" : "34",
+      "title" : "Delete Multiple Dynamic Entries",
+      "result" : "  1. The specific entry can be deleted."
+   },
+   "37" : {
+      "steps" : "  1. Go to DHCP Server Set interfaces and x0, x2, x3,x4 with different dynamic and static entries Set each entry with different lease time, DNS servers and WINS servers. Configure multiple interfaces with different zone type.",
+      "initial" : "  N/A",
+      "id" : "37",
+      "title" : "Combination Settings",
+      "result" : "  1. Client on each interface gets correct DHCP lease."
+   },
+   "43" : {
+      "steps" : "  1. Start new DHCP client on LAN interface.\n  2. Configure DHCP client to use bad UDP checksums.",
+      "initial" : "  N/A",
+      "id" : "43",
+      "title" : "CDR: DHCP requests with invalid UDP Checksum",
+      "result" : "  1. Verify new client fails to obtained lease for IP address."
+   },
+   "05" : {
+      "steps" : "  1. Go to the DHCP Server page.\n  2. Go to configuration pop-up page, Set lease time to 1 and 9999, with other proper lease settings Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "5",
+      "title" : "Valid Lease Time Value",
+      "result" : "  1. The box should allow these values to be entered in the GUI."
+   }
+}

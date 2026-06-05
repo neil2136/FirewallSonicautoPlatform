@@ -1,0 +1,86 @@
+{
+"4405972" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for LDAP user succeed through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "id" : "4405972",
+      "title" : "Verify that login with compromised password for LDAP user succeed through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "result" : "  Verify that login with compromised password for LDAP user succeed through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled"
+},
+"4405973" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for LDAP user fail through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "id" : "4405973",
+      "title" : "Verify that login with compromised password for LDAP user fail through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "result" : "  Verify that login with compromised password for LDAP user fail through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled"
+   },
+"4405976" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for RADIUS user succeed through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "id" : "4405976",
+      "title" : "Verify that login with compromised password for RADIUS user succeed through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "result" : "  Verify that login with compromised password for RADIUS user succeed through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled"
+   },
+"4405977" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for RADIUS user fail through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "id" : "4405977",
+      "title" : "Verify that login with compromised password for RADIUS user fail through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "result" : "  Verify that login with compromised password for RADIUS user fail through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled"
+   },
+"4405980" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for TACACs user succeed through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "id" : "4405980",
+      "title" : "Verify that login with compromised password for TACACs user succeed through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "result" : "  Verify that login with compromised password for TACACs user succeed through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled"
+   },
+"4405981" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for TACACs user fail through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "id" : "4405981",
+      "title" : "Verify that login with compromised password for TACACs user fail through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "result" : "  Verify that login with compromised password for TACACs user fail through FW MGMT CLI when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled"
+   },
+"4405974" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for LDAP user succeed through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "id" : "4405974",
+      "title" : "Verify that login with compromised password for LDAP user succeed through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "result" : "  Verify that login with compromised password for LDAP user succeed through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled"
+   },
+"4405975" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for LDAP user fail through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "id" : "4405975",
+      "title" : "Verify that login with compromised password for LDAP user fail through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "result" : "  Verify that login with compromised password for LDAP user fail through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled"
+   },
+"4405978" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for RADIUS user succeed through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "id" : "4405978",
+      "title" : "Verify that login with compromised password for RADIUS user succeed through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "result" : "  Verify that login with compromised password for RADIUS user succeed through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled"
+   },
+"4405979" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for RADIUS user fail through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "id" : "4405979",
+      "title" : "Verify that login with compromised password for RADIUS user fail through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "result" : "  Verify that login with compromised password for RADIUS user fail through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled"
+   },
+"4405984" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for TACACs user succeed through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "id" : "4405984",
+      "title" : "Verify that login with compromised password for TACACs user succeed through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled",
+      "result" : "  Verify that login with compromised password for TACACs user succeed through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is disabled"
+   },
+"4405985" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that login with compromised password for TACACs user fail through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "id" : "4405985",
+      "title" : "Verify that login with compromised password for TACACs user fail through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled",
+      "result" : "  Verify that login with compromised password for TACACs user fail through FW MGMT API when \u201cIf a compromised password is detected, block the login until the password is changed\u201d is enabled"
+   }
+}

@@ -1,0 +1,72 @@
+{
+  "2513570": {
+    "steps": "1) Configure a new interface X2 , zone: WAN\n2) Edit this interface in IPv6 interface page, select the ip-assignment as DHCPv6, enable PD,\nenable \"Send preferred delegated prefix\" and set the value as 2001:470:80B7:930::/60\n3) connect it to a DHCPv6 server, make sure it can acquire PD from this server;\n4) capture dhcpv6 packet and check if append the IP Prefix option in the IA-PD option to indicate it’s hint\n5)Switch to \"Protocol\" tab, check the info under \"Delegated Prefixes Acquired via DHCPv6\" table.",
+    "id": "2513570",
+    "title": "enable \"Send preferred delegated prefix\" and set proper value",
+    "description": "",
+    "result": "4) append the IP Prefix option in the IA-PD option to indicate it’s hint\n5) the values should be same as what be set in hint"
+  },
+  "2513571": {
+    "steps": "1) Configure a new interface X2 , zone: WAN\n2) Edit this interface in IPv6 interface page, select the ip-assignment as DHCPv6, enable PD,\nenable \"Send preferred delegated prefix\" and set the value as 2001:470:80B7:800::/60(which is not in the pd range in server)\n3) connect it to a DHCPv6 server, make sure it can acquire PD from this server;\n4) capture dhcpv6 packet and check if append the IP Prefix option in the IA-PD option to indicate it’s hint\n5)Switch to \"Protocol\" tab, check the info under \"Delegated Prefixes Acquired via DHCPv6\" table.",
+    "id": "2513571",
+    "title": "enable \"Send preferred delegated prefix\" and set improper value",
+    "description": "",
+    "result": "4) append the IP Prefix option in the IA-PD option to indicate it’s hint\n5) the PD should be in the range in server"
+  },
+  "2513572": {
+    "steps": "1) Configure a new interface X2 , zone: WAN\n2) Edit this interface in IPv6 interface page, select the ip-assignment as DHCPv6, enable PD,\nenable \"Send preferred delegated prefix\" and set the value as 2001:470:80B7:ddd33::/60\n3）set the value as 2001:470:80B7:ddd3::/555",
+    "id": "2513572",
+    "title": "[error test]enable \"Send preferred delegated prefix\" and set invalid value",
+    "description": "",
+    "result": "2）it will popup Error \"Schema validation error: property 'addr': invalid format\"\n3）it will popup error \"Value or string length(444) out of bounds (max = 128)\""
+  },
+  "2513573": {
+    "steps": "1 edit the value of PD hint in PD range in server 2001:470:80B7:903::/60\n2 Switch to \"Protocol\" tab, check the info under \"Delegated Prefixes Acquired via DHCPv6\" table.\n3 edit the value of PD hint in PD range in server 2001:470:80B7:803::/60\n4 Switch to \"Protocol\" tab, check the info under \"Delegated Prefixes Acquired via DHCPv6\" table.",
+    "id": "2513573",
+    "title": "edit PD hint value in GUI",
+    "description": "",
+    "result": ""
+  },
+  "2513574": {
+    "steps": "1 disable \"Send preferred delegated prefix\"\n2 Switch to \"Protocol\" tab, check the info under \"Delegated Prefixes Acquired via DHCPv6\" table.",
+    "id": "2513574",
+    "title": "disable PD HINT in GUI",
+    "description": "",
+    "result": ""
+  },
+  "2513575": {
+    "steps": "\n\n1 open console to configure interface ipv6 X2  follow below CLI commands\nconfig(AAA)# interface ipv6 X2\n\n(edit-interface[X2]-ipv6)# ip-assignment dhcpv6\n\n(edit-WAN-dhcpv6[X2])# prefix-delegation\n\n(edit-WAN-dhcpv6-pd[X2])# preferred 2001:470:80b7:906:: 60          \n\n(edit-WAN-dhcpv6-pd[X2])# COMMIT\n\n% Applying changes...\n\n% Status returned processing command:\n\nCOMMIT\n\n% Changes made.  \n\n2 show interface ipv6 X2 check if PD hint saved\ninterface ipv6 X2\n    ip-assignment dhcpv6\n        prefix-delegation\n            preferred 2001:470:80b7:906:: 60\n            exit\n3 from GUI check the PD hint value\n4 Switch to \"Protocol\" tab, check the info under \"Delegated Prefixes Acquired via DHCPv6\" table.\n",
+    "id": "2513575",
+    "title": "Enable PD Hint via CLI",
+    "description": "",
+    "result": "the values should be same as what be set in hint"
+  },
+  "2513576": {
+    "steps": "\n\n1 open console to configure interface ipv6 X2  follow below CLI commands\nconfig(AAA)# interface ipv6 X2\n\n(edit-interface[X2]-ipv6)# ip-assignment dhcpv6\n\n(edit-WAN-dhcpv6[X2])# prefix-delegation\n\n(edit-WAN-dhcpv6-pd[X2])# no preferred          \n\n(edit-WAN-dhcpv6-pd[X2])# COMMIT\n\n% Applying changes...\n\n% Status returned processing command:\n\nCOMMIT\n% Changes made.  \n\n2 show interface ipv6 X1 check if PD hint disabled\ninterface ipv6 X1\n    ip-assignment dhcpv6\n        prefix-delegation\n            no preferred\n            exit\n3 from GUI check the PD hint disabled\n4 check packet\n5 Switch to \"Protocol\" tab, check the info under \"Delegated Prefixes Acquired via DHCPv6\" table.\n",
+    "id": "2513576",
+    "title": "Disable PD Hint via CLI ",
+    "description": "",
+    "result": ""
+  },
+  "2513577": {
+    "steps": "\n\n1 open console\n2 show interface ipv6 X2\ninterface ipv6 X2\n    ip-assignment dhcpv6\n        prefix-delegation\n            preferred 2001:470:80b7:906:: 60\n            exit\n3 edit interface ipv6 X2  follow below CLI commands\nconfig(AAA)# interface ipv6 X2\n\n(edit-interface[X2]-ipv6)# ip-assignment dhcpv6\n\n(edit-WAN-dhcpv6[X2])# prefix-delegation\n\n(edit-WAN-dhcpv6-pd[X2])# preferred 2001:470:80b7:907:: 60          \n\n(edit-WAN-dhcpv6-pd[X2])# COMMIT\n\n% Applying changes...\n\n% Status returned processing command:\n\nCOMMIT\n% Changes made.  \n\n4 show interface ipv6 X2 check if PD hint saved\ninterface ipv6 X2\n    ip-assignment dhcpv6\n        prefix-delegation\n            preferred 2001:470:80b7:907:: 60\n            exit\n5 from GUI check the PD hint value\n6 Switch to \"Protocol\" tab, check the info under \"Delegated Prefixes Acquired via DHCPv6\" table.\n",
+    "id": "2513577",
+    "title": "Edit PD Hint via CLI which add in GUI",
+    "description": "",
+    "result": ""
+  },
+  "2513578": {
+    "steps": "1 go to Device/Diagnostics/Tech Support Report, download TSR\n2 check PD info in tsr\nSend IAPD Prefered:\nIAPD Preferred Prefix:\nIdentity Association for Prefix Delegation:  ",
+    "id": "2513578",
+    "title": " check PD HINT info in TSR ",
+    "description": "",
+    "result": ""
+  },
+  "2513579": {
+    "steps": "1 configure PD hint in several interfaces\n2 after the interfaces get PD, restart the DUT\n3 check PD hint and PD info",
+    "id": "2513579",
+    "title": "restart test",
+    "description": "",
+    "result": ""
+  }
+}

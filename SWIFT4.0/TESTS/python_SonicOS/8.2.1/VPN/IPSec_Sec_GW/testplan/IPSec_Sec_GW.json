@@ -1,0 +1,268 @@
+{
+   "33" : {
+      "steps" : "  1. Put SonicWALL1 behind a NAT device. \n  2. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  3. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  4. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  5. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  6. Disconnect the cable on the primary WAN of SonicWALL2. \n  7. Start a continuous ping from PC1 to PC2. Make sure that SonicWALL1 starts negotiation with primary gateway and fails after five retries. Then SonicWALL1 creates IKE SA and IPsec SA with the secondary gateway. \n  8. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). Verify traffic is not disrupted to the destination gateway and it still uses tunnel to the secondary gateway. \n  9. Let IKE SA lifetime expire.",
+      "initial" : "  PC1--X0 SonicWALL1 X1--NAT device-- X1,X2 SonicWALL2 X0-- PC2",
+      "id" : "33",
+      "title" : "Remote site is behind a NAT device. Primary gateway becomes available after SA lifetime expiry.",
+      "result" : "  SonicWALL1 starts IKE negotiation to the primary gateway and establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway. \n  Traffic flows to the destination network using the primary gateway."
+   },
+   "32" : {
+      "steps" : "  1. Put SonicWALL1 behind a NAT device. \n  2. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  3. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  4. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  5. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  6. Disconnect the cable on the primary WAN of SonicWALL2. \n  7. Start a continuous ping from PC1 to PC2.",
+      "initial" : "  PC1--X0 SonicWALL1 X1--NAT device-- X1,X2 SonicWALL2 X0-- PC2",
+      "id" : "32",
+      "title" : "Remote site is behind a NAT device. Primary gateway is not available.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway and fails after five retries. \n  SonicWALL1 starts a new negotiation using the secondary IPSec gateway and creates IKE SA and IPsec SA with the secondary gateway."
+   },
+   "21" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. \n  4. Start a continuous ping from PC2 to PC1. \n  5. Disconnect the cable on X1 interface of SonicWALL2. \n  6. When a new IKE negotiation is initiated by SonicWALL2 and completed, bring X1 interface up (plug-in the cable to the X1 interface).",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "21",
+      "title" : "WAN connection fails back on the head end.",
+      "result" : "  The primary gateway of SonicWALL2 establishes IKE and IPSec SAs to the remote site. \n  Traffic flows to the destination network using the primary gateway IPSec tunnel."
+   },
+   "7" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter FQDN that is associated with X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. Start a continuous ping from PC1 to PC2. \n  5. Disconnect the cable on the primary WAN of SonicWALL2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "7",
+      "title" : "Remote firewall is using FQDN as a primary Gateway, IP Address as a secondary Gateway",
+      "result" : "  The initial tunnel is established between the boxes. FQDN address is used as IPSec Gateway. IP address that is resolved from the Domain Name is shown as Gateway in the Currently active tunnels section on the VPN > Settings page on SonicWALL1. When the cable on the default WAN of SonicWALL2 is disconnected, the DPD on SonicWALL1 detects a dead peer and deletes the tunnel. \n  Ping from PC1 initiates negotiation on SonicWALL1. It uses primary IPSec GW first. When the first negotiation is aborted due to timeout, the new IKE negotiation starts and uses secondary IPSec GW. Negotiation completes. The secondary WAN IP address of SonicWALL2 is shown as Gateway in the Currently active tunnels section on the VPN > Settings page on SonicWALL1."
+   },
+   "26" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  5. When the tunnel is established, disconnect the cable on the primary WAN of SonicWALL2. \n  6. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiate IKE tunnel with secondary gateway. This negotiation is successful. \n  7. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). \n  8. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "26",
+      "title" : "Zero IPSec gateway on a head end. Switch over upon IKE SA expiry time. Negotiation started by Keep Alive.",
+      "result" : "  SonicWALL1 starts IKE negotiation to the primary gateway and establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway."
+   },
+   "2" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. Start a continuous ping from PC1 to PC2. \n  5. Disconnect the cable on the primary WAN of SonicWALL2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "2",
+      "title" : "Continuous Ping From a Remote Firewall",
+      "result" : "  The initial tunnel is established using the primaty gateway. \n  After the cable on the primary WAN of SonicWALL2 has been disconnected, the ping from PC1 gets dropped. SonicWALL1 sends a configured number of DPD requests before the existing tunnel gets deleted. \n  A new IKE negotiation is initiated by ping. It uses the primary IPSec gateway first. This negotiation fails after 3 retries. A new IKE negotiation starts and uses the secondary IPSec Gateway address. The new tunnel is established. \n  FTP, Telnet, Ping, and HTTP services work through the new tunnel."
+   },
+   "17" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter X1 IP address of SonicWALL1 in the Primary IPSec Gateway field. \n  5. When the tunnel is established, disconnect the cable on the primary WAN of SonicWALL2. \n  6. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiate IKE tunnel with secondary gateway. This negotiation is successful. \n  7. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "17",
+      "title" : "Non-zero IPSec gateway on a head end. Switch over fails. Keep Alive is enabled.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway. This negotiation fails after five retries. \n  SonicWALL1 establishes IKE SA with secondary gateway again."
+   },
+   "1" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. Enable WLB. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. \n  4. Start a continuous ping from PC2 to PC1. \n  5. Disconnect the cable on the primary WAN of SonicWALL2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "1",
+      "title" : "WAN Failover on the head end.",
+      "result" : "  The initial tunnel is established between the boxes. The remote gateway on the VPN>Settings page of SonicWALL1 is the default WAN IP of SonicWALL2. When the default WAN port on SonicWALL2 gets disconnected, a new IKE negotiation is initiated on SonicWALL2 and using the secondary WAN IP as local gateway.  New tunnel is established. The VPN>Settings page of the SonicWALL1 displays the secondary WAN IP of SonicWALL2 in the Active Tunnels table. FTP, Telnet, Ping, and HTTP services work through the new tunnel."
+   },
+   "18" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Disconnect the cable on the primary WAN of SonicWALL2. \n  3. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  4. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  5. In a VPN policy on SonicWALL12, enter X1 IP address of SonicWALL1 in the Primary IPSec Gateway field.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "18",
+      "title" : "Non-zero IPSec gateway on a head end. Primary gateway is not available. Keep Alive is enabled.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway and fails after five retries. \n  SonicWALL1 starts a new negotiation using the secondary IPSec gateway and creates IKE SA and IPsec SA with the secondary gateway."
+   },
+   "30" : {
+      "steps" : "  1. Put SonicWALL1 behind a NAT device. \n  2. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  3. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  4. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  5. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  6. Start a continuous ping from PC1 to PC2. \n  7. Disconnect the cable on the primary WAN of SonicWALL2. \n  8. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiate IKE tunnel with secondary gateway. This negotiation is successful. \n  9. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). Verify traffic is not disrupted to the destination gateway and it still uses tunnel to the secondary gateway. \n  10. Let IKE SA lifetime expire.",
+      "initial" : "  PC1--X0 SonicWALL1 X1--NAT device-- X1,X2 SonicWALL2 X0-- PC2",
+      "id" : "30",
+      "title" : "Remote site is behind a NAT device. Switch over upon IKE SA expiry time. Negotiation started by traffic.",
+      "result" : "  SonicWALL1 starts IKE negotiation to the primary gateway and establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway. \n  Traffic flows to the destination network using the primary gateway."
+   },
+   "16" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2.\n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter X1 IP address of SonicWALL1 in the Primary IPSec Gateway field. \n  5. When the tunnel is established, disconnect the cable on the primary WAN of SonicWALL2. \n  6. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiate IKE tunnel with secondary gateway. This negotiation is successful. \n  7. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). \n  8. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "16",
+      "title" : "Non-zero IPSec gateway on a head end. Switch over upon IKE SA expiry time. Negotiation started by Keep Alive.",
+      "result" : "  SonicWALL1 starts IKE negotiation to the primary gateway and establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway."
+   },
+   "27" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  5. When the tunnel is established, disconnect the cable on the primary WAN of SonicWALL2. \n  6. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiate IKE tunnel with secondary gateway. This negotiation is successful. \n  7. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "27",
+      "title" : "Zero IPSec gateway on a head end. Switch over fails. Keep Alive is enabled.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway. This negotiation fails after five retries. \n  SonicWALL1 establishes IKE SA with secondary gateway again."
+   },
+   "25" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  5. Disconnect the cable on the primary WAN of SonicWALL2. \n  6. Start a continuous ping from PC1 to PC2. Make sure that SonicWALL1 starts negotiation with primary gateway and fails after five retries. Then SonicWALL1 creates IKE SA and IPsec SA with the secondary gateway. \n  7. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). Verify traffic is not disrupted to the destination gateway and it still uses tunnel to the secondary gateway. \n  8. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "25",
+      "title" : "Zero IPSec gateway on a head end. Primary gateway becomes available after SA lifetime expiry.",
+      "result" : "  SonicWALL1 starts IKE negotiation to the primary gateway and establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway. \n  Traffic flows to the destination network using the primary gateway."
+   },
+   "28" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Disconnect the cable on the primary WAN of SonicWALL2. \n  3. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  4. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  5. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "28",
+      "title" : "Zero IPSec gateway on a head end. Primary gateway is not available. Keep Alive is enabled.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway and fails after five retries. \n  SonicWALL1 starts a new negotiation using the secondary IPSec gateway and creates IKE SA and IPsec SA with the secondary gateway."
+   },
+   "14" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2.\n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter X1 IP address of SonicWALL1 in the Primary IPSec Gateway field. \n  5. Disconnect the cable on the primary WAN of SonicWALL2. \n  6. Start a continuous ping from PC1 to PC2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "14",
+      "title" : "Non-zero IPSec gateway on a head end. Primary gateway is not available.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway and fails after five retries. \n  SonicWALL1 starts a new IKE negotiation using the secondary IPSec gateway and creates IKE SA and IPsec SA with the secondary gateway."
+   },
+   "20" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. \n  4. Start a continuous ping from PC2 to PC1. \n  5. Disconnect the cable on the primary WAN of SonicWALL2. \n  6. Whan the tunnel establishes, let SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "20",
+      "title" : "WAN failover on the head end. SA lifetime expires.",
+      "result" : "  SonicWALL1 establishes IKE SA with secondary gateway as responder."
+   },
+   "24" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  5. Disconnect the cable on the primary WAN of SonicWALL2. \n  6. Start a continuous ping from PC1 to PC2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "24",
+      "title" : "Zero IPSec gateway on a head end. Primary gateway is not available.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway and fails after five retries. \n  SonicWALL1 starts a new negotiation using the secondary IPSec gateway and creates IKE SA and IPsec SA with the secondary gateway."
+   },
+   "10" : {
+      "steps" : "  1. Load the firmware on a firewall and boot. \n  2. On the VPN > Settings page, add a new policy. \n  3. Select Main or Aggressive Exchange mode. Fill in a primary IPSec gateway field. Type an IP address in a secondary IPSec gateway field. \n  4. Select local and destination networks in the Networks tab. Save the policy. \n  5. Restart the firewall.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "10",
+      "title" : "VPN policy with Secondary IPSec Gateway. Reboot a firewall.",
+      "result" : "  The secondary IPSec Gateway value in the VPN policy stays intact after reboot."
+   },
+   "31" : {
+      "steps" : "  1. Put SonicWALL1 behind a NAT device. \n  2. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  3. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  4. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  5. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  6. Start a continuous ping from PC1 to PC2. \n  7. Disconnect the cable on the primary WAN of SonicWALL2. \n  8. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiate IKE tunnel with secondary gateway. This negotiation is successful. \n  9. Let IKE SA lifetime expire.",
+      "initial" : "  PC1--X0 SonicWALL1 X1--NAT device-- X1,X2 SonicWALL2 X0-- PC2",
+      "id" : "31",
+      "title" : "Remote site is behind a NAT device. Switch over fails.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway. This negotiation fails after five retries. \n  SonicWALL1 starts IKE negotiation and establishes IKE SA with secondary gateway again."
+   },
+   "35" : {
+      "steps" : "  1. Put SonicWALL1 behind a NAT device. \n  2. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  3. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  4. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  5. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  6. When the tunnel is established, disconnect the cable on the primary WAN of SonicWALL2. \n  7. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiate IKE tunnel with secondary gateway. This negotiation is successful. \n  8. Let IKE SA lifetime expire.",
+      "initial" : "  PC1--X0 SonicWALL1 X1--NAT device-- X1,X2 SonicWALL2 X0-- PC2",
+      "id" : "35",
+      "title" : "Remote site is behind a NAT device. Switch over fails. Keep Alive is enabled.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway. This negotiation fails after five retries. \n  SonicWALL1 establishes IKE SA with secondary gateway again."
+   },
+   "11" : {
+      "steps" : "  1. Load the firmware on a firewall and boot. \n  2. On the VPN > Settings page, add a new policy. \n  3. Select Main or Aggressive Exchange mode. Fill in a primary IPSec gateway field. Type an IP address in a secondary IPSec gateway field. \n  4. Select local and destination networks in the Networks tab. Save the policy. \n  5. On the System > Settings page, export a preference file. Save it on a local drive. \n  6. Import the preference file.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "11",
+      "title" : "VPN policy with Secondary IPSec Gateway. Export and import a preference file.",
+      "result" : "  The secondary IPSec Gateway value in the VPN policy is saved in the preference file."
+   },
+   "22" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  5. Start a continuous ping from PC1 to PC2. \n  6. Disconnect the cable on the primary WAN of SonicWALL2. \n  7. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiate IKE tunnel with secondary gateway. This negotiation is successful. \n  8. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). Verify traffic is not disrupted to the destination gateway and it still uses tunnel to the secondary gateway. \n  9. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "22",
+      "title" : "Zero IPSec gateway on a head end. Switch over upon IKE SA expiry time. Negotiation started by traffic.",
+      "result" : "  SonicWALL1 starts negotiation to the primary gateway and establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway. \n  Traffic flows to the destination network using the primary gateway."
+   },
+   "13" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2.\n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter X1 IP address of SonicWALL1 in the Primary IPSec Gateway field. \n  5. Start a continuous ping from PC1 to PC2. \n  6. Disconnect the cable on the primary WAN of SonicWALL2. \n  7. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiates IKE tunnel with secondary gateway. This negotiation is successful. \n  8. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "13",
+      "title" : "Non-zero IPSec gateway on a head end. Switch over fails.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway. This negotiation fails after five retries. \n  SonicWALL1 starts IKE negotiation and establishes IKE SA with secondary gateway again."
+   },
+   "23" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  5. Start a continuous ping from PC1 to PC2. \n  6. Disconnect the cable on the primary WAN of SonicWALL2. \n  7. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiate IKE tunnel with secondary gateway. This negotiation is successful. \n  8. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "23",
+      "title" : "Zero IPSec gateway on a head end. Switch over fails.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway. This negotiation fails after five retries. \n  SonicWALL1 starts a new IKE negotiation and establishes IKE SA with secondary gateway again."
+   },
+   "29" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Disconnect the cable on the primary WAN of SonicWALL2. \n  3. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  4. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  5. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  6. Make sure that Keep Alive initiates negotiation with primary gateway, and the negotiation fails after five retries. Then SonicWALL1 creates IKE SA and IPsec SA with the secondary gateway. \n  7. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). \n  8. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "29",
+      "title" : "Zero IPSec gateway on a head end. Primary gateway becomes available after SA lifetime expiry. Keep Alive is enabled.",
+      "result" : "  Keep Alive initiates IKE negotiation to the primary gateway and SonicWALL1 establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway."
+   },
+   "6" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X2 IP address of a peer in the Primary IPSec Gateway field and X1 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. Start a continuous ping from PC1 to PC2. \n  5. Disconnect the cable on the secondary WAN of SonicWALL2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "6",
+      "title" : "Inbound IKE to secondary WAN port",
+      "result" : "  The initial tunnel is established using the primaty gateway, which is a secondary WAN interface of SonicWALL2. \n  After the cable on the secondary WAN of SonicWALL2 has been disconnected, the ping from PC1 gets dropped. SonicWALL1 sends a configured number of DPD requests before the existing tunnel gets deleted. \n  A new IKE negotiation is initiated by ping. It uses the primary IPSec gateway first. After the IKE negotiation has been aborted due a timeout (no reply from a peer), a new IKE negotiation starts and uses the secondary IPSec Gateway address, which is the primary WAN interface of SonicWALL2. The new tunnel is established."
+   },
+   "3" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. Start a ping from PC1 to PC2. Stop the ping.\n  5. Disconnect the cable on the primary WAN of SonicWALL2.\n  6. Wait till DPD detects a dead peer and deletes the old tunnel. Then send a single ping from PC1 to PC2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "3",
+      "title" : "Single Ping From a Remote Firewall",
+      "result" : "  The initial tunnel is established between the boxes. The remote gateway for the active tunnel on the VPN>Settings page of SonicWALL1 is the default WAN IP of SonicWALL2. \n  When the single ping is sent from PC1, new IKE negotiation is initiated on SonicWALL1. It tries to negotiate the tunnel using the primary IPSec Gateway address. When IKE negotiation is aborted due a timeout (no reply from a peer), new IKE negotiation starts and uses the secondary IPSec Gateway address. New tunnel is established. The remote gateway for the active tunnel on the VPN>Settings page of SonicWALL1 is the secondary WAN IP of SonicWALL2. \n  FTP, Telnet, Ping, and HTTP services work through the new tunnel. ."
+   },
+   "36" : {
+      "steps" : "  1. Put SonicWALL1 behind a NAT device. \n  2. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  3. Disconnect the cable on the primary WAN of SonicWALL2. \n  4. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  5. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  6. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field.",
+      "initial" : "  PC1--X0 SonicWALL1 X1--NAT device-- X1,X2 SonicWALL2 X0-- PC2",
+      "id" : "36",
+      "title" : "Remote site is behind a NAT device. Primary gateway is not available. Keep Alive is enabled.",
+      "result" : "  SonicWALL1 starts IKE negotiation with primary gateway and fails after five retries. \n  SonicWALL1 starts a new negotiation using the secondary IPSec gateway and creates IKE SA and IPsec SA with the secondary gateway."
+   },
+   "9" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter FQDN that is associated with X1 IP address of a peer in the Primary IPSec Gateway field and FQDN that is associated with X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. Start a continuous ping from PC1 to PC2. \n  5. Disconnect the cable on the primary WAN of SonicWALL2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "9",
+      "title" : "Remote firewall is using FQDN as a primary and a secondary Gateway",
+      "result" : "  The initial tunnel is established between the boxes. The default WAN IP address of SonicWALL2, which is resolved from the Domain Name is shown as Gateway in the Currently active tunnels section on the VPN > Settings page on SonicWALL1. When the cable on the default WAN of SonicWALL2 is disconnected, the DPD on SonicWALL1 detects a dead peer and deleted the tunnel. \n  Ping from PC1 initiates IKE negotiation on SonicWALL1. It uses the primary IPSec GW first. When first negotiation is aborted due to timeout, the new IKE negotiation starts and uses secondary IPSec GW. Negotiation completes . The secondary WAN IP address of SonicWALL2, which is resolved from the Domain Name is shown as Gateway in the Currently active tunnels section on the VPN > Settings page on SonicWALL1."
+   },
+   "12" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter X1 IP address of SonicWALL1 in the Primary IPSec Gateway field. \n  5. Start a continuous ping from PC1 to PC2. \n  6. Disconnect the cable on the primary WAN of SonicWALL2. \n  7. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiates IKE tunnel with secondary gateway. This negotiation is successful. \n  8. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). Verify traffic is not disrupted to the destination gateway and it still uses tunnel to the secondary gateway. \n  9. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "12",
+      "title" : "Non-zero IPSec gateway on a head end. Switch over upon IKE SA expiry time. Negotiation started by traffic.",
+      "result" : "  SonicWALL1 starts IKE negotiation to the primary gateway and establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway. \n  Traffic flows to the destination network using the secondary gateway."
+   },
+   "15" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2.\n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. In a VPN policy on SonicWALL12, enter X1 IP address of SonicWALL1 in the Primary IPSec Gateway field. \n  5. Disconnect the cable on the primary WAN of SonicWALL2. \n  6. Start a continuous ping from PC1 to PC2. Make sure that SonicWALL1 starts negotiation with primary gateway and fails after five retries. Then SonicWALL1 creates IKE SA and IPsec SA with the secondary gateway. \n  7. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). Verify traffic is not disrupted to the destination gateway and it still uses tunnel to the secondary gateway. \n  8. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "15",
+      "title" : "Non-zero IPSec gateway on a head end. Primary gateway becomes available after SA lifetime expiry.",
+      "result" : "  SonicWALL1 starts IKE negotiation to the primary gateway and establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway. \n  Traffic flows to the destination network using the primary gateway."
+   },
+   "8" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and FQDN that is associated with X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. Start a continuous ping from PC1 to PC2. \n  5. Disconnect the cable on the primary WAN of SonicWALL2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "8",
+      "title" : "Remote firewall is using IP Address as a primary Gateway, FQDN as a secondary Gateway",
+      "result" : "  The initial tunnel is established between the boxes. The default WAN IP address of the local firewall is shown as Gateway in the Currently active tunnels section on the VPN > Settings page on SonicWALL1. When the cable on the default WAN of SonicWALL2 is disconnected, the DPD on SonicWALL1 detects a dead peer and deletes the tunnel. \n  Ping from PC1 initiates IKE negotiation on SonicWALL1. It uses primary IPSec GW first. When the first negotiation is aborted due to timeout, the new IKE negotiation starts and uses secondary IPSec GW. Negotiation completes. The secondary WAN IP address of SonicWALL2, which is resolved from the Domain Name is shown as Gateway in the Currently active tunnels section on the VPN > Settings page on SonicWALL1."
+   },
+   "38" : {
+      "steps" : "  1. Put SonicWALL1 behind a NAT device. \n  2. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  3. Disconnect the cables on both primary and secondary WANs of SonicWALL2. \n  4. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  5. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  6. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  7. Start a continuous ping from PC1 to PC2.",
+      "initial" : "  PC1--X0 SonicWALL1 X1--NAT device-- X1,X2 SonicWALL2 X0-- PC2",
+      "id" : "38",
+      "title" : "Remote site is behind a NAT device. Both primary and secondary gateways are not available.",
+      "result" : "  SonicWALL1 tries the tunnel negotiation with primary gateway and fails. \n  Then it tries tunnel negotiation with secondary gateway and fails. \n  It keeps trying negotiation using primary and secondary gateways in turn until it successfully negotiate IKE and IPSec SAs."
+   },
+   "4" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2.\n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. Enable Keep Alive in the VPN policy on SonicWALL1. The tunnel is established. \n  5. Disconnect the cable on the primary WAN of SonicWALL2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "4",
+      "title" : "Keep Alive on a Remote Firewall",
+      "result" : "  The initial tunnel is established using the primaty gateway. \n  After the cable on the primary WAN of SonicWALL2 has been disconnected, the ping from PC1 gets dropped. SonicWALL1 sends a configured number of DPD requests before the existing tunnel gets deleted. \n  A new IKE negotiation is initiated by Keep Alive on SonicWALL1. It uses the primary IPSec gateway first. After the IKE negotiation has been aborted due a timeout (no reply from a peer), a new IKE negotiation starts and uses the secondary IPSec Gateway address. The new tunnel is established."
+   },
+   "34" : {
+      "steps" : "  1. Put SOnicWALL1 behind a NAT device. \n  2. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  3. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  4. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  5. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  6. When the tunnel is established, disconnect the cable on the primary WAN of SonicWALL2. \n  7. Remote site detects the primary gateway unreachable and starts IKE negotiation with primary gateway again. This fails after 5 retries. Remote site negotiate IKE tunnel with secondary gateway. This negotiation is successful. \n  8. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). \n  9. Let IKE SA lifetime expire.",
+      "initial" : "  PC1--X0 SonicWALL1 X1--NAT device-- X1,X2 SonicWALL2 X0-- PC2",
+      "id" : "34",
+      "title" : "Remote site is behind a NAT device. Switch over upon IKE SA expiry time. Negotiation started by Keep Alive.",
+      "result" : "  SonicWALL1 starts IKE negotiation to the primary gateway and establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway."
+   },
+   "37" : {
+      "steps" : "  1. Put SonicWALL1 behind a NAT device. \n  2. Configure a secondary WAN interface on X2 port of SonicWALL2.\n  3. Disconnect the cable on the primary WAN of SonicWALL2. \n  4. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  5. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  6. In a VPN policy on SonicWALL12, enter 0.0.0.0 in the Primary IPSec Gateway field. \n  7. Make sure that Keep Alive initiates negotiation with primary gateway, and the negotiation fails after five retries. Then SonicWALL1 creates IKE SA and IPsec SA with the secondary gateway. \n  8. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). \n  9. Let IKE SA lifetime expire.",
+      "initial" : "  PC1--X0 SonicWALL1 X1--NAT device-- X1,X2 SonicWALL2 X0-- PC2",
+      "id" : "37",
+      "title" : "Remote site is behind a NAT device. Primary gateway becomes available after SA lifetime expiry. Keep Alive is enabled.",
+      "result" : "  Keep Alive initiates IKE negotiation to the primary gateway and SonicWALL1 establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway."
+   },
+   "19" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Disconnect the cable on the primary WAN of SonicWALL2. \n  3. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  4. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable Keep Alive in the policy. Enable DPD on SonicWALL1. \n  5. In a VPN policy on SonicWALL12, enter X1 IP address of SonicWALL1 in the Primary IPSec Gateway field. \n  6. Make sure that Keep Alive initiates negotiation with primary gateway, and the negotiation fails after five retries. Then SonicWALL1 creates IKE SA and IPsec SA with the secondary gateway. \n  7. On the SonicWALL2, bring X1 interface up (plug-in the cable to the X1 interface). \n  8. Let IKE SA lifetime expire.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "19",
+      "title" : "Non-zero IPSec gateway on a head end. Primary gateway becomes available after SA lifetime expiry. Keep Alive is enabled.",
+      "result" : "  Keep Alive initiates IKE negotiation to the primary gateway and SonicWALL1 establishes IKE SA with primary gateway. \n  SonicWALL1 deletes IPSec tunnels to secondary gateway."
+   },
+   "5" : {
+      "steps" : "  1. Configure a secondary WAN interface on X2 port of SonicWALL2. \n  2. Configure matching IKEv1 VPN policies on SonicWALL1 and SonicWALL2. \n  3. In a VPN policy on SonicWALL1, enter X1 IP address of a peer in the Primary IPSec Gateway field and X2 IP address of the peer in the Secondary IPSec Gateway address field. Enable DPD on SonicWALL1. \n  4. Start a continuous ping from PC1 to PC2. \n  5. Disconnect the cable on the primary WAN of SonicWALL2.\n  6. Disconnect the cable on the secondary WAN of SonicWALL2.",
+      "initial" : "  PC1 --- X0 SonicWALL1 X1 --- X1,X2 SonicWALL2 X0 --- PC2",
+      "id" : "5",
+      "title" : "Primary and Secondary WAN ports are disconnected",
+      "result" : "  The initial tunnel is established between the boxes. The remote gateway for the active tunnel on the VPN>Settings page of SonicWALL1 is the default WAN IP of SonicWALL2. \n  After step5 the DPD on SonicWALL1 detects a dead peer and deletes the tunnel. Ping from PC1 initiates a new IKE negotiation on SonicWALL1. It uses the primary IPSec Gateway address first. When IKE negotiation is aborted due a timeout (no reply from a peer), the new IKE negotiation starts and uses the secondary IPSec Gateway address. When the second attempt to negotiate the tunnel is aborted due to a timeout, the new negotiation is initiated and uses the primary IPSec Gateway address. The IKE negotiation starts over and uses primary and secondary gateways in turn."
+   }
+}

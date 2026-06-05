@@ -1,0 +1,22 @@
+{
+    "ssl_vpn": {
+        "server": {
+            "port": 4433,
+            "certificate": {
+                "use_self_signed": true
+            },
+            "user_domain": "LocalDomain",
+            "management": {
+                "web": false,
+                "ssh": false
+            },
+            "ccp": false,
+            "session_timeout": 10,
+            "inactivity_check": false,
+            "download_url": {
+                "default": true
+            },
+            "use_radius": {}
+        }
+    }
+}

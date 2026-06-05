@@ -1,0 +1,107 @@
+{
+  "11": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2)Create S2S VPN policy on Local FW as following:\nAuthentication Method: Manual Key\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nOn Proposals tab, fill in \"123\" as incoming SPI, and 'abc' as outcomint SPI; fill in Encryption Key and Authentication Key\nProperly configure network and proposals, apply configurations\n   3)Create matching S2S VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_Local_X1\nOn Proposals tab, fill in \"abc\" as incoming SPI, and '123' as outcomint SPI; fill in same Encryption Key and Authentication Key as what you configured in step 1\nConfigure matching network and other proposals options, apply configuration\n   4)Make vpn traffic from Local_Subnet to Remote_VPN_Subnet",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "11",
+    "title": "Function: Initiator behind NAT - Manual Key",
+    "result": "  Traffic should be able to pass between Local_Subnet and Remote_VPN_Subnet."
+  },
+  "17": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Remote_FW_X1 into Translated_Remote_X1; Add a WAN->LAN access rule to allow all traffic from WAN to LAN\n   2)Create S2S VPN policy on Local FW as following:\nAuthentication Method: Manual Key\nIPsec Primary Gateway Name or Address: Translated_Remote_X1\nOn Proposals tab, fill in \"123\" as incoming SPI, and 'abc' as outcomint SPI; fill in Encryption Key and Authentication Key\nProperly configure network and proposals, apply configurations\n   3)Create matching S2S VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Local_FW_X1\nOn Proposals tab, fill in \"abc\" as incoming SPI, and '123' as outcomint SPI; fill in same Encryption Key and Authentication Key as what you configured in step 1\nConfigure matching network and other proposals options, apply configuration\n   4)Make vpn traffic from Local_Subnet to Remote_VPN_Subnet",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "17",
+    "title": "Function: Responder behind NAT - Manual Key",
+    "result": "  Traffic should be able to pass between Local_Subnet and Remote_VPN_Subnet."
+  },
+  "2": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Remote_FW_X1 into Translated_Remote_X1; Add a WAN->LAN access rule to allow all traffic from WAN to LAN\n   2)Create S2S VPN policy on Local FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nLocal IKE ID: 1.1.1.1\nRemote IKE ID: 2.2.2.2\nOn Proposals Tab, select Main as Exchange Mode\nProperly configure network and proposals, apply configurations\n   3)Create matching S2S VPN policy on Remote FW as following:\nIPsec Primary Gateway Name or Address: Translated_Local_X1\nLocal IKE ID: 2.2.2.2\nRemote IKE ID: 1.1.1.1\nConfigure matching network and proposals, apply configuration\n   4)Enable Keep Alive or make vpn traffic to trigger tunnel negotiation.\n   5)check log on Local FW.\n   6)repeat step1 1-5, in step 2, select 'Aggressive Mode' or 'IKEv2' as Exchange Mode",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "2",
+    "title": " Function: Log message (Local IPSec Security Gateway behind a NAT device)",
+    "result": "There should be a log \"Local IPSec Security Gateway behind a NAT device."
+  },
+  "3": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Remote_FW_X1 into Translated_Remote_X1; Add a WAN->LAN access rule to allow all traffic from WAN to LAN\n   2)Create S2S VPN policy on Local FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nLocal IKE ID: 1.1.1.1\nRemote IKE ID: 2.2.2.2\nOn Proposals Tab, select Main as Exchange Mode\nProperly configure network and proposals, apply configurations\n   3)Create matching S2S VPN policy on Remote FW as following:\nIPsec Primary Gateway Name or Address: Translated_Local_X1\nLocal IKE ID: 2.2.2.2\nRemote IKE ID: 1.1.1.1\nConfigure matching network and proposals, apply configuration\n   4)Enable Keep Alive or make vpn traffic to trigger tunnel negotiation.\n   5)check log on Remote FW.\n   6)repeat step1 1-5, in step 2, select 'Aggressive Mode' or 'IKEv2' as Exchange Mode",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "3",
+    "title": " Function: Log message (Local IPSec Security Gateway behind a NAT device)",
+    "result": "There should be a log \"Local IPSec Security Gateway behind a NAT device."
+  },
+  "23": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Remote_FW_X1 into Translated_Remote_X1; Add a WAN->LAN access rule to allow all traffic from WAN to LAN\n   2)Create S2S VPN policy on Local FW as following:\nAuthentication Method: Manual Key\nIPsec Primary Gateway Name or Address: Translated_Remote_X1\nOn Proposals tab, fill in \"123\" as incoming SPI, and 'abc' as outcomint SPI; fill in Encryption Key and Authentication Key\nProperly configure network and proposals, apply configurations\n   3)Create matching S2S VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Local_FW_X1\nOn Proposals tab, fill in \"abc\" as incoming SPI, and '123' as outcomint SPI; fill in same Encryption Key and Authentication Key as what you configured in step 1\nConfigure matching network and other proposals options, apply configuration\n   4)Make vpn traffic from Local_Subnet to Remote_VPN_Subnet",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "23",
+    "title": "Function: Both Initiator and Responder behind NAT - Manual Key",
+    "result": "  Traffic should be able to pass between Local_Subnet and Remote_VPN_Subnet."
+  },
+  "12": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2) Create S2S VPN policy on Local_FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nLocal IKE ID: 1.1.1.1\nRemote IKE ID: 2.2.2.2\nOn Proposals Tab, select Aggressive as Exchange Mode\nProperly configure network and proposals, apply configurations\n   3) Create matching S2S VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_Local_X1\nLocal IKE ID: 2.2.2.2\nRemote IKE ID: 1.1.1.1\nConfigure matching network and proposals, apply configuration\n   4)Enable Keep Alive on Local FW or make vpn traffic from Local_Subnet to Remote_VPN_subnet to trigger tunnel negotiation, tunnel should be able to succeed.\n   5)test vpn traffic",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "12",
+    "title": "Function: Initiator behind NAT - Initiator: Main mode with pershared secret; Responder: Main mode with Preshared secret",
+    "result": "  tunnel should be able to be established and vpn traffic should work fine."
+  },
+  "18": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2) Create S2S VPN policy on Local_FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nLocal IKE ID: 1.1.1.1\nRemote IKE ID: 2.2.2.2\nOn Proposals Tab, select Aggressive as Exchange Mode\nProperly configure network and proposals, apply configurations\n   3) Create matching S2S VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_Local_X1\nLocal IKE ID: 2.2.2.2\nRemote IKE ID: 1.1.1.1\nConfigure matching network and proposals, apply configuration\n   4)Enable Keep Alive on Local FW or make vpn traffic from Local_Subnet to Remote_VPN_subnet to trigger tunnel negotiation, tunnel should be able to succeed.\n   5)test vpn traffic",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "18",
+    "title": "Function: Responder behind NAT - Initiator: Main mode with pershared secret; Responder: Main mode with Preshared secret",
+    "result": "  tunnel should be able to be established and vpn traffic should work fine."
+  },
+  "15": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2) Create S2S VPN policy on Local_FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nLocal IKE ID: 1.1.1.1\nRemote IKE ID: 2.2.2.2\nOn Proposals Tab, select Main as Exchange Mode\nProperly configure network and proposals, apply configurations\n   3) Create matching S2S VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_Local_X1\nLocal IKE ID: 2.2.2.2\nRemote IKE ID: 1.1.1.1\nConfigure matching network and proposals, apply configuration\n   4)Enable Keep Alive on Local FW or make vpn traffic from Local_Subnet to Remote_VPN_subnet to trigger tunnel negotiation, tunnel should be able to succeed.\n   5)test vpn traffic",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "15",
+    "title": " Function: Initiator behind NAT - Initiator: Aggressive mode with Preshared secret; Responder: Aggressive mode with Preshared secret",
+    "result": "  tunnel should be able to be established and vpn traffic should work fine."
+  },
+  "37": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2) Create S2S VPN policy on Local_FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nLocal IKE ID: 1.1.1.1\nRemote IKE ID: 2.2.2.2\nOn Proposals Tab, select IKEv2 as Exchange Mode\nProperly configure network and proposals, apply configurations\n   3) Create matching S2S VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_Local_X1\nLocal IKE ID: 2.2.2.2\nRemote IKE ID: 1.1.1.1\nConfigure matching network and proposals, apply configuration\n   4)Enable Keep Alive on Local FW or make vpn traffic from Local_Subnet to Remote_VPN_subnet to trigger tunnel negotiation, tunnel should be able to succeed.\n   5)test vpn traffic",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "37",
+    "title": " Function: Initiator behind NAT - Initiator: IKEv2 mode with pershared secret; Responder: IKEv2 mode with pershared secret",
+    "result": "  tunnel should be able to be established and vpn traffic should work fine."
+  },
+  "39": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2) Create S2S VPN policy on Local_FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nLocal IKE ID: 1.1.1.1\nRemote IKE ID: 2.2.2.2\nOn Proposals Tab, select IKEv2 as Exchange Mode\nProperly configure network and proposals, apply configurations\n   3) Create matching S2S VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_Local_X1\nLocal IKE ID: 2.2.2.2\nRemote IKE ID: 1.1.1.1\nConfigure matching network and proposals, apply configuration\n   4)Enable Keep Alive on Local FW or make vpn traffic from Local_Subnet to Remote_VPN_subnet to trigger tunnel negotiation, tunnel should be able to succeed.\n   5)test vpn traffic",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "39",
+    "title": " Function: Responder behind NAT - Initiator: IKEv2 mode with pershared secret; Responder: IKEv2 mode with pershared secret",
+    "result": "  tunnel should be able to be established and vpn traffic should work fine."
+  },
+  "42": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2) Create S2S VPN policy on Local_FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nLocal IKE ID: 1.1.1.1\nRemote IKE ID: 2.2.2.2\nOn Proposals Tab, select IKEv2 as Exchange Mode\nProperly configure network and proposals, apply configurations\n   3) Create matching S2S VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_Local_X1\nLocal IKE ID: 2.2.2.2\nRemote IKE ID: 1.1.1.1\nConfigure matching network and proposals, apply configuration\n   4)Enable Keep Alive on Local FW or make vpn traffic from Local_Subnet to Remote_VPN_subnet to trigger tunnel negotiation, tunnel should be able to succeed.\n   5)test vpn traffic",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "42",
+    "title": " Function: Both Initiator and Responder behind NAT - Initiator: IKEv2 with pershared secret; Responder:IKEv2 with Preshared secret",
+    "result": "  tunnel should be able to be established and vpn traffic should work fine."
+  },
+  "49": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2) Create TI (Tunnel Interface) VPN policy named 'test' on Local_FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nOn Proposals tab, select IKEv2 as Exchange, properly configure other options, apply configurations\n   3) Create matching TI VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_FW_X1\n   4) On Local FW, go to Network->Routing, add a static routing policy, select Local_FW_X0_subnet as Source, select Remote_FW_X0_Subnet as Destination, select TI policy 'test' as Interface, enable 'Auto-add Access Rules', apply configuration.\n   5)On Remote FW, configure matching static routing.\n   6)Enable Keep Alive or make vpn traffic to trigger tunnel negotiation",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "49",
+    "title": "  Function: Tunnel Interface - Initiator Behind NAT - Initiator: IKEv2 mode with pershared secret; Responder: IKEv2 mode with Preshared secret",
+    "result": "  After Step5, you should be able to establish VPN tunnel, there should be corresponding log for tunnel negotiation.\n   After Step6, vpn traffic from Local_FW_X0_subnet to Remote_FW_X0_Subnet should be succeed"
+  },
+  "47": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2) Create TI (Tunnel Interface) VPN policy named 'test' on Local_FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nOn Proposals tab, select Main as Exchange, properly configure other options, apply configurations\n   3) Create matching TI VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_FW_X1\n   4) On Local FW, go to Network->Routing, add a static routing policy, select Local_FW_X0_subnet as Source, select Remote_FW_X0_Subnet as Destination, select TI policy 'test' as Interface, enable 'Auto-add Access Rules', apply configuration.\n   5)On Remote FW, configure matching static routing.\n   6)Enable Keep Alive or make vpn traffic to trigger tunnel negotiation",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "47",
+    "title": "  Function: Tunnel Interface - Initiator Behind NAT - Initiator: Main mode with pershared secret; Responder: Main mode with Preshared secret",
+    "result": "  After Step5, you should be able to establish VPN tunnel, there should be corresponding log for tunnel negotiation.\n   After Step6, vpn traffic from Local_FW_X0_subnet to Remote_FW_X0_Subnet should be succeed"
+  },
+  "52": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2) Create TI (Tunnel Interface) VPN policy named 'test' on Local_FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nOn Proposals tab, select IKEv2 as Exchange, properly configure other options, apply configurations\n   3) Create matching TI VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_FW_X1\n   4) On Local FW, go to Network->Routing, add a static routing policy, select Local_FW_X0_subnet as Source, select Remote_FW_X0_Subnet as Destination, select TI policy 'test' as Interface, enable 'Auto-add Access Rules', apply configuration.\n   5)On Remote FW, configure matching static routing.\n   6)Enable Keep Alive or make vpn traffic to trigger tunnel negotiation",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "52",
+    "title": "   Function: Tunnel Interface - Both Behind NAT - Initiator: IKEv2 mode with pershared secret; Responder: IKEv2 mode with Preshared secret",
+    "result": "  After Step5, you should be able to establish VPN tunnel, there should be corresponding log for tunnel negotiation.\n   After Step6, vpn traffic from Local_FW_X0_subnet to Remote_FW_X0_Subnet should be succeed"
+  },
+  "43": {
+    "steps": "  1) On NAT_Device_FW, create a NAT policy and translate Local_FW_X1 into Translated_Local_X1; Add a WAN->LAN access rule to allow traffic from WAN to Translated_Local_X1\n   2) Create TI (Tunnel Interface) VPN policy named 'test' on Local_FW as following:\nAuthentication Method: Preshared Secret\nIPsec Primary Gateway Name or Address: Remote_FW_X1\nOn Proposals tab, select IKEv2 as Exchange, properly configure other options, apply configurations\n   3) Create matching TI VPN policy on Remote_FW as following:\nIPsec Primary Gateway Name or Address: Translated_FW_X1\n   4) Enable Keep Alive on Local FW or make vpn traffic from Local_Subnet to Remote_VPN_subnet to trigger tunnel negotiation, tunnel should be able to succeed.\n   5)test vpn traffic",
+    "initial": "Topology:\n(LAN)---(X0) Local_FW (X1)---(X0) NAT_Device_FW (X1)---(X1) Remote_FW (X0)---(LAN)",
+    "id": "43",
+    "title": " Function: Both Initiator and Responder behind NAT - Initiator: IKEv2 with certificate; Responder:IKEv2 with certificate",
+    "result": "  tunnel should be able to be established and vpn traffic should work fine"
+  }
+}

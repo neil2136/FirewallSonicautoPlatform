@@ -1,0 +1,72 @@
+{
+    "1521051": {
+        "steps": "1. Device \\ Log \\ Settings; <br />2. In Log table, navigate to Network; <br />3. Check the DNS Security row, expend; <br />4. Check the DNS Filtering and DNS Policy entries.",
+        "initial": "",
+        "id": "1521051",
+        "title": "[GUI] Verified the default status of DNS Filtering log settings are correct.",
+        "result": "In step 4, log switches are as following:<br />DNS Filtering - DNS Query Received : Disable <br />DNS Filtering - DNS Response Received : Disable <br />DNS Filtering - DNS Query Matched DNS Cache : Disable <br />DNS Filtering - DNS Packet Allowed : Disable <br />DNS Filtering - DNS Packet Dropped : Enable <br />DNS Filtering Expiration Message : Enable<br /><span>DNS Policy Max Connections Exceeded Drop:Enable<br /><span>DNS Policy Source IP Connection Limit Reached Drop:Enable</span></span>"
+    },
+    "1521052": {
+        "steps": "1. Device \\ Log\\ Settings; <br />2. In Log table, navigate to Network \\ DNS Security; <br />3. Check the DNS Filtering and DNS Policy entries, enable all, accept.",
+        "initial": "",
+        "id": "1521052",
+        "title": "[GUI] Enable the log switches of DNS Filtering.",
+        "result": "Success with no error."
+    },
+    "1521053": {
+        "steps": "1. Device \\ Log \\ Settings; <br />2. In Log table, navigate toNetwork \\ DNS Security; <br />3. Check the DNS Filtering and DNS Policy entries, disable all, accept.",
+        "initial": "",
+        "id": "1521053",
+        "title": "[GUI] Disable the log switches of DNS Filtering.",
+        "result": "Success with no error."
+    },
+    "1521158": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From multiple clients in X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Domain tab, select All Domains and All Categories, check the page;\n4. Repeat step2, click Refresh icon;\n5. To Host tab, repeat step 4;\n6. To Statistic tab, repeat step 4.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521158",
+        "title": "[GUI] Verify Refresh button works well on Statistic, Domain and Host pages.",
+        "result": "In step 4-6, the data on the pages updates with the traffic."
+    },
+    "1521169": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Database tab, click Export Database button.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521169",
+        "title": "[GUI] Verify the Export Database button works well.",
+        "result": "The Database can be exported successfully."
+    },
+    "1521170": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. From CLI, enter configure mode;\n4. Input:<br /># export dns-filter-db csv ftp ftp://user:password@servername/dns-filter-db.csv <br /># export dns-filter-db csv user@server:/home/user/dns-filter-db.csv <br /># export dns-filter-db csv scp user@server:/home/user/",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521170",
+        "title": "[CLI] Verify the CLI Commends to export the database.",
+        "result": "The Database can be exported successfully."
+    },
+    "1521171": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. Device \\ Log \\ Settings, set Logging level to debug, click edit, set Display Events in Log Monitor to 0 seconds, accept;\n3. From X0, send DNS traffic through the DUT (over Memory Storage Size);\n4. Policy \\ DNS Security \\ Reports \\ Database tab, check External Storage Status;\n5. Monitor \\ System Logs, check the logs.",
+        "initial": "*Nssp not support<br />*External Storage should be available\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521171",
+        "title": "[FUNC] Verify the Data can be backed up automatically to External Storage when reach the Memory Storage Size.",
+        "result": "In step 4, the status changes;\nIn step 5, a log with id 1696 displays."
+    },
+    "1521172": {
+        "steps": "1. Policy \\ DNS Security \\ Reports, make sure some data in Memory storage;\n2. Reboot the DUT;\n3. Check the Database in Domain and Host page.",
+        "initial": "*Nssp not support",
+        "id": "1521172",
+        "title": "[FUNC] Verify the Database in Memory Storage will be cleared after rebooting.",
+        "result": "The data in step 1 is cleared."
+    },
+    "2045124": {
+        "steps": "1.Device \\ Log \\ Settings, set Logging level to Inform, click edit, set Display Events in Log Monitor to 0 seconds, accept;\r\n2.Device \\ Log \\ Settings \\Network \\ DNS Security, enable all the DNS Filtering entries, accept;\r\n3.Rules and Policies \\ DNS Rules, enable a DNS Policy : Name-Test, Action-Filter, Profile-Default Profile, Interface-X0;\r\n4.PC connected to X0, set dns server as X0 IP, do dig adultswim.com;\r\n5.Check System logs.",
+        "initial": "PC---(X0)DUT(X1)---WAN\r\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "2045124",
+        "title": "[Log][FUNC] Verify Matched DNS policy displays in DNS Filtering log details",
+        "result": "In step 5,  'Match policy: Test' is displayed in log\r\n'DNS Filtering - DNS Packet Negatively Replied' Notes.\r\n\r\nRefer to GEN7-43836"
+    },
+    "1997288": {
+        "steps": "Add a DNS filtering policy. Then check the Audit logs, check the Group name of the related logs ",
+        "initial": "",
+        "id": "1997288",
+        "title": "[GEN7-41496]Check audit log after add/edit/deleted the DNS Filtering policy, it should display 'Group Name' for DNS filtering",
+        "result": " It should display the correct info in the audit logs page."
+    }
+}

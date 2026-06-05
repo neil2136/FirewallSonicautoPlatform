@@ -1,0 +1,119 @@
+{
+  "23": {
+    "steps": " 1.Click the edit icon of a NM policy;\n2.On the pop-up window, do some change for probe target, name, probe type etc.\n3.Click the ok button.\n\n",
+    "atm_id": "FE14A4BA-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": " 1)Enable DHCP Server.\n2)In the DHCP options page add a DHCP option object. ",
+    "id": "1",
+    "title": " Button functionality - Edit a NM policy.",
+    "description": "This case is to verify a NM policy can be edited.",
+    "result": " The policy should update with the new info, and a message should be displayed in the status bar like: The configuration has been updated. Also the pseudo-LED should turn yellow at first. "
+  },
+  "38": {
+    "steps": "1.Start packet capture on the firewall;\n2.Click the add button on the Network Monitor Policies page;\n3.On the pop up window, enter a policy name say Ping Probe;\n4.Select Ping(ICMP) as the probe type;\n5.Create a reachable host as the probe target, leave other fields as default;\n6.Click the ok button; verify the policy is added with Yellow pseudo-LED.\n7.Wait about 30 seconds or less, verify the led turns green;\n8.Disconnect the egress interface, wait for about 30 seconds, verify the led turns red.",
+    "atm_id": "FE31C54A-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": " DUT(x0) ------ probe target ",
+    "id": "38",
+    "title": "  Probe type - Ping.",
+    "description": "Ping probe will use the route table to find the egress interface and next-hop for the defined probe targets. A ping echo-request will be sent out with the source IP of the egress interface. An echo response must return on the same interface within the response timeout limit. Otherwise, a missed probe is counted.",
+    "result": " There should be an echo ping request sent out from the egress interface every 5 seconds, and every request sends out, the count of probes send will increase;\nWhen the host is reachable, there should be same reply return on the egress interface,   and every reply receives, the count of Responses received will increase; After three intervals, Led should turn green and the target status change to Up;\nWhen the host is unreachable, only the count of probes send will increase every 5 seconds, Led should turn red and the target status change to Down.\n\nContains 1925 sections and 35653 cases. "
+  },
+  "39": {
+    "steps": "1.Start packet capture on the firewall;\n2.Click the add button on the Network Monitor Policies page;\n3.On the pop up window, enter a policy name say TCP Probe;\n4.Create a reachable host as the probe target;\n5.Select TCP as the probe type, enter a port number;\n6.Leave other fields as default, then click the ok button;\n7.Wait about 30 seconds or less, verify the led turns green;\n8.Disconnect the egress interface,\n9.Wait for several seconds, verify the led turns red.\n\n",
+    "atm_id": "FE353CC0-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": " DUT(x0) ------ probe target ",
+    "id": "39",
+    "title": " Probe type - TCP.",
+    "description": "TCP probe uses the route table to find the egress interface and next-hop for the probe targets. A TCP/SYN packet will be sent to the target with a source IP of the egress interface. A successful response will be counted for each probe target when the target responds with either a SYN/ACK or RST via the same interface within the reply timeout limit. Otherwise, a missed probe is counted.",
+    "result": " Firewall will send the TCP/SYN packet every 5 seconds, and probes send will increase every packet sends out, when target replies either a SYN/ACK or RST, the Responses received count will increase.\nWhen the host is unreachable, only the count of probes send will increase every 5 seconds, Led should turn red and the target status change to Down.\n\n "
+  },
+  "40": {
+    "steps": "1.Start packet capture on the firewall;\n2.Click the add button on the Network Monitor Policies page;\n3.On the pop up window, enter a policy name say ping explicit;\n4.Select a host behind the router as the probe target;\n5.Select Ping-explicit as the probe type;\n6.Select interface x0 as the outbound interface;\n7.Create an address object of the routers interface 0/1 as the next hop gateway;\n8.Leave other fields as default, then click the ok button;\n9.Wait about 30 seconds or less, verify the led turns green;\n10.Change the next hop gateway, select Select an address object and click OK. Wait for several seconds, verify the led turns red.\n\n",
+    "atm_id": "FE3C4326-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": " DUT(x0) ------ (fa0/1) router (fa0/0) ------ probe target ",
+    "id": "40",
+    "title": "Probe type - Ping-Explicit Route. ",
+    "description": "Ping-Explicit probe bypass the route table, and uses the user-defined Interface and Gateway (optional) to send a ping echo-request. If no gateway is chosen, its assumed that the probe targets are directly connected on the defined Interfaces network.",
+    "result": " There should be an echo ping request sent out from x0 interface every 5 seconds, and the count of probes send will increase every request sends out;\nWhen the target is reachable, there should be same reply return on the egress interface,   and every reply receives, the count of Responses received will increase; After three intervals, Led should turn green and the target status change to Up;\nTarget will become unreachable when no gateway is chosen. Then led should turn red and the target status change to Down. "
+  },
+  "41": {
+    "steps": "1.Start packet capture on the firewall;\n2.Click the add button on the Network Monitor Policies page;\n3.On the pop up window, enter a policy name say TCP explicit;\n4.Select a host behind the router as the probe target;\n5.Select TCP-explicit as the probe type and enter a port number;\n6.Select interface x0 as the outbound interface;\n7.Create an address object of the routers interface 0/1 as the next hop gateway;\n8.Leave other fields as default, then click the ok button;\n9.Wait about 30 seconds or less, verify the led turns green;\n10.Change the next hop gateway, select Select an address object and click OK. 11.Wait for several seconds, verify the led turns red.\n\n",
+    "atm_id": "FE4088E6-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": " DUT(x0) ------ (fa0/1) router (fa0/0) ------ probe target ",
+    "id": "41",
+    "title": "  Probe type- TCP-Explicit Route.",
+    "description": "This probe bypasses the route table and uses the user-defined Interface and gateway to send a TCP/SYN packet to the destination with the source ip of the egress interface. If no gateway is chosen, its assumed that the probe targets are directly connected on the defined interfaces network.",
+    "result": " Firewall will send the TCP/SYN packet every 5 seconds, and probes send will increase every packet sends out, when target replies either a SYN/ACK or RST, the Responses received count will increase.\nWhen the host is unreachable, only the count of probes send will increase every 5 seconds, Led should turn red and the target status change to Down.\n\nContains 1925 sections and 35653 cases. "
+  },
+  "42": {
+    "steps": "1.Add a reachable address object of host type name hostAO;\n2.Click the add button on Network Monitor Policies page;\n3.Enter a policy name like hostProbe;\n4.Expand the probe target dropdown list, select the hostAO,\n5.Select a probe type and do corresponding configuration, then click the ok button;\n6.Wait for several seconds, check the policy status;\nDisconnect the egress interface, wait several seconds and check the policy status.\n",
+    "atm_id": "FE4380A0-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": " n/a",
+    "id": "42",
+    "title": " Functional test for probe target of Host type.",
+    "description": "This case is to verify Host object can be probed successfully.\n\n",
+    "result": " Policy status should be up after three successful intervals, and will change to down after three missed intervals when egress interface disconnected.\nMouse over of the policy status should show the probe statistics and the status of the host target: up or down.\n\n "
+  },
+  "43": {
+    "steps": "1.Add an address object of Range type name RangeAO;\n2.Click the add button on Network Monitor Policies page, enter a policy name like rangeProbe;\n\nSelect RangeAO as the probe target;\nSelect a probe type and do corresponding configuration, then click the ok button;\nWait for several seconds, check the policy status;\nDisconnect the egress interface, wait several seconds and check the policy status.\n",
+    "atm_id": "FE46922C-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": " n/a ",
+    "id": "43",
+    "title": "Functional test for probe target of Range type. ",
+    "description": "This case is to verify Range object can be probed successfully.\n\n",
+    "result": " Policy status should be up if one of the host within the range is up. And will change to down when all the hosts status are down.\nMouse over of the policy status should show the probe statistics and the status of all the host targets within the RangeAO. "
+  },
+  "44": {
+    "steps": "1.Add an address object of FQDN type, enter a domain name baidu.com;\n2.Make sure firewall can access Internet correctly, verify baidu.com can be resolved to correct ip addresses;\n3.Click the add button on Network Monitor Policies page, enter a policy name like fqdnProbe;\n\nSelect the FQDN probe target;\nSelect TCP as the probe type, enter a port number 80, and then click the ok button;\nCheck the packets and log, verify all the resolved ip address are probed.\n",
+    "atm_id": "FE49700A-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": " n/a ",
+    "id": "44",
+    "title": "Functional test for probe target of FQDN type.",
+    "description": "This case is to verify FQDN object can be probed successfully.\n\n",
+    "result": "All resolved ip address of the FQDN can be probed successfully. "
+  },
+  "57": {
+    "steps": "1.From Network->Route Policies add a route with any connected egress interface;\n\nExpand the dropdown list of Network Monitor probe, select Create new network monitor object;\n3.On the pop-up window, add a new NM policy.\n\n",
+    "atm_id": "FE7163F8-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": " n/a ",
+    "id": "57",
+    "title": "Create a new monitor policy from the add route dialog. ",
+    "description": "This case is to verify monitor policy can be added through the add route dialog.",
+    "result": "The NM policy can be added successfully and selected as the probe policy of the route. "
+  },
+  "64": {
+    "steps": "1.Configure some NM policies including custom ones and NAT probe policies;\n2.Verify the custom policies and NAT probe policies work well;\n3.Add some probe enabled route and verify the route policies work well to pass traffic;\n4.Export the preference file;\n5.Restore firewall to factory default settings;\n6.Import the preference file;\n7.Verify all the NM policies and probe bases route are intact;\n8.Verify the NM policies work well;\n9.Verify the route policies work well.",
+    "atm_id": "FE7A887A-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": "n/a ",
+    "id": "64",
+    "title": "Preference export& import support test. ",
+    "description": "This case is to verify all the NM policies and probe based route should be intact and work well after importing the preference.\n\n",
+    "result": " All the NM policies and probe based route should be intact and work well after importing the preference.\n\nContains 1925 sections and 35653 cases. "
+  },
+  "72": {
+    "steps": "1.Add several NM policies; 2.Add some static route with probe policies selected; 3.On CLI, type the command: show tsr network,verify all the NM policies are displayed; 4.Type the command:show route,verify the pepbr can be displayed correctly.\n\nNote: in step3, command is \"<span>show tech-support-report network-monitor</span>\" in 7.1.0, otherwise, it should be \"<span>show network-monitor policies</span>\". \"show tsr network\" can't be work.",
+    "atm_id": "FE8B6118-0F21-11ED-ABEE-161CDBB47B89",
+    "initial": " Connect DUT to a Console output like SecureCRT. ",
+    "id": "72",
+    "title": " CLI support for NM policies configuration.",
+    "description": "This case is to verify PEPBR info can be viewed or configured on CLI. Currently, it hasn't been exploited to configure NM policy or PEPBR on CLI but these info can be viewed on CLI.",
+    "result": "NM policies and PEPBR info can be viewed from CLI.  "
+  },
+  "73": {
+    "steps": "1.Set up VPN numbered TI between DUT and a peer firewall\n2.In DUT to add a PBR, destination to peer firewall LAN subnet (e.g. X0 subnet), interface is VPN TI.\n3.In DUT to add a NM policy, probe target is a host in peer firewall LAN subnet, outbound interface select the VPN TI, probe type ping\n4.Check the NM probe status\n5.Repeat step 3-4 to cover the range, AO Group type probe target\n6.Repeat step 3-4 to cover the other probe types: ping explicit route, TCP, TCP explicit route",
+    "atm_id": "AC5563F2-0F40-11ED-B6A0-C31DDBB47B89",
+    "initial": " DUT------ VPN Numbered TI ----- Firewall ---- LAN hosts ",
+    "id": "73",
+    "title": "Verify the newtwork monitor funciton over VPN numbered TI\nOriginal Description: ",
+    "description": "",
+    "result": " In step3, the NM policy could be created successfully.\nIn Step4,5,6 probe status led show UP, put mouse over it show probe successfully. "
+  },
+  "74": {
+    "steps": "1.Set up VPN unnumbered TI between DUT and a peer firewall\n2.In DUT add PBR, destionation to peer firewall LAN subnet (e.g. X0 subnet), interface is VPN unnumbered TI. In peer firewall need add the similar PBR (destination to DUT X0).\n3.In DUT to add a NM policy, probe target is a host in peer firewall LAN, outbound interface select the VPN unnumbered TI, probe type ping, local IP address use X0 IP\n4.Check the NM probe status\n5.Repeat step 3-4 to cover the range, AO Group type probe target\n6.Repeat step 3-4 to cover the other probe types: ping explicit route, TCP, TCP explicit route\n",
+    "atm_id": "05F52860-0F42-11ED-8556-441DDBB47B89",
+    "initial": "(X0) DUT------ VPN Unnumbered TI ----- Firewall ---- LAN hosts",
+    "id": "74",
+    "title": "  Verify the newtwork monitor funciton over VPN unnumbered TI",
+    "description": "",
+    "result": " In step3, the NM policy could be created successfully.\nIn Step4,5,6 probe status led show UP, put mouse over it show probe successfully. "
+  }
+}

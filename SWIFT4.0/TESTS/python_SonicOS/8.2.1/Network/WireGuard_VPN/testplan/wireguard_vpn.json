@@ -1,0 +1,58 @@
+{
+    "4": {
+        "steps": "",
+        "initial": "",
+        "id": "4",
+        "title": "(GUI)WG0 interface IP address can be edited",
+        "result": ""
+    },
+    "22": {
+        "steps": "",
+        "initial": "",
+        "id": "22",
+        "title": "(GUI)WireGuard Global settings: Enable/Disable wireguard",
+        "result": ""
+    },
+    "31": {
+        "steps": "capital & lower-case letter,number, \n\n_ = + . - are allowed.\n\nFollowings are not allowed:\n\n\"CON\", \"PRN\", \"AUX\", \"NUL\",\n\"COM1\", \"COM2\", \"COM3\", \"COM4\", \"COM5\", \"COM6\", \"COM7\", \"COM8\", \"COM9\",\n\"LPT1\", \"LPT2\", \"LPT3\", \"LPT4\", \"LPT5\", \"LPT6\", \"LPT7\", \"LPT8\", \"LPT9\"\n\nBlank space is not allowed",
+        "initial": "",
+        "id": "31",
+        "title": "(GUI)WireGuard peer configure: Add(check valid name)",
+        "result": ""
+    },
+    "41": {
+        "steps": "",
+        "initial": "",
+        "id": "41",
+        "title": "(GUI)WireGuard peer configure: Export Peer Configuration",
+        "result": ""
+    },
+    "52": {
+        "steps": "",
+        "initial": "",
+        "id": "52",
+        "title": "(Fun)Wireguard allow peer access: any address\n\n(Fun)verify any traffic can be passed through wireguard tunnel after connected",
+        "result": ""
+    },
+    "53": {
+        "steps": "",
+        "initial": "",
+        "id": "53",
+        "title": "(Fun)Wireguard allow peer access: customer-added address:\n\nverify traffic only can be passed to cusomer-added network AO/AO group through wireguard tunnel after connected",
+        "result": ""
+    },
+    "59": {
+        "steps": "",
+        "initial": "",
+        "id": "59",
+        "title": "(Fun)Restart FW, check wireguard configuration is not intacted",
+        "result": ""
+    },
+    "60": {
+        "steps": "",
+        "initial": "",
+        "id": "60",
+        "title": "(Fun)Restart FW, check wireguard can be reconnected by wg client",
+        "result": ""
+    }
+}

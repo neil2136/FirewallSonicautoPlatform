@@ -1,0 +1,128 @@
+{
+  "1523866": {
+    "steps": "",
+    "initial": "",
+    "id": "1523866",
+    "title": "[GUI][Gre4to6][1]Check for tunnel6 interface, make sure all the items display correctly/ function work",
+    "result": ""
+  },
+  "1523867": {
+    "steps": "",
+    "initial": "",
+    "id": "1523867",
+    "title": "[GUI][Gre4to6][3.2]it can add/modify/delete the comment when you add a Gre4to6 tunnel interface",
+    "result": ""
+  },
+  "1523868": {
+    "steps": "",
+    "initial": "",
+    "id": "1523868",
+    "title": "[GUI][Gre4to6][3.10]when I add the Gre4to6 interface,The bound to interface is editable except for change it to be non-wan zone.",
+    "result": ""
+  },
+  "1523876": {
+    "steps": "",
+    "initial": "",
+    "id": "1523876",
+    "title": "[CLI][Gre4to6]the command \"type\" can work normally",
+    "result": ""
+  },
+  "1523877": {
+    "steps": "",
+    "initial": "",
+    "id": "1523877",
+    "title": "[CLI][Gre4to6]it can edit the Gre4to6 interface successful",
+    "result": ""
+  },
+  "1523878": {
+    "steps": "",
+    "initial": "",
+    "id": "1523878",
+    "title": "[CLI][Gre4to6] it can show correct information after  we add a Gre4to6 interface",
+    "result": ""
+  },
+  "1523879": {
+    "steps": "",
+    "initial": "",
+    "id": "1523879",
+    "title": "[CLI][Gre4to6]it should use command-- show tunnel-interfaces 4to6 to show all the 4to6 interfaces",
+    "result": ""
+  },
+  "2682747": {
+    "steps": "",
+    "initial": "",
+    "id": "2682747",
+    "title": "[GUI][Gre4to6][2.1]it can add a GRE4to6 tunnel interface successful on the GUI",
+    "result": ""
+  },
+  "2682748": {
+    "steps": "",
+    "initial": "",
+    "id": "2682748",
+    "title": "[GUI][Gre4to6][2.2]it can delete a GRE4to6 tunnel after we added a GRE4to6 interface",
+    "result": ""
+  },
+  "2682750": {
+    "steps": "",
+    "initial": "",
+    "id": "2682750",
+    "title": "[CLI][Gre4to6]it can delete the Gre4to6 interface successful",
+    "result": ""
+  },
+  "1523869": {
+    "steps": "",
+    "initial": "",
+    "id": "1523869",
+    "title": "[Function][Gre4to6][4.1]When it receives IPv4 traffic, it will put it into GRE4to6 tunnel. The IPv4 traffic will directly encapsulated into tunnel without NATed.",
+    "result": ""
+  },
+  "1523870": {
+    "steps": "",
+    "initial": "",
+    "id": "1523870",
+    "title": "[Function][Gre4to6][4.8.0] they can work normally if we add multiple softwire who bound to same wan interface.",
+    "result": ""
+  },
+  "1523871": {
+    "steps": "",
+    "initial": "",
+    "id": "1523871",
+    "title": " [Function][Gre4to6][4.8.3] when we add a Gre4to6 interface, export the pref file, then import the pref file ,the configuration can't lost",
+    "result": ""
+  },
+  "1523872": {
+    "steps": "",
+    "initial": "",
+    "id": "1523872",
+    "title": "[Function][Gre4to6][4.8.11] when we add a Gre4to6 interface, the configuraiton can't lost after we reboot the box",
+    "result": ""
+  },
+  "1523873": {
+    "steps": "",
+    "initial": "",
+    "id": "1523873",
+    "title": "[Function][Gre4to6][4.9.1]  After we add a Gre4to6 interface, if we change the bould interface it can work normally",
+    "result": ""
+  },
+  "1523874": {
+    "steps": "",
+    "initial": "",
+    "id": "1523874",
+    "title": "[Function][Gre4to6][4.9.7]  After we add a Gre4to6 interface, if we change the bound to interface as L2Bridge mode, it can work normally",
+    "result": ""
+  },
+  "1523875": {
+    "steps": "",
+    "initial": "",
+    "id": "1523875",
+    "title": "[Function][Gre4to6][5.1.4]  After we add a Gre4to6 interface, when I run ipv4 traffic from lan to customer zone, it can work normally",
+    "result": ""
+  },
+  "2682749": {
+    "steps": "",
+    "initial": "",
+    "id": "2682749",
+    "title": "[Function][Gre4to6][4.9]  After we add a Gre4to6 interface, if we change some option it can work normally",
+    "result": ""
+  }
+}

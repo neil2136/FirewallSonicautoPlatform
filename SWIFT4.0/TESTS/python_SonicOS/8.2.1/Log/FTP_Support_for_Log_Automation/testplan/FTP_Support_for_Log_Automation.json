@@ -1,0 +1,512 @@
+{
+   "1513060" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Go to Log-&gt;Automation, Enable \"E-mail Log Automation\", All configurations are correct\n  4.Trigger DUT to send FTP and E-mail log automation to server.\n  5.Make file format and schedule configuration of&#160;&#160; \"Send Log to FTP\" and \"E-mail Log Automation\"&#160; same and trigger them to send logs to Server",
+      "priority" : "Full_Regression",
+      "atm_id" : "f62af932-f87d-4303-8203-bc9335e9a91f",
+      "initial" : "  TBD",
+      "id" : "1513060",
+      "title" : "Enable FTP and Email Log Automation with different format and schedule",
+      "description" : "Original ID: Integrity-007\nOriginal Title: Enable FTP and Email Log Automation with different format and schedule\nOriginal Description:",
+      "result" : "  The two logs are the same and receive at the same time"
+   },
+   "1513040" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Go to Log-&gt;Setting to disable \"Display Events in Log Monitor\" on certain categories\n  4.Trigger DUT to send log automation to server.",
+      "priority" : "Full_Regression",
+      "atm_id" : "c5a62a18-628d-47a8-be79-ec3b5effc419",
+      "initial" : "  TBD",
+      "id" : "1513040",
+      "title" : "Disable \"Display Events in Log Monitor\" on cetain categories(eg.Network;VPN) and enable FTP Log Automation",
+      "description" : "Original ID: Function-018\nOriginal Title: Disable \"Display Events in Log Monitor\" on cetain categories(eg.Network;VPN) and enable FTP Log Automation\nOriginal Description:",
+      "result" : "  Except the disabled categories log, other logs should be sent to FTP Server."
+   },
+   "1513066" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Startup FTP on Server. But disable \"Upload\" permission\n  4. Enable packet monitor and trigger DUT to send log automation to server. 5. Check packets captured and FTP Server",
+      "priority" : "Full_Regression",
+      "atm_id" : "1eaa0a69-886e-46f0-a75e-1d9e0e07ebb2",
+      "initial" : "  TBD",
+      "id" : "1513066",
+      "title" : "Set Server address reachable and FTP service accessible, but without writing permission. Trigger SonicOS to send log, capture packets and check the log on FTP server.",
+      "description" : "Original ID: Negative-003\nOriginal Title: Set Server address reachable and FTP service accessible, but without writing permission. Trigger SonicOS to send log, capture packets and check the log on FTP server.\nOriginal Description:",
+      "result" : "  Setup FTP connection successfully. But fail to upload log onto FTP Server"
+   },
+   "1513028" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select file format to be Plain and other configurations are correct\n  3.Trigger DUT to send log automation to server.",
+      "priority" : "Smoke",
+      "atm_id" : "fc86bc8a-c66a-427b-bc52-238ab48a44f0",
+      "initial" : "  TBD",
+      "id" : "1513028",
+      "title" : "Set file format to be Plain Text, Trigger SonicOS to send log . Check log format on FTP Server",
+      "description" : "Original ID: Function-006\nOriginal Title: Set file format to be Plain Text, Trigger SonicOS to send log . Check log format on FTP Server\nOriginal Description:",
+      "result" : "  The received log format on server is Plain Text"
+   },
+   "1513044" : {
+      "steps" : "  https://track.eng.sonicwall.com/browse/GEN7-34270\n  1.Setup a test bed as follow: PC----DUT----FTP Server 2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct.\n  3. On server, set ftp root directory, and a child folder under root directory. such as root dir is /var/www/html , child folder is /var/www/html/temp.\n  4.On FW, set FTP log automation directory is / , or temp. 4. Enable packet monitor and trigger DUT to send log automation to server.",
+      "priority" : "Smoke",
+      "atm_id" : "99135366-187E-11ED-BC24-35E0DBB47B89",
+      "initial" : "  TBD",
+      "id" : "1513044",
+      "title" : "Verify corresponding FTP log automation directory can be received log .",
+      "description" : "Original ID: Function-022\nOriginal Title: Verify corresponding FTP log automation directory can be received log .\nOriginal Description:",
+      "result" : "  Log can be received in root folder or child folder."
+   },
+   "1513029" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select file format to be HTML and other configurations are correct\n  3.Trigger DUT to send log automation to server.",
+      "priority" : "Smoke",
+      "atm_id" : "6508bdba-c04a-4806-b75c-cec3970f1ce6",
+      "initial" : "  TBD",
+      "id" : "1513029",
+      "title" : "Set file format to be HTML, trigger SonicOS to send log . Check log format on FTP Server",
+      "description" : "Original ID: Function-007\nOriginal Title: Set file format to be HTML, trigger SonicOS to send log . Check log format on FTP Server\nOriginal Description:",
+      "result" : "  The received log format on server is HTML"
+   },
+   "1513024" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server.",
+      "priority" : "Smoke",
+      "atm_id" : "79915760-1d27-4f06-bf6e-8888fa4ec920",
+      "initial" : "  TBD",
+      "id" : "1513024",
+      "title" : "Enable FTP Log Automation, Set correct paratmeter, Then trigger SonicOS to send log to FTP Server.  Check log information",
+      "description" : "Original ID: Function-002\nOriginal Title: Enable FTP Log Automation, Set correct paratmeter, Then trigger SonicOS to send log to FTP Server.  Check log information\nOriginal Description:",
+      "result" : "  In the captured packets, FTP connection is established. Log with correct file name will be saved in correct dirctory on server and\n  inforamtion is correct"
+   },
+   "1513065" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Don't startup FTP on Server\n  4. Enable packet monitor and trigger DUT to send log automation to server. 5. Check packets captured and FTP Server",
+      "priority" : "Sanity",
+      "atm_id" : "4b0f2801-908a-4c9f-97b2-6daf5aca8c42",
+      "initial" : "  TBD",
+      "id" : "1513065",
+      "title" : "Set Server address reachable but FTP service not accessible (FTP port 20/21 closed), Trigger SonicOS to send  log, capture packets and check the log on FTP server.",
+      "description" : "Original ID: Negative-002\nOriginal Title: Set Server address reachable but FTP service not accessible (FTP port 20/21 closed), Trigger SonicOS to send  log, capture packets and check the log on FTP server.\nOriginal Description:",
+      "result" : "  DUT sends FTP packet to Server but not receive response. DUT won't be affected by wrong settings"
+   },
+   "1513045" : {
+      "steps" : "  1.Connect PC to DUT\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\" and check it.\n  3. Restart DUT and check the status\n  4.Disable \"Send Log to FTP\" and check it.\n  5.Restart DUT again and check the status",
+      "priority" : "Smoke",
+      "atm_id" : "a063ec89-2f6d-400b-b35a-5a4b0caf811a",
+      "initial" : "  TBD",
+      "id" : "1513045",
+      "title" : "Enable/Disable \"Send Log to FTP\"",
+      "description" : "Original ID: GUI-001\nOriginal Title: Enable/Disable \"Send Log to FTP\"\nOriginal Description:",
+      "result" : "  When \"FTP Log Automation is enabled, All stuffs are available. When it is disabled, All stuffs are dim. Restart can intact configuration."
+   },
+   "1513023" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Restore default DUT\n  3.Go to Log-&gt;Automation, Check default setting on \"FTP Log Automation\"",
+      "priority" : "Sanity",
+      "atm_id" : "96d6dab9-9c43-4f00-8190-dc8c52b7ef6b",
+      "initial" : "  TBD",
+      "id" : "1513023",
+      "title" : "Check default setting",
+      "description" : "Original ID: Function-001\nOriginal Title: Check default setting\nOriginal Description:",
+      "result" : "  FTP Log Automation is disable,"
+   },
+   "1513063" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select \"Full\"&#160; and other configurations are correct\n  3. Create massive traffic and leave test bed about 7 days",
+      "priority" : "Smoke",
+      "atm_id" : "5a703fae-82bd-4c04-95de-53065baca354",
+      "initial" : "  TBD",
+      "id" : "1513063",
+      "title" : "Long testing in full mode about 7 days with High traffic",
+      "description" : "Original ID: Longevity-003\nOriginal Title: Long testing in full mode about 7 days with High traffic\nOriginal Description:",
+      "result" : "  SonicOS won't crash, Log is sent to Server once cache is full"
+   },
+   "1513036" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----VPN---Partner----FTP Server\n  2.Establish VPN connection between DUT and Partner\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3. Trigger DUT to send log automation to server.",
+      "priority" : "Smoke",
+      "atm_id" : "eb230a80-fabc-4baf-917e-755c9892949e",
+      "initial" : "  TBD",
+      "id" : "1513036",
+      "title" : "FTP Log Automation works in VPN Enviroments",
+      "description" : "Original ID: Function-014\nOriginal Title: FTP Log Automation works in VPN Enviroments\nOriginal Description:",
+      "result" : "  FTP Server can receive log"
+   },
+   "1513047" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", set correct Username and other configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server. 4. Check packets captured. DUT can establish FTP connection with Server successfully and server can receive log\n  5.Try to input incorrect value into Username(For example : Try to input beyond 21 numbers)",
+      "priority" : "Sanity",
+      "atm_id" : "b3e5d47b-f40b-4952-854b-eb048d4c230b",
+      "initial" : "  TBD",
+      "id" : "1513047",
+      "title" : "Input correct/incorrect value into Username",
+      "description" : "Original ID: GUI-003\nOriginal Title: Input correct/incorrect value into Username\nOriginal Description:",
+      "result" : "  Correct value will be accepted and server can receive logs\n  Incorrect value can't be input"
+   },
+   "1513056" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Make FTP Server in PORT Model\n  4. Enable packet monitor and trigger DUT to send log automation to server.",
+      "priority" : "Smoke",
+      "atm_id" : "d92b1bb9-3d06-4c37-9b3e-d89ef5a8d08a",
+      "initial" : "  TBD",
+      "id" : "1513056",
+      "title" : "When FTP Server is in PORT Model",
+      "description" : "Original ID: Integrity-003\nOriginal Title: When FTP Server is in PORT Model\nOriginal Description:",
+      "result" : "  In captured packets, FTP connection is established. Log will be saved in correct dirctory on server and\n  inforamtion is correct"
+   },
+   "1513068" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", set wrong Username and other configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server. 4. Check packets captured",
+      "priority" : "Smoke",
+      "atm_id" : "99fcbf4c-03fe-4d0c-ad52-46935cbcec48",
+      "initial" : "  TBD",
+      "id" : "1513068",
+      "title" : "Input wrong Username, trigger SonicOS to send log, capture packets and check the log on FTP server",
+      "description" : "Original ID: Negative-005\nOriginal Title: Input wrong Username, trigger SonicOS to send log, capture packets and check the log on FTP server\nOriginal Description:",
+      "result" : "  SonicOS send log with wrong username and the connection with FTP Server is rejected"
+   },
+   "1513031" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\",Enable \"Include All Log Information\" and other configurations are correct\n  3.Trigger DUT to send log automation to server. 4.Check logs on FTP Serve",
+      "priority" : "Sanity",
+      "atm_id" : "5864c54c-37c6-43b4-8cae-eaa59087fbc2",
+      "initial" : "  TBD",
+      "id" : "1513031",
+      "title" : "Enable Include All Log Information and trigger SonicOS to send log. Check log on FTP server",
+      "description" : "Original ID: Function-009\nOriginal Title: Enable Include All Log Information and trigger SonicOS to send log. Check log on FTP server\nOriginal Description:",
+      "result" : "  DUT sends detailed log to FTP Server"
+   },
+   "1513033" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Restore default DUT\n  3.Go to Log-&gt;Automation, Enable \"FTP Log Automation\" and All configurations are correct\n  4.Go to System-&gt;Diagnostics and export TSR file",
+      "priority" : "Smoke",
+      "atm_id" : "931d0061-4602-45a3-a002-d6dcfa2aefbe",
+      "initial" : "  TBD",
+      "id" : "1513033",
+      "title" : "Modify the default setting and save. Export TSR to check",
+      "description" : "Original ID: Function-011\nOriginal Title: Modify the default setting and save. Export TSR to check\nOriginal Description:",
+      "result" : "  TSR contains all right configuation on FTP Log Automation."
+   },
+   "1513038" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Restore default on DUT\n  4.After rebooting, To check setting",
+      "priority" : "Smoke",
+      "atm_id" : "0435a648-6047-4f81-8502-e9bf263c39c1",
+      "initial" : "  TBD",
+      "id" : "1513038",
+      "title" : "Configure FTP Log Automation, Then restore default",
+      "description" : "Original ID: Function-016\nOriginal Title: Configure FTP Log Automation, Then restore default \nOriginal Description:",
+      "result" : "  Restore to factory default"
+   },
+   "1513069" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", set wrong Password and other configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server. 4. Check packets captured",
+      "priority" : "Smoke",
+      "atm_id" : "1c353e98-d3c1-4e61-9ae9-3ca8dd638041",
+      "initial" : "  TBD",
+      "id" : "1513069",
+      "title" : "Input wrong Password , trigger SonicOS to send log, capture packets and check the log on FTP server",
+      "description" : "Original ID: Negative-006\nOriginal Title: Input wrong Password , trigger SonicOS to send log, capture packets and check the log on FTP server\nOriginal Description:",
+      "result" : "  SonicOS send log with wrong password and the connection with FTP Server is rejected"
+   },
+   "1513042" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Restore default DUT\n  3.Go to Log-&gt;Automation, Click \"Accept\" Button",
+      "priority" : "Smoke",
+      "atm_id" : "a86f12f7-6be5-4fd8-aa79-9532a2fdb20a",
+      "initial" : "  TBD",
+      "id" : "1513042",
+      "title" : "Click \"Accept Button\" when Log Automation is in default setting",
+      "description" : "Original ID: Function-020\nOriginal Title: Click \"Accept Button\" when Log Automation is in default setting\nOriginal Description: Click \"Accept Button\" when Log Automation is in default setting",
+      "result" : "  No alert will be shown and SonicOS accept setting successfully"
+   },
+   "1513072" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select \"Full\" and other configurations are correct\n  3.Disconnect DUT and FTP Server. 4.Enable GUI log on all functions and create massive traffic to make cache full.\n  5. After estimating log is full, reconnect DUT and FTP Server again and check FTP Server\n  6.Continue to create massive traffic to make log reach full.\n  7. Check FTP server\n  <div style=\"white-space: pre-wrap; line-height: 1.75; font-size: 14px; text-align: left;\"><span style=\"font-size: xx-small;\"><strong>How to fast to get full Log Monitor?</strong>\n  </div>\n  <div style=\"white-space: pre-wrap; line-height: 1.75; font-size: 14px; text-align: left;\"><span style=\"font-size: xx-small;\"><strong>1.enable All <span style=\"color: #333333; background-color: #ffffff;\">Display Events in Log Monitor.\n  </strong>\n  </div>\n  <div style=\"white-space: pre-wrap; line-height: 1.75; font-size: 14px; text-align: left;\"><span style=\"font-size: xx-small;\"><strong><span style=\"color: #333333; background-color: #ffffff;\">2.Set Logging level to the lowest \u00e2\u20ac\u02dcDebug\u00e2\u20ac\u2122\n  </strong>\n  </div>\n  <div style=\"white-space: pre-wrap; line-height: 1.75; font-size: 14px; text-align: left;\"><span style=\"font-size: xx-small;\"><strong><span style=\"color: #333333; background-color: #ffffff;\">3.On two client PC, use iperf to build TCP sync and TCP disconnect packets.\n  </strong>\n  </div>\n  <div style=\"white-space: pre-wrap; line-height: 1.75; font-size: 14px; text-align: left;\"><span style=\"font-weight: bold; color: #333333; background-color: #ffffff; font-size: 13px;\">\n  </div>",
+      "priority" : "Smoke",
+      "atm_id" : "bb149182-05ea-4419-b220-3b01f2c6a8e1",
+      "initial" : "  TBD",
+      "id" : "1513072",
+      "title" : "Fail to connect FTP Server when the DB of log reachs full in Full mode, Then reconnect server again",
+      "description" : "Original ID: Negative-009\nOriginal Title: Fail to connect FTP Server when the DB of log reachs full in Full mode, Then reconnect server again\nOriginal Description:",
+      "result" : "  SonicOS should delete 1/4 entries if Server and DUT is disconnected when cache is full.After reconnecting, SonicOS won't send log until cache is full again"
+   },
+   "1513070" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", set wrong Directory and other configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server. 4. Check packets captured",
+      "priority" : "Sanity",
+      "atm_id" : "cb660df8-6b6c-41af-b351-634f43ceed02",
+      "initial" : "  TBD",
+      "id" : "1513070",
+      "title" : "Input wrong Directory , trigger SonicOS to send log, capture packets and check the log on FTP server",
+      "description" : "Original ID: Negative-007\nOriginal Title: Input wrong Directory , trigger SonicOS to send log, capture packets and check the log on FTP server\nOriginal Description:",
+      "result" : "  SonicOS send log with wrong directory and the connection with FTP Server is rejected"
+   },
+   "1513053" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Try to enable/disable&#160; \"Include All Information\" and save",
+      "priority" : "Full_Regression",
+      "atm_id" : "5a43a654-b5df-4b61-b72e-b48731c9d851",
+      "initial" : "  TBD",
+      "id" : "1513053",
+      "title" : "Enable/Disable \"Include All Information\" and save",
+      "description" : "Original ID: GUI-009\nOriginal Title: Enable/Disable \"Include All Information\" and save\nOriginal Description:",
+      "result" : "  Enable/Disable and save successfully"
+   },
+   "1513027" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select \"Full\" and other configurations are correct\n  4.Enable GUI log on all functions and create massive traffic to make cache full.\n  3. Enable packet monitor and check FTP server",
+      "priority" : "Sanity",
+      "atm_id" : "32c2eaa4-c9b4-49fe-84cd-f6b302e87413",
+      "initial" : "  TBD",
+      "id" : "1513027",
+      "title" : "Select to send log when full and try to create enough log",
+      "description" : "Original ID: Function-005\nOriginal Title: Select to send log when full and try to create enough log  \nOriginal Description:",
+      "result" : "  Log should be sent to FTP Server when cache is full. Max log in cache can refer to product metrix(eg.NSA6600 is 7000)"
+   },
+   "1513037" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Reboot DUT and check setting",
+      "priority" : "Smoke",
+      "atm_id" : "bfdccc13-c204-4389-9137-41115f970a55",
+      "initial" : "  TBD",
+      "id" : "1513037",
+      "title" : "Reboot after setting FTP Log Automation",
+      "description" : "Original ID: Function-015\nOriginal Title: Reboot after setting FTP Log Automation\nOriginal Description:",
+      "result" : "  Setting is intact after rebooting"
+   },
+   "1513064" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", set wrong FTP Server adddress and other configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server. 4. Check packets captured",
+      "priority" : "Full_Regression",
+      "atm_id" : "7c26ff5b-974c-4687-b8ed-de3ecc67525a",
+      "initial" : "  TBD",
+      "id" : "1513064",
+      "title" : "Input wrong Server Address, trigger SonicOS to send log, capture packets and check the log on FTP server",
+      "description" : "Original ID: Negative-001\nOriginal Title: Input wrong Server Address, trigger SonicOS to send log, capture packets and check the log on FTP server\nOriginal Description:",
+      "result" : "  DUT sends FTP packet to wrong address but not receive response. DUT won't be affected by wrong settings"
+   },
+   "1513058" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Go to Log-&gt;Automation, Enable \"E-mail Log Automation\", set all configuration is correc\n  4.Trigger DUT to send FTP and E-mail log automation to server.\n  5.Adjust the different file format configuration of&#160;&#160; \"Send Log to FTP\" and \"E-mail Log Automation\" and trigger them to send logs to Server",
+      "priority" : "Sanity",
+      "atm_id" : "8fbbc7e8-b35f-4ad2-8437-1aa6de349fff",
+      "initial" : "  TBD",
+      "id" : "1513058",
+      "title" : "Enable FTP and Email Log Automation with different format(eg.Plain TEXT,CVS,HTML)",
+      "description" : "Original ID: Integrity-005\nOriginal Title: Enable FTP and Email Log Automation with different format(eg.Plain TEXT,CVS,HTML)\nOriginal Description:",
+      "result" : "  Server can receive logs with correct file format"
+   },
+   "1513052" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Try to select different File Format.",
+      "priority" : "Smoke",
+      "atm_id" : "11937f6e-aa86-4850-8f4d-14d89624fe13",
+      "initial" : "  TBD",
+      "id" : "1513052",
+      "title" : "Select File Format",
+      "description" : "Original ID: GUI-008\nOriginal Title: Select File Format\nOriginal Description:",
+      "result" : "  Plaint Text; HTML; CSV Attachment can be selected"
+   },
+   "1513071" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select \"Daily\" and input correct time(For example: 7:00) and other configurations are correct\n  3.Modify system time to be SUN 6:58&#160; and disconnect DUT and FTP Server. Then wait until 7:01\n  4. Reconnect DUT and FTP Server again and check FTP Server\n  5. Modify system time back to SUN 6:58. Then wait until 7:00",
+      "priority" : "Full_Regression",
+      "atm_id" : "71da01ff-d987-4bef-a09c-f928ff85884b",
+      "initial" : "  TBD",
+      "id" : "1513071",
+      "title" : "Fail to connect FTP Server when the time of \"Send Log\" arrives in daily or weely mode, Then reconnect server again",
+      "description" : "Original ID: Negative-008\nOriginal Title: Fail to connect FTP Server when the time of \"Send Log\" arrives in daily or weely mode, Then reconnect server again\nOriginal Description:",
+      "result" : "  After reconnecting, SonicOS won't send log until the next time point"
+   },
+   "1513039" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Go to Log-&gt;Setting to disable \"Display Events in Log Monitor\" on All categories\n  4.Trigger DUT to send log automation to server.",
+      "priority" : "Sanity",
+      "atm_id" : "6c4e5637-f57f-4d03-9326-43baea545d15",
+      "initial" : "  TBD",
+      "id" : "1513039",
+      "title" : "Disable \"Display Events in Log Monitor\" on All categories and enable FTP Log Automation",
+      "description" : "Original ID: Function-017\nOriginal Title: Disable \"Display Events in Log Monitor\" on All categories and enable FTP Log Automation\nOriginal Description:",
+      "result" : "  FTP Server can't receive logs"
+   },
+   "1513026" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select \"Daily\" and input correct time(For example: SUN 7:00) and other configurations are correct\n  3. Enable packet monitor and modify system time to be SUN 6:58. Then to wait until 7:00",
+      "priority" : "Sanity",
+      "atm_id" : "b260c834-d20a-435c-a236-e1fdd607613e",
+      "initial" : "  TBD",
+      "id" : "1513026",
+      "title" : "Select to send log weekly and adjust system time according to weekly time",
+      "description" : "Original ID: Function-004\nOriginal Title: Select to send log weekly and adjust system time according to weekly time \nOriginal Description:",
+      "result" : "  When time is out,Log should be sent to FTP Server.In the captured packets, FTP connection is established."
+   },
+   "1513055" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configuration are correct\n  3.Go to System-&gt;Settings and configure FTP server parameter in \"Settings\"\n  4.Trigger DUT to send log automation and TSR to server.\n  5.Adjust the configuration of&#160;&#160; \"Send Log to FTP\" and \"Settings\" and trigger them in different conditions",
+      "priority" : "Sanity",
+      "atm_id" : "3684b2ee-e967-4b1a-9670-9204ed4878e1",
+      "initial" : "  TBD",
+      "id" : "1513055",
+      "title" : "Cooperation with TSR by FTP(eg.Enable/Disable,Different/Same Server Address;  Different/Same Username;Different/Same Password;Different/Same Diretory)",
+      "description" : "Original ID: Integrity-002\nOriginal Title: Cooperation with TSR by FTP(eg.Enable/Disable,Different/Same Server Address;  Different/Same Username;Different/Same Password;Different/Same Diretory)\nOriginal Description:",
+      "result" : "  Log and Monitor should be sent according to setting"
+   },
+   "1513073" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select \"Full\" and other configurations are correct\n  3.Disconnect DUT and FTP Server. 4.Enable GUI log on all functions and create massive traffic to make cache full.\n  5.Disconnect DUT and Server when log is uploading",
+      "priority" : "Sanity",
+      "atm_id" : "0717aa45-331e-4e70-8fd5-84b40ee1a42b",
+      "initial" : "  TBD",
+      "id" : "1513073",
+      "title" : "Network connection down during the log uploading",
+      "description" : "Original ID: Negative-010\nOriginal Title: Network connection down during the log uploading\nOriginal Description:",
+      "result" : "  Fails to upload log onto FTP Server. And DUT won't restart, crash and so on."
+   },
+   "1513034" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT(HA)----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Enable packet monitor and trigger DUT to send log automation to server. 4.Make HA failover\n  5.Enable packet monitor and trigger DUT to send log automation to server again",
+      "priority" : "Full_Regression",
+      "atm_id" : "d0ded03d-d245-44b2-a538-b92807c6d4d5",
+      "initial" : "  TBD",
+      "id" : "1513034",
+      "title" : "In HA , Verify FTP log automation",
+      "description" : "Original ID: Function-012\nOriginal Title: In HA , Verify FTP log automation \nOriginal Description:",
+      "result" : "  Log should be sent from active Unit After failover, DUT still can send log to Server"
+   },
+   "1513054" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Go to System-&gt;Packet Monitor and configure FTP server parameter in \"logging\" of \"configure\"\n  4.Trigger DUT to send log automation and packet monitor to server.\n  5.Adjust the configuration of&#160;&#160; \"Send Log to FTP\" and \"Packet Monitor\" and trigger them in different conditions",
+      "priority" : "Sanity",
+      "atm_id" : "846b586c-7124-4052-af33-2049cbc3a467",
+      "initial" : "  TBD",
+      "id" : "1513054",
+      "title" : "Cooperation with Packet Monitor by FTP(eg.Enable/Disable,Different/Same Server Address;  Different/Same Username;Different/Same Password;Different/Same Diretory)",
+      "description" : "Original ID: Integrity-001\nOriginal Title: Cooperation with Packet Monitor by FTP(eg.Enable/Disable,Different/Same Server Address;  Different/Same Username;Different/Same Password;Different/Same Diretory)\nOriginal Description:",
+      "result" : "  Log and Monitor should be sent according to setting"
+   },
+   "1513025" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select \"Daily\" and input correct time(For example:7:00) and other configurations are correct\n  3. Enable packet monitor and modify system time to be 6:58.Then to wait until 7:00",
+      "priority" : "Smoke",
+      "atm_id" : "600e2c8e-bcbd-4958-8fb3-348aec37dbf0",
+      "initial" : "  TBD",
+      "id" : "1513025",
+      "title" : "Select to send log daily and adjust system time according to daily time",
+      "description" : "Original ID: Function-003\nOriginal Title: Select to send log daily and adjust system time according to daily time \nOriginal Description:",
+      "result" : "  When time is out,Log should be sent to FTP Server.In the captured packets, FTP connection is established."
+   },
+   "1513061" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select \"Daily\" and input correct time(For example:7:00) and other configurations are correct\n  3. Create traffic and leave test bed about 7 days",
+      "priority" : "Full_Regression",
+      "atm_id" : "b9825789-d14a-4061-a858-b54fef46215e",
+      "initial" : "  TBD",
+      "id" : "1513061",
+      "title" : "Long testing in daily mode about 7 days",
+      "description" : "Original ID: Longevity-001\nOriginal Title: Long testing in daily mode about 7 days \nOriginal Description:",
+      "result" : "  SonicOS won't crash, Log is sent to Server on time"
+   },
+   "1513049" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", set correct Directory and other configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server. 4. Check packets captured. DUT can establish FTP connection with Server successfully and server can receive log\n  5.Try to input incorrect value into Username(For example : Try to input Directory beyond 33 numbers)",
+      "priority" : "Sanity",
+      "atm_id" : "685969d7-6176-4ac6-8e75-8bb665a58b2c",
+      "initial" : "  TBD",
+      "id" : "1513049",
+      "title" : "Input correct/incorrect value into Directory",
+      "description" : "Original ID: GUI-005\nOriginal Title: Input correct/incorrect value into Directory\nOriginal Description:",
+      "result" : "  Correct value will be accepted and server can receive logs\n  Incorrect value can't be input"
+   },
+   "1513050" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", set correct \"Daily\" and other configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server. 4. Check packets captured. DUT can establish FTP connection with Server successfully and server can receive log\n  5.Try to input incorrect value into Username(For example : Try to input -1,61,alphabet and so on)",
+      "priority" : "Smoke",
+      "atm_id" : "8361f985-13ee-470c-87a7-a75ee3c6686b",
+      "initial" : "  TBD",
+      "id" : "1513050",
+      "title" : "Select \"Daily\" in \"Send Log\" and Input correct/incorrect value into Time Format",
+      "description" : "Original ID: GUI-006\nOriginal Title: Select \"Daily\" in \"Send Log\" and Input correct/incorrect value into Time Format\nOriginal Description:",
+      "result" : "  0~23 can be input into Hour; 0~59 can be input Minute.\n  Incorrect value can't be input and alert will be shown"
+   },
+   "1513059" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Go to Log-&gt;Automation, Enable \"E-mail Log Automation\", All configurations are correct\n  4.Trigger DUT to send FTP and E-mail log automation to server.\n  5.Adjust the different schedule configuration of&#160;&#160; \"Send Log to FTP\" and \"E-mail Log Automation\" and trigger them to send logs to Server",
+      "priority" : "Sanity",
+      "atm_id" : "2ec9b21a-f2f5-4a53-bda2-16e7d641ba02",
+      "initial" : "  TBD",
+      "id" : "1513059",
+      "title" : "Enable FTP and Email Log Automation with different schedule",
+      "description" : "Original ID: Integrity-006\nOriginal Title: Enable FTP and Email Log Automation with different schedule\nOriginal Description:",
+      "result" : "  Server can receive logs according to schedule"
+   },
+   "1513048" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", set correct Password and other configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server. 4. Check packets captured. DUT can establish FTP connection with Server successfully and server can receive log\n  5.Try to input incorrect value into Username(For example : Try to input beyond 33 numbers)",
+      "priority" : "Sanity",
+      "atm_id" : "f5fc1347-6fc8-4543-97ee-2aea0af774da",
+      "initial" : "  TBD",
+      "id" : "1513048",
+      "title" : "Input correct/incorrect value into Password",
+      "description" : "Original ID: GUI-004\nOriginal Title: Input correct/incorrect value into Password\nOriginal Description:",
+      "result" : "  Correct value will be accepted and server can receive logs\n  Incorrect value can't be input"
+   },
+   "1513032" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\",Disable \"Include All Log Information\" and other configurations are correct\n  3.Trigger DUT to send log automation to server. 4.Check logs on FTP Server",
+      "priority" : "Full_Regression",
+      "atm_id" : "5d3c9bf1-24ea-4dfe-acad-da8424deb362",
+      "initial" : "  TBD",
+      "id" : "1513032",
+      "title" : "Disable Include All Log Information and trigger SonicOS to send log. Check log on FTP server",
+      "description" : "Original ID: Function-010\nOriginal Title: Disable Include All Log Information and trigger SonicOS to send log. Check log on FTP server\nOriginal Description:",
+      "result" : "  DUT only sends readable column data to FTP Server"
+   },
+   "1513051" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", set correct \"Weekly\" and other configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server. 4. Check packets captured. DUT can establish FTP connection with Server successfully and server can receive log\n  5.Try to input incorrect value into Username(For example : Try to input -1,61,alphabet and so on)",
+      "priority" : "Full_Regression",
+      "atm_id" : "f8b93887-a28d-4529-a77c-c65ceec54808",
+      "initial" : "  TBD",
+      "id" : "1513051",
+      "title" : "Select \"Weekly\" in \"Send Log\" and Input correct/incorrect value into Time Format",
+      "description" : "Original ID: GUI-007\nOriginal Title: Select \"Weekly\" in \"Send Log\" and Input correct/incorrect value into Time Format\nOriginal Description:",
+      "result" : "  Sun~Sat can be selected; 0~23 can be input into Hour; 0~59 can be input Minute\n  Incorrect value can't be input and alert will be shown"
+   },
+   "1513057" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Make FTP Server in PASS Model\n  4. Enable packet monitor and trigger DUT to send log automation to server.",
+      "priority" : "Sanity",
+      "atm_id" : "5d99b63b-c4de-4215-a528-6543f33cf6a0",
+      "initial" : "  TBD",
+      "id" : "1513057",
+      "title" : "When FTP Server is in PASS Model",
+      "description" : "Original ID: Integrity-004\nOriginal Title: When FTP Server is in PASS Model\nOriginal Description:",
+      "result" : "  In captured packets, FTP connection is established. Log will be saved in correct dirctory on server and\n  inforamtion is correct"
+   },
+   "1513062" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select \"Weekly\" and input correct time(For example:SUN 7:00) and other configurations are correct\n  3. Create traffic and leave test bed about 7 days",
+      "priority" : "Sanity",
+      "atm_id" : "2f7c4722-4c14-491f-968b-470ae7e46b0e",
+      "initial" : "  TBD",
+      "id" : "1513062",
+      "title" : "Long testing in weekly mode about 7 days",
+      "description" : "Original ID: Longevity-002\nOriginal Title: Long testing in weekly mode about 7 days\nOriginal Description:",
+      "result" : "  SonicOS won't crash, Log is sent to Server on time"
+   },
+   "1513030" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", Select file format to be CSV and other configurations are correct\n  3.Trigger DUT to send log automation to server.",
+      "priority" : "Smoke",
+      "atm_id" : "8998555a-5071-4a71-8260-7f129fe9b477",
+      "initial" : "  TBD",
+      "id" : "1513030",
+      "title" : "Set file format to be CSV Attachment, trigger SonicOS to send log . Check log format on FTP Server",
+      "description" : "Original ID: Function-008\nOriginal Title: Set file format to be CSV Attachment, trigger SonicOS to send log . Check log format on FTP Server\nOriginal Description:",
+      "result" : "  The received log format on server is CSV"
+   },
+   "1513035" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Connect FTP Server to LAN zone\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3. Trigger DUT to send log automation to server.\n  4.Make FTP Server connect to DMZ/WAN/WLAN Zone&#160;",
+      "priority" : "Smoke",
+      "atm_id" : "b5935126-800e-4926-b311-0c09e09035d2",
+      "initial" : "  TBD",
+      "id" : "1513035",
+      "title" : "FTP Server  is in different zones(eg. LAN ,DMZ,WAN,WLAN)",
+      "description" : "Original ID: Function-013\nOriginal Title: FTP Server  is in different zones(eg. LAN ,DMZ,WAN,WLAN)\nOriginal Description:",
+      "result" : "  Log should be sent in different zones"
+   },
+   "1513046" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", set correct FTP Server adddress and other configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server. 4. Check packets captured. DUT can establish FTP connection with Server successfully and server can receive log\n  5.Try to input incorrect value into FTP Server address",
+      "priority" : "Smoke",
+      "atm_id" : "ee5d8e04-1c2c-491b-a20b-088032c64ab7",
+      "initial" : "  TBD",
+      "id" : "1513046",
+      "title" : "Input correct/incorrect value into FTP Server(eg.invalid format, broadcast address, multicast address)",
+      "description" : "Original ID: GUI-002\nOriginal Title: Input correct/incorrect value into FTP Server(eg.invalid format, broadcast address, multicast address)\nOriginal Description:",
+      "result" : "  Correct value will be accepted and server can receive logs\n  Incorrect value will be prohibited and alert"
+   },
+   "1513043" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3. Trigger DUT to send log automation to server. Check the log entries on the server\n  4.After about 5 minutes, trigger DUT to send log automation to server 5.Check log again and compare new added entries on Server with log enties on the GUI",
+      "priority" : "Smoke",
+      "atm_id" : "1edc3c7f-cd06-480d-8cd1-6977e3c3b000",
+      "initial" : "  TBD",
+      "id" : "1513043",
+      "title" : "Verify same log entries only will be sent to Server once",
+      "description" : "Original ID: Function-021\nOriginal Title: Verify same log entries only will be sent to Server once\nOriginal Description:",
+      "result" : "  Same log entries only will be sent to Server once and new added entries should be the same on Server and GUI"
+   },
+   "1513067" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Enable \"Send Log to FTP\", All configurations are correct\n  3.Startup FTP on Server, enable \"Upload\" permission. but disk is full\n  4. Enable packet monitor and trigger DUT to send log automation to server. 5. Check packets captured and FTP Server",
+      "priority" : "Sanity",
+      "atm_id" : "606061a6-28ca-4ba6-ab90-8b098e1e1446",
+      "initial" : "  TBD",
+      "id" : "1513067",
+      "title" : "Set Server address reachable and FTP service accessible, has writing permission but disk is full.Trigger  SonicOS to send log, capture packets and check the log on FTP server.",
+      "description" : "Original ID: Negative-004\nOriginal Title: Set Server address reachable and FTP service accessible, has writing permission but disk is full.Trigger  SonicOS to send log, capture packets and check the log on FTP server.\nOriginal Description:",
+      "result" : "  Setup FTP connection successfully. But fail to upload log onto FTP Server"
+   },
+   "1513041" : {
+      "steps" : "  1.Setup a test bed as follow:\n  PC----DUT----FTP Server\n  2.Go to Log-&gt;Automation, Disable \"Send Log to FTP\", All configurations are correct\n  3. Enable packet monitor and trigger DUT to send log automation to server",
+      "priority" : "Smoke",
+      "atm_id" : "c8c9bc17-058c-495e-82a6-afb2c8a76a4d",
+      "initial" : "  TBD",
+      "id" : "1513041",
+      "title" : "Input correct paremeter into FTP Log Automation, but disable \"send log to FTP\"",
+      "description" : "Original ID: Function-019\nOriginal Title: Input correct paremeter into FTP Log Automation, but disable \"send log to FTP\" \nOriginal Description:",
+      "result" : "  Check captured packets, DUT doesn't send FTP packets to Server."
+   }
+}

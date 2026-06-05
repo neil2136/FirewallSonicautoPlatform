@@ -1,0 +1,58 @@
+{
+  "3258877": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.",
+    "id": "3258877",
+    "title": " On SAML profile for Management, only https service related SAML profiles will be shown",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Only https service related SAML profiles will be shown."
+  },
+  "3258878": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable/disable SAML Profiles for management.",
+    "id": "3258878",
+    "title": "SAML Profiles for management can be disabled/enabled",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.\n\n",
+    "result": "SAML Profiles for management can be disabled/enabled."
+  },
+  "3258879": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nClick the expanding triangle.",
+    "id": "3258879",
+    "title": " The details of SAML Profiles can be expanded",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "SP configuration and IDP configuration can be displayed correctly."
+  },
+  "3258880": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nClick \"go to create more profiles\" button.",
+    "id": "3258880",
+    "title": "go to create more profiles\" button can work",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "SAML profiles window will open."
+  },
+  "3258881": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN interface.\nDisable SAML profile on WAN interface.",
+    "id": "3258881",
+    "title": "Single Sign on\" button will show or disappear on firewall management login page when the management SAML Profile is enabled or disabled ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Step 2:\"Single Sign on\" button will show on WAN interface management login page.                                                                                                                    Step 3:\"Single Sign on\" button will disappear on WAN interface management login page."
+  },
+  "3258882": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN zone.\nCheck if other zones have \"Single Sign on\" button",
+    "id": "3258882",
+    "title": "Enable SAML Profiles for management on WAN, the other zone will not be shown \"Single Sign on\" button",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "The \"Single Sign on\" button will not be shown on the management login page of other zones."
+  },
+  "3258883": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN zone.\nClick the \"Single Sign on\" button onÂ WAN interface management login page.",
+    "id": "3258883",
+    "title": "On login page, clicking on the \"Single Sign on\" option should initiate the SAML login flow and redirect the user to the IDP login page",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "The browser will should initiate the SAML login flow and redirect the user to the IDP login page."
+  }
+}

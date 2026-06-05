@@ -1,0 +1,51 @@
+##################################################################
+[ ca ]
+default_ca     = myCA                           # The default ca section
+
+##################################################################
+[ myCA ]
+
+dir		= /SWIFT4.0/TESTS/SonicOS/VPN/VPN_3rd_certificate/testcases/MyCA                           # Where everything is kept
+certificate	= $dir/rootca.pem                 # The CA certificate
+database	= /tmp/logs/index.txt                  # database index file.
+new_certs_dir	= /tmp/logs/                   # default place for new certs.
+private_key	= $dir/private/ca.key             # The private key
+serial		= /tmp/logs/serial                     # The current serial number
+
+default_days		= 1825                    # how long to certify for
+default_crl_days	= 30                      # how long before next CRL
+default_md		= sha1                    # which md to use.
+
+policy			= myCA_policy
+x509_extensions	= certificate_extensions  # Extentions to add to the cert
+
+[ myCA_policy ]
+commonName              = optional
+stateOrProvinceName     = supplied
+stateOrProvinceName     = supplied
+countryName             = supplied
+emailAddress            = optional
+organizationName        = optional
+organizationalUnitName  = optional
+
+[ certificate_extensions ]
+basicConstraints        = CA:false
+##################################################################
+[ req ]
+default_bits		= 1024
+default_md		= sha1
+default_keyfile	= /MyCA/private/ca.key
+prompt		= no
+distinguished_name	= root_ca_distinguished_name
+x509_extensions	= root_ca_extensions
+
+[ root_ca_distinguished_name ]
+commonName		=myCA
+stateOrProvinceName	=The earth
+countryName		=CN
+emailAddress		=optional
+organizationName	=SNWL
+
+[ root_ca_extensions ]
+basicConstraints	=CA:true
+

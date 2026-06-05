@@ -1,0 +1,93 @@
+{
+    "01": {
+        "steps": "1.  log audit\n2.  display-on-console\n3.  commit\n",
+        "initial": "",
+        "id": "01",
+        "title": "Command: Configure/log audit/ display-on-console  ",
+        "result": "Auditing records are shown on the console as configuration changes are detected."
+    },
+    "10": {
+        "steps": "1.  log automation\n2. send-audit weekly \n",
+        "initial": "",
+        "id": "10",
+        "title": "Command: Configure/log automation /send-audit/weekly",
+        "result": ""
+    },
+    "11": {
+        "steps": "1.  log automation\n2. send-audit when-full \n",
+        "initial": "",
+        "id": "11",
+        "title": "Command: Configure/log automation /send-audit/when-full",
+        "result": ""
+    },
+    "16": {
+        "steps": "1.  log audit\n2.  enable\n3.  commit\n",
+        "initial": "",
+        "id": "16",
+        "title": "Command: Configure/log audit/enable",
+        "result": "Audit log is enabled"
+    },
+    "17": {
+        "steps": "1.  log audit\n2.  no enable\n3.  commit",
+        "initial": "",
+        "id": "17",
+        "title": "Command: Configure/log audit/no enable",
+        "result": "Audit log is disabled"
+    },
+    "02": {
+        "steps": "1.  log audit\n2.  no display-on-console\n3.  commit",
+        "initial": "",
+        "id": "02",
+        "title": "Command: Configure/log audit/ no display-on-console  ",
+        "result": "tbd"
+    },
+    "03": {
+        "steps": "1.  log audit\n2.  supplemental-changes ",
+        "initial": "",
+        "id": "03",
+        "title": "Command: Configure/log audit/ supplemental-changes",
+        "result": ""
+    },
+    "04": {
+        "steps": "1.  log audit\n2.  no supplemental-changes ",
+        "initial": "",
+        "id": "04",
+        "title": "Command: Configure/log audit/ no supplemental-changes",
+        "result": ""
+    },
+    "05": {
+        "steps": "1.  log automation\n2. email-address  audit ",
+        "initial": "",
+        "id": "05",
+        "title": "Command: Configure/log automation/ email-address",
+        "result": ""
+    },
+    "06": {
+        "steps": "1.  log automation\n2. email-format-audit csv ",
+        "initial": "",
+        "id": "06",
+        "title": "Command: Configure/log automation /email-format-audit/csv",
+        "result": ""
+    },
+    "07": {
+        "steps": "1.  log automation\n2. email-format-audit html ",
+        "initial": "",
+        "id": "07",
+        "title": "Command: Configure/log automation/ email-format-audit/html",
+        "result": ""
+    },
+    "08": {
+        "steps": "1.  log automation\n2. email-format-audit plain-text ",
+        "initial": "",
+        "id": "08",
+        "title": "Command: Configure/log automation/ email-format-audit/plain-text",
+        "result": ""
+    },
+    "09": {
+        "steps": "1.  log automation\n2. for example, send-audit daily hour 10 minute 30",
+        "initial": "",
+        "id": "09",
+        "title": "Command: Configure/log automation/ send-audit/daily",
+        "result": "TBD"
+    }
+}

@@ -1,0 +1,502 @@
+{
+   "1510532" : {
+      "steps" : "  1. Note down the MAC address of PC2 network adapter. Power off PC2\n  2. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168\n  3. Go to Network-&gt;IP Helper, create a WOL policy: source-&gt;Interface X2, destination-&gt;X3 subnet\n  4. Execute WakeOnLanGui.exe on PC1, fill in PC2 MAC address, a random ip address and subnet mask. Choose port number 7 or 9, then click 'Wake Me Up'\n  5. Capture the packet on the firewall",
+      "priority" : "Full_Regression",
+      "atm_id" : "631A7476-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  PC1-----X2 Sonicwall X3-----PC2 PC with WOL supported network adapter and motherboard.\n  Enable WOL from the BIOS of the motherboard.\n  Download and install WakeOnLanGui on PC1 (http://www.depicus.com/wake-on-lan/wake-on-lan-gui.aspx)",
+      "id" : "1510532",
+      "title" : "WOL forwarding to one or more subnet. Request from client is resolved.",
+      "description" : "Original ID: 168\nOriginal Title: WOL forwarding to one or more subnet. Request from client is resolved.\nOriginal Description: This test case verifies that the WOL broadcast packet can be forwarded to one or more subnet.",
+      "result" : "  PC1 sends WOL broadcast packets to the 192.168.20.255 subnet, Sonicwall received the packet and forward it to X3 subnet.\n  PC2 received the broadcast packet and found the MAC address in the packet matches its MAC address and then powered on."
+   },
+   "1510557" : {
+      "steps" : "  1. Go to Network-&gt;IP Helper\n  2. Click on the 'Add' button under the Relay Protocols section\n  3. Type in a name for the protocol\n  4. Type in the port number in 'Port 1' and/or 'Port 2'\n  5. Type in a Timeout value\n  6. Click the 'OK' button",
+      "priority" : "Smoke",
+      "atm_id" : "61E68D42-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Boot with factory default (Optional)",
+      "id" : "1510557",
+      "title" : "Adding user defined protocols",
+      "description" : "Original ID: 5\nOriginal Title: Adding user defined protocols\nOriginal Description: This test verifies that a user defined IP protocol can be added in the IP Helper Applications section of the IP Helper Settings page.",
+      "result" : "  The user defined protocol is added."
+   },
+   "1510564" : {
+      "steps" : "  1. On DHCP Client pc set its ip address as Obtain an IP address automatically\n  2. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168, disable the DHCP server on the firewall.\n  3. Configure Router f0/0 interface ip as 192.168.30.1, Router f0/1 interface ip as 192.168.40.1\n  4. Add a static route on the Router to reach 192.168.20.0 subnet\n  5. Configure DHCP server ip address as 192.168.40.3, create a DHCP scope: 192.168.20.10-192.168.20.20 6. Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  7. Go to Network-&gt;IP Helper, create a DHCP policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  8. Disable IP Helper\n  9. On the DHCP Client pc, execute ipconfig/renew\n  10. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "63AC616A-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DHCP Client---x2 Sonicwall x3---f0/0 Router f0/1---DHCP server",
+      "id" : "1510564",
+      "title" : "DHCP forwarding to one or more host. IP Helper is disabled.",
+      "description" : "Original ID: 98\nOriginal Title: DHCP forwarding to one or more host. IP Helper is disabled.\nOriginal Description: This test case verifies that the DHCP broadcast packet can not be forwarded to one or more DHCP server on another subnet if IP Helper is disabled.",
+      "result" : "  IP Helper is disabled. The DHCP broadcast packet is dropped on the firewall and can not be forwarded to the DHCP server."
+   },
+   "1510544" : {
+      "steps" : "  Go to GUI IP-Helper page to check the sequence of all supported protocols, it should be as below: DHCP\n  NetBIOS\n  DNS\n  TIME\n  WOL\n  mDNS (Bonjour)\n  SSDP (DLNA)\n  DHCPv6",
+      "priority" : "Smoke",
+      "atm_id" : "800c437f-1ccf-45f3-924b-3daee24e8b04",
+      "initial" : "  TBD",
+      "id" : "1510544",
+      "title" : "GUI: Verify the sequence for all IP-Helper protocols",
+      "description" : "Original ID: 201\nOriginal Title: GUI: Verify the sequence for all IP-Helper protocols \nOriginal Description: The purpose of this case is to verify the sequence of all supported IP-Helper protocols, the newly added protocols should be at the end and cannot insert in the middle, otherwise it may cause the policy mismatch after firmware upgrade",
+      "result" : "  Follow this sequence: DHCP\n  NetBIOS\n  DNS\n  TIME\n  WOL\n  mDNS (Bonjour)\n  SSDP (DLNA)\n  DHCPv6"
+   },
+   "1510535" : {
+      "steps" : "  1. Go to Network--&gt;IP Helper\n  2. Click the Delete icon next to the policy for predefined protocol or select leftmost check-box corresponding to the policy and hit the Delete button at the lower left side of the table to delete the policies for predefined protocols.",
+      "priority" : "Smoke",
+      "atm_id" : "632D754E-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  One or more IP Helper policies for predefined protocols are created.",
+      "id" : "1510535",
+      "title" : "Deleting IP Helper policy with predefined protocols",
+      "description" : "Original ID: 19\nOriginal Title: Deleting IP Helper policy with predefined protocols\nOriginal Description: This test verifies that IP Helper Policy with a predefined protocol can be deleted via either Delete icon next to the policy or by selecting leftmost check-box corresponding to the policy and hitting Delete button at the lower left side of the table.",
+      "result" : "  The IP Helper policies for predefined protocols are deleted."
+   },
+   "1510533" : {
+      "steps" : "  1. Go to Network-->IP Helper\n  2. Click 'Add' button under IP Helper Policies section to add an IP Helper policy for the user defined policy.\n  3. Select a user defined protocol from the Protocol drop down list.\n  4. Select an Interface address object from the 'From' drop down list, select a Host/Network address object from the 'To' drop down list",
+      "priority" : "Smoke",
+      "atm_id" : "627CE1CA-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  One or more user defined protocols are created.",
+      "id" : "1510533",
+      "title" : "Adding IP Helper policy for user defined protocols",
+      "description" : "Original ID: 17\nOriginal Title: Adding IP Helper policy for user defined protocols\nOriginal Description: This test verifies that the 'Protocol' drop-down in the 'Add IP Helper Policy' window displays all user defined protocols. The 'From' drop-down will display address objects of Interface/Zone type. The 'To' drop-down will display address objects of Host/Network type.",
+      "result" : "  The 'From' drop-down will display address objects of Interface type. The 'To' drop-down will display address objects of Host/Network type."
+   },
+   "1510565" : {
+      "steps" : "  1. On DHCP Client pc set its ip address as Obtain an IP address automatically\n  2. Configure X2 as LAN/DMZ/WLAN interface, ip address as 192.168.20.168, configure X3 as LAN/DMZ/WLAN interface, ip address as 192.168.30.168, disable the DHCP server on the firewall.\n  3. Configure Router f0/0 interface ip as 192.168.30.1, Router f0/1 interface ip as 192.168.40.1\n  4. Add a static route on the Router to reach 192.168.20.0 subnet\n  5. Configure DHCP server ip address as 192.168.40.3, create a DHCP scope: 192.168.20.10-192.168.20.20\n  6. Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  7. Go to Network-&gt;IP Helper, create a DHCP policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  8. On the DHCP Client pc, execute ipconfig/renew\n  9. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "629A1268-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DHCP Client---x2 Sonicwall x3---f0/0 Router f0/1---DHCP server",
+      "id" : "1510565",
+      "title" : "DHCP forwarding to one or more host. Test with different source and destination zones",
+      "description" : "Original ID: 99\nOriginal Title: DHCP forwarding to one or more host. Test with different source and destination zones\nOriginal Description: This test case verifies that the DHCP broadcast packet can be forwarded to one or more DHCP server on another subnet between different zones.",
+      "result" : "  The DHCP client pc sends a DHCP broadcast packet to the 192.168.20.255 subnet,\n  firewall received the packet and change it to a unicast packet and set the source ip to 192.168.20.168 and destination ip to 192.168.40.3.\n  The DHCP server sends the response to X3 interface of the firewall, then the firewall forward the response to the DHCP CLient."
+   },
+   "1510551" : {
+      "steps" : "  1. On DNS Client pc set its ip address as 192.168.20.3/24, set the DNS server as 192.168.20.255, shut down Windows Firewall on the DNS Client pc\n  2. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168\n  3. Configure Router f0/0 interface ip as 192.168.30.1, Router f0/1 interface ip as 192.168.40.1\n  4. Add a static route on the Router to reach 192.168.20.0 subnet\n  5. Configure DNS server ip address as 192.168.40.3\n  6. Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  7. Go to Network-&gt;IP Helper, create a DNS policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  8. On the DNS Client pc, try to ping a dns record on the DNS server\n  9. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "6262F468-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DNS Client---x2 Sonicwall x3---f0/0 Router f0/1---DNS server",
+      "id" : "1510551",
+      "title" : "DNS forwarding to one or more host. Request from client is resolved.",
+      "description" : "Original ID: 30\nOriginal Title: DNS forwarding to one or more host. Request from client is resolved.\nOriginal Description: This test case verifies that the DNS broadcast packet can be forwarded to one or more DNS server on another subnet.",
+      "result" : "  The DNS client pc sends a DNS broadcast query to the 192.168.20.255 subnet, firewall received the packet and change it to a unicast packet and set the destination ip to 192.168.40.3.\n  The DNS server sends the response to X3 interface of the firewall, then the firewall forward the response to the DNS CLient."
+   },
+   "1510550" : {
+      "steps" : "  1. Go to Network--&gt;IP Helper\n  2. Click 'Add' button under IP Helper Policies section to add an IP Helper policy for the predefined policy.\n  3. Select 'DHCP' from the Protocol drop down list.\n  4. Select 'Interface X2' from the 'From' drop down list, select 'X2 IP' from the 'To' drop down list\n  5. Click 'OK' button",
+      "priority" : "Smoke",
+      "atm_id" : "635E6104-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Boot with factory default (Optional)",
+      "id" : "1510550",
+      "title" : "Attempt to set invalid values in 'From' and 'To' fields for DHCP policy",
+      "description" : "Original ID: 27\nOriginal Title: Attempt to set invalid values in 'From' and 'To' fields for DHCP policy\nOriginal Description: This test verifies that it is not able to set invalid values in 'From' and 'To' fields for DHCP policy. The 'From' drop-down will show address objects of type Interface/Zone. The 'To' drop-down will show address objects of type Host.",
+      "result" : "  The IP Helper policy is not saved. An error message shows that 'Error: Address range overlaps with another range.'"
+   },
+   "1510556" : {
+      "steps" : "  1. On DNS Client pc set its ip address as 192.168.20.3/24, set the DNS server as 192.168.20.255, shut down Windows Firewall on the DNS Client pc\n  2. On Sonicwall1, Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168.\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2Go to Network-&gt;IP Helper, create a DNS policy: source-&gt;Interface X2, destination-&gt;X3 subnet\n  3. On Sonicwall2, Configure X2 as Lan interface, ip address as 192.168.30.1, configure X3 as Lan interface, ip address as 192.168.40.1.\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2Go to Network-&gt;Routing, create a route policy to reach 192.168.20.0 subnet\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2Go to Network-&gt;IP Helper, create a DNS policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  4. Configure DNS server ip address as 192.168.40.3 5. Disable IP Helper on either firewalls 6. On the DNS Client pc, try to ping a dns record on the DNS server 7. Capture the packet on both firewalls",
+      "priority" : "Smoke",
+      "atm_id" : "62CD8440-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DNS Client---x2 Sonicwall1 x3---x2 Sonicwall2 x3---DNS server",
+      "id" : "1510556",
+      "title" : "DNS forwarding to one or more subnet. IP Helper is disabled.",
+      "description" : "Original ID: 42\nOriginal Title: DNS forwarding to one or more subnet. IP Helper is disabled.\nOriginal Description: This test case verifies that the DNS broadcast packet can not be forwarded to one or more subnet if IP Helper is disabled.",
+      "result" : "  IP Helper is disabled, the DNS broadcast packet is dropped on the firewall and can not be forwarded to the DNS server."
+   },
+   "1510542" : {
+      "steps" : "  1. Go to Network--&gt;IP Helper\n  2. Click the Delete icon next to the policy for user defined protocol or select leftmost check-box corresponding to the policy and hit the Delete button at the lower left side of the table to delete the policies for user defined protocols.",
+      "priority" : "Smoke",
+      "atm_id" : "63BACDCC-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  One or more IP Helper policies for user defined protocols are created.",
+      "id" : "1510542",
+      "title" : "Deleting IP Helper policy for user defined protocols",
+      "description" : "Original ID: 20\nOriginal Title: Deleting IP Helper policy for user defined protocols\nOriginal Description: This test verifies that IP Helper Policy with a user defined protocol can be deleted via either Delete icon next to the policy or by selecting leftmost check-box corresponding to the policy and hitting Delete button at the lower left side of the table.",
+      "result" : "  The IP Helper policies for user defined protocols are deleted."
+   },
+   "1510534" : {
+      "steps" : "  1. Go to Network--&gt;IP Helper\n  2. Click 'Add' button under IP Helper Policies section to add an IP Helper policy.\n  3. Select a protocol from the 'Protocol' drop down list, select an address object from the 'From' drop down list.\n  4. Select 'Create new address object' from the 'To' drop down list\n  5. Type in a new for the address object, select a zone and type for the address object, type in the ip address/subnet mask for the address object, then click 'OK'",
+      "priority" : "Smoke",
+      "atm_id" : "63212578-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Boot with factory default (Optional)",
+      "id" : "1510534",
+      "title" : "Creating new address objects in the Add IP Helper Policy window",
+      "description" : "Original ID: 18\nOriginal Title: Creating new address objects in the Add IP Helper Policy window\nOriginal Description: This test verifies that new address objects can be created in the Add IP Helper Policy window.",
+      "result" : "  The new address object is created successfully and is functional."
+   },
+   "1510541" : {
+      "steps" : "  Go to Network->IP Helper, de-select \"Enable IP Helper\" check box, click \"Accept\" button. Then reboot the firewall.",
+      "priority" : "Smoke",
+      "atm_id" : "628AC056-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Boot with factory default (Optional)",
+      "id" : "1510541",
+      "title" : "Disable IP Helper",
+      "description" : "Original ID: 2\nOriginal Title: Disable IP Helper\nOriginal Description: This test verifies that the 'Enable IP Helper' check box can be disabled and the setting is kept after reboot.",
+      "result" : "  IP Helper is disabled, and it is kept disabled after reboot."
+   },
+   "1510531" : {
+      "steps" : "  <a name=\"168\"></a>1. Note down the MAC address of PC2 network adapter. Power off PC2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  2. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  3. Go to Network-&gt;IP Helper, create a WOL policy: source-&gt;Interface X2, destination-&gt;PC2 IP\n  4. Execute WakeOnLanGui.exe on PC1, fill in PC2 MAC address, a random ip address and subnet mask. Choose port number 7 or 9, then click 'Wake Me Up'\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  5. Capture the packet on the firewall",
+      "priority" : "Sanity",
+      "atm_id" : "64139588-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  <a name=\"168\"></a>PC1-----X2 Sonicwall X3-----PC2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  PC with WOL supported network adapter and motherboard. Enable WOL from the BIOS of the motherboard.\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  Download and install WakeOnLanGui on PC1 (http://www.depicus.com/wake-on-lan/wake-on-lan-gui.aspx)",
+      "id" : "1510531",
+      "title" : "WOL forwarding to one or more host. Request from client is resolved.",
+      "description" : "Original ID: 161\nOriginal Title: WOL forwarding to one or more host. Request from client is resolved.\nOriginal Description: <a name=\"168\"></a>This test case verifies that the WOL broadcast packet can be forwarded to one or more host",
+      "result" : "  <a name=\"168\"></a>\n  PC1 sends WOL broadcast packets to the 192.168.20.255 subnet, Sonicwall received the packet and forward it to PC2 IP.\n  PC2 received the unicast packet and found the MAC address in the packet matches its MAC address and then powered on."
+   },
+   "1510536" : {
+      "steps" : "  1 Add DHCP relay policy from X0 subnet to X2 subnet\n  2 PC in X0 subnet get IP successfully via DUT dhcp relay.\n  3 Check there is related DHCP relay lease on DUT and DHCP lease on DHCP server\n  4 Restart DUT with DHCP relay lease listed\n  5 PC try to get DHCP IP again",
+      "priority" : "Smoke",
+      "atm_id" : "98c027b7-466e-4f09-88ec-83ef61a17abe",
+      "initial" : "  PC---X0 DUT X2---- DHCP server",
+      "id" : "1510536",
+      "title" : "Verify Client could get IP successfully after DUT restart with DHCP lease",
+      "description" : "Original ID: 195\nOriginal Title: Verify Client could get IP successfully after DUT restart with DHCP lease\nOriginal Description: <span>Verify Client could get IP successfully after DUT restart with DHCP lease</span>",
+      "result" : "  Verify after DUT restart, Client PC could get IP successfully again viaDUT DHCP relay"
+   },
+   "1510523" : {
+      "steps" : "  1. On Sonicwall1, configure X2 as Lan interface, ip address as 192.168.20.3/24. Go to Log-&gt;Syslog, add a syslog server, set the Syslog server as 192.168.20.255,\n  2. On Sonicwall2, configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168\n  3. Configure Router f0/0 interface ip as 192.168.30.1, Router f0/1 interface ip as 192.168.40.1\n  4. Add a static route on the Router to reach 192.168.20.0 subnet\n  5. Configure the Syslog server ip address as 192.168.40.3\n  6. On Sonicwall2\n  <ul>\n  <li><span style=\"font-size: 10px;\">\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  </li>\n  <li><span style=\"font-size: 10px;\">\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2Go to Network-&gt;IP Helper, create a syslog protocol, port as 514.\n  </li>\n  <li><span style=\"font-size: 10px;\">\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2Create a syslog policy: source-&gt;Interface X2, destination-&gt;192.168.40.3 7.\n  </li>\n  </ul>\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2On Sonicwall1, generate as many logs as possible\n  8. Capture the packet on the Sonicwall2",
+      "priority" : "Sanity",
+      "atm_id" : "631DD83C-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  User defined protocol Client(Sonicwall1 X2)-----X2 Sonicwall2 X3---f0/0 Router f0/1-----User defined protocol server (Syslog server)\n  Here we use syslog (port 514) as user defined protocol. Use Sonicwall1 as syslog client, and install 3CDaemon on a PC as syslog server.",
+      "id" : "1510523",
+      "title" : "User-defined protocol forwarding to one or more host. Request from client is resolved.",
+      "description" : "Original ID: 110\nOriginal Title: User-defined protocol forwarding to one or more host. Request from client is resolved.\nOriginal Description: This test case verifies that the user defined protocol broadcast packet can be forwarded to one or more user defined protocol server on another subnet.",
+      "result" : "  The Syslog client sends Syslog broadcast packets to the 192.168.20.255 subnet, Sonicwall2 received the packet and change it to a unicast packet and set the destination ip to 192.168.40.3."
+   },
+   "1532480" : {
+      "steps" : "  1 To create 1000 address objects 2 To create 1000 address objects groups 3 Then goto the IP Helper&gt;Policies page 4 Then to create 100+ IP Helper&gt;Policies 5 To go to the IP Helper&gt;Policies page",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1532480",
+      "title" : "GEN7-37285:IP helper>policies page loads in normal",
+      "description" : "TBD",
+      "result" : "  3 The GUI loads this page should in a normal state 5 The GUI loads this page should in a normal state"
+   },
+   "1510554" : {
+      "steps" : "  1. On DNS Client pc set its ip address as 192.168.20.3/24, set the DNS server as 192.168.20.255, shut down Windows Firewall on the DNS Client pc\n  2. On Sonicwall1, Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168.\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;IP Helper, create a DNS policy: source-&gt;Interface X2, destination-&gt;X3 subnet\n  3. On Sonicwall2, Configure X2 as Lan interface, ip address as 192.168.30.1, configure X3 as Lan interface, ip address as 192.168.40.1.\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;Routing, create a route policy to reach 192.168.20.0 subnet\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;IP Helper, create a DNS policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  4. Configure DNS server ip address as 192.168.40.3\n  5. On the DNS Client pc, try to ping a dns record on the DNS server\n  6. Capture the packet on both firewalls",
+      "priority" : "Smoke",
+      "atm_id" : "634F3242-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DNS Client---x2 Sonicwall1 x3---x2 Sonicwall2 x3---DNS server",
+      "id" : "1510554",
+      "title" : "DNS forwarding to one or more subnet. Request from client is resolved.",
+      "description" : "Original ID: 38\nOriginal Title: DNS forwarding to one or more subnet. Request from client is resolved.\nOriginal Description: This test case verifies that the DNS broadcast packet can be forwarded to one or more subnet.",
+      "result" : "  The DNS client pc sends a DNS broadcast query to the 192.168.20.255 subnet\n  Sonicwall1 received the packet and change the destination ip to 192.168.30.255 and forward it to X3 subnet.\n  Sonicwall2 received the broadcast packet and change it to a unicast packet and set the destination ip to 192.168.40.3.\n  The DNS server sends the response to X3 interface of Sonicwall2, then Sonicwall2 forward the response to the Sonicwall1.\n  Sonicwall1 forward the response to the DNS client."
+   },
+   "1510543" : {
+      "steps" : "  \n  1. Enable IP-Helper and mDNS protocol, add a mDNSpolicy, make sure it woks fine\n  2. Have a reboot in firewall\n  3. Check the IP-Helper and mDNSpolicy settings\n  4. Verify the function of mDNSpolicy",
+      "priority" : "Sanity",
+      "atm_id" : "2146f725-42fc-4adc-8b4c-0ad28a85056b",
+      "initial" : "  TBD",
+      "id" : "1510543",
+      "title" : "Reboot test: verify the mDNS policy remain intact and still work normally after a reboot",
+      "description" : "Original ID: 200\nOriginal Title: Reboot test: verify the mDNS policy remain intact and still work normally after a reboot\nOriginal Description:",
+      "result" : "  3. Settings are still there with no change\n  4. mDNSpolicy function still take effect, mDNSpackets could be forwarded according to the policy"
+   },
+   "1510530" : {
+      "steps" : "  1. Go to Network--&gt;IP Helper\n  2. Click 'Add' button under IP Helper Policies section to add an IP Helper policy for the predefined policy.\n  3. Select 'DNS' or 'Time' from the Protocol drop down list.\n  4. Select an Interface address object from the 'From' drop down list, select a Host/Network address object from the 'To' drop down list",
+      "priority" : "Smoke",
+      "atm_id" : "63E0E2B4-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Boot with factory default (Optional)",
+      "id" : "1510530",
+      "title" : "Adding IP Helper policy for DNS and Time pre-defined protocols",
+      "description" : "Original ID: 16\nOriginal Title: Adding IP Helper policy for DNS and Time pre-defined protocols\nOriginal Description: This test verifies that in the 'Add IP Helper Policy' window for DNS and Time pre-defined protocol,\nthe 'From' drop-down will show address objects of type Interface.\nThe 'To' drop-down will show address objects of type Host/Network.",
+      "result" : "  The 'From' drop-down will show address objects of type Interface. The 'To' drop-down will show address objects of type Host/Network."
+   },
+   "1510555" : {
+      "steps" : "  1. On DNS Client pc set its ip address as 192.168.20.3/24, set the DNS server as 192.168.20.255, shut down Windows Firewall on the DNS Client pc\n  2. On Sonicwall1, Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168.\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;IP Helper, create a DNS policy: source-&gt;Interface X2, destination-&gt;X3 subnet\n  3. On Sonicwall2, Configure X2 as Lan interface, ip address as 192.168.30.1, configure X3 as Lan interface, ip address as 192.168.40.1.\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;Routing, create a route policy to reach 192.168.20.0 subnet\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;IP Helper, create a DNS policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  4. Configure DNS server ip address as 192.168.40.3\n  5. Disable DNS IP Helper policies on either firewalls\n  6. On the DNS Client pc, try to ping a dns record on the DNS server\n  7. Capture the packet on both firewalls",
+      "priority" : "Smoke",
+      "atm_id" : "62F478F2-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DNS Client---x2 Sonicwall1 x3---x2 Sonicwall2 x3---DNS server",
+      "id" : "1510555",
+      "title" : "DNS forwarding to one or more subnet. DNS IP Helper policy is disabled.",
+      "description" : "Original ID: 40\nOriginal Title: DNS forwarding to one or more subnet. DNS IP Helper policy is disabled.\nOriginal Description: This test case verifies that the DNS broadcast packet can not be forwarded to one or more subnet if the DNS IP Helper policy is disabled.",
+      "result" : "  The DNS IP Helper policy is disabled, the DNS broadcast packet is dropped on the firewall and can not be forwarded to the DNS server."
+   },
+   "1510518" : {
+      "steps" : "  1. On DHCP Client pc set its ip address as Obtain an IP address automatically\n  2. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168, disable the DHCP server on the firewall.\n  3. Configure Router f0/0 interface ip as 192.168.30.1, Router f0/1 interface ip as 192.168.40.1\n  4. Add a static route on the Router to reach 192.168.20.0 subnet\n  5. Configure DHCP server ip address as 192.168.40.3, create a DHCP scope: 192.168.20.10-192.168.20.20\n  6. Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  7. Go to Network-&gt;IP Helper, create a DHCP policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  8. On the DHCP Client pc, execute ipconfig/renew\n  9. Go to System-&gt;Diagnostics, download the TSR file",
+      "priority" : "Smoke",
+      "atm_id" : "63870D02-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DHCP Client---x2 Sonicwall x3---f0/0 Router f0/1---DHCP server",
+      "id" : "1510518",
+      "title" : "DHCP forwarding to one or more host. TSR output displays DHCP relay related debugging data.",
+      "description" : "Original ID: 100\nOriginal Title: DHCP forwarding to one or more host. TSR output displays DHCP relay related debugging data.\nOriginal Description: This test case verifies that the DHCP relay related debugging data is stored in TSR file.",
+      "result" : "  The TSR file contains the DHCP relay related protocol, policy and ip helper cache information."
+   },
+   "1510563" : {
+      "steps" : "  1. On DHCP Client pc set its ip address as Obtain an IP address automatically\n  2. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168, disable the DHCP server on the firewall.\n  3. Configure Router f0/0 interface ip as 192.168.30.1, Router f0/1 interface ip as 192.168.40.1\n  4. Add a static route on the Router to reach 192.168.20.0 subnet\n  5. Configure DHCP server ip address as 192.168.40.3, create a DHCP scope: 192.168.20.10-192.168.20.20\n  6. Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  7. Go to Network-&gt;IP Helper, create a DHCP policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  8. Disable the DHCP IP Helper policy\n  9. On the DHCP Client pc, execute ipconfig/renew\n  10. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "62DB52A0-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DHCP Client---x2 Sonicwall x3---f0/0 Router f0/1---DHCP server",
+      "id" : "1510563",
+      "title" : "DHCP forwarding to one or more host. DHCP IP Helper policy is disabled.",
+      "description" : "Original ID: 96\nOriginal Title: DHCP forwarding to one or more host. DHCP IP Helper policy is disabled.\nOriginal Description: This test case verifies that the DHCP broadcast packet can not be forwarded to one or more DHCP server on another subnet if the DHCP IP Helper policy is disabled.",
+      "result" : "  The DHCP IP Helper policy is disabled.\n  The DHCP broadcast packet is dropped on the firewall and can not be forwarded to the DHCP server."
+   },
+   "1510559" : {
+      "steps" : "  1. On Time Client pc set its ip address as 192.168.20.3/24, set the Time server as 192.168.20.255\n  2. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168\n  3. Configure Router f0/0 interface ip as 192.168.30.1, Router f0/1 interface ip as 192.168.40.1\n  4. Add a static route on the Router to reach 192.168.20.0 subnet\n  5. Configure Time server ip address as 192.168.40.3\n  6. Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  7. Go to Network-&gt;IP Helper, create a Time policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  8. On the Time Client pc, run the Python script 9. Capture the packet on the firewall",
+      "priority" : "Sanity",
+      "atm_id" : "62886AE0-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Time Client---x2 Sonicwall x3---f0/0 Router f0/1---Time server\n  Time Client: Writen by Python, download and install Python 3.6/3.7 on the Time Client PC, paste the source code to Python IDE, press F5 to run the script.\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  Time Server: Download and install Absolute Time Server\n  Source code\u00c2\u00a3\u00c2\u00ba<a name=\"62\"></a>\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  from socket import *\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  from struct import unpack\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  from time import ctime, sleep\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  from sys import argv\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 argv = argv[1:]\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  if len(argv) == 0:\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2argv = [ '192.168.20.255' ]\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  s = socket(AF_INET, SOCK_DGRAM)\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  s.settimeout(5.0)\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 for server in argv:\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2print (server, \":\",)\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2try:\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2s.sendto(''.encode(), (server, 37))\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2t = long(unpack('!L', s.recv(16)[:4])[0])\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2# Convert fromping 1900/01/01 epoch to 1970/01/01 epoch\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2t -= 2208988800\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2print ctime(t)\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2except timeout:\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2print \"TIMEOUT\"\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2except:\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2print \"ERROR\"\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 s.close()\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  sleep(2)",
+      "id" : "1510559",
+      "title" : "TIME service forwarding to one or more host. Request from client is resolved.",
+      "description" : "Original ID: 62\nOriginal Title: TIME service forwarding to one or more host. Request from client is resolved.\nOriginal Description: This test case verifies that the Time broadcast packet can be forwarded to one or more Time server on another subnet.",
+      "result" : "  The Time client pc sends a Time broadcast query to 192.168.20.255 subnet, firewall received the packet and change it to a unicast packet and set the destination ip to 192.168.40.3.\n  The Time server sends the response to X3 interface of the firewall, then the firewall forward the response to the Time CLient."
+   },
+   "1510520" : {
+      "steps" : "  1. On PC1 set its ip address as 192.168.20.3/24, computer name as aaa 2. On PC2 set its ip address as 192.168.30.3/24, computer name as bbb 3. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168 4. Go to Network-&gt;IP Helper, create a NetBios policy: source-&gt;X2 subnet, destination-&gt;X3 subnet 5. Disable the NetBios IP Helper policy 6. On PC1, ping the computer name of PC2 7. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "63560054-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  PC1---x2 Sonicwall x3---PC2",
+      "id" : "1510520",
+      "title" : "NetBIOS forwarding to one or more subnet. NetBIOS IP Helper policy is disabled.",
+      "description" : "Original ID: 104\r\nOriginal Title: NetBIOS forwarding to one or more subnet. NetBIOS IP Helper policy is disabled.\r\nOriginal Description: This test case verifies that the Netbios broadcast packet can not be forwarded to one or more subnet if the NetBios IP Helper policy is disabled.",
+      "result" : "  The NetBios IP Helper policy is disabled. The NetBios broadcast packet is dropped on the firewall and can not be forwarded to PC2."
+   },
+   "1510537" : {
+      "steps" : "  1. Enable IP-Helper and Netbios protocol, add aNetbiospolicy, make sure it woks fine\n  2. Have a reboot in firewall\n  3. Check the IP-Helper andNetbios policy settings\n  4. Verify the function of Netbiospolicy",
+      "priority" : "Smoke",
+      "atm_id" : "bb380eef-2c2a-4be5-b4ba-1186e6ad55eb",
+      "initial" : "  TBD",
+      "id" : "1510537",
+      "title" : "Reboot test: verify the Netbios policy remain intact and still work normally after a reboot",
+      "description" : "Original ID: 196\nOriginal Title: Reboot test: verify the Netbios policy remain intact and still work normally after a reboot\nOriginal Description:",
+      "result" : "  3. Settings are still there with no change\n  4. Netbiospolicy function still take effect, Netbiospackets could be forwarded according to the policy"
+   },
+   "1510527" : {
+      "steps" : "  <a name=\"153\"></a>1. On PC1 set its ip address as 192.168.20.3/24, computer name as aaa.\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  2. On PC2 set its ip address as 192.168.30.3/24, computer name as bbb.\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  3. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  4. Go to Network-&gt;IP Helper, create 2 mDNS policies:\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  source-&gt;Interface X2, destination-&gt;PC2 IP\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  source-&gt;Interface X3, destination-&gt;PC1 IP\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  5. On PC1, ping the computer name of PC2 (ping bbb.local.)\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  6. Capture the packet on the firewall",
+      "priority" : "Sanity",
+      "atm_id" : "630D7DB6-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  <a name=\"153\"></a>Windows XP/Vista/2008/MAC PC1-------x2 Sonicwall x3-------Windows XP/Vista/2008/MAC PC2\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  Install Bonjour for Windows on Windows PC (http://support.apple.com/downloads/Bonjour_for_Windows)",
+      "id" : "1510527",
+      "title" : "mDNS forwarding to one or more host. Request from client is resolved.",
+      "description" : "Original ID: 145\nOriginal Title: mDNS forwarding to one or more host. Request from client is resolved.\nOriginal Description: <a name=\"153\"></a>This test case verifies that the mDNS multicast packet can be forwarded to one or more\u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2host",
+      "result" : "  <a name=\"153\"></a>PC1 sends a mDNS multicast query to the multicast address 224.0.0.251, firewall received the packet and forward the packet to PC2.\n  PC2 received the packet and sends the response to the multicast address 224.0.0.251, then the firewall forward the response to PC1."
+   },
+   "1510517" : {
+      "steps" : "  Go to Network->IP Helper, click \"Enable IP Helper\" check box, click \"Accept\" button. Then reboot the firewall.",
+      "priority" : "Smoke",
+      "atm_id" : "63FC02B0-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Boot with factory default (Optional)",
+      "id" : "1510517",
+      "title" : "Enable IP Helper",
+      "description" : "Original ID: 1\nOriginal Title: Enable IP Helper\nOriginal Description: This test verifies that the 'Enable IP Helper' check box can be enabled and the setting is kept after reboot.",
+      "result" : "  IP Helper is enabled, and it is kept enabled after reboot."
+   },
+   "1510538" : {
+      "steps" : "  1. Enable IP-Helper and DNS protocol, add aDNS policy, make sure it woks fine\n  2. Have a reboot in firewall\n  3. Check the IP-Helper and DNS policy settings\n  4. Verify the function ofDNS policy",
+      "priority" : "Sanity",
+      "atm_id" : "c4538fe1-0e94-470f-b93d-ea2e64ae81df",
+      "initial" : "  TBD",
+      "id" : "1510538",
+      "title" : "Reboot test: verify the DNS policy remain intact and still work normally after a reboot",
+      "description" : "Original ID: 197\nOriginal Title: Reboot test: verify the DNS policy remain intact and still work normally after a reboot\nOriginal Description:",
+      "result" : "  3. Settings are still there with no change\n  4. DNSpolicy function still take effect, DNSpackets could be forwarded according to the policy"
+   },
+   "1510552" : {
+      "steps" : "  1. On DNS Client pc set its ip address as 192.168.20.3/24, set the DNS server as 192.168.20.255, shut down Windows Firewall on the DNS Client pc\n  2. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168\n  3. Configure Router f0/0 interface ip as 192.168.30.1, Router f0/1 interface ip as 192.168.40.1\n  4. Add a static route on the Router to reach 192.168.20.0 subnet\n  5. Configure DNS server ip address as 192.168.40.3\n  6. Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  7. Go to Network-&gt;IP Helper, create a DNS policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  8. Disable this DNS IP Helper policy\n  9. On the DNS Client pc, try to ping a dns record on the DNS server\n  10. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "637AEEFA-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DNS Client---x2 Sonicwall x3---f0/0 Router f0/1---DNS server",
+      "id" : "1510552",
+      "title" : "DNS forwarding to one or more host. DNS IP Helper policy is disabled.",
+      "description" : "Original ID: 32\nOriginal Title: DNS forwarding to one or more host. DNS IP Helper policy is disabled.\nOriginal Description: This test case verifies that the DNS broadcast packet can not be forwarded to one or more DNS server on another subnet if the DNS IP Helper policy is disabled.",
+      "result" : "  The DNS IP Helper policy is disabled, the DNS broadcast packet is dropped on the firewall and can not be forwarded to the DNS server."
+   },
+   "1510526" : {
+      "steps" : "  1. Go to Network--&gt;IP Helper\n  2. Click 'Add' button under IP Helper Policies section to add an IP Helper policy for the predefined policy.\n  3. Select 'NetBios' from the Protocol drop down list.\n  4. Select a network address object from the 'From' drop down list, select a network address object from the 'To' drop down list",
+      "priority" : "Smoke",
+      "atm_id" : "634A18FC-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Boot with factory default (Optional)",
+      "id" : "1510526",
+      "title" : "Adding NetBIOS IP Helper policy",
+      "description" : "Original ID: 14\nOriginal Title: Adding NetBIOS IP Helper policy\nOriginal Description: This test verifies that in the 'Add IP Helper Policy' window for NetBIOS protocol\nThe 'From' drop-down will show address objects of type Network.\nThe 'To' drop-down will show address objects of type Network.",
+      "result" : "  The 'From' drop-down will only show address objects of type Network. The 'To' drop-down will only show address objects of type Network."
+   },
+   "1510539" : {
+      "steps" : "  1. Enable IP-Helper and Time protocol, add a Timepolicy, make sure it woks fine\n  2. Have a reboot in firewall\n  3. Check the IP-Helper and Timepolicy settings\n  4. Verify the function of Timepolicy",
+      "priority" : "Full_Regression",
+      "atm_id" : "8ffab9d5-902d-4ee3-bd09-4e3d28f13d53",
+      "initial" : "  TBD",
+      "id" : "1510539",
+      "title" : "Reboot test: verify the Time policy remain intact and still work normally after a reboot",
+      "description" : "Original ID: 198\nOriginal Title: Reboot test: verify the Time policy remain intact and still work normally after a reboot\t\nOriginal Description:",
+      "result" : "  3. Settings are still there with no change\n  4. Timepolicy function still take effect,Timepackets could be forwarded according to the policy"
+   },
+   "1510548" : {
+      "steps" : "  1. Go to Network--&gt;IP Helper\n  2. Create an IP Helper policy for NetBios protocol, forward the NetBios traffic from X2 subnet to X3 subnet\n  3. Send NetBios packets on pc1 to pc2\n  4. Go to System-&gt;Diagnostic, click download report",
+      "priority" : "Smoke",
+      "atm_id" : "62948F14-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  pc1---x2 Sonicwall x3---pc2",
+      "id" : "1510548",
+      "title" : "Displaying IP helper cache in TSR",
+      "description" : "Original ID: 23\nOriginal Title: Displaying IP helper cache in TSR\nOriginal Description: This test verifies that TSR will show all the IP helper cache, current policies and protocols.",
+      "result" : "  TSR file has the IP Helper cache, policy and protocol information."
+   },
+   "1510562" : {
+      "steps" : "  1. On DHCP Client pc set its ip address as Obtain an IP address automatically\n  2. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168, disable the DHCP server on the firewall.\n  3. Configure Router f0/0 interface ip as 192.168.30.1, Router f0/1 interface ip as 192.168.40.1\n  4. Add a static route on the Router to reach 192.168.20.0 subnet\n  5. Configure DHCP server ip address as 192.168.40.3, create a DHCP scope: 192.168.20.10-192.168.20.20\n  6. Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  7. Go to Network-&gt;IP Helper, create a DHCP policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  8. On the DHCP Client pc, execute ipconfig/renew\n  9. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "630904AC-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DHCP Client---x2 Sonicwall x3---f0/0 Router f0/1---DHCP server",
+      "id" : "1510562",
+      "title" : "DHCP forwarding to one or more host. Request from client is resolved.",
+      "description" : "Original ID: 94\nOriginal Title: DHCP forwarding to one or more host. Request from client is resolved.\nOriginal Description: This test case verifies that the DHCP broadcast packet can be forwarded to one or more DHCP server on another subnet.",
+      "result" : "  The DHCP client pc sends a DHCP broadcast packet to the 192.168.20.255 subnet,\n  firewall received the packet and change it to a unicast packet and set the source ip to 192.168.20.168 and destination ip to 192.168.40.3.\n  The DHCP server sends the response to X3 interface of the firewall, then the firewall forward the response to the DHCP CLient."
+   },
+   "1510529" : {
+      "steps" : "  1. On PC1 set its ip address as 192.168.20.3/24, computer name as aaa.\n  2. On PC2 set its ip address as 192.168.30.3/24, computer name as bbb.\n  3. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168\n  4. Go to Network-&gt;IP Helper, create 2 mDNS policies: source-&gt;Interface X2, destination-&gt;X3 subnet source-&gt;Interface X3, destination-&gt;X2 subnet\n  5. On PC1, ping the computer name of PC2 (ping bbb.local.)\n  6. Capture the packet on the firewall\n  Note by Sandy:\n  If the win10 send mdns with ttl 1, the packet will be drop in FW, then disable/enable network adapter in PC1 and PC2 at the same time, then ping name.local again.",
+      "priority" : "Sanity",
+      "atm_id" : "638A0D90-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Windows XP/Vista/2008/MAC PC1-------x2 Sonicwall x3-------Windows XP/Vista/2008/MAC PC2\n  Install Bonjour for Windows on Windows PC (http://support.apple.com/downloads/Bonjour_for_Windows)",
+      "id" : "1510529",
+      "title" : "mDNS forwarding to one or more subnet. Request from client is resolved.",
+      "description" : "Original ID: 153\nOriginal Title: mDNS forwarding to one or more subnet. Request from client is resolved.\nOriginal Description: This test case verifies that the mDNS multicast packet can be forwarded to one or more subnet.",
+      "result" : "  PC1 sends a mDNS multicast query to the multicast address 224.0.0.251, firewall received the packet and forward the packet to X3 subnet.\n  PC2 received the packet and sends the response to the multicast address 224.0.0.251, then the firewall forward the response to PC1."
+   },
+   "1510553" : {
+      "steps" : "  1. On DNS Client pc set its ip address as 192.168.20.3/24, set the DNS server as 192.168.20.255, shut down Windows Firewall on the DNS Client pc\n  2. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168\n  3. Configure Router f0/0 interface ip as 192.168.30.1, Router f0/1 interface ip as 192.168.40.1\n  4. Add a static route on the Router to reach 192.168.20.0 subnet\n  5. Configure DNS server ip address as 192.168.40.3\n  6. Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  7. Go to Network-&gt;IP Helper, create a DNS policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  8. Disable IP Helper\n  9. On the DNS Client pc, try to ping a dns record on the DNS server\n  10. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "622E567C-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  DNS Client---x2 Sonicwall x3---f0/0 Router f0/1---DNS server",
+      "id" : "1510553",
+      "title" : "DNS forwarding to one or more host. IP Helper is disabled.",
+      "description" : "Original ID: 34\nOriginal Title: DNS forwarding to one or more host. IP Helper is disabled.\nOriginal Description: This test case verifies that the DNS broadcast packet can not be forwarded to one or more DNS server on another subnet if IP Helper is disabled.",
+      "result" : "  IP Helper is disabled, the DNS broadcast packet is dropped on the firewall and can not be forwarded to the DNS server."
+   },
+   "1510521" : {
+      "steps" : "  1. On PC1 set its ip address as 192.168.20.3/24, computer name as aaa 2. On PC2 set its ip address as 192.168.30.3/24, computer name as bbb 3. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168 4. Go to Network-&gt;IP Helper, create a NetBios policy: source-&gt;X2 subnet, destination-&gt;X3 subnet 5. Disable IP Helper 6. On PC1, ping the computer name of PC2 7. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "62CFC570-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  PC1---x2 Sonicwall x3---PC2",
+      "id" : "1510521",
+      "title" : "NetBIOS forwarding to one or more subnet. IP Helper is disabled.",
+      "description" : "Original ID: 106\r\nOriginal Title: NetBIOS forwarding to one or more subnet. IP Helper is disabled.\r\nOriginal Description: This test case verifies that the Netbios broadcast packet can not be forwarded to one or more subnet if IP Helper is disabled.",
+      "result" : "  IP Helper is disabled. The NetBios broadcast packet is dropped on the firewall and can not be forwarded to PC2."
+   },
+   "1510560" : {
+      "steps" : "  1. Go to Network-&gt;IP Helper\n  2. Click on the 'Edit' icon to edit the user defined protocol\n  3. Make some change to port number, timeout value, enable/disable the protocol, enable/disable allow source ip translation\n  4. Click the 'OK' button",
+      "priority" : "Smoke",
+      "atm_id" : "61E1FF98-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  One or more user defined IP Helper protocols are added.",
+      "id" : "1510560",
+      "title" : "Editing user defined protocols",
+      "description" : "Original ID: 7\nOriginal Title: Editing user defined protocols\nOriginal Description: This test verifies that user defined protocols can be edited. Timeout, port or IP translation value can be changed.",
+      "result" : "  The change is saved and kept after reboot. Protocol name and Raw Mode can not be changed."
+   },
+   "1510547" : {
+      "steps" : "  1. Go to Network--&gt;IP Helper\n  2. Select 'Enable' check box to enable the corresponding IP Helper policy, unselect 'Enable' check box to disable the corresponding IP Helper policy.",
+      "priority" : "Smoke",
+      "atm_id" : "63635FEC-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  One or more IP Helper policies are created.",
+      "id" : "1510547",
+      "title" : "Enabling/disabling IP Helper policies",
+      "description" : "Original ID: 21\nOriginal Title: Enabling/disabling IP Helper policies\nOriginal Description: This test verifies that IP Helper policies can be individually enabled/disabled via per policy check-box.",
+      "result" : "  The IP Helper policies can be individually enabled/disabled via per policy check-box."
+   },
+   "1510524" : {
+      "steps" : "  1. On Sonicwall1, configure X2 as Lan interface, ip address as 192.168.20.3/24.\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Log-&gt;Syslog, add a syslog server, set the Syslog server as 192.168.20.255\n  2. On Sonicwall2\n  <ul>\n  <li><span style=\"font-size: 10px;\">configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168\n  </li>\n  <li><span style=\"font-size: 10px;\">Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  </li>\n  <li><span style=\"font-size: 10px;\">Go to Network-&gt;IP Helper, create a Syslog policy: source-&gt;Interface X2, destination-&gt;X3 subnet\n  </li>\n  </ul>\n  3. On Sonicwall3\n  <ul>\n  <li><span style=\"font-size: 10px;\">Configure X2 as Lan interface, ip address as 192.168.30.1, configure X3 as Lan interface, ip address as 192.168.40.1.\n  </li>\n  <li><span style=\"font-size: 10px;\">Go to Network-&gt;Routing, create a route policy to reach 192.168.20.0 subnet\n  </li>\n  <li><span style=\"font-size: 10px;\">Go to Network-&gt;IP Helper, create a Syslog policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  </li>\n  </ul>\n  4. Configure the Syslog server ip address as 192.168.40.3\n  5. On Sonicwall1, generate as many log as possible\n  6. Capture the packet on the Sonicwall2 and Sonicwall3",
+      "priority" : "Sanity",
+      "atm_id" : "63AE9F20-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  <ol>\n  <li><span style=\"font-size: 10px;\">User defined protocol Client(Sonicwall1 X2)-----X2 Sonicwall2 X3---X2 Sonicwall3 X3-----User defined protocol server (Syslog server)\n  </li>\n  <li><span style=\"font-size: 10px;\">Here we use syslog (port 514) as user defined protocol.\n  </li>\n  <li><span style=\"font-size: 10px;\">Use Sonicwall1 as syslog client, and install 3CDaemon on a PC as syslog server.\n  </li>\n  </ol>",
+      "id" : "1510524",
+      "title" : "User-defined protocol forwarding to one or more subnet. Request from client is resolved.",
+      "description" : "Original ID: 119\nOriginal Title: User-defined protocol forwarding to one or more subnet. Request from client is resolved.\nOriginal Description: This test case verifies that the user defined protocol broadcast packet can be forwarded to one or more subnet.",
+      "result" : "  The Syslog client sends Syslog broadcast packets to the 192.168.20.255 subnet, Sonicwall2 received the packet and change the destination ip to 192.168.30.255 and forward it to X3 subnet.\n  Sonicwall3 received the broadcast packet and change it to a unicast packet and set the destination ip to 192.168.40.3."
+   },
+   "1510558" : {
+      "steps" : "  1. Go to Network-&gt;IP Helper\n  2. Click the 'Delete' icon on the right side of the page to delete the user defined protocol, or select multiple user defined protocols by clicking the check box beside the user defined protocols, then click 'Delete' button to delete multiple user defined protocols.",
+      "priority" : "Smoke",
+      "atm_id" : "62F0138E-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Some user defined IP Helper protocols are added.",
+      "id" : "1510558",
+      "title" : "Deleting user defined protocols",
+      "description" : "Original ID: 6\nOriginal Title: Deleting user defined protocols\nOriginal Description: This test verifies that one or more than one user defined IP Helper protocols can be deleted from the IP Helper Relay Protocols section on the IP Helper Settings page.",
+      "result" : "  One or more than one user defined IP Helper protocols are deleted."
+   },
+   "1510522" : {
+      "steps" : "  1. On PC1 set its ip address as 192.168.20.3/24, computer name as aaa\n  2. On PC2 set its ip address as 192.168.30.3/24, computer name as bbb\n  3. Configure X2 as LAN/DMZ/WLAN interface, ip address as 192.168.20.168, configure X3 as LAN/DMZ/WLAN interface, ip address as 192.168.30.168\n  4. Go to Network-&gt;IP Helper, create a Netbios policy: source-&gt;X2 subnet\n  , destination-&gt;X3 subnet\n  5. On PC1, ping the computer name of PC2\n  6. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "62D3628E-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  PC1---x2 Sonicwall x3---PC2",
+      "id" : "1510522",
+      "title" : "NetBIOS forwarding to one or more subnet. Test with different source and destination zones.",
+      "description" : "Original ID: 107\nOriginal Title: NetBIOS forwarding to one or more subnet. Test with different source and destination zones.\nOriginal Description: This test case verifies that the Netbios broadcast packet can be forwarded to one or more subnet between different zones.",
+      "result" : "  PC1 sends a Netbios broadcast query to the 192.168.20.255 subnet, firewall received the packet and forward the packet to 192.168.30.255. PC2 sends the response to X3 interface of the firewall, then the firewall forward the response to PC1."
+   },
+   "1510549" : {
+      "steps" : "  1. Go to Network-&gt;IP Helper\n  2. Create some protocols and policies\n  3. Go to System-&gt;Settings, and export the preference file\n  4. Import this preference file to the firewall\n  5. After reboot, check the IP Helper settings are saved.",
+      "priority" : "Smoke",
+      "atm_id" : "62074230-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Boot with factory default (Optional)",
+      "id" : "1510549",
+      "title" : "Prefs import",
+      "description" : "Original ID: 24\nOriginal Title: Prefs import\nOriginal Description: This test verifies that IP Helper settings are saved in a preference file.",
+      "result" : "  IP Helper settings are saved in the preference file."
+   },
+   "1510540" : {
+      "steps" : "  1. Enable IP-Helper andWOL protocol, add aWOL policy, make sure it woks fine\n  2. Have a reboot in firewall\n  3. Check the IP-Helper andWOL policy settings\n  4. Verify the function of WOLpolicy",
+      "priority" : "Sanity",
+      "atm_id" : "6069471e-e579-4720-aac1-accb0384ff4f",
+      "initial" : "  TBD",
+      "id" : "1510540",
+      "title" : "Reboot test: verify the WOL policy remain intact and still work normally after a reboot",
+      "description" : "Original ID: 199\nOriginal Title: Reboot test: verify the WOL policy remain intact and still work normally after a reboot\nOriginal Description:",
+      "result" : "  3. Settings are still there with no change\n  4.WOLpolicy function still take effect, WOLpackets could be forwarded according to the policy"
+   },
+   "1510519" : {
+      "steps" : "  1. On PC1 set its ip address as 192.168.20.3/24, computer name as aaa 2. On PC2 set its ip address as 192.168.30.3/24, computer name as bbb 3. Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168 4. Go to Network-&gt;IP Helper, create a Netbios policy: source-&gt;X2 subnet, destination-&gt;X3 subnet 5. On PC1, ping the computer name of PC2 6. Capture the packet on the firewall",
+      "priority" : "Smoke",
+      "atm_id" : "637F7826-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  PC1---x2 Sonicwall x3---PC2",
+      "id" : "1510519",
+      "title" : "NetBIOS forwarding to one or more subnet. Request from client is resolved.",
+      "description" : "Original ID: 102\r\nOriginal Title: NetBIOS forwarding to one or more subnet. Request from client is resolved.\r\nOriginal Description: This test case verifies that the Netbios broadcast packet can be forwarded to one or more subnet.",
+      "result" : "  PC1 sends a Netbios broadcast query to the 192.168.20.255 subnet, firewall received the packet and forward the packet to 192.168.30.255. PC2 sends the response to X3 interface of the firewall, then the firewall forward the response to PC1."
+   },
+   "1510561" : {
+      "steps" : "  1. On Time Client pc set its ip address as 192.168.20.3/24, set the Time server as 192.168.20.255\n  2. On Sonicwall1, Configure X2 as Lan interface, ip address as 192.168.20.168, configure X3 as Lan interface, ip address as 192.168.30.168.\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;Routing, create a route policy to reach 192.168.40.0 subnet\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;IP Helper, create a Time policy: source-&gt;Interface X2, destination-&gt;X3 subnet\n  3. On Sonicwall2, Configure X2 as Lan interface, ip address as 192.168.30.1, configure X3 as Lan interface, ip address as 192.168.40.1. \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;Routing, create a route policy to reach 192.168.20.0 subnet\n  \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2 Go to Network-&gt;IP Helper, create a Time policy: source-&gt;Interface X2, destination-&gt;192.168.40.3\n  4. Configure Time server ip address as 192.168.40.3\n  5. On the Time Client pc, run the Python script\n  6. Capture the packet on both firewalls",
+      "priority" : "Sanity",
+      "atm_id" : "625E8D06-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Time Client---x2 Sonicwall1 x3---x2 Sonicwall2 x3---Time server\n  Time Client: Writen by Python, download and install Python 2.5/2.6 on the Time Client PC, paste the source code to Python IDE, press F5 to run the script.\n  Time Server: Download and install Absolute Time Server",
+      "id" : "1510561",
+      "title" : "TIME service forwarding to one or more subnet. Request from client is resolved.",
+      "description" : "Original ID: 70\nOriginal Title: TIME service forwarding to one or more subnet. Request from client is resolved.\nOriginal Description: This test case verifies that the Time broadcast packet can be forwarded to one or more subnet.",
+      "result" : "  The Time client pc sends a Time broadcast query to the 192.168.20.255 subnet, Sonicwall1 received the packet and change the destination ip to 192.168.30.255 and forward it to X3 subnet.\n  Sonicwall2 received the broadcast packet and change it to a unicast packet and set the destination ip to 192.168.40.3.\n  The Time server sends the response to X3 interface of Sonicwall2, then Sonicwall2 forward the response to the Sonicwall1.\n  Sonicwall1 forward the response to the Time client."
+   },
+   "1510546" : {
+      "steps" : "  1. Configure VPN tunnel between DUT and a firewall, make sure the VPN tunnel is established, add PBR route in both DUT and peer firewall:\n  Destination: Peer X0 subnet, Interface: VPN tunnel\n  2. Disable DHCP server in DUT X0 interface\n  3. Enable IP Helper and DHCP protocol, add a DHCP relay policy: relay source select X0 interface, destination select peer firewall X0 interface IP\n  <span style=\"background-color: #ffff99;\"><em><strong>Notice:if numbered VPN Tunnel, using internal server, relay policy destination should use remote VPN tunnel interface ip; othrewise, using the external server, relay policy destination is the server ip.</strong></em> 4. Add DHCP scope in peer firewall, the subnet should be matched with DUT X0 subnet\n  5. From DUT LAN side PC to request IP address",
+      "priority" : "Smoke",
+      "atm_id" : "0276d1df-52e9-49ec-8b4e-aab5c663057c",
+      "initial" : "  PC---(X0) DUT (X1)-----VPN Tunnel ----- (X1)Firewall (DHCP Server)",
+      "id" : "1510546",
+      "title" : "Verify DHCP relay function over VPN tunnel",
+      "description" : "Original ID: 203\nOriginal Title: Verify DHCP relay function over VPN tunnel\nOriginal Description:",
+      "result" : "  Result for Step 5: DUT side LAN PC can successfully get IP from VPN peer firewall's DHCP scope."
+   },
+   "1510545" : {
+      "steps" : "  1. Configure site-to-site VPN between DUT and a firewall, both use X0 subnent as the protected local network, make sure the S2S VPN is established.\n  2. Disable DHCP server in DUT X0 interface\n  3. Enable IP Helper and DHCP protocol, add a DHCP relay policy: relay source select X0 interface, destination select peer firewall X0 interface IP\n  4. Add DHCP scope in peer firewall, the subnet should be match with DUT X0 subnet\n  5. From DUT LAN side PC to request IP address",
+      "priority" : "Smoke",
+      "atm_id" : "92f65ec5-f2ec-4de2-b78e-e92b92abe50d",
+      "initial" : "  PC---(X0) DUT (X1)-----S2S VPN ----- (X1)Firewall (DHCP Server)",
+      "id" : "1510545",
+      "title" : "Verify DHCP relay function over site-to-site VPN",
+      "description" : "Original ID: 202\nOriginal Title: Verify DHCP relay function over site-to-site VPN\nOriginal Description:",
+      "result" : "  Result for Step 5: DUT side LAN PC can successfully get IP from VPN peer firewall's DHCP scope."
+   },
+   "1510528" : {
+      "steps" : "  1. Go to Network--&gt;IP Helper\n  2. Click 'Add' button under IP Helper Policies section to add an IP Helper policy for the predefined policy.\n  3. Select 'DHCP' from the Protocol drop down list.\n  4. Select a Interface/Zone address object from the 'From' drop down list, select a host address object from the 'To' drop down list",
+      "priority" : "Smoke",
+      "atm_id" : "6269F362-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Boot with factory default (Optional)",
+      "id" : "1510528",
+      "title" : "Adding DHCP IP Helper policy",
+      "description" : "Original ID: 15\nOriginal Title: Adding DHCP IP Helper policy\nOriginal Description: This test verifies that in the 'Add IP Helper Policy' window for DHCP protocol, \u00ef\u00bf\u00bd0\u00e2\u20ac\u017e2\nthe 'From' drop-down will show address objects of type Interface/Zone.\nThe 'To' drop-down will show address objects of type Host.",
+      "result" : "  The 'From' drop-down will show address objects of type Interface/Zone.\n  The 'To' drop-down will show address objects of type Host."
+   },
+   "1510525" : {
+      "steps" : "  1. Go to Network--&gt;IP Helper\n  2. Click 'Add' button under IP Helper Policies section to add an IP Helper policy for the predefined policy.",
+      "priority" : "Smoke",
+      "atm_id" : "622C2352-6D77-11DE-8C38-5F3500F93527",
+      "initial" : "  Boot with factory default (Optional)",
+      "id" : "1510525",
+      "title" : "Adding IP Helper policy with predefined protocols",
+      "description" : "Original ID: 13\nOriginal Title: Adding IP Helper policy with predefined protocols\nOriginal Description: This test verifies that the 'Protocol' drop-down in the 'Add IP Helper Policy' window displays all predefined protocols: DHCP, NetBIOS, DNS, Time, mDNS, etc.",
+      "result" : "  The 'Protocol' drop-down in the 'Add IP Helper Policy' window displays all predefined protocols: DHCP, NetBIOS, DNS, Time, mDNS, etc."
+   }
+}

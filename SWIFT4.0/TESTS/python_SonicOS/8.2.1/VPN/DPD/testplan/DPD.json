@@ -1,0 +1,121 @@
+{
+   "6" : {
+      "steps" : "  N/A ",
+      "initial" : "  This testcase verifies DPD with keep alive enabled when manually reconfigure the settings by users. ",
+      "id" : "6",
+      "title" : "Keep alive with DPD manual settings",
+      "result" : "  Repeat test case 5 with differnet values of DPD interval and FTL"
+   },
+   "11" : {
+      "steps" : "  N/A ",
+      "initial" : "  This test case will ensure DPD with multipl VPN tunnels with keep alive when some major feature enabled. ",
+      "id" : "11",
+      "title" : "Keep Alive with other Major feature",
+      "result" : "  1- Download and Activate Content filtering\n  2- Enable AV\n  3- Have a firewall in HA\n  4- Setup multiple VPN SAs using one box as a responder and multiple Initiators\n  5- Setup Each box to do DPD, choose minimum values for DPD (Interval = 3 and FTL = 3)\n  6- Enable Keep Alive"
+   },
+   "3" : {
+      "steps" : "  N/A ",
+      "initial" : "  This test case verifies DPD default settings work properly. ",
+      "id" : "3",
+      "title" : "Default Settings",
+      "result" : "  1- Boot both initiator and responder to factory defaults and then configure LAN and WAN.\n  2- Go to VPN Advanced page, and DPD would have following default settings.\n  -Enable Dead Peer Detection checkbox checked\n  - Dead Peer Detection Interval = 60 seconds\n  - Failure Trigger Level = 3 missed heartbeats\n  - \"Enable Dead Peer Detection for Idle VPN sessions\" checkbox unchecked\n  3- Configure VPN Policy on both initiator and responder with keepalive disabled.\n  4- Bring up the tunnel by sending continuous ping to the responder.\n  5- Disconnect the WAN port of responder."
+   },
+   "7" : {
+      "steps" : "  N/A ",
+      "initial" : "  This testcase verify sonicwall will not accept invalid values on DPD interval. ",
+      "id" : "7",
+      "title" : "Invalid DPD interval",
+      "result" : "  Valid range for Dead Peer Detection interval is from 3 to 120 seconds. Try both valid and invalid values eg. Valid values: 3, 60, 120, invalid values: 0, 2, 121, -989, adkja , @~!#$%^&*()"
+   },
+   "9" : {
+      "steps" : "  N/A",
+      "initial" : "  This test case will ensure DPD with multiple VPN tunnels ",
+      "id" : "9",
+      "title" : "Stress with multipl VPN tunnel",
+      "result" : "  1- Setup multiple VPN SAs using one box as a responder and multiple Initiators\n  2- Setup Each box to do DPD, choose minimum values for DPD (Interval = 3 and FTL = 3)"
+   },
+   "2" : {
+      "steps" : "  N/A ",
+      "initial" : "  This testcase will verify that VPN tunnel would still be up, when DPD is disabled and traffic is turned off traffic from Initiator side ",
+      "id" : "2",
+      "title" : "Disable DPD with initiator traffic turned off",
+      "result" : "  1- Go to VPN Advanced page and Uncheck Enable Dead Peer Detection checkbox.\n  2- Restart Both Firewalls.\n  3- Configure both local and remote and SAs and enter 28800 for SA lifetime.\n  4- Bring up the tunnel by pinging the remote.\n  5- Turn off the traffic from the Initiator."
+   },
+   "17" : {
+      "steps" : "  setup S2S VPN with 2 firewalls.",
+      "initial" : "  This test case is to verify DPD enabled at both site can work",
+      "id" : "17",
+      "title" : "enable DPD at both sites",
+      "result" : "  1) enable DPD at firewall 1 with DPDI and FTL with default setting\n  2) enable DPD at firewall 2 with DPDI=100,FTP=5.\n  3) trig the VPN tunnel to setup by ping to remote .\n  4) check the VPN state and logs ,monitor it with more than 1 hour."
+   },
+   "12" : {
+      "steps" : "  NA ",
+      "initial" : "  This testcase will verify that VPN tunnel would still be up, when \"DPD for idle VPN session\" is disabled and traffic is turned off traffic from Initiator side ",
+      "id" : "12",
+      "title" : "Disable DPD for Idle VPN sessions",
+      "result" : "  1- Go to VPN Advanced page and make sure that \"Dead Peer Detection for idle VPN session\" checkbox is unchecked.\n  2- Change \"Dead Peer Detection Interval for Idle VPN sessions\" from default 600 sec to smaller time e.g 100 sec\n  3- Restart Both Firewalls. 4- Configure both local and remote and SAs and enter 28800 for SA lifetime. 5\n  - Bring up the tunnel by pinging the remote.\n  6- Turn off the traffic from the Initiator.\n  7- Disconnect responder's WAN interface"
+   },
+   "15" : {
+      "steps" : "  TBD",
+      "initial" : "  Verify DPD by exporting / importing prefs",
+      "id" : "15",
+      "title" : "Export / Import Prefs",
+      "result" : "  1- Go to VPN Advanced page and enable \"Dead Peer Detection for idle VPN session\" checkbox 2- Change \"Dead Peer Detection Interval for Idle VPN sessions\" from default 600 sec to smaller time e.g 100 sec 3- setting the FTL to 4\n  4- Configure both local and remote and SAs and enter 28800 for SA lifetime. 5- restart both firewall\n  6- Bring up the tunnel by pinging the remote. 7- restart both the firewalls and export the setting of one firewall\n  8- import the setting pref file to the one fireall ,then restart\n  9- Bring up the tunnel by pinging the remote."
+   },
+   "14" : {
+      "steps" : "  NA ",
+      "initial" : "  This testcase verify sonicwall will not accept invalid values on \"DPD interval for idle VPN sessions\" ",
+      "id" : "14",
+      "title" : "Invalid \"DPD interval for idle VPN sessions\"",
+      "result" : "  Valid range for \"DPD interval for idle VPN sessions\" is from 60 to 3600 seconds. Try both valid and invalid values eg. Valid values: 60, 1800, 3600, invalid values: 0, 59, 3601, -60, -3600, 9999, adkja , @~!#"
+   },
+   "8" : {
+      "steps" : "  N/A ",
+      "initial" : "  This testcase verify sonicwall will not accept invalid values on DPD failure trigger level. ",
+      "id" : "8",
+      "title" : "Invalid DPD FTL",
+      "result" : "  Valid range for DPD FTL is from 3 to 10. Try both valid and invalid values eg. Valid values: 3, 6, 10, invalid values: 0, 2, 11, -989, adkja , @~!#$%^&*()"
+   },
+   "4" : {
+      "steps" : "  N/A ",
+      "initial" : "  The test case will verify when interval and FTL time works properly. ",
+      "id" : "4",
+      "title" : "Change Interval and FTL time",
+      "result" : "  1- Go to VPN Advanced page and change \"Dead Peer Detection Interval\" to 3 seconds and \"Failure Trigger Level\" to 3 missed heartbeats\n  2- Configure VPN Policy on both initiator and responder with keepalive disabled.\n  3- Bring up the tunnel by sending continuous ping to the responder.\n  4- Disconnect the WAN port of responder. 5- Repeat test with 120 for Interval and 10 for FTL"
+   },
+   "1" : {
+      "steps" : "  N/A ",
+      "initial" : "  This testcase will verify that VPN tunnel would still be up, when DPD is disabled and responder side is turned off. ",
+      "id" : "1",
+      "title" : "Disable DPD",
+      "result" : "  1- Go to VPN Advanced page and Uncheck Enable Dead Peer Detection checkbox.\n  2- Restart Both Firewalls.\n  3- Configure both local and remote and SAs and enter 28800 for SA lifetime.\n  4- Bring up the tunnel by sending continuous ping to the remote 5- Turn off the responder side"
+   },
+   "10" : {
+      "steps" : "  N/A ",
+      "initial" : "  This test case will ensure DPD with multipl VPN tunnels with keep alive. ",
+      "id" : "10",
+      "title" : "Stress test with multipl VPN with Keep alive enabled",
+      "result" : "  1- Setup multiple VPN SAs using one box as a responder and multiple Initiators\n  2- Setup Each box to do DPD, choose minimum values for DPD (Interval = 3 and FTL = 3)\n  3- Enable Keep Alive"
+   },
+   "13" : {
+      "steps" : "  NA ",
+      "initial" : "  This test case verifies that DPD for Idle VPN sessions works properly ",
+      "id" : "13",
+      "title" : "Enable DPD for Idle VPN sessions",
+      "result" : "  1- Go to VPN Advanced page and enable \"Dead Peer Detection for idle VPN session\" checkbox\n  2- Change \"Dead Peer Detection Interval for Idle VPN sessions\" from default 600 sec to smaller time e.g 100 sec\n  3- Restart Both Firewalls.\n  4- Configure both local and remote and SAs and enter 28800 for SA lifetime.\n  5- Bring up the tunnel by pinging the remote.\n  6- Turn off the traffic from the Initiator.\n  7- Disconnect responder's WAN interface"
+   },
+   "16" : {
+      "steps" : "   setup site to site VPN ,local is a pair of HA firewalls ,remote is a single firewalls.",
+      "initial" : "  This test case is to verify the DPD works for HA.",
+      "id" : "16",
+      "title" : "DPD works for HA configuration",
+      "result" : "  1) on local HA firewalls,Enable DPD,and settings for DPD interval is 100\n  2) setting FTL to 5\n  3) on remote firewall ,config the same settings\n  4) trig the VPN setup by ping to remote\n  5) check the logs and VPN tunnel state"
+   },
+   "5" : {
+      "steps" : "  N/A ",
+      "initial" : "  This testcase verifies when using Keep alive with DPD option with default settings. ",
+      "id" : "5",
+      "title" : "Keep alive with DPD default settings",
+      "result" : "  1- Boot both initiator and responder to factory defaults and then configure LAN and WAN.\n  2- Go to VPN Advanced page, and DPD would have following default settings.\n  -Enable Dead Peer Detection\u009d checkbox checked\n  - Dead Peer Detection Interval = 60 seconds\n  - Failure Trigger Level = 3 missed heartbeats\n  3- Configure VPN Policy on both initiator and responder.\n  4- Enable Keeplive on responder\n  5- Disconnect the WAN port of responder\n  6- When the tunnel goes down after 3 missed DPD interval reconnect the WAN port again\n  7- Wait for few minutes 8- Repeat step 5 and 7 about 3 or 4 times"
+   }
+}

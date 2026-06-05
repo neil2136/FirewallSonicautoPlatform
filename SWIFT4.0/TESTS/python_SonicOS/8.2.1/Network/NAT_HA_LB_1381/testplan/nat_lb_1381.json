@@ -1,0 +1,352 @@
+{
+   "33" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) Set NAT method to Random Distribution\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection that a random address is selected.\n  Algorithm randomly selects an address from the pool.",
+      "initial" : "  Setup A with NAT policy F. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "33",
+      "title" : "NAT Method Random distribution- source ANY to pool with Address Object containing range",
+      "result" : "  Random Distribution algorithm behaves as expected."
+   },
+   "32" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) Set NAT method to Random Distribution\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection that a random address is selected.\n  Algorithm randomly selects an address from the pool.",
+      "initial" : "  Setup A with NAT policy E. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "32",
+      "title" : "NAT Method Random distribution- source ANY to pool with Address Object containing hosts",
+      "result" : "  Random Distribution algorithm behaves as expected."
+   },
+   "21" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) On General tab set NAT method to Sticky IP.\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection the IP which the client maps to is used.\n  The sticky IP remap algorithm uses a hash algorithm whereby the source IP address is modulo with the size of the server cluster to determine the server to remap to. For example, in a 3 server cluster (servers A, B, C), the host 192.168.168.100 would remap to server A (192.168.168.100 % 3 = 1).",
+      "initial" : "  Setup B with NAT policy C. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "21",
+      "title" : "NAT Method Sticky IP- source Network to pool with Address Object containing range",
+      "result" : "  Sticky IP algorithm behaves as expected."
+   },
+   "7" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set Probe host every 10 seconds.\n  7) Click OK\n  8) Verify that probe used is TCP handshake on port 80 and is sent every 10 seconds.\n  9) Repeat steps for a few more intervals.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "7",
+      "title" : "Probe interval",
+      "result" : "  Can set probe interval."
+   },
+   "26" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval large - 60 seconds.\n  7) Set probe retry timeout small - 2 seconds.\n  8) Set Missed probes to 3.\n  9) Set NAT method to Block Remapping.\n  10) Click OK\n  11) Use clients to connect to resources continually.\n  12) Disconnect one of the services.\n  13) Observe traffic up to time of 3 missed probe.\n  14) Verify message is logged when transition happens.\n  15) Observe that access to service is not tried when it has been marked down, that traffic is devided between remaining services.\n  16) Repeat steps other missed probe values.",
+      "initial" : "  Setup B with NAT policy C. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "26",
+      "title" : "Block remapping missed probes - resource down",
+      "result" : "  Can set probe missed and is used properly."
+   },
+   "2" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Uncheck the Enable check box.\n  5) Click OK\n  6) Start packet capture program.\n  7) Verify that probes stop.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "2",
+      "title" : "Disable Probe",
+      "result" : "  Can disable HA probes."
+   },
+   "17" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval large - 60 seconds.\n  7) Set probe retry timeout small - 2 seconds.\n  8) Set Missed probes to 3.\n  9) Set NAT method to Round Robin.\n  10) Click OK\n  11) Use clients to connect to resources continually.\n  12) Disconnect one of the services.\n  13) Observe traffic up to time of 3 missed probe.\n  14) Verify message is logged when transition happens.\n  15) Observe that access to service is not tried when it has been marked down, that traffic is devided between remain services in Round Robin fashion.\n  16) Repeat steps other missed probe values.",
+      "initial" : "  Setup A with NAT policy E. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "17",
+      "title" : "Round Robin missed probes - resource down",
+      "result" : "  Can set probe missed and is used properly."
+   },
+   "1" : {
+      "steps" : "  1) Start packet capture program.\n  2) Log in to admin UI.\n  3) Click to edit the NAT policy.\n  4) Click the Advanced tab\n  5) Check the Enable check box.\n  6) Configure other parameters as necessary.\n  7) Click OK\n  8) Verify that probes are sent.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed.",
+      "id" : "1",
+      "title" : "Enable Probe",
+      "result" : "  HA probes are sent to device."
+   },
+   "18" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval large - 60 seconds.\n  7) Set probe retry timeout small - 2 seconds.\n  8) Set Missed probes to 3.\n  9) Set Successful probes to 3.\n  10) Set NAT method to Round Robin.\n  11) Click OK\n  12) Use clients to connect to resources continually.\n  13) Disconnect one of the services.\n  14) Observe traffic up to time of 3 missed probe.\n  15) Observe that access to service is not tried when it has been marked down, that traffic is devided between remain services.\n  16) Reconnect service.\n  17) Observe traffic up to time of 3 successful probes.\n  18) Verify message is logged when transition happens.\n  19) Observe that access to the services resumes with traffic being devided to all services.\n  20) Repeat steps other successful probes values.",
+      "initial" : "  Setup A with NAT policy E. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "18",
+      "title" : "Round Robin successful probes - resource restored",
+      "result" : "  Can set successful probes and is used properly."
+   },
+   "30" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval large - 60 seconds.\n  7) Set probe retry timeout small - 2 seconds.\n  8) Set Missed probes to 3.\n  9) Set NAT method to Symmetrical Mapping\n  10) Click OK\n  11) Use clients to connect to resources continually.\n  12) Disconnect one of the services.\n  13) Observe traffic up to time of 3 missed probe.\n  14) Verify message is logged when transition happens.\n  15) Observe that access to service is not tried when it has been marked down, that traffic is devided between remain services.\n  16) Repeat steps other missed probe values.",
+      "initial" : "  Setup B with NAT policy D. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "30",
+      "title" : "Symmetrical mapping missed probes - resource down (Do not test, no this function)",
+      "result" : "  Can set probe missed and is used properly."
+   },
+   "16" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) Set NAT method to Round Robin.\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection new service next service in NAT policy is used.\n  The round robin remap algorithm sends each incoming connection to the next address in its list. For example, in a 3 server cluster (servers A, B, C), connection #1 would go to server A, connection #2 would go to server B, connection #3 would go to server C, and request #4 would go to server A, thus completing the round robin of all servers.\n  9) Repeat steps with original destination as a range of IP addresses.",
+      "initial" : "  Setup B with NAT policy C. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "16",
+      "title" : "NAT Method Round Robin- source Network to pool with Address Object containing range",
+      "result" : "  Round robin algorithm behaves as expected."
+   },
+   "44" : {
+      "steps" : "  1) Set 8 NAT policies with method to Round Robin\n  2) Disconnect resources.\n  3) Verify marking down of resources (verify each IP in range is marked down)\n  4) Reconnect resources\n  5) Verify marking up of resources",
+      "initial" : "  Setup B with NAT F policy",
+      "id" : "44",
+      "title" : "Scalability - multiple policies and stress test probing",
+      "result" : "  NAT policy probing scales without issues."
+   },
+   "27" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval large - 60 seconds.\n  7) Set probe retry timeout small - 2 seconds.\n  8) Set Missed probes to 3.\n  9) Set Successful probes to 3.\n  10) Set NAT method to Block Remapping\n  11) Click OK\n  12) Use clients to connect to resources continually.\n  13) Disconnect one of the services.\n  14) Observe traffic up to time of 3 missed probe.\n  15) Observe that access to service is not tried when it has been marked down, that traffic is devided between remain services.\n  16) Reconnect service.\n  17) Observe traffic up to time of 3 successful probes.\n  18) Verify message is logged when transition happens.\n  19) Observe that access to the services resumes with traffic being devided to all services.\n  20) Repeat steps other successful probes values.",
+      "initial" : "  Setup B with NAT policy C. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "27",
+      "title" : "Block remapping successful probes - resource restored",
+      "result" : "  Can set successful probes and is used properly."
+   },
+   "25" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) Set NAT method to Block Remapping\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection new service next service in NAT policy is used.\n  The block remapping algorithm divides the size of the source network by the size of the address pool to create logical segments. For example, where x is a 10.1.1.0/24 source subnet and y is a range of addresses 4.2.2.1 - 4.2.2.8 being used as an outbound pool. The 10.1.1.0/24 subnet will be divided into 32 segments (size of x / size of y), and remap the first 32 of x to the first y (10.1.1.1-10.1.1.31 to 4.2.2.1), the seconds 32 of x to the second y (10.1.1.32-10.1.1.63 to 4.2.2.2) etc.\n  For this setup:\n  size of x/size of y = 128/3 = 42 2/3\n  10.190.16.10 (WebBench Client 1) => 192.168.168.10\n  10.190.16.72 (WebBench Client 2) => 192.168.168.72\n  10.190.16.125 (WebBench Client 3) => 192.168.168.125",
+      "initial" : "  Setup B with NAT policy C. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "25",
+      "title" : "NAT Method Block remapping - source Network to pool with Address Object containing range",
+      "result" : "  Block Remapping algorithm behaves as expected."
+   },
+   "28" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Start creation of a NAT policy.\n  3) On Advanced tab set NAT method to Symmetrical Mapping\n  4) Attempt to add a Address object for Original Source that is a collection of individual hosts.\n  5) Attempt to add a Address object for Original Source that is a Range.\n  6) Attempt to add a Address object for Destination that is a collection of individual hosts.\n  7) Attempt to add a Address object for Destination that is a Ranges\n  8) Verify errors",
+      "initial" : "  NA.",
+      "id" : "28",
+      "title" : "NAT Symetrical Mapping - verify configuration validation code",
+      "result" : "  Symmetrical Mapping algorithm validation checks are in place"
+   },
+   "40" : {
+      "steps" : "  1) Set NAT method to Sticky IP\n  2) Run Web Bench HTTP 1.0 Test with 100 threads per 3 clients and basic verify script.\n  3) Keep results for comparison against other algorithms.\n  4) Repeat with probes enabled",
+      "initial" : "  Setup B with NAT D policy",
+      "id" : "40",
+      "title" : "Stress Sticky IP NAT Method",
+      "result" : "  Sticky IP NAT Method Stress."
+   },
+   "14" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) Set NAT method to Round Robin.\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection new service next service in NAT policy is used.\n  The round robin remap algorithm sends each incoming connection to the next address in its list. For example, in a 3 server cluster (servers A, B, C), connection #1 would go to server A, connection #2 would go to server B, connection #3 would go to server C, and request #4 would go to server A, thus completing the round robin of all servers.",
+      "initial" : "  Setup A with NAT policy E. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "14",
+      "title" : "NAT Method Round Robin- source ANY to pool with Address Object containing hosts",
+      "result" : "  Round robin algorithm behaves as expected."
+   },
+   "20" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) On General tab set NAT method to Sticky IP.\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection the IP which the client maps to is used.\n  The sticky IP remap algorithm uses a hash algorithm whereby the source IP address is modulo with the size of the server cluster to determine the server to remap to. For example, in a 3 server cluster (servers A, B, C), the host 192.168.168.100 would remap to server A (192.168.168.100 % 3 = 1).\n  For this setup:\n  67.1.2.3 => 10.190.6.106\n  204.20.30.40 => 10.190.6.105\n  217.8.9.11 => 10.190.6.107",
+      "initial" : "  Setup A with NAT policy B. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "20",
+      "title" : "NAT Method Sticky IP- source ANY to pool with Address Object containing range",
+      "result" : "  Sticky IP algorithm behaves as expected."
+   },
+   "49" : {
+      "steps" : "  1)Add a NAT policy with translated destination as a range;\n  2) Edit the added NAT policy,click the Advanced tab;\n  3) Select the \"Enable probing\",click OK;\n  4)Reconfigure the NAT policy,change the translated destination as a host,check the \u00a1\u00b0Enable probing\" and \"NAT Method\".",
+      "initial" : "  TBD",
+      "id" : "49",
+      "title" : "Probing enabled and change translated destination to a single target",
+      "result" : "  In step 4,verify the \u00a1\u00b0Enable probing\" and \"NAT Method\" are gray."
+   },
+   "24" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Start creation of a NAT policy.\n  3) On Advanced tab set NAT method to Block Remapping\n  4) Attempt to add a Address object for Original Source that is a collection of individual hosts.\n  5) Attempt to add a Address object for Original Source that is a Range.\n  6) Attempt to add a Address object for Destination that is a collection of individual hosts.\n  7) Attempt to add a Address object for Destination that is a Network\n  8) Verify error.",
+      "initial" : "  NA.",
+      "id" : "24",
+      "title" : "NAT Method Block remapping - verify configuration validation code",
+      "result" : "  Block Remapping algorithm validation checks are in place"
+   },
+   "10" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe retry timeout to 0\n  7) Click OK\n  8) Verify Error.\n  9) Set probe retry timeout to 11\n  10) Click OK.\n  11) Verify Error.\n  12) Set probe retry timeout to -1.\n  13) Click OK\n  14) Verify Error.\n  15) Set probe retry timeout to 1.\n  16) Click OK\n  17) Start packet capture program.\n  18) Verify that probe retry timeout is every 1 second.\n  19) Timeout longer than probe interval",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "10",
+      "title" : "Probe reply timeout range",
+      "result" : "  Can set probe retry timeout only within the range."
+   },
+   "31" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval large - 60 seconds.\n  7) Set probe retry timeout small - 2 seconds.\n  8) Set Missed probes to 3.\n  9) Set Successful probes to 3.\n  10) Set NAT method to Symmetrical Mapping\n  11) Click OK\n  12) Use clients to connect to resources continually.\n  13) Disconnect one of the services.\n  14) Observe traffic up to time of 3 missed probe.\n  15) Observe that access to service is not tried when it has been marked down, that traffic is devided between remain services.\n  16) Reconnect service.\n  17) Observe traffic up to time of 3 successful probes.\n  18) Verify message is logged when transition happens.\n  19) Observe that access to the services resumes with traffic being devided to all services.\n  20) Repeat steps other successful probes values.",
+      "initial" : "  Setup B with NAT policy D. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "31",
+      "title" : "Symmetrical mapping successful probes - resource restored(Do not test, no this function)",
+      "result" : "  Can set successful probes and is used properly."
+   },
+   "35" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval large - 60 seconds.\n  7) Set probe retry timeout small - 2 seconds.\n  8) Set Missed probes to 3.\n  9) Set NAT method to Random Distribution\n  10) Click OK\n  11) Use clients to connect to resources continually.\n  12) Disconnect one of the services.\n  13) Observe traffic up to time of 3 missed probe.\n  14) Verify message is logged when transition happens.\n  15) Observe that access to service is not tried when it has been marked down, that traffic is devided between remain services.\n  16) Repeat steps other missed probe values.",
+      "initial" : "  Setup A with NAT policy E. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "35",
+      "title" : "Random distribution missed probes - resource down",
+      "result" : "  Can set probe missed and is used properly."
+   },
+   "11" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 82\n  6) Set missed intervals to 0\n  7) Click OK\n  8) Verify Error.\n  9) Set missed intervals to 11.\n  10) Click OK\n  11) Verify Error\n  12) Set missed intervals to -1.\n  13) Click OK\n  14) Verify Error.\n  15) Set probe missed probes to 1.\n  16) Click OK\n  17) Verify success.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "11",
+      "title" : "Missed probes interval range",
+      "result" : "  Can set missed intervals only within the range."
+   },
+   "48" : {
+      "steps" : "  1) Start packet capture program;\n  2) Log in to admin UI;\n  3)Set interface X2 as DMZ,add a NAT policy about X2;\n  4) Edit the added NAT policy,Click the Advanced tab;\n  5) Check the Enable check box;\n  6) Configure other parameters as necessary,click OK;\n  7) Check the packet.",
+      "initial" : "  TBD",
+      "id" : "48",
+      "title" : "Test probing in DMZ",
+      "result" : "  In step 7,verify HA probes are sent to device from interface X2."
+   },
+   "42" : {
+      "steps" : "  1) Set NAT method to Symmetrical Mapping\n  2) Run Web Bench HTTP 1.0 Test with 100 threads per 3 clients and basic verify script.\n  3) Keep results for comparison against other algorithms.\n  4) Repeat with probes enabled",
+      "initial" : "  Setup B with NAT D policy",
+      "id" : "42",
+      "title" : "Stress Symmetrical Mapping NAT Method",
+      "result" : "  Symmetrical Mapping NAT Method Stress."
+   },
+   "22" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval large - 60 seconds.\n  7) Set probe retry timeout small - 2 seconds.\n  8) Set Missed probes to 3.\n  9) Set NAT method to Sticky IP\n  10) Click OK\n  11) Use clients to connect to resources continually.\n  12) Disconnect one of the services.\n  13) Observe traffic up to time of 3 missed probe.\n  14) Verify message is logged when transition happens.\n  15) Observe that access to service is not tried when it has been marked down, that traffic is devided between remaining services by remapping correctly.\n  16) Repeat steps other missed probe values.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "22",
+      "title" : "Sticky IP missed probes - resource down",
+      "result" : "  Can set probe missed and is used properly."
+   },
+   "46" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) Set NAT method to Round Robin.\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection new service next service in NAT policy is used.\n  The round robin remap algorithm sends each incoming connection to the next address in its list. For example, in a 3 server cluster (servers A, B, C), connection #1 would go to server A, connection #2 would go to server B, connection #3 would go to server C, and request #4 would go to server A, thus completing the round robin of all servers.\n  9) Repeat steps with original destination as a range of IP addresses.",
+      "initial" : "  Setup A with NAT policy E. Capture traffic on port that has the service that will be probed. Probes enabled. Resources are on an interface other than X0.",
+      "id" : "46",
+      "title" : "Round Robin NAT LB with resources on interface other than X0",
+      "result" : "  NAT LB functions properly with Round robin algorithm behaving as expected."
+   },
+   "13" : {
+      "steps" : "  1) Start packet capture program.\n  2) Log in to admin UI.\n  3) Click to edit the NAT policy.\n  4) Click the Advanced tab\n  5) Check the Enable check box.\n  6) Configure other parameters as necessary.\n  7) Click OK\n  8) Verify that probes are sent.",
+      "initial" : "  Setup B with NAT policy B. Capture traffic on port that has the service that will be probed.",
+      "id" : "13",
+      "title" : "Probes to a large range",
+      "result" : "  HA probes are sent to device."
+   },
+   "23" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval large - 60 seconds.\n  7) Set probe retry timeout small - 2 seconds.\n  8) Set Missed probes to 3.\n  9) Set Successful probes to 3.\n  10) Set NAT method to Sticky IP.\n  11) Click OK\n  12) Use clients to connect to resources continually.\n  13) Disconnect one of the services.\n  14) Observe traffic up to time of 3 missed probe.\n  15) Observe that access to service is not tried when it has been marked down, that traffic is devided between remain services.\n  16) Reconnect service.\n  17) Observe traffic up to time of 3 successful probes.\n  18) Verify message is logged when transition happens.\n  19) Observe that access to the services resumes with traffic being devided to all services by remapping correctly.\n  20) Repeat steps other successful probes values.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "23",
+      "title" : "Sticky IP successful probes - resource restored",
+      "result" : "  Can set successful probes and is used properly."
+   },
+   "29" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set NAT method to Symmetrical Mapping\n  5) Click OK\n  6) Use clients to connect to resources continually.\n  7) Verify that for each connection the correct mapping is used.\n  This algorithm grafts the network portion of the pool addresses over the top of the address that is being modified. For example, if the address pool is 192.0.2.0/25 and the address being modified is 10.0.0.50, then the resulting address will be 192.0.2.50. If the address pool is 192.0.2.0/25, and the address being modified is 10.0.0.130, then the resultant address will be 192.0.2.2.\n  For this setup:\n  10.190.16.10 (WebBench Client 1) => 192.168.168.10\n  10.190.16.72 (WebBench Client 2) => 192.168.168.72\n  10.190.16.125 (WebBench Client 3) => 192.168.168.125",
+      "initial" : "  Setup B with NAT policy D. Capture traffic on port . Probes disabled.",
+      "id" : "29",
+      "title" : "NAT Method Symmetrical Mapping - source Network to pool with Address Object containing Network",
+      "result" : "  Symmetrical mapping algorithm behaves as expected."
+   },
+   "6" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 0\n  6) Click OK\n  7) Verify Error.\n  8) Set probe port to 65536.\n  9) Click OK\n  10) Verify Error\n  11) Set probe port to -1.\n  12) Click OK\n  13) Verify Error.\n  14) Set probe port to 1.\n  15) Click OK\n  16) Start packet capture program.\n  17) Verify that probe used is TCP handshake on port 1.\n  18) Set probe port to 65535.\n  19) Start packet capture program.\n  20) Verify that probe used is TCP handshake on port 65535.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "6",
+      "title" : "Probe port range",
+      "result" : "  Can set probe port only within the TCP port range."
+   },
+   "50" : {
+      "steps" : "  In step 5,\"RST Response Counts As Miss\" should be enabled .",
+      "initial" : "  1. create NAT policy;\n  2. Enable probing and change probe type to TCP;\n  3. Select \"RST Response Counts As Miss\";\n  4. Click OK and close; 5. Open the same policy again and check the status of \"RST Response Counts As Miss\".",
+      "id" : "50",
+      "title" : "[GUI]Reopen the nat policy,check the status of \"RST Response Counts As Miss\"",
+      "result" : ""
+   },
+   "39" : {
+      "steps" : "  1) Set NAT method to Round Robin\n  2) Run Web Bench HTTP 1.0 Test with 100 threads per 3 clients and basic verify script.\n  3) Keep results for comparison against other algorithms.\n  4) Repeat with probes enabled",
+      "initial" : "  Setup B with NAT E policy",
+      "id" : "39",
+      "title" : "Stress Round Robin NAT Method",
+      "result" : "  Round Robin NAT Method Stress."
+   },
+   "3" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to ping\n  5) Click OK\n  6) Start packet capture program.\n  7) Verify that probe used is ping.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "3",
+      "title" : "Probe type ping",
+      "result" : "  Can use probe type of ping."
+   },
+   "36" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval large - 60 seconds.\n  7) Set probe retry timeout small - 2 seconds.\n  8) Set Missed probes to 3.\n  9) Set Successful probes to 3.\n  10) Set NAT method to Random Distribution\n  11) Click OK\n  12) Use clients to connect to resources continually.\n  13) Disconnect one of the services.\n  14) Observe traffic up to time of 3 missed probe.\n  15) Observe that access to service is not tried when it has been marked down, that traffic is devided between remain services.\n  16) Reconnect service.\n  17) Observe traffic up to time of 3 successful probes.\n  18) Verify message is logged when transition happens.\n  19) Observe that access to the services resumes with traffic being devided to all services.\n  20) Repeat steps other successful probes values.",
+      "initial" : "  Setup A with NAT policy E. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "36",
+      "title" : "Random distribution successful probes - resource restored",
+      "result" : "  Can set successful probes and is used properly."
+   },
+   "9" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Enable Probing\n  8) Set the probe reply timeout to 10 seconds.\n  9) Set the missed probes to 1.\n  10) Set the successful probes to 1.\n  11) Click OK\n  12) Disconnect a service.\n  13) Observer a probe in continuous packet capture\n  14) 10 seconds after this look in logs and see if the service has been taken out of the pool.\n  15) Repeat steps for a few more probe reply timeouts.",
+      "initial" : "  Setup A with NAT policy A. NAT Method set to Round Robin. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "9",
+      "title" : "Probe reply timeout",
+      "result" : "  Can set probe retry timeout."
+   },
+   "41" : {
+      "steps" : "  1) Set NAT method to Block Mapping\n  2) Run Web Bench HTTP 1.0 Test with 100 threads per 3 clients and basic verify script.\n  3) Keep results for comparison against other algorithms.\n  4) Repeat with probes enabled",
+      "initial" : "  Setup B with NAT D policy",
+      "id" : "41",
+      "title" : "Stress Block Mapping NAT Method",
+      "result" : "  Block Mapping NAT Method Stress."
+   },
+   "12" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 82\n  6) Set Successful probes interval to 0\n  7) Click OK\n  8) Verify Error.\n  9) Set Successful probes interval to 11\n  10) Click OK\n  11) Verify Error\n  12) Set Successful probes interval to -1.\n  13) Click OK\n  14) Verify Error.\n  15) Set probe successful probes to 1.\n  16) Click OK\n  17) Verify success.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "12",
+      "title" : "Successful probes interval range",
+      "result" : "  Can set Successful probes interval only within the range."
+   },
+   "47" : {
+      "steps" : "  1) Start packet capture program.\n  2) Log in to admin UI.\n  3) Click to edit the NAT policy.\n  4) Click the Advanced tab\n  5) Check the Enable check box.\n  6) Configure other parameters as necessary.\n  7) Click OK\n  8) Verify that probes are sent.\n  9) Disable the NAT policy.",
+      "initial" : "  Setup A with NAT policy A.",
+      "id" : "47",
+      "title" : "Disabling NAT LB Policy with Probing Enabled",
+      "result" : "  Probes are no longer sent after disabling NAT policy"
+   },
+   "15" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) Set NAT method to Round Robin.\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection new service next service in NAT policy is used.\n  The round robin remap algorithm sends each incoming connection to the next address in its list. For example, in a 3 server cluster (servers A, B, C), connection #1 would go to server A, connection #2 would go to server B, connection #3 would go to server C, and request #4 would go to server A, thus completing the round robin of all servers.\n  9) Repeat steps with original destination as a range of IP addresses.",
+      "initial" : "  Setup A with NAT policy F. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "15",
+      "title" : "NAT Method Round Robin- source ANY to pool with Address Object containing range",
+      "result" : "  Round robin algorithm behaves as expected."
+   },
+   "8" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80\n  6) Set probe interval to 0\n  7) Click OK\n  8) Verify Error.\n  9) Attempt to set interval to 100\n  10) Verify Failure\n  11) Set probe interval to -1.\n  12) Click OK\n  13) Verify Error.\n  14) Set probe interval to 1.\n  15) Click OK\n  16) Start packet capture program.\n  17) Verify that probe interval is every 1 second.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "8",
+      "title" : "Probe interval range",
+      "result" : "  Can set probe interval only within the range."
+   },
+   "38" : {
+      "steps" : "  1) Have the NAT policy configured on previous version of the device - 3.2, 3.5.\n  2) Upgrade the device.\n  3) Verify that Sticky IP is the algorithm after the upgrade and that other parameters are correct.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "38",
+      "title" : "Sticky IP in upgrade",
+      "result" : "  Sticky IP is the default NAT policy."
+   },
+   "4" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Click OK\n  6) Start packet capture program.\n  7) Verify that probe used is TCP handshake.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "4",
+      "title" : "Probe type TCP",
+      "result" : "  Can use probe type of TCP."
+   },
+   "34" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) Set NAT method to Random Distribution\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection that a random address is selected.\n  Algorithm randomly selects an address from the pool.",
+      "initial" : "  Setup B with NAT policy C. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "34",
+      "title" : "NAT Method Random distribution- source Network to pool with Address Object containing range",
+      "result" : "  Random Distribution algorithm behaves as expected."
+   },
+   "45" : {
+      "steps" : "  1) Set NAT methods to Round Robin for HTTP, PING, HTTPS, Telnet, others?\n  2) Setup probing for these policies for the services\n  3) Disable one service at a time.\n  3) Verify marking down of resources\n  4) Restart service.\n  5) Verify marking up of resources",
+      "initial" : "  Setup B with NAT F policy",
+      "id" : "45",
+      "title" : "Scalability - Multiple policies and stress test probing with different services",
+      "result" : "  NAT policy probing scales without issues."
+   },
+   "37" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Export the TSR.\n  3) Verify TSR displays the following correctly for the configured policy in the NAT Policy table.\n  Load Distribution Method\n  Translated Service Object\n  Src Interface\n  Dst Interface\n  Comment\n  Enabled\n  System Policy\n  Probe Enable\n  Probe Type\n  Probe Port\n  Probe Interval\n  Reply Timeout\n  Missed Probes\n  Successful Probes\n  4) Verify for various settngs.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "37",
+      "title" : "TSR Update",
+      "result" : "  TSR has correct information."
+   },
+   "43" : {
+      "steps" : "  1) Set NAT method to Random Distribution\n  2) Run Web Bench HTTP 1.0 Test with 100 threads per 3 clients and basic verify script.\n  3) Keep results for comparison against other algorithms.\n  4) Repeat with probes enabled",
+      "initial" : "  Setup B with NAT E policy",
+      "id" : "43",
+      "title" : "Stress Random Distribution NAT Method",
+      "result" : "  Random Distribution NAT Method Stress."
+   },
+   "19" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to Ping\n  5) On General tab set NAT method to Sticky IP.\n  6) Click OK\n  7) Use clients to connect to resources continually.\n  8) Verify that for each connection the IP which the client maps to is used.\n  The sticky IP remap algorithm uses a hash algorithm whereby the source IP address is modulo with the size of the server cluster to determine the server to remap to. For example, in a 3 server cluster (servers A, B, C), the host 192.168.168.100 would remap to server A (192.168.168.100 % 3 = 1).\n  For this setup:\n  67.1.2.3 => 10.190.6.106\n  204.20.30.40 => 10.190.6.105\n  217.8.9.11 => 10.190.6.107",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "19",
+      "title" : "NAT Method Sticky IP- source ANY to pool with Address Object containing hosts",
+      "result" : "  Sticky IP algorithm behaves as expected.\n  /////////////////////////////////////////////////////\n  NAT policy:\n  Any\n  Original\n  10.8.105.66\n  10.190.6.105-107\n  Any\n  Original\n  X1\n  Any\n  box of SSL VPN server must set to WAN Zone. the gateway point to sonicwall interface X2.\n  mark by neil zhang March 24 2015\n  ///////////////////////////////////////////////////////////////"
+   },
+   "5" : {
+      "steps" : "  1) Log in to admin UI.\n  2) Click to edit the NAT policy.\n  3) Click the Advanced tab\n  4) Set probe type to TCP\n  5) Set probe port to 80.\n  6) Click OK\n  7) Start packet capture program.\n  8) Verify that probe used is TCP handshake on port 80.\n  9) Set probe port to 443.\n  10) Start packet capture program.\n  11) Verify that probe used is TCP handshake on port 443.",
+      "initial" : "  Setup A with NAT policy A. Capture traffic on port that has the service that will be probed. Probes enabled.",
+      "id" : "5",
+      "title" : "Probe port",
+      "result" : "  Can set probe port."
+   }
+}

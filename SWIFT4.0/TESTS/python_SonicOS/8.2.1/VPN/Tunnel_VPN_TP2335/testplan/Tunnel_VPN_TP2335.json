@@ -1,0 +1,142 @@
+{
+    "StaticRouteConfig_TC22": {
+        "id": "StaticRouteConfig_TC22",
+        "title": "Add a static route with Tunnel Interface selection on the Network > Routing page.",
+        "result": "A new statuc route is displayed under Route Policies.",
+        "initial": "PC --- X0 SonicWALL",
+        "steps": "1. Add a Tunnel Interface VPN policy on the VPN > Settings page.\n2. On the Network > Routing page under Route Policies, click the \"Add...\" button.\n3. In the Add Route Policy window, select X0 subnet as source, remote VPN network as destination (this address object can be created in advance or while adding a static route), Any as service, and Tunnel Interface as interface. Click OK in the Add Route Policy window."
+    },
+    "StaticRouteConfig_TC23": {
+        "id": "StaticRouteConfig_TC23",
+        "title": "VPN tunnel is established before adding the route. Added tunnel interface static route entry is enabled.",
+        "result": "The tunnel interface static route with interface \"test\" is displayed and enabled on the Network > Routing page.",
+        "initial": "Host1 - X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 - Host2",
+        "steps": "1. Add a Tunnel Interface VPN policy on the VPN > Settings page of the SonicWALL1 (DUT). Give it a name \"test\" and X1 IP address of the SonicWALL2 as IPSec Gateway.\n2. Add a similar Tunnel Interface policy on the SonicWALL2. Verify on the DUT that the VPN > Settings page displays the active VPN tunnel with 0.0.0.0/255.255.255.255 as Local and Remote networks.\n3. On the Network > Routing page under Route Policies of DUT, click the \"Add...\" button.\n4. In the Add Route Policy window, select X0 subnet as source, SonicWALL2 LAN as destination (this address object can be created in advance or while adding a static route), Any as service, and Tunnel Interface \"test\" as interface. Click OK in the Add Route Policy window."
+    },
+    "StaticRouteConfig_TC24": {
+        "id": "StaticRouteConfig_TC24",
+        "title": "VPN tunnel is not established after adding the route. Added tunnel interface static route entry is disabled and greyed out.",
+        "result": "The tunnel interface static route with interface \"test\" is displayed, disabled and greyed out on the Network > Routing page.",
+        "initial": "Host1 - X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 - Host2",
+        "steps": "1. Add a Tunnel Interface VPN policy on the VPN > Settings page of the SonicWALL1 (DUT). Give it a name \"test\" and X1 IP address of the SonicWALL2 as IPSec Gateway.\n2. Don't add a similar Tunnel Interface policy on the SonicWALL2. Verify on the DUT that the VPN > Settings page doesn't display the active VPN tunnel.\n3. On the Network > Routing page under Route Policies of DUT, click the \"Add...\" button.\n4. In the Add Route Policy window, select X0 subnet as source, SonicWALL2 LAN as destination (this address object can be created in advance or while adding a static route), Any as service, and Tunnel Interface \"test\" as interface. Click OK in the Add Route Policy window."
+    },
+    "ACLConfig_TC27": {
+        "id": "ACLConfig_TC27",
+        "title": "\"Auto-add Access Rules\" checkbox is enabled. Multiple routes bound to the same Tunnel Interface with different pair of network objects are added.",
+        "result": "The rule with source \"X0 subnet\" and destination SonicWALL2 LAN subnet is displayed under Access Rules (LAN > VPN).\nThe rule with source SonicWALL2 LAN subnet and destination \"X0 subnet\" is displayed under Access Rules (VPN > LAN).\nThe rule with source \"X2 subnet\" and destination SonicWALL2 X2 subnet is displayed under Access Rules (DMZ > VPN).\nThe rule with source SonicWALL2 X2 subnet and destination \"X2 subnet\" is displayed under Access Rules (VPN > DMZ).",
+        "initial": "Host1 - X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 - Host2",
+        "steps": "1. Add a Tunnel Interface VPN policy on the VPN > Settings page of the SonicWALL1 (DUT). Give it a name \"test\" and X1 IP address of the SonicWALL2 as IPSec Gateway.\n2. On the Network > Routing page under Route Policies of DUT, click the \"Add...\" button.\n3. In the Add Route Policy window, select X0 subnet as source, SonicWALL2 X0 as destination (this address object can be created in advance or while adding a static route), Any as service, and Tunnel Interface \"test\" as interface. Verify that the \"Auto-add Access Rules\" checkbox is enabled. Click OK in the Add Route Policy window. \n4. Click the \"Add...\" button again.\n5. In the Add Route Policy window, select X2 subnet (DMZ) as source, SonicWALL2 X2 as destination, Any as service, and Tunnel Interface \"test\" as interface. Verify that the \"Auto-add Access Rules\" checkbox is enabled. Click OK in the Add Route Policy window.                  \n6. On the Firewall > Access Rules page of DUT, view the LAN > VPN, VPN > LAN, DMZ > VPN, and VPN > DMZ rules."
+    },
+    "StaticRouteConfig_TC30": {
+        "id": "StaticRouteConfig_TC30",
+        "title": "Delete a single route entry bound to Tunnel Interface. There is no other route configured for the same pair of network objects.",
+        "result": "The access rules for VPN connection with address objects X0 and remote LAN are deleted from LAN > VPN and VPN > LAN.",
+        "initial": "1. Add a Tunnel Interface VPN policy on the VPN > Settings page of the DUT. Give it a name \"test\" and X1 IP address of the remote gateway as IPSec Gateway.\n2. On the Network > Routing page under Route Policies, add a static route. Select X0 subnet as source, remote LAN as destination, Any as service, and Tunnel Interface \"test\" as interface. Verify that the \"Auto-add Access Rules\" checkbox is enabled. Make sure that there are no other routes configured for the same pair of network objects.\n3. Verify that access rules are added for LAN > VPN and VPN > LAN zones.",
+        "steps": "1. On the Network > Routing page under Route Policies, delete the static route entry with the tunnel interface \"test\".\n2. View the Firewall > Access Rules LAN and VPN zones."
+    },
+    "StaticRouteConfig_TC34": {
+        "id": "StaticRouteConfig_TC34",
+        "title": "Disable VPN Tunnel Interface policy. There is no other route configured for the same pair of network objects and bound to different Tunnel Interface.",
+        "result": "The static route bound to the tunnel interface \"test\" is disabled and greyed out.\nThe LAN > VPN and VPN > LAN access rules for VPN connection with address objects X0 and remote LAN are disabled.",
+        "initial": "1. Add a Tunnel Interface VPN policy on the VPN > Settings page of the DUT. Give it a name \"test\" and X1 IP address of the remote gateway as IPSec Gateway.\n2. On the Network > Routing page under Route Policies, add a static route. Select X0 subnet as source, remote LAN as destination, Any as service, and Tunnel Interface \"test\" as interface. Verify that the \"Auto-add Access Rules\" checkbox is enabled. Make sure that there are no other routes configured for the same pair of network objects and bound to different Tunnel Interface.\n3. Verify that access rules are added for LAN > VPN and VPN > LAN zones.",
+        "steps": "1. On the VPN > Settings page, disable the tunnel interface VPN policy \"test\".\n2. View the Route Policies on the Network > Routing page.\n3. View the LAN > VPN and VPN > LAN access rules."
+    },
+    "TITraffic_TC54": {
+        "id": "TITraffic_TC54",
+        "title": "Tunnel Interface policy is added on DUT and a peer, static route with \"Auto-add Access Rule\" is added - traffic flows between networks.",
+        "result": "The tunnel interface VPN policy \"test\" is displayed under Currently Active VPN Tunnels. The Local and Remote networks are 0.0.0.0/255.255.255.255.\nPings from Host1 to Host2 are replied.",
+        "initial": "Host1 - X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 - Host2",
+        "steps": "1. Add a tunnel interface VPN policy on the SonicWALL1 (DUT). Name it \"test\" and set IPSec Gateway address to X1 IP of the SonicWALL2. Verify that Keep Alive checkbox is enabled.\n2. Add a similar VPN policy on the SonicWALL2.\n3. On the Network > Routing page of the DUT, add a static route with local X0 as source and remote X0 as destination. Bind the static route to the tunnel interface \"test\". Verify that the \"Auto-add Access Rule\" checkbox is enabled.\n4. Add a similar static route on the SonicWALL2.\n5. Send pings from Host1 to Host2.\n6. Execute the test case with IKEv1 and IKEv2 modes."
+    },
+    "1506343": {
+        "id": "1506343",
+        "title": "Traffic of different service types is routed through different tunnel interfaces",
+        "result": "When FTP connection is opened and file is transferred, VPN traffic is routed between WAN (X1) and Tunnel Interface1. When HTTP traffic is sent, ESP packets are routed between X2 and Tunnel Interface2.",
+        "initial": "1. Firewall A(DUT)is configured with a primary WAN (X1) and 1st alternate WAN (X2).\n2. Firewall B is configured with 2 WANs: a primary (X1) and 1st alternate (X2). \n3. All WANs are up.",
+        "steps": "1. Add two Tunnel Interface policies on the Firewall A. Tunnel Interface1 is bound to X1 and has IPSec gateway set to Firewall B X1 IP address. Tunnel Interface2 is bound to X2 and has IPSec gateway set to Firewall B X2 IP address. Add similar policies on the Firewall B.\n2. Add static routes on both firewalls. On Firewall A: first route is bound to Tunnel Interface1, service - FTP; second route is bound to Tunnel Interface2, service - HTTP. Source - local LAN subnet, destination - remote LAN subnet. Add similar routes on the Firewall B.\n3. Verify that access rules with FTP and HTTP services are added for the source and destination networks on the Firewall > Access Rules page of the firewalls. \n4. Connect FTP client on local LAN to FTP server on remote LAN. Transfer a file. Capture ESP packets on the WAN.\n5. Send HTTP traffic between local and remote LANs. Capture ESP packets on the WAN."
+    },
+    "1506344": {
+        "id": "1506344",
+        "title": "WAN with PPPoE. PPPoE is connected - Tunnel Interface policies bound to PPPoE WAN interface are active; static routes bound to the Tunnel Interfaces are enabled. VPN traffic is routed through.",
+        "result": "Static route bound to the tunnel interface policy for PPPoE WAN interface is enabled. Access rules for network objects in the route are present and enabled in the LAN and VPN zones.\nPings from Host1 to Host2 are replied.",
+        "initial": "Host1 - X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 - Host2",
+        "steps": "1. Configure the WAN interface as PPPoE. Keep the physical link up.\n2. Connect to PPPoE network.\n3. Add a tunnel interface VPN policy on the SonicWALL1 (DUT). Name it \"test\" and set IPSec Gateway address to X1 IP of the SonicWALL2. Verify that Keep Alive checkbox is enabled.\n4. Add a similar VPN policy on the SonicWALL2. Verify that the added tunnel interface policies on both firewalls are active.\n5. On the Network > Routing page of the DUT, add a static route with local X0 as source and remote X0 as destination. Bind the static route to the tunnel interface \"test\". Verify that the \"Auto-add Access Rule\" checkbox is enabled.\n6. Add a similar static route on the SonicWALL2.\n7. Send pings from Host1 to Host2.\n8. Execute the test case with IKEv1 and IKEv2 modes."
+    },
+    "1506345": {
+        "id": "1506345",
+        "title": "WAN with PPPoE. PPPoE is disconnected - Tunnel Interface policies bound to PPPoE WAN interface get disabled; static routes bound to the Tunnel Interfaces get disabled. VPN traffic is dropped.",
+        "result": "Static route bound to the tunnel interface policy for PPPoE WAN interface is disabled and greyed out. \nPings from Host1 to Host2 are dropped.",
+        "initial": "Host1 - X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 - Host2",
+        "steps": "1. Configure the WAN interface as PPPoE. Keep the physical link up.\n2. Disconnect from PPPoE network.\n3. Add a tunnel interface VPN policy on the SonicWALL1 (DUT). Name it \"test\" and set IPSec Gateway address to X1 IP of the SonicWALL2. Verify that Keep Alive checkbox is enabled.\n4. Add a similar VPN policy on the SonicWALL2.\n5. Verify that the Tunnel Interface VPN policy bound to PPPoE WAN interface is not active.\n6. On the Network > Routing page of the DUT, add a static route with local X0 as source and remote X0 as destination. Bind the static route to the tunnel interface \"test\". Verify that the \"Auto-add Access Rule\" checkbox is enabled.\n7. Add a similar static route on the SonicWALL2.\n8. Send pings from Host1 to Host2.\n9. Execute the test case with IKEv1 and IKEv2 modes."
+    },
+    "DHCPTraffic_TC78": {
+        "id": "DHCPTraffic_TC78",
+        "title": "WAN with DHCP. DHCP is connected - Tunnel Interface policies bound to DHCP WAN interface are active; static routes bound to the Tunnel Interfaces are enabled. VPN traffic is routed through.",
+        "result": "Static route bound to the tunnel interface policy for DHCP WAN interface is enabled. Access rules for network objects in the route are present and enabled in the LAN and VPN zones.\nPings from Host1 to Host2 are replied.",
+        "initial": "Host1 - X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 - Host2",
+        "steps": "1. Configure the WAN interface as DHCP. Keep the physical link up.\n2. Connect to DHCP network.\n3. Add a tunnel interface VPN policy on the SonicWALL1 (DUT). Name it \"test\" and set IPSec Gateway address to X1 IP of the SonicWALL2. Verify that Keep Alive checkbox is enabled.\n4. Add a similar VPN policy on the SonicWALL2. Verify that the added tunnel interface policies on both firewalls are active.\n5. On the Network > Routing page of the DUT, add a static route with local X0 as source and remote X0 as destination. Bind the static route to the tunnel interface \"test\". Verify that the \"Auto-add Access Rule\" checkbox is enabled.\n6. Add a similar static route on the SonicWALL2.\n7. Send pings from Host1 to Host2.\n8. Execute the test case with IKEv1 and IKEv2 modes."
+    },
+    "DHCPTraffic_TC79": {
+        "id": "DHCPTraffic_TC79",
+        "title": "WAN with DHCP. DHCP is disconnected - Tunnel Interface policies bound to DHCP WAN interface get disabled; static routes bound to the Tunnel Interfaces get disabled. VPN traffic is dropped.",
+        "result": "Static route bound to the tunnel interface policy for DHCP WAN interface is disabled and greyed out. \nPings from Host1 to Host2 are dropped.",
+        "initial": "Host1 - X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 - Host2",
+        "steps": "1. Configure the WAN interface as DHCP. Keep the physical link up.\n2. Disconnect from DHCP network.\n3. Add a tunnel interface VPN policy on the SonicWALL1 (DUT). Name it \"test\" and set IPSec Gateway address to X1 IP of the SonicWALL2. Verify that Keep Alive checkbox is enabled.\n4. Add a similar VPN policy on the SonicWALL2.\n5. Verify that the Tunnel Interface VPN policy bound to DHCP WAN interface is not active.\n6. On the Network > Routing page of the DUT, add a static route with local X0 as source and remote X0 as destination. Bind the static route to the tunnel interface \"test\". Verify that the \"Auto-add Access Rule\" checkbox is enabled.\n7. Add a similar static route on the SonicWALL2.\n8. Send pings from Host1 to Host2.\n9. Execute the test case with IKEv1 and IKEv2 modes."
+    },
+    "BoundInterface_TC107": {
+        "id": "BoundInterface_TC107",
+        "title": "VPN policy should be added  after changed TI Route Based VPN Policy bound to interface",
+        "result": "'VPN policy bound to' interface should be configured, not be blank, new TI VPN policy can be added after interface configuration changed without error.",
+        "initial": "",
+        "steps": "This case is add for GEN7-33532:\n1. X1 assigned as WAN.\n2. Navigate to IPsec VPN &gt; Rules and Settings.\n3. Click on Add; Select Policy Type as \u2018Tunnel Interface\u2019 and Authentication Method as \u2018IKE Using Pre-shared Secret\u2019.\n4. Under Advanced Tab, the \u2018VPN policy bound to\u2019 field would be prepopulated with X1.\n5. Key in Name, Primary gateway, shared secret and click on Save.\n6. VPN policy is added successfully.\n7. Unassign X1 interface or assign as LAN/DMZ/WLAN/custom zone (but not WAN).  Note: can't unassign X1 but can assign to other zone\n8. Assign one of the other interfaces as WAN (for e.g., X4).\n9. Navigate to IPsec VPN &gt; Rules and Settings.\n10.Click on Add; Select Policy Type as \u2018Tunnel Interface\u2019 and Authentication Method as \u2018IKE Using Pre-shared Secret\u2019.\n11.Under Advanced Tab, the \u2018VPN policy bound to\u2019 field would be blank.  \n12.Enter the Name, Primary gateway, shared secret and click on Save.\n"
+    },
+    "1563924": {
+        "id": "1563924",
+        "title": "5.8.x: Add multiple tunnel interface policies with same gateway but different bound to interface",
+        "result": "The tunnel interface policy test2 with same IPSec gateway as policy test1 is added in the GUI. VPN policies test1 and test2 are displayed under VPN Policies on the VPN > Settings page.",
+        "initial": "PC --- X0 SonicWALL",
+        "steps": "1. On the VPN > Settings page under VPN Policies, click the \"Add...\" button. In the VPN Policy window, select Tunnel Interface in the Policy Type drop-down. Type test1 in the Name field. Fill in the Shared Secret and Confirm Shared Secret fields. Type 10.10.10.10 in the IPsec Primary Gateway Name or Address field. In the Advanced tab, select VPN Policy bound to X1 interface. Click OK in the VPN Policy window. Verify that the VPN policy test1 with 10.10.10.10 gateway is displayed under VPN Policies on the VPN > Settings page. \n2. Click the \"Add...\" button. In the VPN Policy window, select Tunnel Interface in the Policy Type drop-down. Type test2 in the Name. Enter a unique Shared Secret and Confirm Shared Secret. Type 10.10.10.10 in the IPsec Primary Gateway Name or Address field. In the Advanced tab, select VPN Policy bound to X2 interface. Click OK in the VPN Policy window."
+    },
+    "SameBoundTo_TC90": {
+        "id": "SameBoundTo_TC90",
+        "title": "5.8.x: Attempt to add multiple tunnel interface policies with same gateway and same bound to interface",
+        "result": "The warning message \"Found a policy with the same peer gateway 10.10.10.10. Share tunnel interface policy is not allowed\" is displayed.",
+        "initial": "PC --- X0 SonicWALL",
+        "steps": "1. On the VPN > Settings page under VPN Policies, click the \"Add...\" button. In the VPN Policy window, select Tunnel Interface in the Policy Type drop-down. Type test1 in the Name field. Fill in the Shared Secret and Confirm Shared Secret fields. Type 10.10.10.10 in the IPsec Primary Gateway Name or Address field. In the Advanced tab, select VPN Policy bound to X1 interface. Click OK in the VPN Policy window. Verify that the VPN policy test1 with 10.10.10.10 gateway is displayed under VPN Policies on the VPN > Settings page. \n2. Click the \"Add...\" button. In the VPN Policy window, select Tunnel Interface in the Policy Type drop-down. Type test2 in the Name. Enter a unique Shared Secret and Confirm Shared Secret. Type 10.10.10.10 in the IPsec Primary Gateway Name or Address field. In the Advanced tab, select VPN Policy bound to X1 interface. Click OK in the VPN Policy window."
+    },
+    "ChangeBoundTo_TC1563926": {
+        "id": "ChangeBoundTo_TC1563926",
+        "title": "'VPN Policy bound to' can be changed",
+        "result": "'VPN Policy bound to' can be changed successfully.",
+        "initial": "",
+        "steps": "Refer to GEN7-40775.\n\n1. X1,X2 assigned as WAN.\n2. Navigate to IPsec VPN &gt; Rules and Settings, click on +Add, select Policy Type as \u2018Tunnel Interface\u2019 and Authentication Method as \u2018IKE Using Pre-shared Secret\u2019. Under Advanced Tab, the \u2018VPN policy bound to\u2019 field would be prepopulated with X1.\n3. Key in Name, Primary gateway, shared secret and click on Save.\n4. Edit this VPN policy, Switch to advanced tab and change the \"VPN Policy bound to\" to Interface X2 and click on accept.\n5. Enable/disable VPN policy and switch between tab.\n6. Edit this VPN policy, Switch to advanced tab and change the \"VPN Policy bound to\" to Interface X1 and click on accept."
+    },
+    "TestRekey_TC61": {
+        "id": "TestRekey_TC61",
+        "title": "Rekey of IPSec SA has no impact on the routes and auto-added rules.",
+        "result": "The tunnel interface static route remains enabled on the Network > Routing page under Route Policies.\nThe auto-added access rules for source and destination networks are present and enabled in required zone and VPN zone on the Firewall > Access Rules page.",
+        "initial": "Host1 - X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 - Host2",
+        "steps": "1. Add Tunnel Interface policies on SonicWALL1 (DUT) and SonicWALL2. Set Phase1 life time to 5 minutes and Phase2 life time to 3 minutes.\n2. Add static routes bound to the tunnel interfaces on both devices. \"Auto-add Access Rule\" is enabled in the routes.\n3. Send continuous pings from Host1 to Host2.\n4. Wait 3 minutes and verify that IPSec SA got renegotiated.\n5. View the static routes and access rules on the DUT.\n6. Execute the test case with IKEv1 and IKEv2 modes."
+    },
+    "DiffBoundToTraffic_TC94": {
+        "id": "DiffBoundToTraffic_TC94",
+        "title": "5.8.x: Multiple tunnel interface policies with same gateway but different bound to interface. VPN traffic is routed through secondary WAN.",
+        "result": "Tunnel1 and Tunnel2 VPN policies on the DUT are active.\nPacket capture shows that VPN traffic is routed through the secondary WAN (X2) of the Firewall A.",
+        "initial": "1. Firewall A(DUT)is configured with a primary WAN(X1) and secondary WAN(X2). Both WANs are up.\n2. Firewall B is configured with a primary WAN(X1).",
+        "steps": "1. Add two tunnel interface VPN policies on the Firewall A: Tunnel1 with IPSec Gateway B(X1) and bound to X1, and Tunnel2 with IPSec Gateway B(X1) and bound to X2.\n2. Add matching policies on the Firewall B: both policies are bound to X1, one policy has IPSec Gateway A(X1), the other policy has IPSec Gateway A(X2).\n3. On the Firewall A, add static routes bound to each configured tunnel interface with a source set to Firewall A X0(LAN) and a destination set to Firewall B X0(LAN). Set metric to 2 in the route for Tunnel1. Set metric to 1 in the route for Tunnel2. Add similar routes on the Firewall B.\n4. Send pings from a host on Firewall A X0(LAN) to a host on Firewall B X0(LAN). Capture packets on WANs of the DUT.\n5. Execute the test case with IKEv1 and IKEv2 modes."
+    },
+    "UnnumberTIConfig_TC100": {
+        "id": "UnnumberTIConfig_TC100",
+        "title": "GUI: Unnumber TI policy will be replaced by Number interface in static routing->interface list after number interface is added for Unnumber TI policy",
+        "result": "see steps",
+        "initial": "None",
+        "steps": "1. add a Unnumber Tunnel Interface VPN policy\n2. check static routing configuration window, make sure the unnumber TI policy name is displayed in the interface list\n3. go to network-&gt;settings, add a 'VPN Tunnel Interface' named 'TI_Interface', bind it to the TI policy added in step 1\n4. check static routing configuration window again, verify that the Unnumber TI policy name is replaced by numbered interface name added in step 3"
+    },
+    "1506329": {
+        "id": "1506329",
+        "title": "Disable and Enable 'Auto-add Access Rule' after static route's interface auto-change from Unnumbered VPN policy to Numbered Interface",
+        "result": "see steps",
+        "initial": "None",
+        "steps": "1. add a Unnumber VPN policy named 'TI_Policy' <br /> 2. add a static routing with auto-add acl enabled, bind it to 'TI_Policy' <br /> 3. On Network-&gt;Interface, add a VPN Tunnel Interface named 'TI_Interface', bind <br /> it to 'TI_Policy' <br /> 4. On Network-&gt;Settings, verify that the interface for static routing is changed <br /> to 'TI_Interface' automatically <br /> 5. edit the static routing, disable 'Auto-Add Access Rule', apply configuration, verify that Auto-Added ACL is deleted Properly.\n6. Enable 'Auto-Add Access Rule' again, apply configuration, verify that ACL can be auto-added properly."
+    }
+}

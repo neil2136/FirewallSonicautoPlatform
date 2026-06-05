@@ -1,0 +1,149 @@
+{
+   "1518244" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly\n  7.N/A\n  8.User 'a' could login successfully",
+      "id" : "1518244",
+      "title" : "[CLI]Verify CLI user supported(SSH)",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a' on SSH portal\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up\n  7.Unlock user 'a' by uncheck the button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  8.Login user 'a' through SSH again"
+   },
+   "1518220" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.NA\n  2.The button exist",
+      "id" : "1518220",
+      "title" : "[GUI]Button \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122 check",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check whether there's an checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122"
+   },
+   "" : {
+      "steps" : "  Initial Setup",
+      "initial" : "  Expected Results",
+      "id" : null,
+      "title" : "Title",
+      "result" : "  Steps"
+   },
+   "1518242" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly , the log event should show correctly when there are fail attempts\n  7.'User is locked out ' page should show up correctly which means this function works based on users instead of IP address\n  8.The user 'a' be blocked by ssh either",
+      "id" : "1518242",
+      "title" : "[GUI]\u2122User is locked out\u2122 page check",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a'\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up , and also check the log event\n  7.From another LAN client(different IP) , login with user 'a'\n  8.Use SSH client to login with user 'a'"
+   },
+   "1518247" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly\n  7.There should be related configurations there",
+      "id" : "1518247",
+      "title" : "[Regular]TSR file check for Lockout User Account",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a' on serial portal\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up\n  7.Check the TSR file to see whether there is Lockout user account related configurations"
+   },
+   "1518237" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A 2.N/A 3.N/A 4.N/A 5.N/A 6.'User is locked out ' page should show up correctly 7.User 'a' couldn't login successfully.",
+      "id" : "1518237",
+      "title" : "[MISC]Guest account login check",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page 2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)&#65533; 3.Create a guest account user 'a' and enable the Guest Service on LAN zone 4.From a LAN client , login with user 'a' 5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute 6.Check whether the 'User is locked out ' page is show up 7.Within 5 mins after user login , login from another LAN client(different IP) using user 'a'"
+   },
+   "1518239" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'Locked out User Account list Check' page should show up correctly , and user info should change to the one we changed in step 7",
+      "id" : "1518239",
+      "title" : "[MISC]Change user's name/password when the user is locked",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page 2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122 3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator' 4.From a LAN client , login with user 'a' 5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute 6.Check whether the 'User is locked out ' is show up 7.Within 5 mins after user login , Change the user name and password of user 'a' 8.Go to User status page , check that changed user 'a' is in the list of 'Locked out User Account list Check'."
+   },
+   "1518227" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  In step 6.There should be log event print out about the user 'a' fail attempts.\n  In step8.User 'a' could login without any issue , which means after check the button '' Log event only without lockout'', log a user fail attempts reaches threshold only instead of lockout.\n  In step 10.User 'a' should be locked out and print event log 'User a reaches lockout threshold, lockout it'.",
+      "id" : "1518227",
+      "title" : "[Log event]Make sure after uncheck this button ,user will be locked out, and log shows 'User reaches lockout threshold, lockout it'",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page<br />2.Enable the checkbox button of 'administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)', and set the lockout period to 10 , and check the button of ' Log event only without lockout' <br />3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator' <br />4.From a LAN client , login with user 'a' on serial portal <br />5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute <br />6.Check the log event <br />7.Within 10 mins , Login to web UI with user 'a' again with correct password <br />8.Check the results <br />9.Un-check the button of ' Log event only without lockout' <br />10.Repeat step 4 to step 8"
+   },
+   "1518254" : {
+      "steps" : "  SSLVPN Client--x1--Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly\n  7.N/A\n  8.The 'Locked out User Account list check' page should show the user 'v' status correctly",
+      "id" : "1518254",
+      "title" : "[User lockout]Verify SSLVPN user supported for this feature",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Build a SSLVPN connection and create a user 'v' with SSLVPN access\n  4.From a SSLVPN client , login with user 'v' to make sure the account is worked\n  5.Logout the user 'v' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up\n  7.Login the web GUI with user admin on the LAN client\n  8.Go to Monitor &gt; User Sessions &gt; Active Users page , check that user 'v' is in the list of 'Locked out User Account list Check'"
+   },
+   "1518249" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly\n  7.Same as Step 4 - 6",
+      "id" : "1518249",
+      "title" : "[Regular]Reboot test for Lockout User Account",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a' on serial portal\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up\n  7.Reboot DUT , then repeat step 4 to 6"
+   },
+   "1518222" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly\n  7.N/A\n  8.N/A\n  9.User 'a' is unlocked and could login successfully",
+      "id" : "1518222",
+      "title" : "[Un-lockout]Unlock a user by GUI(on GUI Locked out User Account list)",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a' on serial portal\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up\n  7.Click unlock button in user status button for user 'a'\n  8.Login to with user a again with correct password\n  9.Check the results"
+   },
+   "1518235" : {
+      "steps" : "  LDAP user--x1--Firewall--x0--LAN client",
+      "initial" : "  In step 6. 'User is locked out ' should show up correctly\n  In step 8. The 'Locked out User Account list check' page should show the user 'Domain\\v' status correctly\n  In step 9. Same as step 8",
+      "id" : "1518235",
+      "title" : "[MISC]For LDAP users, it's supported only if they are imported to firewall as local users. - Import from LDAP",
+      "result" : "  1. Go to Administration, Login page <br />2. Check the checkbox button of 'admin/user account lockout'<br />3. Build a LDAP connection and create a user 'v' on LDAP server , and import the users from LDAP to local db, as the '<span>Include the domains'</span> users ,like 'Domain\\v';\n  4. From the client ,login with user 'Domain\\v' to make sure the account is worked;<br />5. Logout the user 'Domain\\v' , and then login again with wrong password for over 5 times within 1 minute;<br />6. Check whether the 'User is locked out ' shows up;<br />7. Login the web GUI with user admin on the LAN client;<br />8. Go to User Status page , check that user 'Domain\\v' is in the list of 'Locked out User Account list Check';\n  9. Clear the imported domain users, then imported the users from LDAP as 'No-domains' user, then repeat the step 4-8."
+   },
+   "1518256" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly",
+      "id" : "1518256",
+      "title" : "[User lockout]Verify local user supported for this feature",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Create a local user 'a' , and without assigning it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a'\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up"
+   },
+   "1518248" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly\n  7.N/A\n  8.Same as Step 4 - Step 6",
+      "id" : "1518248",
+      "title" : "[Regular]Preferece check for Lockout User Account",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a' on serial portal\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up\n  7.Export the configuration file , and factory default DUT\n  8.Import the configuration file we export from Step 7 , and repeat step 4 to step 6"
+   },
+   "1518251" : {
+      "steps" : "  PC---(X0)DUT(X1)---WANWAN can access to LDAP Server",
+      "initial" : "  In step 4, Login successfully;\n  In step 6-7, 'User is locked out ' should show up correctly.",
+      "id" : "1518251",
+      "title" : "[MISC] Verify local only/domain user is supported to lockout when User Authenication Method configured to 'LDAP + Local Users' (Refer to GEN7-38338)",
+      "result" : "  <ol>\n  <li>Go to Administration, enable 'Admin/user lockout' and 'Local admin/user account lockout';</li>\n  <li>Build a LDAP connection, to User Settings page, set 'User authentication method' to 'LDAP + Local Users' , then configure LDAP correctly;</li>\n  <li>To Local Users page, Create a local only user 'a' and assign it to the group 'Sonicwall Administrator';</li>\n  <li>From a LAN client , login with user 'a';</li>\n  <li>Logout the user 'a', and then login again with wrong password for over 5 times within 1 minute;</li>\n  <li>Check whether the 'User is locked out ' is show up.</li>\n  <li>---Use local domainuser(imported from LDAP) to repeat step 4-6</li>\n  </ol>"
+   },
+   "1518236" : {
+      "steps" : "  LDAP user--x1--Firewall--x0--LAN client",
+      "initial" : "  In step 6.'User is locked out ' page should not show up ,which means this function not supported for users which not imported as local users from LDAP.\n  In step 8.The 'Locked out User Account list check' page should not show the user 'v'.",
+      "id" : "1518236",
+      "title" : "[MISC]For LDAP users, it's supported only if they are imported to firewall as local users. - Not Import from LDAP",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Settings page\n  2.Check the checkbox button of 'admin/user account lockout'\n  3.Build a LDAP connection and create a user 'v' have access to LDAP server , and make sure the user is not imported from LDAP to local db;\n  4.From a client , login with user 'v' to make sure the account is worked\n  5.Logout the user 'v' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' shows up;\n  7.Login the web GUI with user admin on the LAN client\n  8.Go to Monitor &gt; User Sessions &gt; Active Users page , check that user 'v' is not in the list of 'Locked out User Account list Check'"
+   },
+   "1518238" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly 7.Within 5 mins after user login Change the unlock time from default to 10\n  8.The lockout time is change to 10 mins",
+      "id" : "1518238",
+      "title" : "[MISC]Change unlock time from default to 10 when user the is blocked",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a'\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up\n  7.Within 5 mins after user login , Change the unlock time from default to 10\n  8.Go to Monitor &gt; User Sessions &gt; Active Users page , check that user 'a' is in the list of 'Locked out User Account list Check' , and the lockout time is change to 10 mins"
+   },
+   "1518231" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.NA\n  2.The button exist",
+      "id" : "1518231",
+      "title" : "[GUI]Button \u02dcLog event only without lockout\u2122 check",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check whether there's an checkbox button of \u02dcLog event only without lockout\u2122"
+   },
+   "1518226" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.There should be log event print out about the user 'a' fail attempts.\n  2.User 'a' could login without any issue , which means after check the button '' Log event only without lockout'', log a user fail attempts reaches threshold only instead of lockout.",
+      "id" : "1518226",
+      "title" : "[Log event]Make sure after check this button , log a user fail attempts reaches threshold only instead of lockout.",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122, and set the lockout period to 10 , and check the button of ' Log event only without lockout'\n  3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a' on serial portal\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check the log event\n  7.Within 10 mins , Login to web UI with user 'a' again with correct password\n  8.Check the results"
+   },
+   "1518221" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly\n  7.N/A\n  8.N/A\n  9.User 'a' is unlocked and could login successfully",
+      "id" : "1518221",
+      "title" : "[Un-lockout]Lockout time due",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a' on serial portal\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up\n  7.Wait for 5 minutes(the default locktime is 5 mins)\n  8.Login to with user a again with correct password\n  9.Check the results"
+   },
+   "1518252" : {
+      "steps" : "  Firewall--x0--LAN client",
+      "initial" : "  1.N/A\n  2.N/A\n  3.N/A\n  4.N/A\n  5.N/A\n  6.'User is locked out ' page should show up correctly\n  7.N/A\n  8.The 'Locked out User Account list check' page should show the user 'a' status correctly",
+      "id" : "1518252",
+      "title" : "[GUI]Locked out User Account list check",
+      "result" : "  1.Go to Manage &gt; Appliance &gt; Basic Setings page\n  2.Check the checkbox button of \u02dcenable administrator/user account lockout(local user only, uncheck this checkbox to lockout IP address)\u2122\n  3.Create a local user 'a' and assign it to the group 'Sonicwall Administrator'\n  4.From a LAN client , login with user 'a'\n  5.Logout the user 'a' , and then login again with wrong password for over 5 times within 1 minute\n  6.Check whether the 'User is locked out ' page is show up\n  7.Login the web GUI with user admin on the LAN client\n  8.Go to Monitor &gt; User Sessions &gt; Active Users page , check that user 'a' is in the list of 'Locked out User Account list Check'"
+   }
+}

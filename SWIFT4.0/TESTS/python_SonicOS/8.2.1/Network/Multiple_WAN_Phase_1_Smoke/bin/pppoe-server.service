@@ -1,0 +1,11 @@
+[Unit]
+Description=PPPoE Server.
+After=syslog.target
+
+[Service]
+Type=forking
+EnvironmentFile=/etc/ppp/pppoe-server-env
+ExecStart=/sbin/pppoe-server -I $INT -L $LOCAL -R $START -N $NUMBER
+
+[Install]
+WantedBy=multi-user.target

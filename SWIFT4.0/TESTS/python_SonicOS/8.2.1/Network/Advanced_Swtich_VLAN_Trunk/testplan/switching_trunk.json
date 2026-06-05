@@ -1,0 +1,317 @@
+{
+   "33" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, under VLAN Trunks, add a trunk port X5 a enable VLAN 100.\n  2. In the Main interface page, add a sub interface with X6 as parent and VLAN ID 300.\n  3. Config X5:V100 with static IP address.\n  4. Enable DHCP Server for both X5:V100 and X6:V300.\n  5. Make sure that PC1 and PC2 both get dynamic addresses.\n  6. Ping from PC1 to PC2.",
+      "initial" : "  TBD",
+      "id" : "33",
+      "title" : "PC1----(g0/0)Switch1(g0/5)----(X5:V100)DUT(X6:V300)-----(g0/6)Switch2(g0/1)---PC2",
+      "result" : "  [FUN] Hosts from the remote VLANs should be able to communicate with the hosts on Sonicwall's locally configured Vlans through Virtual VLAN Trunk Interface"
+   },
+   "32" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, under VLAN Trunks, add Two trunk port X5 and X6, and enable VLAN 100 and 300 respectively.\n  2. In the Main Interface page, config IP address for X5:V100 and X6:V300.\n  3. Config Switch1 g0/5 as tagged VLAN 100 and g0/0 as untagged VLAN 100, so does Switch2.\n  4. Ping from PC1 to PC2 or from PC2 to PC1.",
+      "initial" : "  TBD",
+      "id" : "32",
+      "title" : "PC1----(g0/0)Switch1(g0/5)----(X5:V100)DUT(X6:V300)-----(g0/6)Switch2(g0/1)---PC2",
+      "result" : "  [FUN] Hosts from different remote VLANs on different switches should be able to communicate with each other through Sonicwall's Trunk Interfaces created for remote VLANs"
+   },
+   "21" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks,add some trunk port(eg.X3,X4,X5).\n  2. Click Enable VLAN button and select trunk port X3 and enable VLAN 100, then save config.\n  3. Click Enable VLAN button and select trunk port X4 and enable VLAN 100, then save config.\n  4. Click Enable VLAN button and select trunk port X5 and enable VLAN 100, then save config.\n  5. In the Main Interface page, check if there is the VLAN trunk interface X3:V100 being created.",
+      "initial" : "  TBD",
+      "id" : "21",
+      "title" : "TBD",
+      "result" : "  Virtual VLAN Trunk Interface can be enabled on multiple trunk ports"
+   },
+   "7" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, click Add button under VLAN Trunks table.\n  2. In the Add Vlan Trunk Port page, select one port to add from the Trunk port drop-down list, then click OK button.",
+      "initial" : "  TBD",
+      "id" : "7",
+      "title" : "TBD",
+      "result" : "  [GUI]Verify that trunk ports can be created by clicking 'Add' button under 'VLAN Trunks' table"
+   },
+   "26" : {
+      "steps" : "  1. Create two portshield groups, X2 portshiled to X0 and X3 portshield to X4.\n  2. Set IP for PC2 as the same subnet with X0, and set IP for PC2 as the same subnet with X4 .\n  3. Ping from PC2 to PC3.",
+      "initial" : "  TBD",
+      "id" : "26",
+      "title" : "PC2(1.1.1.1)----(X2:LAN)DUT(X3:LAN)----PC3(2.2.2.2)",
+      "result" : "  [FUN]Verify that hosts from the different vlans / port shield groups on DUT should have layer 3 connectivity if access rule allows it"
+   },
+   "2" : {
+      "steps" : "  1. Do factory default to the DUT.\n  2. In the Switching->VLAN Trunking page, check the VLAN Table.",
+      "initial" : "  TBD",
+      "id" : "2",
+      "title" : "TBD",
+      "result" : "  [GUI]Verify that by default none of the VLANs are trunked"
+   },
+   "17" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks, add some trunk ports(eg, X3,X4,X5).\n  2. Create a portshield group, like X2 portshield to X0.\n  3. In the Switching->VLAN Trunking page under VLAN Table, config X0 and enable Trunked.\n  4. Then reconfig X0 and disable Trunked.\n  5. Check the VLAN ID for X0 remove from all the trunk ports or not.",
+      "initial" : "  TBD",
+      "id" : "17",
+      "title" : "TBD",
+      "result" : "  Verify that VLAN is removed from all the trunk ports when it is untrunked by unchecking the 'Trunked' checkbox"
+   },
+   "1" : {
+      "steps" : "  1. Do factory default to the DUT.\n  2. In the Switching->VLAN Trunking page, check the VLAN Table.",
+      "initial" : "  TBD",
+      "id" : "1",
+      "title" : "TBD",
+      "result" : "  [GUI]Verify that by default all the ports are listed along with their default VLAN IDs"
+   },
+   "18" : {
+      "steps" : "  1. Create a portshield group, like X2,X3 portshield to X0.\n  2. In the Switching->VLAN Trunking page under VLAN Trunks, add some trunk ports(eg, X3,X4,X5).\n  3. Under VLAN Table , config X0 and enable Trunked.\n  4. Then in the Network->Portshield Groups page, dismatle the Portshield group (X0 is portshield host).\n  5. Switch to switching->VLAN Trunking page, check if the VLAN ID for X0 has disabled on the trunk ports X3/X4/X5 or not.",
+      "initial" : "  TBD",
+      "id" : "18",
+      "title" : "TBD",
+      "result" : "  Once the Portshield group is dismantled, VLAN will be automatically disabled on the trunk port"
+   },
+   "30" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, under VLAN Trunks, add a trunk port X5 and enable VLAN 100.\n  2. In the Main Interface page, config IP address for X5:V100.\n  3. Config Switch g0/5 as tagged VLAN 100 and g0/0 as untagged VLAN 100.\n  4. Ping from PC to Internet .\n  5. Delete VLAN 100 on trunk port X5.\n  6. Ping from PC to Internet .",
+      "initial" : "  TBD",
+      "id" : "30",
+      "title" : "Internet-----(X1)DUT(X5)-----(g0/5)Switch(g0/0)----PC",
+      "result" : "  [FUN] If a Vlan is disabled on trunk port then members of that vlan will not have the connectivity to the other switch through the trunk por"
+   },
+   "16" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks, add some trunk ports(eg, X3,X4,X5).\n  2. Create a portshield group, like X2 portshield to X0.\n  3. In the Switching->VLAN Trunking page under VLAN Table, config X0 and enable Trunked.\n  4. Check the existing trunk ports has the new trunked VLAN or not.",
+      "initial" : "  TBD",
+      "id" : "16",
+      "title" : "TBD",
+      "result" : "  when a new VLAN is trunked, it should be automatically enabled on all the existing trunk ports"
+   },
+   "44" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks,add trunk port(eg.X3).\n  2. Click Enable VLAN button and select trunk port X3 and enable VLAN 100, then save config.\n  3. Assign static IP address for the remote vlan interface X3:V100 in the Main Interface.\n  4. Go to Network->Routing page, enable RIP(ng) /OSPF(V2V3) for X3:V100.\n  5. Then delete the VLAN 100 under trunk port X3 .",
+      "initial" : "  TBD",
+      "id" : "44",
+      "title" : "TBD",
+      "result" : "  Verify that the remote vlan can not be disabled when the remote vlan interfce enable RIP(ng) /OSPF(V2V3)"
+   },
+   "27" : {
+      "steps" : "  1. Create two portshield groups, X2 portshiled to X0 and X3 portshield to X4.\n  2. In the Switching->VLAN Trunking page under VLAN Trunks, add a trunk ports(eg, X5).\n  3. Under VLAN Table, config X0 and input VLAN ID (eg.100) and enable trunked.\n  4. Under VLAN Table, config X4 and input VLAN ID(eg.200) and enable trunked.\n  5. Config Switch and set g0/5 tagged VLAN 100&200, and set g0/1 untagged VLAN 100, and set g0/2 untagged VLAN 200.\n  6. Make sure that PC1 and PC3 are in the same subnet ,PC2 and PC4 are in same subnet.\n  7. Ping from PC1 to PC3.\n  8. Ping from PC2 to PC4.",
+      "initial" : "  TBD",
+      "id" : "27",
+      "title" : "PC1 / PC2-----(X2 / X3)DUT(x5)----(g0/5)Switch(g0/1 /  g0/2)------PC3 / PC4",
+      "result" : "  [FUN]Verify that hosts from multiple vlans on DUT communicate with the host from same Vlans on another switch through trunk port"
+   },
+   "25" : {
+      "steps" : "  1. Create two portshield groups, X2 portshiled to X0 and X3 portshield to X4.\n  2. Set IP for PC2 as the same subnet with PC3.\n  3. Ping from PC2 to PC3.",
+      "initial" : "  TBD",
+      "id" : "25",
+      "title" : "PC2(1.1.1.1)----(X2)DUT(X3)----PC3(1.1.1.100)",
+      "result" : "  [FUN] Verify that hosts from the different vlans / port shield groups on DUT should not have layer 2 connectivity"
+   },
+   "28" : {
+      "steps" : "  1. Create two portshield groups, X3 portshiled to X0 and X4 portshield to X2.\n  2. In the Switching->VLAN Trunking page under VLAN Table, config X0 and input VLAN ID (eg.100) .\n  3. Under VLAN Table, config X2 and input VLAN ID(eg.200).\n  4. In the Switching->VLAN Trunking page under VLAN Trunks, add two trunk ports(eg, X5,X6).\n  5. Enable VLAN 100 for trunk port X5 and enable VLAN 200 for X6 under VLAN Trunks table.\n  6. Under VLAN Table, config X0 and enable trunked, and config X2 and enable trunked.\n  7. Check that trunk port X5 and X6 both have VLAN ID 100 and 200.\n  8. Ping from PC1 to PC3.\n  9. Ping from PC2 to PC4.",
+      "initial" : "  TBD",
+      "id" : "28",
+      "title" : "PC1--Switch1---(X5)DUT(X6)--Switch2--PC2\n\nPC3----(X3)DUT(X4)-----PC4",
+      "result" : "  [FUN]Verify that hosts from multiple vlans on DUT communicate with the host from same Vlans on multiple switches through multiple trunk ports"
+   },
+   "40" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, under VLAN Trunks, add two trunk ports and enable VLAN 100.\n  2. Make surt that Port3 and Port4 are in the same subnets.\n  3. Send UDP traffic with untagged from Port3 to Port4 .\n  4. Check the packets receives at Port4.\n  5. Send UDP traffic with VLAN ID 200 from Port3 to Port4.\n  6. Check the packets receives at Port4.",
+      "initial" : "  TBD",
+      "id" : "40",
+      "title" : "IXIA Port3---(X3)DUT(X4)----IXIA Port4",
+      "result" : "  Verify a Trunk port will drop the untagged packets and the tagged packets that VLAN ID is not enabled in the trunk interface."
+   },
+   "14" : {
+      "steps" : "  1. Create a portshield group, like X2,X3 portshield to X0.\n  2. Config the X0 under VLAN table , and select the Trunked checkbox , then save config.\n  3. Check the 'Trunked' column under 'VLAN Table'\n  1. Create two portshield groups, X2 portshiled to X0 and X3 portshield to X4. 2. In the Switching->VLAN Trunking page under VLAN Trunks, add a trunk ports(eg, X5). 3. Under VLAN Table, config X0 and input VLAN ID (eg.100) and enable trunked. 4. Under VLAN Table, config X4 and input VLAN ID(eg.200) and enable trunked. 5.Check the 'Trunked' and 'vlan id 'column under 'VLAN Table'\n  update by Fitz and reference DTS 212287",
+      "initial" : "  TBD",
+      "id" : "14",
+      "title" : "TBD",
+      "result" : "  Once a VLAN is trunked, its 'Trunked' column is checked under 'VLAN Table'"
+   },
+   "20" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks,add a trunk port(eg.X3).\n  2. Click Enable VLAN button and select trunk port X3 from the Trunked Port drop-down list , and then enter into the VLAN ID(eg.100) to be trunked.\n  3. In the Main Interface page, check if the VLAN trunk interface X3:V100 is created.",
+      "initial" : "  TBD",
+      "id" : "20",
+      "title" : "TBD",
+      "result" : "  Verify that 'Enable VLAN' checkbox creates a virtual interface (VLAN Trunk interface) for remote VLANs"
+   },
+   "24" : {
+      "steps" : "  1. Create a portshield group, like X2,X3 portshield to X0.\n  2. Set IP for PC2 as the same subnet with PC3.\n  3. Ping from PC2 to PC3.",
+      "initial" : "  TBD",
+      "id" : "24",
+      "title" : "PC2(192.168.168.65)----(X2)DUT(X3)----PC3(192.168.168.66)",
+      "result" : "  [FUN] Verify that hosts from the same vlan / port shield group on DUT should have layer 2 connectivity"
+   },
+   "10" : {
+      "steps" : "  1. Make sure that X2 is in unassign state and X3 is LAN/WAN/DMZ zone.\n  2. In the Switching->VLAN Trunking page under VLAN Trunks, add a trunk port and then check the available port from the Trunk Port drop down list.\n  3. Unassign X3 and then check if X3 will be shown in the trunk port down list.",
+      "initial" : "  TBD",
+      "id" : "10",
+      "title" : "TBD",
+      "result" : "  Verify that only an unassigned interface can be configured as a trunk port"
+   },
+   "31" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, under VLAN Trunks, add a trunk port X5 and enable VLAN 100.\n  2. In the Main Interface page, config IP address for X5:V100.\n  3. Config Switch g0/5 as tagged VLAN 100 and g0/0 as untagged VLAN 100.\n  4. Ping from PC to Internet.",
+      "initial" : "  TBD",
+      "id" : "31",
+      "title" : "Internet-----(X1)DUT(X5)-----(g0/5)Switch(g0/0)----PC",
+      "result" : "  [FUN] Hosts from remote vlan should be able to pass traffic through VLAN Trunk Interface created for a remote VLAN"
+   },
+   "35" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, under VLAN Trunks, add a trunk port X5 and enable VLAN 100.\n  2. In the Main Interface page, config IP address for X5:V100.\n  3. Config Switch g0/5 as tagged VLAN 100 and g0/0 as untagged VLAN 100.\n  4. Ping from PC to X5:v100 interface IP .\n  5. Check the traffic statistics of X5 in the Network->Interfaces.",
+      "initial" : "  TBD",
+      "id" : "35",
+      "title" : "Internet-----(X1)DUT(X5)-----(g0/5)Switch(g0/0)----PC",
+      "result" : "  Check the interface traffic statistics for trunk port"
+   },
+   "11" : {
+      "steps" : "  1. Do factory default to the DUT.\n  2. In the Switching->VLAN Trunking page, make sure that one interface(eg,X2) has showed up at VLAN table with reserved VLAN.\n  3. Under \"VLAN Trunks\" table, add trunk port X2.\n  4. Check the port X2 under VLAN table.",
+      "initial" : "  TBD",
+      "id" : "11",
+      "title" : "TBD",
+      "result" : "  Interface should be removed from the 'VLAN table' and listed under 'VLAN Trunks' table after it is configured as trunk port"
+   },
+   "42" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks,add some trunk port(eg.X3,X4).\n  2. Click Enable VLAN button and select trunk port X3 and enable VLAN 100, then save config.\n  3. Click Enable VLAN button and select trunk port X4 and enable VLAN 100, then save config.\n  4. Select VLAN 100 under trunk port X3 and delete.\n  5. Check if the VLAN 100 under trunk port X4 exists.",
+      "initial" : "  TBD",
+      "id" : "42",
+      "title" : "TBD",
+      "result" : "  [GUI]Verify that when one VLAN is disbled in the VLAN trunk interface port, then all other trunk port also will disable the same VLAN\""
+   },
+   "22" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks,add a trunk port(eg.X3).\n  2. Click Enable VLAN button and select trunk port X3 from the Trunked Port drop-down list , and then enter into the VLAN ID(eg.100) to be trunked.\n  3. Check if the virtual VLAN trunk interface X3:V100 is liste under VLAN Table or not.",
+      "initial" : "  TBD",
+      "id" : "22",
+      "title" : "TBD",
+      "result" : "  Virtual VLAN Trunk Interface (X:V) should be listed under VLAN Table along with its VLAN ID"
+   },
+   "13" : {
+      "steps" : "  1. Create a portshield group, like X2,X3 portshield to X0.\n  2. Add a trunk port (eg.X4) under VLAN Trunks.\n  3. Config the X0 under VLAN table , and select the Trunked checkbox , then save config.\n  4. Check the trunk port X4.",
+      "initial" : "  TBD",
+      "id" : "13",
+      "title" : "TBD",
+      "result" : "  Veriy that VLANs can be trunked by checking 'Trunked' checkbox under their configuration"
+   },
+   "23" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks,add a trunk port(eg.X3).\n  2. Click Enable VLAN button and select trunk port X3 from the Trunked Port drop-down list , and then enter into the VLAN ID(eg.100) to be trunked.\n  3. Under VLAN Trunks, select trunk port X3 and click Delete button.",
+      "initial" : "  TBD",
+      "id" : "23",
+      "title" : "TBD",
+      "result" : "  Verify that the trunk port cannot be deleted if Virtual VLAN Trunk Interface configured on it"
+   },
+   "29" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks, add two trunk ports(eg, X5,X6).\n  2. Enable VLAN 100 for trunk port X5 and X6.\n  3. Make sure that PC1 and PC2 use IP in the same subnet.\n  4. Ping from PC1 to PC2.",
+      "initial" : "  TBD",
+      "id" : "29",
+      "title" : "PC1----Switch1----(X5:V100)DUT(X6:V100)----Switch2---PC2",
+      "result" : "  [FUN] In multiple switch topology, verify that hosts from different switches can communicate with each other through Sonicwall if they not directly connected"
+   },
+   "6" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, click the configure button.\n  2. Input the following values for the VLAN ID:\n  a. Input value larger than 4094 or less than 2.\n  b. Input non-numeric characters ,like \"abc\", \"@$%\".\n  c. Input value including space character in the prefix ,suffix or in the middle of the VLAN ID .",
+      "initial" : "  TBD",
+      "id" : "6",
+      "title" : "TBD",
+      "result" : "  [GUI]Negative test for VLAN ID"
+   },
+   "39" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, under VLAN Trunks, add two or more trunk ports and enable multiple VLANs.\n  2. Go to System->Restart page, click Restart button.\n  3. After DUT boot up, check the Trunk ports setting remain intact and work fine.",
+      "initial" : "  TBD",
+      "id" : "39",
+      "title" : "TBD",
+      "result" : "  Verify the trunk port settings remain intact and function work properly after reboot"
+   },
+   "3" : {
+      "steps" : "  1. Create a Portshield group by portshielding one or more interfaces to another interface(portshield host) , like x2,x3 portshield to x0.\n  2. In the Switching->VLAN Trunking page, check the member ports of interface x0.",
+      "initial" : "  TBD",
+      "id" : "3",
+      "title" : "TBD",
+      "result" : "  [GUI]Verify that member ports can be added to a VLAN by creating a Portshield group"
+   },
+   "36" : {
+      "steps" : "  step 1: in the Switching->VLAN Trunking page, click the link \"click here to configure..\" under Reserved VLAN Information tab.\n  step 2: then it switch to the Firewall settings -> Advanced page, input the new starting VLAN ID for Internal VLAN, eg:10 \uff0cthen accept.\n  step 3: restart DUT.\n  step 4: check the modified internal vlan ID for starting on the Firewall settings->Advanced page successfully or not.\n  step 5: check the modified internal vlan ID for starting on the Switching->VLAN Trunking page successfully or not.",
+      "initial" : "  verify that the Reserved VLAN ID can be modified and the modified VLAN works ",
+      "id" : "36",
+      "title" : "TBD",
+      "result" : "  Verify that the Reserved VLAN ID can be modified and the modified VLAN works"
+   },
+   "9" : {
+      "steps" : "  1. Create a trunk port (eg.X3)in the Switching->VLAN Trunking page.\n  2. Go to Network->Interfaces page, check the configure status of the trunk port X3.\n  3. Go to Network->Routing page, check if trunk port X3 can be configured for routing (RIP, OSPF).\n  4. Go to Network->Routing page, add a route and check the available interface.\n  5. Go to Network->ARP page, add a static ARP entry and check the available interface.\n  6. Go to Network->Interface page, config another interface as wiremode and check the available interface for Paired Interface.\n  7. Go to Network->Interface page, config another interface as L2Bridge mode and check the available interface for Bridged to Interface.",
+      "initial" : "  TBD",
+      "id" : "9",
+      "title" : "TBD",
+      "result" : "  [GUI]Verify that a VLAN trunk port cannot be used for any other function and user cannot configure it with IP Address etc"
+   },
+   "41" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks,add some trunk port(eg.X3,X4).\n  2. Click Enable VLAN button and select trunk port X3 and enable VLAN 100, then save config.\n  3. Click Enable VLAN button and select trunk port X4 and enable VLAN 100, then save config.\n  4. In the Main Interface page, check if there is only the VLAN trunk interface X3:V100 being created.",
+      "initial" : "  TBD",
+      "id" : "41",
+      "title" : "TBD",
+      "result" : "  When the same remote VLAN is enabled on another trunk port, no new interface is created."
+   },
+   "12" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks , add a trunk port (eg,X4).\n  2. Then delete the trunk port.\n  3. Check the port X4 under VLAN table.",
+      "initial" : "  TBD",
+      "id" : "12",
+      "title" : "TBD",
+      "result" : "  Interface should be added back to the 'VLAN table' after it is removed from 'VLAN Trunks' table"
+   },
+   "15" : {
+      "steps" : "  1. Create a portshield group, like X2,X3 portshield to X0.\n  2. In the VLAN Trunking page, configure X0 and check the Trunked under VLAN Table.\n  3. Add a trunk port under VLAN Trunks, and check if the trunk port has the existing trunked VLAN.",
+      "initial" : "  When a trunk port is created, it should have the entries of all the existing trunked VLANs ",
+      "id" : "15",
+      "title" : "TBD",
+      "result" : "  When a trunk port is created, it should have the entries of all the existing trunked VLANs"
+   },
+   "8" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, check one trunk port and click the Delete button under \"VLAN Trunks\" table.\n  2. Or click the config button to delete the trunk port",
+      "initial" : "  TBD",
+      "id" : "8",
+      "title" : "TBD",
+      "result" : "  [GUI]Verify that trunk ports can be removed by clicking 'Delete' button under 'VLAN Trunks' table"
+   },
+   "38" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, under VLAN Trunks, add two or more trunk ports and enable multiple VLANs.\n  2. In the System->Diagnostics page, click Download Report button.\n  3. Check the corresponding info about Trunk ports in the downloaded TSR",
+      "initial" : "  TBD",
+      "id" : "38",
+      "title" : "TBD",
+      "result" : "  Trunk ports on TSR"
+   },
+   "4" : {
+      "steps" : "  1. Portshield one or more interfaces to one interface (portshield host) to create a portshield group, like X2,X3 portshield to X0.\n  2. Add a trunk port X4 under VLAN Trunks,and enable multiple VLANs, eg, 100 ,200,300.",
+      "initial" : "  TBD",
+      "id" : "4",
+      "title" : "TBD",
+      "result" : "  Verify that an access port does not show up as a member port of multiple VLANs (only trunk port does)"
+   },
+   "34" : {
+      "steps" : "  1. Check the VLAN Trunking tab under the Switching ",
+      "initial" : "  TBD",
+      "id" : "34",
+      "title" : "TBD",
+      "result" : "  [GUI]Check the VLAN Trunking tab under the Switching"
+   },
+   "45" : {
+      "steps" : "  1. Two DUT running HA.\n  2. On primary unit, add X2 as trunk port and enable VLAN 940.\n  3. Config the interface X2:V940 with static IP address and enable DHCP server.\n  4. In the High Availability->Monitoring page,enable physical monitor for X2:V940 and config per-unit IP address for DUT1 and DUT2 on X2:V940 to be managed and enable the Allow Management on DUT1 and DUT2 .\n  5. Check the configuration on secondary unit.\n  6. From the PC access both of the IP addresses and browse the web pages.\n  7. Attempt to make some configuration changes.\n  8. Ping from the PC to the Internet.\n  9. In the High Availability ->Advanced page, click the button \"Force Active /Standby Failover\".\n  10. Ping from the PC to the Inernet.",
+      "initial" : "  TBD",
+      "id" : "45",
+      "title" : "PC--Switch----(X2:V940)DUT1(X1)-internet\n|HA\n\nPC--Switch----(X2:V940)DUT1(X1)-internet",
+      "result" : "  HA for VLAN Trunking"
+   },
+   "37" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page, under VLAN Trunks, add two or more trunk ports and enable multiple VLANs.\n  2. In the System->Settings page, click Export Settings button to export setting .\n  3. Do factory default to the DUT.\n  4. In the System->Settings page, click Import Settings button to import the setting which is exported at step 2.\n  5. In the Switching->VLAN Trunking page, check the Trunk ports and work fine or not.\n  6. Add more different Trunk ports.\n  7. Import setting which is exported at step 2.\n  8. Check that the old VLAN trunk settings will be deleted and the new VLAN trunk settings show up.",
+      "initial" : "  TBD",
+      "id" : "37",
+      "title" : "TBD",
+      "result" : "  Prefs import & Export with two or more Trunk ports"
+   },
+   "43" : {
+      "steps" : "  1. In the Switching->VLAN Trunking page under VLAN Trunks,add some trunk port(eg.X3,X4).\n  2. Click Enable VLAN button and select trunk port X3 and enable 32 VLANs, then save config.\n  3. Enable 33rd VLAN for trunk port X3.\n  4. Export the settings.\n  5. Do factory default.\n  6. Import the settings.\n  7. Restart the DUT.",
+      "initial" : "  TBD",
+      "id" : "43",
+      "title" : "TBD",
+      "result" : "  Verify that maximum of 32 VLANs can be enabled on each trunk port."
+   },
+   "19" : {
+      "steps" : "  1. Create a portshield group, like X2,X3 portshield to X0.\n  2. In the Switching->VLAN Trunking page under VLAN Trunks, add trunk ports(eg, X3).\n  3. Under VLAN Table , config X0 and enable Trunked.\n  4. Under VLAN Trunks, check if the trunked VLAN can be deleted or not.",
+      "initial" : "  TBD",
+      "id" : "19",
+      "title" : "TBD",
+      "result" : "  Trunk port shouldn't be able to remove VLANs enabled for trunking (by enabling 'Trunked' checkbox)"
+   },
+   "5" : {
+      "steps" : "  1. Portshield one or more interfaces to one interface (portshield host) to create a portshield group, like x2,x3 portshield to x0.\n  2. In the Switching-> VLAN Trunking page, click the configure button of interface x0 in the VLAN Table.\n  3. In the Edit Vlan page , change the Vlan ID and click OK button.",
+      "initial" : "  TBD",
+      "id" : "5",
+      "title" : "TBD",
+      "result" : "  [GUI]users can change the VLAN IDs of all the VLANs(except the reserved VLANs)"
+   }
+}

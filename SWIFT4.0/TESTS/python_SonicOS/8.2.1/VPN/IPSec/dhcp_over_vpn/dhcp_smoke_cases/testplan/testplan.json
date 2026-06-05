@@ -1,0 +1,58 @@
+{
+   "748" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "748",
+      "title" : "Create DHCP over VPN configuration with the Remote Management IP Address in Remote Gateway.",
+      "result" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.2\", \"management_ip\": \"0.0.0.0\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}3.Create DHCP over VPN configuration with the Remote Management IP Address in Remote Gateway.4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote{ \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.1\", \"management_ip\": \"10.0.0.2\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}5.Do pending changes ."
+   },
+   "163" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "163",
+      "title" : "Create DHCP over VPN by enabling Use Internal DHCP Server For For Remote Firewall in Central gateway",
+      "result" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/central .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"central\": { \"internal_dhcp\": false, \"global_vpn\": false, \"remote\": false, \"relay_ip\": \"0.0.0.0\", \"send_requests\": false } } }}3.Create DHCP over VPN by enabling Use Internal DHCP Server For For Remote Firewall in Central gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/central{ \"vpn\": { \"dhcp_over_vpn\": { \"central\": { \"internal_dhcp\": true, \"global_vpn\": false, \"remote\": true, \"relay_ip\": \"0.0.0.0\", \"send_requests\": false } } }}5.Do pending changes ."
+   },
+   "764" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "764",
+      "title" : "Edit DHCP over VPN with the Remote Management IP Address in Remote Gateway",
+      "result" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.2\", \"management_ip\": \"0.0.0.0\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}\n  }3.Edit DHCP over VPN with the Remote Management IP Address in Remote Gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote{ \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.1\", \"management_ip\": \"10.0.0.3\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}"
+   },
+   "366" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "366",
+      "title" : "Edit DHCP over VPN with the Relay IP Address in Remote Gateway",
+      "result" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.2\", \"management_ip\": \"0.0.0.0\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}\n  }3.Edit DHCP over VPN with the Relay IP Address in Remote Gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote{ \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.1\", \"management_ip\": \"0.0.0.0\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}5.Do pending changes ."
+   },
+   "755" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "755",
+      "title" : "Create DHCP over VPN by enabling Send DHCP requests to the server addresses listed below in Central gateway",
+      "result" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/central .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"central\": { \"internal_dhcp\": false, \"global_vpn\": false, \"remote\": false, \"relay_ip\": \"0.0.0.0\", \"send_requests\": false } } }}3.Create DHCP over VPN by enabling Send DHCP requests to the server addresses listed below in Central gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/central{ \"vpn\": { \"dhcp_over_vpn\": { \"central\": { \"internal_dhcp\": true, \"global_vpn\": false, \"remote\": true, \"relay_ip\": \"0.0.0.0\", \"send_requests\": true } } }}5.Do pending changes ."
+   },
+   "696" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "696",
+      "title" : "Edit DHCP over VPN with the Relay IP Address in Central gateway",
+      "result" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/central .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"central\": { \"internal_dhcp\": false, \"global_vpn\": false, \"remote\": false, \"relay_ip\": \"0.0.0.0\", \"send_requests\": false } } }}3.Edit DHCP over VPN with the Relay IP Address in Central gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/central{ \"vpn\": { \"dhcp_over_vpn\": { \"central\": { \"internal_dhcp\": true, \"global_vpn\": false, \"remote\": true, \"relay_ip\": \"10.0.0.7\", \"send_requests\": false } } }}5.Do pending changes"
+   },
+   "758" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "758",
+      "title" : "Create DHCP over VPN with DHCP lease bound to interface X0 in Remote Gateway",
+      "result" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.2\", \"management_ip\": \"0.0.0.0\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}\n  }3.Create DHCP over VPN with DHCP lease bound to interface X0 in Remote Gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote{ \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.1\", \"management_ip\": \"0.0.0.0\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}5.Do pending changes ."
+   },
+   "768" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "768",
+      "title" : "Edit DHCP over VPN by enabling Block traffic through tunnel when IP spoof detected and Obtain temporary lease from local DHCP server if tunnel is down Temporary Lease Time in Remote Gateway",
+      "result" : "  1.Do auth and login https://{IP}/api/sonicos/auth\n  2.Get get https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote .\n  { \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.2\", \"management_ip\": \"0.0.0.0\", \"block_spoof\": true, \"temp_lease\": false, \"lease_time\": 2 } } }}\n  }3.Edit DHCP over VPN by enabling Block traffic through tunnel when IP spoof detected and Obtain temporary lease from local DHCP server if tunnel is down Temporary Lease Time in Remote Gateway4.Do put https://{IP}/api/sonicos/vpn/dhcp-over-vpn/base/remote{ \"vpn\": { \"dhcp_over_vpn\": { \"remote\": { \"bound_to\": \"X0\", \"accept_bridged_wlan_request\": false, \"relay_ip\": \"10.0.0.1\", \"management_ip\": \"0.0.0.0\", \"block_spoof\": true, \"temp_lease\": true, \"lease_time\": 2 } } }}"
+   }
+}

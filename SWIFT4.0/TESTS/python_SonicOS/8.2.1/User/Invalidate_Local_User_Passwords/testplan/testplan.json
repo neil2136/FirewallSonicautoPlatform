@@ -1,0 +1,114 @@
+{
+   "3365283" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365283",
+      "title" : "Login to VPN (SSLVPN/GVC/L2TP) from invalidated local user on Trusted zone - Access Restriction Level 1",
+      "result" : "  TBD"
+   },
+   "3365279" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365279",
+      "title" : "Login to any zone from any management means (CLI, UI, VPN) with invalidated local user - Access Restriction Level 2",
+      "result" : "  TBD"
+   },
+   "3365289" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365289",
+      "title" : "Login  with NSM deny - Access Restriction Level 1",
+      "result" : "  TBD"
+   },
+   "3365280" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365280",
+      "title" : "Login to CLI from console port on invalidated local user account - Access Restriction Level 1",
+      "result" : "  TBD"
+   },
+   "3365286" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365286",
+      "title" : "Login to WAN zone with Mobile Connect for SSL-VPN - Access Restriction Level 1",
+      "result" : "  TBD"
+   },
+   "3365285" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365285",
+      "title" : "Login to Trusted zone with Mobile Connect for SSL-VPN - Access Restriction Level 1",
+      "result" : "  TBD"
+   },
+   "3365275" : {
+      "steps" : "  have admin access to firewall\n  have LAN port configured and set to http(s) management\n  have local user account on firewall",
+      "initial" : "  TBD",
+      "id" : "3365275",
+      "title" : "Login to web UI from invalidated local user on Trusted zone - Access Restriction Level 1",
+      "result" : "  login as admin and set this or all local users to restriction level 1.\n  Login to the LAN zone interface http(s) management port and sign on with local user creds\n  Change the password of the local user account"
+   },
+   "3365277" : {
+      "steps" : "  Have an admin user account, a firewall with SSH enabled on a trusted zone port and a local user account.",
+      "initial" : "  should be allowed to login and change password on trusted zone in ARL (access restriction level) 1",
+      "id" : "3365277",
+      "title" : "Login to SSH (CLI) from invalidated local user on Trusted zone - Access Restriction level 1",
+      "result" : "  login as admin and set this or all local users to access restriction level 1\n  Login to trusted zone ssh with local user creds\n  change password over ssh connection.\n  check normal functionality of user privs after pw change"
+   },
+   "3365290" : {
+      "steps" : "  TBD",
+      "initial" : "  this should be allowed per the fspec as it is over HTTPS",
+      "id" : "3365290",
+      "title" : "Login  with GMS allow - Access Restriction Level 2",
+      "result" : "  TBD"
+   },
+   "3365281" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365281",
+      "title" : "Login to CLI from console port on invalidated local user account - Access Restriction Level 2",
+      "result" : "  TBD"
+   },
+   "3365284" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365284",
+      "title" : "Login to any zone with 2FA local user account on either access restriction level",
+      "result" : "  TBD"
+   },
+   "3365276" : {
+      "steps" : "  Have admin user, firewall with HTTP(s) management enabled on WAN interface, have a local user account",
+      "initial" : "  should not be allowed",
+      "id" : "3365276",
+      "title" : "Login to web UI from invalidated local user on Untrusted zone - Access Restriction Level 1",
+      "result" : "  login as admin and set this or all local users to restriction level 1.\n  Login to the WAN zone interface http(s) management port and sign on with local user creds"
+   },
+   "3365291" : {
+      "steps" : "  TBD",
+      "initial" : "  this should not be allowed since it is over HTTPS, after a password change it should be allowed.",
+      "id" : "3365291",
+      "title" : "Login  with GMS deny - Access Restriction Level 2",
+      "result" : "  TBD"
+   },
+   "3365278" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365278",
+      "title" : "Login to SSH (CLI) from invalidated local user on Untrusted zone - Access Restriction Level 1",
+      "result" : "  TBD"
+   },
+   "3365287" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365287",
+      "title" : "Login  with NSM allow - Access Restriction Level 1",
+      "result" : "  TBD"
+   },
+   "3365288" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3365288",
+      "title" : "Login with GMS via dedicated tunnel",
+      "result" : "  TBD"
+   }
+}

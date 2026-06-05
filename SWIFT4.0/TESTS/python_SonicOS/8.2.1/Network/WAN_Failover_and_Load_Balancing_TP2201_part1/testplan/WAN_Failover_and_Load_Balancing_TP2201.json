@@ -1,0 +1,662 @@
+{
+   "1506111" : {
+      "steps" : "  1)Have two WAN ports configured on the local box a default WAN and secondary one.\n  2) Configure VPN policy on the local box for VPN connection to a remote box.\n  3) Configure VPN policy on the remote box. Specify the secondary WAN IP of the local box as a primary IPSec Gateway. Don't enter a value in the secondary IPSec gateway field.\n  4) Unplug primary WAN interface on local box.\n  5) Start a ping from the remote box.",
+      "priority" : "Smoke",
+      "atm_id" : "D419E688-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506111",
+      "title" : "Inbound IKE to secondary WAN port",
+      "description" : "Original ID: 56\nOriginal Title: Inbound IKE to secondary WAN port\nOriginal Description: Negotiation completes successfully if the remote box uses the IP address of the secondary WAN interface of the local firewall as a primary IPSec gateway.",
+      "result" : "  The VPN tunnel is established between the boxes."
+   },
+   "1506085" : {
+      "steps" : "  1. On the WAN Failover and LB page click to Enable Probe Monitoring.\n  2. Click Accept.\n  3. Click the Configure button.\n  4. On the Load Balancing Monitoring page select Probes Succeed when either Main Target or Alternate Target Respond for both Primary and Secondary interfaces.\n  5. Enter in 0.0.0.0 for Main and Alternate Target for both Pimray and Secondary.\n  6. Click OK.\n  7. Capture packets on the WAN.",
+      "priority" : "Smoke",
+      "atm_id" : "D599C082-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506085",
+      "title" : "Enable Probe Monitoring with default probe targets",
+      "description" : "Original ID: 19\nOriginal Title: Enable Probe Monitoring with default probe targets\nOriginal Description: The admin will ensure that probe monitoring can be enabled",
+      "result" : "  The box should perform an ICMP ping probe of both WAN port's default gateways"
+   },
+   "1506120" : {
+      "steps" : "  1) Configure the default interfaces x0 and x1 as LAN and WAN\n  2) Configure X2 as secondary WAN and update\n  3) Enable Load Balancing\n  4) Enable Basic Active/Passive Failover and uncheck the box for Preempt and failback to Primary WAN when possible\n  5) Unplug the cable for the Primary WAN (X1)\n  6) Send any traffic from the LAN\n  7) Plug back the cable of the Primary Interface\n  8) Send traffic from the LAN",
+      "priority" : "Smoke",
+      "atm_id" : "D592B878-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.",
+      "id" : "1506120",
+      "title" : "Set Basic Active/Passive Failover  with physical monitoring and prempt disabled",
+      "description" : "Original ID: 7\nOriginal Title: Set Basic Active/Passive Failover  with physical monitoring and prempt disabled\nOriginal Description: The admin will ensure that the traffic is routed to Secondary WAN when the Physical cable of the Primary is down and when the Primary is back with prempt mode disabled the failover does not occur.",
+      "result" : "  The log message should display active WAN interface as X2 and the traffic should be routed to the Secondary WAN when the cable is unplugged.\n  Even after the Primary WAN is plugged back the active interface still is the secondary WAN.\n  Note: the default routing keep use the secondary wan in the routing table even after the primary WAN is plugged back."
+   },
+   "1564047" : {
+      "steps" : "  1.Enable stateful HA and virtual mac 2.Configure x1,x2 and x3:v165 as wan zone with static ip,default route interface on active and standby dut is x1 3.Remove x1 from LB group,and add x2 and x3:v165,x3:v165 as primay wan and x2 as seconday wan,check default route 4.Send traffic on LAN PC connected to x0,check the traffic 5.Force failover HA,check default route and traffic matching on new active dut 6.Change LB group,x2 as primay wan and x3:v165 as seconday wan,check the defaut route and traffic 7.Forece failover again,check the defaut route and traffic",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1564047",
+      "title" : "[HA]Verify default gateway on new Active DUT can update after force failover",
+      "description" : "TBD",
+      "result" : "  1.in step 3,default route in active and standby dut is updated to to x3:v165 2.in step 4,traffic goes through from x0 to x3:v165 3.in step 5,default route doesn't change after force failover,traffic still goes through from x0 to x3:v165 4.in step 6,default route interface is updated to X2,traffic goes through from x0 to x2 5.in step 7,default route interface still is X2,traffic goes through from x0 to x2"
+   },
+   "1506079" : {
+      "steps" : "  1) Enable Probing\n  2) Configure the Primary and Secondary probe target with a upstream route\n  3) Enter the value 5 sec to check the Interface\n  4) Enter a value Deactivate interface after 2 missed intervals\n  5) Unplug the cable of the upstream router for the Primary WAN interface\n  6) Verify the log messages and send traffic from the LAN PC to Internet.",
+      "priority" : "Smoke",
+      "atm_id" : "D3F1A57E-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506079",
+      "title" : "Set Deactivate interface after",
+      "description" : "Original ID: 15\nOriginal Title: Set Deactivate interface after\nOriginal Description: The admin will ensure that the box deactivates the Interface after the configured number of missed intervals and fails back to the Secondary WAN",
+      "result" : "  After the missed number of intervals,the Secondary WAN should be activate interface and the traffic should be routed to the secondary WAN."
+   },
+   "1506091" : {
+      "steps" : "  1. Configure X0 as default LAN using a static IP, configure X1 as primary WAN using static IP, configure X2 as secondary WAN using DHCP mode;\n  2. Enable Load Balancing, select Round Robin based WLB;<span class=\"Apple-converted-space\"> 3. Start with src-dst checkbox in OFF setting;\n  4. Start traffic from same source IP address and same destination IP address, but with different source TCP ports and different destination TCP ports e.g. FTP traffic, HTTP traffic from source 192.168.168.1 to destination 10.0.200.2. Traffic may be distributed to different WAN interfaces, X1 and X2.\n  5. Set the src-dst checkbox to the ON setting to enable source and destination IP address binding ;\n  6. Start traffic with a new pair of src-dst, 192.168.168.2 to destination 10.0.200.3, but with different source TCP ports and different destination TCP ports e.g. FTP traffic, HTTP traffic .",
+      "priority" : "Smoke",
+      "atm_id" : "c5eac0d9-bcbf-41bb-be31-47a88141d818",
+      "initial" : "  Have primary and secondary WAN setup.",
+      "id" : "1506091",
+      "title" : "Use source and destination IP address binding for Round Robin based WLB",
+      "description" : "Original ID: 240\nOriginal Title: Use source and destination IP address binding for Round Robin based WLB\nOriginal Description:",
+      "result" : "  in step 3, Traffic may be distributed to WAN interfaces, X1 and X2.\n  in step 5, Traffic must not be distributed to alternate WAN interfaces, all traffic coming from same src-dst pair regardless of the TCP ports, will only go to one particular WAN interface depending on which one has less load."
+   },
+   "1506073" : {
+      "steps" : "  1. Have connections from previous test case still active. Restart any FTP downloads.\n  2. Plug back in Primary WAN interface.\n  3. Observe Logs and WLB statistics.\n  4. Refresh sessions to Web Sites from Client on LAN to WAN\n  5. Connect to an FTP server LAN &gt; WAN and start download of a large file.\n  6. Do continuous ping accross VPN tunnel to the remote LAN PC\n  7. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  8. Packet capture on WAN to see which interface the traffic comes out.",
+      "priority" : "Smoke",
+      "atm_id" : "D4864148-0464-11DE-860E-445A00F93527",
+      "initial" : "  Note: This is to be run with previous 2 test cases and the following 2 test cases.\n  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Disabled.\n  VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected) Previous test case run.",
+      "id" : "1506073",
+      "title" : "WLB disabled - X1 down, X2 up. X1 transitions up.",
+      "description" : "Original ID: 119\nOriginal Title: WLB disabled - X1 down, X2 up. X1 transitions up.\nOriginal Description: Verify existing traffic uses X2 and new connections except PBR uses X2 in WLB disabled configuration with X1 interface transitioning up.",
+      "result" : "  In WAN Load Balancing Statistics X1 link and X2 link are up.\n  X1 and X2 are Diabled in Load Balanced State.\n  FTP session is continue from previous test case.\n  Existing cached connections remain mapped to X2, all new traffic will be still routed to X2.\n  VPN and firewall-generated traffic will use X2.\n  Traffic matching PBR routes using X2 not affected."
+   },
+   "1506108" : {
+      "steps" : "  1) Configure X0 and X1 as default LAN and WAN;\n  2) Configure Secondary WAN,LAN and DMZ;\n  3) Enable Probing and change the default values for the deactivate,reactivate Interfaces;\n  4) From System-Settings Export the prefs file.",
+      "priority" : "Smoke",
+      "atm_id" : "D4CC6452-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506108",
+      "title" : "Preference export with WAN failover settings",
+      "description" : "Original ID: 45\nOriginal Title: Preference export with WAN failover settings\nOriginal Description: The admin will ensure that the Prefs file created with Load Balancing and Failover can be exported as binary file.",
+      "result" : "  Verify if the Preference file can be exported from the GUI"
+   },
+   "1506117" : {
+      "steps" : "  1) Unplug the Primary WAN interface at the Remote site.\n  2) Ping from the remote site to the central site - VPN established using the secondary WAN interface at the remote site.\n  3) Run continuous ping from Central Site to Remote Site.\n  4) Disable traffic from the default Primary WAN port of the local and remote box without unplugging the interface.\n  5) Wait for the probing to fail.",
+      "priority" : "Full_Regression",
+      "atm_id" : "D5052F8A-0464-11DE-860E-445A00F93527",
+      "initial" : "  Remote Site: DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  HA enabled with preempt mode and monitoring disabled.\n  WAN failover enabled with LB option set to Active/Passive Probe monitoring configured with targets.\n  VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the remote SonicWALL, DPD enabled with default values(60 secs, 3 tries)\n  Remote Site: DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  HA enabled with preempt mode and monitoring disabled.\n  WAN failover enabled with LB option set to Active/Passive.\n  VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the Central SonicWALL, DPD enabled with default values(60 secs, 3 tries)",
+      "id" : "1506117",
+      "title" : "WAN failover - logical.  Primary unit X1 interface at the central site of a VPN. No link on the remote sites X1 interface",
+      "description" : "Original ID: 63\nOriginal Title: WAN failover - logical.  Primary unit X1 interface at the central site of a VPN. No link on the remote sites X1 interface\nOriginal Description: The admin will ensure that WAN Failover by Logical link failure on the Primary SonicWALL.\nPrimary WAN interface at the Central Site has been able to establishing a new VPN Connection from the Secondary WAN interface to the Remote Site's Secondary WAN interface of the SonicWALL.",
+      "result" : "  Verify if VPN tunnel from the Secondary WAN interface to the Remote Site's Secondary WAN interface of SonicWALL is established"
+   },
+   "1506096" : {
+      "steps" : "  1. Configure X0 as default LAN using a static IP, configure X1 as primary WAN using static IP, configure X2 as secondary WAN using DHCP mode;\n  2. Enable Load Balancing, select spill-over based WLB, configure that send traffic to Secondary WAN when bandwidth exceeds 10 kbps;<span class=\"Apple-converted-space\"> 3. Set the src-dst checkbox to the ON setting to enable source and destination IP address binding;\n  4. Send high volume traffic with high diversity of destinations , with different service, e.g. FTP,HTTPS, HTTP, PING, observe the packet monitor, find out which WAN interface that each traffic go through;\n  5. Verify that same source-destination pairs are persistent to the same interface;\n  6. Reboot DUT;\n  7. Verify that same source-destination pairs are still persistent to the same interface;",
+      "priority" : "Smoke",
+      "atm_id" : "c4b01ac3-312e-4a22-bff2-3a4dfdc73cd0",
+      "initial" : "  Have primary WAN and secondary WAN.",
+      "id" : "1506096",
+      "title" : "Option source and destination IP address binding work right after rebooting DUT in spill-over based WLB.",
+      "description" : "Original ID: 252\nOriginal Title: Option source and destination IP address binding work right after rebooting DUT in spill-over based WLB. \nOriginal Description: <span class=\"TYPE_tc_text plain\">Option source and destination IP address binding work right after rebooting DUT inspill-over based WLB.</span>",
+      "result" : "  in step 5, same source-destination pairs are persistent to the same interface; in step 7, after rebooting, same source-destination pairs are still persistent to the same interface;"
+   },
+   "1506123" : {
+      "steps" : "  1) Configure X0 and X1 as default LAN and WAN using a static IP.\n  2) Configure X2 as Secondary WAN and Enable Load Balancing Method with Percentage Based.\n  3) Enter the value of 30 in the field for Primary WAN Percentage,and value of 70 in the filed for secondary WAN Percentage,check what order is shown in Failover&amp;LB Group tab and Statistics tab andinEdit LB Group Ratio Mode popup window\n  4) Send different types of traffic (FTP,HTTP,SMTP) from the Chariot from LAN to the WAN. 5) Repeat the above steps with different percentages for the Primary WAN Percentage.",
+      "priority" : "Smoke",
+      "atm_id" : "D5635C36-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.",
+      "id" : "1506123",
+      "title" : "Set Percentage-Based Load Balancing",
+      "description" : "Original ID: 9\nOriginal Title: Set Percentage-Based Load Balancing\nOriginal Description: The admin will ensure that Sonicwall sends traffic to the Primary and Secondary WAN Interface as per the Percenatges configured in the Percentage LB Method",
+      "result" : "  Verify if order is shown as X1 as first and X2 as second inFailover&amp;LB Group tab and Statistics tab,the member interfaces are still correctly ordered as X1 first and X2 second inEdit LB Group Ratio Mode popup\n  Verify if the traffic is send as per the configured percentages.\n  Verify the Log messages if Percentage based statistics are logged."
+   },
+   "1506097" : {
+      "steps" : "  1. Configure X0 as default LAN using a static IP, configure X1:V100 as primary WAN using static IP, configure X2:V200 as secondary WAN using DHCP mode;\n  2. Enable Load Balancing, select Round Robin based WLB;<span class=\"Apple-converted-space\"> 3. Start with src-dst checkbox in OFF setting;\n  4. Start traffic from same source IP address and same destination IP address, but with different source TCP ports and different destination TCP ports e.g. FTP traffic, HTTP traffic from source 192.168.168.1 to destination 10.0.200.2. Traffic may be distributed to different WAN interfaces, X1:V100 and X2:V200.\n  5. Set the src-dst checkbox to the ON setting to enable source and destination IP address binding ;\n  6. Start traffic with a new pair of src-dst, 192.168.168.2 to destination 10.0.200.3, but with different source TCP ports and different destination TCP ports e.g. FTP traffic, HTTP traffic .",
+      "priority" : "Sanity",
+      "atm_id" : "f7086bbb-3012-43d2-bb6b-bce6eac849cb",
+      "initial" : "  Have primary and secondary WAN setup. X1:V100 is primary WAN, X2:V200 is secondary WAN.",
+      "id" : "1506097",
+      "title" : "Use source and destination IP address binding for Round Robin based WLB with vlan sub-interface.",
+      "description" : "Original ID: 258\nOriginal Title: Use source and destination IP address binding for Round Robin based WLB with vlan sub-interface.\nOriginal Description: Use source and destination IP address binding for Round Robin based WLB with vlan sub-interface.",
+      "result" : "  in step 3, Traffic may be distributed to WAN interfaces, X1:V100 and X2:V200.\n  in step 5, Traffic must not be distributed to alternate WAN interfaces, all traffic coming from same src-dst pair regardless of the TCP ports, will only go to one particular WAN interface depending on which one has less load."
+   },
+   "1506063" : {
+      "steps" : "  1) Configure X0 and X1 as default LAN and WAN using a static IP\n  2) Configure X2 as Secondary WAN and Enable Load Balancing Method with Percentage Based.\n  3) Enter the values of @ ,999 in the field for Primary WAN percentage.\n  4) Enter the values 0 ,50,75,100.",
+      "priority" : "Smoke",
+      "atm_id" : "D3D9F640-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces.\n  WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.",
+      "id" : "1506063",
+      "title" : "Boundary check for Percentage Based Load Balancing Method",
+      "description" : "Original ID: 10\nOriginal Title: Boundary check for Percentage Based Load Balancing Method\nOriginal Description: The admin will verify the boundary conditions and error checks for the Percentage based Load Balancing",
+      "result" : "  Verify for the values in step c ,there is error message at the status showing data out of bound and for the values in step d should be updated.\n  The Secondary WAN percentage should be auto populated to reflect the remaining percentage after the Primary WAN percentage is configured."
+   },
+   "1506083" : {
+      "steps" : "  1. Connect to a couple of Web Sites from Client on LAN to WAN\n  2. Connect to an FTP server LAN &gt; WAN and start download of a large file.\n  3. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  4. Unplug Primary WAN interface.\n  5. Refresh sessions to Web Sites from Client on LAN to WAN and make new connections.\n  6. Connect to an FTP server LAN &gt; WAN and start download of a large file.\n  7. Plug back in Primary interface.\n  8. Refresh sessions to Web Sites from Client on LAN to WAN and make new connections.\n  9. Connect to an FTP server LAN &gt; WAN and start download of a large file.",
+      "priority" : "Smoke",
+      "atm_id" : "D4234A20-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces.\n  X2 configured with DHCP, X1 configured static. DHCP server connected to X2. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected. Preempt disabled. Probe Monitoring Enabled.\n  Packet capture on WAN to verify interface the traffic comes out.\n  Check Ethernet WLB statistics through and Firewall &gt; Connection Monitor during test.",
+      "id" : "1506083",
+      "title" : "Basic active/passive failover and failback prempt disabled - primary static, secondary DHCP",
+      "description" : "Original ID: 185\nOriginal Title: Basic active/passive failover and failback prempt disabled - primary static, secondary DHCP\nOriginal Description: Verify that new traffic uses active interface in Active / Passive configuration with both interfaces up in WAN Load Balancing",
+      "result" : "  Traffic goes through X1.\n  Upon failover existing traffic stops.\n  New connections go through X2.\n  Upon restoring X1, existing traffic remains on X2 and new traffic goes to X2 too."
+   },
+   "1506086" : {
+      "steps" : "  1. Observe the logs, look at the TSR, and look at the Statistics on the WLB page during test.\n  2. Configure Primary and Secondary Setting as Probe Succeeds When Main Target Responds.\n  3. Configure Main Target on both Primary and Secondary (Type Ping) with an that can be reached.\n  4. From LAN PC browse web pages on LAN.\n  5. Observe connection monitor.",
+      "priority" : "Smoke",
+      "atm_id" : "D483EED4-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active Passive Failover Selected Probe Monitoring Enabled",
+      "id" : "1506086",
+      "title" : "Probe monitoring - Probe succeeds when Main Target responds - Main Target as: Ping, customized host, reachable",
+      "description" : "Original ID: 202\nOriginal Title: Probe monitoring - Probe succeeds when Main Target responds - Main Target as: Ping, customized host, reachable\nOriginal Description: Verify that probes are sent to Main Target and correct state is shown.",
+      "result" : "  In WAN Load Balancing Statistics X1 link and X2 link are up and available. X1 is Active.\n  Probe Main Target shows Target Alive for both. Traffic uses X1.\n  Probes are sent to the configured IP address and port."
+   },
+   "1224917" : {
+      "steps" : "  1. Establish HA and X1 monitor ip; 2. Configure X0 and X1 as default LAN and WAN with static IP; 3. Configure X2, X3:V170 as WAN Interface with static/DHCP mode; 4. Change X3:V170 as primary WAN, X2 as secondary WAN, remove X1 from Default LB group; 5. WAN PC ping and https X1 monitor ip (both active and standby); 6. Force failover HA, repeat step5 7. Force failover HA again, change WLB to X1 as only WAN, repeat step5 8. Repeat step3~6 3~4 times",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1224917",
+      "title" : "[HA]Verify standby FW can be accessed (ping/https) after modify WLB and HA failover several times",
+      "description" : "Change WLB and force failover HA several times, then verify the standby FW can be accessed",
+      "result" : "  in step5~8, verify standby FW can be accessed successfully"
+   },
+   "1506109" : {
+      "steps" : "  1) Repeat steps in the previous test case.\n  2) Restore the Firmware to factory defaults\n  3) Import the previously saved Prefs file from System-Settings.(Exported file)\n  4) Reboot the box and export the Prefs file\n  5) Optionally perform a diff for both the prefs file using prefs converter script.",
+      "priority" : "Smoke",
+      "atm_id" : "D4BE6690-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506109",
+      "title" : "Preference import with WAN failover settings",
+      "description" : "Original ID: 46\nOriginal Title: Preference import with WAN failover settings\nOriginal Description: The admin will ensure that the Prefs file Imported to the SONICWALL has all the settings that are previously configured before exporting.",
+      "result" : "  Both the Preference files should have the same settings. Settings should be identical to the configuration when original file was exported."
+   },
+   "1506101" : {
+      "steps" : "  1. On the WAN Failover and LB page click to Enable Probe Monitoring.\n  2. Click Accept.\n  3. Click the Configure button.\n  4. On the Load Balancing Monitoring page select Probes Succeed when both Main Target and Alternate Target Respond for both Primary and Secondary interfaces.\n  5. Enter in Host for Main and Alternate Target for both Pimray and Secondary.\n  6. Click OK.\n  7. From configured target PC do a packet capture.",
+      "priority" : "Smoke",
+      "atm_id" : "D46307DC-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506101",
+      "title" : "Set Probes Succeed when both Main Target and Alternate Target Respond",
+      "description" : "Original ID: 27\nOriginal Title: Set Probes Succeed when both Main Target and Alternate Target Respond\nOriginal Description: Verify correct fields grayed out or are able to be configured and that probes are sent to the configured targets.",
+      "result" : "  When Probes Succeed when both Main Target and Alternate Target Respond is selected the fields for protocal and Host are able to be set.\n  Probes are sent to the configured Targets.\n  In WLB statistics all targets will show Target Alive."
+   },
+   "1506071" : {
+      "steps" : "  1. Connect to a couple of Web Sites from Client on LAN to WAN\n  2. Connect to an FTP server LAN &gt; WAN and start download of a large file.\n  3. Connect to FTP server LAN &gt; WAN that is defined in Policy Based Route and start download of a large file.\n  4. Do continuous ping accross VPN tunnel to the remote LAN PC\n  5. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  6. Packet capture on WAN to see which interface the traffic comes out.",
+      "priority" : "Smoke",
+      "atm_id" : "D47F421C-0464-11DE-860E-445A00F93527",
+      "initial" : "  Note: This is to be run with the following 4 test cases.\n  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Disabled.\n  VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected)",
+      "id" : "1506071",
+      "title" : "WLB disabled - X1 up,X2 up",
+      "description" : "Original ID: 117\nOriginal Title: WLB disabled - X1 up,X2 up\nOriginal Description: Verify that traffic uses X1 with WLB disabled configuration with both interfaces up.",
+      "result" : "  In WAN Load Balancing Statistics X1 and X2 links are up and are Disabled in Load Balanced State.\n  All traffic uses X1 except for the policy based route will use X2."
+   },
+   "1506121" : {
+      "steps" : "  1) Unplug the cable for the primary WAN interface - failover occurs.\n  2) Observe traps sent to the SNMP monitor.\n  3) Plug the cable for the primary WAN interface - failback occurs\n  4) Observe traps sent to the SNMP monitor.",
+      "priority" : "Smoke",
+      "atm_id" : "D3D79256-0464-11DE-860E-445A00F93527",
+      "initial" : "  X1 and X2 Configured as WAN interfaces with WLB enabled.\n  Active passive load balancing selected with preempt enabled.\n  SNMP enabled with trap host configured.\n  SNMP enabled on an interface that has access to the SNMP agent or monitor.\n  Logging Alert level set to warning.\n  High availability category selected for Log and Alerts",
+      "id" : "1506121",
+      "title" : "Verify if Sonicwall sends SNMP traps after failover/failback to secondary WAN has occured",
+      "description" : "Original ID: 78\nOriginal Title: Verify if Sonicwall sends SNMP traps after failover/failback to secondary WAN has occured\nOriginal Description: Verify that the Sonicwall sends SNMP traps after Failover to Secondary WAN has occured.",
+      "result" : "  Verify if the Sonicwall sends SNMP traps after Failover to Secondary WAN has occurred for the following cases of alerts that are recorded.\n  --WLB Failover in progress\n  -- WLB Failback initiated by %s\n  -- WLB Resource is now available\n  -- WLB Resource failed"
+   },
+   "1506110" : {
+      "steps" : "  1) Configure the default interfaces x0 and x1 as LAN and WAN\n  2) Configure X2 as secondary WAN and update\n  3) Enable Load Balancing\n  4) Enable Basic Active/Passive Failover\n  5) Unplug the cable for the Primary WAN (X1)\n  6) Send any traffic from the LAN",
+      "priority" : "Smoke",
+      "atm_id" : "D565C48A-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Disabled VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected)\n  Previous test case run.",
+      "id" : "1506110",
+      "title" : "Set Active/Passive Failover with Physical Monitoring",
+      "description" : "Original ID: 5\nOriginal Title: Set Active/Passive Failover with Physical Monitoring\nOriginal Description: The admin will ensure that the Active/Passive Failover can be enabled and that traffic is routed to Secondary WAN when the Physical cable of the Primary is down.",
+      "result" : "  The log message should display active WAN interface as X2 and sent an Alert message also and the traffic should be routed to the Secondary WAN.\n  Verify the gateway address is pointing to the Secondary WAN gateway under the Network- Routing page."
+   },
+   "1506104" : {
+      "steps" : "  1. On the WAN Failover and LB page click to Enable Probe Monitoring.\n  2. Click Accept.\n  3. Click the Configure button.\n  4. On the Load Balancing Monitoring page select Probes Succeed when either Main Target or Alternate Target Respond for both Primary and Secondary interfaces.\n  5. Select the protocol to be TCP.\n  6. Enter in Host for Main and Alternate Target for both Primary and Secondary.\n  7. Enter each of these values for the TCP port -1, a, 655536.\n  8. Click OK. 10. Enter each of these values for the TCP port 0, 8080, 65535",
+      "priority" : "Smoke",
+      "atm_id" : "D3C6C732-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506104",
+      "title" : "Target Port boundary check",
+      "description" : "Original ID: 35\nOriginal Title: Target Port boundary check\nOriginal Description: Verify that only Ports are allowed for Target Port entries.",
+      "result" : "  Error is displayed for values outside of 0-65535.\n  Values inside range are accepted."
+   },
+   "1506116" : {
+      "steps" : "  1. Start a continous ping from the Central Site to the Remote Site.\n  2. Disable traffic for the default WAN port's upstream router on the local box without unplugging the interface.\n  3. Wait for the probes to fail.",
+      "priority" : "Full_Regression",
+      "atm_id" : "D4F95192-0464-11DE-860E-445A00F93527",
+      "initial" : "  Remote Site: DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  HA enabled with preempt mode and monitoring disabled.\n  WAN failover enabled with LB option set to Active/Passive. Probe monitoring enabled with targets set.&#160;\n  VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the remote SonicWALL , DPD enabled with default values(60 secs, 3 tries)\n  Remote Site: DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  HA enabled with preempt mode.\n  WAN failover enabled with LB option set to Active/Passive.\n  VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the Central SonicWALL, &#160;DPD enabled with default values(60 secs, 3 tries)",
+      "id" : "1506116",
+      "title" : "WAN failover - logical.  Primary unit X1 interface at the central site of a VPN",
+      "description" : "Original ID: 61\nOriginal Title: WAN failover - logical.  Primary unit X1 interface at the central site of a VPN\nOriginal Description: The admin will ensure that WAN Failover by Logical link failure on the Primary SonicWALL.\nPrimary WAN interface at the Central Site has been able to establishing&#160;a new VPN Connection from the Secondary WAN interface to the Remote Site Primary WAN of the SonicWALL.",
+      "result" : "  Verify if VPN tunnel from the Secondary WAN interface to the Remote Site Primary SonicWALL is established"
+   },
+   "1506090" : {
+      "steps" : "  1. Navigate to the WAN Failover and LB page\n  2. Check Respond to Probes\n  3. Check Any TCP-SYN to Port\n  4. Enter each of these values for the TCP port -1, a, 655536.\n  5. Click Accept.\n  6. Enter each of these values for the TCP port 0, 8080, 65535\n  7. Click Accept.\n  8. Click the Configure button.",
+      "priority" : "Smoke",
+      "atm_id" : "D5D482D0-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506090",
+      "title" : "TCP-SYN Port Range Check",
+      "description" : "Original ID: 23\nOriginal Title: TCP-SYN Port Range Check\nOriginal Description: Verify only Ports within the range 0-65535 can be entered.",
+      "result" : "  Error is displayed for values outside of 0-65535.\n  Values inside range are accepted.\n  ==Edit by Celia, 2022.09.05=====\n  Error is displayed for values outside of <strong>1</strong>-65535 in G6 and G7."
+   },
+   "1506114" : {
+      "steps" : "  1) Configure the default interfaces x0 and x1 as LAN and WAN\n  2) Configure X2 as secondary WAN and update\n  3) Enable Load Balancing\n  4) Enable Basic Active/Passive Failover and check the box for Preempt and failback to Primary WAN when possible\n  5) Unplug the cable for the Primary WAN (X1)\n  6) Send any traffic from the LAN\n  7) Plug back the cable of the Primary Interface\n  8) Send traffic from the LAN",
+      "priority" : "Smoke",
+      "atm_id" : "D5976422-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected)\n  Previous test case run.",
+      "id" : "1506114",
+      "title" : "Set Basic Active/Passive Failover with physical monitoring and prempt enabled",
+      "description" : "Original ID: 6\nOriginal Title: Set Basic Active/Passive Failover with physical monitoring and prempt enabled\nOriginal Description: The admin will ensure that the traffic is routed to Secondary WAN when the Physical cable of the Primary is down and when the Primary is back with prempt mode the failback has occurred.",
+      "result" : "  The log message should display active WAN interface as X2 and the traffic should be routed to the Secondary WAN when the cable is unplugged.\n  After the Primary WAN is plugged back the log message should display that the Primary interface is active and the traffic should pass through the primary WAN.\n  Verify the Network-Routing page to confirm the Gateway address is that of Primary gateway."
+   },
+   "1259902" : {
+      "steps" : "  1.Config X1, X2, X3:V100 as WAN zone; 2.Edit Default LB group, put X2, X3:V100 into group, remove X1 and make X3:V100 as rank 1; 3.Change X1 as the default WAN back, remove the others at the same time; 4.Config WLB as Round robin mode, and keep traffic running 5.Repeated step2~3 for more than 20 times.",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  Config multi WAN interface.",
+      "id" : "1259902",
+      "title" : "Verify FW works well after edit Default LB group (add, remove interface and change order each time)  repeatedly for more than 20 times",
+      "description" : "Verify FW works well after edit Default LB group (add, remove interface and change order each time)  repeatedly for more than 20 times with round robin traffic active",
+      "result" : "  in step2~3 & 5, no FW crash and the default route update successfully."
+   },
+   "1506095" : {
+      "steps" : "  1. Configure X0 as default LAN using a static IP, configure X1 as primary WAN using static IP, configure X2 as secondary WAN using DHCP mode;\n  2. Enable Load Balancing, select Round Robin based WLB;<span class=\"Apple-converted-space\"> 3. Set the src-dst checkbox to the ON setting to enable source and destination IP address binding;\n  4. Send high volume traffic with high diversity of destinations , with different service, e.g. FTP,HTTPS, HTTP, PING, observe the packet monitor, find out which WAN interface that each traffic go through;\n  5. Verify that same source-destination pairs are persistent to the same interface;\n  6. Reboot DUT;\n  7. Verify that same source-destination pairs are still persistent to the same interface;",
+      "priority" : "Smoke",
+      "atm_id" : "1b02ab4e-e5de-4ea8-b9cc-27a9e069fe93",
+      "initial" : "  Have primary WAN and secondary WAN.",
+      "id" : "1506095",
+      "title" : "Option  source and destination IP address binding work right after rebooting DUT in round robin based WLB.",
+      "description" : "Original ID: 251\nOriginal Title: Option  source and destination IP address binding work right after rebooting DUT in round robin based WLB.\nOriginal Description: Verify that fuction of source and destination IP address binding option won't be destroyed by rebooting DUT.",
+      "result" : "  in step 5, same source-destination pairs are persistent to the same interface; in step 7, after rebooting, same source-destination pairs are still persistent to the same interface;"
+   },
+   "1506062" : {
+      "steps" : "  1) Configure X2 as secondary WAN and update.\n  2) Change the configured secondary to unassigned.\n  3) Repeat the steps for all other Interfaces(X3,X4,X5,...)",
+      "priority" : "Smoke",
+      "atm_id" : "D3B6213E-0464-11DE-860E-445A00F93527",
+      "initial" : "  Default interfaces X0 and X1 configured as LAN and WAN;",
+      "id" : "1506062",
+      "title" : "Configure secondary WAN on different unassigned interfaces",
+      "description" : "Original ID: 1\nOriginal Title: Configure secondary WAN on different unassigned interfaces\nOriginal Description: The admin will ensure that Secondary WAN can be configured on any of the unassigned interface.",
+      "result" : "  The admin should be able to configure secondary WAN on any of the user configurable Interfaces.\n  The configured secondary WAN interface should be reflected when edit LB Group, it should be shown in the GROUP MEMBERS list ."
+   },
+   "1506070" : {
+      "steps" : "  1. Have connections from previous test case still active.\n  2. Plug back in Secondary WAN interface.\n  3. Observe Logs and WLB statistics.\n  4. Refresh sessions to Web Sites from Client on LAN to WAN\n  5. Connect to an FTP server LAN &gt; WAN that would use the Policy Based Route through X2 and start download of a large file.\n  6. Do continuous ping accross VPN tunnel to the remote LAN PC\n  7. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  8. Packet capture on WAN to see which interface the traffic comes out.",
+      "priority" : "Smoke",
+      "atm_id" : "D45736DC-0464-11DE-860E-445A00F93527",
+      "initial" : "  Note: This is to be run with previous 4 test cases.\n  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected. Preempt enabled. Probe Monitoring Disabled.\n  VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected) Previous test case run.",
+      "id" : "1506070",
+      "title" : "WLB enabled Active/Passive, preempt - X1 up, X2 down. X2 transitions to up.",
+      "description" : "Original ID: 116\nOriginal Title: WLB enabled Active/Passive, preempt - X1 up, X2 down. X2 transitions to up.\nOriginal Description: Verify that traffic uses X1 for all connections in Active / Passive configuration except PBR with X2 interface transitioning up in WAN Load Balancing.",
+      "result" : "  In WAN Load Balancing Statistics X1 link is up and X2 link is up.\n  X2 transitions to Available and X1 is Available in Load Balanced State.\n  X1 is Active. Log shows WLB resource now available message.\n  X1 FTP session continues from previous test case. New FTP session that matches Policy Based Route uses X2.\n  Existing cached connections are not affected and remain mapped to X1.\n  New connections matching PBR routes to X2 will be routed to X2. Routing page shows route not grayed out."
+   },
+   "1506087" : {
+      "steps" : "  1. Observe the logs, look at the TSR, and look at the Statistics on the WLB page during test.\n  2. Configure Primary and Secondary Setting as Probe Succeeds When both Main Target and Alternate Target respond.\n  3. Configure Main Target and Alternate Target on both Primary and Secondary (one type TCP and one type Ping) with an IP and/or service that can be reached.\n  4. From LAN PC browse web pages on WAN.\n  5. Observe connection monitor. Repeat steps with Main Target and Alternate Target set to 0.0.0.0 and a default target configured.\n  6. Repeat steps with Main Target and Alternate Target set to 0.0.0.0 and the default target set to 0.0.0.0.",
+      "priority" : "Smoke",
+      "atm_id" : "D5718860-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active Passive Failover Selected Probe Monitoring Enabled DNS configured.",
+      "id" : "1506087",
+      "title" : "Probe monitoring - Probe succeeds when both Main Target and Alternate Target respond - one target TCP and the other Ping, both respond",
+      "description" : "Original ID: 209\nOriginal Title: Probe monitoring - Probe succeeds when both Main Target and Alternate Target respond - one target TCP and the other Ping, both respond\nOriginal Description: Verify that probes are sent to Main Target and Alternate Target and correct state is shown.",
+      "result" : "  In WAN Load Balancing Statistics X1 link and X2 link are up and available. X1 is Active.\n  Probe Main Target shows Target Alive for both.\n  Probe Alternate Target shows Target Alive for both.\n  Traffic uses X1.\n  With Main and Alternate target set to 0.0.0.0 the default target is used.\n  When default target is set to 0.0.0.0 the Default Gateway of the interfaces is used."
+   },
+   "1506072" : {
+      "steps" : "  1. Have connections from previous test case still active.\n  2. Unplug Primary WAN interface.\n  3. Observe Logs and WLB statistics.\n  4. Refresh sessions to Web Sites from Client on LAN to WAN\n  5. Connect to an FTP server LAN &gt; WAN and start download of a large file.\n  6. Do continuous ping accross VPN tunnel to the remote LAN PC\n  7. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  8. Packet capture on WAN to see which interface the traffic comes out.",
+      "priority" : "Smoke",
+      "atm_id" : "D48CA81C-0464-11DE-860E-445A00F93527",
+      "initial" : "  Note: This is to be run with previous and the following 3 test cases.\n  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Disabled.\n  VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected)",
+      "id" : "1506072",
+      "title" : "WLB disabled - X1 up, X2 up. X1 transitions down.",
+      "description" : "Original ID: 118\nOriginal Title: WLB disabled - X1 up, X2 up. X1 transitions down.\nOriginal Description: Verify that traffic uses X2 in WLB disabled configuration with X1 interface transitioning down.",
+      "result" : "  In WAN Load Balancing Statistics X1 link is down and X2 link is up.\n  X1 and X2 are Disabled in Load Balanced State.\n  X1 FTP session is disconnected from previous test case.\n  Existing cached connections remain mapped to X1, new connections re-routed to X2 including VPN and firewall generated traffic.\n  PBR route using X2 is not affected."
+   },
+   "1506100" : {
+      "steps" : "  1.Configure multiple WAN interface,and make sure they got an ip address\n  X1 : dhcp mode by default\n  X3 : static mode\n  X4 : pppoe mode\n  2.Check X1's IP displays correctly ,no wrong displayed such as \"0.0.0.0\"\n  3.On Edit LB Group window,check X3(static mode) and X4 (pppoe mode)are displayed in the left list box,and can remove them to the right list box,and IPs displays correctly when X3 and X4 as WLB group member.\n  4.Remove out X4 from WLB group,change X4's mode from pppoe to l2tp/pptp,then can move X4 to WLB group,and correct IP displayed after it becoms WLB group",
+      "priority" : "Smoke",
+      "atm_id" : "732ca0c9-a70e-4453-aa7d-1992673d2a36",
+      "initial" : "  TBD",
+      "id" : "1506100",
+      "title" : "test different mode interface(static,dhcp,pppoe,l2tp,pptp) can move to WLB group",
+      "description" : "Original ID: 260\nOriginal Title: test different mode interface(static,dhcp,pppoe,l2tp,pptp) can move to WLB group\nOriginal Description:",
+      "result" : "  see steps"
+   },
+   "1506067" : {
+      "steps" : "  1. Have connections from previous test case still active.\n  2. Unplug Primary WAN interface.\n  3. Observe Logs and WLB statistics.\n  4. Refresh sessions to Web Sites from Client on LAN to WAN\n  5. Connect to an FTP server LAN &gt; WAN and start download of a large file.\n  6. Do continuous ping accross VPN tunnel to the remote LAN PC\n  7. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  8. Packet capture on WAN to see which interface the traffic comes out.",
+      "priority" : "Smoke",
+      "atm_id" : "D54C0EB4-0464-11DE-860E-445A00F93527",
+      "initial" : "  Note: This is to be run with previous and the following 3 test cases.\n  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected. Preempt enabled. Probe Monitoring Disabled.\n  VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected) Previous test case run.",
+      "id" : "1506067",
+      "title" : "WLB enabled Active/Passive, preempt - X1 up, X2 up. X1 transitions down.",
+      "description" : "Original ID: 113\nOriginal Title: WLB enabled Active/Passive, preempt - X1 up, X2 up. X1 transitions down.\nOriginal Description: Verify that traffic uses X2 in Active / Passive configuration with X1 interface transitioning down in WAN Load Balancing.",
+      "result" : "  In WAN Load Balancing Statistics X1 link is down and X2 link is up.\n  X1 transitions to Failover and X2 is Available in Load Balanced State.\n  X2 is Active. Log shows WLB Resource Failed and WLB Failover in progress messages.\n  X1 FTP session is disconnected from previous test case.\n  Existing cached connections using X1 are flushed.\n  All traffic old/new is re-routed to X2 including VPN.\n  Policy Based Route connection using X2 is not affected."
+   },
+   "1506105" : {
+      "steps" : "  1. On the WAN Failover and LB page click to Enable Probe Monitoring.\n  2. Click Accept.\n  3. Click the Configure button.\n  4. On the Load Balancing Monitoring page select Probes Succeed when either Main\n  5. Leave 0.0.0.0 for Main and Alternate Target for both Primary and Secondary.\n  6. Enter a Default Target IP for Primary and Secondary.\n  7. Click OK\n  8. From configured target PC do a packet capture.\n  9. Edit Monitoring again and set Hosts for Main and Alternate Target for both Primary and Secondary.\n  10. Click OK\n  11. From configured target PC do a packet capture.\n  12. Edit Monitoring again and set 0.0.0.0 for Main and Alternate Target for both Primary and Secondary.\n  13. Enter 0.0.0.0 for the Default targets.\n  14. Click OK\n  15. From configured target PC do a packet capture.",
+      "priority" : "Smoke",
+      "atm_id" : "D59E6A92-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506105",
+      "title" : "Set Default Target IP",
+      "description" : "Original ID: 37\nOriginal Title: Set Default Target IP\nOriginal Description: Verify can set Default Target IP for Primary and Secondary interfaces.",
+      "result" : "  Probes are sent to the configured Default Targets when Target IP addresses are unspecified.\n  When Target IP addresses are specified the default Target is not used.\n  When the Target IP addresses are all 0.0.0.0 the default gateways are used."
+   },
+   "1506088" : {
+      "steps" : "  1. On the WAN Failover and LB page check Respond to Probes.\n  2. Check Any TCP-SYN to Port\n  3. Enter the custom port matching the probes sent from the other firewall (8080)\n  4. Click Accept.\n  5. Do a packet capture on the WAN and verify probes on being responded to.\n  6. On the WAN Failover and LB page uncheck Respond to Probes.\n  7. Click Accept.\n  8. Do a packet capture on the WAN",
+      "priority" : "Smoke",
+      "atm_id" : "D44462FA-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.\n  Use another sonicwall to setup WLB: Enable Probe Monitoring On the Load Balancing Monitoring page, select Probes Succeed when Main Target Responds for Primary interface. Select the protocol to be TCP. Enter in Host for Main Target to be the WAN interface of the DUT. Enter for the TCP port a custom value (8080).\n  Check the SNWL &#160;box.",
+      "id" : "1506088",
+      "title" : "Device does not SYN-ACK when Respond to Probes option is unchecked",
+      "description" : "Original ID: 22\nOriginal Title: Device does not SYN-ACK when Respond to Probes option is unchecked\nOriginal Description: Verify device does not SYN-ACK when Respond to Probes option is unchecked",
+      "result" : "  RST is sent for probes that are received."
+   },
+   "1506094" : {
+      "steps" : "  1. Configure X0 as default LAN using a static IP, configure X1 as primary WAN using static IP, configure X2 as secondary WAN using DHCP mode;\n  2. Enable Load Balancing, select spill-over based WLB, configure that send traffic to Secondary WAN when bandwidth exceeds 10 kbps.;<span class=\"Apple-converted-space\"> 3. Set the src-dst checkbox to the ON setting to enable source and destination IP address binding ;\n  4. Start traffic A from source 192.168.168.1 to destination 10.0.200.2, e.g. FTP, make sure the traffic exceeds 10kbps,observe the packet monitor, find out which WAN interface traffic go through, e,g. traffic A go through primary WAN;\n  5. Mack primary WAN failover, traffic A go through secondary WAN;\n  6. Primary WAN failback;\n  7. Start traffic B with same source and dest as traffic A, but with different service, e.g.PING traffic, traffic B still go through secondary WAN.",
+      "priority" : "Smoke",
+      "atm_id" : "3a0268dc-010f-4381-92d9-9e92b2d7164a",
+      "initial" : "  Have primary WAN and secondary WAN.",
+      "id" : "1506094",
+      "title" : "Use source and destination IP address binding for Spill-over based WLB with failover and failback.",
+      "description" : "Original ID: 245\nOriginal Title: Use source and destination IP address binding for Spill-over based WLB with failover and failback. \nOriginal Description: Use source and destination IP address binding for Spill-over based WLB with failover and failback.",
+      "result" : "  in step 7, after primary WAN failback, all traffic from source 192.168.168.1 to destination 10.0.200.2 still stay on secondary WAN."
+   },
+   "1506066" : {
+      "steps" : "  1. Connect to a couple of Web Sites from Client on LAN to WAN\n  2. Connect to an FTP server LAN &gt; WAN and start download of a large file.\n  3. Connect to FTP server LAN &gt; WAN that is defined in Policy Based Route and start download of a large file.\n  4. Do continuous ping accross VPN tunnel to the remote LAN PC\n  5. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  6. Packet capture on WAN to see which interface the traffic comes out.",
+      "priority" : "Smoke",
+      "atm_id" : "D57FB0D4-0464-11DE-860E-445A00F93527",
+      "initial" : "  Note: This is to be run with the following 4 test cases.\n  Two interfaces (X1,X2) configured as WAN interfaces.&#160;WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.&#160;Preempt enabled. Probe Monitoring Disabled.\n  VPN setup on X1 to a remote firewall.&#160;IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected)",
+      "id" : "1506066",
+      "title" : "WLB enabled Active/Passive, preempt - X1 up, X2 up",
+      "description" : "Original ID: 112\nOriginal Title: WLB enabled Active/Passive, preempt - X1 up, X2 up\nOriginal Description: Verify that traffic uses X1 in Active / Passive configuration with both interfaces up in WAN Load Balancing",
+      "result" : "  In WAN Load Balancing Statistics X1 and X2 links are up and are Available in Load Balanced State.\n  X1 is active, all traffic uses X1 except for the policy based route will use X2."
+   },
+   "1506093" : {
+      "steps" : "  1. Configure X0 as default LAN using a static IP, configure X1 as primary WAN using static IP, configure X2 as secondary WAN using DHCP mode;\n  2. Enable Load Balancing, select Round Robin based WLB;<span class=\"Apple-converted-space\"> 3. Set the src-dst checkbox to the ON setting to enable source and destination IP address binding ;\n  4. Start traffic A from source 192.168.168.1 to destination 10.0.200.2, e.g. FTP, observe the packet monitor, find out which WAN interface traffic go through, e,g. traffic A go through primary WAN;\n  5. Mack primary WAN failover, traffic A go through secondary WAN;\n  6. Primary WAN failback;\n  7. Start traffic B with same source and dest as traffic A, but with different service, e.g. PING traffic, traffic B still go through secondary WAN.",
+      "priority" : "Smoke",
+      "atm_id" : "d35d5cf7-2155-4516-8ce6-8c0ff68ec2df",
+      "initial" : "  Have primary WAN and secondary WAN.",
+      "id" : "1506093",
+      "title" : "Use source and destination IP address binding for Round Robin based WLB with failover and failback.",
+      "description" : "Original ID: 244\nOriginal Title: Use source and destination IP address binding for Round Robin based WLB with failover and failback.\nOriginal Description: Use source and destination IP address binding for Round Robin based WLB with failover and failback.",
+      "result" : "  in step 7, after primary WAN failback, all traffic from source 192.168.168.1 to destination 10.0.200.2 still stay on secondary WAN."
+   },
+   "1506069" : {
+      "steps" : "  1. Have connections from previous test case still active.\n  2. Unplug Primary WAN interface.\n  3. Observe Logs and WLB statistics.\n  4. Refresh sessions to Web Sites from Client on LAN to WAN\n  5. Connect to an FTP server LAN &gt; WAN that would normally use the Policy Based Route through X2 and start download of a large file.\n  6. Do continuous ping accross VPN tunnel to the remote LAN PC\n  7. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  8. Packet capture on WAN to see which interface the traffic comes out.",
+      "priority" : "Smoke",
+      "atm_id" : "D45288B2-0464-11DE-860E-445A00F93527",
+      "initial" : "  Note: This is to be run with previous 3 test cases and the following test case.\n  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected. Preempt enabled. Probe Monitoring Disabled.\n  VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected) Previous test case run.",
+      "id" : "1506069",
+      "title" : "WLB enabled Active/Passive, preempt - X1 up, X2 up. X2 transitions down.",
+      "description" : "Original ID: 115\nOriginal Title: WLB enabled Active/Passive, preempt - X1 up, X2 up. X2 transitions down.\nOriginal Description: Verify that traffic uses X1 for all connections in Active / Passive configuration with X2 interface transitioning down in WAN Load Balancing",
+      "result" : "  In WAN Load Balancing Statistics X1 link is up and X2 link is down.\n  X2 transitions to Failover and X1 is Available in Load Balanced State.\n  X1 is Active. Log shows WLB Resource failed, WLB Failover in progress messages.\n  X1 FTP session continues from previous test case.\n  X2 FTP session disconnects from previous test case.\n  New FTP session that matches Policy Based Route uses X1.\n  Existing cached connections using X2 are removed and re-routed to X1 including Policy Based Route.\n  Routing page shows route grayed out."
+   },
+   "1506064" : {
+      "steps" : "  1. Select Percentage Based WLB\n  2. Configure percentates for each interface.\n  3. Start traffic from same source IP address and same destination IP address, but with different source TCP ports and different destination TCP ports e.g. FTP traffic, HTTP traffic from source 192.168.168.1 to destination 10.0.200.2.\n  4. Disconnect all traffic and wait for 10 minutes.\n  5. Start traffic from same source IP address and same destination IP address",
+      "priority" : "Smoke",
+      "atm_id" : "D446B7BC-0464-11DE-860E-445A00F93527",
+      "initial" : "  Have primary and secondary WAN setup.",
+      "id" : "1506064",
+      "title" : "Source-destination WLB - persistent percentage based WLB",
+      "description" : "Original ID: 102\nOriginal Title: Source-destination WLB - persistent percentage based WLB\nOriginal Description: With the new src-dst feature, Percentage based load balancing will maintain persistenace.",
+      "result" : "  All traffic coming from same src-dst pair regardless of the TCP ports will only go to one particular WAN interface depending on which one has less load.\n  This mapping will persist even after the connections have timed out."
+   },
+   "1506065" : {
+      "steps" : "  1) Configure X0 and X1 as default LAN and WAN using a static IP.\n  2) Configure X2 as Secondary WAN and Enable Load Balancing Method with Spill-over Based.\n  3) Enter the value of 50000 in the field for Send traffic with Round Robin manner when bandwidth exceeds--kbps Send.\n  4) Send traffic from the Chariot at 50000kbps from the LAN to the WAN.\n  5) Send traffic from the Chariot at 65000kbps from the LAN to WAN.",
+      "priority" : "Smoke",
+      "atm_id" : "D3D53C22-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.",
+      "id" : "1506065",
+      "title" : "Set Spillover-based Load Balancing",
+      "description" : "Original ID: 11\nOriginal Title: Set Spillover-based Load Balancing\nOriginal Description: The admin will ensure that Sonicwall sends traffic to the Secondary WAN Interface after the bandwidth on the Primary WAN exceeds that of the configured limit",
+      "result" : "  Verify when sending 50000kbps the active Interface is Primary WAN and when the bandwidth exceeds 65000 , run with Round Robin manner(Note: Existing flows will remain associated with the original interface).\n  Check the log messages to see if spill-over is logged Verify the Log messages to check the status of WLB resources."
+   },
+   "1506089" : {
+      "steps" : "  1. Observe the logs, look at the TSR, and look at the Statistics on the WLB page during test.\n  2. Configure Primary and Secondary Setting as Probe Succeeds Always.\n  3. From LAN PC browse web pages on WAN.\n  4. Observe connection monitor.",
+      "priority" : "Smoke",
+      "atm_id" : "D544FA52-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active Passive Failover Selected Probe Monitoring Enabled DNS configured. Probe monitoring originally configured.",
+      "id" : "1506089",
+      "title" : "Probe monitoring - Succeeds Always",
+      "description" : "Original ID: 220\nOriginal Title: Probe monitoring - Succeeds Always\nOriginal Description: Verify that probes are not sent and correct state is shown.",
+      "result" : "  In WAN Load Balancing Statistics X1 link and X2 link are up and available. X1 is Active.\n  Probe Main Target and Alternate Target shows No Probing for both. Traffic uses X1."
+   },
+   "1506099" : {
+      "steps" : "  1. On the WAN Failover and LB page click to Enable Probe Monitoring.\n  2. Click Accept.\n  3. Click the Configure button.\n  4. On the Load Balancing Monitoring page select Probes Succeed when either Main Target or Alternate Target Respond for both Primary and Secondary interfaces.\n  5. Enter in Host for Main and Alternate Target for both Primary and Secondary.\n  6. Click OK.\n  7. From configured target PC do a packet capture.",
+      "priority" : "Smoke",
+      "atm_id" : "D59C1468-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506099",
+      "title" : "Set Probes Succeed when either Main Target or Alternate Target Respond",
+      "description" : "Original ID: 26\nOriginal Title: Set Probes Succeed when either Main Target or Alternate Target Respond\nOriginal Description: Verify correct fields grayed out or are able to be configured and that probes are sent to the configured targets.",
+      "result" : "  When Probes succeeds when either Main Target or Alternate Target responds is selected the fields for protocal and Host are able to be set.\n  Probes are sent to the configured Targets.\n  In WLB statistics all targets will show Target Alive."
+   },
+   "1506092" : {
+      "steps" : "  1. Configure X0 as default LAN using a static IP, configure X1 as primary WAN using static IP, configure X2 as secondary WAN using DHCP mode; 2. Enable Load Balancing Method with Spill-over Based; 3. Start with src-dst checkbox in OFF setting;\n  4. Configure that send traffic to Secondary WAN when bandwidth exceeds 10 kbps. 5. Start traffic from same source IP address and same destination IP address, but with different source TCP ports and different destination TCP ports e.g. FTP traffic, HTTP traffic from source 192.168.168.1 to destination 10.0.200.2. and make sure one of them exceeds 10 kbps, Spill-over should happen.\n  6. Set the src-dst checkbox to the ON setting to enable source and destination IP address binding ;\n  7. Start FTP traffic from 192.168.168.2 to destination 10.0.200.3, download a large file to make sure this traffic exceeds 10kbps, and then start another Ping traffic, from 192.168.168.2 to destination 10.0.200.3;\n  8. Observe all the traffic in packet monitor, all traffic must only go to one particular WAN interface depending on which one has less load.",
+      "priority" : "Smoke",
+      "atm_id" : "4fcae3a8-f5a3-4e51-ad5f-6d333721b66e",
+      "initial" : "  Have primary and secondary WAN setup.",
+      "id" : "1506092",
+      "title" : "Use source and destination IP address binding for Spill-over based WLB",
+      "description" : "Original ID: 241\nOriginal Title: Use source and destination IP address binding for Spill-over based WLB \nOriginal Description:",
+      "result" : "  in step 5, Traffic may be distributed to alternate WAN interface, X1 and X2. in step 8, Traffic must not be distributed to alternate WAN interface, all traffic coming from same src-dst pair regardless of service, and will only go to one particular WAN interface depending on which one has less load."
+   },
+   "1506118" : {
+      "steps" : "  1) Ping from the remote site to the central site - VPN established using the primary WAN interface at the remote site.\n  2) Run continuous ping from Central Site to Remote Site.\n  3) Power down the primary unit at the local site.\n  4) Disconnect the default Primary WAN port of the local box.",
+      "priority" : "Full_Regression",
+      "atm_id" : "D4F481D0-0464-11DE-860E-445A00F93527",
+      "initial" : "  Remote Site: DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  HA enabled with preempt mode and monitoring disabled.\n  WAN failover enabled with LB option set to Active/Passive. Probe monitoring enabled with targets set.\n  VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the remote SonicWALL, DPD enabled with default values(60 secs, 3 tries)\n  Remote Site: DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  HA enabled with preempt mode.\n  WAN failover enabled with LB option set to Active/Passive.\n  VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the Central SonicWALL, DPD enabled with default values(60 secs, 3 tries)",
+      "id" : "1506118",
+      "title" : "WAN failover - physical/logical. Backup unit secondary WAN interface at the central site of a VPN connection to the remote sites primary unit X1",
+      "description" : "Original ID: 67\nOriginal Title: WAN failover - physical/logical. Backup unit secondary WAN interface at the central site of a VPN connection to the remote sites primary unit X1\nOriginal Description: The admin will ensure that Hardware Failover by Physical or Logical link failure on the Primary SonicWALL at the Central Site has been able to establishing a new VPN Connection from the Backup Sonicwall's secondary WAN interface of the local pair to the Primary WAN interface of the Remote Site's Primary Sonicwall.",
+      "result" : "  Verify if VPN tunnel from the Secondary WAN interface of the Backup firewall of a local pair to the Remote Site's Primary WAN interface of the Primary SonicWALL is established"
+   },
+   "1506068" : {
+      "steps" : "  1. Have connections from previous test case still active. Restart any FTP downloads.\n  2. Plug back in Primary WAN interface.\n  3. Observe Logs and WLB statistics.\n  4. Refresh sessions to Web Sites from Client on LAN to WAN\n  5. Connect to an FTP server LAN &gt; WAN and start download of a large file.\n  6. Do continuous ping accross VPN tunnel to the remote LAN PC\n  7. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  8. Packet capture on WAN to see which interface the traffic comes out.",
+      "priority" : "Smoke",
+      "atm_id" : "D5DB7680-0464-11DE-860E-445A00F93527",
+      "initial" : "  Note: This is to be run with previous 2 test cases and the following 2 test cases.\n  Two interfaces (X1,X2) configured as WAN interfaces.&#160;WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected. Preempt enabled. Probe Monitoring Disabled.\n  VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected) Previous test case run.",
+      "id" : "1506068",
+      "title" : "WLB enabled Active/Passive, preempt - X1 down,X2 up. X1 transistions up.",
+      "description" : "Original ID: 114\nOriginal Title: WLB enabled Active/Passive, preempt - X1 down,X2 up. X1 transistions up.\nOriginal Description: Verify that traffic uses X1 in Active / Passive configuration with X1 interface transitioning up in WAN Load Balancing.",
+      "result" : "  In WAN Load Balancing Statistics X1 link and X2 link are up.\n  X1 transitions to Available and X2 is Available in Load Balanced State.\n  X1 transistions to Active.\n  Log will show WLB Resource is now available and WLB Failback initiated by preemption due to a more preferred interface being available.\n  FTP session is disconnected from previous test case.\n  Existing cached connections using X2 are removed, all traffic re-routed to X1 including VPN and firewall generated traffic.\n  Traffic matching Policy Based Route to X2 will continue to be routed to X2."
+   },
+   "1506098" : {
+      "steps" : "  1. Configure X0 as default LAN using a static IP, configure X1:V100 as primary WAN using static IP, configure X2:V200 as secondary WAN using DHCP mode; 2. Enable Load Balancing Method with Spill-over Based; 3. Start with src-dst checkbox in OFF setting;\n  4. Configure that send traffic to Secondary WAN when bandwidth exceeds 10 kbps. 5. Start traffic from same source IP address and same destination IP address, but with different source TCP ports and different destination TCP ports e.g. FTP traffic, HTTP traffic from source 192.168.168.1 to destination 10.0.200.2. and make sure one of them exceeds 10 kbps, Spill-over should happen.\n  6. Set the src-dst checkbox to the ON setting to enable source and destination IP address binding WLB;\n  7. Start FTP traffic from 192.168.168.2 to destination 10.0.200.3, download a large file to make sure this traffic exceeds 10kbps, and then start another Ping traffic, from 192.168.168.2 to destination 10.0.200.3;\n  8. Observe all the traffic in packet monitor, all traffic must only go to one particular WAN interface depending on which one has less load.",
+      "priority" : "Sanity",
+      "atm_id" : "707e1dbd-68b0-47e5-8a94-b6979d2a7f8a",
+      "initial" : "  Have primary and secondary WAN setup.X1:V100 is primary WAN, X2:V200 is secondary WAN.",
+      "id" : "1506098",
+      "title" : "Use source and destination IP address binding for Spill-over based WLB with vlan sub-interface.",
+      "description" : "Original ID: 259\nOriginal Title: Use source and destination IP address binding for Spill-over based WLB with vlan sub-interface.\nOriginal Description: Use source and destination IP address binding for Spill-over based WLB with vlan sub-interface.",
+      "result" : "  in step 3, Traffic may be distributed to WAN interfaces, X1:V100 and X2:V200.\n  in step 5, Traffic must not be distributed to alternate WAN interfaces, all traffic coming from same src-dst pair regardless of the TCP ports, will only go to one particular WAN interface depending on which one has less load."
+   },
+   "1506124" : {
+      "steps" : "  1. On the WLB page select X2 as the Primary WAN interface and X1 as the Secondary WAN interface.",
+      "priority" : "Smoke",
+      "atm_id" : "D5552904-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1506124",
+      "title" : "Switching the Primary WAN interface from the default X1",
+      "description" : "Original ID: 95\nOriginal Title: Switching the Primary WAN interface from the default X1\nOriginal Description: Verify that WLB functions using X1 as the secondary WAN interface.",
+      "result" : "  TBD"
+   },
+   "1506080" : {
+      "steps" : "  1) Goto Network &gt; Wan Failover &amp; LB;\n  2) Enter the following values 1,5,10,100 intervals for Deactivate Interface values and apply;\n  3) Enter the values 11,101,%,310 and apply",
+      "priority" : "Smoke",
+      "atm_id" : "D4B29CB6-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506080",
+      "title" : "Deactivate interface after - boundary test",
+      "description" : "Original ID: 16\nOriginal Title: Deactivate interface after - boundary test\nOriginal Description: The admin will ensure that only values from 1 to 10 intervals can be entered",
+      "result" : "  Valid values should be accepted by the box and invalid entries should be given error: Data out of bounds (min = 1, max = 10).\n  ==Edit by Celia, 2022.09.05=====\n  The bounds of Data are changed to : [min = 1, max = 100] (in 6.5.4.10-95n and 7.1.0-6067)"
+   },
+   "1506103" : {
+      "steps" : "  1. On the WAN Failover and LB page click to Enable Probe Monitoring.\n  2. Click Accept.\n  3. Click the Configure button.\n  4. On the Load Balancing Monitoring page select Probes Succeed when either Main Target or Alternate Target Respond for both Primary and Secondary interfaces.\n  5. Select TCP as the Protocol\n  6. Enter in Host for Main and Alternate Target for both Primary and Secondary that have a web server.\n  7. Leave interface as default 80.\n  8. From configured target servers do a packet capture.",
+      "priority" : "Smoke",
+      "atm_id" : "D52D72EC-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506103",
+      "title" : "Set Target Protocol to TCP",
+      "description" : "Original ID: 31\nOriginal Title: Set Target Protocol to TCP\nOriginal Description: Verify TCP probes are sent to configured target.",
+      "result" : "  When TCP is selected as protocol the port and SNWL fields can be configured.\n  Probes are sent to the configured Targets as TCP SYNs."
+   },
+   "1506102" : {
+      "steps" : "  1. On the WAN Failover and LB page click to Enable Probe Monitoring.\n  2. Click Accept.\n  3. Click the Configure button.\n  4. On the Load Balancing Monitoring page select Succeed Always for both Primary and Secondary interfaces.\n  5. Click OK.\n  6. Capture packets on WAN interface.",
+      "priority" : "Smoke",
+      "atm_id" : "D51A87FE-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506102",
+      "title" : "Set Succeed Always",
+      "description" : "Original ID: 29\nOriginal Title: Set Succeed Always\nOriginal Description: Verify correct fields grayed out or are able to be configured and that no probes are sent.",
+      "result" : "  When Succeed Always is selected the fields for protocal and Host are not able to be set.\n  Probes are not sent to the configured Targets.\n  In WLB statistics all targets will show no probing."
+   },
+   "1506122" : {
+      "steps" : "  1) From Network- Interfaces configure x0 as LAN and x1 and x2 as WAN.\n  2) Enable Per connection Round-Robin Outbound Load Balancing method.\n  3) Send different types of traffic like HTTP ,FTP,ICMP,POP3 etc from the LAN to WAN.",
+      "priority" : "Smoke",
+      "atm_id" : "D3DEB0E0-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.",
+      "id" : "1506122",
+      "title" : "Set Per Destination Round-Robin",
+      "description" : "Original ID: 8\nOriginal Title: Set Per Destination Round-Robin\nOriginal Description: The admin will ensure that when Load Balancing is Enabled with Round-Robin method both the WAN interfaces are active and traffic can be passed through both the WAN Interfaces on a per connection basis.",
+      "result" : "  The traffic sent from the LAN to WAN should be sent from both Primary and Secondary WAN on a per connection basis through both the WAN interfaces.\n  Verify the Log messages to check the status of WLB resources."
+   },
+   "1506112" : {
+      "steps" : "  1) Configure the default interfaces x0 and x1 as LAN and WAN.\n  2) Configure X2 as secondary WAN and update.\n  3) Enable Load Balancing.\n  4) Enable Basic Active/Passive Failover and Enable probing.\n  5) Disconnect the Primary WAN by Physical removal of the cable or Unplugging the cable of the upstream router of the Primary WAN.\n  6) Install Global Vpn client and create a new connection with the gateway IP as Primary WAN IP.\n  7) Create another connection with gateway IP as Secondary WANIP.\n  8) Enable the connection with the Primary WAN gateway.\n  9) Unplug the cable for the Primary WAN connection.\n  10) Enable the connection for the Secondary WAN IP.",
+      "priority" : "Smoke",
+      "atm_id" : "D475CFCA-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506112",
+      "title" : "GVPN client with WAN failover in active/passive mode",
+      "description" : "Original ID: 58\nOriginal Title: GVPN client with WAN failover in active/passive mode\nOriginal Description: The admin will ensure that Global Vpn client can connect through both Primary and Secondary WAN",
+      "result" : "  Verify if GVPN client can establish the connection with the Primary WAN IP.\n  After the cable is unplugged verify if failover has occurred and after manually enabling the connection to the Secondary WAN ,the vpn connection should be established."
+   },
+   "1506075" : {
+      "steps" : "  1. Have connections from previous test case still active.\n  2. Unplug Primary WAN interface.\n  3. Observe Logs and WLB statistics.\n  4. Refresh sessions to Web Sites from Client on LAN to WAN\n  5. Connect to an FTP server LAN &gt; WAN that would normally use the Policy Based Route through X2 and start download of a large file.\n  6. Do continuous ping accross VPN tunnel to the remote LAN PC\n  7. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  8. Packet capture on WAN to see which interface the traffic comes out.",
+      "priority" : "Smoke",
+      "atm_id" : "D478281A-0464-11DE-860E-445A00F93527",
+      "initial" : "  Note: This is to be run with previous 3 test cases and the following test case.\n  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Disabled.\n  VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected) Previous test case run.",
+      "id" : "1506075",
+      "title" : "WLB disabled - X1 up, X2 up. X2 transitions down.",
+      "description" : "Original ID: 120\nOriginal Title: WLB disabled - X1 up, X2 up. X2 transitions down.\nOriginal Description: Verify that traffic uses X1 for all connections in WLB disabled configuration with X2 interface transitioning down.",
+      "result" : "  In WAN Load Balancing Statistics X1 link is up and X2 link is down. X2 and X1 are Disabled in Load Balanced State.\n  X1 FTP session continues from previous test case.\n  X2 FTP session disconnects from previous test case.\n  New FTP session that matches Policy Based Route uses X1.\n  Existing cached connections remain mapped to X1, new traffic matching PBR for X2 re-routed to X1."
+   },
+   "1506084" : {
+      "steps" : "  1. Connect to a couple of Web Sites from Client on LAN to WAN\n  2. Connect to an FTP server LAN &gt; WAN and start download of a large file.\n  3. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  4. Unplug Primary WAN interface.\n  5. Refresh sessions to Web Sites from Client on LAN to WAN and make new connections.\n  6. Connect to an FTP server LAN &gt; WAN and start download of a large file.\n  7. Plug back in Primary interface.\n  8. Refresh sessions to Web Sites from Client on LAN to WAN and make new connections.\n  9. Connect to an FTP server LAN &gt; WAN and start download of a large file.",
+      "priority" : "Smoke",
+      "atm_id" : "D500673E-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces.\n  X2 configured with DHCP, X1 configured static. DHCP server connected to X2. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected. Preempt enabled. Probe Monitoring Enabled.\n  Packet capture on WAN to verify interface the traffic comes out.\n  Check Ethernet WLB statistics through and Firewall &gt; Connection Monitor during test.",
+      "id" : "1506084",
+      "title" : "Basic active/passive failover and failback prempt enabled - primary static, secondary DHCP",
+      "description" : "Original ID: 186\nOriginal Title: Basic active/passive failover and failback prempt enabled - primary static, secondary DHCP\nOriginal Description: Verify that new traffic uses active interface in Active / Passive configuration with both interfaces up in WAN Load Balancing",
+      "result" : "  Traffic goes through X1.\n  Upon failover existing traffic stops.\n  New connections go through X2.\n  Upon restoring X1, existing traffic stops on X2 and all traffic goes to X1."
+   },
+   "1506077" : {
+      "steps" : "  1) Enable Probing\n  2) Configure the Primary and Secondary probe target with a upstream route\n  3) Enter a value say 5 sec in the Check Interface section",
+      "priority" : "Smoke",
+      "atm_id" : "D56A7A16-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506077",
+      "title" : "Set Check Interface every",
+      "description" : "Original ID: 13\nOriginal Title: Set Check Interface every\nOriginal Description: The admin will ensure that the box verifies if the Interface is active for the configured time",
+      "result" : "  Verify in the Log Messages if the box is checking for the Interface at the set time i.e. 5sec.\n  Start a wireshark on the WAN and verify the packets for a ICMP packet to the upstream router."
+   },
+   "1506106" : {
+      "steps" : "  1) From Network- Interfaces configure x0 as LAN and x1 and x2 as WAN.\n  2) From Network WAN Failover &amp; LB verify if Probing and Load Balancing methods grayed out.\n  3) Check the box enable Load Balancing and apply.",
+      "priority" : "Smoke",
+      "atm_id" : "D57D63C4-0464-11DE-860E-445A00F93527",
+      "initial" : "  Default interfaces X0 and X1 configured as LAN and WAN",
+      "id" : "1506106",
+      "title" : "Enable Load Balancing and Failover",
+      "description" : "Original ID: 4\nOriginal Title: Enable Load Balancing and Failover\nOriginal Description: The admin will ensure that all the fields for Probing and Load Balancing method are grayed out before the Load Balancing is Enabled and are editable after load balancing is enabled",
+      "result" : "  Enable probe monitoring and Outbound Load Balancing methods should be editable."
+   },
+   "1506119" : {
+      "steps" : "  1. Start a continous ping from the Central Site to the Remote Site.\n  2. Disconnect the default WAN port on the local box.\n  3. Verify failover to Secondary interface and VPN tunnel is re-stablished.\n  4. Reconnect the default WAN port on the local box.",
+      "priority" : "Full_Regression",
+      "atm_id" : "D50EC158-0464-11DE-860E-445A00F93527",
+      "initial" : "  HA enabled with preempt mode and monitoring disabled.\n  WAN failover enabled with LB option set to Active/Passive.\n  VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the remote SonicWALL, DPD enabled with default values(60 secs, 3 tries)\n  Remote Site: DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  Hardware Failover enabled with preempt mode .\n  WAN failover enabled with LB option set to Active/Passive.\n  VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the Central SonicWALL, DPD enabled with default values(60 secs, 3 tries)",
+      "id" : "1506119",
+      "title" : "Verify WAN failback to the primary WAN interface at the central site of a VPN connection can establish a new VPN tunnel to the remote",
+      "description" : "Original ID: 69\nOriginal Title: Verify WAN failback to the primary WAN interface at the central site of a VPN connection can establish a new VPN tunnel to the remote\nOriginal Description: The admin will ensure that a new tunnel is established after failback to the Primary WAN from a local box to the remote box's Primary WAN.",
+      "result" : "  Verify if VPN tunnel from the Primary WAN interface of the local box to the Remote Site's Primary WAN interface is established"
+   },
+   "1506078" : {
+      "steps" : "  1) Goto Network &gt; Wan Failover &amp;LB\n  2) Enter the following values 5,25,100,300 seconds for check Interface values and apply\n  3) Enter the values 1,%,310 and apply",
+      "priority" : "Smoke",
+      "atm_id" : "D595123A-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506078",
+      "title" : "Check interface every - boundary test",
+      "description" : "Original ID: 14\nOriginal Title: Check interface every - boundary test\nOriginal Description: The admin will ensure that only values from 5 to 300 seconds can be entered",
+      "result" : "  Valid entries should be accepted by the box, but invalid entries should get error: Data out of bounds (min = 5, max = 300)"
+   },
+   "1506107" : {
+      "steps" : "  1) Configure the default interfaces x0 and x1 as LAN and WAN.\n  2) Configure X2 as secondary WAN and update.\n  3) Enable Load Balancing.and Basic Active/Passive Failover.\n  4) Enable the checkbox for HTTPS on both the interfaces.\n  5)From a WAN PC manage the box with the interface IP for both Primary and Secondary WAN Interfaces through HTTP.",
+      "priority" : "Smoke",
+      "atm_id" : "D3E83700-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506107",
+      "title" : "Enable HTTPS redirection for active/passive WAN interfaces",
+      "description" : "Original ID: 41\nOriginal Title: Enable HTTPS redirection for active/passive WAN interfaces\nOriginal Description: The admin will ensure that the box can be managed from WAN using only HTTPS and when trying to manage using HTTP it gets redirected to HTTPS",
+      "result" : "  The URL is redirected from HTTP to HTTPS and the box can only be managed using HTTPS from the WAN"
+   },
+   "1506082" : {
+      "steps" : "  1) Goto Network &gt; Wan Failover &amp; LB;\n  2) Enter the following values 1,5,10,100 for Reactivate Interface values and apply;\n  3) Enter the values 11,101,%,310 and apply",
+      "priority" : "Smoke",
+      "atm_id" : "D4B76052-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected.",
+      "id" : "1506082",
+      "title" : "Reactivate interface after -  boundary test",
+      "description" : "Original ID: 18\nOriginal Title: Reactivate interface after -  boundary test\nOriginal Description: The admin will ensure that only values from 1 to 10 intervals can be entered",
+      "result" : "  Invalid entries should be accepted by the box and valid entries should be given error: Data out of bounds (min = 1, max = 10)\n  ==Edit by Celia, 2022.09.05=====\n  The bounds of Data are changed to : [min = 1, max = 100] (in 6.5.4.10-95n and 7.1.0-6067)"
+   },
+   "1506113" : {
+      "steps" : "  1. Start a continous ping from the Central Site to the Remote Site.\n  2. Disconnect the default WAN port on the local box.",
+      "priority" : "Full_Regression",
+      "atm_id" : "D4E1CA86-0464-11DE-860E-445A00F93527",
+      "initial" : "  DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  HA enabled with preempt mode and monitoring disabled.\n  WAN failover enabled with LB option set to Active/Passive. VPN SA configured with IPSec gateway pointing to the primary WAN IP of the remote SonicWALL, DPD enabled with default values(60 secs, 3 tries)\n  Remote Site: DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  WAN failover enabled with LB option set to Active/Passive. VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the Central SonicWALL, DPD enabled with default values(60 secs, 3 tries)",
+      "id" : "1506113",
+      "title" : "WAN failover with VPN configuration over a HA pair",
+      "description" : "Original ID: 59\nOriginal Title: WAN failover with VPN configuration over a HA pair\nOriginal Description: The admin will ensure that WAN Failover has occurred to the secondary WAN after the Primary failed due to physical link down /probing with a VPN configuration on a HA pair.",
+      "result" : "  Verify if VPN tunnel from the Secondary WAN interface to the Remote Site Primary SonicWALL is established"
+   },
+   "1506076" : {
+      "steps" : "  1. Have connections from previous test case still active.\n  2. Plug back in Secondary WAN interface.\n  3. Observe Logs and WLB statistics.\n  4. Refresh sessions to Web Sites from Client on LAN to WAN\n  5. Connect to an FTP server LAN &gt; WAN that would use the Policy Based Route through X2 and start download of a large file.\n  6. Do continuous ping accross VPN tunnel to the remote LAN PC\n  7. Check Ethernet WLB statistics and Firewall &gt; Connection monitor.\n  8. Packet capture on WAN to see which interface the traffic comes out.",
+      "priority" : "Smoke",
+      "atm_id" : "D49FC55A-0464-11DE-860E-445A00F93527",
+      "initial" : "  Note: This is to be run with previous 4 test cases.\n  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Disabled.\n  VPN setup on X1 to a remote firewall. IPSec Primary and Secondary Gateway configured for Primary and Secondary WAN (use address of connected router that has been NAT'd to the corresponding interface).\n  PC connected on remote firewall LAN.\n  Policy Based Route setup routing traffic out Secondary WAN interface (Disabled when interface is disconnected) Previous test case run.",
+      "id" : "1506076",
+      "title" : "WLB disabled - X1 up, X2 down. X2 transistions up.",
+      "description" : "Original ID: 121\nOriginal Title: WLB disabled - X1 up, X2 down. X2 transistions up.\nOriginal Description: Verify that traffic uses X1 for all connections WLB disabled configuration except PBR with X2 interface transitioning up.",
+      "result" : "  In WAN Load Balancing Statistics X1 link is up and X2 link is up.\n  X2 and X1 are Disabled in Load Balanced State.\n  Existing cached connections are not affected and remain mapped to X1.\n  New connections matching PBR will be routed to X2"
+   },
+   "1506074" : {
+      "steps" : "  a) Configure X0 and X1 as default LAN and WAN using a static IP\n  b) Configure X2 as Secondary WAN and Enable Load Balancing Method with Spill-over Based.\n  c) Enter the values of @ ,120000 in the field for Send traffic to Secondary WAN when bandwidth exceeds--kbps.\n  d) Enter the values 0 ,250,50000,100000 .",
+      "priority" : "Smoke",
+      "atm_id" : "D3ECEFCA-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces.\n  WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.",
+      "id" : "1506074",
+      "title" : "Boundary check for Spill-over Based Load Balancing Method",
+      "description" : "Original ID: 12\nOriginal Title: Boundary check for Spill-over Based Load Balancing Method\nOriginal Description: The admin will verify the boundary conditions and error checks for the Spill-over based Load Balancing",
+      "result" : "  Verify for the invalid values, there is error message at the status showing data out of bound and for the valid values it should be updated.\n  ==Edit by Celia, 2022.09.11=====\n  The bounds of Data are changed to : [min = 1, max = 10000000] (in 6.5.4.10-95n and 7.1.0-6068)"
+   },
+   "1506081" : {
+      "steps" : "  1) Enable Probing\n  2) Configure the Primary and Secondary probe target with a upstream route\n  3) Enter the value 5 sec to check the Interface\n  4) Enter a value Deactivate interface after 2 missed intervals\n  5) Enter a value to Reactivate interface after 2 intervals.\n  6) Unplug the cable of the upstream router for the Primary WAN interface\n  7) Verify the log messages and send traffic from the LAN PC to Internet.\n  8) Plug back in cable of the upstream router for the Primary WAN interface.\n  9) Verify the log messages and send traffic from the LAN PC to Internet.",
+      "priority" : "Smoke",
+      "atm_id" : "D3FB1AA0-0464-11DE-860E-445A00F93527",
+      "initial" : "  Two interfaces (X1,X2) configured as WAN interfaces. WAN interfaces each connected to a router.\n  These routers or router are connected to the internet or to switch with several web/ftp servers.\n  LAN interfaces connected to switch with client PCs.\n  WAN Load Balancing Enabled. Active/Passive Failover Selected with Preempt enabled.",
+      "id" : "1506081",
+      "title" : "Set Reactivate interface after",
+      "description" : "Original ID: 17\nOriginal Title: Set Reactivate interface after\nOriginal Description: The admin will ensure that the box Reactivates the Primary Interface after the configured number of successful intervals and fails back to the Primary WAN",
+      "result" : "  After the two intervals after plugging back in cable, the Secondary WAN should be dectivated and the traffic should be routed back to the Primary WAN"
+   },
+   "1506115" : {
+      "steps" : "  1. Start a continous ping from the Central Site to the Remote Site.\n  2. Disconnect the default WAN port on the local box.",
+      "priority" : "Full_Regression",
+      "atm_id" : "D4E41E12-0464-11DE-860E-445A00F93527",
+      "initial" : "  Central Site: DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  HA enabled with preempt mode and monitoring disabled.\n  WAN failover enabled with LB option set to Active/Passive , VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the remote SonicWALL, DPD enabled with default values(60 secs, 3 tries)\n  Remote Site: DUT configured with static IPs on the Primary and Secondary WAN interfaces.\n  Hardware Failover enabled with preempt mode.\n  WAN failover enabled with LB option set to Active/Passive. VPN SA configured with multiple IPSec gateways pointing to the primary and secondary WAN IPs of the Central SonicWALL, DPD enabled with default values(60 secs, 3 tries)",
+      "id" : "1506115",
+      "title" : "WAN failover - physical.  Primary unit X1 interface at the central site of a VPN",
+      "description" : "Original ID: 60\nOriginal Title: WAN failover - physical.  Primary unit X1 interface at the central site of a VPN\nOriginal Description: The admin will ensure that WAN Failover by Physical link failure on the Primary SonicWALL Primary WAN interface at the Central Site has been able to establishing a new VPN Connection from the Secondary WAN interface to the Remote Site Primary WAN of the SonicWALL.",
+      "result" : "  Verify if VPN tunnel from the Secondary WAN interface to the Remote Site Primary SonicWALL is established"
+   }
+}

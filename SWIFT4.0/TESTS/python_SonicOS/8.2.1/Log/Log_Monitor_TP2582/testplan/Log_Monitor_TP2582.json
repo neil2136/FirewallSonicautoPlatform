@@ -1,0 +1,352 @@
+{
+   "33" : {
+      "steps" : "  1.\tLogin from PC1 as admin and browse to Firewall-Log-Log Monitor page, view tab;\n  2.\tLogin from PC2 as admin and non-config mode browse to Firewall-Log-Log Monitor page, view tab;\n  3.\tVerify both admin can configure different column to show without interrupted by each other\n  4.\tAfter both admin logout, all these log view settings was gone\n  5.\tLogin from PC1 as admin and browse to Firewall-Log-Log Monitor page, category tab;\n  6.\tLogin from PC2 as admin and non-config mode browse to Firewall-Log-Log Monitor page, category tab;\n  7.\tVerify admin from PC1 can configure categories and apply\n  8.\tVerify admin from PC2 would be warning to change to configure mode for category configuration",
+      "initial" : "  PC---FW\n  Syslog server setup",
+      "id" : "33",
+      "title" : "Log Monitor display properly with multiple admin",
+      "result" : "  Verify log monitor function correctly with multiple admin"
+   },
+   "32" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page, category tab;\n  2.\tConfigure some category to send syslog\n  3.\tSelect syslog format to Default\n  4.\tVerify the syslog received log with correct format and information\n  5.\tSelect syslog format to WebTrent\n  6.\tVerify syslog didn\u0092t contain \u0091m=,port,interface, n=,c=\u0092 ",
+      "initial" : "  PC---FW\n  Syslog server setup",
+      "id" : "32",
+      "title" : "Syslog format",
+      "result" : "  Verify syslog display correctly"
+   },
+   "21" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category Alert email address with customize email1\n  3.\tVerify all sub event alert be sent to the customized email1 and global alert email too\n  4.\tConfigure sub category Alert email address with keep original checked, verify sub category alert email address didn\u0092t change\n  5.\tConfigure event Alert email address with keep original checked, verify sub event alert email address didn\u0092t change\n  6.\tVerify the event log be sent to the customized email1 and global alert email too",
+      "initial" : "  PC---FW\n  Mail Server---Mail client",
+      "id" : "21",
+      "title" : "Edit category entry: Keep original Alert Email address",
+      "result" : "  Verify alert be sent to configured email accordingly"
+   },
+   "7" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tClick the clear log button",
+      "initial" : "  PC---FW",
+      "id" : "7",
+      "title" : "Clear log",
+      "result" : "  Verify all log cleared"
+   },
+   "26" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tAfter configure some category properties, click the Save as template button\n  3.\tFill in some comment and click Apply\n  4.\tClick Import from template and select Custom, verify it can be selected and description showed as entered before\n  5.\tClick apply\n  6.\tVerify category configuration showed exact the same as configured before",
+      "initial" : "  PC---FW",
+      "id" : "26",
+      "title" : "Save as template and import from template-Custom",
+      "result" : "  Verify category configuration can be saved and custom template are restore"
+   },
+   "2" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tClick the button to export CSV ",
+      "initial" : "  PC---FW ",
+      "id" : "2",
+      "title" : "Export CSV",
+      "result" : "  Verify exported CSV contain same information as log view showed "
+   },
+   "17" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category Syslog checkbox to checked and apply\n  3.\tVerify all sub event Syslog checkbox changed accordingly and main category Syslog checkbox showed as checked status\n  4.\tConfigure sub category Syslog checkbox to keep original status and apply\n  5.\tVerify all sub event Syslog checkbox remain same and sub category Syslog checkbox showed as checked status\n  6.\tConfigure event Syslog checkbox to uncheck and apply\n  7.\tVerify the event Syslog checkbox displayed as unchecked and main/sub category showed mixed mode on Syslog checkbox",
+      "initial" : "  PC---FW\n  Syslog server setup",
+      "id" : "17",
+      "title" : "Edit category entry: Syslog",
+      "result" : "  Verify log category Syslog checkbox configuration works properly and all checked event sent to Syslog."
+   },
+   "1" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tChange Interval to Last 60s and apply;\n  3.\tVerify log monitor displayed log in last 60 second.\n  4.\tChange Interval to Last 2m and apply;\n  5.\tVerify log monitor displayed log in last 2 minutes.\n  6.\tChange Interval to Last 5m and apply;\n  7.\tVerify log monitor displayed log in last 5 minutes.\n  8.\tChange Interval to Last 10m and apply;\n  9.\tVerify log monitor displayed log in last 10 minutes.\n  10.\tChange Interval to Last 15m and apply;\n  11.\tVerify log monitor displayed log in last 15 minutes.\n  12.\tChange Interval to Last 30m and apply;\n  13.\tVerify log monitor displayed log in last 30 minutes.\n  14.\tChange Interval to Last 60m and apply;\n  15.\tVerify log monitor displayed log in last 60 minutes.\n  16.\tChange Interval to Last 3h and apply;\n  17.\tVerify log monitor displayed log in last 3 hours.\n  18.\tChange Interval to Last 6h and apply;\n  19.\tVerify log monitor displayed log in last 6 hours.\n  20.\tChange Interval to Last 12h and apply;\n  21.\tVerify log monitor displayed log in last 12 hours.\n  22.\tChange Interval to Last 24h and apply;\n  23.\tVerify log monitor displayed log in last 24 hours.\n  24.\tChange Interval to Last 7d and apply;\n  25.\tVerify log monitor displayed log in last 7 days.\n  26.\tChange Interval to Last 15d and apply;\n  27.\tVerify log monitor displayed log in last 15 days.\n  28.\tChange Interval to Last 30d and apply;\n  29.\tVerify log monitor displayed log in last 30 days.\n  30.\tChange Interval to All DB Flows and apply;\n  31.\tVerify log monitor displayed all log. ",
+      "initial" : "  PC----FW ",
+      "id" : "1",
+      "title" : "Interval change",
+      "result" : "  Verify log monitor display log according to the interval correctly. "
+   },
+   "18" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category Email checkbox to checked and apply\n  3.\tVerify all sub event Email checkbox changed accordingly and main category Email checkbox showed as checked status\n  4.\tConfigure sub category Email checkbox to keep original status and apply\n  5.\tVerify all sub event Email checkbox remain same and sub category Email checkbox showed as checked status\n  6.\tConfigure event Email checkbox to uncheck and apply\n  7.\tVerify the event Email checkbox displayed as unchecked and main/sub category showed mixed mode on Email checkbox",
+      "initial" : "  PC---FW\n  Mail Server---Mail client",
+      "id" : "18",
+      "title" : "Edit category entry: Email",
+      "result" : "  Verify log category Email checkbox configuration works properly and all checked event sent to Email."
+   },
+   "30" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tClick the Reset Event Count button",
+      "initial" : "  PC---FW",
+      "id" : "30",
+      "title" : "Reset all event count",
+      "result" : "  Verify all category and event count reset to 0"
+   },
+   "16" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category Alert checkbox to checked and apply\n  3.\tVerify all sub event Alert checkbox changed accordingly and main category Alert checkbox showed as checked status\n  4.\tConfigure sub category Alert checkbox to keep original status and apply\n  5.\tVerify all sub event Alert checkbox remain same and sub category Alert checkbox showed as checked status\n  6.\tConfigure event Alert checkbox to uncheck and apply\n  7.\tVerify the event Alert checkbox displayed as unchecked and main/sub category showed mixed mode on Alert checkbox",
+      "initial" : "  PC---FW\n  Mail Server---Mail Client",
+      "id" : "16",
+      "title" : "Edit category entry:Alert",
+      "result" : "  Verify log category Alert checkbox configuration works properly and all checked event sent to alert email."
+   },
+   "44" : {
+      "steps" : "  1.\tConfigure Log monitor\n  2.\tBoot to factory default\n  3.\tVerify log related configuration restored to default;",
+      "initial" : "  PC---FW",
+      "id" : "44",
+      "title" : "Log Monitor factory default",
+      "result" : "  Verify factory default restored log monitor related configuration to default"
+   },
+   "27" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tAfter configure some category properties, click the Save as template button\n  3.\tFill in some comment and click Apply\n  4.\tClick Import from template and select Default\n  5.\tClick apply\n  6.\tVerify category configuration showed exact the same as FW boot in factory default mode",
+      "initial" : "  PC---FW",
+      "id" : "27",
+      "title" : "Import from template-Default",
+      "result" : "  Verify log category configuration can be restore to Default template"
+   },
+   "25" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category and set GUI to 30 sec, then apply\n  3.\tSimulate same log trigger action and verify the same log won\u0092t display on Log view repeat within 30 seconds\n  4.\tConfigure Main category and set Alert to 30 sec, then apply\n  5.\tSimulate same alert trigger action and verify the same log won\u0092t be sent to alert email repeat within 30 seconds\n  6.\tConfigure Main category and set Syslog to 30 sec, then apply\n  7.\tSimulate same alert trigger action and verify the same log won\u0092t be sent to syslog server within 30 seconds\n  8.\tRepeat step 2-7 on sub category\n  9.\tRepeat step 2-7 on event",
+      "initial" : "  PC---FW",
+      "id" : "25",
+      "title" : "Log category redundancy",
+      "result" : "  Verify log redundancy works correctly"
+   },
+   "28" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure some category properties\n  3.\tClick Import from template and select Minimal\n  4.\tClick apply\n  5.\tVerify category configuration changed of GUI selection on each event but other configuration such as colours didn\u0092t change",
+      "initial" : "  PC---FW",
+      "id" : "28",
+      "title" : "Import from template-Minimal",
+      "result" : "  Verify log category configuration can be restore to Minimal template"
+   },
+   "40" : {
+      "steps" : "  1.\tConfigure allow GMS on FW\n  2.\tGo to GMS-unit-Log-Enhanced log setting, change some configuration\n  3.\tVerify configuration sent to FW and applied\n  4.\tGo to GMS-unit-Log-Name Resolution, change some configuration\n  5.\tVerify configuration sent to FW and applied",
+      "initial" : "  PC---FW\n  GMS server setup",
+      "id" : "40",
+      "title" : "GMS support(TBD)",
+      "result" : "  Verify log support GMS configuration"
+   },
+   "14" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category Priority and apply\n  3.\tVerify all sub event priority changed accordingly and main category priority showed as applied priority\n  4.\tConfigure sub category priority and apply\n  5.\tVerify all sub event priority changed accordingly and sub category priority showed as applied priority\n  6.\tConfigure event priority column showed mixed",
+      "initial" : "  PC---FW",
+      "id" : "14",
+      "title" : "Edit category entry: Priority",
+      "result" : "  Verify log category priority configuration works properly"
+   },
+   "20" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category Alert email address with customize email1\n  3.\tVerify all sub event alert be sent to the customized email1 and global alert email too\n  4.\tConfigure sub category Alert email address with customize email2 and apply\n  5.\tVerify all sub event log be sent to the customized email2 and global alert email too\n  6.\tConfigure event Alert email address with customize email3 and apply\n  7.\tVerify the event log be sent to the customized email3 and global alert email too",
+      "initial" : "  PC---FW\n  Mail Server---Mail client",
+      "id" : "20",
+      "title" : "Edit category entry: Customize Alert Email address",
+      "result" : "  Verify log be sent to configured email accordingly"
+   },
+   "49" : {
+      "steps" : "  1.go to log->automation page, add the email address, it should detect the valid of the email\n  2.go to log->settings page, edit the system, when you addd a email address to the \"Send Log Digest to Email Address\", it should detect the valid of the email\n  3.go to log->settings page, edit the \"Edit Attributes of All Categories\", it should detect the valid of the email",
+      "initial" : "  TBD",
+      "id" : "49",
+      "title" : "it_should_detect_the_valid_of_the_email",
+      "result" : "  TBD"
+   },
+   "24" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category and click the Reset Event Count button\n  3.\tClick OK on the popup window to confirm reset\n  4.\tVerify all sub category event count became 0\n  5.\tConfigure sub category and click the Reset Event Count button\n  6.\tVerify all sub event count became 0 and main event count number decreased accordingly\n  7.\tConfigure event and click the Reset Event Count button\n  8.\tVerify event count became 0 and sub category event count number decreased accordingly",
+      "initial" : "  PC---FW",
+      "id" : "24",
+      "title" : "Reset category event count",
+      "result" : "  Verify event count became 0 after click the reset button"
+   },
+   "10" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tClick the Status button",
+      "initial" : "  PC---FW",
+      "id" : "10",
+      "title" : "Log view status",
+      "result" : "  Verify Latest Reported time of each category correctly"
+   },
+   "31" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;",
+      "initial" : "  PC---FW",
+      "id" : "31",
+      "title" : "Log category filter function(TBD)",
+      "result" : "  Verify all category filter function works correctly"
+   },
+   "35" : {
+      "steps" : "  1.\tWith IE7 or above, browse to Firewall-Log-Log Monitor page",
+      "initial" : "  (IE)PC---FW",
+      "id" : "35",
+      "title" : "Log Monitor display properly with IE7 above",
+      "result" : "  Verify log monitor view and category tab all displayed correctly"
+   },
+   "11" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page, view tab;\n  2.\tClick the timestamp of a log to show details",
+      "initial" : "  PC---FW",
+      "id" : "11",
+      "title" : "Log details",
+      "result" : "  Verify each information is correct of the log"
+   },
+   "48" : {
+      "steps" : "  1.\tGo to Firewall-Log-flow reporting page;\n  2.\tEnable Flow Reporting and Visualization\n  3.\tEnable Report to EXTERNAL flow collector\n  4.\tExternal collector's IP address filled with another FW interface IP, only firmware build 5.6.4.0 etc. supported\n  5.\tExternal flow reporting type select IPFIX with extension\n  6. Include following additional reports via IPFIX select Log",
+      "initial" : "  PC---FW ---Netflow collector(FW)\n  Visualization registered",
+      "id" : "48",
+      "title" : "Flow reporting to FW as collector(Firmware 5.6.4)",
+      "result" : "  Verify on the collector FW, reporter FW log showed in Log-view page"
+   },
+   "42" : {
+      "steps" : "  1.\tConfigure Log monitor\n  2.\tExport TSR;",
+      "initial" : "  PC---FW",
+      "id" : "42",
+      "title" : "Log Monitor TSR(TBD)",
+      "result" : "  Verify log monitor related information displayed correctly in TSR"
+   },
+   "22" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category color with customize color1\n  3.\tVerify all sub category showed the same color1\n  4.\tConfigure a sub category color with customize color2\n  5.\tVerify all sub event log showed the same color2\n  6.\tConfigure event color with customize color3 and apply\n  7.\tVerify the event log showed color3 in monitor",
+      "initial" : "  PC---FW",
+      "id" : "22",
+      "title" : "Edit category entry: Customize color",
+      "result" : "  Verify each log showed correct color as configured"
+   },
+   "46" : {
+      "steps" : "  1.\tGo to Firewall-Log-Name resolution page;\n  2.\tConfigure to use DNS then Netbios and apply DNS server address",
+      "initial" : "  PC---FW",
+      "id" : "46",
+      "title" : "Name Resolution",
+      "result" : "  Verify Log monitor view showed resolved dns result in src name and dst name column"
+   },
+   "13" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;",
+      "initial" : "  PC---FW",
+      "id" : "13",
+      "title" : "Log view filter function",
+      "result" : "  Verify log filter works correctly"
+   },
+   "23" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category color with customize color1\n  3.\tVerify all sub category showed the same color1\n  4.\tConfigure a sub category color keep original checked\n  5.\tVerify all sub event log showed the same color1",
+      "initial" : "  PC---FW",
+      "id" : "23",
+      "title" : "Edit category entry: Original color",
+      "result" : "  Verify each log showed correct color as configured"
+   },
+   "29" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure some category properties\n  3.\tClick Import from template and select ViewPoint/GMS\n  4.\tClick apply\n  5.\tVerify category configuration changed of Syslog selection on each event but all other configurations such as colours didn\u0092t change",
+      "initial" : "  PC---FW",
+      "id" : "29",
+      "title" : "Import from template-ViewPoint/GMS",
+      "result" : "  Verify log category configuration can be restore to ViewPoint/GMS template"
+   },
+   "6" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tClick the send log to email button",
+      "initial" : "  PC---FW\n  Mail server---Mail client",
+      "id" : "6",
+      "title" : "Send log to email",
+      "result" : "  Verify log sent to configured email"
+   },
+   "39" : {
+      "steps" : "  1.\tWith Opera, browse to Firewall-Log-Log Monitor page",
+      "initial" : "  (Opera)PC---FW",
+      "id" : "39",
+      "title" : "Log Monitor display properly with Opera",
+      "result" : "  Verify log monitor view and category tab all displayed correctly"
+   },
+   "3" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tClick the button to export TXT",
+      "initial" : "  PC---FW",
+      "id" : "3",
+      "title" : "Export TXT",
+      "result" : "  Verify exported TXT contain same information as log view showed"
+   },
+   "36" : {
+      "steps" : "  1.\tWith Firefox3.5 or above, browse to Firewall-Log-Log Monitor page",
+      "initial" : "  (Firefox)PC---FW",
+      "id" : "36",
+      "title" : "Log Monitor display properly with Firefox 3.5 above",
+      "result" : "  Verify log monitor view and category tab all displayed correctly"
+   },
+   "9" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tClick each column to sort it",
+      "initial" : "  PC---FW",
+      "id" : "9",
+      "title" : "Sort with each column",
+      "result" : "  Verify log can be sorted by each column data correctly"
+   },
+   "41" : {
+      "steps" : "  1.\tConfigure allow Viewpoint on FW\n  2.\tGo to Viewpoint server\n  3.\tVerify viewpoint displayed correct chart",
+      "initial" : "  PC---FW\n  GMS server setup",
+      "id" : "41",
+      "title" : "Viewpoint support(TBD)",
+      "result" : "  Verify log monitor support Viewpoint"
+   },
+   "12" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page, view tab;\n  2.\tClick the disable this kind of event button of a log",
+      "initial" : "  PC---FW",
+      "id" : "12",
+      "title" : "Disable this kind of event",
+      "result" : "  Verify in Log category tab, related event was disabled of GUI/Alert/Syslog/Email column and Log view tab doesn\u0092t show related log"
+   },
+   "47" : {
+      "steps" : "  1.\tTrigger UDP traffic with source port or destination port set to zero\n  2. Check syslog, verify the port number 0 showed in it\n  3.\tTrigger TCP traffic with source port or destination port set to zero\n  4. Check syslog, verify the port number 0 showed in it",
+      "initial" : "  PC---FW\n  Syslog setup",
+      "id" : "47",
+      "title" : "ICSA: the destination port of a TCP or UDP packet sent to or through either interfaces when the destination port was set to zero",
+      "result" : "  Verify syslog contain src or des port number is 0 info."
+   },
+   "15" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category GUI checkbox to checked and apply\n  3.\tVerify all sub event GUI checkbox changed accordingly and main category GUI checkbox showed as checked status\n  4.\tConfigure sub category GUI checkbox to keep original status and apply\n  5.\tVerify all sub event GUI checkbox remain same and sub category GUI checkbox showed as checked status\n  6.\tConfigure event GUI checkbox to uncheck and apply\n  7.\tVerify the event GUI checkbox displayed as unchecked and main/sub category showed mixed mode on GUI checkbox",
+      "initial" : "  PC---FW",
+      "id" : "15",
+      "title" : "Edit category entry: GUI",
+      "result" : "  Verify log category GUI checkbox configuration works properly and all checked event displayed in log view page."
+   },
+   "8" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tConfigure refresh 1 sec, verify warning window popup\n  3.\tConfigure refresh 10 sec, verify log view refresh every 10 seconds\n  4.\tConfigure refresh 999 sec, verify log view refresh every 999 seconds",
+      "initial" : "  PC---FW",
+      "id" : "8",
+      "title" : "Refresh every amount seconds",
+      "result" : "  Verify log monitor refresh time interval work properly\n  Verify refresh time stored in browser, if use the same browser the interval won't change to default"
+   },
+   "38" : {
+      "steps" : "  1.\tWith Safari, browse to Firewall-Log-Log Monitor page",
+      "initial" : "  (Safari)PC---FW",
+      "id" : "38",
+      "title" : "Log Monitor display properly with Safari",
+      "result" : "  Verify log monitor view and category tab all displayed correctly"
+   },
+   "4" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tClick select column to display\n  3.\tVerify Time and Message selected by default and can\u0092t be disselect\n  4.\tVerify No more than 14 column can be selected\n  5.\tVerify Each column showed correct information",
+      "initial" : "  PC---FW",
+      "id" : "4",
+      "title" : "Select Columns to Display",
+      "result" : "  Verify log monitor showed correct information of each column"
+   },
+   "34" : {
+      "steps" : "  1.\tHave two unit with HA configured\n  2.\tFrom unit1 go to Firewall-Log-Log Monitor page, category tab;\n  3.\tConfigure some categories and apply\n  4.\tVerify configuration synchronized to backup unit\n  5.\tFrom backup unit verify it would show its own log",
+      "initial" : "  PC---FW",
+      "id" : "34",
+      "title" : "Log Monitor in HA",
+      "result" : "  Verify log monitor work correctly in HA mode"
+   },
+   "45" : {
+      "steps" : "  1.\tConfigure Log monitor\n  2.\tRestart FW\n  3.\tVerify log related configuration still exist",
+      "initial" : "  PC---FW",
+      "id" : "45",
+      "title" : "Log Monitor fw reboot",
+      "result" : "  Verify log monitor related configuration won\u0092t lost after fw restart"
+   },
+   "37" : {
+      "steps" : "  1.\tWith Chrome, browse to Firewall-Log-Log Monitor page",
+      "initial" : "  (Chrome)PC---FW",
+      "id" : "37",
+      "title" : "Log Monitor display properly with Chrome",
+      "result" : "  Verify log monitor view and category tab all displayed correctly"
+   },
+   "43" : {
+      "steps" : "  1.\tConfigure Log monitor\n  2.\tExport preference file\n  3.\tImport it immediately\n  4.\tVerify log related configuration correct\n  5.\tBoot to factory and import the preference\n  6.\tVerify log related configuration restored;",
+      "initial" : "  PC---FW",
+      "id" : "43",
+      "title" : "Log Monitor preference file",
+      "result" : "  Verify log related configuration restored after import pref file"
+   },
+   "19" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page-Category tab;\n  2.\tConfigure Main category Send to email address with customize email\n  3.\tVerify all sub event log be sent to the customized email and global email too\n  4.\tConfigure sub category Send to email address with customize email2 and apply\n  5.\tVerify all sub event log be sent to the customized email2 and global email too",
+      "initial" : "  PC---FW\n  Mail Server---Mail client",
+      "id" : "19",
+      "title" : "Edit category entry: Send to Email address",
+      "result" : "  Verify log be sent to configured email accordingly"
+   },
+   "5" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tClick the Refresh button",
+      "initial" : "  PC---FW",
+      "id" : "5",
+      "title" : "Refresh",
+      "result" : "  Verify log monitor page refreshed and showed latest log"
+   },
+   "50" : {
+      "steps" : "  1.\tGo to Firewall-Log-Log Monitor page;\n  2.\tClick the button to export CSV/TXT;\n 3.\tOpen the exported files;\n 4.\tSelect the Access rule and NAT policy. ",
+      "initial" : "  PC---FW",
+      "id" : "5",
+      "title" : "Rules name should contain policy ID and name for Access and NAT in System Logs page",
+      "result" : "Rules names should contain policy ID and name for Access and NAT in System Logs page"
+   }
+}

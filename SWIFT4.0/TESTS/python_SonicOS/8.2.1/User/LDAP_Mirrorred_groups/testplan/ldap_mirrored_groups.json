@@ -1,0 +1,268 @@
+{
+   "1516147" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add a Local Groups<br />Name: gptest<br />Member Users and Groups: group1@lei.com<br />5. add group1 to Limited Administrators/Guest Services/SSLVPN Services.<br />6. export preference. restore factory default FW. inport preference.",
+      "id" : "1516147",
+      "title" : "export/import preference",
+      "result" : ""
+   },
+   "1516125" : {
+      "steps" : "",
+      "initial" : "  1. go to Users&amp;Groups tab on LDAP page.<br />2. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add several groups from LDAP Server. press Refresh from LDAP button. check list.<br />5. delete those groups from LDAP Server. press Refresh from LDAP button. check list.",
+      "id" : "1516125",
+      "title" : "Delete/Add a group from LDA P server and refresh",
+      "result" : ""
+   },
+   "1516158" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add users from LDAP Server named user02. choose Rassword never expires on password types. enable Create an Exchange mailbox.<br /> add groups form LDAP Server named group1. enable Create an Exchange e-mail address.<br /> add user-1 to group1. Refresh Groups Mirrored From LDAP list.<br />5. go to Groups Mirrored From LDAP list. configure group1.<br /> enable Require one-time passwords. save it.<br />6. go to Firewall /Access Rules, on LAN to WAN policy, set Users Included to group1@ex2003.com.<br /> add a allowed LAN to WAN DNS prolicy if needed.<br /> 1 LAN &gt; WAN 1 Any Any DNS (Name Service) Allow All None <br /> 2 LAN &gt; WAN 2 Any Any Any Allow group1@ex2003.com None <br />7. access internet from PC1. it will redirect to FW log in page. login it using user02.",
+      "id" : "1516158",
+      "title" : "Group settings cannot be edited except OTP",
+      "result" : ""
+   },
+   "1516142" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. stop AD services. Test status was LDAP authentication error.<br />Refresh Groups Mirrored From LDAP list.",
+      "id" : "1516142",
+      "title" : "If LDAP communication error, groups remained as Mirrored from LDAP",
+      "result" : ""
+   },
+   "1516145" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add a Local Groups<br />Name: gptest<br />Member Users and Groups: group1@lei.com<br />5. add group1 to Limited Administrators/Guest Services/SSLVPN Services.<br />edit/remove it.",
+      "id" : "1516145",
+      "title" : "Mirrored group match a default local group",
+      "result" : ""
+   },
+   "1516156" : {
+      "steps" : "",
+      "initial" : "  1. go to Users&amp;Groups tab on LDAP page.<br />2. enable Mirror LDAP user option. set Refresh period (minutes) as out boundary values . Apply it.<br />such as: <br />-1<br />0.4<br />1/6<br />~!@#$<br />QWERT<br />qwert<br /><br />3. set Refresh period to 3. create a new group and add a user to that on LDAP server. <br />4. waitting 3 mins. check Local Groups page.",
+      "id" : "1516156",
+      "title" : "Boundary and function test for refresh period",
+      "result" : ""
+   },
+   "1516124" : {
+      "steps" : "",
+      "initial" : "  1. Enable \"Additional user group ID\" through click use and save it in LDAP Schema page.\n  2. go to Users/ Settings, choose LDAP+Local Users on User authentication method.<br />3. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Choose \"Only groups that have member users or groups \" and apply it.<br />4. go to Local Groups page. check the mirrored LDAP groups list.<br />5. add users from LDAP Server named user02. choose Password never expires on password types.<br /> add groups form LDAP Server named group1 and group2.<br />6. add user02 to group1 and group2. Set group2 as primary group.<br />7.test user02 on Test page.\n  8. Refresh the mirror group list and check in mirror groups.",
+      "id" : "1516124",
+      "title" : "Enable primary group attribute(AD only)",
+      "result" : ""
+   },
+   "1516144" : {
+      "steps" : "",
+      "initial" : "  1. go to Users&amp;Groups tab on LDAP page.<br />2. enable Mirror LDAP user option. choose All user groups on the LDAP server option. Apply it.<br />3. check Local Groups page.",
+      "id" : "1516144",
+      "title" : "Mirror  All user groups on LDAP group",
+      "result" : ""
+   },
+   "1516139" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method.<br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Firewall /Access Rules. choose Trusted Users on User Included from LAN to WAN.<br />4. create users from LDAP Server named user02. choose Password never expires on password types.<br /> create groups form LDAP Server named group1.<br /> add user02 to group1.<br />5. Conifure NTLM.<br /> Enable Use NTLM to authenticate HTTP traffic<br />6. access internet from PC1. a users authenticated window will be showed. login it using shvl.com\\user02.<br /><br />",
+      "id" : "1516139",
+      "title" : "Mirrored groups with NTLM(AD only)",
+      "result" : ""
+   },
+   "1516122" : {
+      "steps" : "",
+      "initial" : "  1. go to Users&amp;Groups tab on LDAP page.<br />2. enable Mirror LDAP user option. Apply it.<br />3. check Local Groups page.",
+      "id" : "1516122",
+      "title" : "Enable Mirror LDAP groups locally in Users&Groups tab",
+      "result" : ""
+   },
+   "1516146" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4.restart FW.<br />5. Go to LDAP test page to check ldap server is still alive. And check the mirrored LDAP groups list.<br /><br />",
+      "id" : "1516146",
+      "title" : "Restart FW",
+      "result" : ""
+   },
+   "1516127" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add users from LDAP Server named user02. choose Password never expires on password types.<br /> add groups form LDAP Server named group1 and group2. <br /> add user02 to group1. add group1 to group2. Refresh Groups Mirrored From LDAP list.<br />5. remove user02 from group1. Refresh Groups Mirrored From LDAP list.",
+      "id" : "1516127",
+      "title" : "Change the nested group architecture on LDAP server and refresh",
+      "result" : ""
+   },
+   "1516141" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. go to Users/ Settings, check out the mirrored LDAP groups list. Then choose no in the pop up of \"Delete mirrored groups?\"<br />5. Check the mirrored LDAP groups list.",
+      "id" : "1516141",
+      "title" : "Disable LDAP or just Disable Mirror LDAP function, Mirrored group will be added to local groups and can be deleted and edited",
+      "result" : ""
+   },
+   "1516123" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP Users on User authentication method. <br />2. go to Directory. Auto-configure.<br />3. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />4. go to Local Groups page. check the mirrored LDAP groups list.",
+      "id" : "1516123",
+      "title" : "Same group name in different domain",
+      "result" : ""
+   },
+   "1516153" : {
+      "steps" : "",
+      "initial" : "  1. In Active Directory Users and Groups create a container \"Groups\" and in that create another one \"Groups1\", then create some user groups in \"Groups1\".\n  2. go to Users/ Settings, choose LDAP on User authentication method. 3. go to Users&Groups tab on LDAP page. enable Mirror LDAP user option. choose All user groups on the LDAP server on Mirror. add an exclusion \"shvl.com/Groups\" and click the Refresh now button. apply it.\n  4. go to Local Groups page. check the mirrored LDAP groups list.\n  5. set exclusion 'shvl.com/Groups' to 'shvl.com/Groups/Group1'. check the mirrored LDAP groups list.\n  6. move shvl.com/Groups/Group1 from exclusion.",
+      "id" : "1516153",
+      "title" : "Exclude groups in these sub-trees can be showed in Mirror groups",
+      "result" : ""
+   },
+   "1516135" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose Radius Users on User authentication method.\n  2. go to Users&Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.\n  3. go to Firewall /Access Rules. choose Trusted Users on User Included from LAN to WAN.\n  4. go to Security Services /Intrusion Prevention. Enable IPS. configure IPS Category Settings: Category Name: ICMP Prevention: Enable Detection: Enable Included Users/Groups: group1@lei.com Excluded Users/Groups: None\n  5. go to Security Services /Anti-Spyware. Enable Anti-Spyware configure Anti-Spyware Signature Settings Product: Search_Miracle Signature Name: Download x.cab (Adware) Signature ID: 2648 Prevention: Enable Detection: Enable Included Users/Groups: group1@lei.com\n  5. access internet from PC1. a users authenticated page will be showed. login it using a. ping internet. access http://10.103.4.7/test-spyware/. click 2.cab.bin.\n  6. access internet from PC2. a users authenticated page will be showed. login it using b. ping internet. access http://10.103.4.7/test-spyware/. click 2.cab.bin.",
+      "id" : "1516135",
+      "title" : "Mirrored groups with IPS/Anti-Spyware",
+      "result" : ""
+   },
+   "1516136" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose Radius Users on User authentication method.<br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Firewall /Access Rules. choose Trusted Users on User Included from LAN to WAN.<br />4. go to DPI-SSL /Client SSL.<br /> Enable SSL Client Inspection<br /> User Object/Group: group1@lei.com<br />5. access internet from PC1. a users authenticated page will be showed. login it using a. <br /> access https://developer.apple.com.<br />6. access internet from PC2. a users authenticated page will be showed. login it using b. <br /> access https://developer.apple.com.",
+      "id" : "1516136",
+      "title" : "Mirrored groups with DPI-SSL",
+      "result" : ""
+   },
+   "1516155" : {
+      "steps" : "",
+      "initial" : "  1. go to Users&amp;Groups tab on LDAP page.<br />2. enable Mirror LDAP user option. choose Only groups that have member users or groups option. Apply it.<br />3. check Local Groups page.",
+      "id" : "1516155",
+      "title" : "Mirror  Only groups that have member users or groups",
+      "result" : ""
+   },
+   "1516152" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. choose <label for=\"ldapUsrGrpMirrorWhat0\" title=\"\">All user groups on the LDAP server</label>. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add several users from LDAP Server. create many groups on LDAP server. add those users to groups. check the mirrored LDAP groups list.",
+      "id" : "1516152",
+      "title" : "Boundary test for the limitation of mirrored group numbers",
+      "result" : ""
+   },
+   "1516159" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add users from LDAP Server named user02. choose Rassword never expires on password types. enable Create an Exchange mailbox.<br /> add groups form LDAP Server named group1. enable Create an Exchange e-mail address.<br /> add user02 to group1. Refresh Groups Mirrored From LDAP list.<br />5. add test user for Local Users.<br /> go to Groups Mirrored From LDAP list. configure group1.<br /> add test to Member Users and Groups. save it<br />6. go to Firewall /Access Rules, on LAN to WAN policy, set Users Included to group1@ex2003.com.<br /> add a allowed LAN to WAN DNS prolicy if needed.<br /> 1 LAN &gt; WAN 1 Any Any DNS (Name Service) Allow All None <br /> 2 LAN &gt; WAN 2 Any Any Any Allow group1@ex2003.com None <br />7. access internet from PC1. it will redirect to FW log in page. login it using user02.",
+      "id" : "1516159",
+      "title" : "Only users can be added to mirrored groups",
+      "result" : ""
+   },
+   "1516132" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add several users from LDAP Server. such as user-1/password, user-3/password<br /> add two groups form LDAP Server. such as group1, group2. add user-1 to group1, add user-3 to group2.<br /> Refresh Groups Mirrored From LDAP list.<br /> configure SSLVPN Services. add group1 to members.<br /> configure group1. add WAN RemoteAccess Networks to Access List on VPN Access<br /> configure group2. add WAN RemoteAccess Networks to Access List on VPN Access<br />5. go to SSL VPN /Server Settings. enable WAN<br />NetExtender Start IP: 192.168.33.100<br />NetExtender End IP : 192.168.33.110<br />DNS Server 1: 10.217.131.101<br />choose X0 Subnet on Add Client Routes.<br />6. run NexExtender on WAN side. connect WAN IP using user-1 and user-3. access PC1.<br />7. change SSLVPN Services to group2, repeat step 6. access PC1.",
+      "id" : "1516132",
+      "title" : "Mirrored groups with SSL-VPN",
+      "result" : ""
+   },
+   "1516140" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add users from LDAP Server named user02. choose Password never expires on password types.<br /> add groups form LDAP Server named group1 <br /> add user02 to group1. Refresh Groups Mirrored From LDAP list.<br />5. go to Firewall /Access Rules. choose Users Included to group1@leil.com from LAN to WAN policy.<br />6. delete group1 on LDAP server. Refresh Groups Mirrored From LDAP list.<br />7. change Users Included to ALL. delete group1 on Groups Mirrored list.",
+      "id" : "1516140",
+      "title" : "If deleted on LDAP server, mirrored groups will not be auto deleted If it is used in fetures and they can be deleted manually",
+      "result" : ""
+   },
+   "1516126" : {
+      "steps" : "",
+      "initial" : "  1. Create one group named group1 without user on LDAP server.\n  2. Go to Users&amp;Groups tab on LDAP page, enable Mirror LDAP user option. Apply it.\n  3. Go to Local Groups page. check the mirrored groups list.<br />4. Add one user to group1 on LDAP server.<br />5. Click refresh in LDAP Users&amp;Groups tab. Check the mirrored groups list.<br />6. Remove user in group1 on LDAP server.<br />7.Click refresh in LDAP Users&amp;Groups tab. Check the mirrored groups list.",
+      "id" : "1516126",
+      "title" : "Delete/Add users to a group on LDAP server",
+      "result" : ""
+   },
+   "1516129" : {
+      "steps" : "",
+      "initial" : "  1. go to Users&amp;Groups tab on LDAP page.<br />2. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add several users from LDAP Server. such as user-1/password, user-2/password, user-3/password, user-4/password<br /> add two groups form LDAP Server. such as group1, group2. add user-1 and user-2 to group1, add user-3 and user-4 to group2.<br />Refresh Groups Mirrored From LDAP list.<br />5. go to Firewall /Access Rules, on LAN to WAN policy, set Users Included to group1.<br />6. access internet from PC1. it will redirect to FW log in page. login it using those users.<br />7. set Users Included to group2, repeat step 6.",
+      "id" : "1516129",
+      "title" : "Mirrored groups with Access rules",
+      "result" : ""
+   },
+   "1516143" : {
+      "steps" : "",
+      "initial" : "  1. Create one local group named group1 with same domain of LDAP server. LDAP server contain group1 with users.\n  2. go to Users/ Settings, choose LDAP on User authentication method. Enable mirror group in LDAP Users&amp;Groups tab. Apply it.<br />3.go to Local Groups page. check the mirrored LDAP groups list.",
+      "id" : "1516143",
+      "title" : "Mirrored group match a user-created local group",
+      "result" : ""
+   },
+   "1516134" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add users from LDAP Server named user02. choose Rassword never expires on password types. enable Create an Exchange mailbox.<br /> add groups form LDAP Server named group1. enable Create an Exchange e-mail address.<br /> add user02 to group1. Refresh Groups Mirrored From LDAP list.<br />5. go to Security Services /Content Filter. <br /> enable Shopping on URL List form Default Policy.<br />6. go to Firewall /Access Rules, on LAN to WAN policy, set Users Included to group1@ex2003.com.<br /> add a allowed LAN to WAN DNS prolicy if needed.<br /> 1 LAN &gt; WAN 1 Any Any DNS (Name Service) Allow All None <br /> 2 LAN &gt; WAN 2 Any Any Any Allow group1@ex2003.com None <br />7. access internet using baidu.com. it will redirect to FW log in page. login it using user02.<br /> access taobao.com and google.com.hk.",
+      "id" : "1516134",
+      "title" : "Mirrored groups with CFS",
+      "result" : ""
+   },
+   "1516138" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method.<br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Firewall /Access Rules. choose group1 on User Included from LAN to WAN.<br />4. create users from LDAP Server named user02. choose Password never expires on password types.<br /> create groups form LDAP Server named group1.<br /> add user02 to group1. Refresh mirror groups list to check group1 is in the list.<br />5. Conifure SSO Agent.<br /> Enable SSO agent authentication <br /> add a valid host: 192.168.168.4 2258 10 6 32 <br /> enable Use LDAP to retrieve user group information on Users.<br /> run Directory Connector Configurator on LDAP server. <br /> Logon Accout user02. set Logging Level to Debug and check View Logs.<br />6. access internet from PC1. it will redirect to FW log in page. login it using user02.",
+      "id" : "1516138",
+      "title" : "Mirrored groups with SSO agent(AD and eDirectory)",
+      "result" : ""
+   },
+   "1516128" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add users from LDAP Server named user02. choose Password never expires on password types.<br /> add groups form LDAP Server named group1 and group2. <br /> add user02 to group1. add group1 to group2. Refresh Groups Mirrored From LDAP list.<br />5. enable Require one-time passwords on group2.<br /> &#65533; do steps about case 7.",
+      "id" : "1516128",
+      "title" : "Test nested group function (user a ->g1->g2, a inherits g2's group settings)",
+      "result" : ""
+   },
+   "1516151" : {
+      "steps" : "",
+      "initial" : "  for FW1\n  1. go to Users/ Settings, choose LDAP on User authentication method.\n  2. go to Users&Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.\n  3. go to Local Groups page. check the mirrored LDAP groups list.\n  4. add a Local Groups\n  Name: gptest\n  Member Users and Groups: group1@lei.com\n  5. add group1 to Limited Administrators/Guest Services/SSLVPN Services.\n  edit/delete some Mirrored groups set.\n  6. failover FW1. Test status on configure LDAP page.",
+      "id" : "1516151",
+      "title" : "AA support",
+      "result" : ""
+   },
+   "1516157" : {
+      "steps" : "",
+      "initial" : "  1. go to Users&amp;Groups tab on LDAP page.<br />2. enable Mirror LDAP user option. Apply it.<br />3. check Local Groups page.",
+      "id" : "1516157",
+      "title" : "Mirrored LDAP groups cannot be deleted",
+      "result" : ""
+   },
+   "1516131" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add several users from LDAP Server. such as user-1/password, user-3/password<br /> add two groups form LDAP Server. such as group1, group2. add user-1 to group1, add user-3 to group2.<br /> Refresh Groups Mirrored From LDAP list.<br /> configure group1. add WAN RemoteAccess Networks to Access List on VPN Access<br /> configure group2. add WAN RemoteAccess Networks to Access List on VPN Access<br />5. go to VPN /Settings. enable WAN GroupVPN<br />Shared Secret: 12345<br />Virtual Adapter settings: DHCP Lease<br />enable Require authentication of VPN clients by XAUTH. choose group1 on User group for XAUTH users<br />go to VPN /DHCP over VPN. enable Use Internal DHCP Server, click For Global VPN Client.<br />7. run GVC on WAN side. connect WAN IP using user-1 and user-3. access PC1.<br />8. change User group for XAUTH users to group2, repeat step 7. access PC1.",
+      "id" : "1516131",
+      "title" : "Mirrored groups with GVC",
+      "result" : ""
+   },
+   "1516148" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP+Local Users on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. go to Log Settings. Open Gui events contain LDAP Mirroring.<br /> LDAP Mirroring Overflow<br /> LDAP User Group Nesting Not Being Mirrored<br /> LDAP Mirror User Group Member Add Failure<br /> LDAP Mirror User Group Add Failure<br /> LDAP Mirror Deleted Member<br /> LDAP Mirror Added Member<br /> LDAP Mirror Deleted<br /> LDAP Mirror Added<br />5. add/delete members and groups on mirror list. Refresh Groups Mirrored From LDAP list.",
+      "id" : "1516148",
+      "title" : "Log support",
+      "result" : ""
+   },
+   "1516130" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose Radius Users on User authentication method.<br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Firewall /Access Rules. choose Trusted Users on User Included from LAN to WAN.<br />4. go to Firewall /Match Objects. add webmail object<br /> 1 webmail Application Category List N/A WEBMAIL (69) Disable <br /> go to Firewall /App Rules. add webmail policy<br /> 1 webmail App Control Content webmail Reset/Drop Any Any Any Any Any <br /> Excluded: group1@lei.com<br />5. access internet from PC1. a users authenticated page will be showed. login it using a. <br /> access http://mail.163.com.<br />6. access internet from PC2. a users authenticated page will be showed. login it using b. <br /> access http://mail.163.com.<br /> <br /><br />",
+      "id" : "1516130",
+      "title" : "Mirrored groups in App rules",
+      "result" : ""
+   },
+   "1516154" : {
+      "steps" : "",
+      "initial" : "  1. go to Users&amp;Groups tab on LDAP page.<br />2. enable Mirror LDAP user option. Apply it.<br />3. check Local Groups page.\n  4. Reboot device\n  5. After rebootcheck Local Groups page.\n  6. Create access rule using one of the Groups\n  7. Use the access rule and verify that user authenticated from the Group can access through the access rule.",
+      "id" : "1516154",
+      "title" : "Reboot with Mirror LDAP groups locally in Users&Groups tab",
+      "result" : ""
+   },
+   "1516133" : {
+      "steps" : "",
+      "initial" : "  1. go to Users&amp;Groups tab on LDAP page.<br />2. disable Mirror LDAP user option. Apply it.<br />3. check Local Groups page.",
+      "id" : "1516133",
+      "title" : "Disable  Mirror LDAP groups locally  in Users&Groups tab",
+      "result" : ""
+   },
+   "1516137" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose Radius Users on User authentication method.<br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Firewall /Access Rules. choose Trusted Users on User Included from LAN to WAN.<br />4. create users from LDAP Server named user02. choose Password never expires on password types.<br /> create groups form LDAP Server named group1. add user02 to group1.<br />5. create same user from radius server.<br />5. Conifure Radius<br /> Name or IP Address: 192.168.158.100<br /> Shared Secret: zl2136<br /> Radius Client Authentication Succeeded using user02.<br />6. access internet from PC1. a users authenticated page will be showed. login it using user02.<br />7. choose Use LDAP to retrieve user group information on RADIUS Users. repeat step 6.",
+      "id" : "1516137",
+      "title" : "Mirrored groups with Radius",
+      "result" : ""
+   },
+   "1516149" : {
+      "steps" : "",
+      "initial" : "  1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add a Local Groups<br />Name: gptest<br />Member Users and Groups: group1@lei.com<br />5. add group1 to Limited Administrators/Guest Services/SSLVPN Services.<br />6. go to System /Diagnostics. download report.",
+      "id" : "1516149",
+      "title" : "TSR support",
+      "result" : ""
+   },
+   "1516150" : {
+      "steps" : "",
+      "initial" : "  for FW1<br />1. go to Users/ Settings, choose LDAP on User authentication method. <br />2. go to Users&amp;Groups tab on LDAP page. enable Mirror LDAP user option. Apply it.<br />3. go to Local Groups page. check the mirrored LDAP groups list.<br />4. add a Local Groups<br />Name: gptest<br />Member Users and Groups: group1@lei.com<br />5. add group1 to Limited Administrators/Guest Services/SSLVPN Services.<br />edit/delete some Mirrored groups set.<br />6. failover FW1. Test status on configure LDAP page.",
+      "id" : "1516150",
+      "title" : "HA Support",
+      "result" : ""
+   }
+}

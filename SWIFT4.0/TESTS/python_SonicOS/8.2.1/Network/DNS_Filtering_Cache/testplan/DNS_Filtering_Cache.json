@@ -1,0 +1,182 @@
+{
+   "1520998": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digjiushang.cn; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F651A220-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520998",
+      "title": "[GUI] Verify category Alcohol shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_15\nOriginal Title: [GUI] Verify category Alcohol shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain jiushang.cnwith Alcohol is shown correctly in dns proxy cache table."
+   },
+   "1520999": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do dighenrymakow.com; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F652180E-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520999",
+      "title": "[GUI] Verify category Discrimination/Hate shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_16\nOriginal Title: [GUI] Verify category Discrimination/Hate shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain henrymakow.comwith Discrimination/Hate is shown correctly in dns proxy cache table."
+   },
+   "1520984": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2. Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0; 3. PC connected to X0, set dns server as X0 IP, do digadultswim.com; 4. Check DNS proxy cache table.",
+      "priority": "Smoke",
+      "atm_id": "F64A4F8E-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520984",
+      "title": "[GUI] Verify category Adult shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_01\nOriginal Title: [GUI] Verify category Adult shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain adultswim.comwith category Adult is shown correctly in dns proxy cache table."
+   },
+   "1520995": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do diggrabagun.com; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F650541A-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520995",
+      "title": "[GUI] Verify category Violence shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_12\nOriginal Title: [GUI] Verify category Violence shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain grabagun.comwith Violence is shown correctly in dns proxy cache table."
+   },
+   "1520996": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digwww.jiayuan.com; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F650CF1C-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520996",
+      "title": "[GUI] Verify category Dating shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_13\nOriginal Title: [GUI] Verify category Dating shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain www.jiayuan.com with Dating is shown correctly in dns proxy cache table."
+   },
+   "1520989": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digmyfreecams.com; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F64DE4FA-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520989",
+      "title": "[GUI] Verify category Pornography shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_06\nOriginal Title: [GUI] Verify category Pornography shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain myfreecams.comwith category Pornography is shown correctly in dns proxy cache table."
+   },
+   "1520986": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digwww.gamblingsites.org; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F64B3D86-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520986",
+      "title": "[GUI] Verify category Gambling shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_03\nOriginal Title: [GUI] Verify category Gambling shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain www.gamblingsites.org with category Gambling is shown correctly in dns proxy cache table."
+   },
+   "1520993": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digBleacherreport.com; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F64F859E-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520993",
+      "title": "[GUI] Verify category Sports shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_10\nOriginal Title: [GUI] Verify category Sports shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain Bleacherreport.com with Sports is shown correctly in dns proxy cache table."
+   },
+   "1521000": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digbaidu.com; 4. Check DNS proxy cache table.",
+      "priority": "Sanity",
+      "atm_id": "F65281C2-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1521000",
+      "title": "[GUI] Verify when doamin with no category, the category is null in dynamic DNS cache.",
+      "description": "Original ID: DNS_Filtering_Cache_17\nOriginal Title: [GUI] Verify when doamin with no category, the category is null in dynamic DNS cache.\nOriginal Description:",
+      "result": "  In step 4, the category is nullin dns proxy cache table."
+   },
+   "1520990": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digsitenable.ch; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F64E4DAA-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520990",
+      "title": "[GUI] Verify category Anonymous Proxies shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_07\nOriginal Title: [GUI] Verify category Anonymous Proxies shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain sitenable.chwith category Anonymous Proxies is shown correctly in dns proxy cache table."
+   },
+   "1520992": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digcrackswall.com; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F64F1BE0-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520992",
+      "title": "[GUI] Verify category Spyware shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_09\nOriginal Title: [GUI] Verify category Spyware shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain crackswall.comwith Spyware is shown correctly in dns proxy cache table."
+   },
+   "1520988": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digiomovies.to; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F64C0C7A-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520988",
+      "title": "[GUI] Verify category Phishing shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_05\nOriginal Title: [GUI] Verify category Phishing shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain iomovies.towith category Phishing is shown correctly in dns proxy cache table."
+   },
+   "1520985": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digwww.ea.com; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F64AD418-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520985",
+      "title": "[GUI] Verify category Gaming shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_02\nOriginal Title: [GUI] Verify category Gaming shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain www.ea.com with category Gaming is shown correctly in dns proxy cache table."
+   },
+   "1520991": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digloveread.me; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F64EB4B6-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520991",
+      "title": "[GUI] Verify category Social shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_08\nOriginal Title: [GUI] Verify category Social shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain loveread.mewith category Social is shown correctly in dns proxy cache table."
+   },
+   "1520994": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digmyegy.tv; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F64FECFA-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520994",
+      "title": "[GUI] Verify category Hacking/Warez/P2P shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_11\nOriginal Title: [GUI] Verify category Hacking/Warez/P2P shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain myegy.tvwith Hacking/Warez/P2P is shown correctly in dns proxy cache table."
+   },
+   "1520997": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digheavengifts.com; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F65137A4-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520997",
+      "title": "[GUI] Verify category Drugs shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_14\nOriginal Title: [GUI] Verify category Drugs shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domainheavengifts.com with Drugs is shown correctly in dns proxy cache table."
+   },
+   "1520987": {
+      "steps": "  1. DNS \\ DNS Proxy, enable DNS Proxy cache; 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n  3. PC connected to X0, set dns server as X0 IP, do digwww.hjaoopoa.top; 4. Check DNS proxy cache table.",
+      "priority": "Full_Regression",
+      "atm_id": "F64BA582-8640-11EB-88E2-45364435BA2B",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "1520987",
+      "title": "[GUI] Verify category Malware shown correctly in dynamic DNS cache",
+      "description": "Original ID: DNS_Filtering_Cache_04\nOriginal Title: [GUI] Verify category Malware shown correctly in dynamic DNS cache\nOriginal Description:",
+      "result": "  In step 4, domain www.hjaoopoa.top with categoryMalware is shown correctly in dns proxy cache table."
+   },
+   "2045123": {
+      "steps": "  1.DNS \\ DNS Proxy, enable DNS Proxy cache;\n 2.Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n 3.PC connected to X0, set dns server as X0 IP, do dig AAAA playboy.com;\n 4.Check DNS proxy cache IPv6 table.",
+      "priority": "Smoke",
+      "atm_id": "",
+      "initial": "  PC---(X0)DUT(X1)---WAN\n  WAN access to Neustar Server(156.154.54/55.200)",
+      "id": "2045123",
+      "title": "[Cache][FUNC] Verify category shown correctly in IPv6 dynamic DNS cache",
+      "description": "",
+      "result": "  In step 4, domain playboy.com with category Pornography is shown correctly in dns proxy cache ipv6 table.\nRefer to GEN7-43833"
+   }
+}

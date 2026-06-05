@@ -1,0 +1,240 @@
+{   
+   "1516222" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with destination any on DoS policy page and create some addresses object such as \"1.1.1.1\".\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set \"1.1.1.1\" to destination of DoS policy with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1516222",
+      "title" : "[PUT] Edit DoS policies destination on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517284" : {
+      "steps" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  4. Retrieve counters for specific DoS policy with uuid on DoS policy page with Postman: GET https://{{ip_addr}}/api/sonicos/reporting/dos-policies/counters/uuid/{UUID}\n  5. Check the Result in Postman. Compare the settings got via Postman with on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517284",
+      "title" : "[GET]Get counters for specific DoS policy with uuid on DoS policy page",
+      "result" : "  1. Counters for specific DoS policy on DoS policy page is received.\n  2. The settings got via Postman should be in consistency with that on GUI."
+   },
+   "1517259" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with service any on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set specified service such as FTP to service of DoS policy with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517259",
+      "title" : "[PUT] Edit DoS policies service on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517260" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default action profile on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set custom action profile created on DoS Action Profile page such as \"aaa\" to action profile of DoS policy with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517260",
+      "title" : "[PUT] Edit DoS policies action profile on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517263" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default schedule on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set \"schedule\" to custom schedule created on Schedules page such as \"AAA\" with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517263",
+      "title" : "[PUT] Edit DoS policies schedule on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517270" : {
+      "steps" : "  1. Login with admin on CLI.\n  2. Try to add a DoS policy with the POST command, then press Send. POST https://{{ip_addr}}/api/sonicos/dos-policies\n  3. Check the result returned on Postman.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517270",
+      "title" : "[POST] Try to create DoS policies on DoS policy page while unauthorized",
+      "result" : "  \"success\": false and \"message\": \"Unauthorized.\" is returned in Postman,"
+   },
+   "1517261" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default action profile on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set \"enable\" to false with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517261",
+      "title" : "[PUT] Disable DoS policies on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517286" : {
+      "steps" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  4. Retrieve statistics for DoS policies on DoS policy page with Postman: GET https://{{ip_addr}}/api/sonicos/reporting/dos-policies/statistics\n  5. Check the Result in Postman. Compare the settings got via Postman with on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517286",
+      "title" : "[GET]Get statistics for DoS policies on DoS policy page",
+      "result" : "  1. Statistics for DoS policies on DoS policy page is received.\n  2. The settings got via Postman should be in consistency with that on GUI."
+   },
+   "1517283" : {
+      "steps" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  4. Retrieve counters for DoS policies on DoS policy page with Postman: GET https://{{ip_addr}}/api/sonicos/reporting/dos-policies/counters\n  5. Check the Result in Postman. Compare the settings got via Postman with on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517283",
+      "title" : "[GET]Get counters for DoS policies on DoS policy page",
+      "result" : "  1. Counters for DoS policies on DoS policy page is received.\n  2. The settings got via Postman should be in consistency with that on GUI."
+   },
+   "1517268" : {
+      "steps" : "  1. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Add a DoS policy with IPv6 address with the POST command, then press Send. POST https://{{ip_addr}}/api/sonicos/dos-policies\n  4. Check the result (1).\n  5. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  6. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending\n  7. Check the result returned on Postman. Result (2)\n  8. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517268",
+      "title" : "[POST] Create DoS policies with IPv6 address on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517280" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default name on DoS policy page.\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Delete specific DoS policy with uuid with the PUT command, then press Send. DELETE https://{{ip_addr}}/api/sonicos/dos-policies/uuid/{UUID}\n  4. Check the result.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517280",
+      "title" : "[DELETE]Delete specific DoS policiy with uuid on DoS policy page while unauthorized",
+      "result" : "  It should return \"success\": false, and \"message\": \"Unauthorized.\""
+   },
+   "1517265" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set \"comment\" to \"aaa\" with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517265",
+      "title" : "[PUT] Edit DoS policies Description on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517288" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default name on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Delete statistics for specific DoS policy with uuid with the PUT command, then press Send. DELETE https://{{ip_addr}}/api/sonicos/reporting/dos-policies/statistics/uuid/{UUID}\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517288",
+      "title" : "[DELETE]Delete statistics for specific DoS policy with uuid on DoS policy page",
+      "result" : "  1. Statistics for specific DoS policiy on DoS policy page is cleared.\n  2. The settings got via Postman should be in consistency with that on GUI."
+   },
+   "1517278" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default name on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Delete specific DoS policy with uuid with the PUT command, then press Send. DELETE https://{{ip_addr}}/api/sonicos/dos-policies/uuid/{UUID}\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517278",
+      "title" : "[DELETE]Delete specific DoS policiy with uuid on DoS policy page",
+      "result" : "  1. Specific DoS policiy on DoS policy page is deleted.\n  2. The settings got via Postman should be in consistency with that on GUI."
+   },
+   "1517273" : {
+      "steps" : "  1. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Add a DoS policy with nonexist service with the POST command, then press Send. POST https://{{ip_addr}}/api/sonicos/dos-policies\n  4. Check the result returned on Postman.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517273",
+      "title" : "[POST] Try to create DoS policies with nonexist service on DoS policy page",
+      "result" : "  \"success\": false\n  \"message\": Command 'service group xxx' does not match\""
+   },
+   "1517272" : {
+      "steps" : "  1. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Add a DoS policy with nonexist ip address with the POST command, then press Send. POST https://{{ip_addr}}/api/sonicos/dos-policies\n  4. Check the result returned on Postman.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517272",
+      "title" : "[POST] Try to create DoS policies with nonexist ip address on DoS policy page",
+      "result" : "  \"success\": false\n  \"message\": \"Command 'source/destination address name x.x.x.x' does not match\""
+   },
+   "1517285" : {
+      "steps" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  4. Retrieve counter status for DoS policies on DoS policy page with Postman: GET https://{{ip_addr}}/api/sonicos/reporting/dos-policies/counter-status\n  5. Check the Result in Postman. Compare the settings got via Postman with on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517285",
+      "title" : "[GET]Get counter status for DoS policies on DoS policy page",
+      "result" : "  1. Counter status for DoS policies on DoS policy page is received.\n  2. The settings got via Postman should be in consistency with that on GUI."
+   },
+   "1517282" : {
+      "steps" : "  1. Login via GUI, add a DoS policy with custom DoS action profile that can block TCP SYN flood on DoS policy page.\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Set \"enable\" to false with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  4. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  5. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending\n  6. Check if TCP SYN flood can still be blocked.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517282",
+      "title" : "[Func]Verify Enable/Disable DoS policy on DoS policy page works fine",
+      "result" : "  The DoS policy is disabled and can not block TCP SYN flood."
+   },
+   "1517255" : {
+      "steps" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  4. Retrieve DoS policies configuration on DoS policy page with Postman: GET https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the Result in Postman. Compare the settings got via Postman with on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517255",
+      "title" : "[GET]Get DoS policies configuration on DoS policy page",
+      "result" : "  1. DoS policies configuration on DoS policy page is received.\n  2. The settings got via Postman should be in consistency with that on GUI."
+   },
+   "1517274" : {
+      "steps" : "  1. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Add a DoS policy with nonexist action profile with the POST command, then press Send. POST https://{{ip_addr}}/api/sonicos/dos-policies\n  4. Check the result (1).\n  5. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  6. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending\n  7. Check the result returned on Postman. Result (2)",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517274",
+      "title" : "[POST] Try to create DoS policies with nonexist action profile on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": false\n  \"message\": \"DoS Action Object: Failed to get handle for xxx from Dos_Action_Table\""
+   },
+   "1517277" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default name on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set custom parameters such as name/ip/service to DoS policy with specific uuid with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies/uuid/{UUID}\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517277",
+      "title" : "[PUT] Edit specific DoS policy with uuid on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517264" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set \"tag1\" to \"aaa\",\"tag2\" to \"bbb\",\"tag3\" to \"ccc\" with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517264",
+      "title" : "[PUT] Edit DoS policies tag on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517257" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with source any on DoS policy page and create some addresses object such as \"1.1.1.1\".\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set \"1.1.1.1\" to source of DoS policy with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517257",
+      "title" : "[PUT] Edit DoS policies source on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517279" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default name on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Delete specific DoS policy with uuid doesn't exist with the PUT command, then press Send. DELETE https://{{ip_addr}}/api/sonicos/dos-policies/uuid/{UUID}\n  5. Check the result.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517279",
+      "title" : "[DELETE]Delete specific DoS policiy with uuid doesn't exist on DoS policy page",
+      "result" : "  \"success\": false\n  \"Command 'no dos-policy uuid {UUID}' does not match\""
+   },
+   "1517269" : {
+      "steps" : "  1. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Add a DoS policy with name exceeds the maximum length with the POST command, then press Send. POST https://{{ip_addr}}/api/sonicos/dos-policies\n  \"name\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n  4. Check the result returned on Postman. Result (1)\n  5. Check the settings on GUI.Result (2)",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517269",
+      "title" : "[POST] Create DoS policies with name exceeds the maximum length on DoS policy page",
+      "result" : "  1. Postman should return success: false.\n  2. The item is not added on GUI."
+   },
+   "1517256" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default name on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set custom name to DoS policy such as \"aaa\" with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517256",
+      "title" : "[PUT] Edit DoS policies name on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517276" : {
+      "steps" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  4. Retrieve specific DoS policy configuration with specific uuid on DoS policy page with Postman: GET https://{{ip_addr}}/api/sonicos/dos-policies/uuid/{UUID}\n  5. Check the Result in Postman. Compare the settings got via Postman with on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517276",
+      "title" : "[GET]Get specific DoS policiy configuration with uuid on DoS policy page",
+      "result" : "  1. Specific DoS policy configuration on DoS policy page is received.\n  2. The settings got via Postman should be in consistency with that on GUI."
+   },
+   "1517287" : {
+      "steps" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  4. Retrieve statistics for specific DoS policy on DoS policy page with Postman: GET https://{{ip_addr}}/api/sonicos/reporting/dos-policies/statistics/uuid/{UUID}\n  5. Check the Result in Postman. Compare the settings got via Postman with on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517287",
+      "title" : "[GET]Get statistics for specific DoS policy on DoS policy page",
+      "result" : "  1.Statistics for specific DoS policy on DoS policy page is received.\n  2. The settings got via Postman should be in consistency with that on GUI."
+   },
+   "1517275" : {
+      "steps" : "  1. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Add multiple DoS policies with the POST command, then press Send. POST https://{{ip_addr}}/api/sonicos/dos-policies\n  4. Check the result (1).\n  5. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  6. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending\n  7. Check the result returned on Postman. Result (2)\n  8. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517275",
+      "title" : "[POST] Create multiple DoS policies on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517281" : {
+      "steps" : "  1. Login via GUI, add a DoS policy with custom DoS action profile that can block TCP SYN flood on DoS policy page.\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Set \"action\" to \"bypass\" with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  4. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  5. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending\n  6. Check if TCP SYN flood can still be blocked.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517281",
+      "title" : "[Func]Verify Protect/Bypass DoS policy on DoS policy page works fine",
+      "result" : "  The DoS policy is bypassed and can not block TCP SYN flood."
+   },
+   "1517271" : {
+      "steps" : "  1. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Try to add a DoS policy leaving the value of 'name' empty with the POST command, then press Send. POST https://{{ip_addr}}/api/sonicos/dos-policies\n  \"name\": \"\",\n  4. Check the result returned on Postman.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517271",
+      "title" : "[POST] Try to create DoS policies leaving the value of 'name' empty on DoS policy page",
+      "result" : "  \"success\": false\n  \"message\": \"Please enter a name for this rule.\""
+   },
+   "1517266" : {
+      "steps" : "  1. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Add a DoS policy with all any paramters with the POST command, then press Send. POST https://{{ip_addr}}/api/sonicos/dos-policies\n  4. Check the result (1).\n  5. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  6. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending\n  7. Check the result returned on Postman. Result (2)\n  8. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517266",
+      "title" : "[POST] Create DoS policies with all any paramters on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517262" : {
+      "steps" : "  1. Login via GUI, add some DoS policies with default action profile on DoS policy page.\n  2. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  3. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  4. Set \"action\" to \"bypass\" with the PUT command, then press Send. PUT https://{{ip_addr}}/api/sonicos/dos-policies\n  5. Check the result (1).\n  6. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  7. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending 8. Check the result returned on Postman. Result (2) 9. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517262",
+      "title" : "[PUT] Pypass DoS policies on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   },
+   "1517267" : {
+      "steps" : "  1. Auth with Postman: POST https://{{ip_addr}}/api/sonicos/auth\n  2. Delete Pending configure on Postman: DELETE https://{{ip_addr}}/api/sonicos/config/pending\n  3. Add a DoS policy with all specified paramters with the POST command, then press Send. POST https://{{ip_addr}}/api/sonicos/dos-policies\n  4. Check the result (1).\n  5. Get the pending config: GET https://{{ip_addr}}/api/sonicos/config/pending\n  6. Commit the pending config: POST https://{{ip_addr}}/api/sonicos/config/pending\n  7. Check the result returned on Postman. Result (2)\n  8. Check the settings on GUI.",
+      "initial" : "  1. Load the firmware under test\n  2. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API, and the option \"Enable RFC-2617 HTTP Basic Access authentication\"\n  3. Turn off the option \"SSL certificate verification\" in Postman File&gt;Settings.",
+      "id" : "1517267",
+      "title" : "[POST] Create DoS policies with all specified paramters on DoS policy page",
+      "result" : "  Result (1) \"success\": true is returned\n  Result (2) \"success\": true is returned.\n  Result (3) The settings on GUI should be in consistency with those in PUT command"
+   }
+}

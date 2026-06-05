@@ -1,0 +1,114 @@
+{
+   "021" : {
+      "steps" : "  Make sure the configured sccessful",
+      "initial" : "  1.Enable LAN zone Guest service and Enable External Guest Authentication on zone page\n  2.Click CONFIGURE button 3.Edited web server1 with an Ipv4 host AO\n  4.Edited web server2 with an Ipv6 host AO",
+      "id" : "021",
+      "title" : "External Guest Auth: Verify IPv6 host AO can be selected for Web Server 2",
+      "result" : "  No"
+   },
+   "036" : {
+      "steps" : "  Do not ipv6 Authentication and IPv6 traffic can't pass through",
+      "initial" : "  1.Enable DMZ zone Guest service and Enable External Guest Authentication on zone page\n  2.Click CONFIGURE button 3.Edited web server1 with an Ipv6 lhm server and web server2 with empty\n  4.Connect a client on DMZ zone with ipv4 address then access an ipv4 with http traffic",
+      "id" : "036",
+      "title" : "External Guest Auth:DMZ Zone:Http/web server1-ipv6/client with ipv4/ Do not ipv6 Authentication",
+      "result" : "  No"
+   },
+   "010" : {
+      "steps" : "  on step5:Ipv6 traffic can pass FW (can access)",
+      "initial" : "  1.Enable Customer zone Guest service on zone page\n  2.Use a dynamic ipv6 client connect FW\n  3.Access some site e.g. http://ipv6.google.com\n  4.Login with Guest account\n  5.see Guest Status page",
+      "id" : "010",
+      "title" : "Internal Guest Auth:LAN/DMZ/Customer zone--Verify ipv6 traffic can pass after authentication success",
+      "result" : "  No"
+   },
+   "008" : {
+      "steps" : "  The traffic can not pass",
+      "initial" : "  1.Create a LAN zone,then Enable zone Guest service and Enable External Guest Authentication on zone page\n  2.Click CONFIGURE button 3.Edited web server1 with an Ipv6 lhm server and web server2 with ipv4 server\n  4.Edited the external user with a session lifetime\n  5.Connect a client on lan to access ipv6 traffic\n  6.Login the user and wait the session lifetime over\n  7.Access ipv6 traffic",
+      "id" : "046",
+      "title" : "External Guest Auth:Verify quota setting of session lifetime is support ipv6",
+      "result" : "  No"
+   },
+   "031" : {
+      "steps" : "   Do not ipv6 Authentication and IPv6 traffic can't pass through",
+      "initial" : "  1.Enable LAN zone Guest service and Enable External Guest Authentication on zone page\n  2.Click CONFIGURE button 3.Edited web server1 with an Ipv6 lhm server and web server2 with nothing\n  4.Connect a client on LAN zone with ipv4 address then access an ipv4 with https traffic",
+      "id" : "031",
+      "title" : "External Guest Auth:LAN Zone:Https/web server1-ipv6/client with ipv4/ Do not ipv6 Authentication",
+      "result" : "  No"
+   },
+   "005" : {
+      "steps" : "  on step4.A dialog will pop up",
+      "initial" : "  1.Enable LAN zone Guest service on zone page\n  2.Use a ipv6 static client connect FW\n  3.Access some site e.g. http://ipv6.google.com\n  4.Login with Guest account",
+      "id" : "005",
+      "title" : "Internal Guest Auth:Verify dialog will pop up after guest account logs in",
+      "result" : "  No"
+   },
+   "029" : {
+      "steps" : "  Redirect to ipv6 AUTH page with two web server successful",
+      "initial" : "  1.Enable LAN zone Guest service and Enable External Guest Authentication on zone page\n  2.Click CONFIGURE button 3.Edited web server1 with an Ipv4 lhm server and edited webserver2 with an ipv6 lhm server\n  4.Connect a client on LAN zone then access an ipv6 traffic,such as :https://ipv6.google.com",
+      "id" : "029",
+      "title" : "External Guest Auth:LAN Zone:Https/web server1-ipv4/web server2-ipv6/Redirect to ipv6 AUTH page with two web server successful",
+      "result" : "  No"
+   },
+   "003" : {
+      "steps" : "  on Step3:Http redirect to authenication page\n  on step5:Ipv6 traffic can pass FW (can access)",
+      "initial" : "  1.Enable LAN/DMZ/Customer zone Guest service on zone page\n  2.Use a dynamic ipv6 client connect FW\n  3.Access some site e.g. http://ipv6.google.com\n  4.Login with Guest account\n  5.Access http://ipv6.google.com",
+      "id" : "003",
+      "title" : "Internal Guest Auth:LAN/DMZ/Customer zone--Http redirect to authenication page for ipv6 DHCP client",
+      "result" : "  No"
+   },
+   "006" : {
+      "steps" : "  Error display",
+      "initial" : "  1.Enable WLAN zone Guest service on zone page\n  2.Use a dynamic ipv6 client connect FW\n  3.Access some site e.g. http://ipv6.google.com\n  4.Login not Guest account",
+      "id" : "006",
+      "title" : "Internal Guest Auth:Verify Error will be displayed if login not guest user",
+      "result" : "  No"
+   },
+   "007" : {
+      "steps" : "  the client ipv6 address will showing on Guest Status page",
+      "initial" : "  1.Enable DMZ zone Guest service on zone page\n  2.Use a ipv6 static client connect FW\n  3.Access some site e.g. http://ipv6.google.com\n  4.Login with Guest account\n  5.see Guest Status page",
+      "id" : "007",
+      "title" : "Internal Guest Auth:Ipv6 client will be displayed correct information on Guest Status",
+      "result" : "  No"
+   },
+   "038" : {
+      "steps" : "  Redirect to ipv6 AUTH page with two web server successful",
+      "initial" : "  1.Create a Customer zone,then Enable zone Guest service and Enable External Guest Authentication on zone page\n  2.Click CONFIGURE button 3.Edited web server1 with an Ipv4 lhm server and web server2 with Ipv6 lhm server\n  4.Connect a client on this zone with ipv4 and ipv6 address then access an ipv6 with http traffic",
+      "id" : "038",
+      "title" : "External Guest Auth:Customer Zone:Http/web server1-ipv4/web server2-ipv6/Redirect to ipv6 AUTH page with two web server successful",
+      "result" : "  No"
+   },
+   "042" : {
+      "steps" : "  Verify External Auth successful log",
+      "initial" : "  1.Create a LAN zone,then Enable zone Guest service and Enable External Guest Authentication on zone page\n  2.Click CONFIGURE button 3.Edited web server1 with an Ipv4 lhm server and web server2 with Ipv6 lhm server\n  4.Connect a client on LAN zone with ipv4 and ipv6 address then access an ipv6 with https traffic\n  5.Use a guest account to login ",
+      "id" : "042",
+      "title" : "External Guest Auth:Verify External Auth successful log",
+      "result" : "  No"
+   },
+   "018" : {
+      "steps" : "  On step1 and step2 the alert Error occurs ",
+      "initial" : "  1.Configure the two webserver with IPV4 version\n  2.Configure the two webserver with IPV6 version",
+      "id" : "018",
+      "title" : "GUI-External Guest Auth:Error occurs when setting same IP versions of the two web servers",
+      "result" : "  No"
+   },
+   "040" : {
+      "steps" : "  Http redirect to ipv6 Auth page with two web server on VPN",
+      "initial" : "  1.Create a LAN zone,then Enable zone Guest service and Enable External Guest Authentication on zone page\n  2.Click CONFIGURE button 3.Edited web server1 with an Ipv4 lhm server and web server2 with an Ipv6 lhm server on VPN zone\n  4.Connect a client on LAN zone with ipv4 and ipv6 address then access an ipv6 with http traffic",
+      "id" : "040",
+      "title" : "External Guest Auth:Http redirect to ipv6 Auth page with two web server on VPN",
+      "result" : "  No"
+   },
+   "034" : {
+      "steps" : "  Redirect to ipv6 AUTH page with two web server successful",
+      "initial" : "  1.Enable DMZ zone Guest service and Enable External Guest Authentication on zone page\n  2.Click CONFIGURE button 3.Edited web server1 with an Ipv4 lhm server and web server2 with an Ipv6 lhm server\n  4.Connect a client on DMZ zone with ipv4 and ipv6 address then access an ipv6 with https traffic",
+      "id" : "034",
+      "title" : "External Guest Auth:DMZ Zone:Http/web server1-ipv4/web server2-ipv6/Redirect to ipv6 AUTH page with two web server successful",
+      "result" : "  No"
+   },
+   "043" : {
+      "steps" : "  Verify Auto-Session Logout success",
+      "initial" : "  1.Create a LAN zone,then Enable zone Guest service and Enable External Guest Authentication on zone page\n  2.Click CONFIGURE button 3.Edited web server1 with an Ipv6 lhm server and web server2 with empty\n  4.Configure logout CGI on Advanced page 5.Connect a client on LAN zone with ipv4 and ipv6 address then access an ipv6 with https traffic\n  6.Use a guest account to login 7.Logout this user",
+      "id" : "043",
+      "title" : "External Guest Auth:Verify Auto-Session Logout success when configure ipv6 webserver Logout CGI on Advanced page",
+      "result" : "  No"
+   }
+}

@@ -1,0 +1,24 @@
+{
+    "ssl_vpn": {
+        "server": {
+            "access": [
+                {
+                    "enable": false,
+                    "zone": "LAN"
+                },
+                {
+                    "enable": false,
+                    "zone": "WAN"
+                },
+                {
+                    "enable": false,
+                    "zone": "DMZ"
+                },
+                {
+                    "enable": false,
+                    "zone": "WLAN"
+                }
+            ]
+        }
+    }
+}

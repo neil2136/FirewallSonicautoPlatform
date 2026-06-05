@@ -1,0 +1,115 @@
+{
+    "UI_TC01": {
+        "steps": "1.Log in FW\n2.Add some FQDN objects\n3.Go to NAT Policies page, click \"Add\" button, check the drop-down list of Original Source in IPv4/v6 version",
+        "initial": "",
+        "id": "UI_TC01",
+        "title": "[GUI]Check FQDN objects show in drop-down list of Original Source in IPv4/IPv6",
+        "result": "FQDN objects show in the drop-down list"
+    },
+    "UI_TC02": {
+        "steps": "1.Log in FW\n2.Add some FQDN objects\n3.Go to NAT Policies page, click \"Add\" button, check the drop-down list of Original Destination in IPv4/v6 version",
+        "initial": "",
+        "id": "UI_TC02",
+        "title": "[GUI]Check FQDN objects show in drop-down list of Original Destination in IPv4/IPv6 version",
+        "result": "FQDN objects show in the drop-down list"
+    },
+    "UI_TC03": {
+        "steps": "1.Log in FW\n2.Add some FQDN objects\n3.Go to NAT Policies page, click \"Add\" button, check the drop-down list of Translated Source in IPv4/v6 version",
+        "initial": "",
+        "id": "UI_TC03",
+        "title": "[GUI]Check FQDN objects not show in drop-down list of Translated Source in IPv4/IPv6 version",
+        "result": "FQDN objects not show in the drop-down list"
+    },
+    "UI_TC04": {
+        "steps": "1.Log in FW\n2.Add some FQDN objects\n3.Go to NAT Policies page, click \"Add\" button, check the drop-down list of Translated Destination in IPv4/v6 version",
+        "initial": "",
+        "id": "UI_TC04",
+        "title": " [GUI]Check FQDN objects not show in drop-down list of Translated Destination in IPv4/IPv6 version",
+        "result": "FQDN objects not show in the drop-down list"
+    },
+    "UI_TC05": {
+        "steps": "1.Log in FW\n2.Go to NAT Policies page, click \"Add\" button, select \"Create new address object\" for Original Source in IPv4/IPv6 version, check the drop-down list of Type option",
+        "initial": "",
+        "id": "UI_TC05",
+        "title": " [GUI]Check FQDN type show in the drop-down list  when create new an address object for Original Source in IPv4/IPv6",
+        "result": "FQDN type shows in the drop-down list"
+    },
+    "UI_TC06": {
+        "steps": "1.Log in FW\n2.Go to NAT Policies page, click \"Add\" button, select \"Create new address object\" for Original Destination in IPv4/IPv6 version, check the drop-down list of Type option",
+        "initial": "",
+        "id": "UI_TC06",
+        "title": " [GUI]Check FQDN type show in the drop-down list  when create new an address object for Original Destination in IPv4/IPv6 version",
+        "result": "FQDN type shows in the drop-down list"
+    },
+    "UI_TC07": {
+        "steps": "1.Log in FW\n2.Go to NAT Policies page, click \"Add\" button, select \"Create new address object\" for Translate Source in IPv4/IPv6 version, check the drop-down list of Type option",
+        "initial": "",
+        "id": "UI_TC07",
+        "title": "[GUI]Check FQDN type not show in the drop-down list  when create new an address object for Translated Source in IPv4/IPv6 version",
+        "result": "FQDN type not shows in the drop-down list"
+    },
+    "UI_TC08": {
+        "steps": "1.Log in FW\n2.Go to NAT Policies page, click \"Add\" button, select \"Create new address object\" for Translate Destination in IPv4/IPv6 version, check the drop-down list of Type option",
+        "initial": "",
+        "id": "UI_TC08",
+        "title": "[GUI]Check FQDN type not show in the drop-down list  when create new an address object for Translated Destination in IPv4/IPv6 version",
+        "result": "FQDN type not shows in the drop-down list"
+    },
+    "UI_TC09": {
+        "steps": "1.Log in FW, add a AO range named \"X0 range\"\n2.Go to NAT Policies page, add a NAT policy as follows: FQDN object Original X1 IP X0 range Any Original X1 Any, check Advanced page",
+        "initial": "",
+        "id": "UI_TC09",
+        "title": "[GUI]Check the Advanced Settings for the NAT policy can't be configured when FQDN in used",
+        "result": "The Advanced Settings can't be configured"
+    },
+    "UI_TC10": {
+        "steps": "1.Log in FW, add a AO range named \"X0 range\"\n2.Go to NAT Policies page, add a NAT policy as follows:\n   Any Original X1 IP X0 range Any Original X1 Any\n3.Go to Advanced page, select Round Robin mode, click ADD\n4.Re-edit this NAT policy, change Original Source from Any to FQDN object, then check Advanced page",
+        "initial": "",
+        "id": "UI_TC10",
+        "title": "[GUI]Check FQDN is not supported when NAT policy has Advanced configuration",
+        "result": "The Advanced Settings became the default mode"
+    },
+    "UI_TC11": {
+        "steps": "1.Log in new GUI of FW\n2.Add some FQDN objects\n3.Go to NAT Policies page, click \"Add\" button, check the drop-down list of Original Source in IPv4/v6 version\n3.Repeat step3 in Original Destination",
+        "initial": "",
+        "id": "UI_TC11",
+        "title": "[GUI]Check FQDN AO for NAT in new GUI",
+        "result": "FQDN objects show in the drop-down list"
+    },
+    "Negtive_TC12": {
+        "steps": "1.Log in FW, add a AO group name \"NATgroup\" include FQDN objects and normal AOs\n2.Go to NAT Policies page, add a NAT policy as follows:\n   Original Any NATgroup Original Any Original X1 Any\n3.Go to Address Groups page, click the delete icon of the added NAT policy",
+        "initial": "",
+        "id": "Negtive_TC12",
+        "title": "[Negtive]Try to delete an AO Group contains FQDN in use by NAT policies",
+        "result": "Error message \"Error: Object is in use by a NAT Policy\" shows"
+    },
+    "TSR_TC34": {
+        "steps": "1.Add a domain aaa.com bind to WAN PC IP(visited server) on DNS server(10.8.143.190)\n2.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP, change dns server to 10.8.143.190 in Network->DNS page\n3.Go to NAT Policies page, add three NAT Policies in FW:\n   test1 Any X1 IP aaa.com Original Any Original Any X1\n   test2 Any X1AO aaa.com Original Any Original Any X1\n   test3 Any Original aaa.com LAN PC IP Any Original X1 Any\n4.Download TSR, check info about NAT policies",
+        "initial": "",
+        "id": "TSR_TC34",
+        "title": "[Func]Verify the FQDN based NAT policies information in TSR",
+        "result": "All info about NAT policies show correct in TSR"
+    },
+    "CLI_TC37": {
+        "steps": "1.Add a domain aaa.com bind to WAN PC IP(visited server) on DNS server(10.8.143.190)\n2.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP, change dns server to 10.8.143.190 in Network->DNS page\n3.In CLI, enter the commands as follows, then check NAT Policies page:\n   config(18B16989BF80)# nat-policy inbound any outbound X1 source any translated-source X1AO destination aaa.com translated-destination original",
+        "initial": "",
+        "id": "CLI_TC37",
+        "title": " [CLI]Verify FQDN can be added for Original Source/Destination in CLI",
+        "result": "in step3, the nat policy can be added successfully"
+    },
+    "CLI_TC39": {
+        "steps": "1.Add a domain aaa.com bind to WAN PC IP(visited server) on DNS server(10.8.143.190)\n2.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP, change dns server to 10.8.143.190 in Network->DNS page\n3.Go to NAT Policies page, add a NAT Policies in FW:\n   test1 Any X1 IP aaa.com Original Any Original Any X1\n4.In CLI, enter command \"no nat-policy name test1\", check NAT Policies page",
+        "initial": "",
+        "id": "CLI_TC39",
+        "title": "[CLI]Verify FQDN can be deleted for Original",
+        "result": "in step4, test1 can be deleted"
+    },
+    "Log_TC40": {
+        "steps": "1.Log in FW\n2.Add NAT policies with FQDN objects, check log monitor\n3.Edit NAT policies with FQDN objects, check log monitor\n4.Delete NAT policies with FQDN objects, check log monitor\nNotice: enable NAT log settings",
+        "initial": "",
+        "id": "Log_TC40",
+        "title": "[Log]Verify the log message about FQDN AO for NAT policy",
+        "result": "log messages about NAT policies show"
+    }
+
+}

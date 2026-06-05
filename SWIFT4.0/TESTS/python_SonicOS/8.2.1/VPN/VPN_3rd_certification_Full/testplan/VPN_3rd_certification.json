@@ -1,0 +1,258 @@
+{
+   "32" : {
+      "steps" : "  LAN Subnet----FW(X1) --(NAT Device)-- (X1)FW2---LAN Subnet\n  | |\n  OCSP_____________Server",
+      "initial" : "  This case is designed to test tunnel negotiation for 3rd party in Main/Aggressive Mode vpn policy when OCSP is enabled and local FW is behind NAT",
+      "id" : "32",
+      "title" : "3rd party in Aggressive/Main Mode with OCSP enabled, both FWs are behind NAT",
+      "result" : "  1) Import OCSP Root CA and OCSP responder CA, then import the User CA which is signed by OCSP server into both local and remote FW\n  2) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate, and properly configure Peer ID, properly configure network, then go to advanced tab, enable OCSP and fill in ocsp URL\n  3) Create matching vpn policy on remote side\n  4) make vpn traffic or enable keepAlive to start tunnel negotiation\n  5) repeat step 1-4, in step 2, this time create an Aggressive Mode VPN policy"
+   },
+   "11" : {
+      "steps" : "  TBD",
+      "initial" : "  verify importing the Max number of Local Certificates",
+      "id" : "11",
+      "title" : "Import Max number of Local Certificates",
+      "result" : "  1- Import 4 Local Certificates 2- try to add one more and you should see the error message."
+   },
+   "21" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to test 3rd party in Main Mode with Enable Perfect Forward Secrecy.",
+      "id" : "21",
+      "title" : "VPN with 3rd party Cert in Main Mode with Enable Perfect Forward Secrecy",
+      "result" : "  1) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) From the Proposals Tab choose the Enable Perfect Forward Secrecy button.\n  3) Create matching vpn policy on remote side.\n  4) Enable keepAlive on both side."
+   },
+   "7" : {
+      "steps" : "  TBD",
+      "initial" : "  This test case is designed to verify that the imported Certificate can be deleted. ",
+      "id" : "7",
+      "title" : "deletedCertificate",
+      "result" : "  From the System Tab --> From the Certificates Tab --> Click on the Import Button--> Choose Import Local Certificate button --> Choose Local Certificate and then press Import --> click the check box for that certificate and click the delete button.\n  From the System Tab --> From the Certificates Tab --> Click on the Import Button--> Choose Import CA Certificate button --> Choose CA Certificate and then press Import --> click the check box for that CA certificate and click the delete button."
+   },
+   "26" : {
+      "steps" : "  TBD",
+      "initial" : "  This test case is designed to verified that Global VPN client is working with the 3rd Party Cert.",
+      "id" : "26",
+      "title" : "VPN with 3rd Party Cert in Global VPN",
+      "result" : "  1- From the VPN Tab --> click on the setting and then click on the configuration button for the WAN Group VPN --> configure the vpn with the correct certificate 2- on the Global VPN client -- > on the view Tab choose the certificate --> choose the local certificate and then press import."
+   },
+   "2" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to verify if the CA Certificate is importable in the UTM.",
+      "id" : "2",
+      "title" : "Import CA Certificates",
+      "result" : "  From the System Tab --> From the Certificates Tab --> Click on the Import Button--> Choose Import a CA certificate button --> Choose CA Certificate and then press Import."
+   },
+   "17" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to test 3rd party in Main Mode vpn policy with Phase I Life Time > Phase II Life Time.",
+      "id" : "17",
+      "title" : "VPN with 3rd party cert in Main Mode with Phase I Life Time > Phase II Life Time",
+      "result" : "  1) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) From the Proposals Tab choose the Life Time 28800 in Phase I and 21600 in Phase ii.\n  3) Create matching vpn policy on remote side.\n  4) Enable keepAlive on both side."
+   },
+   "22" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to test 3rd party in Aggresssive Mode with Enable Perfect Forward Secrecy.",
+      "id" : "22",
+      "title" : "VPN with 3rd party Cert in Aggresssive Mode with Enable Perfect Forward Secrecy",
+      "result" : "  1) Create a Aggresssive Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) From the Proposals Tab choose the Enable Perfect Forward Secrecy button.\n  3) Create matching vpn policy on remote side.\n  4) Enable keepAlive on both side."
+   },
+   "1" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to verify if the Local Certificate is importable in the UTM.",
+      "id" : "1",
+      "title" : "Import Local Certificate",
+      "result" : "  From the System Tab --> From the Certificates Tab --> Click on the Import Button--> Choose Import Local Certificate button --> Choose Local Certificate and then press Import."
+   },
+   "18" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to test 3rd party in Aggressive Mode vpn policy with Phase I Life Time > Phase II Life Time.",
+      "id" : "18",
+      "title" : "VPN with 3rd party cert in Aggressive Mode with Phase I Life Time > Phase II Life Time",
+      "result" : "  1) Create a Aggressive Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) From the Proposals Tab choose the Life Time 28800 in Phase I and 21600 in Phase ii.\n  3) Create matching vpn policy on remote side.\n  4) Enable keepAlive on both side."
+   },
+   "30" : {
+      "steps" : "  LAN Subnet----FW(X1) --(NAT Device)-- (X1)FW2---LAN Subnet\n  | |\n  OCSP_____________Server",
+      "initial" : "  This case is designed to test tunnel negotiation for 3rd party in Main/Aggressive Mode vpn policy when OCSP is enabled and local FW is behind NAT",
+      "id" : "30",
+      "title" : "3rd party in Aggressive/Main Mode with OCSP enabled, local FW is behind NAT",
+      "result" : "  1) Import OCSP Root CA and OCSP responder CA, then import the User CA which is signed by OCSP server into both local and remote FW\n  2) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate, and properly configure Peer ID, properly configure network, then go to advanced tab, enable OCSP and fill in ocsp URL\n  3) Create matching vpn policy on remote side\n  4) make vpn traffic or enable keepAlive to start tunnel negotiation\n  5) repeat step 1-4, in step 2, this time create an Aggressive Mode VPN policy"
+   },
+   "23" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to test 3rd party in Main Mode.",
+      "id" : "23",
+      "title" : "VPN with 3rd Party Cert with VPN in Main Mode Termicated Option",
+      "result" : "  1) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) Create matching vpn policy on remote side.\n  3) Enable keepAlive on both side."
+   },
+   "13" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to verify the Local Certificate Requests with different Key Sizes.",
+      "id" : "13",
+      "title" : "Local Certificate Requests with different Key Sizes",
+      "result" : "  From the System Tab --> From the Certificates Tab --> Click on the New Signing Request --> From the opening Tab, enter a name and choose the country --> From the Subject Key Size/Curve choose different sizes. --> Click on the Generate button. "
+   },
+   "16" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to test 3rd party in Aggressive Mode with Same Life Time in Phase I and Phase ii",
+      "id" : "16",
+      "title" : "VPN with 3rd Party cert in Aggressive Mode with Same Life Time in Phase I and Phase ii",
+      "result" : "  1) Create a Aggressive Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) From the Proposals Tab choose the Same Life Time in Phase I and Phase ii.\n  3) Create matching vpn policy on remote side\n  4) Enable keepAlive on both side"
+   },
+   "29" : {
+      "steps" : "  LAN Subnet----FW(X1) ---- (X1)FW2---LAN Subnet\n  | |\n  OCSP_Server",
+      "initial" : "  This case is designed to test 3rd party in Main Mode vpn policy with OCSP enabled, tunnel negotiation is trigged by KeepAlive or traffic, tunnel should be successful.",
+      "id" : "29",
+      "title" : "3rd party in Aggressive Mode with OCSP enabled, no NAT between",
+      "result" : "  1) Import OCSP Root CA and OCSP responder CA, then import the User CA which is signed by OCSP server into both local and remote FW\n  2) Create a Aggressive Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate, and properly configure Peer ID, properly configure network, then go to advanced tab, enable OCSP and fill in ocsp URL\n  3) Create matching vpn policy on remote side\n  4) Enable keepAlive on both side\n  5) check tunnel negotiation and vpn traffic\n  6) repeat step 1-5, in step5, test the following case: a. keep Alive is enabled only on one side b: KeepAlive is not enabled, tunnel negotiation is trigerred by vpn traffic."
+   },
+   "6" : {
+      "steps" : "  TBD",
+      "initial" : "  This test case is designed to test if the certificate can be exported. ",
+      "id" : "6",
+      "title" : "Export CA Certificate",
+      "result" : "  1) From the System Tab --> Certification Tab 2) Import CA Certificate.\n  3) From the right side click on the Export Certificate button and try to export."
+   },
+   "27" : {
+      "steps" : "  TBD",
+      "initial" : "  This test case verify the Multiple VPN Tunnels with IKE with 3rd Party Certs.",
+      "id" : "27",
+      "title" : "Multiple VPN Tunnels with IKE with 3rd Party Certs",
+      "result" : "  1-1 \"Create the first VPN tunnel\"\n  1) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) Create matching vpn policy on remote side.\n  3) Enable keepAlive on both side.\n  1-2 \"Create the second VPN tunnel\" 1) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) Create matching vpn policy on remote side.\n  3) Enable keepAlive on both side."
+   },
+   "25" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "25",
+      "title" : "VPN with 3rd Party Cert in DHCP Relay",
+      "result" : "  TBD"
+   },
+   "28" : {
+      "steps" : "  LAN Subnet----FW(X1) ---- (X1)FW2---LAN Subnet\n  | |\n  OCSP_Server ",
+      "initial" : "  This case is designed to test 3rd party in Main Mode vpn policy with OCSP enabled, tunnel negotiation is trigged by KeepAlive, tunnel should be successful.",
+      "id" : "28",
+      "title" : "3rd party in Main Mode with OCSP enabled, no NAT between",
+      "result" : "  1) Import OCSP Root CA and OCSP responder CA, then import the User CA which is signed by OCSP server into both local and remote FW\n  2) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate, and properly configure Peer ID, properly configure network, then go to advanced tab, enable OCSP and fill in ocsp URL\n  3) Create matching vpn policy on remote side\n  4) Enable keepAlive on both side\n  5) check tunnel negotiation and vpn traffic\n  6) repeat step 1-5, in step5, test the following case: a. keep Alive is enabled only on one side b: KeepAlive is not enabled, tunnel negotiation is trigerred by vpn traffic."
+   },
+   "3" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "3",
+      "title" : "Import Certificate Tree",
+      "result" : "  TBD"
+   },
+   "9" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to verify if the expiry Local Certificate can't be imported in the UTM.",
+      "id" : "9",
+      "title" : "Expiry Local Certificate",
+      "result" : "  From the System Tab --> From the Certificates Tab --> Click on the Import Button--> Choose Import Local Certificate button --> Choose expiry Local Certificate and then press Import."
+   },
+   "12" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "12",
+      "title" : "Import Max numbers of CA Certificates",
+      "result" : "  TBD"
+   },
+   "14" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "14",
+      "title" : "Local Certificate Requests with Different Subject Alternative",
+      "result" : "  TBD"
+   },
+   "15" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to test 3rd party in Main Mode with Same Life Time in Phase I and Phase ii",
+      "id" : "15",
+      "title" : "VPN with 3rd party cert in Main Mode with Same Life Time in Phase I and Phase II",
+      "result" : "  1) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) From the Proposals Tab choose the Same Life Time in Phase I and Phase ii.\n  3) Create matching vpn policy on remote side.\n  4) Enable keepAlive on both side."
+   },
+   "20" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to test 3rd party in Aggressive Mode vpn policy with Phase I Life Time < Phase II Life Time.",
+      "id" : "20",
+      "title" : "VPN with 3rd party cert in Aggressive Mode with Phase I Life Time < Phase II Life Time",
+      "result" : "  1) Create a Aggressive Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) From the Proposals Tab choose the Life Time 21600 in Phase I and 28800 in Phase ii.\n  3) Create matching vpn policy on remote side.\n  4) Enable keepAlive on both side."
+   },
+   "8" : {
+      "steps" : "  TBD",
+      "initial" : "  This test case is to verify that the Removed Certificate can be restored. ",
+      "id" : "8",
+      "title" : "Restore Remove Certificate",
+      "result" : "  1- From the System Tab --> From the Certificates Tab --> Click on the Import Button--> Choose Import Local Certificate button --> Choose Local Certificate and then press Import --> click the check box for that certificate and click the delete button.\n  2- From the System Tab --> From the Certificates Tab --> Click on the Import Button--> Import the deleted Certificate again."
+   },
+   "4" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to verify that the Expired Certificate can't be imported.",
+      "id" : "4",
+      "title" : "Import Expired Certificate",
+      "result" : "  From the System Tab --> From the Certificates Tab --> Click on the Import Button--> Choose Import a certificate button --> Choose an expired Certificate and then press Import."
+   },
+   "24" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to test 3rd party in Aggressive Mode.",
+      "id" : "24",
+      "title" : "VPN with 3rd Party Cert with VPN in Aggressive Mode with VPN Termincated Option",
+      "result" : "  1) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) Create matching vpn policy on remote side.\n  3) Enable keepAlive on both side."
+   },
+   "10" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to verify that the Expired CA Certificate can't be imported.",
+      "id" : "10",
+      "title" : "Expiry CA Certificate",
+      "result" : "  From the System Tab --> From the Certificates Tab --> Click on the Import Button--> Choose Import a CA certificate button --> Choose an expired CA Certificate and then press Import."
+   },
+   "19" : {
+      "steps" : "  TBD",
+      "initial" : "  This case is designed to test 3rd party in Main Mode vpn policy with Phase I Life Time < Phase II Life Time.",
+      "id" : "19",
+      "title" : "VPN with 3rd party cert in Main Mode with Phase I Life Time < Phase II Life Time",
+      "result" : "  1) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate.\n  2) From the Proposals Tab choose the Life Time 21600 in Phase I and 28800 in Phase ii.\n  3) Create matching vpn policy on remote side.\n  4) Enable keepAlive on both side."
+   },
+   "31" : {
+      "steps" : "  LAN Subnet----FW(X1) --(NAT Device)-- (X1)FW2---LAN Subnet\n  | |\n  OCSP_____________Server",
+      "initial" : "  This case is designed to test tunnel negotiation for 3rd party in Main/Aggressive Mode vpn policy when OCSP is enabled and remote FW is behind NAT",
+      "id" : "31",
+      "title" : "3rd party in Aggressive/Main Mode with OCSP enabled, remote FW is behind NAT",
+      "result" : "  1) Import OCSP Root CA and OCSP responder CA, then import the User CA which is signed by OCSP server into both local and remote FW\n  2) Create a Main Mode S2S vpn policy, select 3rd as authentication method, select local Gateway certificate, and properly configure Peer ID, properly configure network, then go to advanced tab, enable OCSP and fill in ocsp URL\n  3) Create matching vpn policy on remote side\n  4) make vpn traffic or enable keepAlive to start tunnel negotiation\n  5) repeat step 1-4, in step 2, this time create an Aggressive Mode VPN policy"
+   },
+   "5" : {
+      "steps" : "  TBD",
+      "initial" : "  This test case is designed to test if the certificate can be exported. ",
+      "id" : "5",
+      "title" : "Export Local Certificate",
+      "result" : "  1) From the System Tab --> Certification Tab 2) Import Local Certificate.\n  3) From the right side click on the Export Certificate button and try to export."
+   },
+   "33" : {
+      "steps" : " From the System Tab --> From the Certificates Tab --> Click on the Import Button--> Choose Import a certificate(the size of certificate is more than 1500 bytes) button",
+      "initial" : " ",
+      "id" : "33",
+      "title" : " Import level 2 certificate",
+      "result" : " Level 2 certificate can be imported."
+   }
+,
+   "34" : {
+      "steps" : " 1) From the System Tab --> Certification Tab \n\n2)  Export CA Certificate(the size of certificate is more than 1500 bytes).\n\n3) From the right side click on the Export Certificate button and try to export.",
+      "initial" : "  ",
+      "id" : "34",
+      "title" : "Export level 2 Local Certificate",
+      "result" : "The Certificate should be Exported."
+   }
+,
+   "35" : {
+      "steps" : " 1) For local side, create a  IKEv2/Main/Aggressive Mode S2S vpn policy, select 3rd as authentication method, select imported level 2 3rd certificate(the size of certificate is more than 1500 bytes).\n\n2) From the Proposals Tab choose the Same Life Time in Phase I and Phase ii.\n\n3)  Create matching vpn policy on remote side.\n\n4)  Enable keepAlive on both side.\n\n5)  Capture the packets when vpn negotiate the tunnel\n\n6) Verify VPN traffic between VPN local and remote network\n\n7) Repeat above test when two firewall's VPN bound to interface IP are in different subnet.",
+      "initial" : " ",
+      "id" : "35",
+      "title" : "Use level 2 3rd certificate with IKEv2/Main/Aggressive Mode for site-to-site VPN tunnel",
+      "result" : " Tunnel should be successful and there should be correct log, vpn traffic should work fine.\n\nFragmented packets can be captured when it negotiate the vpn tunnel.\n\nVPN traffic is successful"
+   }
+,
+   "36" : {
+      "steps" : "1) For local side, create a  IKEv2/Main/Aggressive Mode Tunnel vpn policy, select 3rd as authentication method, select imported level 2 3rd certificate(the size of certificate is more than 1500 bytes).\n\n2) From the Proposals Tab choose the Same Life Time in Phase I and Phase ii.\n\n3)  Create matching vpn policy on remote side.\n\n4)  Do not enable keepAlive on both side, send ping traffic from local or remote site through vpn tunnel.\n\n5) Add PBR rules in both firwalls: destination to remote VPN network via this VPN TI. \n\n6) Verify VPN traffic between VPN local and remote network\n\n7) Repeat above test when two firewall's VPN bound to interface IP are in different subnet.",
+      "initial" : " ",
+      "id" : "36",
+      "title" : "Use level 2 3rd certificate with IKEv2/Main/Aggressive Mode for Tunnel VPN policy",
+      "result" : "Tunnel should be successful and there should be correct log, vpn traffic should work fine.\n\nFragmented packets can be captured when it negotiate the vpn tunnel.\n\nVPN traffic is successful."
+   }
+
+}

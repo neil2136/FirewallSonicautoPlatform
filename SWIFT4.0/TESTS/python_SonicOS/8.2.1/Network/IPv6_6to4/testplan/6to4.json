@@ -1,0 +1,289 @@
+{
+   "33" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Cisco Router F0/1 IPv4 address\n  2.\tConfigure 2003::1/64 as Sonicwall1 X0 IPv6 address, 2008::1/64 as Cisco Router F0/0 IPv6 address\n  3.\tConfigure 2003::2/64 as PC1 IPv6 address, 2008::2/64 as PC2 IPv6 address\n  4.\tAdd IPv6/GRE Manual Tunnel Interface on Sonicwall1 and Cisco Router\n  5.\tSend ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware.\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------F0/1 Cisco F0/0--------------PC2\n  2003::/64 10.103.13.35 10.103.6.35 2008::/64",
+      "id" : "33",
+      "title" : "Verify IPv6/GRE Manual Tunnel Interface with Cisco Router",
+      "result" : "  The ICMPv6 packet can be tunneled through the IPv6/GRE Manual Tunnel Interface."
+   },
+   "32" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Cisco Router F0/1 IPv4 address\n  2.\tConfigure 2002:a67:d23:1::1/64 as Sonicwall1 X0 IPv6 address, 2002:a67:623:1::1/64 as Cisco Router F0/0 IPv6 address\n  3.\tConfigure 2002:a67:d23:1::2/64 as PC1 IPv6 address, 2002: a67:623:1::2/64 as PC2 IPv6 address\n  4.\tAdd 6to4 Auto Tunnel Interface on Sonicwall1 and Cisco Router\n  5.\tSend ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware.\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------F0/1 Cisco F0/0--------------PC2\n  2002:a67:d23:1::/64 10.103.13.35 10.103.6.35 2002:a67:623:1::/64",
+      "id" : "32",
+      "title" : "Verify 6to4 Auto Tunnel Interface with Cisco Router",
+      "result" : "  The ICMPv6 packet can be tunneled through the 6to4 Auto Tunnel Interface."
+   },
+   "21" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd a wan zone 6to4 Tunnel Interface.\n  4.\tChange the 6to4 Tunnel Interface from wan zone to unassigned",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "21",
+      "title" : "Verify if the 6to4 tunnel interface is set as unassigned then the related routes and access rules should be removed",
+      "result" : "  The related routes and access rules are removed."
+   },
+   "7" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tClick Add Interface button\n  4.\tAdd IPv6 Manual Tunnel Interface/GRE Manual Tunnel Interface/6to4 Auto Tunnel Interface",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "7",
+      "title" : "GUI: Verify the added 6to4 Tunnel interfaces on Network->Interfaces page",
+      "result" : "  The Network->Interface page displays the Tunnel Interface name, Zone type, Tunnel Type information of the added Tunnel Interface"
+   },
+   "26" : {
+      "steps" : "  1. Configure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address 2. Configure 2003::1/64 as Sonicwall1 X0 IPv6 address, 2008::1/64 as Sonicwall2 X0 IPv6 address 3. Configure 2003::2/64 as PC1 IPv6 address, 2008::2/64 as PC2 IPv6 address 4. Add lan/dmz/wlan/wan zone IPv6 Manual Tunnel Interface on Sonicwall1 (Zone: LAN, Tunnel Type: IPv6 Manual Tunnel Interface, Tunnel Interface IPv6 Address: 10::1, Remote IPv4 Address: WAN_Host_10.103.6.35, Remote IPv6 Network: VPN_Network_2008::/64) 4. Add different zone IPv6 Manual Tunnel Interface on Sonicwall2(Zone: DMZ, Tunnel Type: IPv6 Manual Tunnel Interface, Tunnel Interface IPv6 Address: 10::2, Remote IPv4 Address: WAN_Host_10.103.13.35, Remote IPv6 Network: VPN_Network_2003::/64) 5. Add the access rule(ipv6) dmz->lan service is ICMPV6, source ip is 2003::1/64, dst is any on Sonicwall2 6. Send ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2 2003::/64 10.103.13.35 10.103.6.35 2008::/64",
+      "id" : "26",
+      "title" : "Verify IPv6 Manual Tunnel Interface in different zone, traffic can pass through",
+      "result" : "  The ICMPv6 packet can be tunneled through the lan/dmz/wlan/wan zone IPv6 Manual Tunnel Interface."
+   },
+   "2" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tClick Add Interface button\n  4.\tClick the Zone drop down list",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "2",
+      "title" : "GUI: Check the Zone drop down list",
+      "result" : "  The Zone drop down list lists all the available Zones."
+   },
+   "17" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd two identical IPv6/GRE Manual Tunnel Interfaces",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "17",
+      "title" : "Verify it is not able to add two identical IPv6/GRE Manual Tunnel Interfaces",
+      "result" : "  System will prompt error message to prohibit add two identical IPv6/GRE Manual Tunnel Interfaces."
+   },
+   "1" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tClick Add Interface button",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "1",
+      "title" : "GUI: Click Add Interface pops up the add 6to4 tunnel interface window",
+      "result" : "  The add 6to4 tunnel interface window pops up"
+   },
+   "18" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd two IPv6/GRE Manual Tunnel Interfaces, the Remote IPv6 networks are overlapped",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "18",
+      "title" : "Verify the Remote IPv6 Networks can be overlapped for multiple IPv6/GRE Manual Tunnel Interfaces",
+      "result" : "  The Remote IPv6 Networks can be overlapped for multiple IPv6/GRE Manual Tunnel Interfaces."
+   },
+   "30" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.36.35 as Sonicwall X2 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address\n  2.\tConfigure 2002:a67:d23:1::1/64 as Sonicwall1 X0 IPv6 address, 2002:a67:2423:1::1/64 as Sonicwall1 X3 IPv6 address, 2002:a67:623:1::1/64 as Sonicwall2 X0 IPv6 address\n  3.\tConfigure 2002:a67:d23:1::2/64 as PC1 IPv6 address, 2002:a67:2423:1::2/64 as PC3 IPv6 address, 2002: a67:623:1::2/64 as PC2 IPv6 address\n  4.\tAdd wan zone 6to4 Auto Tunnel Interface on Sonicwall1 and Sonicwall2\n  5.\tSend ICMPv6 packet from PC1 to PC2\n  6.\tSend ICMPv6 packet from PC3 to PC2",
+      "initial" : "  Box with IPv6 firmware 10.103.36.35 X2--------------------------+\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2\n  2002:a67:d23:1::/64 X3 10.103.13.35 10.103.6.35 2002:a67:623:1::/64 | | PC3 2002:a67:2423:1::/64",
+      "id" : "30",
+      "title" : "Verify GRE Manual Tunnel Interface in multi-wan situation",
+      "result" : "  The ICMPv6 packet can pass through the 6to4 Auto Tunnel Interface between PC1, PC2 and PC3."
+   },
+   "16" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd multiple 6to4 Auto Tunnel Interfaces",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "16",
+      "title" : "Verify only one 6to4 auto tunnel interface can be added",
+      "result" : "  Only one 6to4 auto tunnel interface can be added."
+   },
+   "27" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address\n  2.\tConfigure 2003::1/64 as Sonicwall1 X0 IPv6 address, 2008::1/64 as Sonicwall2 X0 IPv6 address\n  3.\tConfigure 2003::2/64 as PC1 IPv6 address, 2008::2/64 as PC2 IPv6 address\n  4.\tAdd lan/dmz/wlan/wan zone GRE Manual Tunnel Interface on Sonicwall1 and Sonicwall2\n  5.\tSend ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2\n  2003::/64 10.103.13.35 10.103.6.35 2008::/64",
+      "id" : "27",
+      "title" : "Verify GRE Manual Tunnel Interface in different zone, traffic can pass through",
+      "result" : "  The ICMPv6 packet can be tunneled through the lan/dmz/wlan/wan zone GRE Manual Tunnel Interface."
+   },
+   "25" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address\n  2.\tConfigure 2002:a67:d23:1::1/64 as Sonicwall1 X0 IPv6 address, 2002:a67:623:1::1/64 as Sonicwall2 X0 IPv6 address\n  3.\tConfigure 2002:a67:d23:1::2/64 as PC1 IPv6 address, 2002: a67:623:1::2/64 as PC2 IPv6 address\n  4.\tAdd lan/dmz/wlan/wan zone 6to4 Auto Tunnel Interface on Sonicwall1 and Sonicwall2\n  5.\tSend ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2\n  2002:a67:d23:1::/64 10.103.13.35 10.103.6.35 2002:a67:623:1::/64",
+      "id" : "25",
+      "title" : "Verify 6to4 Auto Tunnel Interface in different zone, traffic can pass through",
+      "result" : "  The ICMPv6 packet can be tunneled through the lan/dmz/wlan/wan zone 6to4 Auto Tunnel Interface."
+   },
+   "28" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.36.35 as Sonicwall X2 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address\n  2.\tConfigure 2002:a67:d23:1::1/64 as Sonicwall1 X0 IPv6 address, 2002:a67:2423:1::1/64 as Sonicwall1 X3 IPv6 address, 2002:a67:623:1::1/64 as Sonicwall2 X0 IPv6 address\n  3.\tConfigure 2002:a67:d23:1::2/64 as PC1 IPv6 address, 2002:a67:2423:1::2/64 as PC3 IPv6 address, 2002: a67:623:1::2/64 as PC2 IPv6 address\n  4.\tAdd wan zone 6to4 Auto Tunnel Interface on Sonicwall1 and Sonicwall2\n  5.\tSend ICMPv6 packet from PC1 to PC2\n  6.\tSend ICMPv6 packet from PC3 to PC2",
+      "initial" : "  ox with IPv6 firmware 10.103.36.35 X2--------------------------+\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2\n  2002:a67:d23:1::/64 X3 10.103.13.35 10.103.6.35 2002:a67:623:1::/64 | | PC3 2002:a67:2423:1::/64",
+      "id" : "28",
+      "title" : "Verify 6to4 Auto Tunnel Interface in multi-wan situation",
+      "result" : "  The ICMPv6 packet can pass through the 6to4 Auto Tunnel Interface between PC1, PC2 and PC3."
+   },
+   "40" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd multiple 6to4 Tunnel Interfaces\n  4.\tConfigure an HA pair",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "40",
+      "title" : "HA support",
+      "result" : "  The 6to4 Tunnel Interface settings are synced to the idle firewall"
+   },
+   "14" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd multiple GRE Manual Tunnel Interfaces",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "14",
+      "title" : "Verify multiple GRE Manual Tunnel Interfaces can be added",
+      "result" : "  Multiple GRE Manual Tunnel Interfaces can be added."
+   },
+   "20" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd a wan zone 6to4 Tunnel Interface.\n  4.\tChange the 6to4 Tunnel Interface from wan zone to lan/dmz zone",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "20",
+      "title" : "Verify after change the 6to4 tunnel interface zone, the related access rule should be changed accordingly",
+      "result" : "  The access rule is changed accordingly."
+   },
+   "24" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address\n  2.\tConfigure 2003::1/64 as Sonicwall1 X0 IPv6 address, 2008::1/64 as Sonicwall2 X0 IPv6 address\n  3.\tConfigure 2003::2/64 as PC1 IPv6 address, 2008::2/64 as PC2 IPv6 address\n  4.\tAdd GRE Manual Tunnel Interface on Sonicwall1 and Sonicwall2\n  5.\tSend ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2\n  2003::/64 10.103.13.35 10.103.6.35 2008::/64",
+      "id" : "24",
+      "title" : "Verify the IPv6 packet can be tunneled through the GRE Manual Tunnel Interface",
+      "result" : "  The ICMPv6 packet can be tunneled through the GRE Manual Tunnel Interface."
+   },
+   "10" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tClick Add Interface button\n  4.\tAdd IPv6 Manual Tunnel Interface/GRE Manual Tunnel Interface/6to4 Auto Tunnel Interface\n  5.\tClick the configure button to modify the 6to4 Tunnel Interface from the Network->Interfaces page\n  6.\tChange the name, comment, remote IPv6 network, etc.",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "10",
+      "title" : "GUI: Verify 6to4 Tunnel interface can be modified",
+      "result" : "  The 6to4 Tunnel Interface settings can be modified."
+   },
+   "31" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address\n  2.\tConfigure 2002:a67:d23:1::1/64 as Sonicwall1 X0 IPv6 address, 2003::1/64 as Sonicwall2 X0 IPv6 address\n  3.\tConfigure 2002:a67:d23:1::2/64 as PC1 IPv6 address, 2003::2/64 as PC2 IPv6 address\n  4.\tAdd 6to4 Auto Tunnel Interface on Sonicwall1 and Sonicwall2\n  5.\tAdd an IPv6 static route on Sonicwall1\n  Source:Any Destination:Any Gateway:2002:a67:623:1::1 Interface:6to4 Auto\n  6.\tSend ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware.\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2\n  2002:a67:d23:1::/64 10.103.13.35 10.103.6.35 2003::/64",
+      "id" : "31",
+      "title" : "Verify 6to4 relay with 6to4 Auto Tunnel Interface",
+      "result" : "  The ICMPv6 packet is relayed to Sonicwall2."
+   },
+   "35" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address\n  2.\tConfigure 2003::1/64 as Sonicwall1 X0 IPv6 address, 2008::1/64 as Sonicwall2 X0 IPv6 address\n  3.\tConfigure 2003::2/64 as PC1 IPv6 address, 2008::2/64 as PC2 IPv6 address\n  4.\tAdd IPv6/GRE Manual Tunnel Interface on Sonicwall1 and Sonicwall2\n  5.\tAdd IPv6 IKEv2 VPN policy on Sonicwall1 and Sonicwall2, configure 2003::/64 and 2008::/64 as protected network.\n  6.\tSend ICMPv6 packet from PC1 to PC2\n  7.\tModify the route which uses the tunnel interface, select Allow VPN path to take precedence\n  8.\tSend ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2\n  2003::/64 10.103.13.35 10.103.6.35 2008::/64",
+      "id" : "35",
+      "title" : "Verify Allow VPN path to take precedence for identical Remote IPv6 Network.",
+      "result" : "  The ICMPv6 packets are tunneled through the IPv6/GRE Manual Tunnel Interface after step 6. The ICMPv6 packets are tunneled through the vpn tunnel after step 8."
+   },
+   "11" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd IPv6 Manual Tunnel Interface/GRE Manual Tunnel Interface",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "11",
+      "title" : "Verify only IPv4 host address object can be selected as Remote IPv4 Address for IPv6/GRE Manual Tunnel Interface",
+      "result" : "  Only IPv4 host address object can be selected as Remote IPv4 Address"
+   },
+   "22" : {
+      "steps" : "  1. Configure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address 2. Configure 2002:a67:d23:1::1/64 as Sonicwall1 X0 IPv6 address, 2002:a67:623:1::1/64 as Sonicwall2 X0 IPv6 address(10.103.13.35 is translated to a67:d23 and a67:623 is 10.103.6.35 is translated to a67:623) 3. Configure 2002:a67:d23:1::2/64 as PC1 IPv6 address, 2002: a67:623:1::2/64 as PC2 IPv6 address 4. Add 6to4 Auto Tunnel Interface on Sonicwall1(Zone: LAN,Tunnel Type: 6to4 Auto Tunnel Interface,Tunnel Interface IPv6 Address: 2002:a67:d23:2::1) 5. Add 6to4 Auto Tunnel Interface on Sonicwall2(Zone: LAN,Tunnel Type: 6to4 Auto Tunnel Interface,Tunnel Interface IPv6 Address: 2002:a67:623:2::1) 5. Add the access rule(ipv4) wan->wan service is 6auto4, source ip is remote wan IP, dst is any on Sonicwall2, make sure \u00a1\u00b1enable Management\u00a1\u00b0 is checked. 6. Send ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2 2002:a67:d23:1::/64 10.103.13.35 10.103.6.35 2002:a67:623:1::/64",
+      "id" : "22",
+      "title" : "Verify the IPv6 packet can be tunneled through the 6to4 Auto Tunnel Interface",
+      "result" : "  The ICMPv6 packet can be tunneled through the 6to4 Auto Tunnel Interface."
+   },
+   "13" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd IPv6 Manual Tunnel Interface/GRE Manual Tunnel Interface\n  4.\tSelect link-local network or multicast address(ff02::1,ff02::2) as Remote IPv6 Network\n  5.\tSelect valid IPv6 Network(2003::/64, 3ffe::/64) as Remote IPv6 Network",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "13",
+      "title" : "Verify only valid IPv6 networks can be set as Remote IPv6 Network for IPv6/GRE Manual Tunnel Interface",
+      "result" : "  The link-local network or multicast address cannot be set as Remote IPv6 Network."
+   },
+   "23" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address\n  2.\tConfigure 2003::1/64 as Sonicwall1 X0 IPv6 address, 2008::1/64 as Sonicwall2 X0 IPv6 address\n  3.\tConfigure 2003::2/64 as PC1 IPv6 address, 2008::2/64 as PC2 IPv6 address\n  4.\tAdd IPv6 Manual Tunnel Interface on Sonicwall1 and Sonicwall2\n  5.\tSend ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2\n  2003::/64 10.103.13.35 10.103.6.35 2008::/64",
+      "id" : "23",
+      "title" : "Verify the IPv6 packet can be tunneled through the IPv6 Manual Tunnel Interface",
+      "result" : "  The ICMPv6 packet can be tunneled through the IPv6 Manual Tunnel Interface."
+   },
+   "29" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.36.35 as Sonicwall X2 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address\n  2.\tConfigure 2002:a67:d23:1::1/64 as Sonicwall1 X0 IPv6 address, 2002:a67:2423:1::1/64 as Sonicwall1 X3 IPv6 address, 2002:a67:623:1::1/64 as Sonicwall2 X0 IPv6 address\n  3.\tConfigure 2002:a67:d23:1::2/64 as PC1 IPv6 address, 2002:a67:2423:1::2/64 as PC3 IPv6 address, 2002: a67:623:1::2/64 as PC2 IPv6 address\n  4.\tAdd wan zone 6to4 Auto Tunnel Interface on Sonicwall1 and Sonicwall2\n  5.\tSend ICMPv6 packet from PC1 to PC2\n  6.\tSend ICMPv6 packet from PC3 to PC2",
+      "initial" : "  Box with IPv6 firmware 10.103.36.35 X2--------------------------+\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2\n  2002:a67:d23:1::/64 X3 10.103.13.35 10.103.6.35 2002:a67:623:1::/64 | | PC3 2002:a67:2423:1::/64",
+      "id" : "29",
+      "title" : "Verify IPv6 Manual Tunnel Interface in multi-wan situation",
+      "result" : "  The ICMPv6 packet can pass through the 6to4 Auto Tunnel Interface between PC1, PC2 and PC3."
+   },
+   "6" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tClick Add Interface button\n  4.\tType in some comments for the tunnel interface",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "6",
+      "title" : "GUI: Check Comment",
+      "result" : "  The comments are saved."
+   },
+   "39" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd multiple 6to4 Tunnel Interfaces\n  4.\tExport the pref file, delete the 6to4 tunnel interfaces then import the pref file",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "39",
+      "title" : "Pref file export and import",
+      "result" : "  The 6to4 tunnel interfaces are exported to the pref file, and after import the pref file, the 6to4 tunnel interfaces are intact."
+   },
+   "3" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tClick Add Interface button\n  4.\tCheck the Interface Type",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "3",
+      "title" : "GUI: Check the Interface Type",
+      "result" : "  The Interface Type is Tunnel Interface and not editable"
+   },
+   "36" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd multiple 6to4 Tunnel Interfaces\n  4.\tReboot the firewall",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "36",
+      "title" : "The 6to4 Tunnel settings should be intact after firewall restart",
+      "result" : "  The 6to4 Tunnel settings is intact after firewall restart"
+   },
+   "9" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tClick Add Interface button\n  4.\tAdd IPv6 Manual Tunnel Interface/GRE Manual Tunnel Interface/6to4 Auto Tunnel Interface\n  5.\tDelete the 6to4 Tunnel Interface from the Network->Interfaces page",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "9",
+      "title" : "GUI: Verify 6to4 Tunnel interface can be deleted",
+      "result" : "  The 6to4 Tunnel Interface is deleted."
+   },
+   "41" : {
+      "steps" : "  No_PC---(X0)NSA_E5500(X1)----(X1)NSA_3500(X0)---PC1\n  E5500_X1_IPv4: 10.8.47.55\n  NSA3500_X1_IPv4: 10.8.49.35\n  E5500_X0_IPv6: 2012:1:55:1::1\n  E3500_X0_IPv6: 2012:1:35:1::1\n  PC1: 2012:1:35:1::3\n  1. create a 6to4 tunnel interface as following:\n  zone: LAN\n  Interface Type:Tunnel Interface\n  Tunnel Type: IPv6 Manual Interface\n  Name: m\n  Tunnel Interface IPv6 Address:2012:1:35:1::3 ---- Must be configured\n  Prefix Length: 64\n  Remote IPv4 Address: WAN_Host_10.8.49.35\n  Remote IPv6 Network: VPN_Network_2012:1:35:1::0/64\n  Enable all management and user login\n  2. Apply configuration\n  3.configure matching 6to4 tunnel on remote NSA3500\n  4. from PC1, try to ping a host which belong to E5500_X0 subnet, but does not\n  exist, ICMPv6 will fail because of HOST unreachable, and E5500 will reply to PC1\n  with a Host Unreachable Error Msg, FW should behave well with no crash.",
+      "initial" : "  No_PC---(X0)NSA_E5500(X1)----(X1)NSA_3500(X0)---PC1\n  E5500_X1_IPv4: 10.8.47.55\n  NSA3500_X1_IPv4: 10.8.49.35\n  E5500_X0_IPv6: 2012:1:55:1::1\n  E3500_X0_IPv6: 2012:1:35:1::1\n  PC1: 2012:1:35:1::3",
+      "id" : "41",
+      "title" : "Configure 6to4 manual interface will IPv6 address configured, verify that FW will reply error msg and behaviors well if 6to4 traffic fail because of host unreachable",
+      "result" : "  FW should behave well with no crash."
+   },
+   "12" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd IPv6 Manual Tunnel Interface/GRE Manual Tunnel Interface\n  4.\tSelect multicast/broadcast IPv4 address as Remote IPv4 Address",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "12",
+      "title" : "Verify multicast/broadcast IPv4 address cannot be set as Remote IPv4 Address for IPv6/GRE Manual Tunnel Interface",
+      "result" : "  The multicast/broadcast IPv4 address cannot be set as Remote IPv4 Address for IPv6/GRE Manual Tunnel Interface."
+   },
+   "15" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd multiple IPv6 Manual Tunnel Interfaces",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "15",
+      "title" : "Verify multiple IPv6 Manual Tunnel Interfaces can be added",
+      "result" : "  Multiple IPv6 Manual Tunnel Interfaces can be added."
+   },
+   "8" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tClick Add Interface button\n  4.\tAdd Wan Zone IPv6 Manual Tunnel Interface/GRE Manual Tunnel Interface/6to4 Auto Tunnel Interface\n  5.\tGo to Network->WAN Failover & LB page, check the interface drop down list",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "8",
+      "title" : "GUI: Verify 6to4 Tunnel interface is not displayed on WAN Failover&LB page",
+      "result" : "  The 6to4 Tunnel Interface is not displayed in the interface drop down list"
+   },
+   "38" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd multiple 6to4 Tunnel Interfaces\n  4.\tUpgrade/Downgrade the firewall",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "38",
+      "title" : "Firmware upgrade and downgrade",
+      "result" : "  After firewall upgraded the 6to4 tunnel interfaces are intact, and after firewall downgraded to non-ipv6 firmware, the 6to4 tunnel interfaces are removed."
+   },
+   "4" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tClick Add Interface button\n  4.\tClick the Tunnel Type drop down list",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "4",
+      "title" : "GUI: Check the Tunnel Type",
+      "result" : "  There are three items in the Tunnel Type drop down list: IPv6 Manual Tunnel Interface, GRE Tunnel Interface, 6to4 Auto Tunnel Interface."
+   },
+   "34" : {
+      "steps" : "  1.\tConfigure 10.103.13.35 as Sonicwall1 X1 IPv4 address, 10.103.6.35 as Sonicwall2 X1 IPv4 address\n  2.\tConfigure 2003::1/64 as Sonicwall1 X0 IPv6 address, 2008::1/64 as Sonicwall2 X0 IPv6 address\n  3.\tConfigure 2003::2/64 as PC1 IPv6 address, 2008::2/64 as PC2 IPv6 address\n  4.\tAdd IPv6/GRE Manual Tunnel Interface on Sonicwall1 and Sonicwall2\n  5.\tSend ICMPv6 packet from PC1 to PC2\n  6.\tModify Remote IPv4 address object and Remote IPv6 Network address object\n  7.\tSend ICMPv6 packet from PC1 to PC2",
+      "initial" : "  Box with IPv6 firmware\n  PC1-----------------X0 Sonicwall1 X1-----------Internet----------X1 Sonicwall2 X0--------------PC2\n  2003::/64 10.103.13.35 10.103.6.35 2008::/64",
+      "id" : "34",
+      "title" : "Verify modify/delete Remote IPv4 Address Object/Remote IPv6 Network Address Object for an existing IPv6/GRE Manual Tunnel Interface",
+      "result" : "  The ICMPv6 packet can be tunneled through the IPv6/GRE Manual Tunnel Interface after change the Remote IPv4 address object and Remote IPv6 address object."
+   },
+   "37" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd multiple 6to4 Tunnel Interfaces\n  4.\tGo to System->Diagnostics, download the TSR file",
+      "initial" : "  Box with IPv6 firmware.",
+      "id" : "37",
+      "title" : "TSR should have related 6to4 tunnel information",
+      "result" : "  TSR have related 6to4 tunnel information."
+   },
+   "19" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tAdd two IPv6/GRE Manual Tunnel Interfaces, the Remote IPv4 Address are the same",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "19",
+      "title" : "Verify the Remote IPv4 Address can not be the same for multiple IPv6/GRE Manual Tunnel Interfaces",
+      "result" : "  System will prompt error message that the Remote IPv4 Address can not be the same for multiple IPv6/GRE Manual Tunnel Interfaces."
+   },
+   "5" : {
+      "steps" : "  1.\tGo to Network->Interfaces page.\n  2.\tChange the view to IPv6\n  3.\tClick Add Interface button\n  4.\tType in a name for the tunnel interface",
+      "initial" : "  Box with IPv6 firmware",
+      "id" : "5",
+      "title" : "GUI: Check the Name",
+      "result" : "  The tunnel interface name is saved"
+   }
+}

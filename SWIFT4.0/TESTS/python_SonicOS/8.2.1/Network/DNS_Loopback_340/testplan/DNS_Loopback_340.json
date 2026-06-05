@@ -1,0 +1,30 @@
+{
+   "6" : {
+      "steps" : "  1. Add a custom zone test of trusted or public security type and assign an interface say x2 to it;\n  2.\tLocate the server on the x2 subnet, create two address objects ftp_private and ftp_public for the servers private and public address on the Network->Address Objects page;\n  2.\tSet up a dns server A on the wan side, create an entry with domain name ftp.test.com resolved to the servers public ip address;\n  3.\tOn the NAT policies page, add a custom policy as below:\n  Original source: x2 subnet\n  Translated source:wan interface ip\n  Original destination:ftp_public\n  Translated destination:ftp_private\n  Original service:ftp\n  Translated service:original\n  Inbound interface:Any\n  Outbound interface:Any\n  Click the ok button after completed;\n  4.\tOn the firewall, Add an allow access rule from wan->test with destination ftp_public for ftp service of all users;\n  5.\tFrom another host on the x2 subnet( set A as its dns server), try to access the ftp server: ftp://ftp.test.com\n  6.\tTest above steps for http, ping, smtp, pop3,telnet service etc.",
+      "initial" : "  n/a",
+      "id" : "6",
+      "title" : "DNS Loopback on custom zones.",
+      "result" : "  Access to the internal server by its domain name should succeed. The dns server resolves the domain name to the servers public IP address."
+   },
+   "4" : {
+      "steps" : "  Scenario 1:\n  1.\tLocate the server on the lan subnet, create two address objects ftp_private and ftp_public for the servers private and public address on the Network->Address Objects page;\n  2.\tSet up a dns server A on the wan side, create an entry with domain name ftp.test.com resolved to the servers public ip address;\n  3.\tOn the NAT policies page, add a custom policy as below:\n  Original source: lan subnets\n  Translated source:wan interface ip\n  Original destination:ftp_public\n  Translated destination:ftp_private\n  Original service:ftp\n  Translated service:original\n  Inbound interface:Any\n  Outbound interface:Any\n  Click the ok button after completed;\n  4.\tOn the firewall, Add an allow access rule from wan->lan with destination ftp_public for ftp service of all users;\n  5.\tFrom another host on the lan( set A as its dns server), try to access the ftp server: ftp://ftp.test.com\n  6.\tTest above steps for http, ping, smtp, pop3,telnet service etc.\n  Scenario 2:\n  If you do not have a dns server, you can test this feature with DDNS.\n  1.\tConfigure the DDNS settings correctly on the Network->DDNS page, make sure that the domain name you filled can be resolved to the wan interface ip, for example, rosa001.ddns.ms resolved to 10.103.16.240;\n  2.\tAdd a custom policy as below:\n  Original source: lan subnets\n  Translated source:wan interface ip\n  Original destination:wan interface ip\n  Translated destination:ftp_private\n  Original service:ftp\n  Translated service:original\n  Inbound interface:Any\n  Outbound interface:Any\n  Click the ok button after completed;\n  3.\tFrom a host on the lan, try to access the ftp server by ftp://rosa001.ddns.ms.\n  4.\tTest for different services like http, telnet, smtp etc.",
+      "initial" : "  n/a",
+      "id" : "4",
+      "title" : "DNS Loopback on LAN.",
+      "result" : "  Access to the internal server by its domain name should succeed. The dns server resolves the domain name to the servers public IP address."
+   },
+   "7" : {
+      "steps" : "  1.\tLocate the server on the dmz subnet, create two address objects ftp_private and ftp_public for the servers private and public address on the Network->Address Objects page;\n  2.\tSet up a dns server A on the wan side, create an entry with domain name ftp.test.com resolved to the servers public ip address;\n  3.\tOn the NAT policies page, add a custom policy as below:\n  Original source: lan subnets\n  Translated source:wan interface ip\n  Original destination:ftp_public\n  Translated destination:ftp_private\n  Original service:ftp\n  Translated service:original\n  Inbound interface:Any\n  Outbound interface:Any\n  Click the ok button after completed;\n  4.\tOn the firewall, Add an allow access rule from wan->dmz with destination ftp_public for ftp service of all users;\n  5.\tFrom another host on the lan( set A as its dns server), try to access the ftp server: ftp://ftp.test.com\n  6.\tTest above steps for http, ping, smtp, pop3,telnet service etc.",
+      "initial" : "  n/a",
+      "id" : "7",
+      "title" : "DNS loopback from lan to dmz.",
+      "result" : "  Access to the internal server by its domain name should succeed. The dns server resolves the domain name to the servers public IP address."
+   },
+   "5" : {
+      "steps" : "  1.\tLocate the server on the dmz subnet, create two address objects ftp_private and ftp_public for the servers private and public address on the Network->Address Objects page;\n  2.\tSet up a dns server A on the wan side, create an entry with domain name ftp.test.com resolved to the servers public ip address;\n  3.\tOn the NAT policies page, add a custom policy as below:\n  Original source: dmz subnets\n  Translated source:wan interface ip\n  Original destination:ftp_public\n  Translated destination:ftp_private\n  Original service:ftp\n  Translated service:original\n  Inbound interface:Any\n  Outbound interface:Any\n  Click the ok button after completed;\n  4.\tOn the firewall, Add an allow access rule from wan->dmz with destination ftp_public for ftp service of all users;\n  5.\tFrom another host on the dmz( set A as its dns server), try to access the ftp server: ftp://ftp.test.com\n  6.\tTest above steps for http, ping, smtp, pop3,telnet service etc.",
+      "initial" : "  n/a",
+      "id" : "5",
+      "title" : "DNS Loopback on DMZ",
+      "result" : "  Access to the internal server by its domain name should succeed. The dns server resolves the domain name to the servers public IP address."
+   }
+}

@@ -1,0 +1,114 @@
+{
+    "01": {
+        "_case_id": "1525376",
+        "id": "1",
+        "result": "The checkbox is enabled.",
+        "steps": "1. go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN",
+        "title": "GUI: Enable the checkbox of 'Enable DNS host name lookup over TCP for FQDN'"
+    },
+    "02": {
+        "_case_id": "1525377",
+        "id": "2",
+        "result": "The checkbox is disabled.",
+        "steps": "1. go to NetworkDNS page, disable DNS host name lookup over TCP for FQDN",
+        "title": "GUI: Disable the checkbox of 'Enable DNS host name lookup over TCP for FQDN'"
+    },
+    "03": {
+        "_case_id": "1525378",
+        "id": "3",
+        "result": "In step 4, verify after receiving truncated flag, the FW send one DNS query over TCP.",
+        "steps": "1. Set a IPv4 DNS server,in the server, add a FQDN AO and corresponding ip addresses (eg:100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page,configure the IPv4 DNS server;\n4. In AO page,add the FQDN AO which is added in the server,capture the packet in FW.",
+        "title": "Verify the FW send one DNS query over TCP when only one FQDN AO receiving Truncated flag(use IPv4 DNS server)"
+    },
+    "04": {
+        "_case_id": "1525379",
+        "id": "4",
+        "result": "In step 4, verify after receiving truncated flag, the FW send one DNS query over TCP.",
+        "steps": "1. Set a IPv6 DNS server,in the server,add a FQDN AO and corresponding ip addresses (eg,100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page, configure the IPv6 DNS server and check 'Prefer IPv6 DNS Servers';\n4. In AO page, add the FQDN AO which is added in the server, capture the packet in FW.",
+        "title": "Verify the FW send one DNS query over TCP when only one FQDN AO receiving Truncated flag(use IPv6 DNS server)"
+    },
+    "05": {
+        "_case_id": "1525380",
+        "id": "5",
+        "result": "In step 4, verify after receiving truncated flag, each FQDN send a corresponding DNS query over TCP.",
+        "steps": "1. Set a IPv4 DNS server, in the server,add multiple FQDN AOs and corresponding ip addresses (eg,every FQDN AO has 100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page, configure the IPv4 DNS server;\n4. In AO page, add multiple FQDN AOs which are added in the server, capture the packet in FW.",
+        "title": "Verify the FW send corresponding multiple DNS queries over TCP when multiple FQDN AOs receiving Truncated flag(use IPv4 DNS server)"
+    },
+    "06": {
+        "_case_id": "1525381",
+        "id": "6",
+        "result": "In step 4, verify after receiving truncated flag, each FQDN send a corresponding DNS query over TCP.",
+        "steps": "1. Set a IPv6 DNS server,in the server, add multiple FQDN AOs and corresponding ip addresses (eg,every FQDN AO has 100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page,configure the IPv6 DNS server and check 'Prefer IPv6 DNS Servers';\n4. In AO page,add multiple FQDN AOs which are added in the server, capture the packet in FW.",
+        "title": "Verify the FW send corresponding multiple DNS queries over TCP when multiple FQDN AOs receiving Truncated flag(use IPv6 DNS server)"
+    },
+    "07": {
+        "_case_id": "1525382",
+        "id": "7",
+        "result": "In step 4, only the first DNS response is processed when receiving a mass of DNS response with same Transation ID if the relative DNS query over UDP is sent.",
+        "steps": "1. Set a IPv4 DNS server,in the server, add a FQDN AO and corresponding ip addresses (eg,100 ipv4 addresses and 100 ipv6 ip addresses), add a static route, the dst is the FW, gateway is WANem;\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page, configure the IPv4 DNS server;\n4. In AO page, add the FQDN AO which is added in the server, capture the packet in FW.",
+        "title": "Verify only the first DNS response is processed when receiving a mass of DNS response with same Transaction ID if the relative DNS query over UDP is sent"
+    },
+    "08": {
+        "_case_id": "1525383",
+        "id": "8",
+        "result": "All packets are dropped.",
+        "steps": "1. Set a IPv4 DNS server, in the server,add a FQDN AO and corresponding ip addresses (eg,100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page,configure the IPv4 DNS server;\n4. In AO page, add the FQDN AO which is added in the server;\n5. Construct a mass of DNS response over UDP with same Transation ID and set the truncated flag as 1;\n6. Simulate sending these packets to the FW from server.",
+        "title": "Verify the FW doesn't process the DNS response when receiving a mass of DNS response with same Transaction ID if the relative DNS query over UDP isn't sent"
+    },
+    "09": {
+        "_case_id": "1525384",
+        "id": "9",
+        "result": "In step 5, there is the log 'Truncated flag is set', 'Send DNS query over TCP', 'Receive DNS response over TCP'.",
+        "steps": "1. Set a IPv4 DNS server, in the server, add a FQDN AO and corresponding ip addresses (eg,100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page,configure the IPv4 DNS server;\n4. In AO page, add the FQDN AO which is added in the server;\n5. After the FQDN is resolved, check the log.",
+        "title": "Check the log when finding the Truncated flag is set 1, the DNS query over TCP is sent, the DNS response over TCP is received"
+    },
+    "11": {
+        "_case_id": "1525386",
+        "id": "11",
+        "result": "In step 5,there are all resolved ip addresses which are contained in DNS response over udp and tcp.",
+        "steps": "1. Set a DNS server,in the server,add multiple FQDN AOs and corresponding ip addresses (eg,every FQDN AO has 100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page,configure the DNS server;\n4. In AO page, add multiple FQDN AOs which are added in the server;5.After the FQDN is resolved,download the TSR.",
+        "title": "Check the TSR about the checkbox of 'Enable DNS query over TCP'"
+    },
+    "12": {
+        "_case_id": "1525387",
+        "id": "12",
+        "result": "The checkbox is enabled.",
+        "steps": "1. In CLI,enter configure mode,\n2. use the following command:#dns fqdn-over-tcp-dns2.Verify the GUI.",
+        "title": "In CLI,enable the checkbox of 'Enable DNS query over TCP'"
+    },
+    "13": {
+        "_case_id": "1525388",
+        "id": "13",
+        "result": "In step 4, verify after receiving truncated flag,each FQDN send a corresponding DNS query over TCP. In setp 5,verify the function still work.",
+        "steps": "1. Set a DNS server,in the server,add multiple FQDN AOs and corresponding ip addresses (eg,every FQDN AO has 100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page,configure the DNS server;\n4. In AO page, add multiple FQDN AOs which are added in the server;\n5. Reboot the FW.",
+        "title": "Verify after a reboot DUT still send DNS query over TCP when FQDN AO receiving response with truncated flag"
+    },
+    "14": {
+        "_case_id": "1525389",
+        "id": "14",
+        "result": "In step 4, verify after receiving truncated flag, each FQDN send a corresponding DNS query over TCP; In step 6, verify the function still work.",
+        "steps": "1. Set a DNS server,in the server, add multiple FQDN AOs and corresponding ip addresses (eg,every FQDN AO has 100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page,configure the DNS server;\n4. In AO page, add multiple FQDN AOs which are added in the server;\n5. Export the prefs;6.Factory default and import the prefs.",
+        "title": "Prefs export and import test"
+    },
+    "15": {
+        "_case_id": "1525390",
+        "id": "15",
+        "result": "The first DNS query over udp go out through the split DNS server, after receiving the truncated flag, FW send the DNS query over tcp to the inherited DNS server.",
+        "steps": "1. Set a IPv4/6 DNS server,in the server,add a FQDN AO and corresponding ip addresses (eg,100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page,use the inherited IPv4 DNS server;\n4. In DNS Proxy page,enable DNS Proxy,check 'Enforce DNS Proxy For All DNS Requests', add a ipv4/6 split dns entry, set the corresponding domain name and the server;\n5. In AO page,add the FQDN AO which is added in the server,capture the packet in FW.",
+        "title": "Verify DNS over TCP function for Split DNS with IPv4/6 DNS server"
+    },
+    "17": {
+        "_case_id": "1525392",
+        "id": "17",
+        "result": "The first DNS query over udp go out through DNS proxy, after receiving the truncated flag, FW send the DNS query over tcp to the system DNS server. (Since the proxy DNS is the same as the system DNS server, we can check the dns proxy cache, it only contains the ip addresses that is from the dns response over udp)",
+        "steps": "1. Set a IPv4/6 DNS server, in the server,add a FQDN AO and corresponding ip addresses (eg,100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN and in diag page, select 'UDP and TCP' as the DNS proxy protocol;\n3. In DNS page,configure the IPv4/6 DNS server;\n4. In DNS Proxy page,enable DNS Proxy,check 'Enforce DNS Proxy For All DNS Requests';\n5. In AO page, add the FQDN AO which is added in the server, capture the packet in FW.",
+        "title": "Verify DNS over TCP function for TCP DNS Proxy with IPv4/6 DNS server"
+    },
+    "20": {
+        "_case_id": "1525395",
+        "id": "20",
+        "result": "In step 6, the packet is dropped.",
+        "steps": "1. Set a DNS server,in the server, add a FQDN AO and corresponding ip addresses (eg,100 ipv4 addresses and 100 ipv6 ip addresses);\n2. Go to NetworkDNS page, enable DNS host name lookup over TCP for FQDN;\n3. In DNS page, configure the DNS server;\n4. In AO page, add the FQDN AO which is added in the server;\n5. In ACL page,add a lan-wan deny access rule, the added FQDN is the dst;\n6. From lan pc, ping one ip address that is contained in the DNS response over TCP, check the packet.",
+        "title": "Verify the access rule with the FQDN take effect"
+    }
+}

@@ -1,0 +1,392 @@
+{
+   "1530564" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page,fill in appropriate username, password and service name, select PPPoEv6 address Assignment as DHCPv6 Automatic mode, accept default settings for all other options,then connect Firewall to PPPOE server.\n  3. after PPPoEv4 and PPPoEv6 get connected,check if firewall get both ipv4 address and ipv6 address.\n  4. send IPv4 and IPv6 mixed traffic from LAN(pc1) to WAN(pc2)",
+      "priority" : "Sanity",
+      "atm_id" : "b80bcdf9-41c9-477d-a128-35637b3fec59",
+      "initial" : "  1)Have PPPoE server configured and up running, and can provide both IPv4 and IPv6 address to clients, IPv6 address is provided via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530564",
+      "title" : "Verify IPv4 and IPv6 mixed traffic will be forwarded properly when both PPPoEv4 and PPPoEv6 get connected.",
+      "description" : "Original ID: 61\nOriginal Title: Verify IPv4 and IPv6 mixed traffic will be forwarded properly when both PPPoEv4 and PPPoEv6 get connected.\nOriginal Description: This test case is to Verify IPv4 and IPv6 mixed traffic will be forwarded properly when both PPPoEv4 and PPPoEv6 get connected.",
+      "result" : "  Both IPv4 and IPv6 traffic will be forwarded properly."
+   },
+   "1530540" : {
+      "steps" : "  step 1: setup a PPPoEv6 connection; step 2: power off and on SonicWALL; step 3: verify that if PPPoEv6 connection got reconnected automatically; step 4: send IPv6 traffic from LAN to WAN",
+      "priority" : "Sanity",
+      "atm_id" : "c67738e9-e340-4014-93f1-37a1c2b0bcd4",
+      "initial" : "  1)Have PPPoE server configured and up running, and can provide both IPv4 and IPv6 address to clients. 2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530540",
+      "title" : "SonicWALL power cycled",
+      "description" : "Original ID: 52\nOriginal Title: SonicWALL power cycled\nOriginal Description: <span>This test case is to verify that PPPoEv6 will be reconnected after SonicWALL power cycled</span>",
+      "result" : "  PPPoEv6 connect should be reconnected automatically, and IPv6 traffic from LAN to WAN should be able to pass through"
+   },
+   "1530566" : {
+      "steps" : "  1.Set an interface as WAN zone PPPoE mode\n  2.Switch to IPv6 mode, and set the PPPoEv6 address Assignment as \"DHCPv6\" 3.Check GUI itmes included in \"Protocol\" tap",
+      "priority" : "Smoke",
+      "atm_id" : "824eab4e-533a-4c7c-8b4a-c8e540a0a603",
+      "initial" : "  Interface configured as WAN PPPoE mode",
+      "id" : "1530566",
+      "title" : "[GUI][PPPoE IPv6 global address assignment][2.3]GUI Check for DHCPv6 Mode  for \"Protocol\" tap,make sure all the items display correctly work normally",
+      "description" : "Original ID: 69\nOriginal Title: [GUI][PPPoE IPv6 global address assignment][2.3]GUI Check for DHCPv6 Mode  for \"Protocol\" tap,make sure all the items display correctly work normally\nOriginal Description: Verify all the GUI items in this tap can display correctly and options can be checked and unchecked in DHCPv6 mode",
+      "result" : "  There should be 5 sections in this tap:\n  1.DHCPv6 General Information\n  a).DHCPv6 State\n  b).DHCPv6 Server\n  c).DHCPv6 DUID\n  2.Stateful Addresses Acquired via DHCPv6\n  3.Stateless Configuration Settings Acquired via DHCPv6\n  a).DNS Server 1\n  b).DNS Server 2\n  c).DNS Server 3\n  4.Delegated Prefixes Acquired via DHCPv6\n  5.PPPoE Client Settings\n  a). checkbox \"Inactivity Disconnect (minutes)\" can work well and can be set valid value\n  b).checkbox \"Strictly use LCP echo packets for server keep-alive\" can be checked or unchecked\n  c).\"Reconnect the PPPOE client if the server does not send traffic for\" can be checked or unchecked and can be set valid value"
+   },
+   "1530552" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page,fill in appropriate username, password and service name,select PPPoEv6 address Assignment as DHCPv6 Automatic mode, check Send hints for renewing previous IP on startup,then click OK.\n  3. config server allow hints,connect Firewall to PPPOE server, make sure it can acquire IPV6 address.\n  4.Capture packet on Firewall,then restart.",
+      "priority" : "Sanity",
+      "atm_id" : "1d4be710-f55b-4e38-b6dd-29e667683627",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530552",
+      "title" : "check Send hints for renewing previous IP on startup can work fine when WAN ipv6 assignment in PPPOEv6 mode",
+      "description" : "Original ID: 23\nOriginal Title: check Send hints for renewing previous IP on startup can work fine when WAN ipv6 assignment in PPPOEv6 mode\nOriginal Description: This test case is to verify &#160;Send hints for renewing previous IP on startup can work fine when WAN ipv6 assignment in PPPOEv6 mode.",
+      "result" : "  &#160;From the packet capture, in IA_NA option of DHCPv6 Solicit Message, the client will request the old IPv6 address&#160;"
+   },
+   "1530561" : {
+      "steps" : "  1. config interface as PPPOEv6 mode, and make sure it can get connected and get IPv6 address.\n  2. Export the exp file\n  3. factory default\n  4. import the exp file in step2, check if the settings keep same as the setting in step1, and check if PPPoEv6 get connected and can get IPv6 address.",
+      "priority" : "Smoke",
+      "atm_id" : "82c2d345-de4b-403b-a1d4-51e694b70e6e",
+      "initial" : "  1)Have PPPoE server configured and up running, and can provide both IPv4 and IPv6 address to clients. 2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530561",
+      "title" : "Export/import preference file",
+      "description" : "Original ID: 58\nOriginal Title: Export/import preference file\nOriginal Description: This testcase is designed to make sure that PPPOEv6 remain intact after Preference Export and Import",
+      "result" : "  PPPOEv6 settings remain intact after Preference Export and Import, and can get connected after the pref export/import."
+   },
+   "1530562" : {
+      "steps" : "  1. Configure one interface IPv6 as PPPoEv6 mode, make sure it can get connected and acquired IPv6 address.\n  2. Go to the System&gt;Diagnostics&gt;Tech Support Report 3. Click Download Report button 4. Save the TSR file into the local machine",
+      "priority" : "Smoke",
+      "atm_id" : "036d62a9-e055-46ee-9bfa-7f05dc1739c8",
+      "initial" : "  1)Have PPPoE server configured and up running, and can provide both IPv4 and IPv6 address to clients.&#160;\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530562",
+      "title" : "PPPoEv6 information can be included in the Tech Support Report",
+      "description" : "Original ID: 59\nOriginal Title: PPPoEv6 information can be included in the Tech Support Report\nOriginal Description: The test case is designed to make sure the PPPOEv6 configuration information can be included in the Tech Support Report",
+      "result" : "  Look up the TSR, the PPPoEv6 configuration and status info is shown correctly in the report"
+   },
+   "1530520" : {
+      "steps" : "  1. Network-&gt;interface primary WAN,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit primary WAN interface in IPv6 interface page, fill in appropriate username, password and service name, ,select PPPoEv6 address Assignment as DHCPv6 Automatic mode,&#160;accept default settings for all other options, then click OK.\n  3.check GUI interface page and Protocol Tab, status and IPv6 address should shown correctly.",
+      "priority" : "Smoke",
+      "atm_id" : "41572361-a66d-4abe-83a9-2d0973fbcadf",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server1)--PC2",
+      "id" : "1530520",
+      "title" : "Assign Primary WAN IPv6 through PPPoEv6",
+      "description" : "Original ID: 12\nOriginal Title: Assign Primary WAN IPv6 through PPPoEv6 \nOriginal Description: This test case is to verify that primary WAN IPv6 address can be assigned through PPPoEv6 successfully.&#160;",
+      "result" : "  Primary WAN should receive correct IP address and Address Objects page should display the right information too."
+   },
+   "1530550" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page,fill in appropriate username, password and service name,select PPPoEv6 address Assignment as DHCPv6 manual mode, then click OK.\n  3.connect Firewall to PPPOE server, make sure PPPoE server will send RA with flag M=0&amp;O=0 or M=0&amp;O=1, verify if DUT can acquire IPv6 address.\n  4. send traffic from LAN(pc1) to WAN(pc2)\n  5.In GUI diagnostic page to ping WAN PC2 IPv6 address, check if the IPV6 addess can be used\n  6. Repeat step 3~5, change the RA flag in PPPoE server to M=1&amp;O=0 or M=1&amp;O=1",
+      "priority" : "Smoke",
+      "atm_id" : "ace269d1-0cba-4ee7-851e-115f7e6fdeec",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2\n  Tips:\n  on GEN7 , it is not-applicable .It is design change that noDHCPv6 manual mode .\n  https://track.eng.sonicwall.com/browse/GEN7-11368",
+      "id" : "1530550",
+      "title" : "Verify PPPoEv6 can obtain IPv6 address in DHCPv6 manual mode",
+      "description" : "Original ID: 21\nOriginal Title: Verify PPPoEv6 can obtain IPv6 address in DHCPv6 manual mode \nOriginal Description: This test case is to verify that WAN IP can be assigned through PPPoEv6 &#160;in DHCPv6 manual mode &#160;successfully.",
+      "result" : "  in step 3,check GUI interface page and Protocol Tab, status and IPv6 address should shown correctly.\n  in step 4,traffic from LAN to WAN should be able to pass through\n  in step 5,the traffic from DUT to WAN should be be able to pass through ,From the captured packet,it should use WAN ipv6 address\n  in step 6, the result are same as above, DUT can get IPv6 address and IPv6 traffic can pass through successfully."
+   },
+   "1530542" : {
+      "steps" : "  step 1: configure SonicWALL WAN &#160;ipv6 interface as static IP; step 2: switch WAN IP assignment to PPPoEv6; step 3: verify if WAN interface got the correct IPv6 address; step 4: send IPv6 traffic from LAN to WAN",
+      "priority" : "Sanity",
+      "atm_id" : "ffe15ae7-92e3-4f8f-bf06-338157632fb5",
+      "initial" : "  1)Have PPPoE server configured and up running, and can provide both IPv4 and IPv6 address to clients. 2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530542",
+      "title" : "Change WAN IP assignment from static to PPPoEv6",
+      "description" : "Original ID: 54\nOriginal Title: Change WAN IP assignment from static to PPPoEv6 \nOriginal Description: &#160;This test case is to verify that SonicWALL should work well after WAN IPv6 assignment changed from static to PPPoEv6",
+      "result" : "  WAN interface should get correct IPv6 address and IPv6 traffic from LAN to WAN should be able to pass through"
+   },
+   "1530549" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page,fill in appropriate username, password and service name (share the same with PPPoE IPv4),select PPPoEv6 address Assignment as DHCPv6 Automatic mode, then click OK.\n  3.config PPPoEv6 server with RA enable, set flag M=1&amp;O=1 or M=1&amp;O=0, and Capture packet on Firewall.\n  4.connect Firewall to PPPOE server,check ifit can acquire IPV6 address.\n  5. send traffic from LAN(pc1) to WAN(pc2)\n  6.In GUI diagnostic page to ping WAN PC2 IPv6 address, check if the IPV6 addess can be used\n  7. Repeat step 3~6, but change RA flag in PPPoE server to M=0&amp;O=1 or M=0&amp;O=0, and make sure the option \"Enable stateless address autoconfiguration\" is not selected in DUT, check if DUT still can get IPv6 address from PPPoE server.",
+      "priority" : "Sanity",
+      "atm_id" : "141eec17-7bfc-42f7-87a9-c852ae586ff5",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE. 2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530549",
+      "title" : "Verify PPPoEv6 can obtain IPv6 address in DHCPv6 Automatic mode",
+      "description" : "Original ID: 20\nOriginal Title: Verify PPPoEv6 can obtain IPv6 address in DHCPv6 Automatic mode\nOriginal Description: This test case is to verify that WAN IP can be assigned through PPPoEv6 &#160;in DHCPv6 Automatic mode successfully.",
+      "result" : "  in step 3, the capture packets should include the DHCPv6 over PPPoE session packets (solicit/advertise/request/reply).\n  in step 4,check GUI interface page and Protocol Tab, status and IPv6 address should shown correctly.\n  in step 5,traffic from LAN to WAN should be able to pass through\n  in step 6,the traffic from DUT to WAN should be be able to pass through ,From the captured packet,it should use WAN ipv6 address\n  in step 7, DUT won't have IPv6 address,because when the M flag is 0, DUT won't send DHCPv6 solicit to ask for IANA option."
+   },
+   "1530532" : {
+      "steps" : "  step 1: setup a PPPoEv6 connection; step 2: power cycle SonicWALL; step 3: validate SonicWALL re-establishes the PPPoEv6 connection and pings through the PPPoEv6 connection are responded to",
+      "priority" : "Smoke",
+      "atm_id" : "6d034d86-a0d0-4357-9c54-a3a2fd5a61d2",
+      "initial" : "  1)Have PPPoE server configured and up running, and can provide both IPv4 and IPv6 address to clients. 2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530532",
+      "title" : "Verify negotiation after SonicWALL reboot (WAN link and connectivity)",
+      "description" : "Original ID: 33\nOriginal Title: Verify negotiation after SonicWALL reboot (WAN link and connectivity) \nOriginal Description: <span>This test case is to verify PPPoE negotiation after SonicWALL reboot&#160;</span>",
+      "result" : "  SonicWALL should re-establish the PPPoEv6 connection, and the traffic through the PPPoEv6 connection should be successful."
+   },
+   "1530567" : {
+      "steps" : "  1. in Network-&gt;System-&gt;Failover & LB, IN Groups-&gt;IPv6 table, set X2 as primary wan in Basic Failover Type 2. set interface X2 as PPPoe mode,and fill in appropriate username, password and service name,then check IPv6 as PPPoEv6 mode, make sure it can get connected and acquired IPv6 address. 3. go to Policy-&gt;Rules and Policies-&gt;Routing Rules,check ipv6 routing ",
+      "priority" : "Smoke",
+      "atm_id" : "1e2171e3-6aba-4efb-aced-0602128f48b7",
+      "initial" : "  TBD",
+      "id" : "1530567",
+      "title" : "[FC][Route table check][3.1]Verify the Route table when PPPoE IPv6 interface is the default WAN",
+      "description" : "Original ID: 74\r\nOriginal Title: [FC][Route table check][3.1]Verify the Route table when PPPoE IPv6 interface is the default WAN\r\nOriginal Description:",
+      "result" : "  1 default route with metric 50 and correct gateway is bounding to X2 ![](index.php?/attachments/get/058ee694-90c6-44a2-8bc7-23bf0dd597cd) "
+   },
+   "1530557" : {
+      "steps" : "  1. Network -&gt;interface,add a sub-interface X1:V222, then set its zone as WAN,and select IP Assignment as PPPoE,click OK 2. Edit this interface in IPv6 interface page ,fill in appropriate username, password and service name ,select PPPoEv6 address Assignment as DHCPv6 Automatic mode, accept default settings for all other options,then click OK. 3. Connect Firewall to PPPOE server,check if the VLAN sub interface it can get ipv6 address,and send IPv6 traffic from LAN(pc1) to WAN(pc2), check if IPv6 traffic passs through 4. Add another VLAN sub-interface X2:V333 through switching-&gt;vlan truncking page (set X2 as trunk port and enable VLAN 333), and then back to network -&gt;interface,edit this interface to WAN zone PPPoE mode. 5. In interface X2:V333 IPv6 configuraton page, fill in appropriate username, password and service name, select PPPoEv6 address Assignment as DHCPv6 Automatic mode, accept default settings for all other options,then click OK. 6. Connect it to server,check if it can get ipv6 address,and if IPv6 traffic can be forwarded properly",
+      "priority" : "Sanity",
+      "atm_id" : "5fccaab1-81d3-4308-9108-3e0cf47c10a7",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1:v222--(PPPOE server1)--PC2 (DUT)X2:v333--(PPPOE server2)--PC3",
+      "id" : "1530557",
+      "title" : "pppoev6 can obtain IPv6 address with VLAN sub interface",
+      "description" : "Original ID: 28\nOriginal Title: pppoev6 can obtain IPv6 address with VLAN sub interface\nOriginal Description: This test case is to verify pppoev6 can obtain IPv6 address with VLAN interface.",
+      "result" : "  PPPoEv6 &#160;with VLAN interface can successfully get IPv6 address, and LAN to WAN IPv6 traffic should be forwarded normally."
+   },
+   "1530524" : {
+      "steps" : "  Title: Assign both Primary and Secondary WAN IP through PPPoE Description:\n  1. Network-&gt;interface primary WAN,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit primary WAN interface in IPv6 interface page,fill in appropriate username,password and service name, accept default settings for all other options,then click OK.\n  3. Network-&gt;interface secondary WAN,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  4. Edit secondary WAN interface in IPv6 interface page,fill in appropriate username,password and service name, ,select PPPoEv6 address Assignment as DHCPv6 Automatic mode, accept default settings for all other options,then click OK.\n  5.check GUI interface page and Protocol Tab of both WAN interfaces, status and IPv6 address should shown correctly",
+      "priority" : "Sanity",
+      "atm_id" : "6f28c06a-b146-41e7-b80a-537e48c859dc",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server1)--PC2\n  (DUT)X2--(PPPOE server 2)--PC3",
+      "id" : "1530524",
+      "title" : "Assign both Primary and Secondary WAN IPv6 address through PPPoEv6",
+      "description" : "Original ID: 14\nOriginal Title: Assign both Primary and Secondary WAN IPv6 address through PPPoEv6\nOriginal Description: This test case is to verify that both primary and secondary WAN IPv6 address can be assigned through PPPoEv6 successfully.&#160;",
+      "result" : "  Both primary and secondary WAN should receive correct IPv6 address"
+   },
+   "1530559" : {
+      "steps" : "  1. Network-&gt;interface primary WAN,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit primary WAN interface in IPv6 interface page, Enter a string with 63 characters for both username and password field, click OK.\n  3. Edit primary WAN interface in IPv6 interface page, Enter a string with 64 characters for both username and password field, click OK.",
+      "priority" : "Sanity",
+      "atm_id" : "2f214f8a-edbd-4d0d-ad3e-dbedcc2b2492",
+      "initial" : "  TBD",
+      "id" : "1530559",
+      "title" : "Verify the length of User Name and Password fields in PPPoEv6 configuration page",
+      "description" : "Original ID: 50\nOriginal Title: Verify the length of User Name and Password fields in PPPoEv6 configuration page\nOriginal Description: <a name=\"47\"></a>This test case is to verify that both username and password fields allow maximum of 63 characters",
+      "result" : "  In Step 2, the setting could be saved successfully.\n  In Step 3, GUI will show error message to notify user the maximum length.&#65533;"
+   },
+   "1530547" : {
+      "steps" : "  1. use CLI command configure X3 as PPPoEv6 DHCPv6 auto mode config(DUT)# interface IPV6 X3 (edit-interface[X2]-ipv6)# ip-assignment pppoe6 (edit-WAN-pppoe6[X2])# mode-assignment auto (edit-WAN-pppoe6[X2])# commit 2.use CLI command show interface ipv6 X3, check if configuration saved",
+      "priority" : "Smoke",
+      "atm_id" : "3d79cd60-897e-4ce8-895f-1a098ada3a9a",
+      "initial" : "  TBD",
+      "id" : "1530547",
+      "title" : "[CLI][19.7]Verify \"Show\" command can display correct info for PPPoEv6 interface with Auto mode",
+      "description" : "Original ID: 125\r\nOriginal Title: [CLI][19.7]Verify \"Show\" command can display correct info for PPPoEv6 interface with Auto mode\r\nOriginal Description:",
+      "result" : "  (edit-WAN-pppoe6[X3])# show interface ipv6 X3 interface ipv6 X3 ip-assignment pppoe6 mode-assignment auto schedule always-on no inactivity no lcp-echo-packets reconnect 5 ncp-neg-retrans 200 exit ipv6-traffic duplicate-address-detection-transmits 1 reachable-time 30 no management https management https-source any no management ping management ping-source any no management snmp management snmp-source any no management ssh management ssh-source any no user-login http no user-login https exit"
+   },
+   "1530548" : {
+      "steps" : "  1. use CLI command to configure X3 as PPPOEV6 AUTO mode config(DUT)# interface ipv6 X3 (edit-interface[X3]-ipv6)# ip-assignment pppoe6 (edit-WAN-pppoe6[X3])# mo (edit-WAN-pppoe6[X3])# mode-assignment static dhcpv6 auto (edit-WAN-pppoe6[X3])# mode-assignment auto (edit-WAN-pppoe6[X3])# commit 2. use CLI command to change mode-assignment 3. after modofy mode check if pppoev6 can get proper address",
+      "priority" : "Smoke",
+      "atm_id" : "92a1f720-e78d-40c6-9e97-63a80271acb7",
+      "initial" : "  TBD",
+      "id" : "1530548",
+      "title" : "[CLI][19.10]Verify function can work well when change the PPPoEv6 mode using CLI commands",
+      "description" : "Original ID: 128\r\nOriginal Title: [CLI][19.10]Verify function can work well when change the PPPoEv6 mode using CLI commands\r\nOriginal Description:",
+      "result" : "  function can work well when change the PPPoEv6 mode using CLI commands"
+   },
+   "1530528" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page,fill in appropriate username, password and service name, accept default settings for all other options, and click OK;\n  3. Protocol-&gt;PPPoE Client Settings,check Inactivity Disconnect\n  4.specify -1/0 for Inactivity Disconnect\n  5.specify 1/999 for Inactivity Disconnect",
+      "priority" : "Sanity",
+      "atm_id" : "5ea2efde-ca2d-43b3-b66f-2c651dca5182",
+      "initial" : "  1)Have PPPoE server configured and up running, and can provide both IPv4 and IPv6 address to clients, make sure IPv6 address is provided via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530528",
+      "title" : "Boundary check for Inactivity Disconnect",
+      "description" : "Original ID: 18\r\nOriginal Title: Boundary check for Inactivity Disconnect \r\nOriginal Description: <span>This test case is to do boundary checks for Inactivity Disconnect&#160;</span>",
+      "result" : "  step4 show error msg:The \"Inactivity Timeout\" field can be set to a value between 1-999 minutes only\n  step 5 verify from the GUI that primary WAN can receive correct IP address;"
+   },
+   "1530530" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page, fill in appropriate username, password and service name, select PPPoEv6 address Assignment as DHCPv6 Automatic mode, accept default settings for all other options, and click OK;\n  3. Protocol-&gt;PPPoE Client Settings,check Inactivity Disconnect,and accept default setting (10 minutes)\n  4.keep SonicWALL inactive for 10 minutes without any ipv4 and ipv6 traffic from LAN-&gt;WAN; 5.keep SonicWALL inactive for 10 minutes without ipv4 but ipv6 traffic from LAN-&gt;WAN; 6.keep SonicWALL inactive for 10 minutes without ipv6 but ipv4 traffic from LAN-&gt;WAN;",
+      "priority" : "Smoke",
+      "atm_id" : "12eedd94-2f3d-4f55-b612-415196fc5b94",
+      "initial" : "  1)Have PPPoE server configured and up running, and can provide both IPv4 and IPv6 address to clients\u00c2\u00a3\u00c2\u00acmake sure IPv6 address is provided via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530530",
+      "title" : "Verify Inactivity Disconnection default setting",
+      "description" : "Original ID: 19\nOriginal Title: Verify Inactivity Disconnection default setting \nOriginal Description: This test case is to verify that inactivity disconnection setting works well",
+      "result" : "  in step 4 verify that PPPoE connection is terminated after 10 min\n  in step 5 and 6 PPPoE connection will not be terminated after 10 min"
+   },
+   "1530569" : {
+      "steps" : "  1. set interface X2 as PPPoe mode,and fill in appropriate username, password and service name,then check IPv6 as PPPoEv6 mode, make sure it can get connected and acquired IPv6 address. 2. in X2 IPv6 page, enable SNMP management 3. vevify related ACL policy is auto created from WAN-&gt;WAN 4. go to Device-&gt;Settings-&gt;SNMP, enable SNMP and do related configure 5. Use a MIB Browser (Such as ManageEngine MibBrowser Free Tool) , Load the Sonicwall MIBs 6. connect X2 PPPOEv6 address and get SNMP variable via MIB Browse ",
+      "priority" : "Smoke",
+      "atm_id" : "8ec08989-e7e4-4bc8-900c-595069a4c3e6",
+      "initial" : "  TBD",
+      "id" : "1530569",
+      "title" : "[FC][Management service check][7.3]Verify PPPoE IPv6 interface can be managed thru SNMP if this service enabled at the interface and related ACL policy is auto created from WAN->WAN",
+      "description" : "Original ID: 88\r\nOriginal Title: [FC][Management service check][7.3]Verify PPPoE IPv6 interface can be managed thru SNMP if this service enabled at the interface and related ACL policy is auto created from WAN-&gt;WAN\r\nOriginal Description:",
+      "result" : "  3. in globle mode, related ACL policy is auto created from WAN-&gt;WAN ![](index.php?/attachments/get/82fae2b8-6c9b-4fd7-bc28-aea8cd4ccad3) in policy mode the security policy need to be maunal added 4. PPPoE IPv6 interface can be managed thru SNMP "
+   },
+   "1530546" : {
+      "steps" : "  1. use CLI command configure X2 as PPPoEv6 DHCPv6 auto mode config(DUT)# interface IPV6 X2 (edit-interface[X2]-ipv6)# ip-assignment pppoe6 (edit-WAN-pppoe6[X2])# mode-assignment dhcpv6 (edit-WAN-pppoe6[X2])# mode auto (edit-WAN-pppoe6[X2])# commit 2.use CLI command show interface ipv6 X2, check \"listen-router-advertisement\" 3.check if \"no listen-router-advertisement\" can be saved",
+      "priority" : "Smoke",
+      "atm_id" : "8bba1682-4ca5-4ecf-820d-04ff285f2002",
+      "initial" : "  TBD",
+      "id" : "1530546",
+      "title" : "[CLI][19.5]Verify \"Listening to RA\" should be enabled when set an interface as PPPoEv6 DHCPv6 thru CLI",
+      "description" : "Original ID: 123\r\nOriginal Title: [CLI][19.5]Verify \"Listening to RA\" should be enabled when set an interface as PPPoEv6 DHCPv6 thru CLI\r\nOriginal Description:",
+      "result" : "  2.\"listen-router-advertisement\" is enabled (edit-WAN-pppoe6[X2])# show interface ipv6 X2 interface ipv6 X2 ip-assignment pppoe6 mode-assignment dhcpv6 no prefix-delegation no rapid-commit mode auto schedule always-on no inactivity no lcp-echo-packets reconnect 5 ncp-neg-retrans 200 exit ipv6-traffic listen-router-advertisement no stateless-address-autoconfig duplicate-address-detection-transmits 1 reachable-time 30 management https management https-source any management ping management ping-source any management snmp management snmp-source any no management ssh management ssh-source any no user-login http no user-login https https-redirect exit 3.error msg will show :Error: Listening to router advertisement option must be enabled via the 'listen-router-advertisement' command when PPPOEv6 get address with DHCPv6 (auto) mode. (edit-WAN-pppoe6[X2])# exit (edit-interface[X2]-ipv6)# no listen-router-advertisement (edit-interface[X2]-ipv6)# commit % Error encountered processing command: commit % Error: Listening to router advertisement option must be enabled via the 'listen-router-advertisement' command when PPPOEv6 get address with DHCPv6 (auto) mode. % Type 'cancel' at any time to abort current % changes and return to the previous mode. "
+   },
+   "1530536" : {
+      "steps" : "  1. setup a PPPoEv6 connection; 2. click disconnect button on Network -&gt; Interfaces IPv6 page for WAN that configured as PPPoEv6;",
+      "priority" : "Sanity",
+      "atm_id" : "6176f3cb-4ba5-4459-8ceb-f9bd16cbd73f",
+      "initial" : "  1)Have PPPoE server configured and up running, and can provide both IPv4 and IPv6 address to clients. 2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530536",
+      "title" : "Verify disconnecting PPPoEv6 connection from SonicWALL",
+      "description" : "Original ID: 39\nOriginal Title: Verify disconnecting PPPoEv6 connection from SonicWALL \nOriginal Description: <span>&#160;This test is to verify that PPPoEv6 connection can be disconnected from SonicWALL management GUI.</span>",
+      "result" : "  1. WAN IPv6 address is clear &#160;on ipv6 page.\n  2. connect buttons are shown on ipv6 page "
+   },
+   "1530554" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page,fill in appropriate username, password and service name,select PPPoEv6 address Assignment as Automatic mode,then click OK.\n  3.config PPPoEv6 server with RA enable, set flag M=1&amp;O=1,with prefix provided, check if it can get ipv6 address\n  4.config PPPoEv6 server with RA enable, set flag M=0&amp;O=1 and with prefix provided, check if it can get ipv6 address\n  5. send traffic from LAN(pc1) to WAN(pc2)\n  6.In GUI diagnostic page to ping WAN PC2 IPv6 address, check if the IPV6 addess can be used",
+      "priority" : "Smoke",
+      "atm_id" : "542b8e5c-de5e-4162-bf3a-c6285c1a07ec",
+      "initial" : "  1)Have PPPoE server configured and up running\u00c2\u00a3\u00c2\u00acmake sure it can provide IPv6 address to clients via RA prefix instead of DHCPv6&nbsp;\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2.",
+      "id" : "1530554",
+      "title" : "Verify PPPoEv6 can obtain IPv6 address in Auto mode",
+      "description" : "Original ID: 25\nOriginal Title: Verify PPPoEv6 can obtain IPv6 address in Auto mode \nOriginal Description: This test case is to verify that PPPoEv6 can obtain IPv6 address in Automatic mode",
+      "result" : "  in step 3&amp;4, regardless of flag M&amp;O,it will get Autonomous ipv6 address;\n  in step 5,traffic from LAN to WAN should be able to pass through\n  in step 6,the traffic from DUT to WAN should be OK ,From the captured packet,it should use WAN ipv6 address"
+   },
+   "1530544" : {
+      "steps" : "  1. set X2 as PPPoe v6 DHCPv6 mode 2. check ipv6 X2 related ao :X2 IPv6 Primary Dynamic Address,X2 IPv6 Primary Dynamic Address Subnet",
+      "priority" : "Smoke",
+      "atm_id" : "689fd6d3-9f3b-46f5-a541-bd401b78be37",
+      "initial" : "  TBD",
+      "id" : "1530544",
+      "title" : "[FC][PPPoEv6 interface][16.4]Verify related AO can resolve correct address when PPPoEv6 interface get address thru DHCPv6 mode",
+      "description" : "Original ID: 109\r\nOriginal Title: [FC][PPPoEv6 interface][16.4]Verify related AO can resolve correct address when PPPoEv6 interface get address thru DHCPv6 mode\r\nOriginal Description:",
+      "result" : "  ![](index.php?/attachments/get/40872e39-1882-445c-9d1b-e84c02f7d473) X2 IPv6 Primary Dynamic Address,X2 IPv6 Primary Dynamic Address Subnet are came from pppoe ipv6 dhcpv6 address"
+   },
+   "1530553" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page,fill in appropriate username, password and service name,select PPPoEv6 address Assignment as DHCPv6 Automatic mode, check Use Rapid Commit Option,then click OK.\n  3. config server in Rapid Commit and then connect Firewall to PPPOE server,Capture packet on Firewall. check if it can get ipv6 address and observe the DHCPv6 negotiation process.\n  4. send traffic from LAN(pc1) to WAN(pc2)\n  5. In GUI diagnostic page to ping WAN PC2 IPv6 address, check if the IPV6 addess can be used",
+      "priority" : "Sanity",
+      "atm_id" : "1f5c0ee2-36cc-446e-b3e5-93e45a9b3fcf",
+      "initial" : "  1)Have PPPoE server configured and up running\u00c2\u00a3\u00c2\u00acmake sure it can provide IPv6 address to clients via DHCPv6 over PPPoE\n  2)PC1--X0(DUT)X1--PPPOE server--PC2",
+      "id" : "1530553",
+      "title" : "Verify PPPoEv6 can obtain IPv6 address in DHCPv6 Rapid Commit mode",
+      "description" : "Original ID: 24\nOriginal Title: Verify PPPoEv6 can obtain IPv6 address in DHCPv6 Rapid Commit mode \nOriginal Description: This test case is to verify PPPoEv6 can obtain IPv6 address in DHCPv6 Rapid Commit mode&#160;",
+      "result" : "  in step 3:Form the captured packet, you will notice the Solicit message, and there is 'Rapid commit' option,and DHCPv6 process only have solicit and reply msg.\n  in step 4,traffic from LAN to WAN should be able to pass through\n  in step5,the traffic from DUT to WAN should be OK ,From the captured packet,it should use WAN ipv6 address"
+   },
+   "1530568" : {
+      "steps" : "  1. set PPPoE IPv6 in Auto mode 2. change the schedule which include system time, check if pppoeV6 is connected 3. change the schedule which include system time, check if pppoeV6 is connected 4. change the schedule which include system time, check if pppoeV6 is connected ",
+      "priority" : "Smoke",
+      "atm_id" : "4fb30263-43e0-416b-a993-6549819d4b9f",
+      "initial" : "  TBD",
+      "id" : "1530568",
+      "title" : "[FC][Schedule check][6.1]Verify to change different schedules,PPPoE IPv6 can work normally in Auto mode",
+      "description" : "Original ID: 85\r\nOriginal Title: [FC][Schedule check][6.1]Verify to change different schedules,PPPoE IPv6 can work normally in Auto mode\r\nOriginal Description:",
+      "result" : "  2. pppoeV6 is connected 3. pppoeV6 is disconnected 4. pppoeV6 is connected"
+   },
+   "1530538" : {
+      "steps" : "  step 1: setup a PPPoEv6 connection; step 2: go to Network -&gt; Interfaces IPv6 page, click Disconnect button for the WAN interface; step 3: verify that PPPoEv6 connection got terminated, verify IPv6 traffic through PPPoEv6 interface.\n  step 4: click Connect button for the WAN interface; step 5: verify that PPPoEv6 connection got reconnected,&#160;verify IPv6 traffic through PPPoEv6 interface.",
+      "priority" : "Smoke",
+      "atm_id" : "57f2f73e-79a1-4ec0-8ba8-529fc8115d3f",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530538",
+      "title" : "Verify Disconnect and Connect buttons",
+      "description" : "Original ID: 51\nOriginal Title: Verify Disconnect and Connect buttons\nOriginal Description: <span>This test case is to verify that PPPoEv6 - Disconnect and Connect buttons work as expected</span>",
+      "result" : "  Result of step3: PPPoEv6 connection should be terminated after click the Disconnect button, IPv6 traffic cannot pass through PPPoEv6 interface.\n  Result of step5: PPPoEv6 connection should be re-established after click the Connect button, IPv6 traffic can pass through PPPoEv6 interface."
+   },
+   "1530526" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page,fill in appropriate username,password and service name, select PPPoEv6 address Assignment as DHCPv6 Automatic mode, check HTTPs for management, accept default settings for all other options,then click OK.\n  3.check GUI interface page and Protocol Tab, status and IPv6 address should shown correctly.\n  4. open a browser in PC2,and accessthe ipv6 address obtain from https://[ipv6]; management GUI should be brough up; modify some configuratons, check if it can save right.\n  5. go to System -&gt; Adminstration page, change HTTPs port to 8080; open a browser in PC2 and access https://[ipv6]:8080,after management,modify someconfiguratons, check if it can save right.\n  6. repeat step 2~5 with HTTP management option enabled, to verify HTTP management",
+      "priority" : "Smoke",
+      "atm_id" : "6adb45f2-8e4b-46f8-ac18-6123445315bc",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530526",
+      "title" : "Assign WAN IPv6 address through PPPoEv6 and enable its management for HTTP/HTTPS",
+      "description" : "Original ID: 15\nOriginal Title: Assign WAN IPv6 address through PPPoEv6 and enable its management for HTTP/HTTPS\nOriginal Description: This test case is to verify that&#160;Assign WAN IPv6 address through PPPoEv6 and enable its management for HTTP/HTTPS",
+      "result" : "  using the ipv6 address obtained from pppoev6 server,management GUI should be brough up,and user can modify configuratons successfully."
+   },
+   "1530555" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page,fill in appropriate username, password and service name,select PPPoEv6 address Assignment as Static mode,then click OK.\n  3.config static IPv6 address,gateway and DNS,then Capture packet on Firewall. 4. send traffic from LAN(pc1) to WAN(pc2)\n  5.In GUI diagnostic page to ping WAN PC2 IPv6 address, check if the IPV6 addess can be used",
+      "priority" : "Smoke",
+      "atm_id" : "e8cb7387-ac19-4393-b39e-41ced34b231d",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it won't provide IPv6 address to clients in either stateful (DHCPv6) or stateless (RA prefix) way.\n  2)PC1--X0(DUT)X1--G0/1(PPPOE server)G0/0--PC2",
+      "id" : "1530555",
+      "title" : "Verify PPPoEv6 can obtain IPv6 address in Static mode",
+      "description" : "Original ID: 26\nOriginal Title: Verify PPPoEv6 can obtain IPv6 address in Static mode\nOriginal Description: This test case is to verify PPPoEv6 can obtain IPv6 address in Static mode",
+      "result" : "  in step 4,traffic from LAN to WAN should be able to pass through\n  in step 5,the traffic from DUT to WAN should be OK ,From the captured packet,it should use WAN ipv6 address"
+   },
+   "1530563" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page ,fill in appropriate username, password and service name, select PPPoEv6 address Assignment as DHCPv6 Automatic mode, accept default settings for all other options,then click OK.\n  3. connect Firewall to PPPOE server,check if it can get ipv6 address\n  4. send traffic from LAN(pc1) to WAN(pc2)\n  5.In GUI diagnostic page to ping WAN PC2 IPv6 address, check if the IPv6 addess can be used",
+      "priority" : "Smoke",
+      "atm_id" : "6d481eb9-3c05-47f9-ae78-f1a5ce575538",
+      "initial" : "  1)Have PPPoE server configured and up running, and no IPv4 address provided, only provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530563",
+      "title" : "When server side only support PPPoE ipv6 ,It can work fine",
+      "description" : "Original ID: 60\nOriginal Title: When server side only support PPPoE ipv6 ,It can work fine\nOriginal Description: This test case is to verify pppoe server only support ipv6 can work fine",
+      "result" : "  PPPoEv6 can successfully get IPv6 address, and LAN to WAN IPv6 traffic should be forwarded normally."
+   },
+   "1530551" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page,fill in appropriate username, password and service name (share the same with PPPoE IPv4),select PPPoEv6 address Assignment as DHCPv6 Automatic mode, enable DHCPv6 prefix delegation,then click OK.\n  3. connect Firewall to PPPOE server,capture packet on Firewall. check if it can get ip address and PD\n  4.config lan interface ,add downsteam delegated IPv6 address from wan interface,make sure LAN pc1 can get ipv6 address From PD 5. send traffic from LAN(pc1) to WAN(pc2)\n  6.In GUI diagnostic page to ping WAN PC2 IPv6 address, check if the IPV6 addess can be used\n  7.the PD can be released and renewed successfully",
+      "priority" : "Smoke",
+      "atm_id" : "38ae09c6-ab91-452a-8637-51308b8c38b2",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530551",
+      "title" : "Verify DHCPv6 PD option can be obtained from PPPoEv6 server side",
+      "description" : "Original ID: 22\nOriginal Title: Verify DHCPv6 PD option can be obtained from PPPoEv6 server side\nOriginal Description: This test case is to verify Verify DHCPv6 PD option can be obtained from PPPoEv6 server side",
+      "result" : "  in step 3,check GUI interface page and Protocol Tab, status and PD should shown correctly.\n  In step 4, check if LAN pc1 can get ipv6 address From PD in step 5,traffic from LAN to WAN should be able to pass through\n  in step 6,check the PD can be released and renewed successfully"
+   },
+   "1530558" : {
+      "steps" : "  1. Network-&gt;interface X1,set its zone as WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit X1 interface in IPv6 interface page, fill in appropriate username, password and service name, select PPPoEv6 address Assignment as DHCPv6 Automatic mode, accept default settings for all other options, then click OK.\n  3. Connect Firewall to PPPOE server, check if it can get ipv6 address\n  4. Check Network-&gt;routing IPv6 page,verify if IPv6 defualt route generated",
+      "priority" : "Smoke",
+      "atm_id" : "1bf2162d-4937-4d6d-86b3-e34a67f741c1",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530558",
+      "title" : "Verify IPv6 defualt route generated by PPPoEv6 pramary WAN interface.",
+      "description" : "Original ID: 29\nOriginal Title: Verify IPv6 defualt route generated by PPPoEv6 pramary WAN interface.\nOriginal Description: This test case is to verify &#160;IPv6 defualt route generated by PPPoEv6 pramary WAN interface.",
+      "result" : "  PPPoEv6 &#160;get connected and can get IPv6 address, the IPv6 defualt route is also generated."
+   },
+   "1530545" : {
+      "steps" : "  1. use CLI command configure X2 as PPPoEv6 Static mode config(UTM)# interface ipv6 X2 (edit-interface[X2]-ipv6)# ip-assignment pppoe6 (edit-WAN-pppoe6[X2])# mode-assignment static (edit-WAN-pppoe6[X2])# ip 2001:470:80b7:8ab:25dc::9999 (edit-WAN-pppoe6[X2])# gateway fe80::e14d:625c:e34d:625d (edit-WAN-pppoe6[X2])# commit 2.use CLI command show interface ipv6 X2, check if configuration saved",
+      "priority" : "Smoke",
+      "atm_id" : "6420f50d-b978-4665-9108-97ae50d07fad",
+      "initial" : "   ",
+      "id" : "1530545",
+      "title" : "[CLI][19.4]Verify an interface can be assigned as PPPoEv6 Static mode thru CLI commands without any error or issue",
+      "description" : "Original ID: 119\r\nOriginal Title: [CLI][19.4]Verify an interface can be assigned as PPPoEv6 Static mode thru CLI commands without any error or issue\r\nOriginal Description:",
+      "result" : "  2.(edit-WAN-pppoe6[X2])# show interface ipv6 X2 interface ipv6 X2 ip-assignment pppoe6 mode-assignment static ip 2001:470:80b7:8ab:25dc::9999 dns primary :: dns secondary :: dns tertiary :: gateway fe80::e14d:625c:e34d:625d schedule always-on no inactivity no lcp-echo-packets reconnect 5 ncp-neg-retrans 200 exit ipv6-traffic listen-router-advertisement no stateless-address-autoconfig duplicate-address-detection-transmits 1 reachable-time 30 management https management https-source any management ping management ping-source any management snmp management snmp-source any no management ssh management ssh-source any no user-login http no user-login https https-redirect exit"
+   },
+   "1530522" : {
+      "steps" : "  1. Network-&gt;interface primary WAN, keep IP Assignment as static, configure IP address (e.g., 1.1.1.1), then click OK 2. Network-&gt;interface page configure X2 as secondary WAN,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  3. Edit secondary WAN interface in IPv6 interface page,fill in appropriate username,password and service name, ,select PPPoEv6 address Assignment as DHCPv6 Automatic mode, accept default settings for all other options,then click OK.\n  4.check GUI interface page and Protocol Tab, status and IPv6 address should shown correctly.",
+      "priority" : "Sanity",
+      "atm_id" : "9ec09993-6142-4d9d-a0ca-d9756086e831",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X2--(PPPOE server 2)--PC2",
+      "id" : "1530522",
+      "title" : "Assign Secondary WAN IPv6 through PPPoEv6 and Primary as Static",
+      "description" : "Original ID: 13\nOriginal Title: Assign Secondary WAN IPv6 through PPPoEv6 and Primary as Static\nOriginal Description: <span>This test case is to verify that&#160;</span><span>&#160;secondary WAN IP can be assigned through PPPoEv6 successfully.</span>",
+      "result" : "  Secondary WAN should receive correct IPv6 address"
+   },
+   "1530560" : {
+      "steps" : "  1. Network-&gt;interface, select the View IP Version to IPv4, select IP Assignment as PPPoE\n  2. change the IP version to Ipv6, fill in correct user name and password, select PPPoEv6 address Assignment as DHCPv6 Automatic mode, accept default settings for all other options, and click OK; 3. after get ipv6 address, check \u00c2\u00a1\u00c2\u00b0Disable all IPv6 Traffic\u00c2\u00a1\u00c2\u00b1 on the Interface in advance page, send IP6 traffic from LAN(pc1) to WAN(pc2)\n  4. uncheck \u00c2\u00a1\u00c2\u00b0Disable all IPv6 Traffic\u00c2\u00a1\u00c2\u00b1 on the Interface in advance page, send IPv6 traffic from LAN(pc1) to WAN(pc2)",
+      "priority" : "Sanity",
+      "atm_id" : "20229738-26b9-40ec-af3c-c07f3139203a",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530560",
+      "title" : "Disable all IPv6 Traffic on the PPPoEv6 Interface",
+      "description" : "Original ID: 57\nOriginal Title: Disable all IPv6 Traffic on the PPPoEv6 Interface\nOriginal Description: This test case is to verify the functon of Disable all IPv6 Traffic on the PPPOEv6 Interface can work fine",
+      "result" : "  in step 3, all IPv6 Traffic on the Interface should be dropped\n  in step 4, all IPv6 Traffic can pass through"
+   },
+   "1530570" : {
+      "steps" : "  1. Network-&gt;interface primary WAN,set it zone WAN ,and select IP Assignment as PPPoE, then click OK 2. Edit primary WAN interface in IPv6 interface page, in protocol tab enable \"Inactivity Disconnect\" and set \"Inactivity Disconnect\" value&lt;1 ,check if FW can accept this value",
+      "priority" : "Smoke",
+      "atm_id" : "8285d7a9-06c4-45ee-8068-41f6a4edce3f",
+      "initial" : "  TBD",
+      "id" : "1530570",
+      "title" : "[FC][Boundary test for Inactivity Disconnect][10.3]Verify if set \"Inactivity Disconnect\" value<1 to see if FW can accept this value",
+      "description" : "Original ID: 93\r\nOriginal Title: [FC][Boundary test for Inactivity Disconnect][10.3]Verify if set \"Inactivity Disconnect\" value&lt;1 to see if FW can accept this value\r\nOriginal Description:",
+      "result" : "  the FW will popup error msg"
+   },
+   "1530534" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. Edit this interface in IPv6 interface page, fill in appropriate username, password and service name, select PPPoEv6 address Assignment as DHCPv6 Automatic mode, accept default settings for all other options, and click OK;\n  3. Protocol-&gt;PPPoE Client Settings,check Inactivity Disconnect,and accept default setting (10 minutes)\n  4. verify from the GUI that primary WAN can receive correct IPv6 address; 5.keep SonicWALL inactive for 10 minutes without any traffic from LAN-&gt;WAN; verify that PPPoE connection is terminated; 6.explicitly re-connect PPPoEv6 through management GUI; verify that PPPoEv6 connection got re-established; 7.keep SonicWALL inactive for another 10 minutes without any traffic from LAN-&gt;WAN; 8.then send IPv6 traffic from LAN to WAN,&#65533;verify that PPPoEv6 connection got re-established;&#65533;",
+      "priority" : "Smoke",
+      "atm_id" : "c5271034-c008-48eb-b676-bda16796643a",
+      "initial" : "  1)Have PPPoE server configured and up running, make sure it can provide IPv6 address to clients via DHCPv6 over PPPoE.\n  2)PC1--X0(DUT)X1--(PPPOE server)--PC2",
+      "id" : "1530534",
+      "title" : "Re-connecting after Inactivity Disconnection timeout",
+      "description" : "Original ID: 36\nOriginal Title: Re-connecting after Inactivity Disconnection timeout \nOriginal Description: &#160;This test case is to verify that inactivity disconnection setting works well&#160;",
+      "result" : "  SonicWALL should re-establish PPPoE connection to PPPoE server,&#160;<span style=\"font-size: 10px;\">and the traffic through the PPPoEv6 connection should be successful."
+   },
+   "1530565" : {
+      "steps" : "  1. set interface X2 as PPPoe mode,and fill in appropriate username, password and service name,then check IPv6 as PPPoEv6 mode, make sure it can get connected and acquired IPv6 address. 2. veirfy all the items display correctly work normally",
+      "priority" : "Smoke",
+      "atm_id" : "ec15ff30-97a1-42f2-922a-c8e7adc4bfdf",
+      "initial" : "  TBD",
+      "id" : "1530565",
+      "title" : "[GUI][PPPoE IPv6 Interface][1.1]GUI Check for PPPoE IPv6 interface,make sure all the items display correctly work normally",
+      "description" : "Original ID: 62\r\nOriginal Title: [GUI][PPPoE IPv6 Interface][1.1]GUI Check for PPPoE IPv6 interface,make sure all the items display correctly work normally\r\nOriginal Description:",
+      "result" : "  See title"
+   },
+   "1530556" : {
+      "steps" : "  1. Network-&gt;interface x1,set it zone WAN ,and select IP Assignment as PPPoE, then click OK\n  2. change the IP version to Ipv6,there are three ways for obtaining a global address,static or DHCPv6, or Auto,the default way is Auto.\n  3. after fill in appropriate username, password and service name, it can save without error,and then send traffic from LAN PC1 to WAN PC2.\n  4. change global address obtain ways of PPPOEv6 from\n  AUTO to DHCPv6, default dhcpv6 mode is automatic,and it can save without error,then send traffic from LAN PC1 to WAN PC2.\n  5. change global address obtain ways of PPPOEv6 from\n  DHCPv6 to static,and it can save without error,then send traffic from LAN PC1 to WAN PC2.",
+      "priority" : "Smoke",
+      "atm_id" : "f0a1fc56-0ceb-4429-af2c-752ad7daff0e",
+      "initial" : "  1)Have PPPoE server configured and up running\u00c2\u00a3\u00c2\u00acmake sure it can provide IPv6 address to clients in both stateful (DHCPv6) and stateless (RA prefix) way.\n  2)PC1--X0(DUT)X1--PPPOE server--PC2",
+      "id" : "1530556",
+      "title" : "Switch global address obtain ways of PPPOEv6 between Auto, Static, DHCPv6",
+      "description" : "Original ID: 27\nOriginal Title: Switch global address obtain ways of PPPOEv6 between Auto, Static, DHCPv6\nOriginal Description: This test case is to verify that &#160;Switch global address obtain ways of PPPOEv6 between Auto, Static, DHCPv6 can work fine",
+      "result" : "  1)after switch the mode,WAN interface should get correct IPv6 address\n  2) traffic from LAN to WAN should be able to pass through\n  3)traffic from DUT to WAN PC2 should be able to pass through,make sure the new IPV6 address could be used"
+   }
+}

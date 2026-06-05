@@ -1,0 +1,23 @@
+{
+    "01" : {
+        "steps": "Edit user. Add Limited Management Capabitilies privilege",
+        "initial": "PC1 -- (X0 LAN) DUT (X1 WAN)",
+        "id" : "01",
+        "title": "Add Limited Management Capabitilies privilege",
+        "result": "Limited management can be edited."
+    },
+    "02" : {
+        "steps": "Add user to a group that has Limited Administrator privileges",
+        "initial": "PC1 -- (X0 LAN) DUT (X1 WAN)",
+        "id" : "02",
+        "title": "Add user to a group that has Limited Administrator privileges",
+        "result": "Limited management can be added."
+    },
+    "03" : {
+        "steps": "1. add limit admin user in local Users.\n\n2. add Limited Administrators to limit user in Local Groups.\n3. enable HTTPS for User Login on X0 Interface.\n\n4. access a wan host form PC1, a limit login dialog box will show. managment it.\n\n5. check guest user can be configurable\n\n6. check local user can not be configurable",
+        "initial": "PC1 -- (MGMT) DUT (X1 WAN)",
+        "id" : "03",
+        "title": "Verify user with the limited management right can manage the firmware(from LAN)",
+        "result" : "Verify user with the limited management right can manage the firmware(from LAN)"
+    }
+}

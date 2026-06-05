@@ -1,0 +1,61 @@
+{
+    "user": {
+        "ldap": {
+            "server": [
+                {
+                    "host": "10.5.67.160",
+                    "enable": true,
+                    "role": {
+                        "primary": true
+                    },
+                    "port": 389,
+                    "timeout": {
+                        "server": 10,
+                        "operation": 5
+                    },
+                    "use_tls": false,
+                    "send_start_tls_request": false,
+                    "schema": "microsoft-active-directory",
+                    "user_class": "user",
+                    "user_attribute": {
+                        "logon_name": "sAMAccountName",
+                        "qualified_logon_name": "userPrincipalName",
+                        "group_membership": "memberOf",
+                        "additional_group_id": "primaryGroupID",
+                        "use_additional_group_id": false,
+                        "framed_ip_address": "msRADIUSFramedIPAddress"
+                    },
+                    "user_group_class": "group",
+                    "user_group_attribute": {
+                        "member": {
+                            "type": "distinguished-name",
+                            "name": "member"
+                        },
+                        "additional_group_match": "primaryGroupToken"
+                    },
+                    "directory": {
+                        "primary_domain": "sosqa.com",
+                        "users_tree": [
+                            {
+                                "name": "sosqa.com/Users"
+                            }
+                        ],
+                        "user_groups_tree": [
+                            {
+                                "name": "sosqa.com/Users"
+                            }
+                        ]
+                    },
+                    "bind": {
+                        "acct": {
+                            "name": "auth_test",
+                            "location": "sosqa.com/Users"
+                        }
+                    },
+                    "bind_password": "S0nicwall",
+                    "referred_bind_with_account": "local"
+                }
+            ]
+        }
+    }
+}

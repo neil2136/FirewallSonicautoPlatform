@@ -1,0 +1,72 @@
+{
+   "01" : {
+      "steps" : "1.add a static interface with LAN/DMZ/WAN/User defined mode\u00810„2\n\n2.set ip address as 192.168.1.100, network mask as 255.255.255.254\n\n3.check it can saved",
+      "initial" : "",
+      "id" : "01",
+      "title" : "Add an interface with 31_bit_Addressing",
+      "result" : "interface with 31_bit_Addressing can be saved normally"
+   },
+   "02" : {
+      "steps" : "1.choose an interface with 31 bit addressing,then click edit button\n\n2.change zone of interface,check if it can change successfully\n\n3.change the ip address ,check if it can change successfully\n\n4.change the netmask from 31 bit to other mask such as 24 bit,check related AO ,check if it change correctly",
+      "initial" : "",
+      "id" : "02",
+      "title" : "modify an interface with 31 bit addressing",
+      "result" : "the interface with 31 bit can modify"
+   },
+   "03" : {
+      "steps" : "1 choose a physical interface with 31 bit addressing,check if it can unassign\n\n2.choose a vlan interface with 31 bit addressing,check if it can be deleted",
+      "initial" : "",
+      "id" : "03",
+      "title" : "unassign / delete an interface with 31 bit addressing",
+      "result" : "step1 ,it can\u00810„2unassign\n\nstep2, it can be deleted"
+   },
+   "04" : {
+      "steps" : "1. set interface X2 with 31 bit addressing on DUT 1,set ip address as 192.168.100.100/31\n\n2.set interface X2 with 31 bit addressing on DUT 2,set ip address as 192.168.100.101/31,and enable ping management\n\n3. from diagnostics page of DUT1,ping 192.168.100.101.check if it can ping successfully",
+      "initial" : "",
+      "id" : "04",
+      "title" : "Ping between interfaces with 31 bit addressing",
+      "result" : "Ping between interfaces with 31 bit addressing can successful"
+   },
+   "05" : {
+      "steps" : "1.configure X2 as lan with 31 bit addressing, set ip address as 192.168.100.100/31\n\n2.enable https/snmp/ssh management of X2\n\n3. configure X3 as lan with 24 bit addressing,set ip as 192.168.3.1/24,and add related dhcp server\n\n4. configure related access rule, especially enable management\n\n5. On DHCP Client pc set its ip address as Obtain an IP address automatically,execute ipconfig/renew\n\n6. from DHCP client,type\"https:// [X2's IP]\" from browser,check if can login successfully\n\n7. from DHCP client, initial SSH connect to the interface X2, make sure the SSH session is setup\n\n8. Go to System>Administration page, enable SNMP and configure it properly\n\n9. From SNMP server, connect to the interface X2, make sure SNMP server can read mib information of FW;\n\n10. uncheck https/snmp/ssh management of X2,check if can work normally",
+      "initial" : "dhcp client ---- [x3] DUT [X2(with 31 bit addressing)]",
+      "id" : "05",
+      "title" : "Management (https/snmp/ssh) on interface with 31 bit addressing",
+      "result" : "step 6, can login successfully\n\nstep 7, the SSH session can be setup\n\nstep 9,SNMP server can read mib information of FW through interface X2\n\nstep 10 ,after uncheck, can't login,the ssh session can't set up,SNMP server can't read mib information"
+   },
+   "06" : {
+      "steps" : "1. add a vlan interface,set it as lan/dmz/wan mode\n\n2.set ip address as 192.168.30.1,netmask as 255.255.255.254\n\n3.check if the configuration can be saved\n\n4.send traffic through VLAN interface,check if can pass through",
+      "initial" : "",
+      "id" : "06",
+      "title" : "Vlan interface can be assigned as 31 bit addressing",
+      "result" : "step3 vlan interface can be assigned as 31 bit addressing\n\nstep4 traffic through vlan interface can pass through"
+   },
+   "07" : {
+      "steps" : "1. configure interface X2 of DUT1 as wan static mode,get ip 2.2.2.3/31,set it as default wan\n\n2. network->nat policy ,check if exist interface X2 related nat policy\u00810„2\n\n3. configure interface X0 of DUT1 as lan static mode with 24 bit addressing,set ip 192.168.168.168\n\n4. connect pc to x0 of DUT1, send traffic to internet\n\n5. from captured packet ,check if it nated on interface X2 of DUT1",
+      "initial" : "pc-----[X0]DUT1[X2]------internet",
+      "id" : "07",
+      "title" : "Vlan interface can be assigned as 31 bit addressing",
+      "result" : "NAT work fine on interface with 31 bit addressing"
+   },
+   "10" : {
+      "steps" : "1. set interface X2 with 31 bit addressing on DUT 1,set it as wan static mode,ip address as 192.168.100.100/31\n\n2. set interface X2 with 31 bit addressing on DUT 2,set it as wan static mode, ip address as 192.168.100.101/31\n\n3. enable bgp on both interfaces,then check if the interface can establish bgp with peer can learn and advertise bgp routes",
+      "initial" : "",
+      "id" : "10",
+      "title" : "BGP could be established via interface with 31 bit addressing",
+      "result" : "BGP could be established via /31 interface"
+   },
+   "11" : {
+      "steps" : "1. configure interface X2 as wan static mode,get ip 2.2.2.3/31\n\n2. configure interface X0 as lan static mode with 24 bit addressing,set ip 192.168.168.168,connect pc to x0\n\n3. Network->Routing,add a PBR ,to destination ip 8.8.8.8 through interface X2,check if the PBR added successfully\n\n4. send traffic from PC to 8.8.8.8,from captured packet check if the traffic pass through X2",
+      "initial" : "pc-----[X0]DUT[X2]------internet",
+      "id" : "11",
+      "title" : "PBR could be added and working fine with /31 interface",
+      "result" : "PBR could be added and working fine with /31 interface"
+   },
+   "31" : {
+      "steps" : "1. Configure X2 as LAN with 31 bit address, e.g, 200.1.1.0/31, peer router (or another firewall) also configure /31 address, e.g, 200.1.1.1/31\n\n2. From PC to ping DUT X2 IP\n\n3. Repeat steps 1~2 with change X2 as DMZ zone\n\n4. Repeat steps 1~2 with change X2 as WAN zone\n\n5. Repeat steps 1~2 with change X2 as a custom zone",
+      "initial" : "DUT(X2)-----Router(or another Firewall)----PC",
+      "id" : "31",
+      "title" : "Verify the 31 bit address in different Zones(LAN/DMZ/WAN/Custom)",
+      "result" : "Step 2,3,4,5. Ping is successful."
+   }
+}

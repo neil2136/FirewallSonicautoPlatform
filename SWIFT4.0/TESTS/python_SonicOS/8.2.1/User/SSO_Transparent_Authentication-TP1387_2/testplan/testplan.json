@@ -1,0 +1,93 @@
+{
+    "1522304": {
+        "id": "1522304",
+        "title": "User groups configured locally. Use a full user name including the domain component.",
+        "result": "The user is allowed to access the Internet without logging in to the SonicWALL. The firewall prints a log message User login allowed. The user's name in the log message is shown in the <domain>/<user-name> format.",
+        "inital": "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\nThe other PC is a workstation where a domain user should log in to the domain.",
+        "steps": "1. Load 4.0e or newer firmware on the firewall. 2. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method. 3. Click the Configure button. In the Settings tab of the Sonicwall SSO Agent Authentication Configuration window enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent. 4. In the Users tab, select Local configuration. Don't enable the Simple user names in local database check box. Click OK. 5. On the Firewall&gt;Access Rules page, edit the default LAN&gt;WAN rule. Select Everyone in the Users Alowed field. 6. <span>On the Users&gt;Local Users page, add a new user. Enter a name of the domain user in</span>\\ format. 7. As a domain user, log in to the network from the workstation. Access the Internet."
+    },
+    "1522305": {
+        "id": "1522305",
+        "title": "User groups configured locally. Use a full user name including the domain component. Allow only users listed locally.",
+        "result": "The SonicWALL allows accessing the Internet to the first user and denies the second one. The users' names are printed in the log messages in the <domain>/<user-name> format.",
+        "inital": "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\nThe other PC is a workstation where a domain user should log in to the domain.",
+        "steps": "1. Load 4.0e or newer firmware on the firewall. 2. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method. 3. Click the Configure button. In the Settings tab of the Sonicwall SSO Agent Authentication Configuration window enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent. 4. In the Users tab, select Local configuration. Enable the Allow only users listed locally check box. Click OK. 5. On the Firewall&gt;Access Rules page, edit the default LAN&gt;WAN rule. Select Everyone in the Users Alowed field. 6. On the Users&gt;Local Users page, add a new user. Enter a name of the domain user in \\ format. 7. As a domain user that is listed in the local database, log in to the network from the workstation. Access the Internet. 8. Re-log in as a domain user whose name is not listed in the local database. access the Internet."
+    },
+    "1522312": {
+        "id": "1522312",
+        "title": "Use LDAP to retrieve user group information. Allow only users listed locally.",
+        "result": "The user qatest2 is allowed to access the Internet. The firewall prints the log message Local user login allowed. The other domain user is presented with Authentication Required page when trying to access the Internet. The firewall prints the log message User login denied - not found locally.",
+        "inital": "Configure a domain QALAB on the LAN of SonicWALL. Add a user with the name qatest2 in Active Directory of the domain. \nOn a workstation that is joined the domain, install a Sonicwall SSO Agent. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\nUse the other workstation to log users in the domain.",
+        "steps": "1. Load firmware on the firewall. 2. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method. 3. Click the Configure button. In the Settings tab of the Sonicwall SSO Agent Authentication Configuration window enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent. 4. In the Users tab, select Allow only users listed locally and Use LDAP to retrieve user group information. Click Configure. 5. In the LDAP Configuration window, fill in the fields. In the Directory tab, run Auto-Configure to add all sub-directories in the Trees containing users and user groups. Save. 6. On the Firewall&gt;Access Rules page, edit the default LAN&gt;WAN rule. Select Everyone in the Users Allowed field. 7. On the Users&gt;Local Users page, add a user QALAB\\qatest2. 8. As a domain user qatest2, log in to the QALAB domain from the workstation. Access the Internet. 9. Logout the user qatest2. Login the other domain user, whose name is not duplicated on the Users&gt;Local Users page. Attempt to access the Internet."
+    },
+    "1522313": {
+        "id": "1522313",
+        "title": "User session is terminated by session time expiry.",
+        "result": "Verify that 'login session limit' does not take effect for SSO user.",
+        "inital": "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\nThe other PC is a workstation where a domain user should log in to the domain.",
+        "steps": "1. Load firmware on the firewall. 2. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method. 3. Click the Configure button. In the Settings tab of the Sonicwall SSO Agent Authentication Configuration window enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent. 4. In the Users tab, select Local configuration. Click OK. 5. On the Users&gt;Settings tab, have Login session limit set to 5 minutes. 6. On the Firewall&gt;Access Rules page, edit the default LAN&gt;WAN rule. Select Everyone in the Users Allowed field. 7. As a domain user, log in to the domain from the workstation. Access the Internet. Pass continuous traffic to the WAN.8. Verify that 'login session limit' does not take effect for SSO user."
+    },
+    "1522318": {
+        "id": "1522318",
+        "title": "The Sonicwall SSO Agent is used.",
+        "result": "The user that is logged in to the domain is allowed to access the Internet without logging in to the SonicWALL.",
+        "inital": "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. The other PC is a workstation where a domain user should log in to the domain.",
+        "steps": "1. Install SonicWALL Directory Configurator 1.0.x on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties. 2. Load firmware on the firewall. 3. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method. 4. Click the Configure button. In the Settings tab of the Sonicwall SSO Agent Authentication Configuration window enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent. 5. In the Users tab, select Local configuration. Click OK. 6. In the Test tab, run Check agent connectivity test. Verify the Agent is ready message is displayed in the Test Status field. 7. On the Firewall&gt;Access Rules page, edit the default LAN&gt;WAN rule. Select Everyone in the Users Allowed field. 8. As a domain user, log in to the domain from the workstation. Access the Internet."
+    },
+    "1522345": {
+        "id": "1522345",
+        "title": "Inactive user can be activated on sending traffic if that follows a previous SSO failure",
+        "result": "The user should be activated and displayed in the active user sessions list.",
+        "inital": "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.<br />\nThe other PC is a workstation where a domain user should log in to the domain.",
+        "steps": "1. Install SonicWALL Directory Configurator on the windows server. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\n2. Go to the Users&gt;Settings page on firewall.\n3. Click Configure SSO button. In the SSO Agents tab of the Sonicwall SSO Agent Authentication Configuration window, enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent. \n4. On the Firewall&gt;Access Rules page, edit the default LAN&gt;WAN rule. Select Everyone in the Users Allowed field.\n5. Disable all SSO agents as a way to force an SSO failure. \n6. Send traffic from a user PC and verify that it is shown as an SSO failure in the unauthenticated users list on the Users&gt;Status page. \n7. Log the user out from their PC and re-enable the SSO agents. \n8. Log the user back in and verify that the user is now shown as inactive on the Users&gt;Status page.\n9. Verify that the inactive user is still also listed in the unauthenticated users list. \n10. Send traffic from the user's PC to destinations on the WAN."
+    },
+    "1522351": {
+        "id": "1522351",
+        "title": "Check SSO authentication/operation statistics in TSR file",
+        "result": "The relevant data of SSOauthenticationstatistics and SSO operation statisticsare displayed correctly.",
+        "inital": "<span>1. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method. </span>\n<span>2. Click the Configure button. In the Settings tab of the Sonicwall SSO Agent Authentication Configuration window enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent. </span>\n<span>3. In the Users tab, select Local configuration. Enable the Simple user names in local database check box. Click OK. </span>\n<span>4. Configure a local user matching domain user. </span>\n<span>5. On the Firewall&gt;Access Rules page, edit the default LAN&gt;WAN rule. Select Everyone in the Users Allowed field.</span>\n<span>6. As a domain user, log in to the network from the workstation. Access the Internet.</span>",
+        "steps": "Navigate to System-&gt;Diagnostics page, download the TSR file, and check SSOauthenticationstatistics and SSO operation statistics."
+    },
+    "1522322": {
+        "id": "1522322",
+        "title": "Single sign on for multiple connections from a user starting at the same time",
+        "result": "Pings should be successful to both addresses - no timeouts.",
+        "inital": "TBD",
+        "steps": "1. Enable SSO and set a LAN to WAN rule for Ping with users allowed set to Trusted Users. 2. From a PC that is logged into the domain on the LAN side, ping an IP address on the WAN and ensure that the user is properly logged in via SSO. 3. Using a bash shell on that PC (e.g. using CygWin) set up the following shell script (ping -l 1024 -w 5000 WAN-side IP&amp; ping -l 512 -w 5000 WAN-side IP) 4. Log the user out from the SonicWALL's Users &gt; Status page, and then execute the above shell script on the PC."
+    },
+    "1522326": {
+        "id": "1522326",
+        "title": "A user is not logged in to a network and accessing resources within the network.  CFS and SSO enabled.  No rule.",
+        "result": "The user that is not logged in to the domain is allowed to access the Internet.",
+        "inital": "Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.\nThe other PC is a workstation where a domain user should log in to the domain.",
+        "steps": "1. Load firmware on the firewall. 2. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method. 3. Click the Configure button. In the Settings tab of the Sonicwall SSO Agent Authentication Configuration window enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent. 4. In the Users tab, select Local configuration. Click OK. 5. Don't have a user based access rule. 6. Enable CFS on the LAN 6. As a local user, log in to the workstation. Access the Internet."
+    },
+    "1522342": {
+        "id": "1522342",
+        "title": "IPS trigger SSO authentication",
+        "result": "1.<span>Verify the user is not displayed on the Users&gt;Status page in step7.</span>2. Verify IPS policy can trigger SSO authentication in step8. The user is displayed on the Users&gt;Status page.",
+        "inital": "<span>PC --- X0 SonicWALL</span>",
+        "steps": "1.Install SonicWALL Directory Configurator on the windows server. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.2. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method.3. Click the Configure button. In the Settings tab of the Sonicwall SSO Agent Authentication Configuration window enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent.4. In the Users tab, select Local configuration. Click OK.5. Don't have a user based access rule.6. Enable IPS policy and configure an IPS policy. 7. As a domain user, log in to the LAN PC.8. Make traffic to trigger IPS policy."
+    },
+    "1522344": {
+        "id": "1522344",
+        "title": "Application firewall trigger SSO authentication",
+        "result": "1.Verify the user is not displayed on the Users&gt;Status page in step7.2. Verify Application firewallcan trigger SSO authentication in step8. The user is displayed on the Users&gt;Status page.",
+        "intial": "<span>PC --- X0 SonicWALL</span>",
+        "steps": "1.Install SonicWALL Directory Configurator on the windows server. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.2. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method.3. Click the Configure button. In the Settings tab of the Sonicwall SSO Agent Authentication Configuration window enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent.4. In the Users tab, select Local configuration. Click OK.5. Don't have a user based access rule.6. Enable Application firewall and configure Application firewall. 7. As a domain user, log in to the LAN PC.8. Make traffic to trigger Application firewall."
+    },
+    "1825413": {
+        "id": "1825413",
+        "title": "Settings tab. The Timeout (seconds) field boudaries.",
+        "result": "When 0 or 301 is entered in the Timeout field, the status bar shows an error message Timeout. Data out of bounds (min=1, max=300). The values 1, 10, and 300 are accepted and saved in the Sonicwall SSO Agent Configuration.",
+        "intial": "PC --- X0 SonicWALL",
+        "steps": "1. Load firmware on the firewall. 2. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method. 3. Click the Configure button. In the Settings tab of the Sonicwall SSO AgentAuthentication Configuration window enter IP address of the agent and a port number. Enter Shared Key. 4. Enter 0 in the Timeout (seconds) field. Click the Apply button. 5. Repeat the previous step using the following values: 1, 10, 300, 301."
+    },
+    "1522344": {
+        "id": "1522344",
+        "title": "Application firewall trigger SSO authentication",
+        "result": "1.Verify the user is not displayed on the Users&gt;Status page in step7.2. Verify Application firewallcan trigger SSO authentication in step8. The user is displayed on the Users&gt;Status page.",
+        "intial": "<span>PC --- X0 SonicWALL</span>",
+        "steps": "1.Install SonicWALL Directory Configurator on the windows server. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.2. Go to the Users&gt;Settings page. Select Sonicwall SSO Agent for the Single-sign-on method.3. Click the Configure button. In the Settings tab of the Sonicwall SSO Agent Authentication Configuration window enter the IP address of the PC with Sonicwall SSO Agent running. Enter the shared key matching the one set on the agent.4. In the Users tab, select Local configuration. Click OK.5. Don't have a user based access rule.6. Enable Application firewall and configure Application firewall. 7. As a domain user, log in to the LAN PC.8. Make traffic to trigger Application firewall."
+    }
+}

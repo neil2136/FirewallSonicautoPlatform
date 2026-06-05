@@ -1,0 +1,492 @@
+{
+   "1714235" : {
+      "steps" : "  1. configure an IKEv2 ip pool vpn policy with Range Type (1.1.1.1-2.2.2.2 which include 2 ip)\n  2. connect 2 client\n  3. both clients could be able to connect to FW and traffic works fine\n  4. connect a third client\n  5. it should fail to connect to FW and there will be log saying that \"IP pool is FULL\"",
+      "priority" : "Full_Regression",
+      "atm_id" : "3092c6ca-7f23-40e0-9f0e-94c2e331030a",
+      "initial" : "  None",
+      "id" : "1714235",
+      "title" : "TC-42.\tAdd an IKEv2 ip pool policy with Range Type IP pool (including 2 IP), connect 1/2/3 client,  check each client\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00be\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2s tunnel and traffic.",
+      "description" : "Original ID: 35\nOriginal Title: TC-42.\tAdd an IKEv2 ip pool policy with Range Type IP pool (including 2 IP), connect 1/2/3 client,  check each client\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00be\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2s tunnel and traffic.\nOriginal Description: This case is designed to test when the IP pool is configured with Range Type , connect multiple client, traffic and tunnel should work fine; When IP pool is full, connect one more client, there will be log saying \"The ip pool is full\"",
+      "result" : "  see steps"
+   },
+   "1714240" : {
+      "steps" : "  1. edit the created ikev2 ip pool policy\n  2. on network tab, change remote network from \"Use IKEv2 IP pool\" to other options\n  3. click OK to apply configuration",
+      "priority" : "Smoke",
+      "atm_id" : "9bda9266-1bd5-4ebc-8675-c17831b9f9dc",
+      "initial" : "  An IKEv2 ip pool policy is created",
+      "id" : "1714240",
+      "title" : "Edit an existing IKEv2 IP pool policy, switching remote network from Use IKEv2 IP pool choose destination network from list or tunnel all, verify success",
+      "description" : "Original ID: 4\nOriginal Title: Edit an existing IKEv2 IP pool policy, switching remote network from  choose destination network from list  or tunnel all, verify success\nOriginal Description: This case is designed to test if it could work fine when editing an ikev2 ip pool policy and change remote network from \"Use IKEv2 IP pool\" to other option.",
+      "result" : "  It should work fine as long as the remote network does not overlap with any existing policies' remote network."
+   },
+   "1714213" : {
+      "steps" : "  1. Add an IKEv2 ip pool VPN policy 2. Enable the policy\n  3. check LAN->VPN and VPN->LAN access rule",
+      "priority" : "Full_Regression",
+      "atm_id" : "6af4c419-04a0-4199-b9cc-b26662d47005",
+      "initial" : "  None",
+      "id" : "1714213",
+      "title" : "Add an IKEv2 VPN policy with IP pool, enable the policy, verify that auto-added access rule in LAN->VPN and VPN->LAN is added and enabled",
+      "description" : "Original ID: 15\nOriginal Title: Add an IKEv2 VPN policy with IP pool, enable the policy, verify that auto-added access rule in LAN->VPN and VPN->LAN is added and enabled\nOriginal Description: This case is designed to verify that auto-added access rule in LAN->VPN and VPN->LAN is added and enabled if adding an IKEv2 VPN policy with IP pool and enable the policy",
+      "result" : "  There will be corresponding access rule added for this policy and it is enabled."
+   },
+   "1714209" : {
+      "steps" : "  1. Properly configure DNS and WINS server under VPN->Advanced->IKEv2 DNS and WINS Server Settings\n  2. Add a new ikev2 ip pool vpn policy\n  3. On Win7 client, open the properties window of VPN connection->Networking->Internet Protocal Version 4 properties, manually set DNS and WINS\n  4. connect a client\n  5. After client get IP, execute command 'ipconfig /all' and check DNS and WINS settings for \"PPP adapter VPN Connection\"\n  4. After client get IP from ip pool, check DNS and",
+      "priority" : "Sanity",
+      "atm_id" : "02df7c5f-f610-4c53-9484-4951699d58de",
+      "initial" : "  None",
+      "id" : "1714209",
+      "title" : "Add an IKEv2 VPN policy with IP pool, configure the client which do not require DNS and Netbios Server, connect the client, verify that DNS server and Netbios Server does not take effect",
+      "description" : "Original ID: 11\nOriginal Title: Add an IKEv2 VPN policy with IP pool, configure the client which do not require DNS and Netbios Server, connect the client, verify that DNS server and Netbios Server does not take effect\nOriginal Description: This case is designed to test that DNS server and Netbios Server does not take effect if client does not require DNS and Netbios Server.",
+      "result" : "  FW's DNS and WINS settings does not take effect."
+   },
+   "1714210" : {
+      "steps" : "  1. Do not configure configure DNS and WINS server under VPN->Advanced->IKEv2 DNS and WINS Server Settings\n  2. Add a new ikev2 ip pool vpn policy\n  3. On Win7 client, open the properties window of VPN connection->Networking->Internet Protocal Version 4 properties, all set to obtain address automatically\n  4. connect a client\n  5. After client get IP, execute command 'ipconfig /all' and check DNS and WINS settings for \"PPP adapter VPN Connection\"\n  4. After client get IP from ip pool, check DNS and",
+      "priority" : "Full_Regression",
+      "atm_id" : "5920c3ec-d88e-4007-ad48-6d2ddc4b5920",
+      "initial" : "  None",
+      "id" : "1714210",
+      "title" : "Client require DNS and WINS server, but FW does not configure them, connect a client",
+      "description" : "Original ID: 12\nOriginal Title: Client require DNS and WINS server, but FW does not configure them, connect a client\nOriginal Description: This case is designed to test that client could still connect to FW if client require DNS and WINS server but FW does not configure them.",
+      "result" : "  client could connect to FW successfully, traffic works fine, and the DNS and WINS server is all 0.0.0.0"
+   },
+   "1714212" : {
+      "steps" : "  1. configure DNS and WINS server under VPN->Advanced->IKEv2 DNS and WINS Server Settings (Try to configure different DNS and WINS server), select 'Inherit DNS Settings Dynamically from the SonicWALL's DNS settings'\n  2. Add a new ikev2 ip pool vpn policy\n  3. On Win7 client, open the properties window of VPN connection->Networking->Internet Protocal Version 4 properties, all set to obtain address automatically\n  4. connect a client\n  5. After client get IP, execute command 'ipconfig /all' and check DNS and WINS settings for \"PPP adapter VPN Connection\"\n  4. After client get IP from ip pool, check DNS and WINS server",
+      "priority" : "Smoke",
+      "atm_id" : "f0214b11-8df6-451d-ada9-b560a4337937",
+      "initial" : "  None",
+      "id" : "1714212",
+      "title" : "Client require DNS and WINS server, DNS and WINS server are inherited from WAN interface on FW, connect a client",
+      "description" : "Original ID: 14\nOriginal Title: Client require DNS and WINS server, DNS and WINS server are inherited from WAN interface on FW, connect a client\nOriginal Description: This case is designed to test that client could connect to FW and get DNS and WINS configuration from FW if it reuqire DNS and WINS server and FW configure them.",
+      "result" : "  client could connect to FW successfully and it will get IP, DNS, WINS configuration from FW, traffic also works fine."
+   },
+   "1714243" : {
+      "steps" : "  1. configure an IKEv2 ip pool vpn policy with Range Type (1.1.1.1-2.2.2.2 which include 2 ip)\n  2. connect 2 client\n  3. connect a third client, check log, there should be log saying that \"the IP pool is full\"",
+      "priority" : "Full_Regression",
+      "atm_id" : "df0a30bb-e5a8-450b-846c-09fd92ddee03",
+      "initial" : "  None",
+      "id" : "1714243",
+      "title" : "Add an IKEv2 ip pool policy with Range Type IP pool (including 2 IP), connect a third client,  check log",
+      "description" : "Original ID: 42\nOriginal Title: Add an IKEv2 ip pool policy with Range Type IP pool (including 2 IP), connect a third client,  check log\nOriginal Description: This case is designed to test When IP pool is full, connect one more client, there will be log saying \"IP pool is full\"",
+      "result" : "  see steps"
+   },
+   "1714230" : {
+      "steps" : "  1. configure an IKEv2 ip pool vpn policy\n  2. connect a win7 client\n  3. restart client\n  4. after client start up, reconnect to FW, it should be able to connect to FW",
+      "priority" : "Full_Regression",
+      "atm_id" : "21749ffe-be6c-4744-befc-559e490a4063",
+      "initial" : "  None",
+      "id" : "1714230",
+      "title" : "Win7 Client connected to IKEv2 IP pool policy, then restart the client, it should be able to connect to VPN after it startup",
+      "description" : "Original ID: 30\nOriginal Title: Win7 Client connected to IKEv2 IP pool policy, then restart the client, it should be able to connect to VPN after it startup\nOriginal Description: This case is designed to test that after an client is connect to FW, restart Win7 client, after the client start up, it should be able to connect to FW.",
+      "result" : "  in step 3, when win7 client restart, it will send delete SA request, after FW receive this request, it will delete SA; in step 4, after FW start up, it should be able to connect to FW."
+   },
+   "1714226" : {
+      "steps" : "  1. configure ikev2 ip pool vpn policy 2. connect a client behind NAT, it should be able to connect to FW successfully, test traffic from VPN->LAN and LAN->VPN, it should also works fine 3. change client's IP, there are two possibility here, one is that if the NAT IP changed correspondingly, the other is NAT IP does not change",
+      "priority" : "Full_Regression",
+      "atm_id" : "523ea815-921e-4da2-9e06-58e4b7935733",
+      "initial" : "  Client --- NAT Device ---(WAN) FW",
+      "id" : "1714226",
+      "title" : "Configure a IKEv2 policy with IP pool, connect a client behind NAT, verify traffic and updating IP address",
+      "description" : "Original ID: 27\nOriginal Title: Configure a IKEv2 policy with IP pool, connect a client behind NAT, verify traffic and updating IP address\nOriginal Description: This case is designed to test the traffic and updating client ip behavior when client is behind NAT",
+      "result" : "  TBD"
+   },
+   "1714238" : {
+      "steps" : "  1. configure an ikev2 ip pool policy\n  2. connect a client\n  3. export prefs\n  4. delete the policy created in step 1\n  5. import the prefs",
+      "priority" : "Full_Regression",
+      "atm_id" : "91259fc1-c7d2-418d-bb7b-a98c007236fe",
+      "initial" : "  None",
+      "id" : "1714238",
+      "title" : "Configure a IKEv2 VPN policy with IP pool, connect a client, export prefs and import prefs",
+      "description" : "Original ID: 38\nOriginal Title: Configure a IKEv2 VPN policy with IP pool, connect a client, export prefs and import prefs\nOriginal Description: This case is designed to test that ikev2 ip pool configuration is saved in prefs",
+      "result" : "  IKEv2 ip pool policy is saved in presf"
+   },
+   "1714253" : {
+      "steps" : "  1. Add an ikev2 ip pool vpn policy, select 1.1.1.0/24 as ip pool AO\n  2. Add a second ikev2 ip pool vpn policy, select 1.1.1.0/24 ip pool AO, click OK to apply configuration",
+      "priority" : "Full_Regression",
+      "atm_id" : "031e88f1-0470-4515-9cbb-70387fa0fea5",
+      "initial" : "  None",
+      "id" : "1714253",
+      "title" : "Add two different IKEv2 VPN policy, verify that it is not allowed to configure two IP pool with two AO which are overlapping",
+      "description" : "Original ID: 7\nOriginal Title: Add two different IKEv2 VPN policy, verify that it is not allowed to configure two IP pool with two AO which are overlapping\nOriginal Description: This case is designed to test that it is not allowed to configure overlapping network for ikev2 ip pool policy",
+      "result" : "  \"Error: Name: Address object 1.1.1.0 has overlapping networks\" is prompted"
+   },
+   "1714231" : {
+      "steps" : "  1. configure an IKEv2 ip pool policy with FQDN GW\n  2. connect a client\n  3. test tunnel and traffic",
+      "priority" : "Full_Regression",
+      "atm_id" : "ced97e5a-a52a-4468-8d05-8d809ae590ec",
+      "initial" : "  None",
+      "id" : "1714231",
+      "title" : "Add a FQDN IKEv2 ip pool policy, connect a client, test tunnel and traffic.",
+      "description" : "Original ID: 31\nOriginal Title: Add a FQDN IKEv2 ip pool policy, connect a client, test tunnel and traffic.\nOriginal Description: This case is designed to test tunnel and traffic when ikev2 ip pool is configured with FQDN",
+      "result" : "  tunnel could be set up and traffic works fine."
+   },
+   "1714239" : {
+      "steps" : "  1. configure an ikev2 ip pool policy and export prefs\n  2. set firmware to factory default and downgrade to old firmware\n  3. import the prefs, verify that no serious issue happen",
+      "priority" : "Full_Regression",
+      "atm_id" : "1d23144f-8037-4364-9c72-f0974372c7e8",
+      "initial" : "  None",
+      "id" : "1714239",
+      "title" : "Configure a IKEv2 VPN policy with IP pool, connect a client, downgrade to old firmware",
+      "description" : "Original ID: 39\nOriginal Title: Configure a IKEv2 VPN policy with IP pool, connect a client, downgrade to old firmware\nOriginal Description: This case is designed to test that no serious issue is caused when downgrading to old firmware which does not support ikev2 ip pool",
+      "result" : "  see steps"
+   },
+   "1714221" : {
+      "steps" : "  1. configure an IKEv2 ip pool vpn policy 2. connect a win7 64 client 3. ping from client to vpn protected subnet, verify success 4. ping large traffic from client to vpn protected subnet (cmd: ping X.X.X.X -l 2000), verify success",
+      "priority" : "Sanity",
+      "atm_id" : "9988a21a-ec2a-4b73-ae99-d4af79c24905",
+      "initial" : "  None",
+      "id" : "1714221",
+      "title" : "Configure a IKEv2 policy with IP pool, connect a Win7_64 client, ping FW interface and protected subnet, verify success",
+      "description" : "Original ID: 22\nOriginal Title: Configure a IKEv2 policy with IP pool, connect a Win7_64 client, ping FW interface and protected subnet, verify success\nOriginal Description: This case is designed to test win7_64 client could connect to FW and traffic works fine.",
+      "result" : "  see steps"
+   },
+   "1714252" : {
+      "steps" : "  1.Edit the IKEv2 ip pool policy\n  2. change Exchange Mode to Main/Aggressive\n  3. select remote network\n  4. click OK to apply configuration",
+      "priority" : "Sanity",
+      "atm_id" : "514e7061-13a8-4d4e-b5fd-23495086d4dc",
+      "initial" : "  An IKEv2 ip pool policy is created",
+      "id" : "1714252",
+      "title" : "Edit an existing IKEv2 IP pool policy into Aggressive/Main mode, properly select remote network, verify configuration will be applied",
+      "description" : "Original ID: 6\nOriginal Title: Edit an existing IKEv2 IP pool policy into Aggressive/Main mode, properly select remote network, verify configuration will be applied\nOriginal Description: This case is designed to test that Edit an existing IKEv2 IP pool policy into Aggressive/Main mode, properly select remote network, configuration will be applied",
+      "result" : "  configuration is properly applied."
+   },
+   "1714247" : {
+      "steps" : "  1. connect a client to ikev2 ip pool vpn policy\n  2. ping a big packet, make it fragmented, verify that traffic could go through vpn tunnel successfully.",
+      "priority" : "Full_Regression",
+      "atm_id" : "a2812240-8c44-4706-9184-30c759e7c917",
+      "initial" : "  None",
+      "id" : "1714247",
+      "title" : "Configure a IKEv2 policy with IP pool, connect a Win7_32 client, test fragement traffic could pass vpn tunnel",
+      "description" : "Original ID: 46\nOriginal Title: Configure a IKEv2 policy with IP pool, connect a Win7_32 client, test fragement traffic could pass vpn tunnel\nOriginal Description: This case is designed to test fragmented traffic passing through ikev2 ip pool vpn tunnel.",
+      "result" : "  see steps"
+   },
+   "1714229" : {
+      "steps" : "  1. add an new vpn policy, select IKEv2\n  2. go to network tab, select Use IKEv2 IP Pool\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00c2\u00af\u00c3\u201a\u00c2\u00bf\u00c3\u201a\u00c2\u00bd as remote network and configure an ip pool AO (Try Range and Network Type when creating IP pool AO)\n  3. properly configure other configuration and apply configuration",
+      "priority" : "Full_Regression",
+      "atm_id" : "85f45aca-8faf-43c9-8154-fe0cf392edbb",
+      "initial" : "  None",
+      "id" : "1714229",
+      "title" : "Add a new VPN policy, select IKEv2 mode, select  Use IKEv2 IP Pool\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00c2\u00af\u00c3\u201a\u00c2\u00bf\u00c3\u201a\u00c2\u00bd and configure a IP pool AO, verify configuration could be applied and saved",
+      "description" : "Original ID: 3\nOriginal Title: Add a new VPN policy, select IKEv2 mode, select  Use IKEv2 IP Pool\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00c2\u00af\u00c3\u201a\u00c2\u00bf\u00c3\u201a\u00c2\u00bd and configure a IP pool AO, verify configuration could be applied and saved\nOriginal Description: This case is designed to test that it could configure an ikev2 ip pool vpn policy.",
+      "result" : "  A new IKEv2 ip pool vpn policy is created"
+   },
+   "1714219" : {
+      "steps" : "  1. add 2 ikev2 ip pool vpn policy, gw is set with 0.0.0.0\n  2. connect the client\n  3. ping from client to FW protected subnet, verify success\n  4. ping from FW protected subnet to client, verify success",
+      "priority" : "Sanity",
+      "atm_id" : "fe27b88e-8e00-409f-b728-aa235ba3b7b1",
+      "initial" : "  None",
+      "id" : "1714219",
+      "title" : "Add an IKEv2 VPN policy with IP pool, GW is configured with 0.0.0.0, connect a client from that IP, verify success",
+      "description" : "Original ID: 20\nOriginal Title: Add an IKEv2 VPN policy with IP pool, GW is configured with 0.0.0.0, connect a client from that IP, verify success\nOriginal Description: This case is designed to check vpn traffic when ikev2 policy's gw is configured with 0.0.0.0.",
+      "result" : "  see steps"
+   },
+   "1714251" : {
+      "steps" : "  1. edit the existing ikev2 ip pool policy\n  2. change Exchange Mode from IKEv2 to Main/Aggressive mode\n  3. Click OK to apply configuration",
+      "priority" : "Full_Regression",
+      "atm_id" : "f1d30da5-a67f-45e3-97c0-b3f9f187587d",
+      "initial" : "  An IKEv2 ip pool policy is existed.",
+      "id" : "1714251",
+      "title" : "Edit an existing IKEv2 IP pool policy into Aggressive/Main mode, verify error will prompt to ask you to select remote network",
+      "description" : "Original ID: 5\nOriginal Title: Edit an existing IKEv2 IP pool policy into Aggressive/Main mode, verify error will prompt to ask you to select remote network\nOriginal Description: This case is designed to test that error will prompt when edit an ikev2 ip pool to main/aggressive mode directly.",
+      "result" : "  \"Error: Remote Network not selected\" will prompt"
+   },
+   "1714244" : {
+      "steps" : "  1. connect client to ikev2 ip pool policy\n  2. update the client's IP\n  3. after FW successfully update client IP, check log",
+      "priority" : "Full_Regression",
+      "atm_id" : "c6955737-1c9c-4da9-9b36-a42598e808d8",
+      "initial" : "  None",
+      "id" : "1714244",
+      "title" : "Update client\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00be\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2s IP when it is connected to IKEv2 ip pool VPN policy, check log",
+      "description" : "Original ID: 43\nOriginal Title: Update client\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00be\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2s IP when it is connected to IKEv2 ip pool VPN policy, check log\nOriginal Description: This case is desiged to test the 'updating client ip' will be displayed in log when client ip is updated",
+      "result" : "  There should be log saying client IP updated infomation, and the new and old IP is displayed in that log"
+   },
+   "1714217" : {
+      "steps" : "  1. add 2 ikev2 ip pool vpn policy, gw is set with ikev2 client's IP\n  2. connect the client\n  3. ping from client to FW protected subnet, verify success\n  4. ping from FW protected subnet to client, verify success",
+      "priority" : "Full_Regression",
+      "atm_id" : "ca271245-9ab7-4a14-ade6-d8a3e57f0d73",
+      "initial" : "  None",
+      "id" : "1714217",
+      "title" : "Add an IKEv2 VPN policy with IP pool, GW is configured with specified IP, connect a client from that IP, verify success",
+      "description" : "Original ID: 19\nOriginal Title: Add an IKEv2 VPN policy with IP pool, GW is configured with specified IP, connect a client from that IP, verify success\nOriginal Description: This case is designed to check vpn traffic when ikev2 policy's gw is configured with specified ip.",
+      "result" : "  see steps"
+   },
+   "1714215" : {
+      "steps" : "  1. add an ikev2 ip pool vpn policy, verify that access rule is auto-added\n  2. now delete the vpn policy, verify that the auto-added access rule is also deleted\n  3. Repeat step 1-2, in step1, disable vpn policy after it is added",
+      "priority" : "Full_Regression",
+      "atm_id" : "353c2a7f-0235-4ce2-96f7-d1898a450335",
+      "initial" : "  None",
+      "id" : "1714215",
+      "title" : "Add an IKEv2 VPN policy with IP pool, then delete it, verify that corresponding access rule will be deleted",
+      "description" : "Original ID: 17\nOriginal Title: Add an IKEv2 VPN policy with IP pool, then delete it, verify that corresponding access rule will be deleted\nOriginal Description: This case is designed to test that access rule will be deleted automatically if delete the vpn policy",
+      "result" : "  auto-added access rule will be deleted if vpn policy is deleted."
+   },
+   "1714208" : {
+      "steps" : "  1. add a new main/aggressive/ikev2 vpn policy\n  2. for remote network, select \"Choose destination network from list\" and select AO with 1.1.1.0/24 which overlap with existing ikev2 ip pool AO.\n  3. apply configuration",
+      "priority" : "Full_Regression",
+      "atm_id" : "002edb44-c617-4040-8719-14ea617b8805",
+      "initial" : "  An IKEv2 IP pool VPN policy is created, and its IP pool AO is 1.1.1.0/24",
+      "id" : "1714208",
+      "title" : "Add an IKEv2 VPN policy with IP pool, then add a non-ip pool VPN policy with remote network overlap with IP pool, verify error will prompt to prevent from configuring overlapping AO",
+      "description" : "Original ID: 10\nOriginal Title: Add an IKEv2 VPN policy with IP pool, then add a non-ip pool VPN policy with remote network overlap with IP pool, verify error will prompt to prevent from configuring overlapping AO\nOriginal Description: This case is designed to test that error will prompt when trying to add a S2S vpn policy with remote AO which will overlap the existing IP pool AO.",
+      "result" : "  \"Error: Name: Address object 9.9.9.0 has overlapping networks\" will prompt"
+   },
+   "1714255" : {
+      "steps" : "  1. create an ikev2 ip pool vpn policy 2. connect an client",
+      "priority" : "Smoke",
+      "atm_id" : "4e0dc4aa-3403-4e88-afba-5e83be238bbe",
+      "initial" : "  None",
+      "id" : "1714255",
+      "title" : "GUI: Configure a IKEv2 VPN policy, connect a client, check GUI including current active tunne  and  vpn policy",
+      "description" : "Original ID: 9\nOriginal Title: GUI: Configure a IKEv2 VPN policy, connect a client, check GUI including current active tunnel and vpn policy \nOriginal Description: This case is designed to test the GUI under  current active tunnel and  vpn policy when client connect to IKEv2 ip pool policy.",
+      "result" : "  1. Green LED is up after tunnel is established\n  2. There is SA existing under current active tunnel and it displays proper infomation"
+   },
+   "1714250" : {
+      "steps" : "  1. configure an ikev2 ip pool vpn policy with Multicast broadcast enabled\n  2. connect a client\n  3. make multicast broadcast traffic on FW, verify that the multicast traffic will go through vpn tunnal",
+      "priority" : "Sanity",
+      "atm_id" : "8ae61633-902b-4304-a7d6-f629ea382771",
+      "initial" : "  None",
+      "id" : "1714250",
+      "title" : "Multicast broadcast could pass IKEv2 ip pool VPN tunnel if it is enabled",
+      "description" : "Original ID: 49\nOriginal Title: Multicast broadcast could pass IKEv2 ip pool VPN tunnel if it is enabled\nOriginal Description: This case is designed to test that Multicast broadcast could pass IKEv2 ip pool VPN tunnel if it is enabled",
+      "result" : "  see steps"
+   },
+   "1714228" : {
+      "steps" : "  1. configure an IKEv2 IP pool VPN policy\n  2. connect a client\n  3. change client's static IP by manually changing it to another\n  4. verify on FW side, the client IP is updated, traffic also works fine\n  5. change client's IP from Static to DHCP, verify that on FW side, the client IP is updated, traffic also works fine 6. change client's IP by disable one eth card and enable another one, verify that on FW side, the client IP is updated, traffic also works fine",
+      "priority" : "Full_Regression",
+      "atm_id" : "b6b33524-dcb1-47b1-a60f-d3c178ee9060",
+      "initial" : "  None",
+      "id" : "1714228",
+      "title" : "Using different ways to make the interface up and down and down to up for many times",
+      "description" : "Original ID: 29\nOriginal Title: Using different ways to make the interface up and down and down to up for many times\nOriginal Description: This case is designed to test that client IP will be updated when using different ways to make interface up and down for many times",
+      "result" : "  see results"
+   },
+   "1714211" : {
+      "steps" : "  1. manually configure configure DNS and WINS server under VPN->Advanced->IKEv2 DNS and WINS Server Settings (Try to configure different DNS and WINS server)\n  2. Add a new ikev2 ip pool vpn policy\n  3. On Win7 client, open the properties window of VPN connection->Networking->Internet Protocal Version 4 properties, all set to obtain address automatically\n  4. connect a client\n  5. After client get IP, execute command 'ipconfig /all' and check DNS and WINS settings for \"PPP adapter VPN Connection\"\n  4. After client get IP from ip pool, check DNS and WINS server",
+      "priority" : "Full_Regression",
+      "atm_id" : "04845d21-cc02-4f63-9bd9-fe5f9a5f08f6",
+      "initial" : "  None",
+      "id" : "1714211",
+      "title" : "Client require DNS and WINS server, manully configure DNS and WINS server on FW, connect a client",
+      "description" : "Original ID: 13\nOriginal Title: Client require DNS and WINS server, manully configure DNS and WINS server on FW, connect a client\nOriginal Description: This case is designed to test that client could connect to FW and get DNS and WINS configuration from FW if it reuqire DNS and WINS server and FW configure them.",
+      "result" : "  client could connect to FW successfully, it could get IP, DNS and WINS configuration from FW, and traffic also works fine"
+   },
+   "1714223" : {
+      "steps" : "  1. configure an IKEv2 ip pool vpn policy 2. connect a client 3. make continuous FTP/ICMP traffic\n  4. change client's IP 5. check that after FW update client's IP, traffic can still pass through tunnel without re-establish SA.",
+      "priority" : "Smoke",
+      "atm_id" : "f7926065-3029-4c47-9672-0e74045dac56",
+      "initial" : "  None",
+      "id" : "1714223",
+      "title" : "Configure an IKEv2 policy with IP pool, connect win_32 client, make continuous traffic, then change client IP, verify that the traffic can pass through the VPN tunnel without re-establish SA",
+      "description" : "Original ID: 24\nOriginal Title: Configure an IKEv2 policy with IP pool, connect win_32 client, make continuous traffic, then change client IP, verify that the traffic can pass through the VPN tunnel without re-establish SA\nOriginal Description: This case is designed to test after tunnel is established, change win_32 client IP, tunnel will update IP without re-establish tunnel.",
+      "result" : "  check that after FW update client's IP, traffic can still pass through tunnel without re-establish SA."
+   },
+   "1714248" : {
+      "steps" : "  1. configure ikev2 ip pool vpn policy with HTTP/HTTPS/SSH/SNMP management enabled 2. connect a client, then from the client, try to manage FW through HTTP/HTTPS/SSH/SNMP, verify success\n  3. now disable HTTP/HTTPS/SSH/SNMP management on ikev2 ip pool vpn policy\n  4. connect a client, then from the client, try to manage FW through HTTP/HTTPS/SSH/SNMP, verify fail",
+      "priority" : "Smoke",
+      "atm_id" : "5cdf01c8-7be2-49a5-ad78-1f205fb88277",
+      "initial" : "  None",
+      "id" : "1714248",
+      "title" : "HTTP/HTTPS/SSH/SNMP management --- client could manage FW through HTTP/HTTPS/SSH/SNMP is HTTP/HTTPS/SSH/SNMP management is enabled",
+      "description" : "Original ID: 47\nOriginal Title: HTTP/HTTPS/SSH/SNMP management --- client could manage FW through HTTP/HTTPS/SSH/SNMP is HTTP/HTTPS/SSH/SNMP management is enabled\nOriginal Description: This case is designed to test that client could manage FW through HTTP/HTTPS/SSH/SNMP is HTTP/HTTPS/SSH/SNMP management is enabled",
+      "result" : "  see steps"
+   },
+   "1714220" : {
+      "steps" : "  1. configure an IKEv2 ip pool vpn policy\n  2. connect a win7 32 client\n  3. ping from client to vpn protected subnet, verify success\n  4. ping large traffic from client to vpn protected subnet (cmd: ping X.X.X.X -l 2000), verify success",
+      "priority" : "Full_Regression",
+      "atm_id" : "e0a84595-2a2c-487e-ae54-bfe06c9a6108",
+      "initial" : "  Win7 32 bit OS is prepared",
+      "id" : "1714220",
+      "title" : "Configure a IKEv2 policy with IP pool, connect a Win7_32 client, ping FW interface and protected subnet, verify success;",
+      "description" : "Original ID: 21\nOriginal Title: Configure a IKEv2 policy with IP pool, connect a Win7_32 client, ping FW interface and protected subnet, verify success;\nOriginal Description: This case is designed to test win7_32 client could connect to FW and traffic works fine.",
+      "result" : "  see steps"
+   },
+   "1714245" : {
+      "steps" : "  TBD",
+      "priority" : "Sanity",
+      "atm_id" : "f0a43412-01f1-41e1-b6e8-8ac06b1b2f84",
+      "initial" : "  TBD",
+      "id" : "1714245",
+      "title" : "HA Support: IKEv2 IP pool policy should support HA",
+      "description" : "Original ID: 44\nOriginal Title: HA Support: IKEv2 IP pool policy should support HA\nOriginal Description: This case is designed to test HA support for IKEv2 ip pool policy, including both stateful and non-stateful HA",
+      "result" : "  TBD"
+   },
+   "1714242" : {
+      "steps" : "  1. configure an ikev2 ip pool policy and connect a client 2. check log",
+      "priority" : "Smoke",
+      "atm_id" : "6e57ba5f-4b34-469c-8ce6-105e1d6e97b5",
+      "initial" : "  None",
+      "id" : "1714242",
+      "title" : "Configure a IKEv2 VPN policy with IP pool, connect a client, check log",
+      "description" : "Original ID: 41\nOriginal Title: Configure a IKEv2 VPN policy with IP pool, connect a client, check log\nOriginal Description: This case is designed to test that there will be MOBIKE_SUPPORTED and 'allocatind IP' info displayed in log when connected ikev2 client",
+      "result" : "  There will be MOBIKE_SUPPORTED notify in log, and it will display the allocated IP for the client in the log."
+   },
+   "1714249" : {
+      "steps" : "  1. configure an ikev2 ip pool vpn policy with NetBIOS broadcast enabled\n  2. connect a client\n  3. make NBNS traffic on FW, verify that the netbios traffic will go through vpn tunnal and reach client",
+      "priority" : "Full_Regression",
+      "atm_id" : "537493e0-7951-4658-b3c4-edb3f56942e9",
+      "initial" : "  None",
+      "id" : "1714249",
+      "title" : "NetBIOS broadcast could pass IKEv2 ip pool VPN tunnel if it is enabled",
+      "description" : "Original ID: 48\nOriginal Title: NetBIOS broadcast could pass IKEv2 ip pool VPN tunnel if it is enabled\nOriginal Description: This case is designed to test that NetBIOS broadcast could pass IKEv2 ip pool VPN tunnel if it is enabled",
+      "result" : "  see steps"
+   },
+   "1714241" : {
+      "steps" : "  1. configure ikev2 ip pool policy\n  2. restart fw\n  3. after fw start up, verify that the policy is still there\n  4. connect a client, verify success",
+      "priority" : "Full_Regression",
+      "atm_id" : "9010a74c-5a93-4c50-ad88-ab3c0fc962e0",
+      "initial" : "  None",
+      "id" : "1714241",
+      "title" : "Configure a IKEv2 VPN policy with IP pool, connect a client, Restart FW",
+      "description" : "Original ID: 40\nOriginal Title: Configure a IKEv2 VPN policy with IP pool, connect a client, Restart FW\nOriginal Description: This case is designed to test that after fw start up, the ikev2 ip pool policy still works fine",
+      "result" : "  see steps"
+   },
+   "1714232" : {
+      "steps" : "  1. configure an IKEv2 ip pool policy with 0.0.0.0 as gateway\n  2. connect multiple client\n  3. test tunnel and traffic with each client",
+      "priority" : "Smoke",
+      "atm_id" : "f474d7ec-4375-4814-96fc-dd008751b57f",
+      "initial" : "  None",
+      "id" : "1714232",
+      "title" : "Add an IKEv2 ip pool policy with GW 0.0.0.0, connect multiple client, check tunnel and traffic.",
+      "description" : "Original ID: 32\nOriginal Title: Add an IKEv2 ip pool policy with GW 0.0.0.0, connect multiple client, check tunnel and traffic.\nOriginal Description: This case is designed to test tunnel and traffic when multi client is connected to FW",
+      "result" : "  The tunnel and traffic should work fine for each client."
+   },
+   "1714214" : {
+      "steps" : "  1. add 3 ikev2 ip pool vpn policy with different ip pool AO\n  2. disable policy one by one\n  3. check LAN->VPN and VPN->LAN access rule",
+      "priority" : "Sanity",
+      "atm_id" : "7ab6948b-e112-4339-8f28-9a5e64a313f3",
+      "initial" : "  None",
+      "id" : "1714214",
+      "title" : "Add 3 IKEv2 VPN policy with IP pool, disable policy, verify that auto-added access rule is added and disabled.",
+      "description" : "Original ID: 16\nOriginal Title: Add 3 IKEv2 VPN policy with IP pool, disable policy, verify that auto-added access rule is added and disabled.\nOriginal Description: This case is designed to test that auto-added access rule will be disabled if corresponding policy is disabled.",
+      "result" : "  the auto-added access rule will also be disabled one by one."
+   },
+   "1714233" : {
+      "steps" : "  1. configure 2 ikev2 ip pool vpn policy with different protected subnet\n  2. connect different client to each policy\n  3. test tunnel and traffic",
+      "priority" : "Full_Regression",
+      "atm_id" : "071f24f3-d671-45e8-a2f3-b61ba955eee8",
+      "initial" : "  None",
+      "id" : "1714233",
+      "title" : "Add 2 IKEv2 ip pool policy with Host Type IP pool, connect one client to each policy, check tunnel and traffic.",
+      "description" : "Original ID: 33\nOriginal Title: Add 2 IKEv2 ip pool policy with Host Type IP pool, connect one client to each policy, check tunnel and traffic.\nOriginal Description: This case is designed to test that when there are multiple ikev2 ip pool policy, connect client to each policy, traffic and tunnel should work fine.",
+      "result" : "  tunnel and traffic should work fine"
+   },
+   "1714222" : {
+      "steps" : "  1. configure IKEv2 ip pool vpn policy\n  2. connect the client successfully\n  3. ping non_FW subnet, verify that traffic will not go into VPN tunnel;\n  4. ping a subnet which belong to FW subnet, but does not belong to VPN protected subnet, verify that traffic will not go into VPN tunnel",
+      "priority" : "Full_Regression",
+      "atm_id" : "87988be4-b2ca-4eba-a5a1-1e8047e91363",
+      "initial" : "  None",
+      "id" : "1714222",
+      "title" : "Configure a IKEv2 policy with IP pool, connect a client, ping non_protected subnet, verify it will not go into VPN tunnel",
+      "description" : "Original ID: 23\nOriginal Title: Configure a IKEv2 policy with IP pool, connect a client, ping non_protected subnet, verify it will not go into VPN tunnel\nOriginal Description: This case is designed to test that after client connected to FW, if the destination of traffic does not belong to vpn's protected subnet, it will not go into VPN tunnel.",
+      "result" : "  see steps"
+   },
+   "1714216" : {
+      "steps" : "  1. add 2 ikev2 ip pool vpn policy, one is with Host Type IP pool AO, one is with Range Type AO, the other with Network AO\n  2. enable policy 1, disable policy 2, delete policy 3, check access rule",
+      "priority" : "Sanity",
+      "atm_id" : "f1a50b88-384c-464e-ba82-93f2aaa60fe8",
+      "initial" : "  None",
+      "id" : "1714216",
+      "title" : "Multiple ikev2 ip pool policy with different AO type, try disable and delete them, verify that access rule behave correctly",
+      "description" : "Original ID: 18\nOriginal Title: Multiple ikev2 ip pool policy with different AO type, try disable and delete them, verify that access rule behave correctly\nOriginal Description: This case is designed to test that access rule behave correctly when there is multiple ikev2 ip pool policies.",
+      "result" : "  corresponding access rule should behave correctly."
+   },
+   "1714254" : {
+      "steps" : "  1. create an ikev2 ip pool vpn policy\n  2. select 1.1.1.0/24 (which is the same AO as existing S2S policy) as IP pool AO 3. Apply configuration",
+      "priority" : "Full_Regression",
+      "atm_id" : "9c993a67-a6f6-409b-b060-f5c39ec8b5d4",
+      "initial" : "  An S2S policy is created, its remote network is 1.1.1.0/24",
+      "id" : "1714254",
+      "title" : "Add a IKEv2 VPN policy, configure an IP pool with AO which overlap another policy remote network, verify it is not allowed to configure an IP pool that will overlap another existing policy  rem AO",
+      "description" : "Original ID: 8\nOriginal Title: Add a IKEv2 VPN policy, configure an IP pool with AO which overlap another policy  remote network, verify it is not allowed to configure an IP pool that will overlap another existing policy  rem AO\nOriginal Description: This case is designed to test it is not allowed to create an IKEv2 ip pool policy's IP pool AO to overlap existing S2S policies' remote AO.",
+      "result" : "  \"Error: Name: Address object 9.9.9.0 has overlapping networks\" is prompted"
+   },
+   "1714234" : {
+      "steps" : "  1. configure an IKEv2 ip pool vpn policy with Network Type\n  2. connect multiple client\n  3. client should be able to connect to FW and traffic can go through VPN tunnel",
+      "priority" : "Sanity",
+      "atm_id" : "fdff58bf-f0d9-4a87-a8d1-137da1e329b3",
+      "initial" : "  None",
+      "id" : "1714234",
+      "title" : "Add an IKEv2 ip pool policy with Network TYPE, connect  check each client\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00af\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00bf\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00bds tunnel and traffic.",
+      "description" : "Original ID: 34\nOriginal Title: Add an IKEv2 ip pool policy with Network TYPE, connect  check each client\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00af\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00bf\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00bds tunnel and traffic.\nOriginal Description: This case is designed to test when the IP pool is configured with Network Type, connect client, traffic and tunnel should work fine",
+      "result" : "  see steps"
+   },
+   "1714227" : {
+      "steps" : "  1. configure ikev2 ip pool vpn policy (Attention: in this case, the certificate should include NAT WAN IP instead of original WAN IP) 2. connect a client behind NAT, it should be able to connect to FW successfully, test traffic from VPN->LAN and LAN->VPN, it should also works fine 3. change client's IP, there are two possibility here, one is that if the NAT IP changed correspondingly, the other is NAT IP does not change",
+      "priority" : "Sanity",
+      "atm_id" : "bd73df14-4c4e-4590-926f-d5e5bf7b16fc",
+      "initial" : "  Client --- NAT Device (WAN)-----NAT Device 2 -(WAN) FW",
+      "id" : "1714227",
+      "title" : "Configure a IKEv2 policy with IP pool, both FW and Client behind NAT, verify traffic and updating IP address",
+      "description" : "Original ID: 28\nOriginal Title: Configure a IKEv2 policy with IP pool, both FW and Client behind NAT, verify traffic and updating IP address\nOriginal Description: This case is designed to test the traffic and updating client ip behavior when both FW and client are behind NAT",
+      "result" : "  TBD"
+   },
+   "1714218" : {
+      "steps" : "  1. add a new vpn policy, select main/aggressive mode on proposal tab, check network tab",
+      "priority" : "Full_Regression",
+      "atm_id" : "204d085c-7f67-4ab5-970d-d9d69a4c76cf",
+      "initial" : "  None",
+      "id" : "1714218",
+      "title" : "2. Add a new VPN policy, select Main/Aggressive mode, verify \u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c2\u00b9\u00c3\u0192\u00e2\u20ac\u00a6\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u201cthe GUI will not display Use IKEv2 IP Pool\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00c2\u00af\u00c3\u201a\u00c2\u00bf\u00c3\u201a\u00c2\u00bd in network label\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00be\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2",
+      "description" : "Original ID: 2\nOriginal Title: 2. Add a new VPN policy, select Main/Aggressive mode, verify \u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c2\u00b9\u00c3\u0192\u00e2\u20ac\u00a6\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u201cthe GUI will not display Use IKEv2 IP Pool\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00c2\u00af\u00c3\u201a\u00c2\u00bf\u00c3\u201a\u00c2\u00bd in network label\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00be\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\nOriginal Description: This case is designed to test that Use IKEv2 IP Pool\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00c2\u00af\u00c3\u201a\u00c2\u00bf\u00c3\u201a\u00c2\u00bd is not displayed if main/aggressive is selected.",
+      "result" : "  Use IKEv2 IP Pool\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00c2\u00af\u00c3\u201a\u00c2\u00bf\u00c3\u201a\u00c2\u00bd is not displayed if main/aggressive is selected."
+   },
+   "1714207" : {
+      "steps" : "  1. add a new vpn policy, select IKEv2 mode on proposal tab, check network tab",
+      "priority" : "Smoke",
+      "atm_id" : "8f589ae3-8c38-48cb-81c1-2d93658883bd",
+      "initial" : "  None",
+      "id" : "1714207",
+      "title" : "Add a new VPN policy, select IKEv2 mode, verify  the GUI will display  Use IKEv2 IP Pool  in network label",
+      "description" : "Original ID: 1\nOriginal Title: Add a new VPN policy, select IKEv2 mode, verify  the GUI will display Use IKEv2 IP Pool  in network label\nOriginal Description: This case is designed to test that Use IKEv2 IP Poo  displayed if IKEv2 is selected.",
+      "result" : "  Use IKEv2 IP Pool is displayed if IKEv2 is selected."
+   },
+   "1714224" : {
+      "steps" : "  1. configure an IKEv2 ip pool vpn policy 2. connect a Win_64 client 3. make continuous FTP/ICMP traffic\n  4. change client's IP 5. check that after FW update client's IP, traffic can still pass through tunnel without re-establish SA.",
+      "priority" : "Full_Regression",
+      "atm_id" : "a9e91537-7103-4262-8dbd-7c3cbe7ff975",
+      "initial" : "  None",
+      "id" : "1714224",
+      "title" : "Configure an IKEv2 policy with IP pool, connect win_64 client, make continuous traffic, then change client IP, verify that the traffic can pass through the VPN tunnel without re-establish SA",
+      "description" : "Original ID: 25\nOriginal Title: Configure an IKEv2 policy with IP pool, connect win_64 client, make continuous traffic, then change client IP, verify that the traffic can pass through the VPN tunnel without re-establish SA\nOriginal Description: This case is designed to test after tunnel is established, change win_64 client IP, tunnel will update IP without re-establish tunnel.",
+      "result" : "  check that after FW update client's IP, traffic can still pass through tunnel without re-establish SA."
+   },
+   "1714246" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "ce66c081-679e-4df5-9b2d-2f8b0af47506",
+      "initial" : "  TBD",
+      "id" : "1714246",
+      "title" : "Connect to IKEv2 ip pool policy using StrongSwan",
+      "description" : "Original ID: 45\nOriginal Title: Connect to IKEv2 ip pool policy using StrongSwan\nOriginal Description: IKEv2 IP pool policy should support StrongWAN client",
+      "result" : "  TBD"
+   },
+   "1714225" : {
+      "steps" : "  1. configure an IKEv2 ip pool vpn policy 2. connect a client 3. change client's IP 4. check log and current active tunnel, there will be log notifying client IP updated, FW will update client IP under 'currently active tunnel' after receiving this notification.",
+      "priority" : "Sanity",
+      "atm_id" : "7715c0d8-c16c-4996-b29a-79458f40c8d4",
+      "initial" : "  None",
+      "id" : "1714225",
+      "title" : "Configure an IKEv2 policy with IP pool, connect client, then change client IP, verify client IP will be updated without re-establishing SA",
+      "description" : "Original ID: 26\nOriginal Title: Configure an IKEv2 policy with IP pool, connect client, then change client IP, verify client IP will be updated without re-establishing SA\nOriginal Description: This case is designed to test after tunnel is established, change win_32 client IP, client IP on FW will be updated without re-establishing SA",
+      "result" : "  see steps"
+   },
+   "1714237" : {
+      "steps" : "  1. configure an ikev2 ip pool policy and connect a client 2. check TSR",
+      "priority" : "Sanity",
+      "atm_id" : "31994be0-fe06-4d05-a71e-733fc9ea9387",
+      "initial" : "  None",
+      "id" : "1714237",
+      "title" : "Configure a IKEv2 VPN policy with IP pool, connect a client, check TSR.",
+      "description" : "Original ID: 37\nOriginal Title: Configure a IKEv2 VPN policy with IP pool, connect a client, check TSR.\nOriginal Description: This case is designed to test that ikev2 configuration is saved in TSR",
+      "result" : "  ikev2 related configuration is saved in TSR"
+   },
+   "1714236" : {
+      "steps" : "  1. connect a client to ikev2 ip pool vpn policy\n  2. under 'currently active tunnel', there will be a tunnel for that client, and there is \"Renegotiate\" button, click the button",
+      "priority" : "Full_Regression",
+      "atm_id" : "bd2b9e58-6381-4e6f-a2cd-6e6f00de778d",
+      "initial" : "  None",
+      "id" : "1714236",
+      "title" : "Click Renegotiate button for existing IKEv2 ip pool tunnel, it will delete the currect SA.",
+      "description" : "Original ID: 36\nOriginal Title: Click Renegotiate button for existing IKEv2 ip pool tunnel, it will delete the currect SA.\nOriginal Description: This case is designed to test \"renegotiate\" button for active tunnel of ikev2 ip pool policy, this button will delete SA",
+      "result" : "  it will delete the current IKE SA for this client"
+   }
+}

@@ -1,0 +1,492 @@
+{
+   "33" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Add Destination remapping NAT policy (Refer Test Case 28)\n  3)Refer Test case 28 for the rest of test steps",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "33",
+      "title" : "Function: Destination Remapping (One to Many)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "32" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Add Destination remapping NAT policy without source rempping (Refer Test Case 28)\n  3)Refer Test case 28 for the rest of test steps",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "32",
+      "title" : "Function: Source Remapping (All Unmapped)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "63" : {
+      "steps" : "  step 1. Initiate an outbound ICMP Echo Request\n  step 2. Verify the packet is received on the WAN\n  step 3. Wait for natIcmpTimeout seconds\n  step 4. Transmit the Echo Response from the WAN to LAN\n  step 5. Verify ICMP packet from the WAN is not forwarded to LAN\n  step 6. Initiate a second outbound ICMP Echo Request\n  step 7. Verify the packet is received on the WAN\n  step 8. Wait for natIcmpTimeout - 5 seconds\n  step 9. Transmit the Echo Response from the WAN to LAN\n  step 10. Verify ICMP packet from the WAN is forwarded to LAN\n  Reference:\n  RFC 2663 IP Network Address Translator Terminology and Considerations\n  Section 2.6 End of session for TCP, UDP and others\n  NOTE: This test verifies that the router maintains an NAT entry for a\n  ICMP connections for 'natIcmpTimeout' seconds. The\n  natIcmpTimeout setting is configured in the configuration file\n  using the testvar natIcmpTimeout. If not specified, it defaults to\n  90 seconds.\n  Example:\n  testvar natFinRstTimeout 90",
+      "initial" : "  See CDRouter configuration",
+      "id" : "63",
+      "title" : "CDR: Verify NAT ICMP session timeout",
+      "result" : "  PASS"
+   },
+   "21" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Modify any custom NAT policy to change any field defined in this policy with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "21",
+      "title" : "GUI: Modify NAT Policies",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "7" : {
+      "steps" : "  1.Configure additional lan host\n  2.Configure the new lan host so that its udp source ports will be the same as the original LAN host.\n  3.Initiate outbound udp connections for both LAN hosts (DNS query)\n  4.Verify the DNS queries are answered\n  5.Continue to create up to 10 udp connections per host",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "7",
+      "title" : "CDR: Source Remap - NAPT with multiple LAN hosts using the same UDP src port",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "26" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Test the functionality of any default NAT policy",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "26",
+      "title" : "Function: Default NAT Policies",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "18" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Add the the NAT policy one by one to the maximum numbers using a script to compare the numbers defined in Product Matrix",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "18",
+      "title" : "GUI (Scalability): Add maximum numbers of NAT Policies",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "16" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Add the a NAT policy by clicking Add button\n  4) Select approriate values for all fields\n  5) Pass traffic to make sure this NAT policy working",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "16",
+      "title" : "GUI: Add NAT Policies",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "44" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for DMZ <---> LAN\n  3)Create the neccesory access rules for DMZ <---> LAN\n  4)Pass traffic from DMZ to LAN with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "44",
+      "title" : "Function: Traffic directions (DMZ to LAN)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "55" : {
+      "steps" : "  step 1. Set the TCP options to resemble a Windows TCP client\n  step 2. Initiate an outbound TCP connection to HTTP server\n  step 3. Verify the received MSS on the LAN and WAN matches\n  the expected MSS size\n  step 4. Verify the IPv4 src address on the WAN side is the router's address\n  step 5. Send HTTP GET request to server\n  step 6. Verify HTTP response is received\n  step 7. Close TCP connection from LAN side\n  step 8. Repeat testing using TCP options for a Linux TCP client\n  NOTE: The expected MSS size for MSS clamping can be configured\n  using the testvar mssClampingValue.\n  Example:\n  testvar mssClampingValue 1452",
+      "initial" : "  1. Start the DUT from factory default settings2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "55",
+      "title" : "CDR:Verify MSS Clamping with TCP options from different clients",
+      "result" : "  MSS Clamping with TCP options from different clients is verified"
+   },
+   "27" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Create and test the functionality of any custom NAT policy",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "27",
+      "title" : "Function: Custom NAT Policies",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "57" : {
+      "steps" : "  step 1. Initiate an outbound TCP connection to next TCP port\n  step 2. Verify the connection is established\n  step 3. Close the TCP connection using FIN from WAN\n  step 4. Wait for natFinRstTimeout to expire\n  step 5. Retransmit the last TCP segment from the WAN to LAN\n  step 6. Verify TCP packet from the WAN is not forwarded to LAN\n  step 7. Initiate a second outbound TCP connection to same TCP port\n  step 8. Verify the connection is established\n  step 9. Close the TCP connection using FIN from WAN\n  step 10. Wait for natFinRstTimeout - 5 seconds\n  step 11. Retransmit the last TCP segment from the WAN to LAN\n  step 12. Verify TCP packet from the WAN is forwarded to LAN\n  Reference:\n  RFC 2663 IP Network Address Translator Terminology and Considerations\n  Section 2.6 End of session for TCP, UDP and others\n  NOTE: This test verifies that the router maintains an NAT entry for a\n  TCP connection that has been closed for 'natFinRstTimeout' seconds. The\n  natFinRstTimeout setting is configured in the configuration file\n  using the testvar natFinRstTimeout. If not specified, it defaults to\n  4 minutes.",
+      "initial" : "  See CDRouter configuration",
+      "id" : "57",
+      "title" : "CDR: Verify NAT TCP session timeout after FIN close",
+      "result" : "  PASS"
+   },
+   "61" : {
+      "steps" : "  step 1. Initiate an outbound UDP echo\n  step 2. Verify the UDP packet is received on the WAN\n  step 3. Wait for natUdpTimeout seconds\n  step 4. Transmit the UDP response from the WAN to LAN\n  step 5. Verify UDP packet from the WAN is not forwarded to LAN\n  step 6. Initiate a second outbound UDP echo\n  step 7. Verify the packet is received on the WAN\n  step 8. Wait for natUdpTimeout - 5 seconds\n  step 9. Transmit the UDP response from the WAN to LAN\n  step 10. Verify UDP packet from the WAN is forwarded to LAN\n  Reference:\n  RFC 2663 IP Network Address Translator Terminology and Considerations\n  Section 2.6 End of session for TCP, UDP and others\n  NOTE: This test verifies that the router maintains an NAT entry for a\n  UDP connections for 'natUdpTimeout' seconds. The natUdpTimeout\n  setting is configured in the configuration file using the testvar\n  natUdpTimeout. If not specified, it defaults to 5 minutes.\n  Example:\n  testvar natUdpTimeout 300",
+      "initial" : "  See CDRouter configuration",
+      "id" : "61",
+      "title" : "CDR: Verify NAT UDP session timeout",
+      "result" : "  PASS"
+   },
+   "20" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Delete a custom NAT policy with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "20",
+      "title" : "GUI: Delete NAT Policies",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "10" : {
+      "steps" : "  1.Forward an UDP packet from a LAN client to the WAN\n  2.Verify packet is received on WAN side\n  3.Send ICMP time exceeded packet with original UDP packet as data\n  4.Verify ICMP time exceeded packet is received by LAN host\n  5. Verify the contents of the original IP packet included in the ICMP time exceeded message are translated by NAT.\n  6.The following fields are verified: - IP length (length should not change) - IP src address (translated by NAT) - IP destination address (unchanged) - IP checksum (recomputed by NAT) - UDP src port (translated by NAT) - UDP destination port (unchanged)",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "10",
+      "title" : "CDR: Destination Remap - Verify NAT translates IP address in ICMP time exceeded data",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "31" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Add a NAT policy with some source rempping (Refer Test Case 39)\n  3) Refer Test case 39 for the rest of test steps",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "31",
+      "title" : "Function: Source Remapping (Some Unmapped)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "35" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Go to Network/Address Object page\n  3)Add the following address object:\n  --------------------------------------------------------------------------------------------\n  NameZone AssignmentTypeIP Address\n  ---------------------------------------------------------------------------------------------\n  Server-IPLANHost192.168.168.200\n  ---------------------------------------------------------------------------------------------\n  4)Go to Network/NAT Policy page\n  5)Add the following NAT policy:\n  ---------------------------------------------------------------------------------------------------------------------------------------\n  SourceDestinationServiceInterface\n  ---------------------------------------------------------------------------------------------------------------------------------------\n  OriginalTranslatedOriginal TranslatedOriginalTranslatedInboundOutbound\n  ----------------------------------------------------------------------------------------------------------------------------------------\n  Inbound:\n  AnyOriginalWAN IP Server-IPAnyOriginalX1Any\n  (All Unmapped ) (One to One Mapping )(All Unmapped )\n  ----------------------------------------------------------------------------------------------------------------------------------------\n  6)Confirm the following firewall rule must exist in Firewall/Access Rules page (create it if not):\n  WAN LAN\n  -----------------------------------------------------------------------\n  SourceDestinationServiceAction\n  -----------------------------------------------------------------------\n  AnyWAN IPFTPAllow\n  -----------------------------------------------------------------------\n  7)Access this FTP server using WAN IP from any host connected on X1 (primary WAN) interface with success.\n  8)Test Web server or E-mail server on LAN using similar configurations above.",
+      "initial" : "  Firmware setting is restored to Factory Default Settings and connect a FTP server with IP 192.168.168.200 on LAN (X0).",
+      "id" : "35",
+      "title" : "Function: Destination Remapping (One to One)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "11" : {
+      "steps" : "  1.Forward an UDP packet from a LAN client to the WAN\n  2.Verify packet is received on WAN side\n  3.Send ICMP port unreachable with original UDP packet as data\n  4.Verify ICMP port unreachable is received by LAN host\n  5.Verify the contents of the original IP packet included in the ICMP port unreachable message are translated by NAT.\n  6.The following fields are verified: - IP length (length should not change) - IP src address (translated by NAT) - IP destination address(unchanged) - IP checksum (recomputed by NAT) - UDP src port (translated by NAT) - UDP destination port (unchanged)",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "11",
+      "title" : "CDR: Destination Remap - Verify NAT translates IP address in ICMP port unreachable",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "48" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for DMZ 1-to-1 <---> LAN\n  3)Create the neccesory access rules for DMZ 1-to-1 <---> LAN\n  4)Pass traffic from LAN to DMZ 1-to1 with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "48",
+      "title" : "Function: Traffic directions (LAN to DMZ 1-to-1)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "65" : {
+      "steps" : "  step 1. Enable LAN client and remote host to include the router alert\n  IP option every IPv4 packet\n  step 2. Initiate an outbound UDP connection (UDP echo)\n  step 3. Verify the udp is received on WAN side\n  step 4. Verify the IPv4 src address on the WAN side is the router's address\n  step 5. Send a return response back to LAN\n  step 6. Verify return packet is received on the LAN\n  Reference:\n  RFC 3022 Traditional IP Network Address Translator (Traditional NAT)",
+      "initial" : "  see cdrouter_nat_340",
+      "id" : "65",
+      "title" : "CDR:Outbound UDP connection using IPv4 options",
+      "result" : "  PASS"
+   },
+   "29" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/Address Object page\n  3) Add the following address object:\n  ---------------------------------------------------------------------------------------------------------------------------------------\n  Name Zone Assignment Type Staring IP Address Ending IP Address\n  ---------------------------------------------------------------------------------------------------------------------------------------\n  WAN IP Pool WAN Range 10.0.30.206 10.0.30.208\n  -------------------------------------------------------------------------------------------------------------------------------------\n  4) Go to Network/NAT Policy page\n  5) Add the following NAT policy:\n  --------------------------------------------------------------------------------------------------------------------------------------------------\n  Source Destination Service Interface\n  ---------------------------------------------------------------------------------------------------------------------------------------------------\n  Original Translated Original Translated Original Translated Inbound Outbound\n  ---------------------------------------------------------------------------------------------------------------------------------------------------\n  Outbound:\n  Any WAN IP Pool Any Original Any Original X0 X1\n  (Many to Few Mapping ) (All Unmapped ) (All Unmapped )\n  ----------------------------------------------------------------------------------------------------------------------------------------------------\n  6) Confirm the following firewall rule must exist in Firewall/Access Rules page (create it if not):\n  LAN WAN\n  -----------------------------------------------------------------------\n  Source Destination Service Action\n  -----------------------------------------------------------------------\n  Any Any Any Allow\n  -----------------------------------------------------------------------\n  7) Access Internet from any hosts on X0 (primary LAN) with ping, FTP, HTTP or other types of traffic.",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "29",
+      "title" : "Function: Source Remapping (Many to few)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "50" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for DMZ <---> WAN and LAN <---> WAN\n  3)Create the neccesory access rules for DMZ <---> WAN and LAN <---> WAN\n  4)Configure the different network mode at a time\n  5)Pass traffic from DMZ to WAN or LAN to WAN with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "50",
+      "title" : "Function: NAT Policy with different network modes",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "39" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Go to Network/Address Object page\n  3)Add the following address object:\n  --------------------------------------------------------------------------------------------\n  NameZone AssignmentTypeIP Address\n  ---------------------------------------------------------------------------------------------\n  Server-IPLANHost192.168.168.200\n  ---------------------------------------------------------------------------------------------\n  4)Go to Network/NAT Policy page\n  5)Add the following two NAT policies (Inbound and Outbound:\n  ---------------------------------------------------------------------------------------------------------------------------------------\n  SourceDestinationServiceInterface\n  ---------------------------------------------------------------------------------------------------------------------------------------\n  OriginalTranslatedOriginal TranslatedOriginalTranslatedInboundOutbound\n  ----------------------------------------------------------------------------------------------------------------------------------------\n  Inbound:\n  AnyOriginalWAN IP Server-IPFTPOriginalX1Any\n  (All Unmapped ) (One to One Mapping )(Some Unmapped )\n  ----------------------------------------------------------------------------------------------------------------------------------------\n  6)Confirm the following firewall rule must exist in Firewall/Access Rules page (create it if not):\n  WAN LAN\n  -----------------------------------------------------------------------\n  SourceDestinationServiceAction\n  -----------------------------------------------------------------------\n  AnyWAN IPFTPAllow\n  -----------------------------------------------------------------------\n  7)Access this FTP server from any host connected on X1 (primary WAN) interface with success.\n  8)Test Web server or E-mail server on LAN using similar configurations above.",
+      "initial" : "  Firmware setting is restored to Factory Default Settings and connect an FTP server with IP 192.168.168.200 on LAN (X0).",
+      "id" : "39",
+      "title" : "Function: Service Remapping (Some Unmapped)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "64" : {
+      "steps" : "  step 1. Enable LAN client and remote host to include the router alert\n  IP option every IPv4 packet\n  step 2. Initiate an outbound TCP connection to HTTP server\n  step 3. Verify the connection is established\n  step 4. Verify the IPv4 src address on the WAN side is the router's address\n  step 5. Send HTTP GET request to server\n  step 6. Verify HTTP response is received\n  step 7. Close TCP connection from LAN side\n  Reference:\n  RFC 3022 Traditional IP Network Address Translator (Traditional NAT)\n  step 6. Initiate a second outbound ICMP Echo Request\n  step 7. Verify the packet is received on the WAN\n  step 8. Wait for natIcmpTimeout - 5 seconds\n  step 9. Transmit the Echo Response from the WAN to LAN\n  step 10. Verify ICMP packet from the WAN is forwarded to LAN\n  Reference:\n  RFC 2663 IP Network Address Translator Terminology and Considerations\n  Section 2.6 End of session for TCP, UDP and others\n  NOTE: This test verifies that the router maintains an NAT entry for a\n  ICMP connections for 'natIcmpTimeout' seconds. The\n  natIcmpTimeout setting is configured in the configuration file\n  using the testvar natIcmpTimeout. If not specified, it defaults to\n  90 seconds.\n  Example:\n  testvar natFinRstTimeout 90",
+      "initial" : "  see cdrouter_nat_330",
+      "id" : "64",
+      "title" : "CDR:Outbound TCP connection using IPv4 options",
+      "result" : "  PASS"
+   },
+   "58" : {
+      "steps" : "  step 1. Initiate an outbound TCP connection to next TCP port\n  step 2. Verify the connection is established\n  step 3. Close the TCP connection using RST from LAN\n  step 4. Wait for natFinRstTimeout to expire\n  step 5. Retransmit the last TCP segment from the WAN to LAN\n  step 6. Verify TCP packet from the WAN is not forwarded to LAN\n  step 7. Initiate a second outbound TCP connection to same TCP port\n  step 8. Verify the connection is established\n  step 9. Close the TCP connection using RST from LAN\n  step 10. Wait for natFinRstTimeout - 5 seconds\n  step 11. Retransmit the last TCP segment from the WAN to LAN\n  step 12. Verify TCP packet from the WAN is forwarded to LAN\n  Reference:\n  RFC 2663 IP Network Address Translator Terminology and Considerations\n  Section 2.6 End of session for TCP, UDP and others\n  NOTE: This test verifies that the router maintains an NAT entry for a\n  TCP connection that has been closed for 'natFinRstTimeout' seconds. The\n  natFinRstTimeout setting is configured in the configuration file\n  using the testvar natFinRstTimeout. If not specified, it defaults to\n  4 minutes.\n  Example:\n  testvar natFinRstTimeout 240\n  NOTE: There are two mains types of implementations of the natFinRstTimeout\n  timer. Some implementations delete the NAT entry after a FIN or RST event\n  occurs and the natFinRstTimeout occurs. Other implmentations, reset the\n  timeout each time a packet is seen. This test case uses 2 TCP sessions\n  to verify the behavior since sending TCP data to verify the timeout can\n  cause some implementations to reset the timeout.\n  step 6. Verify TCP packet from the WAN is not forwarded to LAN\n  step 7. Initiate a second outbound TCP connection to same TCP port\n  step 8. Verify the connection is established\n  step 9. Close the TCP connection using FIN from WAN\n  step 10. Wait for natFinRstTimeout - 5 seconds\n  step 11. Retransmit the last TCP segment from the WAN to LAN\n  step 12. Verify TCP packet from the WAN is forwarded to LAN\n  Reference:\n  RFC 2663 IP Network Address Translator Terminology and Considerations\n  Section 2.6 End of session for TCP, UDP and others\n  NOTE: This test verifies that the router maintains an NAT entry for a\n  TCP connection that has been closed for 'natFinRstTimeout' seconds. The\n  natFinRstTimeout setting is configured in the configuration file\n  using the testvar natFinRstTimeout. If not specified, it defaults to\n  4 minutes.",
+      "initial" : "  See CDRouter configuration",
+      "id" : "58",
+      "title" : "CDR: Verify NAT TCP session timeout after RST close",
+      "result" : "  PASS"
+   },
+   "41" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for DMZ <---> WAN\n  3)Create the neccesory access rules for DMZ <---> WAN\n  4)Pass traffic from WAN to DMZ with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "41",
+      "title" : "Function: Traffic directions (WAN to DMZ)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "12" : {
+      "steps" : "  1.Enable LAN client and remote host to include the router alert IP option every IPv4 packet\n  2.Initiate an outbound TCP connection to HTTP server\n  3.Verify the connection is established\n  4.Verify the IPv4 src address on the WAN side is the router's address\n  5. Send HTTP GET request to server\n  6.Verify HTTP response is received\n  7.Close TCP connection from LAN side ",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "12",
+      "title" : "CDR: Outbound TCP connection using IPv4 options",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "15" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Add the following NAT policy with failed result\n  --------------------------------------------------------------------------------------------------------------------------------------------------\n  Source Destination Service Interface\n  ---------------------------------------------------------------------------------------------------------------------------------------------------\n  Original Translated Original Translated Original Translated Inbound Outbound\n  ---------------------------------------------------------------------------------------------------------------------------------------------------\n  Any WAN Primary IP Any Original Any Original X1 X2\n  ---------------------------------------------------------------------------------------------------------------------------------------------------\n  The above NAT policy does not result in error.\n  If a destination NAT is entered with outbound interface specified , it should result in an error.",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "15",
+      "title" : "GUI: Error and wrong inputs",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "52" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for a VPN policy\n  3)Pass traffic for two peers of VPN with success\n  *********************\n  Create a site-to-site VPN between two devices.\n  1.In the Advanced tab select checkbox \"Apply NAT policies\"\n  2.Select the Trasnlated loacl network / Translated remote network ( Typically only one side is translated, but both can be enabled)\n  3.Create an address object for the translated network. ( the actual LAN address will be hidden and the translated network is exposed to the other side )\n  4.Verify the NAT policies that get auto added after selecting the translated network.\n  5.On the peer create a VPN tunnel using the translated network in the Remote destination network drop down list.\n  Create an address object for the remote LAN ( translated LAN ) .\n  1.Ensure the vpn tunnel is properly established.\n  2.From Hosts on either side of the tunnel have ICMP traffic,ensure only the tanslated network addresses are pingable and not the actual network addresses.\n  3.Packet capture on the local firewall where translation is enabled will show natted packets.",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "52",
+      "title" : "Function: NAT Policy with VPN",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "60" : {
+      "steps" : "  step 1. Send outbound TCP Syn to next TCP port\n  step 2. Wait for natSynTimeout to expire\n  step 3. Send TCP Syn+Ack from WAN back to LAN host\n  step 4. Verify TCP packet from the WAN is not forwarded to LAN\n  step 5. Send a second outbound TCP Syn to same TCP port\n  step 6. Wait for natSynTimeout - 5 seconds\n  step 7. Send TCP Syn+Ack from WAN back to LAN host\n  step 8. Verify TCP packet from the WAN is forwarded to LAN\n  Reference:\n  RFC 2663 IP Network Address Translator Terminology and Considerations\n  Section 2.6 End of session for TCP, UDP and others\n  NOTE: This test verifies that the router maintains an NAT entry for a\n  partially open TCP connection for 'natSynTimeout' seconds. The\n  natSynTimeout setting is configured in the configuration file\n  using the testvar natSynTimeout. If not specified, it defaults to\n  2 minutes.\n  Example:\n  testvar natSynTimeout 120",
+      "initial" : "  See CDRouter configuration",
+      "id" : "60",
+      "title" : "CDR: Verify NAT TCP SYN session timeout",
+      "result" : "  PASS"
+   },
+   "56" : {
+      "steps" : "  step 1. Set the TCP options to resemble a Windows TCP client\n  step 2. Initiate an outbound TCP connection to HTTP server\n  step 3. Verify the received MSS on the LAN and WAN matches\n  the expected MSS size\n  step 4. Verify the IPv4 src address on the WAN side is the router's address\n  step 5. Send HTTP GET request to server\n  step 6. Verify HTTP response is received\n  step 7. Close TCP connection from LAN side\n  step 8. Repeat testing using TCP options for a Linux TCP client\n  NOTE: The expected MSS size for MSS clamping can be configured\n  using the testvar mssClampingValue.\n  Example:\n  testvar mssClampingValue 1452",
+      "initial" : "  1. Start the DUT from factory default settings2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "56",
+      "title" : "CDR: Verify MSS Clamping does not modify smaller MSS values",
+      "result" : "  It is verified that MSS Clamping does not modify smaller MSS values"
+   },
+   "66" : {
+      "steps" : "  a) Set X?(X2,X3...) as WAN (or LAN,DMZ,WLAN)\n  b) On Network->NAT Policy page, NAT policies based X? will auto added.\n  c) Reboot FW\n  d) Go to Network->NAT Policy page, the auto-added policies should remain unchanged.\n  See DTS #107619 as reference",
+      "initial" : "  TBD",
+      "id" : "66",
+      "title" : "Auto added nat policy for WAN, LAN, DMZ, WLAN remain unchanged after reboot",
+      "result" : "  After reboot, the auto-added policies should remain unchanged, for example, X? IP will not change into X? subnet"
+   },
+   "45" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for LAN <---> WAN\n  3)Create the neccesory access rules for LAN <---> WAN\n  4)Pass traffic from WAN to LAN with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "45",
+      "title" : "Function: Traffic directions (WAN to LAN)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "19" : {
+      "steps" : "  1.Firmware setting is restored to Factory Default Settings.\n  2.Configure LAN and WAN interfaces.\n  3.Verify the default NAT plocicies.\n  4.Add custom NAT policies for Public LAN servers.\n  5.Ensure custom NAT policies added take effect.\n  Disable the custom user-added NAT policies, ensure the default NAT policy gets a hit for the traffic.\n  Ensure the priority order of NAT policies id honored.",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "19",
+      "title" : "GUI: Adjust NAT Policy priorities",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "62" : {
+      "steps" : "  step 1. Initiate an outbound DNS query\n  step 2. Verify the DNS packet is received on the WAN\n  step 3. Wait for natDnsTimeout seconds\n  step 4. Transmit the DNS response from the WAN to LAN\n  step 5. Verify DNS packet from the WAN is not forwarded to LAN\n  step 6. Initiate a second outbound DNS query\n  step 7. Verify the packet is received on the WAN\n  step 8. Wait for natDnsTimeout - 5 seconds\n  step 9. Transmit the DNS response from the WAN to LAN\n  step 10. Verify DNS packet from the WAN is forwarded to LAN\n  Reference:\n  RFC 2663 IP Network Address Translator Terminology and Considerations\n  Section 2.6 End of session for TCP, UDP and others\n  NOTE: This test verifies that the router maintains an NAT entry for a\n  DNS connection for 'natDnsTimeout' seconds. The\n  natDnsTimeout setting is configured in the configuration file\n  using the testvar natDnsTimeout. If not specified, it defaults to\n  5 minutes. If the implementation does not make any distintiction\n  between DNS and generic UDP, this timeout should be set to the\n  same value as the natUdpTimeout.\n  Example:\n  testvar natDnsTimeout 300",
+      "initial" : "  See CDRouter configuration",
+      "id" : "62",
+      "title" : "CDR: Verify NAT DNS session timeout",
+      "result" : "  PASS"
+   },
+   "54" : {
+      "steps" : "  step 1. Set the TCP MSS size to 1460\n  step 2. Initiate an outbound TCP connection to HTTP server\n  step 3. Verify the received MSS on the LAN and WAN matches\n  the expected MSS size\n  step 4. Verify the IPv4 src address on the WAN side is the router's address\n  step 5. Send HTTP GET request to server\n  step 6. Verify HTTP response is received\n  step 7. Close TCP connection from LAN side\n  NOTE: The expected MSS size for MSS clamping can be configured\n  using the testvar mssClampingValue.\n  Example:\n  testvar mssClampingValue 1452",
+      "initial" : "  1. Start the DUT from factory default settings2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "54",
+      "title" : "CDR: Verify basic MSS Clamping for TCP sessions",
+      "result" : "  Basic MSS Clamping for TCP sessions is verified"
+   },
+   "67" : {
+      "steps" : "  1. Login to manage interface through a web browser\n  2. Config x1 as DHCP mode, create an AO1 ( ip is in x1 subnet but not x1 ip, and no host using it)\n  3. Go to Network->NAT Policy page, add the following NAT policy: Original Translated Original Translated Original Translated Inbound Outbound\n  Any Original AO1 PC1 ip Any Original X1 Any\n  4. Go to Firewall->Access Rules, add the following policy:\n  WAN->LAN Any Any ICMP Allow All\n  5. From PC on WAN ping AO1, capture the packet on the firewall and PC1",
+      "initial" : "  Firmware setting is restored to Factory Default Settings and connect PC1 on LAN (X0).",
+      "id" : "67",
+      "title" : "Verify DNAT policy when the original destination does not belong to firewall interface",
+      "result" : "  1.Ping can success\n  2.Check the packet, destination translated success. "
+   },
+   "70" : {
+      "steps" : "   the loopback NAT policy is functioning by testing from private side to the public ip address of server.",
+      "initial" : "  1.Login to the SonicWall management GUI.\n  2.Navigate to Manage | Rules | NAT Policies submenu.\n  Click Add.\n  Create the following NAT policy.\n  Original Source: LAN Subnets (or Firewalled Subnets if you want hosts in other zones to be included).\n  Translated Source: WAN Interface IP.\n  Original Destination: WAN Interface IP OR public IP address is not the WAN interface IP\n  Translated Destination: Server's Private IP Object (i.e. 192.168.0.254).\n  Original Service: Any (or a custom service).\n  Translated Service: Original.\n  Inbound Interface: Any.\n  Outbound Interface: Any.\n  3.Create a LAN to DMZ (or destination zone where the server's private IP is) access rule with the server's public IP address as destination.\n  Navigate to Manage | Rules | Access Rules submenu.\n  Click Add.\n  From: LAN.\n  To: DMZ (or custom zone where the server is).\n  Source Port: Any.\n  Services: Any (or restrict to specific ports).\n  Source: LAN Subnets (or custom subnets).\n  Destination: Public IP of the server (i.e. WAN Interface IP or WAN custom object).",
+      "id" : "70",
+      "title" : "[NAT reflection or hairpin or loopback NAT ]Access A Server Behind The SonicWall From Internal Networks Using Public IPs",
+      "result" : ""
+   },
+   "68" : {
+      "steps" : "  All the costom NAT policies are still there and function is working as expected.",
+      "initial" : "  1. Add some custom NAT policies, including LAN->WAN, WAN->DMZ, LAN->DMZ directions.\n  2. Reboot DUT\n  3. Verify if all the costom NAT policies are still there and function is working as expected.",
+      "id" : "68",
+      "title" : "Verfiy the user added NAT policies remain unchanged after the reboot",
+      "result" : ""
+   },
+   "17" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Add the a NAT policy by clicking Add button\n  4) Select all same values as an existing NAT policy\n  5) Click OK button to get a configuration message Error: Duplicate policy exists",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "17",
+      "title" : "GUI: Add duplicated NAT Policies",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "2" : {
+      "steps" : "  1.Initiate an outbound UDP connection (DNS query)\n  2.Verify the udp is received on WAN side\n  3.Verify the IPv4 src address on the WAN side is the router's address\n  4.Send a return response back to LAN\n  5.Verify return packet is received on the LAN",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings (This should enable default outbound NAT policies)",
+      "id" : "2",
+      "title" : "CDR: Source Remap - Outbound UDP connections use NAPT",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "1" : {
+      "steps" : "  1. Initiate an outbound TCP connection to HTTP server.\n  2. Verify the connection is established.\n  3. Verify the IPv4 src address on the WAN side is the router's address.\n  4. Send HTTP GET request to server.\n  5. Verify HTTP response is received.\n  6. Close TCP connection from LAN side",
+      "initial" : "  1. Start the DUT from factory default settings2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "1",
+      "title" : "CDR: Source Remap - Outbound TCP connections use NAPT",
+      "result" : "  As mentioned in Test Instructions"
+   },
+   "30" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/Address Object page\n  3) Add the following two address objects:\n  Name : Private-IP\n  Zone : LAN\n  Type: Host\n  IP Address : 192.168.168.200\n  Name : Public-IP\n  Zone : WAN\n  Type: Host\n  IP Address : 10.0.30.206\n  4) Go to Network/NAT Policy page\n  5) Add the following two NAT policies (Inbound and Outbound:\n  Outbound:\n  Original Source : Private-IP\n  Translated Source : Public-IP\n  Original Destination : Any\n  Translated Destination : Original\n  Original service : Any\n  Translated Service : Original\n  Inbound Interface : X0\n  Outbound Interface : X1\n  Inbound:\n  Original Source : Any\n  Translated Source : Original\n  Original Destination : Public-IP\n  Translated Destination : Private-IP\n  Original service : Any\n  Translated Service : Original\n  Inbound Interface : X1\n  Outbound Interface : Any\n  6) Confirm the following firewall rule must exist in Firewall/Access Rules page (create it if not):\n  Action : Allow\n  From : WAN\n  To : LAN\n  Service : Any\n  Source: Any\n  Destination : Public-IP\n  Inbound Interface : X1\n  Outbound Interface : Any\n  7) Access Internet from the host, 192.168.168.200 on X0 (primary LAN) with ping, FTP, HTTP or other types of traffic to make sure the source IP out of WAN port (X1) is showed as Publick IP instead of the WAN primary IP.",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "30",
+      "title" : "Function: Source Remapping (One to One)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "25" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Use te boundary values defined in a custom NAT policy to check its functality",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "25",
+      "title" : "Boundary: Boundary conditions for GUI and function tests",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "28" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Go to Network/NAT Policy page\n  3)Add the following NAT policy if it does not exist, or delete it if it exists, then add:\n  Original Source : Any\n  Translated Source : X1 IP\n  Original Destination : Any\n  Translated Destination : Original\n  Original service : Any\n  Translated Service : Original\n  Inbound Interface : X0\n  Outbound Interface : X1\n  4)Access Internet from any hosts on X0 (primary LAN) with ping, FTP, HTTP or other types of traffic.",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "28",
+      "title" : "Function: Source Remapping (Many to One)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "40" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Add Source or Destination remapping NAT policy without Service remapping (See Test Case 28 and 29)\n  3)Refer Test case 28 for the rest of test steps",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "40",
+      "title" : "Function: Service Remapping (All Unmapped)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "14" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Add the following NAT policy:\n  --------------------------------------------------------------------------------------------------------------------------------------------------\n  Source Destination Service Interface\n  ---------------------------------------------------------------------------------------------------------------------------------------------------\n  Original Translated Original Translated Original Translated Inbound Outbound\n  ---------------------------------------------------------------------------------------------------------------------------------------------------\n  Any WAN Primary IP Any Original Any Original X2 X1\n  ---------------------------------------------------------------------------------------------------------------------------------------------------\n  4) Access Internet from any hosts on X2 (LAN) with ping, FTP, HTTP or other types of traffic.",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "14",
+      "title" : "GUI: Setting modifications",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "69" : {
+      "steps" : "  All the configured fields/values are displayed for both default NAT policies and custom NAT policies.",
+      "initial" : "  1. Add some custom NAT policies, including LAN-WAN, WAN->DMZ, DMZ->WAN directions.\n  2. Export TSR, check all the configured fields/values are displayed for both default NAT policies and custom NAT policies.",
+      "id" : "69",
+      "title" : "Verify TSR contain all the info for NAT policies",
+      "result" : ""
+   },
+   "59" : {
+      "steps" : "  step 1. Initiate an outbound TCP connection to next TCP port\n  step 2. Verify the connection is established\n  step 3. Wait for natTcpTimeout to expire\n  step 4. Retransmit the last TCP segment from the WAN to LAN\n  step 5. Verify TCP packet from the WAN is not forwarded to LAN\n  step 6. Initiate a second outbound TCP connection to same TCP port\n  step 7. Verify the connection is established\n  step 8. Wait for natTcpTimeout - 5 seconds\n  step 9. Retransmit the last TCP segment from the WAN to LAN\n  step 10. Verify TCP packet from the WAN is forwarded to LAN\n  Reference:\n  RFC 2663 IP Network Address Translator Terminology and Considerations\n  Section 2.6 End of session for TCP, UDP and others\n  NOTE: This test verifies that the router delete the NAT entry\n  for a TCP session that has been inactive for natTcpTimeout\n  seconds. The natTcpTimeout can be configured using the testvar\n  natTcpTimeout.\n  Example:\n  testvar natTcpTimeout 86400\n  NOTE: The default natTcpTimeout on most NAT devices can be quite long.\n  Some device default to 24 hours (86400). This test can be quite\n  time consuming with long timeout values.",
+      "initial" : "  See CDRouter configuration",
+      "id" : "59",
+      "title" : "CDR: Verify NAT TCP session timeout for established session",
+      "result" : "  PASS"
+   },
+   "49" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for DMZ <---> LAN public\n  3)Create the neccesory access rules for DMZ <---> LAN public\n  4)Pass traffic from DMZ to LAN public with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "49",
+      "title" : "Function: Traffic directions (DMZ to LAN public)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "24" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Modify Address object group and service object group associated to a custom NAT Policy table with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "24",
+      "title" : "GUI: Address object group and service group with NAT Policies",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "53" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for this platform as a NAT devices\n  3)Place this NAT device between two peers of VPN\n  4)Pass traffic for two peers of VPN with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "53",
+      "title" : "Function: Acting as a? NAT box with VPN NAT Traversal",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "22" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Add a comment to a custom NAT policy to view to make sure it is correctly displayed",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "22",
+      "title" : "GUI: Add and view NAT Policy comments",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "42" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for DMZ <---> WAN\n  3)Create the neccesory access rules for DMZ <---> WAN\n  4)Pass traffic from DMZ to WAN with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "42",
+      "title" : "Function: Traffic directions (DMZ to WAN)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "46" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for LAN <---> WAN\n  3)Create the neccesory access rules for LAN <---> WAN\n  4)Pass traffic from LAN to WAN with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "46",
+      "title" : "Function: Traffic directions (LAN to WAN)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "23" : {
+      "steps" : "  1) Login to management interface through a web browser\n  2) Go to Network/NAT Policy page\n  3) Modify Address object and service object associated to a custom NAT Policy table with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "23",
+      "title" : "GUI: Modify Address and service objects to update NAT Policy table",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "13" : {
+      "steps" : "  1.Enable LAN client and remote host to include the router alert IP option every IPv4 packet\n  2.Initiate an outbound UDP connection (DNS query)\n  3.Verify the udp is received on WAN side\n  4.Verify the IPv4 src address on the WAN side is the router's address\n  5.Send a return response back to LAN\n  6.Verify return packet is received on the LAN ",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "13",
+      "title" : "CDR: Outbound UDP connection using IPv4 options",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "6" : {
+      "steps" : "  1.Initiate an outbound UDP connection\n  2.Verify the the UDP packet is received on the WAN\n  3.Verify the src address on the WAN side is the router's address\n  4.Send return UDP packet back to the LAN\n  5.Verify the return UDP packet is received on the LAN\n  6.Continue creating session up to the maximum number supported\n  7.Once all sessions are established, loop through each session again and forward a UDP packet from the WAN to the LAN using the port mappings that were established for each connection.\n  8.Verify that each UDP connection is still forwarding traffic\n  9.from WAN to LAN.",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "6",
+      "title" : "CDR: Source Remap - Maximum number of UDP connections with single lan host",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "36" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Login to management interface through a web browser\n  3)Add Source remapping NAT policy with some Destination remapping (Refer Test Case 39 for Unremapping setting)\n  4)Refer Test case 39 for the rest of test steps",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "36",
+      "title" : "Function: Destination Remapping (Some Unmapped)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "3" : {
+      "steps" : "  1.Initiate an outbound tcp connection\n  2.Verify the connection is established\n  3.Verify the src address on the WAN side is the router's address\n  4.Continue creating session up to the maximum number supported",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "3",
+      "title" : "CDR: Source Remap - Maximum number of TCP connections with single lan host",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "9" : {
+      "steps" : "  1.Forward an UDP packet from a LAN client to the WAN with UDP checksum 0\n  2.Verify packet is received\n  3.Verify received UDP checksum on WAN side is 0",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings (This should enable default outbound NAT policies)",
+      "id" : "9",
+      "title" : "CDR: Source Remap - UDP headers with 0 checksum should not be modified",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "51" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for DMZ <---> WAN and LAN <---> WAN with different interfaces\n  3)Create the neccesory access rules for DMZ <---> WAN and LAN <---> WAN\n  4)Configure the different network mode at a time\n  5)Pass traffic from DMZ to WAN or LAN to WAN with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "51",
+      "title" : "Function: NAT Policy with different interfaces",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "47" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for DMZ <---> LAN\n  3)Create the neccesory access rules for DMZ <---> LAN\n  4)Pass traffic from LAN to DMZ with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "47",
+      "title" : "Function: Traffic directions (LAN to DMZ public)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "8" : {
+      "steps" : "  1.Forward an UDP packet from a LAN client to the WAN\n  2.Forward a packet back from the WAN to the same LAN client\n  3.Verify packet is received\n  4.Forward a packet using a different source IP address to LAN\n  5.Verify the packet is not forwarded onto the LAN",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "8",
+      "title" : "CDR: Source Remap - Verify NAPT checks source IP address of inbound UDP packets",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "38" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Go to Network/Address Object page\n  3)Add the following address object:\n  --------------------------------------------------------------------------------------------\n  Name Zone Assignment TypeIP Address\n  ---------------------------------------------------------------------------------------------\n  Server-IP LAN Host 192.168.168.200\n  ---------------------------------------------------------------------------------------------\n  4)Go to Firewall/Service page\n  5)Add the following custom service:\n  --------------------------------------------------------------------------------------------\n  Name ProtocolPort Range\n  ---------------------------------------------------------------------------------------------\n  8888-tcp TCP (6) 8888 - 8888\n  ---------------------------------------------------------------------------------------------\n  6)Go to Network/NAT Policy page\n  7)Add the following two NAT policies (Inbound and Outbound:\n  ---------------------------------------------------------------------------------------------------------------------------------------\n  SourceDestinationServiceInterface\n  ---------------------------------------------------------------------------------------------------------------------------------------\n  OriginalTranslatedOriginal TranslatedOriginalTranslatedInboundOutbound\n  ----------------------------------------------------------------------------------------------------------------------------------------\n  Inbound:\n  Any Original WAN IP Server-IP 8888-tcp HTTP X1 Any\n  (All Unmapped ) (One to One Mapping )(One to One Mapping )\n  ----------------------------------------------------------------------------------------------------------------------------------------\n  8)Confirm the following firewall rule must exist in Firewall/Access Rules page (create it if not):\n  WAN LAN\n  -----------------------------------------------------------------------\n  SourceDestinationServiceAction\n  -----------------------------------------------------------------------\n  Any WAN IP 8888-tcp Allow\n  -----------------------------------------------------------------------\n  9)Access this Web server from any host connected on X1 (primary WAN) interface with success.\n  10)Test FTP server or E-mail server on LAN using similar configurations above.",
+      "initial" : "  Firmware setting is restored to Factory Default Settings and connect a Web server with IP 192.168.168.200 on LAN (X0).",
+      "id" : "38",
+      "title" : "Function: Service Remapping (One to One)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "4" : {
+      "steps" : "  1.Configure additional lan host\n  2.Configure the new lan host so that its TCP source ports will be the same as the original LAN host.\n  3.Initiate outbound TCP connections for both LAN hosts\n  4.Verify the connections are established\n  5.Continue to create up to 10 connections per host.",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "4",
+      "title" : "CDR: Source Remap - NAPT with multiple LAN hosts using the same TCP src port",
+      "result" : "  As mentioned in Test Excutions"
+   },
+   "34" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Login to management interface through a web browser\n  3)Add Destination remapping NAT policy (Refer Test Case 29)\n  4)Refer Test case 29 for the rest of test steps",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "34",
+      "title" : "Function: Destination Remapping (Few to Many)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "37" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Add Source remapping NAT policy without Destination remapping (See Test Case 28 and 29)\n  3)Refer Test case 28 for the rest of test steps",
+      "initial" : "  Firmware setting is restored to Factory Default Settings.",
+      "id" : "37",
+      "title" : "Function: Destination Remapping (All Unmapped)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "43" : {
+      "steps" : "  1)Login to management interface through a web browser\n  2)Create outbound and inbound NAT policies for DMZ <---> LAN\n  3)Create the neccesory access rules for DMZ <---> LAN\n  4)Pass traffic from LAN to DMZ with success",
+      "initial" : "  Firmware setting is restored to Factory Default Settings",
+      "id" : "43",
+      "title" : "Function: Traffic directions (LAN to DMZ)",
+      "result" : "  All steps in Test Excution section above are passed without errors."
+   },
+   "5" : {
+      "steps" : "  1.Initiate an outbound TCP connection to HTTP server\n  2.Verify the connection is established\n  3.Verify the IPv4 src address on the WAN side is the router's address\n  4.Initiate an outbound UDP connection using same source port (DNS Query)\n  5.Verify the UDP packet is received on the WAN\n  6.Send a return UDP packet back to the LAN host\n  7.Verify return UDP packet is received on the LAN\n  8.Close TCP connection from LAN side",
+      "initial" : "  1. Start the DUT from factory default settings\n  2. Setup WAN interface with proper IP settings(This should enable default outbound NAT policies)",
+      "id" : "5",
+      "title" : "CDR: Source Remap - NAPT with a TCP and UDP connection using the same source port",
+      "result" : "  As mentioned in Test Excutions"
+   }
+}

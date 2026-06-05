@@ -1,0 +1,65 @@
+{
+   "6" : {
+      "steps" : "  1. Add a static route, src X0 subnet, dst to 40.1.1.0/24, outgoing interface X1;\n  2. Add a static route, src X3 subnet, dst to 80.1.1.0/24, outgoing interface X2;\n  3. Send traffic from X0 subnet to 40.1.1.0/24 and check the traffic flow;\n  4. Send traffic from X3 subnet to 80.1.1.0/24 and check the traffic flow;",
+      "initial" : "  It will be added.",
+      "id" : "6",
+      "title" : "Function: Route traffic through primary WAN or secondary WAN",
+      "result" : "  in step 3, traffic will be forwarded to X1;\n  in step 4, traffic will be forwarded to X2."
+   },
+   "3" : {
+      "steps" : "  1. Edit a static route, test the metric boundary , 1-255;\n  2. Test the function of this static route, when the metric is 1, 2, 254, 255;",
+      "initial" : "  It will be added.",
+      "id" : "3",
+      "title" : "Boundary: Boundary conditions for GUI and function tests",
+      "result" : "  in step 1, type metric 0, error prompt; type metric 1, saved; type metric 2, saved; type metric 254, saved; type metric 255, saved; type metric 256, error prompt.\n  in step 2, when metric is 1,2,254, static route take effect, when metric is 255, traffic will not be forwarded by this static route."
+   },
+   "7" : {
+      "steps" : "  This case was obsoleted.",
+      "initial" : "  It will be added.",
+      "id" : "7",
+      "title" : "[obsolete]Function: Static route with VPN Single Armed Mode",
+      "result" : "  This case was obsoleted."
+   },
+   "9" : {
+      "steps" : "  Add and edit and delete static route, check the routing table;",
+      "initial" : "  It will be added.",
+      "id" : "9",
+      "title" : "Function: Routing Table for Static route",
+      "result" : "  all static routes are shown correctly on the routing table."
+   },
+   "2" : {
+      "steps" : "  1. Add a static route, type wrong metric and wrong AO;\n  2. Error message should prompt.",
+      "initial" : "  It will be added.",
+      "id" : "2",
+      "title" : "GUI: Error and wrong inputs",
+      "result" : "  in step 2, error message should prompt."
+   },
+   "8" : {
+      "steps" : "  1. Configure interface X2, zone WAN , connected to a router;\n  2. Add a static route, dst to 60.1.1.0/24, outgoing interface X2, gateway: router IP;\n  3. Send traffic to 60.1.1.0/24 from X0 subnet, check the traffic flow;",
+      "initial" : "  It will be added.",
+      "id" : "8",
+      "title" : "Function: Static route test with Router",
+      "result" : "  in step 3, traffic is forwarded to router."
+   },
+   "1" : {
+      "steps" : "  in step 2, setting modifications must be made successfully.",
+      "initial" : "  1. Add a static route;\n  2. Modify the parameters of this static route;",
+      "id" : "1",
+      "title" : "GUI: Setting modifications",
+      "result" : ""
+   },
+   "4" : {
+      "steps" : "  1. Add a static route, src: X0 subnet, dst : 40.1.1.0/24, outgoing interface X2;\n  2. Send traffic to 40.1.1.0/24 from X0 subnet, check the traffic flow ;",
+      "initial" : "  It will be added.",
+      "id" : "4",
+      "title" : "Function: Route traffic through primary LAN",
+      "result" : "  in step 2, traffic will be forwarded to X2."
+   },
+   "5" : {
+      "steps" : "  1. Configure interface X2, zone DMZ, static IP;\n  2. Connect PC to X2;\n  3. Add static route on FW, src: X2 subnet, dst: 40.1.1.0/24, outgoing interface X3;\n  4. Send traffic from X2 subnet to 40.1.1.0/24 and check the traffic flow.",
+      "initial" : "  It will be added.",
+      "id" : "5",
+      "title" : "Function: Route traffic through DMZ or custom zone",
+      "result" : "  in step 4, traffic will be forwarded to X3."
+   }
+}

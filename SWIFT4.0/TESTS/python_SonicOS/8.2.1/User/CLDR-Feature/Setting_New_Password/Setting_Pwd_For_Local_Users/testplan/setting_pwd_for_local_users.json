@@ -1,0 +1,30 @@
+{
+   "4113382" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that compromised password cannot be set for a local user through FW MGMT API when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is enabled",
+      "id" : "4113382",
+      "title" : "Verify that compromised password cannot be set for a local user through FW MGMT API when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is enabled",
+      "result" : "  Verify that compromised password cannot be set for a local user through FW MGMT API when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is enabled"
+   },
+   "4113380" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that compromised password cannot be set for a local user through FW MGMT CLI when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is enabled",
+      "id" : "4113380",
+      "title" : "Verify that compromised password cannot be set for a local user through FW MGMT CLI when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is enabled",
+      "result" : "  Verify that compromised password cannot be set for a local user through FW MGMT CLI when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is enabled"
+   },
+   "4113381" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that compromised password can be set for a local user through FW MGMT API when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is disabled",
+      "id" : "4113381",
+      "title" : "Verify that compromised password can be set for a local user through FW MGMT API when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is disabled",
+      "result" : "  Verify that compromised password can be set for a local user through FW MGMT API when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is disabled"
+   },
+   "4113379" : {
+      "steps" : "  Verify that Compromised Credential Detection tab is available under Device-User-Settings and the feature is enabled",
+      "initial" : "  Verify that compromised password can be set for a local user through FW MGMT CLI when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is disabled",
+      "id" : "4113379",
+      "title" : "Verify that compromised password can be set for a local user through FW MGMT CLI when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is disabled",
+      "result" : "  Verify that compromised password can be set for a local user through FW MGMT CLI when \u201cDo not allow a compromised password to be used when setting a new password...For local users\u201d is disabled"
+   }
+}

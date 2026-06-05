@@ -1,0 +1,37 @@
+{
+    "01" : {
+        "steps": "1) retrieve all ipv6 interfaces configuration &2) check response is ok",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 WAN) -- PC2", 
+        "id" : "01",
+        "title": "retrieve all ipv6 interfaces configuration",
+        "result": "reponse can show all ipv6 interfaces ip"
+    },
+    "02" : {
+        "steps": "1) add wlan tunnel interface to bound physical interface in ipv4 &2) get wt1 interface in ipv6 3) check response is ok",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 WAN) -- PC2", 
+        "id" : "02",
+        "title":"retrieve configuration of specified wlan tunnel interface to bound to physical interface",
+        "result": "can get reponse of ipv6 wt1 interface" 
+    },
+    "03" : {
+        "steps": "1) edit general tab when selecting auto mode for ipv6 interface 2) check response is ok ",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 WAN) -- PC2", 
+        "id" : "03",
+        "title": "edit general tab when selecting auto mode for a ipv6 interface",
+        "result" : "response contain auto mode information"
+    },
+    "04" : {
+        "steps": "1) edit router advertisement tab when selecting static mode by api 2) check response is ok",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 WAN) -- PC2", 
+        "id" : "04",
+        "title":"edit router advertisement tab when selecting static mode for a ipv6 interface",
+        "result": "check response have router advertisement info" 
+    },
+    "05" : {
+        "steps": "1) edit general tab when selecting DHCPv6 mode for a ipv6 interface &2) check response is ok",
+        "initial": "PC1 -- (X0 LAN) DUT (X2 WAN) -- PC2", 
+        "id" : "05",
+        "title":"edit general tab when selecting DHCPv6 mode for a ipv6 interface",
+        "result": "check response is DHCPv6 mode" 
+    }
+}

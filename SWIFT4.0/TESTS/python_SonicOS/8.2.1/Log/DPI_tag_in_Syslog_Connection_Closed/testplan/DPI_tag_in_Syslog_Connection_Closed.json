@@ -1,0 +1,452 @@
+{
+   "1520020" : {
+      "steps" : "  When CFS Enabled=0; Flow without URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog",
+      "priority" : "Smoke",
+      "atm_id" : "233cd89b-ae6a-4400-9b71-1d8db8b92b44",
+      "initial" : "  TBD",
+      "id" : "1520020",
+      "title" : "When CFS Enabled=0; Flow without URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog",
+      "description" : "Original ID: 120\nOriginal Title: When CFS Enabled=0; Flow without URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog\nOriginal Description:",
+      "result" : "  Message ID is 537, DPI Tag is in"
+   },
+   "1520013" : {
+      "steps" : "  When App Control=1; App Rules=0 without entry; Open and close HTTPS connection , check DPI tag in syslog and GUI log",
+      "priority" : "Smoke",
+      "atm_id" : "ca9d9981-904f-402d-baa5-faccec2351d5",
+      "initial" : "  TBD",
+      "id" : "1520013",
+      "title" : "When App Control=1; App Rules=0 without entry; Open and close HTTPS connection , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 113\nOriginal Title: When App Control=1; App Rules=0 without entry; Open and close HTTPS connection , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1 in syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520024" : {
+      "steps" : "  Syslog Format in enhanced mode, check DPI tag in syslog",
+      "priority" : "Sanity",
+      "atm_id" : "48f00268-089a-48a9-ac1e-032fa0f20c0e",
+      "initial" : "  TBD",
+      "id" : "1520024",
+      "title" : "Syslog Format in enhanced mode, check DPI tag in syslog",
+      "description" : "Original ID: 124\nOriginal Title: Syslog Format in enhanced mode, check DPI tag in syslog\nOriginal Description:",
+      "result" : "  DPI Tag is in the syslog"
+   },
+   "1520005" : {
+      "steps" : "  Continue above test case, restart FW,check DPI Tag in syslog when UDP traffic is \"Connection Closed\"",
+      "priority" : "Full_Regression",
+      "atm_id" : "3b215cfc-8e5d-4c01-bb2e-fb547b1f4c7f",
+      "initial" : "  TBD",
+      "id" : "1520005",
+      "title" : "Continue above test case, restart FW,check DPI Tag in syslog when UDP traffic is \"Connection Closed\"",
+      "description" : "Original ID: 105\nOriginal Title: Continue above test case, restart FW,check DPI Tag in syslog when UDP traffic is \"Connection Closed\"\nOriginal Description:",
+      "result" : "  DPI Tag=1 is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520038" : {
+      "steps" : "  When App Control=1; Enable App Control only on VPN zones, Open and close HTTPS connection between other zones except VPN Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Full_Regression",
+      "atm_id" : "be54c656-ad92-4622-84bc-25cd34b656e6",
+      "initial" : "  TBD",
+      "id" : "1520038",
+      "title" : "When App Control=1; Enable App Control only on VPN zones, Open and close HTTPS connection between other zones except VPN Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 138\nOriginal Title: When App Control=1; Enable App Control only on VPN zones, Open and close HTTPS connection between other zones except VPN Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520021" : {
+      "steps" : "  When CFS Enabled=1; Flow with URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog",
+      "priority" : "Smoke",
+      "atm_id" : "5a935ed0-0fab-4138-9d62-a64eb272d109",
+      "initial" : "  TBD",
+      "id" : "1520021",
+      "title" : "When CFS Enabled=1; Flow with URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog",
+      "description" : "Original ID: 121\nOriginal Title: When CFS Enabled=1; Flow with URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog\nOriginal Description:",
+      "result" : "  Message ID is 97, DPI Tag is in"
+   },
+   "1520010" : {
+      "steps" : "  Continue above test case, restart FW,check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"",
+      "priority" : "Full_Regression",
+      "atm_id" : "58da9e88-c8f2-4e27-a580-5dda6c1708f2",
+      "initial" : "  TBD",
+      "id" : "1520010",
+      "title" : "Continue above test case, restart FW,check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"",
+      "description" : "Original ID: 110\nOriginal Title: Continue above test case, restart FW,check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"\nOriginal Description:",
+      "result" : "  DPI Tag=1 is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520028" : {
+      "steps" : "  When App Control=1; Enable App Control on No zones, Open and close https connnection to FW, check DPI tag in syslog and GUI log",
+      "priority" : "Smoke",
+      "atm_id" : "904aee1c-05b6-405c-ab6d-ecc9b267a300",
+      "initial" : "  TBD",
+      "id" : "1520028",
+      "title" : "When App Control=1; Enable App Control only on No zones, Open and close https connnection to FW, check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 128\nOriginal Title: When App Control=1; Enable App Control only on No zones, Open and close https connnection to FW, check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520019" : {
+      "steps" : "  When CFS Enabled=0; Flow with URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog&#160;",
+      "priority" : "Smoke",
+      "atm_id" : "dfa14188-eb45-4d59-80fc-8f5eaee8c26c",
+      "initial" : "  TBD",
+      "id" : "1520019",
+      "title" : "When CFS Enabled=0; Flow with URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog",
+      "description" : "Original ID: 119\nOriginal Title: When CFS Enabled=0; Flow with URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog  \nOriginal Description:",
+      "result" : "  Message ID is 537, DPI Tag is in"
+   },
+   "1520039" : {
+      "steps" : "  When App Control=1; Enable App Control only on SSL VPN zones, Open and close HTTPS connection from or to SSLVPN Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Sanity",
+      "atm_id" : "74f5ed38-acd0-43f5-9df0-94ac416c423d",
+      "initial" : "  TBD",
+      "id" : "1520039",
+      "title" : "When App Control=1; Enable App Control only on SSL VPN zones, Open and close HTTPS connection from or to SSLVPN Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 139\nOriginal Title: When App Control=1; Enable App Control only on SSL VPN zones, Open and close HTTPS connection from or to SSLVPN Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1&#160; is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520023" : {
+      "steps" : "  Syslog Format in default mode, check DPI tag in syslog",
+      "priority" : "Smoke",
+      "atm_id" : "4ac05b9b-24b8-40a4-b4f1-7671670fb800",
+      "initial" : "  TBD",
+      "id" : "1520023",
+      "title" : "Syslog Format in default mode, check DPI tag in syslog",
+      "description" : "Original ID: 123\nOriginal Title: Syslog Format in default mode, check DPI tag in syslog\nOriginal Description:",
+      "result" : "  DPI Tag is in the syslog"
+   },
+   "1520002" : {
+      "steps" : "  In Default Setting,Only enable App Rules without entry,Check DPI Tag in syslog when UDP traffic is \"Connection Closed\"",
+      "priority" : "Sanity",
+      "atm_id" : "fba9b53d-46df-4860-b2a2-0e68017ceeb6",
+      "initial" : "  TBD",
+      "id" : "1520002",
+      "title" : "In Default Setting,Only enable App Rules without entry,Check DPI Tag in syslog when UDP traffic is \"Connection Closed\"",
+      "description" : "Original ID: 102\nOriginal Title: In Default Setting,Only enable App Rules without entry,Check DPI Tag in syslog when UDP traffic is \"Connection Closed\"\nOriginal Description:",
+      "result" : "  DPI Tag=1 is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520044" : {
+      "steps" : "  Check DPI Tag in the syslog when over 1000 TCP connections disconnect",
+      "priority" : "Smoke",
+      "atm_id" : "e986cce4-c729-49a8-a90f-d8bf98b19af9",
+      "initial" : "  TBD",
+      "id" : "1520044",
+      "title" : "Check DPI Tag in the syslog when over 1000 TCP connections disconnect",
+      "description" : "Original ID: 202\nOriginal Title: Check DPI Tag in the syslog when over 1000 TCP connections disconnect\nOriginal Description:",
+      "result" : "  DUT works well and DPI tags are correct"
+   },
+   "1520015" : {
+      "steps" : "  When App Control=1 ,Enable App Control Exclusion List and Use App Control Exclusion AO,Open and close HTTP connection ,check DPI tag in syslog and GUI log",
+      "priority" : "Smoke",
+      "atm_id" : "a96dbca7-eafc-4282-a425-ce70ac70792e",
+      "initial" : "  TBD",
+      "id" : "1520015",
+      "title" : "When App Control=1 ,Enable App Control Exclusion List and Use App Control Exclusion AO,Open and close HTTP connection ,check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 115\nOriginal Title: When App Control=1 ,Enable App Control Exclusion List and Use App Control Exclusion AO,Open and close HTTP connection ,check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 in syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520026" : {
+      "steps" : "  When App Control=0; App Rules=0, Enable GAV/IPS/Anti-Spware. Open and close HTTPS connection , check DPI tag in syslog and GUI log",
+      "priority" : "Full_Regression",
+      "atm_id" : "4897433f-efeb-489f-8774-0f68c267ab2a",
+      "initial" : "  TBD",
+      "id" : "1520026",
+      "title" : "When App Control=0; App Rules=0, Enable GAV/IPS/Anti-Spware. Open and close HTTPS connection , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 126\nOriginal Title: When App Control=0; App Rules=0, Enable GAV/IPS/Anti-Spware. Open and close HTTPS connection , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  GAV/IPS/Anti-Spware shouldn't affect DPI Tag. Tag=1"
+   },
+   "1520004" : {
+      "steps" : "  In Default Setting,Enable App Rules and create entry,Remove entry. Then check DPI Tag in syslog when UDP traffic is \"Connection Closed\"",
+      "priority" : "Sanity",
+      "atm_id" : "5c76c7cc-c5b0-448c-92f8-51472b468e4e",
+      "initial" : "  TBD",
+      "id" : "1520004",
+      "title" : "In Default Setting,Enable App Rules and create entry,Remove entry. Then check DPI Tag in syslog when UDP traffic is \"Connection Closed\"",
+      "description" : "Original ID: 104\nOriginal Title: In Default Setting,Enable App Rules and create entry,Remove entry. Then check DPI Tag in syslog when UDP traffic is \"Connection Closed\"\nOriginal Description:",
+      "result" : "  DPI Tag=1 is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520014" : {
+      "steps" : "  When App Control=1; App Rules=1 with entry, Open and close HTTPS connection , check DPI tag in syslog and GUI log",
+      "priority" : "Full_Regression",
+      "atm_id" : "2d7d4073-649b-45a0-84e4-f65e4b741e58",
+      "initial" : "  TBD",
+      "id" : "1520014",
+      "title" : "When App Control=1; App Rules=1 with entry, Open and close HTTPS connection , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 114\nOriginal Title: When App Control=1; App Rules=1 with entry, Open and close HTTPS connection , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1 in syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520040" : {
+      "steps" : "  When App Control=1; Enable App Control only on SSL VPN zones, Open and close HTTPS connection between other zones except SSLVPN Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Full_Regression",
+      "atm_id" : "78a39c6d-b403-43aa-a429-e0620e3e7494",
+      "initial" : "  TBD",
+      "id" : "1520040",
+      "title" : "When App Control=1; Enable App Control only on SSL VPN zones, Open and close HTTPS connection between other zones except SSLVPN Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 140\nOriginal Title: When App Control=1; Enable App Control only on SSL VPN zones, Open and close HTTPS connection between other zones except SSLVPN Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520006" : {
+      "steps" : "  In Default Setting,Check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"",
+      "priority" : "Smoke",
+      "atm_id" : "aadb6a35-78fd-4d44-a421-bae0a06b3dca",
+      "initial" : "  TBD",
+      "id" : "1520006",
+      "title" : "In Default Setting,Check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"",
+      "description" : "Original ID: 106\nOriginal Title: In Default Setting,Check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"\nOriginal Description:",
+      "result" : "  DPI Tag=0&#160; is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520045" : {
+      "steps" : "  Connection Opened/Closed for 24 hours, Check DUT and syslog info",
+      "priority" : "Full_Regression",
+      "atm_id" : "bdbdf4af-27ef-40f1-bfac-321d71e051f8",
+      "initial" : "  TBD",
+      "id" : "1520045",
+      "title" : "Connection Opened/Closed for 24 hours, Check DUT and syslog info",
+      "description" : "Original ID: 301\nOriginal Title: Connection Opened/Closed for 24 hours, Check DUT and syslog info\nOriginal Description:",
+      "result" : "  DUT works well.DPI Tag is correct"
+   },
+   "1520001" : {
+      "steps" : "  In Default Setting,Check DPI Tag in syslog when UDP traffic is \"Connection Closed\"",
+      "priority" : "Smoke",
+      "atm_id" : "83acc282-4976-4804-8ac5-5869c9d972bd",
+      "initial" : "  TBD",
+      "id" : "1520001",
+      "title" : "In Default Setting,Check DPI Tag in syslog when UDP traffic is \"Connection Closed\"",
+      "description" : "Original ID: 101\nOriginal Title: In Default Setting,Check DPI Tag in syslog when UDP traffic is \"Connection Closed\"\nOriginal Description:",
+      "result" : "  DPI Tag=0 is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520016" : {
+      "steps" : "  When App Control=1 ,Enable App Control Exclusion List and Use IPS Exclusion List,Open and close HTTP connection ,check DPI tag in syslog and GUI log",
+      "priority" : "Smoke",
+      "atm_id" : "d1f0fda5-377c-4cee-afd2-0e5aef89e87d",
+      "initial" : "  TBD",
+      "id" : "1520016",
+      "title" : "When App Control=1 ,Enable App Control Exclusion List and Use IPS Exclusion List,Open and close HTTP connection ,check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 116\nOriginal Title: When App Control=1 ,Enable App Control Exclusion List and Use IPS Exclusion List,Open and close HTTP connection ,check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 in syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520017" : {
+      "steps" : "  When App Rules with one created entry =1,Select App Rule Entry's Exclusion Source AO to be LAN PC, Open and close HTTP connection ,check DPI tag in syslog and GUI log",
+      "priority" : "Sanity",
+      "atm_id" : "9e3e12cc-68c7-49cb-8ae9-0739193a24e3",
+      "initial" : "  TBD",
+      "id" : "1520017",
+      "title" : "When App Rules with one created entry =1,Select App Rule Entry's Exclusion Source AO to be LAN PC, Open and close HTTP connection ,check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 117\nOriginal Title: When App Rules with one created entry =1,Select App Rule Entry's Exclusion Source AO to be LAN PC, Open and close HTTP connection ,check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1 in syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520035" : {
+      "steps" : "  When App Control=1; Enable App Control only on WAN zones, Open and close HTTPS connection from or to WAN Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Smoke",
+      "atm_id" : "a6c834b1-6518-4006-af92-cd27834dc9c2",
+      "initial" : "  TBD",
+      "id" : "1520035",
+      "title" : "When App Control=1; Enable App Control only on WAN zones, Open and close HTTPS connection from or to WAN Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 135\nOriginal Title: When App Control=1; Enable App Control only on WAN zones, Open and close HTTPS connection from or to WAN Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1&#160; is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520043" : {
+      "steps" : "  Check DPI Tag in the syslog when over 1000 UDP connections disconnect",
+      "priority" : "Sanity",
+      "atm_id" : "0f83bff5-47a5-4fe2-bf13-113487bd3a3e",
+      "initial" : "  TBD",
+      "id" : "1520043",
+      "title" : "Check DPI Tag in the syslog when over 1000 UDP connections disconnect",
+      "description" : "Original ID: 201\nOriginal Title: Check DPI Tag in the syslog when over 1000 UDP connections disconnect\nOriginal Description:",
+      "result" : "  DUT works well and DPI tags are correct"
+   },
+   "1520033" : {
+      "steps" : "  When App Control=1; Enable App Control only on WLAN zones, Open and close HTTPS connection from or to WLAN Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Smoke",
+      "atm_id" : "f7c5b024-6f25-49ae-8062-695a0db958a0",
+      "initial" : "  TBD",
+      "id" : "1520033",
+      "title" : "When App Control=1; Enable App Control only on WLAN zones, Open and close HTTPS connection from or to WLAN Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 133\nOriginal Title: When App Control=1; Enable App Control only on WLAN zones, Open and close HTTPS connection from or to WLAN Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1&#160; is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520030" : {
+      "steps" : "  When App Control=1; Enable App Control only on LAN zones, Open and close HTTPS connection between other zones except LAN Zone, check DPI tag in syslog and GUI log",
+      "priority" : "Sanity",
+      "atm_id" : "be5660c9-06a2-42e8-845f-1733e6044f91",
+      "initial" : "  TBD",
+      "id" : "1520030",
+      "title" : "When App Control=1; Enable App Control only on LAN zones, Open and close HTTPS connection between other zones except LAN Zone, check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 130\nOriginal Title: When App Control=1; Enable App Control only on LAN zones, Open and close HTTPS connection between other zones except LAN Zone, check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520042" : {
+      "steps" : "  When App Control=1; Enable App Control only on Customer zones, Open and close HTTPS connection between other zones except Customer Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Full_Regression",
+      "atm_id" : "cd2893ad-33f5-4005-a9fc-69ac9930f816",
+      "initial" : "  TBD",
+      "id" : "1520042",
+      "title" : "When App Control=1; Enable App Control only on Customer zones, Open and close HTTPS connection between other zones except Customer Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 142\nOriginal Title: When App Control=1; Enable App Control only on Customer zones, Open and close HTTPS connection between other zones except Customer Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520008" : {
+      "steps" : "  In Default Setting,Enable App Rules and create entry,Check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"",
+      "priority" : "Smoke",
+      "atm_id" : "5a38199e-d420-4e69-8d2d-ef76158426a0",
+      "initial" : "  TBD",
+      "id" : "1520008",
+      "title" : "In Default Setting,Enable App Rules and create entry,Check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"",
+      "description" : "Original ID: 108\nOriginal Title: In Default Setting,Enable App Rules and create entry,Check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"\nOriginal Description:",
+      "result" : "  DPI Tag=1 is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520003" : {
+      "steps" : "  In Default Setting,Enable App Rules and create entry,Check DPI Tag in syslog when UDP traffic is \"Connection Closed\"",
+      "priority" : "Smoke",
+      "atm_id" : "f83a1320-c17b-4765-8b7e-5f37baaec04a",
+      "initial" : "  TBD",
+      "id" : "1520003",
+      "title" : "In Default Setting,Enable App Rules and create entry,Check DPI Tag in syslog when UDP traffic is \"Connection Closed\"",
+      "description" : "Original ID: 103\nOriginal Title: In Default Setting,Enable App Rules and create entry,Check DPI Tag in syslog when UDP traffic is \"Connection Closed\"\nOriginal Description:",
+      "result" : "  DPI Tag=1 is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520009" : {
+      "steps" : "  In Default Setting,Enable App Rules and create entry,Remove entry. Then check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"",
+      "priority" : "Sanity",
+      "atm_id" : "baa05903-3df9-440d-89ca-d52de4a84188",
+      "initial" : "  TBD",
+      "id" : "1520009",
+      "title" : "In Default Setting,Enable App Rules and create entry,Remove entry. Then check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"",
+      "description" : "Original ID: 109\nOriginal Title: In Default Setting,Enable App Rules and create entry,Remove entry. Then check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"\nOriginal Description:",
+      "result" : "  DPI Tag=1 is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520037" : {
+      "steps" : "  When App Control=1; Enable App Control only on VPN zones, Open and close HTTPS connection from or to VPN Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Sanity",
+      "atm_id" : "697e2cc1-1cfa-4746-bd79-4b15652c7028",
+      "initial" : "  TBD",
+      "id" : "1520037",
+      "title" : "When App Control=1; Enable App Control only on VPN zones, Open and close HTTPS connection from or to VPN Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 137\nOriginal Title: When App Control=1; Enable App Control only on VPN zones, Open and close HTTPS connection from or to VPN Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1&#160; is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520029" : {
+      "steps" : "  When App Control=1; Enable App Control only on LAN zones, Open and close HTTPS connection from or to LAN Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Smoke",
+      "atm_id" : "c30569d5-177b-4397-b4e4-248b2bbc6a33",
+      "initial" : "  TBD",
+      "id" : "1520029",
+      "title" : "When App Control=1; Enable App Control only on LAN zones, Open and close HTTPS connection from or to LAN Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 129\nOriginal Title: When App Control=1; Enable App Control only on LAN zones, Open and close HTTPS connection from or to LAN Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1&#160; is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520011" : {
+      "steps" : "  When App Control=0; App Rules=0 without entry; Open and close HTTPS connection , check DPI tag in syslog and GUI log",
+      "priority" : "Smoke",
+      "atm_id" : "ec86d8e4-ee89-4a38-a70e-abb783b730be",
+      "initial" : "  TBD",
+      "id" : "1520011",
+      "title" : "When App Control=0; App Rules=0 without entry; Open and close HTTPS connection , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 111\nOriginal Title: When App Control=0; App Rules=0 without entry; Open and close HTTPS connection , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 in syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520036" : {
+      "steps" : "  When App Control=1; Enable App Control only on WAN zones, Open and close HTTPS connection between other zones except WAN Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Sanity",
+      "atm_id" : "fdc6a9be-3ca5-4390-8795-8257bd49ef7d",
+      "initial" : "  TBD",
+      "id" : "1520036",
+      "title" : "When App Control=1; Enable App Control only on WAN zones, Open and close HTTPS connection between other zones except WAN Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 136\nOriginal Title: When App Control=1; Enable App Control only on WAN zones, Open and close HTTPS connection between other zones except WAN Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520041" : {
+      "steps" : "  When App Control=1; Enable App Control only on Customer zones, Open and close HTTPS connection from or to Customer Zone, check DPI tag in syslog and GUI log",
+      "priority" : "Sanity",
+      "atm_id" : "06f5d934-28ad-447f-90da-f67c9b03ba18",
+      "initial" : "  TBD",
+      "id" : "1520041",
+      "title" : "When App Control=1; Enable App Control only on Customer zones, Open and close HTTPS connection from or to Customer Zone, check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 141\nOriginal Title: When App Control=1; Enable App Control only on Customer zones, Open and close HTTPS connection from or to Customer Zone, check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1&#160; is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520031" : {
+      "steps" : "  When App Control=1; Enable App Control only on DMZ zones, Open and close HTTPS connection from or to DNZ Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Smoke",
+      "atm_id" : "74aac1ca-b019-4bb7-b0e8-d4439e7808b3",
+      "initial" : "  TBD",
+      "id" : "1520031",
+      "title" : "When App Control=1; Enable App Control only on DMZ zones, Open and close HTTPS connection from or to DNZ Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 131\nOriginal Title: When App Control=1; Enable App Control only on DMZ zones, Open and close HTTPS connection from or to DNZ Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1&#160; is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520012" : {
+      "steps" : "  When App Control=0; App Rules=1 with entry, Open and close HTTPS connection , check DPI tag in syslog and GUI log",
+      "priority" : "Smoke",
+      "atm_id" : "8a60d741-239f-4c54-aa1a-d8db3b58ebb3",
+      "initial" : "  TBD",
+      "id" : "1520012",
+      "title" : "When App Control=0; App Rules=1 with entry, Open and close HTTPS connection , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 112\nOriginal Title: When App Control=0; App Rules=1 with entry, Open and close HTTPS connection , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1 in syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520007" : {
+      "steps" : "  In Default Setting,Only enable App Rules without entry,Check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"",
+      "priority" : "Sanity",
+      "atm_id" : "378ba246-6599-4652-ab3a-d2506c230b8a",
+      "initial" : "  TBD",
+      "id" : "1520007",
+      "title" : "In Default Setting,Only enable App Rules without entry,Check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"",
+      "description" : "Original ID: 107\nOriginal Title: In Default Setting,Only enable App Rules without entry,Check DPI Tag in syslog when HTTP traffic is \"Connection Closed\"\nOriginal Description:",
+      "result" : "  DPI Tag=1&#160; is in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520025" : {
+      "steps" : "  Syslog Format in ArcSight mode, check DPI tag in syslog",
+      "priority" : "Sanity",
+      "atm_id" : "40878cab-512d-4955-b08b-03288e76ec4c",
+      "initial" : "  TBD",
+      "id" : "1520025",
+      "title" : "Syslog Format in ArcSight mode, check DPI tag in syslog",
+      "description" : "Original ID: 125\nOriginal Title: Syslog Format in ArcSight mode, check DPI tag in syslog\nOriginal Description:",
+      "result" : "  DPI Tag is in the syslog"
+   },
+   "1520018" : {
+      "steps" : "  When App Rules with one created entry =1,Select App Rule Entry's Action Objects to be BYPASS DPI, Open and close HTTP connection ,check DPI tag in syslog and GUI log",
+      "priority" : "Full_Regression",
+      "atm_id" : "1aa1d3d3-ad08-4017-9fb8-ae2255c14e0b",
+      "initial" : "  TBD",
+      "id" : "1520018",
+      "title" : "When App Rules with one created entry =1,Select App Rule Entry's Action Objects to be BYPASS DPI, Open and close HTTP connection ,check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 118\nOriginal Title: When App Rules with one created entry =1,Select App Rule Entry's Action Objects to be BYPASS DPI, Open and close HTTP connection ,check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=1 in syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520032" : {
+      "steps" : "  When App Control=1; Enable App Control only on DMZ zones, Open and close HTTPS connection between other zones except DMZ Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Sanity",
+      "atm_id" : "761a7c0d-d4c8-47b4-b5c8-8741c048ca1a",
+      "initial" : "  TBD",
+      "id" : "1520032",
+      "title" : "When App Control=1; Enable App Control only on DMZ zones, Open and close HTTPS connection between other zones except DMZ Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 132\nOriginal Title: When App Control=1; Enable App Control only on DMZ zones, Open and close HTTPS connection between other zones except DMZ Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   },
+   "1520027" : {
+      "steps" : "  Syslog Format in WebTrends mode, check DPI tag in syslog",
+      "priority" : "Sanity",
+      "atm_id" : "10ec387d-d134-4235-9bfd-06c2f39ffd51",
+      "initial" : "  TBD",
+      "id" : "1520027",
+      "title" : "Syslog Format in WebTrends mode, check DPI tag in syslog",
+      "description" : "Original ID: 127\nOriginal Title: Syslog Format in WebTrends mode, check DPI tag in syslog\nOriginal Description:",
+      "result" : "  DPI Tag is in the syslog"
+   },
+   "1520022" : {
+      "steps" : "  When CFS Enabled=1; Flow without URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog",
+      "priority" : "Smoke",
+      "atm_id" : "d89eb022-76d3-4c1c-8604-6f93200b160e",
+      "initial" : "  TBD",
+      "id" : "1520022",
+      "title" : "When CFS Enabled=1; Flow without URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog",
+      "description" : "Original ID: 122\nOriginal Title: When CFS Enabled=1; Flow without URL, Open and close https connection , check message ID and confirm whether DPI tag is in syslog\nOriginal Description:",
+      "result" : "  Message ID is 537, DPI Tag is in"
+   },
+   "1520034" : {
+      "steps" : "  When App Control=1; Enable App Control only on WLAN zones, Open and close HTTPS connection between other zones except WLAN Zone , check DPI tag in syslog and GUI log",
+      "priority" : "Sanity",
+      "atm_id" : "dc79c4ec-453c-4446-9d06-26db26600187",
+      "initial" : "  TBD",
+      "id" : "1520034",
+      "title" : "When App Control=1; Enable App Control only on WLAN zones, Open and close HTTPS connection between other zones except WLAN Zone , check DPI tag in syslog and GUI log",
+      "description" : "Original ID: 134\nOriginal Title: When App Control=1; Enable App Control only on WLAN zones, Open and close HTTPS connection between other zones except WLAN Zone , check DPI tag in syslog and GUI log\nOriginal Description:",
+      "result" : "  DPI Tag=0 in the syslog and GUI log\n  For FSpec Version 1.1 on RFE 1748, GUI LOG won't support DPI Tag.\n  https://track.eng.sonicwall.com/browse/SOS-1104"
+   }
+}

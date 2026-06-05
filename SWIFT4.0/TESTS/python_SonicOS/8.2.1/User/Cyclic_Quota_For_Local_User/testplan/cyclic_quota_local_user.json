@@ -1,0 +1,205 @@
+{
+   "1546584" : {
+      "steps" : "  Box will pop error info about invalid receive limit",
+      "initial" : "  Original ID: 26\n  Original Title: [Error]invalid value about receive limit of quota cycle setting\n  Original Description: invalid value about receive limit of quota cycle setting",
+      "id" : "1546584",
+      "title" : "[Error]Invalid value about receive limit of quota cycle setting",
+      "result" : "  n/a"
+   },
+   "1546578" : {
+      "steps" : "  User can receive unlimited traffic",
+      "initial" : "  Original ID: 20\n  Original Title: [Boundary]maximum value about receive limit of quota cycle setting\n  Original Description: maximum value about receive limit of quota cycle setting",
+      "id" : "1546578",
+      "title" : "[Boundary]Maximum value about receive limit of quota cycle setting",
+      "result" : "  n/a"
+   },
+   "1507029" : {
+      "steps" : "  User traffic quota exceeded",
+      "initial" : "  Original ID: 31\n  Original Title: [log]log \"user traffic quota exceeded\" appear, when user run out of his transmit traffic bandwidth\n  Original Description: log \"user traffic quota exceeded\" appear, when user run out of his transmit traffic bandwidth",
+      "id" : "1507029",
+      "title" : "[log]log \"user traffic quota exceeded\" appear, when user run out of his transmit traffic bandwidth",
+      "result" : "  Add user account\n  Access LAN subnet\n  Check for user login"
+   },
+   "1546580" : {
+      "steps" : "  User can transmit unlimited traffic",
+      "initial" : "  Original ID: 22\n  Original Title: [Boundary]maximum value about transmit limit of quota cycle setting\n  Original Description: maximum value about transmit limit of quota cycle setting",
+      "id" : "1546580",
+      "title" : "[Boundary]Maximum value about transmit limit of quota cycle setting",
+      "result" : "  n/a"
+   },
+   "1546585" : {
+      "steps" : "  Box will pop error info about invalid receive limit",
+      "initial" : "  Original ID: 27\n  Original Title: [Error]invalid value about transmit limit of quota cycle setting\n  Original Description: invalid value about transmit limit of quota cycle setting",
+      "id" : "1546585",
+      "title" : "[Error]Invalid value about transmit limit of quota cycle setting",
+      "result" : "  n/a"
+   },
+   "1507037" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 49\n  Original Title: [Function] Function test of quota cyclic for LDAP import to local\n  Original Description:",
+      "id" : "1507037",
+      "title" : "[Function] Function test of quota cyclic for LDAP import to local",
+      "result" : "  TBD"
+   },
+   "1507028" : {
+      "steps" : "  User Session Timeout",
+      "initial" : "  Original ID: 30\n  Original Title: [log]log \"user traffic quota exceeded\" appear, when user run out of his session life time\n  Original Description: log \"user traffic quota exceeded\" appear, when user run out of his session life time",
+      "id" : "1507028",
+      "title" : "[log]log \"User traffic quota exceeded\" appear, when user run out of his session life time",
+      "result" : "  Add user account\n  Access LAN subnet\n  Check for user login"
+   },
+   "1507036" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 48\n  Original Title: [Function] The Quota will refer the local users's setting and status when auth is done through LDAP\n  Original Description:",
+      "id" : "1507036",
+      "title" : "[Function] The Quota will refer the local users's setting and status when auth is done through LDAP",
+      "result" : "  TBD"
+   },
+   "1546587" : {
+      "steps" : "  Have no error when import/export Pref about quota cycle setting",
+      "initial" : "  Original ID: 29\n  Original Title: [Pref]Pref import/export for quota cycle setting\n  Original Description: Pref import/export for quota cycle setting",
+      "id" : "1546587",
+      "title" : "[Pref]Pref import/export for quota cycle setting",
+      "result" : "  n/a"
+   },
+   "1507035" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 47\n  Original Title: [Function] The Quota will refer the local users's setting and status when auth is done through radius\n  Original Description:",
+      "id" : "1507035",
+      "title" : "[Function] The Quota will refer the local users's setting and status when auth is done through radius",
+      "result" : "  TBD"
+   },
+   "1507038" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 50\n  Original Title: [183441] multi-users are login with same account, verify DTS 183441\n  Original Description:",
+      "id" : "1507038",
+      "title" : "[183441] multi-users are login with same account, verify DTS 183441",
+      "result" : "  TBD"
+   },
+   "1507032" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 36\n  Original Title: [REBOOT] Check remaining RX/TX/time limit after reboot\n  Original Description:",
+      "id" : "1507032",
+      "title" : "[REBOOT] Check remaining RX/TX/time limit after reboot",
+      "result" : "  TBD"
+   },
+   "1507024" : {
+      "steps" : "  After user run out of his receive traffic, the user cannot access network",
+      "initial" : "  Original ID: 09\n  Original Title: [Function]verify quota setting of receive traffic bandwidth could be used only once when quota cycle is 'Non Cyclic'\n  Original Description: verify quota setting of receive traffic bandwidth only could be used once when quota cycle is 'Non Cyclic'",
+      "id" : "1507024",
+      "title" : "[Function]verify quota setting of receive traffic bandwidth could be used only once when quota cycle is 'Non Cyclic'",
+      "result" : "  Add user account\n  Access LAN subnet\n  Check for user login\n  Run traffic and user cannot access network"
+   },
+   "1507033" : {
+      "steps" : "  TSR include quota cycle type setting information",
+      "initial" : "  Original ID: 37\n  Original Title: [TSR]verify TSR include quota cycle type setting information and usage\n  Original Description: TSR include quota cycle type setting information",
+      "id" : "1507033",
+      "title" : "[TSR]verify TSR include quota cycle type setting information and usage",
+      "result" : "  n/a"
+   },
+   "1546582" : {
+      "steps" : "  User session lifetime is 1 minute",
+      "initial" : "  Original ID: 24\n  Original Title: [Boundary]minimum value about session life time should be Idle Timeout\n  Original Description: minimum value about session life time should be Idle Timeout",
+      "id" : "1546582",
+      "title" : "[Boundary]Minimum value about session life time should be Idle Timeout",
+      "result" : "  n/a"
+   },
+   "1507025" : {
+      "steps" : "  After user run out of his session lifetime resource, the user cannot access network today, then after 0 clock tomorrow, he have quota again",
+      "initial" : "  Original ID: 11\n  Original Title: [Function]verify quota setting of session lifetime could be used only once in every day when quota cycle is 'Per Day'\n  Original Description: quota setting of session lifetime could be used only once in every day when quota cycle is 'Per Day'",
+      "id" : "1507025",
+      "title" : "[Function]verify quota setting of session lifetime could be used only once in every day when quota cycle is 'Per Day'",
+      "result" : "  Add user account\n  Access LAN subnet\n  Check for user login\n  Run traffic and user cannot access network"
+   },
+   "1507031" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 33\n  Original Title: Stateful HA support\n  Original Description:",
+      "id" : "1507031",
+      "title" : "Stateful HA support",
+      "result" : "  TBD"
+   },
+   "1507023" : {
+      "steps" : "  quota cycle type setting can be configured by local users in CLI mode",
+      "initial" : "  Original ID: 06\n  Original Title: [CLI]verify quota cycle type setting can be configured by add local users CLI modeEdit case\n  Original Description: quota cycle type setting can be configured by local users in CLI mode",
+      "id" : "1507023",
+      "title" : "[CLI]verify quota cycle type setting can be configured by add local users CLI modeEdit case",
+      "result" : "  n/a"
+   },
+   "1507026" : {
+      "steps" : "  After user run out of his receive traffic bandwidth resource, the user cannot access network,then after 0 clock tomorrow, he have quota again",
+      "initial" : "  Original ID: 12\n  Original Title: [Function]verify quota setting of receive traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'\n  Original Description: quota setting of receive traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'",
+      "id" : "1507026",
+      "title" : "[Function]verify quota setting of receive traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'",
+      "result" : "  Add user account\n  Access LAN subnet\n  Check for user login\n  Run traffic and user cannot access network"
+   },
+   "1507022" : {
+      "steps" : "  User Quota can be configured when add any local users",
+      "initial" : "  Original ID: 01\n  Original Title: [GUI]verify quota cycle type setting can be configured in local users\n  Original Description: verify quota cycle type setting can be configured in local users",
+      "id" : "1507022",
+      "title" : "[GUI]Verify quota cycle type setting can be configured in local users",
+      "result" : "  N/A"
+   },
+   "1507034" : {
+      "steps" : "  client quota should reset after 0 clock",
+      "initial" : "  Original ID: 38\n  Original Title: [Function]verify 0 clock reset quota after user run out of quota per day\n  Original Description: 0 clock reset quota after user run out of quota per day",
+      "id" : "1507034",
+      "title" : "[Function]verify 0 clock reset quota after user run out of quota per day",
+      "result" : "  n/a"
+   },
+   "1546583" : {
+      "steps" : "  Verify user created successfully with the Maximum value boundary values of 'Account Lifetime' and 'Session Lifetime'.",
+      "initial" : "  Original ID: 25\n  Original Title: [Boundary]maximum value about session life time should be account lifetime\n  Original Description: maximum value about session life time should be account lifetime",
+      "id" : "1546583",
+      "title" : "[Boundary]Maximum value about session lifetime should be account lifetime",
+      "result" : "  PC -- X0 SonicWALL"
+   },
+   "1546579" : {
+      "steps" : "  User can receive 1 MB traffic.",
+      "initial" : "  Original ID: 21\n  Original Title: [Boundary]minimum value about receive limit of quota cycle setting\n  Original Description: minimum value about receive limit of quota cycle setting",
+      "id" : "1546579",
+      "title" : "[Boundary]Minimum value about receive limit of quota cycle setting.",
+      "result" : "  n/a"
+   },
+   "1507039" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 51\n  Original Title: [GUI] On User/Status page, check quota statistics will change dynamically\n  Original Description:",
+      "id" : "1507039",
+      "title" : "[GUI] On User/Status page, check quota statistics will change dynamically",
+      "result" : "  TBD"
+   },
+   "1507030" : {
+      "steps" : "  \"User traffic quota exceeded\"",
+      "initial" : "  Original ID: 32\n  Original Title: [log]log \"user traffic quota exceeded\" appear when user run out of his receive traffic bandwidth\n  Original Description: log \"user traffic quota exceeded\" appear when user run out of his receive traffic bandwidth",
+      "id" : "1507030",
+      "title" : "[log]log \"user traffic quota exceeded\" appear when user run out of his receive traffic bandwidth",
+      "result" : "  Add user account\n  Access LAN subnet\n  Check for user login"
+   },
+   "1546577" : {
+      "steps" : "  Quota setting of session lifetime only could be used once when quota cycle is 'Non Cyclic'",
+      "initial" : "  Original ID: 08\n  Original Title: [Function]verify quota setting of session lifetime could be used only once when quota cycle is 'Non Cyclic'\n  Original Description: quota setting of session lifetime only could be used once when quota cycle is 'Non Cyclic'",
+      "id" : "1546577",
+      "title" : "[Function]Verify quota setting of session lifetime could be used only once when quota cycle is 'Non Cyclic'",
+      "result" : "  user --- box"
+   },
+   "1507027" : {
+      "steps" : "  After user run out of his transmit traffic bandwidth resource, the user cannot access network, then after 0 clock tomorrow, he have quota again",
+      "initial" : "  Original ID: 13\n  Original Title: [Function]verify quota setting of transmit traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'\n  Original Description: quota setting of receive traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'",
+      "id" : "1507027",
+      "title" : "[Function]verify quota setting of transmit traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'",
+      "result" : "  Add user account\n  Access LAN subnet\n  Check for user login\n  Run traffic and user cannot access network"
+   },
+   "1546586" : {
+      "steps" : "  The session lifetime cannot be greater than the Cycle time!\n  Please enter zero or a positive integer as receive limit value.",
+      "initial" : "  Original ID: 28\n  Original Title: [Error]invalid/greater value about session lifetime of quota cycle setting\n  Original Description: invalid value about session lifetime of quota cycle setting",
+      "id" : "1546586",
+      "title" : "[Error]Invalid/greater value about session lifetime of quota cycle setting",
+      "result" : "  n/a"
+   },
+   "1546581" : {
+      "steps" : "  User can send 1 MB traffic",
+      "initial" : "  Original ID: 23\n  Original Title: [Boundary]minimum value about transmit limit of quota cycle setting\n  Original Description: minimum value about transmit limit of quota cycle setting",
+      "id" : "1546581",
+      "title" : "[Boundary]Minimum value about transmit limit of quota cycle setting",
+      "result" : "  n/a"
+   }
+}

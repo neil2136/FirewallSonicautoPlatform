@@ -1,0 +1,191 @@
+{
+   "11" : {
+      "steps" : "  n",
+      "initial" : "  1) Go to the System > Settings page.\n  2) Click \u0093Export Settings\u0094/Import Settings button.",
+      "id" : "11",
+      "title" : "Export/import prefs file",
+      "result" : "  TBD"
+   },
+   "21" : {
+      "steps" : "  The previous user is dropped to non-config mode or logged out. When clicking \u0093change mode\u0094, the message \u0093Not currently available\u0094 is showed.",
+      "initial" : "  1) Login to firewall as guest admin.\n  2) Login to firewall as limitted admin on another pc.\n  3) Verify the previous user is dropped to non-config mode.",
+      "id" : "21",
+      "title" : "Preempt:try to preempt between guest admin user and limitted admin user",
+      "result" : "  TBD"
+   },
+   "7" : {
+      "steps" : "  Then the test1 are logged in and have access via the SonicWaLL.In the pop window, It is showed the test1 can manage FW via LAN interface.",
+      "initial" : "  1) Have a user test1 with \u0093Guest Administrator\u0094 previledges added in the local database\n  2) Login FW via local host as test1.",
+      "id" : "7",
+      "title" : "Function test on guest admin can login/manage FW via local host behind site to site vpn tunnle",
+      "result" : "  TBD"
+   },
+   "26" : {
+      "steps" : "  verify that user is still login and continue management on secondary device.",
+      "initial" : "  1) Log into the primary unit as a guest admin\n  2) Power off or reboot the primary unit",
+      "id" : "26",
+      "title" : "SHA: login as a guest admin then trigger failover, verify that user is still login and continue management",
+      "result" : "  TBD"
+   },
+   "2" : {
+      "steps" : "  The message \u0093For Guest Administrators, only delete member is allowed. To add a user to Guest Administrators, please go to Local Users page. \u0094is showed",
+      "initial" : "  1) Go to the Users>Local Groups page and click the \u0093Add Group\u0094button.\n  2) Fill in the Name and hit the OK button in the \u0093Add Group\u0094dialog\n  3) Select the group\u0093Guest Administrators\u0094and click configure\n  4) In the Edit Group dialog, go to the Members tab. Select new added group from the \"Non-Member Users and Groups\" pane. Click on the \"->\" button",
+      "id" : "2",
+      "title" : "Add a group then include it in \"Guest Administrators\"",
+      "result" : "  TBD"
+   },
+   "17" : {
+      "steps" : "  The changes is worked",
+      "initial" : "  1) Login to FW as guest admin\n  2) From popup window, click \u0093manage\u0094button\n  3) Then mode is Config, make some changes, such as add new guest accounts",
+      "id" : "17",
+      "title" : "Login guest admin in configured mode then try to configure/edit",
+      "result" : "  TBD"
+   },
+   "22" : {
+      "steps" : "  The user are logged out from the SonicWALLL successfully",
+      "initial" : "  1) Have a user with \u0093Guest Administrator\u0094 previledges logged in.\n  2) From pop-up window, click \u0093Logout\u0094button.",
+      "id" : "22",
+      "title" : "Logout a guest admin",
+      "result" : "  TBD"
+   },
+   "1" : {
+      "steps" : "  Check that default group \"Guest Administrors\" is in \u0093User groups\ufffd pane.",
+      "initial" : "  1)\ufffd Go to the Users > Local Users page and click the \"Add User\" button.\n  2)\ufffd Go to the Groups tab",
+      "id" : "1",
+      "title" : "Check default group \"Guest Administrors\"",
+      "result" : "  TBD"
+   },
+   "18" : {
+      "steps" : "  The error message \u0093Not allowed in current mode\u0094is showed",
+      "initial" : "  1) Login to firewall as admin\n  2) Login to firewall as guest admin on another pc\n  3) The message\u0093An administrator is already logged in for configuration\u0094is showed. Click \u0093Non-config\u0094icon.\n  4) make some changes, such as add new guest accounts",
+      "id" : "18",
+      "title" : "Login guest admin in non-configured mode try to configure/edit",
+      "result" : "  TBD"
+   },
+   "23" : {
+      "steps" : "  n",
+      "initial" : "  1) Log in SonicWALL as the user with \u0093Guest Administrator\u0094 previledges.\n  2) Check all icons/buttons on the management page work well",
+      "id" : "23",
+      "title" : "Verify all icons/buttons on the management page work well after a guest admin login",
+      "result" : "  TBD"
+   },
+   "13" : {
+      "steps" : "  1) After step 5, the password cannot be changed to 111, error message says: \"Error: Password is too short\".\n  2) After step 6, the password cannot be changed to 1111111, warning message says:\u0093Password must contain letters and numbers(user will need to change it)\u0094.",
+      "initial" : "  1) Go to the Users > Local Users page and click the \"Add User\" button.\n  2) Fill in the Name\u0093test\u0094, Password\u00931\u0094, and Confirm Password fields in the \"Add User\" dialog.\n  3) Go to the Groups tab. Select \u0093Guest Administrators\u0094 from the \u0093User groups\u0094 pane. Click on the \u0093->\u0094button. Click the OK button.\n  4) Go to System-Administration, change Enforce password complexity to Require alphabetic and numeric characters, and change \"Enforce a minimum password length of:\" to 5 , then apply\n  5) Then try to change the password of \u0093test\u0094 to 111.\n  6) Then try to change the password of \u0093test\u0094 to 1111111.",
+      "id" : "13",
+      "title" : "Test \"Apply password constraints for all local users\" on guest admin",
+      "result" : "  TBD"
+   },
+   "16" : {
+      "steps" : "  User login to FW successfully.",
+      "initial" : "  1) Login to FW as guest admin via HTTP\n  2) From popup window, click \u0093manage\u0094button",
+      "id" : "16",
+      "title" : "Login guest admin via HTTPS then manage FW",
+      "result" : "  TBD"
+   },
+   "6" : {
+      "steps" : "  Then the test1 are logged in and have access via the SonicWaLL.In the pop window, It is showed the test1 can manage FW via LAN interface.",
+      "initial" : "  1) Have a user test1 with \u0093Guest Administrator\u0094 previledges added in the local database\n  2) Network -> interfaces -> go to the LAN, edit the interface. Enable User Managment (HTTPS). Save the settings.\n  2) Login from the LAN as test1.",
+      "id" : "6",
+      "title" : "Function test on guest admin can login/manage FW via LAN interface",
+      "result" : "  TBD"
+   },
+   "27" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "27",
+      "title" : "TBD",
+      "result" : "  TBD"
+   },
+   "25" : {
+      "steps" : "  Verify that all guest admin login session/status are both shown on primary and secondary units",
+      "initial" : "  1 Login to primary unit\n  2 Login to secondary unit",
+      "id" : "25",
+      "title" : "SHA: verify that all guest admin login session/status are both shown on active and standby units",
+      "result" : "  TBD"
+   },
+   "3" : {
+      "steps" : "  The user is displayed in the Local Users table. The \u00a1\u00b0Guest\u00a1\u00b1 is displayed in the \u00a1\u00b0Admin\u00a1\u00b1 column for the user\u00a1\u00afs entry.",
+      "initial" : "  1) Go to the Users > Local Users page and click the \"Add User\" button.\n  2) Fill in the Name, Password, and Confirm Password fields in the \"Add User\" dialog.\n  3) Go to the Groups tab. Select \u00a1\u00b0Guest Administrators\u00a1\u00b1 from the \u00a1\u00b0User groups\u00a1\u00b1 pane. Click on the \u00a1\u00b0->\u00a1\u00b1button.\n  4) Click the OK button.",
+      "id" : "3",
+      "title" : "Add a local user with \"Guest Adminisrator\", test functionality",
+      "result" : "  TBD"
+   },
+   "9" : {
+      "steps" : "  Then the test1 are logged in and have access via the SonicWaLL.In the pop window, It is showed the test1 can manage FW .",
+      "initial" : "  1) Have a user test1 with \u0093Guest Administrator\u0094 previledges added in the local database\n  2) Login FW via local host as test1 via non-lan non-vpn interface.",
+      "id" : "9",
+      "title" : "Function test on guest admin can login/manage FW via non-lan non-vpn interface",
+      "result" : "  TBD"
+   },
+   "12" : {
+      "steps" : "  All the settings that are configured should be intake after the reboot",
+      "initial" : "  a) Add a local user with \"Guest Adminisrator\"\n  1) Go to the Users > Local Users page and click the \"Add\" button.\n  2) Fill in the Name, Password, and Confirm Password fields in the \"Add User\" dialog.\n  3) Go to the Groups tab. Select \u0093Guest Administrators\u0094 from the \u0093User groups\u0094 pane. Click on the \u0093->\u0094button.\n  4) Click the OK button.\n  b) Edit and \"Guest Administrator\" user\n  c)Reboot the Sonicwall",
+      "id" : "12",
+      "title" : "Verify that related guest admin settings are intact after FW restart",
+      "result" : "  TBD"
+   },
+   "14" : {
+      "steps" : "  The popup window is showed, it is said \u0093please enter a new password\u0094.",
+      "initial" : "  1) Have a user test1 (Password 111)with \u0093Guest Administrator\u0094 previledges added in the local database.\n  2) Login FW via local host as test1.",
+      "id" : "14",
+      "title" : "Update password in the login popup window after login as a guest admin",
+      "result" : "  TBD"
+   },
+   "15" : {
+      "steps" : "  It is said \u0093User login not allowed here\u0094",
+      "initial" : "  1) Login to FW by guest admin via HTTP",
+      "id" : "15",
+      "title" : "Login guest admin via HTTP then manage FW",
+      "result" : "  TBD"
+   },
+   "20" : {
+      "steps" : "  The previous guest admin is dropped to non-config mode or logged out. When clicking \u0093change mode\u0094, the message \u0093Not currently available\u0094 is showed. ",
+      "initial" : "  1) Login to firewall as guest admin1.\n  2) Login to firewall as guest admin2 on another pc.\n  3) Verify the previous guest administrator is dropped to non-config mode.",
+      "id" : "20",
+      "title" : "Preempt:try to preempt between two guest admin users",
+      "result" : "  TBD"
+   },
+   "8" : {
+      "steps" : "  Then the test1 are logged in and have access via the SonicWaLL.In the pop window, It is showed the test1 can manage FW via LAN interface.",
+      "initial" : "  1) Have a user test1 with \u0093Guest Administrator\u0094 previledges added in the local database\n  2) Login FW via local host as test1.",
+      "id" : "8",
+      "title" : "Function test on guest admin can login/manage FW via local host behind WAN group vpn tunnle",
+      "result" : "  TBD"
+   },
+   "4" : {
+      "steps" : "  The message\u0093Users in group Guest Administrators may not be members of groups other than Everyone and Trusted Users\u0094 is displayed.",
+      "initial" : "  1) Go to the Users > Local Users page and click the \"Add User\" button.\n  2) Fill in the Name, Password, and Confirm Password fields in the \"Add User\" dialog.\n  3) Go to the Groups tab. Select \u0093Guest Administrators\u0094,\u0093Limited Administrators\u0094( or\u0093Sonicwall Read-only Admins\u0094)from the \u0093User groups\u0094 pane. Click on the \u0093->\u0094button.\n  4) Click the OK button.",
+      "id" : "4",
+      "title" : "Negative test: try to add a local user with \" Guest Admin\" and other admin priveledge (limit, read-only)",
+      "result" : "  TBD"
+   },
+   "24" : {
+      "steps" : "  Verify that the added user(group) can be synchronized to the standby",
+      "initial" : "  1) Log into the primary unit, add a user(or group) with \u0093Guest Administrator\u0094 previledges.",
+      "id" : "24",
+      "title" : "SHA: verify that all guest admin users and guest admin groups configured on the active can be synchronized to the standby",
+      "result" : "  TBD"
+   },
+   "10" : {
+      "steps" : "  All of the information are included in TSR",
+      "initial" : "  1) Go to the System > Diagnostics page.\n  2) Check \u0093Detail of users\u0094,and click the \u0093Download Report\u0094button",
+      "id" : "10",
+      "title" : "Check guest admin info inTSR",
+      "result" : "  TBD"
+   },
+   "19" : {
+      "steps" : "  The message\u0093Not currently available\u0094is showed.The administrator is still in config mode.",
+      "initial" : "  1) Login to firewall as admin.\n  2) Login to firewall as guest admin on another pc.\n  3) The message\u0093An administrator is already logged in for configuration\u0094is showed. Click \u0093Non-config\u0094icon.\n  4) Click \u0093change mode\u0094.",
+      "id" : "19",
+      "title" : "Preempt:verify that guest admin is unablre to preempt Full Admin",
+      "result" : "  TBD"
+   },
+   "5" : {
+      "steps" : "  1) In step 4, the message \u0093Users in group Guest Administrators may not be members of groups other Everyone and Trusted Users\u0094\n  2) In step 6, Nothing is displayed in the \u0093Admin\u0094 column for the user\u0092s entry.",
+      "initial" : "  1) Have a user with \u0093Guest Administrator\u0094 previledges added in the local database\n  2) On the Users>Local Users page and click the config icon next to the user in the Local Users table.\n  3) In the Edit User dialog, go to the Groups tab. Select \u0093Limited Administrators\u0094 (or \u0093SonicWall Read-Only Admins\u0094) from the \u0093User Groups\u0094 pane. Click on the \u0093->\u0094button.\n  4) Click the OK button\n  5) From step 2, go to the Groups tab. Select \u0093Guest Administrators\u0094 from the \u0093Member of\u0094 pane. Click on the \u0093<-\u0094button.\n  6) Click the OK button",
+      "id" : "5",
+      "title" : "Edit and delete \"Guest Administrator\" user(remove/add previledges)",
+      "result" : "  TBD"
+   }
+}

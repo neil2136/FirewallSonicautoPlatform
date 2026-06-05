@@ -1,0 +1,58 @@
+{
+   "6" : {
+      "steps" : "Config change should be taken and displayed.",
+      "initial" : "Original ID: 23\n  Original Title: POST User SSO radius accounting client\n  Original Description: Add new User SSOradius accounting client",
+      "id" : "6",
+      "title" : "POST User SSO radius accounting client",
+      "result" : "1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other check boxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "3" : {
+      "steps" : "Config change should be taken and displayed.",
+      "initial" : "Original ID: 11\n  Original Title: PUT user SSO agent using name\n  Original Description: Edit exisiting User SSO agent by specific name",
+      "id" : "3",
+      "title" : "PUT user SSO agent using name",
+      "result" : "1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "7" : {
+      "steps" : "Config change should be taken and displayed .",
+      "initial" : "Original ID: 25\n  Original Title: PUT User SSO radius accounting client using name\n  Original Description: Edit exisiting User SSOradius accounting client by specific name",
+      "id" : "7",
+      "title" : "PUT User SSO radius accounting client using name",
+      "result" : "1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "2" : {
+      "steps" : "Config change should be taken and displayed , functionality of the User SSO server should change accordingly.",
+      "initial" : "Original ID: 09\n  Original Title: POST User SSO Agent Original Description: Add new User SSOagent",
+      "id" : "2",
+      "title" : "POST User SSO Agent",
+      "result" : "1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "8" : {
+      "steps" : "Error is displayed",
+      "initial" : "Original ID: 39\n  Original Title: Attempt PUT to non-existent SSO agent\n  Original Description: Attempt PUT to non-existent SSO agent",
+      "id" : "8",
+      "title" : "Attempt PUT to non-existent SSO agent",
+      "result" : "1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "1" : {
+      "steps" : "Config change should be taken and displayed.",
+      "initial" : "Original ID: 01 Original Title: PUT User SSO settings\n  Original Description: Edit exisiting UserSSO settings",
+      "id" : "1",
+      "title" : "PUT User SSO settings",
+      "result" : "1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "4" : {
+      "steps" : "Config change should be taken and displayed/ SSO Agent should be created",
+      "initial" : "Original ID: 16\n  Original Title: POST User SSO Terminal Services Agent\n  Original Description: Add new User SSO terminal services agent",
+      "id" : "4",
+      "title" : "POST User SSO Terminal Services Agent",
+      "result" : "1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   },
+   "5" : {
+      "steps" : "Config change should be taken and displayed .",
+      "initial" : "Original ID: 18\n  Original Title: PUT User SSO terminal services agent using name\n  Original Description: Edit exisiting User SSO terminal services agent by specific name",
+      "id" : "5",
+      "title" : "PUT User SSO terminal services agent using name",
+      "result" : "1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows"
+   }
+}

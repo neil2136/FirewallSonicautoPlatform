@@ -1,0 +1,38 @@
+{
+  "6": {
+    "id": "6",
+    "title": "Add Button",
+    "initial": " N/A",
+    "steps": "  1) Go to Log > Syslog page.\n2) Click add button.\n3) Enter IP and port.\n4) Click OK\n5) Verify Sylog server is added\n6) Verify TSR shows entry.",
+    "result": "  Pop up window to add syslog server is displayed and syslog server is added."
+  },
+  "7": {
+    "id": "7",
+    "title": "Click on the on the Edit icon in the column Configure in the Syslog Servers",
+    "initial": " Already added a syslog server",
+    "steps": "  1) Go to Log > Syslog\n2) In Syslog list click Edit icon of existing syslog server\n3) Change Event Profile, IP address, port, Syslog Format, Syslog Facility and Syslog ID.\n4) check on Enable Event Rate Limiting and Enable Data Rate Limiting, then to change Maximum Events Per and Maximum Bytes Per value.\n5) if enabled NDPP mode, change Local Interface and Outbound Interface.(This step does not cover.)\n6) Verify changes are reflected in the list.\n7) Verify changes in the TSR",
+    "result": "  Can edit syslog servers."
+  },
+  "22": {
+    "id": "22",
+    "title": "Syslog facility",
+    "initial": " Syslog server setup.",
+    "steps": "  Add some syslog servers: \n1) Repeate selecting different Syslog Facility for syslog servers.\n2) Run traffic to generate logs.\n3) Verify that correct facility was sent to syslog servers.",
+    "result": "  Syslog facility was set.\nCorrect facility was sent."
+  },
+  "51": {
+    "id": "51",
+    "title": "Syslog ID",
+    "initial": " N/A",
+    "steps": "  Add some syslog servers: \n1) Change Syslog ID value would cause all syslog servers' Syslog ID value changed.\n2) Change the Syslog ID value to different value for these syslog servers would cause  Syslog ID value to Multiple values on Syslog Settings segment.\n5) Run traffic to generate logs.\n6) Verify that correct ID was sent to each syslog servers.",
+    "result": "  Syslog ID was set.\nCorrect ID was sent."
+  },
+  "52": {
+    "id": "52",
+    "title": "Syslog Format",
+    "initial": " N/A",
+    "steps": "  Add some syslog servers: \n1) Repeate selecting different Syslog Format on Syslog Settings segment.\n2) Repeate selecting different Syslog Format for syslog servers.\n3) Run traffic to generate logs.\n4) Verify that correct Format was sent to syslog servers.",
+    "result": "  Syslog Format was set.\nCorrect Format was sent."
+  }
+
+}

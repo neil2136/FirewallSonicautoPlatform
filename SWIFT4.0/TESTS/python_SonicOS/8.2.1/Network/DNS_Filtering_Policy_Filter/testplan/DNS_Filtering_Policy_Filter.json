@@ -1,0 +1,107 @@
+{
+    "1": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, profile-Default Profile, Enable;\n\n2. Network \\ DNS \\ Settings, set DNS as 8.8.8.8(different from Neustar Server);\n\n3. PC connects to X0, set the DNS of PC as X0 IP;\n\n4. From PC, dig www.ea.com, do capture packet on DUT;\n\n5. Check the DNS Packets.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1",
+        "title": "[FUNC] Verify enable the DNS Policy works.",
+        "result": "In step 5, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT.\n\n*Delete any new policies created after this test for the next test."
+    },
+    "2": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, profile-Default Profile, Enable;\n\n2. Network \\ DNS \\ Settings, set DNS as 8.8.8.8(different from Neustar Server);\n\n3. PC connects to X0, set the DNS of PC as X0 IP;\n\n4. From PC, dig www.ea.com, do capture packet on DUT;\n\n5. Check the DNS Packets.\n\n6. Disable \"Test\" policy, repeat 4-5.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "2",
+        "title": "[FUNC] Verify disable the DNS Policy works.",
+        "result": "In step 5, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT;\n\nIn step 6, DNS Packets from PC is dropped by DUT.\n\n*Delete any new policies created after this test for the next test."
+    },
+    "3": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Profile-Default Profile, Enable;\n\n2. Network \\ DNS \\ Settings, set DNS as 8.8.8.8(different from Neustar Server);\n\n3. PC connects to X0, set the DNS of PC as X0 IP;\n\n4. From PC, dig www.ea.com, do capture packet on DUT;\n\n5. Check the DNS Packets;\n\n6. Object \\ Profile Objects \\ DNS Filtering, edit Default Profile, change the Allow action of Gaming to Negative Reply;\n\n7. Repeat 3-4.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "3",
+        "title": "[FUNC] Verify the Profile of DNS Policy works.",
+        "result": "In step 5, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT;\n\nIn step 7, DNS Reply from Neustar is dropped by DUT, dig results is SERVFAIL."
+    },
+    "4": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Zone-LAN, action-Filter, profile-Default Profile, Enable;\n\n2. Set interface X2 as LAN Zone, and Set DNS on DNS Settings as 8.8.8.8(different from Neustar Server);\n\n3. PC connects to X2, set the DNS of PC as X2 IP;\n\n4. From PC, dig www.ea.com, do capture packet on DUT;\n\n5. Check the DNS Packets;\n\n6. Change the Zone of \"Test\" policy and interface X2 to DMZ, repeat 4-5;\n\n7. Change the Zone of \"Test\" policy and interface X2 to Custom public/trusted zone, repeat 4-5.",
+        "initial": "PC---(X2)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "4",
+        "title": "[FUNC] Verify the DNS Policy works on LAN/DMZ/Custom Zone",
+        "result": "In step 5-7, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT.\n\n*Delete any new policies created after this test for the next test."
+    },
+    "5": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Zone-WAN, action-Filter, profile-Default Profile, Enable;\n\n2. Set interface X1 as WAN Zone, and set DNS on DNS Settings as 8.8.8.8(different from Neustar Server);\n\n3. PC connects to X1, set the DNS of PC as X1 IP;\n\n4. From PC, dig www.ea.com, do capture packet on DUT;\n\n5. Check the DNS Packets.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "5",
+        "title": "[FUNC] Verify the DNS Policy works on WAN Zone",
+        "result": "In step 5, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT.\n\n*Delete any new policies created after this test for the next test."
+    },
+    "6": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Zone-WLAN, action-Filter, profile-Default Profile, Enable;\n\n2. Set X2 as WLAN interface with IP 172.16.31.1, and set DNS on DNS Settings as 8.8.8.8(different from Neustar Server);\n\n3. Connect SonicPoint to X2;\n\n4. Wireless PC connects to sonicpoit, set DNS server of PC as 172.16.31.1;\n\n5. From PC, dig www.ea.com, do capture packet on DUT;\n\n6. Check the DNS Packets;\n\n7. Configure a WLAN tunnel Interface, Wireless pc connects to the interface, then repeat 5-6.",
+        "initial": "Client--AP--X2--DUT--X1--WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "6",
+        "title": "[FUNC] Verify the DNS Policy works on WLAN Zone, including WLAN tunnel interface.",
+        "result": "In step 5, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT.\n\n*Delete any new policies created after this test for the next test."
+    },
+    "7": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top:\na policy named Test, Zone-SSLVPN, action-Filter, Enable, \nprofile-Default Profile(category 'Gaming' is set as Forged IP action);\n\n2. Set interface X1 as WAN Zone, and set DNS on DNS Settings as 8.8.8.8(different from Neustar Server);\n\n3. Enable SSLVPN on WAN zone, config the DNS of Client profile as X0 interface ip 192.168.168.168, and Route as LAN Subnet;\n\n4. Add a user with groups-SSLVPN Service and VPN Access-LAN subnet ;\n\n5. Client connects to SSLVPN;\n\n6. From Client, dig www.ea.com @192.168.168.168, do capture packet on DUT;\n\n7. Check the DNS Packets.",
+        "initial": "LAN---(X0)DUT(X1)---WAN---SSLVPN Client \uff1b\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "7",
+        "title": "[FUNC] Verify the DNS Policy works on SSLVPN Zone",
+        "result": "In step 6-7,\n\nresolved address is forged ip ; \n\nDNS Packets from Client is forwarded to Neustar server(156.154.54.200/201) by DUT.\n\n*Delete any new policies created after this test for the next test."
+    },
+    "8": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Zone-VPN, action-Filter, profile-Default Profile, Enable;\n\n2. Set interface X1 as WAN Zone, and set DNS on DNS Settings as 8.8.8.8(different from Neustar Server);\n\n3. Set up a Site to Site VPN to FW, remote network is X0 Subnet;\n\n4. PC1 connects to FW X0, set DNS of PC1 as DUT X0 IP;\n\n5. From PC1, dig www.ea.com, do capture packet on DUT;\n\n6. Check the DNS Packets.",
+        "initial": "PC1---(X0)FW(X1)---WAN---(X1)DUT(X0)\uff1b WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "8",
+        "title": "[FUNC] Verify the DNS Policy works on VPN Zone, including VPN Tunnel Interface.",
+        "result": "In step 6, DNS Packets from PC1 is forwarded to Neustar server(156.154.54.200/201) by DUT.\n\n*Delete any new policies created after this test for the next test."
+    },
+    "9": {
+        "steps": "1. Add a LAN virtual Interface bounded to X0, VLAN tag-642, IP 192.168.10.1, and set DNS on DNS Settings as 8.8.8.8(different from Neustar Server);\n\n2. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0:V642, action-Filter, profile-Default Profile, Enable;\n\n3. PC connects to X0:V642, set the DNS of PC as X0:V642 IP 192.168.10.1;\n\n4. From PC, dig www.ea.com, do capture packet on DUT;\n\n5. Check the DNS Packets;",
+        "initial": "PC---(X0:V642)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "9",
+        "title": "[FUNC] Verify the DNS Policy works on Virtual Interface.",
+        "result": "In step 5, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT.\n\n*Delete any new policies created after this test for the next test."
+    },
+    "10": {
+        "steps": "1. Switching \\ VLAN Trunking, add Vlan Trunk Port X2, and enable vlan 642;\n\n2. Set X2:V642 as LAN interface with IP 192.168.10.1, and set DNS on DNS Settings as 8.8.8.8(different from Neustar Server);\n\n3. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X2:V642, action-Filter, profile-Default Profile, Enable;\n\n4. PC connects to X0:V642, set the DNS of PC as X2:V642 IP 192.168.10.1;\n\n5. From PC, dig www.ea.com, do capture packet on DUT;\n\n6. Check the DNS Packets;",
+        "initial": "*TZ not support\n\nPC---(X2:V642)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "10",
+        "title": "[FUNC] Verify the DNS Policy works on trunk vlan Interface",
+        "result": "In step 6, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT.\n\n*Delete any new policies created after this test for the next test."
+    },
+    "11": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named TestF, Interface-X0, action-Filter, Enable;\n\n2. Add top: a policy named TestP, Interface-X0, action-Proxy, Enable;\n\n3. Network \\ DNS \\ Settings, set DNS as 10.190.202.200(different from Neustar Server);\n\n4. PC connect to X0, set the DNS of PC as X0 IP, from PC, dig www.ea.com, do capture packet on DUT;\n\n5. Check the DNS Packets;\n\n6. Move \"TestF\" to the top, repeat 4-5.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "11",
+        "title": "[FUNC] Verify the Priority of DNS Policy.",
+        "result": "In step 5, DNS Packets from PC is forwarded to 10.190.202.200(DUT DNS Server) by DUT;\n\nIn step 6, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT."
+    },
+    "12": {
+        "steps": "1. Network \\ Interfaces, set X0-192.168.168.168;\n\n2. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named TestA, Interface-X0, Address-192.168.168.100, Service-UDP, action-Filter, Enable;\n\n3. PC connect to X0, set the DNS of PC as 192.168.168.168, IP of PC as 192.168.168.100;\n\n4. From PC, dig www.ea.com, do capture packet on DUT;\n\n5. Check the DNS Packets;\n\n6. Set IP of PC as 192.168.168.200;\n\n7. Repeat 4-5.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "12",
+        "title": "[FUNC] Verify the Address of DNS Policy works.",
+        "result": "In step 5, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT;\n\nIn step 7, DNS Packets from PC is dropped by DUT."
+    },
+    "13": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named TestS, Interface-X0, Service-UDP, action-Filter, Enable;\n\n2. PC connect to X0, set the DNS of PC as X0 IP;\n\n3. From PC, dig www.ea.com, do capture packet on DUT;\n\n4. Check the DNS Packets;\n\n5. From PC, dig www.ea.com +tcp, do capture packet on DUT;\n\n6. Repeat 3-4.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "13",
+        "title": "[FUNC] Verify the Service of DNS Policy works.",
+        "result": "In step 4, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT;\n\nIn step 6, DNS Packets from PC is dropped by DUT."
+    },
+    "14": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named TestS, Interface-X0, Service-UDP, action-Filter, Schedule-10min, Enable;\n\n2. PC connect to X0, set the DNS of PC as X0 IP;\n\n3. From PC, dig www.ea.com, do capture packet on DUT;\n\n4. Check the DNS Packets;\n\n5. Wait for 10min, until the time is out of the schedule and the policy is grey;\n\n6. From PC, dig www.ea.com, do capture packet on DUT;\n\n7. Repeat 3-4.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "14",
+        "title": "[FUNC] Verify the Schedule of DNS Policy works.",
+        "result": "In step 4, DNS Packets from PC is forwarded to Neustar server(156.154.54.200/201) by DUT;\n\nIn step 7, DNS Packets from PC is dropped by DUT."
+    },
+    "15": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top and enable a policy named TestC, Interface-X0, Service-UDP, action-Filter, Select 'Enable Connection Threshold for each Source IP'-2;\n\n2. Log \\ Settings \\ Network \\ DNS Security, enable 'DNS Policy Source IP Connection Limit Reached Drop'(id 1690), click edit, set Event Priority to Alert, Display Events in Log Monitor to 0, save;\n\n3. PC connect to X0, set the DNS of PC as X0 IP, dig over 2 domains;\n\n4. Check the packet monitor and system log.",
+        "initial": "PC---(X0)DUT(X1)---WAN; \n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "15",
+        "title": "[FUNC] Verify the Connection Thresholds of DNS Policy works.",
+        "result": "The over queries are failed, dropped by the policy TestC;\n\nA log 'Packet dropped; source connection limit for this source IP address has been reached'(id 1690) displays."
+    }
+}

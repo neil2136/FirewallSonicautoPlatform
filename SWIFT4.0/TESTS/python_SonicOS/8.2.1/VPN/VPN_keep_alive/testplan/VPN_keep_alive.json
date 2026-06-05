@@ -1,0 +1,44 @@
+{
+   "6" : {
+      "steps" : "  1) Configure a VPN Policy on the local firewall. Set SA lifetime to at least 300 seconds. Enable KeepAlive . 2) Configure the matching VPN Policy on the remote firewall. 3) When the tunnel is built, go to Network>Address Objects page on the local firewall and edit the address object that is used by VPN policy as a remote network. Change the network.",
+      "initial" : "  N/A",
+      "id" : "6",
+      "title" : "New IKE negotiation is attempted after Address Objects used by the VPN policy changes",
+      "result" : "  The existing tunnel gets deleted on the local box. The local box should start IKE negotiation after that."
+   },
+   "4" : {
+      "steps" : "  1) Configure a VPN Policy on the local firewall. Set SA lifetime to at least 300 seconds. Enable KeepAlive . 2) Configure the matching VPN Policy on the remote firewall. 3) Wait for SA lifetime to expire.",
+      "initial" : "  N/A",
+      "id" : "4",
+      "title" : "New IKE negotiation is attempted after SA lifetime expires",
+      "result" : "  The local box should start IKE negotiation after SA lifetime expires."
+   },
+   "1" : {
+      "steps" : "  1) Configure a VPN Policy on the local firewall. Set SA lifetime to at least 300 seconds. Enable KeepAlive . 2) Configure the matching VPN Policy on the remote firewall. 3) Restart the local firewall.",
+      "initial" : "  N/A",
+      "id" : "1",
+      "title" : "New IKE negotiation is attempted after startup/bootup",
+      "result" : "  The local box should start IKE negotiation after reboot."
+   },
+   "3" : {
+      "steps" : "  1) Configure a VPN Policy on the local firewall. Set SA lifetime to at least 300 seconds. Enable KeepAlive . 2) Configure the matching VPN Policy on the remote firewall. 3) When the tunnel is built, change the preshared secret on the local firewall.",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "New IKE negotiation is attempted after negotiation failure due to errors",
+      "result" : "  The local box should delete the old SA and start a new negotiation. The negotiation will fail due to unmatched preshared secret. When the negotiation is aborted due to timeout, a next new IKE negotiation will start, and so on."
+   },
+   "2" : {
+      "steps" : "  1) Configure a VPN Policy on the local firewall. Set SA lifetime to at least 300 seconds. Enable KeepAlive . 2) Configure the matching VPN Policy on the remote firewall. 3) When the tunnel is built, change preshared secret on the both local and remote firewalls.",
+      "initial" : "  N/A",
+      "id" : "2",
+      "title" : "New IKE negotiation is attempted after Add/Modify VPN policy",
+      "result" : "  The local box should start IKE negotiation after VPN policies on the both firewalls have been modified."
+   },
+   "5" : {
+      "steps" : "  1) Configure a VPN Policy on the local firewall. Set SA lifetime to at least 300 seconds. Enable KeepAlive . 2) Configure the matching VPN Policy on the remote firewall.Enable DPD 3) When the tunnel is built, manually disconnect the cable on the WAN port of th e local box. 4) Wait for remote firewall to tear down the tunnel after sending appropriate number of DPD messages.",
+      "initial" : "  N/A",
+      "id" : "5",
+      "title" : "New IKE negotiation is attempted after DPD tears down a tunnel",
+      "result" : "  Remote firewall will send DPD requests and won't get replies from a peer. After the appropriate number of DPD messages (set on VPN> advansed page) the existing tunnels will be torn down.\n  The local box should start IKE negotiation after that."
+   }
+}

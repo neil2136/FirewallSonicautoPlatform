@@ -1,0 +1,1038 @@
+{
+   "050" : {
+      "steps" : "  IPv6-Post single user with ipv6 attribute but wrong IPv6 address",
+      "initial" : "  status code 400",
+      "id" : "050",
+      "title" : "TBD",
+      "result" : "  1 send post request with json including single user with ipv6 attribute but wrong ipv6 address"
+   },
+   "037" : {
+      "steps" : "  Delete multi users with xml",
+      "initial" : "  status code 200",
+      "id" : "037",
+      "title" : "TBD",
+      "result" : "  1 Send delete request with multi users in xml"
+   },
+   "006" : {
+      "steps" : "  API Client-Edit client IP or name",
+      "initial" : "  Configration applied with no error",
+      "id" : "006",
+      "title" : "TBD",
+      "result" : "  API Client-Edit client IP or name"
+   },
+   "052" : {
+      "steps" : "  IPv6-Delete multi users all with ipv6 attribute and IPv6 addresses",
+      "initial" : "  status code 200",
+      "id" : "052",
+      "title" : "TBD",
+      "result" : "  1 Send Delete request with json including multi users with ipv6 attribute and IPv6 addresses"
+   },
+   "036" : {
+      "steps" : "  Delete multi users with json",
+      "initial" : "  status code 200",
+      "id" : "036",
+      "title" : "TBD",
+      "result" : "  1 Send delete request with multi users in json"
+   },
+   "117" : {
+      "steps" : "  Delete multi users with one IP of no user logged in",
+      "initial" : "  status code 207",
+      "id" : "117",
+      "title" : "TBD",
+      "result" : "  na"
+   },
+   "047" : {
+      "steps" : "  IPv6-Post multi users all with ipv6 attribute and IPv6 addresses",
+      "initial" : "  status code 200",
+      "id" : "047",
+      "title" : "TBD",
+      "result" : "  1 send post request with xml including multi users all with ipv6 attribute and ipv6 address"
+   },
+   "046" : {
+      "steps" : "  IPv6-Post single user with ipv6 attribute and IPv6 address",
+      "initial" : "  status code 200",
+      "id" : "046",
+      "title" : "TBD",
+      "result" : "  1 Send post request with json using ipv6 attribute and IPv6 address"
+   },
+   "049" : {
+      "steps" : "  IPv6-Post single user with ipv4 attribute but wrong IPv4 address",
+      "initial" : "  status code 400",
+      "id" : "049",
+      "title" : "TBD",
+      "result" : "  1 send post request with xml including single user with ipv4 attribute but wrong ipv4 address"
+   },
+   "051" : {
+      "steps" : "  IPv6-Delete single user with IPv6 address in URI",
+      "initial" : "  status code 200",
+      "id" : "051",
+      "title" : "TBD",
+      "result" : "  1 Send Delete request with ipv6 address"
+   },
+   "003" : {
+      "steps" : "  API Client-Delete an API client",
+      "initial" : "  Configration applied with no error",
+      "id" : "003",
+      "title" : "TBD",
+      "result" : "  API Client-Delete an API client"
+   },
+   "120" : {
+      "steps" : "  Post users with init-state active or inactive",
+      "initial" : "  user1 is active, user2 is inactive",
+      "id" : "120",
+      "title" : "TBD",
+      "result" : "  1 post user1 with init-state active,user2 with init-state inactive"
+   },
+   "053" : {
+      "steps" : "  IPv6-Delete multi users all with ip attribute ,some using IPv4 address, some using IPv6 address",
+      "initial" : "  status code 200",
+      "id" : "053",
+      "title" : "TBD",
+      "result" : "  1 Send Delete request with xml including multi users with ip attribute ,some using IPv4 address, some using IPv6 address"
+   },
+   "031" : {
+      "steps" : "  Delete single user with IP in URI",
+      "initial" : "  status code 200",
+      "id" : "031",
+      "title" : "TBD",
+      "result" : "  1 Send request with URI /api/sso/users/192.168.1.1"
+   },
+   "044" : {
+      "steps" : "  IPv6-Post single user with ip attribute and IPv6 address",
+      "initial" : "  status code 200",
+      "id" : "044",
+      "title" : "TBD",
+      "result" : "  1 Send post request with json using ip attribute and IPv6 address"
+   },
+   "001" : {
+      "steps" : "  API Client-Add an API client with IP",
+      "initial" : "  Configration applied with no error",
+      "id" : "001",
+      "title" : "TBD",
+      "result" : "  API Client-Add an API client with IP"
+   },
+   "048" : {
+      "steps" : "  IPv6-Post multi users all with ip attribute ,some using IPv4 address, some using IPv6 address",
+      "initial" : "  status code 200",
+      "id" : "048",
+      "title" : "TBD",
+      "result" : "  1 Send post request with json using ipv attribute ,some using IPv4 address, some using IPv6 address"
+   },
+   "045" : {
+      "steps" : "  IPv6-Post single user with ipv4 attribute and IPv4 address",
+      "initial" : "  status code 200",
+      "id" : "045",
+      "title" : "TBD",
+      "result" : "  1 Send post request with xml using ipv4 attribute and IPv4 address"
+   },
+   "1505341" : {
+      "steps" : "  1 Access rule allow all for DNS and allow everyone for other traffic 2 User authentication set to Local User 3 Send out request including ip,name, type domain, domain, group using json 4 Genere traffic to activate user",
+      "initial" : "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate 3 User groups created or imported from LDAP",
+      "id" : "1505341",
+      "title" : "TBD",
+      "result" : "  status code 200, no ldap lookup"
+   },
+   "1505342" : {
+      "steps" : "  1 Access rule allow all for DNS and allow everyone for other traffic 2 User authentication set to LDAP 3 Send out request including ip,name, type domain, domain, group ,group lookup true using xml 4 Genere traffic to activate user",
+      "initial" : "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate 3 User groups created or imported from LDAP",
+      "id" : "1505342",
+      "title" : "TBD",
+      "result" : "  status code 200, no ldap lookup"
+   },
+   "1505353" : {
+      "steps" : "  1 Send out request with just IP attribute 2 Send out request with just Name attribute",
+      "initial" : "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate",
+      "id" : "1505353",
+      "title" : "post single user with no ip or no name",
+      "result" : "  status code 400"
+   },
+   "1505355" : {
+      "steps" : "  1 Send out request with type non-domain",
+      "initial" : "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate",
+      "id" : "1505355",
+      "title" : "post single user wrong type",
+      "result" : "  status code 400"
+   },
+   "1505359" : {
+      "steps" : "  1 Send request with IP 192.168.1.1 name a 2 Send request with IP 192.168.1.1 name b",
+      "initial" : "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate",
+      "id" : "1505359",
+      "title" : "post single user with  IP duplicated with  inactive logged in user",
+      "result" : "  status code 400"
+   },
+   "1505360" : {
+      "steps" : " 1 Send request with IP 192.168.1.1 name a 2 Generate traffic from 192.168.1.1 3 Send request with IP 192.168.1.1 name b",
+      "initial" : "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate 3 User groups created or imported from LDAP",
+      "id" : "1505360",
+      "title" : "post single user with  IP duplicated with  active logged in user",
+      "result" : "  status code 200, user updated and become inactive"
+   },
+   "1505361" : {
+      "steps" : " 1 Send request with IP 192.168.1.1 name a 2 Send the same request again",
+      "initial" : "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate 3 User groups created or imported from LDAP",
+      "id" : "1505361",
+      "title" : "post single user with ip and name duplicate with logged in user",
+      "result" : "  now It's status code 200 but with content user already login, user's groups settings won't be updated"
+   },
+   "1505367" : {
+      "steps" : " 1 Send request of multi users with json 2 Genereate traffic from couple of client to active users",
+      "initial" : "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate 3 User groups created or imported from LDAP",
+      "id" : "1505367",
+      "title" : "Post  multi users with json",
+      "result" : "  status code 200"
+   },
+   "1505368" : {
+      "steps" : " 1 Send request of multi users with xml 2 Genereate traffic from couple of client to active users",
+      "initial" : "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate 3 User groups created or imported from LDAP",
+      "id" : "1505368",
+      "title" : "Post  multi users with xml",
+      "result" : "  status code 200"
+   },
+   "1505345": {
+    "steps": "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate 3 User groups created or imported from LDAP",
+    "initial": "  1 Access rule allow all for DNS and allow everyone for other traffic\n2 User authentication set to LDAP\n3 Send out request including ip,name, domain use DNS name,muiltple groups.group-lookup true using json\n4 Genere traffic to activate user",
+    "id": "1505345",
+    "title": "post single user with attribute ip, name,  domain using DNS name, groups, group-lookup true",
+    "result": "  status code 200, no ldap lookup"
+  },
+   "1505354": {
+    "steps": "  1 Send out request IP with value \"192.168\" 1 Send out request IP with value IP",
+    "initial": "  1 Shell script using Curl/HTTPie or Python script using Requests 2 API client uses high level security and certificate",
+    "id": "1505354",
+    "title": "post single user with wrong ip address",
+    "result": "  status code 400"
+  },
+   "1505386" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505386",
+      "title" : "IPv6-Post single user with ipv6 attribute and IPv6 address",
+      "result" : "  TBD"
+   },
+   "1505500" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505500",
+      "title" : "General settings-HTTPs port number to valid number",
+      "result" : "  TBD"
+   },
+   "1505364" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505364",
+      "title" : "Post domain user with group format as group, domain\\group created in local groups",
+      "result" : "  TBD"
+   },
+   "1505455" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505455",
+      "title" : "Post user in subdomain",
+      "result" : "  TBD"
+   },
+   "1505447" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505447",
+      "title" : "reboot",
+      "result" : "  TBD"
+   },
+   "1505365" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505365",
+      "title" : "Post domain user with group format as group,group.domain.com created in local groups",
+      "result" : "  TBD"
+   },
+   "1505390" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505390",
+      "title" : "IPv6-Post single user with ipv6 attribute but wrong IPv6 address",
+      "result" : "  TBD"
+   },
+   "1505440" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505440",
+      "title" : "Too many users concurrently logging in",
+      "result" : "  TBD"
+   },
+   "1505441" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505441",
+      "title" : "User limit exceeded",
+      "result" : "  TBD"
+   },
+   "1505424" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505424",
+      "title" : "CSRF-client request  sequence overplap with previous ones",
+      "result" : "  TBD"
+   },
+   "1505391" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505391",
+      "title" : "IPv6-Delete single user with IPv6  address in URI",
+      "result" : "  TBD"
+   },
+   "1505493" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505493",
+      "title" : "Edit API Client window- Shared secret verification security level high with SHA256 and SHA512",
+      "result" : "  TBD"
+   },
+   "1505503" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505503",
+      "title" : "Checkbox of API Clients- Advanced,\"Restrict origins if client uses CORS\"",
+      "result" : "  TBD"
+   },
+   "1505484" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505484",
+      "title" : "API Client-Statistics for one client",
+      "result" : "  TBD"
+   },
+   "1505450" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505450",
+      "title" : "HA-Verify Posted user info synced to secondary unit",
+      "result" : "  TBD"
+   },
+   "1505442" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505442",
+      "title" : "Receive connection request from a non-client",
+      "result" : "  TBD"
+   },
+   "1505403" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505403",
+      "title" : "Client uses shared secret security level low-no shared secret",
+      "result" : "  TBD"
+   },
+   "1505362" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505362",
+      "title" : "Post single user with name duplicated and login uniques enbaled",
+      "result" : "  TBD"
+   },
+   "1505397" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505397",
+      "title" : "Firewall uses default self-signed certificate",
+      "result" : "  TBD"
+   },
+   "1505438" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505438",
+      "title" : "Failed to add or delete the user for other reason",
+      "result" : "  TBD"
+   },
+   "1505467" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505467",
+      "title" : "Stateful HA- sync inactive user group and group lookup info",
+      "result" : "  TBD"
+   },
+   "1505395" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505395",
+      "title" : "Inactive user age out when session time runs out-default 60 minutes",
+      "result" : "  TBD"
+   },
+   "1505469" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505469",
+      "title" : "Stateful HA- sync active user idle-action setting",
+      "result" : "  TBD"
+   },
+   "1505373" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505373",
+      "title" : "Delete single user with IP in URI and  content of mismatching user name",
+      "result" : "  TBD"
+   },
+   "1505371" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505371",
+      "title" : "Delete single user with IP in URI",
+      "result" : "  TBD"
+   },
+   "1505417" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505417",
+      "title" : "Firewall requires high including both 256 and 512, client uses medium",
+      "result" : "  TBD"
+   },
+   "1505393" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505393",
+      "title" : "IPv6-Delete multi users all with ip attribute ,some using IPv4 address, some using IPv6 address",
+      "result" : "  TBD"
+   },
+   "1505497" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505497",
+      "title" : "Edit API Client window- Enable/Disable Allow persistent connections",
+      "result" : "  TBD"
+   },
+   "1505430" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505430",
+      "title" : "Persist connection enabled, client time out",
+      "result" : "  TBD"
+   },
+   "1505380" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505380",
+      "title" : "Option request with xml",
+      "result" : "  TBD"
+   },
+   "1505480" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505480",
+      "title" : "API Client-Client status light",
+      "result" : "  TBD"
+   },
+   "1505485" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505485",
+      "title" : "API Client-Statistics for all  clients",
+      "result" : "  TBD"
+   },
+   "1505471" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505471",
+      "title" : "Enable \"Restrict origins if client uses CORS\", input \"false\" in the field of  \"Allow origins\".",
+      "result" : "  TBD"
+   },
+   "1505412" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505412",
+      "title" : "Client require server authenticator in reply when use medium",
+      "result" : "  TBD"
+   },
+   "1505381" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505381",
+      "title" : "Option request with json",
+      "result" : "  TBD"
+   },
+   "1505435" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505435",
+      "title" : "Send request not using HTTPs",
+      "result" : "  TBD"
+   },
+   "1505487" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505487",
+      "title" : "API Client-Edit client button",
+      "result" : "  TBD"
+   },
+   "1505490" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505490",
+      "title" : "Edit API Client window- shared secret",
+      "result" : "  TBD"
+   },
+   "1505387" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505387",
+      "title" : "IPv6-Post multi users all with ipv6 attribute and IPv6 addresses",
+      "result" : "  TBD"
+   },
+   "1505419" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505419",
+      "title" : "CSRF-sequecen number for newly added client",
+      "result" : "  TBD"
+   },
+   "1505384" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505384",
+      "title" : "IPv6-Post single user with ip attribute and IPv6 address",
+      "result" : "  TBD"
+   },
+   "1505453" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505453",
+      "title" : "HA- CSRF is enabled in a failover",
+      "result" : "  TBD"
+   },
+   "1505449" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505449",
+      "title" : "API settings are synced to backup HA",
+      "result" : "  TBD"
+   },
+   "1505439" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505439",
+      "title" : "Unable to login user with name admin",
+      "result" : "  TBD"
+   },
+   "1505478" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505478",
+      "title" : "API Client-Add an API Client with DNS name",
+      "result" : "  TBD"
+   },
+   "1505415" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505415",
+      "title" : "Firewall requires SHA256,client uses medium",
+      "result" : "  TBD"
+   },
+   "1505369" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505369",
+      "title" : "Post multi users with some error user info",
+      "result" : "  TBD"
+   },
+   "1505378" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505378",
+      "title" : "Delete multi users with some error user info",
+      "result" : "  TBD"
+   },
+   "1505432" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505432",
+      "title" : "Use https management port",
+      "result" : "  TBD"
+   },
+   "1505457" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505457",
+      "title" : "Delete multi users with one IP of no user logged in",
+      "result" : "  TBD"
+   },
+   "1505379" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505379",
+      "title" : "Detele multi user with large content",
+      "result" : "  TBD"
+   },
+   "1505462" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505462",
+      "title" : "Post users with different idle-timeout",
+      "result" : "  TBD"
+   },
+   "1505483" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505483",
+      "title" : "API Client-Edit client authentication method",
+      "result" : "  TBD"
+   },
+   "1505398" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505398",
+      "title" : "Firewall uses custom certificate",
+      "result" : "  TBD"
+   },
+   "1505452" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505452",
+      "title" : "HA-Verify failover happen, post/delete works fine",
+      "result" : "  TBD"
+   },
+   "1505444" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505444",
+      "title" : "TSR shows 3rd party API settings",
+      "result" : "  TBD"
+   },
+   "1505448" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505448",
+      "title" : "export/import prefrence",
+      "result" : "  TBD"
+   },
+   "1505413" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505413",
+      "title" : "Firewall requires SHA256, client uses SHA512",
+      "result" : "  TBD"
+   },
+   "1505505" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505505",
+      "title" : "API Clients- Advanced,Add a \"Allow origins\" with two more domain names seperated by comma.",
+      "result" : "  TBD"
+   },
+   "1505495" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505495",
+      "title" : "Edit API Client window- Shared secret verification security level low",
+      "result" : "  TBD"
+   },
+   "1505479" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505479",
+      "title" : "API Client-Delete an API client",
+      "result" : "  TBD"
+   },
+   "1505460" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505460",
+      "title" : "Post users with init-state active or inactive",
+      "result" : "  TBD"
+   },
+   "1505422" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505422",
+      "title" : "CSRF-requests with failed authentication won't increase sequence number",
+      "result" : "  TBD"
+   },
+   "1505499" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505499",
+      "title" : "General settings- Use the HTTPS Management port",
+      "result" : "  TBD"
+   },
+   "1505376" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505376",
+      "title" : "Delete multi users with json",
+      "result" : "  TBD"
+   },
+   "1505433" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505433",
+      "title" : "Manage and sent SSO api request from the same client when same port number used",
+      "result" : "  TBD"
+   },
+   "1505370" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505370",
+      "title" : "Post multi user with large content",
+      "result" : "  TBD"
+   },
+   "1505464" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505464",
+      "title" : "Post user with wrong idle-timeout value",
+      "result" : "  TBD"
+   },
+   "1505421" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505421",
+      "title" : "CSRF-sequence number restart after firewall reboot",
+      "result" : "  TBD"
+   },
+   "1505385" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505385",
+      "title" : "IPv6-Post single user with ipv4 attribute and IPv4 address",
+      "result" : "  TBD"
+   },
+   "1505492" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505492",
+      "title" : "Edit API Client window- Shared secret verification security level high with SHA512",
+      "result" : "  TBD"
+   },
+   "1505446" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505446",
+      "title" : "syslog",
+      "result" : "  TBD"
+   },
+   "1505392" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505392",
+      "title" : "IPv6-Delete multi users all with ipv6 attribute and IPv6 addresses",
+      "result" : "  TBD"
+   },
+   "1505498" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505498",
+      "title" : "General settings-Enable/disable SSO 3rd-Party API",
+      "result" : "  TBD"
+   },
+   "1505451" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505451",
+      "title" : "HA-Verify deleted user info synced to secondary unit",
+      "result" : "  TBD"
+   },
+   "1505463" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505463",
+      "title" : "Post users with different sess-timeout",
+      "result" : "  TBD"
+   },
+   "1505456" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505456",
+      "title" : "post multiuser with one not able to login",
+      "result" : "  TBD"
+   },
+   "1505383" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505383",
+      "title" : "Request content type set to types other than xml or json",
+      "result" : "  TBD"
+   },
+   "1505486" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505486",
+      "title" : "API Client-Reset statistics",
+      "result" : "  TBD"
+   },
+   "1505461" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505461",
+      "title" : "Post users with idle-action logout or go-inactive",
+      "result" : "  TBD"
+   },
+   "1505472" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505472",
+      "title" : "Enable \"Restrict origins if client uses CORS\", send a request from an origin that is same as \"Allow origins\" on the UTM.",
+      "result" : "  TBD"
+   },
+   "1505358" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505358",
+      "title" : "post single user with attribute not supported",
+      "result" : "  TBD"
+   },
+   "1505475" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505475",
+      "title" : "Enable \"Restrict origins if client uses CORS\", send a request not in the client's list of  \"Allow origins\".",
+      "result" : "  TBD"
+   },
+   "1505420" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505420",
+      "title" : "CSRF-sequence numbers for multiple clients",
+      "result" : "  TBD"
+   },
+   "1505501" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505501",
+      "title" : "General settings-HTTP port number to nubmers conflict with other port settings in firewall",
+      "result" : "  TBD"
+   },
+   "1505504" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505504",
+      "title" : "API Clients- Advanced,Add a \"Allow origins\" with only one domain name.",
+      "result" : "  TBD"
+   },
+   "1505363" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505363",
+      "title" : "Post domain user with group format as group, group@domain.com created in local groups",
+      "result" : "  TBD"
+   },
+   "1505489" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505489",
+      "title" : "Edit API Client window- select authentication method",
+      "result" : "  TBD"
+   },
+   "1505437" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505437",
+      "title" : "Request doesn't accept XML or json",
+      "result" : "  TBD"
+   },
+   "1505468" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505468",
+      "title" : "Stateful HA- sync inactive user idle-action,sess-timeout and idle timeout setting",
+      "result" : "  TBD"
+   },
+   "1505404" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505404",
+      "title" : "Client only uses Certificate",
+      "result" : "  TBD"
+   },
+   "1505372" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505372",
+      "title" : "Delete single user with IP in URI and correct content",
+      "result" : "  TBD"
+   },
+   "1505502" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505502",
+      "title" : "General settings-request client certificate will enforce dedicated HTTPs port",
+      "result" : "  TBD"
+   },
+   "1505396" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505396",
+      "title" : "Inactive user age out when session time runs out-change the default value",
+      "result" : "  TBD"
+   },
+   "1505428" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505428",
+      "title" : "Persist connection enabled, send muliple requests in one connection",
+      "result" : "  TBD"
+   },
+   "1505482" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505482",
+      "title" : "API Client-Edit client IP or name",
+      "result" : "  TBD"
+   },
+   "1505357" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505357",
+      "title" : "post single user with wrong ip-remote",
+      "result" : "  TBD"
+   },
+   "1505496" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505496",
+      "title" : "Edit API Client window- Enable/Disable CSRF prevention",
+      "result" : "  TBD"
+   },
+   "1505416" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505416",
+      "title" : "Firewall requires SHA512,client uses medium",
+      "result" : "  TBD"
+   },
+   "1505466" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505466",
+      "title" : "Firewall different sso user session settings-post users with different init-state,idle-action values",
+      "result" : "  TBD"
+   },
+   "1505423" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505423",
+      "title" : "CSRF-client request  sequence number out of order",
+      "result" : "  TBD"
+   },
+   "1505436" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505436",
+      "title" : "Other than POST, DELETE, Option is sent from client",
+      "result" : "  TBD"
+   },
+   "1505414" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505414",
+      "title" : "Firewall requires SHA512, client uses SHA256",
+      "result" : "  TBD"
+   },
+   "1505481" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505481",
+      "title" : "API Client-Enable/disable a client",
+      "result" : "  TBD"
+   },
+   "1505389" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505389",
+      "title" : "IPv6-Post single user with ipv4 attribute but wrong IPv4 address",
+      "result" : "  TBD"
+   },
+   "1505418" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505418",
+      "title" : "Firewall requires medium. Client uses low",
+      "result" : "  TBD"
+   },
+   "1505445" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505445",
+      "title" : "log",
+      "result" : "  TBD"
+   },
+   "1505366" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505366",
+      "title" : "Post domain user with group format as group@domain.com, group at any domain created in local",
+      "result" : "  TBD"
+   },
+   "1505477" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505477",
+      "title" : "API Client-Add an API client with IP",
+      "result" : "  TBD"
+   },
+   "1505491" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505491",
+      "title" : "Edit API Client window- Shared secret verification security level high with SHA256",
+      "result" : "  TBD"
+   },
+   "1505375" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505375",
+      "title" : "Delete single user with wrong IP in URI",
+      "result" : "  TBD"
+   },
+   "1505443" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505443",
+      "title" : "packet capture displays decrepted HTTP packet when SSO option enabled",
+      "result" : "  TBD"
+   },
+   "1505377" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505377",
+      "title" : "Delete multi users with xml",
+      "result" : "  TBD"
+   },
+   "1505434" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505434",
+      "title" : "Use https dedicated port",
+      "result" : "  TBD"
+   },
+   "1505488" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505488",
+      "title" : "Edit API Client window- edit ip or name",
+      "result" : "  TBD"
+   },
+   "1505382" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505382",
+      "title" : "Request content type  by default xml",
+      "result" : "  TBD"
+   },
+   "1505388" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505388",
+      "title" : "IPv6-Post multi users all with ip attribute ,some using IPv4 address, some using IPv6 address",
+      "result" : "  TBD"
+   },
+   "1505494" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505494",
+      "title" : "Edit API Client window- Shared secret verification security level medium",
+      "result" : "  TBD"
+   },
+   "1505409" : {
+      "steps" : "  6/14/2023 12:19 AM",
+      "initial" : "  Praveen Guddadahalli",
+      "id" : "1505409",
+      "title" : "Client uses shared secret security level low  along with certificate",
+      "result" : "  TBD"
+   }
+}

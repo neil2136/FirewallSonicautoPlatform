@@ -1,0 +1,53 @@
+$TTL 60
+@       IN      SOA     dns.baidu.com. dnsv6.baidu.com. (
+                                1       ;serial
+                                1D      ;refresh
+                                1H      ;retry
+                                1W      ;expire
+                                3H )    ;minimum
+@               IN      NS      dns.baidu.com.
+dns             IN    A        12.12.1.100
+dns             IN    AAAA     2001:2011::100
+dnsv6             IN    A        12.12.1.100
+dnsv6             IN    AAAA     2001:2011::100
+pc1.baidu.com. IN      A       192.3.2.1
+pc1.baidu.com. IN      AAAA       1009:3:2::1
+pc2.baidu.com. IN      A       192.16.2.110
+pc3.baidu.com. IN      A       192.16.2.120
+pc4.baidu.com. IN      A       192.16.2.130
+pc5.baidu.com. IN      A       192.16.2.140
+pc6.baidu.com. IN      A       192.16.2.150
+www.baidu.com. IN      A       192.16.2.160
+1.baidu.com        IN      A       192.168.20.1
+2.baidu.com        IN      A       192.168.20.2
+3.baidu.com        IN      A       192.168.20.3
+4.baidu.com        IN      A       192.168.20.4
+5.baidu.com        IN      A       192.168.20.5
+6.baidu.com        IN      A       192.168.20.6
+7.baidu.com        IN      A       192.168.20.7
+8.baidu.com        IN      A       192.168.20.8
+9.baidu.com        IN      A       192.168.20.9
+10.baidu.com        IN      A       192.168.20.10
+11.baidu.com        IN      A       192.168.20.11
+12.baidu.com        IN      A       192.168.20.12
+13.baidu.com        IN      A       192.168.20.13
+14.baidu.com        IN      A       192.168.20.14
+15.baidu.com        IN      A       192.168.20.15
+16.baidu.com        IN      A       192.168.20.16
+17.baidu.com        IN      A       192.168.20.17
+18.baidu.com        IN      A       192.168.20.18
+19.baidu.com        IN      A       192.168.20.19
+20.baidu.com        IN      A       192.168.20.20
+21.baidu.com        IN      A       192.168.20.21
+22.baidu.com        IN      A       192.168.20.22
+23.baidu.com        IN      A       192.168.20.23
+24.baidu.com        IN      A       192.168.20.24
+25.baidu.com        IN      A       192.168.20.25
+26.baidu.com        IN      A       192.168.20.26
+27.baidu.com        IN      A       192.168.20.27
+28.baidu.com        IN      A       192.168.20.28
+29.baidu.com        IN      A       192.168.20.29
+30.baidu.com        IN      A       192.168.20.30
+31.baidu.com        IN      A       192.168.20.31
+32.baidu.com        IN      A       192.168.20.32
+33.baidu.com        IN      A       192.168.20.33

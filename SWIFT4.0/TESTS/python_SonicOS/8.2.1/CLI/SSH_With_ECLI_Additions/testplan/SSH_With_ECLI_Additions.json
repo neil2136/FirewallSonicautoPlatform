@@ -1,0 +1,72 @@
+{
+   "1520302" : {
+      "steps" : "  1. Connect 4 SSH sessions.\n  2. From CLI in configure &gt; ssh server mode issue command: terminate 3. Verify all SSH sessions are disconnected.\n  4. From CLI login and go to configure &gt; ssh server.\n  5. Issue the command enable.\n  6. Reconnect ssh sessions",
+      "priority" : "Smoke",
+      "atm_id" : "76913152-331d-497a-82eb-bba75ffdcee8",
+      "initial" : "  SSH enabled on an interface",
+      "id" : "1520302",
+      "title" : "Enable SSH",
+      "description" : "Original ID: 63\nOriginal Title: Enable SSH\nOriginal Description: Verify the enable function of SSH.",
+      "result" : "  SSH server started again and able to accept connections"
+   },
+   "1520299" : {
+      "steps" : "  1. Connect 4 SSH sessions.\n  2. From CLI in configure &gt; ssh server mode issue command: terminate 3. Verify all SSH sessions are disconnected.\n  4. Attempt to reconnec SSH session",
+      "priority" : "Smoke",
+      "atm_id" : "d80ad34e-03e5-42c2-9161-aec1dc18f4aa",
+      "initial" : "  SSH enabled on an interface",
+      "id" : "1520299",
+      "title" : "Terminate SSH",
+      "description" : "Original ID: 57\nOriginal Title: Terminate SSH\nOriginal Description: Verify the terminate function of SSH.",
+      "result" : "  Sessions diconnected and SSH is disabled."
+   },
+   "1520298" : {
+      "steps" : "  1) Initiate SSH to device: ssh ip_address\n  2) Wait for connection. 3) From Serial Console do: show ssh server sessions.\n  6) From Serial Console go to configure level then ssh server.\n  4) From Serial Console kill the ssh session:kill session ip 10.190.6.227 port 64201\n  5) Verify session is removed from the window and with show ssh server sessions ",
+      "priority" : "Smoke",
+      "atm_id" : "5c559937-a447-441f-ab17-4c971b900b89",
+      "initial" : "  SSH enabled on an interface",
+      "id" : "1520298",
+      "title" : "Kill SSH session",
+      "description" : "Original ID: 53\nOriginal Title: Kill SSH session\nOriginal Description: Verify Kill SSH session",
+      "result" : "  Killing ssh session kills the session without issues"
+   },
+   "1520297" : {
+      "steps" : "  1) Connect with SSH to device\n  2) Generate a new key in ssh server: genkey.\n  3) Reconnect and verify that old key is still used (no warning message displayed)\n  4) Reboot the device.\n  5) Connect with SSH to device.\n  6) Verify warning message is displayed.\n  7) Delete key in client store.(known_hosts)\n  8) Connect with SSH to device.",
+      "priority" : "Smoke",
+      "atm_id" : "29e5e28b-52a7-48a9-8dfc-5c88f47506b1",
+      "initial" : "  Device setup with SSH enabled.",
+      "id" : "1520297",
+      "title" : "Generate New Key",
+      "description" : "Original ID: 51\nOriginal Title: Generate New Key\nOriginal Description: Verify that a new key can be generated and used by SSH",
+      "result" : "  New key is generated and is used by subsequent SSH sessions after a reboot."
+   },
+   "1520301" : {
+      "steps" : "  1) In CLI go to config &gt; ssh server and issue command: ssh port 54022\n  2) Initiate SSH to device on port 22: ssh ip_address\n  3) Verify cannot connect\n  4) Initiate SSH to device on new port : ssh ip_address -p 54022\n  5) Verify can connect\n  6) Reset port to default using CLI\n  7) Initiate SSH to device: ssh ip_address -p 54022\n  8) Verify cannot connect\n  9) Initiate SSH to device: ssh ip_address\n  10) Verify can connect",
+      "priority" : "Smoke",
+      "atm_id" : "c21ddcab-365e-4b46-a88b-c84aea05af59",
+      "initial" : "  Device setup with SSH enabled.\n  Ssh port assigned to non-standard such as 54022.",
+      "id" : "1520301",
+      "title" : "Set port to non-standard TCP port",
+      "description" : "Original ID: 61\nOriginal Title: Set port to non-standard TCP port \nOriginal Description: Verify set port to non-standard TCP port",
+      "result" : "  Refusal of SSH connection on previously assigned ports and successful connection on assigned port."
+   },
+   "1520300" : {
+      "steps" : "  1. Connect 4 SSH sessions.\n  2. From CLI in configure &gt; ssh server mode issue command: terminate 3. Verify all SSH sessions are disconnected.\n  4. From CLI login and go to configure &gt; ssh server.\n  5. Issue the command restart.\n  6. Reconnect ssh sessions",
+      "priority" : "Smoke",
+      "atm_id" : "0c489d1c-8c32-4816-acc2-b269c144b37c",
+      "initial" : "  SSH enabled on an interface",
+      "id" : "1520300",
+      "title" : "Restart SSH",
+      "description" : "Original ID: 59\nOriginal Title: Restart SSH\nOriginal Description: Verify the restart function of SSH.",
+      "result" : "  SSH server started again and able to accept connections"
+   },
+   "1520303" : {
+      "steps" : "  1. Connect 4 SSH sessions using different zones / interfaces.\n  2. From CLI in configure &gt; ssh server mode issue command: terminate 3. Verify all SSH sessions are disconnected.\n  4. Attempt to reconnect SSH session\n  5. Enable SSH\n  6. Reconnect SSH session",
+      "priority" : "Smoke",
+      "atm_id" : "9495a000-956b-4d36-b41b-7790e26a788e",
+      "initial" : "  SSH enabled on an interface",
+      "id" : "1520303",
+      "title" : "Terminate SSH with connections from different interfaces",
+      "description" : "Original ID: 64\nOriginal Title: Terminate SSH with connections from different interfaces\nOriginal Description: Verify the terminate function of SSH with connections from different interfaces",
+      "result" : "  Sessions diconnected and SSH is disabled. Sessions can reconnect after enabling."
+   }
+}

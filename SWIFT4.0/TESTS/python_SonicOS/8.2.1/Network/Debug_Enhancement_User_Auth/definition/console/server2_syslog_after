@@ -1,0 +1,337 @@
+Feb 17 05:23:52 VTB721-PC3 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-57.el7_9.3" x-pid="3572" x-info="http://www.rsyslog.com"] rsyslogd was HUPed
+Feb 17 05:24:06 VTB721-PC3 systemd[1]: Removed slice User Slice of root.
+Feb 17 05:30:01 VTB721-PC3 systemd[1]: Created slice User Slice of root.
+Feb 17 05:30:01 VTB721-PC3 systemd[1]: Started Session 33 of user root.
+Feb 17 05:30:01 VTB721-PC3 systemd[1]: Removed slice User Slice of root.
+Feb 17 05:40:01 VTB721-PC3 systemd[1]: Created slice User Slice of root.
+Feb 17 05:40:01 VTB721-PC3 systemd[1]: Started Session 34 of user root.
+Feb 17 05:40:01 VTB721-PC3 systemd[1]: Removed slice User Slice of root.
+Feb 17 05:50:01 VTB721-PC3 systemd[1]: Created slice User Slice of root.
+Feb 17 05:50:01 VTB721-PC3 systemd[1]: Started Session 35 of user root.
+Feb 17 05:50:01 VTB721-PC3 systemd[1]: Removed slice User Slice of root.
+Feb 17 06:00:01 VTB721-PC3 systemd[1]: Created slice User Slice of root.
+Feb 17 06:00:01 VTB721-PC3 systemd[1]: Started Session 36 of user root.
+Feb 17 06:00:01 VTB721-PC3 systemd[1]: Removed slice User Slice of root.
+Feb 17 06:00:23 VTB721-PC3 systemd[1]: Created slice User Slice of root.
+Feb 17 06:00:23 VTB721-PC3 systemd[1]: Started Session 37 of user root.
+Feb 17 06:00:23 VTB721-PC3 systemd-logind[693]: New session 37 of user root.
+Feb 17 06:00:47 vtb721-utm AUTH: Attempting to authenticate user: admin from 192.168.168.10 on port 443 via X0
+Feb 17 06:00:47 vtb721-utm AUTH: allowAdminLoginFrom: peerZone=1
+Feb 17 06:00:47 vtb721-utm AUTH: authenticateWebUserLogin 1029: isAdmin 1 allowAdmin 1
+Feb 17 06:00:47 vtb721-utm AUTH:   - UsrName 'admin' loginName 'admin' Domain 'Nil' nameType=0
+Feb 17 06:00:47 vtb721-utm AUTH: authenticateWebUserLogin: user admin fd 124 (val 179837) r1=B69E76CA79D39A54332C969B99141026 r2=5747039CAF645A2ACE35F6E094571ECF
+Feb 17 06:00:47 vtb721-utm AUTH: getUserCfg: local user admin cfg -> 'admin' @ 0xaaaaef1e0478
+Feb 17 06:00:47 vtb721-utm AUTH: authWebUser: user admin has local config @ 0xaaaaef1e0478
+Feb 17 06:00:47 vtb721-utm AUTH: Authenticating user admin in local database (HTTP digest auth)
+Feb 17 06:00:47 vtb721-utm AUTH: authWebUser: alg=SHA-256 pDigest=8ba2e4974de70e0f1e43ceab51bf550602a444e974f8bcbbf9c5c7de581af294
+Feb 17 06:00:47 vtb721-utm AUTH: authUserHttpDgst: user 'admin' SHA-256 digest check failed
+Feb 17 06:00:47 vtb721-utm AUTH:  - response: 8ba2e4974de70e0f1e43ceab51bf550602a444e974f8bcbbf9c5c7de581af294 calculated: 7dffc4c62c0de806b115c71860e468028ecce49e60e933a42bf82a3b08eb3553
+Feb 17 06:00:47 vtb721-utm AUTH: authenticateWebUserLogin: user admin, authMethod = 1, retcode from authWebUser -10
+Feb 17 06:00:47 vtb721-utm AUTH: authenticateWebUserLogin: authentication of admin from 192.168.168.10 failed, retCode -10
+Feb 17 06:00:47 vtb721-utm AUTH:  - authentication failed: admin
+Feb 17 06:00:47 vtb721-utm AUTH: webUserLoginFail: admin err -10
+Feb 17 06:00:47 vtb721-utm AUTH: Login page fetch from 192.168.168.10
+Feb 17 06:00:47 vtb721-utm AUTH:  - rand1 = 'B69E76CA79D39A54332C969B99141026', rand2 = '5747039CAF645A2ACE35F6E094571ECF'
+Feb 17 06:00:47 vtb721-utm AUTH:  - rand32b64 = '192MOq6aKv47Ga2nWLKH0jleg+ynIHbrF3X9iQ4b9Ck='
+Feb 17 06:00:47 vtb721-utm AUTH:  - zone = 1 (LAN)
+Feb 17 06:00:47 vtb721-utm AUTH: Login page fetch from 192.168.168.10
+Feb 17 06:00:47 vtb721-utm AUTH:  - rand1 = '618A9C40C035AA246C508C17FA25BCCE', rand2 = 'A5AAC94E54160C89CB7D11C98D36B498'
+Feb 17 06:00:47 vtb721-utm AUTH:  - rand32b64 = '41AkAd7Q09qSvMeERgpn/rpWuuNJ/dUNZQ9LsN9vig8='
+Feb 17 06:00:47 vtb721-utm AUTH:  - zone = 1 (LAN)
+Feb 17 06:00:47 vtb721-utm AUTH: Attempting to authenticate user: admin from 192.168.168.10 on port 443 via X0
+Feb 17 06:00:47 vtb721-utm AUTH: allowAdminLoginFrom: peerZone=1
+Feb 17 06:00:47 vtb721-utm AUTH: authenticateWebUserLogin 1029: isAdmin 1 allowAdmin 1
+Feb 17 06:00:47 vtb721-utm AUTH:   - UsrName 'admin' loginName 'admin' Domain 'Nil' nameType=0
+Feb 17 06:00:47 vtb721-utm AUTH: authenticateWebUserLogin: user admin fd 124 (val 179841) r1=618A9C40C035AA246C508C17FA25BCCE r2=A5AAC94E54160C89CB7D11C98D36B498
+Feb 17 06:00:47 vtb721-utm AUTH: getUserCfg: local user admin cfg -> 'admin' @ 0xaaaaef1e0478
+Feb 17 06:00:47 vtb721-utm AUTH: authWebUser: user admin has local config @ 0xaaaaef1e0478
+Feb 17 06:00:47 vtb721-utm AUTH: Authenticating user admin in local database (HTTP digest auth)
+Feb 17 06:00:47 vtb721-utm AUTH: authWebUser: alg=SHA-256 pDigest=aa3a7efe5c53cf7f0d1ae25340c77960ef318ee1d11a74e4287f37513f73f36a
+Feb 17 06:00:47 vtb721-utm AUTH: authUserHttpDgst: user 'admin' SHA-256 digest OK, authenticated
+Feb 17 06:00:47 vtb721-utm AUTH: authenticateWebUserLogin: user admin, authMethod = 1, retcode from authWebUser 0
+Feb 17 06:00:47 vtb721-utm AUTH: Admin user admin @ 192.168.168.10 authenticated
+Feb 17 06:00:47 vtb721-utm  - sessId: EE35925FF4E364E62EB1DA558D91BB68
+Feb 17 06:00:47 vtb721-utm  - pageSeed: 51b5c32b400f4a4604f609a70667ae69
+Feb 17 06:00:47 vtb721-utm  - pEncSessId: 5484749B8A23857111E3C68B30D9A40117D51557:1097F200A490C12676E1220D384D554982EB565D60
+Feb 17 06:00:47 vtb721-utm  - csrfToken D25F7C85BD31DEA9723C57DEA593F067
+Feb 17 06:00:47 vtb721-utm AUTH: authenticated admin admin from 192.168.168.10 (non-config) via X0
+Feb 17 06:00:47 vtb721-utm AUTH: Admin user admin logged in from 192.168.168.10
+Feb 17 06:00:47 vtb721-utm AUTH: User admin logged in from 192.168.168.10,0
+Feb 17 06:00:47 vtb721-utm AUTH: Admin user admin login completed from 192.168.168.10, mode: Non-Config
+Feb 17 06:00:47 vtb721-utm AUTH: registerConfigMode: user admin from SonicOS API from 192.168.168.10
+Feb 17 06:00:47 vtb721-utm AUTH: session_acquire_priv: admin (SonicOS API from 192.168.168.10) session request
+Feb 17 06:00:54 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:00:54 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:00:54 vtb721-utm AUTH: CLI local user failLoginNum 0 pUser->isUserLocked 0
+Feb 17 06:00:54 vtb721-utm  
+Feb 17 06:00:54 vtb721-utm AUTH: Login of CLI user admin from 192.168.168.10 failed, err -10
+Feb 17 06:00:57 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:00:57 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:00:57 vtb721-utm AUTH: CLI local user failLoginNum 1 pUser->isUserLocked 0
+Feb 17 06:00:57 vtb721-utm  
+Feb 17 06:00:57 vtb721-utm AUTH: Login of CLI user admin from 192.168.168.10 failed, err -10
+Feb 17 06:01:01 VTB721-PC3 systemd[1]: Started Session 38 of user root.
+Feb 17 06:01:02 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:01:02 vtb721-utm AUTH: authenticateCliUserLogin: password for admin from 192.168.168.10 is missing
+Feb 17 06:01:07 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:01:07 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:01:07 vtb721-utm AUTH: CLI local user failLoginNum 2 pUser->isUserLocked 0
+Feb 17 06:01:07 vtb721-utm  
+Feb 17 06:01:07 vtb721-utm AUTH: CLI full admin user admin logged in from 192.168.168.10, fd=259
+Feb 17 06:01:12 vtb721-utm AUTH: session_acquire_priv: admin (ssh from 192.168.168.10) session request
+Feb 17 06:01:15 vtb721-utm AUTH: session_preempt: admin (SonicOS API from 192.168.168.10) session preempted
+Feb 17 06:01:15 vtb721-utm AUTH: GUI session preempted by admin (ssh from 192.168.168.10)
+Feb 17 06:01:19 vtb721-utm AUTH: session_release_priv: admin (ssh from 192.168.168.10) session release
+Feb 17 06:01:20 vtb721-utm AUTH: CLI user on fd 259 logged out
+Feb 17 06:01:25 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:01:25 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:01:25 vtb721-utm AUTH: CLI local user failLoginNum 0 pUser->isUserLocked 0
+Feb 17 06:01:25 vtb721-utm  
+Feb 17 06:01:25 vtb721-utm AUTH: Login of CLI user admin from 192.168.168.10 failed, err -10
+Feb 17 06:01:28 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:01:28 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:01:28 vtb721-utm AUTH: CLI local user failLoginNum 1 pUser->isUserLocked 0
+Feb 17 06:01:28 vtb721-utm  
+Feb 17 06:01:28 vtb721-utm AUTH: CLI full admin user admin logged in from 192.168.168.10, fd=259
+Feb 17 06:01:33 vtb721-utm AUTH: session_acquire_priv: admin (ssh from 192.168.168.10) session request
+Feb 17 06:02:17 VTB721-PC3 systemd-logind[693]: Removed session 37.
+Feb 17 06:06:07 VTB721-PC3 systemd[1]: Removed slice User Slice of root.
+Feb 17 06:10:01 VTB721-PC3 systemd[1]: Created slice User Slice of root.
+Feb 17 06:10:01 VTB721-PC3 systemd[1]: Started Session 39 of user root.
+Feb 17 06:10:01 VTB721-PC3 systemd[1]: Removed slice User Slice of root.
+Feb 17 06:11:04 VTB721-PC3 systemd[1]: Created slice User Slice of root.
+Feb 17 06:11:04 VTB721-PC3 systemd[1]: Started Session 40 of user root.
+Feb 17 06:11:04 VTB721-PC3 systemd-logind[693]: New session 40 of user root.
+Feb 17 06:13:00 VTB721-PC3 systemd-logind[693]: Removed session 40.
+Feb 17 06:13:00 VTB721-PC3 systemd[1]: Removed slice User Slice of root.
+Feb 17 06:16:03 VTB721-PC3 systemd[1]: Created slice User Slice of root.
+Feb 17 06:16:03 VTB721-PC3 systemd[1]: Started Session 41 of user root.
+Feb 17 06:16:03 VTB721-PC3 systemd-logind[693]: New session 41 of user root.
+Feb 17 06:20:01 VTB721-PC3 systemd[1]: Started Session 42 of user root.
+Feb 17 06:30:01 VTB721-PC3 systemd[1]: Started Session 43 of user root.
+Feb 17 06:40:01 VTB721-PC3 systemd[1]: Started Session 44 of user root.
+Feb 17 06:46:56 vtb721-utm AUTH: session_release_priv: admin (ssh from 192.168.168.10) session release
+Feb 17 06:46:57 vtb721-utm AUTH: CLI user on fd 257 logged out
+Feb 17 06:47:01 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:47:01 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:47:01 vtb721-utm AUTH: CLI local user failLoginNum 0 pUser->isUserLocked 0
+Feb 17 06:47:01 vtb721-utm  
+Feb 17 06:47:01 vtb721-utm AUTH: Login of CLI user admin from 192.168.168.10 failed, err -10
+Feb 17 06:47:04 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:47:04 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:47:04 vtb721-utm AUTH: CLI local user failLoginNum 1 pUser->isUserLocked 0
+Feb 17 06:47:04 vtb721-utm  
+Feb 17 06:47:04 vtb721-utm AUTH: CLI full admin user admin logged in from 192.168.168.10, fd=257
+Feb 17 06:47:09 vtb721-utm AUTH: session_acquire_priv: admin (ssh from 192.168.168.10) session request
+Feb 17 06:47:10 vtb721-utm AUTH: session_release_priv: admin (ssh from 192.168.168.10) session release
+Feb 17 06:47:11 vtb721-utm AUTH: CLI user on fd 257 logged out
+Feb 17 06:47:15 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:47:15 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:47:15 vtb721-utm AUTH: CLI local user failLoginNum 0 pUser->isUserLocked 0
+Feb 17 06:47:15 vtb721-utm  
+Feb 17 06:47:15 vtb721-utm AUTH: Login of CLI user admin from 192.168.168.10 failed, err -10
+Feb 17 06:47:19 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:47:19 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:47:19 vtb721-utm AUTH: CLI local user failLoginNum 1 pUser->isUserLocked 0
+Feb 17 06:47:19 vtb721-utm  
+Feb 17 06:47:19 vtb721-utm AUTH: CLI full admin user admin logged in from 192.168.168.10, fd=257
+Feb 17 06:47:24 vtb721-utm AUTH: session_acquire_priv: admin (ssh from 192.168.168.10) session request
+Feb 17 06:47:25 vtb721-utm AUTH: session_release_priv: admin (ssh from 192.168.168.10) session release
+Feb 17 06:47:26 vtb721-utm AUTH: CLI user on fd 257 logged out
+Feb 17 06:47:27 vtb721-utm AUTH: Login page fetch from 192.168.168.10
+Feb 17 06:47:27 vtb721-utm AUTH:  - rand1 = '9F05A0679849580ADB03880F02E65A3D', rand2 = '129C161DFB540AF83FBE17915EFB8BA2'
+Feb 17 06:47:27 vtb721-utm AUTH:  - rand32b64 = 'j5uxH5XUT98iVV7r5bPPV6Q4kqDvpFa2IqhsWtWKuTw='
+Feb 17 06:47:27 vtb721-utm AUTH:  - zone = 1 (LAN)
+Feb 17 06:47:27 vtb721-utm AUTH: Attempting to authenticate user: admin from 192.168.168.10 on port 443 via X0
+Feb 17 06:47:27 vtb721-utm AUTH: allowAdminLoginFrom: peerZone=1
+Feb 17 06:47:27 vtb721-utm AUTH: authenticateWebUserLogin 1029: isAdmin 1 allowAdmin 1
+Feb 17 06:47:27 vtb721-utm AUTH:   - UsrName 'admin' loginName 'admin' Domain 'Nil' nameType=0
+Feb 17 06:47:27 vtb721-utm AUTH: authenticateWebUserLogin: user admin fd 124 (val 225375) r1=9F05A0679849580ADB03880F02E65A3D r2=129C161DFB540AF83FBE17915EFB8BA2
+Feb 17 06:47:27 vtb721-utm AUTH: getUserCfg: local user admin cfg -> 'admin' @ 0xaaaaef1e0478
+Feb 17 06:47:27 vtb721-utm AUTH: authWebUser: user admin has local config @ 0xaaaaef1e0478
+Feb 17 06:47:27 vtb721-utm AUTH: Authenticating user admin in local database (HTTP digest auth)
+Feb 17 06:47:27 vtb721-utm AUTH: authWebUser: alg=SHA-256 pDigest=011750d45fcded138af89825f586073e502a557bd96c583aa763ac73be484573
+Feb 17 06:47:27 vtb721-utm AUTH: authUserHttpDgst: user 'admin' SHA-256 digest OK, authenticated
+Feb 17 06:47:27 vtb721-utm AUTH: authenticateWebUserLogin: user admin, authMethod = 1, retcode from authWebUser 0
+Feb 17 06:47:27 vtb721-utm AUTH: Admin user admin @ 192.168.168.10 authenticated
+Feb 17 06:47:27 vtb721-utm  - sessId: CAD2BC4992C883671A318DDC72D171F1
+Feb 17 06:47:27 vtb721-utm  - pageSeed: cebcda49c5be01439f3c67d806848139
+Feb 17 06:47:27 vtb721-utm  - pEncSessId: 1B864EF27CEA4FF3981D47404559D46EBF7B57D7:10B893C1D73863C8838F656E7F26BAAD7CC786C677
+Feb 17 06:47:27 vtb721-utm  - csrfToken 6866D8C1A884E46D5674A6DC4BC6989E
+Feb 17 06:47:27 vtb721-utm AUTH: authenticated admin admin from 192.168.168.10 (non-config) via X0
+Feb 17 06:47:27 vtb721-utm AUTH: Admin user admin logged in from 192.168.168.10
+Feb 17 06:47:27 vtb721-utm AUTH: User admin logged in from 192.168.168.10,0
+Feb 17 06:47:27 vtb721-utm AUTH: Admin user admin login completed from 192.168.168.10, mode: Non-Config
+Feb 17 06:47:27 vtb721-utm AUTH: registerConfigMode: user admin from SonicOS API from 192.168.168.10
+Feb 17 06:47:27 vtb721-utm AUTH: session_acquire_priv: admin (SonicOS API from 192.168.168.10) session request
+Feb 17 06:47:30 vtb721-utm AUTH: userLogoutByIpAddr: 192.168.168.10,0
+Feb 17 06:47:30 vtb721-utm AUTH: Logging out user admin from 192.168.168.10,0: SonicOS API logout
+Feb 17 06:47:30 vtb721-utm AUTH: User admin from 192.168.168.10,0 logged out: SonicOS API logout
+Feb 17 06:47:30 vtb721-utm AUTH: session_release_priv: admin (SonicOS API from 192.168.168.10) session release
+Feb 17 06:47:30 vtb721-utm AUTH: User admin from 192.168.168.10 ended management
+Feb 17 06:47:30 vtb721-utm AUTH: flushCacheUserCallback: user 192.168.168.10,0 (userToken 0xaaab03bb1990 type 0) flushUla 0, flushNonUla 15
+Feb 17 06:47:30 vtb721-utm AUTH: Finished flushing user admin (UserIp 0xaaab03bae7e0)
+Feb 17 06:47:44 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:47:44 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:47:44 vtb721-utm AUTH: CLI local user failLoginNum 0 pUser->isUserLocked 0
+Feb 17 06:47:44 vtb721-utm  
+Feb 17 06:47:44 vtb721-utm AUTH: Login of CLI user admin from 192.168.168.10 failed, err -10
+Feb 17 06:47:47 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:47:47 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:47:47 vtb721-utm AUTH: CLI local user failLoginNum 1 pUser->isUserLocked 0
+Feb 17 06:47:47 vtb721-utm  
+Feb 17 06:47:47 vtb721-utm AUTH: CLI full admin user admin logged in from 192.168.168.10, fd=257
+Feb 17 06:47:52 vtb721-utm AUTH: session_acquire_priv: admin (ssh from 192.168.168.10) session request
+Feb 17 06:47:53 vtb721-utm AUTH: session_release_priv: admin (ssh from 192.168.168.10) session release
+Feb 17 06:47:54 vtb721-utm AUTH: CLI user on fd 257 logged out
+Feb 17 06:47:58 vtb721-utm AUTH: Login page fetch from 192.168.168.10
+Feb 17 06:47:58 vtb721-utm AUTH:  - rand1 = '94A6F92B9A62C7BB6E2D662D97FD8585', rand2 = 'C86D4596C7D71EA4298DEC0D07CF6B16'
+Feb 17 06:47:58 vtb721-utm AUTH:  - rand32b64 = '+JarVklwOTc+G5s8j/FAIZklZnIr4en5hDmJIkvG0j8='
+Feb 17 06:47:58 vtb721-utm AUTH:  - zone = 1 (LAN)
+Feb 17 06:47:58 vtb721-utm AUTH: Attempting to authenticate user: admin from 192.168.168.10 on port 443 via X0
+Feb 17 06:47:58 vtb721-utm AUTH: allowAdminLoginFrom: peerZone=1
+Feb 17 06:47:58 vtb721-utm AUTH: authenticateWebUserLogin 1029: isAdmin 1 allowAdmin 1
+Feb 17 06:47:58 vtb721-utm AUTH:   - UsrName 'admin' loginName 'admin' Domain 'Nil' nameType=0
+Feb 17 06:47:58 vtb721-utm AUTH: authenticateWebUserLogin: user admin fd 124 (val 225865) r1=94A6F92B9A62C7BB6E2D662D97FD8585 r2=C86D4596C7D71EA4298DEC0D07CF6B16
+Feb 17 06:47:58 vtb721-utm AUTH: getUserCfg: local user admin cfg -> 'admin' @ 0xaaaaef1e0478
+Feb 17 06:47:58 vtb721-utm AUTH: authWebUser: user admin has local config @ 0xaaaaef1e0478
+Feb 17 06:47:58 vtb721-utm AUTH: Authenticating user admin in local database (HTTP digest auth)
+Feb 17 06:47:58 vtb721-utm AUTH: authWebUser: alg=SHA-256 pDigest=85d4f2c19df8754101c15927c61ce9e79f29fcc55c079526e44a6a84a03c0e6f
+Feb 17 06:47:58 vtb721-utm AUTH: authUserHttpDgst: user 'admin' SHA-256 digest OK, authenticated
+Feb 17 06:47:58 vtb721-utm AUTH: authenticateWebUserLogin: user admin, authMethod = 1, retcode from authWebUser 0
+Feb 17 06:47:58 vtb721-utm AUTH: Admin user admin @ 192.168.168.10 authenticated
+Feb 17 06:47:58 vtb721-utm  - sessId: 0B49086D515C213B5B673A829169B6BB
+Feb 17 06:47:58 vtb721-utm  - pageSeed: d380e9f05a0ca1bca7f13f2be5d24c27
+Feb 17 06:47:58 vtb721-utm  - pEncSessId: 5B8331BC9BE9BD6E26BB814C028E16582D77ACE4:10E67E7AF8EA348977EC4834DA9E0E04DCFD00BDC8
+Feb 17 06:47:58 vtb721-utm  - csrfToken 5D32A0F28BED62899C7BE2C26754C40B
+Feb 17 06:47:58 vtb721-utm AUTH: authenticated admin admin from 192.168.168.10 (non-config) via X0
+Feb 17 06:47:58 vtb721-utm AUTH: Admin user admin logged in from 192.168.168.10
+Feb 17 06:47:58 vtb721-utm AUTH: User admin logged in from 192.168.168.10,0
+Feb 17 06:47:58 vtb721-utm AUTH: Admin user admin login completed from 192.168.168.10, mode: Non-Config
+Feb 17 06:47:58 vtb721-utm AUTH: registerConfigMode: user admin from SonicOS API from 192.168.168.10
+Feb 17 06:47:58 vtb721-utm AUTH: session_acquire_priv: admin (SonicOS API from 192.168.168.10) session request
+Feb 17 06:48:01 vtb721-utm AUTH: userLogoutByIpAddr: 192.168.168.10,0
+Feb 17 06:48:01 vtb721-utm AUTH: Logging out user admin from 192.168.168.10,0: SonicOS API logout
+Feb 17 06:48:01 vtb721-utm AUTH: User admin from 192.168.168.10,0 logged out: SonicOS API logout
+Feb 17 06:48:01 vtb721-utm AUTH: session_release_priv: admin (SonicOS API from 192.168.168.10) session release
+Feb 17 06:48:01 vtb721-utm AUTH: User admin from 192.168.168.10 ended management
+Feb 17 06:48:01 vtb721-utm AUTH: flushCacheUserCallback: user 192.168.168.10,0 (userToken 0xaaab03bb19f8 type 0) flushUla 0, flushNonUla 15
+Feb 17 06:48:01 vtb721-utm AUTH: Finished flushing user admin (UserIp 0xaaab03baea58)
+Feb 17 06:48:15 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:48:15 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:48:15 vtb721-utm AUTH: CLI local user failLoginNum 0 pUser->isUserLocked 0
+Feb 17 06:48:15 vtb721-utm  
+Feb 17 06:48:15 vtb721-utm AUTH: Login of CLI user admin from 192.168.168.10 failed, err -10
+Feb 17 06:48:18 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:48:18 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:48:18 vtb721-utm AUTH: CLI local user failLoginNum 1 pUser->isUserLocked 0
+Feb 17 06:48:18 vtb721-utm  
+Feb 17 06:48:18 vtb721-utm AUTH: CLI full admin user admin logged in from 192.168.168.10, fd=257
+Feb 17 06:48:23 vtb721-utm AUTH: session_acquire_priv: admin (ssh from 192.168.168.10) session request
+Feb 17 06:48:24 vtb721-utm AUTH: session_release_priv: admin (ssh from 192.168.168.10) session release
+Feb 17 06:48:25 vtb721-utm AUTH: CLI user on fd 257 logged out
+Feb 17 06:48:29 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:48:29 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:48:29 vtb721-utm AUTH: CLI local user failLoginNum 0 pUser->isUserLocked 0
+Feb 17 06:48:29 vtb721-utm  
+Feb 17 06:48:29 vtb721-utm AUTH: Login of CLI user admin from 192.168.168.10 failed, err -10
+Feb 17 06:48:32 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:48:32 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:48:32 vtb721-utm AUTH: CLI local user failLoginNum 1 pUser->isUserLocked 0
+Feb 17 06:48:32 vtb721-utm  
+Feb 17 06:48:32 vtb721-utm AUTH: CLI full admin user admin logged in from 192.168.168.10, fd=257
+Feb 17 06:48:37 vtb721-utm AUTH: session_acquire_priv: admin (ssh from 192.168.168.10) session request
+Feb 17 06:48:38 vtb721-utm AUTH: session_release_priv: admin (ssh from 192.168.168.10) session release
+Feb 17 06:48:39 vtb721-utm AUTH: CLI user on fd 257 logged out
+Feb 17 06:48:41 vtb721-utm AUTH: Login page fetch from 192.168.168.10
+Feb 17 06:48:41 vtb721-utm AUTH:  - rand1 = 'FD5734662E4160A8C20D9FE603E13ED9', rand2 = 'A5EE553768450C710355C3ED1882885B'
+Feb 17 06:48:41 vtb721-utm AUTH:  - rand32b64 = 'kMdyv0Sd8dEnhxCx36deVZC/hP0FXa7YH0wxDuN6Ozo='
+Feb 17 06:48:41 vtb721-utm AUTH:  - zone = 1 (LAN)
+Feb 17 06:48:41 vtb721-utm AUTH: Attempting to authenticate user: admin from 192.168.168.10 on port 443 via X0
+Feb 17 06:48:41 vtb721-utm AUTH: allowAdminLoginFrom: peerZone=1
+Feb 17 06:48:41 vtb721-utm AUTH: authenticateWebUserLogin 1029: isAdmin 1 allowAdmin 1
+Feb 17 06:48:41 vtb721-utm AUTH:   - UsrName 'admin' loginName 'admin' Domain 'Nil' nameType=0
+Feb 17 06:48:41 vtb721-utm AUTH: authenticateWebUserLogin: user admin fd 124 (val 226537) r1=FD5734662E4160A8C20D9FE603E13ED9 r2=A5EE553768450C710355C3ED1882885B
+Feb 17 06:48:41 vtb721-utm AUTH: getUserCfg: local user admin cfg -> 'admin' @ 0xaaaaef1e0478
+Feb 17 06:48:41 vtb721-utm AUTH: authWebUser: user admin has local config @ 0xaaaaef1e0478
+Feb 17 06:48:41 vtb721-utm AUTH: Authenticating user admin in local database (HTTP digest auth)
+Feb 17 06:48:41 vtb721-utm AUTH: authWebUser: alg=SHA-256 pDigest=a6c25ce0ba5d0182a15858e51b67dba9e118a2011f8f3b0672dfef86f89be88e
+Feb 17 06:48:41 vtb721-utm AUTH: authUserHttpDgst: user 'admin' SHA-256 digest OK, authenticated
+Feb 17 06:48:41 vtb721-utm AUTH: authenticateWebUserLogin: user admin, authMethod = 1, retcode from authWebUser 0
+Feb 17 06:48:41 vtb721-utm AUTH: Admin user admin @ 192.168.168.10 authenticated
+Feb 17 06:48:41 vtb721-utm  - sessId: 63E780FEB2AE4454D85DDDB137D34A3D
+Feb 17 06:48:41 vtb721-utm  - pageSeed: bc6bff5e2307a565d95851b5ee1f9b51
+Feb 17 06:48:41 vtb721-utm  - pEncSessId: E5203F3A83F70206BEC1689AAD82957E5D70EC4D:10D55DCB1BB4B9498C49823DC6CB56878F9C5AB0AE
+Feb 17 06:48:41 vtb721-utm  - csrfToken 663E32C8AC2FDD5FAA950F9E7683774C
+Feb 17 06:48:41 vtb721-utm AUTH: authenticated admin admin from 192.168.168.10 (non-config) via X0
+Feb 17 06:48:41 vtb721-utm AUTH: Admin user admin logged in from 192.168.168.10
+Feb 17 06:48:41 vtb721-utm AUTH: User admin logged in from 192.168.168.10,0
+Feb 17 06:48:41 vtb721-utm AUTH: Admin user admin login completed from 192.168.168.10, mode: Non-Config
+Feb 17 06:48:41 vtb721-utm AUTH: registerConfigMode: user admin from SonicOS API from 192.168.168.10
+Feb 17 06:48:41 vtb721-utm AUTH: session_acquire_priv: admin (SonicOS API from 192.168.168.10) session request
+Feb 17 06:48:44 vtb721-utm AUTH: userLogoutByIpAddr: 192.168.168.10,0
+Feb 17 06:48:44 vtb721-utm AUTH: Logging out user admin from 192.168.168.10,0: SonicOS API logout
+Feb 17 06:48:44 vtb721-utm AUTH: User admin from 192.168.168.10,0 logged out: SonicOS API logout
+Feb 17 06:48:44 vtb721-utm AUTH: session_release_priv: admin (SonicOS API from 192.168.168.10) session release
+Feb 17 06:48:44 vtb721-utm AUTH: User admin from 192.168.168.10 ended management
+Feb 17 06:48:44 vtb721-utm AUTH: flushCacheUserCallback: user 192.168.168.10,0 (userToken 0xaaab03bb1a60 type 0) flushUla 0, flushNonUla 15
+Feb 17 06:48:44 vtb721-utm AUTH: Finished flushing user admin (UserIp 0xaaab03baecd0)
+Feb 17 06:48:57 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:48:57 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:48:57 vtb721-utm AUTH: CLI local user failLoginNum 0 pUser->isUserLocked 0
+Feb 17 06:48:57 vtb721-utm  
+Feb 17 06:48:57 vtb721-utm AUTH: Login of CLI user admin from 192.168.168.10 failed, err -10
+Feb 17 06:49:00 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:49:00 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:49:00 vtb721-utm AUTH: CLI local user failLoginNum 1 pUser->isUserLocked 0
+Feb 17 06:49:00 vtb721-utm  
+Feb 17 06:49:00 vtb721-utm AUTH: CLI full admin user admin logged in from 192.168.168.10, fd=257
+Feb 17 06:49:05 vtb721-utm AUTH: session_acquire_priv: admin (ssh from 192.168.168.10) session request
+Feb 17 06:49:06 vtb721-utm AUTH: session_release_priv: admin (ssh from 192.168.168.10) session release
+Feb 17 06:49:08 vtb721-utm AUTH: CLI user on fd 257 logged out
+Feb 17 06:49:12 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:49:12 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:49:12 vtb721-utm AUTH: CLI local user failLoginNum 0 pUser->isUserLocked 0
+Feb 17 06:49:12 vtb721-utm  
+Feb 17 06:49:12 vtb721-utm AUTH: Login of CLI user admin from 192.168.168.10 failed, err -10
+Feb 17 06:49:15 vtb721-utm AUTH: authenticateCliUserLogin: user admin from 192.168.168.10
+Feb 17 06:49:15 vtb721-utm AUTH: Authenticating CLI user admin from 192.168.168.10 in local database
+Feb 17 06:49:15 vtb721-utm AUTH: CLI local user failLoginNum 1 pUser->isUserLocked 0
+Feb 17 06:49:15 vtb721-utm  
+Feb 17 06:49:15 vtb721-utm AUTH: CLI full admin user admin logged in from 192.168.168.10, fd=257
+Feb 17 06:49:20 vtb721-utm AUTH: session_acquire_priv: admin (ssh from 192.168.168.10) session request
+Feb 17 06:49:21 vtb721-utm AUTH: session_release_priv: admin (ssh from 192.168.168.10) session release
+Feb 17 06:49:22 vtb721-utm AUTH: CLI user on fd 257 logged out
+Feb 17 06:49:23 vtb721-utm AUTH: Login page fetch from 192.168.168.10
+Feb 17 06:49:23 vtb721-utm AUTH:  - rand1 = '35777C10181B083F43BBDB8B4FD57B9A', rand2 = '5D8CC0FF90CBFEFB7BE97BEA132B0664'
+Feb 17 06:49:23 vtb721-utm AUTH:  - rand32b64 = 'YYN5Ws43cOpB11lm4+hpPH1ucPOC1JnZdr583Dec6z8='
+Feb 17 06:49:23 vtb721-utm AUTH:  - zone = 1 (LAN)
+Feb 17 06:49:23 vtb721-utm AUTH: Attempting to authenticate user: admin from 192.168.168.10 on port 443 via X0
+Feb 17 06:49:23 vtb721-utm AUTH: allowAdminLoginFrom: peerZone=1
+Feb 17 06:49:23 vtb721-utm AUTH: authenticateWebUserLogin 1029: isAdmin 1 allowAdmin 1
+Feb 17 06:49:23 vtb721-utm AUTH:   - UsrName 'admin' loginName 'admin' Domain 'Nil' nameType=0
+Feb 17 06:49:23 vtb721-utm AUTH: authenticateWebUserLogin: user admin fd 124 (val 227203) r1=35777C10181B083F43BBDB8B4FD57B9A r2=5D8CC0FF90CBFEFB7BE97BEA132B0664
+Feb 17 06:49:23 vtb721-utm AUTH: getUserCfg: local user admin cfg -> 'admin' @ 0xaaaaef1e0478
+Feb 17 06:49:23 vtb721-utm AUTH: authWebUser: user admin has local config @ 0xaaaaef1e0478
+Feb 17 06:49:23 vtb721-utm AUTH: Authenticating user admin in local database (HTTP digest auth)
+Feb 17 06:49:23 vtb721-utm AUTH: authWebUser: alg=SHA-256 pDigest=b16df2b27e6ed49871c01e397e4d85afc2ec98ad41669e780d3fa3fd3c095296
+Feb 17 06:49:23 vtb721-utm AUTH: authUserHttpDgst: user 'admin' SHA-256 digest OK, authenticated
+Feb 17 06:49:23 vtb721-utm AUTH: authenticateWebUserLogin: user admin, authMethod = 1, retcode from authWebUser 0
+Feb 17 06:49:23 vtb721-utm AUTH: Admin user admin @ 192.168.168.10 authenticated
+Feb 17 06:49:23 vtb721-utm  - sessId: B953CAEC1154ADD5E87427B5487A96CD
+Feb 17 06:49:23 vtb721-utm  - pageSeed: 0638b9187dde13100e8579fb7279c9cc
+Feb 17 06:49:23 vtb721-utm  - pEncSessId: 5FC1E83F55DE6A25D6761E984FA7DD4841E7068F:109CC64686443CD3C3A704375BEBBE25DABA0C2B6B
+Feb 17 06:49:23 vtb721-utm  - csrfToken AB17097ED9FBC2CCD2838FA8AAF755FA
+Feb 17 06:49:23 vtb721-utm AUTH: authenticated admin admin from 192.168.168.10 (non-config) via X0
+Feb 17 06:49:23 vtb721-utm AUTH: Admin user admin logged in from 192.168.168.10
+Feb 17 06:49:23 vtb721-utm AUTH: User admin logged in from 192.168.168.10,0
+Feb 17 06:49:23 vtb721-utm AUTH: Admin user admin login completed from 192.168.168.10, mode: Non-Config
+Feb 17 06:49:23 vtb721-utm AUTH: registerConfigMode: user admin from SonicOS API from 192.168.168.10
+Feb 17 06:49:23 vtb721-utm AUTH: session_acquire_priv: admin (SonicOS API from 192.168.168.10) session request
+Feb 17 06:49:26 vtb721-utm AUTH: userLogoutByIpAddr: 192.168.168.10,0
+Feb 17 06:49:26 vtb721-utm AUTH: Logging out user admin from 192.168.168.10,0: SonicOS API logout
+Feb 17 06:49:26 vtb721-utm AUTH: User admin from 192.168.168.10,0 logged out: SonicOS API logout
+Feb 17 06:49:26 vtb721-utm AUTH: session_release_priv: admin (SonicOS API from 192.168.168.10) session release
+Feb 17 06:49:26 vtb721-utm AUTH: User admin from 192.168.168.10 ended management
+Feb 17 06:49:26 vtb721-utm AUTH: flushCacheUserCallback: user 192.168.168.10,0 (userToken 0xaaab03bb1ac8 type 0) flushUla 0, flushNonUla 15
+Feb 17 06:49:26 vtb721-utm AUTH: Finished flushing user admin (UserIp 0xaaab03baef48)

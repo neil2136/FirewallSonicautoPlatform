@@ -1,0 +1,359 @@
+{
+   "33" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "33",
+      "title" : "Stateful HA support",
+      "result" : "  TBD"
+   },
+   "32" : {
+      "steps" : "  n/a",
+      "initial" : "  log \"user traffic quota exceeded\" appear when user run out of his receive traffic bandwidth",
+      "id" : "32",
+      "title" : "[log]log \"user traffic quota exceeded\" appear when user run out of his receive traffic bandwidth",
+      "result" : "  1. go to 'user->local users & group'\n  2. add user account which receive quota is 1 MB\n  3.client login iwith the user account, and access 'www.sina.com'\n  4. check receive traffic exceed and log\""
+   },
+   "21" : {
+      "steps" : "  n/a",
+      "initial" : "  minimum value about receive limit of quota cycle setting",
+      "id" : "21",
+      "title" : "[Boundary]minimum value about receive limit of quota cycle setting",
+      "result" : "  1. go to 'user->local users & group' page\n  2. 'add' local users\n  3. set 'Receive limit' 1\n  4 verify user can receive limit 1 MB"
+   },
+   "05" : {
+      "steps" : "  n/a",
+      "initial" : "  when configure quota cycle type setting select \"None Cycle\",session lifetime, receive limit, transmit limit should have postfix string 'Per Month'",
+      "id" : "05",
+      "title" : "[GUI]when configure quota cycle type setting select \"None Cycle\",session lifetime, receive limit, transmit limit should have postfix string 'Per Month'",
+      "result" : "  1. go to 'user->local users & group' page\n  2. add one local users\n  3. choose qutoa cyclic setting is 'per month'\n  4. verify session lifetime, receive limit and transmit limit have postfix 'per month'"
+   },
+   "26" : {
+      "steps" : "  n/a",
+      "initial" : "  invalid value about receive limit of quota cycle setting",
+      "id" : "26",
+      "title" : "[Error]invalid value about receive limit of quota cycle setting",
+      "result" : "  1. go to 'user->local users & group' page\n  2. 'add' local users\n  3. set 'Receive limit' invalid character, such as 'a', '-1'\n  4 verify user session lifetime is 1 days"
+   },
+   "17" : {
+      "steps" : "  N/A",
+      "initial" : "  quota setting of session lifetime could be used only once in every month when quota cycle is 'Per Month'",
+      "id" : "17",
+      "title" : "[Function]verify quota setting of session lifetime could be used only once in every month when quota cycle is 'Per Month'",
+      "result" : "  \"1 add one user account quota cyclic setting is 'Per Month\n  2 user access network by user account\n  3 after user run out of his session lifetime resource, the user cannot access network\""
+   },
+   "04" : {
+      "steps" : "  n/a",
+      "initial" : "  when configure quota cycle type setting select \"None Cycle\",session lifetime, receive limit, transmit limit should have postfix string 'Per Week'",
+      "id" : "04",
+      "title" : "[GUI]when configure quota cycle type setting select \"Per Week\",session lifetime, receive limit, transmit limit should have postfix string 'Per Week'",
+      "result" : "  1. go to 'user->local users & group' page\n  2. add one local users\n  3. choose qutoa cyclic setting is 'per week'\n  4. verify session lifetime, receive limit and transmit limit have postfix 'per week'"
+   },
+   "02" : {
+      "steps" : "  N/A",
+      "initial" : "  verify quota cycle type setting have 4 item to select \"None Cycle\", \"Per Day\", \"Per Week\", \"Per Month\"",
+      "id" : "02",
+      "title" : "[GUI]verify quota cycle type setting have 4 item to select \"None Cycle\", \"Per Day\", \"Per Week\", \"Per Month\"",
+      "result" : "  1. go to 'user->local users & group' page;\n  2. click 'add' user button;\n  3 Switch to \"User Quota\" tab;\n  4. verify 'quota cycle type setting' dropdown have four value 'Non Cyclic', 'Per Week', 'Per Month','Per Day'"
+   },
+   "18" : {
+      "steps" : "  N/A",
+      "initial" : "  quota setting of receive traffic bandwidth could be used only once in every month when quota cycle is 'Per Month'",
+      "id" : "18",
+      "title" : "[Function]verify quota setting of receive traffic bandwidth could be used only once in every month when quota cycle is 'Per Month'",
+      "result" : "  1 add one user account quota cyclic setting is 'Per Month\n  2 user access network by user account\n  3 after user run out of his receive traffic bandwidth resource, the user cannot access network"
+   },
+   "03" : {
+      "steps" : "  N/A",
+      "initial" : "  when configure quota cycle type setting select \"None Cycle\",session lifetime, receive limit, transmit limit should have postfix string ' Per Day'",
+      "id" : "03",
+      "title" : "[GUI]when configure quota cycle type setting select \"Per Day\",session lifetime, receive limit, transmit limit should have postfix string ' Per Day'",
+      "result" : "  1. go to 'user->local users & group' page\n  2. add one local users\n  3. choose qutoa cyclic setting is 'per day'\n  4. verify session lifetime, receive limit and transmit limit have postfix 'per day'"
+   },
+   "30" : {
+      "steps" : "  n/a",
+      "initial" : "  log \"user traffic quota exceeded\" appear, when user run out of his session life time",
+      "id" : "30",
+      "title" : "[log]log \"user traffic quota exceeded\" appear, when user run out of his session life time",
+      "result" : "  1. go to 'user->local users & group'\n  2. add user account which session lifetime is 11 Minute\n  3.client login iwith the user account, and access 'www.sina.com', and\n  4. check receive traffic exceed and log"
+   },
+   "16" : {
+      "steps" : "  N/A",
+      "initial" : "  quota setting of receive traffic bandwidth could be used only once in every week when quota cycle is 'Per Week'",
+      "id" : "16",
+      "title" : "[Function]verify quota setting of transmit traffic bandwidth could be used only once in every week when quota cycle is 'Per Week'",
+      "result" : "  1 add one user account quota cyclic setting is 'Per Week'\n  2 user access network by user account\n  3 after user run out of his transimit traffic resource, the user cannot access network"
+   },
+   "06" : {
+      "steps" : "  n/a",
+      "initial" : "  quota cycle type setting can be configured by local users in CLI mode",
+      "id" : "06",
+      "title" : "[CLI]verify quota cycle type setting can be configured by add local users CLI modeEdit case",
+      "result" : "  config(C0EAE48890BE)# user local (config-user-local)# user cli (add-local-user[cli])# quota-cycle day (add-local-user[cli])# limit receive 400 (add-local-user[cli])# limit transmit 233 (add-local-user[cli])# session-lifetime 10 hours\n  (add-local-user[cli])# commit"
+   },
+   "44" : {
+      "steps" : "  n/a",
+      "initial" : "  receive traffic bandwidth is unlimited when quota setting of receive traffic bandwidth is unlimited",
+      "id" : "44",
+      "title" : "[Function]verify receive traffic bandwidth is unlimited when quota setting of receive traffic bandwidth is unlimited",
+      "result" : "  1. go to 'user->local users & group'\n  2. add user account\n  3. go to 'User Quota' tab\n  4. set receive bandwidth 0\n  5. client log in with user user, and receive lagre traffic"
+   },
+   "27" : {
+      "steps" : "  n/a",
+      "initial" : "  invalid value about transmit limit of quota cycle setting",
+      "id" : "27",
+      "title" : "[Error]invalid value about transmit limit of quota cycle setting",
+      "result" : "  1. go to 'user->local users & group' page\n  2. 'add' local users\n  3. set 'Tramsimit limit' invalid character, such as 'a', '-1'\n  4 verify user session lifetime is 1 days"
+   },
+   "25" : {
+      "steps" : "  n/a",
+      "initial" : "  maximum value about session life time should be account lifetime",
+      "id" : "25",
+      "title" : "[Boundary]maximum value about session life time should be account lifetime",
+      "result" : "  \"1. go to 'user->local users & group' page\n  2. 'add' local users\n  3. set 'Session Lifetime' 9999\n  4 verify user session lifetime is 1 days\""
+   },
+   "28" : {
+      "steps" : "  n/a",
+      "initial" : "  invalid value about session lifetime of quota cycle setting",
+      "id" : "28",
+      "title" : "[Error]invalid/greater value about session lifetime of quota cycle setting",
+      "result" : "  \"1. go to 'user->local users & group' page\n  2. 'add' local users\n  3. set 'Session Lifetime' invalid character, such as 'a', '-1'"
+   },
+   "01" : {
+      "steps" : "  N/A",
+      "initial" : "  verify quota cycle type setting can be configured in local users",
+      "id" : "01",
+      "title" : "[GUI]verify quota cycle type setting can be configured in local users",
+      "result" : "  1. go to 'user->local users & group' page;\n  2. click 'add' user button;\n  3. Verify there's a User Quota tab and could be configured. "
+   },
+   "40" : {
+      "steps" : "  n/a",
+      "initial" : "  0 clock first day of month reset quota when user run out of quota per month",
+      "id" : "40",
+      "title" : "[Function]verify 0 clock first day of month reset quota when user run out of quota per month",
+      "result" : "  1. go to 'user->local users & group'\n  2. add user account\n  3. go to 'User Quota' tab\n  4. set cyclic quota setting is per month\n  5. verify 0 clock reset quota after user run out of quota per day"
+   },
+   "20" : {
+      "steps" : "  n/a",
+      "initial" : "  maximum value about receive limit of quota cycle setting",
+      "id" : "20",
+      "title" : "[Boundary]maximum value about receive limit of quota cycle setting",
+      "result" : "  \"1. go to 'user->local users & group' page\n  2. 'add' local users\n  3. set 'Receive limit' 0\n  4 verify user can receive limit unlimited\""
+   },
+   "14" : {
+      "steps" : "  N/A",
+      "initial" : "  quota setting of session lifetime could be used only once in every week when quota cycle is 'Per Week'",
+      "id" : "14",
+      "title" : "[Function]verify quota setting of session lifetime could be used only once in every week when quota cycle is 'Per Week'",
+      "result" : "  1 add one user account quota cyclic setting is 'Per Week'\n  2 user access network by user account\n  3 after user run out of his session lifetime resource, the user cannot access network"
+   },
+   "07" : {
+      "steps" : "  box-GMS Server",
+      "initial" : "  verify quota cycle type setting can be configured in local users by GMS",
+      "id" : "07",
+      "title" : "[GMS]verify quota cycle type setting can be configured in local users by GMS",
+      "result" : "  1 go to GMS server (10.8.51.211)\n  2 go to local users tab\n  3 add new local users 4 configure quota cycle tab"
+   },
+   "49" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "49",
+      "title" : "[Function] Function test of quota cyclic for LDAP import to local",
+      "result" : "  TBD"
+   },
+   "24" : {
+      "steps" : "  n/a",
+      "initial" : "  minimum value about session life time should be Idle Timeout",
+      "id" : "24",
+      "title" : "[Boundary]minimum value about session life time should be Idle Timeout",
+      "result" : "  1. go to 'user->local users & group' page\n  2. 'add' local users\n  3. set 'Session Lifetime' 1\n  4 verify user session lifetime is 1 minute"
+   },
+   "10" : {
+      "steps" : "  n/a",
+      "initial" : "  verify quota setting of transmit traffic bandwidth only could be used once when quota cycle is 'Non Cyclic'",
+      "id" : "10",
+      "title" : "[Function]verify quota setting of transmit traffic bandwidth could be used only once when quota cycle is 'Non Cyclic'",
+      "result" : "  1 add one user account quota cyclic setting is 'Non Cyclic'\n  2 user access network by user account\n  3 after user run out of his transmit traffic resource, the user cannot access network"
+   },
+   "31" : {
+      "steps" : "  n/a",
+      "initial" : "  log \"user traffic quota exceeded\" appear, when user run out of his transmit traffic bandwidth",
+      "id" : "31",
+      "title" : "[log]log \"user traffic quota exceeded\" appear, when user run out of his transmit traffic bandwidth",
+      "result" : "  1. go to 'user->local users & group'\n  2. add user account which transimit quota is 1 MB\n  3.client login iwith the user account, and access 'www.sina.com'\n  4. check transmit traffic exceed and log"
+   },
+   "35" : {
+      "steps" : "  n/a",
+      "initial" : "  quota cycle type setting can be saved after box reboot",
+      "id" : "35",
+      "title" : "[REBOOT]quota cycle type setting can be saved after box reboot",
+      "result" : "  1. add user account\n  2. add proper quota setting\n  3. reboot box\n  4. check quota setting have been saved"
+   },
+   "11" : {
+      "steps" : "  N/A",
+      "initial" : "  quota setting of session lifetime could be used only once in every day when quota cycle is 'Per Day'",
+      "id" : "11",
+      "title" : "[Function]verify quota setting of session lifetime could be used only once in every day when quota cycle is 'Per Day'",
+      "result" : "  1 add one user account quota cyclic setting is 'Per Day' 2 user access network by user account 3 after user run out of his session time resource, the user cannot access network"
+   },
+   "48" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "48",
+      "title" : "[Function] The Quota will refer the local users's setting and status when auth is done through LDAP",
+      "result" : "  TBD"
+   },
+   "42" : {
+      "steps" : "  n/a",
+      "initial" : "  user account exists according to account life time ",
+      "id" : "42",
+      "title" : "[Function]verify user account exists according to account life time",
+      "result" : "  1. go to 'user->local users & group'\n  2. add user account\n  3. go to 'User Quota' tab\n  4. set 'account lifetime' 1 day\n  5. check 'user->user account' page, user account should dissappear when account expiration"
+   },
+   "22" : {
+      "steps" : "  n/a",
+      "initial" : "  maximum value about transmit limit of quota cycle setting",
+      "id" : "22",
+      "title" : "[Boundary]maximum value about transmit limit of quota cycle setting",
+      "result" : "  1. go to 'user->local users & group' page\n  2. 'add' local users\n  3. set 'Receive limit' 0\n  4 verify user can transimit unlimited traffic"
+   },
+   "46" : {
+      "steps" : "  n/a",
+      "initial" : "  unit of traffic bandwidth is only M",
+      "id" : "46",
+      "title" : "[GUI]verify unit of traffic bandwidth is only M",
+      "result" : "  \"1. go to 'user->local users & group;\n  2. check transmit and receive traffic unit is 'MB'"
+   },
+   "08" : {
+      "steps" : "  user --- box",
+      "initial" : "  quota setting of session lifetime only could be used once when quota cycle is 'Non Cyclic'",
+      "id" : "08",
+      "title" : "[Function]verify quota setting of session lifetime could be used only once when quota cycle is 'Non Cyclic'",
+      "result" : "  1 add one user account quota cyclic setting is 'Non Cylic'\n  2 user access network by user account\n  3 after user run out of his resource, the user cannot access network"
+   },
+   "13" : {
+      "steps" : "  N/A",
+      "initial" : "  quota setting of receive traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'",
+      "id" : "13",
+      "title" : "[Function]verify quota setting of transmit traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'",
+      "result" : "  1 add one user account quota cyclic setting is 'Per Day'\n  2 user access network by user account\n  3 after user run out of his transimit traffic resource, the user cannot access network"
+   },
+   "23" : {
+      "steps" : "  n/a",
+      "initial" : "  minimum value about transmit limit of quota cycle setting",
+      "id" : "23",
+      "title" : "[Boundary]minimum value about transmit limit of quota cycle setting",
+      "result" : "  1. go to 'user->local users & group' page\n  2. 'add' local users\n  3. set 'Transimit limit' 1\n  4 verify user can transimit limit 1 MB"
+   },
+   "29" : {
+      "steps" : "  n/a",
+      "initial" : "  Pref import/export for quota cycle setting",
+      "id" : "29",
+      "title" : "[Pref]Pref import/export for quota cycle setting",
+      "result" : "  1. import/export quota cycle setting"
+   },
+   "50" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "50",
+      "title" : "[183441] multi-users are login with same account, verify DTS 183441",
+      "result" : "  TBD"
+   },
+   "39" : {
+      "steps" : "  n/a",
+      "initial" : "  0 clock Monday reset quota when user run out of quota per week",
+      "id" : "39",
+      "title" : "[Function]verify 0 clock Sunday reset quota when user run out of quota per week",
+      "result" : "  1. go to 'user->local users & group'\n  2. add user account\n  3. go to 'User Quota' tab\n  4. set cyclic quota setting is per week\n  5. verify 0 clock reset quota after user run out of quota per day"
+   },
+   "36" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "36",
+      "title" : "[REBOOT] Check remaining RX/TX/time limit after reboot",
+      "result" : "  TBD"
+   },
+   "51" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "51",
+      "title" : "[GUI] On User/Status page, check quota statistics will change dynamically",
+      "result" : "  TBD"
+   },
+   "41" : {
+      "steps" : "  n/a",
+      "initial" : "  quota cycle should be adapted to the local time",
+      "id" : "41",
+      "title" : "[Funtion]verify quota cycle should be adapted to the local time",
+      "result" : "  quota should be adapted to the local time"
+   },
+   "12" : {
+      "steps" : "  N/A",
+      "initial" : "  quota setting of receive traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'",
+      "id" : "12",
+      "title" : "[Function]verify quota setting of receive traffic bandwidth could be used only once in every day when quota cycle is 'Per Day'",
+      "result" : "  1 add one user account quota cyclic setting is 'Per Day'\n  2 user access network by user account\n  3 after user run out of his receive traffic resource, the user cannot access network"
+   },
+   "47" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "47",
+      "title" : "[Function] The Quota will refer the local users's setting and status when auth is done through radius",
+      "result" : "  TBD"
+   },
+   "15" : {
+      "steps" : "  N/A",
+      "initial" : "  quota setting of receive traffic bandwidth could be used only once in every week when quota cycle is 'Per Week'",
+      "id" : "15",
+      "title" : "[Function]verify quota setting of receive traffic bandwidth could be used only once in every week when quota cycle is 'Per Week'",
+      "result" : "  \"1 add one user account quota cyclic setting is 'Per Week'\n  2 user access network by user account\n  3 after user run out of his receive traffic resource, the user cannot access network\""
+   },
+   "38" : {
+      "steps" : "  n/a",
+      "initial" : "  0 clock reset quota after user run out of quota per day",
+      "id" : "38",
+      "title" : "[Function]verify 0 clock reset quota after user run out of quota per day",
+      "result" : "  1. go to 'user->local users & group'\n  2. add user account\n  3. go to 'User Quota' tab\n  4. set cyclic quota setting is per day\n  5. verify 0 clock reset quota after user run out of quota per day"
+   },
+   "34" : {
+      "steps" : "  n/a",
+      "initial" : "  Test quota cyclic feature in HA senario",
+      "id" : "34",
+      "title" : "[HA]Test quota cyclic feature in HA senario",
+      "result" : "  1. set two box HA senario\n  2. add user account\n  3 .add proper quota setting\n  4. client access network with user user\n  5. swap box\n  6. user can access network and have no affect"
+   },
+   "45" : {
+      "steps" : "  n/a",
+      "initial" : "  session life time can be selected min/hour/day",
+      "id" : "45",
+      "title" : "[Function]session life time can be selected min/hour/day",
+      "result" : "  1. go to 'user->local users & group'\n  2. add user account\n  3. go to 'User Quota' tab\n  4. check 'session lifetime' can be selected min/hour/day"
+   },
+   "37" : {
+      "steps" : "  n/a",
+      "initial" : "  TSR include quota cycle type setting information",
+      "id" : "37",
+      "title" : "[TSR]verify TSR include quota cycle type setting information and usage",
+      "result" : "  1. add user account\n  2. add proper quota setting\n  3. download TSR file\n  4. check TSR file include quota setting info"
+   },
+   "43" : {
+      "steps" : "  n/a",
+      "initial" : "  send traffic bandwidth is unlimited when quota setting of send traffic bandwidth is unlimited",
+      "id" : "43",
+      "title" : "[Function]verify send traffic bandwidth is unlimited when quota setting of send traffic bandwidth is unlimited",
+      "result" : "  1. go to 'user->local users & group'\n  2. add user account\n  3. go to 'User Quota' tab\n  4. set receive bandwidth 0\n  5. client log in with user user, and transmit lagre traffic"
+   },
+   "19" : {
+      "steps" : "  N/A",
+      "initial" : "  quota setting of receive traffic bandwidth could be used only once in every month when quota cycle is 'Per Month'",
+      "id" : "19",
+      "title" : "[Function]verify quota setting of transmit traffic bandwidth could be used only once in every month when quota cycle is 'Per Month'",
+      "result" : "  1 add one user account quota cyclic setting is 'Per Month\n  2 user access network by user account\n  3 after user run out of his transimit traffic resource, the user cannot access network"
+   },
+   "09" : {
+      "steps" : "  n/a",
+      "initial" : "  verify quota setting of receive traffic bandwidth only could be used once when quota cycle is 'Non Cyclic'",
+      "id" : "09",
+      "title" : "[Function]verify quota setting of receive traffic bandwidth could be used only once when quota cycle is 'Non Cyclic'",
+      "result" : "  1 add one user account quota cyclic setting is 'Non Cyclic'\n  2 user access network by user account\n  3 after user run out of his receive traffic, the user cannot access network"
+   }
+}

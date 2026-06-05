@@ -1,0 +1,149 @@
+{
+    "14": {
+      "steps": "1.Login to the FW from the default LAN interface;\n  2.Go to Users>Setting, choose the LDAP/RADIUS or \"LDAP + Local User\"/\"RADIUS + Local Users\" for authentication method, and apply;\n  3. From the PC1, enter \"http://x0 interface ip of the FW\", make sure there is page prompting \"Please be patient as you are being re-directed to a secure login page\", and then the page will turn to HTTPS login page; 4. Choose the \"Local Users\" as the authentication method and apply;\n  5. Go to Network>Interfaces, make sure the HTTP user login of each interfaces turn to be active.",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT.",
+      "id": "14",
+      "title": "HTTP user login with LDAP/RADIUS set",
+      "result": "Local user can not login to the FW with HTTP when LDAP authentication method checked"
+   },
+    "27": {
+      "steps": "1.Login to management interface through a web browser\n  2) Go to Network/Interface page\n  3) Configure PortShield Switch mode for LAN/DMZ interface to test if it is functional(not for primary Lan interface x0)",
+      "initial": "",
+      "id": "27",
+      "title": "Function: Network modes for LAN/DMZ(PortShield Switch Mode)",
+      "result": "All steps in Test Excution section above are passed without errors"
+   },
+    "33": {
+      "steps": "1.Login to the FW as admin from the default WAN interface;\n  2.Go to the Network>Interfaces, open the config dialog of the interface X2 just assigned to LAN zone;\n  3.Modify the IP Assignment from Static to L2 Bridged Mode, and choose WAN interface X1 from the \"Bridged to\" drop-down box;\n  4.Verify the LAN interface IP turn to be as same as the WAN interface IP, and the IP Assignment is \"Secondary Bridged I/F\", while the IP Assignment of X1 is \"Primary Bridged I/F\";\n  5.Change the PC2's IP into the WAN subnet, and make sure from PC2 user can manage FW and access resource on WAN side;\n  6.Restart the FW;\n  7.Verify the last configuration is intact after reboot;\n  8.Repeat the steps by bridging to secondary WAN interface and another LAN interface;",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network, the X2 interface connected to PC2.",
+      "id": "33",
+      "title": "Modify the IP assignment of the LAN interface to L2 Bridged Mode",
+      "result": "A LAN interface can be modified to work in L2 Bridged Mode."
+   },
+   "38": {
+      "steps": "1.Login to the FW as admin from the default LAN interface;\n  2). Navigate to Network>Interfaces page, on the default WAN interface edit dialog, configure default WAN to DHCP mode and apply;\n  3). After the WAN interface get DHCP IP address, access the WAN interface from a PC in the same network, make sure it is successful;",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a DHCP server with valid IP address pool.",
+      "id": "38",
+      "title": "Access to WAN interface with DHCP assignment",
+      "result": "FW can be access from the WAN interface with DHCP assigned IP"
+   },
+    "41": {
+      "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network>Interface, on the default WAN interface edit dialog, choose the PPPoE from the IP Assignment list, and enter the correct user name and password, choose \"Obtain IP Address Automatically\" and apply;<br /> 3). After the WAN interface acquire IP address, press the Disconnect button on the interfaces setting page, make sure the interface is disconnected, and there are corresponding log messages;",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a PPPoE server with valid IP address pool.",
+      "id": "41",
+      "title": "Connect and Disconnect PPPoE assignment",
+      "result": "The Connect and Disconnect works correctly"
+   },
+      "42": {
+      "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network>Interface, on the default WAN interface edit dialog, choose the PPPoE from the IP Assignment list, and enter the correct user name and password, choose \"Obtain IP Address Automatically\" and apply; <br />3). After the WAN interface acquire IP address, from PC2, enter the PPPoE assigned IP address of the WAN interface, make sure the GUI can be accessed, and admin can apply changes successfully",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a PPPoE server with valid IP address pool; PC2 connected in the same subnet with X1 interface",
+      "id": "42",
+      "title": "Access to WAN interface with PPPoE assignment",
+      "result": "The WAN interface can be accessed successfully with PPPoE assigned IP"
+   },
+      "46": {
+      "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network>Interfaces page, configure default WAN to PPTP mode and choose DHCP as PPTP IP assignment, and then apply;<br /> 3). After the WAN interface get DHCP IP address, press the Release button on WAN configure dialog, make sure the FW sends DHCP release packets, the assigned IP info are reset to 0.0.0.0 and log prints \"Sending DHCP RELEASE\";<br /> 4). After the DHCP assigned info are released, press the Renew button on Interface setting table or WAN config dialog, make sure the FW sends DHCP Discover and Request packets, and receives DHCP assigned IP address again; <br />5). Press the Refresh button, and make sure the old info displayed on WAN interface config dialog will be updated",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a DHCP server and PPTP server with valid IP address pools",
+      "id": "46",
+      "title": "Function test: Renew, Release and Refresh DHCP IP Assignment in PPTP mode",
+      "result": "The Renew, Release and Refresh buttons work well for DHCP mode in PPTP mode"
+   },
+     "48": {
+      "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network>Interface, on the default WAN interface edit dialog, choose the PPTP from the IP Assignment list, and enter the correct user name, password and PPTP server IP address, choose DHCP and apply; <br />3). After the WAN interface acquire IP address, press the Disconnect button on the interfaces setting page, make sure the FW releases the WAN IP address assigned by PPTP server, and there are corresponding log messages printed; <br />4). Make sure the Disconnect button turn to be Connect button after disconnection; <br />5). Press the Connect button, make sure the FW start to communicate with PPTP server, and there are corresponding log messages printed; <br />6). After the FW obtains IP address from PPTP server, make sure the Connect button turn to be Disconnect button, and the IP address settings assigned by PPTP server are displayed on Interfaces page and Protocol tab of WAN configure dialog;",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a PPTP server and a DHCP server with valid IP address pool.",
+      "id": "48",
+      "title": "Connect and Disconnect PPTP assignment",
+      "result": "The Connect and Disconnect buttons works correctly"
+   },
+     "52": {
+      "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network>Interfaces page, on the default WAN interface edit dialog, configure default WAN to L2TP mode and choose DHCP as L2TP IP assignment, and then apply; <br />3). After the WAN interface get DHCP IP address, press the Release button on WAN configure dialog, make sure the FW sends DHCP release packets, the assigned IP info are reset to 0.0.0.0 and log prints \"Sending DHCP RELEASE\"; <br />4). After the DHCP assigned info are released, press the Renew button on Interface setting table or WAN config dialog, make sure the FW sends DHCP Discover and Request packets, and receives DHCP assigned IP address again;<br /> 5). Press the Refresh button, and make sure the old info displayed on WAN interface config dialog will be updated",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a DHCP server and L2TP server with valid IP address pools",
+      "id": "52",
+      "title": "Function test: Renew, Release and Refresh DHCP IP Assignment in L2TP mode",
+      "result": "The Renew, Release and Refresh buttons work well for DHCP mode in L2TP mode"
+   },
+     "54": {
+      "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network>Interface, on the default WAN interface edit dialog, choose the L2TP from the IP Assignment list, and enter the correct user name, password, L2TP server IP address and shared secret, choose \"DHCP\" and apply; <br />3). After the WAN interface acquire IP address, press the Disconnect button on the interfaces setting page, make sure the FW releases the WAN IP address assigned by L2TP server, and there are corresponding log messages printed;<br /> 4). Make sure the Disconnect button turn to be Connect button after disconnection; <br />5). Press the Connect button, make sure the FW start to communicate with L2TP server, and there are corresponding log messages printed; <br />6). After the FW obtains IP address from L2TP server, make sure the Connect button turn to be Disconnect button, and the IP address settings assigned by L2TP server are displayed on both Interfaces page and Protocol tab of WAN configure dialog;",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network which have a L2TP server and a DHCP server with valid IP address pool",
+      "id": "54",
+      "title": " Connect and Disconnect L2TP assignment",
+      "result": "The Connect and Disconnect buttons works correctly in L2TP assignment"
+   },
+     "55": {
+      "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network>Interface, configure primary WAN properly; <br />3). Assign X2 interface to WAN zone, choose Static mode, and input valid IP address, subnet mask, gateway and dns server IP; <br />4). Check all management and user login, and apply, verify all configuration of X2 interface take effect; <br />5). From PC2, ping X2 interface, make sure successful; <br />6). From PC2, SSH connect to X2 interface, make sure successful; <br />7). From PCs, SNMP connect to X2 interface and retrieve FW information, make sure successful; <br />8). From PC2, manage FW with HTTP and HTTPs, verify successful.",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network; the X2 or other interface connected to different subnet of lab network, and PC2 connected to the same subnet.",
+      "id": "55",
+      "title": "  Assign Secondary interface to WAN zone with Static Mode",
+      "result": "Any interface can be assigned to WAN zone as secondary WAN, and works well"
+   },
+     "56": {
+      "steps": "1). Login to the FW as admin from default LAN interface; <br />2). Navigate to Network>Interface, open the edit dialog of X2 interface, change the setting, such as IP address, DNS, management, User Login and advance setting, apply; <br />3). Reopen the configure page of X2 interface, make sure all the settings are displayed as latest changes;<br /> 4). Export TSR file and check the corresponding info, make sure correct; <br />5). Reboot the FW, and verify the settings won't change back;",
+      "initial": "The environment left after finishing test case 55. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network; the X2 or other interface connected to different subnet of lab network",
+      "id": "56",
+      "title": "Modify the settings of the WAN interface",
+      "result": "The settings of Secondary WAN can be changed freely"
+   },
+     "57": {
+      "steps": "1). Login to the FW as admin from default LAN interface; <br />2). Navigate to Network>Interface, open the edit dialog of X2 interface, change the IP assignment mode to DHCP, and apply; <br />3). Reopen the configure page of X2 interface, make sure the settings are displayed as latest changes; <br />4). Export TSR file and check the corresponding info, make sure correct; <br />5). Reboot the FW, and verify the settings won't change back; <br />6). Verify the X2 interface can obtain IP address from DHCP successfully;",
+      "initial": "The environment left after finishing test case 56. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network; the X2 or other interface connected to different subnet of lab network, and there is a least one DHCP server in the subnet",
+      "id": "57",
+      "title": " Modify the IP assignment of the Secondary WAN interface to DHCP",
+      "result": "The settings of Secondary WAN can be modified freely, and the settings after the changes can take effects"
+   },
+     "58": {
+      "steps": "1). Login to the FW as admin from default LAN interface; <br />2). Navigate to Network>Interface, open the edit dialog of X2 interface, change the IP assignment to PPPoE, input necessary information, and apply; <br />3). Reopen the configure page of X2 interface, make sure all the settings are displayed as latest changes;<br /> 4). Export TSR file and check the corresponding info, make sure correct; <br />5). Reboot the FW, and verify the settings won't change back;<br /> 6). Verify the X2 interface can obtain IP address from PPPoE successfully;",
+      "initial": "The environment left after finishing test case 57. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network; the X2 or other interface connected to different subnet of lab network, and there is a least one PPPoE server in the subnet",
+      "id": "58",
+      "title": " Modify the IP assignment of the Secondary WAN interface to PPPoE",
+      "result": "The settings of Secondary WAN can be modified freely, and the settings after the changes can take effects."
+   },
+     "59": {
+      "steps": "1). Login to the FW as admin from default LAN interface; <br />2). Navigate to Network>Interface, open the edit dialog of X2 interface, change the IP assignment to PPTP, input necessary information, and apply; <br />3). Reopen the configure page of X2 interface, make sure all the settings are displayed as latest changes;<br /> 4). Export TSR file and check the corresponding info, make sure correct;<br /> 5). Reboot the FW, and verify the settings won't change back; <br />6). Verify the X2 interface can obtain IP address from PPTP successfully;",
+      "initial": "The environment left after finishing test case 58. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network; the X2 or other interface connected to different subnet of lab network, and there is a least one PPTP server in the subnet",
+      "id": "59",
+      "title": " Modify the IP assignment of the Secondary WAN interface to PPTP",
+      "result": "The settings of Secondary WAN can be modified freely, and the settings after the changes can take effects"
+   },
+     "60": {
+      "steps": "1). Login to the FW as admin from default LAN interface; <br />2). Navigate to Network>Interface, open the edit dialog of X2 interface, change the IP assignment to L2TP, input necessary information, and apply; <br />3). Reopen the configure page of X2 interface, make sure all the settings are displayed as latest changes; <br />4). Export TSR file and check the corresponding info, make sure correct; <br />5). Reboot the FW, and verify the settings won't change back;<br /> 6). Verify the X2 interface can obtain IP address from L2TP successfully;",
+      "initial": "The environment left after finishing test case 59. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network; the X2 or other interface connected to different subnet of lab network, and there is a least one L2TP server in the subnet",
+      "id": "60",
+      "title": " Modify the IP assignment of the WAN interface to L2TP",
+      "result": "The settings of Secondary WAN can be modified freely, and the settings after the changes can take effects"
+   },
+     "62": {
+      "steps": "1). Login to the FW as admin from the default LAN interface; <br />2). Navigate to Network>Interfaces page, configure an interface X2 to DMZ zone, choose the IP assignment as Static Mode, and input valid IP, make sure the operation is successful; <br />3). Go to the Network>Zone, make sure the X2 is listed in the \"Interface\" column of DMZ zone; <br />4). Go to the Network>Address Object, make sure the zones of \"X2 IP\" and \"X2 Subnet\" are DMZ;<br /> 5). Go to the Network>Routing, make sure the interface X2 of the Route Advisement table is marked as DMZ zone; <br />6). Go to the Firewall>Access Rules, in the DMZ to WAN matrix, modify the default rule to have \"Everyone\" as Allowed Users; <br />7). From the PC2, ping a PC one WAN side, notice no reply received; <br />8). Go to Log>View, check there is an \"ICMP is dropped according rules\" log, with \"DMZ >WAN\" in the Rules column. <br />9). Repeat the steps on another unassigned interface;",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to lab network, the X2 interface connected to PC2.",
+      "id": "62",
+      "title": " Assign an interface to DMZ zone with Static mode",
+      "result": "An interface can be assigned to DMZ zone and works well."
+   },
+     "63": {
+      "steps": "1). Login to the FW; <br />2). Configure the WAN interface to setup connection with lab network; <br />3). Open the configure dialog of the DMZ interface and choose the \"Transparent Mode\", create an address range which is inside the WAN subnet but don't include the WAN interface IP, and choose it as transparent range, click OK, make sure the change is applied;<br /> 4). At this time, make PC1 can not access the DMZ interface anymore; <br />5). Change the IP address of the PC1 to be inside the transparent range, make sure the FW can be accessed from PC1 again;<br /> 6). In the Interfaces Table, make sure the IP Assignment of the DMZ interface is Transparent Mode instead of Static; <br />7). Assign another interface to DMZ zone, and repeat the steps.",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to an interface of the DUT (for example, X2), the X1 interface connected to lab network.",
+      "id": "63",
+      "title": " Assign an interface to DMZ zone with Transparent mode",
+      "result": "The LAN interface can be assigned to Transparent Mode successfully."
+   },
+     "64": {
+      "steps": "1). Login to the FW; <br />2). Navigate to Network>Interfaces page, assign interface X2 to DMZ zone with valid IP;<br /> 3). With the DHCP server disabled on both default LAN interface and X2 interface, assign the DMZ interface to Layer2 Bridged Mode and bridged to X0 interface; <br />4). Make sure the IP of the DMZ interface turns to be as same as the IP address of the X0 interface, the IP assignment of the DMZ interface is \"Secondary Bridged I/F\", and the comment is \"Bridged to X2\"; <br />5). As for the interface X0, the IP assignment changes to \"Primary Bridged I/F\", the comment is changed to \"Bridged to X2\"; <br />6). Try to bridge the DMZ interface to other DMZ interface, make sure successful;",
+      "initial": "Firmware setting is restored to Factory Default Settings. PC1 connects to X0 interface of the DUT, the X1 interface connected to one subnet of lab network, PC2 connected to DMZ interface.",
+      "id": "64",
+      "title": "Assign an interface to DMZ zone with L2 Bridged mode",
+      "result": "The DMZ interface can be assigned to Layer2 Bridged Mode and bridged to a LAN interface successfully."
+   },
+     "67": {
+      "steps": "1). Login to the FW;\n2. Configure the two WAN interfaces(x2,x3) to L2TP/PPPoE/PPTP and connect success;\n3. Go to Networking->Failover&LB, set x3 as default wan;\n4. Change the WAN interface x2 to unassigned.",
+      "initial": "Firmware setting is restored to Factory Default Settings",
+      "id": "67",
+      "title": "Assign an interface to unassigned with L2TP/PPPoE/PPTP mode",
+      "result": "No exception occurs."
+   },
+     "1000": {
+      "steps": "1.Navigate to Network>System>Interfaces>X0 page\n2.Input \"1234567890abcd.corp.test.com\" into domain name and save it.\n3.Setup a DNS server and add a new entry that \"1234567890abcd.corp.test.com\" is attached to X0 IP address in FQDN.\n4.Try to access firewall via domain name \"1234567890abcd.corp.test.com\" from a PC connected to firewall\n5.On DNS server, attach X0 IP address to \"abcd.corp.test.com\"\n6.Try to access firewall via domain name \"abcd.corp.test.com\" from a PC connected to firewall",
+      "initial": "Firmware setting is restored to Factory Default Settings",
+      "id": "1000",
+      "title": "Firewall can only be accessed by IP resolved by Domain Name on interface page when \"Enforce HTTP Host Header Check\" is enabled",
+      "result": "1.Step 4, PC accesses to firewall successfully\n2.Step 6. PC  fails to access to firewall."
+   }
+}

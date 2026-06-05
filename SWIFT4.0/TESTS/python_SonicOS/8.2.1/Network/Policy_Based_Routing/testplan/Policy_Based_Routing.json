@@ -1,0 +1,268 @@
+{
+   "33" : {
+      "steps" : "  When edit a PBR, MGMT interface can not be set as the outgoing interface, the outgoing interface drop-down list does not include MGMT interface.",
+      "initial" : "  1: Navigate to Network->Routing, click \"Add\" button to add a new PBR, check the outgoing interface drop-down list, MGMT interface does not appear.",
+      "id" : "33",
+      "title" : "Can not set MGMT interface as a static route's outgoing interface.",
+      "result" : ""
+   },
+   "32" : {
+      "steps" : "  1. Create Policy to the resources:\n  Source: ClientObj\n  Destination: ServerObj\n  Gateway: Router1\n  Service: HTTP\n  Port: X3\n  2. Access Resourse1 from PC1 with HTTP - shoult go to resource behind Router1 - Verify with Packet Capture.\n  3. Access Resourse2 from PC1 with HTTP - shoult go to resource behind Router1 - Verify with Packet Capture.\n  4. Access Resourse1 from PC2 with HTTP - shoult go to resource behind Router1 - Verify with Packet Capture.\n  5. Access Resourse2 from PC2 with HTTP - shoult go to resource behind Router1 - Verify with Packet Capture.",
+      "initial" : "  X0 - LAN1 - PC1 and PC2\n  X1 - WAN\n  X2 - LAN2\n  X3 - DMZ\n  Router1 connected to X3 - Resource1 (Web/FTP server) behind router with WAN IP\n  - Resource2 (Web/FTP server) behind router with IP on different subnet than other.\n  Create Address Object (ClientObj) containing PC1 and PC2\n  Create Address Object (ServerObj) containing Resource1 and Resource2",
+      "id" : "32",
+      "title" : "Group Object PBR",
+      "result" : "  PBR using group address objects functions properly."
+   },
+   "21" : {
+      "steps" : "  1) From Network-Routing Add a new Route Policy. 2) From the Drop-down menu of source select create a new address object. 3) From the popup window ,Add Address Object create a new address object for the LAN Interface. 4) Repeat the above steps for different Interface. 5) Repeat the above steps from the Drop-down menu of the Destination of the Route Po licy Settings.",
+      "initial" : "  N/A",
+      "id" : "21",
+      "title" : "[Obsolete]Functional testing for the static routes after downgrading the firmware with PBR",
+      "result" : "  New address objects should be added and should appear in the Address Object page ."
+   },
+   "7" : {
+      "steps" : "  1) Configure interfaces X0,X1,X2,set ip assignment and ip address;\n  2)Add a VLAN sub interface X2:V100,set ip assignment and ip address;\n  3)Add a VLAN trunk L3 interface X3,enable vlan 200,set ip assignment and ip address;\n  4)Configure X4 and X5 as wiremode,X6 portshield to X0,X7 as Aggregate Port for X0,X8 as Redundant Port for X2;\n  5) From Network-Routing Add a new Route Policy;\n  6) From the Drop-down menus select valid objects;\n  7) From the Drop-down menu,verify only the interfaces (X0,X1,X2,X2:V100,X3:V200)are shown;\n  8) Click OK and verify PBR is added and has correct information;\n  9) Repeat the above steps for different Interface.",
+      "initial" : "  N/A",
+      "id" : "7",
+      "title" : "Interfaces available/unavailable for selection",
+      "result" : "  Only interfaces X0,X1,X2,X2:V100,X3:V200 are available for selection,interface X3,X4,X5,X6,X7,X8 are not selectable in PBR interface list."
+   },
+   "26" : {
+      "steps" : "  1.Add a PBR,set PC2's ip as destination and set interface as X2;\n  2.Ping PC2 from PC1,capture packets in FW;\n  3.Make interface X2 link down;\n  4.Check the added PBR in GUI and ping PC2 from PC1,capture packets in FW.",
+      "initial" : "  PC1\u00a1\u00aa\u00a1\u00aa(X0)FW(X2)\u00a1\u00aa\u00a1\u00aaPC2",
+      "id" : "26",
+      "title" : "Physical Monitoring of the Interface with PBR",
+      "result" : "  In step 2,verify the traffic go through interface X2;\n  In step 4,verify the added PBR is disabled (grayed out) and the traffic go through the default route."
+   },
+   "2" : {
+      "steps" : "  1) From Network-Routing Add a new Route Policy. 2) From the Drop-down menu of service select create a new service object. 3) From the popup window add Service create a new service object for the LAN Interface. 4) Repeat the above steps for different Interface.",
+      "initial" : "  N/A",
+      "id" : "2",
+      "title" : "Creating a new Service Object",
+      "result" : "  New service objects should be added and should appear in the Firewall-Services page."
+   },
+   "17" : {
+      "steps" : "  1) From Network-Routing,add a Route Policy,select or create an address/service object.in source/destination/gateway/service option;\n  2) From Network-Address Objects,edit the AO the PBR used,from Network-Services,edit the service the PBR used;\n  3) Verify in the added PBR,the AO and the service are updated.",
+      "initial" : "  N/A",
+      "id" : "17",
+      "title" : "Modify an address/service object that is used in a route policy",
+      "result" : "  AO and service are updated."
+   },
+   "1" : {
+      "steps" : "  1) From Network-Routing Add a new Route Policy.\n  2) From the Drop-down menu of source select create a new address object.\n  3) From the popup window ,Add Address Object create a new address object for the LAN Interface.\n  4) Repeat the above steps for different Interface.\n  5) Repeat the above steps from the Drop-down menu of the Destination of the Route Policy Settings.",
+      "initial" : "  N/A",
+      "id" : "1",
+      "title" : "Creating a new Source/Destination Address Object",
+      "result" : "  New address objects should be added and should appear in the Address Object page ."
+   },
+   "16" : {
+      "steps" : "  1) From Network-Routing have several pages of policy based routes.\n  2) Page up through the pages using the right arrow.\n  3) Page back through the pages using the back arrow. 4) Click the last page button. 5) Click the first page button.\n  6) Enter a value for a later entry in the items box - lists that item first.",
+      "initial" : "  Need to add a large number of Policy based routes - best with a script.",
+      "id" : "16",
+      "title" : "Pagination for the Policy Based Routes",
+      "result" : "  Pagination functions work as expected."
+   },
+   "25" : {
+      "steps" : "  1. Configure 2 policy based routes one for www.yahoo.com IP as destination and using Primary WAN and one for www.dell.com as destination and Secondary WAN.\n  2. Send traffic from the LAN to yahoo.com and dell.com do several transactions in different order.\n  3. Send traffic from the LAN to other destinations.\n  4. Run packet capture 'System -> Packet Capture'\n  5. Verify that the Destination interfaces for yahoo and dell show up as X1 and X2 respectively.\n  6. Verify other traffic is load balanced across interfaces.",
+      "initial" : "  2 WANs present and in LB configuration X1 and X2.",
+      "id" : "25",
+      "title" : "Load Balancing with PBR routes",
+      "result" : "  Load balancing is functioning with configured PBR."
+   },
+   "27" : {
+      "steps" : "  1.Add a PBR,set PC2's ip as destination and set interface as X2,in probe,set a reachable target;\n  2.Ping PC2 from PC1,capture packets in FW;\n  3.In the added PBR's probe,change the target to unreachable,ping PC2 from PC1,capture packets in FW.",
+      "initial" : "  PC1\u00a1\u00aa\u00a1\u00aa(X0)FW(X2)\u00a1\u00aa\u00a1\u00aaPC2",
+      "id" : "27",
+      "title" : "Logical Monitoring of the Interface with PBR",
+      "result" : "  In step 2,verify ping is successful and the traffic go through interface X2;\n  In step 3,verify ping is failed and the traffic go through the default route."
+   },
+   "28" : {
+      "steps" : "  1) From System > Settings page export preferences.\n  2) Go to Network > Routes\n  3) Click Delete All for the Policy Based Routes\n  4) Add routes that weren't there before.\n  5) From System > Settings import the previous preferences.\n  6) Verify old policy based routes are there and new ones are not.",
+      "initial" : "  Have several policy based routes created.",
+      "id" : "28",
+      "title" : "Importing and Exporting prefs with PBR routes",
+      "result" : "  PBR routes are can be properl exported then imported back with prefrences."
+   },
+   "40" : {
+      "steps" : "  After a reboot all PBR settings retain intact and still take effect.",
+      "initial" : "  1.Add several PBRs with different source/destination/service/gateway/interface and metric,all PBRs take effect;\n  2.Reboot firewall.",
+      "id" : "40",
+      "title" : "After a reboot all PBR settings retain intact and still take effect.",
+      "result" : ""
+   },
+   "14" : {
+      "steps" : "  1) From Network-Routing check the box next to several route policies. 2) Click delete button. 3) Verify table is refreshed and routes are deleted.\n  4) Click delete all button.\n  5) Verify that those routes that are deletable are deleted and no others.",
+      "initial" : "  Have multiple route policies added.",
+      "id" : "14",
+      "title" : "Deleting Multiple Routes that are added",
+      "result" : "  Multiple routes can be deleted."
+   },
+   "20" : {
+      "steps" : "  1) From Network-Routing Add a new Route Policy. 2) From the Drop-down menu of source select create a new address object. 3) From the popup window ,Add Address Object create a new address object for the LAN Interface. 4) Repeat the above steps for different Interface. 5) Repeat the above steps from the Drop-down menu of the Destination of the Route Policy Settings.",
+      "initial" : "  N/A",
+      "id" : "20",
+      "title" : "[Obsolete]Verify after downgrade the PBR routes are changed to Static Routes",
+      "result" : "  New address objects should be added and should appear in the Address Object page ."
+   },
+   "24" : {
+      "steps" : "  1. Configure 2 policy based routes one for www.yahoo.com IP as destination and using Primary WAN and one for www.dell.com as destination and Secondary WAN.\n  2. Send traffic from the LAN to yahoo.com and dell.com do several transactions in different order.\n  4. Run packet capture 'System -> Packet Capture'\n  5. Verify that the Destination interfaces for yahoo and dell show up as X1 and X2 respectively.",
+      "initial" : "  2 WANs present and in LB configuration X1 and X2.",
+      "id" : "24",
+      "title" : "Verify route policies can override WAN load balancing",
+      "result" : "  PBR routes override WAN load balancing. Traffic is always sent to same route."
+   },
+   "10" : {
+      "steps" : "  1) From Network-Routing Add a new Route Policy.\n  2) From drop down lists select all but one for Source, Destination, Gateway, Service, Interface\n  3) Click OK\n  4) Verify Error.\n  5) Repeat the above steps for different missing fields.",
+      "initial" : "  N/A",
+      "id" : "10",
+      "title" : "Negative tests to submit a PBR without selecting a Source/Destination",
+      "result" : "  Proper error messages. Incomplete Policy not added."
+   },
+   "31" : {
+      "steps" : "  1) From Network-Routing Add a new Route Policy. 2) From the Drop-down menu of source select create a new address object. 3) From the popup window ,Add Address Ob ject create a new address object for the LAN Interface. 4) Repeat the above steps for different Interface. 5) Repeat the above steps from the Drop-down menu of the Destination of the Route Policy Settings.",
+      "initial" : "  N/A",
+      "id" : "31",
+      "title" : "New Address objectS can be created from the drop-down menu of the PBR route",
+      "result" : "  New address objects should be added and should appear in the Address Object page ."
+   },
+   "35" : {
+      "steps" : "  1.Add a PBR,like below:\n  PC1's ip any ip Ping 0.0.0.0 X2 1;\n  2.Ping any ip from PC1,capture packets in FW;\n  3.Ping any ip from PC2,capture packets in FW;\n  4.Ping another ip from PC1,capture packets in FW;\n  5.Access http/ftp server with any ip from PC1,capture packets in FW.",
+      "initial" : "  PC1\u00a1\u00aa\u00a1\u00aa (X0)FW(X2)\n  PC2\u00a1\u00aa\u00a1\u00aa",
+      "id" : "35",
+      "title" : "The route selection based on the cumulative specificity of the source, destination, service",
+      "result" : "  In step 2,verify the FW generates an arp request packet going out through interface X2;\n  In step 3,verify the packets go out through default route;\n  In step 4,verify the FW generates an arp request packet going out through interface X2;\n  In step 5,verify the packets go out through default route."
+   },
+   "11" : {
+      "steps" : "  1) From Network-Routing the edit icon of a Route Policy;\n  2) Select new objects for each of the fields;\n  3) Click OK;\n  4) Verify that the PBR is updated\u00a3\u00bb\n  5)Verify the updated PBR can take effect.",
+      "initial" : "  Existing PBR",
+      "id" : "11",
+      "title" : "Editing a PBR route",
+      "result" : "  PBR can be edited and take effect."
+   },
+   "42" : {
+      "steps" : "  In step 3,the added PBR is deleted.",
+      "initial" : "  1)Add a VLAN sub interface X0:V100;\n  2)From Network->Routing,add a PBR with interface X0:V100;\n  3)Delete the VLAN sub interface,verify the PBR table.",
+      "id" : "42",
+      "title" : "The PBR used a VLAN sub interface will be deleted after the VLAN sub interface is deleted",
+      "result" : ""
+   },
+   "13" : {
+      "steps" : "  1) Assign an interface that is unassigned to a zone and give it an IP address.\n  2) Go to the Network > Routing page.\n  3) Verify a route has been added: Source-Any, Destination - subnet of interface, Service - Any, Gateway - 0.0.0.0, Metric - 20.\n  4) Verify edit and delete icons are grayed out and cannot be used.\n  5) Verify select box is grayed out and cannot be used.",
+      "initial" : "  N/A",
+      "id" : "13",
+      "title" : "Verify if the Default routes are added when creating a Interface and they are neither Editable nor deletable",
+      "result" : "  Default routes are added when creating a Interface and they are neither editable nor deletable."
+   },
+   "23" : {
+      "steps" : "  1. Create 1st Policy to the resource:\n  Source: PC1\n  Destination: Resource\n  Gateway: Router1\n  Service: HTTP\n  Port: X2\n  2. Create 2nd Policy to the resource:\n  Source: PC2\n  Destination: Resource\n  Gateway: Router2\n  Service: HTTP\n  Port: X3\n  3. Create 3rd Policy to the resource:\n  Source: PC1\n  Destination: Resource\n  Gateway: Router2\n  Service: FTP\n  Port: X3\n  4. Access Resourse from PC1 with HTTP - should go to resource behind Router1 - Verify with Packet Capture.\n  5. Access Resourse from PC1 with FTP - should go to resource behind Router2 - Verify with Packet Capture.\n  6. Access Resourse from PC2 with HTTP - should go to resource behind Router2 -Verify with Packet Capture.",
+      "initial" : "  X0 - LAN1 - PC1 and PC2\n  X1 - WAN\n  X2 - LAN2\n  X3 - DMZ\n  Router1 connected to X2 - Resource (Web/FTP server) behind router with WAN IP\n  Router2 connected to X3 - Resource (Web/FTP server) behind router with WAN IP same IP as above",
+      "id" : "23",
+      "title" : "Network traffic should be redirected to alternate interfaces/gateways based on service/source network route policies",
+      "result" : "  Correct route redirection."
+   },
+   "6" : {
+      "steps" : "  1) Create a couple custom service objects and groups.\n  2) From Network-Routing Add a new Route Policy. 2) From the Drop-down menus select valid objects for all files.\n  3) From the service drop down menu verify that all services are viewable\n  4) Select a service and click OK.\n  5) Verify that PBR is added and configuration is correct.\n  6) Repeat the above steps for different services.",
+      "initial" : "  N/A",
+      "id" : "6",
+      "title" : "All service objects visible/selectable in the service list box",
+      "result" : "  All service objects are visible/selectable in the service list box"
+   },
+   "39" : {
+      "steps" : "  TSR includes correct information for all added PBRs.",
+      "initial" : "  1.Add several PBRs with different source/destination/service/gateway/interface and metric;\n  2.Download TSR and check TSR.",
+      "id" : "39",
+      "title" : "TSR includes correct information for all added PBRs.",
+      "result" : ""
+   },
+   "3" : {
+      "steps" : "  1) From Network-Routing Add a new Route Policy. 2) From the Drop-down menu of gateway select create a new address object. 3) From the popup window of add Address Object create a new address object for the LAN Interface. 4) Repeat the above steps for different Interface.",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "Creating a new Address Object from the Gateway field",
+      "result" : "  New address objects should be added and should appear in the Address Object page."
+   },
+   "36" : {
+      "steps" : "  1.Add two PBRs with same source/destination/service/gateway,different interface and metric,like below:\n  Any PC2's ip Any 0.0.0.0 X2 1\n  Any PC3's ip Any 0.0.0.0 X3 2\n  PC2 and PC3 have the same ip address;\n  2.Ping PC2's ip address from PC1,capture packets in FW;\n  3.Change the two PBR's metric,like below:\n  Any PC2's ip Any 0.0.0.0 X2 2\n  Any PC3's ip Any 0.0.0.0 X3 1\n  4.Ping PC2's ip address from PC1,capture packets in FW.\n  Note:It should add a arp (PC2's ip /PC2's mac or PC3's ip /PC3's mac) ,the traffic can pass.",
+      "initial" : "  (X2)\u00a1\u00aa\u00a1\u00aaPC2\n  PC1\u00a1\u00aa\u00a1\u00aa (X0)FW\n  (X3)\u00a1\u00aa\u00a1\u00aaPC3",
+      "id" : "36",
+      "title" : "The route selection based on the PBR metric",
+      "result" : "  In step 2,Verify the packets go out through interface X2;\n  In step 4,Verify the packets go out through interface X3;"
+   },
+   "9" : {
+      "steps" : "  1)In Network-Routing,add a new route policy,in comment,fill in some valid characters;\n  2)In Route Policies page,view the comment.",
+      "initial" : "  N/A",
+      "id" : "9",
+      "title" : "Verifying a PBR comment appears",
+      "result" : "  In step 2,verify the comment."
+   },
+   "12" : {
+      "steps" : "  1) From Network-Routing click the Trash icon next to a PBR;\n  2)Verify the deleted PBR doesn't take effect anymore.",
+      "initial" : "  Existing PBR.",
+      "id" : "12",
+      "title" : "Deleting a PBR route",
+      "result" : "  Route is deleted and not taking effect anymore."
+   },
+   "41" : {
+      "steps" : "  1.Ping any ip address (for example:baidu's ip) from PC1,capture packets in FW;\n  2.Add a PBR with interface Drop_TunnelIF,like below:\n  Any Any Any 0.0.0.0 Drop_TunnelIF 1;\n  3.Ping any ip address (for example:baidu's ip) from PC1,capture packets in FW.",
+      "initial" : "  PC1\u00a1\u00aa\u00a1\u00aa(X0)FW(X1)\u00a1\u00aa\u00a1\u00aaInternet",
+      "id" : "41",
+      "title" : "Veirfy the function of a PBR that used Drop_TunnelIF as interface",
+      "result" : "  In step 1,ping is successful and the traffic go out through interface X1(default route);\n  In step 3,ping is failed and the packet is dropped."
+   },
+   "15" : {
+      "steps" : "  1) From Network-Routing select Custom Policies style.\n  2) Verify only custom policies are shown. 3) Select Default Policies style\n  4) Verify only default policies are shown.\n  5) Select All style.\n  6) Verify all policies are shown.",
+      "initial" : "  Have added several policy based routes.",
+      "id" : "15",
+      "title" : "View style for All/Custom and Default Route Policies",
+      "result" : "  Can change what routes are shown in the table."
+   },
+   "8" : {
+      "steps" : "  1) From Network-Routing Add a new Route Policy. 2) Select valid objects for each of the drop down menus.\n  3) Enter invalid entrys for metric: -1, 0, 256,bad, 3 characters ~!@#$%^&*()_-\n  4) Click OK\n  5) Verify error.\n  6) Repeat for each invalid entry.\n  7) Verify several valid entries 1-255",
+      "initial" : "  N/A",
+      "id" : "8",
+      "title" : "Boundary tests for Metric",
+      "result" : "  Only valid entries can be entered in the metric field."
+   },
+   "38" : {
+      "steps" : "  1.Add a VPN between DUT and another FW;\n  2.On DUT,add a PBR,the destination is the remote network(FW's X0 subnet),the interface is not X1,like below:\n  Any remote network Any 0.0.0.0 X2 1,check the option \"Allow VPN path to take precedence\",click ok;\n  3.Ping PC2 from PC1,capture packets in FW;\n  4.Reopen the added PBR,uncheck the option \"Allow VPN path to take precedence\",click ok;\n  5.Ping PC2 from PC1 again,capture packets in FW.",
+      "initial" : "  Local PC1\u00a1\u00aa (X0)DUT(X1)\u00a1\u00aainternet\u00a1\u00aa(X1)FW(X0)\u00a1\u00aaRemote PC2",
+      "id" : "38",
+      "title" : "Verify the option \"Allow VPN path to take precedence\"",
+      "result" : "  In step 3,ping is successful and the packets go out through interface X1;\n  In step 5,ping is failed and the FW generates an arp request packet going out through interface X2."
+   },
+   "4" : {
+      "steps" : "  1) From Network-Address Objects create a new address object for different Interfaces. 2) From Network-Routing add a new PBR route. 3) From the drop-down window of Source and destination verify if all the default and Custom Address objects for all Interfaces are available. 4) Select different address objects for the Source/Destination and update. 5) Repeat the steps for different combinations.",
+      "initial" : "  N/A",
+      "id" : "4",
+      "title" : "All address objects visible/selectable in the source/destination list boxes",
+      "result" : "  All the Default and Custom address objects should be visible for source and destination drop-down menus and should be selectable."
+   },
+   "37" : {
+      "steps" : "  In step 2,the PBR is light;\n  In step 3,the PBR is grayed out.",
+      "initial" : "  1.Add a PBR,set interface as X2,uncheck \"Disable route when the interface is disconnected\";\n  2.Make interface X2 link down,verify the PBR;\n  3.Reopen the added PBR,check \"Disable route when the interface is disconnected\",verify the PBR.",
+      "id" : "37",
+      "title" : "Verify the option \"Disable route when the interface is disconnected\"",
+      "result" : ""
+   },
+   "19" : {
+      "steps" : "  1) From Network-Routing Add a new Route Policy.\n  2) From the Drop-down menu of source select create a new address object.\n  3) From the popup window ,Add Address Object create a new address object for the LAN Interface. sss) Repeat the above steps for different Interface.\n  4) Repeat the above steps from the Drop-down menu of the Destination of the Route Policy Settings.",
+      "initial" : "  N/A",
+      "id" : "19",
+      "title" : "[Obsolete]Functional testing for the Static Routes that are changed to PBR routes",
+      "result" : "  New address objects should be added and should appear in the Address Object page ."
+   },
+   "43" : {
+      "steps" : "  Site_B_Group can be added to Test_Net",
+      "initial" : "  1) Create 2 Address Objects (Site_A and Site_B)\n  2) Create 2 Address Group and put the Address Objects created previously(Site_A_Group which contains Site_A and Site_B_Group which contains Site_B AO)\n  3) Create a Address Group called Test_Net and add only Site_A_Group\n  4) Create a static route using Test_Net as Source\n  5) Modify Test_Net and add Site_B_Group(DTS 193260)",
+      "id" : "43",
+      "title" : "Modify permit APIs for PBR needed to support nested groups(DTS 193260)",
+      "result" : ""
+   },
+   "5" : {
+      "steps" : "  1) From Network-Routing add a new Policy based route. 2) From the Drop-down menu of gateway in the add route policy verify only host address objects are available.",
+      "initial" : "  N/A",
+      "id" : "5",
+      "title" : "Only host address objects/visible selectable in the gateway list box",
+      "result" : "  Only host address objects should be visible and selectable from the drop-down list of the Gateway in the Add route policy window."
+   }
+}

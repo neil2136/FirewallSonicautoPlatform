@@ -1,0 +1,30 @@
+{
+   "1" : {
+      "initial" : "  N/A",
+      "id" : "1",
+      "steps" : "  <p>1)Disable DHCP Server</p>\n  <p>2)Enable IPHelper</p>\n  <p>3)Enable DHCP support option</p>\n  <p>4)Configure interface OPT as DMZ</p>\n  <p>5)Place an DHCP server on LAN network, Create DHCP ranges for DMZ Zone</p>\n  <p>6)Create IPHelper policy with DMZ zone in To and address object of DHCP server in From.</p>\n  <p>7)From client verify that can obtain DHCP lease.</p>",
+      "uuid" : "1523758",
+      "title" : "  DHCP Forward from LAN to DMZ"
+   },
+   "2" : {
+      "initial" : "  N/A",
+      "id" : "2",
+      "steps" : "  <p>1) Enable IPHelper</p>\n  <p>2) Enable DHCP support option</p>\n  <p>3)<a name=\"13\"></a>Configure interface x2 as DMZ\u00810\u00842</p>\n  <p>4)<a name=\"13\"></a> interface x3 as LAN\u00810\u00842</p>\n  <p>5)Place an DHCP server on DMZ network, Create DHCP ranges for DMZ Zone\u00810\u00842</p>\n  <p>6)Create a Single\u00810\u00842IPHelper policy with DMZ zone in To and LAN interface in From.\u00810\u00842</p>\n  <p>7) Verify mutilple clients can get dhcp leases and send traffic</p>\n  <p>8) Restore settings</p>",
+      "uuid" : "1523757",
+      "title" : "  Single Policy with multiple DHCP clients associated"
+   },
+   "3" : {
+      "steps" : "  <ol>\n  <li><span style=\"font-size: 10px;\">IP helper netBios policy as source network 192.167.2.0/24 to destination as 192.167.3.0/24.</span></li>\n  <li><span style=\"font-size: 10px;\">Test if netbios-ns request from PC1 to PC2 is resolved.</span></li>\n  <li><span style=\"font-size: 10px;\">Test if netbios-ns request from PC2 to PC1 is resolved.</span></li>\n  </ol>",
+      "initial" : "  <ol>\n  <li><span style=\"font-size: 10px;\">LAN (Any) interface in static Mode with subnet specified as interface subnet (192.167.2.0/24).</span></li>\n  <li><span style=\"font-size: 10px;\">WAN interface is configured as another subnet (192.167.3.0/24).</span></li>\n  </ol>",
+      "id" : "3",
+      "title" : "  NetBios in NAT Mode",
+      "uuid" : "1527114"
+   },
+   "4" : {
+      "initial" : "  <ol>\n  <li><span style=\"font-size: 10px;\">LAN (Any) interface in static Mode with subnet specified as interface subnet (192.167.2.0/24).</span></li>\n  <li><span style=\"font-size: 10px;\">WAN interface is configured as another subnet (192.168.0.0/16).</span></li>\n  <li><span style=\"font-size: 10px;\">IP helper netBios policy as source network 192.167.2.0/24 to destination as 192.168.1.0/24.</span></li>\n  </ol>",
+      "id" : "4",
+      "steps" : "  <ol>\n  <li><span style=\"font-size: 10px;\">Test if netbios-ns request from PC1 to PC2 is resolved.</span></li>\n  <li><span style=\"font-size: 10px;\">Test if netbios-ns request from PC2 to PC1 is resolved.</span></li>\n  </ol>",
+      "uuid" : "1527115",
+      "title" : "  NetBios when Subset policy"
+   }
+}

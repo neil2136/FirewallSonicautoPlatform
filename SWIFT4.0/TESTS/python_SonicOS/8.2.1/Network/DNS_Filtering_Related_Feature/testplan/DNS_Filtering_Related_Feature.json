@@ -1,0 +1,86 @@
+{
+    "1521143": {
+        "steps": "1. Config DNS Filtering settings(Policy settings, global settings, profile settings, etc.);\n2. Export exp file;\n3. Factory Default;\n4. Import exp file.",
+        "initial": "",
+        "id": "1521143",
+        "title": "[FUNC] Verify settings keep intact after exp export/import.",
+        "result": "Settings keep intact after exp file export/import."
+    },
+    "1521144": {
+        "steps": "1. Config DNS Filtering settings(Policy settings, global settings, profile settings, etc.);\n2. Reboot DUT.",
+        "initial": "",
+        "id": "1521144",
+        "title": "[FUNC] Verify settings keep intact after reboot.",
+        "result": "Settings keep intact after reboot."
+    },
+    "1521145": {
+        "steps": "1. Config DNS Filtering settings(Policy settings, global settings, profile settings, etc.);\n2. Load a new firmware;\n3. Boot with Current Configuration.",
+        "initial": "",
+        "id": "1521145",
+        "title": "[FUNC] Verify settings keep intact after upgrade.",
+        "result": "Settings keep intact after upgrade."
+    },
+    "1521146": {
+        "steps": "1. Config DNS Filtering settings(Policy settings, global settings, profile settings, etc.);\r\n2. Sync to Secondary idle.\r\n*Need license on primary and bind two idles in MSW.",
+        "initial": "Set up HA environment",
+        "id": "1521146",
+        "title": "[FUNC] HA: Verify settings sync correctly in HA environment.",
+        "result": "Settings keep intact in HA environment."
+    },
+    "1521147": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface/Zone-Any, action-Filter, Profile-Default Profile, Enable;\r\n2. Change the action of category 'Gaming' is Block in the Default Profile;\r\n3. Enable 'Enforce DNS Proxy For All DNS Requests' in DNS Proxy page, clear the DNS Cache;\r\n4. In Device &gt; Diagnostics &gt; DNS Name Lookup, DNS Server: System Find location of this URL: www.ea.com.",
+        "initial": "WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521147",
+        "title": "[FUNC] Verify the DNS Packets of DNS Lookup from Diagnostics are prior to DNS Filtering.",
+        "result": "DNS Resolved successfully."
+    },
+    "1521148": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface/Zone-Any, action-Filter, Profile-Default Profile, Enable;\r\n2. Change the action of category 'Gaming' is Allow in the Default Profile;\r\n3. Enable 'Enable DNS Sinkhole Service' in DNS Security &gt;DNS Sinkhole page, action is 'Dropping, with Logs';\r\n4. In 'Custom Malicious Domain Name List' tab, add a new entry: www.ea.com;\r\n5. PC connects to X0, set dns server as X0 IP, do dig www.ea.com.",
+        "initial": "WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521148",
+        "title": "[FUNC] Verify the DNS Packets with malicious domain in DNS Sinkhole are prior to DNS Filtering.",
+        "result": "Fail to resolve 'www.ea.com'with \"connection timed out\"."
+    },
+    "1521149": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface/Zone-Any, action-Filter, Profile-Default Profile, Enable;\r\n2. Change the action of category 'Gaming' is Block in the Default Profile;\r\n3. Enable 'Enforce DNS Proxy For All DNS Requests' in DNS Proxy page, clear the DNS Cache;\r\n4. In Address Object, add a FQDN address 'www.ea.com', mouse hovers on the detail of the entry;\r\n5. Select it and click Resolve selected; 6. Mouse hovers on 'www.ea.com'.",
+        "initial": "WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521149",
+        "title": "[FUNC] Verify the DNS Packets of FQDN bypass DNS Filtering.",
+        "result": "In step 4, \"UNRESOLVED\" shows;\r\nIn step 6, the ip of the domain is resolved correctly, and shows."
+    },
+    "1521150": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface/Zone-Any, action-Filter, Profile-Default Profile, Enable;\r\n2. Change the action of category 'Gaming' is Block in the Default Profile;\r\n3. Enable 'Enforce DNS Proxy For All DNS Requests' in DNS Proxy page, clear the DNS Cache;\r\n4. In Device &gt; Diagnostics &gt; Ping, Ping host or IP address: www.ea.com.",
+        "initial": "WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521150",
+        "title": "[FUNC] Verify the DNS Packets of PING Lookup from Diagnostics bypass DNS Filtering.",
+        "result": "The domain can be resolved successfully."
+    },
+    "1521151": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Profile-Default Profile, Enable;\r\n2. Change the action of category 'Gaming' is Block in the Default Profile;\r\n3. Enable 'Enable proxying of split DNS servers' in DNS Proxy page;\r\n4. In Split DNS tab, add a new entry: IP Version: IPv4, Domain Name: www.ea.com, IPv4 DNS Server Primary: 10.190.202.200, Local Interface: X0;\r\n5. PC connects to X0, set dns server as X0 IP, do' dig www.ea.com'.",
+        "initial": "PC---(X0)DUT(X1)---WAN---Split DNS\r\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521151",
+        "title": "[FUNC] Verify the DNS Packets with domain in Split DNS table bypass DNS Filtering.",
+        "result": "DNS Resolved successfully."
+    },
+    "1521187": {
+        "steps": "1. Make sure DNS Security license is activated;\r\n2. DNS Security \\ Settings \\ DNS Filtering tab and DNS Security \\ Reports page, check the page;\r\n3. From GUI and CLI, enter configure mode, add a dns policy with action-Filter.",
+        "initial": "",
+        "id": "1521187",
+        "title": "[FUNC] Verify DNS Filtering can be configured when the license is activated.",
+        "result": "In step 2, the sections can be accessed.\r\nIn step 3, success."
+    },
+    "1521188": {
+        "steps": "1. Make sure DNS Security license is NOT activated;\r\n2. <span>DNS Security \\ Settings \\ DNS Filtering tab and DNS Security \\ Reports page, check the page</span>;\r\n3. From GUI and CLI, enter configure mode, add a dns policy with action-Filter.",
+        "initial": "",
+        "id": "1521188",
+        "title": "[FUNC] Verify DNS Filtering can not be configured when the license is NOT activated.",
+        "result": "In step 2, the section can not be accessed.\r\nIn step 3, failed."
+    },
+    "1521189": {
+        "steps": "1.Device &gt; Log &gt; Settings, enable DNS Filtering Expiration Message, set its log priority to alert and display interval to 0;\r\n2.Add a dns filter policy from X0, with default profile;\r\n3.Make DNS Filtering license expired, check the logs;\r\n4.DNS Security \\ Settings \\ DNS Filtering tab and DNS Security \\ Reports page, check the pages;\r\n5.From GUI and CLI, enter configure mode, add/edit a dns policy with action-Filter.\r\n6.From LAN client, dig adult.com @X0-ip,(domain should with negative reply) check the result\r\n\r\n",
+        "initial": "LAN Client-X0-DUT-WAN",
+        "id": "1521189",
+        "title": "[FUNC] Verify when license is expired, DNS Filter policy cannot be edited and works as proxy one.",
+        "result": "In step 3, a log shows: Your DNS Filtering subscription has expired.\r\nIn step 4, the section can not be accessed.\r\nIn step 5, failed.(except for change the policy action to proxy and delete)\r\nIn step 6, the dns can be done proxy successfully and forward to default dns settings not Neustar server.\r\n\r\n"
+    }
+}

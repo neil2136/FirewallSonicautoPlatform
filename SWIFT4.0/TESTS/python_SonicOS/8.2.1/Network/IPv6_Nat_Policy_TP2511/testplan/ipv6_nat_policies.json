@@ -1,0 +1,58 @@
+{
+  "1": {
+    "steps" : "1- Login to management interface through a web browser\n2- Go to Network/NAT Policy page\n3- Click IPv6 Only radio Button\n4- Add the following NAT policy by clicking Add button OriginalTranslatedOriginalTranslatedOriginalTranslatedInboundOutbound AnyOriginal2001:1::112001::10AnyOriginalX1Any",
+    "initial" : "Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN and DMZ",
+    "id" : "1",
+    "title" : "GUI: Add IPv6 NAT Policies",
+    "result" : "Verify that IPv6 NAT Policy is added"
+  },
+  "19": {
+    "steps" : "1- Login to management interface through a web browser <br />2- Go to Network/Address Object page <br />3- Click IPv6 Only radio Button and add the following address abjects: <br />Name Zone Assignment Type IP Address Public-IP <br />WAN Host 2001:1::100 & Private-IP LAN Host 2001::100 <br />4- Go to Network/NAT Policy page <br />5- Click IPv6 Only radio Button <br />6- Add the following NAT policy: <br />Source Destination Service Interface OriginalTranslatedOriginalTranslatedOriginalTranslatedInboundOutbound <br />Private-IPPublic-IPAnyOriginal AnyOriginal X0X1 (One to One Mapping ) (All Unmapped )(All Unmapped) <br />7- Create necessary access rules <br />8- Access any host on WAN from LAN Host with IPv6 IP: 2001::100 and make sure that source IP out of WAN port (X1) is shown as 2001:1::100 instead of X1 IPv6 Primary Static Address",
+    "initial" : "Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN, DMZ and custom Zone <br />2001::/64 (LAN) <br />2001:1::/64 (WAN) <br />2001:4::/64 (DMZ)<br /> 2001:5::/64 (Custom Zone",
+    "id" : "19",
+    "title" : " Function: Source Remapping (One to One)",
+    "result" : "All steps in Test Excution section above are passed without errors."
+  },
+  "23": {
+    "steps": "\n\n1- Login to management interface through a web browser <br />2- Go to Network/Address Object page <br />3- Click IPv6 Only radio Button and add the following address Groups: <br />IPv6-LAN-Group with LAN IPs 2001::115, 2001::116, 2001::117, 2001::118, 2001::119 & 2001::120 <br />IPv6-WAN-Group with less number of WAN IPs 2001:1::200 and 2001:1::201 <br />4- Go to Network/NAT Policy page <br />5- Click IPv6 Only radio Button <br />6- Add the following NAT policy: <br />Source Destination Service Interface OriginalTranslatedOriginalTranslatedOriginalTranslatedInboundOutbound <br />AnyOriginalIPv6-WAN-GroupIPv6-LAN-Group AnyOriginal X1Any (All Unmapped ) (few to many )(All Unmapped) <br />7- Create necessary access rules <br />8- Verify that NAT Policy works\nnote:When to configure a DNAT policy, user shall firstly add original destination IP addresses to the interface, as an IPv6 interface support multiple addressing.\n\n<div><font color=\"#111111\" face=\"Arial\"><span>like:IPv6-WAN-Group2001:470:80b7:869::36-39/128. must add them IPS to WAN interface on Advanced page</span></font></div>\n",
+    "initial": "Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN, DMZ and custom Zone <br />2001::/64 (LAN) <br />2001:1::/64 (WAN) <br />2001:4::/64 (DMZ) <br />2001:5::/64 (Custom Zone)",
+    "id" : "23",
+    "title" : " Function: Destination Remapping (Few to Many)",
+    "result" : "All steps in Test Excution section above are passed without errors."
+  },
+  "4": {
+    "steps":"This testcase has three cases..\nCase1:Deleting policy by clicking X button:\n1- Login to management interface through a web browser\n2- Go to Network/NAT Policy page\n3- Click on Custom Policies and IPv6 Only radio buttons\n4- Click X button at the end of an IPv6 NAT policy - Verify that policy gets deleted\nCase2:Deleting policy by checking the checkbox for NAT Policy and then clicking Delete button:\n1- Login to management interface through a web browser\n2- Go to Network/NAT Policy page\n3- Click on Custom Policies and IPv6 Only radio buttons\n4- Check the checkbox for IPv6 NAT Policy and then click Delete button - Verify that policy gets deleted\nCase3:Deleting all IPv6 NAT policies by clicking Delete All button:\n1- Login to management interface through a web browser\n2- Go to Network/NAT Policy page\n3- Click on Custom Policies and IPv6 Only radio buttons\n4- Click Delete All button - Verify that all the remaining custom IPv6 NAT policies get deleted",
+    "initial": "Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN and DMZ.\nSeveral custom IPv6 NAT Policies are already created",
+    "id" : "4",
+    "title" : " GUI: Delete IPv6 NAT Policies",
+    "result" : "User should be able to delete custom IPv6 NAT policies"
+  },
+  "8": {
+    "steps":"1- Login to management interface through a web browser\n2- Go to Firewall/Service page\n3- Modify custom services and custom service groups being used in the NAT policy\n4- Go to Network/NAT Policy page\n5- Click on Custom Policies and IPv6 Only radio buttons\n6- Verify that custom services and custom service groups in the NAT Policies are updated in NAT Policy table",
+    "initial": "Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN and DMZ.\nCustom IPv6 NAT Policies using custom services / custom  service groups already created",
+    "id" : "8",
+    "title" : " GUI: Modify Services and Service groups to update IPv6 NAT Policy table",
+    "result" : "Service and service group in an existing IPv6 NAT policy can be modified"
+  },
+  "9": {
+    "steps": "1- Login to management interface through a web browser\n2- Go to Network/NAT Policy page\n3- Click IPv6 Only radio Button\n4- Add the following NAT policy with incorrect outbound interface.. Original Translated Original Translated Original Translated Inbound Outbound Any Original 2001:1::11 2001::10 Any Original X1 X1\n5- Try more of such cases.",
+    "initial": "",
+    "id" : "9",
+    "title" : " GUI: Error and wrong inputs",
+    "result" : "Firewall would give error when user tries to enter wrong inputs.."
+  },
+  "44": {
+    "steps": "1- Login to management interface through a web browser\n2- Go to Network/NAT Policy page\n3- Click IPv6 Only radio Button\n4- Create several IPv6 NAT Policies from WAN to LAN, WAN to DMZ, DMZ to WAN etc..\n5- Export Prefs\n6- Reboot the box to factory default settings\n7- Import Prefs back and verify that IPv6 NAT policies remain intact",
+    "initial": "Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN, DMZ and custom Zone\n2001::/64 (LAN)\n2001:1::/64 (WAN)\n2001:4::/64 (DMZ)\n2001:5::/64 (Custom Zone)",
+    "id" : "44",
+    "title" : "Preference Export and Import",
+    "result" : "IPv6 NAT policies should remain intact after Preference Export and Import"
+  },
+  "28": {
+    "steps": "1- Login to management interface through a web browser <br />2- Go to Network/Address Object page <br />3- Click IPv6 Only radio Button and add the following address object: Name Zone Assignment Type IP Address IPv6-Server-IP LAN Host 2001::100 <br />4- Go to Network/NAT Policy page <br />5- Click IPv6 Only radio Button <br />6- Add the following NAT policy (Also Check Create reflexive Policy checkbox) <br />Source Destination Service Interface Original Translated Original Translated Original Translated Inbound Outbound <br />Any Original X1 IPv6 Primary Static Address IPv6-Server-IP HTTP original X1 any (All Unmapped) (One-to-one mapping) (Some unmapped) <br />7- Make sure that WAN to LAN access rule is allowed\n8- Access this HTTP server from any host connected on X1 (primary WAN) interface with success.\n9- Try similar testcase for other services like FTP etc",
+    "initial":"Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN, DMZ and custom Zone <br />2001::/64 (LAN) <br />2001:1::/64 (WAN) <br />2001:4::/64 (DMZ) <br />2001:5::/64 (Custom Zone) <br />2001::100 is configured as FTP, HTTP server",
+    "id": "28",
+    "title": "Function: Service Remapping (Some Unmapped)",
+    "result": "All steps in Test Excution section above are passed without errors"
+  }
+}

@@ -1,0 +1,23 @@
+{
+   "1" : {
+      "steps" : "1) From the Users>Guest Account, click the 'Add Guest' button to open the configure dialog;<br />2) Use the 'Generate' button to generate guest name and password automatically.<br /> 3) Go to the 'Guest Services' tab, check the boxes, and set the account,session expiration, and idle time.<br />4) Press OK, and make sure the guest is listed in Guest Account list.<br /> 5) Open the config dialog of it, verify all the settings isn't changed.",
+      "initial" : " PC1 connected to X0 interface of the DUT, the X1 interface connected to lab network which can access Internet; PC2 is a wireless client.",
+      "id" : "1",
+      "title" : "Create a guest user ",
+      "result" : "Wlan guest user can be created successfully."
+   },
+   "2" : {
+      "steps" : "1) From the Users>Guest Account, click the trash icon behind a guest user 'test', verify a dialog popped up saying 'Are you sure you wish to delete the user test?'<br />2) Press OK, make sure the guest user is deleted<br />3) Check the check-box before another guest user 'test1', and then click the 'Delete' button, verify a dialog popped up saying 'Are you sure you wish to delete the selected entries?'<br />4) Press OK, make sure the selected guest user is deleted<br />5) From the CLI, type 'show tsr users' to show all the users, make sure the 2 guest user are not included in it",
+      "initial" : "PC1 connected to X0 interface of the DUT, the X1 interface connected to lab network which can access Internet; PC2 is a wireless client.",
+      "id" : "2",
+      "title" : "Deleting the guest user",
+      "result" :" The guest user can be deleted successfully." 
+   },
+   "13" : {
+      "steps" : "1).From Users>Local Users, add multiple guest users manually<br />2).Export the TSR file with current preference<br /> 3).Open the TSR file, make sure all the guest users are listed in 'User Object Table' correctly<br />4).Add some new guest users and deleted some old guest users, and then export TSR file<br />5).Open the new TSR file, and make sure the information about guest users are updated correctly",
+      "initial" : "  PC1 connected to X0 interface of the DUT.",
+      "id" : "13",
+      "title" : "Verify the TSR for the Guest Users created",
+      "result" :"TSR file is carrying correct Guest Users information." 
+   }
+}

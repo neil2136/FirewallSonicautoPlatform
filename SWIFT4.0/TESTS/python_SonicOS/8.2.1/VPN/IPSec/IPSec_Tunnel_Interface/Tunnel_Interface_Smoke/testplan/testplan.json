@@ -1,0 +1,59 @@
+{
+   "83" : {
+      "steps" : "1.Do auth and login api/sonicos/auth  2.Get api/sonicos/vpn/policies/ipv4/tunnel-interface. 3.Do post api/sonicos/vpn/policies/ipv4 tunnel-interface",
+      "initial" : "  TBD",
+      "id" : "83",
+      "title" : "Create a Tunnel Interface IPV4 VPN policy with the Encryption - DES and 3DES in the Ipsec (Phase 2) Proposal",
+      "result" : " Creating a Tunnel Interface IPV4 VPN policy with the Encryption - DES and 3DES should give success message"
+   },
+
+   "71" : {
+      "steps" : " 1.Do auth and login api/sonicos/auth 2.Get api/sonicos/vpn/policies/ipv4/tunnel-interface. 3.Do post api/sonicos/vpn/policies/ipv4/tunnel-interface.",
+      "initial" : "  TBD",
+      "id" : "71",
+      "title" : "Create a Tunnel Interface IPV4 VPN policy with Peer IKE ID - IPV4 Address and domain name",
+      "result" : "Creating a Tunnel Interface IPV4 VPN policy with Peer IKE ID - IPV4 Address and domain name should give success message"
+   },
+   "70" : {
+      "steps" : " 1.Do auth and login api/sonicos/auth 2.Get api/sonicos/vpn/policies/ipv4/tunnel-interface.  3.Do post api/sonicos/vpn/policies/ipv4/tunnel-interface.",
+      "initial" : "  TBD",
+      "id" : "70",
+      "title" : "Create a Tunnel Interface IPV4 VPN policy with Local IKE ID - Key Identifier",
+      "result" : "Creating a Tunnel Interface IPV4 VPN policy with Local IKE ID - Key Identifier should give success message"
+   },
+   "94" : {
+      "steps" : "  1.Do auth and login api/sonicos/auth  2.Get api/sonicos/vpn/policies/ipv4/tunnel-interface. 3.Do post api/sonicos/vpn/policies/ipv4/tunnel-interface.",
+      "initial" : "  TBD",
+      "id" : "94",
+      "title" : "Create a Tunnel Interface IPV4 VPN policy with the Authontication - MD5 and SHA1 in the Ipsec (Phase 2) Proposal",
+      "result" : "Creating a Tunnel Interface IPV4 VPN policy with the Authontication - MD5 and SHA1 should give success message"
+   },
+   "68" : {
+      "steps" : "1.Do auth and login api/sonicos/auth 2.Get api/sonicos/vpn/policies/ipv4/tunnel-interface. 3.Do post api/sonicos/vpn/policies/ipv4/tunnel-interface.",
+      "initial" : "  TBD",
+      "id" : "68",
+      "title" : "Create a Tunnel Interface IPV4 VPN policy with Local IKE ID - E-mail Address and Firewall Identifier",
+      "result" : "Creating a Tunnel Interface IPV4 VPN policy with Local IKE ID - E-mail Address and Firewall Identifier should give success message"
+   },
+   "78" : {
+      "steps" : "  1.Do auth and login api/sonicos/auth  2.Get api/sonicos/vpn/policies/ipv4/tunnel-interface.  3.Do post api/sonicos/vpn/policies/ipv4/tunnel-interface",
+      "initial" : "  TBD",
+      "id" : "78",
+      "title" : "Create a Tunnel Interface IPV4 VPN policy with Authontication method IKE using Preshared Secret and Peer IKE ID - Distinguished Name(DN)",
+      "result" : "Creating a Tunnel Interface IPV4 VPN policy with Authontication method IKE using Preshared Secret and Peer IKE ID - Distinguished Name(DN) should give success message"
+   },
+   "93" : {
+      "steps" : "1.Do auth and login api/sonicos/auth  2.Get api/sonicos/vpn/policies/ipv4/tunnel-interface.  3.Do post api/sonicos/vpn/policies/ipv4/tunnel-interface.",
+      "initial" : "  TBD",
+      "id" : "93",
+      "title" : "Create a Tunnel Interface IPV4 VPN policy with the Encryption - AESGMAC-256 in the Ipsec (Phase 2) Proposal",
+      "result" : "Creating a Tunnel Interface IPV4 VPN policy with the Encryption - AESGMAC-256 in the Ipsec (Phase 2) Proposal should give success message"
+   },
+   "101" : {
+      "steps" : " 1.Do auth and login api/sonicos/auth  2.Get api/sonicos/vpn/policies/ipv4/tunnel-interface.  3.Do post api/sonicos/vpn/policies/ipv4/tunnel-interface.",
+      "initial" : "  TBD",
+      "id" : "101",
+      "title" : "Create a Tunnel Interface IPV4 VPN policy with VPN Policy bound to: Interface X0/X1/U0",
+      "result" : "Create a Tunnel Interface IPV4 VPN policy with VPN Policy bound to: Interface should give success message"
+   }
+}

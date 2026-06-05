@@ -1,0 +1,191 @@
+{
+   "35" : {
+      "steps" : "  TBD",
+      "initial" : "  Account Lifetime: by Days with Prune account upon expiration unchecked",
+      "id" : "35",
+      "title" : "Account Lifetime: by Days with Prune account upon expiration unchecked",
+      "result" : "   1. Device>Local users and groups>local users> edit user> select Account Lifetime: Days> Set 2 days 2. uncheck Prune account upon expiration > save"
+   },
+   "33" : {
+      "steps" : "  TBD",
+      "initial" : "  Account Lifetime: by Hours with Prune account upon expiration unchecked",
+      "id" : "33",
+      "title" : "Account Lifetime: by Hours with Prune account upon expiration unchecked",
+      "result" : "   1. Device>Local users and groups>local users> edit user> select Account Lifetime: Hours> Set 2 hours 2. uncheck Prune account upon expiration > save"
+   },
+   "32" : {
+      "steps" : "  TBD",
+      "initial" : "  Account Lifetime: by Minutes with Prune account upon expiration checked",
+      "id" : "32",
+      "title" : "Account Lifetime: by Minutes with Prune account upon expiration checked",
+      "result" : "   1. Device>Local users and groups>local users> edit user> select Account Lifetime: Minutes> Set 30 minutes 2. check Prune account upon expiration > save"
+   },
+   "26" : {
+      "steps" : "  TBD",
+      "initial" : "  Enable Prune expired user accounts",
+      "id" : "26",
+      "title" : "Enable Prune expired user accounts",
+      "result" : "   1. Device>Local users and groups>settings 2. enable prune expired user accounts 3. PUT api/sonicos/user/local/base 4. { \"user\": { \"local\": { \"apply_password_constraints\": true, \"prune_on_expiry\": true } } }"
+   },
+   "48" : {
+      "steps" : "  TBD",
+      "initial" : "  Local user settings in TSR",
+      "id" : "48",
+      "title" : "Local user settings in TSR",
+      "result" : "   1. go to local user page 2. add local user 3. go to system diagnostic page and download TSR 4. check the Users"
+   },
+   "42" : {
+      "steps" : "  TBD",
+      "initial" : "  Remaining lifetime check in Edit User window",
+      "id" : "42",
+      "title" : "Remaining lifetime check in Edit User window",
+      "result" : "   1. Create user with Account Lifetime : 2 minutes 2. After One minute click on Edit user and check the Account lifetime 1 minute"
+   },
+   "46" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "46",
+      "title" : "Account life time test of LDAP users",
+      "result" : "  TBD"
+   },
+   "30" : {
+      "steps" : "  TBD",
+      "initial" : "  Select Account Lifetime: Never expires for Local users",
+      "id" : "30",
+      "title" : "Account Lifetime: Never expires",
+      "result" : "   1. Device>Local users and groups>local users> edit user> select Account Lifetime: Never expires>save"
+   },
+   "44" : {
+      "steps" : "  TBD",
+      "initial" : "  Check hyperlink of 'password constraints'",
+      "id" : "44",
+      "title" : "Check hyperlink of 'password constraints'",
+      "result" : "   1. >Device>Local users and groups> settings> click on hyperlink of 'password constraints'"
+   },
+   "29" : {
+      "steps" : "  TBD",
+      "initial" : "  Disable Apply password constraints for all local users",
+      "id" : "29",
+      "title" : "Disable Apply password constraints for all local users",
+      "result" : "   1. Device>Local users and groups>settings 2. Disable Apply password constraints for all local users 3. PUT api/sonicos/user/local/base 4. { \"user\": { \"local\": { \"apply_password_constraints\": false, \"prune_on_expiry\": true } } }"
+   },
+   "27" : {
+      "steps" : "  TBD",
+      "initial" : "  Disable Prune expired user accounts",
+      "id" : "27",
+      "title" : "Disable Prune expired user accounts",
+      "result" : "   1. Device>Local users and groups>settings 2. Disable prune expired user accounts 3. PUT api/sonicos/user/local/base 4. { \"user\": { \"local\": { \"apply_password_constraints\": true, \"prune_on_expiry\": false } } }"
+   },
+   "50" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "50",
+      "title" : "Pref export and re-import",
+      "result" : "  TBD"
+   },
+   "28" : {
+      "steps" : "  TBD",
+      "initial" : "  Enable Apply password constraints for all local users",
+      "id" : "28",
+      "title" : "Enable Apply password constraints for all local users",
+      "result" : "   1. Device>Local users and groups>settings 2. Enable Apply password constraints for all local users 3. PUT api/sonicos/user/local/base 4. { \"user\": { \"local\": { \"apply_password_constraints\": true, \"prune_on_expiry\": true } } }"
+   },
+   "39" : {
+      "steps" : "  TBD",
+      "initial" : "  Try to login with the expired but not pruned users",
+      "id" : "39",
+      "title" : "Try to login with the expired but not pruned users",
+      "result" : "   1. Create user with Account Lifetime : 1 minute disable prune local user in settings 2. After One minute Login from the client machine 3. check user status"
+   },
+   "36" : {
+      "steps" : "  TBD",
+      "initial" : "  Account Lifetime: by Days with Prune account upon expiration checked",
+      "id" : "36",
+      "title" : "Account Lifetime: by Days with Prune account upon expiration checked",
+      "result" : "   1. Device>Local users and groups>local users> edit user> select Account Lifetime: Days> Set 2 days 2. check Prune account upon expiration > save"
+   },
+   "40" : {
+      "steps" : "  TBD",
+      "initial" : "  Try to login with the expired and pruned users",
+      "id" : "40",
+      "title" : "Try to login with the expired and pruned users",
+      "result" : "   1. Create user with Account Lifetime : 1 minute enable prune local user in settings 2. After One minute User should deleted 3. Login from the client machine 4. check user status"
+   },
+   "51" : {
+      "steps" : "  TBD",
+      "initial" : "  When the user is expired and pruned, make sure it is removed from the group that it belongs",
+      "id" : "51",
+      "title" : "When the user is expired and pruned, make sure it is removed from the group that it belongs",
+      "result" : "   1. Create user with Account lifetime: 1 min check prune on expiry"
+   },
+   "41" : {
+      "steps" : "  TBD",
+      "initial" : "  Account life time test with the user belonging to different groups",
+      "id" : "41",
+      "title" : "Account life time test with the user belonging to different groups",
+      "result" : "   1. >Device>Local users and groups>local groups>expand the dropdown of group \"Everyone\" 2. Select user >edit> see the remaining Acccount life time of local user"
+   },
+   "47" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "47",
+      "title" : "Account life time test of Radius users",
+      "result" : "  TBD"
+   },
+   "52" : {
+      "steps" : "  Restart the firewall and check the remaining lifetime",
+      "initial" : "  Restart the firewall and check the remaining lifetime",
+      "id" : "52",
+      "title" : "Restart the firewall and check the remaining lifetime",
+      "result" : "  Restart the firewall and check the remaining lifetime"
+   },
+   "38" : {
+      "steps" : "  TBD",
+      "initial" : "  Account Lifetime: negetive test with aphabetic and symbolic characters",
+      "id" : "38",
+      "title" : "Account Lifetime: negetive test with aphabetic and symbolic characters",
+      "result" : "  Device>Local users and groups>local users> edit user> select Account Lifetime: Days> Enter \"abcd\" days> save"
+   },
+   "34" : {
+      "steps" : "  TBD",
+      "initial" : "  Account Lifetime: by Hours with Prune account upon expiration checked",
+      "id" : "34",
+      "title" : "Account Lifetime: by Hours with Prune account upon expiration checked",
+      "result" : "   1. Device>Local users and groups>local users> edit user> select Account Lifetime: Hours> Set 2 hours 2. check Prune account upon expiration > save"
+   },
+   "49" : {
+      "steps" : "  TBD",
+      "initial" : "  Check Logs for local users",
+      "id" : "49",
+      "title" : "Check Logs for local users",
+      "result" : "   1. create a local user test3 2. >Monitor>Logs>System Logs 3. check for log \"User test3 is created\""
+   },
+   "45" : {
+      "steps" : "  TBD",
+      "initial" : "  Delete the user with account lifetime configured",
+      "id" : "45",
+      "title" : "Delete the user with account lifetime configured",
+      "result" : "   1. >Device>local users and groups > click the trash icon and delete local user 2. Delete 'api/sonicos/user/local/users/name/"
+   },
+   "37" : {
+      "steps" : "  TBD",
+      "initial" : "  Out of bounds error for Account Lifetime: boundary check",
+      "id" : "37",
+      "title" : "Account Lifetime: boundary check",
+      "result" : "   1. Device>Local users and groups>local users> edit user> select Account Lifetime: Days> Set 12343 days> save"
+   },
+   "43" : {
+      "steps" : "  TBD",
+      "initial" : "  Edit the remainling lifetime",
+      "id" : "43",
+      "title" : "Edit the remainling lifetime",
+      "result" : "   1. >Device>Localusers and groups>local users> edit user> Account lifetime : Days > enter 2 Days> save"
+   },
+   "31" : {
+      "steps" : "  TBD",
+      "initial" : "  Account Lifetime: by Minutes with Prune account upon expiration unchecked",
+      "id" : "31",
+      "title" : "Account Lifetime: by Minutes with Prune account upon expiration unchecked",
+      "result" : "   1. Device>Local users and groups>local users> edit user> select Account Lifetime: Minutes> Set 30 minutes 2. uncheck Prune account upon expiration > save"
+   }
+}

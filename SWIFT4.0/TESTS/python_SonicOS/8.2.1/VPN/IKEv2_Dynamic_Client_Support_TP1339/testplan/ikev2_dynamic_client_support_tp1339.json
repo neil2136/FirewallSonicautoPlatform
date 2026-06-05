@@ -1,0 +1,173 @@
+{
+  "tc01": {
+    "steps": "Load SonicOS firmware and boot with default settings.\nGo to the VPN > Advanced page and click the 'Configure' button under IKEv2 Settings.",
+    "atm_id": "BDEE411A-0464-11DE-860E-445A00F93527",
+    "initial": "PC --- X0 SonicWALL",
+    "id": "tc01",
+    "title": "Default IKE attributes in a Global IKEv2 Policy",
+    "description": "This test verifies that the Global IKEv2 Policy is created by default with the following attributes for IKE proposal. DH Group=2, Encryption=3DES, and Authentication=SHA1.",
+    "result": "The Configure IKEv2 Dynamic Client Proposal dialog is displayed.\nIt shows the following attributes for IKE proposal: DH Group=2, Encryption=3DES, and Authentication=SHA1."
+  },
+  "tc02": {
+    "steps": "Load SonicOS firmware and boot with default settings.\nOn the VPN > Settings page, add a new VPN policy. Select IKEv2 exchange mode and enter 0.0.0.0 IPSec gateway.\nView the Proposals tab of the VPN policy.\n",
+    "atm_id": "BE0285D0-0464-11DE-860E-445A00F93527",
+    "initial": "PC --- X0 SonicWALL",
+    "id": "tc02",
+    "title": " IKE attributes in IKEv2 dynamic peer policy.",
+    "description": "This test verifies that attributes for IKE proposal in a VPN policy with IKEv2 exchange mode and zero IPSec gateway are greyed out.",
+    "result": "The attributes for IKE proposal in the VPN policy are greyed out."
+  },
+  "tc03": {
+    "steps": "Load SonicOS firmware and boot with default settings.\nOn the VPN > Settings page, add a new VPN policy. Select IKEv2 exchange mode and enter 0.0.0.0 IPSec gateway. Make sure that attributes for IKE proposal are greyed out and show DH Group=2, Encryption=3DES, and Authentication=SHA1.\nOn the VPN > Advanced page, click the Configure button under IKEv2 Settings.\nIn the Configure IKEv2 Dynamic Client Proposal dialog, change Encryption to AES-128 and click OK. Click OK in the popup message \"Global IKEv2 proposal modofication updates IKEv2 dynamic peer policies and deletes current tunnel for those policies. Are you sure you want to update global policy?\"\nOpen the VPN policy created in Step2 and view the Proposal tab.",
+    "atm_id": "BDF2DE0A-0464-11DE-860E-445A00F93527",
+    "initial": "PC --- X0 SonicWALL ",
+    "id": "tc03",
+    "title": " Modify IKE attributes in the Global IKEv2 Policy.",
+    "description": "This test verifies that IKE attributes in a VPN policy with IKEv2 exchange mode and zero IPSec gateway should be modified in the Global IKEv2 Policy.",
+    "result": "The Encryption has been changed to AES-128 in the IKEv2 dynamic peer policy.\n\n"
+  },
+  "tc09": {
+    "steps": "Load SonicOS 4.0 ENH firmware on SonicWALL1 and SonicWALL2, and boot with default settings. Configure LAN and WAN interfaces on the firewalls.\nOn the VPN > Settings page of SonicWALL1, add a new VPN policy. Select IKEv2 exchange mode, enter 0.0.0.0 IPSec gateway, and select X0 subnet of SonicWALL1 as a local network and X0 subnet of SonicWALL2 as a destination network.\nOn the VPN > Settings page of SonicWALL2, add a matching VPN policy. Select IKEv2 exchange mode, enter X1 IP address of SonicWALL1 in the primary IPSec Gateway address field. Select X0 subnet of SonicWALL2 as a local network and X0 subnet of SonicWALL1 as a destination network.\nInitiate ping from PC2 to PC1.\n",
+    "atm_id": "",
+    "initial": "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC2",
+    "id": "tc09",
+    "title": "Negotiate a tunnel using a VPN policy with IKEv2 exchange mode and zero IPSec gateway.",
+    "description": "This test verifies that IKE and IPSec tunnel can be created using a VPN policy with IKEv2 exchange mode and zero IPSec gateway.\n\n",
+    "result": "IKE and IPSec SAs are negotiated. The tunnel between local and remote LANs is created."
+  },
+  "tc22": {
+    "steps": "Load SonicOS firmware and boot with default settings.\non VPN->Advanced page, click Configure button under IKE settings.\ncheck IKEv2 dynamic client Procosal diag",
+    "atm_id": "3DA79066-6098-11ED-BF99-10E69EE98C89",
+    "initial": " PC --- X0 SonicWALL",
+    "id": "tc22",
+    "title": "AESGCM encrytion is inclluding in Global IKE settings",
+    "description": "This test verifies that AESGCM encrytion is in IKEv2",
+    "result": "the Encrytion support AESGCM128/ AESGCM192/AESGCM256, when select encrytion as AESGCM, Authentication will auto change to PRF Algorithm, and there are 5 algorithms in the drop-down list: PRF_HMAC_MD5/PRF_HMAC_SHA1/PRF_HMAC_SHA256/PRF_HMAC_SHA384/PRF_HMAC_SHA512\n\n"
+  },
+  "tc23": {
+    "steps": "Load SonicOS firmware and boot with default settings.\nOn the VPN > Settings page, add a new VPN policy. Select IKEv2 exchange mode and enter 0.0.0.0 IPSec gateway. Make sure that attributes for IKE proposal are greyed out and show DH Group=2, Encryption=3DES, and Authentication=SHA1.\nOn the VPN > Advanced page, click the Configure button under IKEv2 Settings.\nIn the Configure IKEv2 Dynamic Client Proposal dialog, change Encryption to AESGCM and click OK. Click OK in the popup message \"Global IKEv2 proposal modification updates IKEv2 dynamic peer policies and deletes current tunnel for those policies. Are you sure you want to update global policy?\"\nOpen the VPN policy created in Step2 and view the Proposal tab.",
+    "atm_id": "1714322",
+    "initial": "PC --- X0 SonicWALL",
+    "id": "tc23",
+    "title": "Modify IKE attributes to AESGCM in Global IKEv2 settings",
+    "description": "This test verifies that AESGCM encrytion in the Global IKEv2 settings can be saved and auto changed in IKEv2 peer policy",
+    "result": "The Encryption in the Global IKEv2 Policy and in the Proposal tab of the IKEv2 dynamic peer policy shows AESGCM"
+  },
+  "tc24": {
+    "steps": "Load SonicOS firmware and boot with default settings.\n2.config(2CB8ED694D80)# vpn\n(config-vpn)# ikev2\n(config-ikev2)# proposal encryption aes-gcm16-256\n(config-ikev2)# proposal prf hmac-sha-512\n(config-ikev2)# commit\n\nview the Global IKE settings\n",
+    "atm_id": "5521F54A-609A-11ED-B8D6-2EE69EE98C89",
+    "initial": "PC --- X0 SonicWALL ",
+    "id": "tc24",
+    "title": "Modify IKE attributes to AESGCM in the Global IKEv2 setting via CLI",
+    "description": "This test verifies that AESGCM encrytion in the Global IKEv2 settings can be saved via CLI",
+    "result": "check the Global IKE settings, settings via CLI configure are saved"
+  },
+  "tc25": {
+    "steps": "Load SonicOS firmware and boot with default settings.\nOn the VPN > Advance page, open the configure for IKEv2 dynamic client, choose AESGCM as Encrytion\nOn the VPN > Settings page, add a new VPN policy. Select IKEv2 exchange mode and enter 0.0.0.0 IPSec gateway.\nOn the System > Diagnostics page, download TSR.",
+    "atm_id": "A6EF0862-609B-11ED-AC69-20E69EE98C89",
+    "initial": "PC --- X0 SonicWALL ",
+    "id": "tc25",
+    "title": "TSR for IKEv2 dynamic client procosal encrytion is AESGCM",
+    "description": "This test verifies that TSR shows the Global IKEv2 Settings from the VPN>Advances page and settings for a VPN policy with IKEv2 exchange mode.",
+    "result": "The TSR shows IKEv2 Global settings and settings for a VPN policy with IKEv2 exchange mode."
+  },
+  "tc26": {
+    "steps": "Load SonicOS firmware and boot with default settings.\nOn the VPN > Advance page, open Configure for IKEv2 Dynamic Client Procosal, choose AESGCM as Encrytion\nOn the VPN > Settings page, add a new VPN policy. Select IKEv2 exchange mode and enter non-zero IPSec gateway address.\n4, reboot firewall, check IKEv2 Dynamic Client Procosal and vpn settings",
+    "atm_id": "ED805C24-609E-11ED-8693-2EE69EE98C89",
+    "initial": "PC --- X0 SonicWALL",
+    "id": "tc26",
+    "title": "settings keep after reboot firewall for IKEv2 Dynamic Client Proposal Encrytion is AESGCM",
+    "description": "this test verifies thatIKEv2 Dynamic Client Proposal Encrytion is AESGCM settings should be keep after firewall reboot",
+    "result": "step2 ,3 configuration can be saved\nstep4, settings are kept after firewall boots up"
+  },
+  "tc27": {
+    "steps": "Load SonicOS firmware and boot with default settings.\nOn the VPN > Advance page, open Configure for IKEv2 Dynamic Client Procosal, choose AESGCM as Encrytion\nOn the VPN > Settings page, add a new VPN policy. Select IKEv2 exchange mode and enter zero IPSec gateway address.\nrestore firewall,\nafter firewall boots up, import exp file and then check IKEv2 Dynamic Client Procosal and vpn settings",
+    "atm_id": "A50FDA76-60A0-11ED-9C0B-99E69EE98C89",
+    "initial": "PC --- X0 SonicWALL",
+    "id": "tc27",
+    "title": "exp file import for Encrytion is AESGCM in IKEv2 Dynamic Client Procosal",
+    "description": "this test verifies thatIKEv2 Dynamic Client Proposal Encrytion is AESGCM settings should be keep after exp file import",
+    "result": ""
+  },
+  "tc28": {
+    "steps": "Load firmware on SonicWALL1 and SonicWALL2(both support AESGCM), and boot with default settings. Configure LAN and WAN interfaces on the firewalls.\nOn the VPN > Advanced page of SonicWALL1, configure IKEv2 Dynamic Client Procosal, choose Encrytion as AESGCM\nOn the VPN > Settings page of SonicWALL1, add a new VPN policy. Select IKEv2 exchange mode, enter 0.0.0.0 IPSec gateway, and select X0 subnet of SonicWALL1 as a local network and X0 subnet of SonicWALL2 as a destination network.\nOn the VPN > Settings page of SonicWALL2, add a matching VPN policy. Select IKEv2 exchange mode, enter X1 IP address of SonicWALL1 in the primary IPSec Gateway address field. Select X0 subnet of SonicWALL2 as a local network and X0 subnet of SonicWALL1 as a destination network.\nInitiate ping from PC2 to PC1.\n",
+    "atm_id": "278AC946-60A3-11ED-B7C6-A8E69EE98C89",
+    "initial": "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC2",
+    "id": "tc28",
+    "title": "[s2s]Negotiate a S2S VPN tunnel with IKEv2 exchange mode phase1 using AESGCM encrytion and zero IPSec gateway",
+    "description": "This test verifies that IKE and IPSec tunnel can be created using a VPN policy with IKEv2 exchange mode phase1 using AESGCM encrytion and zero IPSec gateway.\n\n",
+    "result": "IKE and IPSec SAs are negotiated. The tunnel between local and remote LANs is created."
+  },
+  "tc29": {
+    "steps": "Load firmware on SonicWALL1 and SonicWALL2(both support AESGCM), and boot with default settings. Configure LAN and WAN interfaces on the firewalls.\nOn the VPN > Advanced page of SonicWALL1, configure IKEv2 Dynamic Client Procosal, choose Encrytion as AESGCM\nOn the VPN > Settings page of SonicWALL1, add a new tunnel interface VPN policy. Select IKEv2 exchange mode, enter 0.0.0.0 IPSec gateway, and select X0 subnet of SonicWALL1 as a local network and X0 subnet of SonicWALL2 as a destination network.\nOn the VPN > Settings page of SonicWALL2, add a matching VPN policy. Select IKEv2 exchange mode, enter X1 IP address of SonicWALL1 in the primary IPSec Gateway address field. Select X0 subnet of SonicWALL2 as a local network and X0 subnet of SonicWALL1 as a destination network.\nInitiate ping from PC2 to PC1.",
+    "atm_id": "24F82046-60A5-11ED-B7C6-A8E69EE98C89",
+    "initial": "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC2",
+    "id": "tc29",
+    "title": "[tunnel]Negotiate a tunnel VPN with IKEv2 exchange mode phase1 using AESGCM encrytion and zero IPSec gateway",
+    "description": "This test verifies that IKE and IPSec tunnel can be created using a VPN policy with IKEv2 exchange mode phase1 using AESGCM encrytion and zero IPSec gateway",
+    "result": "IKE and IPSec SAs are negotiated. The tunnel between local and remote LANs is created"
+  },
+  "tc30": {
+    "steps": "Load firmware on SonicWALL1 and SonicWALL2(both support AESGCM), and boot with default settings. Configure LAN and WAN interfaces on the firewalls.\nOn the VPN > Advanced page of SonicWALL1, configure IKEv2 Dynamic Client Procosal, choose different encrytion and PRF algorithm, like 1)choose Encrytion as AESGCM16-256, PRF Algorithm as PRF_HMAC_MD5, 2)choose Encrytion as AESGCM16-128, PRF Algorithm as PRF_HMAC_SHA256\nOn the VPN > Settings page of SonicWALL1, add a new VPN policy. Select IKEv2 exchange mode, enter 0.0.0.0 IPSec gateway, and select X0 subnet of SonicWALL1 as a local network and X0 subnet of SonicWALL2 as a destination network.\nOn the VPN > Settings page of SonicWALL2, add a matching VPN policy. Select IKEv2 exchange mode, enter X1 IP address of SonicWALL1 in the primary IPSec Gateway address field. Select X0 subnet of SonicWALL2 as a local network and X0 subnet of SonicWALL1 as a destination network.\nInitiate ping from PC2 to PC1.",
+    "atm_id": "29030BF4-79E3-11ED-A354-25EBA0E98C89",
+    "initial": "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC2",
+    "id": "tc30",
+    "title": "[s2s]Combination test for IKEv2 exchange mode phase1 using AESGCM encrytion and zero IPSec gateway",
+    "description": "This test verifies that IKE and IPSec S2S tunnel can be created using a VPN policy with IKEv2 exchange mode phase1 using different AESGCM encrytion and PRF Algorithm with zero IPSec gateway.\n\n",
+    "result": "IKE and IPSec SAs are negotiated. The tunnel between local and remote LANs is created."
+  },
+  "tc31": {
+    "steps": "Load firmware on SonicWALL1 and SonicWALL2(both support AESGCM), and boot with default settings. Configure LAN and WAN interfaces on the firewalls.\nOn the VPN > Advanced page of SonicWALL1, configure IKEv2 Dynamic Client Procosal, configure IKEv2 Dynamic Client Procosal, choose different encrytion and PRF algorithm, like 1)choose Encrytion as AESGCM16-256, PRF Algorithm as PRF_HMAC_MD5, 2)choose Encrytion as AESGCM16-128, PRF Algorithm as PRF_HMAC_SHA256\nOn the VPN > Settings page of SonicWALL1, add a new tunnel interface VPN policy. Select IKEv2 exchange mode, enter 0.0.0.0 IPSec gateway, and select X0 subnet of SonicWALL1 as a local network and X0 subnet of SonicWALL2 as a destination network.\nOn the VPN > Settings page of SonicWALL2, add a matching VPN policy. Select IKEv2 exchange mode, enter X1 IP address of SonicWALL1 in the primary IPSec Gateway address field. Select X0 subnet of SonicWALL2 as a local network and X0 subnet of SonicWALL1 as a destination network.\nInitiate ping from PC2 to PC1.\n",
+    "atm_id": "1DEFFECE-79E4-11ED-A450-6CEBA0E98C89",
+    "initial": "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC2",
+    "id": "tc31",
+    "title": "[tunnel vpn]Combination test for IKEv2 exchange mode phase1 using AESGCM encrytion and zero IPSec gateway",
+    "description": " This test verifies that IKE and IPSec tunnel VPN connection can be created using a VPN policy with IKEv2 exchange mode phase1 using different AESGCM encrytion and PRF Algorithm with zero IPSec gateway.",
+    "result": "IKE and IPSec SAs are negotiated. The tunnel between local and remote LANs is created.\n\n"
+  },
+  "tc32": {
+    "steps": "Import certificates on two FWs. The two FWs support AESGCM in phase 1 .\nAdd ikev2 s2s vpn policy on two FWs. Auth method is 3rd party certificate. DUT's gw is 0.0.0.0. Fill correct peer ike id. Set local and remote network. Proposal phase 1 uses DH group 14 + AESGCM16-256 + PRF_HMAC_SHA256 which configured in dynamic client proposal. Peer's gw is DUT's x1, not 0.0.0.0.\nAfter tunnel up, ping from PC under local network to remote network.\n",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc32",
+    "title": "",
+    "description": "",
+    "result": "Tunnel can up. PCs can ping each other."
+  },
+  "tc33": {
+    "steps": "Factory default FW.\nCheck the default value of dynamic client proposal from vpn -> advanced -> IKEv2 Dynamic Client Proposal.\nAdd a new ikev2 vpn policy with gateway 0.0.0.0, observe the default value of phase 1 proposal.",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc33",
+    "title": "Check dynamic client ikev2 phase 1 default proposal value from GUI after factory default.",
+    "description": "",
+    "result": "In step 2, from story GEN7-35748, the dynamic client proposal is DH group 2 + AES-256 + SHA256.\nIn step 3, the new ikev2 vpn policy with gateway 0.0.0.0 shows the phase 1 proposal as DH group 2 + AES-256 + SHA256.\n\n"
+  },
+  "tc34": {
+    "steps": "Factory default FW, FW's version is after story GEN7-35748.\nAdd ikev2 dynamic client tunnel vpn policy from CLI, set gateway as 0.0.0.0 and peer ike id.\n\nconfig(2CB8ED9D80F0)# vpn policy tunnel-interface 111\n(add-tunnel-interface[111])# gateway primary 0.0.0.0\n(add-tunnel-interface[111])# auth-method shared-secret\n(auth-method-shared-secret[111])# shared-secret 12345678\n(auth-method-shared-secret[111])# ike-id peer ipv4 1.1.1.1\n\nCheck the phase 1 proposal.",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc34",
+    "title": "Check dynamic client ikev2 phase 1 default proposal value from CLI after default default.",
+    "description": "",
+    "result": "In step 3, the policy shows phase 1 proposal as DH group 2 + AES-256 + SHA256.\n\n"
+  },
+  "tc35": {
+    "steps": "Set dynamic client proposal to AESGCM algorithm.\nCreate one vpn policy with peer gateway as 0.0.0.0. Peer connects it with the same AESGCM algorithm. Tunnel could up.\nCheck CLI command 'show vpn tunnels' or 'show vpn tunnel <policy name>'.",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc34",
+    "title": "Dynamic client VPN tunnel up on phase 1 AESGCM, CLI command 'show vpn tunnels' or 'show vpn tunnel <policy name>' can show the algorithm and prf algorithm.",
+    "description": "",
+    "result": "In step3, the algorithm and prf algorithm should match the setting. For example 'IKEv2 Mode, AESGCM16-256 PRF-HMAC-SHA256'.\n\n"
+  },
+    "tc14": {
+    "steps": "Load SonicOS firmware on SonicWALL1 and SonicWALL2, and boot with default settings. Configure LAN and WAN interfaces on the firewalls.\n\nOn the VPN > Settings page of SonicWALL1, add a new VPN policy. Select IKEv2 exchange mode, enter 0.0.0.0 IPSec gateway, Configure the Peer IKE ID” edit box in IKE Authentication part, set the value as X1 IP address of SonicWALL2.\nAnd select X0 subnet of SonicWALL1 as a local network and X0 subnet of SonicWALL2 as a destination network. Set IKE SA lifetime = 270 sec, IPSec SA lifetime = 120 sec.\n\nOn the VPN > Settings page of SonicWALL2, add a matching VPN policy. Select IKEv2 exchange mode, enter X1 IP address of SonicWALL1 in the primary IPSec Gateway address field. Select X0 subnet of SonicWALL2 as a local network and X0 subnet of SonicWALL1 as a destination network. Set matching SA lifitime.\n\n4. Initiate ping from PC2 to PC\nLet four minutes pass and view the log on the firewalls.",
+    "atm_id": "BDDDE55E-0464-11DE-860E-445A00F93527",
+    "initial": " PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC2",
+    "id": "tc14",
+    "title": " Rekey event for the tunnel using VPN policy with IKEv2 exchange mode and zero IPSec gateway.",
+    "description": "This test verifies that IKEv2 dynamic peer policy is renegotiated  when IKE/IPSec lifetime expires.",
+    "result": "Child SAs are negotiated after SA lifetime is about to expire. IPSec SA is renegotiated in 120 seconds. IKE SA is renegotiated in 270 seconds."
+  }
+}

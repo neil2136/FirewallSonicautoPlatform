@@ -1,0 +1,106 @@
+{
+  "1518396": {
+    "id": "1518396",
+    "title": "App Control Advanced --- Edit a category, sso enforcement disabled, set included user with local user/group",
+    "result": "1. Go to sso enforcement tab, mouse over LAN zone, \"Required by: Application Firewall\" will prompt; \n2. Check TSR, from Zones on which modules require user authentication, Application Firewall requires user authentication will be recorded; \n3. Check Log and User->Status, verify that SSO authentication is triggered, verify app control works fine (see steps)",
+    "steps": "1. go to Firewall->App Control Advanced, enable app control on Firewall-> App Control Advanced \n2. edit a category like ‘DOWNLOAD-APP’, set included user/group with local user ‘YILI/qa1’, and excluded user/group ‘none’, set action to enable block, click OK to apply configuration \n3. enable app control on LAN zone \n4. make sure sso enforcement is disabled, make sure access rule from LAN->WAN is set to allow all \n5. from a lan client whose domain name is ‘YILI/qa1’ (included in group1), download p2p resource using Xunlei Thunder, verify that app control could trigger SSO authentication\n6. from a lan client whose domain name is not ‘YILI/qa1’, download p2p resource using Xunlei Thunder, verify that app control will still trigger SSO authentication, but app control will not take effect for this pc \n7. repeat step 1-7, in step 2, edit a category like ‘DOWNLOAD-APP’, set included user/group with local group ‘group1’, and excluded user/group ‘none’, set action to enable block, click OK to apply configuration"
+  },
+
+  "1518397": {
+    "id": "1518397",
+    "title": "App Control Advanced --- Edit a signature, sso enforcement enabled , set both included and excluded user/group",
+    "result": "1. Go to sso enforcement tab, mouse over LAN zone, \"Required by: Application Firewall, SSO enforcement\" will prompt;\n2. Check TSR, from Zones on which modules require user authentication, Application Firewall and SSO Enforcement require user authentication; \n3. Check Log and User->Status, verify that SSO authentication is triggered, verify app control works fine",
+    "steps": "1. go to Firewall->App Control Advanced, enable app control on Firewall-> App Control Advanced\n2. edit a Xunlei Thunder signature, set included user/group with local group ‘group1’, and excluded user/group ‘YILI/qa2’, set action to enable block, click OK to apply configuration\n3. enable app control on LAN zone\n4. make sure sso enforcement is enabled, make sure access rule from LAN->WAN is set to allow all\n5. from a lan client whose domain name is ‘YILI/qa1’, download p2p resource using Xunlei Thunder, verify that app control triggers SSO authentication and takes effect\n6. from a lan client included in ‘YILI/qa2’, verify SSO triggers but app control does NOT take effect\n7. for other client, tbd"
+  },
+
+  "1518398": {
+    "id": "1518398",
+    "title": "App Control Advanced --- Edit an application, sso enforcement enabled , set included user/group",
+    "result": "1. Go to sso enforcement tab, mouse over LAN zone, \"Required by: Application Firewall, SSO enforcement\" will prompt; \n2. Check TSR, from Zones on which modules require user authentication, Application Firewall and SSO Enforcement requires user authentication will be recorded; \n3. Check Log and User->Status, verify that SSO authentication is triggered, verify app control works fine (see steps)",
+    "steps": "1. go to Firewall->App Control Advanced, enable app control on Firewall-> App Control Advanced \n2. edit a Xunlei Thunder application, set included user/group with local user ‘YILI/qa1’, and excluded user/group ‘none’, set action to enable block, click OK to apply configuration \n3. enable app control on LAN zone \n4. make sure sso enforcement is enabled, make sure access rule from LAN->WAN is set to allow all \n5. from a lan client whose domain name is ‘YILI/qa1’, download p2p resource, verify SSO triggers & app control takes effect \n6. from a lan client not ‘YILI/qa1’, verify SSO triggers but app control does NOT take effect \n7. repeat step 1-6 using group ‘group1’ instead of local user"
+  },
+
+  "1518399": {
+    "id": "1518399",
+    "title": "App Control Advanced --- Edit an application, sso enforcement enabled , set excluded user/group",
+    "result": "1. Go to sso enforcement tab, mouse over LAN zone, \"Required by: Application Firewall, SSO enforcement\" will prompt;\n2. Check TSR, Application Firewall and SSO Enforcement require user authentication;\n3. Verify SSO triggers and app control works",
+    "steps": "1. enable app control \n2. edit Xunlei Thunder app, set excluded user/group ‘YILI/qa1’, included ‘all’ \n3. enable app control on LAN \n4. ensure sso enforcement is enabled \n5. from user ‘YILI/qa1’, SSO triggers but app control does NOT apply \n6. from others, SSO triggers & app control applies \n7. repeat using group ‘group1’"
+  },
+
+  "1518400": {
+    "id": "1518400",
+    "title": "App Rules --- add an app rule policy, sso enforcement disabled , set included user/group",
+    "result": "1. SSO shows Application Firewall requires authentication;\n2. TSR confirms;\n3. Logs confirm SSO trigger & app control works",
+    "steps": "1. create match object with DOWNLOAD-APP \n2. create rule including ‘YILI/qa1’ \n3. enable app rules\n4. ensure sso enforcement disabled \n5. from ‘YILI/qa1’ SSO triggers & app control applies \n6. from others SSO triggers but app control does NOT apply \n7. repeat with group ‘group1’"
+  },
+
+  "1518401": {
+    "id": "1518401",
+    "title": "App Control Advanced --- Edit a category, sso enforcement disabled , set excluded user/group",
+    "result": "1. SSO tab shows Application Firewall requires authentication;\n2. TSR confirms;\n3. Logs confirm SSO trigger and behavior",
+    "steps": "1. enable app control\n2. edit category, exclude ‘YILI/qa1’, include all\n3. enable app control on LAN\n4. sso enforcement disabled\n5. for ‘YILI/qa1’: SSO triggers but app control does not apply\n6. others: SSO triggers & app control applies\n7. repeat using group"
+  },
+
+  "1518402": {
+    "id": "1518402",
+    "title": "App Rules --- add an app rule policy, sso enforcement disabled , set excluded user/group",
+    "result": "1. SSO tab shows Application Firewall requires authentication;\n2. TSR confirms;\n3. Logs confirm SSO triggered correctly",
+    "steps": "1. create match object\n2. rule with included all, excluded ‘YILI/qa1’\n3. enable app rules\n4. ensure sso enforcement disabled\n5. user ‘YILI/qa1’: SSO triggers, app control no effect\n6. others: SSO triggers, app control applies\n7. repeat with group"
+  },
+
+  "1518403": {
+    "id": "1518403",
+    "title": "App Rules --- Add an app rule policy, sso enforcement disabled , set both included and excluded user/group",
+    "result": "1. SSO tab reflects Application Firewall requirement;\n2. TSR confirms;\n3. Logs show triggers",
+    "steps": "1. create match object\n2. rule: include ‘group1’, exclude ‘YILI/qa2’\n3. enable app rules\n4. sso disabled\n5. qa1: SSO & app control applies\n6. qa2: SSO but app control does NOT apply\n7. others TBD"
+  },
+
+  "1518404": {
+    "id": "1518404",
+    "title": "App Rules --- Add an app rule policy, sso enforcement enabled , set included user/group",
+    "result": "1. SSO tab: required by App Firewall & SSO enforcement;\n2. TSR confirms;\n3. Logs confirm behavior",
+    "steps": "1. create match object\n2. rule include ‘YILI/qa1’\n3. enable app rules\n4. sso enabled\n5. qa1: SSO & app control applies\n6. others: SSO triggers but app control does not apply\n7. repeat with group"
+  },
+
+  "1518405": {
+    "id": "1518405",
+    "title": "App Rules --- Add an app rule policy, sso enforcement enabled , set excluded user/group",
+    "result": "1. SSO tab shows required by App Firewall & SSO enforcement;\n2. TSR confirms;\n3. Logs match behavior",
+    "steps": "1. create match object\n2. rule include all, exclude ‘YILI/qa1’\n3. enable app rules\n4. sso enabled\n5. qa1: SSO triggers, app control no effect\n6. others: SSO triggers & app control applies\n7. repeat with group"
+  },
+
+  "1518406": {
+    "id": "1518406",
+    "title": "App rules: include user is set to all and excluded is set to none, verify app control will not trigger SSO authentication",
+    "result": "1. As per steps",
+    "steps": "1. create match object\n2. rule include all, exclude none\n3. enable app rules\n4. verify SSO does NOT trigger & app control applies"
+  },
+
+  "1518407": {
+    "id": "1518407",
+    "title": "Signature: include user is set to all and excluded is set to none, verify app control will not trigger SSO authentication",
+    "result": "1. As per steps",
+    "steps": "1. enable app control\n2. edit signature include all exclude none\n3. enable on LAN\n4. verify no SSO trigger, app control applies"
+  },
+
+  "1518408": {
+    "id": "1518408",
+    "title": "Category: include user is set to all and excluded is set to none, verify app control will not trigger SSO authentication",
+    "result": "1. As per steps",
+    "steps": "1. enable app control\n2. edit category include all exclude none\n3. enable on LAN\n4. verify no SSO trigger, app control applies"
+  },
+
+  "1518409": {
+    "id": "1518409",
+    "title": "Application: include user is set to all and excluded is set to none, verify app control will not trigger SSO authentication",
+    "result": "1. As per steps",
+    "steps": "1. enable app control\n2. edit application include all exclude none\n3. enable on LAN\n4. verify no SSO trigger, app control applies"
+  },
+
+  "1518410": {
+    "id": "1518410",
+    "title": "Edit a signature, then enable app control, verify that sso enforcement will be enabled automatically",
+    "result": "See steps",
+    "steps": "1. edit signature & add included user -> SSO enforcement remains disabled\n2. enable app control globally -> still disabled\n3. enable app control on LAN zone -> SSO enforcement automatically becomes enabled"
+  }
+}

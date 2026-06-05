@@ -1,0 +1,162 @@
+{
+  "1525139": {
+    "steps": "Go to the DHCP Server page, Static Tab,\nGo to Add pop-up page, DNS/WINS tab\nChoose option of Inherit DNS settings from the SonicWALL DNS settings\nSet Static range\nClient gets static DHCP lease from SonicWALL",
+    "initial": "",
+    "id": "1525139",
+    "title": "DNS Inherit Settings for Static Entry",
+    "description": "The user will ensure that the firewall DNS information under DHCP server can be managed upon options of 1) Inherit from the SonicWALL DNS settings when use static settings.",
+    "result": "DHCP client’s DNS settings match SonicWALL DNS settings when using static IPs"
+  },
+  "1525141": {
+    "steps": "Go to the DHCP Server page, Dynamic Tab,\nGo to Add pop-up page, DNS/WINS tab\nChoose option of specify manually, and set DNS settings.\nSet DHCP Dynamic range\nClient gets dynamic DHCP lease from SonicWALL.",
+    "initial": "",
+    "id": "1525141",
+    "title": "DNS Manual Settings for Dynamic Entry",
+    "description": "The user will ensure that the firewall DNS information under DHCP server with Dynamic range settings can be managed when using the option of\nSpecify manually",
+    "result": "DHCP client’s DNS settings match the settings specified in DHCP server when using dynamic IPs ."
+  },
+  "1525146": {
+    "steps": "Go to the DHCP Server page, Static Tab\nGo to Add/Edit pop-up page, DNS/WINS tab\nSet a domain name and a static range\nClient gets static DHCP lease from SonicWALL",
+    "initial": "",
+    "id": "1525146",
+    "title": "Client gets Domain Name Info with Static lease",
+    "description": "The user will ensure that the DHCP client gets correct Domain Name information under DHCP server with static settings.",
+    "result": "DHCP client's domain name settings match SonicWALL DNS settings when using static IPs ."
+  },
+  "1525147": {
+    "steps": "Go to the DHCP Server page, Dynamic Tab\nGo to Add/Edit pop-up page\nSet a client gateway and network mask and dynamic range\nClient gets dynamic DHCP lease from SonicWALL",
+    "initial": "",
+    "id": "1525147",
+    "title": "Client gets Network Setting with Dynamic Lease ",
+    "description": "The user will ensure that the DHCP client gets correct network information under DHCP server with Dynamic settings.",
+    "result": "DHCP client's network settings match SonicWALL settings when using dynamic IPs ."
+  },
+  "1525148": {
+    "steps": "Go to the DHCP Server page, Dynamic Tab;\nGo to Add/Edit pop-up page;\nSet a client gateway address and a network mask with a static range;\nClient gets static DHCP lease from SonicWALL",
+    "initial": "",
+    "id": "1525148",
+    "title": "Client Gets Network Settings with Static lease",
+    "description": "The user will ensure that the DHCP client gets correct network settings under DHCP server with static settings",
+    "result": "DHCP client's network settings match SonicWALL settings when using static IPs ."
+  },
+  "1525154": {
+    "steps": "Go to the DHCP Server page, Static Tab\nIn the Static Entry Range section, try to enter a Mac address with the following IPs :\n260.1.1.1\n1.260.1.1\n1.1.260.1\n1.1.1.260\nHit Update after each IP address.",
+    "initial": "",
+    "id": "1525154",
+    "title": "Static IP Address Values",
+    "description": "The user will ensure that the firewall will only accept proper IP addresses in the Static Field on the DHCP Server page.A properly formatted IP address consists of 4 numbers separated by dots, where each number cannot exceed 255.",
+    "result": "The box should not allow any of the numbers to be entered in the GUI."
+  },
+  "1525165": {
+    "steps": "Go to the DHCP Server page, Dynamic Tab\nGo to Add pop-up page,\nSet lease time to 0, -5 with other proper lease settings\nHit Update after each input.",
+    "initial": "",
+    "id": "1525165",
+    "title": " Invalid Lease Time Value ",
+    "description": "The user will ensure that the firewall will not accept invalid values in the lease time field on the DHCP Server configuration page. ?",
+    "result": "The box should not allow zero or negative value to be entered in the GUI."
+  },
+  "1525166": {
+    "steps": "Go to the DHCP Server page.\nGo to configuration pop-up page,\nSet lease time to 1 and 9999, with other proper lease settings\nHit Update after each input.",
+    "initial": "",
+    "id": "1525166",
+    "title": "Valid Lease Time Value",
+    "description": "The user will ensure that the firewall will only accept proper values ( from 1 to 9999) in the lease time field on the DHCP Server configuration page. ?",
+    "result": "The box should allow these values to be entered in the GUI."
+  },
+  "1525168": {
+    "steps": "Go to the DHCP Server page.\nGo to configuration pop-up page,\nIn the Client Gateway section, try to enter the following IPs :\n260.1.1.1\n1.260.1.1\n1.1.260.1\n1.1.1.260\nHit Update after each input.",
+    "initial": "",
+    "id": "1525168",
+    "title": "Invalid Client Gateway Value",
+    "description": "The user will ensure that the firewall will not accept invalid values in the Client Gateway field on the DHCP Server configuration page. ?",
+    "result": "The box should not allow these values to be updated in the GUI."
+  },
+  "1525172": {
+    "steps": "Go to the DHCP Server page.\nGo to configuration pop-up page,\nIn the DNS Server section, try to enter the following IPs :\n260.1.1.1\n1.260.1.1\n1.1.260.1\n1.1.1.260\nHit Update after each input.",
+    "initial": "",
+    "id": "1525172",
+    "title": "Invalid DNS Server Values ",
+    "description": "he user will ensure that the firewall will not accept invalid values in the DNS Servers fields on the DHCP Server configuration page.",
+    "result": "The box should not allow these values to be updated in the GUI."
+  },
+  "1525174": {
+    "steps": "Go to the DHCP Server page.\nGo to configuration pop-up page,\nIn the Win Server section, try to enter the following IPs :\n260.1.1.1\n1.260.1.1\n1.1.260.1\n1.1.1.260\nHit Update after each input.",
+    "initial": "",
+    "id": "1525174",
+    "title": "Invalid WinServer Values",
+    "description": "The user will ensure that the firewall will not accept invalid values in the Win Servers field on the DHCP Server configuration page.",
+    "result": "The box should not allow these values to be updated in the GUI."
+  },
+  "1525175": {
+    "steps": "Go to the DHCP Server page.\nGo to configuration pop-up page,\nIn the Domain name section, try to enter a value with 256 characters:\nHit Update after input.",
+    "initial": "",
+    "id": "1525175",
+    "title": "Invalid Domain",
+    "description": "The user will ensure that the firewall will not accept invalid values in the domain name field on the DHCP Server configuration page. ?",
+    "result": "The box should not the value to be updated in the GUI."
+  },
+  "1525179": {
+    "steps": "\n\n    In Network \\ Interfaces \\ X1, set it as DHCP WAN, set X0 as LAN;\n    In Network \\ DHCP Server \\ DHCP Server Lease Scopes, add a Dynamic Scope in X0, DNS SERVERS is Inherit;\n    PC connects to X0, set ip as DHCP;\n    From DUT, set X1 as static WAN with all DNS Servers are set to 0.0.0.0;\n    From PC, do 'ipconfig /release' then 'ipconfig /renew';\n    Check the DNS Server settings in PC.\n\n",
+    "initial": "",
+    "id": "1525179",
+    "title": "[FUNC] Verify the DNS Server in DHCP client is valid when static WAN interface has no DNS Server.",
+    "description": "",
+    "result": "In step 1, X1 gets valid DNS Server;\nIn step 3, the PC gets correct ip and DNS Server from DUT;\nIn step 6, the PC gets the same DNS Server as step 3."
+  },
+  "1525180": {
+    "steps": "\n\n    In Network \\ Interfaces \\ X1, set it as DHCP WAN, set X0,X2 as LAN;\n    In Network \\ DHCP Server \\ DHCP Server Lease Scopes, add a Dynamic Scope in X0, DNS SERVERS is Inherit;\n    PC connects to X0, set ip as DHCP;\n    From DUT, disconnect to the DHCP Server in X1, then release X1;\n    In Network \\ DHCP Server \\ DHCP Server Lease Scopes, add a new Dynamic Scope in X2, DNS SERVERS is Inherit;\n    PC connects to X2, set ip as DHCP;\n    Check the DNS Server settings in PC.\n\n",
+    "initial": "",
+    "id": "1525180",
+    "title": "[FUNC] Verify the DNS Server in new DHCP client is valid when DHCP WAN interface has no DNS Serve",
+    "description": "",
+    "result": "In step 1, X1 gets valid DNS Server;\nIn step 3, the PC gets correct ip and DNS Server from DUT;\nIn step 7, the PC gets the same DNS Server as step 3."
+  },
+  "1825685": {
+    "steps": "1)set DHCP lease time = 24 hrs.\n2)Do a DHCP renew\n3)Check the DHCP Flash writes count in the TSR.",
+    "initial": "",
+    "id": "1825685",
+    "title": "DHCP leases are saved in to the Flash only when it is necessary. ",
+    "description": "This test is to verify current DHCP leases are saved in to the Flash not on all Probe intervals, but based on any network change happened after the previous probe. ",
+    "result": "Make sure DHCP lease flash writes count gets incremented only when there is a change in the network caused by DHCP Release/DHCP Renew, DHCP lease time expiry, DHCP server configuration change in the GUI."
+  },
+  "1825686": {
+    "steps": "1) Set dhcp lease for multiple interfaces and multiple zones <br />2) Clients get dhcp leases.<br /> 3) reboot server <br />4) Verify DHCP bindings.\nNotice: Enable DHCP Binding before download TSR",
+    "initial": "DHCP Server enabled. DHCP persistence is configured. ",
+    "id": "18256865",
+    "title": "Verify DHCP bindings ",
+    "description": "This test case is to verify that dhcp binds status shows correct info after reboot server. ",
+    "result": "Bindings shows correct info."
+  },
+  "1825687": {
+    "steps": "Test case 1\n1)Make sure clients got DHCP leases from the server.\n2)Wait for DHCP Server Persistence Monitoring Interval (default 5mts) + delta (max 5mts)\n3)Reboot the firewall.\n4)Do DHCP renew.",
+    "initial": "",
+    "id": "1825687",
+    "title": "Restoring configuration to Factory default truncate DHCP lease file in the Flash. ",
+    "description": " This test is to make sure that doing Factory Default, truncate the DHCP lease file in the Flash.",
+    "result": "No DHCP leases displayed on the current DHCP Leases section in the DHCP server page."
+  },
+  "1825688": {
+    "steps": "1.configure DHCP server with dynamic and static setting across multiple interfaces/zones\n2.Clients get DHCP leases\n3.Reboot server\n4.Client sents Discover after reboot",
+    "initial": "1)DHCP Server Enabled\n2)DHCP Persistence is set.",
+    "id": "1825688",
+    "title": "Client sends discover after reboot ",
+    "description": "This test case is to verify that DHCP persistence take into action when client sends discover after server reboot.",
+    "result": "Clients should still get leases."
+  },
+  "1825689":{
+    "steps": "1.Set the value for DHCP Server Persistence Monitoring Interval as the number between 5 and 1440\n2.Make sure clients got DHCP leases from the server.\n3.Dowload TSR file.\n4.Wait for DHCP Server Persistence Monitoring Interval + delta (max 5mts)\n5.Reboot the firewall.\n6.Do DHCP renew.",
+    "initial":"DHCP Server enabled. <br />DHCP presistence is configured.",
+    "id": "1825689",
+    "title": " Funciton for DHCP Server Persistence Monitoring Interval testing",
+    "description": "This test case is to verifiy setting the different valid value for DHCP Server Persistence Monitoring Interval should work fine.",
+    "result": "1.Check the TSR file,the Total dhcp lease flash writes after reboot so far\n2.After rebooting the Firewall, check ¡° Current DHCP Leases¡± in the DHCP server page. Verify that the lease information is preserved across reboot. Notice: hostname isn't saved.\n3.After DHCP renew make sure that the client gets the same DHCP lease it got before reboot."
+  },
+  "1825690": {
+    "steps": " Do import the configuration",
+    "initial":"after test case 4",
+    "id": "1825690",
+    "title": " import works with DHCP Persistence configuration ",
+    "description": "This test is to make sure import works with DHCP persistence configuration. ",
+    "result": "Configuration import properly. Make sure DHCP persistence configuration preserved across reboots."
+  }
+}

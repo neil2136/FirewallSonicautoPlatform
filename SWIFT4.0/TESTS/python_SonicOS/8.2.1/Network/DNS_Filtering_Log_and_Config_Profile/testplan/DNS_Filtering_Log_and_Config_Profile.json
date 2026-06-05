@@ -1,0 +1,47 @@
+{
+   "015" : {
+      "steps" : "1. From CLI, enter configure mode;\n2. Input:\n#dns-security\n#dns-filtering\n#profile test\n#commit.",
+      "initial" : "PC---(X0)DUT(X1)---WAN DNS Server",
+      "id" : "015",
+      "title" : "[CLI] Verify the CLI commands to add profiles work.",
+      "result" : "In step 2, changes made correctly, and the \"test\" entry shows correctly on GUI."
+   },
+   "016" : {
+      "steps" : "1. From CLI, enter configure mode;\n2. Input:\n#dns-security\n#dns-filtering\n#profile test\n#commit\n3. Edit:\n#name testEdit\n#category 1.\\ Adult forge-ip-reply\n#commit",
+      "initial" : "PC---(X0)DUT(X1)---WAN DNS Server",
+      "id" : "016",
+      "title" : "[CLI] Verify the CLI commands to edit profiles work.",
+      "result" : "In step 3, changes made correctly, and the \"testEdit\" entry shows correctly on GUI."
+   },
+   "018" : {
+      "steps" : "1. From CLI, enter configure mode;\n2. Input:\n#dns-security\n#dns-filtering\n#profile test\n#commit\n3. Delete:\n #no profile test\n#commit",
+      "initial" : "PC---(X0)DUT(X1)---WAN DNS Server.",
+      "id" : "018",
+      "title" : "[CLI] Verify the CLI commands to delete profiles work.",
+      "result" : "In step 3, changes made correctly, and the \"test\" entry is deleted on GUI."
+   },
+   "004" : {
+      "steps" : "1. Device - Log - Settings, set Logging level to Inform, click edit, set Display Events in Log Monitor to 0 seconds, accept;\n2. Device - Log - Settings - Network - DNS Security, enable all the DNS Filtering entries, accept; \n3. Rules and Policies - DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-Default Profile;\n4. DNS - DNS Proxy, enable DNS Proxy cache and clear all the DNS Proxy cache;\n5. PC connects to X0, set dns server as X0 IP, do dig www.ea.com;\n6. Moniter - Logs - System log, check the logs;\n7. Profile Objects - DNS Filtering, set the action of Gaming in Default Profile to Block; \n8. From PC,  do dig www.ea.com again, check the logs.",
+      "id" : "004",
+      "title" : "[FUNC] When all DNS Filtering logs are enabled, verified they are worked.",
+      "result" : "In step 6, DNS Query Received, DNS Response Received From Sonicwall Secured DNS Service, DNS Packet Allowed show;\nIn step 8, DNS Query Received,DNS Query Matched DNS Cache, DNS Packet Blocked show.."
+   },
+   "019" : {
+      "steps" : "1. Add a valid profile named \"test\";\n2. Enable a DNS Policy with Action \"Filter\";\n3. Choose \"test\" profile on Policy Profile;\n4. From CLI, enter configure mode;\n5. Input:\n#dns-security\n#dns-filtering\n#no profile test\n#commit",
+      "id" : "019",
+      "title" : "[CLI] Verify when a profile is binded to a DNS Policy, the profile can not be deleted via CLI commands..",
+      "result" : "In step 5, the profile can not be deleted with an error \"Error: The target DNS Filtering Object test is in used by a DNS policy."
+   },
+   "014" : {
+      "steps" : "1.Object - Profile Objects - DNS Filtering;\n2. Add some valid profiles;\n3. Edit some profiles, change the names and actions;\n4. Delete some profiles or delete all;\n5. Navigate to System - Diagnostics - Tech Support Report, export TSR;\n6. In TSR, check the DNS Filtering Profile Object..",
+      "id" : "014",
+      "title" : " [TSR] Verify when users add/edit/delete profiles, the configuration of DNS Filtering profile shows correctly in TSR.",
+      "result" : "In step 6, the profile configuration is correct."
+   },
+   "021" : {
+      "steps" : "1. From CLI, enter configure mode;\n2. Input:\n#dns-security\n#dns-filtering\n#no profiles\n#commit.",
+      "id" : "021",
+      "title" : "[CLI] Verify the CLI commands to delete all profiles work..",
+      "result" : "Changes made correctly, and all custom profiles are deleted on GUI.."
+   }
+}

@@ -1,0 +1,30 @@
+{
+   "4" : {
+      "steps" : "  <p>1. On DHCP Client pc set its ip address as Obtain an IP address automatically</p>\n  <p>2. Configure X1 ip address as 13.0.0.168, disable the DHCP server on the firewall.</p>\n  <p>3. Configure Router f0/0 interface ip as 192.168.168.1, Router f0/1 interface ip as 13.0.0.1</p>\n  <p>4. Add a static route on the Router to reach 192.168.168.169 subnet</p>\n  <p>5. Configure DHCP server ip address as 13.0.0.5, create a DHCP scope: 192.168.168.20-192.168.168.22</p>\n  6. Go to Network-&gt;IP Helper, create a DHCP policy: source-&gt;Interface X0, destination-&gt;13.0.0.5</p>\n  <p>7. On the DHCP Client pc, execute ipconfig/renew</p>\n  <p>9. Capture the packet on the firewall</p>",
+      "title" : "  DHCP forwarding to one or more host.",
+      "id" : "4",
+      "result" : "  DHCP Client---x0 Sonicwall x1---DHCP server",
+      "uuid" : "1510565"
+   },
+   "2" : {
+      "uuid" : "1510547",
+      "result" : "  One or more IP Helper policies are created.",
+      "id" : "2",
+      "steps" : "  <p>1. Go to Network--&gt;IP Helper</p>\n  <p>2. Select 'Enable' check box to enable the corresponding IP Helper policy, unselect 'Enable' check box to disable the corresponding IP Helper policy.</p>",
+      "title" : "  Enabling/disabling IP Helper policies"
+   },
+   "3" : {
+      "uuid" : "1510554",
+      "result" : "  DNS Client---x0 Sonicwall1 x1---DNS server",
+      "steps" : "  <p>1. On DNS Client pc set its ip address as 13.0.0.1/24, shut down Windows Firewall on the DNS Client pc</p>\n  <p>2. On Sonicwall, Configure X1 as Wan interface, ip address as 13.0.0.168 2 Go to Network-&gt;Routing, create a route policy to reach 13.0.0.5 subnet</p>\n  <p>\u00810\u00842 \u00810\u00842 Go to Network-&gt;IP Helper, create a DNS policy: source-&gt;Interface X0, destination-&gt;13.0.0.5 subnet</p>\n  <p>\u00810\u00842 \u00810\u00843 On the DNS Client pc, try to ping a dns record on the DNS server</p>\n 4Capture the packet on  firewall</p>",
+      "title" : "  DNS forwarding to one or more subnet. Request from client is resolved.",
+      "id" : "3"
+   },
+   "1" : {
+      "uuid" : "1510557",
+      "result" : "  Boot with factory default (Optional)",
+      "id" : "1",
+      "steps" : "  <p>1. Go to Network-&gt;IP Helper</p>\n  <p>2. Click on the 'Add' button under the Relay Protocols section</p>\n  <p>3. Type in a name for the protocol</p>\n  <p>4. Type in the port number in 'Port 1' and/or 'Port 2'</p>\n  <p>5. Type in a Timeout value</p>\n  <p>6. Click the 'OK' button</p>",
+      "title" : "  Adding user defined protocols"
+   }
+}

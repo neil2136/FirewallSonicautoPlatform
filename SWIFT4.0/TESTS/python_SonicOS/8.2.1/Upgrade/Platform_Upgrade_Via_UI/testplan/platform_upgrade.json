@@ -1,0 +1,16 @@
+{
+    "01": {
+        "steps": "1. upgrade current firmware from LAN or WAN.",
+        "initial": "upgrade previous firmware, add WAN interface configure and else, make sure ping pass from lan to wan",
+        "id": "01",
+        "title": "upgrade the current version",
+        "result": "verify upgrade the current version successful."
+    },
+    "02": {
+        "steps": "1 ping form LAN to WAN",
+        "initial": "",
+        "id": "02",
+        "title": "check traffic from LAN to WAN",
+        "result": "verify traffic from LAN to WAN successful"
+    }
+}

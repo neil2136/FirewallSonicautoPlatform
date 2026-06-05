@@ -1,0 +1,23 @@
+{
+   "16" : {
+      "steps" : "  1>Start Multicast Server on X1.\n  2>Start Multicast Client on X0, X3.\n  3>Disable Multicast on the Multicast page.",
+      "initial" : "  Assumes General multicast configurations done with Multicast Enabled. - Put Multicast server on interface X1, WAN - Put Multicast clients on Interface X0, X3. - Set up proper rules for Multicast. - Enable Multicast on interface X0, X1 and X3.",
+      "id" : "16",
+      "title" : "Disable Multicast at the Multicast Page disable all multicast data reception",
+      "result" : "  After step 2, clients can receive multicast data on X0 and X3.\n  After Step 3, clients can not receive any multicast data."
+   },
+   "17" : {
+      "steps" : "  1>Start Multicast Server on X1.\n  2>Start Multicast Client on X0.\n  3>Disable Multicast on the X0 or Disable Multicast on X1.",
+      "initial" : "  Assumes General multicast configurations done with Multicast Enabled. Enable Multicast On interface X0 and X1. Put Multicast server on interface X1, WAN. Put Multicast clients on Interface X0. Set up proper rules for Multicast",
+      "id" : "17",
+      "title" : "Disable Multicast at the Interface page disables multicast reception /sending on that interface.",
+      "result" : "  After Step 2, clients can receive multicast data on X0.\n  After Step 3, clients can not receive any multicast data."
+   },
+   "12" : {
+      "steps" : "  1>Enable Multicast on X0,X1,X2,X3.\n  2>Execute a Perl script for IGMPV2/V3 Membership Report on X0.\n  3>See the IGMP state table in the Firewall->Multicast Page.\n  4>Keep the Firewall Idle for the Timeout +delta (scheduler time :300secs(MAX))",
+      "initial" : "  Assumes General multicast configurations done with Multicast Enabled. PERL Script generating IGMPV2/V3 membership report on X0,X2,X3.\n  Alternatively, use IXload With Video client and server and generate IGMPv3 and V2 joins for 20 + channels. Stop the IXload traffic and verify aging out of IGMP entries on UTM.",
+      "id" : "12",
+      "title" : "Multicast IGMP state Table time out working properly",
+      "result" : "  After 3>IGMP IGMP state Table has entries for Multicast address on X0.\n  After 4>No entry for Multicast address for X0."
+   }
+}

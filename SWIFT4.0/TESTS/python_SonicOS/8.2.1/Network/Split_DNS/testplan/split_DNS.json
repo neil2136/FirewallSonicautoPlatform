@@ -1,0 +1,247 @@
+{
+   "098" : {
+      "steps" : "  1. navigate Network->DNS proxy\n  2. add several split entried\n  3. navigate to System /Diagnostics-> \"Tech Support Report\" session->check option \"DNS Proxy Cache\",download TSR\n  4. check TSR about split dns setting",
+      "initial" : "  TBD",
+      "id" : "098",
+      "title" : "check TSR about split dns setting",
+      "result" : "  TSR about dns split settings,including split entries and \"Manually set TTL value in DNS reply\" if enabled"
+   },
+   "081" : {
+      "steps" : "  1.add a split DNS entry,with 3 dns servers\n  2.check if Server failover and failback function well",
+      "initial" : "  TBD",
+      "id" : "081",
+      "title" : "Function test of multiple split DNS servers",
+      "result" : "   multiple split DNS servers failover and failback function well"
+   },
+   "074" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode\n  2.Navigate to Network > Interfaces,add VLAN interface bound to X2 such as X2:V853,set as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2:V853.\n  3.set X1 as WAN interface,and have ipv6 address and ipv6 DNS server\n  4. connect pc to X2:V853.,and get ip 192.168.16.16,and dns server as 192.168.16.1\n  5.add a split DNS entry,set\n  Domain Name:*.baidu.com\n  Primary Server(v4):8.8.8.8\n  Local Interface:X2:V853\n  6.from client pc,send dns query :dnslookup www.baidu.com\n  7.check captured packet",
+      "initial" : "  TBD",
+      "id" : "074",
+      "title" : "Split dns function test when local interface is a vlan interface",
+      "result" : "  split dns work well "
+   },
+   "077" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server\n  4.add a ipv4 tunnel VPN through X1,and add tunnel interface named split 98.1.1.1\n  5.add related routing, to remote network 192.168.15.0/24 through tunnel interface split\n  6.add a split DNS entry,set\n  Domain Name:*.snwl.com\n  Primary Server(v4):192.168.15.15 (DNS server in remote network)\n  Local Interface:split\n  7.change tunnel interface split ip to 98.1.1.10,check if can save",
+      "initial" : "  TBD",
+      "id" : "077",
+      "title" : "Split DNS proxy: function test when local interface is numbered tunnel interface and modify the tunnel interface's IP address.",
+      "result" : "  tunnel interface can be modified"
+   },
+   "013" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy.\n  2.add a Split DNS entry\n  3.check if can add multiple split DNS servers",
+      "initial" : "  TBD",
+      "id" : "013",
+      "title" : "GUI: multiple split DNS servers support while adding a split DNS entry",
+      "result" : "   each Split DNS entry can add 3 ipv4 DNS servers and 3 ipv6 DNS servers"
+   },
+   "080" : {
+      "steps" : "  1.Configure DNS Proxy with a public outside DNS and a private inside DNS server\n  2. add a split entry with private inside DNS server\n  3. Ensure functionality using both servers works,\n  4. send different dns queries to both servers\n  5. Compare server status and statistics of both DNS servers.",
+      "initial" : "  TBD",
+      "id" : "080",
+      "title" : "RFE/ If system DNS server is configured per a split DNS entry, its status/stats should be updated per the processing [refer to DTS #172411]",
+      "result" : "  Both servers should show the expected status (green) and stat increments."
+   },
+   "072" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server\n  4.add a ipv4 tunnel VPN through X1,and add tunnel interface named split\n  5.add related routing, to remote network 192.168.15.0/24 through tunnel interface split\n  6.add a split DNS entry,set\n  Domain Name:*.snwl.com\n  Primary Server(v4):192.168.15.15 (DNS server in remote network)\n  Local Interface:X2\n  5.connect PC to X2,and set ip 192.168.16.16,and dns server as 192.168.16.1, from client pc,send dns query :dnslookup 1.snwl.com\n  6.check captured packet",
+      "initial" : "  TBD",
+      "id" : "072",
+      "title" : "nunbered tunnel VPN: Function test of split dns with nunbered tunnel VPN, dns proxy mode : 4to4",
+      "result" : "  split dns work well "
+   },
+   "082" : {
+      "steps" : "  1.Function test when the first IPv4 DNS server is down.\n  2.Function test when the first and the second IPv4 DNS server is down.\n  3.Function test when the third IPv4 DNS server is down.\n  4.Function test when the first IPv4 DNS server is UP again when the second or third server is UP.\n  5.Function test when the first IPv6 DNS server is down.\n  6.Function test when the second IPv6 DNS server is down.\n  7.Function test when the third IPv6 DNS server is down.\n  8.Function test when the first IPv6 DNS server is UP again when the second or third server is UP.\n  9.Function test when the first IPv6 DNS server is UP again.",
+      "initial" : "  TBD",
+      "id" : "082",
+      "title" : "Server failover and failback for split DNS proxy and verify the strategy of choosing DNS server in a split DNS entry,",
+      "result" : "  if the primary is down (10 times query failure, each with 10s timeout) then switch to secondary, the same for switch to tertiaryIf primary DNS server is up, then use primary DNS server,\n  If primary DNS server is down, then choose the next DNS server which is up,\n  If all DNS servers are down, then choose the server with the least resovling failure count.\n  FW should keep trying the primary server in a fixed interval."
+   },
+   "110" : {
+      "steps" : "  1. navigate Network->DNS proxy,enable dns proxy,and set mode 4TO6\n  2. add several split entries\n  3. export prefs1\n  4. factory default\n  5. import prefs1,check if everything OK\n  6. change mode to 4 to 4 mode,change some split entries\n  7. import prefs1,check if everything OK",
+      "initial" : "  TBD",
+      "id" : "110",
+      "title" : "prefs export and import about split DNS",
+      "result" : "  1 Export and import is validated\n  2 Configuration keeps intact."
+   },
+   "076" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server\n  4.add a ipv4 tunnel VPN through X1,and add tunnel interface named split\n  5.add related routing, to remote network 192.168.15.0/24 through tunnel interface split\n  6.add a split DNS entry,set\n  Domain Name:*.snwl.com\n  Primary Server(v4):192.168.15.15 (DNS server in remote network)\n  Local Interface:split\n  5.connect PC to X2,and set ip 192.168.16.16,and dns server as 192.168.16.1, from client pc,send dns query :dnslookup 1.snwl.com\n  6.check captured packet\n  Note:In remote fw,should add a VPN->LAN access rule.",
+      "initial" : "  TBD",
+      "id" : "076",
+      "title" : "Split DNS Proxy function when local interface is numbered tunnel interface.",
+      "result" : "  split dns work well "
+   },
+   "094" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy\n  2.add a split DNS entry,set\n  Domain Name:*.baidu.com\n  Primary Server(v4):8.8.8.8\n  Local Interface:X1\n  Manually set TTL value in DNS reply 1440(seconds)\n  3. send dns query from client nslookup www.baidu.com,check what dns reponse received",
+      "initial" : "  TBD",
+      "id" : "094",
+      "title" : "Test option manual TTL setting for split DNS entry",
+      "result" : "  client receive response with manually set TTL"
+   },
+   "01" : {
+      "steps" : "  steps:\n  1. Configure Site to Site TI VPN between Gen 6 devices, say central FW and remote FW;\n  2. Enable the checkbox of \"Enable DNS Proxy\" and \"Enforce DNS Proxy For All DNS Requests\"at central FW and remote FW;\n  3. Setup a DNS Server at central FW to be reachable over the WAN interfaces X3; 4. Configure Split DNS for DNS Domain *.sonicwall.com on central FW and remote FW, primary DNS server is the DNS server reachable via interface X3;\n  5. Send DNS traffic for domain *.sonicwall.com from X0 on central FW and remote FW;\n  6. Check split DNS server status on both central FW and remote FW;",
+      "initial" : "  Site to Site VPN between TZ300W Main Site and TZ500W Remote Site . Both Sites have DNS Proxy Enabled on LAN and WLAN Interfaces. Both Sites also have split dns configured for domain *.sonicwall.com to use DNS Server reachable through X3 WAN Subnet on Main Site. ",
+      "id" : "01",
+      "title" : "Exclude DNS requests over incoming VPN from DNS proxy at central gateway. #DTS 193116",
+      "result" : "  in step 5, client should get the correct DNS answer for domain *.sonicwall.com;\n  in step 6, DNS server should be up in split DNS entry."
+   },
+   "095" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy\n  2.add a split DNS entry,set\n  Domain Name:*.baidu.com\n  Primary Server(v4):8.8.8.8\n  Local Interface:X1\n  Manually set TTL value in DNS reply 1(seconds)\n  3.check if split DNS entry can be added\n  4.change TTL to 999999999,check if can be added",
+      "initial" : "  TBD",
+      "id" : "095",
+      "title" : "Boundary test for option manual TTL setting for split DNS entry",
+      "result" : "  perfer to DTS 179762 ,now TTL Use %u data type as the data type of the background is unsigned int. waiting for the solution of DTS 185561"
+   },
+   "033" : {
+      "steps" : "  Add a split DNS entry with wildcard e.g., *.sonicwall.com",
+      "initial" : "  TBD",
+      "id" : "033",
+      "title" : "Add a split DNS entry with wildcard e.g., *.sonicwall.com",
+      "result" : "  Entry added without any error message prompt"
+   },
+   "086" : {
+      "steps" : "  1. add a split dns proxy over VPN tunnel interface\n  2. try to delete the tunnel interface,check if can be deleted",
+      "initial" : "  TBD",
+      "id" : "086",
+      "title" : "The numbered VPN tunnel interface which is used in split DNS should not be deleted",
+      "result" : "  The numbered VPN tunnel interface which is used in split DNS should not be deleted"
+   },
+   "070" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server\n  4.add a ipv4 site to site VPN through X1,and with X2 local network,and remote network is 192.168.15.0/24,with dns server 192.168.15.15\n  5.add a split DNS entry,set\n  Domain Name:*.snwl.com\n  Primary Server(v4):192.168.15.15\n  Local Interface:X2\n  5.connect PC to X2,and set ip 192.168.16.16,and dns server as 192.168.16.1, from client pc,send dns query :dnslookup 1.snwl.com\n  6.check captured packet\n  7.change X2 to DMZ zone,repeat 5-6\n  8.change X2 to custom zone,repeat 5-6\n  9.change Local Interface to X1,repeat 5-6",
+      "initial" : "  TBD",
+      "id" : "070",
+      "title" : "site to site VPN: Function test of split dns with local interface from LAN/DMZ/WAN/CUSTOM zone, dns proxy mode : 4to4",
+      "result" : "  split dns work well "
+   },
+   "112" : {
+      "steps" : "  1 navigate to network->dns proxy,disable dns proxy main switch\n  2 navigate to network->dns page,add split dns entry\n  Domain Name:*.163.com\n  Primary Server(v4):10.8.143.156(which is different with system dns server)\n  Local Interface:X1\n  3 navigate to log->Automation->Mail Server Settings\n  Mail Server (name or IP address):smtp.163.com\n  advanced:Enable SMTP Authentication,and fill your own 163 email username and password\n  From E-mail Address: fill you own 163 email\n  Authentication Method:POP before SMTP\n  POP3 Server (name or IP address):pop.163.com\n  and fill your own 163 email username and password,and click accept\n  4 click button:TEST SETTINGS\n  5 capture packet,check if it resolve these two FQDN AOs through Split DNS\n  6 check general dns cache on network->dns cache",
+      "initial" : "  TBD",
+      "id" : "112",
+      "title" : "the Split DNS feature is used directly by SMTP servers and POP servers",
+      "result" : "  5 from captured packet,FW send dns query \"smtp.163.com\"and \"POP.163.com\" to split DNS server \"10.8.143.156\"\n  6 in the security appliance's main DNS Cache has entry of SMTP and POP3 server"
+   },
+   "109" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\"\n  2.enable HA\n  3.add some split entries ,check both DUTs\n  4.force failover or reboot active DUT\n  5.from pc,send dns query hit split entry\n  6.change mode to 4 to 6 mode, force failover again\n  7. repeat step 4-5",
+      "initial" : "  TBD",
+      "id" : "109",
+      "title" : "Test DNS Split functions in HA topology.",
+      "result" : "  Test DNS Split functions well in HA topology."
+   },
+   "113" : {
+      "steps" : "  1 navigate to network->dns proxy,disable dns proxy main switch\n  2 navigate to network->dns page,add split dns entry\n  Domain Name:*.snwl.com\n  Primary Server(v4):10.8.143.156(which is different with system dns server)\n  Local Interface:X1\n  3 navigate to system->administrator->Advanced Management,and Enable management using GMS,then set GMS Host Name or IP Address: gms.snwl.com\n  4 capture packet,check if it resolve this FQDN through Split DNS\n  5 check general dns cache on network->dns cache",
+      "initial" : "  TBD",
+      "id" : "113",
+      "title" : "the Split DNS feature is used directly by GMS and GMS standby",
+      "result" : "  4 from captured packet,FW send dns query \"gms.snwl.com\" to split DNS server \"10.8.143.156\"\n  5 in the security appliance's main DNS Cache has entry of gms server"
+   },
+   "068" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server\n  4.add a split DNS entry,set\n  Domain Name:*.baidu.com\n  Primary Server(v4):8.8.8.8\n  Local Interface:X1\n  5.from client pc,send dns query :dnslookup www.baidu.com\n  6.check captured packet\n  7.change Local Interface to X2,repeat 5-6\n  8.change X2 to DMZ zone,repeat 5-6\n  9.change X2 to custom zone,repeat 5-6",
+      "initial" : "  TBD",
+      "id" : "068",
+      "title" : "Non-VPN: Function test of split dns with local interface from LAN/DMZ/WAN/CUSTOM zone, dns proxy mode : 4to4",
+      "result" : "  split dns work well "
+   },
+   "065" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy\n  2.add a split DNS entry,set Domain Name:*.baidu.com Primary Server(v4):8.8.8.8\n  Local Interface:X1\n  3.check if split DNS entry can be added",
+      "initial" : "  TBD",
+      "id" : "065",
+      "title" : "Add a Split DNS entry",
+      "result" : "  split DNS entry can be added"
+   },
+   "071" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to6 mode\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IPv4 192.168.16.1 and IPv6 1616::1 and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server\n  4.add a ipv6 site to site VPN through X1,and with X2 local network,and remote network is 1515::/64,with dns server 1515::15\n  5.add a split DNS entry,set\n  Domain Name:*.snwl.com\n  Primary Server(v6):1515::15\n  Local Interface:X2\n  5.connect PC to X2,and set ip 192.168.16.16,and dns server as 192.168.16.1, from client pc,send dns query :dnslookup 1.snwl.com\n  6.check captured packet\n  7.change X2 to DMZ zone,repeat 5-6\n  8.change X2 to custom zone,repeat 5-6\n  9.change Local Interface to X1,repeat 5-6",
+      "initial" : "  TBD",
+      "id" : "071",
+      "title" : "site to site VPN: Function test of split dns with local interface from LAN/DMZ/WAN/CUSTOM zone, dns proxy mode : 4to6",
+      "result" : "  split dns work well "
+   },
+   "084" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server\n  4.add a ipv6 site to site VPN through X1,and with X2 local network,and remote ipv4 network is 192.168.15.0/24, remote ipv6 network is 1515::/64,with ipv4 dns server 192.168.15.15 and ipv6 dns server 1515::15\n  5.add a ipv4 tunnel VPN through X1,add related routing, to remote network 192.168.17.0/24 through tunnel vpn ,with ipv4 dns server 192.168.17.17\n  6.add a split DNS entry,set\n  Domain Name:*.snwl.com\n  Primary Server(v4):10.8.143.218(normal WAN DNS server)\n  Secondary Server Server(v4):192.168.15.15(DNS server in remote network over S2s VPN)\n  Tertiary Server(v4):192.168.17.17 (DNS server in remote network over tunnel vpn)\n  Primary Server(v6):2001:470:80b7:88f:250:56ff:fea1:6da0(normal WAN DNS server)\n  Secondary Server(v6):1515::15(DNS server in remote network over S2s VPN)\n  Local Interface:X2\n  7.check if normal WAN DNS server is up\n  8.check if normal WAN DNS server is down if failover to s2s VPN\n  7.check if normal WAN DNS server AND DNS server in remote network over S2s VPN IS down,check failover to tunnel VPN",
+      "initial" : "  TBD",
+      "id" : "084",
+      "title" : "Function test when the 3 split DNS servers are s2s VPN , VPN tunnel, and normal WAN DNS server seperately.",
+      "result" : "  split entry with 3 split DNS servers are s2s VPN , VPN tunnel, and normal WAN DNS server seperately can function well"
+   },
+   "066" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy\n  2.delete a split DNS entry\n  3.check if split DNS entry can be deleted",
+      "initial" : "  TBD",
+      "id" : "066",
+      "title" : "Delete a Split DNS entry",
+      "result" : "   split DNS entry can be deleted"
+   },
+   "034" : {
+      "steps" : "  1. add a split DNS entry with wildcard e.g., *.sonicwall.com;\n  2. Query for www.sonicwall.com;\n  3. Query for sonicwall.com;",
+      "initial" : "  TBD",
+      "id" : "034",
+      "title" : "Function test of split DNS entry with wildcard e.g., *.sonicwall.com",
+      "result" : "  in step 1, entry is added successfully;\n  in step 2, query was going to the specified server;\n  in step 3, query was going to the specified server."
+   },
+   "105" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy\n  2.add maximum split dns entries with multiple dns servers\n  3.reboot DUT\n  4.from client pc,send dns query hit split entry,check if do proxy",
+      "initial" : "  TBD",
+      "id" : "105",
+      "title" : "Reboot test for split DNS function (configure multiple split DNS servers and maximum split DNS entries)",
+      "result" : "  Configuration keeps intact."
+   },
+   "075" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode\n  2.Navigate to switching ->VLAN Trunking,add Vlan Trunk Port X2,and enable vlan 853\n  3.Navigate to Network > Interfaces,set X2:V853 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2:V853.\n  4.set X1 as WAN interface,and have ipv6 address and ipv6 DNS server\n  5. connect pc to X2:V853.,and get ip 192.168.16.16,and dns server as 192.168.16.1\n  6.add a split DNS entry,set\n  Domain Name:*.baidu.com\n  Primary Server(v4):8.8.8.8\n  Local Interface:X2:V853\n  7.from client pc,send dns query :dnslookup www.baidu.com\n  8.check captured packet",
+      "initial" : "  TBD",
+      "id" : "075",
+      "title" : "Split dns function test when local interface is a trunk vlan interface",
+      "result" : "  split dns work well "
+   },
+   "079" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode,and enable \"Enforce DNS Proxy For All DNS Requests \"\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server\n  4.add a split DNS entry,set\n  Domain Name:*.baidu.com\n  Primary Server(v4):8.8.8.8\n  Local Interface:X1\n  5.from client PC,send DNS query,nslookup www.baidu.com with dns server 10.190.202.200\n  6.check captured packet,if hit split entry",
+      "initial" : "  TBD",
+      "id" : "079",
+      "title" : "Split DNS proxy : function test with enforce DNS Proxy option enabled.",
+      "result" : "  step6 enforce option function well with split dns proxy"
+   },
+   "067" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy\n  2.add 32 split DNS entries\n  3.try to add the 33rd split DNS entry",
+      "initial" : "  TBD",
+      "id" : "067",
+      "title" : "Verify that the maximum items of Split DNS entries is 32",
+      "result" : "  step2 32 split DNS entries can be added\n  step3 the 33rd split DNS entry can't be added with error"
+   },
+   "114" : {
+      "steps" : "  1 navigate to network->dns proxy,disable dns proxy main switch\n  2 navigate to network->dns page,add split dns entry\n  Domain Name:*.snwl.com\n  Primary Server(v4):10.8.143.156(which is different with system dns server)\n  Local Interface:X1\n  3 navigate to netwrok->Web Proxy,and add a Proxy Web Server with FQDN AO,set Proxy Web Server (name or IP address):webproxy1.snwl.com\n  4 capture packet,check if it resolve this FQDN through Split DNS\n  5 add a User Proxy Server with FQDN AO:webproxy2.snwl.com\n  6 capture packet,check if it resolve this FQDN through Split DNS\n  7 check general dns cache on network->dns cache",
+      "initial" : "  TBD",
+      "id" : "114",
+      "title" : "the Split DNS feature is used directly by Web Proxy servers and User (internal) Proxy servers server",
+      "result" : "  4 from captured packet,FW send dns query \"webprxoy1.snwl.com\" to split DNS server \"10.8.143.156\"\n  6 from captured packet,FW send dns query \"webprxoy2.snwl.com\" to split DNS server \"10.8.143.156\"\n  7 in the security appliance's main DNS Cache has 2 entries of web proxy server"
+   },
+   "111" : {
+      "steps" : "  1 navigate to network->dns proxy,disable dns proxy main switch\n  2 navigate to network->dns page,add split dns entry\n  Domain Name:*.snwl.com\n  Primary Server(v4):10.8.143.156(which is different with system dns server)\n  Local Interface:X1\n  3 navigate to log->Syslog,and add a syslog server with FQDN AO,set Name or IP Address : syslog.snwl.com\n  4 capture packet,check if it resolve this FQDN through Split DNS\n  5 check general dns cache on network->dns cache",
+      "initial" : "  TBD",
+      "id" : "111",
+      "title" : "the Split DNS feature is used directly by Syslog server",
+      "result" : "  4 from captured packet,FW send dns query \"syslog.snwl.com\" to split DNS server \"10.8.143.156\"\n  5 in the security appliance's main DNS Cache has entry of syslog server"
+   },
+   "073" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server\n  4.add a ipv4 tunnel VPN through X1,add related routing, to remote network 192.168.15.0/24 through tunnel vpn\n  6.add a split DNS entry,set\n  Domain Name:*.snwl.com\n  Primary Server(v4):192.168.15.15 (DNS server in remote network)\n  Local Interface:X2\n  5.connect PC to X2,and set ip 192.168.16.16,and dns server as 192.168.16.1, from client pc,send dns query :dnslookup 1.snwl.com\n  6.check captured packet",
+      "initial" : "  TBD",
+      "id" : "073",
+      "title" : "unnumbered tunnel VPN: Function test of split dns with dns proxy mode : 4to4",
+      "result" : "  split dns work well "
+   },
+   "083" : {
+      "steps" : "  1.navigate to network->dns proxy->split DNS Server\n  2.check LED color of each split dns server\n  3.Moving the mouse over the LED displays a popup with further information",
+      "initial" : "  TBD",
+      "id" : "083",
+      "title" : "Check the server status LED and statistics for split DNS servers.",
+      "result" : "  IPv4 DNS Server IPv4 IP address of the DNS Server and its status icon:\n  \u0095 Green \u0096 up\n  \u0095 Yellow \u0096 unknown\n  \u0095 Red \u0096 down\n  IPv6 DNS Server IPv6 IP address of the DNS Server and its status icon:\n  \u0095 Green \u0096 up\n  \u0095 Yellow \u0096 unknown\n  \u0095 Red \u0096 down\n  Moving the mouse over the LED displays a popup with further information about the number of proxied DNS packets sent and the number of successful DNS Proxy queries"
+   },
+   "078" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server\n  4.add a ipv4 tunnel VPN through X1,add related routing, to remote network 192.168.15.0/24 through tunnel vpn\n  6.add a split DNS entry,set\n  Domain Name:*.snwl.com\n  Primary Server(v4):192.168.15.15 (DNS server in remote network)\n  Local Interface:X2\n  5.connect PC to X2,and set ip 192.168.16.16,and dns server as 192.168.16.1, from client pc,send dns query :dnslookup 1.snwl.com\n  6.check captured packet\n  7.add tunnel interface for the unnumbered VPN named split\n  8.change the local interface to tunnel interface split\n  9.send dns query :dnslookup 1.snwl.com.and check captured packet",
+      "initial" : "  TBD",
+      "id" : "078",
+      "title" : "split DNS proxy: change the used unumberred VPN tunnel policy into numbered tunnel IF",
+      "result" : "  after change the used unumberred VPN tunnel policy into numbered tunnel IF ,the dns proxy can work normally"
+   },
+   "069" : {
+      "steps" : "  1.Navigate to Network > DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to6 mode\n  2.Navigate to Network > Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\n  3.set X1 as WAN interface,and have ipv6 address and ipv6 DNS server\n  4.add a split DNS entry,set\n  Domain Name:*.baidu.com\n  Primary Server(v4):8.8.8.8\n  Primary Server(v4):240c::6666\n  Local Interface:X1\n  5.from client pc,send dns query :dnslookup www.baidu.com\n  6.check captured packet\n  7.change Local Interface to X2,repeat 5-6\n  8.change X2 to DMZ zone,repeat 5-6\n  9.change X2 to custom zone,repeat 5-6\n  Notice:if you found ipv6 dns server can't be reached, you could uses your own dns server to test ipv6 related cases",
+      "initial" : "  TBD",
+      "id" : "069",
+      "title" : "Non-VPN: Function test of split dns with local interface from LAN/DMZ/WAN/CUSTOM zone, dns proxy mode : 4to6",
+      "result" : "  split dns work well "
+   }
+}

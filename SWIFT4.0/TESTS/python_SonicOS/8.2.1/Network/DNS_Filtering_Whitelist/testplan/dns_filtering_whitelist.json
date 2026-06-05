@@ -1,0 +1,80 @@
+{
+    "13" : {
+       "steps" : "  TBD",
+       "id" : "13",
+       "result" : "  1. Edit some valid white list entries;\n  2. Enable From CLI, Input:\n  show dns-security white-list-entries",
+       "initial" : "  TBD",
+       "title" : "[CLI] Verify the CLI command to show White list."
+    },
+    "14" : {
+       "initial" : "  TBD",
+       "title" : "[CLI] Verify the CLI command to show White list in DNS Filtering.",
+       "result" : "  1. Edit some valid white list entries;\n  2. Enable white list in DNS Filtering;\n  3. Enable From CLI, Input:\n  show dns-security\n  show dns-security dns-filtering\n  show dns-security dns-filtering base",
+       "id" : "14",
+       "steps" : "  TBD"
+    },
+    "03" : {
+       "id" : "03",
+       "result" : "  1. Policy \\ Security Service \\ DNS Security \\ DNS Filtering tab, enable 'Enable White List'.",
+       "initial" : "  TBD",
+       "title" : "[GUI] Enable White List in DNS Filtering.",
+       "steps" : "  TBD"
+    },
+    "04" : {
+       "initial" : "  TBD",
+       "title" : "[GUI] Disable White List in DNS Filtering.",
+       "result" : "  1. Policy \\ Security Service \\ DNS Security \\ DNS Filtering tab, disable 'Enable White List'.",
+       "id" : "04",
+       "steps" : "  TBD"
+    },
+    "06" : {
+       "id" : "06",
+       "result" : "  1. Policy \\ Security Service \\ DNS Security \\ DNS Filtering tab, enable 'Enable White List';\n  2. Add a white list entry: *.ea.com;\n  3. Check the TSR.",
+       "title" : "[TSR] Verify the configuration of White List is correct.",
+       "initial" : "  TBD",
+       "steps" : "  TBD"
+    },
+    "02" : {
+       "steps" : "  TBD",
+       "initial" : "  TBD",
+       "title" : "[GUI] Verify the default status of White List is enabled in DNS Filtering .",
+       "result" : "  1. Factory default;\n  2. Policy \\ Security Service \\ DNS Security \\ DNS Filtering \\ DNS Filtering Global Settings, check 'Enable White List' .",
+       "id" : "02"
+    },
+    "01" : {
+       "steps" : "  TBD",
+       "title" : "[GUI] Verify when DNS Filtering is disabled, the White List is editable.",
+       "initial" : "  TBD",
+       "result" : "  1. Factory default;\n  2. Policy \\ Security Service \\ DNS Security \\ White List tab, check the table;\n  3. Rules and Policies \\ DNS Policy, enable a DNS Policy : Action-Filter, Interface-X0, check the white list table.",
+       "id" : "01"
+    },
+    "10" : {
+       "steps" : "  TBD",
+       "initial" : "  TBD",
+       "title" : "[CLI] Verify the CLI command to config White list.",
+       "result" : "  1. From CLI, enter config mode;\n  2. Input:\n  # dns-security\n  # white-list-entry www.ea.com\n  # commit;\n  3. Input:\n  #dns-security\n  #no white-list-entry www.ea.com\n  # commit.",
+       "id" : "10"
+    },
+    "12" : {
+       "initial" : "  TBD",
+       "title" : "[CLI] Verify the CLI command to disable White list in DNS Filtering.",
+       "result" : "  1. From CLI, enter config mode;\n  2. Input:\n  # dns-security\n  # dns-filtering\n  # no useWhiteList\n  # commit.",
+       "id" : "12",
+       "steps" : "  TBD"
+    },
+    "05" : {
+       "steps" : "  TBD",
+       "result" : "  1. Policy \\ Security Service \\ DNS Security \\ DNS Filtering tab, check the info icon.",
+       "id" : "05",
+       "initial" : "  TBD",
+       "title" : "[GUI] Verify when mouse hovered on the info icon of the 'Enable White List', the detail shows."
+    },
+    "11" : {
+       "initial" : "  TBD",
+       "title" : "[CLI] Verify the CLI command to enable White list in DNS Filtering.",
+       "id" : "11",
+       "result" : "  1. From CLI, enter config mode;\n  2. Input:\n  # dns-security\n  # dns-filtering\n  # useWhiteList\n  # commit.",
+       "steps" : "  TBD"
+    }
+ }
+ 

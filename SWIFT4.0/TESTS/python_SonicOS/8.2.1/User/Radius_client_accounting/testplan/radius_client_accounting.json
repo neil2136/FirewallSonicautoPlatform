@@ -1,0 +1,72 @@
+{
+   "1527415" : {
+      "steps" : "  1) Go to User/Settings page and click on the Accounting tab<br />2) Now under accounting tab you should see a check box for \"Send RADIUS Accounting Information\", Clicking the Send RADIUS Accounting information will then make the rest of the fields visible.<br />3) Under RADIUS Accounting Section click Add button to add new Radius Accounting Server, A Pop-up Server configuration dialog will apper<br />4) Enter the appropriate values for each field and click save.<br />5) Also verify that you can edit the New RADIUS Accounting Server entry successfully.<br />6) Now click on the delete button of the configured RADIUS Accounting Servers",
+      "initial" : "  The deleted RADIUS Accounting Server should be deleted successfully and entry should not be displayed in the list, also we verify the entry is not present in TSR",
+      "id" : "1527415",
+      "title" : "Verify  Radius Accounting Server that is configured can be deleted successfully",
+      "result" : "The deleted RADIUS Accounting Server should be deleted successfully and entry should not be displayed in the list, also we verify the entry is not present in TSR"
+   },
+   "1527420" : {
+      "steps" : "  1) Go to User/Settings page and click on the Accounting tab<br />2) Now under accounting tab you should see a check box for \"Send RADIUS Accounting Information\", Clicking the Send RADIUS Accounting information will then make the rest of the fields visible.<br />3) Under RADIUS Accounting Section click ADD button to add an appropriate Accounting server.<br />4) Under Users Accounting select the check box \"Users Authenticated by web login\" and include<br />Domain User or Local User or Domain and Local User based on the testing requirment<br />5) Now authenticate a user with web login.",
+      "initial" : "  Verify that the Accounting data is sent to the correct accounting server, you can also do packet capture for verifying accounting data",
+      "id" : "1527420",
+      "title" : "Send Accounting data for Users Authenticated by web login",
+      "result" : "Verify that the Accounting data is sent to the correct accounting server, you can also do packet capture for verifying accounting data"
+   },
+   "1527414" : {
+      "steps" : "  1) Go to User/Settings page and click on the Accounting tab<br />2) Now under accounting tab you should see a check box for \"Send RADIUS Accounting Information\", Clicking the Send RADIUS Accounting information will then make the rest of the fields visible.<br />3) Under RADIUS Accounting Section click Add button to add new Radius Accounting Server, A Pop-up Server configuration dialog will apper<br />4) Enter the appropriate values for each field and click save.<br />5) Also verify that you can edit the New RADIUS Accounting Server entry successfully.",
+      "initial" : "  Check the Ip/Host name, Port field takes valid values and User Name Format field drop down menu shows valid formats for selection.",
+      "id" : "1527414",
+      "title" : "Verify New Radius Accounting Server can be added and edited",
+      "result" : "Check the Ip/Host name, Port field takes valid values and User Name Format field drop down menu shows valid formats for selection."
+   },
+   "1527413" : {
+      "steps" : "  1) Go to User/Settings page and click on the Accounting tab<br />2) Now under accounting tab you should see a check box for \"Send RADIUS Accounting Information\", Clicking the Send RADIUS Accounting information will then make the rest of the fields visible. <br />3) Under RADIUS Accounting Section click ADD button to add an appropriate Accounting server.<br />4) Under Users Accounting select the appropriate check box for sending accounting data and include<br />Domain User or Local User or Domain and Local User based on the testing requirment<br /><br />",
+      "initial" : "  verify the import configuration restors the same settings for RADIUS accounting",
+      "id" : "1527413",
+      "title" : "Import and export configuration with RADIUS accounting settings",
+      "result" : "verify the import configuration restors the same settings for RADIUS accounting"
+   },
+   "1527417" : {
+      "steps" : "  1) Go to User/Settings page and click on the Accounting tab<br />2) Now under accounting tab you should see a check box for \"Send RADIUS Accounting Information\", Clicking the Send RADIUS Accounting information will then make the rest of the fields visible.<br />3) Under RADIUS Accounting Section click on the Test button, A Pop-up Radius Accounting Test dialog will appers.<br />4) Select The Appropriate Server and connectivity.<br />5) Click on the Test Button",
+      "initial" : "  Check that \"RADIUS Accounting server responded \" message is displayed, you can also do a packet capture and verify that our UTM sends Accounting-On request to the server for this test",
+      "id" : "1527417",
+      "title" : "Server connectivity Test",
+      "result" : "Check that RADIUS Accounting server responded message is displayed, you can also do a packet capture and verify that our UTM sends Accounting-On request to the server for this test"
+   },
+   "1527418" : {
+      "steps" : "  1) Go to User/Settings page and click on the Accounting tab<br />2) Now under accounting tab you should see a check box for \"Send RADIUS Accounting Information\", Clicking the Send RADIUS Accounting information will then make the rest of the fields visible.<br />3) Under RADIUS Accounting Section click on the Test button, A Pop-up Radius Accounting Test dialog will appers.<br />4) Select The Appropriate Server , User Accounting, User name, Ip Address with which the test request is done. <br />5) Click on the Test Button",
+      "initial" : "  Check that \"RADIUS server accepted all accounting requests \" message is displayed, you can also do a packet capture and verify that our UTM sends Accounting-Start, Interim update, Stop request to the server that are spaced 10 seconds apart for this test",
+      "id" : "1527418",
+      "title" : "User Accounting Test",
+      "result" : "Check that RADIUS server accepted all accounting requests message is displayed, you can also do a packet capture and verify that our UTM sends Accounting-Start, Interim update, Stop request to the server that are spaced 10 seconds apart for this test"
+   },
+   "1527411" : {
+      "steps" : "  1) Go to User/Settings page and click on the Accounting tab<br />2) Now under accounting tab you should see a check box for \"Send RADIUS Accounting Information\", Clicking the Send RADIUS Accounting information will then make the rest of the fields visible.",
+      "initial" : "  Accounting Tab should be divided into two section for configuration<br />1)RADIUS Accounting<br />2)User Accounting",
+      "id" : "1527411",
+      "title" : "Verify  Configurations for Radius Accounting server will be available on User/Settings page under Accounting tab",
+      "result" : "Accounting Tab should be divided into two section for configuration RADIUS Accounting, User Accounting"
+   },
+   "1527416" : {
+      "steps" : "  1) Go to User/Settings page and click on the Accounting tab<br />2) Now under accounting tab you should see a check box for \"Send RADIUS Accounting Information\", Clicking the Send RADIUS Accounting information will then make the rest of the fields visible.<br />3) Under RADIUS Accounting Section Hower the mouse pointer on the tool tip arrow of \"Send Accounting Data to all Servers\" checkbox",
+      "initial" : "  Check that the appropriate tool tip is displayed",
+      "id" : "1527416",
+      "title" : "Verify the Tool Tip for \"Send Accounting Data to all Servers\"",
+      "result" : "Check that the appropriate tool tip is displayed"
+   },
+   "1527412" : {
+      "steps" : "  1) Go to User/Settings page and click on the Accounting tab<br />2) Now under accounting tab you should see a check box for \"Send RADIUS Accounting Information\", Clicking the Send RADIUS Accounting information will then make the rest of the fields visible. <br />3) Under RADIUS Accounting Section click ADD button to add an appropriate Accounting server.<br />4) Under Users Accounting select the appropriate check box for sending accounting data and include<br />Domain User or Local User or Domain and Local User based on the testing requirment<br /><br />",
+      "initial" : "  Download the TSR and verify the RADIUS accounting details are present in the TSR properly",
+      "id" : "1527412",
+      "title" : "Verify TSR has Radius accounting configuration information",
+      "result" : "Download the TSR and verify the RADIUS accounting details are present in the TSR properly"
+   },
+   "1527419" : {
+      "steps" : "  1) Go to User/Settings page and click on the Accounting tab<br />2) Now under accounting tab you should see a check box for \"Send RADIUS Accounting Information\", Clicking the Send RADIUS Accounting information will then make the rest of the fields visible.<br />3) Under RADIUS Accounting Section click on the Test button, A Pop-up Radius Accounting Test dialog will appers.<br />4) In RADIUS Accounting Test Pop-Up Hower the mouse pointer on the tool tip arrow near User Connectivity",
+      "initial" : "  Check that the appropriate tool tip is displayed for RADIUS Accounting Test",
+      "id" : "1527419",
+      "title" : "Verify Tool Tip For \"RADIUS Accounting Test\"",
+      "result" : "Check that the appropriate tool tip is displayed for RADIUS Accounting Test"
+   }
+}

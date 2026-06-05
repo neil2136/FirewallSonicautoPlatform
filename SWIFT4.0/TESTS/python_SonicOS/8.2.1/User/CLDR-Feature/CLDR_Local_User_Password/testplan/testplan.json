@@ -1,0 +1,51 @@
+{
+    "4113638": {
+        "_case_id": "SOSAIOT-TC-77742",
+        "id": "4113638",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT API from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT API from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT API from all zones"
+    },
+    "4113639": {
+        "_case_id": "SOSAIOT-TC-77748",
+        "id": "4113639",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GMS/NSM from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GMS/NSM from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GMS/NSM from all zones"
+    },
+    "4113640": {
+        "_case_id": "SOSAIOT-TC-77750",
+        "id": "4113640",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using ULA from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using ULA from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using ULA from all zones"
+    },
+    "4113641": {
+        "_case_id": "SOSAIOT-TC-77743",
+        "id": "4113641",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using SSLVPN Portal from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using SSLVPN Portal from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using SSLVPN Portal from all zones"
+    },
+    "4113642": {
+        "_case_id": "SOSAIOT-TC-77749",
+        "id": "4113642",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using NX client from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using NX client from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using NX client from all zones"
+    },
+    "4113643": {
+        "_case_id": "SOSAIOT-TC-77751",
+        "id": "4113643",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using MC client from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using MC client from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using MC client from all zones"
+    },
+    "4113644": {
+        "_case_id": "SOSAIOT-TC-77741",
+        "id": "4113644",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GVC client from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GVC client from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GVC client from all zones"
+    }
+}

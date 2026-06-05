@@ -1,0 +1,26 @@
+$TTL 86400
+@       IN      SOA     dns.google.co.jp. dnsv6.google.co.jp. (
+                                1       ;serial
+                                1D      ;refresh
+                                1H      ;retry
+                                1W      ;expire
+                                3H )    ;minimum
+@               IN      NS      dns.google.co.jp.
+pc1.google.co.jp. IN      A       192.168.168.10
+pc2.google.co.jp. IN      A       12.12.1.169
+pc3.google.co.jp. IN      A      12.12.1.30
+pc4.google.co.jp. IN      A       192.168.2.40
+map.google.co.jp. IN      A       192.168.3.40
+plus.google.co.jp. IN      A       192.168.4.40
+www.google.co.jp. IN      A       192.168.5.40
+dns.google.co.jp.   IN      A       12.12.1.30
+server.google.co.jp.        IN      A       10.6.0.69
+mail.google.co.jp.  IN      MX 5    dns.test.com
+nginxl          IN      CNAME   www
+pc2v6             IN      AAAA    1001:2::20
+pc3v6            IN      AAAA    2001:20::30
+pc4v6            IN      AAAA    1001:2::40
+ipv6             IN      AAAA    2001:20::30
+dnsv6           IN      AAAA    2001:20::30
+mailv6          IN      AAAA    2001:20::30
+@               IN      MX      10      dnsv6.google.co.jp.

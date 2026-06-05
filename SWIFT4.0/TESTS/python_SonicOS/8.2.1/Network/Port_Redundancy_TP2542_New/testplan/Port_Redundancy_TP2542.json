@@ -1,0 +1,39 @@
+{
+   "1" : {
+      "steps" : "1) Go to Network > Interfaces page. <br />2) Click to edit an interface. <br />3) On Advanced Tab select port Redundancy and port from drop downs.<br />4) Click OK.",
+      "initial" : "PC on LAN. <br />Server on WAN. ",
+      "id" : "1",
+      "title" : " Configuration of Redundant Port",
+      "result" : "Interface now shows the redundant port in its configuration. Redundant interface is not editable."
+   },
+   "2" : {
+      "steps" : "1) Go to Network > Interfaces page. <br />2) Click to edit an interface. <br />3) On Advanced Tab select Nonefrom drop down. <br />4) Click OK.",
+      "initial" : " PC on LAN. <br />Server on WAN. <br />Redundant interface already configured.",
+      "id" : "2",
+      "title" : " Removing Redundant Port ",
+      "result" : "Interface does not show redundant port in its configuration. Interface that was redundant port can now be edited."
+   },
+   "11" : {
+      "steps" : "1) Run some FTP traffic LAN to WAN with LAN interface configured with Redundant Port",
+      "initial" : " PC on LAN. <br />Server on WAN. <br />Interface on LAN configured with redundant port and both connected to the same switch.",
+      "id" : "11",
+      "title" : "Traffic with redundant port configured LAN ",
+      "result" : "Traffic succeeds."
+   },
+   "12" : {
+      "steps" : "Run some FTP traffic LAN to WAN through.",
+      "initial" : "PC on LAN. <br />Server on WAN. <br />Interface on WAN configured with redundant port and both connected to the same switch.",
+      "id" : "12",
+      "title" : "Traffic with redundant port configured WAN ",
+      "result" : "Traffic succeeds."
+   },
+   "42" : {
+      "steps" : "On the Network->Interfaces page, click to edit one interface x2 whic speed is 1Gbps. 2. On the Advanced Tab ,check the redundant port from drop down.",
+      "initial" : " N/A",
+      "id" : "42",
+      "title" : " verify that only the interfaces which has the same speed can be configured for port redundancy",
+      "result" : "step 2:the available port are all 1Gbps ."
+   }
+   
+   
+}

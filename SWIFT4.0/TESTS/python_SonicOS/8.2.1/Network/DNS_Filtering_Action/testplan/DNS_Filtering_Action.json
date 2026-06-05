@@ -1,0 +1,35 @@
+{
+   "001" : {
+      "steps" : "1. Rules and Policies - DNS Rules, enable a DNS Policy : Action-Filter, Profile-Default Profile, Interface-X0;\n 2. Device - Log - Settings - Network - DNS Security, enable 'DNS Filtering - DNS Packet Allowed', accept;\n 3. Device - Log - Settings, set Logging level to Inform, click edit, set Display Events in Log Monitor to 0 seconds, accept;\n 4. PC connected to X0, set dns server as X0 IP, do dig www.baidu.com; \n 5. Do packet capture on DUT, check DNS packets;\n6. Check logs in Monitor - Logs - System Logs.",
+      "initial" : "PC---(X0)DUT(X1)---WAN DNS Server",
+      "id" : "001",
+      "title" : "[FUNC] Verify when the category is no category, the DNS Reply is forwarded by DUT, and log shows..",
+      "result" : "1.In step 5, the DNS reply from Neustar is forwarded to the Client by DUT./n 2.In step 6, a log displayed: DNS Filtering - DNS Packet Allowed."
+   },
+   "002" : {
+      "steps" : "1. Profile Objects - DNS Filtering, add a profile named \"test\", the action of category \"Adult\", \"Gaming\", \"Gambling\", \"Malware\" is Allow;\n 2. Rules and Policies - DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\";\n3. In Device - Log - Settings page, set Logging level to Inform, click edit, set Display Events in Log Monitor to 0 seconds, enable log 'DNS Filtering - DNS Packet Allowed' in Network - DNS Security, accept;\n4. PC connected to X0, set dns server as X0 IP, do 'dig adultswim.com';\n5. Do packet capture on DUT, check DNS packets, and check log in Monitor - Logs - System Logs;\n6. From PC, do 'dig www.ea.com', repeat step 5;\n7. From PC, do 'dig www.gamblingsites.org', repeat step 5;\n8. From PC, do 'dig www.hjaoopoa.top', repeat step 5.",
+      "initial" : "PC---(X0)DUT(X1)---WAN DNS Server",
+      "id" : "002",
+      "title" : "[FUNC] Verify when the category action is Allow, the DNS Reply is forwarded by DUT, and log shows..",
+      "result" : "In step 5-8, the DNS reply from Neustar is forwarded to the Client by DUT, and a log displayed: DNS Filtering - DNS Packet Allowed."
+   },
+   "003" : {
+      "steps" : "1. Profile Objects - DNS Filtering, add a profile named \"test\", the action of category \"Phishing\", \"Pornography\", \"Anonymous Proxies\", \"Social\", \"Bots/C2\" is Block;\n 2. Rules and Policies - DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\";\n 3. In Device - Log - Settings page, click edit, set Display Events in Log Monitor to 0 seconds, set Logging level to Inform, enable log 'DNS Filtering - DNS Packet Dropped' in Network - DNS Security,  accept;\n4. PC connected to X0, set dns server as X0 IP, do 'dig iomovies.to';\n 5. Do packet capture on DUT, check DNS packets, and log in Monitor - Logs - System Logs;\n6. From PC, do 'dig myfreecams.com', repeat step 5;\n7. From PC, do 'dig sitenable.ch', repeat step 5;\n8. From PC, do 'dig loveread.me', repeat step 5;    9. From PC, do 'dig ultradnsfirewall-bots.neustar', repeat step 5.",
+      "initial" : "PC---(X0)DUT(X1)---WAN DNS Server.",
+      "id" : "003",
+      "title" : "[FUNC] Verify when the category action is Block, the DNS Reply is dropped by DUT, and log shows.",
+      "result" : "In step 5-9, DNS Reply is dropped by DUT, and a log displayed: DNS Filtering - DNS Packet Blocked.."
+   },
+   "004" : {
+      "steps" : "1. Profile Objects - DNS Filtering, add a profile named \"test\", the action of category \"Spyware\", \"Parked Domains\", \"Sports\", \"Hacking/Warez/P2P\",\"Violence\" is Negative Reply;\n 2. Rules and Policies - DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\";\n3. In Device - Log - Settings page, click edit, set Display Events in Log Monitor to 0 seconds, set Logging level to Inform, enable 'DNS Filtering - DNS Packet Dropped' in Network - DNS Security,  accept;\n4. PC connected to X0, set dns server as X0 IP, do 'dig  crackswall.com';\n5. Do packet capture on DUT, check DNS packets, and log in Monitor - Logs - System Logs;\n6. From PC, do 'dig ultradnsfirewall-parked-domains.neustar', repeat step 5;\n7. From PC, do 'dig Bleacherreport.com', repeat step 5;\n8. From PC, do 'dig myegy.tv', repeat step 5;\n9. From PC, do 'dig grabagun.com', repeat step5.",
+      "id" : "004",
+      "title" : "[FUNC] Verify when the category action is Negative Reply, the flag is changed and the changed Reply is forwarded by DUT, and log shows.",
+      "result" : "In step 5-9, the flag in DNS Reply, which is forwarded to the Client by DUT, is 0010(Server failure), and a log displayed: DNS Filtering - DNS Packet Negatively Replied.."
+   },
+   "005" : {
+      "steps" : "1. Profile Objects - DNS Filtering, add a profile named \"test\", the action of category \"Dating\", \"Drugs\", \"Alcohol\", \"Discrimination/Hate\", \"Ransomware\"  is Forged IP Reply;\n2. Rules and Policies - DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\", then in DNS Security page, set the Forged IPv4 is 127.0.0.2, Forged IPv6 is 1001::2;\n3. In Device - Log - Settings page, click edit, set Display Events in Log Monitor to 0 seconds, set Logging level to Inform, enable 'DNS Filtering - DNS Packet Dropped' in Network - DNS Security, accept;\n4. PC connected to X0:192.168.168.168, set dns server as X0 IP, do 'dig a www.jiayuan.com ' ;\n5. Do packet capture on DUT, check DNS packets, and log in Monitor - Logs - System Logs;\n6. From PC, do 'dig a heavengifts.com', repeat step 5;\n7. From PC, do 'dig a jiushang.cn', repeat step 5;\n8. From PC, do 'dig aaaa henrymakow.com', repeat step 5;\n9. From PC, do 'dig aaaa ultradnsfirewall-ransomware.neustar', repeat step5..",
+      "id" : "005",
+      "title" : "[FUNC] Verify when the category action is Forged IP Reply, the answer address is changed and the changed Reply is forwarded by DUT, and log shows.",
+      "result" : "1.In step 5-7, the answer address in DNS Reply, which is forwarded to the Client by DUT, is 127.0.0.2 and a log displayed: DNS Filtering - DNS Packet IP Forged;\n 2.In step 8-9, the answer address in DNS Reply, which is forwarded to the Client by DUT, is 1001::2 and a log displayed: DNS Filtering - DNS Packet IP Forged."
+   }
+}

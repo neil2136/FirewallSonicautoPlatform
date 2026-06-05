@@ -1,0 +1,410 @@
+{
+  "3258884": {
+    "steps": "Go to Device/Users/Local Users & Groups, Local Users tab, add a local user whose name is consistent with the User Name Attribute value on the SAML IDP.\nEdit this user, add SonicWALL Administrators privilege.\"\nClick the \"Single Sign on\" button on WAN interface management login page.\nLogin FW via the SAML user added in step 1.\nClick the Manage button on session window.\n",
+    "id": "3258884",
+    "title": "Users with SonicWALL Administrators privilege authenticate via SAML and manage FW  ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML and manage FW."
+  },
+  "3258885": {
+    "steps": "Go to Device/Users/Local Users & Groups, Local Groups tab, add a local group whose name is consistent with the Group Name Attribute value on the SAML IDP.\nEdit this group, add SonicWALL Administrators privilege.\nClick the \"Single Sign on\" button on WAN interface management login page.\nLogin FW via the SAML user whose properties matching Group Name Attribute value added in step 1.\nClick the Manage button on session window.",
+    "id": "3258885",
+    "title": "Group with SonicWALL Administrators privilege authenticate via SAML and manage FW  ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML and manage FW."
+  },
+  "3258886": {
+    "steps": "Go to Device/Users/Local Users & Groups, Local Users tab, add a local user whose name is consistent with the User Name Attribute value on the SAML IDP.\nClick the \"Single Sign on\" button on WAN interface management login page.\nLogin FW via the SAML user added in step 1.",
+    "id": "3258886",
+    "title": "Users without SonicWALL Administrators privilege authenticate via SAML ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Login Failed\nUser login denied - User has no privileges for login from that location"
+  },
+  "3258887": {
+    "steps": "Go to Device/Users/Local Users & Groups, Local Groups tab, add a local group whose name is consistent with the Group Name Attribute value on the SAML IDP.\nClick the \"Single Sign on\" button on WAN interface management login page.\nLogin FW via the SAML user whose properties matching Group Name Attribute value added in step 1.",
+    "id": "3258887",
+    "title": "Group without SonicWALL Administrators privilege authenticate via SAML ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Login Failed\nUser login denied - User has no privileges for login from that location."
+  },
+  "3258888": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN interface.\nClickÂ the \"Single Sign on\" button onÂ WAN interface management login page.\nLogin FW via the SAML user.",
+    "id": "3258888",
+    "title": " Enable SAML Profiles for management, users can authenticate via SAML and have management access to the firewall from WAN",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML and have management access to the firewall from WAN."
+  },
+  "3258889": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on LAN interface.\nClick the \"Single Sign on\" button on LAN interface management login page.\nLogin FW via the SAML user.",
+    "id": "3258889",
+    "title": "Enable SAML Profiles for management, users can authenticate via SAML and have management access to the firewall from LAN ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML and have management access to the firewall from LAN."
+  },
+  "3258890": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on DMZ interface.\nClickÂ the \"Single Sign on\" button on DMZ interface management login page.\nLogin FW via the SAML user.",
+    "id": "3258890",
+    "title": " Enable SAML Profiles for management, users can authenticate via SAML and have management access to the firewall from DMZ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML and have management access to the firewall from DMZ."
+  },
+  "3258891": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on custom zone interface.\nClickÂ the \"Single Sign on\" button on custom zone interface management login page.\nLogin FW via the SAML user.",
+    "id": "3258891",
+    "title": "Enable SAML Profiles for management, users can authenticate via SAML and have management access to the firewall from custom zone ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML and have management access to the firewall from custom zone."
+  },
+  "3258892": {
+    "steps": "Go to Device/Users/Settings, Authentication tab,click configure button for SAML Profile.\nEdit the management SAML Profile, Enable Single Logout.\nLogin FW via the SAML user.\nClick Logout button on session window.\nOpen the same browser, click the \"Single Sign on\" button on management login page.\nEdit the management SAML Profile, disable Single Logout.\nLogin FW via the SAML user.\nClick Logout button on session window.\nOpen the same browser, click the \"Single Sign on\" button on management login page.\n",
+    "id": "3258892",
+    "title": "Enable/disable Single Logout, testing SAML Management ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Step 5, username and password need to be entered again.\nStep 9, username and password do not need to be entered again to login successfully."
+  },
+  "3258893": {
+    "steps": "Go to Device/Users/Settings, Authentication tab,click configure button for SAML Profile.\nEdit the management SAML Profile, Enable Single Logout.\nLogin FW via the same SAML user from different PC.\nClick Logout button on one session window.",
+    "id": "3258893",
+    "title": "Test SLO when same user login from different PC/IPs ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Other session windows will not be affected."
+  },
+  "3258894": {
+    "steps": "Go to Device/Users/Settings, Authentication tab, click configure button for SAML Identification Provider.\nEdit the management SAML IDP, select a Trusted Certificate matching the SAML Signing Certificate on IDP.\nLogin FW via the SAML user.",
+    "id": "3258894",
+    "title": "SAML IDP Trusted Certificates is the IDP default Certificate ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully."
+  },
+  "3258895": {
+    "steps": "Upload custom certificate in SAML Signing Certificate on IDP.\nGo to Device/Users/Settings, Authentication tab, click configure button for SAML Identification Provider.\nEdit the management SAML IDP,select a Trusted Certificate matching the SAML Signing Certificate on IDP.\nLogin FW via the SAML user.",
+    "id": "3258895",
+    "title": " SAML IDP Trusted Certificates is the custom certificate",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully."
+  },
+  "3258896": {
+    "steps": "Go to Device/Users/Settings, Authentication tab, click configure button for SAML Identification Provider.\nEdit the management SAML IDP, select a Trusted Certificate not matching the SAML Signing Certificate on IDP.\nLogin FW via the SAML user.",
+    "id": "3258896",
+    "title": "SAML IDP Trusted Certificates does not match the SAML Signing Certificate on IDP ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can not authenticate via SAML."
+  },
+  "3258897": {
+    "steps": "Go to Device/Users/Settings, Authentication tab, click configure button for SAML Profile.\nEdit the management SAML Profile, enable Use a certificate to sign SP request, select a Trusted RSA Certificate matching Verification certificates on IDP.\nLogin FW via the SAML user.",
+    "id": "3258897",
+    "title": "Enable sign SP request, request Certificate match Verification certificates with RSA Cert on IDP ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully."
+  },
+  "3258898": {
+    "steps": "Go to Device/Users/Settings, Authentication tab, click configure button for SAML Profile.\nEdit the management SAML Profile, enable Use a certificate to sign SP request, click the Select certificate's drop-down box",
+    "id": "3258898",
+    "title": "The sign SP request certificate in SAML profile does not support ECDSA Cert ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "ECDSA Cert can not be seen."
+  },
+  "3258899": {
+    "steps": "Go to Device/Users/Settings, Authentication tab, click configure button for SAML Profile.\nEdit the management SAML Profile, enable Use a certificate to sign SP request, select a Trusted Certificate not matching Verification certificates on IDP.\nLogin FW via the SAML user.",
+    "id": "3258899",
+    "title": "Enable sign SP request, request Certificate does not match Verification certificates on IDP  ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can not authenticate via SAML."
+  },
+  "3258900": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN zone.\nAuthenticate Admins from local via the regular 'log in' option on management login page.",
+    "id": "3258900",
+    "title": "Enable SAML Profiles for management, authenticate Admins from local via the regular 'log in' option ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Authenticate Admins from local can success."
+  },
+  "3258901": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nDisable SAML profile on WAN zone.\nAuthenticate Admins from local via the regular 'log in' option on management login page.",
+    "id": "3258901",
+    "title": "Disable SAML Profiles for management, authenticate via the regular 'log in' option ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Authenticate Admins from local can success."
+  },
+  "3258902": {
+    "steps": " \"Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\\nDisable SAML profile on WAN zone.\\nAuthenticate Admins from LDAP/RADIUS/TACACS via the regular 'log in' option on management logi\",\n",
+    "id": "3258902",
+    "title": " Enable SAML Profiles for management, authenticate Admins from LDAP/RADIUS/TACACS via the regular 'log in' option",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Authenticate Admins from LDAP/RADIUS/TACACS can success."
+  },
+  "3258903": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nDisable SAML profile on WAN zone.\nAuthenticate Admins from LDAP/RADIUS/TACACS via the regular 'log in' option.",
+    "id": "3258903",
+    "title": " Disable SAML Profiles for management, authenticate Admins from LDAP/RADIUS/TACACS via the regular 'log in' option",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Authenticate Admins from LDAP/RADIUS/TACACS can success."
+  },
+  "3258904": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable more than 3 SAML profiles on WAN interface.\nClick the \"Single Sign on\" button on WAN interface management login page.\nLogin FW via the SAML user.\nDisable the first IDP,Login FW via the SAML user.\nDisable the second IDP,Login FW via the SAML user.",
+    "id": "3258904",
+    "title": "Priority testing for multiple IDPs on the same interface ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Step 4, The first IDP will work.\nStep 5, The second IDP will work.\nStep 6, The last IDP will work."
+  },
+  "3258905": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN interface.\nLogin FW via user with Administrators privilege. Check if TYPE/MODE value of the User sessions on page Users/Status if correct\nLogin FW via user with Limited Administrators privilege. Check if TYPE/MODE value of the User sessions on page Users/Status if correct\nLogin FW via user with Read-Only Admins privilege. Check if TYPE/MODE value of the User sessions on page Users/Status if correct\nLogin FW via user with Guest Administrators privilege. Check if TYPE/MODE value of the User sessions on page Users/Status if correct\n",
+    "id": "3258905",
+    "title": " Testing simultaneously login via SAML, with different users and privileges.",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Step 3: Users can authenticate via SAML and manage FW.\nStep 4: Login Failed\nUser login denied - User has no privileges for login from that location.\n\nStep 5: Users can authenticate via SAML and manage FW in Read-Only mode.\nStep 6: You have guest admin firewall administration capabilities.\nTYPE/MODE value of the User sessions on page Users/Status for every kind of admin user is correct"
+  },
+  "3258906": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable a SAML profile with domain SP.\nOn DNS server, set the ip address of this domain name to X1 ip.\nLogin FW via the SAML user from this domain name.\nOn DNS server, set the ip address of this domain name to X0 ip.\nLogin FW via the SAML user from this domain name.\nOn DNS server, set the ip address of this domain name to X2 ip.\nLogin FW via the SAML user from this domain name.",
+    "id": "3258906",
+    "title": "Mixed testing of multiple interfaces and same IDP with domain type ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully from different interface."
+  },
+  "3258907": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable different IDP SAML profiles on different interfaces.\nLogin FW via the SAML user from different interfaces.\n",
+    "id": "3258907",
+    "title": "Mixed testing of multiple interfaces and different IDPs ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully from different interfaces"
+  },
+  "3258908": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN zone.\nLogin FW via the SAML user.",
+    "id": "3258908",
+    "title": "The MGMT user information post authentication by IDP should be reflected under Firewall>Device>Users>Status section ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "For a managing web user who was authenticated by SAML it will show \"Web Login, Managing(Non-config mode), SAML Authed\"."
+  },
+  "3258909": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN zone.\nLogin FW via the SAML user.\nCheck the inactivity session time.\nWait inactivity session timeout.",
+    "id": "3258909",
+    "title": "SAML authenticated user inactivity session timeout ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Step 4, the inactivity session time is 60 minutes which is determined by IDP.\nstep 5, after inactivity session timeout, the user will be logout automatically."
+  },
+  "3258910": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN zone.\nLogin FW via the SAML user.\n",
+    "id": "3258910",
+    "title": "Firewall should maintain an event log with user/group details ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Firewall should maintain an event log with user/group details."
+  },
+  "3258911": {
+    "steps": "SAML User login with 2FA method",
+    "id": "3258911",
+    "title": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN interface.\nLogin FW via the SAML user with 2FA method.\n ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully."
+  },
+  "3258912": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN interface.\nIDP unreachable.\nLogin FW via the SAML user.",
+    "id": "3258912",
+    "title": "Testing SAML Management with IDP unreachable ",
+    "description": "Users can not authenticate via SAML, and FW console does not display exceptions.",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": ""
+  },
+  "3258913": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN zone.\nLogin FW via the SAML user.\nBurp suite, ACS replay good and bad requests.",
+    "id": "3258913",
+    "title": "Simulate ACS replay with burp suite tool ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "The FW console does not display exceptions."
+  },
+  "3258914": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN interface.\nLogin FW via the SAML user.\nKeep login/logout, see if there is any memory leak.",
+    "id": "3258914",
+    "title": "Keep SAML user login/logout, see if there’s any memory leak ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "The FW console does not display exceptions."
+  },
+  "3258915": {
+    "steps": "Go to Device/Users/Settings, click configure button for SAML Service Provider, add a Domain type SAML SP.\nSelect the SP added in step 1 in SAML profile.\nLogin FW access via IP with the SAML user.\nGo to Device/Users/Settings, click configure button for SAML Service Provider, add a IP type SAML SP.\nSelect the SP added in step 4 in SAML profile.\nLogin FW access via Domain with the SAML user.\n",
+    "id": "3258915",
+    "title": "Configured domain but access via IP, or vice versa ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can not authenticate via SAML successfully."
+  },
+  "3258916": {
+    "steps": "Go to Device/Settings/Administration, Management tab, change HTTPS Port to Non-443 port, such as 444.\nUpdate the https port on IDP.\nEnable SAML profile on WAN zone.\nLogin FW via the SAML user.",
+    "id": "3258916",
+    "title": " Non-443 port as HTTPS Port, testing SAML https Management",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully."
+  },
+  "3258917": {
+    "steps": "Go to Device/Users/Settings, Authentication tab,click configure button for SAML Profile.\nAdd more than 16 https service SAML Profiles.\nGo to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.",
+    "id": "3258917",
+    "title": "Verify the Max entries of the SAML Profiles For Management ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "All HTTPS service SAML Profiles can be shown."
+  },
+  "3258918": {
+    "steps": "Go to Device/Users/Settings, click configure button for SAML Service Provider, add a IP type SAML SP.\nSelect the SP added in step 1 in SAML profile.\nLogin FW via the SAML user.\nGo to Device/Users/Settings, click configure button for SAML Service Provider, add a Domain type SAML SP.\nSelect the SP added in step 4 in SAML profile.\nLogin FW via the SAML user.",
+    "id": "3258918",
+    "title": "IP/Domain type for SAML SP, testing SAML https Management ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML and have management access to the firewall from WAN."
+  },
+  "3258919": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN zone.\nLogin FW via the SAML user in proxy.",
+    "id": "3258919",
+    "title": "Test browser in proxy ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully."
+  },
+  "3258920": {
+    "steps": "Different browsers testing: Firefox, chrome, edge, safari.",
+    "id": "3258920",
+    "title": " Different browsers testing",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully."
+  },
+  "3258922": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN zone.\nRestart FW.\nLogin FW via the SAML user.\n",
+    "id": "3258922",
+    "title": " Restart FW,SAML function should still work",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully."
+  },
+  "3258923": {
+    "steps": "Go to Device/Settings/Administration, Management tab, click SAML profiles button to open SAML profile for Management window.\nEnable SAML profile on WAN zone.\nPrefs export/import, after re-import the CAs.\nLogin FW via the SAML user.",
+    "id": "3258923",
+    "title": "Prefs export/import,SAML function should still work ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Users can authenticate via SAML successfully."
+  },
+  "3258924": {
+    "steps": "show user saml profile test-profile\nuser saml\nprofile test-profile\n[no]management  ---> no management: disable, management: enable",
+    "id": "3258924",
+    "title": "CLI support for HTTPS management via SAML ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Saml profile for management can be enabled/disabled."
+  },
+  "3258925": {
+    "steps": "config\ndbg\ngeneral-settings\nlog-to console\nexit\nauth\nsaml [1-10]\ncommit",
+    "id": "3258925",
+    "title": "Allow user to set saml debug level via CLI ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Saml debug level can be set."
+  },
+  "3258927": {
+    "steps": "Go to Device/Settings/Certificates, import the CA certificate.\nGo to Device/Settings/Administration, enable \"Enable Login by User Certificate or Common Access Card\", User Name Field :Subject: Common Name, Client Certificate Issuer selects the CA certificate imported in step1.\nGo to Device/Users/Local Users & Groups, add a local user matching the Certificate Subject, and give it administrator privilege.\nGo to x1 interface, enable https for user login.\nDelete the CA certificate used by Management Cert Auth.",
+    "id": "3258927",
+    "title": "Delete a ca cert used by Management Cert Auth should be rejected ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Delete the ca cert used by Management Cert Auth should be rejected."
+  },
+  "3258928": {
+    "steps": "Go to Device/Settings/Certificates, import the CA certificate and its downstream CA certificate.\nGo to Device/Settings/Administration, enable \"Enable Login by User Certificate or Common Access Card\", User Name Field :Subject: Common Name, Client Certificate Issuer selects the downstream CA certificate imported in step 1.\nGo to Device/Users/Local Users & Groups, add a local user matching the Certificate Subject, and give it administrator privilege.\nGo to x1 interface, enable https for user login.\nDelete the CA certificate whose downstream certs are used by Management Cert Auth.",
+    "id": "3258928",
+    "title": "Delete a ca cert whose downstream certs are used by Management Cert Auth should be rejected ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Delete the ca cert whose downstream certs are used by Management Cert Auth should be rejected."
+  },
+  "3258930": {
+    "steps": "Go to Device/Settings/Certificates, import the CA certificate.\nGo to Device/Settings/Administration, enable \"Enable Login by User Certificate or Common Access Card\", User Name Field :Subject: Common Name, Client Certificate Issuer selects the CA certificate imported in step 1.\nGo to Device/Users/Local Users & Groups, add a local user matching the Certificate Subject, and give it administrator privilege.\nGo to x1 interface, enable https for user login.\nLogin FW on x1 interface.\n",
+    "id": "3258930",
+    "title": "The functionality of Management Cert Auth works well ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "The functionality of Management Cert Auth works well."
+  },
+  "3346041": {
+    "steps": "Enable SAML management on X0.\nConnect FW via VPN(gvc, netextender).\nLogin FW via the SAML user on X0 interface.",
+    "id": "3346041",
+    "title": "SAML management FW interface through VPN tunnel ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "SAML management successfully on X0 interface through VPN tunnel."
+  },
+  "3490398": {
+    "steps": "Go to Device/Users/Settings, add a SAML Identification Provider which User Name Attribute do not exist in the SAML IDP.\nClick the \"Single Sign on\" button on WAN interface management login page.",
+    "id": "3490398",
+    "title": "IDP send response with missing required attributes ",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Login Failed\nFail to find username from IdP response, please contact your network administrator for help."
+  },
+  "3490399": {
+    "steps": "Bind the X1 IDP to a different SP,such as X2.\nClick the \"Single Sign on\" button on X2 interface management login page.\nLogin FW via the SAML user.",
+    "id": "3490399",
+    "title": "Use a SAML assertion for a different SP",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Login Failed."
+  },
+  "3423117": {
+    "steps": "Disable HTTPS User Login on WAN interface.\nGo to Device/Users/Local Users & Groups, Local Users tab, add a local user whose name is consistent with the User Name Attribute value on the SAML IDP.\nClick the \"Single Sign on\" button on WAN interface management login page.\nLogin FW via the SAML user added in step 1.",
+    "id": "3423117",
+    "title": "Login MGMT with “HTTPS Login” disabled on the interface",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Login Failed\nHTTPS User login not allowed from here."
+  },
+  "3758544": {
+    "steps": "Configure IDP settings on the firewall and IDP properly.\nEnable SAML https mgmt on X1\nSet X2 to WAN. Enable WLB, add X2 above X1, select the type as Round Robin.\n4.Add a user on the firewall with same name as in IDP, add it to group 'SonicWALL Administrators'\n\n5.Try to login with the SAML user from X1 using SAML Auth.\n\n",
+    "id": "3758544",
+    "title": "Verify SAML auth to X1 can succeed when WLB is enabled and X2 has higher priority than X1",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": ""
+  },
+  "3823491": {
+    "steps": "1.Login as a SAML user with Full admin privilege and click Manage button to access firewall GUI.\n\n2.Wait about 3-5 minutes, the remaining session time reduced, then click the Manage button again.",
+    "id": "3823491",
+    "title": "Click the Manage button again after several minutes and check firewall won't end current management session.",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": "Step2, still current management session displayed, it won't be expired and remaining session time should not recovered to initial."
+  },
+  "3833488": {
+    "steps": "1.Login using IDP saml user, check default session time;\n2.Change the default session time on IDP, different IDPs may configure at different fields, for example, OKTA, it's \"maximum app session time\", change it to 30 minutes, for onelogin, it's \"SAML SessionNotOnOrAfter\", change it to 45minutes\n3.Logout and relogin using saml user, check the session time.",
+    "id": "3833488",
+    "title": "Verify the SAML user session time should be same and can be updated successfully as configured on IDP.",
+    "description": "",
+    "initial": "IDP settings refer:\n\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\n\nUser is created on the IDP.\n\nHTTPS service SAML profiles have been added.",
+    "result": ""
+  }
+}

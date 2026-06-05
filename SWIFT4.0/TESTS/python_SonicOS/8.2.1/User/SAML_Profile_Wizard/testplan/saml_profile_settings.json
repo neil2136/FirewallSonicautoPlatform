@@ -1,0 +1,37 @@
+{
+  "4119730": {
+    "steps": "1 Click 'Wizard' beside SAML Profile 2 Fill the proper SAML profile name and comments, then click 'Next' 3 Click 'Create New Service Provider' to create a SP Profile, fill the proper value of the SP profile, then click 'Next' 4 To export your SP profile, click 'Next' 5 Click 'Create New Identity Provider' and 'Import', select your IDP profile 5-1 To specify your 'User Name Attribute' and 'Group Name Attribute', click 'Next' 6 Select 'Create address objects and access rules automatically' 7 Check your configuration in the 'SUMMARY' table and apply the configuration",
+    "initial": "",
+    "id": "4119730",
+    "title": "Create SAML Profile via Wizard",
+    "result": "7 The configuration will take effect after reboot, after reboot, the configuration should be the same as it configured"
+  },
+   "4119731": {
+    "steps": "1 Refer to the case of C4119730, in the 'SERVICE PROVIDER ', select the type of the SP to domain2 Fill the FQDN of your service provider, set the service type to SSLVPN3 Apply the configuration",
+    "initial": "",
+    "id": "4119731",
+    "title": "Create a Domain Type Service Provider via Wizard",
+    "result": "3 The configuration should take effect after reboot"
+  },
+   "4119732": {
+    "steps": "1 Refer to the case of C4119730, in the 'Identity Provider ', select 'Please select how to configure the Identity Provider' to 'Manual'2 Fill each option to the value from the IdP3 Apply the configuration",
+    "initial": "",
+    "id": "4119732",
+    "title": "To manually set the IdP via SAML Wizard ",
+    "result": "The configuration should be successful and take effect after reboot"
+  },
+   "4119733": {
+    "steps": "1 Refer to the case of C4119730, in the Service Provider and Identity Provider, select the objects which was already created2 Fill proper values for other options3 Apply the configuration",
+    "initial": " ",
+    "id": "4119733",
+    "title": "To check the pre-create SP/IdP profile could be selected via SAML Wizard",
+    "result": "The configuration will take effect without a reboot since the sonicOS has already rebooted after creating IdP profile"
+  },
+  "4119734": {
+    "steps": "1 Refer to the case of C4119730, to import an RSA self-signed certificate2 Enable 'Use a certificate to sign SP request'4 Select the certificate that pre-imported3 Apply the configuration",
+    "initial": " ",
+    "id": "4119734",
+    "title": "To Use a certificate to sign SP request via SAML Wizard",
+    "result": "The configuration will take effect without a reboot"
+  }
+}

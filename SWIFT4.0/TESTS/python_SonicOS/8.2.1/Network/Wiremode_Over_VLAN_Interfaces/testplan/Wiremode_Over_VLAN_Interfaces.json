@@ -1,0 +1,202 @@
+{
+   "1513136" : {
+      "steps" : "  1. Run traffic between PC and Server that does not match rule - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Smoke",
+      "atm_id" : "f50a3082-8930-4bce-bd3f-80a7952511f6",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. PC on one interface. Other interface connect to Server or to router which is connected to Server.&#160;\n  Security Services licensed. App rules enabled.",
+      "id" : "1513136",
+      "title" : "App Rule allowed traffic Wiremode over VLAN  - Secure same interface",
+      "description" : "Original ID: 066\nOriginal Title: App Rule allowed traffic Wiremode over VLAN  - Secure same interface\nOriginal Description: Verify App Rule allowed traffic Wiremode over VLAN  - Secure same interface",
+      "result" : "  Traffic succeeds. No logs identifying the traffic as undesirable."
+   },
+   "1513151" : {
+      "steps" : "  1. Configure two physical interfaces into Secure wire mode, e.g. X12 and X13 set to Secure wire mode\n  2. Create VLAN interfaces X12:V1200 and X13:v1300, and configure them into wire mode (bypass, inspect, secure)\n  3. Reboot DUT\n  4. Check wiremode settings keep unchanged in both parent and VLAN interfaces.\n  5. Verify the wiremode function work fine in bothparent and VLAN interfaces.",
+      "priority" : "Smoke",
+      "atm_id" : "1f6d2f90-2e0a-4a78-8ad1-97ae6b116b32",
+      "initial" : "  TBD",
+      "id" : "1513151",
+      "title" : "[SM9800/12K] [RFE in DTS 200015] Reboot test when both parent interfaces and VLAN interfaces are in wire mode",
+      "description" : "Original ID: 183\nOriginal Title: [SM9800/12K] [RFE in DTS 200015] Reboot test when both parent interfaces and VLAN interfaces are in wire mode\nOriginal Description:",
+      "result" : "  4. Wiremode settings keep unchanged in both parent and VLAN interfaces.\n  5. Wiremode function work fine in bothparent and VLAN interfaces."
+   },
+   "1513139" : {
+      "steps" : "  1. FTP a virus from the server to the PC",
+      "priority" : "Smoke",
+      "atm_id" : "44175cfa-ce6e-4a2e-be0c-ccabe8393516",
+      "initial" : "  Interfaces configured in Wiremode- Secure PC on one interface. Other interface connect to Server or to router which is connected to Server.\n  Security Services licensed. GAV enabled",
+      "id" : "1513139",
+      "title" : "IPS traffic Wiremode over VLAN - Secure same VLAN tag",
+      "description" : "Original ID: 087\nOriginal Title: IPS traffic Wiremode over VLAN - Secure same VLAN tag\nOriginal Description: Verify IPS traffic Wiremode over VLAN - Secure same VLAN tag",
+      "result" : "  Virus is blocked. Log identifies traffic as containing virus."
+   },
+   "1513134" : {
+      "steps" : "  1. Configure two physical interfaces to a wiremode pair.\n  2. Check if you can add vlan interfaces for the two interfaces.\n  3. Remove the wiremode pair from the interfaces.\n  4. Add two vlan interfaces and try setting them to a wiremode pair.",
+      "priority" : "Smoke",
+      "atm_id" : "8b7c70b3-0c8e-4c03-83aa-a9d539f31682",
+      "initial" : "  Default",
+      "id" : "1513134",
+      "title" : "GUI - Wiremode over VLAN can be added after the wiremode pair is removed from parent interfaces",
+      "description" : "Original ID: 035\nOriginal Title: GUI - Wiremode over VLAN can be added after the wiremode pair is removed from parent interfaces\nOriginal Description: Wiremode over VLAN can be added after the wiremode pair is removed from parent interfaces",
+      "result" : "  Wiremode over VLAN can be added after the wiremode pair is removed from parent interfaces"
+   },
+   "1513148" : {
+      "steps" : "  1. In GUI to configure two physical interfaces (e.g. X12, X13) to Secure wire mode.\n  2. Add VLAN interfaces X12:v1200, X13:v1300 in unassigned status\n  3. Configure X12:V1200 and X13:v1300 to wire mode (bypass, inspect, secure).",
+      "priority" : "Smoke",
+      "atm_id" : "41dd39e8-fa92-4ce3-a3db-a7cccfb40284",
+      "initial" : "  TBD",
+      "id" : "1513148",
+      "title" : "[SM9800/12K] [RFE in DTS 200015] Verify when a parent (physical) interface is in Secure wire mode, allow adding VLAN interfaces in wire mode",
+      "description" : "Original ID: 180\nOriginal Title: [SM9800/12K] [RFE in DTS 200015] Verify when a parent (physical) interface is in Secure wire mode, allow adding VLAN interfaces in wire mode\nOriginal Description:",
+      "result" : "  3. The configuration should be successful without error."
+   },
+   "1513141" : {
+      "steps" : "  1. FTP a virus from the server to the PC",
+      "priority" : "Smoke",
+      "atm_id" : "a1560559-8153-427e-ac1c-a123b4d289c8",
+      "initial" : "  Interfaces configured in Wiremode- Secure PC on one interface. Other interface connect to Server or to router which is connected to Server.\n  Security Services licensed. GAV enabled",
+      "id" : "1513141",
+      "title" : "CFS traffic Wiremode over VLAN - Secure same interface",
+      "description" : "Original ID: 098\nOriginal Title: CFS traffic Wiremode over VLAN - Secure same interface\nOriginal Description: Verify CFS traffic Wiremode over VLAN - Secure same interface",
+      "result" : "  Virus is blocked. Log identifies traffic as containing virus."
+   },
+   "1513135" : {
+      "steps" : "  1. Run traffic between PC and Server that does not match rule - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Smoke",
+      "atm_id" : "cba98e94-102a-459e-8803-75f7c50d0e76",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. PC on one interface. Other interface connect to Server or to router which is connected to Server.&#160;\n  Security Services licensed. App rules enabled.",
+      "id" : "1513135",
+      "title" : "App Rule allowed traffic Wiremode over VLAN  - Secure different VLAN tag",
+      "description" : "Original ID: 063\nOriginal Title: App Rule allowed traffic Wiremode over VLAN  - Secure different VLAN tag\nOriginal Description: Verify App Rule allowed traffic Wiremode over VLAN  - Secure different VLAN tag",
+      "result" : "  Traffic succeeds. No logs identifying the traffic as undesirable."
+   },
+   "1513144" : {
+      "steps" : "  1. Enable DHCP on PC 2. Verify PC obtains DHCP lease",
+      "priority" : "Smoke",
+      "atm_id" : "6bc148f9-2759-4b35-8375-805d7bff150e",
+      "initial" : "  Interfaces configured in Wire Mode - Secure PC connected to DUT Other interface of DUT is connect to DHCP Server",
+      "id" : "1513144",
+      "title" : "DHCP traffic through Wiremode over VLAN Secure",
+      "description" : "Original ID: 127\nOriginal Title: DHCP traffic through Wiremode over VLAN Secure\nOriginal Description: Verify DHCP traffic through Wiremode over VLAN Secure",
+      "result" : "  PC obtains DHCP lease"
+   },
+   "1513145" : {
+      "steps" : "  1. On other SonicWALL enable Multicast (Require IGMP Membership reports for multicast data forwarding) and enable Multicast on Ports. 2. On other SonicWALL enable Access rule allow Multicast through. 3. Run multicast of movie using VLC on Server. 4. Open VLC stream on Client to Multicast address.",
+      "priority" : "Smoke",
+      "atm_id" : "c47d28da-5195-468d-b751-e6ecad4aa3ca",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. PC on one interface. Other interface connect to another SonicWALL which is connected to Server. VLC server on Server and Client.",
+      "id" : "1513145",
+      "title" : "Multicast traffic Wiremode over VLAN Secure",
+      "description" : "Original ID: 133\nOriginal Title: Multicast traffic Wiremode over VLAN Secure\nOriginal Description: Verify Multicast traffic Wiremode over VLAN Secure",
+      "result" : "  Able to see VLC stream on Client. IGMP entry shows up in the IGMP State Table of the other SonicWALL but not the DUT."
+   },
+   "1513132" : {
+      "steps" : "  1. Add two vlan interfaces and configure them into a wiremode pair.\n  2. Try deleting the two vlan interfaces.",
+      "priority" : "Smoke",
+      "atm_id" : "106abb76-0af7-4961-b821-c0cb9516180f",
+      "initial" : "  Default",
+      "id" : "1513132",
+      "title" : "GUI - Cannot delete Wiremode over VLAN interface",
+      "description" : "Original ID: 022\nOriginal Title: GUI - Cannot delete Wiremode over VLAN interface\nOriginal Description: Verify cannot delete Wiremode over VLAN interface",
+      "result" : "  Cannot delete Wiremode over VLAN interface"
+   },
+   "1513150" : {
+      "steps" : "  1. Configure two physical interfaces into Secure wire mode, e.g. X12 and X13 set to Secure wire mode\n  2. Create VLAN interfaces X12:V1200 and X13:v1300, and configure them into wire mode (bypass, inspect, secure)\n  3. Send untagged traffic check they can hit the X12-X13 wiremode pair policy, e.g. virus packet will be dropped and log printed\n  4. Send tagged traffic (VLAN ID=1200/1300) check they can hit the X12:V1200-X13:v1300 wiremode pair policy, e.g. when in inspect mode the virus packet could pass but have log printed.",
+      "priority" : "Smoke",
+      "atm_id" : "fcf39c83-6976-4c43-bff6-58b12a3635bb",
+      "initial" : "  TBD",
+      "id" : "1513150",
+      "title" : "[SM9800/12K] [RFE in DTS 200015] Verify the function when both parent interfaces and VLAN interfaces are in wire mode",
+      "description" : "Original ID: 182\nOriginal Title: [SM9800/12K] [RFE in DTS 200015] Verify the function when both parent interfaces and VLAN interfaces are in wire mode\nOriginal Description:",
+      "result" : "  Untagged traffic can hitX12-X13 wiremode pair policy,tagged traffic (VLAN ID=1200/1300) can hit the X12:V1200-X13:v1300 wiremode pair policy."
+   },
+   "1513133" : {
+      "steps" : "  1. Add two vlan interfaces under a parent and leave them unassigned 2. Check if you can configure the VLAN interfaces to a wiremode pair.",
+      "priority" : "Smoke",
+      "atm_id" : "9da4c3d3-efdb-4523-bc64-2e79ffae3cd4",
+      "initial" : "  Default",
+      "id" : "1513133",
+      "title" : "GUI - Can't configure Wiremode over VLAN over same parent interface",
+      "description" : "Original ID: 031\nOriginal Title: GUI - Can't configure Wiremode over VLAN over same parent interface\nOriginal Description: Verify wiremode over VLAN over same parent interface",
+      "result" : "  Can't configure Wiremode over VLAN over same parent interface"
+   },
+   "1513143" : {
+      "steps" : "  1. Start Packet capture. 2. Run traffic from client to server - tagged traffic should be from PC to other SonicWALL interface.",
+      "priority" : "Smoke",
+      "atm_id" : "663ad948-143d-4f0c-828b-bccdbbd24393",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. PC is connected to interface on the DUT. PC is configured for VLAN tagged traffic. Other interface of DUT is connect to another SonicWALL which is connected to a server. Tagged VLAN is configured on the SonicWALL.",
+      "id" : "1513143",
+      "title" : "Traffic with different VLAN tag through Wiremode over VLAN Paired interfaces",
+      "description" : "Original ID: 117\nOriginal Title: Traffic with different VLAN tag through Wiremode over VLAN Paired interfaces\nOriginal Description: Verify Traffic with different VLAN tag through Wiremode over VLAN Paired interfaces",
+      "result" : "  Tagged traffic traverses the DUT wire mode interfaces with no issues."
+   },
+   "1513146" : {
+      "steps" : "  1.\tTry sending ftp, http, ping , virus between PC1 and PC2 from both the directions. Also run ftp traffic matching the app rule",
+      "priority" : "Smoke",
+      "atm_id" : "e19e1501-9235-4445-9814-b91ed80ce3d1",
+      "initial" : "  PC1 ----------------- X2(WAN) DUT X3(DMZ)-----PC2 1.\tTwo interfaces configured in WAN-DMZ-wiremode-secure mode\n  2.\tPC1 connected to one interface and PC2 connected to another\n  3.\tSecurity (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.\n  4.\tThe default deny access rule for WAN>DMZ enabled",
+      "id" : "1513146",
+      "title" : "Wiremode over VLAN Secure test between WAN-DMZ",
+      "description" : "Original ID: 147\nOriginal Title: Wiremode over VLAN Secure test between WAN-DMZ\nOriginal Description: Verify Wiremode over VLAN Secure test between WAN-DMZ",
+      "result" : "  1.\tAll traffic from PC1 (WAN side)to PC2(DMZ side) should be denied.\n  2.\tThe traffic should be successful from PC2 to PC1 with log generated for traffic matching the app rule and virus."
+   },
+   "1513140" : {
+      "steps" : "  1. FTP a virus from the server to the PC",
+      "priority" : "Smoke",
+      "atm_id" : "ac1a0a62-8a81-4c44-ba29-209fcb56b243",
+      "initial" : "  Interfaces configured in Wiremode- Secure PC on one interface. Other interface connect to Server or to router which is connected to Server.\n  Security Services licensed. GAV enabled",
+      "id" : "1513140",
+      "title" : "CFS traffic Wiremode over VLAN - Secure same VLAN tag",
+      "description" : "Original ID: 094\nOriginal Title: CFS traffic Wiremode over VLAN - Secure same VLAN tag\nOriginal Description: Verify CFS traffic Wiremode over VLAN - Secure same VLAN tag",
+      "result" : "  Virus is blocked. Log identifies traffic as containing virus."
+   },
+   "1513138" : {
+      "steps" : "  1. FTP a virus from the server to the PC",
+      "priority" : "Smoke",
+      "atm_id" : "9f65077e-47fc-4933-ad06-3349d0dc1863",
+      "initial" : "  Interfaces configured in Wiremode- Secure PC on one interface. Other interface connect to Server or to router which is connected to Server.\n  Security Services licensed. GAV enabled",
+      "id" : "1513138",
+      "title" : "Virus traffic Wiremode over VLAN - Secure different VLAN tag",
+      "description" : "Original ID: 082\nOriginal Title: Virus traffic Wiremode over VLAN - Secure different VLAN tag\nOriginal Description: Verify Virus traffic Wiremode over VLAN - Secure different VLAN tag",
+      "result" : "  Virus is blocked. Log identifies traffic as containing virus."
+   },
+   "1513142" : {
+      "steps" : "  1. Verify can access interface with management. 2. Edit the interface 3. Select Wire Mode from IP Assignment Box 4. Select Bypass from the Type Box 5. Select another Unassigned interface for the pair. 6. Click OK 7. Attempt to access UI using previous IP. 8. Configure IP addresses on PCs to be able to communicate. 9. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Smoke",
+      "atm_id" : "5e777ac8-9b10-476a-84b8-111077b4f7db",
+      "initial" : "  Interface configured on LAN with Static IP and management enabled. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1513142",
+      "title" : "Switching Wiremode over VLAN interface to static VLAN",
+      "description" : "Original ID: 111\nOriginal Title: Switching Wiremode over VLAN interface to static VLAN\nOriginal Description: VerifySwitching Wiremode over VLAN interface to static VLAN",
+      "result" : "  Management is not possible. Traffic between the PCs succeeds."
+   },
+   "1513147" : {
+      "steps" : "  1.\tTry sending ftp, http, ping, virus between PC1 and PC2 from both the directions. Also run ftp traffic matching the app rule",
+      "priority" : "Smoke",
+      "atm_id" : "e8ca7b7a-4d24-4c1f-a634-10cfcdcb30d7",
+      "initial" : "  PC1 ----------------- X2(DMZ) DUT X3(DMZ)-----PC2 1.\tTwo interfaces configured in DMZ-DMZ-wiremode-secure mode\n  2.\tPC1 connected to one interface and PC2 connected to another\n  3.\tSecurity (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp.",
+      "id" : "1513147",
+      "title" : "Wiremode over VLAN Secure test between DMZ-DMZ.",
+      "description" : "Original ID: 149\nOriginal Title: Wiremode over VLAN Secure test between DMZ-DMZ.\nOriginal Description: Verify Wiremode over VLAN Secure test between DMZ-DMZ.",
+      "result" : "  1.\tThe traffic should be successful from both directions with log generated for traffic matching the app rule and virus."
+   },
+   "1513149" : {
+      "steps" : "  1. Select two physical interfaces which in unassigned status (e.g. X12, X13)\n  2. Create VLAN interface X12:V1200, X13:V1300, then configure them into wire mode (bypass, inspect or secure)\n  3. Configure parent interfaces X12 X13 as Secure wire mode.",
+      "priority" : "Smoke",
+      "atm_id" : "001b77f3-bc0e-4ed8-92b7-da23d63f9e43",
+      "initial" : "  TBD",
+      "id" : "1513149",
+      "title" : "[SM9800/12K] [RFE in DTS 200015] Verify when there are VLAN interfaces in wire mode, allow configuring Secure  wire mode on the parent interfaces.",
+      "description" : "Original ID: 181\nOriginal Title: [SM9800/12K] [RFE in DTS 200015] Verify when there are VLAN interfaces in wire mode, allow configuring Secure  wire mode on the parent interfaces. \nOriginal Description:",
+      "result" : "  3. The configuration will be successful."
+   },
+   "1513137" : {
+      "steps" : "  1. FTP a virus from the server to the PC",
+      "priority" : "Smoke",
+      "atm_id" : "87706f7a-64a4-493b-978d-fc63ef6805a5",
+      "initial" : "  Interfaces configured in Wiremode- Secure PC on one interface. Other interface connect to Server or to router which is connected to Server.\n  Security Services licensed. GAV enabled",
+      "id" : "1513137",
+      "title" : "Virus traffic Wiremode over VLAN - Secure same VLAN tag",
+      "description" : "Original ID: 078\nOriginal Title: Virus traffic Wiremode over VLAN - Secure same VLAN tag\nOriginal Description: Verify Virus traffic Wiremode over VLAN - Secure same VLAN tag",
+      "result" : "  Virus is blocked. Log identifies traffic as containing virus."
+   }
+}

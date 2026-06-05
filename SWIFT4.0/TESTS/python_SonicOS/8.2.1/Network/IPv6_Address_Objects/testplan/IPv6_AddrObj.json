@@ -1,0 +1,37 @@
+{
+   "4" : {
+      "initial" : "  <p>LAN IP address configured to 2001::1<br /> WAN IP address configured to 2002::1</p>",
+      "title" : "  Create an address object Type - Host, Zone WAN",
+      "steps" : "  <p>1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on 'Add' under the Address Object column. <br />3. Enter the following details - Name - test Zone Assignment - WAN Type - Host IP Address - 2002::2 <br />4. Click OK.</p>",
+      "uuid" : "1527167",
+      "id" : "4"
+   },
+   "29" : {
+      "uuid" : "1527163",
+      "id" : "29",
+      "initial" : "  <p>Address objects of the following type created<br /> - 1. test1 - Type Host, Zone - LAN - IPv4 <br />- 2. test2 - Type Range, Zone - LAN - IPv6</p>",
+      "title" : "  Create an address group with both IPv4 and IPv6 address objects",
+      "steps" : "  <p>1. From the 'Address Objects' page, click on the 'IPv4 and IPv6' radio button. <br />2. Click on 'Add Group' under the Address Group column. <br />3. Enter 'test' for the name. <br />4. Select 'test1' and 'test2' from the list and click the '-&gt;' button so that they get added. <br />5. Click OK.</p>"
+   },
+   "24" : {
+      "initial" : "  LAN IP address configured to 2001::1",
+      "steps" : "  <p>1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on 'Add' under the Address Object column. <br />3. Enter the following details - Name - test Zone Assignment - LAN Type - Network Network - 2007::11 Netmask/Prefix length - 64 <br />4. Click OK.</p>",
+      "title" : "  Create an address object Type - Network, Zone SSLVPN",
+      "uuid" : "1527161",
+      "id" : "24"
+   },
+   "2" : {
+      "id" : "2",
+      "uuid" : "1527159",
+      "steps" : "  <p>1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on 'Add' under the Address Object column. <br />3. Enter the following details - Name - test Zone Assignment - LAN Type - Range Starting IP Address - 2001::2 Ending IP Address - 2001::5 <br />4. Click OK.</p>",
+      "title" : "  Create an address object Type - Range, Zone LAN",
+      "initial" : "  LAN IP address configured to 2001::1"
+   },
+   "38" : {
+      "id" : "38",
+      "uuid" : "1527166",
+      "title" : "  Delete an address object",
+      "steps" : "  <p>1. From the 'Address Objects' page, click on the 'IPv6 only' radio button. <br />2. Click on the checkbox next to Address object 'test'. <br />3. Click the 'Delete' button.</p>",
+      "initial" : "  <p>LAN IP address configured to 2001::1 <br />An address object 'test' with IP '2001::3' of type 'Host' and zone LAN created (as in Test case 1)</p>"
+   }
+}

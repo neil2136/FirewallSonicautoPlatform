@@ -1,0 +1,212 @@
+{
+   "1714081" : {
+      "steps" : "  Add more than one Options as testcase 1 Click Advanced button, Click Delete all button",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714081",
+      "title" : "Delete all the Generic option object",
+      "description" : "Original ID: 4\nOriginal Title: Delete all the Generic option object\nOriginal Description: This test ensures that User can add a generic options manually.",
+      "result" : "  All the option objects can be deleted successful."
+   },
+   "1714084" : {
+      "steps" : "  1.Add more than one Option groups as testcase 4.1.5\n  2.Click Advanced button, Click one of the Option Group edit button, make some modification.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714084",
+      "title" : "Edit Generic option Groups",
+      "description" : "Original ID: 7\nOriginal Title: Edit Generic option Groups\nOriginal Description: This test ensures that User can add a generic options manually.",
+      "result" : "  The configuration above will be successful."
+   },
+   "1714066" : {
+      "steps" : "  Enable DHCPv6 Server. Click Advanced button.\n  Click Add option in Option Objects page, then, Input valid Option name and Option value according the option number.Click Ok button.",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714066",
+      "title" : "Add Generic option object",
+      "description" : "Original ID: 1\nOriginal Title: Add Generic option object\nOriginal Description: This test ensures that User can add a generic options manual",
+      "result" : "  The configuration above will be successful. And the  manual-added Option will be list after the configuration.\nStateful DHCP server testing."
+   },
+   "1714067" : {
+      "steps" : "  1.Add more than one Option option/group as testcase above.\n  2.Add a DHCPv6 Dynamic entry. Choose the Option object or Option group form dropdown list . Click Ok button.\n  3.Click Advanced button, go to Option groups page,Click delete button of the option option/group",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714067",
+      "title" : "Can't Delete Generic option object/Group in use",
+      "description" : "Original ID: 10\nOriginal Title: Can't Delete Generic option object/Group in use\nOriginal Description: This test ensures that User cant delete the Generic option object/groups manually(those option object/group used by any DHCP entry.).",
+      "result" : "  The selected option object/group cant be deleted successful."
+   },
+   "1714079" : {
+      "steps" : "  1)Configure two DHCP option object for Tag No, say: 23.\n  2)Try to add this two option object to DHCP option group.\n  3)Force a DHCP client to request for option 23. in the DHCP Soclicit/Request packet,include option 23.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714079",
+      "title" : "DHCP Server doesn't insert same option tag multiple times for DHCP option request send by the client.",
+      "description" : "Original ID: 21\nOriginal Title: DHCP Server doesn't insert same option tag multiple times for DHCP option request send by the client.\nOriginal Description: This test ensures that same option Tag is not repeated in the DHCP OFFER/ACK message. (Note: Provided same option is not configured in the basic configuration of DHCP address pool, ex: DNS, Domain Name, Router address etc)",
+      "result" : "  The user can't add this two option object to same option group. The DHCP server OFFER/ACK packet should show only one DHCP option with Tag Number 23."
+   },
+   "1714074" : {
+      "steps" : "  1)Configure following DHCP option Objects option1: TagNo 230, value = 10.10.10.10, option2: TagNo = 231, value = 11.11.11.11.\n  2)Create an option Group: optionGrp12 with option1 and option2 as members.\n  3)Bind DHCP Generic group handle with optionGrp12 in the DHCP server configuration.\n  4)Start a DHCP client to do a Discover.\n  5)The client got an IP address from the pool.\n  6)Now delete option objects option1 and option2 from optionGrp12. Now optionGrp12 is empty.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714074",
+      "title" : "Binding an option Group with No members doesnt cause any issue",
+      "description" : "Original ID: 17\nOriginal Title: Binding an option Group with No members doesnt cause any issue\nOriginal Description: This test ensures that an empty option Group doesnt cause any unexpected behavior",
+      "result" : "  The DHCP server doesnt crash. The next DHCP offer send by the server doesnt have any DHCP options present."
+   },
+   "1714086" : {
+      "steps" : "  1.Add more than one Option groups as testcase 4.1.5\n  2.Click Advanced button,go to option groups page, Click Delete all button",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714086",
+      "title" : "Delete all the Generic option groups",
+      "description" : "Original ID: 9\nOriginal Title: Delete all the Generic option groups\nOriginal Description: This test ensures that User can delete all the Generic option groups  manually(make sure those option groups dont used by any DHCP entry.)",
+      "result" : "  All the option groups can be deleted successful"
+   },
+   "1714076" : {
+      "steps" : "  Start with a minimum number of DHCP clients doing Renew/Release. Increase the number of DHCP clients.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714076",
+      "title" : "Run a couple of tests over a period of 72 hour",
+      "description" : "Original ID: 19\nOriginal Title: Run a couple of tests over a period of 72 hour\nOriginal Description: This test find out Max no of DHCP client can get the lease from the server with DHCP \nGeneric options configured on each address pool and the delay in getting the lease.",
+      "result" : "  Measure the performance of the Firewall. Measure the delay in getting the lease with and without DHCP Generic options present."
+   },
+   "1714070" : {
+      "steps" : "  1)In the DHCP option page added DHCP option is listed.\n  2)Select the added option. Enable Send Dhcp Option Always\n  3)Do a Renew from the DHCP Client. Capture the packets between Server and Client.\n  4)Clear DNS info in DNS page.\n  5)Do a Renew from the DHCP Client.Capture the packets between Server and Client.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714070",
+      "title" : "DHCP Generic options doesnt interfere other DHCP options configured in the server",
+      "description" : "Original ID: 13\nOriginal Title: DHCP Generic options doesnt interfere other DHCP options configured in the server\nOriginal Description: This test ensures that DHCP Generic option dont interfere with other DHCP standard options.",
+      "result" : "  DHCP Reply message only show Option 23 DNS =2001:30:1:1::2\n  DHCP Reply message only show Option 23 DNS = 2005::201"
+   },
+   "1714069" : {
+      "steps" : "  1)In the DHCP option page added DHCP option is listed.\n  2) Select the added option in Advanced page of a DHCP scope. Disable Send Dhcp Option Always\n  3)Do a Renew from the DHCP Client.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714069",
+      "title" : "DHCP server provides Generic options to the clients only if it is requested.",
+      "description" : "Original ID: 12\nOriginal Title: DHCP server provides Generic options to the clients only if it is requested.\nOriginal Description: This test ensures that DHCP server provides generic option only if the client request for it.",
+      "result" : "  DHCP reply message shows Generic options only if the client requested these options using option30 (Parameter Request List)"
+   },
+   "1714077" : {
+      "steps" : "  Add more than one Options as testcase 1 Click Advanced button, Click one of the Option Object edit button, make some modification.",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714077",
+      "title" : "Edit Generic option objects",
+      "description" : "Original ID: 2\nOriginal Title: Edit Generic option objects\nOriginal Description: This test ensures that User can add a generic options manually.",
+      "result" : "  The configuration above will be successful."
+   },
+   "1714073" : {
+      "steps" : "  1)Configure following DHCP option Objects option1: TagNo 30, value = 2003::201, option2: TagNo = 31, value = 2002::201.\n  2)Create an option Group: optionGrp12 with option1 and option2 as members.\n  3)Bind DHCP Generic group handle with optionGrp12 in the DHCP server configuration.\n  4)Start a DHCP client to do a Discover.\n  5)The client got an IP address from the pool.\n  6)Now Delete option object option1",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714073",
+      "title" : "Removing/Editing option objects in the option group take in effect immediately",
+      "description" : "Original ID: 16\nOriginal Title: Removing/Editing option objects in the option group take in effect immediately\nOriginal Description: This test ensures that option object callback mechanism works and DHCP server \ndoesnt crash and works as expected.",
+      "result" : "  The DHCP server doesnt crash. The next DHCP offer send by the server has Tag Number 231 present and not Tag Number 230. The DHCP server OFFER/ACK packet should show only one DHCP option with Tag Number 230."
+   },
+   "1714082" : {
+      "steps" : "  1.Enable DHCPv6 Server.\n  2.Click Advanced button.\n  3.Click Add option in Option Objects page, then, Input valid Option name and Option value according the option number.Click Ok button.\n  4.Repeat step3 add more than one address object.\n  5.Click Add group button in Option Groups page, then, input valid option group name, select some Option objects form left list to right list. Click Ok button.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714082",
+      "title" : "Add Generic option Group",
+      "description" : "Original ID: 5\nOriginal Title: Add Generic option Group\nOriginal Description: This test ensures that User can add a generic options manually.",
+      "result" : "  The configuration above will be successful."
+   },
+   "1714072" : {
+      "steps" : "  same as test case 1, yet none is selected as generic option group.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714072",
+      "title" : "DHCP generic group set to None works.",
+      "description" : "Original ID: 15\nOriginal Title: DHCP generic group set to None works.\nOriginal Description: This test is to make sure that when option group is selected as None in the DHCP server configuration doesnt send additional options to the clients.",
+      "result" : "  No Additional DHCP options in the Advertise/Reply messages."
+   },
+   "1714080" : {
+      "steps" : "  Add more than one Options as testcase 1 Click Advanced button, Choose one of the Option Object ,Click Delete button",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714080",
+      "title" : "Delete one Generic option object",
+      "description" : "Original ID: 3\nOriginal Title: Delete one Generic option object\nOriginal Description: This test ensures that User can add a generic options manually",
+      "result" : "  The selected option object can be deleted successful."
+   },
+   "1714071" : {
+      "steps" : "  1)Configure DHCPv6 option objects and Groups.\n  2)In the DHCPv6-&gt; Advance configuration page, bind generic option to an option object/group.\n  3)Do Export the configuration\n  4)Try to import Exported configuration",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714071",
+      "title" : "Import Export works with DHCP Option Objects/Groups",
+      "description" : "Original ID: 14\nOriginal Title: Import Export works with DHCP Option Objects/Groups\nOriginal Description: This test is to make sure import/Export works with DHCP Generic option configuration.",
+      "result" : "  Configuration imported/exported properly. Shows DHCPv6 option settings preserved"
+   },
+   "1714078" : {
+      "steps" : "  1)Start the DHCP client on the LAN\n  2)Now DHCP Client got the lease with the Generic options present in the optionGrp1.\n  3)Failover the firewall\n  4)Client: do a DHCP release and then DHCP Renew",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714078",
+      "title" : "Make sure that the DHCP Generic option works with the HA deployment",
+      "description" : "Original ID: 20\nOriginal Title: Make sure that the DHCP Generic option works with the HA deployment\nOriginal Description: This test ensures that DHCP Generic option works with the HA deployment",
+      "result" : "  Client got lease from the Backup Firewall with Generic options present in the optionGrp1."
+   }, 
+   "1714083" : {
+      "steps" : "  1.Enable DHCPv6 Server.\n  2.Click Advanced button.\n  3.Click Add option in Option Objects page, then, Input valid Option name and Option value according the option number.Click Ok button.\n  4.Repeat step3 add more than one address object. Click Add group button in Option Groups page, then, input valid option group name, dont select any Option Object.. Click Ok button",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714083",
+      "title" : "Add Generic option Group without  option object",
+      "description" : "Original ID: 6\nOriginal Title: Add Generic option Group without  option object\nOriginal Description: This test ensures that User can add a generic options manually",
+      "result" : "  The configuration above will be successful"
+   },
+   "1714068" : {
+      "steps" : "  1)In the DHCP option page added DHCP option is listed.\n  2) Select the added option in Advanced page of a DHCP scope. Select Send Dhcp Option Always\n  3)Do a Renew from the DHCP Client.",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714068",
+      "title" : "DHCP server provides Generic options to the client always",
+      "description" : "Original ID: 11\nOriginal Title: DHCP server provides Generic options to the client always\nOriginal Description: This test ensures that DHCP server provides Generic options in the DHCP Offer as well as DHCP ACK to the clients.",
+      "result" : "  DHCP reply message shows the Generic options client requested"
+   },
+   "1714085" : {
+      "steps" : "  1.Add more than one Option groups as testcase 4.1.5\n  2.Click Advanced button, go to Option groups page,Click delete button of one of the option group",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714085",
+      "title" : "Delete one Generic option Group",
+      "description" : "Original ID: 8\nOriginal Title: Delete one Generic option Group\nOriginal Description: The selected option group can be deleted successful.",
+      "result" : "  The selected option group can be deleted successful."
+   }, 
+   "1714075" : {
+      "steps" : "  1)Create 11 option objects and add in to an option Group, Grp1. (current only support max 11).\n  2)Do a Discover/Renew on the DHCP client side.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714075",
+      "title" : "Find out Maximum number of DHCP options that can be send in the DHCP Advertise/Reply message.",
+      "description" : "Original ID: 18\nOriginal Title: Find out Maximum number of DHCP options that can be send in the DHCP Advertise/Reply message.\nOriginal Description: This test find out Max number of DHCP options DHCP server can send in the DHCP Advertise/Reply message. We allow maximum total option length up to 1200 by design.",
+      "result" : "  DHCP server Offer/Ack packet contains options such that maximum option length is not exceeded by 1200. Additional options not get added in to the packet."
+   }
+}

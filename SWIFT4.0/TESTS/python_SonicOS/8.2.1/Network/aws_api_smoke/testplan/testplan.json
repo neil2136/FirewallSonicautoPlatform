@@ -1,0 +1,163 @@
+{
+   "11" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "11",
+      "title" : "Verify Update amazon web services object by changing the custom key under address group mapping configuration.",
+      "result" : "  PUT {ip}/api/sonicos/amazon-web-services/objects/group-mappings\n  { \"amazon_web_services\": { \"objects\": { \"group_mapping\": [ { \"index\": 0, \"address_group\": \"string\", \"condition\": [ { \"custom_key\": { \"key\": \"string\", \"value\": \"string\" } }, { \"instance_property\": { \"key\": \"instance-id\", \"value\": \"string\" } } ] } ] } }}"
+   },
+   "21" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "21",
+      "title" : "Verify by updating the aws connection by secret access key more than 64bit length for out of bound condition",
+      "result" : "  { \"amazon_web_services\": { \"connection\": { \"access_key_id\": \"string\", \"secret\": \"string\", \"region\": \"north-virginia\" } }}"
+   },
+   "05" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "05",
+      "title" : "Verify by Updating synchronization_interval Amazon Web Services objects configuration",
+      "result" : "  { \"amazon_web_services\": { \"objects\": { \"mapping\": true, \"syncronization_interval\": 0, \"monitor_region\": { \"north_virginia\":true\n  }\n  }\n  }"
+   },
+   "17" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "17",
+      "title" : "Verify update instance property amazon web services object address group mapping configuration by index",
+      "result" : "  GET {ip}/api/sonicos/amazon-web-services/objects/group-mappings/index/{INDEX}\n  { \"amazon_web_services\": { \"objects\": { \"group_mapping\": [ { \"index\": 0, \"address_group\": \"string\", \"condition\": [ { \"custom_key\": { \"key\": \"string\", \"value\": \"string\" } }, { \"instance_property\": { \"key\": \"instance-id\", \"value\": \"string\" } } ] } ] } }}"
+   },
+   "04" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "04",
+      "title" : "Verify by Updating mapping Amazon Web Services objects configuration",
+      "result" : "  { \"amazon_web_services\": { \"objects\": { \"mapping\": true, \"syncronization_interval\": 0, \"monitor_region\": { \"north_virginia\":true\n  }\n  }\n  }"
+   },
+   "02" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "02",
+      "title" : "Verify by updating the aws connection",
+      "result" : "  { \"amazon_web_services\": { \"connection\": { \"access_key_id\": \"string\", \"secret\": \"string\", \"region\": \"north-virginia\" } }}"
+   },
+   "22" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "22",
+      "title" : "Verify by Updating synchronization_interval Amazon Web Services objects configuration for out of bound condition",
+      "result" : "  { \"amazon_web_services\": { \"objects\": { \"mapping\": true, \"syncronization_interval\": 901, \"monitor_region\": { \"north_virginia\": false, \"ohio\": true, \"north_california\": false, \"oregon\": false, \"canada\": false, \"mumbai\": false, \"seoul\": false, \"singapore\": false, \"sydney\": false, \"tokyo\": false, \"frankfurt\": false, \"ireland\": false, \"london\": false, \"paris\": false, \"sao_paulo\": false } } }}"
+   },
+   "18" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "18",
+      "title" : "Verify delete amazon web services object address group mapping configuration by index",
+      "result" : "  DELETE {ip}/api/sonicos/amazon-web-services/objects/group-mappings/index/{INDEX}\n  { \"amazon_web_services\": { \"objects\": { \"group_mapping\": [ { \"index\": 0, \"address_group\": \"string\", \"condition\": [ { \"custom_key\": { \"key\": \"string\", \"value\": \"string\" } }, { \"instance_property\": { \"key\": \"instance-id\", \"value\": \"string\" } } ] } ] } }}"
+   },
+   "03" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "03",
+      "title" : "Verify by Retrieving Amazon Web Services objects configuration.",
+      "result" : "  GET {ip}/api/sonicos/amazon-web-services/objects/base"
+   },
+   "08" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "08",
+      "title" : "Verify force Delete all Amazon web services related address objects and groups.",
+      "result" : "   Get /amazon-web-services/force-sync"
+   },
+   "23" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "23",
+      "title" : "Verify by Updating by removing the existing monitor_region Amazon Web Services objects configuration",
+      "result" : "  { \"amazon_web_services\": { \"objects\": { \"mapping\": true, \"syncronization_interval\": 0, \"monitor_region\": { \"north_virginia\":false\n  }\n  }\n  }"
+   },
+   "16" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "16",
+      "title" : "Verify update custom key amazon web services object address group mapping configuration by index",
+      "result" : "  PUT {ip}/api/sonicos/amazon-web-services/objects/group-mappings/index/{INDEX}\n  { \"amazon_web_services\": { \"objects\": { \"group_mapping\": [ { \"index\": 0, \"address_group\": \"string\", \"condition\": [ { \"custom_key\": { \"key\": \"string\", \"value\": \"string\" } }, { \"instance_property\": { \"key\": \"instance-id\", \"value\": \"string\" } } ] } ] } }}"
+   },
+   "13" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "13",
+      "title" : "Verify retrieving amazon web services object address group mapping configuration by index",
+      "result" : "  GET {ip}/api/sonicos/amazon-web-services/objects/group-mappings/index/{INDEX}\n  { \"amazon_web_services\": { \"objects\": { \"group_mapping\": [ { \"index\": 0, \"address_group\": \"string\", \"condition\": [ { \"custom_key\": { \"key\": \"string\", \"value\": \"string\" } }, { \"instance_property\": { \"key\": \"instance-id\", \"value\": \"string\" } } ] } ] } }}"
+   },
+   "06" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "06",
+      "title" : "Verify by Updating monitor_region Amazon Web Services objects configuration",
+      "result" : "  { \"amazon_web_services\": { \"objects\": { \"mapping\": true, \"syncronization_interval\": 0, \"monitor_region\": { \"north_virginia\":true\n  }\n  }\n  }"
+   },
+   "01" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "01",
+      "title" : "Verify retrieving the amazon-web-services connection",
+      "result" : "  GET {ip}/api/sonicos/amazon-web-services/connection"
+   },
+   "12" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "12",
+      "title" : "Verify retrieving amazon web services object address group mapping configuration.",
+      "result" : "  GET {ip}/api/sonicos/amazon-web-services/objects/group-mappings\n  { \"amazon_web_services\": { \"objects\": { \"group_mapping\": [ { \"index\": 0, \"address_group\": \"string\", \"condition\": [ { \"custom_key\": { \"key\": \"string\", \"value\": \"string\" } }, { \"instance_property\": { \"key\": \"instance-id\", \"value\": \"string\" } } ] } ] } }}"
+   },
+   "20" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "20",
+      "title" : "Verify by updating the aws connection by invalid secret access key",
+      "result" : "  { \"amazon_web_services\": { \"connection\": { \"access_key_id\": \"string\", \"secret\": \"string\", \"region\": \"north-virginia\" } }}"
+   },
+   "14" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "14",
+      "title" : "Verify Update amazon web services object by changing the instance key under address group mapping configuration.",
+      "result" : "  PUT {ip}/api/sonicos/amazon-web-services/objects/group-mappings\n  { \"amazon_web_services\": { \"objects\": { \"group_mapping\": [ { \"index\": 0, \"address_group\": \"string\", \"condition\": [ { \"custom_key\": { \"key\": \"string\", \"value\": \"string\" } }, { \"instance_property\": { \"key\": \"instance-id\", \"value\": \"string\" } } ] } ] } }}"
+   },
+   "15" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "15",
+      "title" : "Verify Update amazon web services object by adding 2 or more address group mapping configuration.",
+      "result" : "  PUT {ip}/api/sonicos/amazon-web-services/objects/group-mappings\n  { \"amazon_web_services\": { \"objects\": { \"group_mapping\": [ { \"index\": 0, \"address_group\": \"string\", \"condition\": [ { \"custom_key\": { \"key\": \"string\", \"value\": \"string\" } }, { \"instance_property\": { \"key\": \"instance-id\", \"value\": \"string\" } } ] } ] } }}"
+   },
+   "07" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "07",
+      "title" : "Verify Delete all Amazon web services related address objects and groups.",
+      "result" : "  DELETE /amazon-web-services/address-objects"
+   },
+   "19" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "19",
+      "title" : "Verify by updating the aws connection with invalid access key",
+      "result" : "  { \"amazon_web_services\": { \"connection\": { \"access_key_id\": \"string\", \"secret\": \"string\", \"region\": \"north-virginia\" } }}"
+   },
+   "10" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "10",
+      "title" : "Verify Create existing amazon web services object address group mapping configuration.",
+      "result" : "  POST {ip}/api/sonicos/amazon-web-services/objects/group-mappings\n  { \"amazon_web_services\": { \"objects\": { \"group_mapping\": [ { \"index\": 0, \"address_group\": \"string\", \"condition\": [ { \"custom_key\": { \"key\": \"string\", \"value\": \"string\" } }, { \"instance_property\": { \"key\": \"instance-id\", \"value\": \"string\" } } ] } ] } }}"
+   },
+   "09" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "09",
+      "title" : "Verify Create amazon web services object address group mapping configuration.",
+      "result" : "  POST {ip}/api/sonicos/amazon-web-services/objects/group-mappings\n  { \"amazon_web_services\": { \"objects\": { \"group_mapping\": [ { \"index\": 0, \"address_group\": \"string\", \"condition\": [ { \"custom_key\": { \"key\": \"string\", \"value\": \"string\" } }, { \"instance_property\": { \"key\": \"instance-id\", \"value\": \"string\" } } ] } ] } }}"
+   }
+}

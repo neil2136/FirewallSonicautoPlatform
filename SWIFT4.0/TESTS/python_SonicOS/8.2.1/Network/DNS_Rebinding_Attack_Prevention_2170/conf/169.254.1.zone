@@ -1,0 +1,13 @@
+$TTL 1D
+@            IN    SOA           @            root.test.com.  (
+                                 2007042801
+                                 1H
+                                 15M
+                                 1W
+                                 1D  )
+            IN     NS            test.com.
+125         IN     PTR           test.com.
+125         IN     PTR           www.test.com.
+124         IN     PTR           db.test.com.
+126         IN     PTR           ns.test.com.
+251         IN     PTR           mail.test.com.

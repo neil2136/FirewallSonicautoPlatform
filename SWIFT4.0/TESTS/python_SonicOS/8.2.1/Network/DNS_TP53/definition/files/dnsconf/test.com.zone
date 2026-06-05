@@ -1,0 +1,12 @@
+$TTL 86400
+@	IN	SOA	ns.test.com. root.test.com. (
+				1	;serial
+				1D	;refresh
+				1H	;retry
+				1W	;expire
+				3H )	;minimum
+@		IN	NS	ns.test.com.
+ns.test.com.	IN	A	114.114.114.114
+www.test.com.	IN	A	10.190.202.200
+mail.test.com.	IN	MX 5	ns.test.com
+nginxl		IN	CNAME	www

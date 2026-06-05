@@ -1,0 +1,1795 @@
+from definition.init_param import *
+
+class Test_01_WAN_Failover_and_Load_Balancing_TP2201_tc_112(Test):
+    uuid = '1506066'
+    description= show_testcase_info(Parameter.TESTPLAN, '1506066', description=True)['title']
+
+    def test_00_show_testcase_info(self):
+        show_testcase_info(Parameter.TESTPLAN, '1506066')
+        Assertion.assert_equal(True, True, "ERR: show testcase info failed")
+    
+    def test_01_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X2_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+    
+    def test_02_add_addr_object(self):
+        logger.info('add addr object...')
+        remote_l = {
+            'name': 'remote_net',
+            'zone': 'VPN',
+            'object_type': 'network',
+            'value': '{},255.255.255.0'.format(rm_x0_net),
+        }
+        remote_r = {
+            'name': 'remote_net',
+            'zone': 'VPN',
+            'object_type': 'network',
+            'value': '{},255.255.255.0'.format(dut_x0_net),
+        }
+        rc = LAddrObj.config_addressobject(**remote_l)
+        logger.info('-'*10+'Add AO for rm DUT'+'-'*10)
+        rc &= RAddrObj.config_addressobject(**remote_r)
+        Assertion.assert_equal(rc, True, 'Add AO for DUT and RDUT Failed.')
+
+    def test_03_add_vpn_policy_in_dut_and_remote(self):
+        logger.info('add vpn policy....')
+        Lvpn = {
+            'type'              : 'site_to_site',
+            'name'              : 'vpn_local',
+            'enable'            : True,
+            'auth_mode'         : 'shared_secret',
+            'secret'            : '123456',
+            'pri_gate'          : Parameter.REMOTE_X1,
+            'local_ike_type'    : 'ipv4',
+            'peer_ike_type'     : 'ipv4',
+            'local_ike_id'      : '',
+            'peer_ike_id'       : '',
+            'local_net_type'    : 'name',
+            'remote_net_type'   : 'name',
+            'local_net_name'    : 'X0 Subnet',
+            'remote_net_name'   : 'remote_net',
+            'ike_exchange'      : 'aggressive',
+            'ike_lifetime'      : '120',
+            'ipsec_lifetime'    : '120',
+            'keep_alive'        : True,
+            'bound_to'          :['zone', 'WAN'],
+        }
+        Rvpn = {
+            'type'              : 'site_to_site',
+            'name'              : 'vpn_remote',
+            'enable'            : True,
+            'auth_mode'         : 'shared_secret',
+            'secret'            : '123456',
+            'pri_gate'          : Parameter.X1_IP,
+            'sec_gate'          : Parameter.X2_IP,
+            'local_ike_type'    : 'ipv4',
+            'peer_ike_type'     : 'ipv4',
+            'local_ike_id'      : '',
+            'peer_ike_id'       : '',
+            'local_net_type'    : 'name',
+            'remote_net_type'   : 'name',
+            'local_net_name'    : 'X0 Subnet',
+            'remote_net_name'   : 'remote_net',
+            'ike_exchange'      : 'aggressive',
+            'ike_lifetime'      : '120',
+            'ipsec_lifetime'    : '120',
+            'keep_alive'        : True,
+            'bound_to'          : ['zone', 'WAN'],
+        }
+        rc = LvpnObj.add_vpn_policy(**Lvpn)
+        rc &= RvpnObj.add_vpn_policy(**Rvpn)
+        Assertion.assert_equal(rc, True, 'Add vpn policy in dut and remote Failed.')
+
+    def test_04_add_route_for_x2(self):
+        logger.info('add route for x2...')
+        route_dict = {
+            "route_policies": [
+                {
+                    "ipv4": {
+                        "name": "ftp",
+                        "comment": "",
+                        "interface": "X2",
+                        "metric": 1,
+                        "service": {
+                            "name": "FTP"
+                        },
+                        "gateway": {
+                            "name": "X2 Default Gateway"
+                        },
+                        "source": {
+                            "group": "LAN Subnets"
+                        },
+                        "destination": {
+                            "any": True
+                        },
+                        "disable_on_interface_down": True,
+                        "vpn_precedence": False,
+                        "probe": "",
+                        "distance": {
+                            "auto": True
+                        },
+                        "tos": "0x00",
+                        "mask": "0x00",
+                        "type": "standard"
+                    }
+                }
+            ]
+        }
+        rc = routeObj.add_route_policy(**route_dict)
+        Assertion.assert_equal(rc, True, "ERR: add route for x2 failed")
+
+    def test_05_check_enable_load_balance(self):
+        logger.info('uncheck enable load balance...')
+        lb = {
+            'enable': True
+        }
+        rc = failoverlbObj.config_failover_settings(**lb)
+        Assertion.assert_equal(rc, True, "ERR: uncheck enable load balance failed")
+
+    def test_06_config_LB_group(self):
+        logger.info('Edit the default LB group...')
+        lb = {
+            "failover_lb": {
+                "group": [
+                    {
+                        "name": " Default LB Group",
+                        "type": "basic",
+                        "final_backup": "",
+                        "preempt": True,
+                        "probing": {
+                            "health_check": 5,
+                            "missed_intervals": 3,
+                            "successful_intervals": 3,
+                            "global_responder": False
+                        },
+                        "interface": [
+                            {
+                                "name": "X1",
+                                "rank": 1,
+                                "probe_type": "physical"
+                            },
+                            {
+                                "name": "X2",
+                                "rank": 2,
+                                "probe_type": "physical",
+                                "probe_condition": "always"
+                            },
+                            {}
+                        ]
+                    }
+                ]
+            }
+        }
+        rc = failoverlbObj.config_failover_groups_by_multi(**lb)
+        Assertion.assert_equal(rc, True, "ERR: edit the default LB group failed")
+
+    def test_07_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+
+    @repeat_method(3)
+    def test_08_verify_traffic_out_when_connect_to_web_server(self):
+        logger.info('verify traffic out when connect to web server...')
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        for i in range(3):
+            output=subprocess.run('curl http://{}'.format(http_server), shell=True, capture_output=True) 
+            output1 = output.stdout.decode('utf-8')
+            if output1:
+                break
+        logger.info('output1:{}'.format(output1))
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r"Hello Automation", str(output1), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+                 flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when connect to web server failed")
+
+    @repeat_method(3)
+    def test_09_verify_traffic_out_when_connect_to_ftp_server(self):
+        logger.info('verify traffic out when connect to ftp server...')
+        cmd = "echo 'this is small ftp file' > /home/ftp_112.txt"
+        pc_server_ssh.send_command(cmd)
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        logger.info('create a new file ftp_112.txt on pc server:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd = 'python3 {}'.format('{}/upload_or_download_file.py download sftp '.format(toolPath)) + '/home/ftp_112.txt '+' root ' + http_server + \
+             ' /home/ftp_112.txt '  + ' password 22'
+        logger.info('run cmd in pc1:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd_server = 'ls -l /home'
+        logger.info('run cmd in http server:{}'.format(cmd_server))
+        output = local_host.send_command(cmd_server)
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r".*ftp_112.txt", str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: send ftp traffic failed")
+
+    @repeat_method(3)
+    def test_10_verify_wan_load_balancing_statistics(self):
+        logger.info('verify wan load balancing statistics...')
+        flag = False
+        sleep(10)
+        output = failoverlbObj.check_failover_members_status()
+        logger.info(output)
+        if re.search(r"member_name\'\:\s\'X1", str(output[0]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[0]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[0]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"member_name\'\:\s\'X2", str(output[1]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[1]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[1]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[1]), re.S|re.I)   :
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify wan load balancing statistics failed")
+
+    
+    def test_11_change_interface_x1_x2_default_gw_vpn(self):
+        logger.info("change x1 x2 interface default gw vpn... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X0,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X2,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw vpn failed")
+
+    @repeat_method(3)
+    def test_12_verify_traffic_when_accorss_vpn_tunnel(self):
+        logger.info('verify traffic out when accorss vpn tunnel...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        local_host.send_command('ping -c 5 {}'.format(Parameter.PC2_ETH0))
+        packetObj.stop_capture()
+        output = packetObj.export_captured_packets()
+        logger.info(output)
+        if re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, Parameter.REMOTE_X1), str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format( Parameter.REMOTE_X1, Parameter.X1_IP), str(output), re.S|re.I):
+            flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when accorss vpn tunnel failed")
+
+
+class Test_02_WAN_Failover_and_Load_Balancing_TP2201_tc_113(Test):
+    uuid = '1506067'
+    description= show_testcase_info(Parameter.TESTPLAN, '1506067', description=True)['title']
+
+    def test_00_show_testcase_info(self):
+        show_testcase_info(Parameter.TESTPLAN, '1506067')
+        Assertion.assert_equal(True, True, "ERR: show testcase info failed")
+
+    def test_01_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X2_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+
+    def test_02_unplug_interface_x1(self):
+        logger.info('unplug interface x1...')
+        systemlogObj.clear_log()
+        rc = interfaceObj.disable_interface(name='X1')
+        Assertion.assert_equal(rc, True, "ERR: unplug x1 interface failed")
+
+    @repeat_method(3)
+    def test_03_verify_log(self):
+        logger.info('verify log...')
+        flag = False
+        sleep(10)
+        output = systemlogObj.get_log()
+        logger.info(output)
+        if re.search(r"Interface X1 Link Is Down", str(output), re.S|re.I) and \
+            re.search(r"WLB Failover in progress", str(output), re.S|re.I) and \
+            re.search(r"WLB Resource failed", str(output), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify log failed")
+
+    @repeat_method(3)
+    def test_04_verify_traffic_out_when_connect_to_web_server(self):
+        logger.info('verify traffic out when connect to web server...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        for i in range(3):
+            output=subprocess.run('curl http://{}'.format(http_server), shell=True, capture_output=True) 
+            output1 = output.stdout.decode('utf-8')
+            if output1:
+                break
+        logger.info('output1:{}'.format(output1))
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r"Hello Automation", str(output1), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X2_IP, http_server), str(output2), re.S|re.I):
+                 flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when connect to web server fail")
+
+    @repeat_method(3)
+    def test_05_verify_traffic_out_when_connect_to_ftp_server(self):
+        logger.info('verify traffic out when connect to ftp server...')
+        sleep(10)
+        cmd = "echo 'this is small ftp file' > /home/ftp_113.txt"
+        pc_server_ssh.send_command(cmd)
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        logger.info('create a new file ftp_113.txt on pc server:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd = 'python3 {}'.format('{}/upload_or_download_file.py download sftp '.format(toolPath)) + '/home/ftp_113.txt '+' root ' + http_server + \
+             ' /home/ftp_113.txt '  + ' password 22'
+        logger.info('run cmd in pc1:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd_server = 'ls -l /home'
+        logger.info('run cmd in http server:{}'.format(cmd_server))
+        output = local_host.send_command(cmd_server)
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r".*ftp_113.txt", str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X2_IP, http_server), str(output2), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: send ftp traffic failed")
+
+    def test_06_verify_wan_load_balancing_statistics(self):
+        logger.info('verify wan load balancing statistics...')
+        flag = False
+        output = failoverlbObj.check_failover_members_status()
+        logger.info(output)
+        if re.search(r"member_name\'\:\s\'X1", str(output[0]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Down", str(output[0]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Failover", str(output[0]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"member_name\'\:\s\'X2", str(output[1]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[1]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[1]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[1]), re.S|re.I)   :
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify wan load balancing statistics failed")
+
+    def test_07_change_interface_x1_x2_default_gw_to_vpn(self):
+        logger.info("change x1 x2 interface default gw to vpn... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X0,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X2,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw to vpn failed")
+
+    @repeat_method(3)
+    def test_08_verify_traffic_when_accorss_vpn_tunnel(self):
+        logger.info('verify traffic out when accorss vpn tunnel...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        local_host.send_command('ping -c 5 {}'.format(Parameter.PC2_ETH0))
+        packetObj.stop_capture()
+        output = packetObj.export_captured_packets()
+        logger.info(output)
+        if re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X2_IP, Parameter.REMOTE_X1), str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format( Parameter.REMOTE_X1, Parameter.X2_IP), str(output), re.S|re.I):
+            flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when accorss vpn tunnel failed")
+
+
+class Test_03_WAN_Failover_and_Load_Balancing_TP2201_tc_114(Test):
+    uuid = '1506068'
+    description= show_testcase_info(Parameter.TESTPLAN, '1506068', description=True)['title']
+
+    def test_00_show_testcase_info(self):
+        show_testcase_info(Parameter.TESTPLAN, '1506068')
+        Assertion.assert_equal(True, True, "ERR: show testcase info failed")
+
+    def test_01_plug_interface_x1(self):
+        logger.info('plug interface x1...')
+        systemlogObj.clear_log()
+        rc = interfaceObj.enable_interface(name='X1')
+        Assertion.assert_equal(rc, True, "ERR: plug x1 interface failed")
+
+    @repeat_method(3)
+    def test_02_verify_log(self):
+        logger.info('verify log...')
+        flag = False
+        sleep(10)
+        output = systemlogObj.get_log()
+        logger.info(output)
+        if re.search(r"Interface X1 Link Is Up", str(output), re.S|re.I) and \
+            re.search(r"WLB Resource is now available", str(output), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify log failed")
+
+    def test_03_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X2_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+
+    @repeat_method(3)
+    def test_04_verify_traffic_out_when_connect_to_web_server(self):
+        logger.info('verify traffic out when connect to web server...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        for i in range(3):
+            output=subprocess.run('curl http://{}'.format(http_server), shell=True, capture_output=True) 
+            output1 = output.stdout.decode('utf-8')
+            if output1:
+                break
+        logger.info('output1:{}'.format(output1))
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r"Hello Automation", str(output1), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+                 flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when connect to web server fail")
+
+    @repeat_method(3)
+    def test_05_verify_traffic_out_when_connect_to_ftp_server(self):
+        logger.info('verify traffic out when connect to ftp server...')
+        cmd = "echo 'this is small ftp file' > /home/ftp_114.txt"
+        pc_server_ssh.send_command(cmd)
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        logger.info('create a new file ftp_114.txt on pc server:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd = 'python3 {}'.format('{}/upload_or_download_file.py download sftp '.format(toolPath)) + '/home/ftp_114.txt '+' root ' + http_server + \
+             ' /home/ftp_114.txt '  + ' password 22'
+        logger.info('run cmd in pc1:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd_server = 'ls -l /home'
+        logger.info('run cmd in http server:{}'.format(cmd_server))
+        output = local_host.send_command(cmd_server)
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r".*ftp_114.txt", str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: send ftp traffic failed")
+
+    def test_06_verify_wan_load_balancing_statistics(self):
+        logger.info('verify wan load balancing statistics...')
+        flag = False
+        output = failoverlbObj.check_failover_members_status()
+        logger.info(output)
+        if re.search(r"member_name\'\:\s\'X1", str(output[0]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[0]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[0]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"member_name\'\:\s\'X2", str(output[1]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[1]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[1]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[1]), re.S|re.I)   :
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify wan load balancing statistics failed")
+
+    def test_07_change_interface_x1_x2_default_gw_to_vpn(self):
+        logger.info("change x1 x2 interface default gw to vpn... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X0,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X2,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw to vpn failed")
+
+    @repeat_method(3)
+    def test_08_verify_traffic_when_accorss_vpn_tunnel(self):
+        logger.info('verify traffic out when accorss vpn tunnel...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        local_host.send_command('ping -c 5 {}'.format(Parameter.PC2_ETH0))
+        packetObj.stop_capture()
+        output = packetObj.export_captured_packets()
+        logger.info(output)
+        if re.search(r"IP Type: ESP\(0x\d+\),\sSrc=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, Parameter.REMOTE_X1), str(output), re.S|re.I) and \
+            re.search(r"IP Type: ESP\(0x\d+\),\sSrc=\[{}\], Dst=\[{}\]".format( Parameter.REMOTE_X1, Parameter.X1_IP), str(output), re.S|re.I):
+            flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when accorss vpn tunnel failed")
+
+
+class Test_04_WAN_Failover_and_Load_Balancing_TP2201_tc_115(Test):
+    uuid = '1506069'
+    description= show_testcase_info(Parameter.TESTPLAN, '1506069', description=True)['title']
+
+    def test_00_show_testcase_info(self):
+        show_testcase_info(Parameter.TESTPLAN, '1506069')
+        Assertion.assert_equal(True, True, "ERR: show testcase info failed")
+    
+    def test_01_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X2_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+    
+    def test_02_unplug_interface_x2(self):
+        logger.info('unplug interface x2...')
+        systemlogObj.clear_log()
+        rc = interfaceObj.disable_interface(name='X2')
+        Assertion.assert_equal(rc, True, "ERR: unplug x2 interface failed")
+
+    @repeat_method(3)
+    def test_03_verify_log(self):
+        logger.info('verify log...')
+        flag = False
+        sleep(10)
+        output = systemlogObj.get_log()
+        logger.info(output)
+        if re.search(r"Interface X2 Link Is Down", str(output), re.S|re.I) and \
+            re.search(r"WLB Failover in progress", str(output), re.S|re.I) and \
+            re.search(r"WLB Resource failed", str(output), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify log failed")
+
+    @repeat_method(3)
+    def test_04_verify_traffic_out_when_connect_to_web_server(self):
+        logger.info('verify traffic out when connect to web server...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        for i in range(3):
+            output=subprocess.run('curl http://{}'.format(http_server), shell=True, capture_output=True) 
+            output1 = output.stdout.decode('utf-8')
+            if output1:
+                break
+        logger.info('output1:{}'.format(output1))
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r"Hello Automation", str(output1), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+                 flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when connect to web server fail")
+
+    @repeat_method(3)
+    def test_05_verify_traffic_out_when_connect_to_ftp_server(self):
+        logger.info('verify traffic out when connect to ftp server...')
+        cmd = "echo 'this is small ftp file' > /home/ftp_115.txt"
+        pc_server_ssh.send_command(cmd)
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        logger.info('create a new file ftp_115.txt on pc server:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd = 'python3 {}'.format('{}/upload_or_download_file.py download sftp '.format(toolPath)) + '/home/ftp_115.txt '+' root ' + http_server + \
+             ' /home/ftp_115.txt '  + ' password 22'
+        logger.info('run cmd in pc1:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd_server = 'ls -l /home'
+        logger.info('run cmd in http server:{}'.format(cmd_server))
+        output = local_host.send_command(cmd_server)
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r".*ftp_115.txt", str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: send ftp traffic failed")
+
+    def test_06_verify_wan_load_balancing_statistics(self):
+        logger.info('verify wan load balancing statistics...')
+        flag = False
+        output = failoverlbObj.check_failover_members_status()
+        logger.info(output)
+        if re.search(r"member_name\'\:\s\'X2", str(output[1]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Down", str(output[1]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Failover", str(output[1]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"member_name\'\:\s\'X1", str(output[0]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[0]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[0]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[0]), re.S|re.I)   :
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify wan load balancing statistics failed")
+    
+    def test_07_change_interface_x1_x2_default_gw_to_vpn(self):
+        logger.info("change x1 x2 interface default gw to vpn... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X0,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X2,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw to vpn failed")
+
+    @repeat_method(3)
+    def test_08_verify_traffic_when_accorss_vpn_tunnel(self):
+        logger.info('verify traffic out when accorss vpn tunnel...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        local_host.send_command('ping -c 5 {}'.format(Parameter.PC2_ETH0))
+        packetObj.stop_capture()
+        output = packetObj.export_captured_packets()
+        logger.info(output)
+        if re.search(r"IP Type: ESP\(0x\d+\),\sSrc=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, Parameter.REMOTE_X1), str(output), re.S|re.I) and \
+            re.search(r"IP Type: ESP\(0x\d+\),\sSrc=\[{}\], Dst=\[{}\]".format( Parameter.REMOTE_X1, Parameter.X1_IP), str(output), re.S|re.I):
+            flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when accorss vpn tunnel failed")
+
+
+class Test_05_WAN_Failover_and_Load_Balancing_TP2201_tc_116(Test):
+    uuid = '1506070'
+    description= show_testcase_info(Parameter.TESTPLAN, '1506070', description=True)['title']
+
+    def test_00_show_testcase_info(self):
+        show_testcase_info(Parameter.TESTPLAN, '1506070')
+        Assertion.assert_equal(True, True, "ERR: show testcase info failed")
+   
+    def test_01_plug_interface_x2(self):
+        logger.info('plug interface x2...')
+        systemlogObj.clear_log()
+        rc = interfaceObj.enable_interface(name='X2')
+        Assertion.assert_equal(rc, True, "ERR: plug x2 interface failed")
+
+    @repeat_method(3)
+    def test_02_verify_log(self):
+        logger.info('verify log...')
+        flag = False
+        sleep(10)
+        output = systemlogObj.get_log()
+        logger.info(output)
+        if re.search(r"Interface X2 Link Is Up", str(output), re.S|re.I) and \
+            re.search(r"WLB Resource is now available", str(output), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify log failed")
+ 
+    def test_03_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X2_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+  
+    @repeat_method(3)
+    def test_04_verify_traffic_out_when_connect_to_web_server(self):
+        logger.info('verify traffic out when connect to web server...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        for i in range(3):
+            output=subprocess.run('curl http://{}'.format(http_server), shell=True, capture_output=True) 
+            output1 = output.stdout.decode('utf-8')
+            if output1:
+                break
+        logger.info('output1:{}'.format(output1))
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r"Hello Automation", str(output1), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+                 flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when connect to web server fail")
+
+    @repeat_method(3)
+    def test_05_verify_traffic_out_when_connect_to_ftp_server(self):
+        logger.info('verify traffic out when connect to ftp server...')
+        cmd = "echo 'this is small ftp file' > /home/ftp_116.txt"
+        pc_server_ssh.send_command(cmd)
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        logger.info('create a new file ftp_116.txt on pc server:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd = 'python3 {}'.format('{}/upload_or_download_file.py download sftp '.format(toolPath)) + '/home/ftp_116.txt '+' root ' + http_server + \
+             ' /home/ftp_116.txt '  + ' password 22'
+        logger.info('run cmd in pc1:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd_server = 'ls -l /home'
+        logger.info('run cmd in http server:{}'.format(cmd_server))
+        output = local_host.send_command(cmd_server)
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r".*ftp_116.txt", str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: send ftp traffic failed")
+
+    @repeat_method(3)
+    def test_06_verify_wan_load_balancing_statistics(self):
+        logger.info('verify wan load balancing statistics...')
+        flag = False
+        output = failoverlbObj.check_failover_members_status()
+        logger.info(output)
+        if re.search(r"member_name\'\:\s\'X1", str(output[0]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[0]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[0]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"member_name\'\:\s\'X2", str(output[1]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[1]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[1]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[1]), re.S|re.I)   :
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify wan load balancing statistics failed")
+
+    def test_07_change_interface_x1_x2_default_gw_to_vpn(self):
+        logger.info("change x1 x2 interface default gw to vpn... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X0,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X2,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw to vpn failed")
+
+    @repeat_method(3)
+    def test_08_verify_traffic_when_accorss_vpn_tunnel(self):
+        logger.info('verify traffic out when accorss vpn tunnel...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        local_host.send_command('ping -c 5 {}'.format(Parameter.PC2_ETH0))
+        packetObj.stop_capture()
+        output = packetObj.export_captured_packets()
+        logger.info(output)
+        if re.search(r"IP Type: ESP\(0x\d+\),\sSrc=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, Parameter.REMOTE_X1), str(output), re.S|re.I) and \
+            re.search(r"IP Type: ESP\(0x\d+\),\sSrc=\[{}\], Dst=\[{}\]".format( Parameter.REMOTE_X1, Parameter.X1_IP), str(output), re.S|re.I):
+            flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when accorss vpn tunnel failed")
+
+
+class Test_06_WAN_Failover_and_Load_Balancing_TP2201_tc_117(Test):
+    uuid = '1506071'
+    description= show_testcase_info(Parameter.TESTPLAN, '1506071', description=True)['title']
+
+    def test_00_show_testcase_info(self):
+        show_testcase_info(Parameter.TESTPLAN, '1506071')
+        Assertion.assert_equal(True, True, "ERR: show testcase info failed")
+    
+    def test_01_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X2_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+    
+    def test_02_uncheck_enable_load_balance(self):
+        logger.info('uncheck enable load balance...')
+        lb = {
+            'enable': False
+        }
+        rc = failoverlbObj.config_failover_settings(**lb)
+        Assertion.assert_equal(rc, True, "ERR: uncheck enable load balance failed")
+
+    @repeat_method(3)
+    def test_03_verify_traffic_out_when_connect_to_web_server(self):
+        logger.info('verify traffic out when connect to web server...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        for i in range(3):
+            output=subprocess.run('curl http://{}'.format(http_server), shell=True, capture_output=True) 
+            output1 = output.stdout.decode('utf-8')
+            if output1:
+                break
+        logger.info('output1:{}'.format(output1))
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r"Hello Automation", str(output1), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+                 flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when connect to web server fail")
+
+    @repeat_method(3)
+    def test_04_verify_traffic_out_when_connect_to_ftp_server(self):
+        logger.info('verify traffic out when connect to ftp server...')
+        cmd = "echo 'this is small ftp file' > /home/ftp_117.txt"
+        pc_server_ssh.send_command(cmd)
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        logger.info('create a new file ftp_117.txt on pc server:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd = 'python3 {}'.format('{}/upload_or_download_file.py download sftp '.format(toolPath)) + '/home/ftp_117.txt '+' root ' + http_server + \
+             ' /home/ftp_117.txt '  + ' password 22'
+        logger.info('run cmd in pc1:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd_server = 'ls -l /home'
+        logger.info('run cmd in http server:{}'.format(cmd_server))
+        output = local_host.send_command(cmd_server)
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r".*ftp_117.txt", str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: send ftp traffic failed")
+
+    def test_05_verify_wan_load_balancing_statistics(self):
+        logger.info('verify wan load balancing statistics...')
+        flag = False
+        output = failoverlbObj.check_failover_members_status()
+        logger.info(output)
+        if re.search(r"member_name\'\:\s\'X1", str(output[0]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[0]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[0]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"member_name\'\:\s\'X2", str(output[1]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[1]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[1]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[1]), re.S|re.I)   :
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify wan load balancing statistics failed")
+    
+    def test_06_change_interface_x1_x2_default_gw_to_vpn(self):
+        logger.info("change x1 x2 interface default gw to vpn... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X0,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X2,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw to vpn failed")
+
+    @repeat_method(3)
+    def test_07_verify_traffic_when_accorss_vpn_tunnel(self):
+        logger.info('verify traffic out when accorss vpn tunnel...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        local_host.send_command('ping -c 5 {}'.format(Parameter.PC2_ETH0))
+        packetObj.stop_capture()
+        output = packetObj.export_captured_packets()
+        logger.info(output)
+        if re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, Parameter.REMOTE_X1), str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format( Parameter.REMOTE_X1, Parameter.X1_IP), str(output), re.S|re.I):
+            flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when accorss vpn tunnel failed")
+
+
+class Test_07_WAN_Failover_and_Load_Balancing_TP2201_tc_118(Test):
+    uuid = '1506072'
+    description= show_testcase_info(Parameter.TESTPLAN, '1506072', description=True)['title']
+    jira = 'GEN7-35606'
+
+    def test_00_show_testcase_info(self):
+        show_testcase_info(Parameter.TESTPLAN, '1506072')
+        Assertion.assert_equal(True, True, "ERR: show testcase info failed")
+    
+    def test_01_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X2_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+
+    def test_02_unplug_interface_x1(self):
+        logger.info('unplug interface x1...')
+        # rc = os_obj.set_switch_port('UTM', 'X1','down')
+        rc = interfaceObj.disable_interface(name='X1')
+        Assertion.assert_equal(rc, True, "ERR: unplug x1 interface failed")
+
+    @repeat_method(3)
+    def test_03_verify_traffic_out_when_connect_to_web_server(self):
+        logger.info('verify traffic out when connect to web server...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        for i in range(3):
+            output=subprocess.run('curl http://{}'.format(http_server), shell=True, capture_output=True) 
+            output1 = output.stdout.decode('utf-8')
+            if output1:
+                break
+        logger.info('output1:{}'.format(output1))
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r"Hello Automation", str(output1), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X2_IP, http_server), str(output2), re.S|re.I):
+                 flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when connect to web server fail")
+
+    @repeat_method(3)
+    def test_04_verify_traffic_out_when_connect_to_ftp_server(self):
+        logger.info('verify traffic out when connect to ftp server...')
+        cmd = "echo 'this is small ftp file' > /home/ftp_118.txt"
+        pc_server_ssh.send_command(cmd)
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        logger.info('create a new file ftp_118.txt on pc server:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd = 'python3 {}'.format('{}/upload_or_download_file.py download sftp '.format(toolPath)) + '/home/ftp_118.txt '+' root ' + http_server + \
+             ' /home/ftp_118.txt '  + ' password 22'
+        logger.info('run cmd in pc1:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd_server = 'ls -l /home'
+        logger.info('run cmd in http server:{}'.format(cmd_server))
+        output = local_host.send_command(cmd_server)
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r".*ftp_118.txt", str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X2_IP, http_server), str(output2), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: send ftp traffic failed")
+
+    def test_05_verify_wan_load_balancing_statistics(self):
+        logger.info('verify wan load balancing statistics...')
+        flag = False
+        output = failoverlbObj.check_failover_members_status()
+        logger.info(output)
+        if re.search(r"member_name\'\:\s\'X1", str(output[0]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Down", str(output[0]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Failover", str(output[0]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"member_name\'\:\s\'X2", str(output[1]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[1]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[1]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[1]), re.S|re.I)   :
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify wan load balancing statistics failed")
+
+    def test_06_change_interface_x1_x2_default_gw_to_vpn(self):
+        logger.info("change x1 x2 interface default gw to vpn... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X0,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X2,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw to vpn failed")
+
+    @repeat_method(3)
+    def test_07_verify_traffic_when_accorss_vpn_tunnel(self):
+        logger.info('verify traffic out when accorss vpn tunnel...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        local_host.send_command('ping -c 5 {}'.format(Parameter.PC2_ETH0))
+        packetObj.stop_capture()
+        output = packetObj.export_captured_packets()
+        logger.info(output)
+        if re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X2_IP, Parameter.REMOTE_X1), str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format( Parameter.REMOTE_X1, Parameter.X2_IP), str(output), re.S|re.I):
+            flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when accorss vpn tunnel failed")
+
+
+class Test_08_WAN_Failover_and_Load_Balancing_TP2201_tc_119(Test):
+    uuid = '1506073'
+    description= show_testcase_info(Parameter.TESTPLAN, '1506073', description=True)['title']
+    jira = 'GEN7-35606'
+
+    def test_00_show_testcase_info(self):
+        show_testcase_info(Parameter.TESTPLAN, '1506073')
+        Assertion.assert_equal(True, True, "ERR: show testcase info failed")
+
+    def test_01_plug_interface_x1(self):
+        logger.info('plug interface x1...')
+        rc = interfaceObj.enable_interface(name='X1')
+        # rc = os_obj.set_switch_port('UTM', 'X1','up')
+        Assertion.assert_equal(rc, True, "ERR: plug x1 interface failed")
+
+    def test_02_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X2_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+
+    @repeat_method(3)
+    def test_03_verify_traffic_out_when_connect_to_web_server(self):
+        logger.info('verify traffic out when connect to web server...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        for i in range(3):
+            output=subprocess.run('curl http://{}'.format(http_server), shell=True, capture_output=True) 
+            output1 = output.stdout.decode('utf-8')
+            if output1:
+                break
+        logger.info('output1:{}'.format(output1))
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r"Hello Automation", str(output1), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+                 flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when connect to web server fail")
+
+    @repeat_method(3)
+    def test_04_verify_traffic_out_when_connect_to_ftp_server(self):
+        logger.info('verify traffic out when connect to ftp server...')
+        cmd = "echo 'this is small ftp file' > /home/ftp_119.txt"
+        pc_server_ssh.send_command(cmd)
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        logger.info('create a new file ftp_119.txt on pc server:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd = 'python3 {}'.format('{}/upload_or_download_file.py download sftp '.format(toolPath)) + '/home/ftp_119.txt '+' root ' + http_server + \
+             ' /home/ftp_119.txt '  + ' password 22'
+        logger.info('run cmd in pc1:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd_server = 'ls -l /home'
+        logger.info('run cmd in http server:{}'.format(cmd_server))
+        output = local_host.send_command(cmd_server)
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r".*ftp_119.txt", str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: send ftp traffic failed")
+
+    def test_05_verify_wan_load_balancing_statistics(self):
+        logger.info('verify wan load balancing statistics...')
+        flag = False
+        output = failoverlbObj.check_failover_members_status()
+        logger.info(output)
+        if re.search(r"member_name\'\:\s\'X1", str(output[0]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[0]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Probing", str(output[0]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"member_name\'\:\s\'X2", str(output[1]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[1]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Available", str(output[1]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[1]), re.S|re.I)   :
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify wan load balancing statistics failed")
+
+    def test_06_change_interface_x1_x2_default_gw_to_vpn(self):
+        logger.info("change x1 x2 interface default gw to vpn... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X0,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X2,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw to vpn failed")
+   
+    @repeat_method(3)
+    def test_07_verify_traffic_when_accorss_vpn_tunnel(self):
+        logger.info('verify traffic out when accorss vpn tunnel...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        local_host.send_command('ping -c 5 {}'.format(Parameter.PC2_ETH0))
+        packetObj.stop_capture()
+        output = packetObj.export_captured_packets()
+        logger.info(output)
+        if re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X2_IP, Parameter.REMOTE_X1), str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format( Parameter.REMOTE_X1, Parameter.X2_IP), str(output), re.S|re.I):
+            flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when accorss vpn tunnel failed")
+
+
+class Test_09_WAN_Failover_and_Load_Balancing_TP2201_tc_120(Test):
+    uuid = '1506075'
+    description= show_testcase_info(Parameter.TESTPLAN, '1506075', description=True)['title']
+    jira = 'GEN7-35606'
+
+    def test_00_show_testcase_info(self):
+        show_testcase_info(Parameter.TESTPLAN, '1506075')
+        Assertion.assert_equal(True, True, "ERR: show testcase info failed")
+    
+    def test_01_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X2_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+    
+    def test_02_unplug_interface_x2(self):
+        logger.info('unplug interface x2...')
+        rc = interfaceObj.disable_interface(name='X2')
+        Assertion.assert_equal(rc, True, "ERR: unplug x2 interface failed")
+
+    @repeat_method(3)
+    def test_03_verify_traffic_out_when_connect_to_web_server(self):
+        logger.info('verify traffic out when connect to web server...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        for i in range(3):
+            output=subprocess.run('curl http://{}'.format(http_server), shell=True, capture_output=True) 
+            output1 = output.stdout.decode('utf-8')
+            if output1:
+                break
+        logger.info('output1:{}'.format(output1))
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r"Hello Automation", str(output1), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+                 flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when connect to web server fail")
+
+    @repeat_method(3)
+    def test_04_verify_traffic_out_when_connect_to_ftp_server(self):
+        logger.info('verify traffic out when connect to ftp server...')
+        cmd = "echo 'this is small ftp file' > /home/ftp_120.txt"
+        pc_server_ssh.send_command(cmd)
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        logger.info('create a new file ftp_120.txt on pc server:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd = 'python3 {}'.format('{}/upload_or_download_file.py download sftp '.format(toolPath)) + '/home/ftp_120.txt '+' root ' + http_server + \
+             ' /home/ftp_120.txt '  + ' password 22'
+        logger.info('run cmd in pc1:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd_server = 'ls -l /home'
+        logger.info('run cmd in http server:{}'.format(cmd_server))
+        output = local_host.send_command(cmd_server)
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r".*ftp_120.txt", str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: send ftp traffic failed")
+
+    def test_05_verify_wan_load_balancing_statistics(self):
+        logger.info('verify wan load balancing statistics...')
+        flag = False
+        output = failoverlbObj.check_failover_members_status()
+        logger.info(output)
+        if re.search(r"member_name\'\:\s\'X1", str(output[0]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[0]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Probing", str(output[0]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"member_name\'\:\s\'X2", str(output[1]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Down", str(output[1]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Failover", str(output[1]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[1]), re.S|re.I) :
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify wan load balancing statistics failed")
+
+    def test_06_change_interface_x1_x2_default_gw_to_vpn(self):
+        logger.info("change x1 x2 interface default gw to vpn... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X0,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X2,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw to vpn failed")
+    
+    @repeat_method(3)
+    def test_07_verify_traffic_when_accorss_vpn_tunnel(self):
+        logger.info('verify traffic out when accorss vpn tunnel...')
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        local_host.send_command('ping -c 5 {}'.format(Parameter.PC2_ETH0))
+        packetObj.stop_capture()
+        output = packetObj.export_captured_packets()
+        logger.info(output)
+        if re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, Parameter.REMOTE_X1), str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format( Parameter.REMOTE_X1, Parameter.X1_IP), str(output), re.S|re.I):
+            flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when accorss vpn tunnel failed")
+
+
+class Test_10_WAN_Failover_and_Load_Balancing_TP2201_tc_121(Test):
+    uuid = '1506076'
+    description= show_testcase_info(Parameter.TESTPLAN, '1506076', description=True)['title']
+    jira = 'GEN7-35606'
+
+    def test_00_show_testcase_info(self):
+        show_testcase_info(Parameter.TESTPLAN, '1506076')
+        Assertion.assert_equal(True, True, "ERR: show testcase info failed")
+   
+    def test_01_plug_interface_x2(self):
+        logger.info('plug interface x2...')
+        rc = interfaceObj.enable_interface(name='X2')
+        Assertion.assert_equal(rc, True, "ERR: plug x2 interface failed")
+ 
+    def test_02_change_interface_x1_x2_default_gw(self):
+        logger.info("change x1 x2 interface default gw... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.X2_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw failed")
+   
+    @repeat_method(3)
+    def test_03_verify_traffic_out_when_connect_to_web_server(self):
+        logger.info('verify traffic out when connect to web server...')
+        flag = False
+        sleep(30)
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        for i in range(3):
+            output=subprocess.run('curl http://{}'.format(http_server), shell=True, capture_output=True) 
+            output1 = output.stdout.decode('utf-8')
+            if output1:
+                break
+        logger.info('output1:{}'.format(output1))
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r"Hello Automation", str(output1), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+                 flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when connect to web server fail")
+
+    @repeat_method(3)
+    def test_04_verify_traffic_out_when_connect_to_ftp_server(self):
+        logger.info('verify traffic out when connect to ftp server...')
+        cmd = "echo 'this is small ftp file' > /home/ftp_121.txt"
+        pc_server_ssh.send_command(cmd)
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        logger.info('create a new file ftp_121.txt on pc server:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd = 'python3 {}'.format('{}/upload_or_download_file.py download sftp '.format(toolPath)) + '/home/ftp_121.txt '+' root ' + http_server + \
+             ' /home/ftp_121.txt '  + ' password 22'
+        logger.info('run cmd in pc1:{}'.format(cmd))
+        local_host.send_command(cmd)
+        cmd_server = 'ls -l /home'
+        logger.info('run cmd in http server:{}'.format(cmd_server))
+        output = local_host.send_command(cmd_server)
+        packetObj.stop_capture()
+        output2 = packetObj.export_captured_packets()
+        logger.info(output2)
+        if re.search(r".*ftp_121.txt", str(output), re.S|re.I) and \
+            re.search(r"Src=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, http_server), str(output2), re.S|re.I):
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: send ftp traffic failed")
+
+    def test_05_verify_wan_load_balancing_statistics(self):
+        logger.info('verify wan load balancing statistics...')
+        flag = False
+        output = failoverlbObj.check_failover_members_status()
+        logger.info(output)
+        if re.search(r"member_name\'\:\s\'X1", str(output[0]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[0]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Probing", str(output[0]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[0]), re.S|re.I) and \
+            re.search(r"member_name\'\:\s\'X2", str(output[1]), re.S|re.I) and \
+            re.search(r"link_status\'\:\s\'Link Up", str(output[1]), re.S|re.I) and \
+            re.search(r"lb_status\'\:\s\'Probing", str(output[1]), re.S|re.I) and \
+            re.search(r"main_target_status\'\:\sFalse", str(output[1]), re.S|re.I) and \
+            re.search(r"alternate_target_status\'\:\sFalse", str(output[1]), re.S|re.I)   :
+            flag = True
+        Assertion.assert_equal(flag, True, "ERR: verify wan load balancing statistics failed")
+    
+    def test_06_change_interface_x1_x2_default_gw_to_vpn(self):
+        logger.info("change x1 x2 interface default gw to vpn... ")
+        x1 = {
+            'if': 'X1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X0,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        x2 = {
+            'if': 'X2',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X2_IP,
+            'netmask': '255.255.255.0',
+            'gateway': Parameter.GW_X2,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_snmp': True,
+            'mgmt_ping': True,
+        }
+        rc = interfaceObj.config_interface(**x1)
+        rc &= interfaceObj.config_interface(**x2)
+        Assertion.assert_equal(rc, True, "ERR: change x1 x2 interface default gw to vpn failed")
+   
+    @repeat_method(3)
+    def test_07_verify_traffic_when_accorss_vpn_tunnel(self):
+        logger.info('verify traffic out when accorss vpn tunnel...')
+        flag = False
+        packetObj.clear_packets()
+        packetObj.start_capture()
+        local_host.send_command('ping -c 5 {}'.format(Parameter.PC2_ETH0))
+        packetObj.stop_capture()
+        output = packetObj.export_captured_packets()
+        logger.info(output)
+        if re.search(r"IP Type: ESP\(0x\d+\),\sSrc=\[{}\], Dst=\[{}\]".format(Parameter.X1_IP, Parameter.REMOTE_X1), str(output), re.S|re.I) and \
+            re.search(r"IP Type: ESP\(0x\d+\),\sSrc=\[{}\], Dst=\[{}\]".format( Parameter.REMOTE_X1, Parameter.X1_IP), str(output), re.S|re.I):
+            flag =  True
+        Assertion.assert_equal(flag, True, "ERR: verify traffic out when accorss vpn tunnel failed")

@@ -1,0 +1,135 @@
+{
+  "1529345": {
+    "steps": "",
+    "initial": "",
+    "id": "1529345",
+    "title": "[GUI][DS-Lite][3.2]it can add/modify/delete the comment when you add a DS-Lite tunnel interface",
+    "result": ""
+  },
+  "1529346": {
+    "steps": "",
+    "initial": "",
+    "id": "1529346",
+    "title": "[GUI][Gre4to6][3.10]when I add the Gre4to6 interface,The bound to interface is editable except for change it to be non-wan zone.",
+    "result": ""
+  },
+  "1529347": {
+    "steps": "",
+    "initial": "",
+    "id": "1529347",
+    "title": " [Function][DS-Lite][4.7]it can get the AFTR ipv6 address when we use the \"Get via DHCP\", The bound to interface is DHCP mode and enable the AFTR option ",
+    "result": ""
+  },
+  "1529348": {
+    "steps": "",
+    "initial": "",
+    "id": "1529348",
+    "title": " [Function][DS-Lite][4.8.3] when we add a DS-Lite interface, export the pref file, then import the pref file ,the configuration can't lost ",
+    "result": ""
+  },
+  "1529349": {
+    "steps": "",
+    "initial": "",
+    "id": "1529349",
+    "title": " [Function][DS-Lite][4.8.5] when we add a DS-Lite interface, it can correctly display in the appflow monitor ",
+    "result": ""
+  },
+  "1529350": {
+    "steps": "",
+    "initial": "",
+    "id": "1529350",
+    "title": " [Function][DS-Lite][4.8.11] when we add a DS-Lite interface, the configuraiton can't lost after we reboot the box ",
+    "result": ""
+  },
+  "2682746": {
+    "steps": "",
+    "initial": "",
+    "id": "2682746",
+    "title": "[Function][DS-Lite][4.9] After we add a DS-Lite interface, if we change some option it can work normally",
+    "result": ""
+  },
+  "1529352": {
+    "steps": "",
+    "initial": "",
+    "id": "1529352",
+    "title": " [Function][DS-Lite][4.9.2] After we add a DS-Lite interface, if we change the AFTR interface from manually to Get via DHCP, it can work normally ",
+    "result": ""
+  },
+  "1529353": {
+    "steps": "",
+    "initial": "",
+    "id": "1529353",
+    "title": "[Function][DS-Lite][4.9.7] After we add a DS-Lite interface, if we change the bound to interface as L2Bridge mode, it can work normally",
+    "result": ""
+  },
+  "1529354": {
+    "steps": "",
+    "initial": "",
+    "id": "1529354",
+    "title": "[Function][DS-Lite][5.1.1] After we add a DS-Lite interface, when I run ipv6 traffic, it can forward correctly",
+    "result": ""
+  },
+  "1529355": {
+    "steps": "",
+    "initial": "",
+    "id": "1529355",
+    "title": "[Function][DS-Lite][5.1.4] After we add a DS-Lite interface, when I run ipv4 traffic from lan to customer zone, it can work normally",
+    "result": ""
+  },
+  "1529356": {
+    "steps": "",
+    "initial": "",
+    "id": "1529356",
+    "title": "[Function][DS-Lite][5.2.3]when use AFTR FQDN mode, the fqdn should be valid, like \"www.aftr.com\"",
+    "result": ""
+  },
+  "1529357": {
+    "steps": "",
+    "initial": "",
+    "id": "1529357",
+    "title": "[CLI][DS-Lite]the command \"type\" can work normally",
+    "result": ""
+  },
+  "1529358": {
+    "steps": "",
+    "initial": "",
+    "id": "1529358",
+    "title": "[CLI][DS-Lite]it can edit the ds-lite interface successful",
+    "result": ""
+  },
+  "1529359": {
+    "steps": "",
+    "initial": "",
+    "id": "1529359",
+    "title": " [CLI][DS-Lite]it can correct display the ds-lite information when I show current-config under no-config mode ",
+    "result": ""
+  },
+  "2672318": {
+    "steps": "",
+    "initial": "",
+    "id": "2672318",
+    "title": "[Function][DS-Lite]Verify the traffic pass through DS-Lite tunnel successfully when using a linux PC as AFTR",
+    "result": ""
+  },
+  "2682743": {
+    "steps": "",
+    "initial": "",
+    "id": "2682743",
+    "title": "[CLI][DS-Lite]it can delete the ds-lite interface successful ",
+    "result": ""
+  },
+  "2682744": {
+    "steps": "",
+    "initial": "2682744",
+    "id": "",
+    "title": "[GUI][DS-Lite][2.1]it can add a DSLite tunnel interface successful on the GUI ",
+    "result": ""
+  },
+  "2682745": {
+    "steps": "",
+    "initial": "",
+    "id": "2682745",
+    "title": "[GUI][DS-Lite][2.2]it can delete a DSLite tunnel after we added a DSLite interface ",
+    "result": ""
+  }
+}

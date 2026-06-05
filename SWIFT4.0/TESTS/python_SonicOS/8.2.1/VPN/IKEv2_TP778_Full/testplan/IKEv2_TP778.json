@@ -1,0 +1,532 @@
+{
+   "2338166" : {
+      "steps" : "  Full_Regression",
+      "priority" : "HA pair",
+      "atm_id" : "TBD",
+      "initial" : "  2,3. Traffic passes and FW works normally. ",
+      "id" : "2338166",
+      "title" : "GEN7-42155: Modified address object which is in used in VPN will not affect HA FW and traffic",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "2649618" : {
+      "steps" : "  Smoke",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "TBD",
+      "initial" : "  Traffic still can go through vpn success, the VPN &gt; Settings page shows the active tunnel between local and peer site. ",
+      "id" : "2649618",
+      "title" : "IKEv2 S2S VPN with a 3rd Party negotiate, IKE ID Type. Distinguished name (DN).",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1522672" : {
+      "steps" : "  Smoke",
+      "priority" : "strongswan is installed on ubuntu.\r\n",
+      "atm_id" : "AF9FA41C-6168-11ED-9C98-7BF19EE98C89",
+      "initial" : "  Tunnel is up.\n  PC under X0 can ping LAN ip of strongswan.",
+      "id" : "1522672",
+      "title" : "AESGCM support for S2S vpn with 3rd party strongswan, under DH group 14 + AESGCM16-256 + PRF_HMAC_SHA256.",
+      "description" : "No",
+      "result" : "  Original ID: 37 Original Title: AESGCM support for S2S vpn connection setup with 3rd party(strongswan)(7.1.0 and later release support) Original Description: test testcase only support for 7.1.0 and later release this test verifies that sonicwall support create s2s vpn connection with 3rd part using AESGCM Encrytion in IKE phrase1"
+   },
+   "2167886" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B0752710-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "2167886",
+      "title" : "Error conditions simulation. Non-Matching Types2 - PRF",
+      "description" : "Yes",
+      "result" : "  Original ID: 25 Original Title: Error conditions simulation. Non-Matching Types2 - PRF Original Description: TBD"
+   },
+   "1968641" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  SA is negotiated successfully.",
+      "id" : "1968641",
+      "title" : "Phase2 requirements. DES encryption algorithms",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1522666" : {
+      "steps" : "  Sanity",
+      "priority" : "X2 FW1 X1 ---- X1 FW2 X2 VPN:\nFW1(Initiator): 192.168.0.0/16----X2 FW2(Responder): X2------&gt;X2",
+      "atm_id" : "59B206C4-67BA-11EC-BD6E-B796938F55E4",
+      "initial" : "  On step 6, Tunnel is UP. log shows FW1 is Initiator, FW2 is Responder, \"IKEv2 negotiation complete\"",
+      "id" : "1522666",
+      "title" : "Basic IKE Negotiation: Traffic selector Initiator contains Larger range",
+      "description" : "No",
+      "result" : "  Original ID: 31\n  Original Title: Basic IKE Negotiation: Traffic selector Initiator contains Larger range\n  Original Description: This test verifies the ability of the SonicWALL to correctly negotiate and serve as an Initiator when responder is configured with a subset of initiator's selectors."
+   },
+   "2649619" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "TBD",
+      "initial" : "  Traffic still can go through vpn success, the VPN &gt; Settings page shows the active tunnel between local and peer site.",
+      "id" : "2649619",
+      "title" : "IKEv2 S2S VPN with a 3rd Party negotiate, IKE ID Type. E-Mail ID (UserFQDN).",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1522677" : {
+      "steps" : "  Smoke",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B0500494-0464-11DE-860E-445A00F93527",
+      "initial" : "  The initial tunnel is negotiated, you will see two INIT packets and two AUTH packets. After 180 seconds CREATE_CHILD_SA request packet will be sent from initiator. Responder will send CREATE_CHILD_SA response packet. Either side can be initiator since they both have the same lifetime. This will be Phase2 (IPSec) re-key. The same will happen in another 90 seconds, when Phase1 (IKE) expires. You will see another CREATE_CHILD_SA packet exchange. The DELETE messages will be sent following each re-key event, the old SA will be deleted.",
+      "id" : "1522677",
+      "title" : "Re-keying. Matched lifetime settings.",
+      "description" : "Yes",
+      "result" : "  Original ID: 9\n  Original Title: Re-keying. Matched lifetime settings.\n  Original Description: This test verifies the ability of SonicWALL to re-initiate and re-key the sessions when peers have matched lifetime settings."
+   },
+   "1705067" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B06BFCE4-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1705067",
+      "title" : "DPD. Peer initiates liveness check. Local is dead.",
+      "description" : "Yes",
+      "result" : "  Original ID: 17\n  Original Title: DPD. Peer initiates liveness check. Local is dead.\n  Original Description: This test verifies the ability of SonicWALL as a peer side to perform liveness check when ESP traffic flows in one direction and a local is dead."
+   },
+   "1522667" : {
+      "steps" : "  Sanity",
+      "priority" : "X2 FW1 X1 ---- X1 FW2 X2 VPN:\nFW1(Responder): 192.168.0.0/16----X2 FW2(Initiator): X2------&gt;X2",
+      "atm_id" : "2418662E-67C5-11EC-9244-B896938F55E4",
+      "initial" : "  On step 6, Tunnel is UP. log shows FW1 is Responder, FW2 is Initiator, \"IKEv2 negotiation complete\"",
+      "id" : "1522667",
+      "title" : "Basic IKE Negotiation: Traffic selector Responder contains Larger range",
+      "description" : "No",
+      "result" : "  Original ID: 32\n  Original Title: Basic IKE Negotiation: Traffic selector Responder contains Larger range\n  Original Description: This test verifies the ability of the SonicWALL to correctly negotiate and serve as an Initiator when initiatoris configured with a subset of responder's selectors."
+   },
+   "1705068" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B062D10A-0464-11DE-860E-445A00F93527",
+      "initial" : "  The VPN > Settings page can not show the active tunnel between SonicWALL1 and SonicWALL2. The firewall's log shows messages: IKEv2 Payload processing error IKEv2 IKE proposal does not match",
+      "id" : "1705068",
+      "title" : "Error conditions simulation. Non-Matching Proposals.",
+      "description" : "Yes",
+      "result" : "  Original ID: 21 Original Title: Error conditions simulation. Non-Matching Proposals. Original Description: This test verifies the SonicWALL can not negotiate the VPN tunnel successfully when peers are configured with unmatched protocol,including exchange, DH group, Authentication,encryption method."
+   },
+   "2649621" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  Traffic still can go through vpn success, the VPN &gt; Settings page shows the active tunnel between local and peer site.",
+      "id" : "2649621",
+      "title" : "IKEv2 S2S VPN with a 3rd Party negotiate, IKE ID Type. IP Address (IPV4).",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1786222" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  In step 2, the tunnel can up.\n  From system log the ID 943 shows message: IKEv2 Accept IKE SA Proposal\n  Notes: VPN Policy: xxx; AES_GCM256; prfAlg: HMAC_SHA256;DH Group 14; spi:xxx.\n  In step 3, after changing proposal, the tunnel can up. The system log notes are:\n  VPN Policy: xxx; AES_GCM128; prfAlg: HMAC_SHA384;DH Group 14;\n  VPN Policy: xxx; AES_GCM192; prfAlg: HMAC_SHA512;DH Group 14;",
+      "id" : "1786222",
+      "title" : "System log shows prf algorithm for ID 943.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1522656" : {
+      "steps" : "  Smoke",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B0596B1A-0464-11DE-860E-445A00F93527",
+      "initial" : "  ISAKMP packet trace on the WAN shows:\n  IKE_SA_INIT packet (Initiator's Request) is sent from SonicWALL1's X1 to SonicWALL2's X1. It shows Next Payload: Security Association; Version: 2.0.\n  IKE_SA_INIT (Responder's Response) is sent from SonicWALL2's X1 to SonicWALL1's X1.\n  IKE_AUTH (Initiator's Request) is sent from SonicWALL1's X1 to SonicWALL2's X1. It shows Next Payload: Encrypted; Version: 2.0.\n  IKE_AUTH (Responder's Response) is sent from SonicWALL2's X1 to SonicWALL1's X1.\n  The VPN > Settings page shows the active tunnel between SonicWALL1 and SonicWALL2.\n  The firewall's log shows messages: IKEv2 Accept IKE SA Proposal IKEv2 Accept IPsec SA Proposal\n  IKEv2 negotiation complete.\n  The Notes column of the log shows VPN Policy name; 3DES; HMAC_SHA1_96; IKEv2 InitSPI; IKEv2 RespSPI; Local Net:<Local LAN> Remote Net:<Remote LAN>.",
+      "id" : "1522656",
+      "title" : "Basic IKE Negotiation with Preshared Key and simple proposals/selectors. Serve as Initiator.",
+      "description" : "Yes",
+      "result" : "  Original ID: 1\n  Original Title: Basic IKE Negotiation with Preshared Key and simple proposals/selectors. Serve as Initiator.\n  Original Description: This test verifies the ability of the SonicWALL to correctly negotiate and serve as an Initiator when peers are configured with same protocols/algorithms."
+   },
+   "1705069" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B0570A78-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1705069",
+      "title" : "Error conditions simulation. Non-Matching Protocols",
+      "description" : "Yes",
+      "result" : "  Original ID: 22 Original Title: Error conditions simulation. Non-Matching Protocols Original Description: TBD"
+   },
+   "1826640" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  The tunnel can up and ping is ok.",
+      "id" : "1826640",
+      "title" : "IKE v1 aggressive mode tunnel vpn pre-shared key vpn can up based on phase 2 AESGMAC encryption.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1522660" : {
+      "steps" : "  Sanity",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B067766A-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1522660",
+      "title" : "Re-keying. Mismatched lifetime settings. Peer is configured with shorter lifetimes. Ping initiated from peer side",
+      "description" : "Yes",
+      "result" : "  Original ID: 13\n  Original Title: Re-keying. Mismatched lifetime settings. Peer is configured with shorter lifetimes. Ping initiated from peer side\n  Original Description: This test verifies the ability of SonicWALL to re-initiate and re-key the sessions when a peer is configured with shorter lifetimes and ping is initiated from peer side."
+   },
+   "1745858" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  From story GEN7-35748's change, in step 2, these values of DH group, encryption and authentication are not allowed to edit, default values are group 2, AES-256 and SHA256. In step 3, the three items can be edited. You can change to any other proposal and save it. ",
+      "id" : "1745858",
+      "title" : "Check the ikev2 default value change of phase 1 proposal from GUI after factory default.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1826641" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  After upgrade, the vpn policy settings is the same with before. The tunnel can up and traffic is ok.",
+      "id" : "1826641",
+      "title" : "Upgrade from 7.0.1 5119 with AESGMAC setting to 7.0.1/7.1.1  latest sprint or latter builds, check settings and traffic.",
+      "description" : "No",
+      "result" : "  Because on 7.0.1-11 and 7.1.1, AESGMAC was removed in some sprints. At last added it back. So added case to check if the settings and traffic upgrade from old versions are not impacted."
+   },
+   "1968639" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B072D97E-0464-11DE-860E-445A00F93527",
+      "initial" : "  Tunnel can not be established because of the unmatched the exchange method,with such logs:IKEv2 Payload processing error(Encryption algorithm mismatch. Local: DES; Peer: 3DES ),IKEv2 Payload processing error.",
+      "id" : "1968639",
+      "title" : "Error conditions simulation. Non-Matching Types1 - Encrypt",
+      "description" : "Yes",
+      "result" : "  Original ID: 24 Original Title: Error conditions simulation. Non-Matching Types1 - Encrypt Original Description: This test verifies the SonicWALL can not negotiate the VPN tunnel successfully when peers are configured with unmatched Encryption method"
+   },
+   "1522668" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "A5C9B492-113F-11ED-B6C3-0D3BDBB47B89",
+      "initial" : "  Checkipsec gateway, local&amp;destination networks, crypto suite(ipsec phase2 protocol,encryption,ike phase1 exchange mode),IKEv2 mode are displayed in VPN Policies IPv4 page.",
+      "id" : "1522668",
+      "title" : "VPN->Policies page displays VPN Gateway/Destinations/Crypto Suite information",
+      "description" : "No",
+      "result" : "  Original ID: 33\n  Original Title: VPN->Policies page displays VPN Gateway/Destinations/Crypto Suite information\n  Original Description:"
+   },
+   "2649620" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "TBD",
+      "initial" : "  Traffic still can go through vpn success, the VPN &gt; Settings page shows the active tunnel between local and peer site.",
+      "id" : "2649620",
+      "title" : "IKEv2 S2S VPN with a 3rd Party negotiate, IKE ID Type. Domain name (FQDN).",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1705071" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B046DD38-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1705071",
+      "title" : "DH Group wrong guess in initial exchange. Responder is configured with a subset of initiators.",
+      "description" : "Yes",
+      "result" : "  Original ID: 6\n  Original Title: DH Group wrong guess in initial exchange. Responder is configured with a subset of initiators.\n  Original Description: This test verifies that a responder sends INVALID_KE_PAYLOAD message if an initiator uses wrong DH Group in initial exchange."
+   },
+   "1768530" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  In step 1 and step 2, no AESGCM in encryption list from GUI and CLI under IKEv1 two modes. In step 3, change to IKEv2, can select AESGCM and save the setting.",
+      "id" : "1768530",
+      "title" : "Negative case: IKEv1 aggressive mode and main mode are not support AESGCM.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1522675" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "0480A640-79E5-11ED-8422-7DEBA0E98C89",
+      "initial" : "  the VPN &gt; Settings page shows the active tunnel between SonicWALL1 and Strongswan.\n  traffic success. The firewall's log shows messages: IKEv2 Accept IKE SA Proposal IKEv2 Accept IPsec SA Proposal IKEv2 negotiation complete",
+      "id" : "1522675",
+      "title" : "[TSR] Check TSR shows correct proposal for AESGCM in phase 1 .",
+      "description" : "No",
+      "result" : "  Original ID: 43 Original Title: [Combination test]AESGCM support for Tunnel vpn connection setup with 3rd party(strongswan)(7.1.0 and later release support) Original Description: this testcase only support for 7.1.0 and later release this test verifies that sonicwall support create tunnel vpn connection with 3rd part using different AESGCM encrytion and PRF Algorithm in IKE phrase1"
+   },
+   "1968623" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  In step 2 and step 3, the CLI command can show different AESGCM algorithms.",
+      "id" : "1968623",
+      "title" : "VPN tunnel up on different phase 2 AESGCM algorithms, CLI command 'show vpn tunnels' or 'show vpn tunnel <policy name>' can show the correct algorithms.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1745859" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  In step 3, the old vpn policies' settings are not changed. The new vpn policy's ikev2 phase 1 default proposal values are still the old values, not follow the new values. You can change the proposal after adding specific gateway. If the old version before story GEN7-35748 are hardly to be loaded, pls use below test method to cover this test point. 1. Change ikev2 default proposal in dynamic client setting: vpn -&gt; advanced -&gt; IKEv2 Dynamic Client Proposal. Then add some s2s ikev2 policies with no change on phase 1 proposal. The gateway is specific gateway except 0.0.0.0. 2. Export the config. Change dynamic client proposal to group 2/AES-256/SHA256. 3. Import the config. Check the added vpn policies in step 1 and add new ikev2 policy. These vpn policies' default phase 1 proposal are not group 2/AES-256/SHA256.",
+      "id" : "1745859",
+      "title" : "Upgrade with current setting from version of old proposal default value to version of new proposal default value.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1522670" : {
+      "steps" : "  Smoke",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "D89E4AC2-60C7-11ED-BACB-28E89EE98C89",
+      "initial" : "  The tunnel can up. PC 3 can ping PC 1 .",
+      "id" : "1522670",
+      "title" : "AESGCM support for phase1 of s2s vpn tunnel, under DH group 1 + AESGCM16-128 + PRF_HMAC_SHA384.",
+      "description" : "No",
+      "result" : "  Original ID: 35\n  Original Title: AESGCM support for IKE Negotiation phase1 of s2s vpn tunnel\n  Original Description: This testcase only support 7.1.0 and later release\n  This test verifies the SonicWALL can negotiate the s2s VPN tunnel successfully with IKEv2 exchange mode phase1 using AESGCM encryption"
+   },
+   "1522659" : {
+      "steps" : "  Smoke",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B054B1D8-0464-11DE-860E-445A00F93527",
+      "initial" : "  The initial tunnel is negotiated, you will see two INIT packets and two AUTH packets. After 180 seconds CREATE_CHILD_SA request packet will be sent from initiator. Responder will send CREATE_CHILD_SA response packet. In this case, since the remote has a shorter lifetime, it will always initiate re-key and send CREATE_CHILD_SA request upon IPSec and IKE lifetime expiration. The appropriate DELETE messages will be sent after IKE or IPSec renegotiation. Those DELETE requests can be sent from either side.",
+      "id" : "1522659",
+      "title" : "Re-keying. Mismatched lifetime settings. Peer is configured with shorter lifetimes. Ping initiated from local side.",
+      "description" : "Yes",
+      "result" : "  Original ID: 12\n  Original Title: Re-keying. Mismatched lifetime settings. Peer is configured with shorter lifetimes. Ping initiated from local side.\n  Original Description: This test verifies the ability of SonicWALL to re-initiate and re-key the sessions when a peer is configured with shorter lifetimes and ping is initiated from local side."
+   },
+   "1532972" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  &lt;span&gt;Tunnel should be successful and there should be correct log, vpn traffic should work fine.&lt;/span&gt; &lt;span&gt;Fragmented packets can be captured when it negotiate the vpn tunnel.&lt;/span&gt; &lt;span&gt;VPN traffic is successful&lt;/span&gt;",
+      "id" : "1532972",
+      "title" : "GEN7-38158:Use level 2 3rd certificate with IKEv2/Main/Aggressive Mode for site-to-site VPN tunnel",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1705072" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B04B6E2A-0464-11DE-860E-445A00F93527",
+      "initial" : "  The VPN > Settings page shows the active tunnel between SonicWALL1 and SonicWALL2.\n  The firewall's log shows messages:\n  IKEv2 Accept IKE SA Proposal\n  IKEv2 Accept IPsec SA Proposal\n  IKEv2 negotiation complete. After the life time expired, they will negotiate again ,in initiator ,we will see log :IKEv2 Initiator: Send CREATE_CHILD_SA response, IKEv2 Responder :Received CREATE_CHILD_SA response",
+      "id" : "1705072",
+      "title" : "Initiator uses matching DH Group in CREATE_CHILD_SA exchange",
+      "description" : "Yes",
+      "result" : "  Original ID: 7\n  Original Title: Initiator uses matching DH Group in CREATE_CHILD_SA exchange\n  Original Description: This test verifies the ability of the SonicWALL to correctly negotiate and serve as an Initiator when it uses matching DH Group in CREATE_CHILD_SA exchange."
+   },
+   "1522669" : {
+      "steps" : "  Smoke",
+      "priority" : "TBD",
+      "atm_id" : "9BC7A666-1153-11ED-B579-2C3CDBB47B89",
+      "initial" : "  Check all new-added ikev2 vpn policies:\n  ipsec gateway, local&amp;destination networks, crypto suite(ipsec phase2 protocol,encryption,ike phase1 exchange mode) are all displayed in VPN Policies IPv4 page.",
+      "id" : "1522669",
+      "title" : "Add multiple IKEv2 VPN policies, check VPN->Policies page displays all VPN Gateway/Destinations/Crypto Suite information",
+      "description" : "No",
+      "result" : "  Original ID: 34\n  Original Title: Add multiple IKEv2 VPN policies, check VPN->Policies page displays all VPN Gateway/Destinations/Crypto Suite information\n  Original Description:"
+   },
+   "1968622" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  In step 2, the CLI command can show correct AESGMAC algorithm.",
+      "id" : "1968622",
+      "title" : "VPN tunnel up on phase 2 AESGMAC, CLI command 'show vpn tunnels' or 'show vpn tunnel <policy name>' can show the algorithm.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1522662" : {
+      "steps" : "  Sanity",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B0709330-0464-11DE-860E-445A00F93527",
+      "initial" : "  DPD messages should be sent out from SW1 after the peer is dead. After three failures the tunnel satus should change to disdabled and the SAs should be deleted.",
+      "id" : "1522662",
+      "title" : "DPD. Local initiates liveness check. Peer is dead.",
+      "description" : "Yes",
+      "result" : "  Original ID: 15\n  Original Title: DPD. Local initiates liveness check. Peer is dead.\n  Original Description: This test verifies the ability of SonicWALL as a local side to perform liveness check when ESP traffic flows in one direction and a peer is dead."
+   },
+   "1705070" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B0606C1C-0464-11DE-860E-445A00F93527",
+      "initial" : "  Tunnel can not be established because of the unmatched the exchange method,with such logs: IKEv2 VPN Policy not found, IKEv2 Payload processing error,Received notify. NO_PROPOSAL_CHOSEN.",
+      "id" : "1705070",
+      "title" : "Error conditions simulation. Non-Matching Transforms",
+      "description" : "Yes",
+      "result" : "  Original ID: 23 Original Title: Error conditions simulation. Non-Matching Transforms Original Description: This test verifies the SonicWALL can not negotiate the VPN tunnel successfully when peers are configured with unmatched exchange method"
+   },
+   "1522665" : {
+      "steps" : "  Full_Regression",
+      "priority" : "X4/X2 FW1 X1 ---- X1 FW2 X2\nVPN: FW1(Initiator) X4/X2----&gt;X2 FW2(Responder) X2----&gt;X2",
+      "atm_id" : "B07E52FE-0464-11DE-860E-445A00F93527",
+      "initial" : "  On step7, Tunnel is down and log shows \"Traffic Selectors Unacceptable\".\n  On step 9, Ping should be OK and tunnel is up.",
+      "id" : "1522665",
+      "title" : "Basic IKE Negotiation: Traffic selector Initiator contains 2 subnets X4/X2, Responder contains X2.",
+      "description" : "No",
+      "result" : "  Original ID: 3\n  Original Title: Basic IKE Negotiation: Traffic selector Initiator contains 2 subnets X4/X2, Responder contains X2.\n  Original Description: This test verifies the ability of the SonicWALL to correctly negotiate and serve as an Initiator when responder is configured with a subset of initiator's selectors."
+   },
+   "1826637" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  The tunnel can up and traffic can reach peer network.",
+      "id" : "1826637",
+      "title" : "IKE v2 S2S pre-shared key vpn can up based on phase 2 AESGMAC encryption.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1826636" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  In step 1 and step 2, GUI can show AESGMAC in phase 2 encryption list. The configuration can be saved. In step 3, CLI can config AESGMAC and the policy can be added.",
+      "id" : "1826636",
+      "title" : "AESGMAC can be configured through GUI and CLI.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1705066" : {
+      "steps" : "  Full_Regression",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B05E0EC2-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1705066",
+      "title" : "DPD. Peer initiates liveness check. Local is alive.",
+      "description" : "Yes",
+      "result" : "  Original ID: 16\n  Original Title: DPD. Peer initiates liveness check. Local is alive.\n  Original Description: This test verifies the ability of SonicWALL as a peer side to perform liveness check when ESP traffic flows in one direction and a local is alive."
+   },
+   "1522676" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "8E954E10-C6F9-11ED-BF7C-217D79990318",
+      "initial" : "  The VPN &gt; Settings page shows the active tunnel between local and peer site.\n  Traffic still can go through vpn success after the peer's dynamic wan ip changed.\n  The firewall's log shows messages: IKEv2 Accept IKE SA Proposal IKEv2 Accept IPsec SA Proposal IKEv2 negotiation complete",
+      "id" : "1522676",
+      "title" : "IKEv2 S2S VPN with a 3rd Party negotiate with dynamic WAN IP Peer",
+      "description" : "No",
+      "result" : "  Original ID: 45\n  Original Title: IKEv2 S2S VPN with a 3rd Party negotiate with dynamic WAN IP Peer Original Description:"
+   },
+   "1968621" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  In step 2, the CLI command can show correct AESGCM and prf algorithm.",
+      "id" : "1968621",
+      "title" : "VPN tunnel up on phase 1 AESGCM, CLI command 'show vpn tunnels' or 'show vpn tunnel <policy name>' can show the algorithm and prf algorithm.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1522657" : {
+      "steps" : "  Sanity",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B05BCB4E-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1522657",
+      "title" : "Re-keying. Mismatched lifetime settings. Peer is configured with longer lifetimes. Ping initiated from local side.",
+      "description" : "Yes",
+      "result" : "  Original ID: 10\n  Original Title: Re-keying. Mismatched lifetime settings. Peer is configured with longer lifetimes. Ping initiated from local side.\n  Original Description: This test verifies the ability of SonicWALL to re-initiate and re-key the sessions when a peer is configured with longer lifetimes and ping is initiated from local side."
+   },
+   "1826638" : {
+      "steps" : "  Sanity",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  In step 2, the tunnel should up. In step 3, ping should success.",
+      "id" : "1826638",
+      "title" : "IKE v2 tunnel vpn authenticated by certificate, can up based on phase 2 AESGMAC encryption.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1826639" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  The tunnel can up and ping is ok.",
+      "id" : "1826639",
+      "title" : "IKE v1 main mode S2S pre-shared key vpn can up based on phase 2 AESGMAC encryption.",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1826682" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  In step 3, edit policy in GUI, the authentication shows as None. In down tunnel list, the crypto suite shows only AESGCM algorithm. In step 5, CLI no option of \"authentication\". AESGMAC should show the similar results.",
+      "id" : "1826682",
+      "title" : "Add or edit vpn policy with  AESGCM or AESGMAC as encryption from CLI and GUI, no authentication option could be set. (GEN7-43274)",
+      "description" : "No",
+      "result" : "  TBD"
+   },
+   "1522664" : {
+      "steps" : "  Sanity",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B042315C-0464-11DE-860E-445A00F93527",
+      "initial" : "  ISAKMP packet trace on the WAN shows:\n  IKE_SA_INIT packet (Initiator's Request) is sent from SonicWALL2's X1 to SonicWALL1's X1. It shows Next Payload: Security Association; Version: 2.0.\n  IKE_SA_INIT (Responder's Response) is sent from SonicWALL1's X1 to SonicWALL2's X1.\n  IKE_AUTH (Initiator's Request) is sent from SonicWALL2's X1 to SonicWALL1's X1. It shows Next Payload: Encrypted; Version: 2.0.\n  IKE_AUTH (Responder's Response) is sent from SonicWALL1's X1 to SonicWALL2's X1.\n  The VPN > Settings page shows the active tunnel between SonicWALL1 and SonicWALL2.\n  The firewall's log shows messages: IKEv2 Accept IKE SA Proposal IKEv2 Accept IPsec SA Proposal\n  IKEv2 negotiation complete.\n  The Notes column of the log shows VPN Policy name; 3DES; HMAC_SHA1_96; IKEv2 InitSPI; IKEv2 RespSPI; Local Net:<Local LAN> Remote Net:<Remote LAN>.",
+      "id" : "1522664",
+      "title" : "Basic IKE Negotiation with Preshared Key and simple proposals/selectors. Serve as Responder.",
+      "description" : "Yes",
+      "result" : "  Original ID: 2\n  Original Title: Basic IKE Negotiation with Preshared Key and simple proposals/selectors. Serve as Responder.\n  Original Description: This test verifies the ability of the SonicWALL to correctly negotiate and serve as a Responder when peers are configured with same protocols/algorithms."
+   },
+   "1522658" : {
+      "steps" : "  Sanity",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B0776FAC-0464-11DE-860E-445A00F93527",
+      "initial" : "  TBD",
+      "id" : "1522658",
+      "title" : "Re-keying. Mismatched lifetime settings. Peer is configured with longer lifetimes. Ping initiated from peer side.",
+      "description" : "Yes",
+      "result" : "  Original ID: 11\n  Original Title: Re-keying. Mismatched lifetime settings. Peer is configured with longer lifetimes. Ping initiated from peer side.\n  Original Description: This test verifies the ability of SonicWALL to re-initiate and re-key the sessions when a peer is configured with longer lifetimes and ping is initiated from peer side."
+   },
+   "1522671" : {
+      "steps" : "  Sanity",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "99F01EFE-6162-11ED-9A50-55F19EE98C89",
+      "initial" : "  The tunnel can up. PC 3 can ping PC 1 . ",
+      "id" : "1522671",
+      "title" : "AESGCM support for phase 1 of tunnel vpn, under DH group 2 + AESGCM16-192 + PRF_HMAC_MD5.",
+      "description" : "No",
+      "result" : "  Original ID: 36 Original Title: AESGCM support for IKE Negotiation phase1 tunnel interface vpn Original Description: This testcase only support 7.1.0 and later release This test verifies the SonicWALL can negotiate tunnel VPN successfully with IKEv2 exchange mode phase1 using AESGCM encryption"
+   },
+   "1522661" : {
+      "steps" : "  Smoke",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B0652068-0464-11DE-860E-445A00F93527",
+      "initial" : "  The local firewall should check if the peer is alive in case if no traffic is sent through the active tunnel. You will see the DPD packets exchange.",
+      "id" : "1522661",
+      "title" : "DPD. Local initiates liveness check. Peer is alive.",
+      "description" : "Yes",
+      "result" : "  Original ID: 14\n  Original Title: DPD. Local initiates liveness check. Peer is alive.\n  Original Description: This test verifies the ability of SonicWALL as a local side to perform liveness check when ESP traffic flows in one direction and a peer is alive."
+   },
+   "1522673" : {
+      "steps" : "  Sanity",
+      "priority" : "strongswan is installed on ubuntu.\r\n",
+      "atm_id" : "ABB3075E-760D-11ED-BD9A-278FA0E98C89",
+      "initial" : "  The tunnel can up. PC under X0 can ping LAN ip of strongswan. ",
+      "id" : "1522673",
+      "title" : "AESGCM support for tunnel vpn with 3rd party strongswan, under DH group 5 + AESGCM16-256 + PRF_HMAC_SHA1 .",
+      "description" : "No",
+      "result" : "  Original ID: 39 Original Title: AESGCM support for S2S Tunnel vpn connection setup with 3rd party(strongswan)(7.1.0 and later release support) Original Description: This testcase only support 7.1.0 and later release this test verifies that sonicwall support create tunnel vpn connection with 3rd part using AESGCM Encrytion in IKE phrase1"
+   },
+   "1522674" : {
+      "steps" : "  Smoke",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 --- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "99412D00-79E4-11ED-A72F-7DEBA0E98C89",
+      "initial" : "  The tunnel can up.\n  PC 3 can ping PC 1.",
+      "id" : "1522674",
+      "title" : "AESGCM support on S2S  3rd party certificate, under 256bit random ECP group + AESGCM16-128 + PRF_HMAC_SHA512.",
+      "description" : "No",
+      "result" : "  Original ID: 41 Original Title: [tunnel vpn]AESGCM support for IKE Negotiation phase1 Combination test of encrytion and PRF Algorithm(7.1.0 and later release) Original Description: this testcase only support for 7.1.0 and later release This test verifies that IKE and IPSec tunnel VPN connection can be created using a VPN policy with IKEv2 exchange mode phase1 using different AESGCM encrytion and PRF Algorithm"
+   },
+   "1522663" : {
+      "steps" : "  Smoke",
+      "priority" : "PC1 --- X0 SonicWALL1 X1 -- X0 NAT device X1 -- PC2 -- X1 SonicWALL2 X0 --- PC3",
+      "atm_id" : "B06E40BC-0464-11DE-860E-445A00F93527",
+      "initial" : "  Make sure that the NAT device in front of the local firewall is detected during negotiation and the appropriate log is shown on the firewalls. The DPD exchange will occur every 20 seconds for NAT traversal.",
+      "id" : "1522663",
+      "title" : "NAT Traversal. Local behind NAT device.",
+      "description" : "No",
+      "result" : "  Original ID: 18\n  Original Title: NAT Traversal. Local behind NAT device.\n  Original Description: This test verifies the ability of SonicWALL to correctly negotiate if a local is communicating from behind a NAT device."
+   },
+   "1745860" : {
+      "steps" : "  Full_Regression",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  In step 3, from story GEN7-35748, the added tunnel vpn policy's phase 1 proposal should be DH group 2 + AES-256 + SHA256.",
+      "id" : "1745860",
+      "title" : "Check the ikev2 default value change of phase 1 proposal from CLI after factory default.",
+      "description" : "No",
+      "result" : "  TBD"
+   }
+}

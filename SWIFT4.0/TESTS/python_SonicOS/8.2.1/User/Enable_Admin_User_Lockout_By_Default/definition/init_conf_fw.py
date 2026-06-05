@@ -1,0 +1,48 @@
+from definition.settings import *
+
+class TestConfigTB(Test):
+    uuid = 'NonTC'
+    
+    def test_01_Set_X0_Interface(self):
+        x1_static = {
+            'if': 'x0',
+            'zone': 'LAN',
+            'mode': 'static',
+            'ip': Parameter.FIREWALL,
+            'gateway': Parameter.X0_GW,
+            'mgmt_https': True,
+            'mgmt_ssh': True,
+            'mgmt_ping': True,
+            'user_http': False,
+            'user_https': True,
+            'https_redirect': True
+        }
+        rc = interface.config_interface(**x1_static)
+        Assertion.assert_equal(rc, True, "ERR: Config X1 to static failed")
+
+    def test_02_Set_X1_Interface(self):
+        x1_static = {
+            'if': 'x1',
+            'zone': 'WAN',
+            'mode': 'static',
+            'ip': Parameter.X1_IP,
+            'gateway': Parameter.X1_GW,
+            'dns1': Parameter.X1_DNS1,
+            'dns2': Parameter.X1_DNS2,
+            'dns3': Parameter.X1_DNS3,
+            'mgmt_https': True,
+            'mgmt_ssh': True,
+            'mgmt_ping': True,
+            'user_http': False,
+            'user_https': True,
+            'https_redirect': True
+        }
+        rc = interface.config_interface(**x1_static)
+        Assertion.assert_equal(rc, True, "ERR: Config X1 to static failed")
+    
+    @repeat_method(5)
+    def test_03_register_fw(self):
+        rc = license.register("online")
+        Assertion.assert_equal(rc, True, "ERR: register fw failed")
+
+  

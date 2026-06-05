@@ -1,0 +1,186 @@
+{
+    "TC01": {
+        "id": "TC01",
+        "title": "[GUI]Verify \"\"Update URL\"\" and  \"\"Update URL Period\"\" shown in advanced page when add \"\"v6Plus Static IP Address Service\"\" tunnel",
+        "steps": "1.Click Add Interface\n2.Click 4to6Tunnel Interface, choose \"\"v6Plus Static IP Address Service\"\"\n3.Verify \"\"Update URL\"\" and  \"\"Update URL Period\"\" is shown",
+        "expected result": "see steps",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC02": {
+        "id": "TC02",
+        "title": "[Negtive]Verify specify charater can't be fill in \"\"Update URL\"\" and  \"\"Update URL Period\"\" field in \"\"v6Plus Static IP Address Service\"\" tunnel advanced page",
+        "steps": "1.Click Add Interface\n2.Click 4to6Tunnel Interface, choose \"\"v6Plus Static IP Address Service\"\"\n3.Go to advanced page, fill $#%$% or -1 on \"\"Update URL\"\"",
+        "expected result": "error pops when enter \"\"$#%$%\"\", \"\"-1\"\" can be saved per dev's design.",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC03": {
+        "id": "TC03",
+        "title": "[Func]Verify \"\"Update URL Period\"\" status and details show correct",
+        "steps": "1.Configure wan interface as auto mode, with interface ID configured ::1:1:1:1\n2.Click Add Interface, click 4to6Tunnel Interface,\nTunnel Type: v6Plus Static IP Address Service\nName: v6Plus\nBound to: select the WAN interface configured in step 1\nLocal IPv6 Address: select \"\"Use Primary IPv6 Address\"\"\nBR IPv6 Address: select \"\"Configure Static Address\"\" and fill with the BR specified by ISP\n3.Go to advanced page, Local IPv4 Address: fill with the \"\"v6 plus static IP\"\" specified by ISP, the default value is 192.0.0.2 \nUpdate URL: http://[2001:470:80b7:896:250:56ff:feb4:e631]\nUpdate URL Period: 1\nCheck the status via mouse hover on the led\n4.Change Update URL to blank, check the status via mouse hover on the led\n5.Change Update URL to -1, check the status via mouse hover on the led",
+        "expected result": "in step3, the led show green, and the detail show like \"\"Success 8 times, last at 13s ago\"\"\nin step4, the led show yellow, and the detail show like \"\"Unknown Status\"\"\nin step5, the led show red, and the detail show like \"\"Failed 1 times, last at 20s ago\"\"\n",
+        "priority": "Smoke",
+        "type": "Functional"
+    },
+    "TC04": {
+        "id": "TC04",
+        "title": "[Func]Verify http request send via \"\"Update URL\"\" when primary address changed",
+        "steps": "1.Configure wan interface as auto mode, with interface ID configured ::1:1:1:1\n2.Click Add Interface, click 4to6Tunnel Interface,\nTunnel Type: v6Plus Static IP Address Service\nName: v6Plus\nBound to: select the WAN interface configured in step 1\nLocal IPv6 Address: select \"\"Use Primary IPv6 Address\"\"\nBR IPv6 Address: select \"\"Configure Static Address\"\" and fill with the BR specified by ISP\n3.Go to advanced page, Local IPv4 Address: fill with the \"\"v6 plus static IP\"\" specified by ISP, the default value is 192.0.0.2\nUpdate URL: http://[2001:470:80b7:896:250:56ff:feb4:e631]\nUpdate URL Period: 43200\nCheck packet monitor\n4.Change wan interface ID to ::200, check packet monitor",
+        "expected result": "in step3, capture the http request once\nin step4, send http request after wan interface IP changed\n",
+        "priority": "Sanity",
+        "type": "Functional"
+    },
+    "TC05": {
+        "id": "TC05",
+        "title": "[CLI]Verify \"\"Update URL\"\" and  \"\"Update URL Period\"\" can be set via CLI",
+        "steps": "1.Login FW via CLI\n2.Commands as followed:\nconfig(18C2418A2034)# interface tun   \nconfig(18C2418A2034)# tun          \nconfig(18C2418A2034)# tunnel-interface \n  4to6    ipv6    vpn     \nconfig(18C2418A2034)# tunnel-interface 4to6 JPIX\n(edit-tunnel-interface[JPIX])# sho current-config \n    type v6plus\n        local-ipv4 192.0.0.10\n        bound-to interface X1\n        local dynamic\n        remote ipv6 2001:470:80b7:896:1:2:3:4\n        exit\n\n    flow-reporting\n    fragment-packets\n    no ignore-df-bit\n    send-icmp-fragmentation\n    no comment\n(edit-tunnel-interface[JPIX])# type v6plus \n(edit-v6plus-tunnel[JPIX])# update-url http://[2001:470:80b7:896:250:56ff:feb4:e631]\n(edit-v6plus-tunnel[JPIX])# update-url-period 43200\n(edit-v6plus-tunnel[JPIX])# commit\n(edit-v6plus-tunnel[JPIX])# exi\n(edit-tunnel-interface[JPIX])# sho cu\n    type v6plus\n        local-ipv4 192.0.0.10\n        bound-to interface X1\n        local dynamic\n        remote ipv6 2001:470:80b7:896:1:2:3:4\n        update-url http://[2001:470:80b7:896:250:56ff:feb4:e631]\n        update-url-period 43200\n        exit\n\n    flow-reporting\n    fragment-packets\n    no ignore-df-bit\n    send-icmp-fragmentation\n    no comment",
+        "expected result": "Check GUI, the correct parameter shows, and the led became green with the correct details ",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC15": {
+        "id": "TC15",
+        "title": "[Func]Verify \"\"Update URL Period\"\" status and details show correct after reboot FW",
+        "steps": "1.Configure wan interface as auto mode, with interface ID configured ::1:1:1:1\n2.Click Add Interface, click 4to6Tunnel Interface,\nTunnel Type: v6Plus Static IP Address Service\nName: v6Plus\nBound to: select the WAN interface configured in step 1\nLocal IPv6 Address: select \"\"Use Primary IPv6 Address\"\"\nBR IPv6 Address: select \"\"Configure Static Address\"\" and fill with the BR specified by ISP\n3.Go to advanced page, Local IPv4 Address: fill with the \"\"v6 plus static IP\"\" specified by ISP, the default value is 192.0.0.2\nUpdate URL: http://[2001:470:80b7:896:250:56ff:feb4:e631]\nUpdate URL Period: 43200\ncheck the status via mouse hover on the led\n4.Click Restart System, check the status via mouse hover on the led after FW boot up",
+        "expected result": "in step3&4, the led show green, and the detail show like \"\"Success 8 times, last at 13s ago\"\"",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC16": {
+        "id": "TC16",
+        "title": "[Func]Verify \"\"Update URL Period\"\" status and details show correct after export and impor prefs",
+        "steps": "1.Configure wan interface as auto mode, with interface ID configured ::1:1:1:1\n2.Click Add Interface, click 4to6Tunnel Interface,\nTunnel Type: v6Plus Static IP Address Service\nName: v6Plus\nBound to: select the WAN interface configured in step 1\nLocal IPv6 Address: select \"\"Use Primary IPv6 Address\"\"\nBR IPv6 Address: select \"\"Configure Static Address\"\" and fill with the BR specified by ISP\n3.Go to advanced page, Local IPv4 Address: fill with the \"\"v6 plus static IP\"\" specified by ISP, the default value is 192.0.0.2\nUpdate URL: http://[2001:470:80b7:896:250:56ff:feb4:e631]\nUpdate URL Period: 43200\ncheck the status via mouse hover on the led\n4.Export prefs, remove the parameter of Update URL and Update URL Period\n5.Import prefs, check the configuration and status after FW boot up",
+        "expected result": "in step3,the led show green, and the detail show like \"\"Success 8 times, last at 13s ago\"\"\nin step5,all configuration are remained and the led show green, the led's detail show like \"\"Success 8 times, last at 13s ago\"\"",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC19": {
+        "id": "TC19",
+        "title": "[Func]Verify LAN PC can access the IPv6 internet via  \"\"v6Plus Static IP Address Service\"\" tunnel",
+        "steps": "1.Click \"\"Add Interface\"\" on interface page, choose \"\"Add 4to6 Tunnel Interface\"\"\n2.Choose \"\"v6Plus Static IP Address Service\"\" for \"\"Tunnel Type\"\", bound to X1\n3.Choose \"\"Use Primary IPv6 Address\"\" for \"\"Local IPv6 Address\"\", config peer BR address\n4.Set the TunnelInterface as the default GW in IPv4 routing table\n5.Add NAT, any translate to tunnel interface IP, out interface is tunnel interface, make the NAT priority high(must higher than the default NAT)\n6.PC connect X0, only have IPv4 address, ping IPv4 address on WAN subnet",
+        "expected result": "in step6, Ping traffic pass successfully.",
+        "priority": "Sanity",
+        "type": "Functional"
+    },
+    "TC20": {
+        "id": "TC20",
+        "title": "[Func]Verify LAN PC still access the IPv6 internet via  \"\"v6Plus Static IP Address Service\"\" tunnel after restart FW",
+        "steps": "1.Click \"\"Add Interface\"\" on interface page, choose \"\"Add 4to6 Tunnel Interface\"\"\n2.Choose \"\"v6Plus Static IP Address Service\"\" for \"\"Tunnel Type\"\", bound to X1\n3.Choose \"\"Use Primary IPv6 Address\"\" for \"\"Local IPv6 Address\"\", config peer BR address\n4.Set the TunnelInterface as the default GW in IPv4 routing table\n5.Add NAT, any translate to tunnel interface IP, out interface is tunnel interface, make the NAT priority high(must higher than the default NAT)\n6.PC connect X0, only have IPv4 address, ping IPv4 address on WAN subnet\n7.Click Restart System, repeat step6",
+        "expected result": "in step6&7, Ping traffic pass successfully.",
+        "priority": "Sanity",
+        "type": "Functional"
+    },
+    "TC22": {
+        "id": "TC22",
+        "title": "[Func]Verify the correct IPv6 address chosen as the primary address to estabish  \"\"v6Plus Static IP Address Service\"\" tunnel",
+        "steps": "1.Config X1 as static mode, ip 2001:470:80b7:8ac:a:b:c:d, and enable \"\"Enable Stateless Address Autoconfiguration\"\", \"\"Interface Identifier\"\" is not set, X1 will show \n2001:470:80b7:8ac:a:b:c:d/64 and 2001:470:80b7:8ac:1ac2:41ff:fe8a:2035/64\n2.Click \"\"Add Interface\"\" on interface page, choose \"\"Add 4to6 Tunnel Interface\"\", choose \"\"v6Plus Static IP Address Service\"\" for \"\"Tunnel Type\"\", bound to X1, choose \"\"Use Primary IPv6 Address\"\" for \"\"Local IPv6 Address\"\", config peer BR address\n3.Set the TunnelInterface as the default GW in IPv4 routing table\n4.Add NAT, any translate to tunnel interface IP, out interface is tunnel interface, make the NAT priority high(must higher than the default NAT)\n5.Capture packet, check try to establish 4to6 tunnel via 2001:470:80b7:8ac:a:b:c:d\n6.Config X1 \"\"Interface Identifier\"\": \"\"::1:1:1:1\"\", verify X1 became \n2001:470:80b7:8ac:a:b:c:d/64 and 2001:470:80b7:8ac:1:1:1:1/64\n7.Capture packet, check try to establish 4to6 tunnel via 2001:470:80b7:8ac:1:1:1:1\n8.PC connect X0, only have IPv4 address, ping IPv4 address on WAN subnet, ping traffic pass successfully.",
+        "expected result": "see steps",
+        "priority": "Smoke",
+        "type": "Functional"
+    },
+    "TC17": {
+        "id": "TC17",
+        "title": "[Func]Verify \"\"Update URL Period\"\" function",
+        "steps": "1.Configure wan interface as auto mode, with interface ID configured ::1:1:1:1\n2.Click Add Interface, click 4to6Tunnel Interface,\nTunnel Type: v6Plus Static IP Address Service\nName: v6Plus\nBound to: select the WAN interface configured in step 1\nLocal IPv6 Address: select \"\"Use Primary IPv6 Address\"\"\nBR IPv6 Address: select \"\"Configure Static Address\"\" and fill with the BR specified by ISP\n3.Go to advanced page, Local IPv4 Address: fill with the \"\"v6 plus static IP\"\" specified by ISP, the default value is 192.0.0.2\nUpdate URL: http://[2001:470:80b7:896:250:56ff:feb4:e631]\nUpdate URL Period: 0\nCheck packet monitor\n4.Change Update URL Period to 3, check packet monitor\n5.Change Update URL Period to 43200, check packet monitor",
+        "expected result": "in step3, only send the http request once \nin step4, send the http request every 3 minutes\nin step5, send the http request every 43200 minutes",
+        "priority": "Smoke",
+        "type": "Functional"
+    },
+    "TC06": {
+        "id": "TC06",
+        "title": "[GUI]Verify \"\"v6Plus Static IP Address Service\"\" type shown in the dropdown list when add 4to6 tunnel interface",
+        "steps": "1.Click \"\"Add Interface\"\" on interface page\n2.Choose \"\"Add 4to6 Tunnel Interface\"\"\n3.Check dropdown list of \"\"Tunnel Type\"\"",
+        "expected result": "in step3, \"\"v6Plus Static IP Address Service\"\" show",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC21": {
+        "id": "TC21",
+        "title": "[Func]Verify LAN PC still access the IPv6 internet via \"\"v6Plus Static IP Address Service\"\" tunnel after export and import prefs",
+        "steps": "1.Click \"\"Add Interface\"\" on interface page, choose \"\"Add 4to6 Tunnel Interface\"\"\n2.Choose \"\"v6Plus Static IP Address Service\"\" for \"\"Tunnel Type\"\", bound to X1\n3.Choose \"\"Use Primary IPv6 Address\"\" for \"\"Local IPv6 Address\"\", config peer BR address\n4.Set the TunnelInterface as the default GW in IPv4 routing table\n5.Add NAT, any translate to tunnel interface IP, out interface is tunnel interface, make the NAT priority high(must higher than the default NAT)\n6.PC connect X0, only have IPv4 address, ping IPv4 address on WAN subnet\n7.Export prefs, change the peer BR address, delete the NAT policy\n8.Im port the prefs, repeat step6",
+        "expected result": "in step6, Ping traffic pass successfully.\nin step8, all the previous configuration are back and ping successfully.",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC07": {
+        "id": "TC07",
+        "title": "[CLI]Verify \"\"v6Plus Static IP Address Service\"\" tunnel can be set via CLI",
+        "steps": "config(18C2418A2034)# tunnel-interface 4to6 JPIX \n(add-tunnel-interface[JPIX])# \n(add-tunnel-interface[JPIX])# type v6plus \n(add-v6plus-tunnel[JPIX])# local-ipv4 192.0.0.10\n(add-v6plus-tunnel[JPIX])# bound-to interface X1\n(add-v6plus-tunnel[JPIX])# local dynamic \n(add-v6plus-tunnel[JPIX])# remote ipv6 2001:470:80b7:896:1:2:3:4 \n(add-v6plus-tunnel[JPIX])# commit\n% Applying changes...\n% Status returned processing command:\n    commit\n% Changes made.\n(edit-v6plus-tunnel[JPIX])# sho current-config \n% No v6plus Tunnel Interface changes made.\n(edit-v6plus-tunnel[JPIX])# exi\n(edit-tunnel-interface[JPIX])# sho cu\n(edit-tunnel-interface[JPIX])# sho current-config \n    type v6plus\n        local-ipv4 192.0.0.10\n        bound-to interface X1\n        local dynamic\n        remote ipv6 2001:470:80b7:896:1:2:3:4\n        exit\n\n    flow-reporting\n    fragment-packets\n    no ignore-df-bit\n    send-icmp-fragmentation\n    no comment",
+        "expected result": "Check GUI, JPIX tunnel is added successfully.",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC18": {
+        "id": "TC18",
+        "title": "Verify v6Plus Tunnel interface include Auto Update URL show correctly on TSR.",
+        "steps": "1.Configure wan interface as auto mode, with interface ID configured ::1:1:1:1\n2.Click Add Interface, click 4to6Tunnel Interface,\nTunnel Type: v6Plus Static IP Address Service\nName: JPIX\nBound to: select the WAN interface configured in step 1\nLocal IPv6 Address: select \"\"Use Primary IPv6 Address\"\"\nBR IPv6 Address: select \"\"Configure Static Address\"\" and fill with the BR specified by ISP\n3.Go to advanced page, Local IPv4 Address: fill with the \"\"v6 plus static IP\"\" specified by ISP, the default value is 192.0.0.2\nUpdate URL: http://[2001:470:80b7:896:250:56ff:feb4:e631]\nUpdate URL Period: 43200\n4.Download TSR",
+        "expected result": "in TSR, the info shows:\nInterface Name                                  : JPIX                            \nInterface is Portshield Host    : No                              \nInterface is Nativebridge Host:\t\t\tNo\nWire Mode                                       : 0                               \nWire Mode Type                                  : None                            \nWire Mode Paired Interface                      : None                            \nWire Mode Paired Interface Zone                 : Unassigned                      \nWire Mode Fail to Wire                          : 0                               \nWire Mode Link State Propagation                : 0                               \nWire Mode Disable Stateful Inspection           : 0                               \nWire Mode Restrict analysis at resource limit   : 0                               \nWire Mode Bypass on Malfunction                 : No                              \nPaired Interface Link Aggregation Port          : 0    -1   -1   -1  \nComment                                         :                                 \nLink Status: UP       Value   : 1       \nPort Status                     : UP\nLink Type        :other            Value           : 131     \nLink Speed and Mode             : Interface Up                    \nLink Ability                    : 0x0 = \t\n\t\t\t\t\t\t\t   Ethernet Unsupported\nConfig MAC                                      : FF:FF:FF:FF:FF:FF\nRuntime MAC                                     : 00:00:00:00:00:00\nmacOverride                                     : No                              \nMTU                                             : 1460                            \nEffective MTU                                   : 1460                            \nUser-configured MTU                             : 1500                            \nZone  : WAN    Handle: 2      Type  : 0     \n\n[IPv4 Settings]\nIP Address                                      : 192.0.0.10\nNetwork                                         : 192.0.0.0\nNetwork Mask                                    : 255.255.255.0\nFQND-assignment                                 : \nConfig MAC                                      : FF:FF:FF:FF:FF:FF\nRuntime MAC                                     : 00:00:00:00:00:00\nmacOverride                                     : No\nMTU                                             : 1460                            \nEffective MTU                                   : 1460                            \nUser-configured MTU                             : 1500                            \nUse Routed Mode                                 : No                              \nNAT Policy out/in interface                     : -1                              \nFragment non-VPN packets                        : Yes                             \nIgnore don't frag bit                           : No                              \nSend ICMP redirect for Frag needed              : No                              \nARP proxy-management PCs                        : No                              \nEgress Bandwidth Mgt Enabled                    : No                              \nKbps available for Egress Bandwidth Mgt         : 384.000000                      \nIngress Bandwidth Mgt Enabled                   : No                              \nKbps available for Ingress Bandwidth Mgt        : 384.000000                      \nEnable Auto-Discovery of SonicWall Switches     : No                              \nEnable Swflow on Interface                      : Yes                             \nEnable multicast on Interface                   : No                              \nSend pkts w/802.1 tags if policy allows         : No                              \nEnable Asymmetric Route Support                 : No                              \nExclude from Route Advertisement                : No                              \nManagement Interface                            : No                              \nIfVirtual tag value                             : 0x00000000\nEnable Default 802.1p CoS                       : No                              \nDefault 802.1p CoS value                        : 0x00000000\nInterface http Management                       : No                              \nInterface https Management                      : No                              \nInterface ssh Management                        : No                              \nInterface ping Management                       : No                              \nInterface snmp Management                       : No                              \nInterface http User Login                       : No                              \nInterface https User Login                      : No                              \nInterface http Redirect Rule                    : Yes                             \nInterface add DHCP Lease                        : No                              \nNICL Status                                     : 1\nNICL Interval                                   : 0\nNICL ID                                         : 0\nNICL Time                                       : 01/00/1900 00:00:00.000\nFailover Group                                  : 0\nTunnel type                                     : v6Plus\nBound Interface                                 : X1\nLocal IPv6 Addr Mode                            : Use Primary IPv6 Address\nCurrent Local IPv6 Address                      : 2001:470:80b7:8ac:1:1:1:1\nRemote IPv6 Addr Mode                           : Static Address\nManual Remote IPv6 Addr                         : 2001:470:80b7:896:1:2:3:4\nUpdate URL                                      : http://[2001:470:80b7:896:250:56ff:feb4:e631]\nUpdate URL Period (minutes)                     : 43200\nUpdate URL Info                                 : last at 138 seconds before, success for 1 times\nGateway MAC                                     : 00:00:00:00:00:00\nGateway IP                                      : 0.0.0.0\ndnsServer1                                      : 0.0.0.0\ndnsServer2                                      : 0.0.0.0\ndnsServer3                                      : 0.0.0.0\nWAN Mode: Static IP  Value   : 2       \nWAN Mode State: Started   Value   : 0 \n",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "SOSAIOT-TC-57720": {
+        "id": "SOSAIOT-TC-57720",
+        "title": "[HA]Verify v6Plus Tunnel interface include Auto Update URL works well on HA setup",
+        "steps": "1.Establish HA setup\n2.Configure wan interface as static mode\n2.Click Add Interface, click 4to6Tunnel Interface,\nTunnel Type: v6Plus Static IP Address Service\nName: JPIX\nBound to: select the WAN interface configured in step 1\nLocal IPv6 Address: select \"\"Use Primary IPv6 Address\"\"\nBR IPv6 Address: select \"\"Configure Static Address\"\" and fill with the BR specified by ISP\n3.Go to advanced page, Local IPv4 Address: fill with the \"\"v6 plus static IP\"\" specified by ISP, the default value is 192.0.0.2\nUpdate URL: http://[2001:470:80b7:896:250:56ff:feb4:e631]\nUpdate URL Period: 43200\n4.Set the TunnelInterface as the default GW in IPv4 routing table\n5.Add NAT, any translate to tunnel interface IP, out interface is tunnel interface, make the NAT priority high(must higher than the default NAT)\n6.PC connect X0, only have IPv4 address, ping IPv4 address on WAN subnet\n7.Force failove HA, repeat step6",
+        "expected result": "in step6&7, Ping traffic pass successfully.\n\n",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC12": {
+        "id": "TC12",
+        "title": "[Func]Verify JPIX v6Plus tunnel interface can be added successful on the GUI",
+        "steps": "1.Click \"\"Add Interface\"\" on interface page, choose \"\"Add 4to6 Tunnel Interface\"\"\n2.Choose \"\"v6Plus Static IP Address Service\"\" for \"\"Tunnel Type\"\", bound to X1\n3.Choose \"\"Use Primary IPv6 Address\"\" for \"\"Local IPv6 Address\"\", config peer BR address, click OK\n",
+        "expected result": "it can be added successfully",
+        "priority": "Smoke",
+        "type": "Functional"
+    },
+    "TC13": {
+        "id": "TC13",
+        "title": "[Func]Verify JPIX v6Plus tunnel interface can be edit successful on the GUI",
+        "steps": "1.Click \"Add Interface\" on interface page, choose \"Add 4to6 Tunnel Interface\"\n2.Choose \"\"v6Plus\" Static IP Address Service\"\" for \"Tunnel Type\", bound to X1\n3.Enter name \"JPIX\"\n4.Choose \"Use Primary IPv6 Address\" for \"Local IPv6 Address\", config peer BR address, click OK\n5.Click (Link: http://5.Click )  configuration icon of \"JPIX\", change name to \"JPIX_v6Plus\", click OK",
+        "expected result": "The name is updated successfully.",
+        "priority": "Sanity",
+        "type": "Functional"
+    },
+    "TC14": {
+        "id": "TC14",
+        "title": "[Func]Verify JPIX v6Plus tunnel interface can be deleted successful on the GUI",
+        "steps": "",
+        "expected result": "",
+        "priority": "Sanity",
+        "type": "Functional"
+    },
+    "TC08": {
+        "id": "TC08",
+        "title": "[CLI]Verify JPIX v6Plus tunnel interface can be added successfu",
+        "steps": "config(18C2418A2034)# tunnel-interface 4to6 JPIX \n(add-tunnel-interface[JPIX])# type v6plus \n(add-v6plus-tunnel[JPIX])# bound-to interface X1 \n(add-v6plus-tunnel[JPIX])# local dynamic \n(add-v6plus-tunnel[JPIX])# remote ipv6 \n(add-v6plus-tunnel[JPIX])# remote ipv6 380::1\n(add-v6plus-tunnel[JPIX])# commit\n% Applying changes...\n% Status returned processing command:\n    commit\n% Changes made.",
+        "expected result": "The tunnel \"JPIX\" shows when check GUI.",
+        "priority": "Sanity",
+        "type": "Functional"
+    },
+    "TC09": {
+        "id": "TC09",
+        "title": "[CLI]Verify JPIX v6Plus tunnel interface can be modified successful ",
+        "steps": "config(18C2418A2034)# tunnel-interface 4to6 JPIX \n(edit-tunnel-interface[JPIX])# type v6plus \n(edit-v6plus-tunnel[JPIX])# remote ipv6 2001::1\n(edit-v6plus-tunnel[JPIX])# commit\n% Applying changes...\n% Status returned processing command:\n    commit\n% Changes made.\n               ",
+        "expected result": "The remote IP is updated the new one when check on GUI.",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC10": {
+        "id": "TC10",
+        "title": "[CLI]Verify JPIX v6Plus tunnel interface can be deleted successful ",
+        "steps": "1.Click \"\"Add Interface\"\" on interface page, choose \"\"Add 4to6 Tunnel Interface\"\"\n2.Choose \"\"v6Plus Static IP Address Service\"\" for \"\"Tunnel Type\"\", bound to X1\n3.Choose \"\"Use Primary IPv6 Address\"\" for \"\"Local IPv6 Address\"\", config peer BR address\n4.Set the TunnelInterface as the default GW in IPv4 routing table\n5.Add NAT, any translate to tunnel interface IP, out interface is tunnel interface, make the NAT priority high(must higher than the default NAT)\n6.PC connect X0, only have IPv4 address, ping IPv4 address on WAN subnet\n7.Delete the tunnel interface",
+        "expected result": "It can be deleted successfully and PC traffic will failed after the tunnel deleted",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    },
+    "TC11": {
+        "id": "TC11",
+        "title": "[CLI]Verify it can correct display the JPIX_v6Plus information when I show current-config under no-config mode",
+        "steps": "1.Config v6Plus tunnel interface on GUI without update URL settings.\n2.Enter the command \"sho tunnel-interface 4to6 JPIX\" on CLI.\n3.Add update url settings on GUI.\n4.Enter the command \"sho tunnel-interface 4to6 JPIX\" on CLI again.\n\n\n",
+        "expected result": "admin@18C2418A2034> sho tunnel-interface 4to6 JPIX \ntunnel-interface 4to6 JPIX\n    type v6plus\n        local-ipv4 192.0.0.2\n        bound-to interface X1\n        local dynamic\n        remote ipv6 380::1\n        update-url 100::1\n        update-url-period 60\n        exit\n    flow-reporting\n    fragment-packets\n    no ignore-df-bit\n    send-icmp-fragmentation\n    no comment\n    exit",
+        "priority": "Full_Regression",
+        "type": "Functional"
+    }
+}

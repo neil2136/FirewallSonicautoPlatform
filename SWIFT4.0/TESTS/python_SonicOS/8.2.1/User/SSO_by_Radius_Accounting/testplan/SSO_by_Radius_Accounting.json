@@ -1,0 +1,233 @@
+{
+   "33" : {
+      "steps" : "  1. On the User->Settings page, click on the \"Configure SSO...\" button. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. Click Radius Accounting tab, add server clients and change some attributes and OK.\n  3. Go to System->Diagnostics, click \"Download Report\" button.\n  4. In the report, find radius accounting part. Compare the information with GUI configuration.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "33",
+      "title" : "Radius SSO TSR",
+      "result" : "  Radius accounting information in the report is the same as the configured on GUI."
+   },
+   "32" : {
+      "steps" : "  1. On the User->Settings page, click on the \"Configure SSO...\" button. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the RADIUS Accounting tab of the SonicWALL SSO Agent Authentication Configuration window, click Accounting Clients tab, then click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab.\n  3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window.\n  4. Repeat the previous step some times. Click OK to close the window.\n  5. Export preferences.\n  6. Factory default firewall or modify radius accounting related settings.\n  7. Import preference.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "32",
+      "title" : "Preference input with Radius SSO configuration",
+      "result" : "  1 Export and import is validated.\n  2 Configuration keeps intact."
+   },
+   "11" : {
+      "steps" : "  1. From the Client, sending a Start accounting request.\n  2. On the Users->Status page, no user will be login.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, port and other attributes, itc..\n  2. On Sonicwall, enable SSO RADIUS Accounting, add RADIUS Client with a diffrencent IP from the  RADIUS Client using in step 1, with the same shared secrets, itc..",
+      "id" : "11",
+      "title" : "Radius client start from a non-configured IP",
+      "result" : "  Verify user login failed"
+   },
+   "21" : {
+      "steps" : "  1. Login in Aventail product with user like qa.\n  2. On the Users->Status page, qa will display.",
+      "initial" : "  Aventail Product  --- X1 Sonicwall\n  1. On Aventail product, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets, set User Name Format to be SonicWALL Aventail itc..",
+      "id" : "21",
+      "title" : "User-Name attribute format: SonicWALL Aventail",
+      "result" : "  Login user on Users->Status page will display with user name."
+   },
+   "7" : {
+      "steps" : "  1. Have an client configured in the RADIUS Accounting/Accounting Clients tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click on IP address in the client entry. Change the IP address.\n  3. Modify other settings of the client the same way. Click OK in the SSO Agent Authentication Configuration window.\n  4. Open the window and look at the client entry in the RADIUS Accounting/Accounting Clients tab.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "7",
+      "title" : "Edit RADIUS accounting client in list",
+      "result" : "  The client entry shows modified IP address, User Name Format , Proxy Forward To, Interim Updt Timeout ."
+   },
+   "26" : {
+      "steps" : "  Not in use",
+      "initial" : "  Not in use",
+      "id" : "26",
+      "title" : "App Rules with Radius SSO",
+      "result" : "  Not in use"
+   },
+   "2" : {
+      "steps" : "  1. On the User->Settings page, click on the \"Configure SSO...\" button. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. Notice Test tab does't appear on SSO Agent Authentication Configuration page.\n  3. In the SSO Agents tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"General Settings\" tab.\n  4. Click the checkbox of \"Enable SSO agent authentication\". Click Apply.\n  5. There's a Test tab appear on SSO Agent Authentication Configuration page",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "2",
+      "title" : "Test tab not show if Enable SSO agent authentication not checked",
+      "result" : "  When the checkbox of \"Enable SSO agent authentication\" is disabled, Test tab won't appear on SSO Agent Authentication Configuration page. When \"Enable SSO agent authentication\" is checked, there's a new tab named Test appears."
+   },
+   "17" : {
+      "steps" : "  1. From the Client, sending a Start accounting request.\n  2. On the Users->Status page, a user with name Auth. by SSO/RADIUS Acct will display.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets, set User Name Format to be User-name itc..",
+      "id" : "17",
+      "title" : "User-Name attribute format: username",
+      "result" : "  Login user on Users->Status page will display with user name."
+   },
+   "22" : {
+      "steps" : "  1. From the Client, sending a Start accounting request user like lqian@myDomain.\n  2. On the Users->Status page, lqian will display.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets, set User Name Format to be other with format %[^@]%s, itc..",
+      "id" : "22",
+      "title" : "User-Name attribute format: Other",
+      "result" : "  Login user on Users->Status page will display with user name, mouse over the user, you'll see myDomain\\lqian."
+   },
+   "1" : {
+      "steps" : "  1. On the User->Settings page, click on the \"Configure SSO...\" button. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the SSO Agents tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"General Settings\" tab.\n  3. Click the checkbox of \"Enable SSO agent authentication\". Click Apply and close the window.\n  4. Open the SonicWALL SSO Agent Authentication Configuration window and view SSO Agents/General Settings tab.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "1",
+      "title" : "SSO Agents tab: Enable SSO agent authentication",
+      "result" : "  The checkbox of \"Enable SSO agent authentication\" can be clicked and enabled."
+   },
+   "18" : {
+      "steps" : "  1. From the Client, sending a Start accounting request using user like myDomain\\lqian.\n  2. On the Users->Status page,  lqian will display.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets, set User Name Format to be Domain\\user-name itc..",
+      "id" : "18",
+      "title" : "User-Name attribute format: domain\\user-name",
+      "result" : "  Login user on Users->Status page will display with user name, mouse over the user, you'll see myDomain\\lqian."
+   },
+   "30" : {
+      "steps" : "  Not in use",
+      "initial" : "  Not in use",
+      "id" : "30",
+      "title" : "App Control Advanced with Radius SSO",
+      "result" : "  Not in use"
+   },
+   "23" : {
+      "steps" : "  1. From the Client, sending a Start accounting request.\n  2. On Sonicwall A, go to Users->Status page, a user with name Auth. by SSO/RADIUS Acct will display.\n  3. On Sonicwall B, go to Users->Status page, a user with name Auth. by SSO/RADIUS Acct will display.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall A\n  --- X1 Sonicwall B\n  1. On RADIUS Client, add the (Sonicwall A)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall A, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets, set User Name Format to be User-name itc.. On Forwarding tab, add Sonicwall B X1 IP and shared secret.\n  3. On Sonicwall B, add the (Sonicwall A)RADIUS Client's IP, shared secrets.",
+      "id" : "23",
+      "title" : "Radius accounting forwarding",
+      "result" : "  RADIUS accounting messages can be forwarded on to other configured RADIUS accounting servers and user login information will display in Users->Status page."
+   },
+   "13" : {
+      "steps" : "  1. From the Client, sending a Start accounting request\n  2. On the Users->Status page, a user will be login.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets,  port other than the default one and other attributes, itc..\n  2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same port and  shared secrets, itc..",
+      "id" : "13",
+      "title" : "Radius client start from non-default port but same with SSO configured",
+      "result" : "  Verify user login on User-Status page"
+   },
+   "16" : {
+      "steps" : "  1. From the Client, sending a Start accounting request.\n  2. On the Users->Status page, the user won't be login.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, disable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets, itc..",
+      "id" : "16",
+      "title" : "DisableSSO by Radius",
+      "result" : "  User won't be login."
+   },
+   "29" : {
+      "steps" : "  Not in use",
+      "initial" : "  Not in use",
+      "id" : "29",
+      "title" : "Anti-Spyware with Radius SSO",
+      "result" : "  Not in use"
+   },
+   "6" : {
+      "steps" : "  1. On the User->Settings page, click on the \"Configure SSO...\" button. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the RADIUS Accounting tab of the SonicWALL SSO Agent Authentication Configuration window, click Accounting Clients tab, then click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab.\n  3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window.\n  4. Repeat the previous step 15 more times. Click OK to close the window.\n  5. Open the SonicWALL SSO Agent Authentication Configuration window and view the RADIUS Accounting/Accounting Clients tab. Attempt to add one more client entry.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "6",
+      "title" : "Add maximum RADIUS accounting client",
+      "result" : "  16 clients are shown in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window. The attempt to add the 17-th client entry fails. There should be an error message in the Status bar(however there isn't now. I'll update the case later)."
+   },
+   "27" : {
+      "steps" : "  Not in use",
+      "initial" : "  Not in use",
+      "id" : "27",
+      "title" : "CFS with Radius SSO",
+      "result" : "  Not in use"
+   },
+   "25" : {
+      "steps" : "  1. On the User->Settings page, click on the \"Configure SSO...\" button. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the RADIUS Accounting tab of the SonicWALL SSO Agent Authentication Configuration window, click Accounting Clients tab, then click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab.\n  3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window.\n  4. Go t o Firewall->Access Rules page, check WAN to WAN access rules.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "25",
+      "title" : "Access rules with Radius SSO user",
+      "result" : "  There's an auto-added access rule with source \"RADIUS Accounting Clients\", destination \"WAN Interface IP\", service \"RADIUS Accounting\" and allow all."
+   },
+   "28" : {
+      "steps" : "  Not in use",
+      "initial" : "  Not in use",
+      "id" : "28",
+      "title" : "IPS with Radius SSO",
+      "result" : "  Not in use"
+   },
+   "3" : {
+      "steps" : "  1. On the User->Settings page, click on the \"Configure RADIUS\" button. The RADIUS configuration page opens.\n  2. In the Primary Server area, input name or IP address in the \"Name or IP Address\" entry, input password in the \"Shared Secret\" entry, leave port number as it is. Click \"OK\" button\n  3. On the User->Settings page, click on the \"Configure SSO...\" button. The SonicWALL SSO Agent Authentication Configuration opens.\n  4. Notice the checkbox of \"Enable SSO agent authentication\" is disabled on SSO Agents/General Settings tab.\n  5. Click NTLM tab, from the menu list besides \"Use NTLM to authenticate HTTP traffic\", Disabled/Enabled shows.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "3",
+      "title" : "NTLM tab : If \u00a1\u00aeEnable SSO agent authentication\u00a1\u00af not checked, Use NTLM to authenticate HTTP traffic showed Disabled/Enabled",
+      "result" : "  If \u00a1\u00aeEnable SSO agent authentication\u00a1\u00af checked, Use NTLM to authenticate HTTP traffic showed Disabled/Before SSO/Only NTLM"
+   },
+   "9" : {
+      "steps" : "  1. Have at least one client configured in the RADIUS Accounting/Accounting Clients tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click x icon (Delete) in the client entry. Click OK to close the window.\n  3. Open the SonicWALL SSO Agent Authentication Configuration window and view the RADIUS Accounting/Accounting Clients.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "9",
+      "title" : "Delete RADIUS accounting client",
+      "result" : "  The RADIUS Accounting/Accounting Clients tab doesn't show the client that was deleted in step2."
+   },
+   "12" : {
+      "steps" : "  1. From the Client, sending a Start accounting request.\n  2. On the Users->Status page, no user will be login.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, port and other attributes, itc..\n  2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same shared secrets,different port, itc..",
+      "id" : "12",
+      "title" : "Radius client start from port different from SSO",
+      "result" : "  Verify user login failed"
+   },
+   "14" : {
+      "steps" : "  1. From the Client, sending a Start accounting request.\n  2. On the Users->Status page, a user will be login.\n  3. From the Client, sending a Stop accounting request.\n  4. On the Users->Status page, a user will be logout.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same shared secrets, itc..",
+      "id" : "14",
+      "title" : "Radius client stop of login user",
+      "result" : "  Verify user be logout"
+   },
+   "15" : {
+      "steps" : "  1. On System->Packet Moniter page, click on \"Start Capture\" button.\n  2.  From the Client, sending a Stop accounting request.\n  2. On System->Packet Moniter page, a UDP packet from client to FW is dropped.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, port and other attributes, itc..\n  2. On Sonicwall, enable SSO RADIUS Accounting, add RADIUS Client with a diffrencent IP from the  RADIUS Client using in step 1, with the same shared secrets, itc..",
+      "id" : "15",
+      "title" : "Radius client stop from client which not login",
+      "result" : "  Verify FW ignore the message"
+   },
+   "20" : {
+      "steps" : "  1. From the Client, sending a Start accounting request user like lqian@myDomain.\n  2. On the Users->Status page, lqian will display.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets, set User Name Format to be user-name@domain itc..",
+      "id" : "20",
+      "title" : "User-Name attribute format: user-name@domain",
+      "result" : "  Login user on Users->Status page will display with user name, mouse over the user, you'll see myDomain\\lqian."
+   },
+   "8" : {
+      "steps" : "  1. Have an client configured in the RADIUS Accounting/Accounting Clients tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click the Edit icon for the client entry. The View/Edit pane gets displayed.\n  3. Make some changes in the Settings tab of View/Edit pane, say modify Client host name or IP address, Shared Secret. Click Apply in the SSO Agent Authentication Configuration window.\n  4. Make some changes in the RADIUS tab of View/Edit pane, say modify User-Name attribute format. Click Apply in the SSO Agent Authentication Configuration window. \n  5. Make some changes in the Forwarding tab of View/Edit pane, say Server IP, Port, Shared Secret. Click OK in the SSO Agent Authentication Configuration window.\n  6. Open the window and look at the client entry.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "8",
+      "title" : "Edit RADIUS accounting client by click the configure button",
+      "result" : "  The client entry shows modified information."
+   },
+   "4" : {
+      "steps" : "  1. Load Firmware and boot with factory default settings\n  2. Login FW through default X0\n  3. On Users->Settings page, there're four Single-sign-on methods: SSO Agent, Terminal Services Agent, Browser NTLM Authentication and RADIUS Accounting. The status of them is disabled by default.\n  4. Click one time on the icon beside SSO Agent, Terminal Services Agent, Browser NTLM Authentication and RADIUS Accounting, the icon becomes cross\u00a3\u00a8 \u00a3\u00a9.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "4",
+      "title" : "User-Settings page SSO Agent/Browser NTLM auth/TSA/Radius status",
+      "result" : "  Status of SSO Agent, Terminal Services Agent, Browser NTLM Authentication and RADIUS Accounting on Users->Settings page is disabled by default."
+   },
+   "24" : {
+      "steps" : "  1. From the Client, sending some Start and Stop accounting requests.\n  2. On RADIUS Accounting tab, mouse over the button beside accounting client config button, RADIUS accounting client statistics page display, check the information.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets, set User Name Format to be User-name itc..",
+      "id" : "24",
+      "title" : "Radius accounting client statistics",
+      "result" : "  RADIUS accounting client statistics page records all the related information."
+   },
+   "10" : {
+      "steps" : "  1. From the Client, sending a Start accounting request.\n  2. On the Users->Status page, a user will be login.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same shared secrets, itc..",
+      "id" : "10",
+      "title" : "Radius client start",
+      "result" : "  Verify user login on User-Status page"
+   },
+   "19" : {
+      "steps" : "  1. From the Client, sending a Start accounting request user like myDomain/lqian.\n  2. On the Users->Status page, lqian will display.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets, set User Name Format to be Domain/user-name itc..",
+      "id" : "19",
+      "title" : "User-Name attribute format: domain/user-name",
+      "result" : "  Login user on Users->Status page will display with user name, mouse over the user, you'll see myDomain\\lqian."
+   },
+   "31" : {
+      "steps" : "  1. From the Client, sending a Start accounting request.\n  2. Go to Log-View page, there's a log with message saying user authentication by SSO via RADIUS Accounting.\n  3. From the Client, sending a Stop accounting request.\n  4 Go to Log-View page, there's a log with message saying user logout reported by RADIUS accounting.",
+      "initial" : "  RADIUS Client --- X1 Sonicwall\n  1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..\n  2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets, set User Name Format to be User-name itc..",
+      "id" : "31",
+      "title" : "Radius SSO related log",
+      "result" : "  When user login or logout, there're related logs."
+   },
+   "5" : {
+      "steps" : "  1. On the User->Settings page, click on the \"Configure SSO...\" button. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the RADIUS Accounting tab of the SonicWALL SSO Agent Authentication Configuration window, click Accounting Clients tab, then click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab. \n  3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window. \n  4. Repeat the previous step typing a host name in the Host Name or IP Address field. Click Apply and close the window. \n  5. Open the SonicWALL SSO Agent Authentication Configuration window and view the Settings.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "5",
+      "title" : "Add RADIUS accounting client",
+      "result" : "  Two new client entries are displayed in the RADIUS Accounting/Accounting Clients of the SonicWALL SSO Agent Authentication Configuration window. The first client is specified by IP address, the second one by the host name."
+   }
+}

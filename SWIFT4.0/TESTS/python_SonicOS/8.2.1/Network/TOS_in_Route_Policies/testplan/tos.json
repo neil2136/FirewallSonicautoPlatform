@@ -1,0 +1,52 @@
+{
+   "1506054" : {
+      "steps" : "Add a static IPv6 route entry with TOS field and mask set to specific values\nSend IPv6 traffic with traffic class value that matches the TOS value in the entry\nSend IPv6 traffic with No traffic class value\nSend IPv6 traffic with Traffic class value set to other than that present in the entry",
+      "priority" : "  TBD",
+      "atm_id" : "Original ID: 28\nOriginal Title: Add a IPv6 TOS route policy\nOriginal Description: To verify the TOS field and mask works for IPv6 traffic,.",
+      "initial" : "  TBD",
+      "id" : "1506054",
+      "title" : "Add a IPv6 TOS route policy",
+      "description" : "  TBD",
+      "result" : "Ipv6 traffic with traffic class value that matches the TOS value entry should get a hit ont he entry and routed accordingly.\nOther IPv6 traffic should hit the default entry and get routed accordingly"
+   },
+   "1506056" : {
+      "steps" : " 1. Add a router without TOS/mask set \r\n2.Send traffic matching the route parameters without TOS\r\n",
+      "priority" : "TBD",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1506056",
+      "title" : "Add a router without TOS/mask set",
+      "description" : "Original ID: 5\nOriginal Title: Add a router without TOS/mask set\nOriginal Description:",
+      "result" : " the traffic should match the route"
+   },
+   "1506053" : {
+      "steps" : "1.Add three route policies with same route parameters (src,dst,service, metric) different TOS values, route them to three different destination interfaces /gateways\r\n2.Send traffic matching the route parameters with TOS bits set that match the TOS values.\r\n",
+      "priority" : "  TBD",
+      "atm_id" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "1506053",
+      "title" : "multiple policy routes with identical Source-IP, Destination-IP, and Service values, but differing TOS/TOS Mask values",
+      "description" : "Original ID: 2\r\nOriginal Title: multiple policy routes with identical Source-IP, Destination-IP, and Service values, but differing TOS/TOS Mask values\r\nOriginal Description: To verify differentitation of route policies based on TOS values",
+      "result" : "Verify that the  traffic is routed using different routes based on the TOS value"
+   },
+   "1506055" : {
+      "steps" : "1.Add multiple route policies with TOS and mask fields using CLI. \r\n2.Verify the added policies on GUI. \r\n3.Try to modify the added policy using CLI. \r\n4.Try to modify the added policy using GUI.",
+      "priority" : "  TBD",
+      "atm_id" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "1506055",
+      "title" : "Add route policy with TOS field using CLI",
+      "description" :"Original ID: 31\r\nOriginal Title: Add route policy with TOS field using CLI\r\nOriginal Description: Verify CLI addition of route policy with TOS",
+      "result" :  "GUI should reflect the policies added via CLI and vice versa"
+   },
+   "1506052" : {
+      "steps" : "Add a static route entry , with TOS value = 0, 24, FF, 100, - 1\nSet the mask value to : 00,FF,100, AB,",
+      "priority" : "  TBD",
+      "atm_id" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "1506052",
+      "title" : "Boudry test for Tos/Mask",
+      "description" : "Original ID: 1\nOriginal Title: Boudry test for Tos/Mask\nOriginal Description: To verify the boundary values for TOS value and mask fields",
+      "result" : "TOS value should reject any value out of bounds\nTOS mask should reject any value out of bounds"
+   }
+}

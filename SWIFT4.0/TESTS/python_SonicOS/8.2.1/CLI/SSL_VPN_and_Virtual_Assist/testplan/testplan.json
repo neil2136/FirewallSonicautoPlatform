@@ -1,0 +1,51 @@
+{
+   "1514823" : {
+      "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "initial" : "  Result 1: syslog message m=1383 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration failure is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with failed Virtual Assist Settings is correctly displayed.\n  Result 4: Failed configuration changes trigger a SNMP trap and trap number for failed Audit Event is defined as 5610",
+      "id" : "1514823",
+      "title" : "Do a wrong operation in virtual assist from CLI",
+      "result" : "  1.Do a wrong operation in virtual assist.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+   },
+   "1514826" : {
+      "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful SonicPoint/SonicWave L3 Management Default Device Profile settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+      "id" : "1514826",
+      "title" : "Modify Client Settings->SonicPoint/SonicWave L3 Management Default Device Profile->Settings tab from CLI",
+      "result" : "  1.Modify Client Settings->SonicPoint/SonicWave L3 Management Default Device Profile->Settings tab.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+   },
+   "1514820" : {
+      "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "initial" : "  Result 1: syslog message m=1383 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration failure is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with failed SSL VPN Settings is correctly displayed.\n  Result 4: Failed configuration changes trigger a SNMP trap and trap number for failed Audit Event is defined as 5610",
+      "id" : "1514820",
+      "title" : "Do a wrong operation in SSLVPN from CLI",
+      "result" : "  1.Do a wrong operation in SSLVPN.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+   },
+   "1514821" : {
+      "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful SSL VPN settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+      "id" : "1514821",
+      "title" : "Enable SSL VPN Status on Zones from CLI",
+      "result" : "  1. Enable/disable LAN/WAN/DMZ/WLAN/customzone.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+   },
+   "1514825" : {
+      "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful default device profile settings are correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+      "id" : "1514825",
+      "title" : "Modify Client Settings-> Default Device Profile->Settings tab from CLI",
+      "result" : "  1.Modify Client Settings-> Default Device Profile->Settings tab.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+   },
+   "1514824" : {
+      "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful SSL VPN settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+      "id" : "1514824",
+      "title" : "Modify SSL VPN Server Settings from CLI",
+      "result" : "  1.Modify SSL VPN Server Settings.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+   },
+   "1514822" : {
+      "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful Virtual Assist settings is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+      "id" : "1514822",
+      "title" : "Modify general settings in virtual assist from CLI",
+      "result" : "  1.Modify general settings in virtual assist.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+   }
+}

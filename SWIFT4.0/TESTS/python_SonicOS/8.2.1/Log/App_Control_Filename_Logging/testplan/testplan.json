@@ -1,0 +1,212 @@
+{
+   "1519929" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page;3. Add a syslog server (it's located in WAN zone)to receive logs; 4. Generate some NetBios/CIFS traffic through FW, try to get some file by NetBios/CIFS; 5.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519929",
+      "title" : "Verify File name can be logged for NetBios/CIFS protocol  in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "" : {
+      "steps" : "  Initial Setup",
+      "initial" : "  Steps",
+      "id" : null,
+      "title" : "Title",
+      "result" : "  Expected Results"
+   },
+   "1519952" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 3. Generate some SMTP traffic through FW, try to send some file by smtp; 4.Check the log with Message has the Filename is showed in Event Log.",
+      "id" : "1519952",
+      "title" : "Verify File name can be logged for SMTP protocol  in Event log",
+      "result" : "  TBD"
+   },
+   "1519933" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 2.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 3.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 4. Generate some http traffic through FW, try to get some file by http; 5.Check the log with Message has the Filename is showed in Event Log",
+      "id" : "1519933",
+      "title" : "IPv6: Verify File name can be logged for http protocol in Event log",
+      "result" : "  TBD"
+   },
+   "1519951" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 3. Generate some NetBios/CIFS traffic through FW, try to get some file by NetBios/CIFS; 4.Check the log with Message has the Filename is showed in Event Log.",
+      "id" : "1519951",
+      "title" : "Verify File name can be logged for NetBios/CIFS protocol  in Event log",
+      "result" : "  TBD"
+   },
+   "1519935" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 2.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 3.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 4. Generate some NetBios/CIFS traffic through FW, try to get some file by NetBios/CIFS; 5.Check the log with Message has the Filename is showed in Event Log.",
+      "id" : "1519935",
+      "title" : "IPv6: Verify File name can be logged for NetBios/CIFS protocol  in Event log",
+      "result" : "  TBD"
+   },
+   "1519928" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 3.Add a syslog server (it's located in WAN zone)to receive logs 4. Generate some ftp traffic through FW, try to get some file by FTP; 5.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519928",
+      "title" : "Verify File name can be logged for ftp protocol in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519949" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 3. Generate some http traffic through FW, try to get some file by http; 4.Check the log with Message has the Filename is showed in Event Log",
+      "id" : "1519949",
+      "title" : "Verify File name can be logged for http protocol in Event log",
+      "result" : "  TBD"
+   },
+   "1519936" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 2.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 3.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 4. Generate some SMTP traffic through FW, try to send some file by smtp; 5.Check the log with Message has the Filename is showed in Event Log.",
+      "id" : "1519936",
+      "title" : "IPv6:Verify File name can be logged for SMTP protocol  in Event log",
+      "result" : "  TBD"
+   },
+   "1519950" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 3. Generate some ftp traffic through FW, try to get some file by FTP; 4.Check the log with Message has the Filename is showed in Event Log.",
+      "id" : "1519950",
+      "title" : "Verify File name can be logged for ftp protocol in Event log",
+      "result" : "  TBD"
+   },
+   "1519942" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 2.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 3.Check Filename Logging(ID:1580) for Application Control is configured in log setting page;4. Add a syslog server (it's located in WAN zone)to receive logs; 5. Generate some NetBios/CIFS traffic through FW, try to get some file by NetBios/CIFS; 5.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519942",
+      "title" : "IPv6: Verify File name can be logged for NetBios/CIFS protocol  in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519934" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 2.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 3.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 4. Generate some ftp traffic through FW, try to get some file by FTP; 5.Check the log with Message has the Filename is showed in Event Log.",
+      "id" : "1519934",
+      "title" : "IPv6: Verify File name can be logged for ftp protocol in Event log",
+      "result" : "  TBD"
+   },
+   "1519938" : {
+      "steps" : "  TBD",
+      "initial" : "  Check Filename Logging can be disable in App Control page.",
+      "id" : "1519938",
+      "title" : "GUI: disable Filename Logging",
+      "result" : "  Check Filename Logging can be disable in App Control page."
+   },
+   "1519948" : {
+      "steps" : "  TBD",
+      "initial" : "  TSR: Verify 'Enable Filename Logging' is recorded.",
+      "id" : "1519948",
+      "title" : "TSR: Verify 'Enable Filename Logging' is recorded",
+      "result" : "  TSR: Verify 'Enable Filename Logging' is recorded."
+   },
+   "1519953" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 3. Generate some POP3 traffic through FW, try to receive some file by POP3; 4.Check the log with Message has the Filename is showed in Event Log.",
+      "id" : "1519953",
+      "title" : "Verify File name can be logged for POP3 protocol  in Event log",
+      "result" : "  TBD"
+   },
+   "1519945" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page; 3.Add a syslog server (it's located in WAN zone)to receive logs 4. Generate some IMAP traffic through FW, try to transfer some file by IMAP; 5.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519945",
+      "title" : "IPv6: Verify File name can be logged for IMAP protocol  in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519941" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 2.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 3.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 4.Add a syslog server (it's located in WAN zone)to receive logs 5. Generate some ftp traffic through FW, try to get some file by FTP; 6.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519941",
+      "title" : "IPv6: Verify File name can be logged for ftp protocol in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519939" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 2.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 3.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 4. Generate some IMAP traffic through FW, try to transfer some file by IMAP; 5.Check the log with Message has the Filename is showed in Event Log",
+      "id" : "1519939",
+      "title" : "IPv6: Verify File name can be logged for IMAP protocol  in Event log",
+      "result" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 2.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 3.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 4. Generate some IMAP traffic through FW, try to transfer some file by IMAP; 5.Check the log with Message has the Filename is showed in Event Log."
+   },
+   "1519940" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 2.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 3.Check Filename Logging(ID:1580) for Application Control is configured in log setting page;4.Add a syslog server (it's located in WAN zone)to receive logs; 5. Generate some http traffic through FW, try to get some file by http; 5.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519940",
+      "title" : "IPv6: Verify File name can be logged for http protocol in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519955" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page;3.Add a syslog server (it's located in WAN zone)to receive logs; 4. Generate some http traffic through FW, try to get some file by http; 5.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519955",
+      "title" : "Verify File name can be logged for http protocol in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519943" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page;3.Add a syslog server (it's located in WAN zone)to receive logs; 4. Generate some SMTP traffic through FW, try to send some file by smtp; 5.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519943",
+      "title" : "IPv6: Verify File name can be logged for SMTP protocol  in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519946" : {
+      "steps" : "  TBD",
+      "initial" : "  Restart the FW verify it works after it's up.",
+      "id" : "1519946",
+      "title" : "Restart the FW verify it works after it's up",
+      "result" : "  TBD"
+   },
+   "1519932" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page; 3.Add a syslog server (it's located in WAN zone)to receive logs 4. Generate some IMAP traffic through FW, try to transfer some file by IMAP; 5.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519932",
+      "title" : "Verify File name can be logged for IMAP protocol  in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519944" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page;3.Add a syslog server (it's located in WAN zone)to receive logs; 4. Generate some POP3 traffic through FW, try to receive some file by POP3; 5.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519944",
+      "title" : "IPv6: Verify File name can be logged for POP3 protocol  in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519930" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page;3.Add a syslog server (it's located in WAN zone)to receive logs; 4. Generate some SMTP traffic through FW, try to send some file by smtp; 5.Check the log with Message has the Filename is showed in syslog file.",
+      "id" : "1519930",
+      "title" : "Verify File name can be logged for SMTP protocol  in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519947" : {
+      "steps" : "  TBD",
+      "initial" : "  HA environment: Verify File name can be logged when fail over occurs.",
+      "id" : "1519947",
+      "title" : "HA environment: Verify File name can be logged when fail over occurs",
+      "result" : "  TBD"
+   },
+   "1519937" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Set up IPv6 network environment with pc, FW interface, server etc. 2.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 3.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 4. Generate some POP3 traffic through FW, try to receive some file by POP3; 5.Check the log with Message has the Filename is showed in Event Log",
+      "id" : "1519937",
+      "title" : "IPv6: Verify File name can be logged for POP3 protocol  in Event log",
+      "result" : "  TBD"
+   },
+   "1519931" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page;3.Add a syslog server (it's located in WAN zone)to receive logs; 4. Generate some POP3 traffic through FW, try to receive some file by POP3; 5.Check the log with Message has the Filename is showed in syslog file",
+      "id" : "1519931",
+      "title" : "Verify File name can be logged for POP3 protocol  in syslog server(server in WAN zone)",
+      "result" : "  TBD"
+   },
+   "1519927" : {
+      "steps" : "  TBD",
+      "initial" : "  Check Filename Logging can be enable in App Control page.",
+      "id" : "1519927",
+      "title" : "GUI: Enable Filename Logging",
+      "result" : "  Check Filename Logging can be enable in App Control page."
+   },
+   "1519954" : {
+      "steps" : "  TBD",
+      "initial" : "  1.Browse App Control page, Enable App Control,Enable filename Logging,Enable Logging For All Apps; 2.Check Filename Logging(ID:1580) for Application Control is configured in log setting page 3. Generate some IMAP traffic through FW, try to transfer some file by IMAP; 4.Check the log with Message has the Filename is showed in Event Log",
+      "id" : "1519954",
+      "title" : "Verify File name can be logged for IMAP protocol  in Event log",
+      "result" : "  TBD"
+   }
+}

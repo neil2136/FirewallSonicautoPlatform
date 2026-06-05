@@ -1,0 +1,352 @@
+{
+   "1514645" : {
+      "steps" : "  1. Modify a custom CFS action object(Global settings).\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "6a5e772a-12e8-4540-aeba-dc4458522a00",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514645",
+      "title" : "[Content Filter Objects/CFS Action Objects]Modify a custom CFS action object(Global settings)",
+      "description" : "Original ID: 115\nOriginal Title: [Content Filter Objects/CFS Action Objects]Modify a custom CFS action object(Global settings)\nOriginal Description: This case is to verify that when modifying a custom CFS action object, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Modified 'CFS Action Object Id'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Modified 'CFS Action Object Id' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514665" : {
+      "steps" : "  1. Delete all the action objects.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "58d7be37-befa-4309-b2e2-75a07a82fa8a",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514665",
+      "title" : "[Action Objects]Delete all action objects",
+      "description" : "Original ID: 61\nOriginal Title: [Action Objects]Delete all action objects\nOriginal Description: This case is to verify that when deleting all action objects, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with multiple \"Deleted 'Application Firewall Action ID'\" are correctly showed.\n  Result 3: Log message related with mutiple \"Deleted 'Application Firewall Action ID'\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514644" : {
+      "steps" : "  1. Modify an URI list group.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "686dca7d-6b3d-4e90-8d3d-07acd3cea648",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514644",
+      "title" : "[Content Filter Objects/URI List Groups]Modify an URI list group",
+      "description" : "Original ID: 110\nOriginal Title: [Content Filter Objects/URI List Groups]Modify an URI list group\nOriginal Description: This case is to verify that when modifying an URI list group, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with 'CFS URL List Group to Group' are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: 'CFS URL List Group to Group' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514640" : {
+      "steps" : "  1. Modify an email address object.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "fff4559b-1e4b-4310-af22-ebd32d70de46",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514640",
+      "title" : "[Email Address Objects]Modify an email adderss object",
+      "description" : "Original ID: 100\nOriginal Title: [Email Address Objects]Modify an email adderss object\nOriginal Description: This case is to verify that when modifying an email address object, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with 'Application Firewall Email name' are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: 'Application Firewall Email name' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514669" : {
+      "steps" : "  1. Modify an address group.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "3b0c82e8-80a9-4c92-b3bc-da6fd8d57641",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514669",
+      "title" : "[Adress Objects]Modify an address group",
+      "description" : "Original ID: 77\nOriginal Title: [Adress Objects]Modify an address group\nOriginal Description: This case is to verify that when modifying an address group, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog messages m=1382 are received on the server. And the messages are correctly displayed.\n  Result 2: Reports related with \"Address Object in Group\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: 'Address Object in Group' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514667" : {
+      "steps" : "  1. Delete an address object of IPv4 type.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "10bd25d9-5dbd-4967-bc36-4abc43b62882",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514667",
+      "title" : "[Adress Objects]Delete an address object of IPv4 type",
+      "description" : "Original ID: 66\nOriginal Title: [Adress Objects]Delete an address object of IPv4 type\nOriginal Description: This case is to verify that when deleting an address object of IPv4 type, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog messages m=1382 are received on the server. And the messages are correctly displayed.\n  Result 2: Reports related with \"Deleted 'Address Object'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Deleted 'Address Object' ***'\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514674" : {
+      "steps" : "  1. Delete a custom bandwidth object.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "2a66b218-6bcc-49a3-9722-ed69a845f1f3",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514674",
+      "title" : "[Bandwidth Objects]Delete a custom bandwitdth object",
+      "description" : "Original ID: 96\nOriginal Title: [Bandwidth Objects]Delete a custom bandwitdth object\nOriginal Description: This case is to verify that when deleting a custom bandwidth object, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Deleted 'Bandwidth Object Name'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Deleted 'Bandwidth Object Name' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514666" : {
+      "steps" : "  1. Modify an address object of IPv4 type.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "d6c24a6d-1e67-4357-85ab-55fe20135604",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514666",
+      "title" : "[Adress Objects]Modify an address object of IPv4 type",
+      "description" : "Original ID: 63\nOriginal Title: [Adress Objects]Modify an address object of IPv4 type\nOriginal Description: This case is to verify that when modifying an address object of IPv4 type, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog messages m=1382 are received on the server. And the messages are correctly displayed.\n  Result 2: Reports related with \"Modified 'Address Object''\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Modified 'Address Object' ***'\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514661" : {
+      "steps" : "  1. Modify an match object incluing its \"Action Name\", \"Action\" and \"Content\".\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "0d95e482-b6e6-45b7-8a32-ab1561b7f46b",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514661",
+      "title" : "[Match Objects]Modify a match object",
+      "description" : "Original ID: 50\nOriginal Title: [Match Objects]Modify a match object\nOriginal Description: This case is to verify that when modifying a match object, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Application Firewall Action ***\" are correctly showed.\n  Result 3: Log message related with \"Application Firewall Action ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514657" : {
+      "steps" : "  1. Modify a content filter policy.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "b09ae843-065f-4129-99ad-3c1e384ae9b6",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514657",
+      "title" : "[Content Filter Policies]Modify a custom content filter policy",
+      "description" : "Original ID: 42\nOriginal Title: [Content Filter Policies]Modify a custom content filter policy\nOriginal Description: This case is to verify that when modifying a custom content filter policy, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Modified 'CFS Policy Name'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: 'Configuration succeeded: Modified 'CFS Policy Name' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514662" : {
+      "steps" : "  1. Delete all the match objects.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "7e88bda3-f241-4f53-81ff-dd07dcefcc07",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514662",
+      "title" : "[Match Objects]Delete all match objects",
+      "description" : "Original ID: 53\nOriginal Title: [Match Objects]Delete all match objects\nOriginal Description: This case is to verify that when deleting all match objects, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with multiple \"Deleted 'Application Firewall Action ID'\" are correctly showed.\n  Result 3: Log message related with mutiple \"Deleted 'Application Firewall Action ID'\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514651" : {
+      "steps" : "  1. Modify an app control policy(Including Policy Name/Type and Source/Destination options).\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "980c4b08-9030-4328-b863-dca816a01471",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514651",
+      "title" : "[App Rules]Modify an app control policy(Policy Name/Type and Source/Destination options)",
+      "description" : "Original ID: 26\nOriginal Title: [App Rules]Modify an app control policy(Policy Name/Type and Source/Destination options)\nOriginal Description: This case is to verify that when modifying an app control policy, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"'Application Firewall policy ***'\" are correctly showed.\n  Result 3: Log message related with \"'Application Firewall policy ***'\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514650" : {
+      "steps" : "  1. Make some successful configurations with access rule.\n  2. Download the TSR, and check if the auditing records are correctly displayed",
+      "priority" : "Smoke",
+      "atm_id" : "63973909-512c-47f6-9115-e2ce089c7d6b",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "1514650",
+      "title" : "Verify the Auditing Records of configuration succeeds are reflected in TSR",
+      "description" : "Original ID: 22\nOriginal Title: Verify the Auditing Records of configuration succeeds are reflected in TSR\nOriginal Description: This case is to verify that when configuration of access rule succeeds, the Auditing Records will be reflected in TSR",
+      "result" : "  In TSR, auditing records of successful configuration should be correctly showed."
+   },
+   "1514649" : {
+      "steps" : "  1. Make some configurations with access rule with wrong parameters so that it fails, and errors are displayed. Like inputting a value beyond the legal range of a parameter.\n  2. Make sure there is corresponding report on Log/ Auditing Records page.\n  3. Download the TSR, and check if the auditing records are correctly displayed",
+      "priority" : "Smoke",
+      "atm_id" : "9dfd1a87-d68e-4508-a196-57964563d3d9",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "1514649",
+      "title" : "Verify the Auditing Records of configuration fails are reflected in TSR",
+      "description" : "Original ID: 21\nOriginal Title: Verify the Auditing Records of configuration fails are reflected in TSR\nOriginal Description: This case is to verify that when configuration of access rule fails, the Auditing Records will be reflected in TSR",
+      "result" : "  In TSR, auditing records of failed configuration should be correctly showed."
+   },
+   "1514648" : {
+      "steps" : "  1.Modify an access rule of IPv6 type, change some items in the rule.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "e1577096-78dd-4953-b79f-4807d49573ad",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514648",
+      "title" : "[Access Rules]Modify an access rule of IPv6 type",
+      "description" : "Original ID: 13\nOriginal Title: [Access Rules]Modify an access rule of IPv6 type\nOriginal Description: This case is to verify that when modifying an access rule of IPv6, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog messages m=1382 are received on the server. And the messages are correctly displayed.\n  Result 2: Reports related with \"Modified 'Action in IPv6'\" are correctly showed.\n  Result 3: Log message related with \"Modified 'Action in IPv6'\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514647" : {
+      "steps" : "  1. Modify a custom CFS profile object(Parameters on Settings tab page>>>General Configuraion and URI List Configuraion sections).\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "8bfe8fae-494d-4b20-a357-32e28cd97c48",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514647",
+      "title" : "[Content Filter Objects/CFS Profile Objects]Modify a custom CFS profile object(Settings tab page>>>General Configuraion and URI List Configuraion)",
+      "description" : "Original ID: 126\nOriginal Title: [Content Filter Objects/CFS Profile Objects]Modify a custom CFS profile object(Settings tab page>>>General Configuraion and URI List Configuraion)\nOriginal Description: This case is to verify that when modifying a custom CFS profile object, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Modified 'CFS Profile Object Id'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Modified 'CFS Profile Object Id' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514642" : {
+      "steps" : "  1. Modify an URI list object.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "e770b1ee-57f0-4fae-8098-356b34218dd9",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514642",
+      "title" : "[Content Filter Objects/URI List Objects]Modify an URI list object",
+      "description" : "Original ID: 105\nOriginal Title: [Content Filter Objects/URI List Objects]Modify an URI list object\nOriginal Description: This case is to verify that when modifying an URI list object, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Modified 'CFS URL List Object Id'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Modified 'CFS URL List Object Id' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514652" : {
+      "steps" : "  1. Modify an app control policy(Including Included/Excluded options).\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "dc81eb80-19a7-4ba2-ae87-1083d0f88a18",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514652",
+      "title" : "[App Rules]Modify an app control policy(Included/Excluded options)",
+      "description" : "Original ID: 27\nOriginal Title: [App Rules]Modify an app control policy(Included/Excluded options)\nOriginal Description: This case is to verify that when modifying an app control policy, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"'Application Firewall policy ***'\" are correctly showed.\n  Result 3: Log message related with \"'Application Firewall policy ***'\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514672" : {
+      "steps" : "  1. Delete a custom bandwidth object.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "0318e4c2-1f7b-4ad9-84f3-366600755179",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514672",
+      "title" : "[Bandwidth Objects]Delete a custom bandwitdth object",
+      "description" : "Original ID: 91\nOriginal Title: [Bandwidth Objects]Delete a custom bandwitdth object\nOriginal Description: This case is to verify that when deleting a custom bandwidth object, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Deleted 'Bandwidth Object Name'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Deleted 'Bandwidth Object Name' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514658" : {
+      "steps" : "  1. Disable the default content filter policy.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.\n  6. Enable the default content filter policy and retest step 2 ~ step 5.",
+      "priority" : "Smoke",
+      "atm_id" : "0b9c0675-5a5f-4a35-9581-0e7a6f7908e1",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514658",
+      "title" : "[Content Filter Policies]Enable/Disable the default content filter policy",
+      "description" : "Original ID: 45\nOriginal Title: [Content Filter Policies]Enable/Disable the default content filter policy\nOriginal Description: This case is to verify that when enabling/disabling the default content filter policy, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"CFS Policy Enabled\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Modified 'CFS Policy Name' , CFS Default Policy\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514660" : {
+      "steps" : "  1. Modify an access rule of IPv4 type, including \"Source/Destination/Service\".\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "166434a0-1d5e-4c5f-a411-066ebe269315",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514660",
+      "title" : "[Access Rules]Modify an access rule of IPv4 type, including \"Source/Destination/Service\"",
+      "description" : "Original ID: 5\nOriginal Title: [Access Rules]Modify an access rule of IPv4 type, including \"Source/Destination/Service\"\nOriginal Description: This case is to verify that when changing \"Source/Destination/Service\" contents of an IPv4 access rule, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog messages m=1382 are received on the server. And the messages are correctly displayed.\n  Result 2: Reports related with \"Modified 'Action in ***'\" are correctly showed.\n  Result 3: Log message related with \"Modified 'Action in ***'\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514655" : {
+      "steps" : "  1. Modify App Control Global Settings.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "1133bc90-6209-4c8d-90ba-b39c1e3a5dc5",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514655",
+      "title" : "[App Control]Modify global settings of app control",
+      "description" : "Original ID: 34\nOriginal Title: [App Control]Modify global settings of app control\nOriginal Description: This case is to verify that when modifying global settings of app control, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"AF Policy Enable Change\", \"'Enable Logging For All Apps\", \"Enable Filename Logging\", \"Appcontrol Global LRT\" are correctly showed.\n  Result 3: Related log message are correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514643" : {
+      "steps" : "  1. Delete multiple selected URI list objects.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "2ae65031-ce66-43aa-9ec8-6b7a0af24817",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514643",
+      "title" : "[Content Filter Objects/URI List Objects]Delete multiple selected URI list objects",
+      "description" : "Original ID: 107\nOriginal Title: [Content Filter Objects/URI List Objects]Delete multiple selected URI list objects\nOriginal Description: This case is to verify that when deleting multiple selected URI list objects, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Deleted 'CFS URL List Object Id'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Deleted 'CFS URL List Object Id' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514646" : {
+      "steps" : "  1. Delete all the custom CFS action objects.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "ed2464f5-5ecc-40cc-8282-59c55d8f9bdd",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514646",
+      "title" : "[Content Filter Objects/CFS Action Objects]Delete all the custom CFS action objects",
+      "description" : "Original ID: 124\nOriginal Title: [Content Filter Objects/CFS Action Objects]Delete all the custom CFS action objects\nOriginal Description: This case is to verify that when deleting all the custom CFS action objects, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Delete all CFS Objects\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Delete all CFS Objects\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514656" : {
+      "steps" : "  1. Select a category and modify its configuration.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "24bdbe11-d396-4e3b-a60c-6f809f310860",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514656",
+      "title" : "[App Control]Modify app control settings of a category",
+      "description" : "Original ID: 38\nOriginal Title: [App Control]Modify app control settings of a category\nOriginal Description: This case is to verify that when modifying app control settings of a category, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"IPS2: ***\" are correctly showed.\n  Result 3: Log messages related with \"Configuration succeeded: 'IPS2***'\" are correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514653" : {
+      "steps" : "  1. Delete an app control policy.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "3bb40d88-200c-4be2-ad1c-897210b45623",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514653",
+      "title" : "[App Rules]Delete an app control policy",
+      "description" : "Original ID: 29\nOriginal Title: [App Rules]Delete an app control policy\nOriginal Description: This case is to verify that when deleting an app control policy, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Deleted 'Application Firewall policy ID'\" are correctly showed.\n  Result 3: Log message related with \"Deleted 'Application Firewall policy ID'\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514670" : {
+      "steps" : "  1. Modify a custom service group.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "0a2e7af3-47bd-41aa-908c-ba3aea8c40c5",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514670",
+      "title" : "[Service Groups]Modify a custom service group",
+      "description" : "Original ID: 83\nOriginal Title: [Service Groups]Modify a custom service group\nOriginal Description: This case is to verify that when modifying a custom service group, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with 'Service Name' are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: 'Service Name' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514664" : {
+      "steps" : "  1. Modify an action object incluing its \"Action Name\", \"Action\" and \"Content\".\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "3ed69177-d7c9-4e8a-b138-68a7044ecb7b",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514664",
+      "title" : "[Action Objects]Modify an action object",
+      "description" : "Original ID: 58\nOriginal Title: [Action Objects]Modify an action object\nOriginal Description: This case is to verify that when modifying an action object, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Application Firewall Action ***\" are correctly showed.\n  Result 3: Log message related with \"Application Firewall Action ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514654" : {
+      "steps" : "  1. Enable an access rule of IPv4 type.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.\n  6.Disable an access rule of IPv4 type and retest above steps.",
+      "priority" : "Smoke",
+      "atm_id" : "2f3f551c-2103-47dc-8e4a-8dfb227eda6d",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514654",
+      "title" : "[Access Rules]Enable/Disable an access rule of IPv4 type",
+      "description" : "Original ID: 3\nOriginal Title: [Access Rules]Enable/Disable an access rule of IPv4 type\nOriginal Description: This case is to verify that when enabling/disabling an access rule of IPv4, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog messages m=1382 are received on the server. And the messages are correctly displayed.\n  Result 2: Reports related with \"'Enabled Policy\" are correctly showed.\n  Result 3: Log message related with \"'Enabled Policy\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514673" : {
+      "steps" : "  1. Modify a custom bandwidth object.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "ec75f76c-104c-44fe-8099-0b2cc3502983",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514673",
+      "title" : "[Bandwidth Objects]Modify a custom bandwitdth object",
+      "description" : "Original ID: 94\nOriginal Title: [Bandwidth Objects]Modify a custom bandwitdth object\nOriginal Description: This case is to verify that when modifying a custom bandwidth object, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Modified 'Bandwidth Object Name'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Modified 'Bandwidth Object Name' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514668" : {
+      "steps" : "  1. Modify an address object of IPv6 type.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "7a63b09e-ee12-4bb8-8c8f-dce831ee5c6a",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514668",
+      "title" : "[Adress Objects]Modify an address object of IPv6 type",
+      "description" : "Original ID: 68\nOriginal Title: [Adress Objects]Modify an address object of IPv6 type\nOriginal Description: This case is to verify that when modifying an address object of IPv6 type, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog messages m=1382 are received on the server. And the messages are correctly displayed.\n  Result 2: Reports related with \"Modified 'Address Object''\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Modified 'Address Object' ***'\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514641" : {
+      "steps" : "  1. Delete multiple selected email address objects at a time.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "b8ae70ed-60a3-424d-9ee0-0754f877c5c7",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514641",
+      "title" : "[Email Address Objects]Delete selected email address objects",
+      "description" : "Original ID: 102\nOriginal Title: [Email Address Objects]Delete selected email address objects\nOriginal Description: This case is to verify that when deleting multiple selected email address objects, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Deleted 'Application Firewall Email name'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Deleted 'Application Firewall Email name' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514659" : {
+      "steps" : "  1. Delete a custom content filter policy.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "b9a3b8ff-da6c-4c36-a8be-9c8a97187034",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514659",
+      "title" : "[Content Filter Policies]Delete a custom content filter policy",
+      "description" : "Original ID: 46\nOriginal Title: [Content Filter Policies]Delete a custom content filter policy\nOriginal Description: This case is to verify that when deleting a custom content filter policy, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Deleted 'CFS Policy Name'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Deleted 'CFS Policy Name' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514663" : {
+      "steps" : "  1. Modify an application list object including its \"Action Name\", \"Action\" and \"Content\".\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "206924e0-6374-43a4-856d-f7363075046f",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514663",
+      "title" : "[Match Objects]Modify an application list object",
+      "description" : "Original ID: 55\nOriginal Title: [Match Objects]Modify an application list object\nOriginal Description: This case is to verify that when modifying an application list, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Application Firewall Action ***\" are correctly showed.\n  Result 3: Log message related with \"Application Firewall Action ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1514671" : {
+      "steps" : "  1. Modify a custom bandwidth object.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent. Result 4.",
+      "priority" : "Smoke",
+      "atm_id" : "22f270e0-1d0e-4ec2-a6ce-df362b61d53d",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+      "id" : "1514671",
+      "title" : "[Bandwidth Objects]Modify a custom bandwitdth object",
+      "description" : "Original ID: 89\nOriginal Title: [Bandwidth Objects]Modify a custom bandwitdth object\nOriginal Description: This case is to verify that when modifying a custom bandwidth object, correct auditing reports are displayed in Auditing Records, Log Monitor,SNMP and Syslog",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with \"Modified 'Bandwidth Object Name'\" are correctly showed.\n  Result 3: Log message related with \"Configuration succeeded: Modified 'Bandwidth Object Name' ***\" is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   }
+}

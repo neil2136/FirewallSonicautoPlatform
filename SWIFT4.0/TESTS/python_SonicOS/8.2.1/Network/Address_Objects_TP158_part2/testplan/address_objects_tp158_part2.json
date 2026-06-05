@@ -1,0 +1,316 @@
+{
+  "tc10": {
+    "steps": "1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestVpnHost as the name, choose type as Host, enter 172.16.3.1 as the IP address, select Zone Assignment as VPN;\n3) Click OK\n4) Go to Network/IPSec VPN/Rules and Settings page, click the Add button. In the pop-up VPN Policy window, select Network tab, in the 'Choose destination network from list' list, select create new address object. Verify that you're able to create a VPN zone AO successfully. ",
+    "atm_id": "92BE0E94-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc10",
+    "title": "Create new Objects for VPN Host",
+    "description": "Create new Objects for VPN Host",
+    "result": "In Network -> Address Objects page, you should be able to see TestVpnHost in the address objects list with proper information.\nAble to add a VPN zone AO in VPN policy edit widow."
+  },
+  "tc11": {
+    "steps": " 1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestVpnRange as the name, choose type as Range, enter an IP range, select Zone Assignment as VPN;\n3) Click OK",
+    "atm_id": "92BBCD8C-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc11",
+    "title": "Create new Objects for VPN Range",
+    "description": "Create new Objects for VPN Range",
+    "result": "\n\nIn Network -> Address Objects page, you should be able to see TestVpnRange in the addrss objects list with proper information.\n\nContains 1948 sections and 36109 cases.\n"
+  },
+  "tc12": {
+    "steps": " 1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestVpnNet as the name, choose type as Network, enter network information, select Zone Assignment as VPN;\n3) Click OK",
+    "atm_id": "92D73FF4-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc12",
+    "title": " Create new Objects for VPN Network",
+    "description": "Create new Objects for VPN network",
+    "result": "In Network -> Address Objects page, you should be able to see TestVpnNet in the addrss objects list with proper information."
+  },
+  "tc13": {
+    "steps": "1) On the Firewall>Multicast page, enable Multicast.\n2) On the Network -> Address Objects page, click Add button to add address object;\n3) Enter TestMultiHost as the name, choose type as Host, enter 224.0.1.100 as the IP address, select Zone Assignment as MULTICAST;\n3) Click OK ",
+    "atm_id": "92A4E75C-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc13",
+    "title": " Create new Objects for Multicast Host",
+    "description": " Create new Objects for Multicast Host",
+    "result": "In Network -> Address Objects page, you should be able to see TestMultiHost in the addrss objects list with proper information."
+  },
+  "tc14": {
+    "steps": " 1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestMultiRange as the name, choose type as Range, enter an IP range, select Zone Assignment as MULTICAST;\n3) Click OK",
+    "atm_id": "92C05CA8-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc14",
+    "title": " Create new Objects for Multicast Range",
+    "description": "Create new Objects for Multicast Range",
+    "result": "In Network -> Address Objects page, you should be able to see TestMultiRange in the addrss objects list with proper information"
+  },
+  "tc15": {
+    "steps": "1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestMultiNet as the name, choose type as Network, enter network information, select Zone Assignment as MULTICAST;\n3) Click OK ",
+    "atm_id": "92D4F424-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc15",
+    "title": "Create new Objects for Multicast Network",
+    "description": "Create new Objects for Multicast Network",
+    "result": "In Network -> Address Objects page, you should be able to see TestMultiNet in the addrss objects list with proper information."
+  },
+  "tc17": {
+    "steps": "1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestWLanRange as the name, choose type as Range, enter an IP range, select Zone Assignment as WLAN;\n3) Click OK",
+    "initial": " ",
+    "id": "tc17",
+    "title": "Create new Objects for WLAN Range",
+    "description": " Create new Objects for WLAN Range",
+    "result": "In Network -> Address Objects page, you should be able to see TestWLanRange in the addrss objects list with proper information."
+  },
+  "tc18": {
+    "steps": "1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestWLanNet as the name, choose type as Network, enter network information, select Zone Assignment as WLAN;\n3) Click OK ",
+    "atm_id": "92CBCF2A-0464-11DE-860E-445A00F93527",
+    "initial": " ",
+    "id": "tc18",
+    "title": " Create new Objects for WLAN Network",
+    "description": "Create new Objects for WLAN Network",
+    "result": "In Network -> Address Objects page, you should be able to see TestWlanNet in the addrss objects list with proper information."
+  },
+  "tc02": {
+    "steps": "1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestLanRange as the name, choose type as Range, enter an IP range, select Zone Assignment as LAN;\n3) Click OK ",
+    "atm_id": "92B07A72-0464-11DE-860E-445A00F93527",
+    "initial": " ",
+    "id": "tc02",
+    "title": "Create new Objects for LAN Range",
+    "description": "Create new Objects for LAN Range",
+    "result": "In Network -> Address Objects page, you should be able to see TestLanRange in the addrss objects list with proper information."
+  },
+  "tc20": {
+    "steps": " 1) Go to Network -> Address Objects page, click Add Group button to add address object group;\n2) Enter TestAddressGroupB as the name, select groups that have confliction, such as Lan Interface IP and LAN Subnets;\n3) Click OK",
+    "atm_id": "92A744AC-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc20",
+    "title": "Create Addrss Group - Negative Test",
+    "description": "Create Addrss Group - Negative Test",
+    "result": "You will see error message such as Address Object in Group: Adding LAN Interface IP to xxx: Address object LAN Interface IP overlaps with address object LAN Subnet."
+  },
+  "tc21": {
+    "steps": "1) Go to Network -> Address Objects page, click delete button for an address object;\n2) Click OK when \"Are you sure you wish to delete xxx?\" window pops up. ",
+    "atm_id": "92CE1A5A-0464-11DE-860E-445A00F93527",
+    "initial": " ",
+    "id": "tc21",
+    "title": "Delete Address Objects",
+    "description": "Delete Address Objects",
+    "result": "The address object should be deleted from the address object list; if it was part of any address groups, it won't be part of those groups any more."
+  },
+  "tc22": {
+    "steps": "1) Go to Network -> Address Objects page, click delete button for an address group;\n2) Click OK when \"Are you sure you wish to delete xxx?\" window pops up",
+    "atm_id": "92D29BAC-0464-11DE-860E-445A00F93527",
+    "initial": " ",
+    "id": "tc22",
+    "title": "Delete Address Group",
+    "description": "Delete Address Group",
+    "result": "The address group should be deleted from the address group list; if it was part of any address groups, it won't be part of those groups any more."
+  },
+  "tc23": {
+    "steps": "\n\n    Do factory default .\n    Enter into Network->Address Object page, check all default address objects are available and its value are correct.\n\n ",
+    "atm_id": "92AE1430-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc23",
+    "title": " Verify Default Address Objects",
+    "description": "Verify Default Address Objects",
+    "result": "Default Address Objects should be available, according to SonicWALL firware type."
+  },
+  "tc24": {
+    "steps": "Go to Network ->Address Objects page, you should see three view styles:\nAll Address Objects, Custom Address Objects, and Default Address Objects. Choose one by one to see how the view changes ",
+    "atm_id": "92D05B26-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc24",
+    "title": "Address Object View",
+    "description": "Address Object View",
+    "result": "Address group and address objects that are displayed should be according to the view style selection."
+  },
+  "tc27": {
+    "steps": "1) Go to Match Objects -> Addresses ->Address Objects page, click Add button to add address object;\n2) Enter TestFQDN as the name, choose type as FQDN, enter *.bing.com as the FQDN Hostname, select Zone Assignment as WAN;\n3) Click OK ",
+    "atm_id": "10C703E8-6179-11EC-B33F-7439938F55E4 ",
+    "initial": " ",
+    "id": "tc27",
+    "title": " Create new Objects for FQDN",
+    "description": "",
+    "result": "TestFQDN displays in the addrss objects list: DETAILS is *.bing.com, type fqdn, Zone WAN, and configurable."
+  },
+  "tc28": {
+    "steps": " 1) Go to Match Objects -> Addresses ->Address Objects page, add an fqdn object named TestFQDN, hostname-*.bing.com, Zone-WAN, ;\n2) Select TestFQDN, click Resolve;\n3) Click OK",
+    "atm_id": "4f113a22-ca70-40a5-9ff9-a61a3265f481 ",
+    "initial": " DUT(X1)---WAN,\nDNS Server works well",
+    "id": "tc28",
+    "title": "Verify FQDN Objects can be resolved successfully",
+    "description": "",
+    "result": "The FQDN is Resolved correctly."
+  },
+  "tc03": {
+    "steps": " 1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestLanNet as the name, choose type as Network, enter network information, select Zone Assignment as LAN;\n3) Click OK",
+    "atm_id": "92C4E0FC-0464-11DE-860E-445A00F93527",
+    "initial": " ",
+    "id": "tc03",
+    "title": "Create new Objects for LAN Network",
+    "description": " Create new Objects for LAN Network",
+    "result": "In Network -> Address Objects page, you should be able to see TestLanNet in the addrss objects list with proper information."
+  },
+  "tc31": {
+    "steps": "To create MAC type AO\nTo edit MAC type AO\nTo delete MAC type AO ",
+    "atm_id": "9551708E-034B-11ED-A0C2-927D74F93DDB ",
+    "initial": " ",
+    "id": "tc31",
+    "title": "To do the MAC type AO basic operation",
+    "description": "",
+    "result": "All action could be done without error"
+  },
+  "tc32": {
+    "steps": " To create a MAC type AO in LAN /DMZ/VPN zone\nThe apply this AO into the CFS LAN/DMZ/VPN-WAN policy\nTo do this on the UPE mode",
+    "atm_id": "074664C4-034C-11ED-A0C2-927D74F93DDB ",
+    "initial": " ",
+    "id": "tc32",
+    "title": "To apply the MAC type AO into a Content Filter Policy",
+    "description": "",
+    "result": "The MAC AO should be get resolved conrrectly.The CFS policy should be matched and the proper CFS action should be performed"
+  },
+  "tc33": {
+    "steps": "To create many MAC type AOes in LAN/DMZ/VPN Zone\nTo create a AO group including these AOes\nThen apply this group into LAN/DMZ/VPN-WAN CFS policy\nRestest this on the UPE mode ",
+    "atm_id": "D9A5405C-034C-11ED-B44E-547D74F93DDB ",
+    "initial": " ",
+    "id": "tc33",
+    "title": "To apply the MAC type AO group in to the CFS Policy",
+    "description": "",
+    "result": "The MAC AO should be get resolved conrrectly.The CFS policy should be matched, and the proper CFS action should be performed"
+  },
+  "tc34": {
+    "steps": "\n\n    Create a new address object as 1.1.1.1\n    Create a group named \"iphAOG\", added this AO 1.1.1.1 in the group\n    Create a IP Helper policy which use the \"iphAOG\"\n\n    Navigates to address objects page again, try to change the IP/zone about the AO\n    5.Navigates to address groups page again, try add another AO to \"iphAOG\"\n    Repeat step5 for delete AO from AOgroup\n\n ",
+    "atm_id": "DB2FAE68-6B29-11ED-BC5E-18B49FE98C89 ",
+    "initial": " ",
+    "id": "tc34",
+    "title": " Verify Address objects/groups can be modified which used in IP helper policy (related to GEN7-36224)",
+    "description": "",
+    "result": "in step4, the IP/zone can be changed successfully\nin step5, the Address group can be changed successfully and no error pops up"
+  },
+  "tc04": {
+    "steps": "1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestWanHost as the name, choose type as Host, enter 172.16.2.1 as the IP address, select Zone Assignment as WAN;\n3) Click OK ",
+    "atm_id": "92B4FF5C-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc04",
+    "title": "Create new Objects for WAN Host",
+    "description": " Create new Objects for WAN Host",
+    "result": "In Network -> Address Objects page, you should be able to see TestWanHost in the addrss objects list with proper information."
+  },
+  "tc05": {
+    "steps": " 1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestWanRange as the name, choose type as Range, enter an IP range, select Zone Assignment as WAN;\n3) Click OK",
+    "atm_id": "92B98572-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc05",
+    "title": "Create new Objects for WAN Range",
+    "description": "Create new Objects for WAN Range",
+    "result": "In Network -> Address Objects page, you should be able to see TestWanRange in the addrss objects list with proper information."
+  },
+  "tc06": {
+    "steps": "1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestWanNet as the name, choose type as Network, enter network information, select Zone Assignment as WAN;\n3) Click OK ",
+    "atm_id": "92B741B8-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc06",
+    "title": "Create new Objects for WAN Network",
+    "description": "Create new Objects for WAN Network",
+    "result": "In Network -> Address Objects page, you should be able to see TestWanNet in the addrss objects list with proper information."
+  },
+  "tc08": {
+    "steps": " 1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestDmzRange as the name, choose type as Range, enter an IP range, select Zone Assignment as DMZ;\n3) Click OK",
+    "atm_id": "92ABCFD6-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc08",
+    "title": "Create new Objects for DMZ Range",
+    "description": "Create new Objects for DMZ Range",
+    "result": "In Network -> Address Objects page, you should be able to see TestDmzRange in the addrss objects list with proper information."
+  },
+  "tc09": {
+    "steps": "1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestDmzNet as the name, choose type as Network, enter network information, select Zone Assignment as DMZ;\n3) Click OK",
+    "atm_id": "92A98B04-0464-11DE-860E-445A00F93527 ",
+    "initial": " ",
+    "id": "tc09",
+    "title": "Create new Objects for DMZ Network",
+    "description": "Create new Objects for DMZ Network",
+    "result": "In Network -> Address Objects page, you should be able to see TestDmzNet in the addrss objects list with proper information."
+  },
+  "tc07": {
+    "steps": "1) Go to Network -> Address Objects page, click Add button to add address object;\n2) Enter TestDmzHost as the name, choose type as Host, enter 172.16.3.1 as the IP address, select Zone Assignment as DMZ;\n3) Click OK ",
+    "atm_id": "92B2BBB6-0464-11DE-860E-445A00F93527",
+    "initial": " N/A",
+    "id": "tc07",
+    "title": "Create new Objects for DMZ Host",
+    "description": " Create new Objects for DMZ Host",
+    "result": "In Network -> Address Objects page, you should be able to see TestDmzHost in the addrss objects list with proper information."
+  },
+  "tc35": {
+    "steps": " 1.search one unassigned interface like X3 in Addresses page,observe 7 types of default AO are displayed:\nX3 IP,X3 Subnet,X3 IPv6 Link-Local Address,X3 IPv6 Primary Dynamic Address,X3 IPv6 Primary Dynamic Address Subnet,X3 IPv6 Primary Static Address,X3 IPv6 Primary Static Address Subnet.\n\n2.set X3 with wan zone\n\n3.search X3,then display 9 type of AOs about X3,new generated two AOs:X3 Default Gateway,X3 IPv6 Default Gateway\n\n4.unassgin X3,observe two AO X3 Default Gateway and X3 IPv6 Default Gateway are deleted\n\n",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc35",
+    "title": "Check ipv4 and ipv6 default gateway AOs generate and after set interface with wan zone and disappear after unassign",
+    "description": "",
+    "result": "see steps"
+  },
+  "tc36": {
+    "steps": "Create several Address objects\nCreate several Address groups with step1 created address objects as their member\nCreate a supergroup address group with step2 created address groups as member\nCreate a supergroup address group with step2 created address groups and some address objects as member\nCreate a supergroup address group with step2 created custom address groups and some default service groups as member\nCreate a supergroup address group with step2 created custom address groups, some default address groups, some default address objects and some custom address objects ",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc36",
+    "title": "Create supergroup that use other address groups as member",
+    "description": "To verify a supergroup that use other address groups as member can be created succesfully",
+    "result": "In Step3, 4, 5, 6, the supergroup address group could be created successfully."
+  },
+  "tc01_new": {
+    "steps": "1.Go to Network>Interface page and choose IPv6 radio button in View IP Version IPv4 IPv6.\n 2.Open configuration page of the interface and do some configuration\n 3.go to Object -> Match Objects-> Addresses -> Address Groups, Choose Default view and check default IPv4 and IPv6 address group:\nsuch as Firewalled (IPv6) Subnets / Zone Interface (IPv6) Addresses / Zone (IPv6) Subnets / Xi (IPv6) addresses / Xi Management (IPv6) Addresses",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc01_new",
+    "title": "check default Address Group",
+    "description": "",
+    "result": "Default Address Groups should be available\n\n"
+  },
+  "tc02_new": {
+    "steps": "1.Login to Firewall UI\n 2.Go to Objects -> Address Object Groups\n 3.Enter a name/term of an Address-Object in the filter",
+    "atm_id": "",
+    "initial": "Creat an address object Group and add some address objects.",
+    "id": "tc02_new",
+    "title": "Check can filter all the Address Object which in the Address Object Groups",
+    "description": "",
+    "result": "all Groups where the Address Object is a member of are filtered out."
+  },
+  "tc03_new": {
+    "steps": "Try to create address groups contain each other as following:\nGROUP 1：GROUP 2, GROUP3            GROUP 2 :GROUP 1, GROUP 3           GROUP3 : GROUP 1, GROUP2",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc03_new",
+    "title": "Alert pops up when address groups contain each other(GEN7-48193)",
+    "description": "",
+    "result": "Alert pops up and fail to create address groups"
+  },
+  "tc04_new": {
+    "steps": "Create following special address objects:\ntest1: network type, 0.0.0.0/255.0.0.0\ntest2: network type, 0.0.0.0/255.128.0.0\ntest3: network type, 0.0.0.0/0.0.0.0\ntest4: host type, 0.0.0.0/255.255.255.0",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc04_new",
+    "title": "Alert pops up and fail to create address groups",
+    "description": "Added from GEN7-50821.",
+    "result": "All these AOs should be created successfully, and its AO type/network/prefix should be displayed as the configured values."
+  },
+  "tc05_new": {
+    "steps": "1.add a custom address-object \"test\"\n2.add another  address-object also named \"test\" and check if can be saved\n3.add a custom address-object group \"test-group\"\n4.add another  address-object group also named \"test-group\" and check if can be saved\n",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc05_new",
+    "title": "[nagetive test]add a exist custom address-object/address-objest group",
+    "description": "",
+    "result": "1.it will popup error \"already exists.\"\n\n2.it will popup error \"already exists.\""
+  },
+  "tc06_new": {
+    "steps": "1.add a address-object \"X1 IP\" which is a exist default address-object and check if can be saved\n2.add a custom address-object group \"LAN IPv6 Subnets\"  which is a exist default address-object group and check if can be saved",
+    "atm_id": "",
+    "initial": " ",
+    "id": "tc06_new",
+    "title": "[nagetive test]add a exist default address-object/address-objest group",
+    "description": "",
+    "result": "it will popup error \"already exists.\"\n\n"
+  }
+}

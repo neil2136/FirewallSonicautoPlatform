@@ -1,0 +1,37 @@
+{
+    "1521080": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Clear all DNS policies;\r\n2. Top add and enable a policy named Test, Action-Filter, Zone-LAN, Address-X0 Subnet, Service-DNS UDP;\r\n3. Rules and Policies \\ Access Rules, check the access rules;\r\n4. Change the action to Proxy, repeat 1-3.",
+        "initial": "",
+        "id": "1521080",
+        "title": "[ACL] In Global Mode, verify an auto added Access Rule is generated when add an enabled DNS Policy with unique configuration of Source/Service tab.",
+        "result": "When the Policy is enabled, one Allow Access Rule is added and enabled automatically with these settings:\r\n\r\n\u2022 Src Zone and Dst Zone are the same: LAN.\r\n\u2022 Source Address : X0 Subnet.\r\n\u2022 Destination Address : LAN interface IP.\r\n\u2022 Service : DNS (Name Service) UDP.\r\n\u2022 Description : Auto rule for DNS policy.\r\n\r\nThe ACL is not allowed to delete."
+    },
+    "1521081": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Clear all DNS policies;\r\n2. Top add and enable a policy named Test, Action-Filter, Zone-LAN, Address-X0 Subnet, Service-DNS UDP; \r\n3. Rules and Policies \\ Access Rules, check the access rules on firewall;\r\n4. Change the name and action, repeat 2-3.",
+        "initial": "",
+        "id": "1521081",
+        "title": "[ACL] In Global Mode, verify Access Rules are not changed when add enabled DNS Policies with existed configuration of Source/Service tab.",
+        "result": "In step3, one Allow Access Rule is added and enabled automatically related to Test;\r\n\r\nIn step4, no new ACLs add."
+    },
+    "1521082": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Clear all DNS policies;\r\n2. Top add and enable a policy named Test, Action-Filter, Zone-LAN, Address-X0 Subnet, Service-DNS UDP;\r\n3. Rules and Policies \\ Access Rules, check the Access Rules;\r\n4. Disable the DNS policy \"Test\", check the Access Rules;\r\n5. Change the name and action, but the other configurations keep same as Test, add enabled the DNS proxy Policy, check the Access Rules;\r\n6. Disable the enabled DNS proxy policy, check the Access Rules.",
+        "initial": "",
+        "id": "1521082",
+        "title": "[ACL] In Global Mode, Verify the auto-added Access Rule is disabled when the related DNS Policies are all disabled.",
+        "result": "In step 3, an auto-added ACL is enabled;\r\n\r\nIn step 4, the ACL is disabled;\r\n\r\nIn step 5, the ACL is enabled;\r\n\r\nIn step 6, the ACL is disabled."
+    },
+    "1521083": {
+        "steps": "1.Policy \\ Rules and Policies \\ DNS Rules, Clear all DNS policies;\r\n2.Top add and enable a policy named Test, Action-Filter, Zone-LAN, Address-X0 Subnet, Service-DNS UDP\r\n3.Rules and Policies \\ Access Rules, check the access rules on firewall;\r\n4.Delete \"Test\", check the access rule;\r\n5.Re-add Test and change the name and action, but the other configurations keep same as Test, add enabled DNS Policy \"Test_proxy\";\r\n6.Delete \"Test\", check the ACL.\r\n7.Delete \"Test_proxy\", check the ACL.",
+        "initial": "",
+        "id": "1521083",
+        "title": "[ACL] In Global Mode, Verify the auto-added Access Rule is deleted when related DNS Policies are all deleted.",
+        "result": "In step 3, an enabled auto-added ACL display;\r\n\r\nIn step 4, the ACL is deleted;\r\n\r\nIn step 5-6, the ACL is displayed.\r\n\r\nIn step 7, the ACL is deleted."
+    },
+    "1521084": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, Clear all DNS policies;\r\n2. Top add and enable a policy named \"TestA\", action-Filter, Zone-DMZ, Address-X2 Subnet, Service-DNS UDP;\r\n3. Add and enable a policy named \"TestB\", action-Proxy, Zone-DMZ, Address-X2 Subnet, Service-DNS UDP;\r\n4. Rules and Policies \\ Access Rules, check the access rules on firewall;\r\n5. Edit the DNS policy \"TestB\", change Zone to LAN, Address to X0 Subnet, check the ACL.",
+        "initial": "",
+        "id": "1521084",
+        "title": "[ACL] In Global Mode, Verify the auto-added Access Rule changes with the DNS Policy.",
+        "result": "In step 4, only one enabled auto-added ACL shows;\r\n\r\nIn step 5, a new ACL related to TestB is added."
+    }
+}

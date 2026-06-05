@@ -1,0 +1,56 @@
+{
+   "2202249" : {
+      "steps" : " 1.double click created VPN.input username and password configured in Users of FW,and click connect 2.FW-&gt;vpn-&gt;L2TP Server,check if exist active L2TP session\n  3.Users-&gt;status,check if exist activeUser sessions\n  4.from L2TP client,ping to firewall's LAN interface IP,check if traffic well\n  5.disconnect L2TP from client side,check if disconnect successfully\n  6.connect it again,check if connect successfully and l2tp client work well\n  7.disconnect L2TP from server side,check if disconnect successfully\n  8..connect it again,check if connect successfully and l2tp client work well",
+      "atm_id" : "A31039AC-0464-11DE-860E-445A00F93527",
+      "initial" : "N/A",
+      "id" : "2202249",
+      "title" : "L2TP client connect and disconnect",
+      "description" : "Original ID: 7\n",
+      "result" : "  L2TP client can connect and disconnect without error"
+   },
+   "1507826" : {
+      "steps" :  "1. Go to Network>IPSec VPN.L2TP Server,Enable L2TP Server and\n  config L2tp server. 2.L2TP Users TAB: config Local L2TP IP pool and choose User group for L2TP user(e.g, Everyone). 3. Users->local users, add user \"l2tp\" and add vpn access networks. 4. Go to Network -> IPSec VPN ->Rules and Settings, Enable WAN Group vpn and set shared secret.\n  5. Establish vpn connection from wan clientby VLAN.\n  6. Accessing the L2TP Server page.",
+      "atm_id" : "C5F0CCA2-0B9A-11EC-BDBA-9C5A4B56B95F",
+      "initial" : "N/A",
+      "id" : "1507826",
+      "title" : "Accessing the L2TP Server page when L2TP Client was connected by VLAN",
+      "description" : "Original ID: 18\n",
+      "result" : "  TheL2TP Server page can be accessed successfully.<a href=\"https://track.eng.sonicwall.com/browse/GEN7-24040\">[GEN7-24040] SonicWall reboots when accessing the L2TP page of the GUI - SonicWall Jira</a>"
+   },
+   "1507827" : {
+      "steps" : "   1) Go to Network/Firewall/Advanced, enable \"Enable IP header checksum enforcement\", click Accept. 2) Go to Network/IPSec VPN/L2TP Server,Enable L2TP Server and config L2tp server. 3) L2TP Users TAB: config Local L2TP IP pool and choose User group for L2TP user(e.g, Everyone). 4) Users-&gt;local users, add user \"l2tp\" and add vpn access networks. 5) Go to Network/IPSec VPN/Rules and Settings, Enable WAN Group vpn and set shared secret. 6) Establish vpn connection. ",
+      "atm_id" : "2F9A55EE-0BBC-11EC-A151-8F5C4B56B95F",
+      "initial" : "N/A",
+      "id" : "1507827",
+      "title" : "\"Enable IP header checksum enforcement\" is enabled, connect L2TP client",
+      "description" : "Original ID: 19\r\n",
+      "result" : "  L2TP client can connect successfully."
+   },
+   "2202248" : {
+      "steps" : "  1.connect several L2TP clients to the server configured in FW\n  2.network->L2TP server,disable l2tp server,check if all the clients disconnect successful.and active L2TP session became empty\n  3.enable l2tp server,connect several l2tp clients again,check if all the clients connect successful.and verify  \bidirectional traffic between l2tp clinets and LAN/DMZ subnets can be successful.",
+      "atm_id" : "A314B68A-0464-11DE-860E-445A00F93527",
+      "initial" : "N/A",
+      "id" : "2202248",
+      "title" : "Function: L2TP server enable and disable",
+      "description" : "Original ID: 6\n",
+      "result" : "  after step2, all the clients disconnect successful.and active L2TP session became empty\n  after step3, clients can connect succesfully,and bidirectional traffic between l2tp clinets and LAN/DMZ subnets&#160;can be successful."
+   },
+   "1507828" : {
+      "steps" : "  1.VPN-&gt;setting,enable VPN. 2.VPN-&gt;setting-&gt;VPN Policies-&gt; WAN GroupVPN,enable it.and then config the shared secret (e.g. password) 3.VPN-&gt;L2TP Server,enable it.then config. 1) L2TP Server TAB: add DNS server and WIN server 2) L2TP Users TAB:config Local L2TP IP pool,and choose User group for L2TP user(e.g, Everyone) 4.Users-&gt;local users,add one ,and config 1) Groups:ADD THE USER as a member of SonicWALL Administrators 2) VPN Access:add Firewalled Subnets to access list",
+      "atm_id" : "A2FE106A-0464-11DE-860E-445A00F93527",
+      "initial" : "N/A",
+      "id" : "1507828",
+      "title" : "Function: L2TP server configuration",
+      "description" : "Original ID: 4\r\n",
+      "result" : "  the server can be set up without error"
+   },
+   "1507825" : {
+      "steps" : " 1.from L2TP client behind NAT ,config Host IP address:FW1's WAN IP. 2.connect the clinet to the server,check if connect successfully. 3.from L2TP client,ping to FW1's LAN interface IP,check if traffic well. 4.from L2TP client,check if can management FW1.",
+      "atm_id" : "A2F74884-0464-11DE-860E-445A00F93527",
+      "initial" : "N/A",
+      "id" : "1507825",
+      "title" : "L2TP client behind NAT",
+      "description" : "Original ID: 16\r\n",
+      "result" : "  l2tp client behind NAT can connect successfully and work fine."
+   }
+}

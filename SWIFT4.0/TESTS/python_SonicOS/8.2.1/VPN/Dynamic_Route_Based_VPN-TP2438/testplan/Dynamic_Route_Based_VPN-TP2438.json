@@ -1,0 +1,202 @@
+{
+   "1515050" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CBD5829E-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515050",
+      "title" : "Static route on TI bound to primary WAN, RIP on TI bound to secondary WAN",
+      "description" : "Original ID: 81\nOriginal Title: Static route on TI bound to primary WAN, RIP on TI bound to secondary WAN\nOriginal Description: TBD",
+      "result" : "  TBD"
+   },
+   "1515046" : {
+      "steps" : " 1. Have RIP enabled on the tunnel interface policy (see TC-6). Make sure that subnets that are advertised by RIP are shown in the routing table of a peer.\n  2. On the Network > Routing page, open RIP Configuration window for the tunnel interface and select Disable. Save the configuration by clicking OK.\n  3. View the routing table on the peer firewall.",
+      "priority" : null,
+      "atm_id" : "CBE916F6-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : " ",
+      "id" : "1515046",
+      "title" : "Disable RIP on tunnel interface",
+      "description" : "Original ID: 7\nOriginal Title: Disable RIP on tunnel interface\nOriginal Description: This test verifies that RIP can be disabled on a tunnel interface and subnets that are advertised by RIP are removed from the routing table of a peer.",
+      "result" : "  The subnets that were advertised by RIP are removed from the routing table of a peer."
+   },
+   "1515032" : {
+      "steps" : "  1. Have RIP/OSPF enabled on the tunnel interface policy (see TC-6/8). Make sure that subnets that are advertised by RIP/OSPF are shown in the routing table.\n  2. On the VPN > Settings page,disable the tunnel interface VPN policy. 3. View the routing table on the Network > Routing page.",
+      "priority" : null,
+      "atm_id" : "CC490FB6-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "",
+      "id" : "1515032",
+      "title" : "Disable tunnel interface VPN policy",
+      "description" : "Original ID: 10\nOriginal Title: Disable tunnel interface VPN policy\nOriginal Description: This test verifies that if a tunnel interface VPN policy gets disabled, the associated RIP/OSPF routes are deleted from the routing table.",
+      "result" : "  The subnets that were advertised by RIP/OSPF are removed from the routing table."
+   },
+   "1515049" : {
+      "steps" : "  1. Have the tunnel interface policy with enabled Allow Advanced Routing added on the VPN > Settings page on the DUT.\n  2. On the Network > Routing page, set OSPF to Passive mode on X0 (LAN) interface. Configure OSPF on the tunnel interface. Select Enabled and configure Global Unnumbered Configuration. Save the configuration by clicking OK.\n  3. Repeat the above steps on a peer.\n  4. View the routing table on the DUT and peer firewall.",
+      "priority" : null,
+      "atm_id" : "CC23218E-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "",
+      "id" : "1515049",
+      "title" : "Enable OSPF on tunnel interface",
+      "description" : "Original ID: 8\nOriginal Title: Enable OSPF on tunnel interface\nOriginal Description: This test verifies that OSPF can be enabled on a tunnel interface and subnets that are advertised by OSPF are displayed in the routing table of a peer.",
+      "result" : "  OSPF on the tunnel interface is shown Enabled in the Routing Protocols table on the Network > Routing page. The green bullet is shown for the tunnel interface under OSPF Neighbor Status. The routing table shows LAN subnet of the peer firewall. Interface is the tunnel interface that OSPF is enabled on."
+   },
+   "1515044" : {
+      "steps" : "  1. Have the tunnel interface policy with enabled Allow Advanced Routing added on the VPN > Settings page on the DUT.\n  2. On the Network > Routing page, set RIP to Passive mode on X0 (LAN) interface. Configure RIP on the tunnel interface. Select Send and Receive, and configure Global Unnumbered Configuration. Save the configuration by clicking OK.\n  3. Repeat the above steps on a peer.\n  4. View the routing table on the DUT and peer firewall.",
+      "priority" : null,
+      "atm_id" : "CE72CA16-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "",
+      "id" : "1515044",
+      "title" : "Enable RIP on tunnel interface",
+      "description" : "Original ID: 6\nOriginal Title: Enable RIP on tunnel interface\nOriginal Description: This test verifies that RIP can be enabled on a tunnel interface and subnets that are advertised by RIP are displayed in the routing table of a peer.",
+      "result" : "  RIP on the tunnel interface is shown Enabled in the Routing Protocols table on the Network > Routing page. The routing table shows LAN subnet of the peer firewall. Interface is the tunnel interface that RIP is enabled on."
+   },
+   "1515035" : {
+      "steps" : "  1. On the VPN > Settings page under VPN Policies, click the \"Add...\" button. 2. In the VPN Policy window, select Tunnel Interface in the Policy Type drop-down.\n  3. Fill in the Name, IPSec Primary Gateway Name or Address, Shared Secret, and Confirm Shared Secret fields.\n  4. In the Advanced tab, enable the Allow Advanced Routing check box. KeepAlive is enabled by default.\n  5. Save the policy by clicking OK.\n  6. View the Routing Protocols table on the Network > Routing page.",
+      "priority" : null,
+      "atm_id" : "CE8F81A6-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "",
+      "id" : "1515035",
+      "title" : "Add Tunnel Interface VPN policy with Keep Alive and enabled \"Allow Advanced Routing\"",
+      "description" : "Original ID: 2\nOriginal Title: Add Tunnel Interface VPN policy with Keep Alive and enabled \"Allow Advanced Routing\"\nOriginal Description: This test verifies that if a Tunnel Interface VPN policy with Keep Alive and enabled \"Allow Advanced Routing\" check box is configured, the tunnel interface is added in the list of interfaces for Advanced Routing.",
+      "result" : "  The tunnel interface is added in the list of interfaces for Advanced Routing on the Network > Routing page."
+   },
+   "1515052" : {
+      "steps" : "  1. Have OSPF enabled on the tunnel interface policy (see TC-8). Make sure that subnets that are advertised by OSPF are shown in the routing table of a peer.\n  2. On the Network > Routing page, open OSPF Configuration window for the tunnel interface and select Disable. Save the configuration by clicking OK.\n  3. View the routing table on the peer firewall.",
+      "priority" : null,
+      "atm_id" : "CC31C18A-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "",
+      "id" : "1515052",
+      "title" : "Disable OSPF on tunnel interface",
+      "description" : "Original ID: 9\nOriginal Title: Disable OSPF on tunnel interface\nOriginal Description: This test verifies that OSPF can be disabled on a tunnel interface and subnets that are advertised by OSPF are removed from the routing table of a peer.",
+      "result" : "  The subnets that were advertised by OSPF are removed from the routing table of a peer."
+   },
+   "1515033" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "893efa3e-f820-4fdd-9de9-1b1c24bff753",
+      "initial" : "  TBD",
+      "id" : "1515033",
+      "title" : "Verify after reboot, all dynamic route based VPN are still work well.",
+      "description" : "Original ID: 102\nOriginal Title: Verify after reboot, all dynamic route based VPN are still work well.\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1515039" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CC069DDE-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515039",
+      "title" : "Send and Receive. Receive RIPv2, Send RIPv2 on DUT",
+      "description" : "Original ID: 30\nOriginal Title: Send and Receive. Receive RIPv2, Send RIPv2 on DUT\nOriginal Description: TBD",
+      "result" : "  TBD"
+   },
+   "1515043" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CDBD271A-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515043",
+      "title" : "OSPFv2: Hello packets are sent every Hello Interval seconds to the IP multicast address (224.0.0.5)",
+      "description" : "Original ID: 59\nOriginal Title: OSPFv2: Hello packets are sent every Hello Interval seconds to the IP multicast address (224.0.0.5)\nOriginal Description: TBD",
+      "result" : "  TBD"
+   },
+   "1515048" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CED7A60C-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515048",
+      "title" : "OSPFv2: IP Address Borrowed From a physical interface (test different interfaces)",
+      "description" : "Original ID: 77\nOriginal Title: OSPFv2: IP Address Borrowed From a physical interface (test different interfaces)\nOriginal Description: TBD",
+      "result" : "  TBD"
+   },
+   "1515037" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CE59DB8C-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515037",
+      "title" : "Send and Receive. Receive RIPv2, Send RIPv1 on DUT",
+      "description" : "Original ID: 28\nOriginal Title: Send and Receive. Receive RIPv2, Send RIPv1 on DUT\nOriginal Description: TBD",
+      "result" : "  TBD"
+   },
+   "1515042" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CBD8C71A-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515042",
+      "title" : "RIP: IP Address Borrowed From VLAN interface",
+      "description" : "Original ID: 56\nOriginal Title: RIP: IP Address Borrowed From VLAN interface\nOriginal Description: TBD",
+      "result" : "  TBD"
+   },
+   "1515036" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CE3F74B8-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515036",
+      "title" : "Send Only RIPv2-v1 compatible on DUT",
+      "description" : "Original ID: 21\nOriginal Title: Send Only RIPv2-v1 compatible on DUT\nOriginal Description: TBD",
+      "result" : "  TBD"
+   },
+   "1515040" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CEF6F340-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515040",
+      "title" : "Connected networks are advertised in RIP RTUs when the Redistribute Connected Networks check box is turned on",
+      "description" : "Original ID: 37\nOriginal Title: Connected networks are advertised in RIP RTUs when the Redistribute Connected Networks check box is turned on\nOriginal Description: TBD",
+      "result" : "  TBD"
+   },
+   "1515045" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CEA3BAFE-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515045",
+      "title" : "OSPFv2: static route doesn't appear in the OSPF route database of a peer when the Redistribute Static Routes check box is turned off",
+      "description" : "Original ID: 68\nOriginal Title: OSPFv2: static route doesn't appear in the OSPF route database of a peer when the Redistribute Static Routes check box is turned off\nOriginal Description: TBD",
+      "result" : "  TBD"
+   },
+   "1515051" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CE316F58-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515051",
+      "title" : "Multiple Tunnel Interfaces to different peers using the same borrowed interface",
+      "description" : "Original ID: 83\nOriginal Title: Multiple Tunnel Interfaces to different peers using the same borrowed interface\nOriginal Description: TBD",
+      "result" : "  TBD"
+   },
+   "1515038" : {
+      "steps" : " 1. Have the tunnel interface policy with enabled Allow Advanced Routing added on the VPN > Settings page (see TC-2). 2. Make sure that the tunnel interface is shown in the Routing Protocols table on the Network > Routing page along with physical interfaces.\n  3. Edit the tunnel interface policy. In the Advanced tab, disable the Allow Advanced Routing check box\n  4. Save the policy by clicking OK.\n  5. View the Routing Protocols table on the Network > Routing page.",
+      "priority" : null,
+      "atm_id" : "CC0E28C4-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : " ",
+      "id" : "1515038",
+      "title" : "Disable \"Allow Advanced Routing\" in Tunnel Interface policy",
+      "description" : "Original ID: 3\nOriginal Title: Disable \"Allow Advanced Routing\" in Tunnel Interface policy\nOriginal Description: This test verifies that if the \"Allow Advanced Routing\" check box gets disabled in existing Tunnel Interface VPN policy, the tunnel interface is deleted from a list of interfaces for Advanced Routing.",
+      "result" : "  The tunnel interface is deleted from a list of interfaces for Advanced Routing on the Network > Routing page."
+   },
+   "1515041" : {
+      "steps" : "  1. Have the tunnel interface policy with disabled Allow Advanced Routing on the VPN > Settings page (see TC-3). 2. Make sure that the tunnel interface is not shown in the Routing Protocols table on the Network > Routing page along with physical interfaces.\n  3. Edit the tunnel interface policy. In the Advanced tab, enable the Allow Advanced Routing check box.\n  4. Save the policy by clicking OK.\n  5. View the Routing Protocols table on the Network > Routing page.",
+      "priority" : null,
+      "atm_id" : "CEC002B8-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "",
+      "id" : "1515041",
+      "title" : "Enable \"Allow Advanced Routing\" in Tunnel Interface policy",
+      "description" : "Original ID: 4\nOriginal Title: Enable \"Allow Advanced Routing\" in Tunnel Interface policy\nOriginal Description: This test verifies that if the \"Allow Advanced Routing\" check box gets enabled in existing Tunnel Interface VPN policy, the tunnel interface is added in a list of interfaces for Advanced Routing.",
+      "result" : "  The tunnel interface is added in a list of interfaces for Advanced Routing and shown in the Routing Protocols table on the Network > Routing page."
+   },
+   "1515047" : {
+      "steps" : "",
+      "priority" : null,
+      "atm_id" : "CC1850EC-D3AC-11DE-AB69-5B2C00F93527",
+      "initial" : "  TBD",
+      "id" : "1515047",
+      "title" : "OSPFv2: RIP routes are redistributed to OSPF when the Redistribute RIP Routes check box is turned on",
+      "description" : "Original ID: 74\nOriginal Title: OSPFv2: RIP routes are redistributed to OSPF when the Redistribute RIP Routes check box is turned on\nOriginal Description: TBD",
+      "result" : "  TBD"
+   }
+}

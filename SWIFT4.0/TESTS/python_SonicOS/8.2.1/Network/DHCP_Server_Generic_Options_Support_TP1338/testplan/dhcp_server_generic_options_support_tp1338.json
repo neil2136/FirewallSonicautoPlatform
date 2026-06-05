@@ -1,0 +1,70 @@
+{
+  "1": {
+    "steps": " 1)In the DHCP option page added DHCP option is listed.\n2)Select the added option. Select Send Dhcp Option Always\n3)Do a Renew from the DHCP Client.",
+    "atm_id": "BDC1F39E-0464-11DE-860E-445A00F93527",
+    "initial": " 1)Enable DHCP Server.\n2)In the DHCP options page add a DHCP option object. ",
+    "id": "1",
+    "title": "DHCP server provides Generic options to the client always",
+    "description": "This test ensures that DHCP server provides Generic options in the DHCP Offer as well as DHCP ACK to the clients.",
+    "result": "  "
+  },
+  "2": {
+    "steps": " 1)In the DHCP option page added DHCP option is listed.\n2)Select the added option. Disable Send Dhcp Option Always\n3)Do a Renew from the DHCP Client.",
+    "atm_id": "BDCB3260-0464-11DE-860E-445A00F93527",
+    "initial": " 1)Enable DHCP Server.\n2)In the DHCP options page add a DHCP option object. ",
+    "id": "2",
+    "title": " DHCP server provides Generic options to the clients only if it is requested.",
+    "description": "This test ensures that DHCP server provides generic option only if the client request for it.",
+    "result": " DHCP offer /Ack shows Generic options only if the client requested these options using option55 (Parameter Request List)\n\n "
+  },
+  "3": {
+    "steps": " 1)In the DHCP option page added DHCP option is listed.\n2)Select the added option. Enable Send Dhcp Option Always\n3)Do a Renew from the DHCP Client.",
+    "atm_id": "BDCD7CC8-0464-11DE-860E-445A00F93527",
+    "initial": " Same as Testcase1. In the option object add an option 150 for VoIP call Manager = 10.10.10.1 Configure VoIP Call Manger in the DHCP>Advanced page = 20.20.20.1\n1)Enable DHCP Server.\n2)In the DHCP options page add a DHCP option object.\n\n ",
+    "id": "3",
+    "title": " DHCP Generic options doesnt interfere other DHCP options configured in the server",
+    "description": "This test ensures that DHCP Generic option dont interfere with other DHCP standard options.",
+    "result": " DHCP offer /Ack show Option 150 two times, First: 20.20.20.1 and the Second: 10.10.10.1"
+  },
+  "4": {
+    "steps": " 1)Configure DHCP option objects and Groups.\n2)In the DHCP Advance configuration, bind generic option to an option object/group.\n3)Do Export the configuration\n4)Try to import Exported configuration ",
+    "atm_id": "BDBFAA26-0464-11DE-860E-445A00F93527",
+    "initial": " n/a ",
+    "id": "4",
+    "title": "Import Export works with DHCP Option Objects/Groups",
+    "description": "This test is to make sure import/Export works with DHCP Generic option configuration.",
+    "result": " Configuration imported/exported properly. Shows DHCP option settings preserved. "
+  },
+  "6": {
+    "steps": " 1)Configure DHCP option object for Tag No, say: 230.\n2)Force a DHCP client to request for option 230. in the DHCP Discover/Request packet, in the Option55 parameter list add option 230 two times.\n\n",
+    "atm_id": "BDD21C38-0464-11DE-860E-445A00F93527",
+    "initial": " n/a ",
+    "id": "6",
+    "title": "DHCP Server doesnt insert same option tag multiple times  for DHCP option request send by the client.",
+    "description": " This test ensures that same option Tag is not repeated in the DHCP OFFER/ACK message. (Note: Provided same option is not configured in the basic configuration of DHCP address pool, ex: DNS, Domain Name, Router address etc)",
+    "result": " The DHCP server OFFER/ACK packet should show only one DHCP option with Tag Number 230. "
+  },
+  "7": {
+    "steps": " 1)Configure following DHCP option Objects option1: TagNo 230, value = 10.10.10.10, option2: TagNo = 231, value = 11.11.11.11.\n2)Create an option Group: optionGrp12 with option1 and option2 as members.\n3)Bind DHCP Generic group handle with optionGrp12 in the DHCP server configuration.\n4)Start a DHCP client to do a Discover.\n5)The client got an IP address from the pool.\n6)Now Delete option object option1.",
+    "atm_id": "BDCFCC30-0464-11DE-860E-445A00F93527",
+    "initial": " n/a ",
+    "id": "7",
+    "title": "Removing/Editing option objects in the option group take in effect immediately.",
+    "description": "This test ensures that option object callback mechanism works and DHCP server doesnt crash and works as expected.",
+    "result": " The DHCP server doesnt crash. The next DHCP offer send by the server has Tag Number 231 present and not Tag Number 230.\n\nContains 1913 sections and 35217 cases. "
+  },
+  "8": {
+    "steps": " 1.Goto DHCP Advanced Settings page, click Add button.\n2.Select option43, check if Option Type supports all types(IP Address/Four Byte Data/Two Byte Data/One Byte Data/String/Boolean/Domain Name/Hex String).\n3.Option Type select IP Address, input right option value, click save button.\n4.DHCP client do renew, check the packet.\n5.Option Type select other types, repeat step3-4.",
+    "initial": " 1)Enable DHCP Server.\n2)In the DHCP options page add a DHCP option object. ",
+    "title": "Check DHCP option 43 accept all types of option values on DHCP Advanced Settings page",
+    "description": "DHCP option 43 should accept all types of option values",
+    "result": " Step 2,Option type supports all types.\nStep 3,Add option43 successfully.\nStep 4,Packet shows option43 right.\nStep 5,All types works well. "
+  },
+  "9": {
+    "steps": "1.Goto DHCP Server Lease Scopes page, click Add Dynamic button.\n2.Add a dhcp scope like: 192.168.168.200-192.168.168.210,\n3.Click Advanced button, for DHCP Generic Option Group, click Create new dhcp option object\n4.Select option43, check if Option Type supports all types(IP Address/Four Byte Data/Two Byte Data/One Byte Data/String/Boolean/Domain Name/Hex String).\n5.Option Type select IP Address, input right option value, click save button.\n6.DHCP client do renew, check the packet. ",
+    "initial": " 1)Enable DHCP Server. ",
+    "title": "Check DHCP option 43 accept all types of option values DHCP Generic Option Group",
+    "description": "GEN7-34477 DHCP option 43 should accept all types of option values",
+    "result": " Step 4,Option type supports all types.\nStep 5,Add option43 successfully.\nStep 6,Packet shows option43 right. "
+  }
+}

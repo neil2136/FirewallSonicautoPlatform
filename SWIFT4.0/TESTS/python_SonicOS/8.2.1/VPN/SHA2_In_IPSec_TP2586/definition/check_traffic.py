@@ -1,0 +1,18 @@
+from definition.settings import *
+
+
+def ping_from_local_to_remote():
+    logger.info(" {} ".center(20, '-').format('Initiate pings'))
+    rc = False
+    for i in range(10):
+        out = os.system("ping {} -c 1".format(PC2_eth0))
+        if '100% packet loss' not in str(out):
+            logger.info('Successfully initiated continuous traffic from remote to local NAT.')
+            rc = True
+            break
+        elif i == 9:
+            logger.info('Ping failed')
+            logger.info(out)
+            rc = False
+    return rc
+

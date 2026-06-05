@@ -1,0 +1,114 @@
+#!/usr/bin/expect --
+
+set filename [ info script ]
+#set DIR "/SWIFT4.0/TESTS/SonicOS/SHA_HA/HACerts/testcases"
+
+##################### Creat DIRs #####################
+proc MKdir { DIR } {
+#    set DIR "/SWIFT4.0/TESTS/SonicOS/SHA_HA/HACerts/testcases"
+    puts "Create DIR for CA ...\nmkdir $DIR/MyCA\nmkdir\t$DIR/MyCA\t\t\\\n\t$DIR/MyCA/newcerts\t\\\n\t$DIR/MyCA/private\t\\\n\t$DIR/MyCA/crl\n";
+    set a 0;
+    spawn mkdir $DIR/MyCA
+    set timeout 3
+    while {$a<4} {
+        expect {
+            timeout { puts"TIMEOUT"; exit 1; }
+            "*File exists" {puts "File exit."; incr a 1; if { $a == 1 } { spawn mkdir $DIR/MyCA/newcerts } elseif { $a == 2 } { spawn mkdir $DIR/MyCA/private } elseif { $a == 3 } { spawn mkdir $DIR/MyCA/crl } else { puts "\nCreat DIRs Successful!"; } }
+            "" {puts "Creare success."; sleep 3; incr a 1 ; if { $a == 1 } { spawn mkdir $DIR/MyCA/newcerts } elseif { $a == 2 } { spawn mkdir $DIR/MyCA/private } elseif { $a == 3 } { spawn mkdir $DIR/MyCA/crl } else { puts "\nCreat DIRs Successful!"; } }
+        }
+    }
+    if {$a != 4} { exit 1; }
+}
+
+##################### Creat files #####################
+proc Newfile { DIR } {
+#    set DIR "/SWIFT4.0/TESTS/SonicOS/SHA_HA/HACerts/testcases"
+    puts "Creat files:\n  index.txt --- contains information of certificates\n  serial --- contains certificates' number\n";
+    system "touch /tmp/logs/index.txt"
+    spawn cat /tmp/logs/index.txt
+    set timeout 3
+    expect {
+        timeout { exit 1; }
+        "" { puts "Creat index.txt successful!"; }
+        "*No such file or directory" { puts "\nCreat index.txt Failed"; exit 1; }
+    }
+    system "echo 01 >/tmp/logs/serial"
+    spawn cat /tmp/logs/serial
+    set timeout 3
+    expect {
+        timeout { exit 1; }
+        "01" { puts "\nCreat serial successful!"; }
+        "*No such file or directory" { puts "\nCreat serial Failed"; exit 1; }
+    }
+}
+
+##################### Remove DIRS and files #####################
+proc RMfile { DIR } {
+#    set DIR "/SWIFT4.0/TESTS/SonicOS/SHA_HA/HACerts/testcases"
+    system "rm -rf $DIR/MyCA";
+    spawn cat $DIR/MyCA
+    set timeout 3
+    expect {
+        timeout { exit 1; }
+        "*No such file or directory" { puts "\nRemove all Files Passed"; }
+        "*Is a directory" { puts "\nRemove all Files Failed"; exit 1; }
+    }
+}
+
+##################### Creat root CA #####################
+proc RootCA { DIR } {
+#    set DIR "/SWIFT4.0/TESTS/SonicOS/SHA_HA/HACerts/testcases"
+    puts "\nCreat root CA ...";
+    set a 0;
+    spawn openssl req -x509 -newkey rsa:1024 -out $DIR/MyCA/rootca.pem -outform PEM -days 9131 -config $DIR/openssl_local.cnf
+    set timeout 6 
+    while { $a<2 } {
+        expect {
+            timeout { exit 1; }
+            ":" { send "123456\r"; sleep 1; incr a 1; }
+        }
+    }
+}
+
+##################### Creat local certificate #####################
+proc LocalCert { DIR THIRDname } {
+#    set DIR "/SWIFT4.0/TESTS/SonicOS/SHA_HA/HACerts/testcases"
+    puts "\nCreat local certificate ...";
+    set a 0
+    spawn openssl ca -in /tmp/logs/$THIRDname.p10 -config $DIR/openssl_local.cnf
+    sleep 1;
+    set timeout 10
+
+    while { $a<4 } {
+        expect {
+            timeout {exit 1}
+            ":" { if { $a==0 } { send "root\r"; sleep 2; incr a 1; } elseif { $a==1 } { send "y\r"; sleep 2; incr a 1; } }
+            "\]" { send "y\r"; sleep 2; incr a 1; }
+            "*Updated" { puts "\nCreat local certificate passed."; incr a 1; }
+        }
+    }
+}
+
+##################### MAIN PART #####################
+
+if {$argc < 2} {
+    puts "Error: please specify CA type.\nUsage: $filename <CA type e.g: 0|1|2|3|4|...> <CA path> [Third name]\n";
+    puts "0 -- Creat DIRs and Files";
+    puts "1 -- Creat Root CA";
+    puts "2 -- Creat Local certificate";
+    puts "4 -- Remove all Files";
+    puts "5 -- Creat index.txt and serial file";
+    exit 1;
+}
+
+set CAtype [lindex $argv 0]
+set DIR [lindex $argv 1]
+set THIRDname [lindex $argv 2]
+
+switch $CAtype {
+    0 { MKdir $DIR; Newfile $DIR }
+    1 { RootCA $DIR }
+    2 { LocalCert $DIR $THIRDname }
+    4 { RMfile $DIR }
+    5 { Newfile $DIR }
+}

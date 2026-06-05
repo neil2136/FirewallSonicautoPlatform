@@ -1,0 +1,108 @@
+{
+   "56631": {
+      "steps": "1.click the edit button behind the ipv6 network monitor policy\n\n2.change its name or probe type,then save.",
+      "initial": "",
+      "id": "56631",
+      "title": "Edit an IPv6 Network Monitor policy ",
+      "result": "1.the policy is editable.\n\n2.after edit ,the policy is changed ."
+   },
+  "56627": {
+      "steps": "\n\n1.On Network->Network Monitor page, click ipv6 only button,add a IPV6 network monitor.\n\n    set name as test_ipv6,and from probe target drop list ,choose or create one ipv6 address,and �0„2probe type is Ping(ICMP),and save.\n    check policy test_ipv6 is shown on the ipv6 only table and�0„2IPv4 and IPv6 table.\n\n",
+      "initial": "",
+      "id": "56627",
+      "title": "Add an IPv6 Network Monitor policy ",
+      "result": ""
+   },
+  "56630": {
+      "steps": "",
+      "initial": "",
+      "id": "56630",
+      "title": "IPv4 and IPv6 elements mixed test",
+      "result": ""
+   },
+  "3375049": {
+      "steps": "1.Go to Network Monitor page, click Add\n2.Click “Create New Address Object” for Probe target, create IPv6 AO range 2001:470:80b7:8aa::1- 2001:470:80b7:8aa::ffff:ffff:ffff, click OK\n3.Mouse hover on \"Probe target\"\n4.Mouse hover on \"Status\" and check packet monitor",
+      "initial": "",
+      "id": "3375049",
+      "title": " Verify network monitor works when probe target is a big size IPv6 range for probe target ",
+      "result": "in step3, it shows 2001:470:80b7:8aa::1-2001:470:80b7:8aa::100 (maxinum is 256 for each network monitor entry)\nin step4, FW send packet successfully and status show corresponding probe status"
+   },
+  "56633": {
+      "steps": "1. add a ipv6 network monitor policy from only ipv6 page.</span>\n\n    set probe type as Ping(ICMP)-Explicit Route,set probe target as 4::4, set next Hop Gateway as fe80::1,set outbound interface as physical interface�0„2X2,and add a proper name,leave other options as default,then save.\n    from packet captured,check if have ICMPv6 traffic send from x2 to 4::4�0„2\n",
+      "initial": "",
+      "id": "56633",
+      "title": "Set Outbound Interface as a physical interface",
+      "result": "physical interface can be set as outbound interface"
+   },
+  "56634": {
+      "steps": "\n\n    add a ipv6 network monitor policy from only ipv6 page.\n    set probe type as Ping(ICMP)-Explicit Route,set probe target as 4::4, set next Hop Gateway as fe80::1,set outbound interface as X2,and add a proper name,leave other options as default,then save.\n    from packet captured,check if have ICMPv6 traffic send from x2 to 4::4�0„2\n\n",
+      "initial": "",
+      "id": "56634",
+      "title": "Set Next Hop Gateway as an IPv6 Address",
+      "result": ""
+   },
+  "56635": {
+      "steps": "configure X1 as wan dhcp mode,and add a ipv6 AO named x0 range which includes the PCs' IP connected to x0 interface .\nnetwork -> nat,add a ipv6 nat policy,set source original any,source translated any,destination original \"�0„2<span>X1 IPv6 Primary�0„2</span><span>Dynamic Address\",destination translated \"x0 range\", and save.</span>\n<span>3.<span>Click the Advanced tab,</span><span>�0„2enable probing ,and set probe type to Ping,</span><span>�0„2Set NAT method to Round Robin,and click OK.</span></span>\n<span><span>4.network->network monitor,check if �0„2a ipv6 network monitor added, and check its status",
+      "initial": "",
+      "id": "56635",
+      "title": " Test IPv6 Probe using in NAT policy",
+      "result": ".a policy named with NAT PROBE start was added,and it can't be edit.\n\n    probe target is the AO which set as destination translated.\n"
+   },
+  "56636": {
+      "steps": "1.add one ipv6 network monitor policies.\n2.click the button behind this entry,and delete this entry.",
+      "initial": "",
+      "id": "56636",
+      "title": "Delete an IPv6 Network Monitor policy",
+      "result": "the entry can be delete successfully."
+   },
+  "56637": {
+      "steps": "1 Go to Network /Network Monitor page.�0„2<br />2 add some ipv6 and ipv4 network monitor policies and configure related settings.�0„2<br />3 Wait until the status is stable<br />4 Export TSR.�0„2",
+      "initial": "",
+      "id": "56637",
+      "title": "Check TSR",
+      "result": "Info is correct and integrated in TSR for Network Monitor�0„2feature"
+   },
+  "56638": {
+      "steps": "\n\n    add a ipv6 network monitor policy from only ipv6 page.\n    set probe type as Ping(ICMP)-Explicit Route,set probe target as the pc's ipv6 address which connected to interface x0, set next Hop Gateway as none,set outbound interface as X0,and add a proper name,leave other options as default,then save.\n    check if�0„2�0„2IPv6 host can be set as probe target.\n    check how it probe ipv6 host.\n\n",
+      "initial": "",
+      "id": "56638",
+      "title": "Verify the function to probe an IPv6 host",
+      "result": ""
+   },
+
+   "56628": {
+      "steps": "Step 1 Configure the static route.<br />Step 2 In the Probe pull-down menu select the appropriate Network Monitor object or select Create�0„2New Network Monitor object... to dynamically create a new object.<br />Step 3 Typical configurations will not check the Disable route when probe succeeds checkbox,because typically administrators will want to disable a route when a probe to the route¡¯s�0„2destination fails. This option is provided to give administrators added flexibility for defining�0„2routes and probes.<br />Step 4 Select the Probe default state is UP to have the route consider the probe to be successful (i.e.�0„2in the ¡°UP¡± state) when the attached Network Monitor policy is in the ¡°UNKNOWN¡± state. This�0„2is useful to control the probe-based behavior when a unit of a High Availability pair transitions�0„2from ¡°IDLE¡± to ¡°ACTIVE,¡± because this transition sets all Network Monitor policy states to�0„2¡°UNKNOWN.¡±<br />Step 5 Click OK to apply the configuration",
+      "initial": "",
+      "id": "56628",
+      "title": "Test IPv6 Probe using in PBR policy",
+      "result": ""
+   },
+   "56629": {
+      "steps": " 1. add a ipv6 network monitor policy from only ipv6 page.\n\n2. set probe type as Ping(ICMP)-Explicit Route,set probe target as the pc's ipv6 address which connected to interface x0, set next Hop Gateway as fe80::1,set outbound interface as X0,and add a proper name,leave other options as default,then save.\n\n3. wait for a while,the monitor status change to UP .\n\n4. power off the pc,wait for a while,check the monitor status .\n\n5. power on the pc,wait for a while,check the monitor status .",
+      "initial": "",
+      "id": "56629",
+      "title": "Verify the monitor status change from Down to UP when the probe target come back",
+      "result": "4.�0„2�0„2�0„2<span class='TYPE_tc_text plain'>the monitor status change from UP to Down when the probe target is become unavailable.</span>�0„2\n\n5. �0„2�0„2the monitor status change from Down to UP when the probe target come back"
+   },
+  "56639": {
+      "steps": "add a ipv6 network monitor policy from only ipv6 page.\n    set probe type as Ping(ICMP)-Explicit Route,set probe target as the pc's ipv6 address which connected to interface x0, set next Hop Gateway as fe80::1,set outbound interface as X0,and add a proper name,leave other options as default,then save.\n    wait for a while,the monitor status change to UP .\n    �0„2power off�0„2the pc,wait for a while,check the�0„2monitor status .\n\n",
+      "initial": "",
+      "id": "56639",
+      "title": "Verify the monitor status change from UP to Down when the probe target is become unavailable.",
+      "result": "0„2the monitor status change from UP to Down when the probe target is become unavailable."
+   },
+   "56626": {
+      "steps": "1. add a ipv6 network monitor policy from only ipv6 page.\n\n2. set probe type as TCP-Explicit Route,set probe target as 4::4, set next Hop Gateway as fe80::1,set outbound interface as X2,probe port 80 and add a proper name,leave other options as default,then save.\n\n3. from packet captured,check if have TCP traffic with port 80 send from x2 to 4::4�0„2",
+      "initial": "",
+      "id": "56626",
+      "title": "Test Probe Type-TCP-Explicit Route",
+      "result": "the policy with�0„2Probe Type-<span>TCP-Explicit Route</span> can work normally"
+   },
+   "56632": {
+      "steps": "1. Go to Network Monitor page, click Add\n\n2. Click “Create New Address Object” for Probe target, create IPv6 AO range 2001:470:80b7:8aa::1- 2001:470:80b7:8aa::ffff:ffff:ffff, click OK\n\n3. Mouse hover on \"Probe target\"\n4. Mouse hover on \"Status\" and check packet monitor",
+      "initial": "",
+      "id": "56632",
+      "title": "Verify network monitor works when probe target is  a big size IPv6 range for probe target",
+      "result": "in step3, it shows 2001:470:80b7:8aa::1-2001:470:80b7:8aa::100 (maxinum is 256 for each network monitor entry)in step4, FW send packet successfully and status show corresponding probe status"
+   }
+}

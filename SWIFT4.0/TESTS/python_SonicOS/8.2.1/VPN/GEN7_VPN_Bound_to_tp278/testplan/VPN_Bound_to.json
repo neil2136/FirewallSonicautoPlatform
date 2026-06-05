@@ -1,0 +1,66 @@
+{
+   "2" : {
+      "steps" : "  \n  2) TBD",
+      "initial" : "  N/A",
+      "id" : "2",
+      "title" : "Bound to: X1 Interface. IKE > Main Mode. PRO5060 Box -> Initiator.",
+      "result" : "  TBD"
+   },
+   "3" : {
+      "steps" : "  \n  3) TBD",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "Bound to: X1 Interface. IKE > Main Mode. PRO5060 Box -> Responder",
+      "result" : "  TBD"
+   },
+   "4" : {
+      "steps" : "    1. Add a site-to-site VPN policy with IKE using Preshared Secret,add peer's IP address as the IPsec Primary Gateway,input the local networks and remote networks,choose aggressive mode as the IKE(phase \n  1) proposals,do not check the keep alive,choose vpn policy bound to Interface X1;\n    2. Add a related site-to-site VPN policy for the peer side, do not check keep alive;\n    3. Send ping from local side to initiate the VPN connection.",
+      "initial" : "  pc1-------(X\n  0)FW1(X\n  1)----------(X\n  1)FW2(X\n  0)--------pc2",
+      "id" : "4",
+      "title" : "Bound to: X1 Interface. IKE > Aggressive Mode. PRO5060 Box -> Initiator.",
+      "result" : "  The site-to-site VPN should be established, from Log view page,we get:\n  \"IKE Initiator: Start Aggressive Mode negotiation (Phase \n  1)\" initiated by local side,\"IKE Initiator: Aggressive Mode complete (Phase \n  1).\",\"IKE Initiator: Start Quick Mode (Phase \n  2).\",\"IKE negotiation complete. Adding IPSec SA. (Phase \n  2)\"."
+   },
+   "5" : {
+      "steps" : "  \n  5) TBD",
+      "initial" : "  N/A",
+      "id" : "5",
+      "title" : "Bound to: X1 Interface. IKE > Aggressive Mode. PRO5060 Box -> Responder.",
+      "result" : "  TBD"
+   },
+   "6" : {
+      "steps" : "  \n  6) TBD",
+      "initial" : "  N/A",
+      "id" : "6",
+      "title" : "Bound to: X1 Interface. Manual Key. PRO5060 Box -> Initiator.",
+      "result" : "  TBD"
+   },
+   "7" : {
+      "steps" : "  \n  7) TBD",
+      "initial" : "  N/A",
+      "id" : "7",
+      "title" : "Bound to: X1 Interface. Manual Key. PRO5060 Box -> Responder.",
+      "result" : "  TBD"
+   },
+   "8" : {
+      "steps" : "  \n  8) TBD",
+      "initial" : "  N/A",
+      "id" : "8",
+      "title" : "Bound to: X1 Interface. Third Party Certificates. PRO5060 Box -> Initiator.",
+      "result" : "  TBD"
+   },
+   "9" : {
+      "steps" : "    1. Add a site-to-site VPN policy with 3rd CA,add peer's IP address as the IPsec Primary Gateway,input the local networks and remote networks,choose aggressive mode or main mode as the IKE(phase \n  1) proposals,do not check the keep alive,choose vpn policy bound to Interface X1;\n    2. Add a related site-to-site VPN policy for the peer side, do not check keep alive;\n    3. Send ping from remote side to initiate the VPN connection.",
+      "initial" : "  pc1-------(X\n  0)FW1(X\n  1)----------(X\n  1)FW2(X\n  0)--------pc2",
+      "id" : "9",
+      "title" : "Bound to: X1 Interface. Third Party Certificates. PRO5060 Box -> Responder",
+      "result" : "  The site-to-site VPN should be established, from Log view page,we get:\n  \"IKE Responder: Aggressive Mode complete (Phase \n  1)\" initiated by local side,\"IKE Responder: Aggressive Mode complete (Phase \n  1).\",\"IKE Responder: Start Quick Mode (Phase \n  2).\",\"IKE negotiation complete. Adding IPSec SA. (Phase \n  2)\"."
+   },
+   "10" : {
+      "steps" : "  For example:Bound to: X0 Interface. IKE > Aggressive Mode. PRO5060 Box -> Initiator:\n    1. Add a site-to-site VPN policy with IKE using Preshared Secret,add peer's IP address as the IPsec Primary Gateway,input the local networks:X3 subnet and remote networks:peer's X3 subnet,choose aggressive mode as the IKE(phase \n  1) proposals,do not check the keep alive,choose vpn policy bound to Interface X0;\n    3. Add a related site-to-site VPN policy for the peer side, do not check keep alive;\n    4. Send ping from local side to initiate the VPN connection.",
+      "initial" : "  pc1-------(x\n  3)FW1(x\n  0)----------(x\n  0)FW2(x\n  3)--------pc2;\n  Have a CA certificate and issued local certificate imported;\n  Have X3 interface assigned to be dmz/custom zone,X0 as the default LAN zone",
+      "id" : "10",
+      "title" : "Bound to: X0 Interface. Repeat tests cases ##2-9",
+      "result" : "  The site-to-site VPN should be established, from Log view page,we get:\n  \"IKE Initiator: Start Aggressive Mode negotiation (Phase \n  1)\" initiated by local side,\"IKE Initiator: Aggressive Mode complete (Phase \n  1).\",\"IKE Initiator: Start Quick Mode (Phase \n  2).\",\"IKE negotiation complete. Adding IPSec SA. (Phase \n  2)\"."
+   }
+
+}

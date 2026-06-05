@@ -1,0 +1,65 @@
+{
+   "01" : {
+      "steps" : "1.Make some successful changes as well as some failed configuration.\n2.Go to Log Settings/ Auditing Records page, check the records.",
+      "initial" : "1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "01",
+      "title" : "Verify the records are displayed in correct format",
+      "result" : "The Auditing Records are displayed in correct format"
+   },
+   "04" : {
+      "steps" : "Go to Log Settings/Automation, enter the correct Email address and Mail Server settings for E-mail Audit Records Automation.\nLog Settings/ Auditing Records page, click the icon \"Export Auditing Records by Email\".\nGo to your mailbox, check if Auditing Records are received.",
+      "initial" : "1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "04",
+      "title" : "Verify the records can be exported by Email correctly",
+      "result" : "Auditing Records are received in the mail box, and are displayed properly."
+   },
+   "06" : {
+      "steps" : "Go to Log Settings/ Auditing Records page, click the icon \"Export Auditing Records as CSV File\".\nCheck the records downloaded.",
+      "initial" : "1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "06",
+      "title" : "Verify the records can be exported as CSV File correctly",
+      "result" : "Auditing Records is exported as CSV File correctly"
+   },
+   "08" : {
+      "steps" : "Go to Log Settings/ Auditing Records page, click the icon \"Display Auditing Records on Console\"\nMake some configuration on the firewall.\nCheck the console outputs.\n\n------Edit by Celia-----\nIn UI7, to find \"Display Auditing Records on Console\", user should go to Monitor/Logs/Auditing Logs page, click 'Supplemental' icon, then the button shows.",
+      "initial" : "1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "08",
+      "title" : "Verify it's able to display Auditing Records on  Console properly",
+      "result" : "New Auditing Records are printed on Console."
+   },
+   "30" : {
+      "steps" : "Make some changes on the firewall.\nGo to Log Settings/ Auditing Records page,  check the Old Value and New Value of the records",
+      "initial" : "1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "30",
+      "title" : " Verify the Old Value and New Value of the records",
+      "result" : "Old Value and New Value of the records are correct"
+   },
+   "41" : {
+      "steps" : "Login from GUI.\nGo to Diag page, uncheck the option Enable Configuration Auditing and apply.\nMake some changes on the firewall to trigger both successful and failed configurations.\nGo to Log/ Auditing Records page, check if the configurations are audited.",
+      "initial" : "1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "41",
+      "title" : "Disable Configuration Auditing from the Diag page",
+      "result" : "When Configuration Auditing is disabled on Diag page, new configuration is not audited"
+   },
+   "44" : {
+      "steps" : "Login from CLI.\nIssue the following commands:\nconfig(C0EAE49CE84C)# log audit settings\n(config-audit)# enable\n(config-audit)# commit\n\nCheck the status of option 'Enable Configuration Auditing' on diag page. Result 1.\nMake some changes on the firewall to trigger both successful and failed configurations.\nGo to Log/ Auditing Records page, check if the configurations are audited. Result 2.",
+      "initial" : "1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "44",
+      "title" : "Enable Configuration Auditing from CLI",
+      "result" : "When Configuration Auditing is enabled on CLI, the option is disabled on diag page too.\nNew configuration is audited."
+   },
+   "47" : {
+      "steps" : "Make some changes on the firewall to trigger both successful and failed configurations auditing.\nGo to Log/ Auditing Records page, make sure there are records.\nReboot the DUT.\nCheck the  Log/ Auditing Records page again.",
+      "initial" : "1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "47",
+      "title" : "Verify Auditing Records persistence support",
+      "result" : "For NSA series firewall, the Auditing Records should be kept after the reboot"
+   },
+   "56" : {
+      "steps" : "1.Configure X4 as LAN and set IP/Subnet, save\n2.Export currenty prefs file in Device->Firmware and settings page\n3.Change X4 to unassigned state\n4.Import the prefs that exported in step2\n5.After firewall boots up check the audit log",
+      "initial" : "1.The option 'Enable Configuration Auditing' is checked on diag page.",
+      "id" : "56",
+      "title" : "can generate audit record when reboot fireware after import the configuration files.\n",
+      "result" : "Audit log should show \"import settings\" log with \"succeed\" transaction status."
+   }
+}

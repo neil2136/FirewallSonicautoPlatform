@@ -1,0 +1,113 @@
+{
+   "07" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled) 4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "07",
+      "title" : "User LDAP servers GET",
+      "result" : "Ensure the above command returns Success = true"
+   },
+   "01" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "01",
+      "title" : "PUT User LDAP settings",
+      "result" : "Ensure the above command returns Success = true"
+   },
+   "08" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "08",
+      "title" : "PUT User LDAP servers",
+      "result" : "Ensure the above command returns Success = true"
+   },
+   "05" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "05",
+      "title" : "PUT UserLDAP server using name",
+      "result" : "Ensure the above command returns Success = true"
+   },
+   "03" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "03",
+      "title" : "POST User LDAP server settings",
+      "result" : "Ensure the above command returns Success = true"
+   },
+   "06" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "06",
+      "title" : "POST User LDAP servers",
+      "result" : "Ensure the above command returns Success = true"
+   },
+   "15" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "15",
+      "title" : "Ensure the above command returns Success = true"
+   },
+   "1825025" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  The particular user object referred by name should be displayed.",
+      "id" : "1825025",
+      "title" : "GET user LDAP server using name",
+      "result" : "  1. GET the server configuration:  curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/User/LDAP/server/name/xxx"
+   },
+   "1825024" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  All userLDAP settings should be displayed.",
+      "id" : "1825024",
+      "title" : "GET User LDAP settings",
+      "result" : "  1 GET the settings  .curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/user/ldap/settings"
+   },
+   "1825027" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  Reporting LDAP global statistics should be shown",
+      "id" : "1825027",
+      "title" : "GET reporting LDAP statistics global",
+      "result" : "  1.curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/reporting/ldap-statistics/global"
+   },
+   "1825033" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  Error is displayed",
+      "id" : "1825033",
+      "title" : "Attempt to DELETE non-existant User LDAP server by name",
+      "result" : "  1. Attempt to DELETE to the ldap server endpoint:  https://x.x.x.x/api/sonicos/user/ldap/server/fake"
+   },
+   "1825032" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  Error is displayed",
+      "id" : "1825032",
+      "title" : "Attmpt to get non-existant user LDAP server using name",
+      "result" : "  1. GET the server configuration:  curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/User/LDAP/server/name/fake"
+   },
+   "1825028" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  Reporting LDAP statistics global should be cleared",
+      "id" : "1825028",
+      "title" : "DELETE reporting LDAP statistics global",
+      "result" : "  1. DELETE to the endpoint:  https://x.x.x.x/api/sonicos/resporting/ldap-statistics/global  2. Ensure the above command returns Success = true  3. GET the statistics from the same endpoint and verify they are cleared."
+   },
+   "1825029" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  Reporting LDAP statistics should be shown for specified server",
+      "id" : "1825029",
+      "title" : "GET reporting LDAP statistics server",
+      "result" : "  1.curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/reporting/ldap-statistics/y.y.y.y"
+   },
+   "1825026" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  Specific User guest object should be deleted.",
+      "id" : "1825026",
+      "title" : "DELETE User LDAP server by name",
+      "result" : "  1. DELETE to the ldap server endpoint:  https://x.x.x.x/api/sonicos/user/ldap/server/name  2. Ensure the above command returns Success = true i  3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending  4. Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending  5. Verify commit is successful."
+   },
+   "1825030" : {
+      "steps" : "  1.Load the firmware under test  2. Configure necessary LAN and WAN interfaces and Register the FW  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  Reporting LDAP statistics global should be cleared for the specified server",
+      "id" : "1825030",
+      "title" : "DELETE reporting LDAP statistics server",
+      "result" : "  1. DELETE to the reporting ldap statistics endpoint for a server:  https://x.x.x.x/api/sonicos/resporting/ldap-statistics/server/y.y.y.y  2. Ensure the above command returns Success = true"
+   }
+}

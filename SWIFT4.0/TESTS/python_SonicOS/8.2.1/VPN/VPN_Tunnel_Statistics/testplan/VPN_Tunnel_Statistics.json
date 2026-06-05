@@ -1,0 +1,37 @@
+{
+   "4" : {
+      "steps" : "  Set VPN tunnel between box to box using (with pre-shared Key, 3 rd parth cert in Main mode and aggressive mode). Place a router with lower MTU in between the boxes at the WAN. After VPN tunnel brough up Open Tunnel St atistic Wi ndow Ping with fragmented packets. Set Etherpeak on both WAN and LAN side of sonicwall .",
+      "initial" : "  N/A",
+      "id" : "4",
+      "title" : "Fragmented Packets",
+      "result" : "  Verify the Tunnel Statistic correct info on Fragmented packets as showing in the Etherpeak ."
+   },
+   "1" : {
+      "steps" : "  Set VPN tunnel between box to box (with pre-shared Key, 3 rd parth cert in Main mode and aggressive mode). After VPN tunnel first brough up",
+      "initial" : "  N/A",
+      "id" : "1",
+      "title" : "Tunnel Statistic Icon appears after VPN tunnel",
+      "result" : "  Verify the Tunnel Statistic icon appears along with renegotiation button. Clieck the Icon, the pop-up window shows Created Time and Tunnel Valid Time."
+   },
+   "3" : {
+      "steps" : "  Set VPN tunnel between box to box using (with pre-shared Key, 3 rd parth cert in Main mode and aggressive mode). After VPN tunnel brought up Open Tunnel St atistic Wi ndow Click Ok Reopen The Window again, Click X button.",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "Tunnel Statistic Window",
+      "result" : "  Verify the Tunnel Statistic Wi ndow can be closed."
+   },
+   "2" : {
+      "steps" : "  Set VPN tunnel between box to box using (with pre-shared Key, 3 rd parth cert in Main mode and aggressive mode). After VPN tunnel is up Open tunnel statistic window Send VPN traffic between the tunel Clieck Refresh",
+      "initial" : "  N/A",
+      "id" : "2",
+      "title" : "Traffic Info in Packets and Bytes",
+      "result" : "  Verify the Tunnel Statistic shows increasing number of Packets In, Packets Out, Bytes In and Bytes out info."
+   },
+   "5" : {
+      "steps" : "  Set VPN tunnel between box to box(with pre-shared Key, 3 rd parth cert in Main mode and aggressive mode). After VPN tunnel brough up Send traffic through the tunnel Check Tunel statistic window shows data pass through info Click renegotiate button",
+      "initial" : "  N/A",
+      "id" : "5",
+      "title" : "Reset Tunnel Statistics Info with Renegotiation",
+      "result" : "  Verify the Tunnel Statistic icon disappears along with renegotiation button. After renegotiation complete, the ico reappears again and open the Tunnel statistic window, all packets info set to 0, while create time and Tunnel valid until are reset."
+   }
+}

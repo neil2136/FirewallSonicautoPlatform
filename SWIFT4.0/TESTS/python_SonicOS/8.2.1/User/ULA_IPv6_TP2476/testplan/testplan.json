@@ -1,0 +1,205 @@
+{
+    "1504087": {
+        "id": "1504087",
+        "title": "User login status",
+        "result": "Verify user info displayed correctly on User-Status page.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as a local user\n3. Repeat on DMZ/WLAN/Cuz/SSLVPN/VPN\n"
+    },
+    "1504088": {
+        "id": "1504088",
+        "title": "User Logout, Login session limit expired log",
+        "result": "The log message  User session time expired  is shown on the firewall and related IP address info displayed correctly.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Configure user session time to 5 minutes\n2. Browse to FW LAN IPv6 interface\n3. Login as a local user\n4. Wait 5 minutes.\n"
+    },
+    "1504089": {
+        "id": "1504089",
+        "title": "Login Redirect upon accessing the Internet",
+        "result": "Verify after login, user was redirected to the previous requested website.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.\n4. LAN to WAN allow Everyone",
+        "steps": "1. From IPv6 address PC browse to internet website, verify be redirect to authentication page with IPv6 address\n2. Login as a local user\n"
+    },
+    "1504090": {
+        "id": "1504090",
+        "title": "User has read only admin privilege",
+        "result": "Verify user can browse to all management page but not allow to change configuration.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created with read only admin privilege.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as the read only admin\n"
+    },
+    "1504091": {
+        "id": "1504091",
+        "title": "User has limited admin privilege",
+        "result": "Verify user can browse to limited management page and change configuration",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created with limited admin privilege.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as the limited admin\n"
+    },
+    "1504092": {
+        "id": "1504092",
+        "title": "User has full admin privilege",
+        "result": "Verify user can browse to all management page but not allow to change configuration.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created with full admin privilege.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as the full admin\n"
+    },
+    "1504093": {
+        "id": "1504093",
+        "title": "Login as built in admin",
+        "result": "Verify every page can displayed and make configuration",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created with full admin privilege.",
+        "steps": "1. Browse to FW LAN IPv6 interface \n2. Login as built in admin\n"
+    },
+    "1504094": {
+        "id": "1504094",
+        "title": "Allow only authenticated users to access the Internet",
+        "result": "As mentioned in steps.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. LAN to WAN access rule allow group.",
+        "steps": "1. Create a local group  gp \n2. Create a local user  test  which has  gp  group.\n3. Configure IPv6 LAN to WAN access rule, allow User  gp .\n4. From LAN PC with IPv6 address try to browse the internet\n5. After be redirected to IPv6 address login page, login as  test\u00c2\u00a0\n6. Verify after login, user was redirected to the website.\n"
+    },
+    "1504095": {
+        "id": "1504095",
+        "title": "Allow user has inherited privilege to access the Internet",
+        "result": "As mentioned in steps.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. LAN to WAN access rule allow group.",
+        "steps": "1. Create a local group  gp.\n2. Create another group  sgp  which is member of  gp.\n3. Configure IPv6 LAN to WAN access rule, allow User  gp.\n4. Create a local user  test  which is member of  sgp.\n5. From LAN PC with IPv6 address try to browse the internet.\n6. After be redirected to IPv6 address login page, login as  test.\n7. Verify after login, user was redirected to the website.\n"
+    },
+    "1504096": {
+        "id": "1504096",
+        "title": "Allow LDAP group users (Imported to fw) to access the Internet",
+        "result": "As mentioned in steps.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. LAN to WAN access rule allow group.",
+        "steps": "1. Configure LDAP for user authentication.\n2. Click import LDAP group.  For example LDAP group  Test Group  was imported to FW.\n3. Configure IPv6 LAN to WAN access rule, allow User  Test Group\u00c2\u00a0\n4. From LAN PC with IPv6 address try to browse the internet\n5. After be redirected to IPv6 address login page, login as a LDAP user which belong to Test Group\n6. Verify after login, user was redirected to the website\n7. From LAN PC with IPv6 address try to browse the internet\n8. After be redirected to IPv6 address login page, login as a LDAP user which not belong to Test Group\n9. Verify user login allowed but internet access dropped\n"
+    },
+    "1504097": {
+        "id": "1504097",
+        "title": "Acceptable Use Policy is displayed on login",
+        "result": "As mentioned in steps",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Configure acceptable user policy for Trusted Zone/WAN zone/Public Zone/Wireless Zone/VPN Zone\n2. Browse to FW LAN IPv6 interface\n3. Login as a local user\n4. Verify the acceptable user policy displayed with IPv6 address\n5. Repeat with different zone\n"
+    },
+    "1504098": {
+        "id": "1504098",
+        "title": "User login Log",
+        "result": "Verify user info displayed correctly in log.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as a local user\n3. Repeat on DMZ/WLAN/Cuz/SSLVPN/VPN\n"
+    },
+    "1504099": {
+        "id": "1504099",
+        "title": "User Lockout from IPv6 address",
+        "result": "As mentioned in steps",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. User lockout enabled.",
+        "steps": "1. Enable user lockout, set to 2 attempts and 2 minutes\n2. Browse to FW LAN IPv6 interface\n3. Login as a local user with wrong password twice\n4. Verify the user is not allowed to login\n5. After 2 minutes, try login again with correct password\n6. Verify login succeed\n"
+    },
+    "1504100": {
+        "id": "1504100",
+        "title": "User Lockout from IPv6 address then try login via IPv4 address",
+        "result": "As mentioned in steps",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. User lockout enabled.",
+        "steps": "1. Enable user lockout, set to 2 attempts and 2 minutes\n2. Browse to FW LAN IPv6 interface\n3. Login as a local user with wrong password twice\n4. Verify the user is not allowed to login\n5. From another LAN PC with IPv4 address, browse to LAN IPv4 interface\n6. Try to login the locked user\n7. Verify login failed\n8. After 2 minutes, try login again with correct password via both IPv6 and IPv4 address\n9. Verify login succeed\n"
+    },
+    "1504101": {
+        "id": "1504101",
+        "title": "User Lockout from IPv4 address then try login via IPv6 address",
+        "result": "As mentioned in steps",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. User lockout enabled.",
+        "steps": "1. Enable user lockout, set to 2 attempts and 2 minutes\n2. Browse to FW LAN IPv4 interface\n3. Login as a local user with wrong password twice\n4. Verify the user is not allowed to login\n5. From another LAN PC with IPv6 address, browse to LAN IPv6 interface\n6. Try to login the locked user\n7. Verify login failed\n8. After 2 minutes, try login again with correct password via both IPv6 and IPv4 address\n9. Verify login succeed\n"
+    },
+    "1504102": {
+        "id": "1504102",
+        "title": "User unlocked by admin",
+        "result": "As mentioned in steps",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. User lockout enabled.",
+        "steps": "1. Enable user lockout, set to 2 attempts and 2 minutes\n2. Browse to FW LAN IPv6 interface\n3. Login as a local user with wrong password twice\n4. Verify the user is not allowed to login\n5. Login as admin to FW, unlock the user\n6. Try to login the locked user again\n7. Verify login succeed\n"
+    },
+    "1504103": {
+        "id": "1504103",
+        "title": "Admin permission with IPv6 address",
+        "result": "As mentioned in steps",
+        "initial": "1. PC-----LAN (FW)\n2. User management allowed on LAN interface",
+        "steps": "1. From PC1 in LAN IPv6 subnet, browse to FW LAN IPv6 interface\n2. Login as built in admin\n3. From PC2 in LAN IPv6 subnet, browse to FW LAN IPv6 interface\n4. Login as built in admin\n5. Verify redirect to permission page\n6. Click Continue on permission page\n7. Verify PC2 admin can configure FW, PC1 admin was in non-configure mode\n"
+    },
+    "1504104": {
+        "id": "1504104",
+        "title": "Admin login from IPv6 address then try permission via IPv4 address",
+        "result": "As mentioned in steps",
+        "initial": "1. PC-----LAN (FW)\n2. User management allowed on LAN interface",
+        "steps": "1. From PC1 in LAN IPv6 subnet, browse to FW LAN IPv6 interface\n2. Login as built in admin\n3. From PC2 in LAN IPv4 subnet, browse to FW LAN IPv4 interface\n4. Login as built in admin\n5. Verify redirect to permission page\n6. Click Continue on permission page\n7. Verify PC2 admin can configure FW, PC1 admin was in non-configure mode\n"
+    },
+    "1504105": {
+        "id": "1504105",
+        "title": "Admin login from IPv4 address then try permission via IPv6 address",
+        "result": "As mentioned in steps",
+        "initial": "1. PC-----LAN (FW)\n2. User management allowed on LAN interface",
+        "steps": "1. From PC1 in LAN IPv4 subnet, browse to FW LAN IPv4 interface\n2. Login as built in admin\n3. From PC2 in LAN IPv6 subnet, browse to FW LAN IPv6 interface\n4. Login as built in admin\n5. Verify redirect to permission page\n6. Click Continue on permission page\n7. Verify PC2 admin can configure FW, PC1 admin was in non-configure mode\n"
+    },
+    "1504106": {
+        "id": "1504106",
+        "title": "Bypass User Authentication. Allow HTTP URLs. Add URLs",
+        "result": "Verify no user login window appeared. The website can be accessed",
+        "initial": "1. WAN-----PC-----LAN (FW)\n2. User Login allowed on LAN interface",
+        "steps": "1. Configure LAN to WAN access rule, allow Everyone.\n2. Add HTTP URL to bypass user authentication, such as ipv6.google.com\n3. From PC1 in LAN IPv6 subnet, browse to ipv6.google.com\n"
+    },
+    "1504107": {
+        "id": "1504107",
+        "title": "User Logout, select the Logout button",
+        "result": "When the user test pushes the Logout button, he is logged out from the firewall. The UserLogin Status window is closed and the login page is displayed in the main window. The entry for the user test is removed from the Currently active sessions table on the Users &gt; Status page on the firewall.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as a local user\n3. Push the Logout button.\n"
+    },
+    "1504108": {
+        "id": "1504108",
+        "title": "User logout Log",
+        "result": "Verify user logout info displayed correctly in log.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as a local user\n3. Then logout the user\n"
+    },
+    "1504109": {
+        "id": "1504109",
+        "title": "User logout by administrator",
+        "result": "The entry for the user test is removed from the Currently active sessions table on the Users &gt; Status page on the firewall. When the user test refreshes the UserLoginStatus window, the window gets closed and the login page is displayed in the main browser window.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as a local user\n3. Use a different PC from the one that admin is using for management.\u00c2\u00a0\n4. As admin logged in the firewall, go to the Users &gt; Status page and click on the Trashcan icon in the user test entry.\n"
+    },
+    "1504110": {
+        "id": "1504110",
+        "title": "User logout by admin Log",
+        "result": "The log message  User logged out by admin  is shown on the firewall and related ip address displayed correctly",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as a local user\n3. Use a different PC from the one that admin is using for management.\u00c2\u00a0\n4. As admin logged in the firewall, go to the Users &gt; Status page and click on the Trashcan icon in the user test entry.\n"
+    },
+    "1504111": {
+        "id": "1504111",
+        "title": "User Logout, inactivity timer expired",
+        "result": "When the inactivity timeout, he is logged out from the firewall.The entry for the user test is removed from the Currently active sessions table on the Users &gt; Status page on the firewall.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3.Local user was created.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as a local user\n3. Don t send any traffic.\n"
+    },
+    "1504112": {
+        "id": "1504112",
+        "title": "User Logout, inactivity timer expired log",
+        "result": "The log message  User inactivity time expired  is shown on the firewall and related IP address is correct.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Browse to FW LAN IPv6 interface\n2. Login as a local user\n3. Don t send any traffic.\n"
+    },
+    "1504113": {
+        "id": "1504113",
+        "title": "User Logout, Login session limit expired",
+        "result": "When the session expired, he is logged out from the firewall.  The entry for the user test is removed from the Currently active sessions table on the Users &gt; Status page on the firewall.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Configure user session time to 5 minutes\n2. Browse to FW LAN IPv6 interface\n3. Login as a local user\n4. Wait 5 minutes.\n"
+    },
+    "1418194": {
+        "id": "1418194",
+        "title": "GEN7-30314: Perform ULA/SSO testing by disabling by disable IPv4 on all interfaces and Enable IPv6",
+        "result": "GEN7-30314: Validate Full IPv6 support is needed with ULA for the SSO API and SSO by RADIUS Accounting",
+        "initial": "1. Disable IPv4 on all interfaces\n2. Enable IPv6 on the interface\n\n",
+        "steps": "1. Disable IPv4 on all interfaces\n2. Enable IPv6 on the interface\n3. Perform ULA/SSO testing"
+    },
+    "1418197": {
+        "id": "1418197",
+        "title": "GEN7-30023: IPv6 users get logged in with an incorrect local interface address",
+        "result": "Look at the user entry in the TSR and check the local IP address shown and Look at the event logs of the login and check the destination IP address field.",
+        "initial": "1. PC-----LAN (FW)\n2. User login allowed on LAN interface\n3. Local user was created.",
+        "steps": "1. Log a user in from an IPv6 address.\n2. Look at the user entry in the TSR and check the local IP address shown.\n3. Look at the event logs of the login and check the destination IP address field."
+    }
+}

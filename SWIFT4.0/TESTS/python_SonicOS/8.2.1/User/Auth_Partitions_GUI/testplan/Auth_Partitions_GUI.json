@@ -1,0 +1,128 @@
+{
+   "3214485" : {
+      "steps" : "  1. Enable authentication partitioning.\n  2. Configure a parent partition and at least one sub-partition. Do not set any RADIUS Accounting clients in the sub-partition.\n  3. Pull a TSR, or on CLI type \"show tech-support-report user-authentication-partitioning\". It hangs and after a short time warnings of high CPU and semaphore long hold times start getting printed on the console.",
+      "initial" : "  Firewall shouldn't freeze/reboot dwhile downloading TSR or CLI type \"show tech-support-report user-authentication-partitioning\"",
+      "id" : "3214485",
+      "title" : "GEN8-5730: Printing a TSR can get into an infinite loop when authentication is enabled",
+      "result" : ""
+   },
+   "1519595" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Partition -&gt; Partition Policy.\n  2. Try to delete the custom made policy and default policy.",
+      "initial" : "  1. The policy or all the policies are deleted successfully.\n  2. Default policy cannot be deleted.",
+      "id" : "1519595",
+      "title" : "Delete the policy",
+      "result" : ""
+   },
+   "1519590" : {
+      "steps" : "  1. Navigate to Devices -&gt; Users -&gt; Partition -&gt; Create one Partition.\n  2. Now click on Auto assign button which is just beside the partition and select the things which you wanted to auto assign.\n  3. Observe the result.",
+      "initial" : "  1. The items which we have select in the partition for auto-assign should be automatically assign to the respective configuration.",
+      "id" : "1519590",
+      "title" : "Auto assign the item to the selected partition",
+      "result" : ""
+   },
+   "1519586" : {
+      "steps" : "  1. Navigate Device -&gt; Users -&gt; Partitions -&gt; Enable the checkbox \"Enable Authentication Partitioning\".\n  2. Now add one Partition in which select Partition type as \"A top-level Partition\".\n  3. Click on Add button again and this time select Partition type as \"A sub-partition\" select Parent Partition.\n  4. Observe the result.",
+      "initial" : "  1. sub-parition added successfully and display under specified parent partition by an arrow marked.",
+      "id" : "1519586",
+      "title" : "Add sub-partitions under specified partition",
+      "result" : ""
+   },
+   "1519589" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Partitions -&gt; Enable Authentication Partitioning checkbox.\n  2. Now add one Partition with the name WENLU.\n  3. Add one LDAP server to the partition named WENLU.\n  4. Now delete the LDAP Server configuration.",
+      "initial" : "  1. LDAP LDAP and other server configuration can be removed successfully.",
+      "id" : "1519589",
+      "title" : "Remove the LDAP server from one partition(Radius,SSO,Terminal services,accouting)",
+      "result" : ""
+   },
+   "1519585" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Partitions.\n  2. Enable 'Authentication Partition' checkbox.\n  3. Add a new partition, enter the partition name and domains with partitions.\n  4. Add multiple partitions with different windows domains.",
+      "initial" : "  1. Multiple partitions with different domains are added successfully.",
+      "id" : "1519585",
+      "title" : "Add multiple partitions with different windows domain",
+      "result" : ""
+   },
+   "1519592" : {
+      "steps" : "  1. Enable 'Authentication Partition'\n  2. Observe the result.",
+      "initial" : "  1. There is an auto-created default policy displayed which can be edited but cannot be deleted.",
+      "id" : "1519592",
+      "title" : "Default policy can be configured but cannot be deleted.",
+      "result" : ""
+   },
+   "2772777" : {
+      "steps" : "  1. In Users &gt; Auth partitions, Add few Partitions.\n  2. Under each partition add few LDAP servers or Radius servers in User Settings page\n  3. Come back to Auth Partitioning page and open configure for any partition\n  4. Check if correct servers are showing up for each partition",
+      "initial" : "  Correct Servers should show up for all the Auth partitions for which LDAP/Radius etc servers configured.",
+      "id" : "2772777",
+      "title" : "GEN7-48762: Auth Partitioning Page -> Edit Server Lists -> Modal retains wrong server values",
+      "result" : ""
+   },
+   "1519584" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Partitions\n  2. Check 'Enable Authentication Partition' option.",
+      "initial" : "  1. Authentication Partition function is enabled.\n  2. 'Default' partition and policy displayed and cannot be deleted.",
+      "id" : "1519584",
+      "title" : "Enable Authentication Partition option",
+      "result" : ""
+   },
+   "1519594" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Partition -&gt; Navigate to Partition Policy.\n  2. Edit the Policy which we have created.",
+      "initial" : "  1. The policy is changed successfully.",
+      "id" : "1519594",
+      "title" : "Edit the policy",
+      "result" : ""
+   },
+   "1519587" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Partitions -&gt; Enable Authentication Partitioning -&gt; and add one Partition.\n  2. Add one Sub Partition.\n  3. Now edit the parent and sub partition.\n  4. Observe the result.",
+      "initial" : "  1. After edit whatever the changes made should be saved successfully.",
+      "id" : "1519587",
+      "title" : "Edit the partition/sub-partition",
+      "result" : ""
+   },
+   "2706660" : {
+      "steps" : "  1. Keep firewall unregistered . 2.Enable Partition and save changes. ",
+      "initial" : "  Allowing authentication partitioning should work when firewall is not licensed / registered",
+      "id" : "2706660",
+      "title" : "Verify  Allow authentication partitioning to work when firewall is not licensed / registered",
+      "result" : ""
+   },
+   "2772776" : {
+      "steps" : "  1. Add partition selection policy.\n  2. Check try-all option is present for \"remote users connecting via...\" option\n  3. Check the help text is present as in the UI6.\n  Refer Jira : https://sonicwall.atlassian.net/browse/GEN7-48764",
+      "initial" : "  try-all option should be available, help text should be present when select \"remote users connecting via...\" option",
+      "id" : "2772776",
+      "title" : "GEN7-48764: Review and fix \"remote users\" option in Partition Selection Policy Add.",
+      "result" : ""
+   },
+   "1519588" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Partitions -&gt; \"Enable Authentication Partitioning\".\n  2. Now add two Parents Partitions.\n  3. Now configure LDAP and select one Partitions.\n  4. Now edit the LDAP configuration and change the partition to other partition.",
+      "initial" : "  1. The LDAP server is moved to another partition and displayed correctly.",
+      "id" : "1519588",
+      "title" : "Move the LDAP server to another partition",
+      "result" : ""
+   },
+   "2723402" : {
+      "steps" : "  1.Login to firewall\n  2.Enable auth partitioning, and create one partition.\n  3.Go to Local Users page and click on the default/custom partition in the top right corner.\n  4.Check the Users list in Local users page.\n  5.Repeat the same steps for Local groups page as well",
+      "initial" : "  1.Users should be visible in local users page when the partition is filtered for default/custom.",
+      "id" : "2723402",
+      "title" : "GEN7-48705: Users and Groups showing \u00e2\u20ac\u0153No data\u00e2\u20ac\uf19d with Authentication Partitioning Enabled .",
+      "result" : ""
+   },
+   "1519593" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Partition -&gt; Enable Partitioning Checkbox.\n  2. Add one Partition.\n  3. Now create one Policy using the partition which we have created previously.",
+      "initial" : "  1. The policy is created successfully.",
+      "id" : "1519593",
+      "title" : "Add one policy for specified partition",
+      "result" : ""
+   },
+   "3100649" : {
+      "steps" : "  1.Enable auth partition and create custom partitions, 2.Create LDAP and add the domains to the partitions created\n  3.Import users from LDAP servers 4.Filter the users based on the partition in Localusers and groups page.\n  5.Move to other tabs like from Local Users to Local group and then come back to local users check if the filter is in intact.",
+      "initial" : "  Filtering should show the proper users data even after moving to other screens and coming back the Users page.",
+      "id" : "3100649",
+      "title" : "Local Users and groups are not displaying the exact list for specific partitions with specific Domains.",
+      "result" : ""
+   },
+   "1519591" : {
+      "steps" : "  1. Navigate to Device -&gt; Users -&gt; Partitions -&gt; \"Enable Authentication Partitioning\".\n  2. Add some of the partition.\n  3. Now delete the create partitions.",
+      "initial" : "  1. The partition or all the partitions are deleted successfully.\n  2. Default partition cannot be deleted.\n  3. When delete all partition , all LDAP/RADIUS/SSO will assigned with Default/NONE partition.",
+      "id" : "1519591",
+      "title" : "Delete the partition/sub-partition",
+      "result" : ""
+   }
+}

@@ -1,0 +1,92 @@
+{
+   "1529664" : {
+      "steps" : "  1.) In the Firewall - Advanced Rule Options page, enable Stealth Mode.\n  2.) On the remote computer, enable a packet trace utility such as Ethereal, or EtherPeek and set it to capture all traffic from the firewall in both directions.\n  3.) From a remote computer, send an invalid TCP recieved out-of-state packet. Use the Nemesis tool from the command line and type nemesis tcp -v -fSA -D[WAN IP Address] This will send a SYN-ACK without first sending a SYN.",
+      "priority" : "Smoke",
+      "atm_id" : "19eeb087-c39a-4e83-ba9a-4ae21b2a03f0",
+      "initial" : "  N/A",
+      "id" : "1529664",
+      "title" : "Firewall will not reply with RST to Invalid TCP Packets while in STEALTH Mode",
+      "description" : "Original ID: 5\nOriginal Title: Firewall will not reply with RST to Invalid TCP Packets while in STEALTH Mode\nOriginal Description: Verify that the firewall when in stealth mode, will not send an RST reply to any source that sent an invalid TCP packet received out-of-state.",
+      "result" : "  When Stealth Mode is enabled, the firewall will not reply with RST (reset) to invalid TCP packets received out-of-state. A message will be logged on the firewall displaying TCP packet received on non-existent/closed connection; TCP packet dropped, and list the Notes section TCP Flag(s) ACK SYN."
+   },
+   "1529660" : {
+      "steps" : "  1.) From a command line window of a remote PC on the WAN, type nmap -vv -sV --version_trace [WAN IP Address of the firewall].\n  2.) Send the scan to the firewall.\n  3.) Verfiy the firewall log messages.\n  4.) Verify that a connection is not allowed with the PC.",
+      "priority" : "Smoke",
+      "atm_id" : "31b45201-bb01-469f-a64e-03fda9dff539",
+      "initial" : "  N/A",
+      "id" : "1529660",
+      "title" : "Version Detection Scan",
+      "description" : "Original ID: 15\nOriginal Title: Version Detection Scan\nOriginal Description: Verify that the firewall will drop any packets from a version detection scan, log messages containing the POssible and Probable TCP scann dropped, and will not allow a connection with the device that sent the packet.",
+      "result" : "  The firewall receiving the packets will: Not allow a connection to be established Drop the packets Display messages that there is a Possible and Probable port scan dropped"
+   },
+   "1529661" : {
+      "steps" : "  1.) Using Nmap configure the command line with nmap -vv -sO --version_trace [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages that the packets were dropped and contains the correct information for Possible and Probable port scan dropped.\n  4.) Verify that an initial connection is not established.",
+      "priority" : "Smoke",
+      "atm_id" : "76179497-5dfa-4b1b-a103-967c4a606460",
+      "initial" : "  Should this test be performed with a router or switch included and EGP, IGP, or BGP set and configured?",
+      "id" : "1529661",
+      "title" : "IP Protocol Scan",
+      "description" : "Original ID: 16\nOriginal Title: IP Protocol Scan\nOriginal Description: Verify that the firewall will drop any packets that contain a IP Protocol scan, log messages containing the correct TCP ports scanned and will not open a connection with the device that sent the packets.",
+      "result" : "  Firewall that receives the packets will: Not allow the initial connection to be opened Drop the packets Display a message in the log with the correct port scan list"
+   },
+   "1529663" : {
+      "steps" : "  1.) One at a time, create a packet with the following TCP flag(s): _ - (NULL: Stealth Scan) ACK-URG FIN (FIN: Stealth Scan) FIN-PSH FIN-URG FIN-PSH-URG (XMAS: Stealth Scan) FIN-RST FIN-RDT-URG FIN-RST-PSH-URG SYN-RST SYN-FIN SYN-FIN-RST SYN-FIN-PSH SYN-FIN-RST-PSH SYN-FIN-RST-PSH-ACK SYN-FIN-RST-PSH-ACK-URG\n  2.) Send the packet to the firewall.\n  3.) Verify the log displays a message that the packet was dropped and contains the correct TCP flag type that was sent.\n  4.) Verify that an initial connection is not established.",
+      "priority" : "Smoke",
+      "atm_id" : "a5035467-773a-4281-bf09-f30d951edbdf",
+      "initial" : "  Either nmap, or nemesis can be used to send the packets. In the case of nemesis there is only one packet being sent and this may not be enough traffic to set off the port scan feature of the firewall. When using nemesis you may have to repeatedly send the same packet 3-6 times before you see the appropriate message.\n  For nemesis type nemesis tcp -v -f[flag] -D[WAN IP Address] The following flags can be used, either singly or together: S = SYN A = ACK R = RST P = PSH F = FIN U = URG E = NULL C = NULL\n  For nmap type nmap -vv --scanflags [flag] [WAN IP Address] The following flags can be used, either singly or together: SYN ACK RST PSH FIN URG NULL, use nmap -vv -sN [WAN IP Address]",
+      "id" : "1529663",
+      "title" : "Invalid TCP Flags",
+      "description" : "Original ID: 2\nOriginal Title: Invalid TCP Flags\nOriginal Description: Verify that the firewall will drop any packets that contain invalid TCP flags, log a message containing the correct TCP flag and will not open a connection with the device that sent the packet.",
+      "result" : "  Firewall that receives the packet will: Not allow the initial connection to be opened Drop the packet Display a message in the log with the correct TCP flag(s)"
+   },
+   "1529662" : {
+      "steps" : "  1.) Using Nmap configure the command line with nmap -vv -sW [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages that the packets were dropped and contains the correct information for Possible and Probable port scan dropped.\n  4.) Verify that an initial connection is not established.",
+      "priority" : "Smoke",
+      "atm_id" : "3afaa287-8e4b-4dfa-b1ae-d282b444ce9b",
+      "initial" : "  N/A",
+      "id" : "1529662",
+      "title" : "Window Scan",
+      "description" : "Original ID: 18\nOriginal Title: Window Scan\nOriginal Description: Verify that the firewall will drop any packets that contain a Window scan, log a message containing the correct TCP ports scanned and will not open a connection with the device that sent the packets",
+      "result" : "  Should all ports be returned as CLOSED, even if actully OPEN?\n  Firewall that receives the packets will: Not allow the initial connection to be opened Drop the packets Display a message in the log with the correct port scan list"
+   },
+   "1529659" : {
+      "steps" : "  1.) Using Nmap, type at the command line nmap -vv -sS -f [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the firewall logs display a message that the scan was dropped and contains the correct TCP type that was sent.\n  4.) Verify that an initial connection is not established.",
+      "priority" : "Smoke",
+      "atm_id" : "b51fff96-90b3-4367-bb17-94867350a011",
+      "initial" : "  N/A",
+      "id" : "1529659",
+      "title" : "Fragmentation Scan",
+      "description" : "Original ID: 12\nOriginal Title: Fragmentation Scan\nOriginal Description: Verify that the firewall will drop any scan and the associated packets, log two messages containing the reason for the drop and will not open a connection with the device that sent the packet.",
+      "result" : "  Firewall that receives the scan will: Not allow the initial connection to be opened Drop the scan packets Display a message in the log with the correct TCP error"
+   },
+   "1529665" : {
+      "steps" : "  1.) One at a time, create a packet with the following TCP flag(s): _ - (NULL: Stealth Scan) FIN (FIN: Stealth Scan) FIN-PSH-URG (XMAS: Stealth Scan)\n  2.) Send the packet to the firewall.\n  3.) Verify the log displays a message that the packet was dropped and contains the correct TCP flag type that was sent. 4.) Verify that an initial connection is not established.",
+      "priority" : "Smoke",
+      "atm_id" : "b9327e87-d5df-4ec8-bd7b-9e301b3c0e82",
+      "initial" : "  Either nmap, or nemesis can be used to send the packets. In the case of nemesis there is only one packet being sent and this may not be enough traffic to set off the port scan feature of the firewall. When using nemesis you may have to repeatedly send the same packet 3-6 times before you see the appropriate message.\n  For nemesis type nemesis tcp -v -f[flag] -D[WAN IP Address] The following flags can be used: E = NULL Stealth Scan C = NULL Stealth Scan F = FIN Stealth Scan FPU = XMAS Stealth Scan\n  For nmap type nmap -vv -s[flag] [WAN IP Address] The following flags can be used: N = NULL Stealth Scan F = FIN Stealth Scan X = XMAS Stealth Scan",
+      "id" : "1529665",
+      "title" : "Invalid TCP Flags with Steath Scan",
+      "description" : "Original ID: 7\nOriginal Title: Invalid TCP Flags with Steath Scan\nOriginal Description: Verify that the firewall will drop any packets that contain invalid TCP flags, log a message containing the correct TCP flag and will not open a connection with the device that sent the packet.",
+      "result" : "  Firewall that receives the packet will: Not allow the initial connection to be opened Drop the packet Display a message in the log with the correct TCP flag(s)"
+   },
+   "1529666" : {
+      "steps" : "  1.) Using Nmap configure the command line with nmap -vv -sT [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages that the packets were dropped and contains the correct information for Possible and Probable port scan dropped.\n  4.) Verify that an initial connection is not established.",
+      "priority" : "Smoke",
+      "atm_id" : "471e01e2-4b67-40af-a536-353e1502dee5",
+      "initial" : "  N/A",
+      "id" : "1529666",
+      "title" : "TCP SYN Scan",
+      "description" : "Original ID: 9\nOriginal Title: TCP SYN Scan\nOriginal Description: Verify that the firewall will drop any packets that contain a TCP SYN scan, log a message containing the correct TCP ports scanned and will not open a connection with the device that sent the packets.",
+      "result" : "  Firewall that receives the packets will: Not allow the initial connection to be opened Drop the packets Display a message in the log with the correct port scan list"
+   },
+   "1529658" : {
+      "steps" : "  1.) Create an FTP Public Server using the Public Server Wizard in the firewall.\n  2.) Verify that the FTP Public Server wizard created the appropriate rules to allow traffic to access the server within the private network.\n  3.) From a client PC on the WAN, login to the FTP Server behind the firewall.\n  4.) One at a time, create a packet with the following TCP flag(s): _ - (NULL: Stealth Scan) ACK-URG FIN (FIN: Stealth Scan) FIN-PSH FIN-URG FIN-PSH-URG (XMAS: Stealth Scan) FIN-RST FIN-RDT-URG FIN-RST-PSH-URG SYN-RST SYN-FIN SYN-FIN-RST SYN-FIN-PSH SYN-FIN-RST-PSH SYN-FIN-RST-PSH-ACK SYN-FIN-RST-PSH-ACK-URG\n  5.) Send the packet to the firewall.\n  6.) Verify the log displays a message that the packet was dropped and contains the correct TCP flag type that was sent.\n  4.) Verify that the initial connection is still established.",
+      "priority" : "Smoke",
+      "atm_id" : "f18ef6a9-85f9-441c-bb01-b7ac0ae1dbd8",
+      "initial" : "  Either nmap, or nemesis can be used to send the packets. In the case of nemesis there is only one packet being sent and this may not be enough traffic to set off the port scan feature of the firewall. When using nemesis you may have to repeatedly send the same packet 3-6 times before you see the appropriate message.\n  For nemesis type nemesis tcp -v -f[flag] -D[WAN IP Address] The following flags can be used, either singly or together: S = SYN A = ACK R = RST P = PSH F = FIN U = URG E = NULL C = NULL\n  For nmap type nmap -vv --scanflags [flag] [WAN IP Address] The following flags can be used, either singly or together: SYN ACK RST PSH FIN URG NULL, use nmap -vv -sN [WAN IP Address]",
+      "id" : "1529658",
+      "title" : "Invalid TCP Flags with Valid Connection Aready Established",
+      "description" : "Original ID: 1\nOriginal Title: Invalid TCP Flags with Valid Connection Aready Established\nOriginal Description: Verify that the firewall will drop any packets that contain invalid TCP flags, log a message containing the correct TCP flag and will keep open a connection with the device that sent the packet. This test will validate that even though a valid connection exists, and there are cached entries, an invalid packet will still be detected, dropped and logged on the firewall.",
+      "result" : "  Firewall that receives the packet will: Continue to allow the initial connection to be opened Drop the packet Display a message in the log with the correct TCP flag(s)"
+   }
+}

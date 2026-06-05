@@ -1,0 +1,506 @@
+{
+"33" : {
+"steps" : "  1.Create a NAT probe policy like case 30;\n  2.Verify the policy is displayed correctly in NM policies table;\n  3.Back to the configuration page of this NAT policy, click the advanced tab;\n  4.Un-select the checkbox Enable probing.",
+"initial" : "  n/a",
+"id" : "33",
+"title" : "Auto-added policies can be deleted through Advanced settings of NAT policy.",
+"result" : "  The auto-added NAT probe policy is deleted on the NM policies table."
+},
+"32" : {
+"steps" : "  1.Add a NAT probe policy like case 30;\n  2.ON NAT policies page, click the edit icon of this NAT policy;\n  3.Click the advanced tab, then make some changes like change probe type to TCP and port 80, then click the OK button;\n  4.Back to NM policies page, check that the NAT probe policies has been updated and the policy name may change to NAT Probe2;\n  5.Check the pseudo-LED and statistics of this policy.",
+"initial" : "  n/a",
+"id" : "32",
+"title" : "Auto-added policies can be edited through Advanced settings of NAT policy.",
+"result" : "  NAT probe polices can be edited successfully through advanced NAT. The pseudo-LED turns yellow and all statistics of this policy has been cleared at first."
+},
+"63" : {
+"steps" : "  1.Add a syslog server correctly;\n  2.Do test case 62;\n  3.Verify all the host and policy state transitions are sent via syslog.",
+"initial" : "  Set up a syslog server.",
+"id" : "63",
+"title" : "Syslog- Host and policy state transitions also sent via syslog.",
+"result" : "  Firewall sent syslog about the host and policy state transitions."
+},
+"21" : {
+"steps" : "  1. Open the add NM policy window on Network Monitor Policies page;\n  2. Enter a policy name, select a probe target and leave other fields as default;\n  3. Enter some characters in the comments field and then click ok.",
+"initial" : "  n/a",
+"id" : "21",
+"title" : "GUI functionality - comment field.",
+"result" : "  Policy added successfully and comments can be displayed correctly when put mouse over the comments icon."
+},
+"71" : {
+"steps" : "  1.Configure the high availability on the primary firewall;\n  2.Add several NM policies and some probe enable routes;\n  3.Make a failure on the primary firewall, verifies the backup sonicwall transitions from idle to active;\n  4.Check the NM policy and route status.",
+"initial" : "  One firewall configured as the Primary unit, and an identical firewall configured as the Backup unit.",
+"id" : "71",
+"title" : "HA pair- Check policies when a HA unit transitions from idle to active.",
+"result" : "  When the back sonicwall transitions from idle to active, all the NM policies status should change to unknown, and if the Probe default state is UP selected, all the probe based route show be active.\n  When the policies status change to UP or Down, all the probe based route status should change accordingly."
+},
+"7" : {
+"steps" : "  1.Open the add NM policy window on Network Monitor Policies page;\n  2.Select Ping(ICMP) or TCP as the probe type;\n  3.Check the Next Hop Gateway and Outbound Interface option.",
+"initial" : "  n/a",
+"id" : "7",
+"title" : "GUI functionality - Gateway and Interface option should be disabled for Ping and TCP probe.",
+"result" : "  Gateway and Interface should be disabled when probe type is Ping(ICMP) or TCP."
+},
+"26" : {
+"steps" : "  1.Add a NM policy;\n  2.Add a static route and choose this NM policy;\n  3.Back to NM policy page, try to delete this policy.",
+"initial" : "  n/a",
+"id" : "26",
+"title" : "Negative test - Delete a policy that is in use by a route.",
+"result" : "  The policy can not be deleted, firewall will report following errors:\n  Object is in use by a Route Policy.\n  Cannot delete this Network Monitor entry."
+},
+"18" : {
+"steps" : "  1. Open the add NM policy window on Network Monitor Policies page;\n  2. Enter a policy name, and select a probe target;\n  3. Enter following value for missed intervals and then click the ok button.\n  0\n  200\n  1\n  100",
+"initial" : "  n/a",
+"id" : "18",
+"title" : "GUI functionality-boundary test for failure threshold.",
+"result" : "  For value 0, firewall will report: Please specify a threshold for missed intervals.\n  For value200, firewall will report: Error: Missed Probes: Data out of bounds (min = 1, max = 100).\n  Value1 and 100 will be accepted by firewall."
+},
+"72" : {
+"steps" : "  1.Add several NM policies;\n  2.Add some static route with probe policies selected;\n  3.On CLI, type the command: show tsr network,verify all the NM policies are displayed;\n  4.Type the command:show route,verify the pepbr can be displayed correctly.",
+"initial" : "  Connect DUT to a Console output like SecureCRT.",
+"id" : "72",
+"title" : "CLI support for NM policies configuration.",
+"result" : "  NM policies and PEPBR info can be viewed from CLI."
+},
+"16" : {
+"steps" : "  1. Open the add NM policy window on Network Monitor Policies page;\n  2. Enter a policy name, and select a probe target;\n  3. Enter following value for probe intervals and then click the ok button.\n  0 9999\n  60\n  1\n  3600",
+"initial" : "  n/a",
+"id" : "16",
+"title" : "GUI functionality - boundary check for probe intervals.",
+"result" : "  For value 0, firewall will reportPlease specify a probe interval;\n  For value 9999, firewall will report Error: Probe Interval: Data out of bounds (min = 1, max = 3600);\n  The last three values will be accepted,"
+},
+"44" : {
+"steps" : "  1.Add an address object of FQDN type, enter a domain name baidu.com;\n  2.Make sure firewall can access Internet correctly, verify baidu.com can be resolved to correct ip addresses;\n  3.Click the add button on Network Monitor Policies page, enter a policy name like fqdnProbe;\n  4. Select the FQDN probe target;\n  5. Select TCP as the probe type, enter a port number 80, and then click the ok button;\n  6. Check the packets and log, verify all the resolved ip address are probed.",
+"initial" : "  n/a",
+"id" : "44",
+"title" : "Functional test for probe target of FQDN type.",
+"result" : "  All resolved ip address of the FQDN can be probed successfully."
+},
+"55" : {
+"steps" : "  1.From Network->Route Policies add a static route with any connected egress interface - DO NOT select the Disable route on interface-disconnect;\n  2.Select a probe policy which status is UP from the network monitor probe dropdown list;\n  3.Click the OK button, verify the static route status;\n  4.Send traffic through this route.",
+"initial" : "  n/a",
+"id" : "55",
+"title" : "Functional test for static route when probe policy status is UP.",
+"result" : "  The static route should be active, and traffic through this route should pass correctly."
+},
+"27" : {
+"steps" : "  1.Add several NM policies;\n  2.Wait for the pseudo-LEDs turn green or red;\n  3. Put the mouse over the pseudo-LEDs, check that following statistics are provided:\n  1) Successful probe percentage;\n  2) Number of Resolved probe targets; 3) Total number of probes sent;\n  4) Total number of successful probe responses received;\n  5) A list of resolved probe targets and their status. 4. Click the clear statistics button; check the statistics again.",
+"initial" : "  n/a",
+"id" : "27",
+"title" : "Button functionality- Clear statistics.",
+"result" : "  Statistics 1 to 4 of all the policies should be cleared and set to zero."
+},
+"57" : {
+"steps" : "  1.From Network->Route Policies add a route with any connected egress interface;\n  2. Expand the dropdown list of Network Monitor probe, select Create new network monitor object;\n  3.On the pop-up window, add a new NM policy.",
+"initial" : "  n/a",
+"id" : "57",
+"title" : "Create a new monitor policy from the add route dialog.",
+"result" : "  The NM policy can be added successfully and selected as the probe policy of the route."
+},
+"61" : {
+"steps" : "  1.Select a custom route with a probe policy selected;\n  2.Click the trash icon or delete button to delete it.",
+"initial" : "  n/a",
+"id" : "61",
+"title" : "Delete a static route with a probe policy selected.",
+"result" : "  The route can be deleted successfully."
+},
+"20" : {
+"steps" : "  1. Open the add NM policy window on Network Monitor Policies page;\n  2. Enter a policy name, select a range probe target and leave other fields as default;\n  3. Select the checkbox of All must respond and then click the OK button;\n  4. Open the TSR, check the value of allHostsMustRespond.\n  5. Open the configuration window of the policy, un-check All must respond option.",
+"initial" : "  n/a",
+"id" : "20",
+"title" : "GUI functionality- All must respond option can be checked/unchecked.",
+"result" : "  All must respond can be selected and its value will set to 1 in the TSR once selected."
+},
+"10" : {
+"steps" : "  1.Create a NM policy with explicit route as the probe type;\n  2.Create an address object say AOtarget with host type of lan zone and ip 10.10.10.10/24 ;\n  3.Create an address object say AOgateway with host type of lan zone and ip 192.168.168.10/24;\n  4.Enter a policy name and then click ok;\n  5.Go to Network->Address object page, click the edit icon of AOtarget, change the AO type to Range, and ip range from 10.10.10.10 to 10.10.10.15;\n  6.Click the edit icon of AOgateway, change the ip address to 192.168.168.20;\n  7.Back to network monitor policies page, put the mouse over the probe target and gateway.",
+"initial" : "  N/A",
+"id" : "10",
+"title" : "GUI functionality- Edit an Object that is selected as the gateway or probe target.",
+"result" : "  The object should be updated accordingly on the Network monitor policies table."
+},
+"31" : {
+"steps" : "  1.Add several NAT probe policies like case 30;\n  2.Verify these policies are displayed in the NM policies table;\n  3.Select a NAT probe policy, and then click the delete button, click the ok button on the pop up window;\n  4.Click the delete all button, then click ok on the pop up window.",
+"initial" : "  n/a",
+"id" : "31",
+"title" : "Auto-added policies can not be deleted by delete button or delete all button.",
+"result" : "  All the NAT probe policies should not be deleted."
+},
+"35" : {
+"steps" : "  1. Do test 34;\n  2. Switch to radio button All policies.",
+"initial" : "  n/a",
+"id" : "35",
+"title" : "GUI functionality- Test radio button of All policies.",
+"result" : "  All policies including the auto-added ones are displayed."
+},
+"11" : {
+"steps" : "  1.Create a NM policy with explicit route as the probe type;\n  2.Create an address object say AOtarget with host type of lan zone;\n  3.Create an address object say AOgateway with host type of lan zone;\n  4.Enter a policy name and then click ok;\n  5.Go to Network->Address object page, click the edit icon of AOtarget, change it form Host to Network object;\n  6.Click the edit icon of AOgateway, change it to other types like Range, Network.",
+"initial" : "  n/a",
+"id" : "11",
+"title" : "Negative test- Change the AO that is in use by a policy to a wrong type.",
+"result" : "  Step 5 and 6 should not be allowed. No crash happens and firewall will report error that the AO type is wrong."
+},
+"48" : {
+"steps" : "  1.Configure x2 interface as DMZ zone, and assign a static ip for it;\n  2.Add a reachable address object in DMZ zone;\n  3.Add a NM policy with this object as probe target and Ping or TCP as the probe type;\n  4.Wait about 30 seconds or less, verify the led turns green;\n  5.Disconnect x2 interface, wait for about 30 seconds, verify the led turns red.",
+"initial" : "  DUT (DMZ) ------ probe target",
+"id" : "48",
+"title" : "Functional test for Egress interface with target in DMZ zone.",
+"result" : "  Firewall should use x2 interface as the source ip address to send and receive probe packets."
+},
+"65" : {
+"steps" : "  1.Configure some NM policies including custom ones and NAT probe policies on current firmware;\n  2.Verify the custom policies and NAT probe policies work well;\n  3.Add some probe enabled route and verify the route policies work well to pass traffic;\n  4.Upgrade or downgrade to a new firmware with current settings.",
+"initial" : "  n/a",
+"id" : "65",
+"title" : "Upgrade & downgrade test between firmware that support PEPBR.",
+"result" : "  All the NM policies and probe based route should be intact and work well after upgrade or downgrade completes."
+},
+"29" : {
+"steps" : "  1.Add several NM policies with different probe targets, and probe types;\n  2.Click the hyperlink of Name, Destination, Gateway, Interface, probe type, port, response timeout, Interval, failure threshold, success threshold, all must respond.",
+"initial" : "  n/a",
+"id" : "29",
+"title" : "GUI functionality- Policy list can be sorted by all columns except Status, Comment and Configure.",
+"result" : "  Policies can be sorted correctly by these columns."
+},
+"50" : {
+"steps" : "  1.Configure x1 interface as default WAN zone, x3 interface as the secondary wan;\n  2.Unplug the cable of interface x3 to make sure its the primary wan that is in use;\n  3.Add a reachable address object of FQDN type in WAN zone;\n  4.Add a NM policy with this FQDN as probe target and Ping or TCP as the probe type;\n  5.Wait several seconds, verify the led turns green;\n  6.Disconnect x1 interface, and plug in the cable of x3 interface, make sure x1 is failover and x3 is active;\n  7.Wait for several seconds; verify the probe can still succeed.",
+"initial" : "  (Primary WAN) DUT(Secondary WAN) Internet Probe target",
+"id" : "50",
+"title" : "Functional test for Egress interface when wan failover",
+"result" : "  When wan failover from primary to secondary, firewall should be able to change to the correct egress interface to send the probe packets."
+},
+"39" : {
+"steps" : "  1.Start packet capture on the firewall;\n  2.Click the add button on the Network Monitor Policies page;\n  3.On the pop up window, enter a policy name say TCP Probe;\n  4.Create a reachable host as the probe target;\n  5.Select TCP as the probe type, enter a port number;\n  6.Leave other fields as default, then click the ok button;\n  7.Wait about 30 seconds or less, verify the led turns green;\n  8.Disconnect the egress interface,\n  9.Wait for several seconds, verify the led turns red.",
+"initial" : "  DUT(x0) ------ probe target",
+"id" : "39",
+"title" : "Probe type - TCP.",
+"result" : "  Firewall will send the TCP/SYN packet every 5 seconds, and probes send will increase every packet sends out, when target replies either a SYN/ACK or RST, the Responses received count will increase. When the host is unreachable, only the count of probes send will increase every 5 seconds, Led should turn red and the target status change to Down."
+},
+"64" : {
+"steps" : "  1.Configure some NM policies including custom ones and NAT probe policies;\n  2.Verify the custom policies and NAT probe policies work well;\n  3.Add some probe enabled route and verify the route policies work well to pass traffic;\n  4.Export the preference file;\n  5.Restore firewall to factory default settings;\n  6.Import the preference file;\n  7.Verify all the NM policies and probe bases route are intact;\n  8.Verify the NM policies work well;\n  9.Verify the route policies work well.",
+"initial" : "  n/a",
+"id" : "64",
+"title" : "Preference export& import support test.",
+"result" : "  All the NM policies and probe based route should be intact and work well after importing the preference."
+},
+"58" : {
+"steps" : "  1.From Network->Route Policies add a custom route with any connected egress interface -DO NOT select the Disable route on interface-disconnect;\n  2.Select a probe policy which status is UP from the network monitor probe dropdown list;\n  3.Select the checkbox of Disable route when probe succeeds;\n  4.Click the OK button, verify the static route status;\n  5.Disconnect the egress interface of the selected probe policy, wait several seconds, check the static route again.",
+"initial" : "  n/a",
+"id" : "58",
+"title" : "Functional test for option Disable route when probe succeeds.",
+"result" : "  The static route should be grayed-out when probe succeeds and active when the probe fails."
+},
+"41" : {
+"steps" : "  1.Start packet capture on the firewall;\n  2.Click the add button on the Network Monitor Policies page;\n  3.On the pop up window, enter a policy name say TCP explicit;\n  4.Select a host behind the router as the probe target;\n  5.Select TCP-explicit as the probe type and enter a port number;\n  6.Select interface x0 as the outbound interface;\n  7.Create an address object of the routers interface 0/1 as the next hop gateway;\n  8.Leave other fields as default, then click the ok button;\n  9.Wait about 30 seconds or less, verify the led turns green;\n  10.Change the next hop gateway, select Select an address object and click OK. 11.Wait for several seconds, verify the led turns red.",
+"initial" : "  DUT(x0) ------ (fa0/1) router (fa0/0) ------ probe target",
+"id" : "41",
+"title" : "Probe type- TCP-Explicit Route.",
+"result" : "  Firewall will send the TCP/SYN packet every 5 seconds, and probes send will increase every packet sends out, when target replies either a SYN/ACK or RST, the Responses received count will increase. When the host is unreachable, only the count of probes send will increase every 5 seconds, Led should turn red and the target status change to Down."
+},
+"12" : {
+"steps" : "  1. Open the add NM policy window on Network Monitor Policies page;\n  2. Expand the probe type dropdown list.",
+"initial" : "  n/a",
+"id" : "12",
+"title" : "GUI functionality -check therere four probe types in total.",
+"result" : "  There should be four types in total:\n  Ping(ICMP), TCP, Ping(ICMP)-Explicit Route, TCP-Explicit Route"
+},
+"15" : {
+"steps" : "  1.Open the add NM policy window on Network Monitor Policies page;\n  2.Enter a policy name, and select a probe target;\n  3.Enter a value other than integer for following probe parameters and then click ok:\n  a)Port number\n  b)Probe interval\n  c)Reply timeout\n  d)Failure threshold e)Success threshold 4.Re-enter an integer for these parameters and click OK.",
+"initial" : "  n/a",
+"id" : "15",
+"title" : "GUI functionality - Format check for probe parameters.",
+"result" : "  For values other than integer, firewall will report error Data is incorrectly formatted."
+},
+"52" : {
+"steps" : "  1.Configure an interface like x4 as a custom zone with trusted or public security type;\n  2.Add a reachable address object in this custom zone;\n  3.Add a NM policy with this object as probe target and Ping or TCP as the probe type;\n  4.Wait several seconds, verify the led turns green;\n  5.Disconnect x4 interface, wait for about 30 seconds, verify the led turns red.",
+"initial" : "  DUT (custom) ----- probe target",
+"id" : "52",
+"title" : "Functional test for Egress interface with target in Custom zone.",
+"result" : "  Firewall should use x4 interface as the source ip address to send and receive probe packets."
+},
+"60" : {
+"steps" : "  1.Add a static route and choose a probe policy for it;\n  2.Click the edit icon of the route, make some changes like change the probe policy to None;\n  3.Click the ok button.",
+"initial" : "  n/a",
+"id" : "60",
+"title" : "Edit a static route with a probe policy selected.",
+"result" : "  The route can be edited successfully."
+},
+"56" : {
+"steps" : "  1.Do test case 55;\n  2.On network monitor policies page, disconnect the egress interface of the selected policy, wait till the pseudo-led turns red;\n  3.Back to Network-> Routing page, check the static route should be grayed-out;\n  4.Verify traffic on this route.",
+"initial" : "  n/a",
+"id" : "56",
+"title" : "Functional test for static route when probe policy status is Down.",
+"result" : "  The static route should be grayed-out when the probe policy status is down and traffic on this route should be dropped."
+},
+"66" : {
+"steps" : "  1.Configure advanced NAT, enable probing on a lower firmware that doesnt support PEPBR feature;\n  2.Upgrade to a 5.5 firmware or higher that has the PEPBR feature added with current settings.",
+"initial" : "  n/a",
+"id" : "66",
+"title" : "Upgrade from a non-PEPBR firmware, new module added and original policies should intact.",
+"result" : "  There should be a new module Network Monitor Policies added under Network section, and the NAT probe policies should be auto-added in the policies table."
+},
+"45" : {
+"steps" : "  1.Add a group object say group1 including some hosts, range, or FQDN objects;\n  2.Click the add button on Network Monitor Policies page, enter a policy name like groupProbe;\n  3.Select group1 as the probe target, select a probe type and then click the ok button;\n  4.Check the packets, log and the policy status.",
+"initial" : "  n/a",
+"id" : "45",
+"title" : "Functional test for probe target of Group type.",
+"result" : "  Policy status should be up if one of the members in the group is up. Mouse over of the policy status should show the probe statistics and the status of all the ip addresses in the group including host, range and FQDN."
+},
+"19" : {
+"steps" : "  1. Open the add NM policy window on Network Monitor Policies page;\n  2. Enter a policy name, and select a probe target;\n  3. Enter following value for missed intervals and then click the ok button.\n  0\n  200\n  1\n  100",
+"initial" : "  n/a",
+"id" : "19",
+"title" : "GUI functionality-boundary test for success threshold.",
+"result" : "  For value 0, firewall will report: Please specify a threshold for successful intervals.\n  For value200, firewall will report: Error: Successful Probes: Data out of bounds (min = 1, max = 100).\n  Value1 and 100 will be accepted by firewall."
+},
+"62" : {
+"steps" : "  1.Add a custom NM policies, verify the log, there should be a log as below:\n  03/19/2009 13:33:17.048 Info Firewall Event Network Monitor Policy tcp probe Added\n  2.When the probe target is down, there should be alerts as below:\n  03/19/2009 13:33:37.048 Alert Firewall Event Network Monitor: Host 192.168.45.10 (Policy: tcp probe) is offline;\n  03/19/2009 13:33:37.048 Alert Firewall Event Network Monitor: Policy tcp probe status is Down;\n  3.Change the probe target to a reachable one, check the log, there should be alerts as below:\n  03/19/2009 13:34:28.624 Alert Firewall Event Network Monitor: Policy tcp probe status is UNKNOWN\n  03/19/2009 13:34:38.624 Alert Firewall Event Network Monitor: Host 192.168.45.1 (Policy: tcp probe) is online\n  03/19/2009 13:34:38.624 Alert Firewall Event Network Monitor: Policy tcp probe status is UP.\n  4.Change the policy name from tcp probe to probe test, check the log, there should be a log as below:\n  03/19/2009 14:17:39.880 Info Firewall Event Network Monitor Policy test_probe Modified;\n  5.Delete the policy, check the log, there should be a event as below:\n  03/19/2009 13:59:35.752 Info Firewall Event Network Monitor Policy tcp probe Deleted.\n  6.Add a NAT probe policy through advanced NAT, then edit it, check the log, there should be events as below:\n  03/19/2009 14:13:47.944InfoFirewall EventNetwork Monitor Policy NAT PROBE13 Deleted\n  03/19/2009 14:13:48.048 Info Firewall Event Network Monitor Policy NAT PROBE14",
+"initial" : "  n/a",
+"id" : "62",
+"title" : "Log- Host and policy state transitions are logged as Alerts.",
+"result" : "  There should be logs as listed in the case recording every transition of the host or policy status."
+},
+"54" : {
+"steps" : "  1.For a NM policy, change the default value of following parameters to a different one:\n  Probe intervals\n  Reply timeout\n  Successful threshold\n  Failure threshold\n  2. Capture the packets, check the updated value works.",
+"initial" : "  n/a",
+"id" : "54",
+"title" : "Functional test for specified probe parameters.",
+"result" : "  Firewall should execute probe and give the target status by the new parameter values."
+},
+"67" : {
+"steps" : "  1. Add several NAT probe policies and custom policies;\n  2. Add several route policies with custom NM policy enabled;\n  3. Downgrage to a lower version that not support PEPBR feature.",
+"initial" : "  n/a",
+"id" : "67",
+"title" : "Downgrade to a lower firmware that does not support PEPBR.",
+"result" : "  Downgrade to a lower firmware version which not support the PEPBR should not cause any crash."
+},
+"70" : {
+"steps" : "  1.Add max number NM policies and each policy has a range type object as the probe target;\n  2.Monitor the core utilization, and run other traffic under the case for one or two days.",
+"initial" : "  May need the system script and testbed.",
+"id" : "70",
+"title" : "Test performance when Max policies added and each policy has a large range target.",
+"result" : "  No crash occurs and firewall should work well to handle all the traffic."
+},
+"68" : {
+"steps" : "  1. Add the DUT to GMS server successfully;\n  2. Verify NM policies and probe enabled route can be configured correctly on GMS.",
+"initial" : "  GMS server installed and DUT added in.",
+"id" : "68",
+"title" : "NM polices in GMS management.",
+"result" : "  When supported, NM policies and probe enabled route can be configured successfully on GMS."
+},
+"17" : {
+"steps" : "  1. Open the add NM policy window on Network Monitor Policies page;\n  2. Enter a policy name, and select a probe target;\n  3. Leave default value 5 as the probe interval, then enter following value for reply timeout:\n  0\n  10\n  3 1 4. Change probe interval value to 100, then enter following value for reply timeout: 60, 80.",
+"initial" : "  n/a",
+"id" : "17",
+"title" : "GUI functionality-boundary check for reply timeout.",
+"result" : "  For value 0, firewall will report Please specify a reply timeout;\n  For value 10, firewall will report The probe interval must be greater than the reply timeout.; For value 80, firewall will report Error: Reply Time Out: Data out of bounds (min = 1, max = 60).\n  Value 3, 1 and 60 will be accepted by firewall."
+},
+"2" : {
+"steps" : "  1.Try to add a NM policy with the name field empty;\n  2.Click the ok button.",
+"initial" : "  n/a",
+"id" : "2",
+"title" : "GUI functionality - Empty Name is not allowed.",
+"result" : "  The policy should not be added; an error message should come up Please enter a policy name."
+},
+"1" : {
+"steps" : "  1.Click the add button to add a NM policy\n  2.On the pop up window type in following characters in the name field; testPolicy Test12 !@$ 123456\n  3.Choose a probe target and then click ok.",
+"initial" : "  n/a",
+"id" : "1",
+"title" : "GUI functionality - Format check for Name field.",
+"result" : "  The first three characters can be accepted as the Name, while numbers should not be allowed, an error will come up Error: Network Object names cannot be numbers."
+},
+"30" : {
+"steps" : "  1.Create an address object wan_host of host type in wan zone;\n  2.Create an address object lan_range of range type in lan zone;\n  3.Add a NAT policy like below:\n  Original Source:Any Translated Source:Original Original Destination: wan_host Translated Destination: lan_range Original service:Any Translated service:Original Inbound interface:x1 Outbound interface: Any\n  4.Click the Advanced tab->High Availability, select Enable Probing and leave everything else as default;\n  5.Go to Network Monitor Policies page; check that theres a auto-added policy name NAT Probe1 and lan_range as the destination;\n  6.Check the edit icon and trash icon, both are disabled.",
+"initial" : "  n/a",
+"id" : "30",
+"title" : "Probe policies configured in NAT advanced settings should be auto-added.",
+"result" : "  Policies configures on Advanced NAT should be auto-added and may not be edited and deleted through NM policies table."
+},
+"25" : {
+"steps" : "  1.Add several NM policies;\n  2.Click the delete all button.",
+"initial" : "  n/a",
+"id" : "25",
+"title" : "Button functionality- Delete all NM policies.",
+"result" : "  All custom policies should be deleted successfully."
+},
+"28" : {
+"steps" : "  1.Add a NM policy as test case 22;\n  2.Put the mouse over the destination, the ip addresses of the probe target should be displayed; 3.Put the mouse over the gateway, the ip address of the gateway should be displayed;\n  4.Put the mouse over the status, probe statistics should be displayed; 5.Put the mouse over the comments, detailed comments entered before should be displayed;\n  6.Put the mouse over the configure icons, edit this entry and delete this entry should be displayed.",
+"initial" : "  n/a",
+"id" : "28",
+"title" : "GUI functionality- Verify the mouse-over will provide detailed info of corresponding items.",
+"result" : "  The detailed info should be displayed when put mouse over corresponding items."
+},
+"40" : {
+"steps" : "  1.Start packet capture on the firewall;\n  2.Click the add button on the Network Monitor Policies page;\n  3.On the pop up window, enter a policy name say ping explicit;\n  4.Select a host behind the router as the probe target;\n  5.Select Ping-explicit as the probe type;\n  6.Select interface x0 as the outbound interface;\n  7.Create an address object of the routers interface 0/1 as the next hop gateway;\n  8.Leave other fields as default, then click the ok button;\n  9.Wait about 30 seconds or less, verify the led turns green;\n  10.Change the next hop gateway, select Select an address object and click OK. Wait for several seconds, verify the led turns red.",
+"initial" : "  DUT(x0) ------ (fa0/1) router (fa0/0) ------ probe target",
+"id" : "40",
+"title" : "Probe type - Ping-Explicit Route.",
+"result" : "  There should be an echo ping request sent out from x0 interface every 5 seconds, and the count of probes send will increase every request sends out;\n  When the target is reachable, there should be same reply return on the egress interface, and every reply receives, the count of Responses received will increase; After three intervals, Led should turn green and the target status change to Up;\n  Target will become unreachable when no gateway is chosen. Then led should turn red and the target status change to Down."
+},
+"14" : {
+"steps" : "  1.Open the add NM policy window on Network Monitor Policies page;\n  2.Enter a policy name, and select a probe target;\n  3. Select TCP or TCP-Explicit Route as probe type;\n  4. Enter a port number as below:\n  0\n  65536\n  65535\n  80",
+"initial" : "  n/a",
+"id" : "14",
+"title" : "GUI functionality - Boundary check for port option.",
+"result" : "  For value 0, firewall will reports an errorPlease specify a port number;\n  For value 65536, firewall will reports:Error: Probe Port: Data out of bounds (min = 0, max = 65535).\n  Value 65535 and 80 should be accepted as the correct port number."
+},
+"69" : {
+"steps" : "  1.Add the max number policies;\n  2.Try to add one more;\n  3.Try to delete one.",
+"initial" : "  n/a",
+"id" : "69",
+"title" : "Max number of the monitor policies. (May need the design matrix)",
+"result" : "  Max x policies can be added, and deletion causes no error when policies reach the max limit."
+},
+"59" : {
+"steps" : "  1.From Network->Route Policies add a route with any connected egress interface -DO NOT select the Disable route on interface-disconnect;\n  2.Select a probe policy from the network monitor probe dropdown list;\n  3.Select the checkbox of Probe default state is up;\n  4.Edit the selected policy to make the status to unknown;\n  5.Switch to the static route quickly, check the status of it;\n  6.Disconnect the egress interface of the selected policy, wait till its status is down;\n  7.Check the static route, it should be disabled.",
+"initial" : "  n/a",
+"id" : "59",
+"title" : "Functional test for option Probe default state is UP.",
+"result" : "  The static route should be active when policy is in unknown status if the option Probe default state is up is selected."
+},
+"49" : {
+"steps" : "  1.Configure x1 interface as default WAN zone;\n  2.Add a reachable address object in WAN zone;\n  3.Add a NM policy with this object as probe target and Ping or TCP as the probe type;\n  4.Wait several seconds, verify the led turns green;\n  5.Disconnect x1 interface, wait for about 30 seconds, verify the led turns red.",
+"initial" : "  DUT (WAN) ---Internet --- probe target",
+"id" : "49",
+"title" : "Functional test for Egress interface with target in WAN zone.",
+"result" : "  Firewall should use x1 interface as the source ip address to send and receive probe packets."
+},
+"24" : {
+"steps" : "  1.Select a NM policy;\n  2.Click the delete button to delete it;\n  3.Select a NM policy;\n  4.Click the delete icon to delete it.",
+"initial" : "  Several NM policies have been added successfully.",
+"id" : "24",
+"title" : "Button functionality - Delete a NM policy.",
+"result" : "  The policy can be deleted successfully either use delete button or click the delete icon. Corresponding entry in NM probe dropdown list of static route window should also be deleted."
+},
+"53" : {
+"steps" : "  1.Add a sub-interface vlan50 with x0 as the parent interface, and assign a static ip for it;\n  2.Configure a vlan 50 in the switch, make sure pc in the vlan can access firewalls interface x0:v50 correctly; 3.Add an address object of the x0:v50 subnet;\n  4.Add a NM policy with this object as probe target and Ping or TCP as the probe type;\n  5.Wait several seconds, verify the led turns green;\n  6.Disconnect x0 interface, wait for about 30 seconds, verify the led turns red.",
+"initial" : "  DUT (x0) ---x0:v50 ---switch--- probe target",
+"id" : "53",
+"title" : "Functional test for Egress interface with target in VLAN subnet.",
+"result" : "  Firewall should use x0:v50 sub interface as the source ip address to send and receive probe packets."
+},
+"22" : {
+"steps" : "  1.Click the add button on the Network Monitor Policies page;\n  2.On the pop up window, enter a policy name say test;\n  3.Select TCP-Explicit Route as the probe type;\n  4.Choose a reachable probe target, select the next hop gateway and then outbound interface;\n  5.Enter a port number that open on the probe target;\n  6.Enter some comments and then click the OK button.\n  7.Go to network->routing page, click the add button at the bottom of the routing table;\n  8.Expand the drop down list of Network Monitor probe.",
+"initial" : "  n/a",
+"id" : "22",
+"title" : "Button functionality-Add a NM policy",
+"result" : "  1. The policy test can be added successfully. And all the parameters including name, destination, gateway, interface, probe type, port, response timeout, interval, failure threshold, success threshold, all must respond, status should be displayed correctly in the network monitor policy table.\n  2. The new added policy should be displayed in the NM probe drop down list of add static route window."
+},
+"42" : {
+"steps" : "  1. Add a reachable address object of host type name hostAO;\n  2. Click the add button on Network Monitor Policies page; 3. Enter a policy name like hostProbe;\n  4. Expand the probe target dropdown list, select the hostAO, 5. Select a probe type and do corresponding configuration, then click the ok button;\n  6. Wait for several seconds, check the policy status;\n  7. Disconnect the egress interface, wait several seconds and check the policy status.",
+"initial" : "  n/a",
+"id" : "42",
+"title" : "Functional test for probe target of Host type.",
+"result" : "  Policy status should be up after three successful intervals, and will change to down after three missed intervals when egress interface disconnected.\n  Mouse over of the policy status should show the probe statistics and the status of the host target: up or down."
+},
+"46" : {
+"steps" : "  1.Add a group object say group1 including some host, range, or FQDN objects;\n  2.Add another group say group2 including group1 and some other host, range or FQDN objects;\n  3.Click the add button on Network Monitor Policies page, enter a policy name like superProbe;\n  4.Select group2 as the probe target, select a probe type and then click the ok button;\n  5.Check the packets, log and the policy status.",
+"initial" : "  n/a",
+"id" : "46",
+"title" : "Functional test for probe target is a super group.",
+"result" : "  Policy status should be up if one of the members in group2 is up. Mouse over of the policy status should show the probe statistics and the status of all the ip addresses in the group2 including host, range, FQDN and those in group1."
+},
+"23" : {
+"steps" : "  1.Click the edit icon of a NM policy;\n  2.On the pop-up window, do some change for probe target, name, probe type etc.\n  3.Click the ok button.",
+"initial" : "  n/a",
+"id" : "23",
+"title" : "Button functionality - Edit a NM policy.",
+"result" : "  The policy should update with the new info, and a message should be displayed in the status bar like: The configuration has been updated. Also the pseudo-LED should turn yellow at first."
+},
+"13" : {
+"steps" : "  1. Open the add NM policy window on Network Monitor Policies page;\n  2. Expand the probe type dropdown list, select Ping(ICMP) or Ping(ICMP)-Explicit Route;\n  3. Check the port option is disabled;\n  4. Select TCP or TCP-Explicit Route as probe type\n  5. Check port option is enabled and port number can be entered.",
+"initial" : "  n/a",
+"id" : "13",
+"title" : "GUI functionality - Port option should be disabled when probe type is Ping or Ping-Explicit Route.",
+"result" : "  Port option is only editable for TCP or TCP- Explicit Route probe."
+},
+"6" : {
+"steps" : "  1.Open the add NM policy window on Network Monitor Policies page;\n  2.Enter a policy name, leave other fields as default, then click the ok button.",
+"initial" : "  n/a",
+"id" : "6",
+"title" : "GUI functionality - Empty probe target is not allowed.",
+"result" : "  Policy should not be added with an error message Please select a probe target."
+},
+"36" : {
+"steps" : "  1.Add more than 10 policies including NAT probe policies and custom ones;\n  2.Go to System->Administration page, change the value of Default Table Size to a small value like 3;\n  3.Back to NM policies page, check the policies are displayed in pages;\n  4.Click the next page icon;\n  5.Click the previous page icon;\n  6.Click the last page icon;\n  7.Click the first page icon;\n  8.Enter a item ID like 5 and search.",
+"initial" : "  n/a",
+"id" : "36",
+"title" : "GUI functionality -Policies can be paginated and searched by item ID.",
+"result" : "  All the pagination buttons should work well. And policy should be searched correctly by ID."
+},
+"3" : {
+"steps" : "  1.Click the add button on Network Monitor Policies page;\n  2.Add a policy with name test, select a probe target and leave everything else as default, then click ok, verify policy test is added successfully;\n  3.Click the add button again and try to add another policy with the same name test;",
+"initial" : "  n/a",
+"id" : "3",
+"title" : "GUI functionality Policy name must be unique.",
+"result" : "  The second policy should not be added and firewall should report error like policy already exists."
+},
+"9" : {
+"steps" : "  1.Create a NM policy with explicit route as the probe type:\n  2.Select or create a new address object say AOtarget as the probe target;\n  3.Select or create a new address object say AOgateway as the next hop gateway;\n  4.Go to network ->address objects page., try to delete the object AOtarget;\n  5.Try to delete the object AOgateway.",
+"initial" : "  N/A",
+"id" : "9",
+"title" : "GUI functionality Delete an Object that is selected as the Gateway or probe target.",
+"result" : "  Operation should be denied with an error message: Error: Object is in use by a Network Monitor policy."
+},
+"51" : {
+"steps" : "  1.Configure an interface like x3 as WLAN zone, connect a sonicpoint/sonicpointN to x3;\n  2.Make sure the sonicpoint/sonicpointN is operational, and wlan clients can get ip addresses;\n  3.Add a reachable address object of WLAN zone;\n  4.Add a NM policy with this object as probe target and Ping or TCP as the probe type;\n  5.Wait several seconds, verify the led turns green;\n  6.Disconnect x3 interface, wait for about 30 seconds, verify the led turns red.",
+"initial" : "  DUT (WLAN) ---Sonicpoint/SonicpointN --- probe target",
+"id" : "51",
+"title" : "Functional test for Egress interface with target in WLAN zone.",
+"result" : "  Firewall should use x3 interface as the source ip address to send and receive probe packets."
+},
+"47" : {
+"steps" : "  1. Open the add NM policy window on Network Monitor Policies page;\n  2. Enter a policy name, select a range or group object that has at least one unreachable ip address;\n  3. Select the checkbox of All must respond and then click the OK button;\n  4. Check the policy status.",
+"initial" : "  n/a",
+"id" : "47",
+"title" : "Functional test for option All hosts must respond.",
+"result" : "  Policy status will be set to down as long as theres one host status is down. Only when all the probe hosts are up, policy status changes to UP."
+},
+"8" : {
+"steps" : "  1. Open the add NM policy window on Network Monitor Policies page;\n  2. Enter a policy name and choose a probe target;\n  3. Select Ping(ICMP)-Explicit Route or TCP-Explicit Route as the probe type;\n  3. Check the Next Hop Gateway and Outbound Interface option becomes enabled;\n  4. Select or create a new object as the gateway and select an interface from the dropdown list;\n  5. Click the ok button.",
+"initial" : "  n/a",
+"id" : "8",
+"title" : "GUI functionality Gateway and Interface can be specified for explicit route probe.",
+"result" : "  Policy with specified gateway and Egress interface can be added successfully."
+},
+"38" : {
+"steps" : "  1.Start packet capture on the firewall;\n  2.Click the add button on the Network Monitor Policies page;\n  3.On the pop up window, enter a policy name say Ping Probe;\n  4.Select Ping(ICMP) as the probe type;\n  5.Create a reachable host as the probe target, leave other fields as default;\n  6.Click the ok button; verify the policy is added with Yellow pseudo-LED.\n  7.Wait about 30 seconds or less, verify the led turns green;\n  8.Disconnect the egress interface, wait for about 30 seconds, verify the led turns red.",
+"initial" : "  DUT(x0) ------ probe target",
+"id" : "38",
+"title" : "Probe type - Ping.",
+"result" : "  There should be an echo ping request sent out from the egress interface every 5 seconds, and every request sends out, the count of probes send will increase;\n  When the host is reachable, there should be same reply return on the egress interface, and every reply receives, the count of Responses received will increase; After three intervals, Led should turn green and the target status change to Up;\n  When the host is unreachable, only the count of probes send will increase every 5 seconds, Led should turn red and the target status change to Down."
+},
+"4" : {
+"steps" : "  1. Click the add button on Network Monitor Policies page;\n  2. In the Name field, try to enter more than 32 characters.",
+"initial" : "  n/a",
+"id" : "4",
+"title" : "GUI functionality - Max length of the Name field.",
+"result" : "  Only 32 characters in maximum can be entered and this name can be displayed correctly in Name column."
+},
+"34" : {
+"steps" : "  1.Create some NAT probe policies like case 30;\n  2.Create some custom policies;\n  3.Click the radio button custom policies on the top of the table.",
+"initial" : "  n/a",
+"id" : "34",
+"title" : "GUI functionality- Test radio button of Custom policies.",
+"result" : "  Only the custom policies are displayed."
+},
+"37" : {
+"steps" : "  1.Add several NM policies with various probe targets and probe types;\n  2.Configure some NAT probe, verify the auto-add policies displayed in the NM policies table;\n  3.Open the TSR of firewall; check all the policies in the TSR.",
+"initial" : "  n/a",
+"id" : "37",
+"title" : "TSR is populated with all Network Monitor policy configuration.",
+"result" : "  There should be a Network Monitor Policies section in the TSR. Custom policies and default ones should be displayed in this section, and all the parameters configured in the se policies should be included."
+},
+"43" : {
+"steps" : "  1.Add an address object of Range type name RangeAO;\n  2.Click the add button on Network Monitor Policies page, enter a policy name like rangeProbe;\n  3. Select RangeAO as the probe target;\n  4. Select a probe type and do corresponding configuration, then click the ok button;\n  5. Wait for several seconds, check the policy status;\n  6. Disconnect the egress interface, wait several seconds and check the policy status.",
+"initial" : "  n/a",
+"id" : "43",
+"title" : "Functional test for probe target of Range type.",
+"result" : "  Policy status should be up if one of the host within the range is up. And will change to down when all the hosts status are down.\n  Mouse over of the policy status should show the probe statistics and the status of all the host targets within the RangeAO."
+},
+"5" : {
+"steps" : "  1. Add a Host object name host, a Range object name range, a FQDN object name fqdn, a MAC object name mac , a Network object name network, a group object name group1 including host, rang and fqdn, and a group object group2 including host ,mac and network.\n  2. Click the add button on Network Monitor Policies page; 3. Expand the probe target dropdown list, verify the objects that displayed.",
+"initial" : "  n/a",
+"id" : "5",
+"title" : "GUI functionality Check the selectable objects for the probe target.",
+"result" : "  Only group1 displayed as the selectable address object groups, and only host, range, fqdn displayed as the selectable address objects."
+}
+}

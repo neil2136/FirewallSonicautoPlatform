@@ -1,0 +1,95 @@
+{
+   "1825273" : {
+      "steps" : "  1. Add one TS Agent with Default/specified partition.2. Reopen the configured TS agent window, change default port (2259) to another 0. Click the Apply button. 3. Repeat step [4], and change port to 65535.4. Repeat step [4], change port to famous ports (21,23,25,80,110, etc.) 7. Change port to -1 or 65536. Action should be denied.",
+      "initial" : "  1. Any UDP ports can be configured for the appliance.",
+      "id" : "1825273",
+      "title" : "Different ports for TS agent (0-65535)",
+      "result" : "Any UDP ports can be configured for the appliance"
+   },
+   "1825274" : {
+      "steps" : "  1. Add one TS Agent with Default/specified partition.2. Reopen the TS agent configuration page. Try any IP addresses that are in the scope of the following addresses. These IP addresses should be denied. 0.0.0.0/8, 127.0.0.0/8, 224.0.0.0/4, 240.0.0.0/4, 255.255.255.255",
+      "initial" : "  1. Only valid unicast IP address could be as TS agent's IP address.",
+      "id" : "1825274",
+      "title" : "IP address validation (Valid unicast address)",
+      "result" : "Only valid unicast IP address could be as TS agent's IP address"
+   },
+   
+   "1825281" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure SSO]-> [Terminal Services] tab.2. Add one TS agent, enter the illegal characters as the host name.3. Click [Apply] or [OK] button.",
+      "initial" : "  1. The illegal characters are not allowed and the message prompts the error.",
+      "id" : "1825281",
+      "title" : "Illegal character check for host name",
+      "result" : "The illegal characters are not allowed and the message prompts the error"
+   },
+   "1525687" : {
+      "steps" : "  1. On the User> Settings page, select \"SonicWALL SSO Agent\" as Single-sign-on method. Click the Configure button next to it. Redirect to HTTPS window opens. Select Yes or No in the window. The SonicWALL SSO Agent Authentication Configuration opens. 2. In the Terminal Services tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"Add...\" button. View/Edit pane gets displayed in the Terminal Services tab. 3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window. 4. Reopen the configured TS agent, change the shared key with even number of characters with hex format.\n  5. Try 0 length and 16 length of keys.\n  6. Try odd number of keys.\n  7. Try 17 and 18 length of keys.\n  8. Try other characters beyond hexadecimal format.",
+      "initial" : "  The appliance can only configure even number of characters of the shared keys, and less than 16 characters with hexadecimal format.",
+      "id" : "1525687",
+      "title" : "GUI: Different length of shared key",
+      "result" : "The appliance can only configure even number of characters of the shared keys, and less than 16 characters with hexadecimal format"
+   },
+   "1825283" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure SSO]-> [Terminal Services] tab.2. Let Host Name/IP Address is empty(or Port).3. Click [Apply] or [OK] button.",
+      "initial" : "  1. Empty input is not allowed and tip/error msg display.",
+      "id" : "1825283",
+      "title" : "Empty input check",
+      "result" : "Empty input is not allowed and tip/error msg display"
+   },
+   "1525686" : {
+      "steps" : "  1. On the User&gt; Settings page, select \"SonicWALL SSO Agent\" as Single-sign-on method. Click the Configure button next to it. Redirect to HTTPS window opens. Select Yes or No in the window. The SonicWALL SSO Agent Authentication Configuration opens. 2. In the Terminal Services tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"Add...\" button. View/Edit pane gets displayed in the Terminal Services tab. 3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window. 4. Click Delete button to remove a configured TS agent. Click Apply button.",
+      "initial" : "  The TS agents can be added and removed correctly.",
+      "id" : "1525686",
+      "title" : "GUI: Add/Remove TS agents",
+      "result" : "The TS agents can be added and removed correctly"
+   },
+   "1825280" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -&gt; [Configure SSO]-&gt; [Terminal Services] tab.2. Add one TS agent, enter the special characters(like MAC address, java script, SQL clause, etc) as the host name.3. Click [Apply] or [OK] button.",
+      "initial" : "  1. It should not save successfully and throws error message",
+      "id" : "1825280",
+      "title" : "Host Name with special character Check",
+      "result" : "It should not save successfully and throws error message"
+   },
+   "1825279" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -&gt; [Configure SSO]-&gt; [Terminal Services] tab.2. Add one TS agent, enter an exceed number of characters as the host name.3. Click [Apply] or [OK] button.",
+      "initial" : "  1. The host name is not allowed and can not save successfully.",
+      "id" : "1825279",
+      "title" : "Host Name exceed Maxium length Check",
+      "result" : "The host name is not allowed and can not save successfully"
+   },
+
+   "1825276" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure SSO]-> [Terminal Services] tab.2. Add one TS agent, enter an invalid ip address like wrong format.3. Click [Apply] or [OK] button.",
+      "initial" : "  1. The invalid ip address is not allowed and the message prompts the error.",
+      "id" : "1825276",
+      "title" : "Invalid IP address check",
+      "result" : "The invalid ip address is not allowed and the message prompts the error"
+   },
+   "1825277" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -> [Configure SSO]-> [Terminal Services] tab.2. Add one TS agent, enter an invalid ip address special ip address(WAN IP/Gateway IP/0.0.0.0\\255.255.255.255, etc).3. Click [Apply] or [OK] button.",
+      "initial" : "  1. It can saved successfully.",
+      "id" : "1825277",
+      "title" : "Special ip address check",
+      "result" : "It can saved successfully"
+   },
+   "1825282" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -&gt; [Configure SSO]-&gt; [Terminal Services] tab.2. Add one TS agent, enter IP address of the agent and a port number. Enter Shared Key. 3. In the Port number field, enter 0. Click the Apply button. 4. Repeat the previous step using the following values: 1, 2, 3000,65535 and 65536.",
+      "initial" : "  1. When 0 or 65536 is entered in the Port number field, the status bar shows an error message Retries. Data out of bounds (min=1, max=65535). 2. The values 1, 2,3000 and 65535 are accepted and saved in the Sonicwall TSA Agent Configuration.",
+      "id" : "1825282",
+      "title" : "Port number boundary test",
+      "result" : "When 0 or 65536 is entered in the Port number field, the status bar shows an error message Retries. Data out of bounds (min=1, max=65535). 2. The values 1, 2,3000 and 65535 are accepted and saved in the Sonicwall TSA Agent Configuration"
+   },
+   "1825278" : {
+      "steps" : "  1. Navigate [Users] - [Settings] -&gt; [Configure SSO]-&gt; [Terminal Services] tab. 2. Add one TS agent, enter a maximum number of characters as the host name. 3. Click [Apply] or [OK] button.",
+      "initial" : "  1. It can saved successfully.",
+      "id" : "1825278",
+      "title" : "Host Name Maxium length Check",
+      "result" : "It can saved successfully"
+   },
+   "1825275" : {
+      "steps" : "  1. Add one TS Agent with Default/specified partition.2. Reopen the configured TS agent, change the shared key with even number of characters with hex format. 3. Try 0 length and 16 length of keys. 4. Try odd number of keys. 5. Try 17 and 18 length of keys.6. Try other characters beyond hexadecimal format.",
+      "initial" : "  1. The appliance can only configure even number of characters of the shared keys, and less than 16 characters with hexadecimal format.",
+      "id" : "1825275",
+      "title" : "Different length of shared key",
+      "result" : "The appliance can only configure even number of characters of the shared keys, and less than 16 characters with hexadecimal format"
+   }
+}

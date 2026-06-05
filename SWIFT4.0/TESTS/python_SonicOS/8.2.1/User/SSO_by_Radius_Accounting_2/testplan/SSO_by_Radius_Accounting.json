@@ -1,0 +1,331 @@
+{
+  "1825541": {
+    "result": "  1. Have an client configured in the [RADIUS Accounting] .> [Accounting Clients] tab.2. Click the Edit icon for the client entry. The View/Edit pane gets displayed.3. Make some changes in the Settings tab of View/Edit pane, say modify Client host name or I",
+    "title": "Edit RADIUS accounting client by clicking the configure button",
+    "initial": "  1. The client entry shows modified information.",
+    "id": "1825541",
+    "steps": "  0"
+  },
+  "1825549": {
+    "initial": "  1. User logout and will not displayed on [Users] . [Status] page.",
+    "id": "1825549",
+    "steps": "  RADIUS Client --- X1 Sonicwall1.1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same shared secrets, it",
+    "title": "RADIUS client stop work for login user in sub partition",
+    "result": "  1. Add one sub partition 'sub1.shcdpqa130' with parent Partition 'SHCDPQA130'.2. Add one Radius client assigned with above sub partition.3. Sending a Stop accounting request from this Client."
+  },
+  "1825527": {
+    "title": "Illegal character check for Client name",
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Add one Accounting client, enter the illegal characters as the host name.3. Click [Apply] or [OK] button.",
+    "id": "1825527",
+    "initial": "  1. The illegal characters are not allowed and the message prompts the error.",
+    "steps": "  0"
+  },
+  "1825532": {
+    "initial": "  1. Error displays and client cannot add.",
+    "id": "1825532",
+    "steps": "  0",
+    "title": "Check Shared Secret not match",
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Click [Add] button,select one partion in list.3. enter Client Name/IP Address,then enter unmatched Shared Secret."
+  },
+  "1825533": {
+    "title": "Invalid IP address with Forwarding Server Check",
+    "result": "  1. Navigate [Users] . [Settings] .&gt; [Configure SSO].&gt; [RADIUS Accounting] tab.2. Click [Add] button .&gt; [Forwarding], enter an invalid ip address like wrong format.3. Click [Apply] or [OK] button.",
+    "id": "1825533",
+    "initial": "  1. The invalid ip address is not allowed and the message prompts the error.",
+    "steps": "  0"
+  },
+  "1825548": {
+    "initial": "  1. User logout and will not displayed on [Users] . [Status] page.",
+    "id": "1825548",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same shared secrets, itc.",
+    "title": "RADIUS client stop work for login user in parent partition",
+    "result": "  1. Follow up the previous case.2. From the Client, sending a Stop accounting request.3. On the [Users] . [Status]page, a user will be logout."
+  },
+  "1825546": {
+    "result": "  1. Follow up the previous case.2. Change the port of RADIUS client as '2258' under [RADIUS Accouting].>[General Settings].3. Sending a Start accounting request from Client with IP 192.168.57.131.",
+    "title": "RADIUS client start work with a non.default port but same with SSO configured",
+    "initial": "  1. User authenticated by SSO and displayed on [Users] . [Status] page marked in 'SHCDPQA130' partition.",
+    "id": "1825546",
+    "steps": "  RADIUS Client --- X1 Sonicwall1.1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, port other than the default one and other attributes, itc..2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same port"
+  },
+  "1825553": {
+    "initial": "  1. Login user on [Users] . [Status]page will display with user name, mouse over the user, you'll see myDomain\\lqian.",
+    "id": "1825553",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets",
+    "result": "  1. Follow up the previous cases.2. Select the User.Name attribute format as 'domain\\user.name'.3. From the Client, sending a Start accounting request using user like myDomain\\lqian.4. On the [Users] . [Status]page, lqian will display.",
+    "title": "User.Name attribute format: domain\\user.name"
+  },
+  "1825525": {
+    "steps": "  0",
+    "initial": "  1.Errors are showed as not allowed.",
+    "id": "1825525",
+    "result": "  1. Navigate [Users] . [Settings] .&gt; [Configure SSO].&gt; [RADIUS Accouting] tab.2. Add one RADIUS Accouting client, enter Client Name with exceed Maxium length.3. Click [Apply] or [OK] button.",
+    "title": "Client Name exceed Maxium length Check"
+  },
+  "1825552": {
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Add an new client with User.Name attribute format as 'username'.3. From the Client, sending a Start accounting request.4. On the [Users] . [Status]page, a user with name Auth",
+    "title": "User.Name attribute format: username",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets",
+    "id": "1825552",
+    "initial": "  1. Login user on [Users] . [Status]page will display with user name."
+  },
+  "1825544": {
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1.On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same shared secrets, it",
+    "initial": "  1. User authenticated and displayed on [Users] . [Status] page marked in 'sub1.shcdpqa130' partition.",
+    "id": "1825544",
+    "result": "  1. Add one sub partition 'sub1.shcdpqa130' with parent Partition 'SHCDPQA130'.2. Add one Radius client assigned with above sub partition.3. Sending a Start accounting request from this Client.",
+    "title": "RADIUS client start can work with sub partition"
+  },
+  "1825540": {
+    "id": "1825540",
+    "initial": "  1. 10 clients are shown in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window. 2. The attempt to add the 11.th client entry fails.",
+    "steps": "  0",
+    "title": "Add maximum RADIUS accounting client",
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Click [Accounting Clients] tab, then click the \"\"Add...\"\" button. View/Edit pane gets displayed in the Settings tab.3. Type an IP address in the Host Name or IP Address field."
+  },
+  "1825537": {
+    "title": "Retries boundary test with Forwarding Server",
+    "result": "  1. Navigate to [Users] - [Settings] -&gt; [Configure SSO] .&gt; [RADIUS Accounting] tab.2. Click [Add] button .&gt; [Forwarding].3. In the Retries field, enter 0. Click the Apply button. 4. Repeat the previous step using the following values: 1, 50000 and",
+    "id": "1825537",
+    "initial": "  1. When 0&#160; is entered in the Server Retries field, the status bar shows an error message Retries. Data out of bounds (min=1, max=99999). 2. The values 1, 50000 and 99999 are accepted and saved. 3. It not allow to enter a integer value &gt;99999.",
+    "steps": "  0"
+  },
+  "1825522": {
+    "steps": "  0",
+    "initial": "  1. The invalid ip address is not allowed and the message prompts the error.",
+    "id": "1825522",
+    "title": "Invalid IP address check",
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Add one RADIUS Accouting client, enter an invalid ip address like wrong format.3. Click [Apply] or [OK] button."
+  },
+  "1515907": {
+    "result": "  1. Navigate to [RADIUS Accounting] .> [Accounting Clients] tab page,add one Accouting Clients assigned with Partition 'Default'.RADIUS accounting client IP:192.168.57.1312. Sending a Start accounting request from Client with IP 192.168.57.131 .",
+    "title": "RADIUS client start can work with 'Default' partition",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1.On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same shared secrets, it",
+    "initial": "  1. User authenticated by SSO and displayed on [Users] . [Status] page marked in 'Default' partition.",
+    "id": "1515907"
+  },
+  "1825555": {
+    "result": "  1. Follow up the previous cases.2. Select the User.Name attribute format as 'user.name@domain'.3. From the Client, sending a Start accounting request user like lqian@myDomain.4. On the [Users] . [Status]page, lqian will display.",
+    "title": "User.Name attribute format: user.name@domain",
+    "id": "1825555",
+    "initial": "  1. Login user on [Users] . [Status]page will display with user name, mouse over the user, you'll see myDomain@lqian.",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secrets"
+  },
+  "1825523": {
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Add one RADIUS Accouting client, enter an invalid ip address special ip address(WAN IP/Gateway IP/0.0.0.0\\255.255.255.255, etc).3. Click [Apply] or [OK] button.",
+    "title": "Special ip address check with RADIUS client",
+    "id": "1825523",
+    "initial": "  1. It can saved successfully.",
+    "steps": "  0"
+  },
+  "1825562": {
+    "initial": "  1. When user login or logout, there're related logs.",
+    "id": "1825562",
+    "steps": "  0",
+    "title": "RADIUS SSO related log",
+    "result": "  1. Follow up the previous cases.2. From the Client, sending a Start accounting request.3. Go to [Log] . [View] page, there's a log with message saying user authentication by SSO via RADIUS Accounting.4. From the Client, sending a Stop accounting request.5"
+  },
+  "1825563": {
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Click [Accounting Clients] tab, then click the \"\"Add...\"\" button. View/Edit pane gets displayed in the Settings tab.3. Type an IP address in the Host Name or IP Address field.",
+    "title": "Preference input with RADIUS SSO configuration",
+    "id": "1825563",
+    "initial": "  1. Export and import is validated.2. Configuration keeps intact,partition information with RADIUS client display.",
+    "steps": "  0"
+  },
+  "1825535": {
+    "steps": "  0",
+    "initial": "  1. When 0&#160; is entered in the Port number field, the status bar shows an error message Retries. Data out of bounds (min=1, max=65535). 2. The values 1, 2, 3000,65535 are accepted and saved. 3. It not allow to enter a integer value &gt;99999.",
+    "id": "1825535",
+    "title": "Port number boundary test with Forwarding Server",
+    "result": "  1. Navigate to [Users] - [Settings] -&gt; [Configure SSO] .&gt; [RADIUS Accounting] tab.2. Click [Add] button .&gt; [Forwarding].3. In the Port number field, enter 0. Click the Apply button. 4. Repeat the previous step using the following values: 1, 2,300"
+  },
+  "1515905": {
+    "title": "Add RADIUS accounting client with 'Default'/specified partition",
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Click [Accounting Clients] tab, then click the \"\"Add...\"\" button. View/Edit pane gets displayed in the Settings tab. 3. Type an IP address in the Host Name or IP Address field",
+    "id": "1515905",
+    "initial": "  1. RADIUS accounting client configured and saved successfully.2. RADIUS accounting client displays under partition assigned in [User].[Partitions] page.",
+    "steps": "  0"
+  },
+  "1825557": {
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secret",
+    "initial": "  1. Login user on [Users] . [Status]page will display with user name, mouse over the user, you'll see myDomain\\lqian.",
+    "id": "1825557",
+    "result": "  1. Follow up the previous cases.2. Select the User.Name attribute format as 'Other'.3. From the Client, sending a Start accounting request user like lqian@myDomain.4. On the [Users] . [Status]page, lqian will display.",
+    "title": "User.Name attribute format: Other"
+  },
+  "1825551": {
+    "title": "Disable SSO by RADIUS Accouting",
+    "result": "  1. In [RADIUS Accouting] .> [General Settings] page,disable 'Enable SSO by RADIUS accouting'.2. From the Client, sending a Start accounting request.3. On the [Users] . [Status]page, the user won't be login.",
+    "initial": "  1. User won't be login and no user display on [Users] . [Status] page.",
+    "id": "1825551",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, disable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secret"
+  },
+  "1825531": {
+    "steps": "  0",
+    "id": "1825531",
+    "initial": "  1. RADIUS Accouting window can be closed without saving.",
+    "title": "Check RADIUS Accouting client window can be closed without saving",
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Click [Add] button,select one partion in list.3. Click delete icon with client."
+  },
+  "1825529": {
+    "steps": "  0",
+    "id": "1825529",
+    "initial": "  1. Different partition can be selected.2. The RADIUS Accouting clients under different partitions can be displayed correctly.",
+    "title": "Show partition option",
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Select the different partition(All/Default/specified partition)."
+  },
+  "1825561": {
+    "steps": "  PC --- X0 SonicWALL",
+    "initial": "  1. There's an auto.added access rule with source \"\"RADIUS Accounting Clients\"\", destination \"\"WAN Interface IP\"\", service \"\"RADIUS Accounting\"\" and allow all.",
+    "id": "1825561",
+    "title": "Access rules with RADIUS SSO user",
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Click [Accounting Clients] tab, then click the \"\"Add...\"\" button. View/Edit pane gets displayed in the Settings tab.3. Type an IP address in the Host Name or IP Address field."
+  },
+  "1825559": {
+    "result": "  1. Navigate to [Users].[Partitions] page,add Partition 'SHCDPQA130':Domain 'SHCDPQA130.com'.2. Navigate to [RADIUS Accouting] .> [Accouting Clients] tab page,add one Accouting Clients assigned with Partition 'SHCDPQA130'.RADIUS accounting client IP:192.16",
+    "title": "RADIUS accounting forwarding work for specified partition",
+    "steps": "  RADIUS Client --- X1 Sonicwall A --- X1 Sonicwall B 1. On RADIUS Client, add the (Sonicwall A)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall A, enable SSO by RADIUS Accounting, add the RADIUS ",
+    "initial": "  1. RADIUS accounting messages can be forwarded on to other configured RADIUS accounting servers and user login information will display in [Users] . [Status]page.",
+    "id": "1825559"
+  },
+  "1825539": {
+    "title": "Javascript/SQL injection with all text field",
+    "result": "  1.Do Javascript/SQL injection with all text filed.",
+    "steps": "  0",
+    "id": "1825539",
+    "initial": "  1. It should not affect by injection."
+  },
+  "1825538": {
+    "id": "1825538",
+    "initial": "  1. the status displays Error: Proxy forward host name/IP address 2: Duplicate proxy forwarding server.",
+    "steps": "  0",
+    "title": "Duplicate IP/Name of Forwarding Server Check",
+    "result": "  1. Navigate to [Users] - [Settings] -&gt; [Configure SSO] .&gt; [RADIUS Accounting] tab.2. Click [Add] button .&gt; [Forwarding].3. enter two or more same IP/Name of Forwarding Servers.4. Click [Apply] or [OK] button."
+  },
+  "1515908": {
+    "title": "RADIUS client start can work with specified partition",
+    "result": "  1. Navigate to [Users].[Partitions] page,add Partition 'SHCDPQA130':Domain 'SHCDPQA130.com'.2. Navigate to [RADIUS Accounting] .> [Accounting Clients] tab page,add one Accouting Clients assigned with Partition 'SHCDPQA130'.RADIUS accounting client IP:192.",
+    "initial": "  1. User authenticated by SSO and displayed on [Users] . [Status] page marked in 'SHCDPQA130' partition.",
+    "id": "1515908",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1.On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same shared secrets, it"
+  },
+  "1825556": {
+    "result": "  1. Follow up the previous cases.2. Select the User.Name attribute format as 'SonicWALL Aventail'.3. Login in Aventail product with user like qa.4. On the [Users] . [Status]page, qa will display.",
+    "title": "User.Name attribute format: SonicWALL Aventail",
+    "initial": "  1. Login user on [Users] . [Status]page will display with user name.",
+    "id": "1825556",
+    "steps": "  Aventail Product --- X1 Sonicwall1. 1. On Aventail product, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared "
+  },
+  "1825543": {
+    "title": "Add same RADIUS accounting client",
+    "result": "  1. Follow up the previous case.2. Add another same RADIUS accounting client.3. Click [Apply] or [OK] button.",
+    "initial": "  1. RADIUS accounting client configuration window is opened.2. Errors are showed as not allowed.",
+    "id": "1825543",
+    "steps": "  0"
+  },
+  "1825524": {
+    "title": "Client Name Maxium length Check",
+    "result": "  1. Navigate [Users] . [Settings] .&gt; [Configure SSO].&gt; [RADIUS Accouting] tab.2. Add one RADIUS Accouting client, enter Client Name with Maxium length.3. Click [Apply] or [OK] button.",
+    "initial": "  1.It can saved successfully.",
+    "id": "1825524",
+    "steps": "  0"
+  },
+  "1825542": {
+    "result": "  1. Have at least one client configured in the [RADIUS Accounting] .> [Accounting Clients] tab.2. Open the SonicWALL SSO Agent Authentication Configuration window and click x icon (Delete) in the client entry. Click [Apply] or [OK] button to close the wind",
+    "title": "Delete RADIUS accounting client with default/specified partition",
+    "id": "1825542",
+    "initial": "  1. The [RADIUS Accounting] .> [Accounting Clients] tab doesn't show the client that was deleted in step2.2. RADIUS accounting client has removed under partition assigned in [User].[Partitions] page.",
+    "steps": "  0"
+  },
+  "1825558": {
+    "title": "RADIUS accounting forwarding work for 'Default' partition",
+    "result": "  1. Navigate to [RADIUS Accouting] .> [Accouting Clients] tab page,add one Accouting Clients assigned with Partition 'Default'.RADIUS accounting client IP:192.168.57.131.2. Edit with RADIUS client,set Server as another FW's WAN IP in 'Forwarding' tab.3. Se",
+    "steps": "  RADIUS Client --- X1 Sonicwall A --- X1 Sonicwall B 1. On RADIUS Client, add the (Sonicwall A)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall A, enable SSO by RADIUS Accounting, add the RADIUS ",
+    "initial": "  1. RADIUS accounting messages can be forwarded on to other configured RADIUS accounting servers and user login information will display in [Users] . [Status]page.",
+    "id": "1825558"
+  },
+  "1515906": {
+    "result": "  1. Have an client configured in the [RADIUS Accounting] .> [Accounting Clients] tab of the SonicWALL SSO Agent Authentication Configuration window.3. Click on IP address in the client entry. Change the IP address.4. Modify other settings of the client the",
+    "title": "Edit RADIUS accounting client in client list",
+    "steps": "  0",
+    "id": "1515906",
+    "initial": "  1. The client entry shows modified IP address, User Name Format , Proxy Forward To, Interim Updt Timeout,partition ."
+  },
+  "1825560": {
+    "initial": "  1. RADIUS accounting client statistics page records all the related information.",
+    "id": "1825560",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secret",
+    "title": "RADIUS accounting client statistics",
+    "result": "  1. From the Client, sending some Start and Stop accounting requests.2. On [RADIUS Accounting] tab, mouse over the button beside accounting client config button, RADIUS accounting client statistics page display, check the information."
+  },
+  "1825564": {
+    "title": "RADIUS SSO TSR",
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Add Accounting clients and change some attributes, then click [Apply] or [OK] button.3. Go to [System] .> [Diagnostics], click \"\"Download Report\"\" button.4. In the report, fin",
+    "steps": "  0",
+    "id": "1825564",
+    "initial": "  1. RADIUS accounting information in the report is the same as the configured on GUI."
+  },
+  "1825536": {
+    "result": "  1. Navigate to [Users] - [Settings] -&gt; [Configure SSO] .&gt; [RADIUS Accounting] tab.2. Click [Add] button .&gt; [Forwarding].3. In the Timeout(seconds) field, enter 0. Click the Apply button. 4. Repeat the previous step using the following values: 1,5",
+    "title": "Timeout(seconds) boundary test with Forwarding Server",
+    "id": "1825536",
+    "initial": "  1. When 0&#160; is entered in the Server timeout field, the status bar shows an error message Retries. Data out of bounds (min=1, max=99999). 2. The values 1, 50000 and 99999 are accepted and saved. 3. It not allow to enter a integer value &gt;99999.",
+    "steps": "  0"
+  },
+  "1825528": {
+    "result": "  0",
+    "title": "Interim Updt timeout boundary test with RADIUS Accounting Client",
+    "steps": "  0",
+    "id": "1825528",
+    "initial": "  TBD"
+  },
+  "1825547": {
+    "id": "1825547",
+    "initial": "  1. User login failed and no user display on [Users] . [Status] page.",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, port and other attributes, itc..2. On Sonicwall, enable SSO RADIUS Accounting, add RADIUS Client with a diffrencent IP from the RADIUS Client usin",
+    "title": "RADIUS client start not work from a non.configured IP in one partition",
+    "result": "  1. Navigate to [Users].[Partitions] page,add Partition 'SHCDPQA130':Domain 'SHCDPQA130.com'.2. Navigate to [RADIUS Accouting] .> [Accouting Clients] tab page,add one Accouting Clients assigned with Partition 'SHCDPQA130'.RADIUS accounting client IP:192.16"
+  },
+  "1825534": {
+    "id": "1825534",
+    "initial": "  1.It can saved successfully.",
+    "steps": "  0",
+    "title": "Name of Forwarding Server with special character Check",
+    "result": "  1. Navigate [Users] . [Settings] .&gt; [Configure SSO].&gt; [RADIUS Accounting] tab.2. Click [Add] button .&gt; [Forwarding], enter Name of Forwarding Server with special character(like IP address, MAC address, javascript, SQL clause, etc).3. Click [Apply"
+  },
+  "1825530": {
+    "result": "  1. Navigate [Users] . [Settings] .> [Configure SSO].> [RADIUS Accouting] tab.2. Let Client Name/IP Address is empty(or Interim Updt Timeout).3. Click [Apply] or [OK] button.",
+    "title": "Empty input check",
+    "steps": "  0",
+    "id": "1825530",
+    "initial": "  1. Empty input is not allowed and tip/error msg display."
+  },
+  "1825545": {
+    "result": "  1. Follow up the previous case.2. Change the port of RADIUS client as '2230' under [RADIUS Accouting].>[General Settings].3. Sending a Start accounting request from Client with IP 192.168.57.131.",
+    "title": "RADIUS client start work with port different from SSO in one partition",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1.On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, port and other attributes, itc..2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same shared secrets,different port, ",
+    "initial": "  1. User authenticated by SSO and displayed on [Users] . [Status] page marked in 'SHCDPQA130' partition.",
+    "id": "1825545"
+  },
+  "1825550": {
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO RADIUS Accounting, add the RADIUS Client, with the same shared secrets, i",
+    "initial": "  1. Verify FW ignore the message",
+    "id": "1825550",
+    "title": "RADIUS client stop from client which not login",
+    "result": "  1. On [System] . [Packet Monitor] page, click on \"\"Start Capture\"\" button.2. From the Client, sending a Stop accounting request.2. On [System] . [Packet Monitor] page, a UDP packet from client to FW is dropped."
+  },
+  "1825554": {
+    "title": "User.Name attribute format: domain/user.name",
+    "result": "  1. Follow up the previous cases.2. Select the User.Name attribute format as 'domain/user.name'.3. From the Client, sending a Start accounting request using user like myDomain/lqian.4. On the [Users] . [Status]page, lqian will display.",
+    "steps": "  RADIUS Client --- X1 Sonicwall1. 1. On RADIUS Client, add the (Sonicwall)RADIUS Server's IP, shared secrets, default port 1813 and other attributes, itc..2. On Sonicwall, enable SSO by RADIUS Accounting, add the RADIUS Client, with the same shared secret",
+    "id": "1825554",
+    "initial": "  Login user on Users-&gt;Status page will display with user name, mouse over the user, you'll see myDomain\\lqian."
+  },
+  "1825526": {
+    "initial": "  1.It can saved successfully.",
+    "id": "1825526",
+    "steps": "  0",
+    "result": "  1. Navigate [Users] . [Settings] .&gt; [Configure SSO].&gt; [RADIUS Accouting] tab.2. Add one RADIUS Accouting client, enter Client Name with special character(like IP address, MAC address, javascript, SQL clause, etc).3. Click [Apply] or [OK] button.",
+    "title": "Client Name with special character Check"
+  }
+}

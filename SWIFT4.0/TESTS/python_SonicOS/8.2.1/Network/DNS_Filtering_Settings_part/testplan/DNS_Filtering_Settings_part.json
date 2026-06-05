@@ -1,0 +1,170 @@
+{
+    "1521001": {
+        "steps": "1. Policy \\ DNS Security \\ Settings \\ DNS Filtering \\ Custom Domain, check the page;\n2. Expande and Collapse the CATEGORY INFORMATION .",
+        "initial": "",
+        "id": "1521001",
+        "title": "[GUI] Verify the category information displays.",
+        "result": "The 19 Categories and their information displays correctly."
+    },
+    "1521003": {
+        "steps": "1. Policy \\ DNS Security \\ Settings \\ DNS Filtering \\ Custom Domain, add a domain: Domain-*.ea.com, Category-1.Adult;\n2. Add a duplicate domain: *.ea.com;\n3. Add a invalid domain: !@#.222 .",
+        "initial": "",
+        "id": "1521003",
+        "title": "[GUI] Verify duplicate and invalid domain cannot be added.",
+        "result": "In step 1, success;\nIn step 2, error prompts: Already exists.\nIn step 3, error prompts: failed : Invalid domain: !@#.222"
+    },
+    "1521004": {
+        "steps": "1. Policy \\ DNS Security \\ Settings \\ DNS Filtering \\ Custom Domain, add a domain: Domain-*.ea.com, Category-1.Adult;\n2. Change the Category to 8.Social .",
+        "initial": "",
+        "id": "1521004",
+        "title": "[GUI] Verify edit the category in custom domain list.",
+        "result": "Success and the domain displays correctly in the table."
+    },
+    "1521005": {
+        "steps": "1. Policy \\ DNS Security \\ Settings \\ DNS Filtering \\ Custom Domain, add a domain: Domain-*.ea.com, Category-1.Adult;\n2. Click Edit, check the Domain.",
+        "initial": "",
+        "id": "1521005",
+        "title": "[GUI] Verify the domain in custom domain list can not be edited.",
+        "result": "The domain can not be edited."
+    },
+    "1521006": {
+        "steps": "1. Policy \\ DNS Security \\ Settings \\ DNS Filtering \\ Custom Domain, add a domain: Domain-*.ea.com, Category-1.Adult;\n2. Delete the Domain.",
+        "initial": "",
+        "id": "1521006",
+        "title": "[GUI] Verify delete a custom domain entry.",
+        "result": "Success"
+    },
+    "1521007": {
+        "steps": "1. Policy \\ DNS Security \\ Settings \\ DNS Filtering \\ Custom Domain, add some valid domains;\n2. Select multiple domains, delete them.",
+        "initial": "",
+        "id": "1521007",
+        "title": "[GUI] Verify delete multiple custom domain entries.",
+        "result": "Success"
+    },
+    "1521008": {
+        "steps": "1. Policy \\ DNS Security \\ Settings \\ DNS Filtering \\ Custom Domain, add some valid domains;\n2. Enter some words in searchbox, check the table.",
+        "initial": "",
+        "id": "1521008",
+        "title": "[GUI] Verify search box works.",
+        "result": "The search box works well."
+    },
+    "1521009": {
+        "steps": "1. Policy \\ DNS Security \\ Settings \\ DNS Filtering \\ Custom Domain, add some valid domains;\n2. Download TSR, check it.",
+        "initial": "",
+        "id": "1521009",
+        "title": "[TSR] Verify custom domains in TSR shows correctly.",
+        "result": "The custom domains display in TSR."
+    },
+    "1521010": {
+        "steps": "1. From CLI, enter config mode;\n2. Input: # dns-security # dns-filtering # custom-domain test.com # category 1.\\ Adult # commit",
+        "initial": "",
+        "id": "1521010",
+        "title": "[CLI] Verify the CLI commands to add a custom domain.",
+        "result": "Changes made correctly, and the Custom domains show correctly on GUI."
+    },
+    "1521011": {
+        "steps": "1. From CLI, enter config mode;\n2. Add test.com: # dns-security # dns-filtering # custom-domain test.com # category 1.\\ Adult commit\n3. Edit test.com: # custom-domain test.com # category 2.\\ Gaming # commit",
+        "initial": "",
+        "id": "1521011",
+        "title": "[CLI] Verify the CLI commands to edit a custom domain.",
+        "result": "Changes made correctly, and the Custom domains show correctly on GUI."
+    },
+    "1521012": {
+        "steps": "1. From CLI, enter config mode;\n2. Add a custom domain test.com;\n3. Delete test.com: # dns-security # dns-filtering # no custom-domain test.com # commit",
+        "initial": "",
+        "id": "1521012",
+        "title": "[CLI] Verify the CLI commands to delete a custom domain.",
+        "result": "Changes made correctly, and the Custom domains show correctly on GUI."
+    },
+    "1521013": {
+        "steps": "1. From CLI, enter config mode;\n2. Add some custom domains(over 3 entries);\n3. Delete all custom domains: # dns-security # dns-filtering # no custom-domains # commit",
+        "initial": "",
+        "id": "1521013",
+        "title": "[CLI] Verify the CLI commands to delete all custom domains.",
+        "result": "Changes made correctly, and the Custom domains show correctly on GUI."
+    },
+    "1521014": {
+        "steps": "1. Add some custom domains(over 3 entries), one of them named test.com;\n2. Show one custom domain: # show dns-security dns-filtering custom-domain test.com\n3. Show all custom domains: # show dns-security dns-filtering custom-domains",
+        "initial": "",
+        "id": "1521014",
+        "title": "[CLI] Verify the CLI commands to show custom domains.",
+        "result": "Changes made correctly, and the Custom domains show correctly on GUI."
+    },
+    "1521018": {
+        "steps": "1. Policy \\ DNS Security \\ Settings \\ DNS Filtering \\ Custom Domain, add a domain: *.ea.com, Category-4. Malware;\n2. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Profile-Default Profile, Enable;\n3. PC connect to X0, set the DNS of PC as X0 IP;\n4. From PC, dig www.ea.com, do capture packet on DUT;\n5. Check the DNS Packets.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521018",
+        "title": "[FUNC] Verify the domain with wildcard is supported.",
+        "result": "The reply status is SERVFAIL and the DNS Reply from Neustar is dropped by DUT."
+    },
+    "1521039": {
+        "steps": "1. Navigate to Policy \\ DNS Security \\ DNS Filtering tab;\n2. Enter 10.1.1.1(valid IPv4 address) in Forged IPv4, accept.",
+        "initial": "",
+        "id": "1521039",
+        "title": "[GUI] Verify the Forged IPv4 is configurable.",
+        "result": "The Forged IPv4 can be configured successfully."
+    },
+    "1521040": {
+        "steps": "1. Navigate to Policy \\ DNS Security \\ DNS Filtering tab; <br />2. Enter 1001::1(valid IPv6 address) in Forged IPv6, accept.",
+        "initial": "",
+        "id": "1521040",
+        "title": "[GUI] Verify the Forged IPv6 is configurable.",
+        "result": "The Forged IPv6 can be configured successfully."
+    },
+    "1521041": {
+        "steps": "1. Navigate to Policy \\ DNS Security \\ DNS Filtering tab; <br />2. Enter 10(wrong IPv4 address) in Forged IPv4; <br />3. Enter 1001:1(wrong IPv6 address) in Forged IPv6.",
+        "initial": "",
+        "id": "1521041",
+        "title": "[GUI] Verify when a wrong IPv4/IPv6 address is entered, the error message throws.",
+        "result": "In step 2, \"invalid IPv4 address\" shows. <br />In step 3, <span>\"invalid IPv6 address\" shows</span>."
+    },
+    "1521042": {
+        "steps": "1. Change to Non-config mode;\n2. Try to configure DNS Filtering ,check if it can be done.",
+        "initial": "",
+        "id": "1521042",
+        "title": "[GUI] Verify DNS Filtering cannot be configured when GUI is in Non-config mode",
+        "result": "Pop up Error: Not allowed in current mode."
+    },
+    "1521044": {
+        "steps": "1. From CLI, input \"dns -security\"\\\"dns-filtering\"\\\"forged-ip 10.1.1.1 ::1\", commit.",
+        "initial": "",
+        "id": "1521044",
+        "title": "[CLI] Verify the CLI command to modify valid Forged IPv4 work.",
+        "result": "Changes made correctly, and the Forged IP shows correctly on GUI."
+    },
+    "1521046": {
+        "steps": "1. From CLI, input:<br />dns-security<br />dns-filtering <br />forged-ip 1.1.1.256.\n2. From CLI, input:<br />dns-security <br />dns-filtering <br />forged-ip 1001::fffg\".",
+        "initial": "",
+        "id": "1521046",
+        "title": "[CLI] Verify when the wrong IPv4/IPv6 address is entered, the CLI command to modify Forged IP fail.",
+        "result": "Error: Invalid input detected."
+    },
+    "1521047": {
+        "steps": "1. Config Forged IP;\n2. From CLI, input \"show dns -security dns-filtering base\".",
+        "initial": "",
+        "id": "1521047",
+        "title": "[CLI] Verify the CLI command to show DNS Filtering global configure work.",
+        "result": "Correct Forged IP configurations show."
+    },
+    "1521179": {
+        "steps": "1. In Device \\ Log \\ Settings page, enable log with id 1686 'DNS Filtering - DNS Packet Allowed' in Network \\ DNS Security, click edit, set Logging level to Inform, set Display Events in Log Monitor to 0 seconds, accept;<br />2. Profile Objects \\ DNS Filtering, add a profile named \"test\", the action of category \"Gaming\" is Forged IP reply / Negative Reply / Block; <br />3. Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\"; <br />4. DNS Security \\ DNS Filtering, set a valid Forged IP address 10.0.0.1/1001::1;<br /><br />5. DNS Security \\ White List, add a domain: www.ea.com, enable white list in DNS Filtering tab; <br />6. PC connected to X0, set dns server as X0 IP, do dig a www.ea.com, check the result; <br />7. Do packet capture on DUT, Check DNS packets and System logs;",
+        "initial": "PC---(X0)DUT(X1)---WAN\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521179",
+        "title": "[FUNC] Verify when White List is enabled, the action of the domain in White List will not be enforced and log shows.",
+        "result": "In step 6-7, the action is not enforced, and a log 'DNS Filtering - DNS Packet Bypassed via Whitelist' displays."
+    },
+    "1521180": {
+        "steps": "1. Profile Objects \\ DNS Filtering, add a profile named \"test\", the action of category \"Gaming\" is Forged IP reply/Negative Reply/Block; <br />2. Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\"; <br />3. DNS Security \\ DNS Filtering,enable white list,andset a valid Forged IP address 10.0.0.1/1001::1;<br /><br />4. DNS Security \\ White List tab, add a domain:www.ea.com; <br />5. PC connected to X0, set dns server as X0 IP, do dig a www.ea.com, check the result; <br />6. Do packet capture on DUT, Check DNS packets; <br />7. Delete the domain in White List, then repeat step 5-6.",
+        "initial": "PC---(X0)DUT(X1)---WAN\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521180",
+        "title": "[FUNC] Verify when White List is enabled, the action of the domain removed from White List will be enforced.",
+        "result": "In step 5-6, the query is successful and passed by the DNS policy;\nIn step 7, the action is enforced."
+    },
+    "1521181": {
+        "steps": "1. Profile Objects \\ DNS Filtering, add a profile named \"test\", the action of category \"Gaming\" is Forged IP reply / Negative Reply / Block; <br />2. Rules and Policies \\ DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\"; <br />3. DNS Security \\ DNS Filtering, set a valid Forged IP address 10.0.0.1/1001::1, enable White List option; <br />4. DNS Security \\ White List , add a domain:www.ea.com;<br /><br />5. PC connected to X0, set dns server as X0 IP, do dig a www.ea.com, check the result; <br />6. Do packet capture on DUT, Check DNS packets; <br />7. DisableWhite List option in DNS Filtering tab, repeat step 5-6.",
+        "initial": "PC---(X0)DUT(X1)---WAN\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521181",
+        "title": "[FUNC] Verify when White List is disabled, the action of the domain in White List will be enforced.",
+        "result": "In step 5-6, the action is not enforced, and the query is successful.\nIn step 7, the action is enforced."
+    }
+}

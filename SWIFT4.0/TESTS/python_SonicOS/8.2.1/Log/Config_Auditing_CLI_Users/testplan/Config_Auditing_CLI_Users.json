@@ -1,0 +1,199 @@
+{
+    "1520157" : {
+       "result" : "  1. Go to Users/Settings page,click CONFIGURE SSO and click RADIUS Accounting/Accounting Clients TAB and add RADIUS Accounting Clients.Save&OK.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Add SSO Agents/RADIUS Accounting Client via CLI",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.\n  5. Servers are added including RADIUS/LDAP/TACACS+/SSO.",
+       "id" : "1520157"
+    },
+    "1520154" : {
+       "id" : "1520154",
+       "result" : "  1. 1. Go to User/Settings page, click CONFIGURE SSO TAB to delete SSO Agent.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "title" : "Delete  SSO Agent via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the SSO Agent creation are correctly showed.\n  Result 3: Log message related with the SSO Agent creation is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall."
+    },
+    "1520155" : {
+       "id" : "1520155",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the TACACS+ SERVER creation are correctly showed.\n  Result 3: Log message related with the TACACS+ SERVER creation is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Delete  TACACS+ SERVER via CLI",
+       "result" : "  1. 1. Go to User/Settings page, click CONFIGURE TACACS+ TAB to delete TACACS+ SERVER.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1520163" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Add Local Users via CLI",
+       "result" : "  1. Go to Users/Local Users & Groups page,click Local Users TAB and click add button to add Local Users.OK.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "id" : "1520163"
+    },
+    "1520162" : {
+       "id" : "1520162",
+       "result" : "  1. Go to Users/Partitions page,click add button to add Partition Selection Policies.Save.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Add Partition Selection Policies via CLI",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.\n  5.Enable authentication partitioning."
+    },
+    "1520148" : {
+       "result" : "  1. 1. Go to User/Settings page, click CONFIGURE RADIUS TAB to add RADIUS SERVER.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the RADIUS SERVER creation are correctly showed.\n  Result 3: Log message related with the RADIUS SERVER creation is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Add  RADIUS SERVER via CLI",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "id" : "1520148"
+    },
+    "1520156" : {
+       "title" : "Add SSO Agents/Terminal Services Agents via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "result" : "  1. Go to Users/Settings page,click CONFIGURE SSO and click Terminal Services/Terminal Services Agents TAB and add Terminal Services Agents.Save&OK.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.\n  5. Servers are added including RADIUS/LDAP/TACACS+/SSO.",
+       "id" : "1520156"
+    },
+    "1520168" : {
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "GENERATE Guest Accounts via CLI",
+       "result" : "  1. Go to Users/Guest Accounts page,click GENERATE button to GENERATE Guest Accounts.OK.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "id" : "1520168"
+    },
+    "1520171" : {
+       "id" : "1520171",
+       "result" : "  1. Go to Users Sessions/Active Users page,click logout button to logout Users.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "title" : "Logout Users via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.\n  5.Users are logged in."
+    },
+    "1520167" : {
+       "title" : "Add Guest Accounts via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "result" : "  1. Go to Users/Guest Accounts page,click ADD GUEST button to add Accounts.OK.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "id" : "1520167"
+    },
+    "1520164" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "result" : "  1. Go to Users/Local Users & Groups page,click Local Users TAB and delete Local Users.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "title" : "Delete  Local Users via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "id" : "1520164"
+    },
+    "1520165" : {
+       "id" : "1520165",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "result" : "  1. Go to Users/Local Users & Groups page,click Local Groups TAB and click add button to add Local Groups.OK.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "title" : "Add Local Groups via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+    },
+    "1520170" : {
+       "result" : "  1. Go to Users/Guest Accounts page,delete Guest Accounts.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Delete Guest Accounts via CLI",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "id" : "1520170"
+    },
+    "1520166" : {
+       "id" : "1520166",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "title" : "Add Guest Profiles via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "result" : "  1. Go to Users/Guest Services page,click add button to add Guest Profiles.OK.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1520158" : {
+       "id" : "1520158",
+       "title" : "Add SSO Agents/3rd-Party API Clients via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "result" : "  1. Go to Users/Settings page,click CONFIGURE SSO and click 3rd-Party API/API Clients TAB and add 3rd-Party API Clients.Save&OK.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.\n  5. Servers are added including RADIUS/LDAP/TACACS+/SSO."
+    },
+    "1520153" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "result" : "  1. 1. Go to User/Settings page, click CONFIGURE LDAP TAB to delete LDAP SERVER.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "title" : "Delete  LDAP SERVER via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the LDAP SERVER creation are correctly showed.\n  Result 3: Log message related with the LDAP SERVER creation is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "id" : "1520153"
+    },
+    "1520152" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the RADIUS SERVER creation are correctly showed.\n  Result 3: Log message related with the RADIUS SERVER creation is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Delete  RADIUS SERVER via CLI",
+       "result" : "  1. 1. Go to User/Settings page, click CONFIGURE RADIUS TAB to delete RADIUS SERVER.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "id" : "1520152"
+    },
+    "1520151" : {
+       "id" : "1520151",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the TACACS+ SERVER creation are correctly showed.\n  Result 3: Log message related with the TACACS+ SERVER creation is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Add  TACACS+ SERVER via CLI",
+       "result" : "  1. 1. Go to User/Settings page, click CONFIGURE TACACS+ TAB to add TACACS+ SERVER.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall."
+    },
+    "1520159" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Add RADIUS Accounting Servers via CLI",
+       "result" : "  1. Go to Users/Settings page,click Accounting/RADIUS ACCOUNTING button and click Settings/RADIUS Servers to add RADIUS Accounting Servers on Settings TAB.Save&OK.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "id" : "1520159"
+    },
+    "1520150" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the SSO Agent creation are correctly showed.\n  Result 3: Log message related with the SSO Agent creation is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Add  SSO Agent via CLI",
+       "result" : "  1. 1. Go to User/Settings page, click CONFIGURE SSO TAB to add SSO Agent.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "id" : "1520150"
+    },
+    "1520172" : {
+       "id" : "1520172",
+       "title" : "Logout Guest Users via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "result" : "  1. Go to Users Sessions/Active Guest Users page,click logout button to logout Guest Users.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.\n  5.Guest Users are logged in."
+    },
+    "1520173" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.",
+       "initial" : "  In TSR, auditing records of successful configuration should be correctly showed.",
+       "title" : "Verify the Auditing Records of configuration succeeds are reflected in TSR",
+       "result" : "  1. Make some successful configurations with Users.\n  2. Download the TSR, and check if the auditing records are correctly displayed",
+       "id" : "1520173"
+    },
+    "1520175" : {
+       "id" : "1520175",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. Setup a HA test bed",
+       "result" : "  1. Make some both successful and failed configurations on the firewall.\n  2. Go to Log Settings/ Auditing Records page of both the active and standby units, check the records.",
+       "title" : "HA Requirement",
+       "initial" : "  The records should be showed on both the units.\n  For standby unit, the Audit Record should indicate that the change came from the Active unit."
+    },
+    "1520174" : {
+       "id" : "1520174",
+       "result" : "  1.Make some successful configurations with Users.\n  2. Check if the configuration success Alert event can be viewed in your mail box.",
+       "initial" : "  When configuration of Users succeeds, the Auditing Records can be sent as Alert to the specified Emai address.",
+       "title" : "Verify the Auditing Records of configuration success can be sent via Email Alert",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. Go to Log Settings page, Edit Log>Configuration Auditing, change the Priority to Alert or above, select Alert for both Configuration Change Failed and Configuration Change Succeeded. 3. Edit the event Configuration Change Failed and Configuration Change Succeeded, input a correct email address in 'Send Alerts to E-mail Address' edit box.\n  4. On Log Automation page, input the corect Mail Server Settings info."
+    },
+    "1520161" : {
+       "id" : "1520161",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.\n  5.Enable authentication partitioning.",
+       "title" : "Add Authentication Partitions via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "result" : "  1. Go to Users/Partitions page,click add button to add Authentication Partitions.Save.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "1520149" : {
+       "id" : "1520149",
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "result" : "  1. 1. Go to User/Settings page, click CONFIGURE LDAP TAB to add LDAP SERVER.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Reports related with the LDAP SERVER creation are correctly showed.\n  Result 3: Log message related with the LDAP SERVER creation is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Add  LDAP SERVER via CLI"
+    },
+    "1520169" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "title" : "Export Guest Accounts via CLI",
+       "result" : "  1. Go to Users/Guest Accounts page,click EXPORT button to export Guest Accounts.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "id" : "1520169"
+    },
+    "1520160" : {
+       "steps" : "  1.The option 'Enable Configuration Auditing' is checked on diag page.\n  2. SNMP tool is available and ready to use.\n  3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page.\n  4. A syslog server is added on the firewall.",
+       "title" : "Add TACACS+ Accounting Servers via CLI",
+       "initial" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\n  Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page.\n  Result 3: Log message related with successful configuration changes is correctly displayed.\n  Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+       "result" : "  1. Go to Users/Settings page,click Accounting/TACACS+ ACCOUNTING button and click Settings/TACACS+ Servers to add TACACS+ Accounting Servers on Settings TAB.Save&OK.\n  2. Go to Syslog server, check the corresponding syslog message. Result 1.\n  3. Go to Log Settings/ Auditing Records page, check the records. Result 2.\n  4. Go to Event Logs page, check the corresponding logs. Result 3.\n  5. Go to SNMP tool, check if there is SNMP trap sent.",
+       "id" : "1520160"
+    }
+ }
+ 

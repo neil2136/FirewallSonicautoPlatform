@@ -1,0 +1,23 @@
+{
+   "51" : {
+      "title" : "Verify that it translate successfully and traffic is reachable when it match NAT64 policy from LAN /DMZ/WLAN->WAN",
+      "id" : "51",
+      "result" : "  step 1: set X2 as LAN /DMZ/WLAN zone and assign ipv6 static address for it\n  step 2: add a nat64 policy and enable it :\n  source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64\n  step 3: ping from client to server with IPv4-embedded IPv6 address",
+      "initial" : "  TBD",
+      "steps" : "  Client----(X2)DUT(X1)----Server"
+   },
+   "2" : {
+      "result" : "  step 1: try to add a nat64 policy:\n  source original : any ; source translated: X1 IP; Pref64: Well-Known Pref64",
+      "initial" : "  TBD",
+      "steps" : "  TBD",
+      "title" : "Verify that it can add NAT64 Policy successfullly",
+      "id" : "2"
+   },
+   "50" : {
+      "steps" : "  Server(20.2.2.244)----(LAN/DMZ X2:20.2.2.2)DUT(WAN X3: 2001:480:1:1::100/64)----Client (2001:480:1:1::1/64)",
+      "result" : "  step 1: add a nat64 policy and enable it:\n  source original : any ; source translated: X2 IP; Pref64: 64:9999::/96\n  step 2: allow IPv6 WAN->WAN access rule and allow IPv6 WAN->LAN/DMZ access rule\n  step 3:add route policy on client PC:\n  route -6 add 64:9999::/96 2001:480:1:1::100\n  step 4: ping from client to server or download file with filezilla by client\n  ping 64:9999::1402:02F4 from client PC\n  Notice:\n  wan pc direct connected to WAN interface,put them in the same VLAN",
+      "initial" : "  TBD",
+      "id" : "50",
+      "title" : "Verify that it translate successfully and traffic is reachable when it match NAT64 policy from WAN->LAN /DMZ"
+   }
+}

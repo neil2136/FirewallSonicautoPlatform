@@ -1,0 +1,41 @@
+{
+   "003" : {
+      "steps" : "1. Profile Objects-DNS Filtering, add a profile named \"test\", the action of category \"Gaming\" is Forged IP reply;\n2. Rules and Policies-DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\";\n3. Security Service-DNS Security-DNS Filtering, set a valid Forged IPv4 address 10.0.0.1;\n4. PC connected to X0, set dns server as X0 IP, do 'dig www.ea.com -t A', check the result.",
+      "initial" : "PC---(X0)DUT(X1)---WAN DNS Server",
+      "id" : "003",
+      "title" : "[FUNC] Verify when the DNS reply with type: A, with action:Forged IP Reply, the answer address is changed to Forged IPv4 address by DUT.",
+      "result" : "4 The URL/Domains belong to the 'Entertainment'  group should be blocked, the proper log should be reported in 'System Logs', and this category should be loged in MONITOR-AppFlow Report--Web Categories Tab.\n6 The URL/Domains belong to the 'Entertainment'  group should be Confirmed, the proper log should be reported in 'System Logs', and this category should be loged in MONITOR-AppFlow Report--Web Categories Tab.\n8 The URL/Domains belong to the 'Entertainment'  group should be Passphrassed, the proper log should be reported in 'System Logs', and this category should be loged in MONITOR-AppFlow Report--Web Categories Tab.\n10 The URL/Domains belong to the 'Entertainment'  group should be Allowed, the proper log should be reported in 'System Logs', and this category should be loged in MONITOR-AppFlow Report--Web Categories Tab."
+   },
+   "004" : {
+      "steps" : "1. Profile Objects-DNS Filtering, add a profile named \"test\", the action of category \"Gaming\" is Forged IP reply;\n2. Rules and Policies-DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\";\n3. Security Service-DNS Security-DNS Filtering, set a valid Forged IPv6 address 1001::1;\n4. PC connected to X0, set dns server as X0 IP, do 'dig www.ea.com -t AAAA', check the result.",
+      "initial" : "PC---(X0)DUT(X1)---WAN DNS Server",
+      "id" : "004",
+      "title" : "[FUNC] Verify when the DNS reply with type: AAAA, with action:Forged IP Reply, the answer address is changed to Forged IPv6 address by DUT.",
+      "result" : "In step 4, the address is Forged IPv6 address: 1001::1."
+   },
+   "005" : {
+      "steps" : "1. Profile Objects-DNS Filtering, add a profile named \"test\", the action of category \"Gaming\" is Forged IP reply;\n2. Rules and Policies-DNS Rules, enable a DNS Policy : Action-Filter, Interface-X0, Profile-\"test\";\n3. Security Service-DNS Security-DNS Filtering, set a valid Forged IP address 10.0.0.1/1001::1;\n4. PC connected to X0, set dns server as X0 IP, do 'dig www.ea.com -t CNAME(/TXT/MX/NS)', check the result.",
+      "initial" : "PC---(X0)DUT(X1)---WAN DNS Server.",
+      "id" : "005",
+      "title" : "[FUNC] Verify when the DNS reply with types : CNAME, TXT, MX, NS, with action: Forged IP Reply, the action is not enforced.",
+      "result" : "In step 4, the Resolved address is the real ip, not forged ip."
+   },
+   "006" : {
+      "steps" : "1. Policy-Security Service-DNS Security-DNS Filtering tab;\n2. Config Forged IP;\n3. Navigate to System-Diagnostics-Tech Support Report, export TSR;\n4. In TSR, check all DNS Filtering Configurations.",
+      "id" : "006",
+      "title" : "[TSR] Verify the configuration of DNS Filtering shows correctly in TSR",
+      "result" : "In step 4, Forged IP shows correctly."
+   },
+   "007" : {
+      "steps" : "From CLI, input \"dns-security\"\"dns-filtering\"\"forged-ip 127.0.0.1 1001::1\",commit.",
+      "id" : "007",
+      "title" : "[CLI] Verify the CLI command to modify valid Forged IPv6 work.",
+      "result" : "Changes made correctly, and the Forged IP shows correctly on GUI."
+   },
+   "008" : {
+      "steps" : "From CLI, input \"dns-security\"\"dns-filtering\"\"forged-ip 127.0.0.1 1001::1\",commit.",
+      "id" : "008",
+      "title" : "[CLI] Verify the CLI command to modify valid Forged IPv6 work.",
+      "result" : "Changes made correctly, and the Forged IP shows correctly on GUI."
+   }
+}

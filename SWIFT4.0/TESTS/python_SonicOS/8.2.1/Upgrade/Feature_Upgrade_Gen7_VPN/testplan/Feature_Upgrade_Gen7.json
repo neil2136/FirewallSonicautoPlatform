@@ -1,0 +1,72 @@
+{
+    "WLB_TC031": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "WLB_TC031",
+        "title": "settings Load Balancing",
+        "result": "Settings are complete after upgrade"
+    },
+    "WLB_TC032": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "WLB_TC032",
+        "title": "functionality Load Balancing",
+        "result": "Feature functions after upgrade"
+    },
+    "Tunnel_TC039": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "Tunnel_TC039",
+        "title": " Settings Numbered Tunnel Interface",
+        "result": "Settings are complete after upgrade"
+    },
+    "Tunnel_TC040": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "Tunnel_TC040",
+        "title": "Functionality Numbered Tunnel Interface",
+        "result": "Feature functions after upgrade"
+    },
+    "S2S_VPN_TC043": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "S2S_VPN_TC043",
+        "title": " Settings S2S and Group vpn",
+        "result": "Settings are complete after upgrade"
+    },
+    "S2S_VPN_TC044": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "S2S_VPN_TC044",
+        "title": "Functionality S2S and Group vpn",
+        "result": "Feature functions after upgrade"
+    },
+    "SSLVPN_TC045": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "SSLVPN_TC045",
+        "title": " Settings SSL-VPN",
+        "result": "Settings are complete after upgrade"
+    },
+    "SSLVPN_TC046": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "SSLVPN_TC046",
+        "title": "Functionality SSL-VPN",
+        "result": "Feature functions after upgrade"
+    },
+    "ULA_TC049": {
+        "steps": "1. Make settings for the specific feature.2. Upgrade from the specified starting firmware to the specified upgrade firmware.",
+        "initial": "",
+        "id": "ULA_TC049",
+        "title": " Settings ULA",
+        "result": "Settings are complete after upgrade"
+    },
+    "ULA_TC050": {
+        "steps": "1. Verify very basic functionality of specific feature.\n2. Upgrade from the specified starting firmware to the specified upgrade firmware.\n3. Verify verify basic functionality of specific feature",
+        "initial": "",
+        "id": "ULA_TC050",
+        "title": "Functionality ULA",
+        "result": "Feature functions after upgrade"
+    }
+}

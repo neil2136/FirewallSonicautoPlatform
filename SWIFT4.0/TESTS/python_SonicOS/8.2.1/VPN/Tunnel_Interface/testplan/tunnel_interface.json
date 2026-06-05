@@ -1,0 +1,37 @@
+{
+  "1": {
+    "steps": " 1. Go to page VPN->Settings, add a Tunnel interface 'test' with IPsec gateway,shared secret,IKE proposal, IPsec proposal etc.\n2. Go to Network->Interfaces, add a VPN tunnel interface with name, choose VPN policy 'test', input name, IP address, subnet mask etc.\nthen click button 'OK' to save it.",
+    "initial": "Host1 --- (X0: LAN) DUT1 (X1)---(X1) DUT2 (X0: LAN)---Host2",
+    "id": "1",
+    "title": "Add a Numbered_tunnel_interface",
+    "result": "VPN tunnel interface can be added."
+  },
+  "2": {
+    "steps": "1. Create TI VPN policy between DUT1 and DUT2\n2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named ‘Ni’, bind it to TI policy and assign it ip address 1.1.1.2, click ‘OK’.\n3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click ‘OK’.\n4. On DUT1, go to Network > Routing page, select ‘Advanced Routing’, then click the ‘configure RIP’ icon of interface ‘Ni’, RIP: Send and Receive, Receive: RIPv2, Send: RIPv2, and enable all the checkboxes of global RIP configuration.\n5. On DUT1, add lan to vpn and vpn to lan access rule, lan is local x0_subnet and vpn is remote x0_subnet\n6. Repeat Step 4 and 5 on DUT2.\n7. Make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n8. Ping between Host1 and Host2, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X/192.168.11.X.\n9. Repeat above steps using RIPv1.",
+    "initial": "Host1 --- (X0: LAN) DUT1 (X1)---(X1) DUT2 (X0: LAN)---Host2",
+    "id": "2",
+    "title": "deleted Certificate",
+    "result": "For step 8: Ping succeeded. Check on Network > Routing page of DUT1, find a route with 'src: any   Dst: 192.168.2.0   Interface: Ni' has been added automatically."
+  },
+  "3": {
+    "steps": "1. Create TI VPN policy between DUT1 and DUT2\n2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named ‘Ni’, bind it to TI policy and assign it ip address 1.1.1.2, click ‘OK’.\n3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click ‘OK’.\n4. On DUT1, go to Network > Routing page, select ‘Advanced Routing’, then click the ‘configure OSPF’ icon of interface ‘Ni’, OSPFv2: Enabled, and enable all the checkboxes of global OSPFv2 configuration.\n5. On DUT1, add lan to vpn and vpn to lan access rule, lan is local x0_subnet and vpn is remote x0_subnet\n6. Repeat Step 4 and 5 on DUT2.\n7. Make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n8. Ping between Host1 and Host2, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X/192.168.11.X.\n9. Repeat above steps using RIPv3 if supports.",
+    "initial": "Host1 --- (X0: LAN) DUT1 (X1)---(X1) DUT2 (X0: LAN)---Host2",
+    "id": "3",
+    "title": "Numbered_tunnel_interface works fine on OSPF",
+    "result": "For step 8: Ping succeeded. Check DUT1 on Network > Routing page, find a route with 'src: any   Dst: 192.168.2.0   Interface: Ni' has been added automatically."
+  },
+  "4": {
+    "steps": "  N/A",
+    "initial": "Host1 --- (X0: LAN) DUT1 (X1)---(X1) DUT2 (X0: LAN)---Host2",
+    "id": "4",
+    "title": "VPN with 3rd Party cert in Aggressive Mode with Same Life Time in Phase I and Phase ii",
+    "result": "Numbered_tunnel_interface works fine on BGP."
+  },
+  "9": {
+    "steps": "  N/A",
+    "initial": "1. Create Tunnel interface VPN policy between DUT1 and DUT2, make sure tunnel is up.\n2. Logon DUT1, go to Network > Interfaces page,  add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 2.2.2.3, click ‘OK’.\n3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 2.2.2.5, click ‘OK’.\n4. Enable BGP on Network Routing page on DUT1 and DUT2.\n5. On DUT1, add a static routing with 'src: X0_Subnet   Dst: 192.168.12.0/24      Interface: Ni', enable 'Auto-add Access Rules'.\n6. On DUT2, add a static routing with 'src: X0_Subnet   Dst: 192.168.11.0/24      Interface: Ni', enable 'Auto-add Access Rules'.\n7. Enter DUT1's CLI, configure BGP \n8. Enter DUT2's CLI and configure matching BGP settings\n9. Ping between Host1 and Host2, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X/192.168.11.X.",
+    "id": "9",
+    "title": "This test case is to verify https works fine on Numbered_tunnel_interface",
+    "result": "Ping succeeded. Check BGP Status on Network->Routing page, connection status is established and there is a route policy with metric 200 auto-learnt."
+  }
+}

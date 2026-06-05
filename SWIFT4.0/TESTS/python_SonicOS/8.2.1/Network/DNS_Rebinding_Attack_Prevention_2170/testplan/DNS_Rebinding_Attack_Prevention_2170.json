@@ -1,0 +1,423 @@
+{
+   "33" : {
+      "steps" : "  1. Go to System->Settings and export TSR.\n  2. Verify that TSR shows DNS rebinding info including all status, action and allowed domain.",
+      "initial" : "  DNS rebinding settings have been configured other than their default values.",
+      "id" : "33",
+      "title" : "Verify DNS rebinding info in TSR",
+      "result" : "  1. TSR shows DNS rebinding info correctly and completely."
+   },
+   "32" : {
+      "steps" : "  1. Reboot firewall.\n  2. Check DNS rebinding settings after firewall rebooting.",
+      "initial" : "  DNS rebinding settings have been configured other than their default values.",
+      "id" : "32",
+      "title" : "Verify that DNS rebinding settings are intact after firewall restart",
+      "result" : "  1. DNS rebinding settings are intact after firewall restart."
+   },
+   "21" : {
+      "steps" : "  1) Configure a FQDN address object with the a wildcard entry that contains part of the hostname that will be queried.\n  2) In the Whitelist choose the address object and click Apply.\n  3) Attempt to delete the address object.\n  4) Configure a FQDN address object with the a wildcard entry that contains part of the hostname that will be queried.\n  5) In the Whitelist choose the address object and click Apply.\n  6) Attempt to delete the address group.",
+      "initial" : "  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "21",
+      "title" : "Attempt deletion of Address Group/Address Object referenced by Domain Allowed drop down",
+      "result" : "  Error is displayed."
+   },
+   "7" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup from X2 DNS Server of valid FQDN on LAN. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  DNS Server or DMZ PC running Netwox on X2 (DMZ) interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "7",
+      "title" : "DNS rebinding attack is not detected for LAN addresses DNS replies sent from DMZ > LAN",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "26" : {
+      "steps" : "  1) Assign IP address within 192.168.155.0/24 to one interface, create a custom zone with type LAN, DMZ or WLAN, then assign this custom zone to that interface.\n  2) Start a packet capture on DNS client. 3) From DNS client do nslookup of the hostname that is configured in the DNS server. 4) Check the log and the packet capture. 5) Repeat for other IP addresses.",
+      "initial" : "  1.\tDNS Server or WAN PC running Netwox on X1 interface set to return non-local address on X1 interface. PC on X0 2. Netwox command example: 104 --hostname www.example.com --hostnameip 1.2.3.4 --authns ns.example.com --authnsip 172.17.7.123 --device Eth2 --src-eth 00:16:36:87:87:22 --src-ip 172.17.7.123\n  3.\tDNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "26",
+      "title" : "DNS rebinding attack detected Host belongs to a custom zone subnet newly created",
+      "result" : "  DNS reply is not found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "2" : {
+      "steps" : "  1) Enable DNS and DNS Rebinding Attack Prevention\n  2) Select Log the Attack and Drop the DNS Reply\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the Link Local Address 169.254.1.1 and analyze DNS response. Optionally do packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a link-local address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 169.254.1.1 -A authns_hostname -a ip_ns",
+      "id" : "2",
+      "title" : "DNS rebinding attack detected - Link Local address",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "17" : {
+      "steps" : "  1) Configure a FQDN address object with the hostname that will be queried.\n  2) In the Whitelist choose the address object and click Apply.\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  PC on X0\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "17",
+      "title" : "White list: Domain allowed is FQDN Address Object",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "1" : {
+      "steps" : "  1) Enable DNS and DNS Rebinding Attack Prevention\n  2) Select Log the Attack and Drop the DNS Reply\n  3) Clear the log on the device\n  4) Use DNS Lookup of FQDN that will return the Node Local Address 127.0.0.1 and analyze DNS response. Optionally do packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return node-local address for sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns",
+      "id" : "1",
+      "title" : "DNS rebinding attack detected - Node local address",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "18" : {
+      "steps" : "  1) Configure serveral FQDN objects with one being the hostname that will be queried.\n  2) Configure an address object that contains all the address objects configured with the last being the hostname.\n  3) In the Whitelist choose the address group object and click Apply.\n  4) Clear the log on the device\n  5) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address and analyze DNS response. Optionally do a packet capture.\n  6) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "18",
+      "title" : "White list: Domain allowed is FQDN Address Group",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "30" : {
+      "steps" : "  1) From DNS client do nslookup of the hostname that is configured in the DNS server. 2) Check the log on firewall.",
+      "initial" : "  1.\tDNS Server or WAN PC running Netwox on X1 interface set to return node-local address on X1 interface. PC on X0 2. Netwox command example: 104 --hostname www.example.com --hostnameip 1.2.3.4 --authns ns.example.com --authnsip 172.17.7.123 --device Eth2 --src-eth 00:16:36:87:87:22 --src-ip 172.17.7.123\n  3.\tDNS Rebinding Attack Prevention Enabled and set to Log and drop, or log and modify..",
+      "id" : "30",
+      "title" : "Verify event log is generated with correct format-Action: Log and drop or log and modify",
+      "result" : "  1. Event log: DNS rebind attack blocked. The eventlog generated will contain the FQDN, host, source and destination IP addresses."
+   },
+   "16" : {
+      "steps" : "  1) From DNS client do nslookup of the hostname that is configured in the DNS server.\n  2) Check the email.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a node-local address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns\n  PC on X0\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.\n  Email server on LAN.\n  SMTP server settings configured. Email address configured for sending alerts to.\n  Enable all alert categories.",
+      "id" : "16",
+      "title" : "Email alert of event",
+      "result" : "  Email shows the detected attack and that it was dropped."
+   },
+   "44" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup from X2 DNS Server of FQDN that will return the Node Local Address 127.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  DNS Server or DMZ PC running Netwox on X2 (DMZ) interface set to return a Node-Local adress for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "44",
+      "title" : "DNS rebinding attack is not detected for Node Local DNS replies sent from DMZ > LAN",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "55" : {
+      "steps" : "  1) Configure a FQDN address object with the a wildcard entry that contains part of the hostname that will be queried.\n  2) In the Whitelist choose the address object and click Apply.\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address not in the list and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  PC on X0\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "55",
+      "title" : "DNS rebinding attack is detected - White list: Domain allowed uses a wildcard entry and host queried does not match.",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "27" : {
+      "steps" : "  1) Start a packet capture on DNS client. 2) From DNS client do nslookup of the hostname that is configured in the DNS server. 3) Check the log and the packet capture.",
+      "initial" : "  1.\tTestbed is as below.\n  Internal Host---Inter_1----Router----Inter_2------X0:LAN-----Firewall-----X1:WAN-----WAN PC(WAN DNS server)\n  Internal host:192.168.100.123/24; Gateway points to Inter_1;\n  Inter_1: 192.168.100.254/24; Inter_2: 192.168.168.254/24; Default gateway of the router points to Inter-2,X0;\n  X0:LAN: 192.168.168.168/24; X1:WAN: 172.17.7.1/24; WAN host: 172.17.7.123/24; Firewall acts as an actual gateway of the Internal host. There is a following static route entry or dynamic route entry for Inter_1 subnet on the firewall.\n  192.168.100.0/24 X0 Inter-2s IP\n  2.\tDNS Server or WAN PC running Netwox on X1 interface set to return node-local address on X1 interface. PC on X0 3.\tNetwox command example: 104 --hostname www.example.com --hostnameip 1.2.3.4 --authns ns.example.com --authnsip 172.17.7.123 --device Eth2 --src-eth 00:16:36:87:87:22 --src-ip 172.17.7.123\n  4.\tDNS Rebinding Attack Prevention Enabled and set to Log and drop.",
+      "id" : "27",
+      "title" : "DNS rebinding attack detected - Host behinds a router, hosts subnet matches a static or dynamic route entry of the firewall",
+      "result" : "  DNS reply is not found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "25" : {
+      "steps" : "  1) Run Performance test from WAN > LAN on Ixia. with and without DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply",
+      "initial" : "  Ixia",
+      "id" : "25",
+      "title" : "Performance",
+      "result" : "  Minimal impact on performance"
+   },
+   "28" : {
+      "steps" : "  1) From DNS client do nslookup of the hostname that is configured in the DNS server. 2) Check the log on firewall.",
+      "initial" : "  1.\tDNS Server or WAN PC running Netwox on X1 interface set to return node-local address on X1 interface. PC on X0 2. Netwox command example: 104 --hostname www.example.com --hostnameip 1.2.3.4 --authns ns.example.com --authnsip 172.17.7.123 --device Eth2 --src-eth 00:16:36:87:87:22 --src-ip 172.17.7.123 3.\tDNS Rebinding Attack Prevention Enabled and set to Log the Attack.",
+      "id" : "28",
+      "title" : "Verify event log is generated with correct format-Action: Log the attack",
+      "result" : "  1. Event log: Possible DNS rebind attack detected. The eventlog generated will contain the FQDN, host, source and destination IP addresses."
+   },
+   "40" : {
+      "steps" : "  1) Enable DNS and DNS Rebinding Attack Prevention\n  2) Select Log the Attack and Drop the DNS Reply\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the WLAN Address 192.168.168.1 and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a WLAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns",
+      "id" : "40",
+      "title" : "DNS rebinding attack detected - Host belonging to WLAN subnets",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "14" : {
+      "steps" : "  1) Set the DNS Rebinding Attack Prevention Action to Log the Attack modify the DNS reply by stripping out all A records and setting the DNS header RCODE field to REFUSED.\n  2) Clear the log on the device\n  3) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address 192.168.168.1 and analyze DNS response. Optionally do a packet capture.\n  4) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and initially set to Log the Attack and Drop DNS Reply.",
+      "id" : "14",
+      "title" : "Policy Action: Log the attack and modify the DNS reply by stripping out all A records and setting the DNS header RCODE field to REFUSED",
+      "result" : "  DNS reply has Refused in it. Log shows the detected attack."
+   },
+   "20" : {
+      "steps" : "  1) Configure a large number of FQDN objects with one being the hostname that will be queried.\n  2) Configure an address object that contains all the address objects configured with the last being the hostname.\n  3) In the Whitelist choose the address group object and click Apply.\n  4) Clear the log on the device\n  5) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address and analyze DNS response. Optionally do a packet capture.\n  6) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "20",
+      "title" : "White list: Domain allowed is entry at the end of a large FQDN Address group",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "49" : {
+      "steps" : "  1) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the Multicast Address 224.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  DNS Server or DMZ PC running Netwox on X2 (LAN) interface set to return a Multicast address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 224.0.0.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "49",
+      "title" : "DNS rebinding attack is not detected for Multcast DNS replies sent from LAN > LAN",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "24" : {
+      "steps" : "  1) Clear the log on the device.\n  2) Connect GVC client from WAN.\n  3) From GVC client do nslookup of the hostname that is configured in the DNS server. Optionally do a packet capture.\n  4) Check the log and the packet capture.",
+      "initial" : "  DNS Server or WAN PC running Netwox on X1 interface set return node-local address, etc on interface on different port than X0.\n  PC on WAN.\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.\n  GVC connection enabled.",
+      "id" : "24",
+      "title" : "DNS rebinding attack is not detected for DNS replies sent to GVC Client",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "10" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup of FQDN that will return the Node Local Address 127.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a node-local address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns\n  PC on X0\n  X0 interface in transparent mode.\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "10",
+      "title" : "DNS rebinding attack is detected - Transparent mode",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "31" : {
+      "steps" : "  1. Login firewall and go to Network->DNS to check the default DNS rebinding settings.",
+      "initial" : "  Boot Firewall with factory default settings.",
+      "id" : "31",
+      "title" : "Verify the default settings for DNS rebinding",
+      "result" : "  1. The default setting for DNS rebinding is enabled with action Log the attack, allowed domain is none."
+   },
+   "35" : {
+      "steps" : "  1.\tLoad a build which support DNS rebinding feature to firewall, then boot it with current settings. Verify if the upgrading works fine with DNS rebinding feature correctly support.\n  2.\tThen downgrade it to a non- DNS rebinding supported build. Verify if all DNS rebinding related items have been correctly removed.",
+      "initial" : "  Firewall is working with a firmware which does not support DNS rebinding feature.",
+      "id" : "35",
+      "title" : "Firmware upgrading/downgrading between two builds which support DNS rebinding attack prevention or not support it.",
+      "result" : "  1. Firewall works fine after upgrading to a DNS rebinding supported build.\n  2. After downgrading, all DNS rebinding related items have been correctly removed."
+   },
+   "11" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup of FQDN that will return the Node Local Address 127.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a node-local address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns\n  PC on X0\n  X0 briged to X1.\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "11",
+      "title" : "DNS rebinding attack is detected - L2Bridge mode",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "53" : {
+      "steps" : "  1) Configure a FQDN address object with the hostname that will not be queried.\n  2) In the Whitelist choose the address object and click Apply.\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address not in the list and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  PC on X0\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "53",
+      "title" : "DNS rebinding attack is detected - White list: Domain allowed is FQDN Address Object and host queried is different.",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "48" : {
+      "steps" : "  1) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the Link Local Address 169.254.1.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  DNS Server or DMZ PC running Netwox on X2 (LAN) interface set to return a Link-Local address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 169.254.1.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "48",
+      "title" : "DNS rebinding attack is not detected for Link Local DNS replies sent from LAN > LAN",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "42" : {
+      "steps" : "  1) Enable DNS and DNS Rebinding Attack Prevention\n  2) Select Log the Attack and Drop the DNS Reply\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return multiple A records including a link-local Address 169.254.1.1 and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server on X1 interface set to return a multiple A records for the sent name which include a Link-local address. PC on X0\n  Netwox command: netwox 104 -h hostname -H 169.254.1.1 -A authns_hostname -a ip_ns",
+      "id" : "42",
+      "title" : "DNS rebinding attack detected when multiple A records are sent with one that is Link Local",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "22" : {
+      "steps" : "  1) Start a packet capture on DNS client.\n  2) Use a script that continuously does DNSlookup using server that will return invalid address 3) Run the script for an hour.\n  4) Check the log and the packet capture.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return node-local address on X1 interface.\n  PC on X0\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "22",
+      "title" : "DNS Rebinding Attack Prevention Stress test",
+      "result" : "  DNS reply is not found in the packet capture. Log shows the detected attacks and that it was dropped. No memory leaks or other issue found after running the test."
+   },
+   "46" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup from X2 DNS Server of FQDN that will return the Multicast Address 224.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  DNS Server or DMZ PC running Netwox on X2 (DMZ) interface set to return a Multicast adress for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 224.0.0.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "46",
+      "title" : "DNS rebinding attack is not detected for Multicast DNS replies sent from DMZ > LAN",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "13" : {
+      "steps" : "  1) Set the DNS Rebinding Attack Prevention Action to Log the Attack and Drop DNS Reply.\n  2) Clear the log on the device\n  3) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address 192.168.168.1 and analyze DNS response. Optionally do a packet capture.\n  4) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and initially set to only Log the Attack",
+      "id" : "13",
+      "title" : "Policy Action: Log the attack and drop the DNS reply",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "23" : {
+      "steps" : "  1) Clear the log on the device\n  2) Connect NetExtender client.\n  3) From NetExtender client do nslookup of the hostname that is configured in the DNS server. Optionally do a packet capture.\n  4) Check the log and the packet capture.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return node-local address, etc on interface on different port than X0.\n  PC on WAN.\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.\n  NetExtender connection enabled.",
+      "id" : "23",
+      "title" : "DNS rebinding attack is not detected for DNS replies sent to NetExtender Client",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "29" : {
+      "steps" : "  1. Start a packet capture on DNS client. 2. From DNS client, do nslookup of the hostname that is configured in the DNS server. 3. Check the log and the packet capture.",
+      "initial" : "  1.\tDNS Server or WAN PC running Netwox on X1 interface set to return non-local address on X1 interface. PC on X0 2. Netwox command example: 104 --hostname www.example.com --hostnameip 1.2.3.4 --authns ns.example.com --authnsip 172.17.7.123 --device Eth2 --src-eth 00:16:36:87:87:22 --src-ip 172.17.7.123 3.\tDNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "29",
+      "title" : "DNS rebinding attack is not detected Host does not belong to firewalls local network subnets",
+      "result" : "  DNS reply is found in the packet capture. Log does not show the detected attack."
+   },
+   "6" : {
+      "steps" : "  1) Enable DNS and DNS Rebinding Attack Prevention\n  2) Select Log the Attack and Drop the DNS Reply\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return multiple A records including a LAN Address 192.168.168.1 and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server on X1 interface set to return a multiple A records for the sent name which include a LAN address. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns",
+      "id" : "6",
+      "title" : "DNS rebinding attack detected when multiple A records are sent with one that is LAN Host",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "50" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup to X2 DNS Server of FQDN that will return the Node-Local Address 127.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  X2 configured as secondary WAN.\n  Route to send requests for PC on WAN out X2.\n  DNS Server or WAN PC running Netwox on X1 interface set to return a Node-Local address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "50",
+      "title" : "DNS rebinding attack detected for Node Local DNS replies on secondary WAN",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "39" : {
+      "steps" : "  1) Enable DNS and DNS Rebinding Attack Prevention\n  2) Select Log the Attack and Drop the DNS Reply\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the DMZ Address 192.168.168.1 and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a DMZ address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns",
+      "id" : "39",
+      "title" : "DNS rebinding attack detected - Host belonging to DMZ subnets",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "3" : {
+      "steps" : "  1) Enable DNS and DNS Rebinding Attack Prevention\n  2) Select Log the Attack and Drop the DNS Reply\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the Multi-cast Address 224.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a multi-cast address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 224.0.0.1 -A authns_hostname -a ip_ns",
+      "id" : "3",
+      "title" : "DNS rebinding attack detected - Multicast",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "36" : {
+      "steps" : "  1. Login the active unit, enable DNS Rebinding, select proper action and Allowed domain info.\n  2. Then trigger a Hardware failover to let the previous inaction unit becomes active.\n  3. Login the current active unit to verify the related DNS Rebinding settings.",
+      "initial" : "  HA has been enalbed and correctly configured on two connected identical units.",
+      "id" : "36",
+      "title" : "DNS Rebinding with HA-Configuration sync",
+      "result" : "  All DNS rebinding related settings can be successfully synconized to the backup unit."
+   },
+   "9" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup to X2 DNS Server of FQDN that will return the LAN Address 192.168.168.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  X2 configured as secondary WAN.\n  Route to send requests for PC on WAN out X2.\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "9",
+      "title" : "DNS rebinding attack detected for LAN address on secondary WAN",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "51" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup to X2 DNS Server of FQDN that will return the Link-Local Address 169.254.1.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  X2 configured as secondary WAN.\n  Route to send requests for PC on WAN out X2.\n  DNS Server or WAN PC running Netwox on X1 interface set to return a Link-Local address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 169.254.1.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "51",
+      "title" : "DNS rebinding attack detected for Link Local DNS replies on secondary WAN",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "41" : {
+      "steps" : "  1) Enable DNS and DNS Rebinding Attack Prevention\n  2) Select Log the Attack and Drop the DNS Reply\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return multiple A records including a node-local Address 127.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server on X1 interface set to return a multiple A records for the sent name which include a node-local address. PC on X0\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns",
+      "id" : "41",
+      "title" : "DNS rebinding attack detected when multiple A records are sent with one that is Node Local",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "12" : {
+      "steps" : "  1) Set the DNS Rebinding Attack Prevention Action to Log the Attack.\n  2) Clear the log on the device\n  3) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address 192.168.168.1 and analyze DNS response. Optionally do a packet capture.\n  4) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "12",
+      "title" : "Policy Action: Log the attack",
+      "result" : "  DNS reply is present. Log shows the detected attack."
+   },
+   "47" : {
+      "steps" : "  1) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the Node Local Address 127.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  DNS Server or DMZ PC running Netwox on X2 (LAN) interface set to return a Node-Local address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "47",
+      "title" : "DNS rebinding attack is not detected for Node Local DNS replies sent from LAN > LAN",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "15" : {
+      "steps" : "  1) From DNS client do nslookup of the hostname that is configured in the DNS server.\n  2) Check the SNMP server.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a node-local address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 127.0.0.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.\n  SNMP server setup on LAN.\n  SNMP administration enabled with trap host and community configured.\n  Enable all logging categories.",
+      "id" : "15",
+      "title" : "SNMP trap of event",
+      "result" : "  Trap shows the detected attack and that it was dropped."
+   },
+   "8" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup to X2 DNS Server of valid FQDN on LAN. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  DNS Server or DMZ PC running Netwox on X2 (LAN) interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "8",
+      "title" : "DNS rebinding attack is not detected for LAN Address DNS replies sent from LAN > LAN",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "52" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup to X2 DNS Server of FQDN that will return the Multi-cast Address 224.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  X2 configured as secondary WAN.\n  Route to send requests for PC on WAN out X2.\n  DNS Server or WAN PC running Netwox on X1 interface set to return a Multicast address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 224.0.0.4 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "52",
+      "title" : "DNS rebinding attack detected for Multicast DNS replies on secondary WAN",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "38" : {
+      "steps" : "  1. Login GMS managment, navagate to Network->DNS to configure all the following settings. Verify if you can configure all of these.\n  #Enable or disable status;\n  #Currnt action;\n  #Allowed Domain setting.\n  2. After you configuration, re-login the firewall though regular http/https, verify if the related settings have been correctly configured.",
+      "initial" : "  GMS management configuration has been successfully configured to manage the firewall. It does not matter which GMS management method you are using.",
+      "id" : "38",
+      "title" : "DNS Rebinding with GMS-Configure settings via GMS",
+      "result" : "  1. In step1, you should be able to configure all of these settings.\n  2. In step2, you should find all of settings have already correctly configued."
+   },
+   "4" : {
+      "steps" : "  1) Enable DNS and DNS Rebinding Attack Prevention\n  2) Select Log the Attack and Drop the DNS Reply\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address 192.168.168.1 and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns",
+      "id" : "4",
+      "title" : "DNS rebinding attack detected - Host belonging to LAN subnets",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "34" : {
+      "steps" : "  1. Configure DNS rebinding both Action and Allowed domain. Make sure that they are different with their default values.\n  2. Export prefs file and save it locally.\n  3. Boot firewall with factory default settings, or just modify DNS rebinding settings. Then try to import the previous exported prefs file.",
+      "initial" : "  n/a",
+      "id" : "34",
+      "title" : "Importing/exporting Prefs file with DNS rebinding settings",
+      "result" : "  1. DNS rebinding settings are intact after importing a prefs file with DNS rebinding configuration."
+   },
+   "56" : {
+      "steps" : "  1) Configure a FQDN address object with the a wildcard entry that contains part of the hostname that will be queried in lowercase such as *.example.local.\n  2) In the Whitelist choose the address object and click Apply.\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address using capital version of the FQDN such as WWW.EXAMPLE.LOCAL and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply",
+      "id" : "56",
+      "title" : "Verify case insensitivity using White list: Domain allowed uses a wildcard entry",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "45" : {
+      "steps" : "  1) Clear the log on the device\n  2) Use X0 PC to do DNS Lookup from X2 DNS Server of FQDN that will return the Link Local Address 169.254.1.1 and analyze DNS response. Optionally do a packet capture.\n  3) Get and analyze the log of the device.",
+      "initial" : "  DNS Server or DMZ PC running Netwox on X2 (DMZ) interface set to return a Link-Local adress for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 169.254.1.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "45",
+      "title" : "DNS rebinding attack is not detected for Link Local DNS replies sent from DMZ > LAN",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "37" : {
+      "steps" : "  1. DNS Rebinding has been enabled on the current active unit with Action Log Attack & Drop DNS Reply, Allowed Domain www.susy.com.\n  2. A PC running with Netwag on the WAN with proper DNS server settings. Refer to the previous test cases for details.\n  3. A PC on LAN keeps sending out DNS request to the DNS server for changing domain queries.\n  4. Trigger a hardware failover to let the backup unit becomes active. Connect the LAN PC to the current acitive unit X0 LAN and continious sends out DNS request to the DNS server for changing domain queries. Verify the LAN PC can get the DNS reply from the fake WAN server. Check the log reports on the firewall.\n  5. Let the LAN PC query the allowed domain www.susy.com. Verify the LAN PC can get the DNS reply from the fake WAN server.",
+      "initial" : "  1. HA has been enalbed and correctly configured on two connected identical units.",
+      "id" : "37",
+      "title" : "DNS Rebinding with HA-Verify DNS rebinding still function well after a Hardware Failover",
+      "result" : "  1. In step4, the LAN PC can not get the DNS reply. And there will be log reported such as DNS Rebinding dropped.\n  2. In step5, the LAN PC can successfully get the DNS reply."
+   },
+   "43" : {
+      "steps" : "  1) Enable DNS and DNS Rebinding Attack Prevention\n  2) Select Log the Attack and Drop the DNS Reply\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return multiple A records including a multi-cast Address 224.0.0.1 and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server on X1 interface set to return a multiple A records for the sent name which include a Multicast address. PC on X0\n  Netwox command: netwox 104 -h hostname -H 224.0.0.1 -A authns_hostname -a ip_ns",
+      "id" : "43",
+      "title" : "DNS rebinding attack detected when multiple A records are sent with one that is Multcast",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "19" : {
+      "steps" : "  1) Configure a FQDN address object with the a wildcard entry that contains part of the hostname that will be queried.\n  2) In the Whitelist choose the address object and click Apply.\n  3) Clear the log on the device\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply",
+      "id" : "19",
+      "title" : "White list: Domain allowed uses a wildcard entry",
+      "result" : "  DNS reply is present. Log does not show an attack."
+   },
+   "54" : {
+      "steps" : "  1) Configure serveral FQDN objects with one being the hostname that will not be queried.\n  2) Configure an address object that contains all the address objects configured.\n  3) In the Whitelist choose the address group object and click Apply.\n  4) Clear the log on the device\n  5) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address not in the list and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns\n  PC on X0\n  DNS Rebinding Attack Prevention Enabled and set to Log the Attack and Drop DNS Reply.",
+      "id" : "54",
+      "title" : "DNS rebinding attack is detected - White list: Domain allowed is FQDN Address Group and host queried is not in the list",
+      "result" : "  There is no DNS reply - no reply found in the packet capture. Log shows the detected attack and that it was dropped."
+   },
+   "2499025" : {
+      "steps" : "  1) set DNS server as private dns server in WAN side2) Enable DNS proxy and DNS Rebinding Attack Prevention and  Select Log the Attack and Drop the DNS Reply3) create domian as FQDN ao host in white list 4 Enable DNS proxy and Enable DNS proxy on X0 interface5)  configure X0 pc and set dns server as interface X0 ip6)  from diagnotics-> ping domain which will return 127.0.0.1 in private DNS server7) do packet capture and check the log",
+      "initial" : " setup private dns server with domain will return 127.0.0.1  and Host belonging to LAN/DMZ subnets ",
+      "id" : "2499025",
+      "title" : "DNS rebinding attack is not detected when DNS proxy enabled and dns query from lan to wan and domain in white list",
+      "result" : " The response was not dropped and no DNS rebind log. "
+   },
+   "2499024" : {
+      "steps" : " 1) set DNS server as private dns server in WAN side2) Enable DNS proxy and DNS Rebinding Attack Prevention and  Select Log the Attack and Drop the DNS Reply3Enable DNS proxy and Enable DNS proxy on X0 interface4)  configure X0 pc and set dns server as interface X0 ip5)  from diagnotics-> ping domain which will return 127.0.0.1 in private DNS server6) do packet capture and check the log7) from diagnostic->Real-time Black List Lookup, using domain dnsbl.sorbs.net and malicious IP 185.167.98.85(find in http://www.sorbs.net/home/stats.shtml )8) do packet capture and check the log",
+      "initial" : " setup private dns server with domain will return 127.0.0.1  and Host belonging to LAN/DMZ subnets ",
+      "id" : "2499024",
+      "title" : "DNS rebinding attack is not detected when DNS proxy enabled and dns query from stack",
+      "result" : " 6) The response was not dropped and no DNS rebind log.8) The response was not dropped and no DNS rebind log. "
+   },
+   "2499023" : {
+      "steps" : "1) set DNS server as private dns server in WAN side2) Enable DNS proxy and DNS Rebinding Attack Prevention and  Select Log the Attack and Drop the DNS Reply3Enable DNS proxy and Enable DNS proxy on X0 interface4)  configure X0 pc and set dns server as interface X0 ip5)  from X0 pc ping domain which will return 127.0.0.1 in private DNS server6) do packet capture and check the log7) from X0 pc ping domain which will return  Host belonging to LAN subnets in private DNS server8) do packet capture and check the logNotice :in 7.1.3/8.0.0  when test dns proxy it should add dns proxy policy and no place to enable proxy in interface ",
+      "initial" : " setup private dns server with domain will return 127.0.0.1  and Host belonging to LAN/DMZ subnets ",
+      "id" : "2499023",
+      "title" : "DNS rebinding attack detected when DNS proxy enabled and dns query from lan to wan",
+      "result" : " 6) DNS reply was dropped. Log show DNS rebind attack blocked8)  DNS reply was dropped. Log show DNS rebind attack blocked"
+   },
+   "5" : {
+      "steps" : "  1) In the UI uncheck DNS Rebinding Attack Prevention Enabled and click Apply.\n  4) Use X0 PC to do DNS Lookup of FQDN that will return the LAN Address 192.168.168.1 and analyze DNS response. Optionally do a packet capture.\n  5) Get and analyze the log of the device.",
+      "initial" : "  Interfaces configured\n  DNS Server or WAN PC running Netwox on X1 interface set to return a LAN address for the sent name. PC on X0\n  Netwox command: netwox 104 -h hostname -H 192.168.168.1 -A authns_hostname -a ip_ns",
+      "id" : "5",
+      "title" : "DNS rebinding attack is not detected when disabled",
+      "result" : "  DNS reply is returned. Log does not shows the detected attack."
+   },
+   "3038692" : {
+      "steps" : " 1.Go to Network > DNS > Setting and enable DNS Rebinding Attack Prevention.2.run nslookup gate.yukika.net in a PC under the firewall.3.It triggers log: DNS rebind attack because resolved IP address is 192.168.9.254.4.check the details and notes in this log",
+      "initial" : " NA",
+      "id" : "3038692",
+      "title" : "Enhance : verify logs associated with DNS rebind attack contain fqdn info",
+      "result" : " The log should include gate.yukika.net in this case which is FQDN for name resolution. It is helpful for troubleshooting by the customer."
+   }
+
+}

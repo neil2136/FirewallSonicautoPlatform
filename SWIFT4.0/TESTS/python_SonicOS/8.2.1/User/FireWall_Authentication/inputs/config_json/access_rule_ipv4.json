@@ -1,0 +1,86 @@
+{
+    "access_rules": [
+        {
+            "ipv4": {
+                "name": "My Rule",
+                "enable": true,
+                "auto_rule": false,
+                "from": "any",
+                "to": "any",
+                "action": "allow",
+                "source": {
+                    "address": {
+                        "any": true
+                    },
+                    "port": {
+                        "any": true
+                    }
+                },
+                "service": {
+                    "any": true
+                },
+                "destination": {
+                    "address": {
+                        "any": true
+                    }
+                },
+                "schedule": {
+                    "always_on": true
+                },
+                "users": {
+                    "included": {
+                        "all": true
+                    },
+                    "excluded": {
+                        "none": true
+                    }
+                },
+                "comment": "",
+                "fragments": true,
+                "logging": true,
+                "sip": false,
+                "h323": false,
+                "flow_reporting": false,
+                "botnet_filter": false,
+                "geo_ip_filter": {
+                    "enable": false,
+                    "global": true
+                },
+                "block": {
+                    "countries": {
+                        "unknown": false
+                    }
+                },
+                "packet_monitoring": false,
+                "management": false,
+                "max_connections": 100,
+                "priority": {
+                    "auto": true
+                },
+                "tcp": {
+                    "timeout": 15,
+                    "urgent": false
+                },
+                "udp": {
+                    "timeout": 30
+                },
+                "connection_limit": {
+                    "source": {},
+                    "destination": {}
+                },
+                "dpi": true,
+                "dpi_ssl": {
+                    "client": true,
+                    "server": true
+                },
+                "redirect_unauthenticated_users_to_log_in": true,
+                "quality_of_service": {
+                    "class_of_service": {},
+                    "dscp": {
+                        "preserve": true
+                    }
+                }
+            }
+        }
+    ]
+}

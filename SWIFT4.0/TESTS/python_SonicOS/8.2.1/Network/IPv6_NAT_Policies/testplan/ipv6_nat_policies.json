@@ -1,0 +1,37 @@
+{
+  "1" : {
+      "steps" : "  <p>1- Login to management interface through a web browser</p>\n  <p>2- Go to Network/NAT Policy page</p>\n  <p>3- Click IPv6 Only radio Button</p>\n  <p>4- Add the following NAT policy by clicking Add button OriginalTranslatedOriginalTranslatedOriginalTranslatedInboundOutbound AnyOriginal2001:1::112001::10AnyOriginalX1Any</p>",
+      "initial" : "  Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN and DMZ",
+      "uuid" : "1505207",
+      "id" : "1",
+      "title" : "  GUI: Add IPv6 NAT Policies"
+   },
+  "8" : {
+      "id" : "8",
+      "title" : "  GUI: Modify Services and Service groups to update IPv6 NAT Policy table",
+      "steps" : "  <p>1- Login to management interface through a web browser</p>\n  <p>2- Go to Firewall/Service page</p>\n  <p>3- Modify custom services and custom service groups being used in the NAT policy</p>\n  <p>4- Go to Network/NAT Policy page</p>\n  <p>5- Click on Custom Policies and IPv6 Only radio buttons</p>\n  <p>6- Verify that custom services and custom service groups in the NAT Policies are updated in NAT Policy table</p>",
+      "initial" : "  Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN and DMZ.\n  Custom IPv6 NAT Policies using custom services / custom service groups already created",
+      "uuid" : "1505214"
+   },
+  "19" : {
+      "initial" : "  <p>Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN, DMZ and custom Zone <br />2001::/64 (LAN) <br />2001:1::/64 (WAN) <br />2001:4::/64 (DMZ)<br /> 2001:5::/64 (Custom Zone</p>",
+      "steps" : "  <p>1- Login to management interface through a web browser <br />2- Go to Network/Address Object page <br />3- Click IPv6 Only radio Button and add the following address abjects: <br />Name Zone Assignment Type IP Address Public-IP <br />WAN Host 2001:1::100 &amp; Private-IP LAN Host 2001::100 <br />4- Go to Network/NAT Policy page <br />5- Click IPv6 Only radio Button <br />6- Add the following NAT policy: <br />Source Destination Service Interface OriginalTranslatedOriginalTranslatedOriginalTranslatedInboundOutbound <br />Private-IPPublic-IPAnyOriginal AnyOriginal X0X1 (One to One Mapping ) (All Unmapped )(All Unmapped) <br />7- Create necessary access rules <br />8- Access any host on WAN from LAN Host with IPv6 IP: 2001::100 and make sure that source IP out of WAN port (X1) is shown as 2001:1::100 instead of X1 IPv6 Primary Static Address</p>",
+      "uuid" : "1505209",
+      "id" : "19",
+      "title" : "  Function: Source Remapping (One to One)"
+   },
+  "23" : {
+      "title" : "  Function: Destination Remapping (Few to Many)",
+      "id" : "23",
+      "uuid" : "1505210",
+      "initial" : "  <p>Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN, DMZ and custom Zone <br />2001::/64 (LAN) <br />2001:1::/64 (WAN) <br />2001:4::/64 (DMZ) <br />2001:5::/64 (Custom Zone)</p>",
+      "steps" : "  <p>1- Login to management interface through a web browser <br />2- Go to Network/Address Object page <br />3- Click IPv6 Only radio Button and add the following address Groups: <br />IPv6-LAN-Group with LAN IPs 2001::115, 2001::116, 2001::117, 2001::118, 2001::119 &amp; 2001::120 <br />IPv6-WAN-Group with less number of WAN IPs 2001:1::200 and 2001:1::201 <br />4- Go to Network/NAT Policy page <br />5- Click IPv6 Only radio Button <br />6- Add the following NAT policy: <br />Source Destination Service Interface OriginalTranslatedOriginalTranslatedOriginalTranslatedInboundOutbound <br />AnyOriginalIPv6-WAN-GroupIPv6-LAN-Group AnyOriginal X1Any (All Unmapped ) (few to many )(All Unmapped) <br />7- Create necessary access rules <br />8- Verify that NAT Policy works</p>\n  <p></p>\n  <div><span><span>note:\u00a0<span>When to configure a DNAT policy, user shall firstly add original destination IP addresses to the interface, as an IPv6 interface support multiple addressing.</span></span></span></div>\n  <div><font color=\"#111111\" face=\"Arial\"><span>like:\u00a0IPv6-WAN-Group\u00a02001:470:80b7:869::36-39/128. must add them IPS to \u00a0WAN interface on \u00a0Advanced page</span></font></div>"
+   },
+  "44" : {
+      "steps" : "  <p>1- Login to management interface through a web browser</p>\n  <p>2- Go to Network/NAT Policy page</p>\n  <p>3- Click IPv6 Only radio Button</p>\n  <p>4- Create several IPv6 NAT Policies from WAN to LAN, WAN to DMZ, DMZ to WAN etc..</p>\n  <p>5- Export Prefs</p>\n  <p>6- Reboot the box to factory default settings</p>\n  <p>7- Import Prefs back and verify that IPv6 NAT policies remain intact</p>",
+      "initial" : "  Firewall running IPv6 Firmware, connected to IPv6 Hosts on LAN, WAN, DMZ and custom Zone 2001::/64 (LAN) 2001:1::/64 (WAN) 2001:4::/64 (DMZ) 2001:5::/64 (Custom Zone)",
+      "uuid" : "1505213",
+      "id" : "44",
+      "title" : "  Preference Export and Import"
+   }
+}

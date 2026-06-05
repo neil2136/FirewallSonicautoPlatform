@@ -1,0 +1,107 @@
+{
+   "35" : {
+      "steps" : "  in step4, mouse hover on aaa.com, it can be resolved\n  in step6&amp;8, ping traffic success, and destination is translated to LAN PC IP",
+      "initial" : "  1.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP\n  2.Add a domain aaa.com bind to X1AO on DNS server (10.8.143.190)\n  3.Go to Network-&gt;DNS page, change dns server to 10.8.143.190\n  4.Go to NAT Policies page, add a NAT policy in FW as follows: Any Original aaa.com LAN PC IP Any Original X1 Any\n  5.Config10.8.143.190 as client PC(WAN side) DNS server IP\n  6.Client PC ping aaa.com, check packet monitor\n  7.Export prefs, then factory default DUT or change NAT settings or change FQDN settings\n  8.Import prefs, check ping traffic and packet monitor",
+      "id" : "35",
+      "title" : "[Func]Verify all FQDN based NAT are active after importing profile",
+      "result" : ""
+   },
+   "27" : {
+      "steps" : "  in step3, mouse hover on aaa.com, it can be resolved\n  in step5, ping traffic success, and source is translated to X1 IP\n  in step6, ping traffic success, and source is translated to X1AO",
+      "initial" : "  1.Add a domain aaa.com bind to WAN PC IP(visited server) on DNS server(10.8.143.190)\n  2.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP, change dns server to 10.8.143.190 in Network-&gt;DNS page\n  3.Go to NAT Policies page, add two NAT Policies in FW: test1 Any X1 IP aaa.com Original Any Original Any X1 test2 Any X1AO aaa.com Original Any Original Any X1\n  4.Config10.8.143.190 as client PC DNS server IP\n  5.Client PC ping aaa.com, check packet monitor\n  6.Disable test1, check packet monitor",
+      "id" : "27",
+      "title" : "[Func]Verify the FQDN based NAT policies can be disabled/enabled",
+      "result" : ""
+   },
+   "25" : {
+      "steps" : "  in step3, mouse hover on aaa.com, it can be resolved\n  in step5, ping traffic success, and source is translated to X1 IP\n  in step6, ping traffic fail",
+      "initial" : "  1.Add a domain aaa.com bind to WAN PC IP(visited server) on DNS server(10.8.143.190).2.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP, change dns server to 10.8.143.190 in Network->DNS page.3.Go to NAT Policies page, add a NAT Policy in FW: test1 Any X1AO aaa.com Original Any Original Any X1.4.Config10.8.143.190 as client PC DNS server IP.5.Client PC ping aaa.com, check packet monitor.6.Delete test1, check ping traffic in client PC",
+      "id" : "25",
+      "title" : "[Func]Verify the NAT policies contain FQDN can be deleted",
+      "result" : "in step3, mouse hover on aaa.com, it can be resolved in step5, ping traffic success, and source is translated to X1AO IP in step6, ping traffic success but source is translate to X1 IP"
+   },
+   "33" : {
+      "steps" : "  in step5, mouse hover on aaa.com, it can be resolved in step 7, the first and seconde LAN PCs' IP can be NATed.",
+      "initial" : "  1.Log in FW, config X1 as DHCP mode, add two X1AOs within X1 subnet but not X1 IP\n  2.Add three PCs connect LAN, create a LANgroup contain all PCs' IP\n  3.Add a domain aaa.com bind to X1AOs on DNS server (10.8.143.190)\n  4.Go to Network-&gt;DNS page, change dns server to 10.8.143.190\n  5.Go to NAT Policies page, add a NAT policy in FW as follows: Any Original aaa.com LANgroup Any Original X1 Any\n  6.Config 10.8.143.190 as client PCs(WAN side) DNS server IP\n  7.Client PCs ping aaa.com, check packet monitor",
+      "id" : "33",
+      "title" : "[Func]Verify the Few-to-Many functin of FQDN based NAT policies",
+      "result" : ""
+   },
+   "21" : {
+      "steps" : "  in step3, mouse hover on aaa.com, it can be resolved\n  in step5, ping traffic success, and source is translated to X1AO",
+      "initial" : "  1.Add a domain aaa.com bind to WAN PC IP(visited server) on DNS server(10.8.143.190)\n  2.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP, change dns server to 10.8.143.190 in Network-&gt;DNS page\n  3.Go to NAT Policies page, add a NAT policy in FW as follows: Any X1AO aaa.com Original Any Original Any X1\n  4.Config10.8.143.190 as client PC DNS server IP\n  5.Client PC ping aaa.com, check packet monitor",
+      "id" : "21",
+      "title" : "[Func]Verify the function of NAT policy with Original Destination as FQDN, translated source not equal to WAN IP",
+      "result" : ""
+   },
+   "36" : {
+      "steps" : "  in step4, mouse hover on aaa.com, it can be resolved\n  in step6&amp;7, ping traffic success, and destination is translated to LAN PC IP",
+      "initial" : "  1.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP\n  2.Add a domain aaa.com bind to X1AO on DNS server (10.8.143.190)\n  3.Go to Network-&gt;DNS page, change dns server to 10.8.143.190\n  4.Go to NAT Policies page, add a NAT policy in FW as follows: Any Original aaa.com LAN PC IP Any Original X1 Any\n  5.Config10.8.143.190 as client PC(WAN side) DNS server IP\n  6.Client PC ping aaa.com, check packet monitor\n  7.Restrat DUT, check ping traffic and packet monitor",
+      "id" : "36",
+      "title" : "[Func]Verify all FQDN based NAT are active after restart",
+      "result" : ""
+   },
+   "26" : {
+      "steps" : "  in step3, mouse hover on aaa.com, it can be resolved in step5, ping traffic success, and source is translated to X1 IP\n  in step6, ping traffic success, and source is translated to X1AO",
+      "initial" : "  1.Add a domain aaa.com bind to WAN PC IP(visited server) on DNS server(10.8.143.190)\n  2.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP, change dns server to 10.8.143.190 in Network-&gt;DNS page\n  3.Go to NAT Policies page, add a NAT Policies in FW: test1 Any X1 IP aaa.com Original Any Original Any X1\n  4.Config10.8.143.190 as client PC DNS server IP\n  5.Client PC ping aaa.com, check packet monitor\n  6.Change the test1's source translate to X1AO, check packet monitor",
+      "id" : "26",
+      "title" : "[Func]Verify the NAT policies contain FQDN can be modified",
+      "result" : ""
+   },
+   "20" : {
+      "steps" : "  in step4, mouse hover on aaa.com, it can be resolved\n  in step6, ping traffic success, and destination is translated to LAN PC IP",
+      "initial" : "  1.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP\n  2.Add a domain aaa.com bind to X1AO on DNS server (10.8.143.190)\n  3.Go to Network-&gt;DNS page, change dns server to 10.8.143.190\n  4.Go to NAT Policies page, add a NAT policy in FW as follows: Any Original aaa.com LAN PC IP Any Original X1 Any\n  5.Config10.8.143.190 as client PC(WAN side) DNS server IP\n  6.Client PC ping aaa.com, check packet monitor",
+      "id" : "20",
+      "title" : "[Func]Verify the function of NAT policy with Original Destination as FQDN, destination translated",
+      "result" : ""
+   },
+   "15" : {
+      "steps" : "  in step3, it can be modified success",
+      "initial" : "  1.Log in FW, add a FQDN AO which is the server domain name\n  2.Go to NAT Policies page, add a NAT policy as follows: Any Original FQDN AO server IP Any Original X1 Any\n  3.Go to Address Object page, modify the added FQDN object",
+      "id" : "15",
+      "title" : "[Func]verify can modify a FQDN in use by NAT policies",
+      "result" : ""
+   },
+   "14" : {
+      "steps" : "  in step3, it can be modified success",
+      "initial" : "  1.Log in FW, add a AO group name \"NATgroup\" include FQDN objects and normal AOs\n  2.Go to NAT Policies page, add a NAT policy as follows: Original Any NATgroup Original Any Original X1 Any\n  3.Go to Address Groups page, modify the added NAT policy",
+      "id" : "14",
+      "title" : "[Func]Verify can modify an AO Group contains FQDN in use by NAT policies",
+      "result" : ""
+   },
+   "38" : {
+      "steps" : "  in step4, test1's translated source is changed to X1AO",
+      "initial" : "  1.Add a domain aaa.com bind to WAN PC IP(visited server) on DNS server(10.8.143.190)\n  2.Log in FW, config X1 as DHCP mode, add a X1AO within X1 subnet but not X1 IP, change dns server to 10.8.143.190 in Network-&gt;DNS page\n  3.Go to NAT Policies page, add a NAT Policies in FW: test1 Any X1 IP aaa.com Original Any Original Any X1\n  4.In CLI, enter the commands as follows, then check NAT Policies page: config(18B16989BF80)# nat-policy name test1 (edit-nat-policy)# translated-source name X1AO ",
+      "id" : "38",
+      "title" : "[CLI]Verify FQDN can be edited for Original Source/Destination in CLI",
+      "result" : ""
+   },
+   "18" : {
+      "steps" : "  in step5, ping traffic successfully",
+      "initial" : "  1.Add a domain aaa.com bind to WAN PC IP(visited server) on DNS server(10.8.143.190) 2.Log in FW, config X1 as DHCP mode, change dns server to 10.8.143.190 in Network->DNS page 3.Go to NAT Policies page, add a NAT policy in FW as follows: aaa.com Original X1 IP LAN PC IP Any Original X1 Any 4.Allow WAN->LAN access rule 5.Config 10.8.143.190 as client PC DNS server IP 6.WAN PC ping X1 IP, check packet monitor Notice: X1 IP ping management should be disabled",
+      "id" : "18",
+      "title" : "[Func]Verify the function of NAT policy with Original Source as FQDN, destination translated",
+      "result" : ""
+   },
+   "13" : {
+      "steps" : "  Error message \"Error: Object is in use by a NAT Policy\" shows",
+      "initial" : "  1.Log in FW, add a FQDN AO which is the server domain name\n  2.Go to NAT Policies page, add a NAT policy as follows: Any Original FQDN AO server IP Any Original X1 Any\n  3.Go to Address Object page, click the delete icon of the added FQDN object",
+      "id" : "13",
+      "title" : "[Negtive]Try to delete a FQDN in use by NAT policies",
+      "result" : ""
+   },
+   "19" : {
+      "steps" : "  in step3, mouse hover on aaa.com, it can be resolved\n  in step5, ping traffic success, and source is translated to X1 IP",
+      "initial" : "  1.Add a domain aaa.com bind to WAN PC IP(visited server) on DNS server(10.8.143.190)\n  2.Log in FW, config X1 as DHCP mode, change dns server to 10.8.143.190 in Network-&gt;DNS page\n  3.Go to NAT Policies page, add a NAT policy in FW as follows: Any X1 IP aaa.com Original Any Original Any X1\n  4.Config10.8.143.190 as client PC DNS server IP\n  5.Client PC ping aaa.com, check packet monitor",
+      "id" : "19",
+      "title" : "[Func]Verify the function of NAT policy with Original Destination as FQDN, source translated",
+      "result" : ""
+   },
+   "23" : {
+      "steps" : "  in step2, FQDN object can be created successfully",
+      "initial" : "  1.Log in FW\n  2.Go to NAT Policies page, click \"Add\" button, select \"Create new address object\" for Original Source/Destination in IPv4/IPv6 version, fill the valid domain name, click OK",
+      "id" : "23",
+      "title" : "[Func]Verify Original Source or Destination can configure as FQDN by creating new AO when adding a NAT policy in IPv4/IPv6 version",
+      "result" : ""
+   }
+}

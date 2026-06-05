@@ -1,0 +1,122 @@
+{
+   "1532968" : {
+      "steps" : "  Build a VPN tunnel between DUT and Fw2. Test traffic with all IPsec encryption and authentication algorithms. Ping small packet (length &lt; 1500) from PC2 to PC1. Ping with payload &gt; 2000 from PC2 to PC1. Adjust ping payload length, so that the ESP packet length is in the range 1984 ~ 2016. Ping from PC2 to PC1. Adjust ping payload length in range 1984 ~ 2016. Ping from PC2 to PC1. GEN7-38149 Another test method is testing with strongswan, ping from strongswan's network with payload over 2000 bytes.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1532968",
+      "title" : "GEN7-38149: Under default algorithm like AESGCM, when there is a fragmented large ESP packet (length > 2000) comes to firewall, firewall will reassemble the packet and decrypt it.",
+      "description" : "Test env: PC1 - DUT - Fw2 - PC2\r\nOn Fw2, enable \"Fragment VPN packets after applying ESP\" on diag page.",
+      "result" : "  All ping can pass."
+   },
+   "1509714" : {
+      "steps" : "  Topo: pc1------X1[FW]X0------pc2 1. Set the x1 interface as static/DHCP mode, configure WAN group VPN in FW, check 'Enable Fragmented Packet Handling' in VPN advanced page, click Accept. 2. Disable 'Enable Fragmented Packet Handling' in VPN advanced page, click Accept.",
+      "priority" : "Full_Regression",
+      "atm_id" : "93559ac0-f227-4659-b123-e9212a414e24",
+      "initial" : "  TBD",
+      "id" : "1509714",
+      "title" : "''Enable Fragmented Packet Handling' can be enable/disable in VPN->Advanced page",
+      "description" : "Original ID: GUI_1\r\nOriginal Title: 'Enable Fragmented Packet Handling' can be enable/disable in VPN-&gt;Advanced page\r\nOriginal Description:",
+      "result" : "  'Enable Fragmented Packet Handling' can be enable/disable in VPN-&gt;Advanced page."
+   },
+   "1509712" : {
+      "steps" : "  Export the TSR, check the ESP packets handle will be recorded in blade 2",
+      "priority" : "Full_Regression",
+      "atm_id" : "37fac19f-04ba-4209-af2a-6d1b461b47e6",
+      "initial" : "  TBD",
+      "id" : "1509712",
+      "title" : "TSR check",
+      "description" : "Original ID: Basic_Func2\nOriginal Title: TSR check\nOriginal Description:",
+      "result" : "  ESP packets handle will be recorded in blade 2 in TSR."
+   },
+   "1509718" : {
+      "steps" : "  Topo:\n  pc1------X1[FW]X0------pc2\n  1. Set the x1 interface as static/DHCP mode, configure WAN group VPN in FW, add a gvc user, check 'Enable Fragmented Packet Hadling' in VPN advanced page, connect it from pc1 (GVC client installed);\n  2. From pc1, ping pc2 with large packets",
+      "priority" : "Smoke",
+      "atm_id" : "6739f3b2-7c2d-4006-aa7d-c82b1869c724",
+      "initial" : "  TBD",
+      "id" : "1509718",
+      "title" : "Fragemented packets go through WAN  Group VPN with 'Enable Fragmented Packet Hadling' checked",
+      "description" : "Original ID: WAN_group_VPN_1\nOriginal Title: Fragemented packets go through WAN  Group VPN with 'Enable Fragmented Packet Hadling' checked \nOriginal Description:",
+      "result" : "  Ping packets can go through VPN tunnel, check the ESP packets in FW, the first packet will be fragmented."
+   },
+   "1509715" : {
+      "steps" : "  Topo:\n  pc1------x0[FW]x1---------x1[FW]X0--------pc2\n  1. Set the x1 interface as static/DHCP mode, configure WAN group VPN in FW, add a gvc user, check 'Enable Fragmented Packet Hadling' in VPN advanced page, connect it from pc1 (GVC client installed), add route for VPN packet go through from pc1 to pc2;\n  2. From pc1, ping pc2 with large packets",
+      "priority" : "Full_Regression",
+      "atm_id" : "7625d112-f1fd-464b-91cb-d63ba6b604fa",
+      "initial" : "  TBD",
+      "id" : "1509715",
+      "title" : "GroupVPN behind NAT, Fragemented packets go through Group VPN with 'Enable Fragmented Packet Hadling' checked",
+      "description" : "Original ID: LAN_group_VPN_1\nOriginal Title: GroupVPN behind NAT, Fragemented packets go through Group VPN with 'Enable Fragmented Packet Hadling' checked \nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1509711" : {
+      "steps" : "  1. Execute the test steps as case 1~4, check the VPN ESP packets go through the FW;\n  2. Restart FW, send the large ping packets go through VPN tunnel",
+      "priority" : "Sanity",
+      "atm_id" : "44baa565-c7a7-4a49-8cc4-dd897f93d584",
+      "initial" : "  TBD",
+      "id" : "1509711",
+      "title" : "Restart FW, verify ESP fragmented packets can work fine as configuration.",
+      "description" : "Original ID: Basic_Func1\nOriginal Title: Restart FW, verify ESP fragmented packets can work fine as configuration.\nOriginal Description:",
+      "result" : "  ESP fragmented packets can work fine as configuration after restart&#12290;"
+   },
+   "2023789" : {
+      "steps" : "  1. Setup site to site or tunnel vpn between two FWs, or with third party application. Choose AES-SHA as Encryption and Authentication in phase 2 ESP proposal. For example, AES-256 with Authentication SHA384. 2. After tunnel up, ping size over 2800 bytes bidirectionally.",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "2023789",
+      "title" : "IKE phase 2 ESP uses AES-SHA, then try packet size over 2800 bytes. (GEN7-38419)",
+      "description" : "TBD",
+      "result" : "  In step 2, ping big packets over 2800 bytes could be ok."
+   },
+   "1509716" : {
+      "steps" : "  Topo:\n  pc1------X1[FW]X0------pc2\n  1. Set the x1 interface as static/DHCP mode, configure WAN group VPN in FW, add a gvc user, uncheck 'Enable Fragmented Packet Hadling' in VPN advanced page, connect it from pc1 (GVC client installed),add route for VPN packet go through from pc1 to pc2;\n  2. From pc1, ping pc2 with large packets",
+      "priority" : "Full_Regression",
+      "atm_id" : "fde39897-5634-4ed7-9034-542170cb17cd",
+      "initial" : "  TBD",
+      "id" : "1509716",
+      "title" : "GroupVPN behind NAT, Fragemented packets go through Group VPN with 'Enable Fragmented Packet Hadling' unchecked",
+      "description" : "Original ID: LAN_group_VPN_2\nOriginal Title: GroupVPN behind NAT, Fragemented packets go through Group VPN with 'Enable Fragmented Packet Hadling' unchecked \nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1509717" : {
+      "steps" : "  1. Capture the ESP fragmented packets through VPN tunnel by referring case1~4;\n  2. Check the fragemented ESP packets will be handled by blade 2, no matter packets received by blade1/2/3/4;",
+      "priority" : "Full_Regression",
+      "atm_id" : "3db147fb-67cb-45fd-9b7c-86ccd24b5e26",
+      "initial" : "  TBD",
+      "id" : "1509717",
+      "title" : "ESP Fragmented packets through VPN tunnel will be handled by blade 2",
+      "description" : "Original ID: Multiblade_1\nOriginal Title: ESP Fragmented packets through VPN tunnel will be handled by blade 2\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1768471" : {
+      "steps" : "  1. Setup s2s or tunnel vpn with other FW. No need to change peer FW's diag option. Topology with peer fw: PC 1 - DUT x1 - x1 - peer FW - PC 2. 2. Ping from PC 2 to PC 1 with payload over 2000 bytes. Or ping from strongswan's network to PC 1 . Try reverse direction.",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1768471",
+      "title" : "General ESP fragment packets can be decrypted and handled by FW.",
+      "description" : "TBD",
+      "result" : "  All ping with size over 2000 bytes should success."
+   },
+   "1509719" : {
+      "steps" : "  Topo:\n  pc1------X1[FW]X0------pc2\n  1. Set the x1 interface as static/DHCP mode, configure WAN group VPN in FW, add a gvc user, uncheck 'Enable Fragmented Packet Hadling' in VPN advanced page, connect it from pc1 (GVC client installed);\n  2. From pc1, ping pc2 with large packets",
+      "priority" : "Sanity",
+      "atm_id" : "939a54cf-2627-4667-a103-5a3fb2478016",
+      "initial" : "  TBD",
+      "id" : "1509719",
+      "title" : "Fragemented packets go through WAN Group VPN with 'Enable Fragmented Packet Hadling' unchecked",
+      "description" : "Original ID: WAN_group_VPN_2\nOriginal Title: Fragemented packets go through WAN Group VPN with 'Enable Fragmented Packet Hadling' unchecked \nOriginal Description:",
+      "result" : "  Ping packets failed to go through VPN tunnel, check the ESP packets in FW, the packets are not to be fragmented."
+   },
+   "1509713" : {
+      "steps" : "  1. Set up HA pair for DUT, run the test steps as case1~4\u00c2\u00af\u00c2\u00bc\u00c5\u2019send large ping packets through VPN tunnel;\n  2. Make the HA primary FW down, secondary FW will take over, check the large ping packets through VPN tunnel;\n  3. Capture the VPN ESP packets in secondary",
+      "priority" : "Full_Regression",
+      "atm_id" : "f0ee6653-0f06-4780-a3df-f11eab482791",
+      "initial" : "  TBD",
+      "id" : "1509713",
+      "title" : "VPN ESP packets works with HA",
+      "description" : "Original ID: Basic_Func3\nOriginal Title: VPN ESP packets works with HA \nOriginal Description:",
+      "result" : "  TBD"
+   }
+}

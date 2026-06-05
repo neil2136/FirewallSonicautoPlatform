@@ -1,0 +1,56 @@
+{
+    "ssl_vpn": {
+        "profile": {
+            "device_profile": [
+                {
+                    "name": "Default Device Profile",
+                    "description": "Default Device Profile",
+                    "network_address": {
+                                "ipv4": {
+                                    "name": {}
+                                },
+                                "ipv6": {
+                                    "name" :{}
+                                }
+                            },
+                    "client": {
+                        "dns": {
+                            "primary": {},
+                            "secondary": {},
+                            "search_lists": false
+                        },
+                        "wins": {
+                            "primary": {},
+                            "secondary": {}
+                        },
+                        "auto_update": false,
+                        "exit_after_disconnect": false,
+                        "netbios_over_sslvpn": false,
+                        "touch_id_authentication": false,
+                        "fingerprint_authentication": false,
+                        "uninstall_after_exit": false,
+                        "create_connection_profile": false,
+                        "cache": {
+                            "user_name_only": true
+                        }
+                    },
+                    "routes": {
+                        "tunnel_all": false,
+                        "route":[]
+                    }
+                },
+                {
+                    "name": "Default Device Profile for SonicPointN",
+                    "description": "Default Device Profile for SonicPointN",
+                    "network_address": {
+                        "ipv4": {}
+                    },
+                    "routes": {
+                        "tunnel_all": false
+                    },
+                    "wlan_tunnel_interface": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,409 @@
+{
+  "7": {
+    "steps": "  Go to the DHCPv6 Server page, Dynamic Tab Go to Add pop-up page, Input proper IP ranges such as :Range start :2005:250:6001:1::1 -range end:2005:250:6001:1::20 Input Valid values in Prefix 2005:250:6001:1:: Hit Update after each input.",
+    "priority": "Smoke",
+    "atm_id": "7ea16594-f1ee-4a95-8c37-fda57ee54727",
+    "initial": "  n/a",
+    "id": "7",
+    "title": "Valid Prefix",
+    "description": "Original ID: 7\nOriginal Title: Valid Prefix\nOriginal Description: The user will ensure that the firewall will accept valid values in Prefix field on the DHCP Server configuration page.",
+    "result": "  The box should allow valid value to be entered in the GUI"
+  },
+  "31": {
+    "steps": "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n  4.Using a PC or router as client, connect to it.\n  5.After the Client got the IP address info, do renew manually from DHCP client.",
+    "priority": "Smoke",
+    "atm_id": "b75cdcd7-9f84-43d4-8f4b-7ca734e6870e",
+    "initial": "  Topology1 DHCP Client ------X3/X4 DUT",
+    "id": "31",
+    "title": "Server get renew message form Client",
+    "description": "Original ID: 31\nOriginal Title: Server get renew message form Client\nOriginal Description: Make sure the DHCPv6 server act correct when Server get renew message form Client",
+    "result": "  After the Client got the IP info from DHCPv6 server, there is an entry display in Current DHCPv6 Leases table. When the user sent renew message to DHCP server to extend the lease time , the Server send reply message to client and refresh the Current DHCPv6 Leases table , update the lease time info for the entry."
+  },
+  "45": {
+    "steps": "  1.Set an interface such as X3 etc as LAN/DMZCustom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, Dont click Managed(M) Address Configuration , Click Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) , Set DNS info and related Option .\n  4.Using a PC or router as client, connect to it.\n  5.Capture the packet between the client and server.",
+    "priority": "Smoke",
+    "atm_id": "129d28db-1b29-4f21-bdfc-ea858218ad33",
+    "initial": "  Topology1 DHCP Client ------X3/X4 DUT",
+    "id": "45",
+    "title": "Stateless DHCP server -Message Validation",
+    "description": "Original ID: 45\nOriginal Title: Stateless DHCP server -Message Validation\nOriginal Description: It is referred from RFC 3315 Section 15. Page 27 'Message Validation'.\nThe user will ensure that the message between client and server is valid when client in Custom zone.",
+    "result": "  DHCPv6 Client Send Information-request message to acquire configuration settings from DHCP server, the DHCP server will send Reply message(without IP address info, included requested configuration settings )."
+  },
+  "8": {
+    "steps": "  Go to the DHCP Server page, Dynamic Tab Go to Add pop-up page, Set Valid Lifetime to a, -5 or @ with other proper settings Hit Update after each input.",
+    "priority": "Smoke",
+    "atm_id": "4d0f90f6-ac0b-4319-9982-721b73d3ceda",
+    "initial": "  Notes:\n  Valid Lifetime between 0 and 71582789",
+    "id": "8",
+    "title": "Invalid Valid Lifetime Value",
+    "description": "Original ID: 8\nOriginal Title: Invalid Valid Lifetime Value\nOriginal Description: The user will ensure that the firewall will not accept invalid values in the Valid Lifetime field on the DHCP Server configuration page.",
+    "result": "  The box should not allow negative value to be entered in the GUI"
+  },
+  "11": {
+    "steps": "  Go to the DHCP Server page. Go to configuration pop-up page, Set Preferred Lifetime to 0 and 71582789 with other proper settings Hit Update after each input.",
+    "priority": "Smoke",
+    "atm_id": "bb2c7550-d624-4735-9e50-67658f556a3c",
+    "initial": "  N/A",
+    "id": "11",
+    "title": "Valid Preferred Lifetime Value",
+    "description": "Original ID: 11\nOriginal Title: Valid Preferred Lifetime Value\nOriginal Description: The user will ensure that the firewall will only accept proper values (from 0 to 71582789) in the Preferred Lifetime field on the DHCP Server configuration page",
+    "result": "  The box should allow these values to be entered in the GUI"
+  },
+  "3": {
+    "steps": "  Go to the DHCP Server page, Dynamic Tab Leave the value in Name option as empty, and finished input proper value in other section.\n  Hit Accept.\n  Try to input a string (length more than 49) in Name option\n  Hit Accept",
+    "priority": "Smoke",
+    "atm_id": "457383f7-4930-4632-af7d-9b2e22ec8fbc",
+    "initial": "  N/A",
+    "id": "3",
+    "title": "Invalid Name",
+    "description": "Original ID: 3\nOriginal Title: Invalid Name\nOriginal Description: N/A",
+    "result": "  There would be error report; the configuration above will not be allowed."
+  },
+  "18": {
+    "steps": "  Go to DHCP Server, Choose IPv6.\n  Add multiple static entries Click Delete All button",
+    "priority": "Smoke",
+    "atm_id": "ac1e35da-e4d9-4649-92e9-44efce052669",
+    "initial": "  n/a",
+    "id": "18",
+    "title": "Delete Multiple Dynamic Entries",
+    "description": "Original ID: 18\nOriginal Title: Delete Multiple Dynamic Entries\nOriginal Description: The user will ensure that multiple Dynamic entries can be deleted with dynamic settings.",
+    "result": "  All the entries can be deleted"
+  },
+  "51": {
+    "steps": "  1.Set an interface such as X3 etc as LAN/DMZCustom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, Click Managed(M) Address Configuration , Click Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) , Set DNS info and related Option .\n  4.Using a PC or router as client, connect to it.\n  5.Capture the packet between the client and server.\n  6.Go to configuration page of interface X3, Dont Click Managed(M) Address Configuration , Click Other (O) Configuration flag and input proper value in Advanced page.\n  7.Go to DHCPv6 client, disable the network card, then, re-enable it .\n  8.Repeat step2 ,change the DHCPv6 server mode as Stateful again.\n  9.Go to DHCPv6 client, disable the network card, then, re-enable it .",
+    "priority": "Smoke",
+    "atm_id": "74567bfd-5b5b-46c2-892b-624efaebcd4b",
+    "initial": "  Topology1 DHCP Client ------X3/X4 DUT",
+    "id": "51",
+    "title": "Exchange between stateless and stateful mod",
+    "description": "Original ID: 51\nOriginal Title: Exchange between stateless and stateful mod\nOriginal Description: Verify the exchange between stateless and stateful mode, the DHCPv6 server still work fine.",
+    "result": "  1.As Stateful mode, capture packets from dhcpv6 server and dhcp client, there is four message: solicit/advertise ,request/reply message exchanged. And the DHCP server sent IP info and other configuration settings to dhcp client.\n  2.In Stateless mode,DHCPv6 Client Send Information-request message to acquire configuration settings from DHCP server, the DHCP server will send Reply message(without IP address info, included requested configuration settings) ).Exchange the mode, the DHCPv6 server still work fine."
+  },
+  "9": {
+    "steps": "  Go to the DHCP Server page. Go to configuration pop-up page, Set Valid Lifetime to 0 and 71582789 with other proper settings Hit Update after each input.",
+    "priority": "Smoke",
+    "atm_id": "1f44562c-51e9-4569-8d9c-f72e9c7676f4",
+    "initial": "  N/A",
+    "id": "9",
+    "title": "Valid Lifetime Value",
+    "description": "Original ID: 9\nOriginal Title: Valid Lifetime Value\nOriginal Description: The user will ensure that the firewall will only accept proper values (from 0 to 71582789) in the Valid Lifetime field on the DHCP Server configuration pag",
+    "result": "  The box should allow these values to be entered in the GUI."
+  },
+  "14": {
+    "steps": "  Go to the DHCP Server page. Go to configuration pop-up page, In the DNS Server section, Choose Specify Manually, try to enter the following IPs : 2001:25de::cade\n  2001:0db8:85a3:08d3:1319:8a2e:0370:7344\n  Hit Update after each input",
+    "priority": "Smoke",
+    "atm_id": "b5f692ef-6151-4483-8169-6f19c1325f04",
+    "initial": "  N/A",
+    "id": "14",
+    "title": "Valid DNS Server Values",
+    "description": "Original ID: 14\nOriginal Title: Valid DNS Server Values\nOriginal Description: The user will ensure that the firewall will accept valid values in the DNS Servers fields on the DHCP Server configuration page.",
+    "result": "  The box should allow these values to be updated in the GUI."
+  },
+  "20": {
+    "steps": "  Go to DHCP Server, Choose IPv6.\n  Add multiple static entries Click Delete All button",
+    "priority": "Smoke",
+    "atm_id": "35a07b17-002a-41b5-8b75-841303cb750f",
+    "initial": "  N/A",
+    "id": "20",
+    "title": "Verify the DUID for each DHCP lease entry",
+    "description": "Original ID: 20\nOriginal Title: Verify the DUID for each DHCP lease entry\nOriginal Description: The user will ensure that multiple Dynamic entries can be deleted with dynamic settings.",
+    "result": "  All the entries can be deleted."
+  },
+  "17": {
+    "steps": "  Go to DHCP Server, Choose IPv6.\n  Add a dynamic entry.\n  High light the entry and click delete button",
+    "priority": "Smoke",
+    "atm_id": "f4fe3f51-03bb-4e09-9a73-a50fb34ff494",
+    "initial": "  N/A",
+    "id": "17",
+    "title": "Delete Single Dynamic Entry",
+    "description": "Original ID: 17\nOriginal Title: Delete Single Dynamic Entry\nOriginal Description: The user will ensure that Single Dynamic entrY can be deleted",
+    "result": "  The specific entry can be deleted."
+  },
+  "1": {
+    "steps": "  1.Go to the DHCP Server page. Click IPV6 button in the right corn of the page.\n  2.Click Enable DHCPv6 server option (The Enable DHCPv6 server is enabled by default) Hit Accept\n  3.Disable Enable DHCPv6 server option Hit Accept",
+    "priority": "Smoke",
+    "atm_id": "c36848ab-9241-4286-9f0e-c8eac7671c1f",
+    "initial": "  N/A",
+    "id": "1",
+    "title": "Enable/Disable DHCP Server",
+    "description": "Original ID: 1\nOriginal Title: Enable/Disable DHCP Server\nOriginal Description: The user will ensure that the firewall DHCP server can be enabled properly.",
+    "result": "  DHCP Server option is being Enabled/disabled."
+  },
+  "2": {
+    "steps": "  Go to the DHCP Server page, Dynamic Tab Try to input a string (Min length 1 and MAX length 49) in Name option\n  Hit Accept",
+    "priority": "Smoke",
+    "atm_id": "81d20800-7796-4db0-84c5-24f5f8a7ecd4",
+    "initial": "  N/A",
+    "id": "2",
+    "title": "Valid Name",
+    "description": "Original ID: 2\nOriginal Title: Valid Name\nOriginal Description: The user will ensure that the user must input some proper value in 'Name' option",
+    "result": "  The configuration above will be allowed."
+  },
+  "6": {
+    "steps": "  Go to the DHCPv6 Server page, Dynamic Tab Go to Add pop-up page, Input proper IP ranges such as :Range start :2005:250:6001:1::1 -range end:2005:250:6001:1::20\n  Input invalid values in Prefix such as 2001:250:6001:1 or invalid format such as 2g:250\n  Hit Update after each input.",
+    "priority": "Smoke",
+    "atm_id": "226f840b-8198-40ed-8eef-9435a0ff5de7",
+    "initial": "  N/A",
+    "id": "6",
+    "title": "Invalid Prefix",
+    "description": "Original ID: 6\nOriginal Title: Invalid Prefix\nOriginal Description: The user will ensure that the firewall will not accept invalid values in Prefix field on the DHCP Server configuration page.",
+    "result": "  There would be error reported and the box should not allow invalid value to be entered in the GUI"
+  },
+  "12": {
+    "steps": "  Go to the DHCP Server page. Go to configuration pop-up page, Input the value in Comments option\n  Hit Update after each input.",
+    "priority": "Smoke",
+    "atm_id": "b751dc0b-8f69-40a8-89a5-1d7c952f3346",
+    "initial": "  n/a",
+    "id": "12",
+    "title": "Add Comments Value",
+    "description": "Original ID: 12\nOriginal Title: Add Comments Value\nOriginal Description: The user will ensure can input value in Comments of scope configuration page",
+    "result": "  The box should allow these values to be entered in the GUI."
+  },
+  "53": {
+    "steps": "  Maximum number of leases supported can be obtained from the field DHCPS Leases in productMatrix.",
+    "priority": "Smoke",
+    "atm_id": "5f72e7a2-4429-45d2-9c25-ab7969f49182",
+    "initial": "  N/A",
+    "id": "53",
+    "title": "Maximum number of leases",
+    "description": "Original ID: 53\nOriginal Title: Maximum number of leases\nOriginal Description: Verify the maximum number of leases given by DHCP Server matches the maximum value defined for the product. Maximum number of leases supported can be obtained from the field DHCPS Leases in productMatrix.",
+    "result": "  Maximum number of leases given by DHCP Server matches the maximum value defined for the product."
+  },
+  "15": {
+    "steps": "  Go to the DHCP Server page, Dynamic Tab, Go to Add pop-up page, DNS tab Choose option of Inherit DNS settings from the SonicWALL DNS settings Set DHCP Dynamic range Client gets dynamic DHCP lease from SonicWALL.",
+    "priority": "Smoke",
+    "atm_id": "9575c4ca-b9ea-4d8b-ab39-462adaaab0d8",
+    "initial": "  n/a",
+    "id": "15",
+    "title": "DNS Inherit Setting Option For Dynamic Entry",
+    "description": "Original ID: 15\nOriginal Title: DNS Inherit Setting Option For Dynamic Entry\nOriginal Description: The user will ensure that the firewall DNS information under DHCP server can be Inherit from the SonicWALL DNS settings when using dynamic settings.",
+    "result": "  DHCP clients DNS settings match SonicWALL DNS settings when using dynamic IPs ."
+  },
+  "19": {
+    "steps": "  Go to DHCP Server, Choose IPv6.\n  Add multiple static entries Click Delete All button",
+    "priority": "Smoke",
+    "atm_id": "564d4825-e04d-4c8a-b109-7300643f6ee5",
+    "initial": "  N/A",
+    "id": "19",
+    "title": "Verify the IAID for each DHCP lease entry",
+    "description": "Original ID: 19\nOriginal Title: Verify the IAID for each DHCP lease entry\nOriginal Description: The user will ensure that multiple Dynamic entries can be deleted with dynamic settings.",
+    "result": "  All the entries can be deleted."
+  },
+  "32": {
+    "steps": "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n  4.Using a PC or router as client, connect to it.\n  5.After the Client get correct IP info from DHCP server, Sent Release manually form DHCP client.",
+    "priority": "Smoke",
+    "atm_id": "206326ab-61a8-4529-b115-f9e0af0bd813",
+    "initial": "  Topology1 DHCP Client ------X3/X4 DUT",
+    "id": "32",
+    "title": "Server get release message form Client",
+    "description": "Original ID: 32\nOriginal Title: Server get release message form Client\nOriginal Description: The user will ensure that the DHCP server act correctly when it get release message from Client",
+    "result": "  DHCP server send reply message to client and release the IP address"
+  },
+  "50": {
+    "steps": "  1.Set an interface such as X3/X4 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Set X1 and X2 of different DHCP relay (such as Cisco router, huawei router, sonicwall firewall)as different zone, enable DHCP relay in Router or Switch.Set X1 IP address is 2001:250:8001:1::1/64 X2 IP address is 2001:250:7001:2\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::20) , and (2001:250:8001:2-2001:250:8001:50)\n  4.Using a PC or router as DHCP client, connect to it.",
+    "priority": "Smoke",
+    "atm_id": "99476631-5000-4a8e-8bbf-bf3cd3668a40",
+    "initial": "  Topology1 DHCP Client 1 Client2--x1Router/Switch(DHCP relay)-x2---X3/X4 DUT",
+    "id": "50",
+    "title": "Stateless DHCP server-DHCP server deployment with different Relay agent",
+    "description": "Original ID: 50\nOriginal Title: Stateless DHCP server-DHCP server deployment with different Relay agent\nOriginal Description: The user will ensure that DHCP server work fine with different relay agent such as Cisco Router,Huawei Router, Sonicwall firewall etc.",
+    "result": "  The DHCP client can get correct info from DHCP server"
+  },
+  "16": {
+    "steps": "  Go to the DHCP Server page. Go to configuration pop-up page, In the Domain name section, try to enter a value @^&amp;*ty, Hit Update after input.",
+    "priority": "Smoke",
+    "atm_id": "171db8b1-89db-4ff4-85fd-58b57330a0ab",
+    "initial": "  N/A",
+    "id": "16",
+    "title": "Invalid Domain",
+    "description": "Original ID: 16\nOriginal Title: Invalid Domain\nOriginal Description: The user will ensure that the firewall will not accept invalid values in the domain name field on the DHCP Server configuration pag  You must following the rule: They must start with a letter, end with a letter or digit, and have as interior characters only letters, digits, and hyphen.  There are also some restrictions on the length MAX length is 63",
+    "result": "  The box should not the value to be updated in the GUI."
+  },
+  "21": {
+    "steps": "  1.Set interface X0 as LAN zone, and set proper IPv6 address : 2001:250:6001:1::1 Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:6001:1:: 2-2001:250:6001:1::5) .\n  3.Using a PC or router as client, connect to X0. Capture the packet between the client and server.",
+    "priority": "Smoke",
+    "atm_id": "15cca23e-39b2-4374-ac9a-9932a224d9c4",
+    "initial": "  Topology1 DHCP Client ------X0 DUT",
+    "id": "21",
+    "title": "Message Validation <Client in LAN zone, verify basic IP info>",
+    "description": "Original ID: 21\nOriginal Title: Message Validation <Client in LAN zone, verify basic IP info>\nOriginal Description: It is referred from RFC 3315 Section 15. Page 27 'Message Validation'.\nThe user will ensure that the message between client and server is valid when client in LAN zone, when DUT is act as Stateful DHCP server.",
+    "result": "  DHCPv6 Client Send DHCPv6 Solicit Message to DUT\n  DUT: Send DHCPv6 Advertise Message through X0.\n  DHCPv6 Client Send DHCPv6 Request Message to DUT.\n  DHCP server Send DHCPv6 Reply Message."
+  },
+  "30": {
+    "steps": "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n  4.Using a PC or router as client, connect to it to get IPv6 info from DHCPv6 server.\n  5.After the Client got the IP address info,\n  6.Disable the corresponding DHCP scope.\n  7.Do renew manually from the old DHCP client.\n  8.Then, add a new PC2 connect to interface X3 ,try to get IP ,DNS info etc from DHCP server.",
+    "priority": "Smoke",
+    "atm_id": "d0717d39-ff7e-4d8b-a781-fcfdc70313da",
+    "initial": "  Topology1 DHCP Client1 ------X3/X4 DUT",
+    "id": "30",
+    "title": "Disable DHCP scope",
+    "description": "Original ID: 30\nOriginal Title: Disable DHCP scope\nOriginal Description: The user will ensure that the DHCP client can't get any info from DHCP server, if the DHCP server scope was disabled.",
+    "result": "  After the Client got the IP info from DHCPv6 server, there is an entry display in Current DHCPv6 Leases table. When the user disable the DHCP entry, the entry above will disappeared , the old DHCP client can extend the old DHCP lifetime, the new DHCP client cant get IP ,DNS info etc from DHCP server."
+  },
+  "5": {
+    "steps": "  Go to the DHCP Server page, Dynamic Tab In the Dynamic Entry Range section, try to enter the following IP range: 2001:25de::cade -2001:25de::caee\n  2001::1-2001::4\n  2001:0db8:85a3:08d3:1319:8a2e:0370:7344-2001:0db8:85a3:08d3:1319:8a2e:0400:7344\n  Hit Update after each IP address.",
+    "priority": "Smoke",
+    "atm_id": "de1ef49e-92d2-4569-b2a5-d4040b9609c2",
+    "initial": "  n/a",
+    "id": "5",
+    "title": "Valid Dynamic Address Value",
+    "description": "Original ID: 5\nOriginal Title: Valid Dynamic Address Value\nOriginal Description: The user will ensure that the firewall will only accept proper IP addresses in the Dynamic Field on the DHCP Server page.",
+    "result": "  The box should allow any of the ranges to be entered in the GUI."
+  },
+  "4": {
+    "steps": "  Go to the DHCP Server page, Dynamic Tab In the Dynamic Entry Range section, try to enter the following IPs : 2001::25de::cade\n  100g::1\n  2001:100g::1\n  2001:250:abcg::1\n  2001:250:6002:100g::1\n  2001:250:6003:123:123g::1\n  2001: 250:6003:123:1230:111g::1\n  2001: 250:6003:123:1230:1112:111g:1\n  2001: 250:6003:123:1230:1112:1110:1g\n  Hit Update after each IP address.",
+    "priority": "Smoke",
+    "atm_id": "3e0a19bf-4d51-4c82-9cd3-da640864877c",
+    "initial": "  N/A",
+    "id": "4",
+    "title": "Invalid Dynamic Address Value",
+    "description": "Original ID: 4\nOriginal Title: Invalid Dynamic Address Value\nOriginal Description: The user will ensure that the firewall will only accept proper IP addresses in the Dynamic Field on the DHCP Server page.",
+    "result": "  The box should not allow any of the numbers to be entered in the GUI."
+  },
+  "13": {
+    "steps": "  Go to the DHCP Server page. Go to configuration pop-up page, In the DNS page, Choose Specify Manually ,try to enter the following IPs : 2001::25de::cade 100g::1 2001:100g::1 2001:250:abcg::1 2001:250:6002:100g::1 2001:250:6003:123:123g::1 2001: 250:6003:123:1230:111g::1 2001: 250:6003:123:1230:1112:111g:1 2001: 250:6003:123:1230:1112:1110:1g Hit Update after each input",
+    "priority": "Smoke",
+    "atm_id": "8023d71c-073c-4d12-b0ec-c480c2cd8f0f",
+    "initial": "  N/A",
+    "id": "13",
+    "title": "Invalid DNS Server Values",
+    "description": "Original ID: 13\nOriginal Title: Invalid DNS Server Values\nOriginal Description: The user will ensure that the firewall will not accept invalid values in the DNS Servers fields on the DHCP Server configuration page.",
+    "result": "  The box should not allow these values to be updated in the GUI"
+  },
+  "10": {
+    "steps": "  Go to the DHCP Server page, Dynamic Tab Go to Add pop-up page, Set Preferred Lifetime to -5 or empty , or larger than Valid Lifetime value. Hit Update after each input --Edit by Celia---\n  Preferred Lifetime can't be larger than Valid Lifetime Comment by Kelly DU: \"MIN:0MAX:71582789 So 0 is valid\" ",
+    "priority": "Smoke",
+    "atm_id": "13901673-aacf-47b9-ac8b-2de9bc238a17",
+    "initial": "  N/A",
+    "id": "10",
+    "title": "Invalid Preferred Lifetime Value",
+    "description": "Original ID: 10\nOriginal Title: Invalid Preferred Lifetime Value\nOriginal Description: The user will ensure that the firewall will not accept invalid values in the Preferred Lifetime field on the DHCP Server configuration page<br /><br /><br />Comment by Kelly DU:<br />MIN:0&#160;MAX:71582789 So 0 is valid",
+    "result": "  The box should not allow negative value to be entered in the GUI"
+  },
+  "22": {
+    "steps": " 1.Set X2 as DMZ zone, set proper IPv6 address in X2:2001:250:6002:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:6002:1:: 2-2001:250:6002:1::5) .\n3.Using a PC or router as client, connect to X2. Capture the packet between the client and server ",
+    "priority": "Sanity",
+    "atm_id": "f5dac2d7-08ec-4cef-8490-959a6d20abfd",
+    "initial": "  Topology1  DHCP Client ------X3/X4 DUT",
+    "id": "22",
+    "title": "Message Validation <Client in DMZ zone, verify basic IP info",
+    "description": "Original ID: 22\nOriginal Title: Message Validation <Client in DMZ zone, verify basic IP info >\nOriginal Description: It is referred from RFC 3315 Section 15. Page 27 'Message Validation'.\nThe user will ensure that the message between client and server is valid when client in Custom zone",
+    "result": "  DHCPv6 Client Send DHCPv6 Solicit Message to DUT\nDUT:Send DHCPv6 Advertise Message through X2.\nDHCPv6 Client Send DHCPv6 Request Message to DUT.\nDHCP Server Send DHCPv6 Reply Message."
+  },
+  "23": {
+    "steps": " 1.Set an interface such as X3 etc as LAN/DMZCustom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+    "atm_id": "0395a26a-6235-4a08-b773-1bb494718539",
+    "initial": "  Topology1  DHCP Client ------X3/X4 DUT",
+    "id": "23",
+    "title": "Message Validation < Client in Custom zone, verify basic IP info",
+    "description": "Original ID: 23\nOriginal Title: Message Validation < Client in Custom zone, verify basic IP info >\nOriginal Description: It is referred from RFC 3315 Section 15. Page 27 'Message Validation'.\nThe user will ensure that the message between client and server is valid when client in Custom zone.",
+    "result": "  DHCPv6 Client get correct IP address from DHCP server."
+  },
+  "24": {
+    "steps": " 1.Set an interface such as X3 etc as LAN/DMZCustom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . In the DNS page, input some value in Domain Name\n3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+    "atm_id": "181c4ca5-b3f0-499f-b9b0-ed332a11efc4",
+    "initial": "  Topology1  DHCP Client ------X3/X4 DUT",
+    "id": "24",
+    "title": "Message Validation< Client gets Domain Name Info with Dynamic lease",
+    "description": "Original ID: 24\nOriginal Title: Message Validation< Client gets Domain Name Info with Dynamic lease >\nOriginal Description: The user will ensure that the DHCP client gets correct Domain Name information under DHCP server with Dynamic settings.",
+    "result": "  DHCPv6 Client get correct Domain Name from DHCP server\n\n"
+  },
+  "25": {
+    "steps": " 1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . In the DNS page, Choose Inherit DNS Settings Dynamically from the SonicWALL's DNS settings or manual input proper DNS settings.\n3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+    "atm_id": "562c9bbb-4a22-4326-8bb4-8ae04f8920a8",
+    "initial": "  Topology1  DHCP Client ------X3/X4 DUT",
+    "id": "25",
+    "title": "Message Validation< Client gets DNS Name Info with Dynamic lease",
+    "description": "Original ID: 25\nOriginal Title: Message Validation< Client gets DNS Name Info with Dynamic lease >\nOriginal Description: The user will ensure that the DHCP client gets correct Domain Name information under DHCP server with Dynamic settings.",
+    "result": "  DHCPv6 Client gets correct DNS settings from DHCP server.\n\n"
+  },
+  "26": {
+    "steps": " 1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+    "atm_id": "ff7d8386-6cdf-48fb-b2ee-8b53dc521b9a",
+    "initial": "  Topology1  DHCP Client ------X3/X4 DUT",
+    "id": "26",
+    "title": "Message Validation< Client gets Valid Lifetime Info with Dynamic lease ",
+    "description": "Original ID: 26\nOriginal Title: Message Validation< Client gets Valid Lifetime Info with Dynamic lease >\nOriginal Description: The user will ensure that the DHCP client gets correct Domain Name information under DHCP server with Dynamic settings",
+    "result": "  DHCPv6 Client gets correct Valid Lifetime from DHCP serve"
+  },
+  "27": {
+    "steps": " 1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+    "atm_id": "4c09ad43-ec7c-48aa-93ee-5a2ecb6d7c3c",
+    "initial": "  Topology1  DHCP Client ------X3/X4 DUT",
+    "id": "27",
+    "title": "Message Validation< Client gets Preferred Lifetime Info with Dynamic lease",
+    "description": "Original ID: 27\nOriginal Title: Message Validation< Client gets Preferred Lifetime Info with Dynamic lease >\nOriginal Description: The user will ensure that the DHCP client gets correct Preferred Lifetime information under DHCP server with Dynamic settings.",
+    "result": "  DHCPv6 Client gets correct Preferred Lifetime from DHCP server."
+  },
+  "35": {
+    "steps": " 1.Set an interface such as X3 /X4 etc as LAN/DMZ Custom zone, set proper IPv6 address\n2.Enable  Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n3.Go to DHCP server, choose IPv6, and add corresponding DHCP scope.\n4.Using a router as DHCP client, enable Rapid Commit option , connect to different interface.\n5.Capture the packet between the client and server.",
+    "atm_id": "e02f51ed-e0e6-400a-bfd2-6b5e6312f5ba",
+    "initial": "  Topology1  DHCP Client 1 Client2------X3/X4 DUT",
+    "id": "35",
+    "title": "Support rapid Commit option",
+    "description": "Our firewall as DHCPv6 server can support rapid commit option by default.If the client includes a Rapid Commit option in the Solicit message,  the DHCP server will send  a Reply message that includes a Rapid Commit option in response.\n\n",
+    "result": " The client includes a Rapid Commit option in the Solicit message,  the DHCP server will send  a Reply message that includes a Rapid Commit option in response. "
+  },
+  "28": {
+    "steps": " 1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . set Preferred time as 60 s and Valid lifetime as 120s\n3.Using a PC or router as client, connect to it. Capture the packet between the client and server.\n\n",
+    "atm_id": "15c3b2ea-684b-4d0b-80b4-9ff5672ca10c",
+    "initial": " Topology1  DHCP Client ------X3/X4 DUT ",
+    "id": "28",
+    "title": "Verify the Server behavior in T1 time",
+    "description": " The user will ensure that the DHCP server act correct at T1 time.",
+    "result": " The Advertise Message /reply Message there is T1/T2 time send to client,  After T1 time after the Client get IP address info from DHCP server, the client send Renew message to DHCP Server, the DHCP server will send the Reply message to DHCP client. sends back the IA to the client with new lifetimes and T1/T2\ntimes"
+  },
+  "33": {
+    "steps": " 1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n2.Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . set Preferred time as 60 s and Valid lifetime as 120s\n4.Using multiple PC or router as DHCP client , connect to it.\n5.Capture the packet between the client and server.\n\n",
+    "atm_id": "451eac2a-c0eb-422d-9651-02d4ee8cf7e9",
+    "initial": " DHCP Client 1 Client2------X3/X4 DU ",
+    "id": "33",
+    "title": "Multiple Client in same interface (Dynamic entry)",
+    "description": "The user will ensure that the Multiply Client can get info from DHCP server in same interface.\n\n",
+    "result": "  All the DHCP clients can get correct info from DHCP server."
+  },
+  "34": {
+    "steps": " 1.Set an interface such as X3 /X4 etc as LAN/DMZ Custom zone, set proper IPv6 address\n2.Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n3.Go to DHCP server, choose IPv6, and add corresponding DHCP scope.\n4.Using multiple PC or router as DHCP client, connect to different interface.\n5.Capture the packet between the client and server.\n\n ",
+    "atm_id": "c5a84933-4132-41be-b9f4-2dda2aa8387d",
+    "initial": " Topology1  DHCP Client 1 Client2------X3/X4 DUT ",
+    "id": "34",
+    "title": "Multiple Client in different interface (Dynamic entry)",
+    "description": "The user will ensure that the Multiply Client can get info from DHCP server in same interface.",
+    "result": " All the DHCP clients can get correct info from DHCP server. "
+  },
+  "39": {
+    "steps": " 1.Configure dynamic DHCPv6 entry with IP address number is 3.\n 2.Connect more than 3 DHCPv6 client to DHCPv6 server.\n 3.Make sure only three DHCPv6 client can get IP info from DHCPv6 server.\n 4.Keep running ipconfig /renew6 in the PC which didnt get IPv6 info.",
+    "atm_id": "2d4ed1d2-700d-4bb2-8d6b-fce27a86b526",
+    "initial": "  ",
+    "id": "39",
+    "title": "IP conflicts (client number bigger than ip address number in scope)",
+    "description": "",
+    "result": " Verify DHCP server behaves healthy"
+  },
+  "58": {
+    "steps": " 1.Customized some configuration of DHCP server.\n2.Restarted the firewall",
+    "atm_id": "95869683-1465-458d-8a51-f9f63663eb8a",
+    "initial": "  Topology1  DHCP Client ------X3/X4 DUT",
+    "id": "58",
+    "title": "Restart the firewall , all configuration of DHCPv6 server saved.",
+    "description": "",
+    "result": " 1.Restarted the firewall ,all configuration of DHCPv6 server saved.\n\n "
+  },
+  "46": {
+    "steps": "1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n2.Enable Enable Router Advertisement, dont enable Managed(M) Address Configuration , Click Other (O) Configuration flag and input proper value in Advanced page.\n3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . set Preferred time as 60 s and Valid lifetime as 120s, set DNS info and domain name info etc.\n4.Using multiple PC or router as DHCP client , connect to it.\n5.Capture the packet between the client and server. ",
+    "atm_id": "a7961113-5db7-49aa-9875-41923278d642",
+    "initial": " Topology1  DHCP Client 1 Client2------X3/X4 DUT\n\n ",
+    "id": "46",
+    "title": " Stateless DHCP server-Multiple Client in same interface (Dynamic entry)",
+    "description": " The user will ensure that the Multiply Client can get info from DHCP server in same interface.",
+    "result": " DHCPv6 Client Send Information-request message to acquire configuration settings from DHCP server, the DHCP server will send Reply message(without IP address info, included requested configuration settings ).\nAll the DHCP clients sent can get correct info from DHCP server. "
+  },
+  "52": {
+    "steps": "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address\n2.Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n3.Go to DHCP server, choose IPv6, and add corresponding DHCP scope.\n4.Using PC1 as DHCP client, connect to interface X3.\n5.Set an interface such as X4 etc as LAN/DMZ Custom zone, set proper IPv6 address\n6.Enable Enable Router Advertisement, only click Other (O) Configuration flag and input proper value in Advanced page.\n7.Go to DHCP server, choose IPv6, and add corresponding DHCP scope.\n8.Using PC2 as DHCP client, connect to interface X4.\n9.Capture the packet between the client and server.",
+    "atm_id": "9151fcac-2670-4fb2-aa56-f370911215fe",
+    "initial": " Topology1  DHCP Client 1 Client2------X3/X4 DUT ",
+    "id": "52",
+    "title": " Mix stateless and stateful ",
+    "description": "The user will ensure that the Multiply Client can get info from DHCP server in same interface.",
+    "result": " 1.As Stateful mode, capture packets from dhcpv6 server and dhcp client pc1, there is four message: solicit/advertise ,request/reply message exchanged. And the DHCP server sent IP info and other configuration settings to dhcp client.\n2.In Stateless mode,DHCPv6 Client PC2 Send Information-request message to acquire configuration settings from DHCP server, the DHCP server will send Reply message(without IP address info, included requested configuration settings)\n\n"
+  }
+}

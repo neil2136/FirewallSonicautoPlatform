@@ -1,0 +1,79 @@
+{
+   "95" : {
+      "steps" : "  1 user authentication to LDAP\n  2 input ip and choose use tls with verify server certificate\n  3 choose 'Give login name/location in tree', ipnut user neme\n  4 verify on directory tab, set User tree for login to server to the correct location (i.e.test.com/Users)\n  5 input the correct domain on directory tab\n  6 auto config trees for user and group",
+      "initial" : "  TBD",
+      "id" : "95",
+      "title" : "LDAP functionality with 'Give login name/location in tree' selected in the configuration",
+      "result" : "  user and groups trees can be read from ldap server"
+   },
+   "11" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  3. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.\n  4. In the Setting tab of the LDAP Configuration window, view the Protocol version drop-down list.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "11",
+      "title" : "GUI: LDAP Configuration> Settings. Protocol version list",
+      "result" : "  The Protocol version drop-down list has two items: LDAP version 2 and LDAP version 3. LDAP version 3 is a default setting."
+   },
+   "65" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Configure interfaces.\n  3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  4. In the Settings tab\uff0center the IP address of the PC connected to X0 (LDAP server)\uff0clogin user name and password.\n  5. In the Schema tab, select Microsoft Active Directory LDAP Schema.\n  6. In the Directory tab, specify a primary domain.\n  7. In the LDAP Users tab, select Limited Administrators as a default LDAP user group.",
+      "initial" : "  N/A",
+      "id" : "65",
+      "title" : "Functional. Default user group is Limited Administrators",
+      "result" : "  Go to Users->Local Group,Limited admin group contain All LDAP Users."
+   },
+   "96" : {
+      "steps" : "  1 user authentication to LDAP\n  2 input ip and choose use tls with verify server certificate\n  3 choose give bind distinguished name, ipnut user (i.e. CN=administrator,CN=Users,DC=qa3,DC=com)\n  4 verify on directory tab, User tree for login to server is greyed out, no input is needed there\n  5 input the correct domain on directory tab\n  6 auto config trees for user and group",
+      "initial" : "  set up ldap server on LAN side",
+      "id" : "96",
+      "title" : "LDAP functionality with Give bind distinguished name' selected in the configuration",
+      "result" : "  user and groups trees can be read from ldap server"
+   },
+   "43" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Configure interfaces.\n  3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.\n  5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password. Have the Require valid certificate from server check box turned on. Have LDAP version 3 selected in the Protocol version field.\n  6. In the Directory tab, specify a primary domain.\n  7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.\n  8. On the Firewall > Access Rules page go to LAN>WAN and set the User Allowed field to Trusted Users in the rule. Add a new rule to allow DNS service.\n  9. Logout from the management screen and attempt to access the Internet. When a browser gets re-directed to /auth.html page, login as qatest entering a valid password.",
+      "initial" : "  LDAP Server --- X0 SonicWALL\n  Windows Certificate Services must be installed on the LDAP server. Download the CA certificate and save locally. Import the CA certificate .cer file on the SonicWALL.\n  On the Active Directory, create a group 'group1'. Create a user 'qatest' and add it to the 'group1'.",
+      "id" : "43",
+      "title" : "Functional. LDAP version 3 is used",
+      "result" : "  Qatest is logged in. The User Login Status window is displayed."
+   },
+   "61" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Configure interfaces.\n  3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  4. In the Settings tab, enter the IP address of the PC connected to X0 (LDAP server), login user name and password.\n  5. In the Schema tab, select Microsoft Active Directory LDAP Schema.\n  6. In the Directory tab, specify a primary domain.\n  7. In the LDAP Users tab, make sure default LDAP user group is not defined.",
+      "initial" : "  LDAP server --- X0 SonicWALL",
+      "id" : "61",
+      "title" : "Functional. Default user group is not defined",
+      "result" : "  Go to Users->Local Group,Only everyone and Trusted Users contain All LDAP Users,and other groups can not contain All LDAP Users."
+   },
+   "133" : {
+      "steps" : "  LDAP user should be able to login successfully with correct login page",
+      "initial" : "  TBD",
+      "id" : "133",
+      "title" : "LDAP user should be able to login successfully with correct login page",
+      "result" : "  Ldap user login should be successfull"
+   },
+   "64" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Configure interfaces.\n  3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  4. In the Settings tab\u00a3\u00acenter the IP address of the PC connected to X0 (LDAP server)\u00a3\u00aclogin user name and password.\n  5. In the Schema tab, select Microsoft Active Directory LDAP Schema.\n  6. In the Directory tab, specify a primary domain.\n  7. In the LDAP Users tab, select 'Guest Services' as a default LDAP user group.",
+      "initial" : "  LDAP server --- X0 SonicWALL",
+      "id" : "64",
+      "title" : "Functional. Default user group is Guest Services",
+      "result" : "  Go to Users->Local Group,Guest Services group contain All LDAP Users."
+   },
+   "56" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Configure interfaces.\n  3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.\n  5. In the Settings tab, enter the FQDN of the PC connected to X0 (LDAP server), login user name and password.\n  6. In the Schema tab, select Microsoft Active Directory LDAP Schema. Use userPrincipalName as Qualified login name attribute.\n  7. In the Directory tab, specify a primary domain.\n  8. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.\n  9. In the Test tab, enter qatest in the User field and a valid password in the Password field. Click the Test button.",
+      "initial" : "  LDAP server --- X0 SonicWALL\n  Windows Certificate Services must be installed on the LDAP server. Download the CA certificate and save locally. Import the CA certificate .cer file on the SonicWALL.\n  On the Active Directory, create a group 'group1'. Create a user 'qatest' and add it to the 'group1'.",
+      "id" : "56",
+      "title" : "Functional. Microsoft Active Directory schema is used",
+      "result" : "  The Test Status field displays a message LDAP Client Authentication Succeeded. The Returned User Attributes field displays userPrincipalName: qatest@.com, member of: group1."
+   },
+   "3" : {
+      "steps" : "  1. Load a firmware and boot with factiry default settings.\n  2. On the Users>Settings page, select LDAP+Local Users from the Authentication Methods drop-down list. Apply.\n  3. Restsrt the firewall.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "3",
+      "title" : "GUI: Select LDAP + Local Users",
+      "result" : "  LDAP+Local Users is selected as authentication method on the Users>Settings page."
+   },
+   "38" : {
+      "steps" : "  1. Load a firmware and boot with factory default settings.\n  2. Configure interfaces.\n  3. On the Users>Setting page, select LDAP from the Authentication Methods drop-down list and click the Configure button.\n  4. Select either OK (re-direct to HTTPS) or Cancel (continue using HTTP) in the following message.\n  5. In the Settings tab, enter the IP address of the PC connected to X0 (LDAP server), login user name and password. Uncheck the Require valid certificate from server check box.\n  6. In the Directory tab, specify a primary domain.\n  7. In the LDAP Users tab, select 'Trusted Users' as a default LDAP user group.\n  8. On the Firewall > Access Rules page go to LAN>WAN and set the User Allowed field to Trusted Users in the rule. Add a new rule to allow DNS service.\n  9. Logout from the management screen and attempt to access the Internet. When a browser gets re-directed to /auth.html page, login as qatest entering a valid password.",
+      "initial" : "  LDAP Server --- X0 SonicWALL\n  On the Active Directory, create a group 'group1'. Create a user 'qatest' and add it to the 'group1'.",
+      "id" : "38",
+      "title" : "Functional. Use IP address for LDAP server",
+      "result" : "  Qatest is logged in. The User Login Status window is displayed."
+   }
+}

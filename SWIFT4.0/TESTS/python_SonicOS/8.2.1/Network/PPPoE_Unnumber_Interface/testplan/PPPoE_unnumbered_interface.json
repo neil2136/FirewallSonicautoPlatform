@@ -1,0 +1,110 @@
+{
+   "06" : {
+      "steps" : "1.Config interface as WAN zone\n2.Choose \"PPPoE\" in \"IP Assignment\"\n3.Check \"Unnumbered interface:\" checkbox, and choose \"Create new unnumber interface\" in the drop-down list",
+      "title" : "GUI: The unnumbered interface can be created via \"Create new unnumber interface\" option in WAN PPPoE setting page",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 06",
+      "result" : "in step3, a new page pop up and can create success"
+   },
+   "12" : {
+      "steps" : "1.Config X2 as unnumbered interface, config X2 IP in PPPoE server pool\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2, check X1 status",
+      "title" : "Func: When the unnumbered interface IP match the PPPoE server pool address, verify the PPPoE unnumbered interface can get connected, the connected IP should be the same with the unnumbered interface.",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 12",
+      "result" : "in step2, X1 IP is the same with X2 IP"
+   },
+   "15" : {
+      "steps" : "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2, make sure X1 get connected\n3.Check NAT polices",
+      "title" : "Func: Verify after the PPPoE unnumbered interface get connected, DUT will auto add two NAT policies (between the PPPoE interface and the unnumbered interface)",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 15",
+      "result" : "in step3, two polices added:\nPolicy #1. From unnumbered interface subnet to any, translated src as original.\nPolicy #2. From any to the PPPoE unnumbered interface subnet, translated dst as original."
+   },
+   "16" : {
+      "steps" : "1.Config X2 as unnumbered interface, PC1 connect to X2\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2, PC2 connect to X1, make sure X1 get connected\n3.PC1 ping PC2, visit PC2 IP via HTTPS and download file via FTP\n4.PC2 ping PC1, visit PC1 IP via HTTPS and download file via FTP\n5.Check capture packet",
+      "title" : "Func: Verify after the PPPoE unnumbered interface get connected, the traffic (ping/FTP/HTTPS) between unnumbered interface host and WAN host should be successful, the data flow should not do NAT",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 16",
+      "result" : "in step3&4, all traffic go through success\nin step5, the data flow do not NAT"
+   },
+   "20" : {
+      "steps" : "1.Config X2 as unnumbered interface, enable Management(ping/https/snmp/ssh)\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3.Enable SNMP in System->SNMP page\n4.PC connect to X2, PC ping X2 IP and visit X2 IP using Explorer and secureCRT, using MIB to get info",
+      "title" : "Management (ping/https/snmp/ssh) from LAN/DMZ PC (connected to the unnumbered interface) to the unnumbered interface should be fine",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 20",
+      "result" : "in step4, all function work well"
+   },
+   "25" : {
+      "steps" : "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3.Click \"Connect\" button\n4.Click \"Disconnect\" button",
+      "title" : "Disconnect/reconnect PPPoE unnumbered interface from GUI,check if work fine",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 25",
+      "result" : "in step3, PPPoE can get IP\nin step4, PPPoE disconnect"
+   },
+   "29" : {
+      "steps" : "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3.After X1 get IP, change X1 to another mode(Specify IP address/Obtiain IP address)",
+      "title" : "If PPPoE unnumbered interface change from unnumbered mode to another mode(Specify Ip address/Obtiain Ip address) , it should can reconnect successfully.",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 29",
+      "result" : "in step3, PPPoE reconnect"
+   },
+   "32" : {
+      "steps" : "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3.After X1 get the same IP with X2, change X2 IP, check log monitor and packet",
+      "title" : "If change ip of unnumbered interface, PPPoE unnumbered should reconnect again and PPPoE ip should be the same with the unnumbered interface.",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 32",
+      "result" : "in step3, X1 IP become the same with the new X2 IP, log and packet show a new PPPoE negotiation"
+   },
+   "41" : {
+      "steps" : "1.Config X2 as LAN unnumbered interface, PC1 connect X2; config X3 as LAN normal interface, PC2 connect X3\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2, make sure X1 get connected\n3.Allow ACL WAN->LAN\n4.Create inbound NAT policy:\nAny Orignal X1 IP PC1 IP Any Orignal WAN interface Any\n5.WAN PC ping X1 IP, capture packet\n6.Change inbound NAT policy:\nAny Orignal X1 IP PC2 IP Any Orignal WAN interface Any\n7.Repeat step5\nNotice: Change the priority of user-defined NAT policies in step4&6, they should be higher than the auto-added NATs in case 15",
+      "title" : "WAN to LAN NAT test, create inbound NAT policy to translate DST IP from PPPoE unnumbered interface IP to LAN host IP",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 41",
+      "result" : "in step5&7, the packet show the data flow destination IP was translated "
+   },
+   "43" : {
+      "steps" : "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3.Shutdown/no shut X1, check X1 status",
+      "title" : "Link down/up test for unnumbered PPPoE interface: after link up, it will reconnect and function is back",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 43",
+      "result" : "in step2&3, X1 can get IP"
+   },
+   "51" : {
+      "steps" : "1.Config LAN unnumbered interface X3, add a DHCP server scope for X3\n2.PC connect X3 and can get IP\n3.Disconnect PPPoE unnumbered interface, PC release/renew\n4.Reconnect PPPoE unnumbered interface, PC release/renew",
+      "title" : "Add dhcp server for the unnumbered interface, disconnect and reconnect the PPPoE unnumbered interface, veirfy DHCP server still work",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 51",
+      "result" : "in step3&4, PC can get IP"
+   },
+   "71" : {
+      "steps" : "1.Config LAN unnumbered interface with PC connected, add avaiable DHCP server scope for this interface\n2.Config WAN PPPoE unnumbered interface, unnumber to LAN unnumbered interface\n3.Ping traffic from LAN PC to Internet website\n4.Restart the FW",
+      "title" : "Restart the FW, verify PPPoE unnumbered can get connected again and traffic is back",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 71",
+      "result" : "in step4, PC ping traffic success again"
+   },
+   "72" : {
+      "steps" : "1.Config LAN unnumbered interface\n2.Config WAN PPPoE unnumbered interface\n3.After WAN PPPoE unnumbered interface connected, download TSR",
+      "title" : "Verify in TSR all the information for PPPoE unnumbered interface and unnumbered interface are correct",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 72",
+      "result" : "All info about PPPoE unnumbered interface and unnumbered interface are correct in TSR"
+   },
+   "73" : {
+      "steps" : "1.Config several LAN unnumbered interfaces\n2.Config several WAN PPPoE unnumbered interfaces, unnumber to LAN unnumbered interfaces\n3.After WAN PPPoE unnumbered interface connected, export prefs\n4.Change some unnumbered interface settings and import prefs\n5.Factory default DUT, import the prefs",
+      "title" : "Prefs exporting/importing test",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 73",
+      "result" : "in step4&5, after DUT boot up, the settings are the same with the prefs"
+   },
+   "76" : {
+      "steps" : "1.Config LAN unnumbered interface with PC connected, add available DHCP server scope for this interface\n2.Config WAN PPPoE unnumbered interface, unnumber to LAN unnumbered interface\n3.PC visit Internet website using Ping traffic, capture packet and check Ping traffic\n4.Enable HA, check PC's traffic",
+      "title" : "[HA]Configure PPPoE unnumbered first then enable HA, verify PPPoE settings will sync to secondary, and traffic not stop during the HA configuration.",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 76",
+      "result" : "in step4, traffic is passing through and no stop"
+   },
+   "78" : {
+      "steps" : "1.Enable HA\n2.Config LAN unnumbered interface with PC connected, add available DHCP server scope for this interface\n3.Config WAN PPPoE unnumbered interface, unnumber to LAN unnumbered interface\n4.PC visit Internet website using Ping traffic, capture packet and check Ping traffic\n5.Click \"Restart\" button in System->Restart page\n6.Login active DUT, check PPPoE unnumbered interface IP and PC's traffic",
+      "title" : "[HA]Verify PPPoE can reconnect with the same IP and traffic is successful after failover due to reboot",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 78",
+      "result" : "in step6, PPPoE unnumbered interface IP is the same and traffic go pass success "
+   },
+   "84" : {
+      "steps" : "1.Enable HA\n2.Config LAN unnumbered interface with PC connected, add available DHCP server scope for this interface\n3.Config WAN PPPoE unnumbered interface, unnumber to LAN unnumbered interface\n4.PC visit Internet website using Ping traffic, capture packet and check Ping traffic\n5.Change PPPoE unnumbered interface settings, such as PPPoE username/password, inactivity and reconnect options, MTU, etc.\n6.Check PPPoE unnumbered interface setting in idle DUT",
+      "title" : "[HA]Verify after PPPoE unnumbered interface settings changed in the active FW, the settings will be synced to the idle one, like PPPoE username/password, inactivity and reconnect options, MTU, etc.",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 84",
+      "result" : "in step6, PPPoE settings are syn success"
+   },
+   "85" : {
+      "steps" : "1.Enable HA\n2.Config LAN unnumbered interface with PC connected, add available DHCP server scope for this interface\n3.Config WAN PPPoE unnumbered interface, unnumber to LAN unnumbered interface, enable Management(ping/https/snmp/ssh)\n4.WAN host ping PPPoE unnumbered interface IP and visit X1 IP using Explorer and secureCRT, using MIB to get info\n5.Click \"Force Active/Standy failover\" button in High Availability-Advanced page\n6.Repeat step4",
+      "title" : "[HA]Management via PPPoE unnumbered interface after failover, including ping/https/snmp/ssh.",
+      "id" : "SonicOS/ Network/ PPPoE_Unnumbered_interface/ 85",
+      "result" : "in step4&6, all function work well"
+   }
+}

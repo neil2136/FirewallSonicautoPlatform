@@ -1,0 +1,93 @@
+{
+    "1516109": {
+        "id": "1516109",
+        "title": "Create a Site to Site IPV6 VPN policy with authentication Method - Manual Key",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516110": {
+        "id": "1516110",
+        "title": "Create a Site to Site IPV6 VPN policy with Loal IKE ID - E-mail Address",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516111": {
+        "id": "1516111",
+        "title": "Create a Site to Site IPV6 VPN policy with Remote networks - selet any Address Objet",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516112": {
+        "id": "1516112",
+        "title": "Create a Site to Site IPV6 VPN policy with Remote networks - selet any Address Group",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516113": {
+        "id": "1516113",
+        "title": "Create a Site to Site IPV6 VPN policy with the new address objet of the type - Range in Remote networks",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516114": {
+        "id": "1516114",
+        "title": "Create a Site to Site IPV6 VPN policy with the Enryption - DES in the Ipse (Phase 2) Proposal",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516115": {
+        "id": "1516115",
+        "title": "Create a Site to Site IPV6 VPN policy with the authentication - SHA1 in the Ipse (Phase 2) Proposal",
+        "result": "Post response: \n{\n \"vpn\": {\n \"policy\": [\n {\n \"ipv6\": {\n \"site_to_site\": {\n \"name\": \"IPV6policy\",\n \"enable\": true,\n \"gateway\": {\n \"primary\": \"2001:4860:4860:0:0:0:0:8888\",\n \"seondary\": \"2001:4860:4860:0:0:0:0:8889\"\n },\n \"auth_method\": {\n \"ertifiate\": {\n \"ertifiate\": \"*.eng.soniwall.om\",\n \"ike_id\": {\n \"loal\": \"domain-name\",\n \"peer\": {\n \"distinguished_name\": \"ou=gmail.om\"\n }\n }\n }\n },\n \"network\": {\n \"loal\": {\n \"name\": \"test123456\"\n },\n \"remote\": {\n \"name\": \"test123456\"\n }\n },\n \"proposal\": {\n \"ike\": {\n \"exhange\": \"ikev2\",\n \"enryption\": \"aes-128\",\n \"authentiation\": \"sha-1\",\n \"dh_group\": \"2\",\n \"lifetime\": 28800\n },\n \"ipse\": {\n \"protool\": \"esp\",\n \"enryption\": {\n \"aes_128\": true\n },\n \"authentiation\": {\n \"sha_1\": true\n },\n \"perfet_forward_serey\": {},\n \"lifetime\": 28800\n }\n },\n \"anti_replay\": true,\n \"management\": {\n \"https\": false,\n \"ssh\": false,\n \"snmp\": false\n },\n \"keep_alive\": false,\n \"allow_sonipointn_layer3\": false,\n \"bound_to\": {\n \"interfae\": \"X1\"\n },\n \"loal_ip\": {\n \"primary\": true\n },\n \"suppress_trigger_paket\": true,\n \"aept_hash\": false,\n \"send_hash\": \"\",\n \"preempt_seondary_gateway\": {}\n }\n }\n }\n ]\n }\n}",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled. \n2.Post body:\n{\n \"vpn\": {\n \"policy\": [\n {\n \"ipv6\": {\n \"site_to_site\": {\n \"name\": \"IPV6policy\",\n \"enable\": true,\n \"gateway\": {\n \"primary\": \"2001:4860:4860:0:0:0:0:8888\",\n \"seondary\": \"2001:4860:4860:0:0:0:0:8889\"\n },\n \"auth_method\": {\n \"ertifiate\": {\n \"ertifiate\": \"*.eng.soniwall.om\",\n \"ike_id\": {\n \"loal\": \"domain-name\",\n \"peer\": {\n \"distinguished_name\": \"ou=gmail.om\"\n }\n }\n }\n },\n \"network\": {\n \"loal\": {\n \"name\": \"test123456\"\n },\n \"remote\": {\n \"name\": \"test123456\"\n }\n },\n \"proposal\": {\n \"ike\": {\n \"exhange\": \"ikev2\",\n \"enryption\": \"aes-128\",\n \"authentiation\": \"sha-1\",\n \"dh_group\": \"2\",\n \"lifetime\": 28800\n },\n \"ipse\": {\n \"protool\": \"esp\",\n \"enryption\": {\n \"aes_128\": true\n },\n \"authentiation\": {\n \"sha_1\": true\n },\n \"perfet_forward_serey\": {},\n \"lifetime\": 28800\n }\n },\n \"anti_replay\": true,\n \"management\": {\n \"https\": false,\n \"ssh\": false,\n \"snmp\": false\n },\n \"keep_alive\": false,\n \"allow_sonipointn_layer3\": false,\n \"bound_to\": {\n \"interfae\": \"X1\"\n },\n \"loal_ip\": {\n \"primary\": true\n },\n \"suppress_trigger_paket\": true,\n \"aept_hash\": false,\n \"send_hash\": \"\",\n \"preempt_seondary_gateway\": {}\n }\n }\n }\n ]\n }\n}"
+    },
+    "1516116": {
+        "id": "1516116",
+        "title": "Edit Site to Site IPV6 VPN policy with authentication Method - Manual Key",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516117": {
+        "id": "1516117",
+        "title": "Edit Site to Site IPV6 VPN policy with Peer IKE ID - E-mail Address",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516118": {
+        "id": "1516118",
+        "title": "Edit Site to Site IPV6 VPN policy with authentication   method - IKE using Preshared Seret and Peer IKE ID - Distinguished Name(DN)",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516119": {
+        "id": "1516119",
+        "title": "Edit Site to Site IPV6 VPN policy with Loal networks - selet any Address Objet",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516120": {
+        "id": "1516120",
+        "title": "Edit Site to Site IPV6 VPN policy with the authentication - SHA1 in the Ipse (Phase 2) Proposal",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    },
+    "1516121": {
+        "id": "1516121",
+        "title": "Delete a Site to Site IPV6 VPN policy with authentication Method - Manual Key",
+        "result": "Post response:",
+        "initial": "",
+        "steps": "1. Make sure SonicOS API i enabled."
+    }
+}

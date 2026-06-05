@@ -1,0 +1,23 @@
+{
+   "5" : {
+      "steps" : "  1. Configure interface X2, zone DMZ, static IP;\n  2. Connect PC to X2;\n  3. Add static route on FW, src: X2 subnet, dst: 40.1.1.0/24, outgoing interface X3;\n  4. Send traffic from X2 subnet to 40.1.1.0/24 and check the traffic flow.",
+      "initial" : "  It will be added.",
+      "id" : "5",
+      "title" : "Function: Route traffic through DMZ or custom zone",
+      "result" : "  in step 4, traffic will be forwarded to X3."
+   },
+   "8" : {
+      "steps" : "  1. Configure interface X2, zone WAN , connected to a router;\n  2. Add a static route, dst to 60.1.1.0/24, outgoing interface X2, gateway: router IP;\n  3. Send traffic to 60.1.1.0/24 from X0 subnet, check the traffic flow;",
+      "initial" : "  It will be added.",
+      "id" : "8",
+      "title" : "Function: Static route test with Router",
+      "result" : "  in step 3, traffic is forwarded to router."
+   },
+   "9" : {
+      "steps" : "  Add and edit and delete static route, check the routing table;",
+      "initial" : " ",
+      "id" : "9",
+      "title" : "Function: Routing Table for Static route",
+      "result" : "  all static routes are shown correctly on the routing table."
+   }
+}

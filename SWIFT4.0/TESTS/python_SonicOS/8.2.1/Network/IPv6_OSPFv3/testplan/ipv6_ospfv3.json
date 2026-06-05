@@ -1,0 +1,100 @@
+{
+   "1514354" : {
+      "steps" : " step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 a global IPv6 address;\n  step 2, Navigate to Network->Routing, switch to IPv6 page, enable OSPFv3 on X4, click OK button ;\n  step 3, Check the OSPFv3 neighbor status LED, it is RED.",
+      "initial" : "DUT",
+      "id" : "1514354",
+      "title" : "GUI: OSPFv3 can be enabled on GUI",
+      "result" : "in step 2, the configuration can be saved successfully.\n  In step 3, when OSPFv3 does not have any neighbors, the neighbor status LED should display as RED."
+   },
+   "1514355" : {
+      "steps" : " step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 an global IPv6 address;\n step 2, Navigate to Network->Routing, switch to IPv6 page, enable OSPFv3 on X4, click OK button ;\n step 3, Change router-id to 10.10.10.10, click OK button, connect a router to X4 (OSPFv3 default router-id is 10.0.0.1, and the two neighbors can not use the same  router-id, so its better to change router-id at the first time, to avoid the confiliction.);\n step 4, Enable debug OSPFv3 on router, check is there any OSPFv3 packets send from DUT;\n step 5, check the OSPFv3 status LED on GUI;\n step 6, show OSPFv3 neighbor in CLI, enter zebos, use command \"ARS OSPFv3>show ipv6 ospf neighbor\" to show the neighbors.",
+      "initial" : "DUT--------ROUTER",
+      "id" : "1514355",
+      "title" : "Function: DUT can establish neighborhood with another router.",
+      "result" : " in step 4, router can receive OSPFv3 Hello packets from DUT , e.g. \"OSPFv3: Rcv hello from 10.10.10.10 area 0 from GigabitEthernet0/1 FE80::C2EA:E4FF:FE5C:9918\"\n \n in step 5,first check the GUI OSPFv3 status LED, it should be GREEN, moused over the LED for more detail, it will show neighbor's router-id, current state and the priority.\n\n in step 6, CLI output will show :Neighbor ID ,Pri , State , Dead Time , Interface , Instance ID，e.g.\nNeighbor ID  Pri    State         Dead Time     Interface Instance ID\n\n11.11.11.11 1     Full/Backup      00:00:36       X4         0"
+   },
+   "1514356" : {
+      "steps" : " step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 an global IPv6 address;\n step 2, Navigate to Network->Routing, switch to IPv6 page, enable OSPFv3 on X4, click OK button ;\n step 3, connect a router to X4, do config on router, let it redistribute connected route and static route on OSPFv3;\n step 4, Check DUT's routing table, DUT can learn neighbor's connected routes and static routes via OSPFv3;\n step 5, Check OSPFv3 database, enter zebos, use command\"ARS OSPFv3>show ipv6 ospf database external\", it will show AS-external-LSA; ",
+      "initial" : " DUT--------ROUTER ",
+      "id" : "1514356",
+      "title" : " Function: DUT can establish neighborhood with other router and can learn IPv6 routes from its neighbor router ",
+      "result" : " in step 4, check routing table, the connected routes and static routes redistributed by router can be learned by DUT, and the metric is 110;\n\n in step 5, CLI output will show details of each route entry that router has redistributed to DUT;\ne.g. LS age: 23\nLS Type: AS-External-LSA\nLink State ID: 0.0.0.12\nAdvertising Router: 10.1.1.1\nLS Seq Number: 0x80000001\nChecksum: 0x3DF5\nLength: 36\nMetric Type: 2 (Larger than any link state path)\nMetric: 20\nPrefix: 2050::/64\nPrefix Options: 0 (-|-|-|-) "
+      },
+   "1514357" : {
+      "steps" : "step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 an global IPv6 address;\n step 2, Connect X1 to internet and ip-assignment is AUTO;\n step 3, Add an IPv6 static route, dst 9898::/64, gateway: X1's gateway, outgoing interface: X1;\n step 4, Navigate to Network->Routing, switch to IPv6 page, enable OSPFv3 on X4, Check option \"Redistribute static routes\", click OK button ;\n step 5, Check OSPFv3 database, enter zebos, use command\"ARS OSPFv3>show ipv6 ospf database external\", it will show AS-external-LSA;\n step 6, Check router's IPv6 ospf routes;",
+      "initial" : "DUT--------ROUTER ",
+      "id" : "1514357",
+      "title" : "Function: Redistribute static routes",
+      "result" : "  in step 5, CLI output will show details of each static route entry that DUT redistributed to router;\ne.g. LS age: 13\nLS Type: AS-External-LSA\nLink State ID: 0.0.0.25\nAdvertising Router: 10.0.0.1\nLS Seq Number: 0x80000001\nChecksum: 0x5A0D\nLength: 36\nMetric Type: 2 (Larger than any link state path)\nMetric: 20\nPrefix: 9898::/64\nPrefix Options: 0 (-|-|-|-)\n\n in step 6 , show ipv6 route ospf on router, the static route redistributed from DUT should be shown.\ne.g.\nOE2 9898::/64 [110/20]\nvia FE80::C2EA:E4FF:FE5C:9918,GigabitEthernet0/1 "
+      },
+   "1514358" : {
+      "steps" : " step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 an global IPv6 address;\n step 2, Configure X1 ipv6 address 2010::1/64;\n step 3, Navigate to Network->Routing, switch to IPv6 page, enable OSPFv3 on X4, Check option \"Redistribute Connected Routes\", click OK button ;\n step 4, Check OSPFv3 database, enter zebos, use command\"ARS OSPFv3>show ipv6 ospf database external\", it will show AS-external-LSA;\n step 5, Check router's IPv6 ospf routes; ",
+      "initial" : " DUT--------ROUTER ",
+      "id" : "1514358",
+      "title" : "Function: Redistribute Connected Routes",
+      "result" : " in step 4, CLI output will show details of each connected route entry that DUT redistributed to router;\ne.g. LS age: 11\nLS Type: AS-External-LSA\nLink State ID: 0.0.0.30\nAdvertising Router: 10.0.0.1\nLS Seq Number: 0x80000001\nChecksum: 0x94CE\nLength: 36\nMetric Type: 2 (Larger than any link state path)\nMetric: 20\nPrefix: 2010::/64\nPrefix Options: 0 (-|-|-|-)\n\nin step 5, show ipv6 route ospf on router, the connected route redistributed from DUT should be shown.\ne.g. OE2 2010::/64 [110/20]\nvia FE80::C2EA:E4FF:FE5C:9918, GigabitEthernet0/1 "
+      },
+   "1514359" : {
+      "steps" : "step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 an global IPv6 address;\nstep 2, Configure interface X2, connect it to another router B, config router B, enable RIPng and redistribute static routes;\nstep 3, Navigate to Network->Routing, switch to IPv6 page, enable RIPng on X2, click OK button ;\nstep 4, Navigate to Network->Routing, switch to IPv6 page, enable OSPFv3 on X4,check option \"Redistribute Rip Routes\", click OK button ;\nstep 5, Check DUT routing table, DUT learned ipv6 routes from router B via RIPng, metric is 120, check DUT RIPng database, enter zebos, use command\"ARS RIPng>show ipv6 rip database \", it will show all ipv6 routes learned via RIPng;\nstep 6, Check OSPFv3 database, enter zebos, use command\"ARS OSPFv3>show ipv6 ospf database external\", it will show AS-external-LSA;\nstep 7, Check router's IPv6 ospf routes;",
+      "initial" : " ROUTER B---------(X2)DUT(X4)--------ROUTER A ",
+      "id" : "1514359",
+      "title" : "Function: Redistribute Rip Routes",
+      "result" : "in step 5, CLI output shows all ipv6 routes learned via RIPng;\ne.g. R 2000::/64 fe80::214:6aff:fe83:af81 X2 2 0 02:37\n\nin step 6, CLI output shows the details of each ipv6 routes that redistributed from DUT, and in this circumstance, DUT redistribute the ipv6 routes that learned from RIPng;\ne.g.\nLS age: 1157\nLS Type: AS-External-LSA\nLink State ID: 0.0.0.40\nAdvertising Router: 10.0.0.1\nLS Seq Number: 0x80000001\nChecksum: 0x6FF9\nLength: 36\nMetric Type: 2 (Larger than any link state path)\nMetric: 20\nPrefix: 2000::/64\nPrefix Options: 0 (-|-|-|-)\n\nin step 7, show ipv6 route ospf on router, the connected route redistributed from DUT should be shown.\ne.g. OE2 2000::/64 [110/20]\nvia FE80::C2EA:E4FF:FE5C:9918, GigabitEthernet0/1"
+      },
+   "1514360" : {
+      "steps" : " step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 an global IPv6 address;\nstep 2, Enter CLI, enter zebos, use command \"ARS OSPFv3(config)>router ipv6 ospf \" to create an OSPF process;\nstep 3, Use command \"ARS OSPFv3(config)>interface X4, ARS OSPFv3(config-if)>ipv6 router ospf area 0 \" to enable OSPFv3 on interface X4;\nstep 4, connect a router to interface X4, and config OSPFv3 on router;\nstep 5, Use command \"show ipv6 ospf neighbors\" on DUT to verify the OSPFv3 neighbor is active. ",
+      "initial" : "DUT--------ROUTER ",
+      "id" : "1514360",
+      "title" : "CLI: Enable OSPFv3",
+      "result" : "in step 2 , command is valid and complete;\nin step 3, command is valid and complete ;\nin step 4, command is valid and complete;\nin step 5, enter zebos, CLI outputs show the details about the active neighbors;\ne.g. Neighbor ID Pri State Dead Time Interface Instance ID\n10.1.1.1 1 Full/DR 00:00:20 X4 0 "
+      },
+   "1514361" : {
+      "steps" : " step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 an global IPv6 address;\n step 2, Configure X1 ipv6 address 2010::1/64;\n step 3, Enable OSPFv3 on X4;\n step 4, Enable OSPFv3 on X1, and select the mode as Passive mode, click OK button to save the configuration;\n step 5, Connect a router to interface X4, and config OSPFv3 on router;\n step 6, use command \"ARS OSPFv3>show ipv6 ospf database link \" to show if the passive interface network has been announced;\n step 7, Check router's IPv6 ospf routes;\n step 8, Enable packet monitor on DUT, verify that there is no OSPF packet send from the passive interface and passive interface can not handle any ospf message. ",
+      "initial" : "DUT--------ROUTER",
+      "id" : "1514361",
+      "title" : "Function: Config an interface as OSPFv3 passive mode.",
+      "result" : " in step 6, CLI output will show Link-LSA of Interface X1\ne.g.\nOSPFv3 Router with ID (9.9.9.9) (Process *null*)\n\nLink-LSA (Interface X1)\n\nLS age: 356\nLS Type: Link-LSA\nLink State ID: 0.0.0.2\nAdvertising Router: 9.9.9.9\nLS Seq Number: 0x80000001\nChecksum: 0x6A0C\nLength: 56\nPriority: 1\nOptions: 0x000013 (-|R|-|-|E|V6)\nLink-Local Address: fe80::c2ea:e4ff:fe5c:9915\nNumber of Prefixes: 1\n\nPrefix: 2010::/64\nPrefix Options: 0 (-|-|-|-)\n\n in step 7, router will learn X1's IPv6 subnet, e.g.\nO 2010::/64 [110/2]\nvia FE80::C2EA:E4FF:FE5C:9918, GigabitEthernet0/1\n\nin step 8, X1 won't send ospf packets and it can not handle ospf message."
+      },
+   "1514362" : {
+      "steps" : " step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 an global IPv6 address;\n step 2, Navigate to Network->Routing, switch to IPv6 page, enable OSPFv3 on X4, click OK button ;\n step 3, connect a router to X4, do config on router, let it redistribute connected route and static route on OSPFv3;\n step 4, Check DUT's routing table, DUT can learn neighbor's connected routes and static routes via OSPFv3;\n step 5, Reboot DUT;\n step 6, After rebooting, check OSPFv3 settings and status;",
+      "initial" : " DUT ----router ",
+      "id" : "1514362",
+      "title" : " After a reboot all OSPFv3 settings and status remain intact ",
+      "result" : " in step 6, after rebooting, OSPFv3 settings and status remain intact and correct, OSPFv3 status should be FULL and the LED displayed in GREEN, check DUT's routing table, it can learn neighbor's connected routes and static routes via OSPFv3. "
+      },
+   "1514363" : {
+      "steps" : "in step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 an global IPv6 address;\nstep 2, Navigate to Network->Routing, switch to IPv6 page, enable OSPFv3 on X4, change hello interval to 5, click OK button ;\nstep 3, Connect X4 to a cisco router, and enable ospfv3 on router, specified the hello interval time to 5;\nstep 4, Enable debug OSPFv3 on router, check OSPFv3 packets send from DUT, the hello interval is 5;\nstep 5, Check the OSPFv3 status LED on GUI;\nstep 6, Show OSPFv3 neighbor in CLI, enter zebos, use command \"ARS OSPFv3>show ipv6 ospf neighbor\" to show the neighbors.",
+      "initial" : " DUT ----router ",
+      "id" : "1514363",
+      "title" : "Function: DUT can establish neighborhood with another router with specified hello-interval time ",
+      "result" : "in step 4, router can receive OSPFv3 Hello packets from DUT , e.g. \"OSPFv3: Rcv hello from 10.10.10.10 area 0 from GigabitEthernet0/1 FE80::C2EA:E4FF:FE5C:9918\"\n\nin step 5,first check the GUI OSPFv3 status LED, it should be GREEN, moused over the LED for more detail, it will show neighbor's router-id, current state and the priority.\n\nin step 6, CLI output will show :Neighbor ID ,Pri , State , Dead Time , Interface , Instance ID，e.g.\nNeighbor ID  Pri   State          Dead Time    Interface Instance ID\n\n11.11.11.11 1     Full/Backup   00:00:16       X4           0 "
+      },
+   "1514364" : {
+      "steps" : "step 1, Add a vlan sub-interface, parent interface X4, id: 868, zone LAN, ip-assignment: static, input IP address, and switch to IPv6 page, set IPv6 static address;\nstep 2, Navigate to Network->Routing, enable OSPFv3 on X4:V868, enable redistribute connected routes and static routes;\nstep 3, Connect cisco router g0/1 to X4, edit vlan 868 on g0/1, enable OSPFv3 on it, redistribute static routes;\nstep 4, Check OSPFv3 status on X4:V868, the LED is GREEN, and moused over it, it will show the neighbor's info;\nstep 5, Check routing table on DUT, X4:V868 can learn static routes from router, the metric is 110;\nstep 6, Check routing table on cisco router, it can learn static routes from DUT, the metric is 110;\nstep 7, Check the packet monitor on DUT, X4:V868 will send OSPF and process OSPF message.",
+      "initial" : " DUT ----router ",
+      "id" : "1514364",
+      "title" : "Test OSPFv3 on vlan sub-interface ",
+      "result" : " X4, id: 868, zone LAN, ip-assignment: static, input IP address, and switch to IPv6 page, set IPv6 static address;\nstep 2, Navigate to Network->Routing, enable OSPFv3 on X4:V868, enable redistribute connected routes and static routes;\nstep 3, Connect cisco router g0/1 to X4, edit vlan 868 on g0/1, enable OSPFv3 on it, redistribute static routes;\nstep 4, Check OSPFv3 status on X4:V868, the LED is GREEN, and moused over it, it will show the neighbor's info;\nstep 5, Check routing table on DUT, X4:V868 can learn static routes from router, the metric is 110;\nstep 6, Check routing table on cisco router, it can learn static routes from DUT, the metric is 110;\nstep 7, Check the packet monitor on DUT, X4:V868 will send OSPF and process OSPF message.\n\nin step 4, the LED on X4:V868 is GREEN, and moused over it, it will show :\nRouter-ID Current State priority\n86.86.86.86 Full/DR 1\n\nin step 5, check DUT's routing table, it include the static routes learned from cisco router, metric is 110;\nin step 6, check router's routing table, it include the static routes learned from DUT, metric is 110;\nin step 7, X4:V868 send OSPF hello packets every 10 seconds; "
+      },
+   "1514365" : {
+      "steps" : "\nstep 1, Config a new interface X4, zone LAN, static IPv4 and IPv6 address;\nstep 2, Enable OSPFv3 on X4;\nstep 3, Connect router g0/1 to X4, enable OSPFv3 on g0/1 , config OSPFv3 on router, use command \"Cisco-2821(config-rtr)#default-information originate always\" to advertise default route;\n\n!\nrouter ospfv3 110\nrouter-id 88.88.88.88\n!\naddress-family ipv6 unicast\ndefault-information originate\nexit-address-family\n!\n\n\nstep 4, Check OSPFv3 status on X4;\nstep 5, Navigate to Network->Routing, check DUT's routing table, a default route with metric 110 will display , and the outgoing interface is X4;\nstep 6, Attempt to change the metric of this default route, change the value in \"Apply the following metric to default routes received from Advanced Routing protocols:\" , e.g. ,change it to 10;\nstep 7, Check the routing table, the default route learned from OSPFv3 , its metric has been changed to 10;",
+      "initial" : " DUT ----router ",
+      "id" : "1514365",
+      "title" : "default route learned from OSPFv3",
+      "result" : " in step 4, the OSPFv3 status LED is GREEN;\nin step 5, check the routing table, DUT has learned a default route from OSPFv3 via X4 , e.g.\n\nAny\t::/0\tAny\tfe80::214:6aff:fe83:af81\tX4\t110\nin step 7, the metric of this default route can be changed between 1-255, in this case ,it has been changed to 10, check GUI ,it will display\n\nAny\t::/0\tAny\tfe80::214:6aff:fe83:af81\tX4\t10"
+      },
+   "1514366" : {
+      "steps" : "step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, give X4 an global IPv6 address;\nstep 2, Navigate to Network->Routing, switch to IPv6 page, enable OSPFv3 on X4, click OK button ;\nstep 3, Change router-id to 10.10.10.10, click OK button, connect a router to X4 (OSPFv3 default router-id is 10.0.0.1, and the two neighbors can not use the same router-id, so its better to change router-id at the first time, to avoid the confiliction.);\nstep 4, check the OSPFv3 status LED on GUI;\nstep 5, in peer router to redirect connected or static routes\n\nstep 6, in DUT IPv6 routing table to check if can learn the IPv6 route that advertised by peer router\n\nstep 7, From PC to send IPv6 traffic to DUT which destionation to hit the learnt IPv6 route prefrix, observe if the packets could be forwarded out via the OSPFv3 interface.",
+      "initial" : " PC-----DUT--------ROUTER (could use another firewall) ",
+      "id" : "1514366",
+      "title" : " Verify the IPv6 traffic that hit the learnt OSPFv3 routes could be forwarded properly",
+      "result" : "in step 4,first check the GUI OSPFv3 status LED, it should be GREEN, moused over the LED for more detail, it will show neighbor's router-id, current state and the priority.\n\nin step 6, the IPv6 routes that advertised by peer router will be shown in DUT IPv6 routing table\n\nin step 7, IPv6 traffic will be forwarded out爒ia the OSPFv3 interface properly. "
+      },
+   "1514367" : {
+      "steps" : "step 1, Configure a new interface X4 with zone and IP in IPv4 interface page, and then switch to IPv6 page, config X4 a static ipv6 address;\nstep 2, Navigate to Network->Routing, switch to IPv6 page, enable OSPFv3 on X4, click OK button ;\nstep 3, Connect a router to X4 ,enable OSPFv3 on router;\nstep 4, Download TSR, check all OSPFv3 related informations.",
+      "initial" : "router-------DUT(they are OSPFv3 neighbors with each other) ",
+      "id" : "1514367",
+      "title" : " Download TSR and check all OSPFv3 related information.",
+      "result" : "in step 4, Download TSR, check all OSPFv3 related informations. make sure they are intact and correct."
+      }
+}

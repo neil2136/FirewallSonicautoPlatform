@@ -1,0 +1,155 @@
+{
+  "tc01": {
+    "steps": "Load the firmware on the firewall and boot with default settings.\nConfigure LAN and WAN interfaces,and proper DNS server\nOn the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"<br />WAN zone assignment and www.google.com FQDN hostname.\n4.<span>check if added FQDN AO can be resolved with ipv6 host</span> ",
+    "atm_id": " b447a62c-1b68-490d-8c15-8de750b5aabe",
+    "initial": " n/a ",
+    "id": "tc01",
+    "title": " Add IPv6 FQDN AO, check if it can be can be resolved with ipv6 host",
+    "description": "check if added FQDN AO can be resolved with ipv6 host\n\n",
+    "result": "<span><span>FQDN AO can be resolved with ipv6 host</span></span>\n\n"
+  },
+  "tc04": {
+    "steps": "configure dns server ,add a domain name like\nsnwl.com with 30 ipv6 hosts and 30 ipv4 hosts\na.snwl.com with 30 ipv6 hosts and 30 ipv4 hosts\n2. add a FQDN AO conclude wildcard like *.snwl.com\n3. check the AO can be solved\n4. ping a.snwl.com,check the resolved host can be added the AO ",
+    "atm_id": " 928f6b26-d3bf-44d5-8c6f-f5b74802980c ",
+    "initial": " n/a ",
+    "id": "tc04",
+    "title": "  add IPv6 FQDN AO conclude wildcard.",
+    "description": "",
+    "result": "In step 4,the FQDN AO include wildcard.can be added successfully."
+  },
+  "tc05": {
+    "steps": "go to diag.html page\nenable option\"Refresh sub-domains of wildcard FQDN address objects \"\nsub-domains of wildcard FQDN address objects will fresh after TTL expired and offset time elapsed\ndisable option\"Refresh sub-domains of wildcard FQDN address objects \"\nsub-domains of wildcard FQDN address objects will delete after TTL expired and offset time elapsed ",
+    "atm_id": " 87513715-6ba9-444e-a23b-16d379bfeee2",
+    "initial": " n/a ",
+    "id": "tc05",
+    "title": " Test option\"Refresh sub-domains of wildcard FQDN address objects  \" in diag page ",
+    "description": "",
+    "result": "n/a"
+  },
+  "tc07": {
+    "steps": "configure dns server ,add a domain name like 1.snwl.com with 4 ipv6 hosts\n2. add a FQDN AO 1.snwl.com,check if it can be resolved with 4 ipv6 hosts\n3. configure dns server, add another host ip to the domain name\n4. wait for a while,check if the FQDN AO can be resolved with 5 ipv6 hosts.",
+    "atm_id": " 2f4f5bb5-c636-4fd4-b1b2-b623f9baf414",
+    "initial": " n/a",
+    "id": "tc07",
+    "title": " Function test when the resolved IPv6 addresses increased ",
+    "description": "",
+    "result": "in step4,<span>the FQDN AO can be resolved with increased host ip</span>"
+  },
+  "tc08": {
+    "steps": "configure dns server ,add a domain name like 1.snwl.com with 4 ipv6 hosts.\n2. add a FQDN AO 1.snwl.com,check if it can be resolved with 4 ipv6 hosts.\n3. configure dns server, delete a ipv6 host to the domain name\n4. wait for a while,check if the FQDN AO can be resolved with 3 ipv6 hosts.\n",
+    "atm_id": "c207a802-6eae-406e-bdab-54c2ee05a324 ",
+    "initial": " n/a ",
+    "id": "tc08",
+    "title": "Function test when the resolved IPv6 addresses decreased ",
+    "description": "",
+    "result": "in step4,<span>the FQDN AO can be solved with decreased host ip</span>\n\n"
+  },
+  "tc10": {
+    "steps": "add a FQDN AO which can resolved IPV6 address such as www.google.com\n2. enable \" Manually set DNS entries' TTL \",set TTL to 150.\n3. check if resolved ipv6 hosts with TTL 150\n4. wait for TTL expired and offset time elapsed,check if SonicOS resend dns qurey,and then mark the TTL with set value.\n",
+    "atm_id": "b852b9f2-625c-42d7-8fc5-f23d1d6b92c4 ",
+    "initial": " n/a",
+    "id": "tc10",
+    "title": "test option \" Manually set DNS entries' TTL \" on IPv6 FQND AO page ",
+    "description": "",
+    "result": "option \" Manually set DNS entries' TTL \" work normally"
+  },
+  "tc12": {
+    "steps": "add a FQDN AO which can resolved IPV6 address such as www.google.com\n2. wait for TTL expired and offset time elapsed,from captured packet check if SonicOS resend dns qurey.\n",
+    "atm_id": "aab73e40-9495-4ec3-97a9-11a48691ba54 ",
+    "initial": " n/a",
+    "id": "tc12",
+    "title": " Verify when one of the binding host's TTL has expired,",
+    "description": "",
+    "result": "in step 2,from captured packet will find SonicOS resend dns qurey."
+  },
+  "tc18": {
+    "steps": "Log->setting,enable Display Events in Log Monitor,and set the interval time to 0\n2. Add a FQDN AO like www.google.com\n3. wait for a while,check log If show\" Added host entry to dynamic address object\"",
+    "atm_id": "c6acd0d5-1a1e-4350-b9fb-dd68ebd2c4a0 ",
+    "initial": " ",
+    "id": "tc18",
+    "title": "Log support: Added Host Entry to dynamic address object ",
+    "description": "",
+    "result": "<span>\" Added host entry to dynamic address object\" is shown in log</span>"
+  },
+  "tc25": {
+    "steps": "add a ipv6 FQDN,eg ipv6.google.com\n2. add an access rule ,from lan to wan,source any ,dest ipv6.google.com,action as deny\n3. from lan pc,ping ipv6.google.com\n4. add access rule from dmz/wlan/custom zone to wan zone ,and use FQDN ipv6 AO,repeat step 2 and 3",
+    "atm_id": " 912d0850-2d6a-4165-bf1f-34dc2bb200b6",
+    "initial": " n/a",
+    "id": "tc25",
+    "title": "IPv6_FQDN_ACL: Deny ACL (LAN-WAN) ",
+    "description": "",
+    "result": "the ping should fail"
+  },
+  "tc26": {
+    "steps": "add a ipv6 FQDN,eg ipv6.google.com\n2. add an access rule ,from lan to wan,source any ,dest ipv6.google.com,action as allow\n3. from lan pc,ping ipv6.google.com\n4. add access rule from dmz/wlan/custom zone to wan zone ,and use FQDN ipv6 AO,repeat step 2 and 3",
+    "atm_id": "5ac55df4-3c38-47b2-ab0e-41be56c25d35 ",
+    "initial": " ",
+    "id": "tc26",
+    "title": "IPV6 FQDN_ACL: Allowed ACL (LAN-WAN) ",
+    "description": "",
+    "result": "the ping should success"
+  },
+  "tc28": {
+    "steps": "1.add a network monitor policy, add a probe target,create new ipv6 FQDN,eg ipv6.google.com <br />2. choose probe type to ping<br />3. check if the policy can be added successfully and if it can be probe\n\n",
+    "atm_id": "4e9187f2-2cc9-42c6-9479-ff5908f284e5",
+    "initial": " n/a ",
+    "id": "tc28",
+    "title": "Add a FQDN based IPv6 Network monitor policy with newly created FQDN Aos ",
+    "description": "",
+    "result": "n/a"
+  },
+  "tc30": {
+    "steps": "add a network monitor policy, add a probe target,use a ipv6 FQDN AO,e.g.ipv6.google.com\n2. choose probe type to ping,choose version IPv6\n3. check if the policy can be added successfully and if it can be probe",
+    "atm_id": " 289b2a8e-0826-4f7b-baf9-a0cfc59763ac",
+    "initial": "n/a ",
+    "id": "tc30",
+    "title": "Add a FQDN based IPv6 Network monitor policy and choose version IPv6 and make sure it works as expected.",
+    "description": "",
+    "result": "n/a"
+  },
+  "tc35": {
+    "steps": "1.network->dns proxy, enabled option \"Enforce DNS Proxy For All DNS Requests \".<br />2.network->address object,add a unsolved FQDN AO like hdhdhdhsjsj.com<br />3.network->dns proxy,enable dns cache,and add a static cache for hdhdhdhsjsj.com <br />4.after a while,check this AO can be resolved\n\nNote:In step 2,if the FQDN AO is unresolved,in step 4,it will take several minutes or click refresh button correctly to update the resolved ip.\n    In step 2, if the FQDN AO is resolved,in step 4,click purge button,it canupdate the resolved ip instantly.",
+    "atm_id": "4b5a3921-05f8-499f-808a-48e72e58c6cc ",
+    "initial": " n/a",
+    "id": "tc35",
+    "title": " Binding test between FQDN AO and DNS Proxy(enforced DNS proxy must be enabled): Add a FQDN AO first and it is unresolved, then add a static DNS cache about this domain",
+    "description": "",
+    "result": "n/a"
+  },
+  "tc50": {
+    "steps": "add a ipv6 FQDN AO\nif it's not used,check if it can be edit,include name/domain name/ttl\n<span>3. if it's not used,check if it can be delete,</span>\n<span><span>4. if it's used,check if it can be edit,include name/domain name/ttl</span></span>\n<span>5.<span>if it's used,check if it can be delete,</span></span>",
+    "atm_id": "69df929f-5ff2-443f-94a2-f9c9de13d502",
+    "initial": "n/a ",
+    "id": "tc50",
+    "title": "edit/delete IPv6 FQDN AO",
+    "description": "",
+    "result": "n/a"
+  },
+  "tc49": {
+    "steps": "1.Add some ipv6 FQDN AOs�/AO groups on primary DUT,check the status ON both DUT<br />2.add some ACL/network monitor policy/syslog/routing which can use ipv6 FQDN Aos<br />3.Download a TSR <br />4.check the IPV6 FQDN AOs and related ACL/network monitor policy/syslog/routing info are correct in TSR",
+    "atm_id": "4616134a-4452-45f3-9531-dfcb79479fcb ",
+    "initial": " ",
+    "id": "tc49",
+    "title": "TSR tes",
+    "description": "",
+    "result": "n/a"
+  },
+  "tc48": {
+    "steps": "1.Add some ipv6 FQDN AOs�/AO groups on primary DUT,check the status ON both DUT<br />2.add some ACL/network monitor policy/syslog/routing which can use ipv6 FQDN Aos<br />3.restart DUT<br />4.check the IPV6 FQDN AOs and related ACL/network monitor policy/syslog/routing can be worked well\n\n",
+    "atm_id": "c55c0ac9-343e-428e-8dd8-058a24e1b434 ",
+    "initial": " ",
+    "id": "tc48",
+    "title": " Restart test ",
+    "description": "",
+    "result": "n/a"
+  },
+  "tc47": {
+    "steps": "1.Add some ipv6 FQDN AOs�/AO groups on primary DUT,check the status ON both DUT<br />2.add some ACL/network monitor policy/syslog/routing which can use ipv6 FQDN Aos<br />3.export prefs<br />4.factory default DUT,and import exported prefs,check is everything OK<br />5.modify or delete or add some ipv6 FQDN AOs�/AO groups/related policies<br />6. import exported prefs,check is everything OK\n\n",
+    "atm_id": "f1f07a70-89e7-4217-9be3-5f7c0e38efe0",
+    "initial": " ",
+    "id": "tc47",
+    "title": " Prefs export and import test",
+    "description": "",
+    "result": "n/a"
+  }
+}

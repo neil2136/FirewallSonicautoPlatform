@@ -1,0 +1,107 @@
+{
+   "11" : {
+      "steps" : "  Reporting radius statistics should be cleared",
+      "initial" : "  1. DELETE to the endpoint:\n  https://192.168.168.168/api/sonicos/resporting/radius\n  2. Ensure the above command returns Success = true\n  3. GET the statistics from the same endpoint and verify they are cleared.",
+      "id" : "11",
+      "title" : "DELETE reporting radius statistics",
+      "result" : "  TBD"
+   },
+   "01" : {
+      "steps" : "  Config change should be taken and displayed.",
+      "initial" : "  1. PUT user radiius settings:\n  Endpoint:\n  JSON:\n  2. Ensure the above command returns Success = true\n  3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n  4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n  5. Verify commit is successful.",
+      "id" : "01",
+      "title" : "PUT User radius settings",
+      "result" : "  TBD"
+   },
+   "05" : {
+      "steps" : "  Config change should be taken and displayed.",
+      "initial" : "  1. PUT Radius Server configuration:\n  Endpoint:\n  https://192.168.168.168/api/sonicos/user/radius/server/x.x.x.x\n  JSON:\n  {\n  \"user\": {\n  \"radius\": {\n  \"server\": [{\n  \"host\": \"10.10.10.10\",\n  \"port\": {\n  \"port_num\": 1812\n  },\n  \"shared_secret\": {\n  \"secret\": \"4,e229f13374f389ced9444d36702d6b5de7b8070905aa71b37cecd2583758b31a4f0a91e55d2c603d\"\n  },\n  \"send_through_vpn_tunnel\": false,\n  \"user_name_format\": {\n  \"user_name\": true\n  },\n  \"enable\": true\n  }]\n  }\n  }\n  }\n  2. Ensure the above command returns Success = true\n  3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n  4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n  5. Verify commit is successful.",
+      "id" : "05",
+      "title" : "PUT radius server using name",
+      "result" : "  TBD"
+   },
+   "12" : {
+      "steps" : "  Error is displayed",
+      "initial" : "  1. Attempt POST with non-existant radius server configuration:\n  Endpoint:\n  https://x.x.x.x/api/sonicos/user/radius/settings\n  JSON:\n  {\n  \"user\": {\n  \"radius\": {\n  \"server\": [\n  {\n  \"host\": \"10.10.10.14\",\n  \"port\": {\n  \"port_num\": 51812\n  },\n  \"shared_secret\": {\n  \"secret\": \"4,b40fb94c8b96a26eb300a4bf12b35ff94469c1a91b324297172c6ffe3d985ca21347f555aef1b9eb\"\n  },\n  \"send_through_vpn_tunnel\": true,\n  \"user_name_format\": {\n  \"name_dot_domain\": true\n  },\n  \"enable\": true\n  }\n  ]\n  }\n  }\n  }",
+      "id" : "12",
+      "title" : "Attempt PUT to non-existant radius server",
+      "result" : "  TBD"
+   },
+   "04" : {
+      "steps" : "  The particular user object referred by name should be displayed.",
+      "initial" : "  1. GET the radius server configuration.\n  Endpoint:\n  https://x.x.x.x/api/sonicos/user/radius/server/x.x.x.x",
+      "id" : "04",
+      "title" : "GET user radius server using name",
+      "result" : "  TBD"
+   },
+   "15" : {
+      "steps" : "  TSR should show all the user objects added via API",
+      "initial" : "  Edit user radius using API ",
+      "id" : "15",
+      "title" : "user radius objects in TSR",
+      "result" : "  TBD"
+   },
+   "14" : {
+      "steps" : "  Error is displayed",
+      "initial" : "  1. Attempt to DELETE to the radius server endpoint: https://192.168.168.168/api/sonicos/user/radius/server/10.10.10.14",
+      "id" : "14",
+      "title" : "Attempt to DELETE non-existant radius server by name",
+      "result" : "  TBD"
+   },
+   "02" : {
+      "steps" : "  All user radius settings should be displayed.",
+      "initial" : "  1.GET the user radius settings:\n  curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/user/radius/settings",
+      "id" : "02",
+      "title" : "GET User radius settings",
+      "result" : "  TBD"
+   },
+   "07" : {
+      "steps" : "  User radius servers should be displayed.",
+      "initial" : "  1. GET the radius servers configuration.\n  Endpoint:\n  https://x.x.x.x/api/sonicos/user/radius/servers",
+      "id" : "07",
+      "title" : "GET Radius servers",
+      "result" : "  TBD"
+   },
+   "03" : {
+      "steps" : "  Config change should be taken and displayed.",
+      "initial" : "  1. POST Radius Server configuration:\n  Endpoint:\n  https://192.168.168.168/api/sonicos/user/radius/settings\n  JSON:\n  )\n  {\n  \"user\": {\n  \"radius\": {\n  \"server\": [\n  {\n  \"host\": \"10.10.10.10\",\n  \"port\": {\n  \"port_num\": 51812\n  },\n  \"shared_secret\": {\n  \"secret\": \"4,b40fb94c8b96a26eb300a4bf12b35ff94469c1a91b324297172c6ffe3d985ca21347f555aef1b9eb\"\n  },\n  \"send_through_vpn_tunnel\": true,\n  \"user_name_format\": {\n  \"name_dot_domain\": true\n  },\n  \"enable\": true\n  }\n  ]\n  }\n  }\n  }\n  2. Ensure the above command returns Success = true\n  3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n  4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n  5. Verify commit is successful.",
+      "id" : "03",
+      "title" : "POST User radius server",
+      "result" : "  TBD"
+   },
+   "08" : {
+      "steps" : "  Config change should be taken and displayed.",
+      "initial" : "  1. POST Multiple Radius Server configuration:\n  Endpoint:\n  https://192.168.168.168/api/sonicos/user/radius/settings\n  JSON:\n  {\n  \"user\": {\n  \"radius\": {\n  \"server\": [\n  {\n  \"host\": \"10.10.10.11\",\n  \"port\": {\n  \"port_num\": 1812\n  },\n  \"shared_secret\": {\n  \"secret\": \"4,d5afbc374e85edcf7eda1cad74ad5f7d23d4a83dd5b3ee15757b92bdf1d645b03dea11923d948a05\"\n  }\n  },\n  {\n  \"host\": \"10.10.10.12\",\n  \"port\": {\n  \"port_num\": 1812\n  },\n  \"shared_secret\": {\n  \"secret\": \"4,3dea11923d948a053f0eb98c7e4bd12712e1ad8b7f5d5a6cea356afa080f91d480a5e18c79adbb5b\"\n  }\n  }\n  ]\n  }\n  }\n  }\n  2. Ensure the above command returns Success = true\n  3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n  4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n  5. Verify commit is successful.",
+      "id" : "08",
+      "title" : "PUT User radius server settings",
+      "result" : "  TBD"
+   },
+   "13" : {
+      "steps" : "  Error is displayed",
+      "initial" : "  1. GET the server configuration:\n  Endpoint:\n  https://x.x.x.x/api/sonicos/user/radius/server/10.10.10.14",
+      "id" : "13",
+      "title" : "Attmpt to get non-existant radius server using name",
+      "result" : "  TBD"
+   },
+   "10" : {
+      "steps" : "  Reporting radius statistics should be shown",
+      "initial" : "  1. GET the reporting radius statistics:\n  Endpoint:\n  https://192.168.168.168/api/sonicos/reporting/radius/x.x.x.x",
+      "id" : "10",
+      "title" : "GET reporting radius statistics",
+      "result" : "  TBD"
+   },
+   "06" : {
+      "steps" : "  Config change should be taken and displayed.",
+      "initial" : "  1. POST Multiple Radius Server configuration:\n  Endpoint:\n  https://192.168.168.168/api/sonicos/user/radius/settings\n  JSON:\n  {\n  \"user\": {\n  \"radius\": {\n  \"server\": [\n  {\n  \"host\": \"10.10.10.11\",\n  \"port\": {\n  \"port_num\": 51812\n  },\n  \"shared_secret\": {\n  \"secret\": \"4,d5afbc374e85edcf7eda1cad74ad5f7d23d4a83dd5b3ee15757b92bdf1d645b03dea11923d948a05\"\n  }\n  },\n  {\n  \"host\": \"10.10.10.12\",\n  \"port\": {\n  \"port_num\": 51812\n  },\n  \"shared_secret\": {\n  \"secret\": \"4,3dea11923d948a053f0eb98c7e4bd12712e1ad8b7f5d5a6cea356afa080f91d480a5e18c79adbb5b\"\n  }\n  }\n  ]\n  }\n  }\n  }\n  2. Ensure the above command returns Success = true\n  3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n  4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n  5. Verify commit is successful.",
+      "id" : "06",
+      "title" : "POST multiple radius servers",
+      "result" : "  TBD"
+   },
+   "09" : {
+      "steps" : "  Specific radius server object should be deleted.",
+      "initial" : "  1. DELETE to the radius server endpoint: https://192.168.168.168/api/sonicos/user/ldap/radius/x.x.x.x\n  2. Ensure the above command returns Success = true i\n  3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n  4. Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n  5. Verify commit is successful.",
+      "id" : "09",
+      "title" : "DELETE radius server by name",
+      "result" : "  TBD"
+   }
+}

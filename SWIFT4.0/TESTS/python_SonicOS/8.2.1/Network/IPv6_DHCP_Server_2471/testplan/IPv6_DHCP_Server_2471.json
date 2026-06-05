@@ -1,0 +1,415 @@
+{
+   "33" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . set Preferred time as 60 s and Valid lifetime as 120s\n  4.Using multiple PC or router as DHCP client , connect to it.\n  5.Capture the packet between the client and server.",
+      "initial" : "  DHCP Client 1 Client2------X3/X4 DU",
+      "id" : "33",
+      "title" : "Multiple Client in same interface (Dynamic entry)",
+      "result" : "  All the DHCP clients can get correct info from DHCP server."
+   },
+   "32" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n  4.Using a PC or router as client, connect to it.\n  5.After the Client get correct IP info from DHCP server, Sent Release manually form DHCP client.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "32",
+      "title" : "Server get release message form Client",
+      "result" : "  DHCP server send reply message to client and release the IP address"
+   },
+   "21" : {
+      "steps" : "  1.Set interface X0 as LAN zone, and set proper IPv6 address : 2001:250:6001:1::1 Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:6001:1:: 2-2001:250:6001:1::5) .\n  3.Using a PC or router as client, connect to X0. Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client ------X0 DUT",
+      "id" : "21",
+      "title" : "Message Validation <Client in LAN zone, verify basic IP info>",
+      "result" : "  DHCPv6 Client Send DHCPv6 Solicit Message to DUT\n  DUT: Send DHCPv6 Advertise Message through X0.\n  DHCPv6 Client Send DHCPv6 Request Message to DUT.\n  DHCP server Send DHCPv6 Reply Message."
+   },
+   "7" : {
+      "steps" : "  Go to the DHCPv6 Server page, Dynamic Tab Go to Add pop-up page, Input proper IP ranges such as :Range start :2005:250:6001:1::1 -range end:2005:250:6001:1::20\n  Input Valid values in Prefix 2005:250:6001:1\n  Hit Update after each input.",
+      "initial" : "  n/a",
+      "id" : "7",
+      "title" : "Valid Prefix",
+      "result" : "  The box should allow valid value to be entered in the GUI"
+   },
+   "26" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n  3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "26",
+      "title" : "Message Validation< Client gets Valid Lifetime Info with Dynamic lease >",
+      "result" : "  DHCPv6 Client gets correct Valid Lifetime from DHCP serve"
+   },
+   "2" : {
+      "steps" : "  Go to the DHCP Server page, Dynamic Tab Try to input a string (Min length 1 and MAX length 49) in Name option\n  Hit Accept",
+      "initial" : "  N/A",
+      "id" : "2",
+      "title" : "Valid Name",
+      "result" : "  The configuration above will be allowed."
+   },
+   "17" : {
+      "steps" : "  Go to DHCP Server, Choose IPv6.\n  Add a dynamic entry.\n  High light the entry and click delete button",
+      "initial" : "  N/A",
+      "id" : "17",
+      "title" : "Delete Single Dynamic Entry",
+      "result" : "  The specific entry can be deleted."
+   },
+   "1" : {
+      "steps" : "  1.Go to the DHCP Server page. Click IPV6 button in the right corn of the page.\n  2.Click Enable DHCPv6 server option (The Enable DHCPv6 server is enabled by default) Hit Accept\n  3.Disable Enable DHCPv6 server option Hit Accept",
+      "initial" : "  N/A",
+      "id" : "1",
+      "title" : "Enable/Disable DHCP Server",
+      "result" : "  DHCP Server option is being Enabled/disabled."
+   },
+   "18" : {
+      "steps" : "  Go to DHCP Server, Choose IPv6.\n  Add multiple static entries Click Delete All button",
+      "initial" : "  n/a",
+      "id" : "18",
+      "title" : "Delete Multiple Dynamic Entries",
+      "result" : "  All the entries can be deleted"
+   },
+   "30" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n  4.Using a PC or router as client, connect to it to get IPv6 info from DHCPv6 server.\n  5.After the Client got the IP address info,\n  6.Disable the corresponding DHCP scope.\n  7.Do renew manually from the old DHCP client.\n  8.Then, add a new PC2 connect to interface X3 ,try to get IP ,DNS info etc from DHCP server.",
+      "initial" : "  Topology1 DHCP Client1 ------X3/X4 DUT",
+      "id" : "30",
+      "title" : "Disable DHCP scope",
+      "result" : "  After the Client got the IP info from DHCPv6 server, there is an entry display in Current DHCPv6 Leases table. When the user disable the DHCP entry, the entry above will disappeared , the old DHCP client can extend the old DHCP lifetime, the new DHCP client cant get IP ,DNS info etc from DHCP server."
+   },
+   "16" : {
+      "steps" : "  Go to the DHCP Server page. Go to configuration pop-up page, In the Domain name section, try to enter a value @^&*ty, Hit Update after input.",
+      "initial" : "  N/A",
+      "id" : "16",
+      "title" : "Invalid Domain",
+      "result" : "  The box should not the value to be updated in the GUI."
+   },
+   "44" : {
+      "steps" : "  1.Set an interface such as X3/X4 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Set X1 and X2 of DHCP relay as different zone, enable DHCP relay in Router or Switch.Set X1 IP address is 2001:250:8001:1::1/64 X2 IP address is 2001:250:7001:2\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::20) , and (2001:250:8001:2-2001:250:8001:50)\n  4.Using a PC or router as DHCP client, connect to it.",
+      "initial" : "  Topology1 DHCP Client 1 Client2--x1Router/Switch(DHCP relay)-x2---X3/X4 DUT",
+      "id" : "44",
+      "title" : "DHCP server deployment with different Relay agent",
+      "result" : "  The DHCP client can get correct info from DHCP server"
+   },
+   "55" : {
+      "steps" : "  1.customized some configuration of DHCPv6 server\n  2.export TSR",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "55",
+      "title" : "TSR support.",
+      "result" : "  The TSR display correct information of DHCPv6 server."
+   },
+   "27" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n  3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "27",
+      "title" : "Message Validation< Client gets Preferred Lifetime Info with Dynamic lease >",
+      "result" : "  DHCPv6 Client gets correct Preferred Lifetime from DHCP server."
+   },
+   "25" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . In the DNS page, Choose Inherit DNS Settings Dynamically from the SonicWALL's DNS settings or manual input proper DNS settings.\n  3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "25",
+      "title" : "Message Validation< Client gets DNS Name Info with Dynamic lease >",
+      "result" : "  DHCPv6 Client gets correct DNS settings from DHCP server."
+   },
+   "28" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . set Preferred time as 60 s and Valid lifetime as 120s\n  3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "28",
+      "title" : "Verify the Server behavior in T1 time",
+      "result" : "  The Advertise Message /reply Message there is T1/T2 time send to client, After T1 time after the Client get IP address info from DHCP server, the client send Renew message to DHCP Server, the DHCP server will send the Reply message to DHCP client. sends back the IA to the client with new lifetimes and T1/T2\n  times"
+   },
+   "57" : {
+      "steps" : "  1.Customized some configuration of DHCP server.\n  2.Using a DHCPv6 client connected to DHCP server, after the DHCPv6 client get information from DHCPv6 server.\n  3.then, plug out the cable of DHCP server\n  4.Then, plug in the cable of DHCP server.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "57",
+      "title" : "Plug in/out the cable of DHCP server",
+      "result" : "  DHCP server should behave healthy."
+   },
+   "40" : {
+      "steps" : "  1. DHCP client gets a lease;\n  2. Set Preferred Lifetime as 5 minutes and Valid Lifetime as 12 minutes;\n  3. Disconnect the first client;\n  4. Staticly assigned the old IP to another DHCP client;\n  5. Before the least time expire, connect back the first DHCP client.",
+      "initial" : "  n/a",
+      "id" : "40",
+      "title" : "Test to see if IP addresses that are already in the network (statically assigned) are not offered by the server to any of the DHCP clients.",
+      "result" : "  Verify the first DHCP client should not get the same lease."
+   },
+   "14" : {
+      "steps" : "  Go to the DHCP Server page. Go to configuration pop-up page, In the DNS Server section, Choose Specify Manually, try to enter the following IPs : 2001:25de::cade\n  2001:0db8:85a3:08d3:1319:8a2e:0370:7344\n  Hit Update after each input",
+      "initial" : "  N/A",
+      "id" : "14",
+      "title" : "Valid DNS Server Values",
+      "result" : "  The box should allow these values to be updated in the GUI."
+   },
+   "20" : {
+      "steps" : "  Go to DHCP Server, Choose IPv6.\n  Add multiple static entries Click Delete All button",
+      "initial" : "  N/A",
+      "id" : "20",
+      "title" : "Verify the DUID for each DHCP lease entry",
+      "result" : "  All the entries can be deleted."
+   },
+   "59" : {
+      "steps" : "  1 DUT set as HA mode and configure HA management interface\n  2 Configure DHCPv6 client on DUT\n  3 Enable DHCPv6 server on DUT and some clients gets DHCPv6 IP successfully\n  4 Start LAN/LAN, LAN/WAN, WAN/LAN traffic and HA management interface Traffic\n  5 Keep DHCPv6 server enable and disable DHCPv6 client and repeat steps 4\n  6 Disable DHCPv6 server and enable DHCPv6 client and repeat step 4\n  7 Disable both DHCPv6 server and DHCPv6 client and repeat step 4",
+      "initial" : "  TBD",
+      "id" : "59",
+      "title" : "Verify Traffic pass successfully when both DHCPv6 server and DHCPv6 client enabled-DTS 203466",
+      "result" : "  Verify traffic pass through succesfully for step 4~7"
+   },
+   "49" : {
+      "steps" : "  1.Set an interface such as X3/X4 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Set X1 and X2 of DHCP relay2 as different zone, enable DHCP relay in Router or Switch. Set X1 IP address is 2001:250:8001:1::1/64 X2 IP address is 2001:250:7001:2\n  3.Set X1 and X2 of DHCP relay1 as different zone, enable DHCP relay in Router or Switch. Set X1 IP address is 2001:250:9001:1::1/64 X2 IP address is 2001:250:8001:2\n  4.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:9001:1:: 2-2001:250:9001:1::20) , and (2001:250:8001:2-2001:250:8001:50)\n  5.Using a PC or router as DHCP client, connect to it.",
+      "initial" : "  Topology1 DHCP Client 1 Client2--x1Router/Switch(DHCP relay1)-x2---x1Router(DHCP relay2 )x2-------X3/X4 DUT",
+      "id" : "49",
+      "title" : "Stateless DHCP server-DHCP server deployment with multi-layer Relay agent",
+      "result" : "  The DHCP client can get correct info from DHCP server"
+   },
+   "24" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZCustom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . In the DNS page, input some value in Domain Name\n  3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "24",
+      "title" : "Message Validation< Client gets Domain Name Info with Dynamic lease >",
+      "result" : "  DHCPv6 Client get correct Domain Name from DHCP server"
+   },
+   "10" : {
+      "steps" : "  Go to the DHCP Server page, Dynamic Tab Go to Add pop-up page, Set Preferred Lifetime to 0, -5 or empty , or smaller than Valid Lifetime value. Hit Update after each input",
+      "initial" : "  N/A",
+      "id" : "10",
+      "title" : "Invalid Preferred Lifetime Value",
+      "result" : "  The box should not allow zero or negative value to be entered in the GUI"
+   },
+   "31" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n  4.Using a PC or router as client, connect to it.\n  5.After the Client got the IP address info, do renew manually from DHCP client.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "31",
+      "title" : "Server get renew message form Client",
+      "result" : "  After the Client got the IP info from DHCPv6 server, there is an entry display in Current DHCPv6 Leases table. When the user sent renew message to DHCP server to extend the lease time , the Server send reply message to client and refresh the Current DHCPv6 Leases table , update the lease time info for the entry."
+   },
+   "35" : {
+      "steps" : "  1.Set an interface such as X3 /X4 etc as LAN/DMZ Custom zone, set proper IPv6 address\n  2.Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, and add corresponding DHCP scope.\n  4.Using a router as DHCP client, enable Rapid Commit option , connect to different interface.\n  5.Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client 1 Client2------X3/X4 DUT",
+      "id" : "35",
+      "title" : "Support rapid Commit option",
+      "result" : "  The client includes a Rapid Commit option in the Solicit message, the DHCP server will send a Reply message that includes a Rapid Commit option in response."
+   },
+   "11" : {
+      "steps" : "  Go to the DHCP Server page. Go to configuration pop-up page, Set Preferred Lifetime to 0 and 71582789 with other proper settings Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "11",
+      "title" : "Valid Preferred Lifetime Value",
+      "result" : "  The box should allow these values to be entered in the GUI"
+   },
+   "53" : {
+      "steps" : "  Maximum number of leases supported can be obtained from the field DHCPS Leases in productMatrix.",
+      "initial" : "  N/A",
+      "id" : "53",
+      "title" : "Maximum number of leases",
+      "result" : "  Maximum number of leases given by DHCP Server matches the maximum value defined for the product."
+   },
+   "48" : {
+      "steps" : "  1.Set an interface such as X3/X4 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Set X1 and X2 of DHCP relay as different zone, enable DHCP relay in Router or Switch.Set X1 IP address is 2001:250:8001:1::1/64 X2 IP address is 2001:250:7001:2\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::20) , and (2001:250:8001:2-2001:250:8001:50)\n  4.Using a PC or router as DHCP client, connect to it.",
+      "initial" : "  Topology1 DHCP Client 1 Client2--x1Router/Switch(DHCP relay)-x2---X3/X4 DUT",
+      "id" : "48",
+      "title" : "DHCP server deployment with one layer Relay agent",
+      "result" : "  The DHCP client can get correct info from DHCP server"
+   },
+   "42" : {
+      "steps" : "  1. configure dynamic DHCP entry;\n  2. Create two DHCP clients 1 and 2 for LAN.\n  3. Change the request IP for client 1 to be out of DHCP range but still in the same subnet;\n  4. Do DHCP renew for client 1;\n  5. The renew should be failed;\n  6. Change the request IP for client 2 to be out of DHCP range and not in the same subnet;\n  7. Do DHCP renew for client 2;\n  8. The renew should be failed too",
+      "initial" : "  N/A",
+      "id" : "42",
+      "title" : "Request IP that out of DHCP range",
+      "result" : "  DHCP server should behave healthy."
+   },
+   "22" : {
+      "steps" : "  1.Set X2 as DMZ zone, set proper IPv6 address in X2:2001:250:6002:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  2. Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:6002:1:: 2-2001:250:6002:1::5) .\n  3.Using a PC or router as client, connect to X2. Capture the packet between the client and server",
+      "initial" : "  Topology1 DHCP Client ------X2 DUT",
+      "id" : "22",
+      "title" : "Message Validation <Client in DMZ zone, verify basic IP info >",
+      "result" : "  DHCPv6 Client Send DHCPv6 Solicit Message to DUT\n  DUT: Send DHCPv6 Advertise Message through X2.\n  DHCPv6 Client Send DHCPv6 Request Message to DUT.\n  DHCP server Send DHCPv6 Reply Message."
+   },
+   "46" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, dont enable Managed(M) Address Configuration , Click Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . set Preferred time as 60 s and Valid lifetime as 120s, set DNS info and domain name info etc.\n  4.Using multiple PC or router as DHCP client , connect to it.\n  5.Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client 1 Client2------X3/X4 DUT",
+      "id" : "46",
+      "title" : "Stateless DHCP server-Multiple Client in same interface (Dynamic entry)",
+      "result" : "  DHCPv6 Client Send Information-request message to acquire configuration settings from DHCP server, the DHCP server will send Reply message(without IP address info, included requested configuration settings ).\n  All the DHCP clients sent can get correct info from DHCP server."
+   },
+   "13" : {
+      "steps" : "  Go to the DHCP Server page. Go to configuration pop-up page, In the DNS page, Choose Specify Manually ,try to enter the following IPs : 2001::25de::cade 100g::1 2001:100g::1 2001:250:abcg::1 2001:250:6002:100g::1 2001:250:6003:123:123g::1 2001: 250:6003:123:1230:111g::1 2001: 250:6003:123:1230:1112:111g:1 2001: 250:6003:123:1230:1112:1110:1g Hit Update after each input",
+      "initial" : "  N/A",
+      "id" : "13",
+      "title" : "Invalid DNS Server Values",
+      "result" : "  The box should not allow these values to be updated in the GUI"
+   },
+   "23" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZCustom zone, set proper IPv6 address :2001:250:7001:1::1. Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  2.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) .\n  3.Using a PC or router as client, connect to it. Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "23",
+      "title" : "Message Validation < Client in Custom zone, verify basic IP info >",
+      "result" : "  DHCPv6 Client get correct IP address from DHCP server."
+   },
+   "29" : {
+      "steps" : "  1Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2 Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3 Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) . set Preferred time as 60 s and Valid lifetime as 120s\n  4 Using a PC or router as client, connect to it.\n  5 Capture the packet between the client and server. The Advertise Message /reply Message there is T1/T2 time send to client, disable the DHCP scope.\n  6 After T2 time, enable the DHCP scope.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "29",
+      "title" : "Verify Server behavior in T2 Time",
+      "result" : "  If the server finds that any of the addresses are no longer\n  appropriate for the link to which the client is attached, the server\n  returns the address to the client with lifetimes of 0.\n  If the server finds the addresses in the IA for the client then the\n  server SHOULD send back the IA to the client with new lifetimes and\n  T1/T2 times.\n  The server constructs a Reply message by setting the msg-type field\n  to REPLY, and copying the transaction ID from the Rebind message into\n  the transaction-id field."
+   },
+   "6" : {
+      "steps" : "  Go to the DHCPv6 Server page, Dynamic Tab Go to Add pop-up page, Input proper IP ranges such as :Range start :2005:250:6001:1::1 -range end:2005:250:6001:1::20\n  Input invalid values in Prefix such as 2001:250:6001:1 or invalid format such as 2g:250\n  Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "6",
+      "title" : "Invalid Prefix",
+      "result" : "  There would be error reported and the box should not allow invalid value to be entered in the GUI"
+   },
+   "50" : {
+      "steps" : "  1.Set an interface such as X3/X4 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Set X1 and X2 of different DHCP relay (such as Cisco router, huawei router, sonicwall firewall)as different zone, enable DHCP relay in Router or Switch.Set X1 IP address is 2001:250:8001:1::1/64 X2 IP address is 2001:250:7001:2\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::20) , and (2001:250:8001:2-2001:250:8001:50)\n  4.Using a PC or router as DHCP client, connect to it.",
+      "initial" : "  Topology1 DHCP Client 1 Client2--x1Router/Switch(DHCP relay)-x2---X3/X4 DUT",
+      "id" : "50",
+      "title" : "Stateless DHCP server-DHCP server deployment with different Relay agent",
+      "result" : "  The DHCP client can get correct info from DHCP server"
+   },
+   "39" : {
+      "steps" : "  1. Configure dynamic DHCPv6 entry with IP address number is 3.\n  2. Connect more than 3 DHCPv6 client to DHCPv6 server.\n  3. Make sure only three DHCPv6 client can get IP info from DHCPv6 server.\n  4. Keep running ipconfig /renew6 in the PC which didnt get IPv6 info.",
+      "initial" : "  N/A",
+      "id" : "39",
+      "title" : "IP conflicts (client number bigger than ip address number in scope.)",
+      "result" : "  Verify DHCP server behaves healthy"
+   },
+   "3" : {
+      "steps" : "  Go to the DHCP Server page, Dynamic Tab Leave the value in Name option as empty, and finished input proper value in other section.\n  Hit Accept.\n  Try to input a string (length more than 49) in Name option\n  Hit Accept",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "Invalid Name",
+      "result" : "  There would be error report; the configuration above will not be allowed."
+   },
+   "36" : {
+      "steps" : "  1. Following steps in Test Case 4.2.14;\n  2. Edit each interface networks to smaller subnets;\n  3. Verify DHCP ranges changes accordingly;\n  4. Set Preferred Lifetime as 3 minutes and Valid Lifetime as 5 minutes\n  5. Verify clients on each interface get leases successfully;\n  6. Do release6/renew6 on each client; verify all clients get leases successfully",
+      "initial" : "  N/A",
+      "id" : "36",
+      "title" : "Update to shorter expire time and smaller subnets on multiple zones",
+      "result" : "  Verify DHCP client on each interface get leases successfully"
+   },
+   "9" : {
+      "steps" : "  Go to the DHCP Server page. Go to configuration pop-up page, Set Valid Lifetime to 0 and 71582789 with other proper settings Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "9",
+      "title" : "Valid Lifetime Value",
+      "result" : "  The box should allow these values to be entered in the GUI."
+   },
+   "51" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZCustom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, Click Managed(M) Address Configuration , Click Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) , Set DNS info and related Option .\n  4.Using a PC or router as client, connect to it.\n  5.Capture the packet between the client and server.\n  6.Go to configuration page of interface X3, Dont Click Managed(M) Address Configuration , Click Other (O) Configuration flag and input proper value in Advanced page.\n  7.Go to DHCPv6 client, disable the network card, then, re-enable it .\n  8.Repeat step2 ,change the DHCPv6 server mode as Stateful again.\n  9.Go to DHCPv6 client, disable the network card, then, re-enable it .",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "51",
+      "title" : "Exchange between stateless and stateful mod",
+      "result" : "  1.As Stateful mode, capture packets from dhcpv6 server and dhcp client, there is four message: solicit/advertise ,request/reply message exchanged. And the DHCP server sent IP info and other configuration settings to dhcp client.\n  2.In Stateless mode,DHCPv6 Client Send Information-request message to acquire configuration settings from DHCP server, the DHCP server will send Reply message(without IP address info, included requested configuration settings) ).Exchange the mode, the DHCPv6 server still work fine."
+   },
+   "58" : {
+      "steps" : "  1.Customized some configuration of DHCP server.\n  2.Restarted the firewall",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "58",
+      "title" : "Restart the firewall , all configuration of DHCPv6 server saved.",
+      "result" : "  1.Restarted the firewall ,all configuration of DHCPv6 server saved."
+   },
+   "41" : {
+      "steps" : "  1. Configure a DHCPv6 Entry with address IP1,Set Preferred Lifetime as 5 minutes and Valid Lifetime as 12 minutes;\n  2. Configure a DHCPv6 client to get the lease with IP1;\n  3. Disconnect the client as soon as the lease is obtained;\n  4. Now configure another client in the network;\n  5. IP1 must be leased to the new client after the 5 minutes lease time",
+      "initial" : "  N/A",
+      "id" : "41",
+      "title" : "Address reusability",
+      "result" : "  Verify DHCPv6 server behaves healthy"
+   },
+   "12" : {
+      "steps" : "  Go to the DHCP Server page. Go to configuration pop-up page, Input the value in Comments option\n  Hit Update after each input.",
+      "initial" : "  n/a",
+      "id" : "12",
+      "title" : "Add Comments Value",
+      "result" : "  The box should allow these values to be entered in the GUI."
+   },
+   "47" : {
+      "steps" : "  1.Set an interface such as X3 /X4 etc as LAN/DMZ Custom zone, set proper IPv6 address\n  2.Enable Enable Router Advertisement, Dont click Managed(M) Address Configuration , Click Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, and add corresponding DHCP scope. Set different DNS info and related Option for each scope.\n  4.Using multiple PC or router as DHCP client, connect to different interface.\n  5.Capture the packet between the client and server",
+      "initial" : "  Topology1 DHCP Client 1 Client2------X3/X4 DUT",
+      "id" : "47",
+      "title" : "Stateless DHCP server-Multiple Client in different interface (Dynamic entry)",
+      "result" : "  DHCPv6 Client Send Information-request message to acquire configuration settings from DHCP server, the DHCP server will send Reply message(without IP address info, included requested configuration settings ).\n  All the DHCP clients sent can get correct info corresponding with different scope from DHCP server"
+   },
+   "15" : {
+      "steps" : "  Go to the DHCP Server page, Dynamic Tab, Go to Add pop-up page, DNS tab Choose option of Inherit DNS settings from the SonicWALL DNS settings Set DHCP Dynamic range Client gets dynamic DHCP lease from SonicWALL.",
+      "initial" : "  n/a",
+      "id" : "15",
+      "title" : "DNS Inherit Setting Option For Dynamic Entry",
+      "result" : "  DHCP clients DNS settings match SonicWALL DNS settings when using dynamic IPs ."
+   },
+   "8" : {
+      "steps" : "  Go to the DHCP Server page, Dynamic Tab Go to Add pop-up page, Set Valid Lifetime to 0, -5 or empty with other proper settings Hit Update after each input.",
+      "initial" : "  N/A",
+      "id" : "8",
+      "title" : "Invalid Valid Lifetime Value",
+      "result" : "  The box should not allow zero or negative value to be entered in the GUI"
+   },
+   "52" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZ Custom zone, set proper IPv6 address\n  2.Enable Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, and add corresponding DHCP scope.\n  4.Using PC1 as DHCP client, connect to interface X3.\n  5.Set an interface such as X4 etc as LAN/DMZ Custom zone, set proper IPv6 address\n  6.Enable Enable Router Advertisement, only click Other (O) Configuration flag and input proper value in Advanced page.\n  7.Go to DHCP server, choose IPv6, and add corresponding DHCP scope.\n  8.Using PC2 as DHCP client, connect to interface X4.\n  9.Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client 1 Client2------X3/X4 DUT",
+      "id" : "52",
+      "title" : "Mix stateless and stateful",
+      "result" : "  1.As Stateful mode, capture packets from dhcpv6 server and dhcp client pc1, there is four message: solicit/advertise ,request/reply message exchanged. And the DHCP server sent IP info and other configuration settings to dhcp client.\n  2.In Stateless mode,DHCPv6 Client PC2 Send Information-request message to acquire configuration settings from DHCP server, the DHCP server will send Reply message(without IP address info, included requested configuration settings)"
+   },
+   "38" : {
+      "steps" : "  1. After following steps in Test Case 4.2.17;\n  2. From DHCP server, choose one interface (x0) and reduce range to a single lease on this interface;\n  3. Place two clients on the interface;\n  4. Verify only one client could get lease on this interface;\n  5. Verify all clients on other interfaces could get leases successfully;\n  6. Do release6/renew6 on each client, verify clients get leases correctly;\n  7. perform step 2) on other NAT interfaces each time and followed by steps 3) to 6), verify DHCP server behave health",
+      "initial" : "  N/A",
+      "id" : "38",
+      "title" : "Update to a single lease IP range on each interface",
+      "result" : "  Verify DHCP client on each interface get leases successfully"
+   },
+   "4" : {
+      "steps" : "  Go to the DHCP Server page, Dynamic Tab In the Dynamic Entry Range section, try to enter the following IPs : 2001::25de::cade\n  100g::1\n  2001:100g::1\n  2001:250:abcg::1\n  2001:250:6002:100g::1\n  2001:250:6003:123:123g::1\n  2001: 250:6003:123:1230:111g::1\n  2001: 250:6003:123:1230:1112:111g:1\n  2001: 250:6003:123:1230:1112:1110:1g\n  Hit Update after each IP address.",
+      "initial" : "  N/A",
+      "id" : "4",
+      "title" : "Invalid Dynamic Address Value",
+      "result" : "  The box should not allow any of the numbers to be entered in the GUI."
+   },
+   "34" : {
+      "steps" : "  1.Set an interface such as X3 /X4 etc as LAN/DMZ Custom zone, set proper IPv6 address\n  2.Enable Router Advertisement, enable Managed(M) Address Configuration and Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, and add corresponding DHCP scope.\n  4.Using multiple PC or router as DHCP client, connect to different interface.\n  5.Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client 1 Client2------X3/X4 DUT",
+      "id" : "34",
+      "title" : "Multiple Client in different interface (Dynamic entry)",
+      "result" : "  All the DHCP clients can get correct info from DHCP server."
+   },
+   "56" : {
+      "steps" : "  1.Customized some configuration of Firewall1 as stateless DHCP server\n  2.Configure Firewall1 as primary HA, and Firewall2 as backup firewall",
+      "initial" : "  N/A",
+      "id" : "56",
+      "title" : "Stateless HA support",
+      "result" : "  The primary and back up firewall should work fine, all configuration should be synchronized"
+   },
+   "45" : {
+      "steps" : "  1.Set an interface such as X3 etc as LAN/DMZCustom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Enable Enable Router Advertisement, Dont click Managed(M) Address Configuration , Click Other (O) Configuration flag and input proper value in Advanced page.\n  3.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:7001:1:: 2-2001:250:7001:1::5) , Set DNS info and related Option .\n  4.Using a PC or router as client, connect to it.\n  5.Capture the packet between the client and server.",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "45",
+      "title" : "Stateless DHCP server -Message Validation",
+      "result" : "  DHCPv6 Client Send Information-request message to acquire configuration settings from DHCP server, the DHCP server will send Reply message(without IP address info, included requested configuration settings )."
+   },
+   "37" : {
+      "steps" : "  1. After following steps in Test Case 4.2.16;\n  2. Edit each interface networks to bigger subnets;\n  3. Verify DHCP ranges changes accordingly;\n  4. Set Preferred Lifetime as 20 minutes and Valid Lifetime as 42 minutes\n  5. Verify clients on each interface get leases successfully;\n  6. Do release/renew on each client, verify all clients get leases successfully",
+      "initial" : "  n/a",
+      "id" : "37",
+      "title" : "Update to greater expire time and greater subnets on multiple zones",
+      "result" : "  Verify DHCP client on each interface get leases successfully"
+   },
+   "43" : {
+      "steps" : "  1.Set an interface such as X3/X4 etc as LAN/DMZ Custom zone, set proper IPv6 address :2001:250:7001:1::1.\n  2.Set X1 and X2 of DHCP relay2 as different zone, enable DHCP relay in Router or Switch. Set X1 IP address is 2001:250:8001:1::1/64 X2 IP address is 2001:250:7001:2\n  3.Set X1 and X2 of DHCP relay1 as different zone, enable DHCP relay in Router or Switch. Set X1 IP address is 2001:250:9001:1::1/64 X2 IP address is 2001:250:8001:2\n  4.Go to DHCP server, choose IPv6, add corresponding DHCP scope (2001:250:9001:1:: 2-2001:250:9001:1::20) , and (2001:250:8001:2-2001:250:8001:50)\n  5.Using a PC or router as DHCP client, connect to it.",
+      "initial" : "  Topology1 DHCP Client 1 Client2--x1Router/Switch(DHCP relay1)-x2---x1Router(DHCP relay2 )x2-------X3/X4 DUT",
+      "id" : "43",
+      "title" : "DHCP server deployment with multi-layer Relay agent",
+      "result" : "  The DHCP client can get correct info from DHCP serve"
+   },
+   "19" : {
+      "steps" : "  Go to DHCP Server, Choose IPv6.\n  Add multiple static entries Click Delete All button",
+      "initial" : "  N/A",
+      "id" : "19",
+      "title" : "Verify the IAID for each DHCP lease entry",
+      "result" : "  All the entries can be deleted."
+   },
+   "54" : {
+      "steps" : "  1.customized some configuration of DHCPv6 server\n  2.export Prefile\n  3.clear all customized configuration\n  4.re-import prefile of step2",
+      "initial" : "  Topology1 DHCP Client ------X3/X4 DUT",
+      "id" : "54",
+      "title" : "Export Prefile and import Prefile.",
+      "result" : "  Export or import the Prefile, dont effect any configuration settings ."
+   },
+   "5" : {
+      "steps" : "  Go to the DHCP Server page, Dynamic Tab In the Dynamic Entry Range section, try to enter the following IP range: 2001:25de::cade -2001:25de::caee\n  2001::1-2001::4\n  2001:0db8:85a3:08d3:1319:8a2e:0370:7344-2001:0db8:85a3:08d3:1319:8a2e:0400:7344\n  Hit Update after each IP address.",
+      "initial" : "  n/a",
+      "id" : "5",
+      "title" : "Valid Dynamic Address Value",
+      "result" : "  The box should allow any of the ranges to be entered in the GUI."
+   }
+}

@@ -1,0 +1,51 @@
+{
+    "34" : {
+        "steps" : "  1.Login to management interface through a web browser.\n  2.Config x1 as WAN zone, x2 as DMZ zone.\n  3)Config PC1, PC2 connect x2, PC's gateway using inerface ip.\n  4)Go to Network->NAT Policy page, delete default NAT policies for outbound traffic, add the following NAT policy:\n  Original Translated Original Translated Original Translated Inbound Outbound:\n  PC1 IP x1 IP Any Original Any Original x2 x1.\n  5)From PC1 and PC2 ping some websites on x1 , capture the packet on the firewall.",
+        "initial" : "  N/A",
+        "id" : "34",
+        "title" : "Verify DMZ to WAN One-to-One policy for outbound traffic",
+        "result" : "  1. The packet shows the source ip translated from PC1 ip  to x1 ip, traffic pass success. And traffic from PC2 to internet is not NATed."
+     },
+     "35" : {
+        "steps" : "  1.Login to management interface through a web browser.\n  2.Config x1 as WAN zone, x2 as DMZ zone.\n  3)Config PC1, PC2 connect x2, PC's gateway using inerface ip.\n  4)Go to Network->NAT Policy page, add the following NAT policy:\n  Original Translated Original Translated Original Translated Inbound Outbound:\n  Any Original x1 IP PC2 ip Any Original x1 Any\n  5)Go to Firewall->Access Rules, add the following policy:\n  WAN->DMZ Any Any ICMP Allow All.\n 6)From PC1 and PC2 ping some websites on x1 , capture the packet on the firewall.",
+        "initial" : "  N/A",
+        "id" : "35",
+        "title" : "Verify WAN to DMZ One-to-One policy for inbound traffic",
+        "result" : "  1. The packet shows the destination ip translated from x1 ip to PC2 ip, traffic pass success."
+     },
+     "37" : {
+        "steps" : "  1.Login to management interface through a web browser.\n  2.)Config x1, x2 as WAN zone, x3:v900 and x3:v953 as DMZ zone.\n  3)Config PC1 and PC2 connect x3:v900(dhcp scope:172.16.1.2-172.16.1.3),PC3 and PC4 connect x3:v953(dhcp scope:172.16.5.2-172.16.5.3), PC's gateway using inerface ip.\n  4)Create an AO group, one group named DMZ group, include range1 (from PC1 ip to PC2 ip) and range2 (from PC3 ip to PC4 ip)\n  5)Go to Network->Failover&LB, put x2 in right panel and config mode as Round Robin\n  6)Go to Network->NAT Policy page, add the following NAT policy:\n  Original Translated Original Translated Original Translated Inbound Outbound:\n  Any Original WAN Interface IP DMZ group Any Original Any Any.\n  7)Go to Firewall->Access Rules, add the following policy:\n  WAN->DMZ Any Any ICMP Allow All\n  8)Using some PCs on Internet ping any ip of WAN Subnets, capture the packet on the firewall. ",
+        "initial" : "  N/A",
+        "id" : "37",
+        "title" : "Verify WAN to multiple DMZs Many-to-Many policy for inbound traffic",
+        "result" : "  1. The packet shows the destination ip translated from x1 ip to PC2 ip, traffic pass success."
+     },
+     "40" : {
+        "steps" : "  1.Login to management interface through a web browser.\n  2.Config x1 as WAN zone, x3 as DMZ zone.\n  3)Config PC1 and PC2 connect x3(dhcp scope:172.16.1.2-172.16.1.3), PC's gateway using inerface ip.\n  4)Create an AO named DMZ range, from PC1 ip and PC2 ip.\n  5)Go to Network->NAT Policy page, add the following NAT policy:\n  Original Translated Original Translated Original Translated Inbound Outbound:\n  Any Original x1 IP DMZ range Any Original x1 Any.\n   6))Go to Firewall->Access Rules, add the following policy:\n  WAN->DMZ Any Any ICMP Allow All.\n  7)Using some PCs on WAN ping x1 ip, capture the packet on the firewall.",
+        "initial" : "  N/A",
+        "id" : "40",
+        "title" : "Verify WAN to DMZ One-to-Many policy for inbound traffic",
+        "result" : "  1. The packet shows the destination ip is translated as expected, traffic pass success."
+     },
+     "41" : {
+        "steps" : "1)Login to management interface through a web browser.\n  2)Config x1 as WAN zone, x2 as DMZ zone.\n  3)Config PC2 connect x2, PC's gateway using inerface ip.\n  4)Go to Firewall->Service page, add the following custom service:\n  Name Protocol Port Range:\n  8888-tcp TCP(6) 8888-8888.\n  5)Go to Network->NAT Policy page, add the following NAT policy:\n  Original Translated Original Translated Original Translated Inbound Outbound:\n  Any Original x1 IP PC2 ip 8888-tcp http x1 Any\n  6)Go to Firewall->Access Rules, add the following policy:\n  WAN->DMZ Any Any 8888-tcp Allow All.\n  7)From PC on WAN log http://x1 ip:8888, capture the packet on the firewall.",
+        "initial": "  N/A",
+        "id": "41",
+        "title": "Verify inbound Port Address Translation via One-to-One NAT Policy",
+        "result": "The packet shows the destination ip and service port is translated as expected, traffic pass success."
+     },
+     "44" : {
+        "steps": "1)Login to management interface through a web browser.\n  2)Config x1 as WAN zone, x2 as DMZ zone\n  3)Config PC1 connect x0, PC2 connect x2, PC's gateway using inerface ip\n  4)Go to Network->NAT Policy page, delete default NAT policies for outbound traffic, add the following NAT policy:\n  Original Translated Original Translated Original Translated Inbound Outbound:\n  X0 Subbets Original 10.8.155.222 PC2 IP Any Original x0 Any\n  6)From PC1 log in http://10.8.155.222, capture the packet on the firewall",
+        "inital": "  N/A",
+        "id": "44",
+        "title": "Verify when One-to-One NAT Policy configured, LAN host can access DMZ server by using server's public address",
+        "result": "The packet shows the destination ip is translated as expected, traffic pass success."
+     },
+     "47" : {
+        "steps": "1)Login to management interface through a web browser\n  2)Config x1 as WAN zone in PPTP mode(obtain ip 192.168.13.128), x2 as DMZ zone\n  3)PC2 connect x2, PC's gateway using inerface ip\n  4)Go to Network->NAT Policy page, add a NAT policy:\n  Original Translated Original Translated Original Translated Inbound Outbound:\n  Any Original x1 IP PC2 ip Any Original x1 Any\n  5)Go to Firewall->Access Rules, add the following policy:\n  WAN->DMZ Any Any ICMP Allow All\n  6)Add a route to 192.168.13.0 in PC1 on the Internet which x1 connected",
+        "inital": "  N/A",
+        "id": "47",
+        "title": "Verify WAN to DMZ One-to-One policy for inbound traffic when WAN is PPTP mode",
+        "result": "The packet shows the destination ip is translated as expected, traffic pass success."
+     }
+}

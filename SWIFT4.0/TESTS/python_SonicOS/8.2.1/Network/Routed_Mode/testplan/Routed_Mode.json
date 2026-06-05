@@ -1,0 +1,114 @@
+{
+   "67" : {
+      "steps" : "  PC1---(X0)FW(X1)---PC2",
+      "initial" : "  Smoke",
+      "id" : "67",
+      "title" : "With the checkbox enabled, test outbound and inbound traffic to verify that the traffic is passing through the unit with no address translations.",
+      "result" : "  1.Configure X0's IP Assignment as static,fill in correct ip and subnet;\n  2.In X0 Advanced tab,enable \"Use Routed Mode\" and set NAT Policy's outbound/inbound interface to X1 ,click OK;\n  3.In PC1 to ping PC2 and capture packets in both PC1 and PC2."
+   },
+   "71" : {
+      "steps" : "  N/A ",
+      "initial" : "  Smoke",
+      "id" : "71",
+      "title" : "Convert an interface which is in LAN\\DMZ with the Routed Mode enabled to L2 Bridged \\Transparent \\Wire Mode \\Tap Mode",
+      "result" : "  1.Configure X2 as LAN/DMZ interface, IP Assignment as static,fill in correct ip and subnet;\n  2.In Advanced tab,enable \"Use Routed Mode\",click OK;\n  3.Check NAT Policies;\n  4.Reconfigure interface X2\u00a3\u00acConvert IP Assignment to Bridged\\Transparent\\Wire Mode\\Tap Mode;\n  5.Check Advanced tab and NAT Policies again."
+   },
+   "70" : {
+      "steps" : "  N/A ",
+      "initial" : "  Smoke",
+      "id" : "70",
+      "title" : "Check if the checkbox is not present for WAN interfaces or when LAN\\DMZ\\WLAN is converted to WAN. In this case also verify that the No NAT policies have been deleted",
+      "result" : "  1.Configure X2 as secondary WAN interface;\n  2.Check Advanced tab;\n  3.Configure X3 as LAN/DMZ interface, IP Assignment as static,fill in correct ip and subnet;\n  4.In Advanced tab,enable \"Use Routed Mode\",click OK;\n  5.Check NAT Policies;\n  6.Reconfigure interface X3, Convert zone to WAN;\n  7.Check Advanced tab and NAT Policies again."
+   },
+   "80" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "80",
+      "title" : "Prefs export/import test for routed mode settings.",
+      "result" : "  1.Configure X2 as LAN/DMZ/WLAN interface, IP Assignment as static,fill in correct ip and subnet;\n  2.In Advanced tab,enable \"Use Routed Mode\" and set NAT Policy's outbound/inbound interface to X1,click OK;\n  3.Export prefile,and then reboot FW with factory default;\n  4.Import the prefile."
+   },
+   "68" : {
+      "steps" : "  N/A ",
+      "initial" : "  Smoke",
+      "id" : "68",
+      "title" : "Check if disabling the \"Use Routed Mode\" checkbox deletes the auto created NAT policies",
+      "result" : "  1.Configure X2 as LAN/DMZ/WLAN interface, IP Assignment as static,fill in correct ip and subnet;\n  2.In Advanced tab,enable \"Use Routed Mode\",click OK;\n  3.Check NAT Policies;\n  4.Reconfigure interface X2\u00a3\u00acdisable \"Use Routed Mode\",click OK;\n  5.Check NAT Policies again."
+   },
+   "78" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "78",
+      "title" : "Verify the routed mode settings remain intact after a reboot.",
+      "result" : "  1.Configure X2 as LAN/DMZ/WLAN interface, IP Assignment as static,fill in correct ip and subnet;\n  2.In Advanced tab,enable \"Use Routed Mode\" and set NAT Policy's outbound/inbound interface to X1,click OK;\n  3.Check NAT Policies and from PC1 to ping PC2,capture packets in both PC1 and PC2.\n  4.Reboot FW;"
+   },
+   "79" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "79",
+      "title" : "Verify the routed mode settings in TSR",
+      "result" : "  1.Configure X2 as LAN/DMZ/WLAN interface, IP Assignment as static,fill in correct ip and subnet;\n  2.In Advanced tab,enable \"Use Routed Mode\" and set NAT Policy's outbound/inbound interface to X1,click OK;\n  3.Download TSR,check the routed mode settings."
+   },
+   "77" : {
+      "steps" : "  PC1---(X0)FW(X1)---PC2",
+      "initial" : "  Full",
+      "id" : "77",
+      "title" : "Verify routed mode is only for IPv4 and it won't impact the IPv6 NAT function.",
+      "result" : "  1.Configure X0's IP Assignment as static,fill in correct ip and subnet;\n  2.In X0 Advanced tab,enable \"Use Routed Mode\" and set NAT Policy's outbound/inbound interface to X1 ,click OK;\n  3.On IPv6 interface page,configure static IPv6 address for X0 and X1,add an NAT policy for PC1 access to PC2,like below:\n  Any X1 IPv6 Primary Static Address Any Original Any Original X0 X1;\n  4.In PC1 to ping PC2 use ipv4 and ipv6 address separately, capture packets in both PC1 and PC2."
+   },
+   "72" : {
+      "steps" : "  N/A ",
+      "initial" : "  Smoke",
+      "id" : "72",
+      "title" : "Change the zone of the interface that is bound to the No-NAT policy to a non-WAN zone and verify that it is not allowed.",
+      "result" : "  1.Configure X2 as secondary WAN;\n  2.Configure X3 as LAN/DMZ/WLAN interface,IP Assignment as static,fill in correct ip and subnet;\n  3.In Advanced tab,enable \"Use Routed Mode\" and set NAT Policy's outbound/inbound interface to X2 ,click OK;\n  4.Go to interface X2,change the zone to a non-WAN zone."
+   },
+   "74" : {
+      "steps" : "  N/A ",
+      "initial" : "  Full",
+      "id" : "74",
+      "title" : "Change the NO_NAT policy's interface to different options and verify that appropriate policies with correct src\\dst interface is configured with the old one delete correctly.",
+      "result" : "  1.Configure X2 as secondary WAN interface;\n  2.Configure X3 as LAN/DMZ interface, IP Assignment as static,fill in correct ip and subnet;\n  3.In Advanced tab,enable \"Use Routed Mode\" and set NAT Policy's outbound/inbound interface to X2 ,click OK;\n  4.Check NAT Policies;\n  5.Reconfigure interface X3,change NAT Policy's outbound/inbound interface to X1(default WAN), click OK;\n  6.Check NAT Policies again."
+   },
+   "75" : {
+      "steps" : "  PC1---(X0)FW(X1)---PC2",
+      "initial" : "  Full",
+      "id" : "75",
+      "title" : "Check the routed mode function with VLAN sub interface",
+      "result" : "  1.Add a vlan interface X0:V100, configure it as LAN/DMZ/WLAN interface, IP Assignment as static,fill in correct ip and subnet;\n  2.In Advanced tab,enable \"Use Routed Mode\" and set NAT Policy's outbound/inbound interface to X1,click OK;\n  3.Check NAT Policies.\n  4.In PC1 to ping PC2 and capture packets in both PC1 and PC2."
+   },
+   "69" : {
+      "steps" : "  N/A ",
+      "initial" : "  Smoke",
+      "id" : "69",
+      "title" : "Check if the checkbox appears only when the interface's zone is LAN, DMZ, WLAN and the custom zones with type of trusted or public or wireless",
+      "result" : "  1.Configure X2 as LAN/DMZ/WLAN/custom zones with type of trusted or public or wireless, IP Assignment as static,fill in correct ip and subnet;\n  2.Check Advanced tab."
+   },
+   "81" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "81",
+      "title" : "Verify can config routed mode in CLI",
+      "result" : "  PC1---X0---DUT---X1---PC2\n  1.In console of DUT,do commands as follows:\n  configure\n  interface X0\n  routed-mode interface X1\n  commit\n  exit\n  show interface X0\n  2.Generate some traffic from X0 PC1 to X1 PC2"
+   },
+   "73" : {
+      "steps" : "  N/A ",
+      "initial" : "  Sanity",
+      "id" : "73",
+      "title" : "From GMS tool try to post config for the No_NAT policy port to be a non-WAN and verify that is not allowed",
+      "result" : "  1.Configure X2 as secondary WAN;\n  2.Configure X3 as LAN/DMZ/WLAN interface,IP Assignment as static,fill in correct ip and subnet;\n  3.In Advanced tab,enable \"Use Routed Mode\" and set NAT Policy's outbound/inbound interface to X2 ,click OK;\n  4.In System->Administration->Advanced Management,enable management using GMS,fill in correct ip address,port,and select management Mode;\n  5.Log in GMS,add this DUT,and then configure interface X2,change the zone to a non-WAN zone."
+   },
+   "66" : {
+      "steps" : "  N/A",
+      "initial" : "  Smoke",
+      "id" : "66",
+      "title" : "Check if enabling the \"Use Routed Mode\" checkbox creates two No-NAT policies, one for outbound and one for inbound.",
+      "result" : "  1.Configure X2 as LAN/DMZ/WLAN interface, IP Assignment as static,fill in correct ip and subnet;\n  2.In Advanced tab,enable \"Use Routed Mode\",click OK;\n  3.Check NAT Policies."
+   },
+   "76" : {
+      "steps" : "  PC1---(X0)FW(X1)---PC2---(X2)",
+      "initial" : "  Full",
+      "id" : "76",
+      "title" : "Check the routed mode function with portshield interface.",
+      "result" : "  1.Configure X0's IP Assignment as static,fill in correct ip and subnet;\n  2.In X0 Advanced tab,enable \"Use Routed Mode\" and set NAT Policy's outbound/inbound interface to X1 ,click OK;\n  3.Configure X2 portshield to X1;\n  4.In PC1 and PC2 to ping PC3,capture packets in FW."
+   }
+}

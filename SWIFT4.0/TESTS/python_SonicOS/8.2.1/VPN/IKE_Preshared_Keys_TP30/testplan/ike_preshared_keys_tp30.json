@@ -1,0 +1,177 @@
+{
+    "13": {
+        "steps": "1) Configure IKE Main Mode VPN policies on the central and remote firewalls. Set Phase1 and Phase2 SA life time to 120 seconds. 2) Initiate the tunnel by pinging from a host on the remote network to a host on the central network. Start FTP transfer through the tunnel. 3) Let 120 seconds pass. ",
+        "initial": "",
+        "id": "13",
+        "title": "Main Mode. Re-key event.",
+        "result": "The new Main Mode Phase1, then Phase2 is negotiated. The log message shows negotiated networks, Crypto Suite, SA life time = 120 sec, and SPIs. Ping and FTP continue to go through the VPN tunnel. "
+    },
+    "24": {
+        "steps": "1) Configure IKE Aggressive Mode VPN policies on the central and remote firewalls. Set Phase1 and Phase2 SA life time to 120 seconds. 2) Initiate the tunnel by pinging from a host on the remote network to a host on the central network. Start FTP transfer through thr tunnel. 3) Let 120 seconds pass. ",
+        "initial": "",
+        "id": "24",
+        "title": "Aggressive Mode. Re-key event.",
+        "result": "The new Aggressive Mode Phase1, then Phase2 is negotiated. The log message shows negotiated networks, Crypto Suite, SA life time = 120 sec, and SPIs. Ping and FTP continue to go through the VPN tunnel. "
+    },
+    "14": {
+        "steps": "1) Configure IKE Main Mode VPN policies on the central and remote firewalls. 2) Initiate the tunnel by pinging from the central network to a remote VPN host. 3) Make sure that the tunnel is up. Clear the log. 4) Hit the Renegotiate button on the central firewall. ",
+        "initial": "",
+        "id": "14",
+        "title": "Main Mode. Renegotiate the SA using the button on initiator.",
+        "result": "The new Phase2 is negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied."
+    },
+    "25": {
+        "steps": "1) Configure IKE Aggressive Mode VPN policies on the central and remote firewalls. 2) Initiate the tunnel by pinging from the central network to a remote VPN host. 3) Make sure that the tunnel is up. Clear the log. 4) Hit the Renegotiate button on the central firewall. ",
+        "initial": "",
+        "id": "25",
+        "title": "Aggressive Mode. Renegotiate the SA using the button on initiator.",
+        "result": "The new Phase2 is negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied. "
+    },
+    "16": {
+        "steps": "1) Configure IKE Main Mode VPN policies on the central and remote firewalls. Set Phase1 and Phase2 SA life time to 120 seconds. 2) Initiate the tunnel by pinging from the host on central network to a remote VPN host. 3) Stop the pings. 4) Let the time > 240 seconds to pass (additional Phase1 will be renegotiated even with no traffic). Clear the log. 5) Start pinging again. ",
+        "initial": "",
+        "id": "16",
+        "title": "Main Mode. The tunnel is re-established after SA life time expired.",
+        "result": "The new Main Mode Phase1 and Quick Mode Phase2 are negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied. "
+    },
+    "27": {
+        "steps": "1) Configure IKE Aggressive Mode VPN policies on the central and remote firewalls. Set Phase1 and Phase2 SA life time to 120 seconds. 2) Initiate the tunnel by pinging from the host on central network to a remote VPN host. 3) Stop the pings. 4) Let the time > 240 seconds to pass (additional Phase1 will be renegotiated even with no traffic). Clear the log. 5) Start pinging again.",
+        "initial": "",
+        "id": "27",
+        "title": "Aggressive Mode. The tunnel is re-established after SA life time expired.",
+        "result": "The new Aggressive Mode Phase1 and Quick Mode Phase2 are negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied. "
+    },
+    "17": {
+        "steps": "1) Configure IKE Main Mode VPN policies on the central and remote firewalls. 2) Initiate the tunnel by pinging from the central network to a remote VPN host. 3) Make sure that the tunnel is up. 4) Clear the log. 5) Continue to ping through the tunnel. 6) Disable the VPN policy on the central firewall. 7) Make sure that IKE SA and IPSec SA Delete messages are shown on the Log page. 8) Re-enable the VPN policy on the central firewall. ",
+        "initial": "",
+        "id": "17",
+        "title": "Main Mode. Re-enable IKE VPN policy with outgoing traffic",
+        "result": "When the VPN policy gets disabled on the central firewall, IKE and IPSec DEL messages are received on the remote firewall. New negotiation doesn't start until the VPN policy on the central firewall gets re-enabled. Then new Main Mode Phase1 and QM Phase2 are negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied. "
+    },
+    "28": {
+        "steps": "1) Configure IKE Aggressive Mode VPN policies on the central and remote firewalls. 2) Initiate the tunnel by pinging from the central network to a remote VPN host. 3) Make sure that the tunnel is up. Clear the log. Continue to ping through the tunnel. 4) Disable the VPN policy on the central firewall. 5) Make sure that IKE SA and IPSec SA Delete messages are shown on the Log page. 6) Re-enable the VPN policy on the central firewall.  ",
+        "initial": "",
+        "id": "28",
+        "title": "Aggressive Mode. Re-enable IKE VPN policy with outgoing traffic.",
+        "result": "When the VPN policy gets disabled on the central firewall, IKE and IPSec DEL messages are received on the remote firewall. New negotiation doesnt start until the VPN policy on the central firewall gets re-enabled. Then new Aggressive Mode Phase1 and QM Phase2 are negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied. "
+    },
+    "20": {
+        "steps": "1) Configure IKE Main Mode VPN policies on the central and remote firewalls. 2) Turn on the check box Enable Windows Networking (NetBIOS) Broadcast in Advanced tab in VPN policies. 3) Go to the Network>IP Helper page in each firewall and turn on the check box Enable IP Helper. Ensure the auto-added entry for the netbios translation is present 4) Ping into the remote VPN host from the host on the local network. Make sure that IKE VPN tunnel is established. 5) On the local host, run nbtstat -a command. On the remote host, capture NetBIOS packets using Wireshark",
+        "initial": "",
+        "id": "20",
+        "title": "Main Mode. NetBIOS through IKE tunnel.",
+        "result": "nbtstat -a command on the local host returns NetBIOS Remote Machine Name Table. EtherPeek on the remote host shows NetBIOS broadcast packet coming from the local host and response packet from the remote host. The response has Source IP address showing the address of the remote host and its computer name. Destination IP address is showing the address of the local host and its computer name. Only the very first time the command is run you will see a broadcast packet, wait until the cache expires to run the command again. NETBIOS unicast packets are sent thru the tunnel irrespective of the enabling the checkbox. Also monitor the netbios bcast traffic that the pc sends out every 3 min. the destination bcast IP address is translated tot he locacl LAN bcast address when the packet gets forwarded on the local LAN."
+    },
+    "31": {
+        "steps": "1) Configure IKE Aggressive Mode VPN policies on the central and remote firewalls. 2) Turn on the check box Enable Windows Networking (NetBIOS) Broadcast in Advanced tab in VPN policies. 3) Go to the Network>IP Helper page in each firewall and turn on the check box Enable IP Helper. Ensure the auto-added netbios entry is created. 4) Ping into the remote VPN host from the host on the local network. Make sure that IKE VPN tunnel is established. 5) On the local host, run nbtstat -a command. On the remote host, capture NetBIOS packets using EtherPeek.",
+        "initial": "",
+        "id": "31",
+        "title": "Aggressive Mode. NetBIOS through IKE tunnel.",
+        "result": "Nbtstat a remote host computer name> command on the local host returns NetBIOS Remote Machine Name Table. EtherPeek on the remote host shows NetBIOS broadcast packet coming from the local host and response packet from the remote host. The response has Source IP address showing the address of the remote host and its computer name. Destination IP address is showing the address of the local host and its computer name.\n\nNote: nbtstat -a command will only send unicast if the cache entry exists. Make sure cache entry is expired to check the broadcast traffic.\nVerify that the destination IP address is translated to the local network directed bcast address whent he bcast netbios request is forwarded on the other side."
+    },
+    "22": {
+        "steps": "1) Acquire a host name from DDNS provider ( www.dyndns.org ) and link it to a dynamic WAN IP on a remote firewall. 2) Configure a central firewall using a static public WAN IP address. 3) Configure IKE Main Mode VPN policies on the central and remote firewalls. Specify Domain Nam e as IPSec Ga teway in the policy on the central firewall. 4) Bring the tunnel up by pinging through the VPN between the two LANs.",
+        "initial": "",
+        "id": "22",
+        "title": "Main Mode. IPSec Gateway is using Domain Name on one side.",
+        "result": "The WAN IP address of the remote firewall is resolved on the VPN>Settings page of the central firewall. The VPN tunnel in IKE Main Mode is established. The entries of the active tunnel is shown in the Currently Active VPN Tunnels table on each firewall. Ping is going through the tunnel."
+    },
+    "33": {
+        "steps": "1) Acquire a host name from DDNS provider ( www.dyndns.org ) and link it to a dynamic WAN IP on a remote firewall. 2) Configure a central firewall using a static public WAN IP address. 3) Configure IKE Aggressive Mode VPN policies on the central and remote firewalls. Specify Domain Name as IPSec Gateway in the policy on the central firewall. 4) Bring the tunnel up by pinging through the VPN from central to remote network. ",
+        "initial": "",
+        "id": "33",
+        "title": "Aggressive Mode. IPSec Gateway is using Domain Name on one side.",
+        "result": "The WAN IP address of the remote firewall is resolved on the VPN>Settings page of the central firewall. The VPN tunnel in IKE Aggressive Mode is established. The entries of the active tunnel is shown in the Currently Active VPN Tunnels table on each firewall. Ping is going through the tunnel. "
+    },
+    "35": {
+        "steps": "1) Configure IKE VPN policies on the central and remote firewalls. 2) On the central firewall, have a more specific VPN destination network (Ex: 192.168.1.0/24) and a super net (Ex: 192.168.0.0/16) in the routing table. 3) Ping into the network on VPN destination from the local host. ",
+        "initial": "",
+        "id": "35",
+        "title": "More specific VPN destination network and a super net in the routing table",
+        "result": "A packet from the local LAN to the destination on the VPN network triggers IKE. The tunnel is established. "
+    },
+    "45": {
+        "steps": "1) Create address objects on the local firewall, Local Net (on DMZ zone) and Remote Net (on VPN zone). 2) Configure a VPN policy on the local firewall. Select Local Net as local network and Remote Net as destination network. 3) Repeat steps 1 and 2 on the remote firewall. 4) Ping into the Remote network from a local PC on the LAN subnet. Make sure that IKE doesnt start. 5) Ping into the Remote host from a local PC on the DMZ subnet. ",
+        "initial": "",
+        "id": "45",
+        "title": "A tunnel between local network and remote network",
+        "result": "IKE is started by traffic from the local PC on the DMZ subnet to the Remote subnet. The tunnel between subnets is established. Log messages show the completion of negotiation between subnets. The active tunnels are shown on the VPN > Settings page of the local and remote firewalls. Subnets are shown under Local and Remote headers.  "
+    },
+    "48": {
+        "steps": "1. Configure IKE VPN policies on the central and remote firewalls. 2. Have VPN disabled on the local firewall. 3. Ping from the local host to remote VPN destination. Make sure that negotiation doesn't start. 4. Turn on the check box Enable VPN on the VPN > Settings page on the local firewall and push the Apply button. 5. Ping from the local host into the VPN destination. ",
+        "initial": "",
+        "id": "48",
+        "title": "Re-enable VPN",
+        "result": "The log message \"VPN enabled by administrator\" is generated and printed on the Log > View page. IKE rules are added automatically at WAN > WAN on the Firewall > Access Rules page. Pings from the local host to the VPN destination are replied. IKE negotiation successfully completes. "
+    },
+    "49": {
+        "steps": "1) Configure IKE VPN policies on the central and remote firewalls. 2) On the local firewall, set Phase1 and Phase2 SA life time to 180 seconds. 3) On the remote firewall, set Phase1 and Phase2 SA lifetime to 300 seconds. 4) Initiate IKE from the local firewall. 5) Have continuous ping from the local host to the remote VPN host during 5 minutes. ",
+        "initial": "",
+        "id": "49",
+        "title": "Initiator's SA life time is smaller",
+        "result": "Phase1 and Phase2 completion log messages on the local and remote firewalls show SA life time = 180 seconds. A new Phase1 and Phase2 will start before 180 seconds will expire. "
+    },
+    "50": {
+        "steps": "1) Configure IKE VPN policies on the central and remote firewalls. 2) On the local firewall, set Phase1 and Phase2 SA life time to 300 seconds. 3) On the remote firewall, set Phase1 and Phase2 SA lifetime to 180 seconds. 4) Initiate IKE from the local firewall. 5) Have continuous ping from the local host to the remote VPN host during 5 minutes. ",
+        "initial": "",
+        "id": "50",
+        "title": "Initiator's life time is bigger",
+        "result": "When negotiation starts by the local firewall, the remote firewall sends Responder's Lifetime notification message to the local firewall. Phase1 and Phase2 completion log messages on the local and remote firewalls show SA life time = 180 seconds. A new Phase1 and Phase2 will start before 180 seconds will expire. "
+    },
+    "60": {
+        "steps": "1) Configure IKE VPN policy on the local and remote firewalls. 2) Enable DPD on the local firewall. 3) Bring the tunnel up. Stop traffic between the local and peer. 4) Disconnect the cable on WAN interface on the remote box. ",
+        "initial": "",
+        "id": "60",
+        "title": "ICSA1.0D: Phase1 requirements. DPD support.",
+        "result": "The SA on the local firewall will be deleted after 3 heartbeats (default setup) with no reply.\n\nafter local DPD packet with no reponse, tunnel change to down,  local won't send delete SA"
+    },
+    "72": {
+        "steps": "1)Configure two IKE VPN policies on the local firewall. Both policies have the same IPsec Gateways. 2)Enter test in the Shared Secret field in the IPSec Keying mode drop-down list in both policies. 3) Edit one of the policies: change Shared Secret to sonicwall. ",
+        "initial": "",
+        "id": "72",
+        "title": " ICSA1.0D: Phase1 parameter modification. Shared Secret",
+        "result": "The following dialog warns about overwritten Phase1 proposals: ?Found a policy with the same peer gateway <addr>. Phase1 proposal for matching policy might be overwritten. Click OK to proceed or Cancel to change settings?. If OK is selected, the other VPN policy gets modified as well ? Shared Secret is set to sonicwall."
+    },
+    "78": {
+        "steps": "1)Configure two IKE VPN policies on the local firewall. Both policies have the same IPsec Gateways. 2)Select IP Address type for the Remote IKE ID and enter 1.1.1.1 in the field in the two policies. 3)Edit one of the policies: change the Remote IKE ID to 5.5.5.5. ?",
+        "initial": "",
+        "id": "78",
+        "title": "ICSA1.0D: Phase1 parameter modification. Remote IKE ID. IP address.",
+        "result": "The following dialog warns about overwritten Phase1 proposals: ?Found a policy with the same peer gateway <addr>. Phase1 proposal for matching policy might be overwritten. Click OK to proceed or Cancel to change settings?. If OK is selected, the other VPN policy gets modified as well ? the Remote IKE ID value is 5.5.5.5."
+    },
+    "88": {
+        "steps": "1) Configure two IKE VPN policies on the local firewall. Both policies have the same IPsec Gateways. 2) Select X1 in the VPN policy bound to drop-down list in the Advanced tab in the two policies. 3) Edit one of the policies: change the selection in the VPN policy bound to list to X2. ?",
+        "initial": "",
+        "id": "88",
+        "title": "ICSA1.0D: Phase1 parameter modification. VPN policy bound to.",
+        "result": "The following dialog warns about overwritten Phase1 proposals: ?Found a policy with the same peer gateway <addr>. Phase1 proposal for matching policy might be overwritten. Click OK to proceed or Cancel to change settings?. If OK is selected, the other VPN policy gets modified as well ? X2 is selected in the VPN policy bound to list ."
+    },
+    "116": {
+        "steps": "Add multiple site-to-site VPN policies(authentication method: IKE Using Preshared Secret) with ipsec gateway, local&destination networks, crypto suite:\nthese policies cover different ipsec gateways: specific ipaddress/domain name/0.0.0.0;\nFor destination networks, cover host, range, network, group etc. type of network AOs,\nFor crypto suites: cover most of ike(phase1)proposals, ipsec(phase2)proposals.",
+        "initial": "",
+        "id": "116",
+        "title": "Add multiple VPN policies, check VPN->Policies page displays all VPN Gateway/Destinations/Crypto Suite information",
+        "result": "Check all new-added vpn policies:\nipsec gateway, local&destination networks, crypto suite(ipsec phase2 protocol,encryption,ike phase1 exchange mode) are all displayed in VPN Policies IPv4 page."
+    },
+    "94": {
+        "steps": "1)Configure a VPN policy on the firewall. Select ?LAN subnets? as a local network. 2)In the Advanced tab of the VPN policy, check the ?Suppress automatic Access Rules creation for VPN Policy? check box. 3)Generate traffic from a local to remote VPN destination. 4) ????? View the Firewall>Access rules page, LAN>VPN and VPN>LAN. ?",
+        "initial": "",
+        "id": "94",
+        "title": "Rules creation is suppressed in VPN policy",
+        "result": "Check all new-added vpn policies:\nipsec gateway, local&destination networks, crypto suite(ipsec phase2 protocol,encryption,ike phase1 exchange mode) are all displayed in VPN Policies IPv4 page."
+    },
+    "107": {
+        "steps": "1.set up a s2s or tunnel vpn with IKE Using Preshared Secret Authentication Method.\n2.input valid special characters such as \"=\",\"/\",\">\", \"<\", \"+\", \".\", \"!\",\"@\",\"#\",\"$\",\"%\",\"^\",\"&\",\"*\",\"-\",\"_\",\"(\", and \")\". --for coverGEN7-17740, but now all special characters should be ok.\nFor gen6 devices, allow special characters as: !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~ , from KB https://www.sonicwall.com/support/knowledge-base/vpn-shared-secret-constraints/170505598052010/",
+        "initial": "",
+        "id": "107",
+        "title": "Check if Shared Secret supports all special characters for a s2s/tunnel vpn.",
+        "result": "VPN policy can be added without error returned."
+    },
+    "102": {
+        "steps": "Set up a S-to-S VPN policy using preshared secret as Auth method, send ping traffic from pc1 to pc2 make the VPN tunnel is up;\nChange the preshared secret of DUT(also do changes in peer side), do not stop ping traffic;\nCheck the VPN status after modification;",
+        "initial": "",
+        "id": "102",
+        "title": "Change the IKE preshared secrets of active VPN",
+        "result": "Check log, Rekey logs should be sent between the local and peer,\nVPN tunnel should be set up again by ping traffic."
+    }
+}

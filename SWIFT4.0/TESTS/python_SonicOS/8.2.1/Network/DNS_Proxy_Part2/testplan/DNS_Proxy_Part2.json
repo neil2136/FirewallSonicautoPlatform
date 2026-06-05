@@ -1,0 +1,198 @@
+{
+    "1526805": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\" <br />2.Navigate to Network &gt; Interfaces,set X2 as LAN interface<br />3.check if can enable \" Enable DNS Proxy\" on X2.<br />4.change X2 to DMZ zone,check if can enable \" Enable DNS Proxy\"",
+        "initial": "",
+        "id": "1526805",
+        "title": "GUI:Enable DNS Proxy on LAN/DMZ zone interface",
+        "result": "<span>\" Enable DNS Proxy\" can be enable on DMZ/LAN ZONE</span>"
+    },
+    "1526808": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode <br />2.Navigate to Network &gt; Interfaces,add VLAN interface bound to X2 such as X2:V853,set as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2:V853.<br />3.set X1 as WAN interface,and have ipv6 address and ipv6 DNS server<br />4. connect pc to X2:V853.,and get ip 192.168.16.16,and dns server as 192.168.16.1 <br />5. from pc,send dns query :dnslookup www.baidu.com <br />6. from captured packet,check if the dns query do proxy<br />7.Navigate to Network &gt; DNS Proxy,change to 4to6 mode,repeat 5 and 6",
+        "initial": "",
+        "id": "1526808",
+        "title": "Function: DNS Proxy 4to4/4to6 mode works on sub-vlan interface",
+        "result": "DNS Proxy 4to4/4to6 mode works well on sub-vlan interface"
+    },
+    "1526809": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode <br />2.Navigate to Network &gt; Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.<br />3.set X3 as LAN zone,and portshield to X2<br />4.set X1 as WAN interface,and have ipv4 and ipv6 address and ipv4 and ipv6 DNS server<br />5.connect PC to X2,and get ip ,and X2 ip as dns server,send dns query,check if do proxy<br />6.shut down X2,send dns query ,check if do proxy<br />7.no shut down X2,send dns query,check if do proxy<br />8.Navigate to Network &gt; DNS Proxy,change to 4to6 mode,repeat 5 - 7",
+        "initial": "",
+        "id": "1526809",
+        "title": "Function: DNS proxy 4to4/ 4to6 mode works with portshield member interfaces.",
+        "result": "DNS proxy 4to4/ 4to6 mode works well with portshield member interfaces."
+    },
+    "1526810": {
+        "steps": "<span style=\"font-size: 10px;\">1.Navigate to Network>DNS Proxy,enable dns proxy ,and set 4TO4 mode</span>\n2. Navigate to Network>DNS, Fill a real ipv4 dns server as server1, then fill two fake ipv4 dns servers as server 2 and server 3;<br />3. Initiate a dns query from client pc and capture the packets, dns query should forward to the server1 and it should reply with the correct IP address;<br />4. Fill a fake dns server as server1 and server3, fill a real dns as server2, do step2 again;<br />5. Fill a fake dns server as server1 and server2, fill a real dns as server3, do step2 again;<br />6.set DNS Proxy mode to 4TO6 mode,and edit ipv6 dns server,repeat steps 2-5",
+        "initial": "",
+        "id": "1526810",
+        "title": "Function: DNS Proxy mode 4TO4/4TO6 mode work fine when DUT has multiple(3) ipv4/ipv6 DNS servers.",
+        "result": "DNS Proxy mode 4TO4 mode work fine when DUT has multiple(3) ipv4 DNS servers. <br />DNS Proxy mode 4TO6 mode work fine when DUT has multiple(3) ipv6 DNS servers."
+    },
+    "1526811": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode,enable DNS Cache\r\n2.Navigate to Network &gt; Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.\r\n3.connect pc to X2,and send multiple dns queries until DNS cache reach its maximum,Verify the maximum entries of dynamic DNS Cache \r\n\r\nNotice:\r\nDynamic DNS cache num depends on the platform\r\nmax DNS cache num in TSR is static + dynamic\r\nProduct Series Max  DNS Cache Num\r\nTZ100,TZ105         256\r\nTZ200,TZ210         512\r\nNSA2400,3500,4500   1024\r\nNG2600,3600        1024\r\nNSA5500-8500       2048\r\nNG4600-9800        2048\r\nSupermassive        4096",
+        "initial": "",
+        "id": "1526811",
+        "title": "Verify the maximum entries of dynamic DNS Cache(according to the matrix doc of FW)",
+        "result": "Verify the maximum entries of dynamic DNS Cache according to the matrix doc of FW"
+    },
+    "1526813": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\" <br />2.Navigate to Network &gt; Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.<br />3. check access rule on firewall<br />4. in diag.html page,change DNS Proxy Protocol from default setting \"UDP only\" to \"UDP and TCP\" <br />5. check access rule on firewall <br />6. in diag.html page,change DNS Proxy Protocol from \"UDP and TCP\" to \"UDP only\"<br />7. check access rule on firewall",
+        "initial": "",
+        "id": "1526813",
+        "title": "Verify the auto added ACL will be change when switch DNS Proxy Protocol",
+        "result": "step 3 access rule with Service is DNS (Name Service) UDP added<br />step 5 access rule with Service is DNS (Name Service) TCP added<br />step 7 access rule with Service is DNS (Name Service) TCP deleted"
+    },
+    "1526816": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode <br />2.Navigate to Network &gt; Interfaces,set X2 as LAN interface with IP 192.168.16.1, and don't enable \" Enable DNS Proxy\" on X2.<br />3.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server<br />4. connect PC to X2,and set ip 192.168.16.16,and dns server as 192.168.16.1 <br />5. from pc,send dns query :dnslookup www.baidu.com <br />6. from captured packet,check if the dns query do proxy<br />7.set DNS Proxy mode to 4TO6 mode,and repeat step 5",
+        "initial": "",
+        "id": "1526816",
+        "title": "For the LAN interface that not enable DNS proxy, verify firewall won't do the proxy work when receive DNS qurey to LAN interface IP",
+        "result": "when receive DNS qurey to LAN interface IP,the Packet will be dropped by Policy drop"
+    },
+    "1526817": {
+        "steps": "1. configure dns server ,add a domain name like 1.snwl.com with 1 ipv6 host and 2 ipv6 hosts with TTL=60 <br />2.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode,and enable DNS cache<br />3.Navigate to Network &gt; Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2. <br />4. from pc,send dns query :dnslookup 1.snwl.com<br />5.Navigate to Network &gt; DNS Proxy>dns cache, check cache 1.snwl.com added,and check its host ip and TTL <br />6.configure dns server ,change the domain name 1.snwl.com with 2 ipv6 hosts and 1 ipv6 host with TTL=600<br />7. wait for TTL expired,send dns query:dnslookup 1.snwl.com from client PC<br />8.Navigate to Network &gt; DNS Proxy>dns cache,,check if the DNS cache entry update",
+        "initial": "",
+        "id": "1526817",
+        "title": "Test the DNS cache entry update (IP changed, IP not change but TTL change)",
+        "result": "the DNS cache entry will update"
+    },
+    "1526820": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to6 mode <br />2.Navigate to Network &gt; Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2,enable \"Enforce DNS Proxy For All DNS Requests\" <br />3.set X1 as WAN interface,and have ipv6 address and ipv6 DNS server<br />4. connect PC to X2,and set ip 192.168.16.16,and dns server as 8.8.8.8 <br />5. from pc,send dns query :dnslookup www.baidu.com <br />6. from captured packet,check if the dns query do proxy<br />7. check the request generated by DUT itself<br />you can navigate to System /Diagnostics > Diagnostic Tools > Check Network Settings,test if My SonicWall can be reached,check if do proxy <br />8. if disable DNS Proxy on interface, set dns server of client PC as interface ip 192.168.16.1,send dns query :dnslookup www.baidu.com,check if the dns query do proxy",
+        "initial": "",
+        "id": "1526820",
+        "title": "Enforcement of DNS Proxy option test with 4to6 mode DNS proxy.",
+        "result": "step6 do prxoy<br />step7 do prxoy<br />step8 the packet will be drop"
+    },
+    "1526821": {
+        "steps": "1. Navigate to Network &gt; DNS Proxy<br />2. add 256 static DNS caches<br />3. add the 257th cache,check if can be success",
+        "initial": "",
+        "id": "1526821",
+        "title": "Verify the maximum entries of static DNS Cache is 256 and FW could reach this maximum.",
+        "result": "step2. 256 static caches can be added<br />step3. the 257th cache can't be added with error"
+    },
+    "1526823": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to6 mode <br />2.in diag.html page,change DNS Proxy Protocol from default setting \"UDP only\" to \"UDP and TCP\"<br />3.Navigate to Network &gt; Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2<br />4.set X1 as WAN interface,and have ipv6 address and ipv6 DNS server<br />5. connect linux PC to X2,and set ip 192.168.16.16<br />6. from linux pc,send dns tcp query with dns server 192.168.16.1 :dig www.baidu.com +tcp @192.168.16.1 <br />7. from captured packet,check if the dns query do proxy<br />8. from linux pc,send tcp dns query with dns server 8.8.8.8:dig www.baidu.com +tcp @8.8.8.8",
+        "initial": "",
+        "id": "1526823",
+        "title": "Function test when enable TCP support in 4to6 DNS Proxy mode",
+        "result": "step7 do proxy<br />step8 bypass"
+    },
+    "1526824": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode <br />2.in diag.html page,change DNS Proxy Protocol from default setting \"UDP and TCP\" to \"UDP only\" <br />3.Navigate to Network &gt; Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2<br />4.set X1 as WAN interface,and have ipv4 address and ipv4 DNS server<br />5. connect linux PC to X2,and set ip 192.168.16.16<br />6. from linux pc,send tcp dns query with dns server 192.168.16.1 :dig www.baidu.com +tcp @192.168.16.1 <br />7. from captured packet,check if the dns query do proxy<br />8. from linux pc,send tcp dns query with dns server 8.8.8.8:dig www.baidu.com +tcp @8.8.8.8",
+        "initial": "",
+        "id": "1526824",
+        "title": "Function test when disable TCP support in 4to4 DNS Proxy mode",
+        "result": "step6 drop\nstep8 bypass"
+    },
+    "1526825": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode <br />2.Navigate to Network &gt; Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.<br />3.set X1 as WAN interface,and have ipv4 and ipv6 address, ipv4 and ipv6 DNS server<br />4. connect PC to X2,and set ip 192.168.16.16,and dns server as 192.168.16.1 <br />5. from pc,send dns query :dnslookup www.baidu.com <br />6. from captured packet,check if send proxy packet to ipv4 dns server<br />7.switching mode from 4to4 to 4to6,send dns query <br />8. check captuered packet check if do proxy and send proxy packet to ipv6 dns server",
+        "initial": "",
+        "id": "1526825",
+        "title": "Function test while switching mode between 4to4 and 4to6.",
+        "result": "while switching mode between 4to4 and 4to6,proxy function well"
+    },
+    "1526827": {
+        "steps": "1. network>dns proxy,disable dns cache<br />2. add a tatic DNS cache,e.g.123.snwl.com with ipv4 123.1.1.1 and ipv6 123::1<br />3. if set 4to4 mode,send dns query from client nslookup 123.snwl.com ,check what dns reponse received<br />4. if set 4to6 mode,send dns query from client nslookup 123.snwl.com,check what dns reponse received",
+        "initial": "",
+        "id": "1526827",
+        "title": "Function test when DNS cache is disabled",
+        "result": "step3 client will not receive dns response from static DNS cache,it will send dns query to default DNS server <br />step4 client will not receive dns response from static DNS cache,it will send dns query to default DNS server"
+    },
+    "1526828": {
+        "steps": "1. network>dns proxy,enable dns cache<br />2. from pc client,send dns query e.g. nslookup www.baidu.com<br />3. check DUT,a dynamic dns cache will add in the DNS cache table<br />4. after the cache entry expired,send dns query e.g. nslookup www.baidu.com again<br />5. check captured packet",
+        "initial": "",
+        "id": "1526828",
+        "title": "Function test when dns cache enabled and the cache entry is already expired in 4to4 and 4to6 mode.",
+        "result": "when a cache entry get expired, DUT will generate and send out a new request to WAN side first then reply LAN client, after that the cache entry TTL will also be updated.\nwhen a cache entry get expired, DUT will update dynamic cache with one response as receiving again one query that matches the domain name.\nDUT wont generate and send out a new request to WAN side immediately as cache entry get expired"
+    },
+    "1526829": {
+        "steps": "1.navigate to network>dns proxy>DNS Server Status<br />2.check LED color<br />3.Moving the mouse over the LED displays a popup with further information",
+        "initial": "",
+        "id": "1526829",
+        "title": "DNS Servers' status(LED) and count statistics are shown correctly on GUI",
+        "result": "The server status is decided by DNS reply from the server:\n- Up, (green LED) : the reply was successful.\n- Unknown, (yellow LED : a DNS reply has not been received by the server.\n- Down, (red LED) : the failure count exceeded the limit of 10. The status remains down until the nextsuccessful DNS query.\nMoving the mouse over the LED displays a popup with further information about the number of proxied DNSpackets sent and the number of successful DNS Proxy queries"
+    },
+    "1526830": {
+        "steps": "<br />1 .test when the first IPv4 DNS server is down.<br />2 .test when the first and the second IPv4 DNS server is down. 3. test when the third IPv4 DNS server is down.<br />4. test when the first IPv4 DNS server is UP again when the second or third server is UP. <br />5. test when the first IPv6 DNS server is down. <br />6. test when the second IPv6 DNS server is down.<br />7. test when the third IPv6 DNS server is down.<br />8. test when the first IPv6 DNS server is UP again when the second or third server is UP.<br />9. test when the first IPv6 DNS server is UP again.",
+        "initial": "",
+        "id": "1526830",
+        "title": "Test the failover and failback between the primary DNS server and the secondary server and the tertiary server.",
+        "result": "If primary DNS server is up, then use primary DNS server,<br />If primary DNS server is down, then choose the next DNS server which is up,<br />If all DNS servers are down, then choose the server with the least resovling failure count. <br />FW should keep trying the primary server in a fixed interval."
+    },
+    "1526831": {
+        "steps": "1.Navigate to Network>DNS Proxy,enable dns proxy, enable \"Enforce DNS Proxy For All DNS Requests\"\r\n2.System>Diagnostics>Diagnostic Tools>Check Network Settings>Security Management,test MySonicWall ane License Manager,from captured packet check if these stack DNS packets sent by sonicOS will NOT enforce dns proxy \r\n3.add a FQDN AO for in PBR/NAT/ACL/VPN/syslog server, from captured packet check if resolve DQDN AO will NOT enforce do dns proxy \r\n4.Security Services>Enable Gateway Anti-Virus,check if Signature Database download will NOT enforce do dns proxy \r\n5.Security Services>Content Filter,check update CFS backend will NOT enforce do dns proxy",
+        "initial": "",
+        "id": "1526831",
+        "title": "Function test of NO enforcement of DNS proxy with stack DNS packets sent by sonicOS (license manager, MSW, GAV database, CFS backend, FQDN AO in PBR/NAT/ACL/VPN, syslog server, etc)",
+        "result": "stack DNS packets sent by sonicOS will NOT do proxy when enforce enabled\r\n\r\n-----Edited by Celia-----\r\nRefer to GEN7-35275, stack dns packet sent by SonicOS will NOT do proxy when enforce enabled."
+    },
+    "1526832": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy.<br />2.Select the Enable DNS Proxy checkbox. <br />3.set X2 as LAN interface <br />4.Click the Edit icon of interface X2,click Advanced, check\" Enable DNS Proxy\" checkbox appear.<br />5. network>DHCP Server,add a dynamic dhcp server for X2<br />6. in the DNS/WINS page,check if the DNS server will be auto-added with the interface ip\n---------Edit by Celia----------\nThis case is not supported over 7.1.0",
+        "initial": "",
+        "id": "1526832",
+        "title": "When an interface has enabled DNS proxy, in DHCP server page the DNS server will also be auto-added into the DNS/WINS page for this interface's dynamic scope.",
+        "result": "in the DNS/WINS page of dhcp server,the DNS server will be auto-added with the interface ip"
+    },
+    "1526833": {
+        "steps": "1. navigate Network>DNS proxy,enable dns proxy,and set mode 4TO4,and enable dns cache<br />2. add several split entried<br />3. add several static dns cache<br />4. send several dns queries, and make dynamic caches added<br />5. navigate to System /Diagnostics> \"Tech Support Report\" session>check option \"DNS Proxy Cache\",download TSR<br />6. check TSR about dns proxy settings and dns cache",
+        "initial": "",
+        "id": "1526833",
+        "title": "check TSR about dns proxy settings and dns cache (include dns proxy option on interface and main switch ,split DNS, static DNS settings and cache)",
+        "result": "TSR about dns proxy settings and dns cache (include dns proxy option on interface and main switch ,split DNS, static DNS settings and cache)"
+    },
+    "1526834": {
+        "steps": "1. network>DNS Proxy,enable DNS Proxy <br />2. navigete to Log>settings,choose Category:network>DNS Porxy,edit the log event \"DNS Proxy Packet Send \" and enable \"Display Events in Log Monitor \" and set \"Redundancy Filter Interval \" to 0 sec <br />3. enable dns proxy on interface and send dns query from client pc, nslookup www.dell.com and server with interface IP<br />4. check log Monitor",
+        "initial": "",
+        "id": "1526834",
+        "title": "Log: verify the log entry \"Send DNS proxy query\"",
+        "result": "the log entry \"Resend DNS proxy query\" will genarate"
+    },
+    "1526835": {
+        "steps": "1.network>DNS Proxy,enable DNS Proxy and enable dns cache\r\n2.navigete to Log>settings,choose Category:network>DNS Porxy,edit the log event \"DNS Proxy Add Cache\" and enable \"Display Events in Log Monitor \" and set \"Redundancy Filter Interval \" to 0 sec \r\n3.enable dns proxy on interface and send dns query from client pc, nslookup www.dell.com and server with interface IP\r\n4.check log Monitor",
+        "initial": "",
+        "id": "1526835",
+        "title": "Log: verify the log entry \"Add DNS cache\"",
+        "result": "the log entry \"Add DNS cache\" will generate"
+    },
+    "1526836": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy,enable main switch \"Enable DNS Proxy\",and set 4to4 mode <br />2.Navigate to Network &gt; Interfaces,set X2 as LAN interface with IP 192.168.16.1, and enable \" Enable DNS Proxy\" on X2.<br />3.reboot DUT<br />4.from client pc,send dns query ,check if do proxy",
+        "initial": "",
+        "id": "1526836",
+        "title": "Reboot test for DNS Proxy 4to4 mode function",
+        "result": "Configuration keeps intact."
+    },
+    "1526839": {
+        "steps": "1. navigate Network>DNS proxy,enable dns proxy,and set mode 4TO6<br />2. add several split entried<br />3. add several static dns cache<br />4. export prefs1<br />5. factory default<br />6. import prefs1,check if everything OK<br />7. change mode to 4 to 4 mode,change some split entries and static dns cache<br />8. import prefs1,check if everything OK",
+        "initial": "",
+        "id": "1526839",
+        "title": "prefs export and import about dns proxy (4to4 and 4to6 mode and DNS Cache)",
+        "result": "1 Export and import is validated<br />2 Configuration keeps intact."
+    },
+    "1532704": {
+        "steps": "1. Enable DNS Proxy on X0(192.168.168.168), and enable 'DNS Proxy Cache' and 'Packet Capture';\r\n2. From PC, dig s.spotim.market AAAA @192.168.168.168;\r\n3. Check the received packet on Firewall;\r\n4. From PC, dig www.bing.com A @192.168.168.168;\r\n5. Check the received packet on Firewall.",
+        "initial": "PC--X0--Firewall--X1--WAN",
+        "id": "1532704",
+        "title": "[FUNC] Verify FW does not crash when dns proxy cache size is over 2048",
+        "result": "In step 3, the size of received DNS reply packet is bigger than 2048, and the FW does not crash.\r\n\r\nIn step 5, the size of received DNS reply packet is less than 2048, and the FW does not crash"
+    },
+    "2268490": {
+        "steps": "1.To DNS Rule page, click add button\r\n2.Select action as Proxy, check the Service box.\r\n",
+        "initial": "after 7.1.1 build",
+        "id": "2268490",
+        "title": "[7.1.1] Verify the Service is 'DNS (Name Service)' as default in DNS Proxy Policy",
+        "result": "The default Service is 'DNS (Name Service)'"
+    },
+    "2329221": {
+        "steps": "1.Navigate to Network &gt; DNS Proxy;\r\n2.check the navigate link *\"To configure DNS Proxy, go to Policy> Rules and Policies> DNS Rules page\"*;\r\n3.check the tool tip of *\"Enforce DNS Proxy For All DNS Requests\"*, then **enable** the Enforce option;\r\n4.click the link on step-2;\r\n5.In DNS Policy page, click add, check the **Destination Address** of the Policy Window;\r\n6.Click the navigate links *'Enforce DNS Proxy For All DNS Requests'* and *'Netowrk &gt; DNS &gt; DNS Proxy'* in Dst Address tool tip detail;\r\n7.In DNS Proxy page, **disable** the Enforce option;\r\n8.Repeat step 5.\r\n\r\n\r\n",
+        "initial": "support over 7.1.1 build",
+        "id": "2329221",
+        "title": "[7.1.1] GUI: Verify the tool tips of DNS Proxy.",
+        "result": "In step 2, the link is on the \"DNS PROXY SETTINGS\" section.\r\n\r\nIn step 3, details show: 'When enabled, all DNS packets will be processed by DNS Security engine. If there is any DNS Rules matched, the packet will be handled per the Rule. If disabled, only DNS with destination being Firewall's Interface IP will be processed. Note: The option takes effective to UDP based DNS.'.\r\n\r\nIn step 4, the link can navigate to *DNS Rules* page.\r\n\r\nIn step 5, the Dst Address is **Any** and not editable. And a tool tip shows: \r\nWhen Enforce DNS Proxy For All DNS Requests is enabled, the Destination Address will be ANY as all DNS packets will be forcefully processed. If the option not enabled, the Destination Address will be Firewall Interface IP.\r\nGo to Netowrk &gt; DNS &gt; DNS Proxy to configure the option\r\n\r\nIn step 6, the links can navigate to *DNS Proxy* page.\r\n\r\nIn step 8, the Dst Address is **Firewall Interface IP** and not editable.\r\n\r\n\r\n"
+    },
+    "2694338": {
+        "steps": "1 in 7.0.1 enable DNS Proxy and enble dns proxy in X0, in 7.1.1 add dns proxy from X0, and set dns server as 8.8.8.8\r\n2 connect A linux PC to X0, and set dns as X0 ip\r\n3 from X0 PC, query a domian with large answer : dig whitelist.ayayot.com AAAA +bufsize=4096 @192.168.168.168 +udp\r\n4 when send the commond again, it should using cache, dns proxy cache, check FW should not crash.\r\n5 query a normal domain: dig www.google.com@192.168.168.168 +udp twice to make sure it can using dns proxy cache, check FW should not crash.",
+        "initial": "",
+        "id": "2694338",
+        "title": "Verify the dut is stable  when query a domian with large answer reply from  DNS proxy cache",
+        "result": "3 check dns reply packet, the packet should be fragment\r\n4 reply packet is send from interface directly which means using cahce the dut should be stable\r\n![](index.php?/attachments/get/8c5db47b-0c9c-4dae-8566-8bf17444889b) \r\n\r\n5 the dut should be stable"
+    }
+}

@@ -1,0 +1,45 @@
+{
+   "1505386" : {
+      "steps" : "  1 Send post request with json using ipv6 attribute and IPv6 address",
+      "initial" : "  status code 200",
+      "id" : "1505386",
+      "title" : "IPv6-Post single user with ipv6 attribute and IPv6 address",
+      "result" : "  TBD"
+   },
+   "1505482" : {
+      "steps" : "  API Client-Edit client IP or name",
+      "initial" : "  Configration applied with no error",
+      "id" : "1505482",
+      "title" : "API Client-Edit client IP or name",
+      "result" : "  TBD"
+   },
+   "1505341" : {
+      "steps" : "  1 Access rule allow all for DNS and allow everyone for other traffic\n  2 User authentication set to Local User\n  3 Send out request including ip,name, type domain, domain, group using json\n  4 Genere traffic to activate user",
+      "initial" : "  status code 200, no ldap lookup",
+      "id" : "1505341",
+      "title" : "post single user with atrribute ip, name, type domain, domain, group using json",
+      "result" : "  TBD"
+   },
+   "1505342" : {
+      "steps" : "  1 Access rule allow all for DNS and allow everyone for other traffic\n  2 User authentication set to LDAP\n  3 Send out request including ip,name, type domain, domain, group ,group lookup true using xml\n  4 Genere traffic to activate user",
+      "initial" : "  status code 200, ldap lookup",
+      "id" : "1505342",
+      "title" : "post single user with attribute ip, name, type domain, domain, group,group-lookup true using xml",
+      "result" : "  TBD"
+   },
+{
+   "1527434" : {
+      "steps" : "  1.Configure SSO 3rd party api,\n 2.Patch a client behind X0 interface of the firewall which has SSO-API script\n 3.Run the script using the bash command in the terminal or use the Postman",
+      "initial" : "  Have a sonicwall firewall with SSO 3rd party api configured",
+      "id" : "1527434",
+      "title" : "Post/login multi  dual ipv4 / ipv6 users",
+      "result" : "  TBD"
+   },
+   "1527435" : {
+      "steps" : "  1.Configure SSO 3rd party api,\n 2.Patch a client behind X0 interface of the firewall which has SSO-API script\n 3.Run the script using the bash command in the terminal or use the Postman\n DELETE  "https://10.21.61.20/api/sso/user/multi ",
+      "initial" : "  Have a sonicwall firewall with SSO 3rd party api configured",
+      "id" : "1527435",
+      "title" : "Logout/delete multi dual ip4/ipv6 users",
+      "result" : "  TBD"
+   }
+}

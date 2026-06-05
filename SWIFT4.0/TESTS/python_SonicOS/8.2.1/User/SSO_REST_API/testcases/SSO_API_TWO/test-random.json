@@ -1,0 +1,10 @@
+{
+    "ip": "192.168.168.99",
+    "name": "user_random",
+    "domain": "nowhere.com",
+    "type": "domain",
+    "init-state": "active",
+    "groups": ["group1", "group2", "group3"],
+    "group-lookup": false,
+    "reason": "Just testing"
+}

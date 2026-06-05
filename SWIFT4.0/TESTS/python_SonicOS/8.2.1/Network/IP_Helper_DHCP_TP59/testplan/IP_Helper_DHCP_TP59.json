@@ -1,0 +1,24 @@
+{
+    "07": {
+        "steps": "1)Disable DHCP Server2)Enable IPHelper3)Enable DHCP support option4)Configure interface OPT as DMZ5)Place an DHCP server on LAN network, Create DHCP ranges for DMZ Zone6)Create IPHelper policy with interfaces in From and address object of DHCP server in To.7)From client verify that can obtain DHCP lease.",
+        "initial": "",
+        "id": "07",
+        "title": "Create Policy with Interface",
+        "result": "Verify the IPHelper policy can be created using an interface; verify the IPHelper policy functions properly."
+    },
+    "10": {
+        "steps": "1)Disable DHCP Server2)Enable IPHelper3)Enable DHCP support option4)Configure interface OPT as DMZ5)Place an DHCP server on LAN network, Create DHCP ranges for DMZ Zone6)Create IPHelper policy with interfaces in From and address object of DHCP server in To.7) Uncheck enable box.8) From client verify that cannot obtain DHCP lease.9) Check the enable box of the policy.10) From client verify that can obtain DHCP lease.",
+        "initial": "",
+        "id": "10",
+        "title": "Enable Policy",
+        "result": "IP helper policy is enabled."
+    },
+    "09": {
+        "steps": "1) Enable IPHelper2) Enable DHCP support option3) Configure interface x0, x2, x3, x4 as DMZ or LAN4) Configure interface x5 as LAN5) Place an DHCP server on x5 network6) Create an IP helper policy for DHCP from an interface to the DHCP server.7) Obtain lease for client.8) Release the leases.9) Delete the IP Helper Policy for DHCP10) Attempt to obtain a lease for the client again.",
+        "initial": "",
+        "id": "09",
+        "title": "Delete Policy",
+        "result": "Verify client is unable to obtain lease after deletion of IP Helper Policy"
+    }
+
+}

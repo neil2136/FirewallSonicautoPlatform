@@ -1,0 +1,114 @@
+{
+   "6" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  Sanity",
+      "id" : "6",
+      "title" : "Verify DNSv6 server settings can be inherited from the wan interface if the wan interface is in DHCPv6 mode.",
+      "result" : "  1. Go to Network>Interface page\n  2. Configure X1 interface as DHCPv6 client\n  3. After X1 interface got ip address and dns settings from the DHCP server, go to Network>DNS page"
+   },
+   "11" : {
+      "steps" : "  Box with IPv6 firmware, an IPv6 DNS Server is connected on Lan or Wan interface",
+      "initial" : "  Smoke",
+      "id" : "11",
+      "title" : "Verify ipv6 dns server works for ping service",
+      "result" : "  1. Go to Network>DNS page, change the view to IPv6\n  2. Select Specify IPv6 DNS Servers Manually\n  3. Type in the DNS server address as DNS Server 1/2/3\n  4. Go to System>Diagnostics page, select Ping\n  5. Ping a FQDN record which is added on the IPv6 DNS Server\n  =========Edit by Celia==========\n  In step3, should enable \"Prefer IPv6 DNS Servers\";\n  before step5, should enable \"Prefer IPV6 Networking\""
+   },
+   "3" : {
+      "steps" : "  Box with IPv6 Firmware",
+      "initial" : "  Full",
+      "id" : "3",
+      "title" : "Verify DNS Server 2 can inherit ipv6 dns setting from primary wan interface",
+      "result" : "  1.\tGo to Network > Interface page, change the view to IPv6\n  2.\tEdit the primary wan interface, type in a valid IPv6 DNS server address for DNS Server 2\n  3.\tGo to Network > DNS page, change the view to IPv6"
+   },
+   "7" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  Smoke",
+      "id" : "7",
+      "title" : "Verify DNS Server 1 can be specified manually",
+      "result" : "  1. Go to Network>DNS page, change the view to IPv6\n  2. Select Specify IPv6 DNS Servers Manually\n  3. Type in an IPv6 address as DNS Server 1"
+   },
+   "9" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  Sanity",
+      "id" : "9",
+      "title" : "Verify DNS Server 3 can be specified manually",
+      "result" : "  1. Go to Network>DNS page, change the view to IPv6\n  2. Select Specify IPv6 DNS Servers Manually\n  3. Type in an IPv6 address as DNS Server 3"
+   },
+   "2" : {
+      "steps" : "  Box with IPv6 Firmware",
+      "initial" : "  Smoke",
+      "id" : "2",
+      "title" : "Verify DNS Server 1 can inherit ipv6 dns setting from primary wan interface",
+      "result" : "  1.\tGo to Network > Interface page, change the view to IPv6\n  2.\tEdit the primary wan interface, type in a valid IPv6 DNS server address for DNS Server 1\n  3.\tGo to Network > DNS page, change the view to IPv6"
+   },
+   "12" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  TBD",
+      "id" : "12",
+      "title" : "Upgrade and downgrade between ipv6 and non-ipv6 firmwares",
+      "result" : "  Upgrade or downgrade between ipv6 and non-ipv6 firmwares"
+   },
+   "15" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  Full",
+      "id" : "15",
+      "title" : "Prefs Import and Export",
+      "result" : "  1. Go to Network>DNS page, change the view to IPv6\n  2. Select Specify IPv6 DNS Servers Manually\n  3. Type in the DNS server address as DNS Server 1/2/3.\n  4. Go to System>Settings page\n  5. Export the pref file\n  6. Import the pref file"
+   },
+   "14" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  Full",
+      "id" : "14",
+      "title" : "TSR support",
+      "result" : "  1. Go to Network>DNS page, change the view to IPv6\n  2. Select Specify IPv6 DNS Servers Manually\n  3. Type in the DNS server address as DNS Server 1/2/3\n  4. Go to System>Diagnostics, download the TSR file"
+   },
+   "8" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  Sanity",
+      "id" : "8",
+      "title" : "Verify DNS Server 2 can be specified manually",
+      "result" : "  1. Go to Network>DNS page, change the view to IPv6\n  2. Select Specify IPv6 DNS Servers Manually\n  3. Type in an IPv6 address as DNS Server 2"
+   },
+   "4" : {
+      "steps" : "  Box with IPv6 Firmware",
+      "initial" : "  Full",
+      "id" : "4",
+      "title" : "Verify DNS Server 3 can inherit ipv6 dns setting from primary wan interface",
+      "result" : "  1.\tGo to Network > Interface page, change the view to IPv6\n  2.\tEdit the primary wan interface, type in a valid IPv6 DNS server address for DNS Server 3\n  3.\tGo to Network > DNS page, change the view to IPv6"
+   },
+   "1" : {
+      "steps" : "  Box with IPv6 Firmware",
+      "initial" : "  TBD",
+      "id" : "1",
+      "title" : "Verify it is able to change the view to ipv6 dns settings",
+      "result" : "  1.\tGo to Network > DNS page.\n  2.\tSelect IPv6 as View IP Version"
+   },
+   "10" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  Smoke",
+      "id" : "10",
+      "title" : "Verify Specify IPv6 DNS Server manually can only accept valid unicast IPv6 DNS server address",
+      "result" : "  1. Go to Network>DNS page, change the view to IPv6\n  2. Select Specify IPv6 DNS Servers Manually\n  3. Type in a valid unicast IPv6 address as DNS Server 1/2/3\n  4. Type in an invalid IPv6 address as DNS Server 1/2/3, say ff02::1\n  ----------Edit by Celia----------\n  Support Unique Local Address: fc00::, fd00:: (refer to GEN7-27062)"
+   },
+   "13" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  Sanity",
+      "id" : "13",
+      "title" : "The DNSv6 Server settings are intact after firewall reboot",
+      "result" : "  1. Go to Network>DNS page, change the view to IPv6\n  2. Select Specify IPv6 DNS Servers Manually\n  3. Type in the DNS server address as DNS Server 1/2/3\n  4. Reboot the firewall"
+   },
+   "16" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  TBD",
+      "id" : "16",
+      "title" : "HA support",
+      "result" : "  1. Go to Network>DNS page, change the view to IPv6\n  2. Select Specify IPv6 DNS Servers Manually\n  3. Type in the DNS server address as DNS Server 1/2/3.\n  4. Check the DNSv6 Server settings on the idle firewall"
+   },
+   "5" : {
+      "steps" : "  Box with IPv6 firmware",
+      "initial" : "  Smoke",
+      "id" : "5",
+      "title" : "Switch the primary wan and the secondary wan interface, verify the DNS Server information is changed accordingly",
+      "result" : "  1.\tGo to Network>Interface page\n  2.\tConfigure X1 and X2 as wan interface, type in different ipv6 dns server address for X1 and X2 interface\n  3.\tGo to Network>Wan Failover and LB page, switch X1 and X2 as primary wan interface"
+   }
+}

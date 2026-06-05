@@ -1,0 +1,85 @@
+from definition.settings import *
+from bin.global_settings import *
+
+
+def disable_pri_gw():
+    logger.info(" {} ".center(20, '-').format('disable primary gw'))
+    rc = False
+    cmd = "perl /SWIFT4.0/COMMON/bin/swconfig.pl -action portdown -device RemoteGEN7 -port X1 -spec \
+        http://osservices-sj.eng.sonicwall.com/topology_details/{}.xml".format(Params.testbed)
+    logger.info(cmd)
+    resp = os.popen(cmd).read()
+    logger.info(resp)
+    time.sleep(15)
+    for i in range(30):
+        out = os.popen("ping {} -c 1".format(PC2_eth0)).read()
+        if '100% packet loss' not in str(out):
+            logger.info('Successfully change vpn to secondary gw.')
+            logger.info(out)
+            rc = True
+            break
+        elif i == 30:
+            logger.info('change vpn to secondary gw failed')
+            logger.info(out)
+            rc = False
+    return rc
+
+
+def enable_pri_gw():
+    logger.info(" {} ".center(20, '-').format('enable primary gw'))
+    rc = False
+    cmd = "perl /SWIFT4.0/COMMON/bin/swconfig.pl -action portup -device RemoteGEN7 -port X1 -spec \
+        http://osservices-sj.eng.sonicwall.com/topology_details/{}.xml".format(Params.testbed)
+    logger.info(cmd)
+    resp = os.popen(cmd).read()
+    logger.info(resp)
+    time.sleep(15)
+    for i in range(30):
+        out = os.popen("ping {} -c 1".format(Parameter.REMOTEX1)).read()
+        logger.info(out)
+        if '100% packet loss' not in str(out):
+            logger.info('Successfully recover vpn to primary gw.')
+            rc = True
+            break
+        elif i == 29:
+            logger.info('recover vpn to primary gw failed')
+            rc = False
+    return rc
+
+
+def disable_rm_x2_port():
+    logger.info(" {} ".center(20, '-').format('disable remote x2 port'))
+    rc = False
+    rc1 = Rinterface_ipv4.disable_interface(name= 'X2')
+    time.sleep(2)
+    for i in range(30):
+        out = os.popen("ping {} -c 2".format(Parameter.REMOTEX2)).read()
+        if '100% packet loss' in str(out):
+            logger.info('Successfully disable remote x2 port.')
+            logger.info(out)
+            rc = True
+            break
+        elif i == 29:
+            logger.info('disable remote x2 port failed')
+            logger.info(out)
+            rc = False
+    return rc
+
+
+def enable_rm_x2_port():
+    logger.info(" {} ".center(20, '-').format('enable remote x2 port'))
+    rc = False
+    rc1 = Rinterface_ipv4.enable_interface(name= 'X2')
+    time.sleep(2)
+    for i in range(30):
+        out = os.popen("ping {} -c 2".format(Parameter.REMOTEX2)).read()
+        if '100% packet loss' not in str(out):
+            logger.info('Successfully recover remote x2 port.')
+            logger.info(out)
+            rc = True
+            break
+        elif i == 29:
+            logger.info('recover remote x2 port failed')
+            logger.info(out)
+            rc = False
+    return rc

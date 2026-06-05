@@ -1,0 +1,114 @@
+{
+   "6" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between Custom zone on the local firewall and LAN in DHCP mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "6",
+      "title" : "Local destination is Custom Zone, remote destination is LAN in DHCP mode",
+      "result" : "  1) Have DHCP Client mode selected on the remote firewall. 2) Create a Custom zone on the local firewall. Assign X3 interface to the new zone. 3) Add a VPN policy on the local firewall. Select X3 Subnet in Local Network. Create a new address object Remote LAN and select it in Destination Network. 4) Add a VPN policy on the remote firewall. Select Primary LAN Subnet in Local Network. Create a new address object ?Remote Custom Zone? and select it in Destination Network. 5) Have a continuous ping between a host on the local Custom zone and a host on the remote LAN. 6) Have FTP transfer during the rekey event. 7) Access a Web server on the remote network. 8) Hit the Renegotiate button on the local firewall to renegotiate the tunnel.\n  9) Disable and re-enable the VPN policy on the local firewall. 10) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "11" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between group object that includes DMZ and Custom zone on the local firewall and LAN in PPPoE mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "11",
+      "title" : "Local destination is DMZ/Custom Zone, remote destination is LAN in PPPoE mode",
+      "result" : "  1) Have PPPoE mode selected on the remote firewall. 2) Have X2 interface assigned to DMZ zone on the local firewall. 3) Create a Custom zone on the local firewall. Assign X3 interface to the new zone. 4) Create a group object Local DMZ and Custom on the local firewall. Add X2 Subnet and X4 Subnet in the group. 5) Add a VPN policy on the local firewall. Select Local DMZ and Custom in Local Network. Create a new address object Remote LAN and select it in Destination Network. 6) Add a VPN policy on the remote firewall. Select Primary LAN Subnet in Local Network. Create new address objects Rem DMZ and Rem Custom and add those objects to a group object Rem DMZ and Custom. Select this group in Destination Network. 7) Have a continuous ping from the hosts on the local DMZ and Custom zones to a host on the remote LAN. 8) Have FTP transfer during the rekey event. 9) Access a Web server on the remote network. 10) Hit the Renegotiate buttons on the local firewall to renegotiate the tunnels. 11) Disable and re-enable the VPN policy on the local firewall. 12) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "3" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between DMZ on the local firewall and LAN in PPPoE mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "3",
+      "title" : "Local destination is DMZ, remote destination is LAN in PPPoE mode",
+      "result" : "  1) Have PPPoE mode selected on the remote firewall. 2) Add a VPN policy on the local firewall. Select DMZ Subnets in Local Network. Create a new address object Remote LAN and select it in Destination Network. 3) Add a VPN policy on the remote firewall. Select Primary LAN Subnet in Local Network. Create a new address object Remote DMZ and select it in Destination Network. 4) Have a continuous ping between a host on the local DMZ and a host on the remote LAN. 5) Have FTP transfer during the rekey event. 6) Access a Web server on the remote network. 7) Hit the Renegotiate button on the local firewall to renegotiate the tunnel. 8) Disable and re-enable the VPN policy on the local firewall. 9) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "7" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between Custom zone on the local firewall and LAN in PPPoE mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "7",
+      "title" : "Local destination is Custom Zone, remote destination is LAN in PPPoE mode",
+      "result" : "  1) Have PPPoE mode selected on the remote firewall. 2) Create a Custom zone on the local firewall. Assign X3 interface to the new zone. 3) Add a VPN policy on the local firewall. Select X3 Subnet in Local Network. Create a new address object Remote LAN and select it in Destination Network. 4) Add a VPN policy on the remote firewall. Select Primary LAN Subnet in Local Network. Create a new address object Remote Custom Zone and select it in Destination Network. 5) Have a continuous ping between a host on the local Custom zone and a host on the remote LAN. 6) Have FTP transfer during the rekey event. 7) Access a Web server on the remote network. 8) Hit the Renegotiate button on the local firewall to renegotiate the tunnel. 9) Disable and re-enable the VPN policy on the local firewall. 10) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "9" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between group object that includes DMZ and Custom zone on the local firewall and LAN in NAT Enabled mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "9",
+      "title" : "Local destination is DMZ/Custom Zone, remote destination is LAN in NAT Enabled mode",
+      "result" : "  1) Have NAT Enabled mode selected on the remote firewall. 2) Have X2 interface assigned to DMZ zone on the local firewall. 3) Create a Custom zone on the local firewall. Assign X3 interface to the new zone. 4) Create a group object Local DMZ and Custom on the local firewall. Add X2 Subnet and X4 Subnet in the group. 5) Add a VPN policy on the local firewall. Select Local DMZ and Custom in Local Network. Create a new address object ?Remote LAN? and select it in Destination Network. 6) Add a VPN policy on the remote firewall. Select Primary LAN Subnet in Local Network. Create new address objects Rem DMZ and Rem Custom and add those objects to a group object Rem DMZ and Custom. Select this group in Destination Network. 7) Have a continuous ping from the hosts on the local DMZ and Custom zones to a host on the remote LAN. 8) Have FTP transfer during the rekey event. 9) Access a Web server on the remote network. 10)Hit the Renegotiate buttons on the local firewall to renegotiate the tunnels. 11) Disable and re-enable the VPN policy on the local firewall. 12) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "2" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between DMZ on the local firewall and LAN in DHCP mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "2",
+      "title" : "Local destination is DMZ, remote destination is LAN in DHCP mode",
+      "result" : "  1) Have DHCP Client mode selected on the remote firewall. 2) Add a VPN policy on the local firewall. Select DMZ Subnets in Local Network. Create a new address object Remote LAN and select it in Destination Network. 3) Add a VPN policy on the remote firewall. Select Primary LAN Subnet in Local Network. Create a new address object Remote DMZ and select it in Destination Network.\n  4) Have a continuous ping between a host on the local DMZ and a host on the remote LAN. 5) Have FTP transfer during the rekey event. 6) Access a Web server on the remote network. 7) Hit the Renegotiate button on the local firewall to renegotiate the tunnel. 8) Disable and re-enable the VPN policy on the local firewall. 9) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "12" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between group object that includes DMZ and Custom zone on the local firewall and LAN in Transparent mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "12",
+      "title" : "Local destination is DMZ/Custom Zone, remote destination is LAN in Transparent mode",
+      "result" : "  1) Have Transparent mode selected on the remote firewall. 2) Have X2 interface assigned to DMZ zone on the local firewall. 3) Create a Custom zone on the local firewall. Assign X3 interface to the new zone. 4) Create a group object ?Local DMZ and Custom? on the local firewall. Add X2 Subnet and X4 Subnet in the group. 5) Add a VPN policy on the local firewall. Select Local DMZ and Custom in Local Network. Create a new address object Remote Range and select it in Destination Network. 6) Add a VPN policy on the remote firewall. Create an address object Local Range and select it in Local Network. Create new address objects Rem DMZ and Rem Custom and add those objects to a group object Rem DMZ and Custom. Select this group in Destination Network. 7) Have a continuous ping from the hosts on the local DMZ and Custom zones to a host on the remote LAN. 8) Have FTP transfer during the rekey event. 9) Access a Web server on the remote network. 10) Hit the Renegotiate buttons on the local firewall to renegotiate the tunnels. 11) Disable and re-enable the VPN policy on the local firewall. 12) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "15" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between DMZ on the local firewall and a group object that includes DMZ and Custom zone on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "15",
+      "title" : "Local destination is DMZ, remote destination is DMZ/Custom Zone",
+      "result" : "  1) Add a VPN policy on the local firewall. Select DMZ Subnets in Local Network. Create new address objects Remote DMZ and Remote Custom. Create a group object Rem DMZ and Custom, add those address objects to the group. Select Rem DMZ and Custom in Destination Network. 2) Create a Custom zone on the remote firewall. Assign X3 interface to it. Have X2 interface assigned to DMZ. 3) Create a group object on the remote firewall. Nam e it Loc DMZ and Custom. Add X2 Subnet and X3 Subnet to the group. 4) Add a VPN policy on the remote firewall. Select Loc DMZ and Custom in Local Network. Create a new address object Remote DMZ and select it in Destination Network. 5) Have a continuous ping between a host on the local DMZ and hosts on the remote DMZ and Custome zones. 6) Have FTP transfer during the rekey event. 7) Access a Web server on the remote network. 8) Hit the Renegotiate buttons on the local firewall to renegotiate the tunnels. 9) Disable and re-enable the VPN policy on the local firewall. 10) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "14" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between DMZ on the local firewall and Custom Zone on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "14",
+      "title" : "Local destination is DMZ, remote destination is Custom Zone",
+      "result" : "  1) Add a VPN policy on the local firewall. Select DMZ Subnets in Local Network. Create a new address object ?Remote Custom? and select it in Destination Network. 2) Create a Custom zone on the remote firewall. Assign X3 interface to it. 3) Add a VPN policy on the remote firewall. Select X3 Subnet in Local Network. Create a new address object Remote DMZ and select it in Destination Network. 4) Have a continuous ping between a host on the local DMZ and a host on the remote Custom zone. 5) Have FTP transfer during the rekey event. 6) Access a Web server on the remote network. 7) Hit the Renegotiate button on the local firewall to renegotiate the tunnel. 8) Disable and re-enable the VPN policy on the local firewall. 9) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "8" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between Custom zone on the local firewall and LAN in Transparent mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "8",
+      "title" : "Local destination is Custom Zone, remote destination is LAN in Transparent mode",
+      "result" : "  1) Have Transparent mode selected on the remote firewall. 2) Create a Custom zone on the local firewall. Assign X3 interface to the new zone. 3) Add a VPN policy on the local firewall. Select X3 Subnet in Local Network. Create a new address object Remote Range and select it in Destination Network.\n  4) Add a VPN policy on the remote firewall. Create a new address object Local Range and select it in Local Network. Create a new address object Remote Custom Zone and select it in Destination Network. 5) Have a continuous ping between a host on the local Custom zone and a host on the remote LAN. 6) Have FTP transfer during the rekey event. 7) Access a Web server on the remote network. 8) Hit the Renegotiate button on the local firewall to renegotiate the tunnel. 9) Disable and re-enable the VPN policy on the local firewall. 10) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "4" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between DMZ on the local firewall and LAN in Transparent mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "4",
+      "title" : "Local destination is DMZ, remote destination is LAN in Transparent mode",
+      "result" : "  1) Have Transparent mode selected on the remote firewall. 2) Add a VPN policy on the local firewall. Select DMZ Subnets in Local Network. Create a new address object Remote Range and select it in Destination Network. 3) Add a VPN policy on the remote firewall. Create an address object Local Range and select it in Local Network. Create a new address object Remote DMZ?and select it in Destination Network. 4) Have a continuous ping between a host on the local DMZ and a host on the remote LAN. 5) Have FTP transfer during the rekey event. 6) Access a Web server on the remote network. 7) Hit the Renegotiate button on the local firewall to renegotiate the tunnel. 8) Disable and re-enable the VPN policy on the local firewall. 9) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "1" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between DMZ on the local firewall and LAN in NAT Enabled mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "1",
+      "title" : "Local destination is DMZ, remote destination is LAN in NAT Enabled mode",
+      "result" : "  1) Have NAT Enabled mode selected on the remote firewall. 2) Add a VPN policy on the local firewall. Select DMZ Subnets in Local Network. Create a new address object ?Remote LAN? and select it in Destination Network. 3) Add a VPN policy on the remote firewall. Select Primary LAN Subnet in Local Network. Create a new address object ?Remote DMZ? and select it in Destination Network. 4) Have a continuous ping between a host on the local DMZ and a host on the remote LAN. 5) Have FTP transfer during the rekey event. 6) Access a Web server on the remote network. 7) Hit the Renegotiate button on the local firewall to renegotiate the tunnel. 8) Disable and re-enable the VPN policy on the local firewall. 9) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "10" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between group object that includes DMZ and Custom zone on the local firewall and LAN in DHCP mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "10",
+      "title" : "Local destination is DMZ/Custom Zone, remote destination is LAN in DHCP mode",
+      "result" : "  1) Have DHCP Client mode selected on the remote firewall. 2) Have X2 interface assigned to DMZ zone on the local firewall. 3) Create a Custom zone on the local firewall. Assign X3 interface to the new zone. 4) Create a group object Local DMZ and Custom on the local firewall. Add X2 Subnet and X4 Subnet in the group. 5) Add a VPN policy on the local firewall. Select Local DMZ and Custom in Local Network. Create a new address object Remote LAN and select it in Destination Network. 6) Add a VPN policy on the remote firewall. Select Primary LAN Subnet in Local Network. Create new address objects Rem DMZ and Rem Custom and add those objects to a group object Rem DMZ and Custom. Select this group in Destination Network. 7) Have a continuous ping from the hosts on the local DMZ and Custom zones to a host on the remote LAN. 8) Have FTP transfer during the rekey event. 9) Access a Web server on the remote network. 10) Hit the Renegotiate buttons on the local firewall to renegotiate the tunnels. 11) Disable and re-enable the VPN policy on the local firewall. 12) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "13" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between DMZ on the local firewall and DMZ on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "13",
+      "title" : "Local destination is DMZ, remote destination is DMZ",
+      "result" : "  1) Add a VPN policy on the local firewall. Select DMZ Subnets in Local Network. Create a new address object DMZ1 and select it in Destination Network. 2) Add a VPN policy on the remote firewall. Select DMZ Subnets in Local Network. Create a new address object ?DMZ2? and select it in Destination Network. 3) Have a continuous ping between a host on the local DMZ and a host on the remote DMZ. 4) Have FTP transfer during the rekey event. 5) Access a Web server on the remote network. 6) Hit the Renegotiate button on the local firewall to renegotiate the tunnel.\n  7) Disable and re-enable the VPN policy on the local firewall. 8) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "16" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between Custom Zone on the local firewall and Custom Zone on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "16",
+      "title" : "Local destination is Custom Zone, remote destination is Custom Zone",
+      "result" : "  1) Create a Custom Zone on the local firewall. Assign X2 interface to it. 2) Add a VPN policy on the local firewall. Select X2 Subnets in Local Network. Create a new address object Rem Custom1 and select it in Destination Network. 3) Create a Custom zone on the remote firewall. Assign X3 interface to it. 4) Add a VPN policy on the remote firewall. Select X3 Subnet in Local Network. Create a new address object Rem Custom2 and select it in Destination Network. 5) Have a continuous ping between a host on the local Custom zone and a host on the remote Custom zone. 6) Have FTP transfer during the rekey event. 7) Access a Web server on the remote network. 8) Hit the Renegotiate button on the local firewall to renegotiate the tunnel. 9) Disable and re-enable the VPN policy on the local firewall. 10) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   },
+   "5" : {
+      "steps" : "  N/A",
+      "initial" : "  The user will ensure that the VPN tunnel is established between Custom zone on the local firewall and LAN in NAT Enabled mode on the remote firewall. Verify rekey, Renegotiate button, disable/enable policy and SA lifetime expiration.Make sure that Ping , FTP, and HTTP work via the tunnel.",
+      "id" : "5",
+      "title" : "Local destination is Custom Zone, remote destination is LAN in NAT Enabled mode",
+      "result" : "  1) Have NAT Enabled mode selected on the remote firewall. 2) Create a Custom zone on the local firewall. Assign X3 interface to the new zone. 3) Add a VPN policy on the local firewall. Select X3 Subnet in Local Network. Create a new address object Remote LAN and select it in Destination Network. 4) Add a VPN policy on the remote firewall. Select Primary LAN Subnet in Local Network. Create a new address object Remote Custom Zone and select it in Destination Network. 5) Have a continuous ping between a host on the local Custom zone and a host on the remote LAN. 6) Have FTP transfer during the rekey event. 7) Access a Web server on the remote network. 8) Hit the Renegotiate button on the local firewall to renegotiate the tunnel.\n  9) Disable and re-enable the VPN policy on the local firewall. 10) Stop the traffic and wait till SA lifetime expires. Start the traffic."
+   }
+}

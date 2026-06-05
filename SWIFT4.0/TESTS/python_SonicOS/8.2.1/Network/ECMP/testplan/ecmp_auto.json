@@ -1,0 +1,72 @@
+{   
+   "038" : {
+      "steps" : "  1. Navigate to Network/Routing page, click tab \"Route Policies\", switch to IPv4 view page;\n  2. Click Add button to add a new route policy, then an add route policy dialog box opens;\n  3. Check all fields on this dialog box, src any, destination Network 20.1.1.0/24, select radio button \"Multi-Path Route\";\n  4. Select \"Gateway Number:\" as 4, configure interface and gateway as X2 and gateway1, configure interface2 and gateway2 as X2 and gateway2, configure interface3 and gateway3 as X2 and gateway3, configure interface4 and gateway4 as X2 and gateway4, metric, click ok button.\n  5. Run continuous and large traffic to the destination, check connection monitor;",
+      "initial" : "  ",
+      "id" : "038",
+      "title" : "Function test: IPv4 ECMP PBR with 4 gateways, same outgoing interface, physical interface",
+      "result" : "  in step 5, traffic must be succeed and has a symmetrical distribution on these 4 gateways."
+   },  
+   "039" : {
+      "steps" : "  1. Navigate to Network/Routing page, click tab \"Route Policies\", switch to IPv4 view page;\n  2. Click Add button to add a new route policy, then an add route policy dialog box opens;\n  3. Check all fields on this dialog box, src any, destination Network 20.1.1.0/24, select radio button \"Multi-Path Route\";\n  4. Select \"Gateway Number:\" as 4, configure interface and gateway: interface Numbered VPN tunnel interface, gateway 0.0.0.0, configure interface2 and gateway2: interface is trunk vlan interface X3:V153, gateway X3:V153 gateway, configure interface3 and gateway3: interface DSLite tunnel interface, gateway 0.0.0.0, metric, configure interface4 and gateway4: interface is X2, gateway X2 gateway, metric, click ok button.\n  5. Run continuous and large traffic to the destination, check connection monitor;\n  6. Add another similar ECMP policy, interface X2, gateway X2 gateway; interface 2 unnumbered VPN tunnel interface, gateway2 0.0.0.0; interface3 sub-vlan interface X2:V152, gateway3 X2:V152 gateway; interface4 GRE4to6 interface, gateway4 0.0.0.0;\n  7. Run continuous and large traffic to the destination, check connection monitor;",
+      "initial" : "  ",
+      "id" : "039",
+      "title" : "Function test: IPv4 ECMP PBR with 4 gateways, different outgoing interfaces, physical, vlan, trunk vlan, VPN tunnel interface and DSLite, GRE tunnel interface mixed",
+      "result" : "  in step 5, traffic must be succeed and has a symmetrical distribution on these 4 interfaces.\n  In step 7, traffic must be succeed and has a symmetrical distribution on these 4 interfaces."
+   },
+   "054" : {
+      "steps" : "  1. Navigate to Network/Routing page, click tab \"Route Policies\", switch to IPv4 view page;\n  2. Click Add button to add a new route policy, then an add route policy dialog box opens;\n  3. Check all fields on this dialog box, src range 192.168.168.65-192.168.168.66, destination network 20.1.1.0/24, select radio button \"Multi-Path Route\";\n  4. Select \"Gateway Number:\" as 4, configure interface and gateway as X2 and gateway1, configure interface2 and gateway2 as X2 and gateway2, configure interface3 and gateway3 as X2 and gateway3, configure interface4 and gateway4 as X2 and gateway4, metric, click ok button.\n  5. Run continuous and large traffic from source PCs to the destination, check connection monitor;",
+      "initial" : "  ",
+      "id" : "054",
+      "title" : "Function test: IPv4 ECMP PBR, src: range, dst: network, service: any, 4 gateways",
+      "result" : "  in step 4, ECMP will be added;\n  in step 5, traffic succeed and has a symmetrical distribution on these 4 gateways."
+   },
+   "057" : {
+      "steps" : "  1. Navigate to Network/Routing page, click tab \"Route Policies\", switch to IPv4 view page;\n  2. Click Add button to add a new route policy, then an add route policy dialog box opens;\n  3. Check all fields on this dialog box, src network 192.168.168.0/24, destination network 20.1.1.0/24, select radio button \"Multi-Path Route\";\n  4. Select \"Gateway Number:\" as 2, configure interface and gateway as X2 and gateway1, configure interface2 and gateway2 as X2 and gateway2, configure interface3 and gateway3 as X2 and gateway3, configure interface4 and gateway4 as X2 and gateway4, metric, click ok button.\n  5. Run continuous and large traffic from source PC to the destination, check connection monitor;",
+      "initial" : "  ",
+      "id" : "057",
+      "title" : "Function test: IPv4 ECMP PBR, src: network, dst: network, service: any, 4 gateways",
+      "result" : "  in step 4, ECMP will be added;\n  in step 5, traffic succeed and has a symmetrical distribution on these 4 gateways."
+   },
+   "096" : {
+      "steps" : "  1. Navigate to Network/Routing page, click tab \"Route Policies\", switch to IPv4 view page;\n  2. Click Add button to add a new route policy, then an add route policy dialog box opens;\n  3. Check all fields on this dialog box, src any, destination Network 20.1.1.0/24, select radio button \"Multi-Path Route\";\n  4. Select \"Gateway Number:\" as 4, configure interface and gateway as X2 and X2 gateway, configure interface2 and gateway2 as X3 and X3 gateway, configure interface3 and gateway3 as X4 and X4 gateway, configure interface4 and gateway4 as X5 and X5 gateway, metric, click ok button.\n  5. Run continuous and large traffic to the destination, check connection monitor;\n  6. Shutdown interface X2, check traffic and connection cache monitor.\n  7. Shutdown X3, check traffic and connection cache monitor.\n  8. Shutdown X4, check traffic and connection cache monitor.\n  9. Shutdown X5, check traffic and connection cache monitor.",
+      "initial" : "  ",
+      "id" : "096",
+      "title" : "Function test when has 4 gateways, the fourth one is down",
+      "result" : "  in step 5, traffic must be succeed and has a symmetrical distribution on these 4 gateways.\n  In step 6, traffic still succeed and distributed on X3, X4, X5;\n  In step 7, traffic still succeed and distributed on X4, X5;\n  in step 8, traffic still succeed only go through X5;\n  in step 9, traffic failed and ECMP PBR is grayed out."
+   },
+   "100" : {
+      "steps" : "  1. Navigate to Network/Routing page, click tab \"Route Policies\", switch to IPv4 view page;\n  2. Click Add button to add a new route policy, then an add route policy dialog box opens;\n  3. Check all fields on this dialog box, src any, destination Network 20.1.1.0/24, select radio button \"Multi-Path Route\";\n  4. Select \"Gateway Number:\" as 4, configure interface and gateway as X2 and X2 gateway, configure interface2 and gateway2 as X3 and X3 gateway, configure interface3 and gateway3 as X4 and X4 gateway, configure interface4 and gateway4 as X5 and X5 gateway, metric, click ok button.\n  5. Run continuous and large traffic to the destination, check connection monitor;\n  6. Shutdown interface X2, and then shutdown X3, and then shutdown X4, and then shutdown X5, check traffic and connection cache monitor.\n  7. No shutdown(up) interface X2, check traffic and connection cache monitor.\n  8. UP interface X3, check traffic and connection cache monitor.\n  9. UP interface X4, check traffic and connection cache monitor.\n  10. UP interface X5, check traffic and connection cache monitor.",
+      "initial" : " ",
+      "id" : "100",
+      "title" : "Function test when has 4 gateways, the fourth one is back",
+      "result" : "  in step 5, traffic must be succeed and has a symmetrical distribution on these 4 gateways.\n  In step 6, traffic will be failed and ecmp pbr will be grayed out.\n  In step 7, traffic will be recovered and go through interface X2.\n  in step 8, traffic will be distributed on X2 and X3.\n  in step 9, traffic will be distributed on X2, X3, X4.\n  in step 10, traffic will be distributed on X2, X3, X4, X5. "
+   },
+   "147" : {
+      "steps" : "  1. Add an IPv4 ECMP PBR with 4 gateways use CLI commands\n  configure\n  route-policy ipv4 interface X1 metric 10 destination name \"server_pc\" gateway name \"X1 Default Gateway\" name ecmp_cli\n  metric 10\n  nexthop-number 4\n  interface2 X2\n  gateway2 name \"X2 Default Gateway\"\n  interface3 X3\n  gateway3 name \"X3 Default Gateway\"\n  interface4 X4\n  gateway4 name \"X4 Default Gateway\"\n  gateway name \"X1 Default Gateway\"\n  end\n  commit\n  2.Run continuous and large traffic to the destination, check connection monitor or packet monitor; ",
+      "initial" : "  ",
+      "id" : "147",
+      "title" : "Add an IPv4 ECMP PBR in CLI with 4 gateways, different outgoing interface",
+      "result" : ""
+   },
+   "159" : {
+      "steps" : "  1. Navigate to Network/Routing page, click tab \"Route Policies\", switch to IPv4 view page;\n  2. Click Add button to add a new route policy, then an add route policy dialog box opens;\n  3. Check all fields on this dialog box, src any, destination Network 20.1.1.0/24, select radio button \"Multi-Path Route\";\n  4. Select \"Gateway Number:\" as 4, configure interface and gateway as X2 and X2 gateway, configure interface2 and gateway2 as X3 and X3 gateway, configure interface3 and gateway3 as X4 and X4 gateway, configure interface4 and gateway4 as X5 and X5 gateway, metric,name as \"ecmp' click ok button.\n  5.use CLI command:show route-policy ipv4 name ecmp get the policy UUID\n  6.use CLI commands to edit the policy\n  configure\n  route-policy ipv4 uuid XXXXXXX\n  nexthop-number 3\n  interface2 X2\n  gateway2 name \"X2 Default Gateway\"\n  interface3 X4\n  gateway3 name \"X4 Default Gateway\"\n  end\n  commit\n  7.Run continuous and large traffic to the destination, check connection monitor or packet monitor; ",
+      "initial" : "  ",
+      "id" : "159",
+      "title" : "Edit an IPv4 ECMP PBR in CLI with 4 gateways, different outgoing interface, added on GUI",
+      "result" : ""
+   },
+   "179" : {
+      "steps" : "  1.add a ecmp route-policy named \"ecmp\" from GUI\n  2. use CLI command:\"show route-policy ipv4 name ecmp\" get the policy UUID\n  3 .use CLI command \"no route-policy ipv4 uuid XXXXXX\"",
+      "initial" : "  ",
+      "id" : "179",
+      "title" : "Delete an IPv4 ECMP PBR in CLI, which is added on GUI",
+      "result" : ""
+   },  
+   "219" : {
+      "steps" : "  1.add several ecmp route-policies from GUI\n  2.download TSR\n  3.check TSR 'Network'->'Routing'->'Route Policies' Part",
+      "initial" : "  ",
+      "id" : "219",
+      "title" : "TSR",
+      "result" : ""
+   }    
+}

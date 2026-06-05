@@ -1,0 +1,317 @@
+{
+    "4113636": {
+        "_case_id": "4113636",
+        "id": "4113636",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT UI from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT UI from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT UI from all zones"
+    },
+    "4113637": {
+        "_case_id": "4113637",
+        "id": "4113637",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT CLI\u00a0 from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT CLI\u00a0 from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT CLI\u00a0 from all zones"
+    },
+    "4113638": {
+        "_case_id": "4113638",
+        "id": "4113638",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT API from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT API from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using FW MGMT API from all zones"
+    },
+    "4113639": {
+        "_case_id": "4113639",
+        "id": "4113639",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GMS/NSM from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GMS/NSM from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GMS/NSM from all zones"
+    },
+    "4113640": {
+        "_case_id": "4113640",
+        "id": "4113640",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using ULA from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using ULA from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using ULA from all zones"
+    },
+    "4113641": {
+        "_case_id": "4113641",
+        "id": "4113641",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using SSLVPN Portal from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using SSLVPN Portal from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using SSLVPN Portal from all zones"
+    },
+    "4113642": {
+        "_case_id": "4113642",
+        "id": "4113642",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using NX client from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using NX client from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using NX client from all zones"
+    },
+    "4113643": {
+        "_case_id": "4113643",
+        "id": "4113643",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using MC client from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using MC client from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using MC client from all zones"
+    },
+    "4113644": {
+        "_case_id": "4113644",
+        "id": "4113644",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GVC client from all zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GVC client from all zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when No Restriction is set, user is able to login using GVC client from all zones"
+    },
+    "4113645": {
+        "_case_id": "4113645",
+        "id": "4113645",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using FW MGMT UI from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using FW MGMT UI from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using FW MGMT UI from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113646": {
+        "_case_id": "4113646",
+        "id": "4113646",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using FW MGMT CLI\u00a0 from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using FW MGMT CLI\u00a0 from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using FW MGMT CLI\u00a0 from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113647": {
+        "_case_id": "4113647",
+        "id": "4113647",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using FW MGMT API from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using FW MGMT API from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using FW MGMT API from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113648": {
+        "_case_id": "4113648",
+        "id": "4113648",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using GMS/NSM from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using GMS/NSM from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using GMS/NSM from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113649": {
+        "_case_id": "4113649",
+        "id": "4113649",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using ULA from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using ULA from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using ULA from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113650": {
+        "_case_id": "4113650",
+        "id": "4113650",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using SSLVPN Portal from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using SSLVPN Portal from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using SSLVPN Portal from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113651": {
+        "_case_id": "4113651",
+        "id": "4113651",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using NX client from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using NX client from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using NX client from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113652": {
+        "_case_id": "4113652",
+        "id": "4113652",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using MC client from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using MC client from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using MC client from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113653": {
+        "_case_id": "4113653",
+        "id": "4113653",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using GVC client from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using GVC client from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Access is set, user is restricted to login using GVC client from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113654": {
+        "_case_id": "4113654",
+        "id": "4113654",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using FW MGMT UI from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using FW MGMT UI from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using FW MGMT UI from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113655": {
+        "_case_id": "4113655",
+        "id": "4113655",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using FW MGMT CLI\u00a0 from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using FW MGMT CLI\u00a0 from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using FW MGMT CLI\u00a0 from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113656": {
+        "_case_id": "4113656",
+        "id": "4113656",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using FW MGMT API from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using FW MGMT API from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using FW MGMT API from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113657": {
+        "_case_id": "4113657",
+        "id": "4113657",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is able to login using GMS/NSM from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is able to login using GMS/NSM from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is able to login using GMS/NSM from LAN, WAN and DMZ zones"
+    },
+    "4113658": {
+        "_case_id": "4113658",
+        "id": "4113658",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using ULA from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using ULA from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using ULA from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113659": {
+        "_case_id": "4113659",
+        "id": "4113659",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using SSLVPN Portal from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using SSLVPN Portal from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using SSLVPN Portal from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113660": {
+        "_case_id": "4113660",
+        "id": "4113660",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using NX client from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using NX client from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using NX client from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113661": {
+        "_case_id": "4113661",
+        "id": "4113661",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using MC client from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using MC client from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using MC client from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113662": {
+        "_case_id": "4113662",
+        "id": "4113662",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using GVC client from WAN and DMZ zones, allowed from LAN zone",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using GVC client from WAN and DMZ zones, allowed from LAN zone",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block Remote Except GMS/NSM is set, user is restricted to login using GVC client from WAN and DMZ zones, allowed from LAN zone"
+    },
+    "4113663": {
+        "_case_id": "4113663",
+        "id": "4113663",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using FW MGMT UI from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using FW MGMT UI from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using FW MGMT UI from LAN, WAN and DMZ zones"
+    },
+    "4113664": {
+        "_case_id": "4113664",
+        "id": "4113664",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is allowed to login using FW MGMT CLI\u00a0 from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is allowed to login using FW MGMT CLI\u00a0 from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is allowed to login using FW MGMT CLI\u00a0 from LAN, WAN and DMZ zones"
+    },
+    "4113665": {
+        "_case_id": "4113665",
+        "id": "4113665",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using FW MGMT API from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using FW MGMT API from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using FW MGMT API from LAN, WAN and DMZ zones"
+    },
+    "4113666": {
+        "_case_id": "4113666",
+        "id": "4113666",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using GMS/NSM from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using GMS/NSM from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using GMS/NSM from LAN, WAN and DMZ zones"
+    },
+    "4113667": {
+        "_case_id": "4113667",
+        "id": "4113667",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using ULA from LAN zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using ULA from LAN zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using ULA from LAN zones"
+    },
+    "4113668": {
+        "_case_id": "4113668",
+        "id": "4113668",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using SSLVPN Portal from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using SSLVPN Portal from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using SSLVPN Portal from LAN, WAN and DMZ zones"
+    },
+    "4113669": {
+        "_case_id": "4113669",
+        "id": "4113669",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using NX client from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using NX client from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using NX client from LAN, WAN and DMZ zones"
+    },
+    "4113670": {
+        "_case_id": "4113670",
+        "id": "4113670",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using MC client from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using MC client from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using MC client from LAN, WAN and DMZ zones"
+    },
+    "4113671": {
+        "_case_id": "4113671",
+        "id": "4113671",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using GVC client from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using GVC client from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console Access is set, user is restricted to login using GVC client from LAN, WAN and DMZ zones"
+    },
+    "4113672": {
+        "_case_id": "4113672",
+        "id": "4113672",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using FW MGMT UI from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using FW MGMT UI from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using FW MGMT UI from LAN, WAN and DMZ zones"
+    },
+    "4113673": {
+        "_case_id": "4113673",
+        "id": "4113673",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is allowed to login using FW MGMT CLI\u00a0 from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is allowed to login using FW MGMT CLI\u00a0 from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is allowed to login using FW MGMT CLI\u00a0 from LAN, WAN and DMZ zones"
+    },
+    "4113674": {
+        "_case_id": "4113674",
+        "id": "4113674",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using FW MGMT API from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using FW MGMT API from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using FW MGMT API from LAN, WAN and DMZ zones"
+    },
+    "4113675": {
+        "_case_id": "4113675",
+        "id": "4113675",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is allowed to login using GMS/NSM from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is allowed to login using GMS/NSM from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is allowed to login using GMS/NSM from LAN, WAN and DMZ zones"
+    },
+    "4113676": {
+        "_case_id": "4113676",
+        "id": "4113676",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using ULA from LAN zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using ULA from LAN zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using ULA from LAN zones"
+    },
+    "4113677": {
+        "_case_id": "4113677",
+        "id": "4113677",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using SSLVPN Portal from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using SSLVPN Portal from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using SSLVPN Portal from LAN, WAN and DMZ zones"
+    },
+    "4113678": {
+        "_case_id": "4113678",
+        "id": "4113678",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using NX client from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using NX client from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using NX client from LAN, WAN and DMZ zones"
+    },
+    "4113679": {
+        "_case_id": "4113679",
+        "id": "4113679",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using MC client from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using MC client from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using MC client from LAN, WAN and DMZ zones"
+    },
+    "4113680": {
+        "_case_id": "4113680",
+        "id": "4113680",
+        "result": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using GVC client from LAN, WAN and DMZ zones",
+        "steps": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using GVC client from LAN, WAN and DMZ zones",
+        "title": "Verify that if compromised password for Local user is detected during periodic check when Block All But Console & GMS/NSM is set, user is restricted to login using GVC client from LAN, WAN and DMZ zones"
+    }
+}

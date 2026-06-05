@@ -1,0 +1,324 @@
+{
+   "33" : {
+      "steps" : "  N/A",
+      "initial" : "  N/A",
+      "id" : "33",
+      "title" : "Exchanging between static mode and DHCP mode",
+      "result" : "  N/A"
+   },
+   "32" : {
+      "steps" : "  1) Set the interface X2 as WAN/LAN/DMZ/Custom zone 2) Using router or windows 2008 as DHCPv6 Server. Set the valid time as 300s%2cpref time as 200s 3) Connected DHCP server to interface X2%2c 4) Capture the packets for those interfaces. 5) Click Renew button for the Client. 6) After the Client get IP info from DHCP server%2c then %2cdisconnect the client and server. 7) Waiting for about 150s ",
+      "initial" : "  PC1 Firewall----HUB----DHCP server ",
+      "id" : "32",
+      "title" : "DHCP client rebind lease when current time reached.",
+      "result" : "  The client initiates a Rebind/Reply message exchange with any available Server. The client includes an IA option with all addresses currently assigned to the IA in its Rebind message."
+   },
+   "21" : {
+      "steps" : "  1) Repeat the steps in above case%2c only make sure the \u0091Use Rapid Commit Option\u0092 is clicked",
+      "initial" : "  Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "21",
+      "title" : "LAN/DMZ/Customer zone ---DHCP v6 Mode as manual, Rapid commit",
+      "result" : "  Form the captured packet, you will notice the Solicit message, and there is 'Rapid commit' option,and reply packet send to DHCPv6 client directly after Solicit message"
+   },
+   "7" : {
+      "steps" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server. 2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&LB. 3) In the configuration page of interface X1%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u0091Manually\u0092. Don't Click 'Only Request Stateless Information' 4) Do a Renew from the DHCP Client. 5) Capture packet on Firewall. ",
+      "initial" : "  Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server. ",
+      "id" : "7",
+      "title" : "WAN interface--DHCPv6 Mode as manual, Don't Click 'Only Request Stateless Information'",
+      "result" : "  the DHCP client can get IP address and other info from DHCP server. "
+   },
+   "26" : {
+      "steps" : "  1) repeat the test case above%2c make sure the \u0091Disable all IPv6 Traffic on the interface\u0092 is clicked.",
+      "initial" : "  Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. ",
+      "id" : "26",
+      "title" : "Disable all IPv6 Traffic on the Interface",
+      "result" : "  The firewall as DHCP client can\u0092t get IP address info from DHCP server."
+   },
+   "2" : {
+      "steps" : "  Step5 DHCP get IP address from DHCP server. Step7 DHCP get IP address from DHCP server\n  Step8 DHCPv6 infrastucture is disabled on the network\n  Step9 Form the captured packet , you will notice the DHCP client only set Information_request message to DHCP server. The DHCP client only get network parameter settings from DHCP server without IP address info.\n  Step 11 DHCP get IP address from DHCP server. Form the captured packet , you will notice the DHCPv6 client actived after send RS three times and none received RA",
+      "initial" : "  1)Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Enable RA in DHCP Server.Set M=1%2c O=1. (2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&LB. (3) In the configuration page of interface X1%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u0091Automatically\u0092. (4) Go to Advanced configuration page%2c Click\u0092 Enable Listening to Router Advertisement \u0092. (5)Do a Renew from the DHCP Client. (6) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Enable RA in DHCP Server.Set M=1%2c O=0. (7) Do a Renew form the DHCP Client%2c Capture packet on Firewall. (8) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Enable RA in DHCP Server.Set M=0%2c O=0. (9) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Enable RA in DHCP Server.Set M=0%2c O=1. (10) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in Router. (11) Do a Renew form the DHCP Client%2c Capture packet on Firewall.",
+      "id" : "2",
+      "title" : "WAN interface-DHCPv6 Mode as Automatic , Enable Stateless Address Autoconfiguration",
+      "result" : ""
+   },
+   "17" : {
+      "steps" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server 2) In the configuration page of interface X2%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u0091Automatic\u0092. ",
+      "initial" : "  DUT-----DHCP Server and Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "17",
+      "title" : "LAN/DMZ/Customer zone --DHCP v6 Mode as Automatic, make sure can't only Request Stateless Information",
+      "result" : "  step2 Make sure the Request Stateless Information button is gray,the user can't enable it."
+   },
+   "1" : {
+      "steps" : "  Step5 DHCP get IP address from DHCP server. Step7 DHCP get IP address from DHCP server\n  Step8 DHCPv6 infrastucture is disabled on the network\n  Step9 Form the captured packet , you will notice the DHCP client only set Information_request message to DHCP server. The DHCP client only get network parameter settings from DHCP server without IP address info.\n  Step 11 DHCP get IP address from DHCP server. Form the captured packet , you will notice the DHCPv6 client actived after send RS three times and none received RA",
+      "initial" : "  (1)Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Enable RA in DHCP Server.Set M=1%2c O=1. (2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&LB. (3) In the configuration page of interface X1%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u0091Automatically\u0092. (4) Go to Advanced configuration page%2c Click\u0092 Enable Listening to Router Advertisement \u0092. (5)Do a Renew from the DHCP Client. (6) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Enable RA in DHCP Server.Set M=1%2c O=0. (7) Do a Renew form the DHCP Client%2c Capture packet on Firewall. (8) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Enable RA in DHCP Server.Set M=0%2c O=0. (9) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Enable RA in DHCP Server.Set M=0%2c O=1. (10) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in Router. (11) Do a Renew form the DHCP Client%2c Capture packet on Firewall.",
+      "id" : "1",
+      "title" : "WAN interface-DHCP v6 Mode as Automatic, Don't click Enable Stateless Address Autoconfiguration",
+      "result" : ""
+   },
+   "18" : {
+      "steps" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X2. Disable RA in DHCP Server. 2) In the configuration page of interface X2%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u0091Manually\u0092. Check \u0093Request Stateless Information \u0094button\n  3) Capture packet on Firewall. ",
+      "initial" : "  Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "18",
+      "title" : "LAN/DMZ/Customer zone --DHCPv6 Mode as manual, Only Request Stateless Information",
+      "result" : "  Form the captured packet, you will notice the DHCP client only set Information_request message to DHCP server. The DHCP client only get network info without IP address"
+   },
+   "30" : {
+      "steps" : "  N/A",
+      "initial" : "  N/A",
+      "id" : "30",
+      "title" : "IP refresh button",
+      "result" : "  N/A"
+   },
+   "16" : {
+      "steps" : "  Test case 4",
+      "initial" : "  Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "16",
+      "title" : "LAN/DMZ/Customer zone DHCP v6 Mode as Automatic, using Rapid Commit Option",
+      "result" : "  pass"
+   },
+   "44" : {
+      "steps" : "  steps: 1) Configure X1, DHCPv6 automatic mode, connect to a DHCPv6 server 1, X1 can acquire IPv6 address from DHCPv6 server 1; 2) Configure X2, DHCPv6 automatic mode, connect to a DHCPv6 server 2, X2 can acquire IPv6 address from DHCPv6 server 2; 3) Enable debug ipv6 dhcp on DHCPv6 server 2; 4) Change X1 to static mode, check DHCPv6 server 2 debug log.",
+      "initial" : "  DHCPv6 server 2----------(X2 DHCPv6 mode)DUT(X1 DHCPv6 mode)----------DHCPv6 server 1",
+      "id" : "44",
+      "title" : "Disable one DHCPv6 client will not take any effect to other DHCPv6 clients.",
+      "result" : "  in step 4, DHCPv6 server 2 should not receive any DHCPv6 packets such as solicit message from X2, means that disable client X1 won't take any effect to client X2's behavior."
+   },
+   "27" : {
+      "steps" : "  1.add a vlan interface is wan/lan/dmz zone\n  2.config vlan interface ipv6 assign mode is dhcp",
+      "initial" : "  DUT---SWITCH----DHCP SERVER",
+      "id" : "27",
+      "title" : "vlan interface can set as DHCP client",
+      "result" : "  pass"
+   },
+   "25" : {
+      "steps" : "  From the packets captured, the DHCP client got Valid time and Preferred time form DHCP server. There is Lease time info in GUI.",
+      "initial" : "  1) Set the interface X1 as primary WAN zone%2c interface X2 as LAN/DMZ/Custom zone. 2) Using router or windows 2008 as DHCPv6 Server. Connected to interface X1/X2. 3) Capture the packets for those interfaces. 4) WAN/DMZ /LAN/Custom DHCP client to renew lease and learn IP address and Lease info from DHCP server ",
+      "id" : "25",
+      "title" : "Lease time info",
+      "result" : ""
+   },
+   "28" : {
+      "steps" : "  The client can release the IP info form DHCP server. And the firewall receive the reply message from the DHCPv6 server",
+      "initial" : "  1) Set the interface X1 as primary WAN zone%2c interface X2/X3\u0085 as LAN/DMZ/Custom zone. 2) Using router or windows 2008 as DHCPv6 Server. Connected to interface X1/X2/X3\u0085. 3) Capture the packets for those interfaces. 4) WAN/DMZ /LAN/Custom DHCP client to renew lease and learn IP address and Lease info from DHCP server 5) Then%2c click the Release button for each client. ",
+      "id" : "28",
+      "title" : "IP release button",
+      "result" : ""
+   },
+   "40" : {
+      "steps" : "  1) Set the interface X1 as primary WAN zone%2c interface X2/X3\u0085 as LAN/DMZ/Custom zone. 2) Using router or windows 2008 as DHCPv6 Server. Connected to interface X1/X2/X3\u0085. 3) Capture the packets for those interfaces. 4) WAN/DMZ /LAN/Custom DHCP client to renew lease and learn IP address and Lease info from DHCP server 5) Check the TSR. 6) Release some of the DHCP clients IP info. ",
+      "initial" : "  PC1 Firewall----HUB----DHCP server",
+      "id" : "40",
+      "title" : "Verify TSR",
+      "result" : "  Verify TSR display the correct info for each DHCP client."
+   },
+   "14" : {
+      "steps" : "  Test case 2",
+      "initial" : "  Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "14",
+      "title" : "LAN/DMZ/Customer zone---DHCPv6 Mode as Automatic , Enable Stateless Address Autoconfiguration",
+      "result" : "  pass"
+   },
+   "20" : {
+      "steps" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X2. Disable RA in DHCP Server 2) In the configuration page of interface X2%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as 'Manually'. Click \u0093Enable Listening to Router Advertisement '\u0094\n  3) Do a Renew from the DHCP Client. 4)Don't click \u0093Enable Listening to Router Advertisement\u0094\n  5) Capture packet on Firewall. ",
+      "initial" : "  Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "20",
+      "title" : "LAN/DMZ/Customer zone --DHCP v6 Mode as manual, (Don't) click Enable Listening to Router Advertisement",
+      "result" : "  step3 and step5 the client in stateful mode, can get ip info and network paramaters from dhcp server "
+   },
+   "24" : {
+      "steps" : "  Verify LAN client receives 2 new DNS servers ",
+      "initial" : "  1) Set the interface X1 as primary WAN zone%2c interface X2 as LAN/DMZ/Custom zone. 2) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. for WAN client to renew lease and learn new DNS servers 3) Using a LAN/DMZ client connect to interface X2%2c add some proper DHCP scope for the interface%2c the DNS inherit form Firewall. Initial Renew from Client. ",
+      "id" : "24",
+      "title" : "DNS info",
+      "result" : ""
+   },
+   "10" : {
+      "steps" : "  1.Get a ip address from DHCPV6 sever\n  2.restart FW\n  3.capture packet from FW",
+      "initial" : "  Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1.",
+      "id" : "10",
+      "title" : "WAN interface---Send hints for renewing previous IP on startup",
+      "result" : "  Form the captured packet, you will notice the Solicit message, and there is IANA option, and IA address have previous IP info"
+   },
+   "31" : {
+      "steps" : "  1) Set the interface X2 as WAN/LAN/DMZ/Custom zone 2) Using router or windows 2008 as DHCPv6 Server. Set the valid time as 300s%2cpref time as 200s 3) Connected DHCP server to interface X2%2c 4) Capture the packets for those interfaces. 5) Click Renew button for the Client. 6) Waiting for 100s. ",
+      "initial" : "  PC1 Firewall----HUB----DHCP server",
+      "id" : "31",
+      "title" : "DHCP client renews lease when current time reached.",
+      "result" : "  The client initiates a Renew/Reply message exchange to extend the lifetimes on any addresses in the IA."
+   },
+   "35" : {
+      "steps" : "  Verify the client can get IP info form one of the DHCPv6 servers(The first recevied).",
+      "initial" : "  1) Set the interface X2 as WAN/LAN/DMZ/Custom zone 2) Using more than one router or windows 2008 as DHCPv6 Server. Connected to interface X2\u0085. 3) Capture the packets for those interfaces. 4) Click Renew button for the Client%2c the client to renew lease and learn IP address and Lease info from one of DHCP server according the rule (choose the fist packets received). ",
+      "id" : "35",
+      "title" : "More than one DHCP server",
+      "result" : ""
+   },
+   "11" : {
+      "steps" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X2. Set X2 as Alternate WAN in WAN Failover & Load Balancing 2) Repeat test (primary WAN zone)above. ",
+      "initial" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X2. ",
+      "id" : "11",
+      "title" : "WAN interface---DHCP client as Alternate WAN zone",
+      "result" : "  N/A"
+   },
+   "42" : {
+      "steps" : "  step 1: config one interface x2 and set the IP assignment as DHCPV6. step 2: config the DHCP Server . step 3: change the mode to the non-config. step 4: click release/renew button.",
+      "initial" : "  DUT(x2)------(DHCP Server)FW ",
+      "id" : "42",
+      "title" : "click release/renew button when in non-config mode",
+      "result" : "  it will show Error: Not allowed in current mode"
+   },
+   "22" : {
+      "steps" : "  1.Get a ip address from DHCPV6 sever\n  2.restart FW\n  3.capture packet from FW",
+      "initial" : "  Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "22",
+      "title" : "LAN/DMZ/Customer zone ---Send hints for renewing previous IP on startup",
+      "result" : "  Form the captured packet, you will notice the Solicit message, and there is IANA option, and IA address have previous IP info"
+   },
+   "46" : {
+      "steps" : "  Verify traffic pass through succesfully for step 4~7",
+      "initial" : "  1 DUT set as HA mode and configure HA management interface\n  2 Configure DHCPv6 client on DUT\n  3 Enable DHCPv6 server on DUT and some clients gets DHCPv6 IP successfully\n  4 Start LAN/LAN, LAN/WAN, WAN/LAN traffic and HA management interface Traffic\n  5 Keep DHCPv6 server enable and disable DHCPv6 client and repeat steps 4\n  6 Disable DHCPv6 server and enable DHCPv6 client and repeat step 4\n  7 Disable both DHCPv6 server and DHCPv6 client and repeat step 4",
+      "id" : "46",
+      "title" : "Verify Traffic pass successfully when both DHCPv6 server and DHCPv6 client enabled-DTS 203466",
+      "result" : ""
+   },
+   "13" : {
+      "steps" : "  Test case 1",
+      "initial" : "  Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "13",
+      "title" : "LAN/DMZ/Custom zone---DHCP v6 Mode as Automatic,Don't click Enable Stateless Address Autoconfiguration",
+      "result" : "  pass\u3001"
+   },
+   "23" : {
+      "steps" : "  Verify the user can input valid value in Comments field.",
+      "initial" : "  1) Set the interface X1 as WAN zone%2c interface X2 as LAN/DMZ/ Customer zone. And IP Assignment as DHCPv6 . 2) Using router or windows 2008 as DHCPv6 Server. Connected to interface X1 and interface X2. 3) Input the valid value in Comments field. ",
+      "id" : "23",
+      "title" : "Comments field",
+      "result" : ""
+   },
+   "29" : {
+      "steps" : "  Verify all interfaces in different zone work as DHCP client would work fine",
+      "initial" : "  1) Set the interface X1 as primary WAN zone%2c interface X2/X3\u0085 as LAN/DMZ/Custom zone. 2) Using router or windows 2008 as DHCPv6 Server. Connected to interface X1/X2/X3\u0085. 3) Capture the packets for those interfaces. 4) Click Renew button for each Client%2c WAN/DMZ /LAN/Custom DHCP client to renew lease and learn IP address and Lease info from DHCP server ",
+      "id" : "29",
+      "title" : "IP renew button",
+      "result" : ""
+   },
+   "6" : {
+      "steps" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server. 2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&LB. 3) In the configuration page of interface X1%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u0091Manually\u0092. Check \u0093Request Stateless Information \u0094button\n  4) Capture packet on Firewall. ",
+      "initial" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server.",
+      "id" : "6",
+      "title" : "WAN interface--DHCPv6 Mode as manual, Only Request Stateless Information",
+      "result" : "  Form the captured packet, you will notice the DHCP client only set Information_request message to DHCP server. The DHCP client only get network info without IP address"
+   },
+   "39" : {
+      "steps" : "  step2. the action don't affect all the cusom configuration . step4. the old configuration back.",
+      "initial" : "  1. Customized some interface as DHCPv6 mode 2. Export the exp file. 3. clear the custom configuration for the interface. 4. import the exp file in step2.",
+      "id" : "39",
+      "title" : "Export/import Exp file",
+      "result" : ""
+   },
+   "3" : {
+      "steps" : "  SonicOS display error message:Listening to Router Advertisement option must be enabled when DHCPV6 is in automatic mode",
+      "initial" : "  This test ensures that interface act as DHCP client %2cusing some configuration%2c the performance act right",
+      "id" : "3",
+      "title" : "WAN interface--DHCP v6 Mode as Automatic, (don't) click 'Enable Listening to Router Advertisement '",
+      "result" : ""
+   },
+   "36" : {
+      "steps" : "  1) Set the interface X2 as WAN/LAN/DMZ/Custom zone 2) Using more than one router or windows 2008 as DHCPv6 Server. Set the DHCP server only can send the same IP address as PC1 to DHCP client. 3) Connected DHCP server to interface X2%2c set Duplicate Address Detection as 1 second. 4) Capture the packets for those interfaces. 5) Click Renew button for the Client. ",
+      "initial" : "  PC1 Firewall----HUB----DHCP server ",
+      "id" : "36",
+      "title" : "Duplicate Address Detection",
+      "result" : "  Verify the client will detect the IP address is duplicate , and don\u0092t use this IP address."
+   },
+   "9" : {
+      "steps" : "  Form the captured packet, you will notice the Solicit message, and there is 'Rapid commit' option,and reply packet send to DHCPv6 client directly after Solicit message",
+      "initial" : "  1) Repeat the steps in above case%2c only make sure the \u0091Use Rapid Commit Option\u0092 is clicked",
+      "id" : "9",
+      "title" : "WAN interface---DHCP v6 Mode as manual, Rapid commit",
+      "result" : ""
+   },
+   "41" : {
+      "steps" : "  1. Set the interface X1 as primary WAN zone%2c interface X2/X3\u0085 as LAN/DMZ/Custom zone. 2. Using router or windows 2008 as DHCPv6 Server. Connected to interface X1/X2/X3\u0085. 3. Capture the packets for those interfaces. 4. WAN/DMZ /LAN/Custom DHCP client to renew lease and learn IP address and Lease info from DHCP server 5. Plug out the cable of DHCP client. 6. Re-plug in the cable of DHCP client ",
+      "initial" : "  PC1 Firewall----HUB----DHCP server ",
+      "id" : "41",
+      "title" : "Plug out/in the cable of DHCP client.",
+      "result" : "  Verify DHCP client work correctly after the cable was plugged in/out ."
+   },
+   "12" : {
+      "steps" : "  N/A",
+      "initial" : "  1.config X1 is Primary WAN X2 is secondary WAN\n  2.retest 1-10",
+      "id" : "12",
+      "title" : "WAN interface--DHCP client as primary WAN and Alternate WAN.",
+      "result" : ""
+   },
+   "15" : {
+      "steps" : "  Test3",
+      "initial" : "  Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "15",
+      "title" : "LAN/DMZ/Customer zone --DHCP v6 Mode as Automatic, (don't) click 'Enable Listening to Router Advertisement '",
+      "result" : "  pass"
+   },
+   "8" : {
+      "steps" : "  step4 and step6 the client in stateful mode, can get ip info and network paramaters from dhcp server ",
+      "initial" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server 2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&LB. 3) In the configuration page of interface X1%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as 'Manually'. Click \u0093Enable Listening to Router Advertisement '\u0094\n  4) Do a Renew from the DHCP Client. 5)Don't click \u0093Enable Listening to Router Advertisement\u0094\n  6) Capture packet on Firewall. ",
+      "id" : "8",
+      "title" : "WAN interface--DHCP v6 Mode as manual, (Don't) click Enable Listening to Router Advertisement",
+      "result" : ""
+   },
+   "38" : {
+      "steps" : "  All the configuration are saved.",
+      "initial" : "  Customzied some interface as DHCPv6 Mode. Restart the firewall. ",
+      "id" : "38",
+      "title" : "Restart the firewall, the configuration are saved.",
+      "result" : ""
+   },
+   "4" : {
+      "steps" : "  Form the captured packet, you will notice the Solicit message, and there is 'Rapid commit' option,and reply packet send to DHCPv6 client directly after Solicit message",
+      "initial" : "  1) Repeat the steps in above case%2c only make sure the \u0091Use Rapid Commit Option\u0092 is clicked",
+      "id" : "4",
+      "title" : "WAN interface DHCP v6 Mode as Automatic, using Rapid Commit Option",
+      "result" : ""
+   },
+   "34" : {
+      "steps" : "  Verify exchanging betwen auto mode and DHCP mode, it take effect immediatly.",
+      "initial" : "  1. set the interface x0 as auto mode. 2. then change it as DHCP mode. 3. change back to auto mode.",
+      "id" : "34",
+      "title" : "Exchanging between auto mode and DHCP mode",
+      "result" : ""
+   },
+   "45" : {
+      "steps" : "  in step 3, the DHCPv6 DUID can not be manually modified;\n  in step 4, change X0's MAC address, DHCPv6 DUID won't be changed. ",
+      "initial" : "  1: Factory default DUT;\n  2: Configure X1 in IPv6 interface page, select its ip-assignment as DHCPv6, connect it to a DHCPv6 server;\n  3: Click edit button of X1, switch to protocol tab, check the DHCPv6 DUID under DHCPv6 General Information;\n  4: Change X0's MAC address, check the DHCPv6 DUID; ",
+      "id" : "45",
+      "title" : "The DHCPv6 DUID can not be manually modified or changed by other means.",
+      "result" : ""
+   },
+   "37" : {
+      "steps" : "  the user make sure an interface can't transparent/ L2 bridged to interface X1",
+      "initial" : "  1. Set interface X1 as DHCPV6 mode%2c get dynamic address from DHCPV6 server. 2. Try to set another interface transparent or L2 bridged to interface X",
+      "id" : "37",
+      "title" : "An Interface in transparent mode/ L2 bridge mode don't support DHCP",
+      "result" : ""
+   },
+   "43" : {
+      "steps" : "  1) Configure an interface X1, enable DHCPv6, and connect it to a DHCPv6 server, make sure it can acquire IANA from that server; 2) Switch to Protocol tab, check its DUID, it is generated according to X0's MAC address; 3) Change X0's MAC address, check X1's DUID, it changed according to X0's new MAC address immediately; 4) Do release and renew process on X1, do packet capture on FW, check the packets, check the release message and solicit message etc, FW should filled Client Identifier option with the new DUID.",
+      "initial" : "  DUT(DHCPv6 client)------------DHCPv6 server",
+      "id" : "43",
+      "title" : "Refer to DTS#139486: When change X0's MAC address , DHCPv6 client's DUID should change immediately.",
+      "result" : "  in step 4) Do release and renew process on X1, do packet capture on FW, check the packets, check the release message and solicit message etc, FW should filled Client Identifier option with the new DUID."
+   },
+   "19" : {
+      "steps" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X2. Disable RA in DHCP Server. 2) In the configuration page of interface X2%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u0091Manually\u0092. Don't Click 'Only Request Stateless Information' 3) Do a Renew from the DHCP Client. 4) Capture packet on Firewall. ",
+      "initial" : "  Config interface X2 is LAN/DMZ/Custom zone",
+      "id" : "19",
+      "title" : "LAN/DMZ/Customer zone --DHCPv6 Mode as manual, Don't Click 'Only Request Stateless Information'",
+      "result" : "  the DHCP client can get IP address and other info from DHCP server."
+   },
+   "5" : {
+      "steps" : "  1) Using a router or windows 2008 as DHCPv6 Server. Connected to interface X1. Disable RA in DHCP Server 2) Set interface X1 as WAN zone%2c and set it as Primary WAN in WAN Failover&LB. 3) In the configuration page of interface X1%2c Set IP assignment as DHCPv6%2c and DHCPv6 mode as \u0091Automatic\u0092. ",
+      "initial" : "  DUT-----DHCP Server",
+      "id" : "5",
+      "title" : "WAN interface--DHCP v6 Mode as Automatic, make sure can't only Request Stateless Information",
+      "result" : "  step3 Make sure the Request Stateless Information button is gray,the user can't enable it."
+   }
+}

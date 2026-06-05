@@ -1,0 +1,1472 @@
+{
+   "1533450" : {
+      "steps" : "  1. Find2.5G/5G/10G/25G ports on your DUT, check it on front panel;\n  2. Test LAG basic function on these ports.\n  If your DUT does not have these ports, please ignore this case.",
+      "priority" : "Smoke",
+      "atm_id" : "A25C40FE-FA75-11EB-A290-FBE045DCE006",
+      "initial" : "  TBD",
+      "id" : "1533450",
+      "title" : "[2.5/5/10/25] Test basic LAG function on 2.5G/5G/10G/25G ports",
+      "description" : "Original ID: 070\nOriginal Title: [2.5/5/10/25] Test basic LAG function on 2.5G/5G/10G/25G ports\nOriginal Description:",
+      "result" : "  LAG function must work on these ports."
+   },
+   "1509582" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports and both enable the same VLAN, eg.100.\n  2. In the Switching -&gt;Link Aggregation page, add a LAG with the two trunk ports.\n  3. In the Switching-&gt;Rapid Spanning Tree page, check the status for the trunk ports under Port Settings table.",
+      "priority" : "Sanity",
+      "atm_id" : "5F9CC186-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  The feature RSTP is only supported on the platform 2400MX",
+      "id" : "1509582",
+      "title" : "[Only for 2400MX] Verify that RSTP cannot be enabled on the ports already configured with link aggregation",
+      "description" : "Original ID: 22\nOriginal Title: [Only for 2400MX] Verify that RSTP cannot be enabled on the ports already configured with link aggregation \nOriginal Description:",
+      "result" : "  step 3: the config button for both trunk ports are gray and can not be edited."
+   },
+   "1533503" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, config X20 with static ip adrress and enable DHCP server for the interface.\n  3.On the Switching-&gt;link aggregation page, add X20 as aggregator port and X21 as its member.\n  4.Config Switch with static port channel.\n  5.Check configuration on secondary unit.\n  6.On PC,try to get dynamic address and send traffic from PC to internet.\n  7.Make force Active/Standby failover.\n  8.On PC, send traffic from PC to internet.",
+      "priority" : "Sanity",
+      "atm_id" : "e8580b12-b691-44cc-99b1-006f8d8ad2d6",
+      "initial" : "  PC-Switch--(x20/x21)DUT1(x1)--Internet\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; |HA\n  PC-Switch--(x20/x21)DUT2(x1)--Internet",
+      "id" : "1533503",
+      "title" : "Verify that stateful failover with static link aggregation(Portshiled mode)",
+      "description" : "Original ID: 53\nOriginal Title: Verify that stateful failover with static link aggregation(Portshiled mode)\nOriginal Description:",
+      "result" : "  Step 5: configuration are synced.\n  Step 6: PC got dynamic address and traffic are reachable.\n  Step 8: after failover, traffic are still reachable."
+   },
+   "1509607" : {
+      "steps" : "  1. Configure X2 as LAN static, enable DHCP scope for X2 interface, X3 portshield to X2.\n  2. In the Switching-&gt;VLAN Trunking page, add trunk port X4, X5\n  3. Under VLAN Table , config X2 and chang the VLAN ID as 844 and Enable Trunked.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X4 as aggregator port and X5 as member and the Key 10.\n  5. In peer switch to configure the two ports that connected to X4,X5 as a port-channel group, and enable tagged VLAN 844 in this port-channel, configure the port that connected to PC2 as untagged VLAN 844 port.\n  6. Connect PC1 directly to DUT X2 port. 7. Check if PC1 and PC2 can get dynmaic address from X2 scope.\n  8. Ping from PC1 to PC2 or from PC2 to PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "1052438e-e24b-477f-adb9-bd2f0ffe098a",
+      "initial" : "  PC1--------(X2) DUT (X4/X5)----LAG----Switch---PC2",
+      "id" : "1509607",
+      "title" : "[Func] L2 connectivity test when LAG ports are in same VLAN with other trunk port",
+      "description" : "Original ID: 45\nOriginal Title: [Func] L2 connectivity test when LAG ports are in same VLAN with other trunk port\nOriginal Description:",
+      "result" : "  step 7: PC1 and PC2 can get dynamic address.\n  step 8: traffic is reachable."
+   },
+   "1509571" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG with the LACP option checked, and save config.",
+      "priority" : "Sanity",
+      "atm_id" : "5F727688-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509571",
+      "title" : "[Only for 6.2.1/6.0.5] [GUI] Verify that LACP can be enabled by clicking \"LACP Enable\" checkbox during LAG Port configuration",
+      "description" : "Original ID: 12\nOriginal Title: [Only for 6.2.1/6.0.5] [GUI] Verify that LACP can be enabled by clicking \"LACP Enable\" checkbox during LAG Port configuration\nOriginal Description: Note:<br />Version 6.2 does not support dynamic LAG .<br />But version 6.2.1.0 and 6.0.5.0 both support dynamic LAG.",
+      "result" : "  step 1: add successfully and the column \"LACP Enable\" is checked ."
+   },
+   "1509579" : {
+      "steps" : "  1. In the Switching -&gt;Link Aggregation page, verify that \"Status\" under \"Link Aggregation\" page shows System ID. 2. Check the value of System ID .",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F35E22C-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509579",
+      "title" : "[GUI]Verify that \"Status\" under \"Link Aggregation\" page shows System ID",
+      "description" : "Original ID: 2\nOriginal Title: [GUI]Verify that \"Status\" under \"Link Aggregation\" page shows System ID\nOriginal Description:",
+      "result" : "  step 1: \"Status\" under \"Link Aggregation\" page shows System ID\n  step 2: the value of system ID is not zero."
+   },
+   "1533471" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add two or more LAGs.\n  2. In the System-&gt;Settings page, click Export Settings button to export setting.\n  3. Do factory default to the DUT.\n  4. In the System-&gt;Settings page, click Import Settings button to import the setting which is exported at step 2.\n  5. In the Switching-&gt;Link Aggregation page, check the LAGs .\n  6. Add more LAG groups.\n  7. Import the settings from the step 2. 8. Check LAG settings.",
+      "priority" : "Smoke",
+      "atm_id" : "5FA81AD6-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533471",
+      "title" : "Prefs import & Export with two or more LAGs",
+      "description" : "Original ID: 24\nOriginal Title: Prefs import & Export with two or more LAGs\nOriginal Description:",
+      "result" : "  step 5: the config is the same as before it exported.\n  step 8: the settings are the same as it exported at step 2."
+   },
+   "1509565" : {
+      "steps" : "  1. Find2.5G/5G/10G/25G ports on your DUT, check it on front panel;\n  2. Test LAG basic function on these ports.\n  If your DUT does not have these ports, please ignore this case.",
+      "priority" : "Smoke",
+      "atm_id" : "A25C40FE-FA75-11EB-A290-FBE045DCE006",
+      "initial" : "  TBD",
+      "id" : "1509565",
+      "title" : "[2.5/5/10/25] Test basic LAG function on 2.5G/5G/10G/25G ports",
+      "description" : "Original ID: 070\nOriginal Title: [2.5/5/10/25] Test basic LAG function on 2.5G/5G/10G/25G ports\nOriginal Description:",
+      "result" : "  LAG function must work on these ports."
+   },
+   "1533514" : {
+      "steps" : "  1. Enable HA in DUT1 and DUT2, and enable the HA option&#160;\"Active/Standby Failover only when ALL aggregate links are down\".\n  2. In the active DUT to configure two L2 LAG groups, X3,X4 are configured in Portshield mode (LAG1, X3 is aggregator) and as LAN zone, X5, X6 are configured in Trunk mode (LAG2, X5 is aggregator) and in WAN zone\n  3. Configure PBR or WLB to make sure the traffic from LAN PC to WAN PC will go through LAG1 and LAG2.\n  4. From LAN PC to trigger ping/FTP/HTTP traffic to WAN PC\n  5. Shutdown the port in Switch which is connected to primary DUT1 X4 port (or X6 port), observe the traffic in step4, observe if have HA failover happen.\n  6. No shutdown the port&#160;in Switch which is connected to primary DUT1 X4 port (or X6 port),&#160;observe the traffic in step4, observe if have HA failover happen.\n  7.&#160;Shutdown the port in Switch which is connected to primary DUT1 X3 port (or X5 port), observe the traffic in step4, observe if have HA failover happen.\n  8. Repeat step 1~7, but disable&#160;the option&#160;\"Active/Standby Failover only when ALL aggregate links are down\".\n  <span style=\"font-size: 10px;\">&#160;",
+      "priority" : "Smoke",
+      "atm_id" : "4814ca39-249a-423a-8a8e-a523647222b9",
+      "initial" : "  LAN PC---Switch----LAG1 -----(X3, X4) DUT1 (X5, X6)------LAG2-----Switch----WAN PC\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; | &#160; &#160; &#160; &#160;&#160;\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; HA\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; |\n  LAN PC---Switch----LAG1 -----(X3, X4) DUT2 (X5, X6)------LAG2-----Switch----WAN PC\n  Note: above switch could be one or two switches, please make sure the allowed VLAN in LAG1 and LAG2 are not overlapped.",
+      "id" : "1533514",
+      "title" : "Verify the HA option \"Active/Standby Failover only when ALL aggregate links are down\" works normally for L2 LAG port",
+      "description" : "Original ID: 63\nOriginal Title: Verify the HA option \"Active/Standby Failover only when ALL aggregate links are down\" works normally for L2 LAG port\nOriginal Description:",
+      "result" : "  4. All traffic are successful.\n  5,6,7. No failover happen, all traffic are successful without interrupted.\n  8. Failover will happen in step 5,7, but traffic should not be interrupted."
+   },
+   "1533463" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add four LAGs.\n  2. Add the fifth LAG.",
+      "priority" : "Sanity",
+      "atm_id" : "5F8AB356-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533463",
+      "title" : "Verify that DUT can only be configured with a maximum of 4 logical groups (LAGS)",
+      "description" : "Original ID: 17\nOriginal Title: Verify that DUT can only be configured with a maximum of 4 logical groups (LAGS) \nOriginal Description:",
+      "result" : "  step 1: add successfully.\n  step 2: fail to add and pop up error message \"the LAG groups have reached the maximum\"."
+   },
+   "1533452" : {
+      "steps" : "  1. Find40G/100G ports on your DUT, check it on front panel;\n  2. Test basic LAG function on these ports;\n  If your DUT does not have these ports, please ignore this case.",
+      "priority" : "Smoke",
+      "atm_id" : "A9189BF8-FA76-11EB-A74D-FDE045DCE006",
+      "initial" : "  TBD",
+      "id" : "1533452",
+      "title" : "[40G/100G] Test basic LAG function on 40G/100G ports.",
+      "description" : "Original ID: 072\nOriginal Title: [40G/100G] Test basic LAG function on 40G/100G ports.\nOriginal Description:",
+      "result" : "  LAG basic function must work on these ports."
+   },
+   "1509613" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add trunk port X1 and X2 and X3 and X4, and all enable VLAN 152.\n  2. In the Switching-&gt;Link Aggregation page, add a LAG with X1 as aggregator port and X2/X3/X4 as member and the Key 10.\n  3. Config Switch with Static LAG.\n  4. In the Main interface page, set X1:V152 as DHCP mode, and check if it get dynamic address.\n  5. Send continous and multiple traffic from PC to Internet.\n  6. On DUT delete LAG member X4 , then remove the port g0/4 from LAG on Switch.\n  7. Check the traffic if they are still reachable.",
+      "priority" : "Smoke",
+      "atm_id" : "4e53ba68-81ad-440b-bca5-3a849e7f0c6d",
+      "initial" : "  Internet--Switch(g0/1 /g0/2 /g0/3 /g0/4)--(X1/X2/X3/X4)DUT(X0)---PC",
+      "id" : "1509613",
+      "title" : "Remove LAG member port when having background traffic",
+      "description" : "Original ID: 50\nOriginal Title: Remove LAG member port when having background traffic\nOriginal Description:",
+      "result" : "  step 4: X1:V152 got dynamic address.\n  step 5: all the traffic are reachable.\n  step 6: the traffic can be reachable."
+   },
+   "1509592" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG and LACP is enabled.\n  2. Then check the status for Partner column .",
+      "priority" : "Smoke",
+      "atm_id" : "0FF0B27C-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  TBD",
+      "id" : "1509592",
+      "title" : "[Only for 6.2.1/6.0.5] [GUI]Verify that LACP Enabled LAG Port shows  Partner's mac address under Link aggregation table",
+      "description" : "Original ID: 31\nOriginal Title: [Only for 6.2.1/6.0.5] [GUI]Verify that LACP Enabled LAG Port shows  Partner's mac address under Link aggregation table\nOriginal Description:",
+      "result" : "  step 2: &#160;the partner's field for LAG Port under Link aggregation table shows partner` mac address."
+   },
+   "1533495" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add trunk port X2 and X3 and both enable VLAN 155. 2. In the Switching-&gt;Link Aggregation page, add a LAG with X2 as aggregator port and X3 as member and the Key 10.\n  3. In the Main interface page, config X2:V155 as WAN zone and set the mode as Static/DHCP/PPPoE/PPTP/L2TP respectively and enable PING.\n  4. Check if it can get dynamic address when set zone as dynamic WAN.\n  5. Config Swith with Static lag.\n  6. Ping from PC1 to X2:V155 managemet IP.\n  7. Send traffic from PC2 to outside through LAG.",
+      "priority" : "Smoke",
+      "atm_id" : "9f0ed114-bad3-4173-952c-0b2f88b83f01",
+      "initial" : "  PC1--Switch--(X2/X3)DUT(X0)---PC2",
+      "id" : "1533495",
+      "title" : "[Func] Veirfy LAG funciton when it is used as WAN uplink (Static/DHCP/PPPoE/PPTP/L2TP)",
+      "description" : "Original ID: 46\nOriginal Title: [Func] Veirfy LAG funciton when it is used as WAN uplink (Static/DHCP/PPPoE/PPTP/L2TP)\nOriginal Description:",
+      "result" : "  step 4: X2:V155 can get dynamic address.\n  step 6: traffic is reachable.\n  step 7: traffic is reachable."
+   },
+   "1533506" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, config X20 and X21 as trunk port and both enable VLAN 943.\n  3.Config X20:V943 as LAN static IP address and enable DHCP server.\n  4.On the Switching-&gt;link aggregation page, add X20 as aggregator port and X21 as its member, and enable LACP.\n  5.Config Switch with dynamic port channel.\n  6.Check configuration on secondary unit.\n  7.On PC,try to get dynamic address and send traffic from PC to internet.\n  8.Make force Active/Standby failover.\n  9.On PC, send traffic from PC to internet.",
+      "priority" : "Sanity",
+      "atm_id" : "b08464e7-2a7e-48f6-8781-d0fd166a0935",
+      "initial" : "  PC-Switch--(x20/x21:V943)DUT1(x1)--Internet\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;|HA\n  PC-Switch--(x20/x21:V943)DUT2(x1)--Internet",
+      "id" : "1533506",
+      "title" : "Verify that stateful failover with dynamic link aggregation(Trunk mode)",
+      "description" : "Original ID: 56\nOriginal Title: Verify that stateful failover with dynamic link aggregation(Trunk mode)\nOriginal Description:",
+      "result" : "  Step 6: configuration are synced.\n  Step 7: PC got dynamic address and traffic are reachable.\n  Step 9: after failover, traffic are still reachable."
+   },
+   "1509603" : {
+      "steps" : "  1. In the Network-&gt;Portshield Groups page, make X2,X3,X4 and X5 portshield to X0.\n  2. In the Switching-&gt;Link Aggregation page, add a static LAG with X2 as aggregator port and X3 as member and the Key 10.\n  3. Add another static LAG with X4 as aggregator port and X5 as member and the Key 20.\n  4. Config Switch2 and Switch3 with Static LAG respectively.\n  5. Make sure that DHCP server for X0 has been enabled.\n  6. Check if PC1 and PC2 can get dynmaic address from X0.\n  7. Ping from PC1 to PC2 or from PC2 to PC1.",
+      "priority" : "Sanity",
+      "atm_id" : "715fd8a4-d998-417c-a022-d00ab086089c",
+      "initial" : "  PC1--Switch1---(X2/X3)DUT(X4/X5)---Switch2---PC2",
+      "id" : "1509603",
+      "title" : "[Obsolete][Func] L2 connectivity test for static LAG (Portshield mode)",
+      "description" : "Original ID: 41\nOriginal Title: [Obsolete][Func] L2 connectivity test for static LAG (Portshield mode)\nOriginal Description:",
+      "result" : "  step 6: PC1 and PC2 can get dynamic address.\n  step 7: traffic is reachable."
+   },
+   "1509567" : {
+      "steps" : "  1. Find40G/100G ports on your DUT, check it on front panel;\n  2. Test basic LAG function on these ports;\n  If your DUT does not have these ports, please ignore this case.",
+      "priority" : "Smoke",
+      "atm_id" : "A9189BF8-FA76-11EB-A74D-FDE045DCE006",
+      "initial" : "  TBD",
+      "id" : "1509567",
+      "title" : "[40G/100G] Test basic LAG function on 40G/100G ports.",
+      "description" : "Original ID: 072\nOriginal Title: [40G/100G] Test basic LAG function on 40G/100G ports.\nOriginal Description:",
+      "result" : "  LAG basic function must work on these ports."
+   },
+   "1509575" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address.\n  2. In the Switching-&gt;Link Aggregation page, add X3 as aggregator and X4&amp;X5&amp;X6&amp;X7 as its member, and save config.",
+      "priority" : "Sanity",
+      "atm_id" : "5F842F22-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  Switch(g0/3 / g0/4 / g0/5 / g0/6 / g0/7)-----(X2/X3/X4/X5/X6)DUT",
+      "id" : "1509575",
+      "title" : "[Only for 6.2.1/6.0.5]Verify that a logical group can at most have 4 aggregated ports for dynamic LAG",
+      "description" : "Original ID: 16\nOriginal Title: [Only for 6.2.1/6.0.5]Verify that a logical group can at most have 4 aggregated ports for dynamic LAG\nOriginal Description:",
+      "result" : "  step 2: it will pop up error message to remind that it has reached the maximum number for members."
+   },
+   "1533501" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add trunk port X1 and X2 and X3 and X4, and all enable VLAN 152.\n  2. In the Switching-&gt;Link Aggregation page, add a LAG with X1 as aggregator port and X2/X3 as member and the Key 10.\n  3. Config Switch with Static LAG(g0/1 /g0/2 /g0/3).\n  4. In the Main interface page, set X1:V152 as DHCP mode, and check if it get dynamic address.\n  5. Send continous and multiple traffic from PC to Internet.\n  6. On DUT add X4 as LAG member and the Key as 10, then add the port g0/4 into LAG on Switch.\n  7. Check the traffic if they are still reachable.",
+      "priority" : "Smoke",
+      "atm_id" : "096821bb-f897-419e-a359-2a8b8d916c55",
+      "initial" : "  Internet--Switch(g0/1 /g0/2 /g0/3 /g0/4)--(X1/X2/X3/X4)DUT(X0)---PC",
+      "id" : "1533501",
+      "title" : "Add LAG member port when having background traffic.",
+      "description" : "Original ID: 51\nOriginal Title: Add LAG member port when having background traffic.\nOriginal Description:",
+      "result" : "  step 4: X1:V152 got dynamic address.\n  step 5: all the traffic are reachable.\n  step 6: the traffic can be reachable."
+   },
+   "1533468" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports and both enable the same VLAN, eg.100.\n  2. In the Switching -&gt;Link Aggregation page, add a LAG with the two trunk ports.\n  3. In the Switching-&gt;VLAN Trunking page, add another VLAN to the two trunk ports, eg .200.\n  4. Then try to delete the VLAN 100.",
+      "priority" : "Smoke",
+      "atm_id" : "5F9859B6-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533468",
+      "title" : "[GUI]Verify that once the link aggregation has been enabled on Trunk ports, additional VLANs cannot be added/deleted on the LAG",
+      "description" : "Original ID: 21\nOriginal Title: [GUI]Verify that once the link aggregation has been enabled on Trunk ports, additional VLANs cannot be added/deleted on the LAG\nOriginal Description:",
+      "result" : "  step 3: it will pop up error message and fail to enable vlan.\n  step 4: it also pop up error message and fail to disable vlan.\n  PS: From version 6.5.2.0 , it can add /delete vlan"
+   },
+   "1533487" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address, and enable DHCP server for the interface X3.\n  2. In the Network-&gt;Portshield Groups page, make X4 portshield to X3.\n  3. Config Switch and create a port channel with members g0/3 and g0/4.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  5. Send multiple traffic from the PC to the Internet.\n  6. Check the LAG Port Statistics for LAG port.",
+      "priority" : "Sanity",
+      "atm_id" : "93ac8d7b-169e-4c5c-823c-882852c1c190",
+      "initial" : "  PC---Switch(g0/3 / g0/4)----(x3/x4)DUT(x1)-------Internet",
+      "id" : "1533487",
+      "title" : "[FUN]Verify the LAG Port Statistics for LAG port work",
+      "description" : "Original ID: 39\nOriginal Title: [FUN]Verify the LAG Port Statistics for LAG port work\nOriginal Description:",
+      "result" : "  step 6: the Rx Frames and Tx Frames are increasing for LAG port."
+   },
+   "1533510" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, click delete button of Aggregator which has members.\n  2.Click the delete button of one member for a LAG.",
+      "priority" : "Sanity",
+      "atm_id" : "5F528634-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533510",
+      "title" : "[GUI]Verify that ports can be deleted from Link Aggregation table by clicking delete button",
+      "description" : "Original ID: 6\nOriginal Title: [GUI]Verify that ports can be deleted from Link Aggregation table by clicking delete button\nOriginal Description:",
+      "result" : "  step 1: fail to delete and it will pop up error message that remind you to delete its member first.\n  step 2: delete successfully."
+   },
+   "1509600" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address, and enable DHCP server for the interface X3.\n  2. In the Network-&gt;Portshield Groups page, make X4 portshield to X3.\n  3. Config Switch and create a port channel with members g0/3 and g0/4.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  5. Send multiple traffic from the PC to the Internet.\n  6. Check the LAG Port Statistics for LAG port.",
+      "priority" : "Sanity",
+      "atm_id" : "93ac8d7b-169e-4c5c-823c-882852c1c190",
+      "initial" : "  PC---Switch(g0/3 / g0/4)----(x3/x4)DUT(x1)-------Internet",
+      "id" : "1509600",
+      "title" : "[FUN]Verify the LAG Port Statistics for LAG port work",
+      "description" : "Original ID: 39\nOriginal Title: [FUN]Verify the LAG Port Statistics for LAG port work\nOriginal Description:",
+      "result" : "  step 6: the Rx Frames and Tx Frames are increasing for LAG port."
+   },
+   "1533477" : {
+      "steps" : "  1. Do factory default to the DUT.\n  2. Verify the link aggregation table if it is empty in the Switching-&gt;Link Aggregation page.",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F43C126-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533477",
+      "title" : "[GUI]Verify that Link Aggregation table is empty when the unit boots up with factory default settings",
+      "description" : "Original ID: 3\nOriginal Title: [GUI]Verify that Link Aggregation table is empty when the unit boots up with factory default settings\nOriginal Description:",
+      "result" : "  step 2: the link aggregation table is empty."
+   },
+   "1533449" : {
+      "steps" : "  1. Find2.5G/5G/10G ports on your DUT, check it on front panel;\n  2. Test basic function of LAG on these ports;\n  If your DUT does not have these ports, ignore this case.",
+      "priority" : "Smoke",
+      "atm_id" : "2C1B8F44-FA75-11EB-A253-FDE045DCE006",
+      "initial" : "  TBD",
+      "id" : "1533449",
+      "title" : "[2.5/5/10] Test basic LAG function on 2.5G/5G/10G ports",
+      "description" : "Original ID: 069\nOriginal Title: [2.5/5/10] Test basic LAG function on 2.5G/5G/10G ports\nOriginal Description:",
+      "result" : "  LAG function must work on these ports."
+   },
+   "1533508" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On Primary unit, Add L2 LAG with trunk port mode and enable physical monitor on trunk vlan interface.\n  3.On High Availability-&gt;advanced page, make sure that the option \"Active/Standby Failover only when ALL aggregate links are down\" are disabled.\n  4.Check configuration on secondary unit.\n  5.Send traffic through the L2 LAG.\n  6.Shut down one trunk port by Switch.\n  7.Check the UI and console.\n  8.Send traffic through the L2 LAG.\n  9.On High Availability-&gt;advanced page, enable the option \"Active/Standby Failover only when ALL aggregate links are down\".\n  10.Repeat the step 4-8.",
+      "priority" : "Sanity",
+      "atm_id" : "7309a930-5070-4f73-bba2-dfb5f611bfa8",
+      "initial" : "  TBD",
+      "id" : "1533508",
+      "title" : "Verify that stateful failover with static/dynamic link aggregation(trunk mode) when shutdown one port",
+      "description" : "Original ID: 58\nOriginal Title: Verify that stateful failover with static/dynamic link aggregation(trunk mode) when shutdown one port\nOriginal Description:",
+      "result" : "  Step 4: the configuration are synced.\n  Step 5: the traffic are reachable.\n  Step 7: failover is observed on the UI and console, and the secondary uint becomes actvie.\n  Step 8: the traffic are reachable.\n  Step 10: after enable the option \"Active/Standby Failover only when ALL aggregate links are down\", and shut down one port , it will not happen failover and traffic are still reachable."
+   },
+   "1533505" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, config X20 and X21 as trunk port and both enable VLAN 943.\n  3.Config X20:V943 as LAN static IP address and enable DHCP server.\n  4.On the Switching-&gt;link aggregation page, add X20 as aggregator port and X21 as its member.\n  5.Config Switch with static port channel.\n  6.Check configuration on secondary unit.\n  7.On PC,try to get dynamic address and send traffic from PC to internet.\n  8.Make force Active/Standby failover.\n  9.On PC, send traffic from PC to internet.\n  10.Repeat step 4-9 when set interface X20:V943 as WAN Zone.",
+      "priority" : "Sanity",
+      "atm_id" : "0e8c6434-bf4e-4200-a685-cbcde7aedb3e",
+      "initial" : "  PC-Switch--(x20/x21:V943)DUT1(x1)--Internet\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; |HA\n  PC-Switch--(x20/x21:V943)DUT2(x1)--Internet",
+      "id" : "1533505",
+      "title" : "Verify that stateful failover with static link aggregation(Trunk mode)",
+      "description" : "Original ID: 55\nOriginal Title: Verify that stateful failover with static link aggregation(Trunk mode)\nOriginal Description:",
+      "result" : "  Step 6: configuration are synced.\n  Step 7: PC got dynamic address and traffic are reachable.\n  Step 9: after failover, traffic are still reachable."
+   },
+   "1533483" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports X3 and X4 (Copper port), and both enable VLAN 871.\n  2. Config X3:V871 with static ip address in the Interface Main page.\n  3. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  4. Config the similar setting on the FW.\n  5. Ping from PC1 to PC2.\n  6. Repeat step 1-5 on Fiber port.",
+      "priority" : "Full_Regression",
+      "atm_id" : "1004F52A-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC1----(X0)DUT(X3 /X4)----(X3/X4)FW(X0)-----PC2",
+      "id" : "1533483",
+      "title" : "Verify static LAG when connected back-back with firewall (Trunk mode)",
+      "description" : "Original ID: 35\nOriginal Title: Verify static LAG when connected back-back with firewall (Trunk mode)\nOriginal Description:",
+      "result" : "  step 5: the traffic is reachable."
+   },
+   "1509577" : {
+      "steps" : "  Portshield mode:\n  1. Make sure that X10 has static IP address and X15 portshiled to X10.\n  2. In the Switching-&gt;Link Aggregation pge, add X10 as aggregator and set X15 as its member with the same Key.\n  3. Check the LAG ID for X10 and X15.\n  Trunk mode: 1. In the Switching-&gt;VLAN Trunk page, add trunk port X10 and X15, and both enable vlan 100.\n  2. In the Switching-&gt;Link Aggregation page, add X10 as aggregator and set X15 as its member with the same Key.\n  3. Check the LAG ID for X10 and X15.",
+      "priority" : "Sanity",
+      "atm_id" : "5F8D8C7A-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  Switch1-----(X10)DUT(X15)----Switch2",
+      "id" : "1509577",
+      "title" : "Verify in static LAG the ports will bond together as long as their keys match",
+      "description" : "Original ID: 18\nOriginal Title: Verify in static LAG the ports will bond together as long as their keys match\nOriginal Description: Link Partner cannot be discovered for Static link aggregation. &#160;In this case, ports aggregate based on keys alone.&#160;",
+      "result" : "  step 3: port X10 and X15 bond togother and have the same LAG ID."
+   },
+   "1509611" : {
+      "steps" : "  1. Add mutlple LAG.\n  2. Send continous traffic through multiple LAG for 24 hours.\n  3. Check if the DUT work normal.",
+      "priority" : "Full_Regression",
+      "atm_id" : "71b83c32-2b63-4ca3-a760-7c42c824e1b2",
+      "initial" : "  TBD",
+      "id" : "1509611",
+      "title" : "Stress test for LAG (long time with high load traffic)",
+      "description" : "Original ID: 49\nOriginal Title: Stress test for LAG (long time with high load traffic)\nOriginal Description:",
+      "result" : "  step 3: DUT should work normal."
+   },
+   "1509598" : {
+      "steps" : "  \n  when add lag with RSTP, then config the Switch and it failed.",
+      "priority" : "Full_Regression",
+      "atm_id" : "1010A6C2-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  TBD",
+      "id" : "1509598",
+      "title" : "[Only for 2400MX] Link Aggregation with RSTP",
+      "description" : "Original ID: 37\nOriginal Title: [Only for 2400MX] Link Aggregation with RSTP\nOriginal Description:",
+      "result" : "  N/A"
+   },
+   "1509587" : {
+      "steps" : "  1. Set X2 as Portshield host, and make X3&amp;X4&amp;X5&amp;X6 portshiled to X2 as Portshiled member.\n  2. In the Switching-&gt;Link Aggregation page, add X2 as aggregator and X3&amp;X4&amp;X5&amp;X6 as its member with the same Key.\n  3. Check the status for the fifth port .",
+      "priority" : "Full_Regression",
+      "atm_id" : "0FE1453A-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  Switch(g0/3 / g0/4 / g0/5 / g0/6 / g0/7)-----(X2/X3/X4/X5/X6)DUT",
+      "id" : "1509587",
+      "title" : "Verify that the static LAG Port status is \"up\" if it is connected but doesn't take part in aggregation",
+      "description" : "Original ID: 27\nOriginal Title: Verify that the static LAG Port status is \"up\" if it is connected but doesn't take part in aggregation \nOriginal Description:",
+      "result" : "  step 3: the status for the fifth port is \"up\"."
+   },
+   "1509591" : {
+      "steps" : "  1. Make sure that X0 has static IP address and X2 is in unassign state.\n  2. In the Switching-&gt;Link Aggregation pge, add X0 as aggregator and X2 as its member, and fill into the Key and enable LACP.\n  3. Config Switch g0/3 with LACP, but g0/4 not.\n  4. Check the status for the LAG Port X2.",
+      "priority" : "Sanity",
+      "atm_id" : "0FEC6E4C-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC---Switch(g0/3 / g0/4)----(X0/X2)DUT(X1)-------Internet",
+      "id" : "1509591",
+      "title" : "[Only for 6.2.1/6.0.5] Verify that the LAG Port status is \"up,ena match\" i.e. (up and enabled but not aggregated)  if LACP is enabled on Sonicwall and the connected switch/PC has static Link Aggregati",
+      "description" : "Original ID: 30\nOriginal Title: [Only for 6.2.1/6.0.5] Verify that the LAG Port status is \"up,ena match\" i.e. (up and enabled but not aggregated)  if LACP is enabled on Sonicwall and the connected switch/PC has static Link Aggregation configured \nOriginal Description: version 6.2 does not support dynamic LAG .<br />But version 6.2.1.0 and 6.0.5.0 both support dynamic LAG.",
+      "result" : "  step 4: the status for X2 port is \"up,ena match\"."
+   },
+   "1533480" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG and LACP is not enabled.\n  2. Then check the status for Partner column .",
+      "priority" : "Sanity",
+      "atm_id" : "0FF61FF0-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  TBD",
+      "id" : "1533480",
+      "title" : "[GUI]Verify in static LAG the partner's field for LAG Port under Link aggregation table is always  00:00:00:00:00:00",
+      "description" : "Original ID: 32\nOriginal Title: [GUI]Verify in static LAG the partner's field for LAG Port under Link aggregation table is always  00:00:00:00:00:00\nOriginal Description:",
+      "result" : "  step 2: the partner's field for LAG Port under Link aggregation table is always &#160;00:00:00:00:00:00"
+   },
+   "1509615" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address, and enable DHCP server for the interface X3.\n  2. Add a sub interface with X3 as parent and VLAN ID 100 and set static ip address and enable DHCP server for X3:V100 .\n  3. Config Switch and create a port channel with members g0/3 and g0/4 and set it mode as hybride.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  5. Check if PC1 can get dynamic address within X3 scope.\n  6. Check if PC2 can get dynamic address within X3:v100 scope.\n  7. Ping continous traffic from PC1 to the Internet.\n  8. Ping continous traffic from PC2 to the Internet.",
+      "priority" : "Smoke",
+      "atm_id" : "b33e7c8a-1644-4afc-9f3b-c40a973b986e",
+      "initial" : "  PC1/PC2---Switch(g0/3 / g0/4)----(x3/x4)DUT(x1)-------Internet",
+      "id" : "1509615",
+      "title" : "[FUN]Verify the Portshield mode LAG with Vlan Sub-interface",
+      "description" : "Original ID: 52\nOriginal Title: [FUN]Verify the Portshield mode LAG with Vlan Sub-interface\nOriginal Description:",
+      "result" : "  step 5: get dynamic address.\n  step 6: get dynamic address.\n  step 7: traffic is reachable.\n  step 8: traffic is reachable."
+   },
+   "1533485" : {
+      "steps" : "  \n  when add lag with RSTP, then config the Switch and it failed.",
+      "priority" : "Full_Regression",
+      "atm_id" : "1010A6C2-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  TBD",
+      "id" : "1533485",
+      "title" : "[Only for 2400MX] Link Aggregation with RSTP",
+      "description" : "Original ID: 37\nOriginal Title: [Only for 2400MX] Link Aggregation with RSTP\nOriginal Description:",
+      "result" : "  N/A"
+   },
+   "1533516" : {
+      "steps" : "  1. Configure two L2 LAG groups via GUI switching page, one is in Portshield mode, another is in Trunk mode, both are in WAN mode, make sure they have WAN IP which are accessible.\n  2. Configure HA monitor IP for both LAG interfaces.\n  3. From a WAN PC to ping the monitor IP of both LAG interfaces.&#160;\n  4. Shutdown the aggregator ports in both LAG group, verify the&#160;ping traffic to LAG interface monitor IP\n  5. No shutdown the&#160;aggregator ports in step 4, shutdown the LAG member ports in both LAG group,&#160;verify&#160;the&#160;ping traffic to LAG interface monitor IP",
+      "priority" : "Smoke",
+      "atm_id" : "d1a3fcf7-0262-4a02-af77-0314268c7a94",
+      "initial" : "  TBD",
+      "id" : "1533516",
+      "title" : "Verify the LAG interface's HA monitor IP is still accessible after the LAG aggregator or member port is down",
+      "description" : "Original ID: 65\nOriginal Title: Verify the LAG interface's HA monitor IP is still accessible after the LAG aggregator or member port is down\nOriginal Description:",
+      "result" : "  Step 3, 4, 5. The ping to all configured monitor IP are successful."
+   },
+   "1509630" : {
+      "steps" : "  step 1: assign one interface(eg. X3) with static ip address .\n  step 2: on Switching-&gt;link aggregation page, add aggregator X3 and its members X2 with static /dynamic mode\n  step 3: config static /dynamic portchannel for Switch.\n  step 4: enable ospf /rip/bgp on interface X3 of DUT1 and also enable ospf /rip/bgp on DUT2.\n  step 5: check ospf/rip/bgp works\n  step 6: shut down aggregator port X3 by Switch.\n  step 7: check ospf/rip/bgp works\n  step 8: no shut down aggregator port X3 by Switch.\n  step 9: check ospf/rip/bgp works\n  step 10: Repeat step 6~9, but shutdown/no shutdown LAG member port.",
+      "priority" : "Smoke",
+      "atm_id" : "4b9bc2fd-327f-42aa-bd62-3cd2f30f307d",
+      "initial" : "  DUT1(X3/X2)------Switch---------DUT2",
+      "id" : "1509630",
+      "title" : "Verify OSPF/RIP/BGP works for L2 LAG (static or dynamic)with Portshield mode",
+      "description" : "Original ID: 66\nOriginal Title: Verify OSPF/RIP/BGP works for L2 LAG (static or dynamic)with Portshield mode \nOriginal Description:",
+      "result" : "  step 5, 7, 9, 10: OSPF/rip/bgp works normally, OSPF/bgp adjacency should not flaps."
+   },
+   "1509632" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, click edit button of the Aggregator and modify its member ports either by deleting or adding one or more ports , and then save config.\n  2.Verify the membor port can be edited or not.",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F55A094-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509632",
+      "title" : "[Only for 6.2.1/6.0.5] [GUI]Verify that ports can be edited  by clicking edit button",
+      "description" : "Original ID: 7\nOriginal Title: [Only for 6.2.1/6.0.5] [GUI]Verify that ports can be edited  by clicking edit button\nOriginal Description: version 6.2 does not support the edit operation for LAG .<br />But version 6.2.1.0 and 6.0.5.0 supports the edit opertion",
+      "result" : "  step 1: edit successfully and except the membor ports, other options can not be modifed.\n  Step 2: the membor port can not be edited."
+   },
+   "1533481" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports X3 and X4 (Copper port), and both enable VLAN 871.\n  2. Config X3:V871 with static ip address and Ping enabled in the Interface Main page, and enable DHCP server for the interface X3:V871.\n  3. Config Switch and create a port channel with members g0/3 and g0/4.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member and enable LACP.\n  5. Check if the PC get dynamic address.\n  6. Ping from PC to the IP of X3:V871.\n  7. Ping from PC to the Internet.\n  8. Shut down g0/3 for Switch, and repeat step 6-7.\n  9. No shut down g0/3 for Switch, and repeat step 6-7.\n  10. Repeat step 1-9 on Fiber port.",
+      "priority" : "Smoke",
+      "atm_id" : "0FFA8FC2-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC1---Switch(g0/3 / g0/4)--(X3 /X4)DUT(X1)-----Internet",
+      "id" : "1533481",
+      "title" : "[Only for 6.2.1/6.0.5] Verify Dynamic Link Aggregation with Trunk mode work",
+      "description" : "Original ID: 33\nOriginal Title: [Only for 6.2.1/6.0.5] Verify Dynamic Link Aggregation with Trunk mode work\nOriginal Description:",
+      "result" : "  step 5: PC can get dynamic address.\n  step 6: the traffic is reachable.\n  step 7: the traffic is reachable."
+   },
+   "1533457" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG with the aggregator option checked, and save config.",
+      "priority" : "Sanity",
+      "atm_id" : "5F6BA4F2-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533457",
+      "title" : "[GUI]Verify that LAG Port can be configured as aggregator by clicking \"aggregator\" checkbox during LAG Port configuration",
+      "description" : "Original ID: 11\nOriginal Title: [GUI]Verify that LAG Port can be configured as aggregator by clicking \"aggregator\" checkbox during LAG Port configuration\nOriginal Description:",
+      "result" : "  step 1: add successfully and the column \"Aggregator\" is checked."
+   },
+   "1533491" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add X2&amp;X3&amp;X4&amp;X5 as trunk port and enable VLAN 100 for all Trunk port.\n  2. In the Switching-&gt;Link Aggregation page, add a LAG with X2 as aggregator and X3 as member and enable LACP, then add another LAG with X4 as aggregator and X5 as member and enable LACP.\n  3. Config Switch1 and Switch2 with Dynamic LAG.\n  4. Assign static ip address for PC1 and PC2 which are both in the same subnet.\n  5. Ping from PC1 to PC2 or PC2 to PC1.",
+      "priority" : "Sanity",
+      "atm_id" : "2f41204c-3d99-4392-9bfc-dab50744f7e2",
+      "initial" : "  PC1--Switch1---(X2/X3)DUT(X4/X5)---Switch2---PC2",
+      "id" : "1533491",
+      "title" : "[Func] L2 connectivity test for dynamic LAG (Trunk mode)",
+      "description" : "Original ID: 42\nOriginal Title: [Func] L2 connectivity test for dynamic LAG (Trunk mode)\nOriginal Description:",
+      "result" : "  step 5: traffic is reachable."
+   },
+   "1533489" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add X2&amp;X3&amp;X4&amp;X5 as trunk port and enable VLAN 100 for all Trunk port.\n  2. In the Switching-&gt;Link Aggregation page, add a LAG with X2 as aggregator and X3 as member, then add another LAG with X4 as aggregator and X5 as member.\n  3. Config Switch1 and Switch2 with static LAG.\n  4. Assign static ip address for PC1 and PC2 which are both in the same subnet.\n  5. Ping from PC1 to PC2 or PC2 to PC1.",
+      "priority" : "Sanity",
+      "atm_id" : "0843e3bf-26a7-4571-83fb-ad24cbf95a95",
+      "initial" : "  PC1--Switch1---(X2/X3)DUT(X4/X5)---Switch2---PC2",
+      "id" : "1533489",
+      "title" : "[Func] L2 connectivity test for static LAG (Trunk mode)",
+      "description" : "Original ID: 40\nOriginal Title: [Func] L2 connectivity test for static LAG (Trunk mode)\nOriginal Description:",
+      "result" : "  step 5: traffic is reachable."
+   },
+   "1533456" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG with the key between 1 -255 and save config.\n  2. Add another LAG with the key 0 or 256 and save config.",
+      "priority" : "Smoke",
+      "atm_id" : "5F66CFF4-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533456",
+      "title" : "[GUI]Verify that manual \"Key\" can be confgured between 1 - 255 during LAG Port cnfiguration",
+      "description" : "Original ID: 10\nOriginal Title: [GUI]Verify that manual \"Key\" can be confgured between 1 - 255 during LAG Port cnfiguration\nOriginal Description:",
+      "result" : "  step 1: add successfully.\n  step 2: fail to add due to invalid User Key value."
+   },
+   "1533509" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, Add L2 LAG and enable physical monitor on the aggregator port.\n  3.Check configuration on secondary unit.\n  4.Send traffic through the L2 LAG.\n  5.Remove one member from the LAG.If static LAG, manually remove member from connected Switch.\n  6.Check the UI and console.\n  7.Send traffic through the L2 LAG.",
+      "priority" : "Smoke",
+      "atm_id" : "43fb7e94-9d2f-45f4-a4c4-30c548545ed0",
+      "initial" : "  TBD",
+      "id" : "1533509",
+      "title" : "Verify that failover should not happen when unassing a LAG member port from static/dynamic link aggregation  (portshield mode /trunk mode)",
+      "description" : "Original ID: 59\nOriginal Title: Verify that failover should not happen when unassing a LAG member port from static/dynamic link aggregation  (portshield mode /trunk mode)\nOriginal Description:",
+      "result" : "  Step 3: configuration are synced.\n  Step 4: traffic are reachable.\n  Step 6: configuration are synced and no failover happened.\n  Step 7: traffic are still reachable."
+   },
+   "1509583" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports ,X3 and X4, and both enable the same VLAN, eg.100.\n  2. In the Switching-&gt;Rapid Spanning Tree page, enable RSTP for both X3 and X4.\n  3. Check the Role and State for both X3 and X4.\n  4. In the Switching -&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  5. Check the State for both X3 and X4.",
+      "priority" : "Full_Regression",
+      "atm_id" : "5FA240AC-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  Switch(g0/3 /g0/4)-----(X3/X4)DUT",
+      "id" : "1509583",
+      "title" : "[Only for 2400MX] Verify that if RSTP needs to be enabled on the LAG, it should be configured on individual members first before enabling link aggregation",
+      "description" : "Original ID: 23\nOriginal Title: [Only for 2400MX] Verify that if RSTP needs to be enabled on the LAG, it should be configured on individual members first before enabling link aggregation\nOriginal Description: The feature RSTP is only supported on the platform 2400MX",
+      "result" : "  step 3: X3 is the Root Port and Forwarding, and X4 is Alternate and Discarding.\n  step 4: add LAG successfully.\n  step 5: the State for both X3 and X4 is Forwarding."
+   },
+   "1533474" : {
+      "steps" : "  1. Set X2 as Portshield host, and make X3&amp;X4&amp;X5&amp;X6 portshiled to X2 as Portshiled member.\n  2. In the Switching-&gt;Link Aggregation page, add X2 as aggregator and X3&amp;X4&amp;X5&amp;X6 as its member with the same Key.\n  3. Check the status for the fifth port .",
+      "priority" : "Full_Regression",
+      "atm_id" : "0FE1453A-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  Switch(g0/3 / g0/4 / g0/5 / g0/6 / g0/7)-----(X2/X3/X4/X5/X6)DUT",
+      "id" : "1533474",
+      "title" : "Verify that the static LAG Port status is \"up\" if it is connected but doesn't take part in aggregation",
+      "description" : "Original ID: 27\nOriginal Title: Verify that the static LAG Port status is \"up\" if it is connected but doesn't take part in aggregation \nOriginal Description:",
+      "result" : "  step 3: the status for the fifth port is \"up\"."
+   },
+   "1509588" : {
+      "steps" : "  1. Make sure that X0 has static IP address and X2 is in unassign state.\n  2. In the Switching-&gt;Link Aggregation pge, add X0 as aggregator and X2 as its member, and fill into the Key and enable LACP.\n  3. Config Switch port g0/3 and g0/4 with LACP.\n  4. Check the status for the LAG Port.",
+      "priority" : "Sanity",
+      "atm_id" : "0FE509A4-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC---Switch(g0/3 / g0/4)----(X0/X2)DUT(X1)-------Internet",
+      "id" : "1509588",
+      "title" : "[Only for 6.2.1/6.0.5] Verify that after successful LACP negotiation LAG Port status is changed to \"up,ena rdy match,sel,sync,agg-Coll/Dist\"",
+      "description" : "Original ID: 28\nOriginal Title: [Only for 6.2.1/6.0.5] Verify that after successful LACP negotiation LAG Port status is changed to \"up,ena rdy match,sel,sync,agg-Coll/Dist\"\nOriginal Description: version 6.2 does not support dynamic LAG .<br />But version 6.2.1.0 and 6.0.5.0 both support dynamic LAG.",
+      "result" : "  step 4: the status is \"up,ena rdy match,sel,sync,agg-Coll/Dist\""
+   },
+   "1509621" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On Primary unit, Add L2 LAG with trunk port mode and enable physical monitor on trunk vlan interface.\n  3.On High Availability-&gt;advanced page, make sure that the option \"Active/Standby Failover only when ALL aggregate links are down\" are disabled.\n  4.Check configuration on secondary unit.\n  5.Send traffic through the L2 LAG.\n  6.Shut down one trunk port by Switch.\n  7.Check the UI and console.\n  8.Send traffic through the L2 LAG.\n  9.On High Availability-&gt;advanced page, enable the option \"Active/Standby Failover only when ALL aggregate links are down\".\n  10.Repeat the step 4-8.",
+      "priority" : "Sanity",
+      "atm_id" : "7309a930-5070-4f73-bba2-dfb5f611bfa8",
+      "initial" : "  TBD",
+      "id" : "1509621",
+      "title" : "Verify that stateful failover with static/dynamic link aggregation(trunk mode) when shutdown one port",
+      "description" : "Original ID: 58\nOriginal Title: Verify that stateful failover with static/dynamic link aggregation(trunk mode) when shutdown one port\nOriginal Description:",
+      "result" : "  Step 4: the configuration are synced.\n  Step 5: the traffic are reachable.\n  Step 7: failover is observed on the UI and console, and the secondary uint becomes actvie.\n  Step 8: the traffic are reachable.\n  Step 10: after enable the option \"Active/Standby Failover only when ALL aggregate links are down\", and shut down one port , it will not happen failover and traffic are still reachable."
+   },
+   "1533518" : {
+      "steps" : "  step 1: add trunk port X3 and X2 and both enable VLAN 943\n  step 2: assign static ip address for X3:V943\n  step 3:on Switching-&gt;link aggregation page, add aggregator X3 and its members X2 with static /dynamic mode step 4:config static /dynamic portchannel for Switch. step 5:enable ospf /rip on interface X3:V943 of DUT1 and also enable ospf /rip on DUT2.\n  step 6: check ospf/rip works\n  step 7: shut down aggregator port X3 by Switch.\n  step 8: check ospf/rip works\n  step 9: no shut down aggregator port X3 by Switch.\n  step 10: check ospf/rip works\n  step 11: Repeat step 6~9, but shutdown/no shutdown LAG member port.",
+      "priority" : "Smoke",
+      "atm_id" : "317fe231-1cf0-4b1a-bec7-7de15440f294",
+      "initial" : "  DUT1(X3/X2)----------Switch---------Device",
+      "id" : "1533518",
+      "title" : "Verify OSPF/RIP works for L2 LAG (static or dynamic)with trunk mode",
+      "description" : "Original ID: 67\nOriginal Title: Verify OSPF/RIP works for L2 LAG (static or dynamic)with trunk mode\nOriginal Description:",
+      "result" : "  step 6,8,10,11:ospf /rip works normally, OSPF adjacency should not flaps."
+   },
+   "1509617" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, config X20 with static ip adrress and enable DHCP server for the interface.\n  3.On the Switching-&gt;link aggregation page, add X20 as aggregator port and X21 as its member, enable LACP.\n  4.Config Switch with dynamic port channel.\n  5.Check configuration on secondary unit.\n  6.On PC,try to get dynamic address and send traffic from PC to internet.\n  7.Make force Active/Standby failover.\n  8.On PC, send traffic from PC to internet.",
+      "priority" : "Sanity",
+      "atm_id" : "fc8a9fa5-52cd-43b2-b6f1-a41ba85a4a32",
+      "initial" : "  PC-Switch--(x20/x21)DUT1(x1)--Internet\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; |HA\n  PC-Switch--(x20/x21)DUT2(x1)--Internet",
+      "id" : "1509617",
+      "title" : "Verify that stateful failover with dynamic link aggregation(Portshiled mode)",
+      "description" : "Original ID: 54\nOriginal Title: Verify that stateful failover with dynamic link aggregation(Portshiled mode)\nOriginal Description:",
+      "result" : "  Step 5: configuration are synced.\n  Step 6: PC got dynamic address and traffic are reachable.\n  Step 8: after failover, traffic are still reachable."
+   },
+   "1509605" : {
+      "steps" : "  1. In the Network-&gt;Portshield Groups page, make X2,X3,X4 and X5 portshield to X0.\n  2. In the Switching-&gt;Link Aggregation page, add a dynamic LAG with X2 as aggregator port and X3 as member and the Key 10 and enable LACP.\n  3. Add another dynamic LAG with X4 as aggregator port and X5 as member and the Key 20 and enable LACP.\n  4. Config Switch2 and Switch3 with Dynamic LAG respectively.\n  5. Make sure that DHCP server for X0 has been enabled.\n  6. Check if PC1 and PC2 can get dynmaic address from X0.\n  7. Ping from PC1 to PC2 or from PC2 to PC1.",
+      "priority" : "Sanity",
+      "atm_id" : "66a6b570-9178-447b-9c77-586038f9c929",
+      "initial" : "  PC1--Switch1---(X2/X3)DUT(X4/X5)---Switch2---PC2",
+      "id" : "1509605",
+      "title" : "[Obsolete][Func] L2 connectivity test for dynamic LAG (Portshield mode)",
+      "description" : "Original ID: 43\nOriginal Title: [Obsolete][Func] L2 connectivity test for dynamic LAG (Portshield mode)\nOriginal Description:",
+      "result" : "  step 6: PC1 and PC2 can get dynamic address.\n  step 7: traffic is reachable."
+   },
+   "1533515" : {
+      "steps" : "  1. Configure two L2 LAG groups via GUI switching page, one is in Portshield mode, another is in Trunk mode, both are in WAN mode, make sure they have WAN IP which are accessible.\n  2. Enable the management option ping/https/http in their LAG interface. (For trunk mode it should be the aggregator port's VLAN interface).&#160;\n  3. From a WAN PC try to manage DUT through the LAG interface IP, verify ping/https/http method.\n  4. Shutdown the aggregator ports in both LAG group, verify the&#160;ping/https/http management traffic again. 5. No shutdown the&#160;aggregator ports in step 4, shutdown the LAG member ports in both LAG group,&#160;verify the&#160;\n  ping/https/http management traffic again. ",
+      "priority" : "Smoke",
+      "atm_id" : "02da3052-e584-4590-90da-bdae4a60e8f7",
+      "initial" : "  TBD",
+      "id" : "1533515",
+      "title" : "Verify the management traffic (ping/https/http) to LAG interface works when the aggregator port or member port is down (Portshield and Trunk mode)",
+      "description" : "Original ID: 64\nOriginal Title: Verify the management traffic (ping/https/http) to LAG interface works when the aggregator port or member port is down (Portshield and Trunk mode)\nOriginal Description:",
+      "result" : "  Step 3,4,5: &#160;The&#160;ping/https/http management are always successful."
+   },
+   "1509573" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address and enable Ping, and enable DHCP server for the interface X3.\n  2. Config Switch and create a port channel with members g0/3 and g0/4.\n  3. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  4. Check if the PC get dynamic address.\n  5. Ping from PC to the IP of X3.\n  6. Ping from PC to the Internet.\n  7.shut down g0/3 for Switch, and repeat step 5-6.\n  8. No shut down g0/3 for Switch, and repeat step 5-6.\n  9. Repeat step 1-9 on Fiber port.",
+      "priority" : "Smoke",
+      "atm_id" : "5F7BC882-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  PC---Switch(g0/3 / g0/4)----(x3/x4)DUT(x1)-------Internet",
+      "id" : "1509573",
+      "title" : "Verify that Link Aggregation on ports within same VLAN work (Lag with portshield mode)",
+      "description" : "Original ID: 14\nOriginal Title: Verify that Link Aggregation on ports within same VLAN work (Lag with portshield mode)\nOriginal Description:",
+      "result" : "  step 4: PC can get dynamic addresss.\n  step 5: the traffic is reachable.\n  step 6: the traffic is reachable."
+   },
+   "1509623" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, click delete button of Aggregator which has members.\n  2.Click the delete button of one member for a LAG.",
+      "priority" : "Sanity",
+      "atm_id" : "5F528634-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509623",
+      "title" : "[GUI]Verify that ports can be deleted from Link Aggregation table by clicking delete button",
+      "description" : "Original ID: 6\nOriginal Title: [GUI]Verify that ports can be deleted from Link Aggregation table by clicking delete button\nOriginal Description:",
+      "result" : "  step 1: fail to delete and it will pop up error message that remind you to delete its member first.\n  step 2: delete successfully."
+   },
+   "1533497" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add trunk port X2/ X3/X4/X5 and all enable VLAN 155. 2. In the Switching-&gt;Link Aggregation page, add a LAG with X2 as aggregator port and X3/X4/X5 as member and the Key 10 and enable LACP, then select load balance type as \"DST_IP,DST_PORT\" .\n  3. In the Main interface page, config X2:V155 as WAN zone and set it static IP.\n  4. Set X2:V155 as default WAN.\n  5. Config Swith with Dynamic lag.\n  6. Send multiple traffic from PC2 and PC3 to the Internet(different destination) respectively.\n  7. Check the Tx traffic statistics for X2/X3/X4/X5.",
+      "priority" : "Sanity",
+      "atm_id" : "a0c165bb-10c1-43a2-8f56-f98964ac673c",
+      "initial" : "  Internet--Switch--(X2/X3/X4/X5)DUT(X0 /X6)---PC2 /PC3",
+      "id" : "1533497",
+      "title" : "[Only for 6.2.1/6.0.5] Verify the outgoing traffic are load balanced in dynamic LAG ports",
+      "description" : "Original ID: 48\nOriginal Title: [Only for 6.2.1/6.0.5] Verify the outgoing traffic are load balanced in dynamic LAG ports\nOriginal Description:",
+      "result" : "  step 7: all the traffic should egress out of the LAG at least 2 or more interfaces."
+   },
+   "1533476" : {
+      "steps" : "  1. Set X2 as Portshield host, and make X3&amp;X4&amp;X5 portshiled to X2 as Portshiled member.\n  2. In the Switching-&gt;Link Aggregation page, add X2 as aggregator and X3&amp;X4&amp;X5&amp;X6 as its member with the same Key.",
+      "priority" : "Sanity",
+      "atm_id" : "0FE7E7E6-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  TBD",
+      "id" : "1533476",
+      "title" : "Verify port status for successful static Link Aggregation LAG",
+      "description" : "Original ID: 29\nOriginal Title: Verify port status for successful static Link Aggregation LAG\nOriginal Description:",
+      "result" : "  step 2: the status for four port is \"up,sel,agg\".\n  for 6.2.1.x, the status should be \"up,sel,agg-Coll/Dist\n  \""
+   },
+   "1533461" : {
+      "steps" : "  For 6.2.1/6.0.5\n  1. Set X2 as LAN (assign an IP),\n  2. In the Switching-&gt;Link Aggregation page, click 'add' and select X2 as aggregator and X3&amp;X4&amp;X5&amp;X6 as its member. Assign a key.\n  3. Configure static LAG on the switch side corresponding to X2, X3, X4 and X5 only (not X6)\n  4. Check the LAG ID for the five ports\n  5. Lag ID for X2, X3, X4, X5 should display '2' (which is the interface id of aggregator) and X6 should display '0' (since LAG is not configured on switch side for X6)\n  For versions other than 6.2.1/6.0.5,\n  1. Set X2 as Portshield host, and make X3&amp;X4&amp;X5&amp;X6 portshiled to X2 as Portshiled member.\n  2. In the Switching-&gt;Link Aggregation page, add X2 as aggregator and X3&amp;X4&amp;X5&amp;X6 as its member with the same Key.\n  3. Check the LAG ID for the five port .",
+      "priority" : "Sanity",
+      "atm_id" : "5F7F7A9A-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  Switch(g0/3 / g0/4 / g0/5 / g0/6 / g0/7)-----(X2/X3/X4/X5/X6)DUT",
+      "id" : "1533461",
+      "title" : "Verify that a logical group can at most have 4 aggregated ports for static LAG",
+      "description" : "Original ID: 15\nOriginal Title: Verify that a logical group can at most have 4 aggregated ports for static LAG\nOriginal Description: If LAG ID shown as same then it means they are successfully aggregated to one LAG group.<br />By default ,the LAG ID for aggregator is the same as its interface number.",
+      "result" : "  step 3: the LAG ID for X2-X5 show \"2\" ,but it shows \"0\" for X6."
+   },
+   "1509566" : {
+      "steps" : "  1. Find 40G ports on your DUT, check it on front panel;\n  2. Test LAG basic function on these ports;\n  If you DUT does not have these ports, please ignore this case.",
+      "priority" : "Smoke",
+      "atm_id" : "754C8ED8-FA76-11EB-A74D-FDE045DCE006",
+      "initial" : "  TBD",
+      "id" : "1509566",
+      "title" : "[40G] Test basic LAG function on 40G ports",
+      "description" : "Original ID: 071\nOriginal Title: [40G] Test basic LAG function on 40G ports\nOriginal Description:",
+      "result" : "  LAG function must work on these ports."
+   },
+   "1533453" : {
+      "steps" : "  1. Add LACP LAG , port X0, member port X2;\n  2. Passing ARP pkts from X0 to X2.",
+      "priority" : "Full_Regression",
+      "atm_id" : "733DEDDA-E26E-11ED-8403-FA6AAEE09C5C",
+      "initial" : "  Refer to JIRA GEN7-38337",
+      "id" : "1533453",
+      "title" : "Verify there's no flooding of any packets in the LAG related vlan until the LACP LAG aggregates",
+      "description" : "Original ID: 074\nOriginal Title: Verify there's no flooding of any packets in the LAG related vlan until the LACP LAG aggregates \nOriginal Description:",
+      "result" : "  in step 2, when LAG is not aggregated, ARP pkt should not be flood between X0 and X2."
+   },
+   "1533479" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG and LACP is enabled.\n  2. Then check the status for Partner column .",
+      "priority" : "Smoke",
+      "atm_id" : "0FF0B27C-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  TBD",
+      "id" : "1533479",
+      "title" : "[Only for 6.2.1/6.0.5] [GUI]Verify that LACP Enabled LAG Port shows  Partner's mac address under Link aggregation table",
+      "description" : "Original ID: 31\nOriginal Title: [Only for 6.2.1/6.0.5] [GUI]Verify that LACP Enabled LAG Port shows  Partner's mac address under Link aggregation table\nOriginal Description:",
+      "result" : "  step 2: &#160;the partner's field for LAG Port under Link aggregation table shows partner` mac address."
+   },
+   "1509626" : {
+      "steps" : "  1. Enable HA in DUT1 and DUT2, and enable the&#160;Virtual MAC option.\n  2. In the active DUT to configure two L2 LAG groups, X3,X4 are configured in Portshield mode (LAG1, X3 is aggregator) and as LAN zone, X5, X6 are configured in Trunk mode (LAG2, X5 is aggregator) and in WAN zone\n  3. In LAN PC to keep ping DUT LAG1 interface IP (=X3 IP)\n  4.&#160;In WAN PC to keep ping DUT LAG2 interface IP (=X5 VLAN interface IP, e.g, X5:V139)\n  5.&#160;In the active DUT to disable HA&#160;virtual MAC option, repeat step 3~4 6.&#160;In the active DUT to enable HA&#160;\n  virtual MAC option, repeat step&#160;3~4 7. Trigger a HA failover, repeat step 5~6.",
+      "priority" : "Full_Regression",
+      "atm_id" : "06bfdb3e-a21a-43c9-b671-93cc2958075d",
+      "initial" : "  LAN PC---Switch----LAG1 -----(X3, X4) DUT1 (X5, X6)------LAG2-----Switch----WAN PC\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; | &#160; &#160; &#160; &#160;&#160;\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; HA\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;|\n  LAN PC---Switch----LAG1 -----(X3, X4) DUT2 (X5, X6)------LAG2-----Switch----WAN PC\n  Note: above switch could be one or two switches, please make sure the allowed VLAN in LAG1 and LAG2 are not overlapped.",
+      "id" : "1509626",
+      "title" : "[DTS 175031] Disable/Enable HA virtual MAC option when have L2 LAG configured (Portshield and Trunk mode)",
+      "description" : "Original ID: 62\nOriginal Title: [DTS 175031] Disable/Enable HA virtual MAC option when have L2 LAG configured (Portshield and Trunk mode)\nOriginal Description:",
+      "result" : "  Step 3~7: Ping is always successful. No any error, exception, notice log shown in GUI or console."
+   },
+   "1509572" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports X3 and X4 (Copper port), and both enable VLAN 871.\n  2. Config X3:V871 with static ip address and Ping enabled in the Interface Main page, and enable DHCP server for the interface X3:V871.\n  3. Config Switch and create a port channel with members g0/3 and g0/4.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  5. Check if the PC get dynamic address.\n  6. Ping from PC to the IP of X3:V871.\n  7. Ping from PC to the Internet.\n  8. Shut down g0/3 for Switch, and repeat step 6-7.\n  9. No shut down g0/3 for Switch, and repeat step 6-7.\n  10. Repeat step 1-9 on Fiber port.",
+      "priority" : "Smoke",
+      "atm_id" : "5F770568-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  PC---Switch(g0/3 / g0/4)----(X3/X4)DUT(x1)-------Internet",
+      "id" : "1509572",
+      "title" : "Verify that Link Aggregation on Trunk ports work (Lag with Trunk mode)",
+      "description" : "Original ID: 13\nOriginal Title: Verify that Link Aggregation on Trunk ports work (Lag with Trunk mode)\nOriginal Description:",
+      "result" : "  step 5: PC can get dynamic address.\n  step 6: the traffic is reachable.\n  step 7: the traffic is reachable."
+   },
+   "1509586" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG with aggregator and a member which is no link.\n  2. Check the status for the member.",
+      "priority" : "Full_Regression",
+      "atm_id" : "0FD81136-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  TBD",
+      "id" : "1509586",
+      "title" : "Verify that the LAG Port status is \"down\" if it is not connected",
+      "description" : "Original ID: 26\nOriginal Title: Verify that the LAG Port status is \"down\" if it is not connected\nOriginal Description:",
+      "result" : "  step 2: it is \"down\"."
+   },
+   "1509570" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG with the aggregator option checked, and save config.",
+      "priority" : "Sanity",
+      "atm_id" : "5F6BA4F2-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509570",
+      "title" : "[GUI]Verify that LAG Port can be configured as aggregator by clicking \"aggregator\" checkbox during LAG Port configuration",
+      "description" : "Original ID: 11\nOriginal Title: [GUI]Verify that LAG Port can be configured as aggregator by clicking \"aggregator\" checkbox during LAG Port configuration\nOriginal Description:",
+      "result" : "  step 1: add successfully and the column \"Aggregator\" is checked."
+   },
+   "1509624" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, Add L2 LAG and enable physical monitor on the aggregator port.\n  3.Check configuration on secondary unit.\n  4.Send traffic through the L2 LAG.\n  5.Add one member to the LAG..\n  6.Check the UI and console.\n  7.Send more traffic through the L2 LAG.",
+      "priority" : "Smoke",
+      "atm_id" : "913046ad-f124-4c95-8f72-297c409e338f",
+      "initial" : "  TBD",
+      "id" : "1509624",
+      "title" : "Verify that failover should not happen when add a LAG member into static/dynamic link aggregation  (portshield mode /trunk mode)",
+      "description" : "Original ID: 60\nOriginal Title: Verify that failover should not happen when add a LAG member into static/dynamic link aggregation  (portshield mode /trunk mode)\nOriginal Description:",
+      "result" : "  Step 3: configuration are synced.\n  Step 4: traffic are reachable.\n  Step 6: configuration are synced and no failover happened.\n  Step 7: traffic are still reachable."
+   },
+   "1533513" : {
+      "steps" : "  1. Enable HA in DUT1 and DUT2, and enable the&#160;Virtual MAC option.\n  2. In the active DUT to configure two L2 LAG groups, X3,X4 are configured in Portshield mode (LAG1, X3 is aggregator) and as LAN zone, X5, X6 are configured in Trunk mode (LAG2, X5 is aggregator) and in WAN zone\n  3. In LAN PC to keep ping DUT LAG1 interface IP (=X3 IP)\n  4.&#160;In WAN PC to keep ping DUT LAG2 interface IP (=X5 VLAN interface IP, e.g, X5:V139)\n  5.&#160;In the active DUT to disable HA&#160;virtual MAC option, repeat step 3~4 6.&#160;In the active DUT to enable HA&#160;\n  virtual MAC option, repeat step&#160;3~4 7. Trigger a HA failover, repeat step 5~6.",
+      "priority" : "Full_Regression",
+      "atm_id" : "06bfdb3e-a21a-43c9-b671-93cc2958075d",
+      "initial" : "  LAN PC---Switch----LAG1 -----(X3, X4) DUT1 (X5, X6)------LAG2-----Switch----WAN PC\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; | &#160; &#160; &#160; &#160;&#160;\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; HA\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;|\n  LAN PC---Switch----LAG1 -----(X3, X4) DUT2 (X5, X6)------LAG2-----Switch----WAN PC\n  Note: above switch could be one or two switches, please make sure the allowed VLAN in LAG1 and LAG2 are not overlapped.",
+      "id" : "1533513",
+      "title" : "[DTS 175031] Disable/Enable HA virtual MAC option when have L2 LAG configured (Portshield and Trunk mode)",
+      "description" : "Original ID: 62\nOriginal Title: [DTS 175031] Disable/Enable HA virtual MAC option when have L2 LAG configured (Portshield and Trunk mode)\nOriginal Description:",
+      "result" : "  Step 3~7: Ping is always successful. No any error, exception, notice log shown in GUI or console."
+   },
+   "1533502" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address, and enable DHCP server for the interface X3.\n  2. Add a sub interface with X3 as parent and VLAN ID 100 and set static ip address and enable DHCP server for X3:V100 .\n  3. Config Switch and create a port channel with members g0/3 and g0/4 and set it mode as hybride.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  5. Check if PC1 can get dynamic address within X3 scope.\n  6. Check if PC2 can get dynamic address within X3:v100 scope.\n  7. Ping continous traffic from PC1 to the Internet.\n  8. Ping continous traffic from PC2 to the Internet.",
+      "priority" : "Smoke",
+      "atm_id" : "b33e7c8a-1644-4afc-9f3b-c40a973b986e",
+      "initial" : "  PC1/PC2---Switch(g0/3 / g0/4)----(x3/x4)DUT(x1)-------Internet",
+      "id" : "1533502",
+      "title" : "[FUN]Verify the Portshield mode LAG with Vlan Sub-interface",
+      "description" : "Original ID: 52\nOriginal Title: [FUN]Verify the Portshield mode LAG with Vlan Sub-interface\nOriginal Description:",
+      "result" : "  step 5: get dynamic address.\n  step 6: get dynamic address.\n  step 7: traffic is reachable.\n  step 8: traffic is reachable."
+   },
+   "1533493" : {
+      "steps" : "  1. In the Network-&gt;Portshield Groups page, make X2 portshield to X0.\n  2. In the Switching-&gt;VLAN Trunking page, add trunk port X4 and X5.\n  3. Under VLAN Table , config X0 and chang the VLAN ID as 939 and Enable Trunked.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X4 as aggregator port and X5 as member and the Key 10.\n  5. Make sure that DHCP server for X0 has been enabled.\n  6. Check if PC1 and PC2 can get dynmaic address from X0.\n  7. Ping from PC1 to PC2 or from PC2 to PC1.",
+      "priority" : "Sanity",
+      "atm_id" : "a728d787-8bc1-41e8-8c1b-3f453e992e75",
+      "initial" : "  PC1--Switch1---(X2/X3)DUT(X4/X5)---Switch2---PC2",
+      "id" : "1533493",
+      "title" : "[Func] L2 connectivity test when LAG ports are in same VLAN with other portshield ports",
+      "description" : "Original ID: 44\nOriginal Title: [Func] L2 connectivity test when LAG ports are in same VLAN with other portshield ports\nOriginal Description:",
+      "result" : "  step 6: PC1 and PC2 can get dynamic address.\n  step 7: traffic is reachable."
+   },
+   "1533522" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG port with \"Auto-Detect\" enabled and LACP enabled.\n  2. Check the \"Key\" column if shows \"Auto\".",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F611406-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533522",
+      "title" : "[Only for 2400MX] [GUI]Verify that \"Key\" column shows \"Auto\" when auto-detect chekbox is checked during Dynamic LAG Port configuration",
+      "description" : "Original ID: 9\nOriginal Title: [Only for 2400MX] [GUI]Verify that \"Key\" column shows \"Auto\" when auto-detect chekbox is checked during Dynamic LAG Port configuration\nOriginal Description: version 6.2 does not support dynamic LAG .<br />Although version 6.2.1.0 and 6.0.5.0 both support dynamic LAG, but they both do not have \"auto\" option.<br />Only 2400mx support",
+      "result" : "  step 2: &#160;\"Key\" column shows \"Auto\""
+   },
+   "1533499" : {
+      "steps" : "  For 6.2.1/6.0.5, follow the below steps\n  1. Set X0 as LAN\n  2. In the Switching-&gt;Link Aggregation page, click \"Add\" button and select X0 as Aggregator\n  3. Set Key and enable LACP\n  4. In LAG member dropdown, select X2 then save.\n  Trunk port mode:\n  1. Add trunk port X3 and X4 , and both enable VLAN 873.\n  2. In the Switching-&gt;Link Aggregation page, add aggregator by click \"Add \" button.\n  3. In the Add LAG Port page, select X3 port and Set Key and enable Aggregator, then save.\n  4. Then add LAG member X4 by click \"Add\" button and set the same Key, then save.\n  For versions other than 6.2.1/6.0.5, execute below:\n  Portshield mode:\n  1. Set X0 as Portshield host, and make X2 portshiled to X0 as Portshiled member.\n  2. In the Switching-&gt;Link Aggregation page, add aggregator by click \"Add\" button. 3.In the Add LAG Port page, select X0 port and Set Key and enable Aggregator, then save.\n  4. Then add LAG member X2 by click \"Add\" button and set the same Key, then save.\n  Trunk port mode:\n  1. Add trunk port X3 and X4 , and both enable VLAN 873.\n  2. In the Switching-&gt;Link Aggregation page, add aggregator by click \"Add \" button.\n  3. In the Add LAG Port page, select X3 port and Set Key and enable Aggregator, then save.\n  4. Then add LAG member X4 by click \"Add\" button and set the same Key, then save.",
+      "priority" : "Sanity",
+      "atm_id" : "5F4D8292-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533499",
+      "title" : "[GUI]Verify that ports can be added to Link Aggregation table by clicking add button",
+      "description" : "Original ID: 5\nOriginal Title: [GUI]Verify that ports can be added to Link Aggregation table by clicking add button\nOriginal Description:",
+      "result" : "  Interface mode:\n  step 4: Both X0 and X4 should be displayed in the page with X0 as aggregator port and X2 as member port\n  Portshield mode:\n  step 3: Aggregator port is added successfully.\n  step 4: Member port is added successfully.\n  Trunk port mode:\n  step 3: Aggregator port is added successfully.\n  step 4: Member port is added successfully."
+   },
+   "1533507" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On Primary unit, Add L2 LAG with portshield mode and enable physical monitor on portshield host.\n  3.On High Availability-&gt;advanced page, make sure that the option \"Active/Standby Failover only when ALL aggregate links are down\" are disabled.\n  4.Check configuration on secondary unit.\n  5.Send traffic through the L2 LAG.\n  6.Shut down portshiled host or portshield member by Switch.\n  7.Check the UI and console.\n  8.Send traffic through the L2 LAG.\n  9.On High Availability-&gt;advanced page, enable the option \"Active/Standby Failover only when ALL aggregate links are down\".\n  10.Repeat the step 4-8.",
+      "priority" : "Sanity",
+      "atm_id" : "6614c7ec-9f21-4cd6-a43a-a6f926fd9c3c",
+      "initial" : "  TBD",
+      "id" : "1533507",
+      "title" : "Verify that stateful failover with static/dynamic link aggregation (portshiled mode) when shutdown one port",
+      "description" : "Original ID: 57\nOriginal Title: Verify that stateful failover with static/dynamic link aggregation (portshiled mode) when shutdown one port\nOriginal Description:",
+      "result" : "  Step 4: the configuration are synced.\n  Step 5: the traffic are reachable.\n  Step 7: failover is observed on the UI and console, and the secondary uint becomes actvie.\n  Step 8: the traffic are reachable.\n  Step 10: after enable the option \"Active/Standby Failover only when ALL aggregate links are down\", and shut down one port , it will not happen failover and traffic are still reachable."
+   },
+   "1533500" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add trunk port X1 and X2 and X3 and X4, and all enable VLAN 152.\n  2. In the Switching-&gt;Link Aggregation page, add a LAG with X1 as aggregator port and X2/X3/X4 as member and the Key 10.\n  3. Config Switch with Static LAG.\n  4. In the Main interface page, set X1:V152 as DHCP mode, and check if it get dynamic address.\n  5. Send continous and multiple traffic from PC to Internet.\n  6. On DUT delete LAG member X4 , then remove the port g0/4 from LAG on Switch.\n  7. Check the traffic if they are still reachable.",
+      "priority" : "Smoke",
+      "atm_id" : "4e53ba68-81ad-440b-bca5-3a849e7f0c6d",
+      "initial" : "  Internet--Switch(g0/1 /g0/2 /g0/3 /g0/4)--(X1/X2/X3/X4)DUT(X0)---PC",
+      "id" : "1533500",
+      "title" : "Remove LAG member port when having background traffic",
+      "description" : "Original ID: 50\nOriginal Title: Remove LAG member port when having background traffic\nOriginal Description:",
+      "result" : "  step 4: X1:V152 got dynamic address.\n  step 5: all the traffic are reachable.\n  step 6: the traffic can be reachable."
+   },
+   "1509580" : {
+      "steps" : "  1. In the Switching -&gt;Link Aggregation page, add a LAG with the aggregator port and its members.\n  2. Delete the aggregator for the LAG.",
+      "priority" : "Sanity",
+      "atm_id" : "5F93DD50-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509580",
+      "title" : "[GUI]Verify that aggregator port cannot be removed from the LAG",
+      "description" : "Original ID: 20\nOriginal Title: [GUI]Verify that aggregator port cannot be removed from the LAG\nOriginal Description: Verify that aggregator port cannot be removed from the LAG. This happens because it represents the LAG in the system",
+      "result" : "  step 2: it will pop up error message to remind that the aggregator port is not allowed to delete when it still has members."
+   },
+   "1509568" : {
+      "steps" : "  1. Verify that \"Link Aggregation\" sub-menu is available under \"Switching\".",
+      "priority" : "Sanity",
+      "atm_id" : "5F1EC542-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509568",
+      "title" : "[GUI]Verify that \"Link Aggregation\" sub-menu is available under \"Switching\"",
+      "description" : "Original ID: 1\nOriginal Title: [GUI]Verify that \"Link Aggregation\" sub-menu is available under \"Switching\"\nOriginal Description:",
+      "result" : "  step 1: \"Link Aggregation\" sub-menu is available under \"Switching\"&#160;"
+   },
+   "1509593" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG and LACP is not enabled.\n  2. Then check the status for Partner column .",
+      "priority" : "Sanity",
+      "atm_id" : "0FF61FF0-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  TBD",
+      "id" : "1509593",
+      "title" : "[GUI]Verify in static LAG the partner's field for LAG Port under Link aggregation table is always  00:00:00:00:00:00",
+      "description" : "Original ID: 32\nOriginal Title: [GUI]Verify in static LAG the partner's field for LAG Port under Link aggregation table is always  00:00:00:00:00:00\nOriginal Description:",
+      "result" : "  step 2: the partner's field for LAG Port under Link aggregation table is always &#160;00:00:00:00:00:00"
+   },
+   "1509628" : {
+      "steps" : "  1. Configure two L2 LAG groups via GUI switching page, one is in Portshield mode, another is in Trunk mode, both are in WAN mode, make sure they have WAN IP which are accessible.\n  2. Enable the management option ping/https/http in their LAG interface. (For trunk mode it should be the aggregator port's VLAN interface).&#160;\n  3. From a WAN PC try to manage DUT through the LAG interface IP, verify ping/https/http method.\n  4. Shutdown the aggregator ports in both LAG group, verify the&#160;ping/https/http management traffic again. 5. No shutdown the&#160;aggregator ports in step 4, shutdown the LAG member ports in both LAG group,&#160;verify the&#160;\n  ping/https/http management traffic again. ",
+      "priority" : "Smoke",
+      "atm_id" : "02da3052-e584-4590-90da-bdae4a60e8f7",
+      "initial" : "  TBD",
+      "id" : "1509628",
+      "title" : "Verify the management traffic (ping/https/http) to LAG interface works when the aggregator port or member port is down (Portshield and Trunk mode)",
+      "description" : "Original ID: 64\nOriginal Title: Verify the management traffic (ping/https/http) to LAG interface works when the aggregator port or member port is down (Portshield and Trunk mode)\nOriginal Description:",
+      "result" : "  Step 3,4,5: &#160;The&#160;ping/https/http management are always successful."
+   },
+   "1533470" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports ,X3 and X4, and both enable the same VLAN, eg.100.\n  2. In the Switching-&gt;Rapid Spanning Tree page, enable RSTP for both X3 and X4.\n  3. Check the Role and State for both X3 and X4.\n  4. In the Switching -&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  5. Check the State for both X3 and X4.",
+      "priority" : "Full_Regression",
+      "atm_id" : "5FA240AC-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  Switch(g0/3 /g0/4)-----(X3/X4)DUT",
+      "id" : "1533470",
+      "title" : "[Only for 2400MX] Verify that if RSTP needs to be enabled on the LAG, it should be configured on individual members first before enabling link aggregation",
+      "description" : "Original ID: 23\nOriginal Title: [Only for 2400MX] Verify that if RSTP needs to be enabled on the LAG, it should be configured on individual members first before enabling link aggregation\nOriginal Description: The feature RSTP is only supported on the platform 2400MX",
+      "result" : "  step 3: X3 is the Root Port and Forwarding, and X4 is Alternate and Discarding.\n  step 4: add LAG successfully.\n  step 5: the State for both X3 and X4 is Forwarding."
+   },
+   "1533451" : {
+      "steps" : "  1. Find 40G ports on your DUT, check it on front panel;\n  2. Test LAG basic function on these ports;\n  If you DUT does not have these ports, please ignore this case.",
+      "priority" : "Smoke",
+      "atm_id" : "754C8ED8-FA76-11EB-A74D-FDE045DCE006",
+      "initial" : "  TBD",
+      "id" : "1533451",
+      "title" : "[40G] Test basic LAG function on 40G ports",
+      "description" : "Original ID: 071\nOriginal Title: [40G] Test basic LAG function on 40G ports\nOriginal Description:",
+      "result" : "  LAG function must work on these ports."
+   },
+   "1509633" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG with mebers.\n  2. Move the mouse to the Action column for one port.",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F59AAD6-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509633",
+      "title" : "[GUI]Verify that each configured port shows \"LAG Port Statics\"",
+      "description" : "Original ID: 8\nOriginal Title: [GUI]Verify that each configured port shows \"LAG Port Statics\" \nOriginal Description:",
+      "result" : "  step 2: it shows \"LAG Port Statics\" ."
+   },
+   "1509604" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add X2&amp;X3&amp;X4&amp;X5 as trunk port and enable VLAN 100 for all Trunk port.\n  2. In the Switching-&gt;Link Aggregation page, add a LAG with X2 as aggregator and X3 as member and enable LACP, then add another LAG with X4 as aggregator and X5 as member and enable LACP.\n  3. Config Switch1 and Switch2 with Dynamic LAG.\n  4. Assign static ip address for PC1 and PC2 which are both in the same subnet.\n  5. Ping from PC1 to PC2 or PC2 to PC1.",
+      "priority" : "Sanity",
+      "atm_id" : "2f41204c-3d99-4392-9bfc-dab50744f7e2",
+      "initial" : "  PC1--Switch1---(X2/X3)DUT(X4/X5)---Switch2---PC2",
+      "id" : "1509604",
+      "title" : "[Func] L2 connectivity test for dynamic LAG (Trunk mode)",
+      "description" : "Original ID: 42\nOriginal Title: [Func] L2 connectivity test for dynamic LAG (Trunk mode)\nOriginal Description:",
+      "result" : "  step 5: traffic is reachable."
+   },
+   "1509597" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address.\n  2. In the Network-&gt;Portshield Groups page, make X4 portshield to X3.\n  3. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  4. Config the similar setting on the FW.\n  5. Ping from PC1 to PC2.\n  6. Repeat step 1-5 on Fiber port.",
+      "priority" : "Full_Regression",
+      "atm_id" : "100B9E7A-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC1----(X0)DUT(X3 /X4)----(X3/X4)FW(X0)-----PC2",
+      "id" : "1509597",
+      "title" : "Verify static LAG when connected back-back with firewall (Portshield mode)",
+      "description" : "Original ID: 36\nOriginal Title: Verify static LAG when connected back-back with firewall (Portshield mode)\nOriginal Description:",
+      "result" : "  step 5: the traffic is reachable."
+   },
+   "1533469" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports and both enable the same VLAN, eg.100.\n  2. In the Switching -&gt;Link Aggregation page, add a LAG with the two trunk ports.\n  3. In the Switching-&gt;Rapid Spanning Tree page, check the status for the trunk ports under Port Settings table.",
+      "priority" : "Sanity",
+      "atm_id" : "5F9CC186-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  The feature RSTP is only supported on the platform 2400MX",
+      "id" : "1533469",
+      "title" : "[Only for 2400MX] Verify that RSTP cannot be enabled on the ports already configured with link aggregation",
+      "description" : "Original ID: 22\nOriginal Title: [Only for 2400MX] Verify that RSTP cannot be enabled on the ports already configured with link aggregation \nOriginal Description:",
+      "result" : "  step 3: the config button for both trunk ports are gray and can not be edited."
+   },
+   "1533511" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, Add L2 LAG and enable physical monitor on the aggregator port.\n  3.Check configuration on secondary unit.\n  4.Send traffic through the L2 LAG.\n  5.Add one member to the LAG..\n  6.Check the UI and console.\n  7.Send more traffic through the L2 LAG.",
+      "priority" : "Smoke",
+      "atm_id" : "913046ad-f124-4c95-8f72-297c409e338f",
+      "initial" : "  TBD",
+      "id" : "1533511",
+      "title" : "Verify that failover should not happen when add a LAG member into static/dynamic link aggregation  (portshield mode /trunk mode)",
+      "description" : "Original ID: 60\nOriginal Title: Verify that failover should not happen when add a LAG member into static/dynamic link aggregation  (portshield mode /trunk mode)\nOriginal Description:",
+      "result" : "  Step 3: configuration are synced.\n  Step 4: traffic are reachable.\n  Step 6: configuration are synced and no failover happened.\n  Step 7: traffic are still reachable."
+   },
+   "1509590" : {
+      "steps" : "  1. Do factory default to the DUT.\n  2. Verify the link aggregation table if it is empty in the Switching-&gt;Link Aggregation page.",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F43C126-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509590",
+      "title" : "[GUI]Verify that Link Aggregation table is empty when the unit boots up with factory default settings",
+      "description" : "Original ID: 3\nOriginal Title: [GUI]Verify that Link Aggregation table is empty when the unit boots up with factory default settings\nOriginal Description:",
+      "result" : "  step 2: the link aggregation table is empty."
+   },
+   "1533488" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, check the Link Aggregation table if have \"Port\", \"LAG ID\", \"Key\", \"Aggregator\", \"LACP Enable\", \"Status\" ,\"Partner\" and \"Action\" columns.",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F486FFA-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533488",
+      "title" : "[GUI]Verify that Link Aggregation table should have \"Port\", \"LAG ID\", \"Key\", \"Aggregator\", \"LACP Enable\", \"Status\" ,\"Partner\" and \"Action\" columns",
+      "description" : "Original ID: 4\nOriginal Title: [GUI]Verify that Link Aggregation table should have \"Port\", \"LAG ID\", \"Key\", \"Aggregator\", \"LACP Enable\", \"Status\" ,\"Partner\" and \"Action\" columns\nOriginal Description:",
+      "result" : "  step 1: the link aggregation table has \"Port\", \"LAG ID\", \"Key\", \"Aggregator\", \"LACP Enable\", \"Status\" ,\"Partner\" and \"Action\" columns."
+   },
+   "1509585" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add two or more LAGs.\n  2. In the System-&gt;Diagnostics page, click Download Report button.\n  3. Check the corresponding info about X0:V100 in the downloaded TSR.",
+      "priority" : "Sanity",
+      "atm_id" : "5FAC61C2-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509585",
+      "title" : "LAGs information in TSR",
+      "description" : "Original ID: 25\nOriginal Title: LAGs information in TSR\nOriginal Description:",
+      "result" : "  step 3: the info about the LAGs are all recorded in the TSR."
+   },
+   "1509563" : {
+      "steps" : "  1. Find the ports with speed1G/2.5G/5G/10G on your DUT, check it on the front panel;\n  2. Test basic function of LAG on these ports.\n  If your DUT does not have these ports, ignore this case.",
+      "priority" : "Smoke",
+      "atm_id" : "D7C560F6-FA73-11EB-A253-FDE045DCE006",
+      "initial" : "  TBD",
+      "id" : "1509563",
+      "title" : "[1/2.5/5/10] Test basic LAG function on 1G/2.5G/5G/10G ports.",
+      "description" : "Original ID: 068\nOriginal Title: [1/2.5/5/10] Test basic LAG function on 1G/2.5G/5G/10G ports.\nOriginal Description:",
+      "result" : "  LAG function must work as 1G ports on these ports."
+   },
+   "1509574" : {
+      "steps" : "  For 6.2.1/6.0.5\n  1. Set X2 as LAN (assign an IP),\n  2. In the Switching-&gt;Link Aggregation page, click 'add' and select X2 as aggregator and X3&amp;X4&amp;X5&amp;X6 as its member. Assign a key.\n  3. Configure static LAG on the switch side corresponding to X2, X3, X4 and X5 only (not X6)\n  4. Check the LAG ID for the five ports\n  5. Lag ID for X2, X3, X4, X5 should display '2' (which is the interface id of aggregator) and X6 should display '0' (since LAG is not configured on switch side for X6)\n  For versions other than 6.2.1/6.0.5,\n  1. Set X2 as Portshield host, and make X3&amp;X4&amp;X5&amp;X6 portshiled to X2 as Portshiled member.\n  2. In the Switching-&gt;Link Aggregation page, add X2 as aggregator and X3&amp;X4&amp;X5&amp;X6 as its member with the same Key.\n  3. Check the LAG ID for the five port .",
+      "priority" : "Sanity",
+      "atm_id" : "5F7F7A9A-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  Switch(g0/3 / g0/4 / g0/5 / g0/6 / g0/7)-----(X2/X3/X4/X5/X6)DUT",
+      "id" : "1509574",
+      "title" : "Verify that a logical group can at most have 4 aggregated ports for static LAG",
+      "description" : "Original ID: 15\nOriginal Title: Verify that a logical group can at most have 4 aggregated ports for static LAG\nOriginal Description: If LAG ID shown as same then it means they are successfully aggregated to one LAG group.<br />By default ,the LAG ID for aggregator is the same as its interface number.",
+      "result" : "  step 3: the LAG ID for X2-X5 show \"2\" ,but it shows \"0\" for X6."
+   },
+   "1509578" : {
+      "steps" : "  Portshield mode:\n  1. Config X6 with static IP address.\n  2. In the Switching-&gt;Link Aggregation page, add X6 as aggregator and X20 as its member and enable LACP.\n  3. Config Switch1 and Switch2 with LACP.\n  4. Check the status for X6 and X20.\n  5. Reconnect X20 to the Switch1 and config LACP.\n  6. Check the status for X6 and X20.\n  Trunk mode:\n  1. In the Switching-&gt;VLAN Trunk page, add trunk port X10 and X15, and both enable vlan 100.\n  2. In the Switching-&gt;Link Aggregation page, add X10 as aggregator and set X15 as its member, then enable LACP.\n  3. Config Switch1 and Switch2 with LACP.\n  4. Check the status for X6 and X20.\n  5. Reconnect X20 to the Switch1 and config LACP.\n  6. Check the status for X6 and X20.",
+      "priority" : "Sanity",
+      "atm_id" : "5F909212-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  Switch1-----(X6)DUT(X20)----Switch2",
+      "id" : "1509578",
+      "title" : "[Only for 6.2.1/6.0.5] Verify in dynamic LAG (LACP enabled) the ports will bond together as long as they are connected to the same link partner",
+      "description" : "Original ID: 19\nOriginal Title: [Only for 6.2.1/6.0.5] Verify in dynamic LAG (LACP enabled) the ports will bond together as long as they are connected to the same link partner\nOriginal Description: If there is no key configured for a port (i.e. Auto mode), it will bond with an aggregator that is connected to the same link partner. Link partner is discovered via LACP messages.\nNote: version 6.2 does not support dynamic LAG .<br />Although version 6.2.1.0 and 6.0.5.0 both support dynamic LAG, but they both do not have \"auto\" option.<br />Only 2400mx support",
+      "result" : "  step 4: port X6 and X20 fail to bond togother and the LAG ID is 0.\n  step 5: port X6 and X20 bond togother."
+   },
+   "1509619" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, config X20 and X21 as trunk port and both enable VLAN 943.\n  3.Config X20:V943 as LAN static IP address and enable DHCP server.\n  4.On the Switching-&gt;link aggregation page, add X20 as aggregator port and X21 as its member, and enable LACP.\n  5.Config Switch with dynamic port channel.\n  6.Check configuration on secondary unit.\n  7.On PC,try to get dynamic address and send traffic from PC to internet.\n  8.Make force Active/Standby failover.\n  9.On PC, send traffic from PC to internet.",
+      "priority" : "Sanity",
+      "atm_id" : "b08464e7-2a7e-48f6-8781-d0fd166a0935",
+      "initial" : "  PC-Switch--(x20/x21:V943)DUT1(x1)--Internet\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;|HA\n  PC-Switch--(x20/x21:V943)DUT2(x1)--Internet",
+      "id" : "1509619",
+      "title" : "Verify that stateful failover with dynamic link aggregation(Trunk mode)",
+      "description" : "Original ID: 56\nOriginal Title: Verify that stateful failover with dynamic link aggregation(Trunk mode)\nOriginal Description:",
+      "result" : "  Step 6: configuration are synced.\n  Step 7: PC got dynamic address and traffic are reachable.\n  Step 9: after failover, traffic are still reachable."
+   },
+   "1533520" : {
+      "steps" : "  Setting a wrong key and then setting a correct Key in the same \"Add LAG Port\" window is blocked by previous error",
+      "priority" : "Sanity",
+      "atm_id" : "5B3837C0-59AA-11EC-89F0-AF84928F55E4",
+      "initial" : "  TBD",
+      "id" : "1533520",
+      "title" : "JIRA GEN7-22239: Setting a wrong key and then setting a correct Key in the same \"Add LAG Port\" window",
+      "description" : "Original ID: 73\nOriginal Title: JIRA GEN7-22239: Setting a wrong key and then setting a correct Key in the same \"Add LAG Port\" window \nOriginal Description: Please refer toGEN7-22239",
+      "result" : "  the correct key should be accepted without any error message"
+   },
+   "1533464" : {
+      "steps" : "  Portshield mode:\n  1. Make sure that X10 has static IP address and X15 portshiled to X10.\n  2. In the Switching-&gt;Link Aggregation pge, add X10 as aggregator and set X15 as its member with the same Key.\n  3. Check the LAG ID for X10 and X15.\n  Trunk mode: 1. In the Switching-&gt;VLAN Trunk page, add trunk port X10 and X15, and both enable vlan 100.\n  2. In the Switching-&gt;Link Aggregation page, add X10 as aggregator and set X15 as its member with the same Key.\n  3. Check the LAG ID for X10 and X15.",
+      "priority" : "Sanity",
+      "atm_id" : "5F8D8C7A-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  Switch1-----(X10)DUT(X15)----Switch2",
+      "id" : "1533464",
+      "title" : "Verify in static LAG the ports will bond together as long as their keys match",
+      "description" : "Original ID: 18\nOriginal Title: Verify in static LAG the ports will bond together as long as their keys match\nOriginal Description: Link Partner cannot be discovered for Static link aggregation. &#160;In this case, ports aggregate based on keys alone.&#160;",
+      "result" : "  step 3: port X10 and X15 bond togother and have the same LAG ID."
+   },
+   "1533512" : {
+      "steps" : "  1. Enable HA in DUT1 and DUT2, and enable the&#160;Virtual MAC option.\n  2. In the active DUT to configure two L2 LAG groups, X3,X4 are configured in Portshield mode (LAG1, X3 is aggregator) and as LAN zone, X5, X6 are configured in Trunk mode (LAG2, X5 is aggregator) and in WAN zone\n  3. In LAN PC to keep ping DUT LAG1 interface IP (=X3 IP), show arp table in PC (arp -a) and record the X3 IP's MAC address.\n  4.&#160;In WAN PC to keep ping DUT LAG2 interface IP (=X5 VLAN interface IP, e.g, X5:V139), show arp table in PC (arp -a) and record the &#160;X5:V139\n  &#160;IP's MAC address. 5. Trigger a HA failover 6. Repeat step 3, step 4, and compare the MAC address for X3 and X5:v139, they should be kept no change.\n  &#160;",
+      "priority" : "Smoke",
+      "atm_id" : "8b7ba5a5-df70-4dac-880e-22d85e11c68c",
+      "initial" : "  LAN PC---Switch----LAG1 -----(X3, X4) DUT1 (X5, X6)------LAG2-----Switch----WAN PC\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; | &#160; &#160; &#160; &#160;&#160;\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; HA\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;|\n  LAN PC---Switch----LAG1 -----(X3, X4) DUT2 (X5, X6)------LAG2-----Switch----WAN PC Note: above switch could be one or two switches, please make sure the allowed VLAN in LAG1 and LAG2 are not overlapped.",
+      "id" : "1533512",
+      "title" : "Verify HA Virtual MAC function works normally in L2 LAG interface (Portshield and Trunk mode)",
+      "description" : "Original ID: 61\nOriginal Title: Verify HA Virtual MAC function works normally in L2 LAG interface (Portshield and Trunk mode)\nOriginal Description:",
+      "result" : "  3. Ping is successful\n  4. Ping is successful\n  6. Ping is successful, MAC address not changed."
+   },
+   "1509627" : {
+      "steps" : "  1. Enable HA in DUT1 and DUT2, and enable the HA option&#160;\"Active/Standby Failover only when ALL aggregate links are down\".\n  2. In the active DUT to configure two L2 LAG groups, X3,X4 are configured in Portshield mode (LAG1, X3 is aggregator) and as LAN zone, X5, X6 are configured in Trunk mode (LAG2, X5 is aggregator) and in WAN zone\n  3. Configure PBR or WLB to make sure the traffic from LAN PC to WAN PC will go through LAG1 and LAG2.\n  4. From LAN PC to trigger ping/FTP/HTTP traffic to WAN PC\n  5. Shutdown the port in Switch which is connected to primary DUT1 X4 port (or X6 port), observe the traffic in step4, observe if have HA failover happen.\n  6. No shutdown the port&#160;in Switch which is connected to primary DUT1 X4 port (or X6 port),&#160;observe the traffic in step4, observe if have HA failover happen.\n  7.&#160;Shutdown the port in Switch which is connected to primary DUT1 X3 port (or X5 port), observe the traffic in step4, observe if have HA failover happen.\n  8. Repeat step 1~7, but disable&#160;the option&#160;\"Active/Standby Failover only when ALL aggregate links are down\".\n  <span style=\"font-size: 10px;\">&#160;",
+      "priority" : "Smoke",
+      "atm_id" : "4814ca39-249a-423a-8a8e-a523647222b9",
+      "initial" : "  LAN PC---Switch----LAG1 -----(X3, X4) DUT1 (X5, X6)------LAG2-----Switch----WAN PC\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; | &#160; &#160; &#160; &#160;&#160;\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; HA\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; |\n  LAN PC---Switch----LAG1 -----(X3, X4) DUT2 (X5, X6)------LAG2-----Switch----WAN PC\n  Note: above switch could be one or two switches, please make sure the allowed VLAN in LAG1 and LAG2 are not overlapped.",
+      "id" : "1509627",
+      "title" : "Verify the HA option \"Active/Standby Failover only when ALL aggregate links are down\" works normally for L2 LAG port",
+      "description" : "Original ID: 63\nOriginal Title: Verify the HA option \"Active/Standby Failover only when ALL aggregate links are down\" works normally for L2 LAG port\nOriginal Description:",
+      "result" : "  4. All traffic are successful.\n  5,6,7. No failover happen, all traffic are successful without interrupted.\n  8. Failover will happen in step 5,7, but traffic should not be interrupted."
+   },
+   "1533466" : {
+      "steps" : "  1. In the Switching -&gt;Link Aggregation page, verify that \"Status\" under \"Link Aggregation\" page shows System ID. 2. Check the value of System ID .",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F35E22C-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533466",
+      "title" : "[GUI]Verify that \"Status\" under \"Link Aggregation\" page shows System ID",
+      "description" : "Original ID: 2\nOriginal Title: [GUI]Verify that \"Status\" under \"Link Aggregation\" page shows System ID\nOriginal Description:",
+      "result" : "  step 1: \"Status\" under \"Link Aggregation\" page shows System ID\n  step 2: the value of system ID is not zero."
+   },
+   "1509576" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add four LAGs.\n  2. Add the fifth LAG.",
+      "priority" : "Sanity",
+      "atm_id" : "5F8AB356-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509576",
+      "title" : "Verify that DUT can only be configured with a maximum of 4 logical groups (LAGS)",
+      "description" : "Original ID: 17\nOriginal Title: Verify that DUT can only be configured with a maximum of 4 logical groups (LAGS) \nOriginal Description:",
+      "result" : "  step 1: add successfully.\n  step 2: fail to add and pop up error message \"the LAG groups have reached the maximum\"."
+   },
+   "1509631" : {
+      "steps" : "  step 1: add trunk port X3 and X2 and both enable VLAN 943\n  step 2: assign static ip address for X3:V943\n  step 3:on Switching-&gt;link aggregation page, add aggregator X3 and its members X2 with static /dynamic mode step 4:config static /dynamic portchannel for Switch. step 5:enable ospf /rip on interface X3:V943 of DUT1 and also enable ospf /rip on DUT2.\n  step 6: check ospf/rip works\n  step 7: shut down aggregator port X3 by Switch.\n  step 8: check ospf/rip works\n  step 9: no shut down aggregator port X3 by Switch.\n  step 10: check ospf/rip works\n  step 11: Repeat step 6~9, but shutdown/no shutdown LAG member port.",
+      "priority" : "Smoke",
+      "atm_id" : "317fe231-1cf0-4b1a-bec7-7de15440f294",
+      "initial" : "  DUT1(X3/X2)----------Switch---------Device",
+      "id" : "1509631",
+      "title" : "Verify OSPF/RIP works for L2 LAG (static or dynamic)with trunk mode",
+      "description" : "Original ID: 67\nOriginal Title: Verify OSPF/RIP works for L2 LAG (static or dynamic)with trunk mode\nOriginal Description:",
+      "result" : "  step 6,8,10,11:ospf /rip works normally, OSPF adjacency should not flaps."
+   },
+   "1509581" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports and both enable the same VLAN, eg.100.\n  2. In the Switching -&gt;Link Aggregation page, add a LAG with the two trunk ports.\n  3. In the Switching-&gt;VLAN Trunking page, add another VLAN to the two trunk ports, eg .200.\n  4. Then try to delete the VLAN 100.",
+      "priority" : "Smoke",
+      "atm_id" : "5F9859B6-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509581",
+      "title" : "[GUI]Verify that once the link aggregation has been enabled on Trunk ports, additional VLANs cannot be added/deleted on the LAG",
+      "description" : "Original ID: 21\nOriginal Title: [GUI]Verify that once the link aggregation has been enabled on Trunk ports, additional VLANs cannot be added/deleted on the LAG\nOriginal Description:",
+      "result" : "  step 3: it will pop up error message and fail to enable vlan.\n  step 4: it also pop up error message and fail to disable vlan.\n  PS: From version 6.5.2.0 , it can add /delete vlan"
+   },
+   "1509595" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address and enable Ping, and enable DHCP server for the interface X3.\n  2. Config Switch and create a port channel with members g0/3 and g0/4.\n  3. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member and enable LACP.\n  4. Check if the PC get dynamic address.\n  5. Ping from PC to the IP of X3.\n  6. Ping from PC to the Internet.\n  7. Shut down g0/3 for Switch, and repeat step 5-6.\n  8. No shut down g0/3 for Switch, and repeat step 5-6.\n  9. Repeat step 1-8 on Fiber port.",
+      "priority" : "Smoke",
+      "atm_id" : "0FFE0904-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC1---Switch(g0/3 / g0/4)--(X3 /X4)DUT(X1)-----Internet",
+      "id" : "1509595",
+      "title" : "[Only for 6.2.1/6.0.5] Verify dynamic Link Aggregation with Portshield mode work",
+      "description" : "Original ID: 34\nOriginal Title: [Only for 6.2.1/6.0.5] Verify dynamic Link Aggregation with Portshield mode work\nOriginal Description:",
+      "result" : "  step 4: PC can get dynamic address.\n  step 5: the traffic is reachable.\n  step 6: the traffic is reachable."
+   },
+   "1509589" : {
+      "steps" : "  1. Set X2 as Portshield host, and make X3&amp;X4&amp;X5 portshiled to X2 as Portshiled member.\n  2. In the Switching-&gt;Link Aggregation page, add X2 as aggregator and X3&amp;X4&amp;X5&amp;X6 as its member with the same Key.",
+      "priority" : "Sanity",
+      "atm_id" : "0FE7E7E6-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  TBD",
+      "id" : "1509589",
+      "title" : "Verify port status for successful static Link Aggregation LAG",
+      "description" : "Original ID: 29\nOriginal Title: Verify port status for successful static Link Aggregation LAG\nOriginal Description:",
+      "result" : "  step 2: the status for four port is \"up,sel,agg\".\n  for 6.2.1.x, the status should be \"up,sel,agg-Coll/Dist\n  \""
+   },
+   "1533484" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address.\n  2. In the Network-&gt;Portshield Groups page, make X4 portshield to X3.\n  3. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  4. Config the similar setting on the FW.\n  5. Ping from PC1 to PC2.\n  6. Repeat step 1-5 on Fiber port.",
+      "priority" : "Full_Regression",
+      "atm_id" : "100B9E7A-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC1----(X0)DUT(X3 /X4)----(X3/X4)FW(X0)-----PC2",
+      "id" : "1533484",
+      "title" : "Verify static LAG when connected back-back with firewall (Portshield mode)",
+      "description" : "Original ID: 36\nOriginal Title: Verify static LAG when connected back-back with firewall (Portshield mode)\nOriginal Description:",
+      "result" : "  step 5: the traffic is reachable."
+   },
+   "1533460" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address and enable Ping, and enable DHCP server for the interface X3.\n  2. Config Switch and create a port channel with members g0/3 and g0/4.\n  3. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  4. Check if the PC get dynamic address.\n  5. Ping from PC to the IP of X3.\n  6. Ping from PC to the Internet.\n  7.shut down g0/3 for Switch, and repeat step 5-6.\n  8. No shut down g0/3 for Switch, and repeat step 5-6.\n  9. Repeat step 1-9 on Fiber port.",
+      "priority" : "Smoke",
+      "atm_id" : "5F7BC882-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  PC---Switch(g0/3 / g0/4)----(x3/x4)DUT(x1)-------Internet",
+      "id" : "1533460",
+      "title" : "Verify that Link Aggregation on ports within same VLAN work (Lag with portshield mode)",
+      "description" : "Original ID: 14\nOriginal Title: Verify that Link Aggregation on ports within same VLAN work (Lag with portshield mode)\nOriginal Description:",
+      "result" : "  step 4: PC can get dynamic addresss.\n  step 5: the traffic is reachable.\n  step 6: the traffic is reachable."
+   },
+   "1509620" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On Primary unit, Add L2 LAG with portshield mode and enable physical monitor on portshield host.\n  3.On High Availability-&gt;advanced page, make sure that the option \"Active/Standby Failover only when ALL aggregate links are down\" are disabled.\n  4.Check configuration on secondary unit.\n  5.Send traffic through the L2 LAG.\n  6.Shut down portshiled host or portshield member by Switch.\n  7.Check the UI and console.\n  8.Send traffic through the L2 LAG.\n  9.On High Availability-&gt;advanced page, enable the option \"Active/Standby Failover only when ALL aggregate links are down\".\n  10.Repeat the step 4-8.",
+      "priority" : "Sanity",
+      "atm_id" : "6614c7ec-9f21-4cd6-a43a-a6f926fd9c3c",
+      "initial" : "  TBD",
+      "id" : "1509620",
+      "title" : "Verify that stateful failover with static/dynamic link aggregation (portshiled mode) when shutdown one port",
+      "description" : "Original ID: 57\nOriginal Title: Verify that stateful failover with static/dynamic link aggregation (portshiled mode) when shutdown one port\nOriginal Description:",
+      "result" : "  Step 4: the configuration are synced.\n  Step 5: the traffic are reachable.\n  Step 7: failover is observed on the UI and console, and the secondary uint becomes actvie.\n  Step 8: the traffic are reachable.\n  Step 10: after enable the option \"Active/Standby Failover only when ALL aggregate links are down\", and shut down one port , it will not happen failover and traffic are still reachable."
+   },
+   "1509609" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add trunk port X2/ X3/X4/X5 and all enable VLAN 155. 2. In the Switching-&gt;Link Aggregation page, add a LAG with X2 as aggregator port and X3/X4/X5 as member and the Key 10.\n  3. In the Main interface page, config X2:V155 as WAN zone and set it static IP.\n  4. Set X2:V155 as default WAN.\n  5. Config Swith with Static lag.\n  6. Send multiple traffic from PC2 and PC3 to the Internet respectively.\n  7. Check the Tx traffic statistics for X2/X3/X4/X5.",
+      "priority" : "Sanity",
+      "atm_id" : "ac54beec-0441-4421-9dc9-08683e86b910",
+      "initial" : "  Internet--Switch--(X2/X3/X4/X5)DUT(X0 /X6)---PC2 /PC3",
+      "id" : "1509609",
+      "title" : "Verify the outgoing traffic are load balanced in static LAG ports",
+      "description" : "Original ID: 47\nOriginal Title: Verify the outgoing traffic are load balanced in static LAG ports\nOriginal Description:",
+      "result" : "  step 7: all the traffic should egress out of the LAG at least 2 or more interfaces."
+   },
+   "1533482" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address and enable Ping, and enable DHCP server for the interface X3.\n  2. Config Switch and create a port channel with members g0/3 and g0/4.\n  3. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member and enable LACP.\n  4. Check if the PC get dynamic address.\n  5. Ping from PC to the IP of X3.\n  6. Ping from PC to the Internet.\n  7. Shut down g0/3 for Switch, and repeat step 5-6.\n  8. No shut down g0/3 for Switch, and repeat step 5-6.\n  9. Repeat step 1-8 on Fiber port.",
+      "priority" : "Smoke",
+      "atm_id" : "0FFE0904-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC1---Switch(g0/3 / g0/4)--(X3 /X4)DUT(X1)-----Internet",
+      "id" : "1533482",
+      "title" : "[Only for 6.2.1/6.0.5] Verify dynamic Link Aggregation with Portshield mode work",
+      "description" : "Original ID: 34\nOriginal Title: [Only for 6.2.1/6.0.5] Verify dynamic Link Aggregation with Portshield mode work\nOriginal Description:",
+      "result" : "  step 4: PC can get dynamic address.\n  step 5: the traffic is reachable.\n  step 6: the traffic is reachable."
+   },
+   "1533504" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, config X20 with static ip adrress and enable DHCP server for the interface.\n  3.On the Switching-&gt;link aggregation page, add X20 as aggregator port and X21 as its member, enable LACP.\n  4.Config Switch with dynamic port channel.\n  5.Check configuration on secondary unit.\n  6.On PC,try to get dynamic address and send traffic from PC to internet.\n  7.Make force Active/Standby failover.\n  8.On PC, send traffic from PC to internet.",
+      "priority" : "Sanity",
+      "atm_id" : "fc8a9fa5-52cd-43b2-b6f1-a41ba85a4a32",
+      "initial" : "  PC-Switch--(x20/x21)DUT1(x1)--Internet\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; |HA\n  PC-Switch--(x20/x21)DUT2(x1)--Internet",
+      "id" : "1533504",
+      "title" : "Verify that stateful failover with dynamic link aggregation(Portshiled mode)",
+      "description" : "Original ID: 54\nOriginal Title: Verify that stateful failover with dynamic link aggregation(Portshiled mode)\nOriginal Description:",
+      "result" : "  Step 5: configuration are synced.\n  Step 6: PC got dynamic address and traffic are reachable.\n  Step 8: after failover, traffic are still reachable."
+   },
+   "1509622" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, Add L2 LAG and enable physical monitor on the aggregator port.\n  3.Check configuration on secondary unit.\n  4.Send traffic through the L2 LAG.\n  5.Remove one member from the LAG.If static LAG, manually remove member from connected Switch.\n  6.Check the UI and console.\n  7.Send traffic through the L2 LAG.",
+      "priority" : "Smoke",
+      "atm_id" : "43fb7e94-9d2f-45f4-a4c4-30c548545ed0",
+      "initial" : "  TBD",
+      "id" : "1509622",
+      "title" : "Verify that failover should not happen when unassing a LAG member port from static/dynamic link aggregation  (portshield mode /trunk mode)",
+      "description" : "Original ID: 59\nOriginal Title: Verify that failover should not happen when unassing a LAG member port from static/dynamic link aggregation  (portshield mode /trunk mode)\nOriginal Description:",
+      "result" : "  Step 3: configuration are synced.\n  Step 4: traffic are reachable.\n  Step 6: configuration are synced and no failover happened.\n  Step 7: traffic are still reachable."
+   },
+   "1509634" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG port with \"Auto-Detect\" enabled and LACP enabled.\n  2. Check the \"Key\" column if shows \"Auto\".",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F611406-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509634",
+      "title" : "[Only for 2400MX] [GUI]Verify that \"Key\" column shows \"Auto\" when auto-detect chekbox is checked during Dynamic LAG Port configuration",
+      "description" : "Original ID: 9\nOriginal Title: [Only for 2400MX] [GUI]Verify that \"Key\" column shows \"Auto\" when auto-detect chekbox is checked during Dynamic LAG Port configuration\nOriginal Description: version 6.2 does not support dynamic LAG .<br />Although version 6.2.1.0 and 6.0.5.0 both support dynamic LAG, but they both do not have \"auto\" option.<br />Only 2400mx support",
+      "result" : "  step 2: &#160;\"Key\" column shows \"Auto\""
+   },
+   "1509610" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add trunk port X2/ X3/X4/X5 and all enable VLAN 155. 2. In the Switching-&gt;Link Aggregation page, add a LAG with X2 as aggregator port and X3/X4/X5 as member and the Key 10 and enable LACP, then select load balance type as \"DST_IP,DST_PORT\" .\n  3. In the Main interface page, config X2:V155 as WAN zone and set it static IP.\n  4. Set X2:V155 as default WAN.\n  5. Config Swith with Dynamic lag.\n  6. Send multiple traffic from PC2 and PC3 to the Internet(different destination) respectively.\n  7. Check the Tx traffic statistics for X2/X3/X4/X5.",
+      "priority" : "Sanity",
+      "atm_id" : "a0c165bb-10c1-43a2-8f56-f98964ac673c",
+      "initial" : "  Internet--Switch--(X2/X3/X4/X5)DUT(X0 /X6)---PC2 /PC3",
+      "id" : "1509610",
+      "title" : "[Only for 6.2.1/6.0.5] Verify the outgoing traffic are load balanced in dynamic LAG ports",
+      "description" : "Original ID: 48\nOriginal Title: [Only for 6.2.1/6.0.5] Verify the outgoing traffic are load balanced in dynamic LAG ports\nOriginal Description:",
+      "result" : "  step 7: all the traffic should egress out of the LAG at least 2 or more interfaces."
+   },
+   "1533458" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG with the LACP option checked, and save config.",
+      "priority" : "Sanity",
+      "atm_id" : "5F727688-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533458",
+      "title" : "[Only for 6.2.1/6.0.5] [GUI] Verify that LACP can be enabled by clicking \"LACP Enable\" checkbox during LAG Port configuration",
+      "description" : "Original ID: 12\nOriginal Title: [Only for 6.2.1/6.0.5] [GUI] Verify that LACP can be enabled by clicking \"LACP Enable\" checkbox during LAG Port configuration\nOriginal Description: Note:<br />Version 6.2 does not support dynamic LAG .<br />But version 6.2.1.0 and 6.0.5.0 both support dynamic LAG.",
+      "result" : "  step 1: add successfully and the column \"LACP Enable\" is checked ."
+   },
+   "1533486" : {
+      "steps" : "  1. In the Network-&gt;Portshield Groups page, make X17 (10Gbps-Full Duplex) and X6(1Gbps-Full Duplex) portshield to X2 (1Gbps-Full Duplex).\n  2.In the Switching-&gt;Link Aggregation page, add X2 (aggregator port) and X6 as LAG port with the Key 100.\n  3. Check the \"LAG ID\" and Status of X2 and X6.\n  4. Add X17 as LAG port with the key 100, too.\n  5. Check the \"LAG ID\" and Status of X17. &#160;",
+      "priority" : "Sanity",
+      "atm_id" : "f01415ca-40ed-4764-bd84-f680ef375c0e",
+      "initial" : "  TBD",
+      "id" : "1533486",
+      "title" : "[GUI]Verify that different speed port can not be added to the same LAG",
+      "description" : "Original ID: 38\nOriginal Title: [GUI]Verify that different speed port can not be added to the same LAG\nOriginal Description: verify that different speed port can not be added to the same LAG&#160;",
+      "result" : "  step 3: the LAG ID should be 2 for both X2 and X6 and their status should be \"up,sel,agg\".\n  step 5: the LAG ID should be 0 for X16 and the status should be \"up\"."
+   },
+   "1533519" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, click edit button of the Aggregator and modify its member ports either by deleting or adding one or more ports , and then save config.\n  2.Verify the membor port can be edited or not.",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F55A094-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533519",
+      "title" : "[Only for 6.2.1/6.0.5] [GUI]Verify that ports can be edited  by clicking edit button",
+      "description" : "Original ID: 7\nOriginal Title: [Only for 6.2.1/6.0.5] [GUI]Verify that ports can be edited  by clicking edit button\nOriginal Description: version 6.2 does not support the edit operation for LAG .<br />But version 6.2.1.0 and 6.0.5.0 supports the edit opertion",
+      "result" : "  step 1: edit successfully and except the membor ports, other options can not be modifed.\n  Step 2: the membor port can not be edited."
+   },
+   "1509625" : {
+      "steps" : "  1. Enable HA in DUT1 and DUT2, and enable the&#160;Virtual MAC option.\n  2. In the active DUT to configure two L2 LAG groups, X3,X4 are configured in Portshield mode (LAG1, X3 is aggregator) and as LAN zone, X5, X6 are configured in Trunk mode (LAG2, X5 is aggregator) and in WAN zone\n  3. In LAN PC to keep ping DUT LAG1 interface IP (=X3 IP), show arp table in PC (arp -a) and record the X3 IP's MAC address.\n  4.&#160;In WAN PC to keep ping DUT LAG2 interface IP (=X5 VLAN interface IP, e.g, X5:V139), show arp table in PC (arp -a) and record the &#160;X5:V139\n  &#160;IP's MAC address. 5. Trigger a HA failover 6. Repeat step 3, step 4, and compare the MAC address for X3 and X5:v139, they should be kept no change.\n  &#160;",
+      "priority" : "Smoke",
+      "atm_id" : "8b7ba5a5-df70-4dac-880e-22d85e11c68c",
+      "initial" : "  LAN PC---Switch----LAG1 -----(X3, X4) DUT1 (X5, X6)------LAG2-----Switch----WAN PC\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; | &#160; &#160; &#160; &#160;&#160;\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; HA\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;|\n  LAN PC---Switch----LAG1 -----(X3, X4) DUT2 (X5, X6)------LAG2-----Switch----WAN PC Note: above switch could be one or two switches, please make sure the allowed VLAN in LAG1 and LAG2 are not overlapped.",
+      "id" : "1509625",
+      "title" : "Verify HA Virtual MAC function works normally in L2 LAG interface (Portshield and Trunk mode)",
+      "description" : "Original ID: 61\nOriginal Title: Verify HA Virtual MAC function works normally in L2 LAG interface (Portshield and Trunk mode)\nOriginal Description:",
+      "result" : "  3. Ping is successful\n  4. Ping is successful\n  6. Ping is successful, MAC address not changed."
+   },
+   "1509601" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, check the Link Aggregation table if have \"Port\", \"LAG ID\", \"Key\", \"Aggregator\", \"LACP Enable\", \"Status\" ,\"Partner\" and \"Action\" columns.",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F486FFA-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509601",
+      "title" : "[GUI]Verify that Link Aggregation table should have \"Port\", \"LAG ID\", \"Key\", \"Aggregator\", \"LACP Enable\", \"Status\" ,\"Partner\" and \"Action\" columns",
+      "description" : "Original ID: 4\nOriginal Title: [GUI]Verify that Link Aggregation table should have \"Port\", \"LAG ID\", \"Key\", \"Aggregator\", \"LACP Enable\", \"Status\" ,\"Partner\" and \"Action\" columns\nOriginal Description:",
+      "result" : "  step 1: the link aggregation table has \"Port\", \"LAG ID\", \"Key\", \"Aggregator\", \"LACP Enable\", \"Status\" ,\"Partner\" and \"Action\" columns."
+   },
+   "1533455" : {
+      "steps" : "  1. Verify that \"Link Aggregation\" sub-menu is available under \"Switching\".",
+      "priority" : "Sanity",
+      "atm_id" : "5F1EC542-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533455",
+      "title" : "[GUI]Verify that \"Link Aggregation\" sub-menu is available under \"Switching\"",
+      "description" : "Original ID: 1\nOriginal Title: [GUI]Verify that \"Link Aggregation\" sub-menu is available under \"Switching\"\nOriginal Description:",
+      "result" : "  step 1: \"Link Aggregation\" sub-menu is available under \"Switching\"&#160;"
+   },
+   "1533478" : {
+      "steps" : "  1. Make sure that X0 has static IP address and X2 is in unassign state.\n  2. In the Switching-&gt;Link Aggregation pge, add X0 as aggregator and X2 as its member, and fill into the Key and enable LACP.\n  3. Config Switch g0/3 with LACP, but g0/4 not.\n  4. Check the status for the LAG Port X2.",
+      "priority" : "Sanity",
+      "atm_id" : "0FEC6E4C-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC---Switch(g0/3 / g0/4)----(X0/X2)DUT(X1)-------Internet",
+      "id" : "1533478",
+      "title" : "[Only for 6.2.1/6.0.5] Verify that the LAG Port status is \"up,ena match\" i.e. (up and enabled but not aggregated)  if LACP is enabled on Sonicwall and the connected switch/PC has static Link Aggregati",
+      "description" : "Original ID: 30\nOriginal Title: [Only for 6.2.1/6.0.5] Verify that the LAG Port status is \"up,ena match\" i.e. (up and enabled but not aggregated)  if LACP is enabled on Sonicwall and the connected switch/PC has static Link Aggregation configured \nOriginal Description: version 6.2 does not support dynamic LAG .<br />But version 6.2.1.0 and 6.0.5.0 both support dynamic LAG.",
+      "result" : "  step 4: the status for X2 port is \"up,ena match\"."
+   },
+   "1509618" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, config X20 and X21 as trunk port and both enable VLAN 943.\n  3.Config X20:V943 as LAN static IP address and enable DHCP server.\n  4.On the Switching-&gt;link aggregation page, add X20 as aggregator port and X21 as its member.\n  5.Config Switch with static port channel.\n  6.Check configuration on secondary unit.\n  7.On PC,try to get dynamic address and send traffic from PC to internet.\n  8.Make force Active/Standby failover.\n  9.On PC, send traffic from PC to internet.\n  10.Repeat step 4-9 when set interface X20:V943 as WAN Zone.",
+      "priority" : "Sanity",
+      "atm_id" : "0e8c6434-bf4e-4200-a685-cbcde7aedb3e",
+      "initial" : "  PC-Switch--(x20/x21:V943)DUT1(x1)--Internet\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; |HA\n  PC-Switch--(x20/x21:V943)DUT2(x1)--Internet",
+      "id" : "1509618",
+      "title" : "Verify that stateful failover with static link aggregation(Trunk mode)",
+      "description" : "Original ID: 55\nOriginal Title: Verify that stateful failover with static link aggregation(Trunk mode)\nOriginal Description:",
+      "result" : "  Step 6: configuration are synced.\n  Step 7: PC got dynamic address and traffic are reachable.\n  Step 9: after failover, traffic are still reachable."
+   },
+   "1533521" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG with mebers.\n  2. Move the mouse to the Action column for one port.",
+      "priority" : "Full_Regression",
+      "atm_id" : "5F59AAD6-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533521",
+      "title" : "[GUI]Verify that each configured port shows \"LAG Port Statics\"",
+      "description" : "Original ID: 8\nOriginal Title: [GUI]Verify that each configured port shows \"LAG Port Statics\" \nOriginal Description:",
+      "result" : "  step 2: it shows \"LAG Port Statics\" ."
+   },
+   "1533454" : {
+      "steps" : "  1. Set up portshield LACP/non-LACP LAG between X0 (aggregator) and X2/other interface 2. Configure LAG on peer switch ",
+      "priority" : "Full_Regression",
+      "atm_id" : "3289BEF6-E271-11ED-B3DD-3B6BAEE09C5C",
+      "initial" : "  Refer to JIRAGEN7-38538",
+      "id" : "1533454",
+      "title" : "Verify LACP and non-LACP LAG works with X0 as the aggregator port.",
+      "description" : "Original ID: 075\nOriginal Title: Verify LACP and non-LACP LAG works with X0 as the aggregator port.\nOriginal Description:",
+      "result" : "  LAG group should be aggregated and works as expected."
+   },
+   "1509602" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add X2&amp;X3&amp;X4&amp;X5 as trunk port and enable VLAN 100 for all Trunk port.\n  2. In the Switching-&gt;Link Aggregation page, add a LAG with X2 as aggregator and X3 as member, then add another LAG with X4 as aggregator and X5 as member.\n  3. Config Switch1 and Switch2 with static LAG.\n  4. Assign static ip address for PC1 and PC2 which are both in the same subnet.\n  5. Ping from PC1 to PC2 or PC2 to PC1.",
+      "priority" : "Sanity",
+      "atm_id" : "0843e3bf-26a7-4571-83fb-ad24cbf95a95",
+      "initial" : "  PC1--Switch1---(X2/X3)DUT(X4/X5)---Switch2---PC2",
+      "id" : "1509602",
+      "title" : "[Func] L2 connectivity test for static LAG (Trunk mode)",
+      "description" : "Original ID: 40\nOriginal Title: [Func] L2 connectivity test for static LAG (Trunk mode)\nOriginal Description:",
+      "result" : "  step 5: traffic is reachable."
+   },
+   "1533473" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG with aggregator and a member which is no link.\n  2. Check the status for the member.",
+      "priority" : "Full_Regression",
+      "atm_id" : "0FD81136-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  TBD",
+      "id" : "1533473",
+      "title" : "Verify that the LAG Port status is \"down\" if it is not connected",
+      "description" : "Original ID: 26\nOriginal Title: Verify that the LAG Port status is \"down\" if it is not connected\nOriginal Description:",
+      "result" : "  step 2: it is \"down\"."
+   },
+   "1533517" : {
+      "steps" : "  step 1: assign one interface(eg. X3) with static ip address .\n  step 2: on Switching-&gt;link aggregation page, add aggregator X3 and its members X2 with static /dynamic mode\n  step 3: config static /dynamic portchannel for Switch.\n  step 4: enable ospf /rip/bgp on interface X3 of DUT1 and also enable ospf /rip/bgp on DUT2.\n  step 5: check ospf/rip/bgp works\n  step 6: shut down aggregator port X3 by Switch.\n  step 7: check ospf/rip/bgp works\n  step 8: no shut down aggregator port X3 by Switch.\n  step 9: check ospf/rip/bgp works\n  step 10: Repeat step 6~9, but shutdown/no shutdown LAG member port.",
+      "priority" : "Smoke",
+      "atm_id" : "4b9bc2fd-327f-42aa-bd62-3cd2f30f307d",
+      "initial" : "  DUT1(X3/X2)------Switch---------DUT2",
+      "id" : "1533517",
+      "title" : "Verify OSPF/RIP/BGP works for L2 LAG (static or dynamic)with Portshield mode",
+      "description" : "Original ID: 66\nOriginal Title: Verify OSPF/RIP/BGP works for L2 LAG (static or dynamic)with Portshield mode \nOriginal Description:",
+      "result" : "  step 5, 7, 9, 10: OSPF/rip/bgp works normally, OSPF/bgp adjacency should not flaps."
+   },
+   "1509599" : {
+      "steps" : "  1. In the Network-&gt;Portshield Groups page, make X17 (10Gbps-Full Duplex) and X6(1Gbps-Full Duplex) portshield to X2 (1Gbps-Full Duplex).\n  2.In the Switching-&gt;Link Aggregation page, add X2 (aggregator port) and X6 as LAG port with the Key 100.\n  3. Check the \"LAG ID\" and Status of X2 and X6.\n  4. Add X17 as LAG port with the key 100, too.\n  5. Check the \"LAG ID\" and Status of X17. &#160;",
+      "priority" : "Sanity",
+      "atm_id" : "f01415ca-40ed-4764-bd84-f680ef375c0e",
+      "initial" : "  TBD",
+      "id" : "1509599",
+      "title" : "[GUI]Verify that different speed port can not be added to the same LAG",
+      "description" : "Original ID: 38\nOriginal Title: [GUI]Verify that different speed port can not be added to the same LAG\nOriginal Description: verify that different speed port can not be added to the same LAG&#160;",
+      "result" : "  step 3: the LAG ID should be 2 for both X2 and X6 and their status should be \"up,sel,agg\".\n  step 5: the LAG ID should be 0 for X16 and the status should be \"up\"."
+   },
+   "1533462" : {
+      "steps" : "  1. In the Interface Main page, config X3 with static IP address.\n  2. In the Switching-&gt;Link Aggregation page, add X3 as aggregator and X4&amp;X5&amp;X6&amp;X7 as its member, and save config.",
+      "priority" : "Sanity",
+      "atm_id" : "5F842F22-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  Switch(g0/3 / g0/4 / g0/5 / g0/6 / g0/7)-----(X2/X3/X4/X5/X6)DUT",
+      "id" : "1533462",
+      "title" : "[Only for 6.2.1/6.0.5]Verify that a logical group can at most have 4 aggregated ports for dynamic LAG",
+      "description" : "Original ID: 16\nOriginal Title: [Only for 6.2.1/6.0.5]Verify that a logical group can at most have 4 aggregated ports for dynamic LAG\nOriginal Description:",
+      "result" : "  step 2: it will pop up error message to remind that it has reached the maximum number for members."
+   },
+   "1533475" : {
+      "steps" : "  1. Make sure that X0 has static IP address and X2 is in unassign state.\n  2. In the Switching-&gt;Link Aggregation pge, add X0 as aggregator and X2 as its member, and fill into the Key and enable LACP.\n  3. Config Switch port g0/3 and g0/4 with LACP.\n  4. Check the status for the LAG Port.",
+      "priority" : "Sanity",
+      "atm_id" : "0FE509A4-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC---Switch(g0/3 / g0/4)----(X0/X2)DUT(X1)-------Internet",
+      "id" : "1533475",
+      "title" : "[Only for 6.2.1/6.0.5] Verify that after successful LACP negotiation LAG Port status is changed to \"up,ena rdy match,sel,sync,agg-Coll/Dist\"",
+      "description" : "Original ID: 28\nOriginal Title: [Only for 6.2.1/6.0.5] Verify that after successful LACP negotiation LAG Port status is changed to \"up,ena rdy match,sel,sync,agg-Coll/Dist\"\nOriginal Description: version 6.2 does not support dynamic LAG .<br />But version 6.2.1.0 and 6.0.5.0 both support dynamic LAG.",
+      "result" : "  step 4: the status is \"up,ena rdy match,sel,sync,agg-Coll/Dist\""
+   },
+   "1533459" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports X3 and X4 (Copper port), and both enable VLAN 871.\n  2. Config X3:V871 with static ip address and Ping enabled in the Interface Main page, and enable DHCP server for the interface X3:V871.\n  3. Config Switch and create a port channel with members g0/3 and g0/4.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  5. Check if the PC get dynamic address.\n  6. Ping from PC to the IP of X3:V871.\n  7. Ping from PC to the Internet.\n  8. Shut down g0/3 for Switch, and repeat step 6-7.\n  9. No shut down g0/3 for Switch, and repeat step 6-7.\n  10. Repeat step 1-9 on Fiber port.",
+      "priority" : "Smoke",
+      "atm_id" : "5F770568-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  PC---Switch(g0/3 / g0/4)----(X3/X4)DUT(x1)-------Internet",
+      "id" : "1533459",
+      "title" : "Verify that Link Aggregation on Trunk ports work (Lag with Trunk mode)",
+      "description" : "Original ID: 13\nOriginal Title: Verify that Link Aggregation on Trunk ports work (Lag with Trunk mode)\nOriginal Description:",
+      "result" : "  step 5: PC can get dynamic address.\n  step 6: the traffic is reachable.\n  step 7: the traffic is reachable."
+   },
+   "1509606" : {
+      "steps" : "  1. In the Network-&gt;Portshield Groups page, make X2 portshield to X0.\n  2. In the Switching-&gt;VLAN Trunking page, add trunk port X4 and X5.\n  3. Under VLAN Table , config X0 and chang the VLAN ID as 939 and Enable Trunked.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X4 as aggregator port and X5 as member and the Key 10.\n  5. Make sure that DHCP server for X0 has been enabled.\n  6. Check if PC1 and PC2 can get dynmaic address from X0.\n  7. Ping from PC1 to PC2 or from PC2 to PC1.",
+      "priority" : "Sanity",
+      "atm_id" : "a728d787-8bc1-41e8-8c1b-3f453e992e75",
+      "initial" : "  PC1--Switch1---(X2/X3)DUT(X4/X5)---Switch2---PC2",
+      "id" : "1509606",
+      "title" : "[Func] L2 connectivity test when LAG ports are in same VLAN with other portshield ports",
+      "description" : "Original ID: 44\nOriginal Title: [Func] L2 connectivity test when LAG ports are in same VLAN with other portshield ports\nOriginal Description:",
+      "result" : "  step 6: PC1 and PC2 can get dynamic address.\n  step 7: traffic is reachable."
+   },
+   "1509614" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add trunk port X1 and X2 and X3 and X4, and all enable VLAN 152.\n  2. In the Switching-&gt;Link Aggregation page, add a LAG with X1 as aggregator port and X2/X3 as member and the Key 10.\n  3. Config Switch with Static LAG(g0/1 /g0/2 /g0/3).\n  4. In the Main interface page, set X1:V152 as DHCP mode, and check if it get dynamic address.\n  5. Send continous and multiple traffic from PC to Internet.\n  6. On DUT add X4 as LAG member and the Key as 10, then add the port g0/4 into LAG on Switch.\n  7. Check the traffic if they are still reachable.",
+      "priority" : "Smoke",
+      "atm_id" : "096821bb-f897-419e-a359-2a8b8d916c55",
+      "initial" : "  Internet--Switch(g0/1 /g0/2 /g0/3 /g0/4)--(X1/X2/X3/X4)DUT(X0)---PC",
+      "id" : "1509614",
+      "title" : "Add LAG member port when having background traffic.",
+      "description" : "Original ID: 51\nOriginal Title: Add LAG member port when having background traffic.\nOriginal Description:",
+      "result" : "  step 4: X1:V152 got dynamic address.\n  step 5: all the traffic are reachable.\n  step 6: the traffic can be reachable."
+   },
+   "1533494" : {
+      "steps" : "  1. Configure X2 as LAN static, enable DHCP scope for X2 interface, X3 portshield to X2.\n  2. In the Switching-&gt;VLAN Trunking page, add trunk port X4, X5\n  3. Under VLAN Table , config X2 and chang the VLAN ID as 844 and Enable Trunked.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X4 as aggregator port and X5 as member and the Key 10.\n  5. In peer switch to configure the two ports that connected to X4,X5 as a port-channel group, and enable tagged VLAN 844 in this port-channel, configure the port that connected to PC2 as untagged VLAN 844 port.\n  6. Connect PC1 directly to DUT X2 port. 7. Check if PC1 and PC2 can get dynmaic address from X2 scope.\n  8. Ping from PC1 to PC2 or from PC2 to PC1.",
+      "priority" : "Smoke",
+      "atm_id" : "1052438e-e24b-477f-adb9-bd2f0ffe098a",
+      "initial" : "  PC1--------(X2) DUT (X4/X5)----LAG----Switch---PC2",
+      "id" : "1533494",
+      "title" : "[Func] L2 connectivity test when LAG ports are in same VLAN with other trunk port",
+      "description" : "Original ID: 45\nOriginal Title: [Func] L2 connectivity test when LAG ports are in same VLAN with other trunk port\nOriginal Description:",
+      "result" : "  step 7: PC1 and PC2 can get dynamic address.\n  step 8: traffic is reachable."
+   },
+   "1509584" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add two or more LAGs.\n  2. In the System-&gt;Settings page, click Export Settings button to export setting.\n  3. Do factory default to the DUT.\n  4. In the System-&gt;Settings page, click Import Settings button to import the setting which is exported at step 2.\n  5. In the Switching-&gt;Link Aggregation page, check the LAGs .\n  6. Add more LAG groups.\n  7. Import the settings from the step 2. 8. Check LAG settings.",
+      "priority" : "Smoke",
+      "atm_id" : "5FA81AD6-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509584",
+      "title" : "Prefs import & Export with two or more LAGs",
+      "description" : "Original ID: 24\nOriginal Title: Prefs import & Export with two or more LAGs\nOriginal Description:",
+      "result" : "  step 5: the config is the same as before it exported.\n  step 8: the settings are the same as it exported at step 2."
+   },
+   "1509612" : {
+      "steps" : "  For 6.2.1/6.0.5, follow the below steps\n  1. Set X0 as LAN\n  2. In the Switching-&gt;Link Aggregation page, click \"Add\" button and select X0 as Aggregator\n  3. Set Key and enable LACP\n  4. In LAG member dropdown, select X2 then save.\n  Trunk port mode:\n  1. Add trunk port X3 and X4 , and both enable VLAN 873.\n  2. In the Switching-&gt;Link Aggregation page, add aggregator by click \"Add \" button.\n  3. In the Add LAG Port page, select X3 port and Set Key and enable Aggregator, then save.\n  4. Then add LAG member X4 by click \"Add\" button and set the same Key, then save.\n  For versions other than 6.2.1/6.0.5, execute below:\n  Portshield mode:\n  1. Set X0 as Portshield host, and make X2 portshiled to X0 as Portshiled member.\n  2. In the Switching-&gt;Link Aggregation page, add aggregator by click \"Add\" button. 3.In the Add LAG Port page, select X0 port and Set Key and enable Aggregator, then save.\n  4. Then add LAG member X2 by click \"Add\" button and set the same Key, then save.\n  Trunk port mode:\n  1. Add trunk port X3 and X4 , and both enable VLAN 873.\n  2. In the Switching-&gt;Link Aggregation page, add aggregator by click \"Add \" button.\n  3. In the Add LAG Port page, select X3 port and Set Key and enable Aggregator, then save.\n  4. Then add LAG member X4 by click \"Add\" button and set the same Key, then save.",
+      "priority" : "Sanity",
+      "atm_id" : "5F4D8292-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509612",
+      "title" : "[GUI]Verify that ports can be added to Link Aggregation table by clicking add button",
+      "description" : "Original ID: 5\nOriginal Title: [GUI]Verify that ports can be added to Link Aggregation table by clicking add button\nOriginal Description:",
+      "result" : "  Interface mode:\n  step 4: Both X0 and X4 should be displayed in the page with X0 as aggregator port and X2 as member port\n  Portshield mode:\n  step 3: Aggregator port is added successfully.\n  step 4: Member port is added successfully.\n  Trunk port mode:\n  step 3: Aggregator port is added successfully.\n  step 4: Member port is added successfully."
+   },
+   "1533496" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add trunk port X2/ X3/X4/X5 and all enable VLAN 155. 2. In the Switching-&gt;Link Aggregation page, add a LAG with X2 as aggregator port and X3/X4/X5 as member and the Key 10.\n  3. In the Main interface page, config X2:V155 as WAN zone and set it static IP.\n  4. Set X2:V155 as default WAN.\n  5. Config Swith with Static lag.\n  6. Send multiple traffic from PC2 and PC3 to the Internet respectively.\n  7. Check the Tx traffic statistics for X2/X3/X4/X5.",
+      "priority" : "Sanity",
+      "atm_id" : "ac54beec-0441-4421-9dc9-08683e86b910",
+      "initial" : "  Internet--Switch--(X2/X3/X4/X5)DUT(X0 /X6)---PC2 /PC3",
+      "id" : "1533496",
+      "title" : "Verify the outgoing traffic are load balanced in static LAG ports",
+      "description" : "Original ID: 47\nOriginal Title: Verify the outgoing traffic are load balanced in static LAG ports\nOriginal Description:",
+      "result" : "  step 7: all the traffic should egress out of the LAG at least 2 or more interfaces."
+   },
+   "1533448" : {
+      "steps" : "  1. Find the ports with speed1G/2.5G/5G/10G on your DUT, check it on the front panel;\n  2. Test basic function of LAG on these ports.\n  If your DUT does not have these ports, ignore this case.",
+      "priority" : "Smoke",
+      "atm_id" : "D7C560F6-FA73-11EB-A253-FDE045DCE006",
+      "initial" : "  TBD",
+      "id" : "1533448",
+      "title" : "[1/2.5/5/10] Test basic LAG function on 1G/2.5G/5G/10G ports.",
+      "description" : "Original ID: 068\nOriginal Title: [1/2.5/5/10] Test basic LAG function on 1G/2.5G/5G/10G ports.\nOriginal Description:",
+      "result" : "  LAG function must work as 1G ports on these ports."
+   },
+   "1533490" : {
+      "steps" : "  1. In the Network-&gt;Portshield Groups page, make X2,X3,X4 and X5 portshield to X0.\n  2. In the Switching-&gt;Link Aggregation page, add a static LAG with X2 as aggregator port and X3 as member and the Key 10.\n  3. Add another static LAG with X4 as aggregator port and X5 as member and the Key 20.\n  4. Config Switch2 and Switch3 with Static LAG respectively.\n  5. Make sure that DHCP server for X0 has been enabled.\n  6. Check if PC1 and PC2 can get dynmaic address from X0.\n  7. Ping from PC1 to PC2 or from PC2 to PC1.",
+      "priority" : "Sanity",
+      "atm_id" : "715fd8a4-d998-417c-a022-d00ab086089c",
+      "initial" : "  PC1--Switch1---(X2/X3)DUT(X4/X5)---Switch2---PC2",
+      "id" : "1533490",
+      "title" : "[Obsolete][Func] L2 connectivity test for static LAG (Portshield mode)",
+      "description" : "Original ID: 41\nOriginal Title: [Obsolete][Func] L2 connectivity test for static LAG (Portshield mode)\nOriginal Description:",
+      "result" : "  step 6: PC1 and PC2 can get dynamic address.\n  step 7: traffic is reachable."
+   },
+   "1533467" : {
+      "steps" : "  1. In the Switching -&gt;Link Aggregation page, add a LAG with the aggregator port and its members.\n  2. Delete the aggregator for the LAG.",
+      "priority" : "Sanity",
+      "atm_id" : "5F93DD50-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533467",
+      "title" : "[GUI]Verify that aggregator port cannot be removed from the LAG",
+      "description" : "Original ID: 20\nOriginal Title: [GUI]Verify that aggregator port cannot be removed from the LAG\nOriginal Description: Verify that aggregator port cannot be removed from the LAG. This happens because it represents the LAG in the system",
+      "result" : "  step 2: it will pop up error message to remind that the aggregator port is not allowed to delete when it still has members."
+   },
+   "1533492" : {
+      "steps" : "  1. In the Network-&gt;Portshield Groups page, make X2,X3,X4 and X5 portshield to X0.\n  2. In the Switching-&gt;Link Aggregation page, add a dynamic LAG with X2 as aggregator port and X3 as member and the Key 10 and enable LACP.\n  3. Add another dynamic LAG with X4 as aggregator port and X5 as member and the Key 20 and enable LACP.\n  4. Config Switch2 and Switch3 with Dynamic LAG respectively.\n  5. Make sure that DHCP server for X0 has been enabled.\n  6. Check if PC1 and PC2 can get dynmaic address from X0.\n  7. Ping from PC1 to PC2 or from PC2 to PC1.",
+      "priority" : "Sanity",
+      "atm_id" : "66a6b570-9178-447b-9c77-586038f9c929",
+      "initial" : "  PC1--Switch1---(X2/X3)DUT(X4/X5)---Switch2---PC2",
+      "id" : "1533492",
+      "title" : "[Obsolete][Func] L2 connectivity test for dynamic LAG (Portshield mode)",
+      "description" : "Original ID: 43\nOriginal Title: [Obsolete][Func] L2 connectivity test for dynamic LAG (Portshield mode)\nOriginal Description:",
+      "result" : "  step 6: PC1 and PC2 can get dynamic address.\n  step 7: traffic is reachable."
+   },
+   "1533498" : {
+      "steps" : "  1. Add mutlple LAG.\n  2. Send continous traffic through multiple LAG for 24 hours.\n  3. Check if the DUT work normal.",
+      "priority" : "Full_Regression",
+      "atm_id" : "71b83c32-2b63-4ca3-a760-7c42c824e1b2",
+      "initial" : "  TBD",
+      "id" : "1533498",
+      "title" : "Stress test for LAG (long time with high load traffic)",
+      "description" : "Original ID: 49\nOriginal Title: Stress test for LAG (long time with high load traffic)\nOriginal Description:",
+      "result" : "  step 3: DUT should work normal."
+   },
+   "1509608" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add trunk port X2 and X3 and both enable VLAN 155. 2. In the Switching-&gt;Link Aggregation page, add a LAG with X2 as aggregator port and X3 as member and the Key 10.\n  3. In the Main interface page, config X2:V155 as WAN zone and set the mode as Static/DHCP/PPPoE/PPTP/L2TP respectively and enable PING.\n  4. Check if it can get dynamic address when set zone as dynamic WAN.\n  5. Config Swith with Static lag.\n  6. Ping from PC1 to X2:V155 managemet IP.\n  7. Send traffic from PC2 to outside through LAG.",
+      "priority" : "Smoke",
+      "atm_id" : "9f0ed114-bad3-4173-952c-0b2f88b83f01",
+      "initial" : "  PC1--Switch--(X2/X3)DUT(X0)---PC2",
+      "id" : "1509608",
+      "title" : "[Func] Veirfy LAG funciton when it is used as WAN uplink (Static/DHCP/PPPoE/PPTP/L2TP)",
+      "description" : "Original ID: 46\nOriginal Title: [Func] Veirfy LAG funciton when it is used as WAN uplink (Static/DHCP/PPPoE/PPTP/L2TP)\nOriginal Description:",
+      "result" : "  step 4: X2:V155 can get dynamic address.\n  step 6: traffic is reachable.\n  step 7: traffic is reachable."
+   },
+   "1509596" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports X3 and X4 (Copper port), and both enable VLAN 871.\n  2. Config X3:V871 with static ip address in the Interface Main page.\n  3. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member.\n  4. Config the similar setting on the FW.\n  5. Ping from PC1 to PC2.\n  6. Repeat step 1-5 on Fiber port.",
+      "priority" : "Full_Regression",
+      "atm_id" : "1004F52A-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC1----(X0)DUT(X3 /X4)----(X3/X4)FW(X0)-----PC2",
+      "id" : "1509596",
+      "title" : "Verify static LAG when connected back-back with firewall (Trunk mode)",
+      "description" : "Original ID: 35\nOriginal Title: Verify static LAG when connected back-back with firewall (Trunk mode)\nOriginal Description:",
+      "result" : "  step 5: the traffic is reachable."
+   },
+   "1509564" : {
+      "steps" : "  1. Find2.5G/5G/10G ports on your DUT, check it on front panel;\n  2. Test basic function of LAG on these ports;\n  If your DUT does not have these ports, ignore this case.",
+      "priority" : "Smoke",
+      "atm_id" : "2C1B8F44-FA75-11EB-A253-FDE045DCE006",
+      "initial" : "  TBD",
+      "id" : "1509564",
+      "title" : "[2.5/5/10] Test basic LAG function on 2.5G/5G/10G ports",
+      "description" : "Original ID: 069\nOriginal Title: [2.5/5/10] Test basic LAG function on 2.5G/5G/10G ports\nOriginal Description:",
+      "result" : "  LAG function must work on these ports."
+   },
+   "1509594" : {
+      "steps" : "  1. In the Switching-&gt;VLAN Trunking page, add two trunk ports X3 and X4 (Copper port), and both enable VLAN 871.\n  2. Config X3:V871 with static ip address and Ping enabled in the Interface Main page, and enable DHCP server for the interface X3:V871.\n  3. Config Switch and create a port channel with members g0/3 and g0/4.\n  4. In the Switching-&gt;Link Aggregation page, add a LAG with X3 as aggregator and X4 as member and enable LACP.\n  5. Check if the PC get dynamic address.\n  6. Ping from PC to the IP of X3:V871.\n  7. Ping from PC to the Internet.\n  8. Shut down g0/3 for Switch, and repeat step 6-7.\n  9. No shut down g0/3 for Switch, and repeat step 6-7.\n  10. Repeat step 1-9 on Fiber port.",
+      "priority" : "Smoke",
+      "atm_id" : "0FFA8FC2-1B39-11DF-83C5-8CF8FFF83527",
+      "initial" : "  PC1---Switch(g0/3 / g0/4)--(X3 /X4)DUT(X1)-----Internet",
+      "id" : "1509594",
+      "title" : "[Only for 6.2.1/6.0.5] Verify Dynamic Link Aggregation with Trunk mode work",
+      "description" : "Original ID: 33\nOriginal Title: [Only for 6.2.1/6.0.5] Verify Dynamic Link Aggregation with Trunk mode work\nOriginal Description:",
+      "result" : "  step 5: PC can get dynamic address.\n  step 6: the traffic is reachable.\n  step 7: the traffic is reachable."
+   },
+   "1509629" : {
+      "steps" : "  1. Configure two L2 LAG groups via GUI switching page, one is in Portshield mode, another is in Trunk mode, both are in WAN mode, make sure they have WAN IP which are accessible.\n  2. Configure HA monitor IP for both LAG interfaces.\n  3. From a WAN PC to ping the monitor IP of both LAG interfaces.&#160;\n  4. Shutdown the aggregator ports in both LAG group, verify the&#160;ping traffic to LAG interface monitor IP\n  5. No shutdown the&#160;aggregator ports in step 4, shutdown the LAG member ports in both LAG group,&#160;verify&#160;the&#160;ping traffic to LAG interface monitor IP",
+      "priority" : "Smoke",
+      "atm_id" : "d1a3fcf7-0262-4a02-af77-0314268c7a94",
+      "initial" : "  TBD",
+      "id" : "1509629",
+      "title" : "Verify the LAG interface's HA monitor IP is still accessible after the LAG aggregator or member port is down",
+      "description" : "Original ID: 65\nOriginal Title: Verify the LAG interface's HA monitor IP is still accessible after the LAG aggregator or member port is down\nOriginal Description:",
+      "result" : "  Step 3, 4, 5. The ping to all configured monitor IP are successful."
+   },
+   "1509569" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add a LAG with the key between 1 -255 and save config.\n  2. Add another LAG with the key 0 or 256 and save config.",
+      "priority" : "Smoke",
+      "atm_id" : "5F66CFF4-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1509569",
+      "title" : "[GUI]Verify that manual \"Key\" can be confgured between 1 - 255 during LAG Port cnfiguration",
+      "description" : "Original ID: 10\nOriginal Title: [GUI]Verify that manual \"Key\" can be confgured between 1 - 255 during LAG Port cnfiguration\nOriginal Description:",
+      "result" : "  step 1: add successfully.\n  step 2: fail to add due to invalid User Key value."
+   },
+   "1509616" : {
+      "steps" : "  1.Two DUT running HA.\n  2.On primary unit, config X20 with static ip adrress and enable DHCP server for the interface.\n  3.On the Switching-&gt;link aggregation page, add X20 as aggregator port and X21 as its member.\n  4.Config Switch with static port channel.\n  5.Check configuration on secondary unit.\n  6.On PC,try to get dynamic address and send traffic from PC to internet.\n  7.Make force Active/Standby failover.\n  8.On PC, send traffic from PC to internet.",
+      "priority" : "Sanity",
+      "atm_id" : "e8580b12-b691-44cc-99b1-006f8d8ad2d6",
+      "initial" : "  PC-Switch--(x20/x21)DUT1(x1)--Internet\n  &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; |HA\n  PC-Switch--(x20/x21)DUT2(x1)--Internet",
+      "id" : "1509616",
+      "title" : "Verify that stateful failover with static link aggregation(Portshiled mode)",
+      "description" : "Original ID: 53\nOriginal Title: Verify that stateful failover with static link aggregation(Portshiled mode)\nOriginal Description:",
+      "result" : "  Step 5: configuration are synced.\n  Step 6: PC got dynamic address and traffic are reachable.\n  Step 8: after failover, traffic are still reachable."
+   },
+   "1533472" : {
+      "steps" : "  1. In the Switching-&gt;Link Aggregation page, add two or more LAGs.\n  2. In the System-&gt;Diagnostics page, click Download Report button.\n  3. Check the corresponding info about X0:V100 in the downloaded TSR.",
+      "priority" : "Sanity",
+      "atm_id" : "5FAC61C2-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  TBD",
+      "id" : "1533472",
+      "title" : "LAGs information in TSR",
+      "description" : "Original ID: 25\nOriginal Title: LAGs information in TSR\nOriginal Description:",
+      "result" : "  step 3: the info about the LAGs are all recorded in the TSR."
+   },
+   "1533465" : {
+      "steps" : "  Portshield mode:\n  1. Config X6 with static IP address.\n  2. In the Switching-&gt;Link Aggregation page, add X6 as aggregator and X20 as its member and enable LACP.\n  3. Config Switch1 and Switch2 with LACP.\n  4. Check the status for X6 and X20.\n  5. Reconnect X20 to the Switch1 and config LACP.\n  6. Check the status for X6 and X20.\n  Trunk mode:\n  1. In the Switching-&gt;VLAN Trunk page, add trunk port X10 and X15, and both enable vlan 100.\n  2. In the Switching-&gt;Link Aggregation page, add X10 as aggregator and set X15 as its member, then enable LACP.\n  3. Config Switch1 and Switch2 with LACP.\n  4. Check the status for X6 and X20.\n  5. Reconnect X20 to the Switch1 and config LACP.\n  6. Check the status for X6 and X20.",
+      "priority" : "Sanity",
+      "atm_id" : "5F909212-023D-11DF-BEB2-F6EFFFF83527",
+      "initial" : "  Switch1-----(X6)DUT(X20)----Switch2",
+      "id" : "1533465",
+      "title" : "[Only for 6.2.1/6.0.5] Verify in dynamic LAG (LACP enabled) the ports will bond together as long as they are connected to the same link partner",
+      "description" : "Original ID: 19\nOriginal Title: [Only for 6.2.1/6.0.5] Verify in dynamic LAG (LACP enabled) the ports will bond together as long as they are connected to the same link partner\nOriginal Description: If there is no key configured for a port (i.e. Auto mode), it will bond with an aggregator that is connected to the same link partner. Link partner is discovered via LACP messages.\nNote: version 6.2 does not support dynamic LAG .<br />Although version 6.2.1.0 and 6.0.5.0 both support dynamic LAG, but they both do not have \"auto\" option.<br />Only 2400mx support",
+      "result" : "  step 4: port X6 and X20 fail to bond togother and the LAG ID is 0.\n  step 5: port X6 and X20 bond togother."
+   }
+}

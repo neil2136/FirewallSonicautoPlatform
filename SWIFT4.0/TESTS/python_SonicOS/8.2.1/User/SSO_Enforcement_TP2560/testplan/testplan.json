@@ -1,0 +1,121 @@
+{
+    "1516338": {
+        "id": "1516338",
+        "title": "Function: SSO enforcement enabled on DMZ zone, no access rule, no security service, traffic from DMZ zone will trigger SSO authentication",
+        "result": "Check Log and User status, verify that DMZ traffic is still able to trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1.\tOpen SSO configuration window, enable SSO enforcement on DMZ zone\n2.\tFrom a DMZ PC to make traffic from DMZ->WAN, make sure access from DMZ->WAN is allowed and the traffic will not trigger security services"
+    },
+    "1516339": {
+        "id": "1516339",
+        "title": "Function: SSO enforcement disabled on DMZ zone, access rule can trigger SSO authentication for DMZ traffic",
+        "result": "Check Log and User status, verify that access rule is still able to trigger SSO authentication",
+        "initial": "Properly configure SSO agent and SSO configuration",
+        "steps": "1.\tOpen SSO configuration window, disable SSO enforcement on DMZ zone\n2.\tConfigure a DMZ -> WAN access rule, allow everyone\n3.\tFrom a DMZ PC to make traffic from DMZ -> WAN"
+    },
+    "1516341": {
+        "id": "1516341",
+        "title": "Function: SSO enforcement disabled on DMZ zone, no access rule, no security service, traffic from DMZ will not trigger SSO authentication",
+        "result": "Check Log and User status, verify that when SSO enforcement is disabled on DMZ zone, DMZ traffic will not trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1.\tOpen SSO configuration window, enable SSO enforcement on DMZ zone\n2.\tFrom a DMZ PC to make traffic from DMZ ->WAN, make sure access from DMZ->WAN is allowed and the traffic will not trigger security services"
+    },
+    "1516347": {
+        "id": "1516347",
+        "title": "Function: SSO enforcement enabled on LAN zone, CFS/IPS/Application FW from LAN can trigger SSO authentication",
+        "result": "Check Log and User status, verify that security services is still able to trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1.\tOpen SSO configuration window, enable SSO enforcement on LAN zone\n2.\tFrom a LAN PC to make traffic to trigger CFS/IPS/Application FW policy"
+    },
+    "1516351": {
+        "id": "1516351",
+        "title": "3\tFunction: SSO enforcement enabled on LAN zone, access rule can trigger SSO authentication for LAN traffic",
+        "result": "Check Log and User status, verify that access rule is still able to trigger SSO authentication",
+        "initial": "Properly configure SSO agent and SSO configuration",
+        "steps": "1.\tOpen SSO configuration window, enable SSO enforcement on LAN zone\n2.\tConfigure a LAN->WAN access rule, allow everyone\n3.\tFrom a LAN PC to make traffic from LAN->WAN"
+    },
+    "1516356": {
+        "id": "1516356",
+        "title": "Function: SSO enforcement enabled on LAN zone, no access rule, no security service, traffic from LAN zone will trigger SSO authentication",
+        "result": "Check Log and User status, verify that LAN traffic is still able to trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1. Open SSO configuration window, enable SSO enforcement on LAN zone 2. From a LAN PC to make traffic from LAN-&gt;WAN, make sure access from LAN-&gt;WAN is allowed and the traffic will not trigger security services"
+    },
+    "1516359": {
+        "id": "1516359",
+        "title": "Function: SSO enforcement enabled on DMZ zone, CFS/IPS/Application FW from DMZ can trigger SSO authentication",
+        "result": "Check Log and User status, verify that security services is still able to trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1.\tOpen SSO configuration window, enable SSO enforcement on DMZ zone\n2.\tFrom a DMZ PC to make traffic to trigger CFS/IPS/Application FW policy"
+    },
+    "1516360": {
+        "id": "1516360",
+        "title": "Function: SSO enforcement enabled on DMZ zone, access rule can trigger SSO authentication for DMZ traffic",
+        "result": "Check Log and User status, verify that access rule is still able to trigger SSO authentication",
+        "initial": "Properly configure SSO agent and SSO configuration",
+        "steps": "1.\tOpen SSO configuration window, enable SSO enforcement on DMZ zone\n2.\tConfigure a DMZ->WAN access rule, allow everyone\n3.\tFrom a DMZ PC to make traffic from DMZ->WAN"
+    },
+    "1516358": {
+        "id": "1516358",
+        "title": "Function: SSO enforcement disabled on LAN zone, no access rule, no security service, traffic from LAN will not trigger SSO authentication",
+        "result": "Check Log and User status, verify that when SSO enforcement is disabled on LAN zone, LAN traffic will not trigger SSO authentication",
+        "initial": "Properly configure SSO agent and SSO configuration",
+        "steps": "1.\tOpen SSO configuration window, disable SSO enforcement on LAN zone\n2.\tFrom a LAN PC to make traffic from LAN-&gt;WAN, make sure access from LAN-&gt;WAN is allowed and the traffic will not trigger security services"
+    },
+    "1516357": {
+        "id": "1516357",
+        "title": "Function: SSO enforcement disabled on LAN zone, CFS/IPS/Application FW from LAN can trigger SSO authentication",
+        "result": "Check Log and User status, verify that security service is still able to trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1.\tOpen SSO configuration window, disable SSO enforcement on LAN zone\n2.\tFrom a LAN PC to make traffic to trigger CFS/IPS/Application FW policy"
+    },
+    "1516349": {
+        "id": "1516349",
+        "title": "Log: check log for SSO enforcement",
+        "result": "There should be proper log when SSO enforcement works.",
+        "initial": "Properly configure SSO agent and SSO configuration",
+        "steps": "1. Open SSO configuration window, enable SSO enforcement on any zone and generate traffic\n2.Navigate to Monitor-&gt;Logs-&gt;SystemLogs\n3.View logs"
+    },
+    "1516342": {
+        "id": "1516342",
+        "title": "Function: SSO enforcement enabled on VPN zone, CFS/IPS/Application FW from VPN can trigger SSO authentication",
+        "result": "Check Log and User status, verify that security services is still able to trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1.\tOpen SSO configuration window, enable SSO enforcement on VPN zone\n2.\tFrom a VPN PC to make traffic to trigger CFS/IPS/Application FW policy"
+    },
+    "1516343": {
+        "id": "1516343",
+        "title": "Function: SSO enforcement enabled on VPN zone, no access rule, no security service, traffic from VPN zone will trigger SSO authentication",
+        "result": "Check Log and User status, verify that VPN traffic is still able to trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1.\tOpen SSO configuration window, enable SSO enforcement on VPN zone\n2.\tFrom a VPN PC to make traffic from VPN->LAN, make sure access from VPN->LAN is allowed and the traffic will not trigger security services"
+    },
+    "1516344": {
+        "id": "1516344",
+        "title": "Function: SSO enforcement disabled on VPN zone, access rule can trigger SSO authentication for VPN traffic",
+        "result": "Check Log and User status, verify that access rule is still able to trigger SSO authentication",
+        "initial": "Properly configure SSO agent and SSO configuration",
+        "steps": "1.\tOpen SSO configuration window, disable SSO enforcement on VPN zone\n2.\tConfigure a VPN -> LAN access rule, allow everyone\n3.\tFrom a VPN PC to make traffic from VPN -> LAN"
+    },
+    "1516345": {
+        "id": "1516345",
+        "title": "Function: SSO enforcement disabled on VPN zone, CFS/IPS/Application FW from VPN can trigger SSO authentication",
+        "result": "Check Log and User status, verify that security service is still able to trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1.\tOpen SSO configuration window, disable SSO enforcement on VPN zone\n2.\tFrom a VPN PC to make traffic to trigger CFS/IPS/Application FW policy"
+    },
+    "1516346": {
+        "id": "1516346",
+        "title": "Function: SSO enforcement disabled on VPN zone, no access rule, no security service, traffic from VPN will not trigger SSO authentication",
+        "result": "Check Log and User status, verify that when SSO enforcement is disabled on VPN zone, VPN traffic will not trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1.\tOpen SSO configuration window, enable SSO enforcement on VPN zone\n2.\tFrom a VPN PC to make traffic from VPN ->WAN, make sure access from VPN->LAN is allowed and the traffic will not trigger security services"
+    },
+    "1516340": {
+        "id": "1516340",
+        "title": "Function: SSO enforcement disabled on DMZ zone, CFS/IPS/Application FW from DMZ can trigger SSO authentication",
+        "result": "Check Log and User status, verify that security service is still able to trigger SSO authentication",
+        "initial": "Device setup with supported firmware and SSO Server Configured and setup SSO configuration on the firewall",
+        "steps": "1.\tOpen SSO configuration window, disable SSO enforcement on DMZ zone\n2.\tFrom a DMZ PC to make traffic to trigger CFS/IPS/Application FW policy"
+    }
+}

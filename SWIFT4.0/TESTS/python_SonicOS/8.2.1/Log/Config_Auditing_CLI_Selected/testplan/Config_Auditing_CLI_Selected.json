@@ -1,0 +1,202 @@
+{
+   "1512824" : {
+      "steps" : "  <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">1. Login from SSH, add a Tunnel Interface VPN policy, Preshared Secret. 2. Go to Syslog server, check the corresponding syslog message. Result 1.......... 3. Go to Log Settings/ Auditing Records page, check the records. Result 2.......... 4. Go to Event Logs page, check the corresponding logs. Result 3.......... 5. Go to SNMP tool, check if there is SNMP trap sent. <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\"> <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">config(2CB8ED694678)# vpn policy provision-client A <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">(add-provision-client[A])# gateway primary 10.8.53.155 <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">(add-provision-client[A])# enable <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">(add-provision-client[A])# user-name qa <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">(add-provision-client[A])# user-password 123456 <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">(add-provision-client[A])# auth-method shared-secret <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">(auth-method-shared-secret[A])# shared-secret 123456 <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">(auth-method-shared-secret[A])# ap-client-id abc <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">(auth-method-shared-secret[A])# commit ",
+      "priority" : "Full_Regression",
+      "atm_id" : "cb9d6de2-c3b0-4ef4-9879-99ac6f7b30ac",
+      "initial" : "  <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">1.The option 'Enable Configuration Auditing' is checked on diag page........... 2. SNMP tool is available and ready to use........... 3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured........... 4. A syslog server is added on the firewall.......... 5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert ",
+      "id" : "1512824",
+      "title" : "Add a VPN policy - Auto Provisioning Client",
+      "description" : "Original ID: 11\nOriginal Title: Add a VPN policy - Auto Provisioning Client\nOriginal Description:",
+      "result" : "  <span style=\"font-size: small; color: #000080;\"><span style=\"font-family: verdana,geneva;\"><span style=\"font-family: arial,helvetica,sans-serif;\"><span style=\"font-size: small; color: #000080;\"><span style=\"font-family: verdana,geneva;\"><span style=\"font-family: arial,helvetica,sans-serif;\">Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed. Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page. Result 3: Log message related with successful VPN Settings is correctly displayed. Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609 "
+   },
+   "1512822" : {
+      "steps" : "  1. Go to System-Administration-Feature Visibility 2. Enable Wireless LAN and IPv6. 3. Go to Syslog server, check the corresponding syslog message. Result 1. 4. Go to Log Settings/ Auditing Records page, check the records. Result 2. 5. Go to Event Logs page, check the corresponding logs. Result 3. 6. Go to SNMP tool, check if there is SNMP trap sent. Result4.",
+      "priority" : "Full_Regression",
+      "atm_id" : "4d250d95-b289-4469-87a2-bb1d860c4d58",
+      "initial" : "  TBD",
+      "id" : "1512822",
+      "title" : "Disable/Enable Wireless LAN and IPv6 from CLI",
+      "description" : "Original ID: 1\nOriginal Title: Disable/Enable Wireless LAN and IPv6 from CLI\t\nOriginal Description:",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed. Result 2: Reports related with the Wireless LAN and IPv6 are correctly showed. Result 3: Log message related with the Wireless LAN and IPv6 is correctly displayed. Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1512833" : {
+      "steps" : "  1. Go to System-Schedules 2. Add a suitable system schedule 3. Go to Syslog server, check the corresponding syslog message. Result 1. 4. Go to Log Settings/ Auditing Records page, check the records. Result 2. 5. Go to Event Logs page, check the corresponding logs. Result 3. 6. Go to SNMP tool, check if there is SNMP trap sent. Result4.",
+      "priority" : "Full_Regression",
+      "atm_id" : "e51f2c00-d6b1-4743-a693-1981a7352744",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page. 2. SNMP tool is available and ready to use. 3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. 4. A syslog server is added on the firewall.",
+      "id" : "1512833",
+      "title" : "Add System Schedules from CLI",
+      "description" : "Original ID: 2\nOriginal Title: Add System Schedules from CLI\nOriginal Description:",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed. Result 2: Reports related with the system schedules are correctly showed. Result 3: Log message related with the system schedules is correctly displayed. Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1512832" : {
+      "steps" : "  config(2cb8ed824980)# match-object test\n  (add-match-object[test])# type email-to\n  (add-match-object[test])# content-entry abc\n  (add-match-object[test])# commit",
+      "priority" : "Smoke",
+      "atm_id" : "2b18d2ea-4dce-472e-9f51-9ed1d9e01aca",
+      "initial" : "  <span style=\"font-size: x-small; font-family: arial,helvetica,sans-serif; background-color: #f5f5f5; color: #031244;\">1.The option 'Enable Configuration Auditing' is checked on diag page. 2. SNMP tool is available and ready to use. 3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. 4. A syslog server is added on the firewall. ",
+      "id" : "1512832",
+      "title" : "[Match Objects]Add a match object from CLI",
+      "description" : "Original ID: 19\nOriginal Title: [Match Objects]Add a match object from CLI\nOriginal Description:",
+      "result" : "  <span style=\"font-size: small; color: #000080;\"><span style=\"font-family: verdana,geneva;\"><span style=\"font-family: arial,helvetica,sans-serif;\"><span style=\"font-size: small; color: #000080;\"><span style=\"font-family: verdana,geneva;\"><span style=\"font-family: arial,helvetica,sans-serif;\">Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed. Result 2: Reports related with the system schedules are correctly showed. Result 3: Log message related with the system schedules is correctly displayed. Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609 "
+   },
+   "1512837" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "eb157bc9-bafe-49ef-a174-1fd9379cfffc",
+      "initial" : "  TBD",
+      "id" : "1512837",
+      "title" : "Delete Custom Zones via CLI",
+      "description" : "Original ID: 5\nOriginal Title: Delete Custom Zones via CLI\t\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1512823" : {
+      "steps" : "  1. Login from SSH, add a Tunnel Interface VPN policy, Preshared Secret. 2. Go to Syslog server, check the corresponding syslog message. Result 1.......... 3. Go to Log Settings/ Auditing Records page, check the records. Result 2.......... 4. Go to Event Logs page, check the corresponding logs. Result 3.......... 5. Go to SNMP tool, check if there is SNMP trap sent. <strong>CLI:</strong>\n  <strong>//Add Tunnel VPN example</strong>\n  <div>config(2CB8ED80FA34)# vpn policy tunnel-interface A</div>\n  <div>(add-tunnel-interface[B])# enable</div>\n  <div>(add-tunnel-interface[B])# gateway primary 10.8.63.184</div>\n  <div>(add-tunnel-interface[B])# auth-method shared-secret</div>\n  <div>(auth-method-shared-secret[B])# shared-secret 123456</div>\n  <div>auth-method-shared-secret[B])# exit</div>\n  <div>(edit-tunnel-interface[B])# proposal ipsec encryption aes-128</div>\n  <div>(edit-tunnel-interface[B])# proposal ipsec authentication sha-1</div>\n  <div>(edit-tunnel-interface[B])# keep-alive</div>\n  <div>(edit-tunnel-interface[B])# no suppress-trigger-packet</div>\n  <div>(edit-tunnel-interface[B])# bound-to interface X1</div>\n  <div>(edit-tunnel-interface[B])# commit</div>",
+      "priority" : "Full_Regression",
+      "atm_id" : "99a1f594-7d94-4c4e-921d-036b1f6bf114",
+      "initial" : "  1.The option 'Enable Configuration Auditing' is checked on diag page........... 2. SNMP tool is available and ready to use........... 3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured........... 4. A syslog server is added on the firewall.......... 5. In Log/Settings, Set the priority for Configuration Change Failed and Configuration Change Succeeded to Alert",
+      "id" : "1512823",
+      "title" : "Add a VPN policy - Tunnel Interface - Preshared Secret",
+      "description" : "Original ID: 10\nOriginal Title: Add a VPN policy - Tunnel Interface - Preshared Secret\t\nOriginal Description: <span></span>",
+      "result" : "  Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed. Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page. Result 3: Log message related with successful VPN Settings is correctly displayed. Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609"
+   },
+   "1512831" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "2b06a94e-e2f6-4c02-87b9-a59c566aebf8",
+      "initial" : "  TBD",
+      "id" : "1512831",
+      "title" : "[Access Rules]Delete an access rule of IPv4 type",
+      "description" : "Original ID: 18\nOriginal Title: [Access Rules]Delete an access rule of IPv4 type\t\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1512836" : {
+      "steps" : "  config(2CB8ED694678)# dynamic-dns config(2CB8ED694678)# dynamic-dns profile hhh\n  (add-ddns[hhh])# user-name test\n  (add-ddns[hhh])# password password\n  (add-ddns[hhh])# domain a.com\n  (add-ddns[hhh])# commit",
+      "priority" : "Smoke",
+      "atm_id" : "c904b923-de04-4565-840b-2f23619cc71b",
+      "initial" : "  TBD",
+      "id" : "1512836",
+      "title" : "Dynamic DNS - Add a DDNS profile - dyn.com",
+      "description" : "Original ID: 4\nOriginal Title: Dynamic DNS - Add a DDNS profile - dyn.com\t\nOriginal Description:",
+      "result" : "  Add a DDNS profile - dyn.com "
+   },
+   "1512841" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "2c460383-574b-4fa3-afcc-c2c5d9ddbc4d",
+      "initial" : "  TBD",
+      "id" : "1512841",
+      "title" : "Enable/Disable General Settings from CLI - Client SSL General",
+      "description" : "Original ID: 9\nOriginal Title: Enable/Disable General Settings from CLI - Client SSL General\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1512834" : {
+      "steps" : "  config(2CB8ED694678)# app-control\n  (config-app-control)#\n  System Commands: cancel clear cli commit end exit export help no show\n  App Control Commands: category enable exclusion log-all log-filename log-redundancy reset update-signatures",
+      "priority" : "Smoke",
+      "atm_id" : "0ff2d546-82f2-495a-9c34-95818f3cb83c",
+      "initial" : "  TBD",
+      "id" : "1512834",
+      "title" : "[App Control]Modify global settings of app control",
+      "description" : "Original ID: 20\nOriginal Title: [App Control]Modify global settings of app control\t\nOriginal Description:",
+      "result" : "  Modify global settings of app control success."
+   },
+   "1512825" : {
+      "steps" : "  Add and delete a radius server:\n  config(2cb8ed824980)# user radius\n  (config-user-radius)# server 10.10.10.10\n  (add-radius-server[10.10.10.10])# shared-secret password\n  (add-radius-server[10.10.10.10])# commit\n  (edit-radius-server[10.10.10.10])# exit\n  (config-user-radius)# no server 10.10.10.10 (config-user-radius)# commit",
+      "priority" : "Sanity",
+      "atm_id" : "67c743f9-ac83-420f-9ec5-52daeac7a813",
+      "initial" : "  TBD",
+      "id" : "1512825",
+      "title" : "Delete RADIUS SERVER via CLI",
+      "description" : "Original ID: 12\nOriginal Title: Delete RADIUS SERVER via CLI\t\nOriginal Description:",
+      "result" : "  <span style=\"font-size: small; color: #000080;\"><span style=\"font-family: verdana,geneva;\"><span style=\"font-family: arial,helvetica,sans-serif;\"><span style=\"font-size: small; color: #000080;\"><span style=\"font-family: verdana,geneva;\"><span style=\"font-family: arial,helvetica,sans-serif;\">Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed. Result 2: Configuration succeeds is reported on Log Settings/ Auditing Records page. Result 3: Log message related with successful VPN Settings is correctly displayed. Result 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609 "
+   },
+   "1512840" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "a4cdb13a-f219-4afb-95e8-fdb1e6106fc2",
+      "initial" : "  TBD",
+      "id" : "1512840",
+      "title" : "Modify DPI-SSH Inclusion/Exclusion",
+      "description" : "Original ID: 8\nOriginal Title: Modify DPI-SSH Inclusion/Exclusion\t\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1512828" : {
+      "steps" : "  config(2cb8ed824980)# ssl-vpn virtual-office\n  (config-sslvpn-virtual-office)# bookmark test\n  (add-bookmark[test])# host 10.103.50.82\n  (add-bookmark[test])# service sshv2\n  (add-bookmark-rdp[test])# commit",
+      "priority" : "Sanity",
+      "atm_id" : "f83e143f-0bf0-420d-94d4-d52faefe2f28",
+      "initial" : "  TBD",
+      "id" : "1512828",
+      "title" : "Add a portal bookmark with service SSHv2 in Virtual Office from CLI",
+      "description" : "Original ID: 15\nOriginal Title: Add a portal bookmark with service SSHv2 in Virtual Office from CLI\t\nOriginal Description:",
+      "result" : "  Add a portal bookmark with service SSHv2 in Virtual Office from CLI can be audit"
+   },
+   "1512838" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "2cec0f03-53a3-4285-9bf2-eedeec05bf93",
+      "initial" : "  TBD",
+      "id" : "1512838",
+      "title" : "[FW setting-flood protection/tcp]Modify tcp setting from CLI",
+      "description" : "Original ID: 6\nOriginal Title: [FW setting-flood protection/tcp]Modify tcp setting from CLI\t\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1512826" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "e744ea14-6da3-4a45-8918-a9715cbc3ad2",
+      "initial" : "  TBD",
+      "id" : "1512826",
+      "title" : "Modify RADIUS User Settings via CLI",
+      "description" : "Original ID: 13\nOriginal Title: Modify RADIUS User Settings via CLI\t\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1512829" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "5b3c3441-f2f8-4145-b932-662690b8f3b5",
+      "initial" : "  TBD",
+      "id" : "1512829",
+      "title" : "Modify SonicWave provision profile 2.4GHz Radio basic/2.4GHz Radio Settings via CLI",
+      "description" : "Original ID: 16\nOriginal Title: Modify SonicWave provision profile 2.4GHz Radio basic/2.4GHz Radio Settings via CLI\t\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1512839" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "7460a926-caaa-4f43-8dce-4ee781c3adae",
+      "initial" : "  TBD",
+      "id" : "1512839",
+      "title" : "[FW setting/SSL Control]Modify Configuration from CLI",
+      "description" : "Original ID: 7\nOriginal Title: [FW setting/SSL Control]Modify Configuration from CLI\t\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1512830" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "8e7a7f63-eb9a-473a-aae4-04b5314ec34f",
+      "initial" : "  TBD",
+      "id" : "1512830",
+      "title" : "Add/delete FairNet Policies via CLI",
+      "description" : "Original ID: 17\nOriginal Title: Add/delete FairNet Policies via CLI\t\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1512827" : {
+      "steps" : "  config(2cb8ed824980)# zone LAN\n  (edit-zone[LAN])# sslvpn-access\n  (edit-zone[LAN])# commit",
+      "priority" : "Sanity",
+      "atm_id" : "29f46619-6c84-4bfd-a3e1-c13488f8a9f2",
+      "initial" : "  TBD",
+      "id" : "1512827",
+      "title" : "Enable SSL VPN Access on Zones from CLI",
+      "description" : "Original ID: 14\nOriginal Title: Enable SSL VPN Access on Zones from CLI\nOriginal Description:",
+      "result" : "  TBD"
+   },
+   "1512835" : {
+      "steps" : "  TBD",
+      "priority" : "Full_Regression",
+      "atm_id" : "76c92737-9c5f-4dbe-9698-e758cfedbf08",
+      "initial" : "  TBD",
+      "id" : "1512835",
+      "title" : "IP Helper - Edit policies",
+      "description" : "Original ID: 3\nOriginal Title: IP Helper - Edit policies\t\nOriginal Description:",
+      "result" : "  TBD"
+   }
+}

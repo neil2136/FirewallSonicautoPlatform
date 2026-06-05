@@ -1,0 +1,136 @@
+{
+    "Main_TC15": {
+        "steps": "1)  Configure IKE Main Mode VPN policies on the central and remote firewalls.  2)  Initiate the tunnel by pinging from the central network to a remote VPN host. 3)  Make sure that the tunnel is up. Clear the log.  4)  Hit the Renegotiate button on the remote firewall.",
+        "initial": "",
+        "id": "Main_TC15",
+        "title": "Main Mode. Renegotiate the SA using the button on responder.",
+        "result": "The new Phase2 is negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied."
+    },
+    "Main_TC18": {
+        "steps": "1)  Configure IKE Main Mode VPN policies on the central and remote firewalls.  2)  Initiate the tunnel by pinging from the central network to a remote VPN host. 3)  Make sure that the tunnel is up. Clear the log. Continue to ping through the tunnel. 4)  Disable the VPN policy on the remote firewall. 5)  Make sure that IKE SA and IPSec SA Delete messages are shown on the Log page. 6)  Re-enable the VPN policy on the remote firewall.",
+        "initial": "",
+        "id": "Main_TC18",
+        "title": "Main Mode. Re-enable IKE VPN policy with incoming traffic.",
+        "result": "When the VPN policy gets disabled on the remote firewall, IKE and IPSec DEL messages are received on the central firewall. New negotiation attempts on the central firewall since pings is continuing. The log shows messages IKE Initiator. No response  remote party timeout. When the VPN policy on the remote firewall gets re-enabled, negotiation completes. New Main Mode Phase1 and QM Phase2 are negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied."
+    },
+    "Main_TC21": {
+        "steps": "1)  Configure IKE Main Mode VPN policies on the central and remote firewalls.  2)  In the Advanced tab in VPN policies, turn on the check box Perfect Forward Secrecy and select DH Group (each group should be tested). 3)  Initiate the tunnel by pinging from the central network to a remote VPN host.",
+        "initial": "",
+        "id": "Main_TC21",
+        "title": "Main Mode. Enable Perfect Forward Secrecy.",
+        "result": "The IKE tunnel in Main Mode is negotiated. KE payload is shown in the Phase2 message. The correct DH Group is shown in the Phase2 completion message."
+    },
+    "Main_TC23": {
+        "steps": "1)  Configure DNS server to link Domain Names to WAN IP addresses of the local and remote firewalls. 2)  Configure IKE Main Mode VPN policies on the two firewalls. Specify Domain name of a peer as IPSec Ga teway in each VPN policy. 3)  Ping through the VPN between the local and remote networks.",
+        "initial": "",
+        "id": "Main_TC23",
+        "title": "Main Mode. IPSec Gateway is using Domain Name on both sides.",
+        "result": "The WAN IP address of a peer gateway is resolved on the VPN>Settings page of each firewall. The VPN tunnel in IKE Main Mode is established. The entries of the active tunnel is shown in the Currently Active VPN Tunnels table on each firewall. Ping is going through the tunnel."
+    },
+    "Aggressive_TC26": {
+        "steps": "1)  Configure IKE Aggressive Mode VPN policies on the central and remote firewalls. Specify IPSec Ga teways in both policies. 2)  Initiate the tunnel by pinging from the central network to a remote VPN host. 3)  Make sure that the tunnel is up. Clear the log.  4)  Hit the Renegotiate button on the remote firewall.",
+        "initial": "",
+        "id": "Aggressive_TC26",
+        "title": "Aggressive Mode. Renegotiate the SA using the button on responder.",
+        "result": "The new Phase2 is negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied."
+    },
+    "Aggressive_TC27": {
+        "steps": "1)  Configure IKE Aggressive Mode VPN policies on the central and remote firewalls. Set Phase1 and Phase2 SA life time to 120 seconds. 2)  Initiate the tunnel by pinging from the host on central network to a remote VPN host. 3)  Stop the pings. 4)  Let the time > 240 seconds to pass (additional Phase1 will be renegotiated even with no traffic). Clear the log.  5)  Start pinging again.",
+        "initial": "",
+        "id": "Aggressive_TC27",
+        "title": "Aggressive Mode. The tunnel is re-established after SA life time expired.",
+        "result": "The new Aggressive Mode Phase1 and Quick Mode Phase2 are negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied."
+    },
+    "Aggressive_TC29": {
+        "steps": "1)  Configure IKE Aggressive Mode VPN policies on the central and remote firewalls. Specify IPSec Gateways in both policies. 2)  Initiate the tunnel by pinging from the central network to a remote VPN host. 3)  Make sure that the tunnel is up. Clear the log. Continue to ping through the tunnel. 4)  Disable the VPN policy on the remote firewall. 5)  Make sure that IKE SA and IPSec SA Delete messages are shown on the Log page. 6)  Re-enable the VPN policy on the remote firewall.",
+        "initial": "",
+        "id": "Aggressive_TC29",
+        "title": "Aggressive Mode. Re-enable IKE VPN policy with incoming traffic.",
+        "result": "When the VPN policy gets disabled on the remote firewall, IKE and IPSec DEL messages are received on the central firewall. New negotiation attempts on the central firewall since pings is continuing. The log shows messages IKE Initiator. No response  remote party timeout. When the VPN policy on the remote firewall gets re-enabled, negotiation completes. New Aggressive Mode Phase1 and QM Phase2 are negotiated. The log message shows negotiated networks, Crypto Suite, SA life time, and SPIs. Pings from the central network to the remote VPN host are replied."
+    },
+    "Aggressive_TC32": {
+        "steps": "1)  Configure IKE Aggressive Mode VPN policies on the central and remote firewalls.  2)  In the Advanced tab in VPN policies, turn on the check box Perfect Forward Secrecy and select DH Group (each group should be tested). 3)  Initiate the tunnel by pinging from the central network to a remote VPN host.",
+        "initial": "",
+        "id": "Aggressive_TC32",
+        "title": "Aggressive Mode. Enable Perfect Forward Secrecy.",
+        "result": "The IKE tunnel in Aggressive Mode is negotiated. KE payload is shown in the Phase2 message. The correct DH Group is shown in the Phase2 completion message."
+    },
+    "SuperNet_TC36": {
+        "steps": "1)  Configure IKE VPN policies on the central and remote firewalls. 2)  On the central firewall, have a super net as VPN destination network (Ex: 192.168.0.0/16) and a more specific network (Ex: 192.168.1.0/24) in the routing table. 3)  Ping into the network on VPN destination from the local host.",
+        "initial": "",
+        "id": "SuperNet_TC36",
+        "title": "Super net VPN destination network and a more specific network in the routing table",
+        "result": "A packet from the local LAN to the destination on the VPN network doesnt trigger IKE."
+    },
+    "NetworkRange_TC44": {
+        "steps": "1)  Create address objects on the local firewall, Local Network (on DMZ zone) and Remote range (on VPN zone). 2)  Configure a VPN policy on the local firewall. Select Local Network as local network and Remote range as destination network. 3)  Create address objects on the remote firewall, Local range (on LAN zone) and Remote Network (on VPN zone). 4)  Configure a VPN policy on the remote firewall. Select Local range as local network and Remote Network as destination network. 5)  Ping from the local PC on the LAN to the PC on the Remote range. Make sure that IKE doesnt start. 6)  Ping from the local PC on the DMZ to the PC on the Remote range.",
+        "initial": "",
+        "id": "NetworkRange_TC44",
+        "title": "A tunnel between local network and remote range",
+        "result": "IKE is started by traffic from the local PC on the DMZ network to the PC on th Remote range. The tunnel is established. Log messages show the completion of negotiation between subnet and a range of IP addresses. The active tunnels are shown on the VPN > Settings page of the local and remote firewalls. On the local firewall the DMZ subnet is shown under Local header and the range of IP addresses under Remote header. On the remote firewall the range of IP addresses on the local LAN is shown under the Local header and the subnet under Remote header."
+    },
+    "Disable_TC47": {
+        "steps": "Configure IKE VPN policies on the central and remote firewalls.  \nPing between the local and remote destinations. Make sure that the tunnel is established.\nTurn off the check box Enable VPN on the VPN > Settings page on the local firewall. Click OK in the message and push the Apply button.\nPing from the local host into the VPN destination.",
+        "initial": "",
+        "id": "Disable_TC47",
+        "title": "Disable VPN",
+        "result": "The log message \"VPN disabled by administrator\" is generated and printed on the Log > View page. IKE rules are removed from WAN > WAN on the Firewall > Access Rules page. Pings from the local host to the VPN destination are dropped. IKE negotiation doesn't start."
+    },
+    "AutoRule_TC93": {
+        "steps": "? 1) ????? Configure a VPN policy on the firewall. Select ?LAN subnets? as a local network. 2) ????? In the Advanced tab of the VPN policy, have the ?Suppress automatic Access Rules creation for VPN Policy? check box unchecked. 3) ????? Generate traffic from a local to remote VPN destination. 4) ????? View the Firewall>Access rules page, LAN>VPN and VPN>LAN. ?",
+        "initial": "",
+        "id": "AutoRule_TC93",
+        "title": "Rules creation is required in VPN policy",
+        "result": "The tunnel is negotiated and traffic goes through. LAN>VPN and VPN>LAN sections of the Access Rules table have auto-added rules for configured VPN policy."
+    },
+    "VLAN_TC96": {
+        "steps": "On the Network>Interfaces page of the local firewall, click the \"Add Interface\" button. Assign LAN zone, X0 Parent Interface, VLAN Tag: 10, enter IP address (the one that was configured on the VLAN of local Linux box). Save.\nOn the Network>Interfaces page of the remote firewall, click the \"Add Interface\" button. Assign LAN zone, X0 Parent Interface, VLAN Tag: 10, enter IP address (the one that was configured on the VLAN of remote Linux box). Save.\nConfigure a VPN policy on the local firewall. Select its local VLAN as Local network and peer's VLAN as Destination network.\nConfigure a VPN policy on the remote firewall. Select its local VLAN as Local network and peer's VLAN as Destination network.\nInitiate ping from the local Linux box to the remote Linux box.",
+        "initial": "",
+        "id": "VLAN_TC96",
+        "title": "A tunnel between VLANs",
+        "result": "A VPN tunnel between the local and remote VLAN subnets is established. Log messages show the completion of negotiation between VLAN subnets. The active tunnels are shown on the VPN > Settings page of the local and remote firewalls."
+    },
+    "ReKey_TC98": {
+        "steps": "Configure IKE Aggressive Mode VPN policies on the DUT. Set Phase1 and Phase2 SA life time to 28800 seconds.  \nConfigure a matching VPN policy on the remote firewall. IPSec Gateway is 0.0.0.0. Phase1 and Phase2 SA life time is 28800 seconds.\nInitiate continuous ping from a host connected to the DUT's LAN.\nLet 28800 seconds pass.",
+        "initial": "",
+        "id": "ReKey_TC98",
+        "title": "Re-key event with default SA lifetime.",
+        "result": "The new IKE and IPSec SAs are negotiated. The log message shows negotiated networks, Crypto Suite, SA life time = 28800 sec, and SPIs. Ping continues to go through the VPN tunnel."
+    },
+    "MultipleVPN_TC101": {
+        "steps": "Establish multiple VPN tunnels\nSet timeout value to a smaller one (like 120s)\nRunning traffic though the tunnel(like ping, FTP traffic etc)\nRunning the case for 5 mins, do not stop traffic throuth VPN tunnel.",
+        "initial": "",
+        "id": "MultipleVPN_TC101",
+        "title": "Edit the lifetime for Multiple VPN tunnels, check the rekey for the VPN tunnels",
+        "result": "After the modification, the tunnel can be built up again, and check logs, it should contains 2 logs regarding rekey for each policy."
+    },
+    "ManagedHttps_TC103": {
+        "steps": "Create a s2s vpn tunnel,Local network select x0 subnet.\nOn Advanced tab, MANAGEMENT VIA THIS SA section, enable HTTPs;USER LOGIN VIA THIS SA, enable HTTPS.\nFrom remote network pc, try to access local firewall x0 interface using https with built-in user like \"admin\".\nCreate a local user like \"admin2\" and add into SonicWall Administrator group， vpn access: local x0 subnet\nFrom remote network pc, try to access local firewall x0 interface using https with local user \"admin2\".",
+        "initial": "",
+        "id": "ManagedHttps_TC103",
+        "title": " Firewall can be managed via https through s2s vpn policy.",
+        "result": "Local firewall can be managed via https successfully."
+    },
+    "ManagedSSH_TC104": {
+        "steps": "1.Create a s2s vpn tunnel, Local network select x0 subnet.\n\nOn Advanced tab, MANAGEMENT VIA THIS SA section, enable SSH;\n3.From remote network pc, start a ssh connection to local firewall x0 interface.",
+        "initial": "",
+        "id": "ManagedSSH_TC104",
+        "title": "Firewall can be managed via ssh through s2s vpn policy.",
+        "result": "Local firewall can be managed via ssh successfully."
+    },
+    "DisableManaged_TC106": {
+        "steps": "1.Create a s2s vpn tunnel;\n2.Configure group vpn policy, on advanced/MANAGEMENT VIA THIS SA section, make sure https/ssh/smtp are disabled;\n3.From remote network pc, try to manage firewall x0 interface via https/ssh/smtp.",
+        "initial": "",
+        "id": "DisableManaged_TC106",
+        "title": "Disable management on s2s sa, firewall won™t be managed then.",
+        "result": "Local firewall can be managed via ssh successfully."
+    },
+    "SNMP_TC110": {
+        "steps": "Set up a s2s VPN and local address as X0 network\nEnable SNMP on X0.\nOn the central firewall, enable SNMP management on Advanced page of the VPN policy.\nSNMP query from remote client to X0",
+        "initial": "",
+        "id": "SNMP_TC110",
+        "title": "SNMP over site to site VPN",
+        "result": "SNMP query can get correct response"
+    }
+
+}

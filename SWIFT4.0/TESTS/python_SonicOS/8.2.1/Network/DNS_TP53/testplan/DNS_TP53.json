@@ -1,0 +1,79 @@
+{
+   "6" : {
+      "steps" : "  1.Initiate a DNS query to the backup DNS server\n  2.Verify the query is received by real DNS server on the WAN side\n  3.Depending on the implementation, the query may be received by the primary or backup DNS server\n  4.Send a return response back to LAN\n  5.Verify the response is received by LAN client.",
+      "initial" : "  see cdrouter_app_22",
+      "id" : "6",
+      "title" : "CDR: Verify DNS queries sent to backup DNS server",
+      "result" : "  as mentioned in the instructions"
+   },
+   "11" : {
+      "steps" : "  1.enable dns server inherit on FW;\n  2.Login the DNS client and run dig @172.16.1.101 +dnssec ns.test.com';\n  3.capture dns query and response in FW;\n",
+      "initial" : "  1.Set up a local DNS server deployed with DNSSEC supoorted,currently you can use winSer2008 r2 to configure the DNSSEC;\n  2.Authorized public DNS server with DNSSEC supported. currently the server 172.16.1.101 can be used.\n  3.Topology: DNS client----DUT------public DNS server local DNS server\n  4.Enable packet capture on DUT;",
+      "id" : "11",
+      "title" : "Firewall should forward DNSSEC response correctly to the client.",
+      "result" : "  Firewall forward the response which with udp payload size 4096 correctly to the client."
+   },
+   "3" : {
+      "steps" : "  1. Initiate a DNS query to the router's LAN ip address;\n  2. Verify the query is received by real DNS server on WAN side;\n  3. Verify a DNS return response back to LAN.",
+      "initial" : "  N/A",
+      "id" : "3",
+      "title" : "A DNS Proxy case Verify if the DNS server resolves to the right URL",
+      "result" : "  Verify the dns server resolves to the FQDNs IP address correctly and the response is received by LAN client."
+   },
+   "7" : {
+      "steps" : "  1.Configure all three dns servers correctly;\n  2.Restart the firewall.",
+      "initial" : "  pc-x0 firewall",
+      "id" : "7",
+      "title" : "Restart firewall to see if dns settings are intact.",
+      "result" : "  DNS servers should retain after restart completes."
+   },
+   "9" : {
+      "steps" : "  1.enable dns server inherit on FW;\n  2.Login the DNS client and run dig @172.16.1.101 +dnssec ns.test.com';\n  3.capture dns query and response in FW;\n",
+      "initial" : "  1.Set up a local DNS server deployed with DNSSEC supoorted,currently you can use winSer2008 r2 to configure the DNSSEC;\n  2.Authorized public DNS server with DNSSEC supported. currently the server 172.16.1.101 can be used.\n  3.Topology: DNS client----DUT------public DNS server local DNS server\n  4.Enable packet capture on DUT;",
+      "id" : "9",
+      "title" : "Firewall can forward DNSSEC queries correctly to DNS server.",
+      "result" : "  firewall forward the queries which with udp payload size 4000 or 4096 correctly to the public DNS server."
+   },
+   "2" : {
+      "steps" : "  1.Login firewall and go to Network/DNS page;\n  2.Check that by default, the option Inherit DNS Settings Dynamically from the WAN Zone is selected;\n  3.Select the radio button Specify DNS Servers Manually, enter following value for all the three dns servers and click the Accept button;\n  256.1.1.1 1.256.1.1 1.1.1.256 1.1.@.1 1.1.1.-9 Asfdfds 10.10.10.10",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "2",
+      "title" : "IP Address validate check for all the three DNS servers",
+      "result" : "  Only the last value can be accepted. Others will denied with error message format or value is wrong."
+   },
+   "8" : {
+      "steps" : "  1.Restore firewall to factory default;\n  2.Configure wan interface, select static mode,configure DNS servers on the page;\n  3.Go to Network->DNS, check that the dns servers all inherit from wan settings page;\n  4.Change wan interface to different mode like DHCP, pppoe,l2tp and pptp, when it connects to the corresponding server correctly, do step3.",
+      "initial" : "  pc-x0 firewall",
+      "id" : "8",
+      "title" : "Check dns servers are inherited corrently from wan settings.",
+      "result" : "  DNS servers inherited from wan settings page should be displayed on Network->DNS page."
+   },
+   "1" : {
+      "steps" : "  1. Initiate a DNS query to the router's LAN ip address\n  2. Verify the query is received by real DNS server on on WAN side\n  3. Send a return response back to LAN",
+      "initial" : "  N/A",
+      "id" : "1",
+      "title" : "CDR:DNS queries to router are forwarded to real DNS server",
+      "result" : "  Verify the response is received by LAN client"
+   },
+   "4" : {
+      "steps" : "  1. Fill a real dns server as server1, then fill two fake dns servers as server 2 and server 3;\n  2. Initiate a dns query and capture the packets, dns query should forward to the server1 and it should reply with the correct IP address;\n  3. Fill a fake dns server as server1 and server3, fill a real dns as server2, do step2 again;\n  4. Fill a fake dns server as server1 and server2, fill a real dns as server3, do step2 again;",
+      "initial" : "  PC --- X0 SonicWALL X1--internet",
+      "id" : "4",
+      "title" : "Validate each DNS server by having a fake DNS server for the other 2 settings",
+      "result" : "  IF the first dns server cant be reached, firewall will send dns query to other servers which can resolve to the correct IP as well."
+   },
+   "10" : {
+      "steps" : "  1.enable dns server inherit on FW;\n  2.modify the pc2 dns file;\n 3.Login the DNS client and run ping ns.test.com';\n  3.capture dns query and response in FW;\n",
+      "initial" : "  1.Set up a local DNS server deployed with DNSSEC supoorted,currently you can use winSer2008 r2 to configure the DNSSEC;\n  2.Authorized public DNS server with DNSSEC supported. currently the server 172.16.1.101 can be used.\n  3.Topology: DNS client----DUT------public DNS server local DNS server\n  4.Enable packet capture on DUT;",
+      "id" : "10",
+      "title" : "Firewall should forward DNSSEC queries correctly to DNS server after os dns config.",
+      "result" : "  Firewall forward the queries which with udp payload size 4000 correctly to the public DNS server.\n  ---------------------------------edit by alisa---------------------------------------\n  Firewall forward the queries."
+   },
+   "5" : {
+      "steps" : "  1. Initiate a DNS query to the primary DNS server\n  2. Verify the query is received by real DNS server on the WAN side\n  3. Depending on the implementation, the query may be received by the primary or backup DNS server\n  4. Send a return response back to LAN\n  5. Verify the response is received by LAN client.",
+      "initial" : "  see cdrouter_app_21",
+      "id" : "5",
+      "title" : "CDR: Verify DNS queries sent to primary DNS server",
+      "result" : "  as mentioned in the instructions"
+   }
+}

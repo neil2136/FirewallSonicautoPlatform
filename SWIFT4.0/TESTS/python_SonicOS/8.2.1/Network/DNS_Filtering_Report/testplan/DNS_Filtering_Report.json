@@ -1,0 +1,149 @@
+{
+    "1521152": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic with categorized domains through the DUT;\n3. Policy \\ DNS Security \\ Reports, check the statistic tab.",
+        "initial": "PC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521152",
+        "title": "[GUI] The DNS filtering Statistic page shows correctly.",
+        "result": "The 19 categories and their statistics display."
+    },
+    "1521153": {
+        "steps": "1. Policy \\ DNS Security \\ Reports, check the statistic tab;\n2. Click category name.",
+        "initial": "*Nssp not support",
+        "id": "1521153",
+        "title": "[GUI] Verify click category can link to the Domain page with the specific category.",
+        "result": "The page jumps to the Domain tab with the specific category filtering."
+    },
+    "1521154": {
+        "steps": "1. Policy \\ DNS Security \\ Reports, check the Domain and Host tab;\n2. Click the license icon.",
+        "initial": "*Nssp not support",
+        "id": "1521154",
+        "title": "[GUI] Verify licenses info displays correctly on Domain and Host pages.",
+        "result": "DNS Filtering Status and External Storage Status display."
+    },
+    "1521155": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports, Domain and Host tab, enter keyword on search box.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521155",
+        "title": "[GUI] Verify Search box works well on Domain and Host pages.",
+        "result": "The search results display correctly."
+    },
+    "1521156": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n\\2. From PC1 in X0, send DNS traffic through the DUT;\n3. Wait for 1 hour, from PC2 in X0, repeat step2;\n4. Policy \\ DNS Security \\ Reports, Domain tab;\n5. Drag the Time button to \"30 Mins\", check the page;\n6. To Host tab, repeat step 5.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521156",
+        "title": "[GUI] Verify Time button works well on Domain and Host pages.",
+        "result": "In step 5, the traffic in step2 is hidden in the table;\nIn step 6, the ip of PC1 is hidden."
+    },
+    "1521157": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From multiple clients(over 50) in X0, send DNS traffic through the DUT (over 50 entries);\n3. Policy \\ DNS Security \\ Reports \\ Domain tab, select All Domains and All Categories;\n4. Select 50 Entries and Unlimited Entries;\n5. To Host tab, repeat step 4.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521157",
+        "title": "[GUI] Verify Entry number drop-down box works well on Domain and Host pages.",
+        "result": "In step 4, the items display correctly;\nIn step 5, the items display correctly."
+    },
+    "1521158": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From multiple clients in X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Domain tab, select All Domains and All Categories, check the page;\n4. Repeat step2, click Refresh icon;\n5. To Host tab, repeat step 4;\n6. To Statistic tab, repeat step 4.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN\n\nWAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521158",
+        "title": "[GUI] Verify Refresh button works well on Statistic, Domain and Host pages.",
+        "result": "In step 4-6, the data on the pages updates with the traffic."
+    },
+    "1521159": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Domain tab, check the Domain drop-down box with Blocked Domains Only;\n4. Select All Domains, check the page.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521159",
+        "title": "[GUI] Verify Domain drop-down box works well.",
+        "result": "In step 3, the default item of the Domain drop-down box is Blocked Domains Only, and the domains blocked display correctly;\nIn step 4, the entries display correctly (No Category domains display)."
+    },
+    "1521160": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Domain tab, check the Category drop-down box;\n4. Select different categories, check the page.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521160",
+        "title": "[GUI] Verify Category drop-down box works well.",
+        "result": "In step 3, the default item of the Domain drop-down box is All Categories, and the entries display correctly;\nIn step 4, the 19 categories display in the box, and the entries display correctly."
+    },
+    "1521161": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Domain tab, check the Domain entry.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521161",
+        "title": "[GUI] Verify Domain entry displays correctly.",
+        "result": "The Domain, Count(right align), Percentage and Category display correctly."
+    },
+    "1521162": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Domain tab, collaspe a Domain entry.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521162",
+        "title": "[GUI] Verify the graph of the Domain entry displays correctly.",
+        "result": "The IP, Hostname(only support DHCP client) and count which query the domain display in the graph."
+    },
+    "1521163": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From multiple clients in X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Host tab, check the Host drop-down box with Blocked Hosts Only;\n4. Select All Hosts, check the page.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521163",
+        "title": "[GUI] Verify Host drop-down box works well.",
+        "result": "In step 3, the default item of the Host drop-down box is Blocked Hosts Only, and the Hosts with blocked queries display correctly;\nIn step 4, the entries display correctly (Hosts without blocked queries display)."
+    },
+    "1521164": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Host tab, check the Host entry.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521164",
+        "title": "[GUI] Verify Host entry displays correctly.",
+        "result": "The IP, Hostname(only support DHCP client), Count(right align) and Percentage display."
+    },
+    "1521165": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Host tab, collaspe a Host entry.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521165",
+        "title": "[GUI] Verify the graph of the Host entry displays correctly.",
+        "result": "The Domains, Category and Count (right align) display correctly."
+    },
+    "1521166": {
+        "steps": "1. Policy \\ DNS Security \\ Reports \\ Database tab, check the Memory Storage Size.",
+        "initial": "*Nssp not support",
+        "id": "1521166",
+        "title": "[GUI] Verify the Memory Storage Size displays correctly.",
+        "result": "The Memory Storage Size displays correctly"
+    },
+    "1521167": {
+        "steps": "1. Policy \\ DNS Security \\ Reports \\ Database tab, check the External Storage Status.",
+        "initial": "*Nssp not support",
+        "id": "1521167",
+        "title": "[GUI] Verify the External Storage Status displays correctly.",
+        "result": "The External Storage Status displays correctly( available-Green,  not available-Red)."
+    },
+    "1521168": {
+        "steps": "1. Policy \\ DNS Security \\ Reports \\ Database tab, check the Percentage Of External Storage Usage.",
+        "initial": "*Nssp not support",
+        "id": "1521168",
+        "title": "[GUI] Verify the Percentage of External Storage Usage info displays correctly.",
+        "result": "Available or Not Available, keep consistent with Domain and Host page."
+    },
+    "1521169": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. Policy \\ DNS Security \\ Reports \\ Database tab, click Export Database button.",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521169",
+        "title": "[GUI] Verify the Export Database button works well.",
+        "result": "The Database can be exported successfully."
+    },
+    "1521170": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. From X0, send DNS traffic through the DUT;\n3. From CLI, enter configure mode;\n4. Input:<br /># export dns-filter-db csv ftp ftp://user:password@servername/dns-filter-db.csv <br /># export dns-filter-db csv user@server:/home/user/dns-filter-db.csv <br /># export dns-filter-db csv scp user@server:/home/user/",
+        "initial": "*Nssp not support\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521170",
+        "title": "[CLI] Verify the CLI Commends to export the database.",
+        "result": "The Database can be exported successfully."
+    },
+    "1521171": {
+        "steps": "1. Policy \\ Rules and Policies \\ DNS Rules, add top: a policy named Test, Interface-X0, action-Filter, Enable;\n2. Device \\ Log \\ Settings, set Logging level to debug, click edit, set Display Events in Log Monitor to 0 seconds, accept;\n3. From X0, send DNS traffic through the DUT (over Memory Storage Size);\n4. Policy \\ DNS Security \\ Reports \\ Database tab, check External Storage Status;\n5. Monitor \\ System Logs, check the logs.",
+        "initial": "*Nssp not support<br />*External Storage should be available\nPC---(X0)DUT(X1)---WAN WAN access to Neustar Server(156.154.54/55.200)",
+        "id": "1521171",
+        "title": "[FUNC] Verify the Data can be backed up automatically to External Storage when reach the Memory Storage Size.",
+        "result": "In step 4, the status changes;\nIn step 5, a log with id 1696 displays."
+    },
+    "1521172": {
+        "steps": "1. Policy \\ DNS Security \\ Reports, make sure some data in Memory storage;\n2. Reboot the DUT;\n3. Check the Database in Domain and Host page.",
+        "initial": "*Nssp not support",
+        "id": "1521172",
+        "title": "[FUNC] Verify the Database in Memory Storage will be cleared after rebooting.",
+        "result": "The data in step 1 is cleared."
+    }
+}

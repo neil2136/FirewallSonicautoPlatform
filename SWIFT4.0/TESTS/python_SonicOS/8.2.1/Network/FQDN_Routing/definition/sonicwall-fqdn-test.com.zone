@@ -1,0 +1,13 @@
+$TTL 1D
+@       IN SOA  @ sonicwall-fqdn-test.com. (
+                                        2017061301      ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+        NS      @
+        A       172.17.1.201
+dns     A       172.18.1.201
+www     A       172.18.2.201
+ftp     A       172.18.3.201
+smb     A       172.18.4.201

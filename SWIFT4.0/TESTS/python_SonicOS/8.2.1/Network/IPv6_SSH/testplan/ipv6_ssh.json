@@ -1,0 +1,142 @@
+{
+   "1530594" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "a3330304-9621-4cb2-b70a-bae04c0dfaec",
+      "initial" : "  N/A",
+      "id" : "1530594",
+      "title" : "[2.8][CLI][port]-Verify if SSH IPV6 still can connect to FW with default port(22) when change from the specified port(111,33 etc) back to the default port",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530590" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "0eee21d1-fe50-4fef-b8a9-ee77840e008a",
+      "initial" : "  N/A",
+      "id" : "1530590",
+      "title" : "[2.3.1][CLI][SCP]-SSH Lib should support SCP so that it can succeed to export capture thru SCP command to another ssh server",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530600" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "45317417-8a84-4c63-86ea-d13e8518ea18",
+      "initial" : "  N/A",
+      "id" : "1530600",
+      "title" : "[6.1][Administration][port]-Check the default port for SSH is 22",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530593" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "0e587645-f5b7-4320-8552-3f1c940f2a7f",
+      "initial" : "  N/A",
+      "id" : "1530593",
+      "title" : "[2.6.1][CLI][MAC Algo]-Verify connection using hmac-sha1 is successful with no issues--command:ssh -m  hmac-sha1 user@ipv6_address",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530599" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6681afc5-1880-4e69-a4c1-2fe71d5c4dce",
+      "initial" : "  N/A",
+      "id" : "1530599",
+      "title" : "[5.6.4][FC][VPN]-Verify the maximum IPv6 SSH connections via VPN tunnel with specified port when SSH management is enabled in VPN policy",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530591" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "3a3804ad-b6e5-4453-93e2-f3d13826a4e6",
+      "initial" : "  N/A",
+      "id" : "1530591",
+      "title" : "[2.4.1][CLI][KexAlgorithms]-Verify connection using diffie-hellman-group-exchange-sha256 is successful with no issues--command:ssh -o KexAlgorithms=diffie-hellman-group-exchange-sha256 user@ipv6_addre",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530601" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "d620cbc9-ec9a-4316-8c95-01442a85a6ef",
+      "initial" : "  N/A",
+      "id" : "1530601",
+      "title" : "[8.2][GMS][Settings]-SSH checkbox can be checked-enable/disable for all IPV6 interfaces settings on GMS",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530595" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "4753cafa-1c0f-4d69-993b-e4ad27a8ee11",
+      "initial" : "  N/A",
+      "id" : "1530595",
+      "title" : "[3.1][TSR]-TSR should include the interface IPv6 ssh management status",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530598" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "5e010b89-994f-42e6-8939-dc58d795ffdd",
+      "initial" : "  N/A",
+      "id" : "1530598",
+      "title" : "[5.6.1][FC][VPN]-Verify SSH IPv6 checkbox on VPN configure page can checked or unchecked",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530592" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "8870661f-2343-426a-8463-e35751aec2b3",
+      "initial" : "  N/A",
+      "id" : "1530592",
+      "title" : "[2.5.1][CLI][Encrypt Algo]-Verify connection using aes128-gcm@openssh.com is successful with no issues--command:ssh -c aes128-gcm@openssh.com user@ipv6_address",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530589" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "a2a688d6-1717-4e7a-99de-e1c90ced0b55",
+      "initial" : "  N/A",
+      "id" : "1530589",
+      "title" : "[2.1.2][CLI][Display]-The status of SSH for all IPV6 interfaces should keep the same as GUI when use \"show\" command to check interface status thru CLI",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530597" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "231eb3e8-db6b-47ab-abaf-62f681dd3de3",
+      "initial" : "  N/A",
+      "id" : "1530597",
+      "title" : "[5.5.1][FC][SSLVPN]-Verify IPv6 SSH connection through SSLVPN can be set up if it is enabled for SSLVPN server",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530588" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "6a735b81-993a-4a86-b825-0283c2dc42a3",
+      "initial" : "  N/A",
+      "id" : "1530588",
+      "title" : "[1.1][GUI][Interface]-GUI Check for SSH IPv6 interface,make sure ssh checkbox display correctly",
+      "description" : "TBD",
+      "result" : "  TBD"
+   },
+   "1530596" : {
+      "steps" : "  Master",
+      "priority" : "TBD",
+      "atm_id" : "0be3c3ee-f472-422f-b463-0f12fb7d07f5",
+      "initial" : "  N/A",
+      "id" : "1530596",
+      "title" : "[4.1][SSH version]-SSHv2 client can connect to FW but it will fail with sshv1",
+      "description" : "TBD",
+      "result" : "  TBD"
+   }
+}

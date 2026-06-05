@@ -1,0 +1,187 @@
+﻿sep=,
+"ID","Title","ATM_ID","Description","Expected Results","Steps"
+"C1522589","use the CLI command to configure the interface","2c1c9ad9-16eb-4baf-866c-efe447c0ea02","Original ID: 1
+Original Title: use the CLI command to configure the interface
+Original Description:","1, step1 assign x2 interface success
+2, step2 unassgin x2 interface success
+3, step3 add tunnel interface success","1,use CLI assign x2 interface
+2,use CLI unassgin x2 interface
+3,use CLI add tunnel interface"
+"C1522590","use the CLI command to configure the network monitot","0f6024d1-77f0-417b-aba9-1bf518525875","Original ID: 10
+Original Title: use the CLI command to configure the network monitot
+Original Description:","add the network monitor policy success","use CLI add a network monitor policy"
+"C1522591","use the CLI command to configure the interface IPv6 settings","6095195f-b960-433d-8e74-1cf5db3d3ccc","Original ID: 11
+Original Title: use the CLI command to configure the interface IPv6 settings
+Original Description:","<span>The CLI command for interface IPv6 settings can be successfully committed</span>","Use the CLI command to configure the interface IPv6 settings"
+"C1522592","Create VLAN interface using CLI","71E1F322-B1F7-11EB-882D-D2B569517C8B","Original ID: 12
+Original Title: Create VLAN interface using CLI
+Original Description: Verifiy Creating VLAN interface using CLI","VLAN interface can be created successfully","use CLI to add a vlan interface
+config(2CB8ED694678)# interface x0 vlan 100<br />(add-interface[X0:V100])# ip-assignment LAN static
+(add-LAN-static[X0:V100])# ip 10.10.10.10<br />(add-LAN-static[X0:V100])# commit"
+"C1522593","Edit VLAN interface using CLI","459A7004-61E3-11EC-9704-8540938F55E4","Original ID: 13
+Original Title: Edit VLAN interface using CLI
+Original Description: Verifiy Editing VLAN interface using CLI","VLAN interface can be edited successfully and lan host can https/ping access vlan interface.","use CLI and edit a vlan interface
+config(2CB8EDA3780B)# interface x0 vlan 834<br />(edit-interface[X0:V834])# management https<br />(edit-interface[X0:V834])# management ping<br />(edit-interface[X0:V834])# commit"
+"C1522594","Delete VLAN interface using CLI","514482AA-61E3-11EC-9DD2-9240938F55E4","Original ID: 14
+Original Title: Delete VLAN interface using CLI
+Original Description: Verifiy Deleting VLAN interface using CLI","VLAN interface can be deleted successfully","use CLI to delete a vlan interface
+
+config(2CB8ED694678)# no interface x0 vlan 100"
+"C1522595","Delete multiple VLAN interfaces using CLI","5AE5E84E-61E3-11EC-9DD2-9240938F55E4","Original ID: 15
+Original Title: Delete multiple VLAN interfaces using CLI
+Original Description: Verifiy deleting multiple VLAN interfaces using CLI","VLAN interfaces can be deleted successfully","use CLI to delete multiple vlan interfaces"
+"C1522596","Delete all VLAN interfaces using CLI","086EA460-61E4-11EC-9350-2D41938F55E4","Original ID: 16
+Original Title: Delete all VLAN interfaces using CLI
+Original Description: Verifiy deleting all VLAN interfaces using CLI","All VLAN interfaces can be deleted successfully","use CLI to delete all vlan interfaces:
+config(2CB8EDA3780B)# no interfaces vlan<br />config(2CB8EDA3780B)# commit"
+"C1522597","Create ARP entry","C726AC94-2D69-11ED-914C-B5679C2CCB88","Original ID: 17
+Original Title: Create ARP entry
+Original Description: Verifiy creating arp entry using CLI","ARP Entry can be created successfully","TBD"
+"C1522598","Edit ARP entry","0B136622-2D6A-11ED-914C-B5679C2CCB88","Original ID: 18
+Original Title: Edit ARP entry
+Original Description: Verifiy editing arp entry using CLI","ARP Entry can be edited successfully","TBD"
+"C1522599","Delete ARP entry","17FB300E-2D6A-11ED-A6A2-C3679C2CCB88","Original ID: 19
+Original Title: Delete ARP entry
+Original Description: Verifiy deleting arp entry using CLI","ARP Entry can be deleted successfully","TBD"
+"C1522600","use CLI command to configure the zone","9fa64a81-95df-414c-90f3-336b280223bd","Original ID: 2
+Original Title: use CLI command to configure the zone
+Original Description:","1, step1 add success
+2, step 2 edit success
+3, step 3 delete success","1, use CLI add a custom zone
+2, use CLI edit th custom zone
+3, use CLI delete the added custom zone"
+"C1522601","Deleting all ARP entries","26BE2F74-2D6A-11ED-AE24-FE679C2CCB88","Original ID: 20
+Original Title: Deleting all ARP entries
+Original Description: Verifiy deleting all arp entries using CLI","All ARP Entries can be deleted successfully","TBD"
+"C1522602","use CLI command to configure the WLB","c0107257-81ee-4867-ae71-0364d8999f4f","Original ID: 3
+Original Title: use CLI command to configure the WLB
+Original Description:","1, use CLI configure default WLB success","1, use CLI edit the default WLB
+2, check it can be edited success"
+"C1522603","use CLI command to configure the DHCP","7494c16b-fb7c-44e1-9891-cc5344c6556f","Original ID: 4
+Original Title: use CLI command to configure the DHCP
+Original Description:","configure step 1-4 success","1, use CLI add a static ipv4 dhcp server scope
+2, use CLI add a dynamic ipv4 dhcp server scope
+3, use CLI edit the added dynaminc scope
+4, use CLI delete the added dynamic scope"
+"C1522604","use CLI command to configure the AO/AO group","ec625b2c-8925-4b8e-b8aa-b8c5921f035f","Original ID: 5
+Original Title: use CLI command to configure the AO/AO group
+Original Description:","configure steps 1-5 success","1, use CLI add a host type ao
+2, use CLI add a range type ao
+3, use CLI add a network type ao
+4, use CLI add a mac type ao
+5, use CLI add a fqdn type ao"
+"C1522605","use CLI command to configure the DDNS","75574a63-2eaf-45b5-bf2a-75cbadeb1ea1","Original ID: 6
+Original Title: use CLI command to configure the DDNS
+Original Description:","configure steps 1-2 success","1, use CLI add a dynamic dns profile
+2, use CLI edit the added ddns profile"
+"C1522606","use CLI command to configure the route","44bfe8ac-c299-42eb-bdd3-ca59193f393b","Original ID: 7
+Original Title: use CLI command to configure the route
+Original Description:","configure steps 1-3 success","1, use CLI add a route policy
+2, use CLI edit the added route policy
+3, use CLI delete the added route policy"
+"C1522607","use CLI command to configure the IP-Helper","89f96f89-1414-44e9-8898-518bbde6fa8d","Original ID: 8
+Original Title: use CLI command to configure the IP-Helper
+Original Description:","configure step 1-3 success","1, use CLI enable iphelper
+2, use CLI add a relay protocol
+3, use CLI add a iphelper policy"
+"C1522608","use CLI command to configure the NAT policy","f0114401-08c8-4701-b1f1-629b718f22de","Original ID: 9
+Original Title: use CLI command to configure the NAT policy
+Original Description:","configure steps 1-5 successfully","1, use CLI add a ipv4 nat policy
+2, use CLI edit the added nat policy
+3, use CLI delete the added nat policy
+4, use CLI add a ipv6 nat policy
+5, use CLI add a nat64 policy"
+"C2025633","Use CLI commands to show the interface ipv6 prefixes","","UI6:
+
+To modify one prefix need send all the interfaces' prefixes
+
+To add one prefix also need send PUT with full prefixes
+
+UI7:
+
+Move prefixes out of interface mode
+","Step4 Each instruction correspond result:
+
+show advertising-prefixes (show all interfaces' prefixes):
+advertising-prefix interface X3 prefix 1::
+    valid-lifetime 12345
+    preferred lifetime 12345
+    on-link
+    autonomous
+    exit
+
+advertising-prefix interface X3 prefix 2::
+    valid-lifetime 12345
+    preferred lifetime 12345
+    on-link
+    autonomous
+    exit
+
+show advertising-prefixes interface X3 (show interface X3's prefixes):
+advertising-prefix interface X3 prefix 1::
+    valid-lifetime 12345
+    preferred lifetime 12345
+    on-link
+    autonomous
+    exit
+
+advertising-prefix interface X3 prefix 2::
+    valid-lifetime 12345
+    preferred lifetime 12345
+    on-link
+    autonomous
+    exit
+
+show advertising-prefix interface X3 prefix 1:: (show specified prefix)
+advertising-prefix interface X3 prefix 1::
+    valid-lifetime 12345
+    preferred lifetime 12345
+    on-link
+    autonomous
+    exit
+
+show advertising-prefixes match valid (show matched prefix)
+advertising-prefix interface X3 prefix 1::
+    valid-lifetime 12345
+    exit
+
+advertising-prefix interface X3 prefix 2::
+    valid-lifetime 12345
+    exit
+
+show advertising-prefixes except valid (show other prefix)
+advertising-prefix interface X3 prefix 1::
+    preferred lifetime 12345
+    on-link
+    autonomous
+    exit
+
+advertising-prefix interface X3 prefix 2::
+    preferred lifetime 12345
+    on-link
+    autonomous
+    exit
+","1. Configure X3 for IPv4
+
+2. Configure X3 as static for IPv6
+
+3. Add Advertising Prefix For X3 in RA page
+Prefix 1::/64
+Valid Lifetime 12345 minute
+Preferred Lifetime 12345 minute
+On-link
+Autonomous
+
+Prefix 2::/64
+Valid Lifetime 12345 minute
+Preferred Lifetime 12345 minute
+On-link
+Autonomous
+
+4. Use CLI commands to show the interface ipv6 prefixes
+show advertising-prefixes
+show advertising-prefixes interface X3
+show advertising-prefix interface X3 prefix 1::
+show advertising-prefixes match valid
+show advertising-prefixes except valid
+"

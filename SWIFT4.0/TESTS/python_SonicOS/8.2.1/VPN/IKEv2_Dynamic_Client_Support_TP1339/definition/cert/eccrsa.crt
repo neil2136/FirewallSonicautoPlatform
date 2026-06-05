@@ -1,0 +1,59 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=CN, ST=shanghai, L=shanghai, O=kun, OU=kun, CN=rsa/emailAddress=kun@163.com
+        Validity
+            Not Before: Mar  2 15:01:52 2020 GMT
+            Not After : Feb 28 15:01:52 2030 GMT
+        Subject: C=CN, ST=shanghai, O=kun, OU=kun, CN=ecdsa/emailAddress=kun@163.com
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:6a:50:89:c7:47:11:bd:a6:93:db:15:c3:8c:1a:
+                    8f:82:ab:20:2a:12:a0:b5:c1:42:9b:e3:be:d0:27:
+                    96:f9:8c:46:45:b1:0c:02:b4:7d:be:d8:74:e6:f6:
+                    36:7c:a1:f4:4e:46:89:89:9a:6c:b6:7b:bd:db:fa:
+                    6e:3d:ce:d6:98
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Key Usage: 
+                Digital Signature, Non Repudiation, Key Encipherment
+    Signature Algorithm: sha256WithRSAEncryption
+         09:c8:6a:b0:00:40:11:07:b7:27:04:e7:c8:63:7c:c7:f2:28:
+         76:5b:3f:09:54:12:11:ef:a8:76:7d:af:ae:a7:e2:53:8f:18:
+         b0:6b:28:e8:a7:2a:49:6b:ae:61:e8:14:7f:60:63:12:2e:98:
+         11:a6:fd:f8:d9:86:9d:83:46:32:23:8f:2e:d4:19:47:95:43:
+         1c:81:cd:e6:c6:48:a3:b9:9d:63:66:f7:bf:df:1a:cd:9b:c5:
+         4f:d6:58:0f:ce:b9:51:23:1f:04:d5:e8:5a:5c:7f:11:1d:95:
+         fd:d1:58:47:6f:04:e6:0f:2b:5c:a9:b0:7b:6f:78:e0:60:21:
+         ac:28:b8:fd:d9:98:74:fe:dd:e9:91:0b:40:ac:22:71:3e:9e:
+         fa:c0:95:9a:0e:80:d1:e0:b2:45:f4:97:eb:b6:9b:52:59:af:
+         9e:ce:5d:3d:23:3a:01:1d:4b:d4:3f:bf:a4:2b:aa:d8:ae:63:
+         1a:bd:4c:3e:af:11:c1:b7:87:a6:56:b4:36:00:e9:03:c6:b4:
+         ed:51:bf:2a:dc:d5:96:ee:3f:f9:05:c0:2a:18:a9:b5:26:7d:
+         d7:7c:a3:aa:4a:97:6b:81:3f:fa:91:3c:f0:08:45:d9:0c:d1:
+         86:f4:c7:f7:85:cd:8d:f0:71:21:e7:0d:da:f4:54:cc:25:f0:
+         5b:dd:85:85
+-----BEGIN CERTIFICATE-----
+MIICqzCCAZOgAwIBAgIBAjANBgkqhkiG9w0BAQsFADB5MQswCQYDVQQGEwJDTjER
+MA8GA1UECAwIc2hhbmdoYWkxETAPBgNVBAcMCHNoYW5naGFpMQwwCgYDVQQKDANr
+dW4xDDAKBgNVBAsMA2t1bjEMMAoGA1UEAwwDcnNhMRowGAYJKoZIhvcNAQkBFgtr
+dW5AMTYzLmNvbTAeFw0yMDAzMDIxNTAxNTJaFw0zMDAyMjgxNTAxNTJaMGgxCzAJ
+BgNVBAYTAkNOMREwDwYDVQQIDAhzaGFuZ2hhaTEMMAoGA1UECgwDa3VuMQwwCgYD
+VQQLDANrdW4xDjAMBgNVBAMMBWVjZHNhMRowGAYJKoZIhvcNAQkBFgtrdW5AMTYz
+LmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABGpQicdHEb2mk9sVw4waj4Kr
+ICoSoLXBQpvjvtAnlvmMRkWxDAK0fb7YdOb2Nnyh9E5GiYmabLZ7vdv6bj3O1pij
+GjAYMAkGA1UdEwQCMAAwCwYDVR0PBAQDAgXgMA0GCSqGSIb3DQEBCwUAA4IBAQAJ
+yGqwAEARB7cnBOfIY3zH8ih2Wz8JVBIR76h2fa+up+JTjxiwayjopypJa65h6BR/
+YGMSLpgRpv342Yadg0YyI48u1BlHlUMcgc3mxkijuZ1jZve/3xrNm8VP1lgPzrlR
+Ix8E1ehaXH8RHZX90VhHbwTmDytcqbB7b3jgYCGsKLj92Zh0/t3pkQtArCJxPp76
+wJWaDoDR4LJF9JfrtptSWa+ezl09IzoBHUvUP7+kK6rYrmMavUw+rxHBt4emVrQ2
+AOkDxrTtUb8q3NWW7j/5BcAqGKm1Jn3XfKOqSpdrgT/6kTzwCEXZDNGG9Mf3hc2N
+8HEh5w3a9FTMJfBb3YWF
+-----END CERTIFICATE-----

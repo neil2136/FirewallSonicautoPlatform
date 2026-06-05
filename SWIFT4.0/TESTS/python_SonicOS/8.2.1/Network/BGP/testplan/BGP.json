@@ -1,0 +1,268 @@
+{
+   "33" : {
+      "steps" : "  1. Setup s2s vpn tunnel between two sw fws. On FW1, fill in primary ipsec gateway address and secondary ipsec gateway address.\n  2. Go to CLI Console of FW1\n  3. Type the following command\n  router bgp 100\n  neighbor 10.20.206.1 remote-as 100\n  neighbor 10.20.206.1 update-source 10.23.71.1\n  network 10.23.75.0/24\n  4. Go to CLI Console of FW2\n  5. Type the following command\n  router bgp 100\n  neighbor 10.23.71.1 remote-as 100\n  neighbor 10.23.71.1 update-source 10.20.206.1\n  network 18.2.2.0/24\n  6. Verify the neighbor can be established, and advertised network can be learned\n  7. Disconnect X1 interface of FW2, VPN tunnel will be established on X2 interface of FW2\n  8. Verify the neighbor can be established, and advertised network can be learned",
+      "initial" : "  (10.23.71.1)x0 FW1 X1(10.103.166.1)------------------------------------- (10.103.163.161)X1 FW2 X0(10.20.206.1)\n  --------------------------------------------------------------------------------------------------------------(10.103.161.193)X2",
+      "id" : "33",
+      "title" : "bgp over s2s ipsec vpn with 2 gateway addresses",
+      "result" : "  N/A"
+   },
+   "32" : {
+      "steps" : "  1. FW1 and FW3 is an HA pair, FW1 is Primary fw, FW3 is backup fw\n  2. Setup s2s vpn tunnel between two FW1 and FW2.\n  3. Go to CLI Console of FW1\n  4. Type the following command\n  router bgp 100\n  neighbor 10.20.206.1 remote-as 100\n  neighbor 10.20.206.1 update-source 10.23.71.1\n  network 10.23.75.0/24\n  5. Go to CLI Console of FW2\n  6. Type the following command\n  router bgp 100\n  neighbor 10.23.71.1 remote-as 100\n  neighbor 10.23.71.1 update-source 10.20.206.1\n  network 18.2.2.0/24\n  7. Verify the neighbor can be established, and advertised network can be learned\n  8. Initiate HA Failover between FW1 and FW3\n  9, Verify the neighbor can be established, and advertised network can be learned",
+      "initial" : "  (10.23.71.1)X0 FW1---HA---FW3 X1(10.103.166.1)------------------------------------- (10.103.163.161)X1 FW2 X0(10.20.206.1)",
+      "id" : "32",
+      "title" : "bgp over s2s ipsec vpn with HA",
+      "result" : "  N/A"
+   },
+   "21" : {
+      "steps" : "  1. Configure basic BGP settings on all these four units, make sure that Unit 1 has EBGP peer Unit 2, Unit 2 has peers Unit 1 and Unit 3, Unit 3 has peers Unit 2 and Unit 4, Unit 4 and Unit 3 are peer.\n  2. Configure BGP network settings on all these four units as below. Then write file to save all the BGP settings. Unit 1: network 192.101.1.0 mask 255.255.255.0; network 192.101.2.0 mask 255.255.255.0 Unit 2: network 192.102.1.0 mask 255.255.255.0; network 192.102.2.0 mask 255.255.255.0 Unit 3: network 192.103.1.0 mask 255.255.255.0; network 192.103.2.0 mask 255.255.255.0 Unit 4: network 192.104.1.0 mask 255.255.255.0; network 192.104.2.0 mask 255.255.255.0.\n  3. Wait for a while until all BGP peers get to Established status and all routes have been successfully populated.\n  4. Now on Unit 1 BGP CLI, show ip bgp regexp _3$, verify that two routes originating from Unit 3 will be matched. See Result 1.\n  5. On Unit 1 BGP CLI, show ip bgp regexp _3_, verify that four routes originating from Unit 3 and Unit 4 will be matched. See Result 2.\n  6. On Unit 1 BGP CLI, show ip bgp regexp ^3$, verify there is no route will be matched. See Result 3.\n  7. On Unit 1 BGP CLI, show ip bgp regexp ^2$, verify there are two routes originating from Unit 2 will be matched. See Result 4.\n  8. On Unit 1 BGP CLI, show ip bgp regexp ^2_, verify there are six routes originating from Unit 2, 3 and 4 will be matched. See Result 5.\n  9. On Unit 1 BGP CLI, show ip bgp regexp .*, verify all bgp routes will be matched. See Result 6",
+      "initial" : "  10.1.1.1 10.1.1.2 10.2.1.1 10.2.1.2 10.3.1.1 10.3.1.2\n  Unit 1(AS 1) --------Unit 2(AS 2) ---------Unit 3(AS 3) -----------Unit 4(AS 4) Unit 1: network 192.101.1.0 mask 255.255.255.0; network 192.101.2.0 mask 255.255.255.0 Unit 2: network 192.102.1.0 mask 255.255.255.0; network 192.102.2.0 mask 255.255.255.0 Unit 3: network 192.103.1.0 mask 255.255.255.0; network 192.103.2.0 mask 255.255.255.0 Unit 4: network 192.104.1.0 mask 255.255.255.0; network 192.104.2.0 mask 255.255.255.0\n  Unit 1 has EBGP peer Unit 2, Unit 2 has peers Unit 1 and Unit 3, Unit 3 has peers Unit 2 and Unit 4, Unit 4 and Unit 3 are peer.",
+      "id" : "21",
+      "title" : "Use regular expression to quickly check bgp routes via show ip bgp regexp LINE",
+      "result" : "  1.\tTwo routes originating from Unit 3 will be matched.\n  2.\tFour routes originating from Unit 3 and Unit 4 will be matched.\n  3.\tNo route will be matched\n  4.\tTwo routes originating from Unit 2 will be matched\n  5.\tSix routes originating from Unit 2, 3 and 4 will be matched\n  6.\tAll bgp routes will be matched"
+   },
+   "7" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, redistribute connected. Exit back to non-config mode in BGP, save the changes write file.]\n  2. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1.\n  3. Then login to Unit 2 GUI->Routing, verify network 192.168.168.0/24 and 172.16.31.0/24 are both in the PBR with a metric of 20. (Because the default EBGP AD is 20).\n  4. Then on Unit 1, enter router configuration then no redistribute connected. Back to ARS BGP cli mode, show running config to verify that there is no redistribute connected. See Result 1. 5. Then on Unit 2, verify that those Unit 1 connected networks are neither in the PRB table nor BGP route table. See Result 2.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24\n  ?\tX2 Static 172.16.31.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1, also make sure Unit 1 X0 and X2 are both well connected",
+      "id" : "7",
+      "title" : "Retrieve connected networks via no redistribute connected",
+      "result" : "  1. Current running config shows that there is no redistribute connected configured.\n  2. These connected networks should be removed from the PRB table and BGP route table."
+   },
+   "26" : {
+      "steps" : "  1. Verify that BGP debugging commands work correctly, including debug BGP (all|dampening|events|filters|fsm|keepalives|mpls|nsm|UPDATES). See Result 1.\n  2. Then verify those related no debug bgp commands work correctly. See Result 2.\n  Note: \"term mon \" should be enabled to see the debug messages on CLI console",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Connect Unit 1 X1 to Unit 2 X1",
+      "id" : "26",
+      "title" : "BGP debugging commands/no debug BGP",
+      "result" : "  1. The related BGP troubleshooting function(s) should be enabled successfully and you could see those debugging messages when terminal monitor is enabled.\n  2. The related BGP troubleshooting function(s) should be disabled successfully.\n  Note: debug bgp updates only prints recieved updates per DTS138542"
+   },
+   "2" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2. Exit back to non-config mode in BGP, save the changes write file.\n  2. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1.\n  3. Then on both units, at the BGP non-config level of the CLI, display the neighbor status of BGP - show ip bgp summary. See Result 1.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Connect Unit 1 X1 to Unit 2 X1",
+      "id" : "2",
+      "title" : "BGP sessions to peers can be successfully established over physical Ethernet network",
+      "result" : "  1.\tYou should see the neighbor session summary. And it will finally reach Establish status."
+   },
+   "17" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as.\n  2. Then configure MD5 authentication such as neighbor 10.1.1.2 password 3 sonicwall. Exit back to non-config mode in BGP, save the changes write file 2. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1. Then configure MD5 authentication such as neighbor 10.1.1.1 password 3 sonicwall. At last write file.\n  3. Then on both units, at the BGP non-config level of the CLI, display the neighbor status of BGP - show ip bgp summary. See Result 1.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Connect Unit 1 X1 to Unit 2 X1",
+      "id" : "17",
+      "title" : "Enable MD5 authentication on a TCP connection between BGP neighbors",
+      "result" : "  1.\tYou should see the neighbor session summary. And it will finally reach Establish status."
+   },
+   "1" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 12.1.1.2 remote-as.\n  2. Exit back to non-config mode in BGP, save the changes write file 2. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 12.1.1.1 remote-as 1.\n  3. Then on both units, at the BGP non-config level of the CLI, display the neighbor status of BGP - show ip bgp summary. See Result 1.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX2 - Static 12.1.1.1/24\n  ?\tX2:V4000 - Static 12.2.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX2 - Static 12.1.1.2/24\n  ?\tX2:V4000 - Static 12.2.1.2/24 Connect Unit 1 X2 to Unit 2 X2",
+      "id" : "1",
+      "title" : "BGP sessions to peers can be successfully established over VLAN network",
+      "result" : "  1.\tYou should see the neighbor session summary. And it will finally reach Establish status."
+   },
+   "18" : {
+      "steps" : "  1. Configure basic BGP settings on all these four units, make sure that Unit 1 has EBGP peer Unit 2, Unit 2 has peers Unit 1 and Unit 3, Unit 3 has peers Unit 2 and Unit 4, Unit 4 and Unit 3 are peer.\n  2. Configure BGP network settings on all these four units as below. Then write file to save all the BGP settings.\n  Unit 1: network 192.101.1.0 mask 255.255.255.0; network 192.101.2.0 mask 255.255.255.0\n  Unit 2: network 192.102.1.0 mask 255.255.255.0; network 192.102.2.0 mask 255.255.255.0\n  Unit 3: network 192.103.1.0 mask 255.255.255.0; network 192.103.2.0 mask 255.255.255.0\n  Unit 4: network 192.104.1.0 mask 255.255.255.0; network 192.104.2.0 mask 255.255.255.0\n  3. Now on Unit 1 BGP CLI, enter config mode to configure proper ip as-path access list to block routes originating from AS 3.\n  ip as-path access-list 1 deny _3$\n  ip as-path access-list 1 permit .* Then on Unit 1, enter router bgp 1 and configure neighbor 10.1.1.2 filter-list 1 in.\n  4. Then check BGP route table(show ip bgp) on Unit 1, verify that all routes originating from Unit 2 and Unit 4 can be successfully received, but the two routes originating from Unit 3 AS 3 are not there. See Result 1.",
+      "initial" : "  10.1.1.1 10.1.1.2 10.2.1.1 10.2.1.2 10.3.1.1 10.3.1.2\n  Unit 1(AS 1) --------Unit 2(AS 2) ---------Unit 3(AS 3) -----------Unit 4(AS 4)\n  Unit 1: network 192.101.1.0 mask 255.255.255.0; network 192.101.2.0 mask 255.255.255.0\n  Unit 2: network 192.102.1.0 mask 255.255.255.0; network 192.102.2.0 mask 255.255.255.0\n  Unit 3: network 192.103.1.0 mask 255.255.255.0; network 192.103.2.0 mask 255.255.255.0\n  Unit 4: network 192.104.1.0 mask 255.255.255.0; network 192.104.2.0 mask 255.255.255.0\n  Unit 1 has EBGP peer Unit 2, Unit 2 has peers Unit 1 and Unit 3, Unit 3 has peers Unit 2 and Unit 4, Unit 4 and Unit 3 are peer.",
+      "id" : "18",
+      "title" : "ip as-path access-list: Block Routes Originating from a Particular AS via ip as-path access-list in",
+      "result" : "  1. On Unit 1 BGP route table, all routes originating from Unit 2 and Unit 4 can be successfully received, but the two routes originating from Unit 3 AS 3 are not there."
+   },
+   "30" : {
+      "steps" : "  1. Setup s2s vpn tunnel between two sw fws.\n  2. Go to CLI Console of FW1\n  3. Type the following command\n  router bgp 100\n  neighbor 10.20.206.1 remote-as 100\n  neighbor 10.20.206.1 update-source 10.23.71.1\n  network 10.23.75.0/24\n  4. Go to CLI Console of FW2\n  5. Type the following command\n  router bgp 100\n  neighbor 10.23.71.1 remote-as 100\n  neighbor 10.23.71.1 update-source 10.20.206.1\n  network 18.2.2.0/24\n  6. Verify the neighbor can be established, and advertised network can be learned",
+      "initial" : "  (10.23.71.1)x0-FW1-X1(10.103.166.1)------------------------------------- (10.103.163.161)X1-FW2-X0(10.20.206.1)",
+      "id" : "30",
+      "title" : "ibgp over s2s ipsec vpn",
+      "result" : "  In step 6, the neighbor can be established and advertised network can be learned successfully."
+   },
+   "16" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, redistributed connected, and aggregate-address 10.102.0.0/16 summary-only. Exit back to non-config mode in BGP, save the changes write file.\n  2. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1 and write file.\n  3. Then login to Unit 2 GUI->Routing, verify network 10.102.0.0/16 is in the route. See Result 1.\n  4. Now go back to Unit 1 BGP CLI, disable the previously configured aggregate command via no aggregate-address 10.102.0.0/16 summary-only. Then login to Unit 2 GUI->Routing, verify that there are two individual routes for 10.102.1.0/24 and 10.102.2.0/24. See Result 2.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 Static 10.1.1.1/24\n  ?\tX2- Static 10.102.1.0/24\n  ?\tX3- Static 10.102.2.0/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1, also make sure Unit 1 X0 and Unit 2 X0 are both well connected. Also make sure Unit 1 X2 and X3 interfaces are well connected.",
+      "id" : "16",
+      "title" : "Aggregate-address/no aggregate-address",
+      "result" : "  1.\tThere is only aggregated bgp route network 10.102.0.0/16 in the PBR route table.\n  2.\tTwo individual routes 10.102.1.0/24 and 10.102.2.0/24 are in PBR."
+   },
+   "27" : {
+      "steps" : "  1. The bgp command shown in CLI and the checkbox BGP enabled/disabled shown in GUI, they can work functionally.\n  2. The configuration will be synchronized to each other successfully through both CLI and GUI.",
+      "initial" : "  1. When FW factory default startup and BGP license activated, check command bgp under routing view in CLI and checkbox BGP enabled/disabled on Advanced Routing page in GUI, see Result 1.\n  2. Cofigure \"bgp\" or \"no bgp\" command in CLI, then check GUI; inverse, cofigure \"enabled\" or \"disabled\" checkbox in GUI, then check CLI, see Result 2.",
+      "id" : "27",
+      "title" : "Verify BGP can be enabled/disabled through both CLI and GUI.",
+      "result" : ""
+   },
+   "25" : {
+      "steps" : "  TBD(Because we may dont support BGP log currently. This may be available later.)",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Connect Unit 1 X1 to Unit 2 X1",
+      "id" : "25",
+      "title" : "FW reports BGP logs appropriately",
+      "result" : "  TBD(Because we may dont support BGP log currently. This may be available later.)"
+   },
+   "28" : {
+      "steps" : "  1. On the primary SonicWALL unit, enter BGP CLI to configure basic BGP settings, such as configure some its BGP neighbors, network several routes, etc. Then write file to save it.\n  2. Then trigger a failover to let the backup unit to take over and become the active unit.\n  3. Then on the backup unit, enter BGP CLI to check the current BGP configuration via show running-config. Verify that if all BGP settings on the primary unit can be synchronized to the backup unit. See Result 1.",
+      "initial" : "  Setup a HA pair properly.",
+      "id" : "28",
+      "title" : "HA with BGP: Verify all BGP settings on the primary unit can be synchronized to the backup unit.",
+      "result" : "  1.\tAll BGP settings on the primary unit can be synchronized to the backup unit."
+   },
+   "14" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Modify EBGP AD to a custom value distance bgp 22 200 200. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, network 192.168.168.0/24. Exit back to non-config mode in BGP, save the changes write file.\n  2. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1 and network 192.168.169.0/24 then write file.\n  3. Then login to Unit 2 to export TSR, verify network 192.168.168.0/24 is in show ip route database with AD 20. You can also verify it on Unit 2 BGP CLI via show ip bgp ipv4 unicast. (Because the default EBGP AD is 20) 4. Then login to Unit 1 to export TSR, verify network 192.168.169.0/24 is in show ip route database with AD 22.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1, also make sure Unit 1 X0 and Unit 2 X0 are both well connected.",
+      "id" : "14",
+      "title" : "Verify default/custom Administrative Distance on EBGP peer",
+      "result" : "  1.\tOn Unit 2, you should see that network 192.168.168.0/24 has a default AD 20. 2.\tOn Unit 1, you should see that network 192.168.168.0/24s AD is the custom configured value 22."
+   },
+   "20" : {
+      "steps" : "  1. Configure basic BGP settings on all these four units, make sure that Unit 1 has EBGP peer Unit 2, Unit 2 has peers Unit 1 and Unit 3, Unit 3 has peers Unit 2 and Unit 4, Unit 4 and Unit 3 are peer.\n  2. Configure BGP network settings on all these four units as below. Then write file to save all the BGP settings. Unit 1: network 192.101.1.0 mask 255.255.255.0; network 192.101.2.0 mask 255.255.255.0 Unit 2: network 192.102.1.0 mask 255.255.255.0; network 192.102.2.0 mask 255.255.255.0 Unit 3: network 192.103.1.0 mask 255.255.255.0; network 192.103.2.0 mask 255.255.255.0 Unit 4: network 192.104.1.0 mask 255.255.255.0; network 192.104.2.0 mask 255.255.255.0.\n  3. Now on Unit 2 BGP CLI, enter config mode to configure proper ip as-path access list to block routes originating from AS 2. ip as-path access-list 1 deny ^2$ ip as-path access-list 1 permit .* Then on Unit 2, enter router bgp 2 and configure neighbor 10.1.1.1 filter-list 1 out.\n  4. Then check BGP route table(show ip bgp) on Unit 1, verify that all routes originating from AS 2 have been blocked. See Result 1.",
+      "initial" : "  10.1.1.1 10.1.1.2 10.2.1.1 10.2.1.2 10.3.1.1 10.3.1.2\n  Unit 1(AS 1) --------Unit 2(AS 2) ---------Unit 3(AS 3) -----------Unit 4(AS 4) Unit 1: network 192.101.1.0 mask 255.255.255.0; network 192.101.2.0 mask 255.255.255.0 Unit 2: network 192.102.1.0 mask 255.255.255.0; network 192.102.2.0 mask 255.255.255.0 Unit 3: network 192.103.1.0 mask 255.255.255.0; network 192.103.2.0 mask 255.255.255.0 Unit 4: network 192.104.1.0 mask 255.255.255.0; network 192.104.2.0 mask 255.255.255.0\n  Unit 1 has EBGP peer Unit 2, Unit 2 has peers Unit 1 and Unit 3, Unit 3 has peers Unit 2 and Unit 4, Unit 4 and Unit 3 are peer.",
+      "id" : "20",
+      "title" : "ip as-path access-list: Block All Routes Originating from a Directly Connected EBGP Neighbor via ip as-path access-list out",
+      "result" : "  1.\tOn Unit 1 BGP route table, that all routes originating from AS 2 have been blocked."
+   },
+   "24" : {
+      "steps" : "  1. On Unit 1, configure your preferred BGP settings (as much as possible), then save all the BGP related settings via write file.\n  2. Let Unit 2 as a BGP peer, configure both Unit 1 and Unit 2 properly to make sure Unit 1 can get several BGP routes from Unit 2.\n  3. Then login Unit 1 GUI to export the current TSR. Check if the TSR includes all configured BGP settings. Also verify that if the BGP route info can be found in the TSR. See Result 1.",
+      "initial" : "  n/a",
+      "id" : "24",
+      "title" : "All BGP related settings and current BGP route info should be included in the exported TSR.",
+      "result" : "  1.\tAll BGP related settings and current BGP route info should be included in the exported TSR."
+   },
+   "10" : {
+      "steps" : "  1. On Unit 2 GUI or CLI, check ospf route info. Make sure that it does have correct ospf routes obtained from Unit 1.\n  2. Configure Unit 2 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, redistribute ospf. Exit back to non-config mode in BGP, save the changes write file\n  3. Configure Unit 3 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1. 4. Then login to Unit 3 GUI->Routing, verify if those routes which appear in the Unit 2 PBR as OSPF routes are in the Unit 3 PBR, also verify if they are in the BGP route table. See Result 1.",
+      "initial" : "  Unit 1: ?\tUnit 1 and Unit 2 are OSPF neighbors with Full state. Also make sure that there are several ospf routes on Unit 2. Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24 Unit 3:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1",
+      "id" : "10",
+      "title" : "Redistribute ospf networks via BGP",
+      "result" : "  1.\tOn Unit 3 PBR table and BGP route table, you should see those routes with correct next hop, interface and metric."
+   },
+   "31" : {
+      "steps" : "  1. Setup s2s vpn tunnel between two sw fws.\n  2. Go to CLI Console of FW1\n  3. Type the following command\n  router bgp 100\n  neighbor 10.20.206.1 remote-as 200\n  neighbor 10.20.206.1 update-source 10.23.71.1\n  neighbor 10.20.206.1 ebgp-multihop 255\n  network 10.23.75.0/24\n  4. Go to CLI Console of FW2\n  5. Type the following command\n  router bgp 200\n  neighbor 10.23.71.1 remote-as 100\n  neighbor 10.23.71.1 update-source 10.20.206.1\n  neighbor 10.23.71.1 ebgp-multihop 255\n  network 18.2.2.0/24\n  6. Verify the neighbor can be established, and advertised network can be learned",
+      "initial" : "  (10.23.71.1)x0 FW1 X1(10.103.166.1)------------------------------------- (10.103.163.161)X1 FW2 X0(10.20.206.1)",
+      "id" : "31",
+      "title" : "ebgp over s2s ipsec vpn",
+      "result" : "  In step 6, the neighbor can be established and advertised network can be learned successfully."
+   },
+   "35" : {
+      "steps" : "  1. On Unit 1 SonicWALL FW, enter BGP CLI to configure basic BGP settings, e.g configure Unit 2 as its BGP neighbor, also network several routes.\n  2. On Unit 2 Cisco router, configure basic BGP settings, e.g configure Unit 1 as its BGP neighbor, also network several routes.\n  3. On each unit, check BGP peer status, verify if the BGP peer can be established successfully. See Result 1.\n  4. On each unit, check BGP route table, verify if the proper BGP routes can be populated successfully. See Result 2.",
+      "initial" : "  Unit 1(SonicWALL FW, AS 1)------------Unit 2(Cisco router, AS 2)",
+      "id" : "35",
+      "title" : "Interoperability test of BGP with Cisco router",
+      "result" : "  1. The BGP peer can be established successfully.\n  2. Proper BGP routes can be populated successfully."
+   },
+   "11" : {
+      "steps" : "  1. On Unit 2 GUI or CLI, check ospf route info. Make sure that it does have correct ospf routes obtained from Unit 1.\n  2. Configure Unit 2 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, redistribute ospf. Exit back to non-config mode in BGP, save the changes write file\n  3. Configure Unit 3 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1.\n  4. Then login to Unit 3 GUI->Routing, verify that those routes which appear in the Unit 2 PBR as OSPF routes are in the Unit 3 PBR.\n  5. Now on Unit 2, enter router configuration then no redistribute ospf. Back to ARS BGP cli mode, show running config to verify that there is no redistribute ospf. See Result 1.\n  6. Then on Unit 3, verify that those Unit 2 ospf networks are neither in the PRB table nor BGP route table. See Result 2.",
+      "initial" : "  Unit 1: ?\tUnit 1 and Unit 2 are OSPF neighbors with Full state. Also make sure that there are several ospf routes on Unit 2. Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24 Unit 3:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1",
+      "id" : "11",
+      "title" : "No redistribute ospf networks via BGP",
+      "result" : "  1.\tCurrent running config shows that there is no redistribute ospf configured.\n  2.\tThese ospf networks should be removed from the PRB table and BGP route table."
+   },
+   "22" : {
+      "steps" : "  1.\tOn Unit 1, configure your preferred BGP settings (as much as possible), then save all the BGP related settings via write file. 2.\tThen reboot FW. Check if all the previous configured BGP settings are intact after FW restart. See Result 1.",
+      "initial" : "  n/a",
+      "id" : "22",
+      "title" : "All BGP related settings are intact after FW restart.",
+      "result" : "  1.\tAll BGP related settings configured previously should be intact and correct after FW restart."
+   },
+   "13" : {
+      "steps" : "  1. On Unit 2 GUI or CLI, check ospf route info. Make sure that it does have several RIP routes obtained from Unit 1.\n  2. Configure Unit 2 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, redistribute rip. Exit back to non-config mode in BGP, save the changes write file\n  3. Configure Unit 3 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1.\n  4. Then login to Unit 3 GUI->Routing, verify that those routes which appear in the Unit 2 PBR as RIP routes are in the Unit 3 PBR. 5. Now on Unit 2, enter router configuration then no redistribute rip. Back to ARS BGP cli mode, show running config to verify that there is no redistribute rip. See Result 1. 6. Then on Unit 3, verify that those Unit 2 RIP networks are neither in the PRB table nor BGP route table. See Result 2.",
+      "initial" : "  Unit 1: ?\tUnit 1 and Unit 2 are RIP neighbors. Also make sure that there are several RIP routes on Unit 2. Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24 Unit 3:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1",
+      "id" : "13",
+      "title" : "No redistribute RIP networks via BGP",
+      "result" : "  1.\tCurrent running config shows that there is no redistribute rip configured.\n  2.\tThese RIP networks should be removed from the PRB table and BGP route table."
+   },
+   "23" : {
+      "steps" : "  1. On Unit 1, configure your preferred BGP settings (as much as possible), then save all the BGP related settings via write file. Now login Unit 1 GUI to export and save the current prefs file.\n  2. Then boot FW to factory default settings and import the saved prefs file. After prefs file loading and FW rebooting, check if all the previous configured BGP settings are intact. See Result 1.",
+      "initial" : "  n/a",
+      "id" : "23",
+      "title" : "All BGP related settings are intact after import prefs file.",
+      "result" : "  1.\tAll BGP related settings configured previously should be intact and correct after loading prefs file and FW rebooting."
+   },
+   "29" : {
+      "steps" : "  1. On the primary SonicWALL unit, enter BGP CLI to configure basic BGP settings, configure unit 2 as its BGP neighbor, network several routes, etc. Then write file to save it.\n  2. On unit 2 FW, enter BGP CLI to configure basic BGP settings, configure the HA as its BGP neighbor, network several routes, etc. Then write file to save it.\n  3. Now on the primary SonicWALL unit and the unit 2, you will see the BGP peer can get to Established status, and proper BGP routes will be populated.\n  4. Then trigger a failover to let the backup unit to take over and become the active unit.\n  5. Now on the backup unit and unit 2, verify that the BGP connection will be re-negotiated and re-established again. And all proper BGP routes will be populated. See Result 1.",
+      "initial" : "  Setup a HA pair properly.",
+      "id" : "29",
+      "title" : "HA with BGP: Verify BGP peer status and BGP route info after a HA failover",
+      "result" : "  1.\tThe BGP connection will be re-negotiated and re-established again. And all proper BGP routes will be populated."
+   },
+   "6" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, redistribute connected. Exit back to non-config mode in BGP, save the changes write file.\n  2. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1.\n  3. Then login to Unit 2 GUI->Routing, verify network 192.168.168.0/24 and 172.16.31.0/24 are both in the PBR with a metric of 20. (Because the default EBGP AD is 20). But X3 network 172.16.32.0/24 should not be in the Unit 2 PBR.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24\n  ?\tX2 Static 172.16.31.1/24\n  ?\tX3 Static 172.16.32.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1, also make sure Unit 1 X0 and X2 are both well connected, but X3 is not connected.",
+      "id" : "6",
+      "title" : "Connected networks can be advertised via BGP, test both active connected route and inactive route",
+      "result" : "  1.\tOn Unit 2 PBR table, network 192.168.168.0/24 and 172.16.31.0/24 are both in the PBR with a metric of 20. (Because the default EBGP AD is 20). But X3 network 172.16.32.0/24 should not be in the Unit 2 PBR."
+   },
+   "3" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, network 192.168.168.0/24. Exit back to non-config mode in BGP, save the changes write file.\n  2. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1 and network 192.168.169.0/24. 1. Then login to Unit 2 GUI->Routing, verify network 192.168.168.0/24 is in the route table with a metric of 20. (Because the default EBGP AD is 20)",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1, also make sure Unit 1 X0 and Unit 2 X0 are both well connected.",
+      "id" : "3",
+      "title" : "Try to advertise a route which is in the current PBR table via Network command",
+      "result" : "  1.\tOn Unit 2 PBR table, network 192.168.168.0/24 should be in the route table with a metric of 20. (Because the default EBGP AD is 20)."
+   },
+   "36" : {
+      "steps" : "  1. On Unit 1 SonicWALL FW, enter BGP CLI to configure basic BGP settings, e.g configure Unit 2 as its BGP neighbor, also network several routes.\n  2. On Unit 2 Juniper router, configure basic BGP settings, e.g configure Unit 1 as its BGP neighbor, also network several routes.\n  3. On each unit, check BGP peer status, verify if the BGP peer can be established successfully. See Result 1.\n  4. On each unit, check BGP route table, verify if the proper BGP routes can be populated successfully. See Result 2.",
+      "initial" : "  Unit 1(SonicWALL FW, AS 1)------------Unit 2(Juniper router, AS 2)",
+      "id" : "36",
+      "title" : "Interoperability test of BGP with Juniper router",
+      "result" : "  1. The BGP peer can be established successfully.\n  2. Proper BGP routes can be populated successfully."
+   },
+   "9" : {
+      "steps" : "  1. Login Unit 1 GUI, add several static routes, make sure these routes are active and valid.\n  2. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, redistribute static. Exit back to non-config mode in BGP, save the changes write file.\n  3. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1.\n  4. Then login to Unit 2 GUI->Routing, verify if those two routes are in the PBR, also verify that they are in the BGP route table.\n  5. Now on Unit 1, enter router configuration then no redistribute static. Back to ARS BGP cli mode, show running config to verify that there is no redistribute static. See Result 1.\n  6. Then on Unit 2, verify that those Unit 1 static networks are neither in the PRB table nor BGP route table. See Result 2.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1",
+      "id" : "9",
+      "title" : "Retrieve static networks via BGP no redistribute static",
+      "result" : "  1. Current running config shows that there is no redistribute static configured.\n  2. These static networks should be removed from the PRB table and BGP route table."
+   },
+   "12" : {
+      "steps" : "  1. On Unit 2 GUI or CLI, check ospf route info. Make sure that it does have correct RIP routes obtained from Unit 1.\n  2. Configure Unit 2 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, redistribute rip. Exit back to non-config mode in BGP, save the changes write file\n  3. Configure Unit 3 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1.\n  4. Then login to Unit 3 GUI->Routing, verify if those routes which appear in the Unit 2 PBR as RIP routes are now in the Unit 3 PBR, also verify if they are in the BGP route table. See Result 1.",
+      "initial" : "  Unit 1: ?\tUnit 1 and Unit 2 are RIP neighbors. Also make sure that there are several RIP routes on Unit 2. Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24 Unit 3:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1",
+      "id" : "12",
+      "title" : "Redistribute RIP networks via BGP",
+      "result" : "  1.\tOn Unit 3 PBR table and BGP route table, you should see those routes with correct next hop, interface and metric."
+   },
+   "15" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Modify IBGP AD to a custom value distance bgp 20 220 200. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 1, network 192.168.168.0/24. Exit back to non-config mode in BGP, save the changes write file.\n  2. Configure Unit 2 BGP settings similarly with router BGP 1, then neighbor 10.1.1.1 remote-as 1 and network 192.168.169.0/24 then write file.\n  3. Then login to Unit 2 to export TSR, verify network 192.168.168.0/24 is in show ip route database with AD 200. You can also verify it on Unit 2 BGP CLI via show ip bgp ipv4 unicast. (Because the default IBGP AD is 200)\n  4. Then login to Unit 1 to export TSR, verify network 192.168.169.0/24 is in show ip route database with AD 220.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1, also make sure Unit 1 X0 and Unit 2 X0 are both well connected.",
+      "id" : "15",
+      "title" : "Verify default/custom Administrative Distance on IBGP peer",
+      "result" : "  1.\tOn Unit 2, you should see that network 192.168.168.0/24 has a default AD 200. 2.\tOn Unit 1, you should see that network 192.168.168.0/24s AD is the custom configured value 220."
+   },
+   "8" : {
+      "steps" : "  1. Login Unit 1 GUI, add two static routes, make sure one route should be valid and active (e.g its nexthop interface is connected), but the other route is inactive.\n  2. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, redistribute static. Exit back to non-config mode in BGP, save the changes write file.\n  3. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1.\n  4. Then login to Unit 2 GUI->Routing, verify if those two routes are in the PBR, also verify if they are in the BGP route table. See Result 1.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 - Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1",
+      "id" : "8",
+      "title" : "Redistribute static networks via BGP (test both active static route and inactive route)",
+      "result" : "  1.\tOn Unit 2 PBR table and BGP route table, you should see that route which is active/valid in Unit 1 PBR should be added successfully. But the inactive route wont be."
+   },
+   "38" : {
+      "steps" : "  1. Add site to site VPN policy on local and remote FW, and use an AO Group as the local and remote network;\n  2. Enable OSPF/RIP on DUT, redistribute the remote VPN network;\n  3. Use command \"show ip route ospf\" on router;\n  4. Disable site to site VPN policy, check router \"show ip route ospf\".",
+      "initial" : "  Router------Local FW(DUT)--site to site VPN established---Remote FW",
+      "id" : "38",
+      "title" : "AO Group used in site to site VPN",
+      "result" : "  in step 1, make sure the VPN policy is established;\n  in step 2, make sure OSPF neighbor established;\n  in step 3, make sure router learned the remote VPN network from DUT;\n  in step 4, make sure when the VPN is down, the remote VPN network routes disappeared on router."
+   },
+   "4" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, make sure try to advertise a route which is NOT in the current PBR, e.g. just network 192.168.123.0/24. Exit back to non-config mode in BGP, save the changes write file.\n  2. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1.\n  3. Then login to Unit 2 GUI->Routing, verify network 192.168.123.0/24 which is not in the Unit 1 PBR, should not be in either PBR or BGP route table(via show ip bgp ipv4 unicast)",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1, also make sure Unit 1 X0 and Unit 2 X0 are both well connected.",
+      "id" : "4",
+      "title" : "Try to advertise a route which is not in the current PBR table via Network command",
+      "result" : "  1.\tOn Unit 2 PBR table, that route should NOT be in the route table or BGP route table."
+   },
+   "34" : {
+      "steps" : "  Firewall should not respond to the tcp syn packet with any reset or fin packet.",
+      "initial" : "  1. Have a box with BGP licensed\n  2. Disable BGP\n  3. Enable Stealth Mode from Firewall->Advanced page\n  4. Use a port scanner to scan port 179 of the firewall",
+      "id" : "34",
+      "title" : "Firewall should not respond to TCP port 179 when BGP is disabled and Stealth Mode is enabled",
+      "result" : ""
+   },
+   "37" : {
+      "steps" : "  1. On Unit 1 SonicWALL FW, enter BGP CLI to configure basic BGP settings, e.g configure Unit 2 as its BGP neighbor, also network several routes.\n  2. On Unit 2 ExtremeNetwork Switch, configure basic BGP settings, e.g configure Unit 1 as its BGP neighbor, also network several routes.\n  3. On each unit, check BGP peer status, verify if the BGP peer can be established successfully. See Result 1.\n  4. On each unit, check BGP route table, verify if the proper BGP routes can be populated successfully. See Result 2.",
+      "initial" : "  Unit 1(SonicWALL FW, AS 1)------------Unit 2(ExtremeNetwork Switch, AS 2)",
+      "id" : "37",
+      "title" : "Interoperability test of BGP with ExtremeNetwork Switch",
+      "result" : "  1. The BGP peer can be established successfully.\n  2. Proper BGP routes can be populated successfully."
+   },
+   "19" : {
+      "steps" : "  1. Configure basic BGP settings on all these four units, make sure that Unit 1 has EBGP peer Unit 2, Unit 2 has peers Unit 1 and Unit 3, Unit 3 has peers Unit 2 and Unit 4, Unit 4 and Unit 3 are peer.\n  2. Configure BGP network settings on all these four units as below. Then write file to save all the BGP settings. Unit 1: network 192.101.1.0 mask 255.255.255.0; network 192.101.2.0 mask 255.255.255.0 Unit 2: network 192.102.1.0 mask 255.255.255.0; network 192.102.2.0 mask 255.255.255.0 Unit 3: network 192.103.1.0 mask 255.255.255.0; network 192.103.2.0 mask 255.255.255.0 Unit 4: network 192.104.1.0 mask 255.255.255.0; network 192.104.2.0 mask 255.255.255.0.\n  3. Now on Unit 1 BGP CLI, enter config mode to configure proper ip as-path access list to block all routes containing AS 3. ip as-path access-list 2 deny _3_ ip as-path access-list 2 permit .* Then on Unit 1, enter router bgp 1 and configure neighbor 10.1.1.2 filter-list 2 in.\n  4. Then check BGP route table(show ip bgp) on Unit 1, verify that all routes containing AS 3 have been blocked. See Result 1.",
+      "initial" : "  10.1.1.1 10.1.1.2 10.2.1.1 10.2.1.2 10.3.1.1 10.3.1.2\n  Unit 1(AS 1) --------Unit 2(AS 2) ---------Unit 3(AS 3) -----------Unit 4(AS 4) Unit 1: network 192.101.1.0 mask 255.255.255.0; network 192.101.2.0 mask 255.255.255.0 Unit 2: network 192.102.1.0 mask 255.255.255.0; network 192.102.2.0 mask 255.255.255.0 Unit 3: network 192.103.1.0 mask 255.255.255.0; network 192.103.2.0 mask 255.255.255.0 Unit 4: network 192.104.1.0 mask 255.255.255.0; network 192.104.2.0 mask 255.255.255.0\n  Unit 1 has EBGP peer Unit 2, Unit 2 has peers Unit 1 and Unit 3, Unit 3 has peers Unit 2 and Unit 4, Unit 4 and Unit 3 are peer.",
+      "id" : "19",
+      "title" : "ip as-path access-list: Block All Routes Containing particular AS Path Number via ip as-path access-list in",
+      "result" : "  1.\tOn Unit 1 BGP route table, all routes all routes containing AS 3 have been blocked."
+   },
+   "5" : {
+      "steps" : "  1. Configure Unit 1 BGP settings, log-in to console CLI and go to config mode, enter ARS BGP cli - route ars-bgp, enter config mode in BGP - configure terminal, enter router configuration - router BGP 1. Enable BGP peering with Unit 2 - neighbor 10.1.1.2 remote-as 2, network 192.168.168.0/24. Exit back to non-config mode in BGP, save the changes write file.\n  2. Configure Unit 2 BGP settings similarly with router BGP 2, then neighbor 10.1.1.1 remote-as 1.\n  3. Then login to Unit 2 GUI->Routing, verify that network 192.168.168.0/24 is in the route table with a metric of 20. (Because the default EBGP AD is 20)\n  4. Now on Unit 1, enter router configuration then no network 192.168.168.0/24. Back to ARS BGP cli mode, show running config to verify that there is no network 192.168.168.0/24. See Result 1.\n  5. Then on Unit 2, verify that those Unit 1 192.168.168.0/24 network is neither in the PRB table nor BGP route table. See Result 2.",
+      "initial" : "  Unit 1:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.168.1/24\n  ?\tX1 Static 10.1.1.1/24 Unit 2:\n  ?\tAdvanced Routing Suite enabled through GUI\n  ?\tX0 - Static 192.168.169.1/24\n  ?\tX1 - Static 10.1.1.2/24 Make sure Unit 1 and Unit 2 can access each other via their X1, also make sure Unit 1 X0 and Unit 2 X0 are both well connected.",
+      "id" : "5",
+      "title" : "Try to retrieve a route via no network command",
+      "result" : "  1. Current running config shows that there is no network 192.168.168.0/24 configured.\n  2. That 192.168.168.0/24 network should be removed from the PRB table and BGP route table."
+   }
+}

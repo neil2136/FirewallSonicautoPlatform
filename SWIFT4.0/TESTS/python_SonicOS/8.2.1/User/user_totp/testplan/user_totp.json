@@ -1,0 +1,541 @@
+{
+   "1514706" : {
+      "steps" : "  Step5- User should login successfully by using code generated in authenticator app.\n  Step7- User gets login without OTP/TOTP Authentication.",
+      "initial" : "  Original ID: 032\n  Original Title: Modify a user, remove the TOTP local group it blonged to;\n  Original Description:",
+      "id" : "1514706",
+      "title" : "Modify a user, remove the TOTP local group it blonged to;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514682" : {
+      "steps" : "  1) In step 3, user 'test' can be successfully created;\n  2) In step 5, FW will accept user 'test', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3) In step 6, authenticator apps will accept the QR code and user 'test' can successfully login by using the PIN code;",
+      "initial" : "  Original ID: 008\n  Original Title: Add a local user, set it as a member of a TOTP local group; ",
+      "id" : "1514682",
+      "title" : "Add a local user, set it as a member of a TOTP local group;",
+      "result" : "  Please install Google Authenticator, DUO Mobile related authenticator apps on your smart phone before executing this case."
+   },
+   "1514742" : {
+      "steps" : "  Verify user lockout functionality with custom values say \u00e2\u01532 attempts every 1 min\u00e2\ufffd and lockout period of 3 minutes using SSL VPN NX client",
+      "initial" : "  Original ID: 074\n  Original Title: Verify user lockout functionality with custom values say \u00e2\u01532 attempts every 1 min\u00e2\ufffd and lockout period of 3 minutes using SSL VPN NX client\n  Original Description: Verify user lockout functionality with custom values say \u00e2\u01532 attempts every 1 min\u00e2\ufffd and lockout period of 3 minutes using SSL VPN NX client",
+      "id" : "1514742",
+      "title" : "Verify user lockout functionality with custom values say \u00e2\u01532 attempts every 1 min\u00e2\ufffd and lockout period of 3 minutes using SSL VPN NX client",
+      "result" : "  TBD"
+   },
+   "1514740" : {
+      "steps" : "  Verify user lockout functionality with default values \u00e2\u01535 attempts every 1 min\u00e2\ufffd and lockout period of 5 minutes using SSL VPN NX client",
+      "initial" : "  Original ID: 072\n  Original Title: Verify user lockout functionality with default values \u00e2\u01535 attempts every 1 min\u00e2\ufffd and lockout period of 5 minutes using SSL VPN NX client\n  Original Description: Verify user lockout functionality with default values \u00e2\u01535 attempts every 1 min\u00e2\ufffd and lockout period of 5 minutes using SSL VPN NX client",
+      "id" : "1514740",
+      "title" : "Verify user lockout functionality with default values \u00e2\u01535 attempts every 1 min\u00e2\ufffd and lockout period of 5 minutes using SSL VPN NX client",
+      "result" : "  TBD"
+   },
+   "1514686" : {
+      "steps" : "  Qr code including the share key info should be displayed in GUI after an unbinding action",
+      "initial" : "  Original ID: 012\n  Original Title: Qrcode including the share key info should be displayed in GUI after an unbinding action;",
+      "id" : "1514686",
+      "title" : "Qrcode including the share key info should be displayed in GUI after an unbinding action;",
+      "result" : "  \n  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514739" : {
+      "steps" : "  Verify user lockout functionality with default values \u00e2\u01535 attempts every 1 min\u00e2\ufffd and lockout period of 5 minutes using SSL VPN web portal",
+      "initial" : "  Original ID: 071\n  Original Title: Verify user lockout functionality with default values \u00e2\u01535 attempts every 1 min\u00e2\ufffd and lockout period of 5 minutes using SSL VPN web portal\n  Original Description: Verify user lockout functionality with default values \u00e2\u01535 attempts every 1 min\u00e2\ufffd and lockout period of 5 minutes using SSL VPN web portal",
+      "id" : "1514739",
+      "title" : "Verify user lockout functionality with default values \u00e2\u01535 attempts every 1 min\u00e2\ufffd and lockout period of 5 minutes using SSL VPN web portal",
+      "result" : "  TBD"
+   },
+   "1564145" : {
+      "steps" : "  2. Emergency Scratch code should be visible on first login and user is able to login with the authenticator code.\n  3. User is able to login with the Emergency Scratch Code.\n  4. Once Admin got loggedin with the Scratch code. Admin is not able to use same scratch code again next time in order to login.\n  5. Once we unbind TOTP new emergency code should be generated and Admin is now able to login with the new emergency code only once.",
+      "initial" : "  Verify BuiltIn Admin Emergency Scratch Code Functionality.",
+      "id" : "1564145",
+      "title" : "BuiltIn Admin Emergency Scratch Code Functionality.",
+      "result" : ""
+   },
+   "1514693" : {
+      "steps" : "  User should not be able to login by using incorrect code.",
+      "initial" : "  Original ID: 019\n  Original Title: FW should not accept incorrect 2FA code;\n  Original Description:",
+      "id" : "1514693",
+      "title" : "FW should not accept incorrect 2FA code;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514733" : {
+      "steps" : "  1&#65289;In step 3, a TOTP user should login through portal page for the first time;\n  2&#65289;In step 4,FW will accept TOTP user, and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3&#65289;In step 5, a subsequent TOTP auth pop-up window will promptafter clicking 'Connect' button, TOTP auth works fine and NX client can connect to FW;\n  4) In step 6 and step 7, after unbind operation, the whole TOTP process works fine.",
+      "initial" : "  Original ID: 059\n  Original Title: A domain user object for the user in a specific domain\n  Original Description:",
+      "id" : "1514733",
+      "title" : "A domain user object for the user in a specific domain",
+      "result" : "  1. Authenticator apps has been installed on the smart phone, such as Google Authenticator, DUO Mobile.\n  2. Configure 'LDAP + Local Users' for User authentication method, and do proper settings for LDAP Server Settings, make sure users can be successfully authenticated on LDAP domain server.\n  3.SSLVPN Service is enabled, NetExtender client is installed on client PCs or mobile devices."
+   },
+   "1514698" : {
+      "steps" : "  Step4- User should login successfully by using code generated in authenticator app.\n  Step6- New authentication page with Qr code including the share key info should be displayed in GUI after an unbinding action.",
+      "initial" : "  Original ID: 024\n  Original Title: Unbind TOTP key on 'Edit User' page by current user with administrator privilege;\n  Original Description:",
+      "id" : "1514698",
+      "title" : "Unbind TOTP key on 'Edit User' page by current user with administrator privilege;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514692" : {
+      "steps" : "  Step4- User should login successfully by using code generated in authenticator app.\n  Step5- User is getting logged in multiple browsers.",
+      "initial" : "  Original ID: 018\n  Original Title: Verify basic TOTP Auth works fine bye using multiple web browsers;\n  Original Description:",
+      "id" : "1514692",
+      "title" : "Verify basic TOTP Auth works fine bye using multiple web browsers;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514737" : {
+      "steps" : "  Step 4: After the login QR code should be displayed &amp; text code should be shown after clicking on the text code",
+      "initial" : "  Original ID: 063\n  Original Title: GEN7-21320: [TZ270] UI doesn't display \"Text code\" to add the TOTP/2FA profile manually[Quarterhorse Technology, Inc.]\n  Original Description:",
+      "id" : "1514737",
+      "title" : "GEN7-21320: [TZ270] UI doesn't display \"Text code\" to add the TOTP/2FA profile manually[Quarterhorse Technology, Inc.]",
+      "result" : "  TBD"
+   },
+   "1514688" : {
+      "steps" : "  Emergency scratch code should be displayed in GUI after an unbinding action.",
+      "initial" : "  Original ID: 014\n  Original Title: Emergency scratch code should be displayed in GUI after an unbinding action;\n  Original Description:",
+      "id" : "1514688",
+      "title" : "Emergency scratch code should be displayed in GUI after an unbinding action;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514743" : {
+      "steps" : "  Step3- User should login successfully by using code generated in authenticator app.\n  Step4- FW should be in stable Status.",
+      "initial" : "  Original ID: GEN7-24658\n  Original Title: GEN7-24658:SonicOS 2/3/4 on both Active and Idle down when to login FW with build-in admin when TOTP (2FA)is enabled\n  Original Description:",
+      "id" : "1514743",
+      "title" : "GEN7-24658:SonicOS 2/3/4 on both Active and Idle down when to login FW with build-in admin when TOTP (2FA)is enabled",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)\n  Configure HA firewalls."
+   },
+   "1514724" : {
+      "steps" : "  Step4- User should not be able to login with a timing mismatch.",
+      "initial" : "  Original ID: 050\n  Original Title: Verify TOTP Auth when FW has incorrect system time;\n  Original Description:",
+      "id" : "1514724",
+      "title" : "Verify TOTP Auth when FW has incorrect system time;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514736" : {
+      "steps" : "  1) In step 3, OTP works fine for domain user;\n  2) In step 4, local user login works fine and there's no OTP procedure will appear;\n  3)In step 6, OTP works fine for local user, domain user login works fine and there's no OTP procedure will appear.",
+      "initial" : "  Original ID: 062\n  Original Title: OTP mechanism for domain user imported from LDAP server works fine while there is a same name local user.\n  Original Description: Scenarios:\n  LDAP + Local Users\tDomain user email OTP + Local user non email OTP\n  Domain user non email OTP + Local user email OTP\n  Radius + Local Users\tDomain user email OTP + Local user non email OTP\n  Domain user non email OTP + Local user email OTP",
+      "id" : "1514736",
+      "title" : "OTP mechanism for domain user imported from LDAP server works fine while there is a same name local user.",
+      "result" : "  1. Authenticator apps has been installed on the smart phone, such as Google Authenticator, DUO Mobile.\n  2. Configure 'LDAP + Local Users' for User authentication method, and do proper settings for LDAP Server Settings, make sure users can be successfully authenticated on LDAP domain server."
+   },
+   "2682876" : {
+      "steps" : "  1\uff09In step 5, a TOTP user should login through portal page for the first time;\n  2\uff09In step 6,FW will accept user 's3', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3\uff09In step 7, a subsequent TOTP auth pop-up window will prompt after clicking 'Connect' button, TOTP auth works fine and NX client can connect to FW;\n  4) NX clients can connect to FW from different zones with TOTP auth configured;",
+      "initial" : "  TBD",
+      "id" : "2682876",
+      "title" : "TOTP auth support SSLVPN users login from DMZ Zone NetExtender;",
+      "result" : ""
+   },
+   "1550996" : {
+      "steps" : "  4. Emergency Scratch code should be visible on first login and user is able to login with the authenticator code.\n  5. User is able to login with the Emergency Scratch Code.\n  6. Once user login once with the Scratch code. user is not able to use same scratch code again next time in order to login.\n  8. Once we unbind TOTP new emergency code should be generated and user is now able to login with the new emergency code only once.",
+      "initial" : "  Emergency Scratch Code Automatically Unbind once the Emergency Scratch Code has been used.",
+      "id" : "1550996",
+      "title" : "GEN6-2819 - Emergency Scratch Code Automatically Unbind once the Emergency Scratch Code has been used.",
+      "result" : ""
+   },
+   "2682877" : {
+      "steps" : "  Step5- FW will accept user 's2', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  Step6- Differ users can connect to FW from different zones with TOTP auth configured.",
+      "initial" : "  Original ID: 036\n  Original Title: TOTP auth support SSLVPN users login from web portol;\n  Original Description:",
+      "id" : "2682877",
+      "title" : "TOTP auth support SSLVPN users login from web portal from WAN;",
+      "result" : "  TBD"
+   },
+   "1514721" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 047\n  Original Title: Verify user authenticate when both nested father and grand-father user groups have TOTP auth;\n  Original Description:",
+      "id" : "1514721",
+      "title" : "Verify user authenticate when both nested father and grand-father user groups have TOTP auth;",
+      "result" : "  TBD"
+   },
+   "1550995" : {
+      "steps" : "  1. Emergency scratch code should be visible when user try to login first time when TOTP is enabled for the user.\n  2. Once after using Emergency scratch code the user is not allowed to use old emergency scratch code again i.e emergency scratch code automatically unbind once it has been used.",
+      "initial" : "  Successfully login with the Emergency code.",
+      "id" : "1550995",
+      "title" : "GEN6-2819 - Emergency Scratch Code Loggin Functionality.",
+      "result" : "  Firewall with the Required SonicOS Firmware."
+   },
+   "1514679" : {
+      "steps" : "  1) In step 3, user 'test' can be successfully created;\n  2) In step 4, FW will accept user 'test', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3) In step 5, authenticator apps will accept the QR code and user 'test' can successfully login by using the PIN code;\n  4) In step 6, once 5 minutes timeout, user 'test' will be deleted from local user list;",
+      "initial" : "  Original ID: 005\n  Original Title: Add a local user with 'Account Lifetime' configured, select TOTP as its OTP method, verify TOTP Auth works;\n  Original Description:",
+      "id" : "1514679",
+      "title" : "Add a local user with 'Account Lifetime' configured, select TOTP as its OTP method, verify TOTP Auth works;",
+      "result" : "  Please install Google Authenticator, DUO Mobile related authenticator apps on your smart phone before executing this case."
+   },
+   "1514699" : {
+      "steps" : "  Step4- User should login successfully by using code generated in authenticator app.\n  Step6- New authentication page with Qr code including the share key info should be displayed in GUI after an unbinding action.",
+      "initial" : "  Original ID: 025\n  Original Title: Unbind TOTP key on login page just after current user submit its 2FA code;\n  Original Description:",
+      "id" : "1514699",
+      "title" : "Unbind TOTP key on login page just after current user submit its 2FA code;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514677" : {
+      "steps" : "  1) In step 3, user 'test' can be successfully created;\n  2) In step 5, FW will accept user 'test', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3) In step 6, authenticator apps will accept the QR code and user 'test' can successfully login by using the PIN code;",
+      "initial" : "  Original ID: 003\n  Original Title: Add a local user, select TOTP as its OTP method;\n  Original Description:",
+      "id" : "1514677",
+      "title" : "Add a local user, select TOTP as its OTP method;",
+      "result" : "  Please install Google Authenticator, DUO Mobile related authenticator apps on your smart phone before executing this case."
+   },
+   "1514734" : {
+      "steps" : "  1\uff09In step 4, a TOTP user should login through portal page for the first time;\n  2\uff09In step 5,FW will accept TOTP user, and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3\uff09In step 6, a subsequent TOTP auth pop-up window will promptafter clicking 'Connect' button, TOTP auth works fine and NX client can connect to FW;\n  4) In step 6 and step 7, both domain and non-domain user 'test1' can successfully login from portal and NetExtender client;\n  5) In step 8, non-domain user can still login from NetExtender client by using the PIN generated by Authenticator;\n  6) In step 9, domain user can still login from NetExtender client by using the PIN generated by Authenticator.",
+      "initial" : "  Original ID: 060\n  Original Title: Domain user and non-domain user has the same name, bind and unbind operation will not affect each other.\n  Original Description:",
+      "id" : "1514734",
+      "title" : "Domain user and non-domain user has the same name, bind and unbind operation will not affect each other.",
+      "result" : "  1. Authenticator apps has been installed on the smart phone, such as Google Authenticator, DUO Mobile.\n  2. Configure 'LDAP + Local Users' for User authentication method, and do proper settings for LDAP Server Settings, make sure users can be successfully authenticated on LDAP domain server.\n  3.SSLVPN Service is enabled, NetExtender client is installed on client PCs or mobile devices."
+   },
+   "1514690" : {
+      "steps" : "  1) In step 6, PIN code generated on Duo Mobile app can be successfully verified by FW;\n  2) Re-login will always succeed;\n  3) All the TOTP users can login successfully;",
+      "initial" : "  Original ID: 016\n  Original Title: User can login by using correct 2FA code generated by Duo Mobile;\n  Original Description:",
+      "id" : "1514690",
+      "title" : "User can login by using correct 2FA code generated by Duo Mobile;",
+      "result" : "  Please install DUO Mobile app on your smartphone before executing this case."
+   },
+   "1514687" : {
+      "steps" : "  In step 5, FW will accept user 'test', and a subsequent TOTP auth page will display, emergency scratch code is displayed on the page.",
+      "initial" : "  Original ID: 013\n  Original Title: Emergency scratch code should be displayed in GUI on the first login;\n  Original Description: Emergency scratch code is an eight-bit decimal sequence, it can be used to login FW for only once.",
+      "id" : "1514687",
+      "title" : "Emergency scratch code should be displayed in GUI on the first login;",
+      "result" : "  TBD"
+   },
+   "1514705" : {
+      "steps" : "  Step2- User should login successfully.\n  Step5- User should login successfully by using code generated in authenticator app.",
+      "initial" : "  Original ID: 031\n  Original Title: Modify a user, add a TOTP local group;\n  Original Description:",
+      "id" : "1514705",
+      "title" : "Modify a user, add a TOTP local group;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514741" : {
+      "steps" : "  Verify user lockout functionality with custom values say \u00e2\u01532 attempts every 1 min\u00e2\ufffd and lockout period of 3 minutes using SSL VPN web portal",
+      "initial" : "  Original ID: 073\n  Original Title: Verify user lockout functionality with custom values say \u00e2\u01532 attempts every 1 min\u00e2\ufffd and lockout period of 3 minutes using SSL VPN web portal\n  Original Description: Verify user lockout functionality with custom values say \u00e2\u01532 attempts every 1 min\u00e2\ufffd and lockout period of 3 minutes using SSL VPN web portal",
+      "id" : "1514741",
+      "title" : "Verify user lockout functionality with custom values say \u00e2\u01532 attempts every 1 min\u00e2\ufffd and lockout period of 3 minutes using SSL VPN web portal",
+      "result" : "  TBD"
+   },
+   "1514713" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 039\n  Original Title: TOTP auth support Group VPN users login;\n  Original Description:",
+      "id" : "1514713",
+      "title" : "TOTP auth support Group VPN users login;",
+      "result" : "  TBD"
+   },
+   "1564144" : {
+      "steps" : "  2. QR code should be shown when the user login for the very first time. And authenticator app is successfully bind with the QR code.\n  3. Admin user is succeffully login to the firewall.",
+      "initial" : "  Verify BuiltIn Admin TOTP Functionality.",
+      "id" : "1564144",
+      "title" : "BuiltIn Admin TOTP Login Functionality",
+      "result" : ""
+   },
+   "1514684" : {
+      "steps" : "  User 'test' should be added as a member of Domain TOTP group.",
+      "initial" : "  Original ID: 010\n  Original Title: Add a local user, set it as a member of a TOTP local domain group; ",
+      "id" : "1514684",
+      "title" : "Add a local user, set it as a member of a TOTP local domain group;",
+      "result" : "  Please install Google Authenticator, DUO Mobile related authenticator apps on your smart phone before executing this case."
+   },
+   "1514714" : {
+      "steps" : "  Step5- User should login successfully by using code generated in authenticator app.",
+      "initial" : "  Original ID: 040\n  Original Title: Radius user authenticate from TOTP group;\n  Original Description:",
+      "id" : "1514714",
+      "title" : "Radius user authenticate from TOTP group;",
+      "result" : "  - Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)\n  - Select User authentication method as Radius"
+   },
+   "1514738" : {
+      "steps" : "  1. In step 3, After giving the credentials, It should redirect to 2FA page that includes QR code &amp; Text Code.<br /> 2. In step 4, After clicking on text code, A code should be displayed.<br /> 3. In step 5, Authenticator app should successfully binded by using the 'Text Code'.",
+      "initial" : "  Original ID: 067\n  Original Title: Bind the authenticator app with the 'text code' in place of QR code.\n  Original Description:",
+      "id" : "1514738",
+      "title" : "Bind the authenticator app with the 'text code' instead of QR code.",
+      "result" : "  1. Any authenticator app should be installed in smartphone, Such as Google Authenticator, DUO Mobile.<br /> 2. Set 'Local Users' in 'Users &gt; Settings &gt; User authentication method'."
+   },
+   "1514723" : {
+      "steps" : "  All the TOTP related configurations are intact and correct;",
+      "initial" : "  Original ID: 049\n  Original Title: Export preference file and check TOTP related configurations;\n  Original Description:",
+      "id" : "1514723",
+      "title" : "Export preference file and check TOTP related configurations;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514711" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 037\n  Original Title: TOTP auth support mobile client on different platforms, including iOS, Andriod and Windows;\n  Original Description:",
+      "id" : "1514711",
+      "title" : "TOTP auth support mobile client on different platforms, including iOS, Andriod and Windows;",
+      "result" : "  TBD"
+   },
+   "1514695" : {
+      "steps" : "  User should not be able to login by using outdated code.",
+      "initial" : "  Original ID: 021\n  Original Title: User cannot login by using outdated 2FA code more than 30 seconds;\n  Original Description:",
+      "id" : "1514695",
+      "title" : "User cannot login by using outdated 2FA code more than 30 seconds;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514700" : {
+      "steps" : "  Step4- User should login successfully by using code generated in authenticator app.\n  Step6- New authentication page with Qr code including the share key info should be displayed in GUI after an unbinding action.",
+      "initial" : "  Original ID: 026\n  Original Title: Unbind TOTP key on 'Edit User' page by Sonicwall Administrator;\n  Original Description:",
+      "id" : "1514700",
+      "title" : "Unbind TOTP key on 'Edit User' page by Sonicwall Administrator;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514707" : {
+      "steps" : "  Step4- User should login successfully by using code generated in authenticator app.\n  Step5- User login successful.",
+      "initial" : "  Original ID: 033\n  Original Title: Modify a user, change its password, verify TOTP Auth works fine;\n  Original Description:",
+      "id" : "1514707",
+      "title" : "Modify a user, change its password, verify TOTP Auth works fine;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514696" : {
+      "steps" : "  Step4- User should be able to login by using authentication code on App.\n  Step5- User should not be able to login by using used code.",
+      "initial" : "  Original ID: 022\n  Original Title: FW should not accept an OTP when it has been validated.\n  Original Description:",
+      "id" : "1514696",
+      "title" : "FW should not accept an OTP when it has been validated.",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514731" : {
+      "steps" : "  1\uff09In step 3, a TOTP user should login through portal page for the first time;\n  2\uff09In step 4,FW will accept TOTP user, and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3\uff09In step 5, a subsequent TOTP auth pop-up window will promptafter clicking 'Connect' button, TOTP auth works fine and NX client can connect to FW;\n  7) In step 7, NX clients work fine during 12 hours with continuous traffic.",
+      "initial" : "  Original ID: 057\n  Original Title: Long time running with continuous traffic of SSLVPN user based on TOTP auth.\n  Original Description:",
+      "id" : "1514731",
+      "title" : "Long time running with continuous traffic of SSLVPN user based on TOTP auth.",
+      "result" : "  1. Authenticator apps has been installed on the smart phone, such as Google Authenticator, DUO Mobile.\n  2.SSLVPN Service is enabled, NetExtender client is installed on client PCs or mobile devices."
+   },
+   "1514720" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 046\n  Original Title: Verify user authenticate when only nested grand-father user group has TOTP auth;\n  Original Description:",
+      "id" : "1514720",
+      "title" : "Verify user authenticate when only nested grand-father user group has TOTP auth;",
+      "result" : "  TBD"
+   },
+   "2682878" : {
+      "steps" : "  Step5- FW will accept user 's3', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  Step6- Differ users can connect to FW from different zones with TOTP auth configured.",
+      "initial" : "  Original ID: 036\n  Original Title: TOTP auth support SSLVPN users login from web portol;\n  Original Description:",
+      "id" : "2682878",
+      "title" : "TOTP auth support SSLVPN users login from web portal from DMZ;",
+      "result" : "  TBD"
+   },
+   "1514715" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 041\n  Original Title: Radius user authenticate from TOTP group with 'Allow only users listed locally' checked;\n  Original Description:",
+      "id" : "1514715",
+      "title" : "Radius user authenticate from TOTP group with 'Allow only users listed locally' checked;",
+      "result" : "  TBD"
+   },
+   "1514712" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 038\n  Original Title: TOTP auth support site to site VPN tunnel management;\n  Original Description:",
+      "id" : "1514712",
+      "title" : "TOTP auth support site to site VPN tunnel management;",
+      "result" : "  TBD"
+   },
+   "1514676" : {
+      "steps" : "  \"TOTP\" item exists in the \"one-time passwords method\" drop list.",
+      "initial" : "  Original ID: 002\n  Original Title: Check TOTP is included in the OTP method list for both user and groups imported/mirrored from LDAP imported and LDAP mirrored;\n  Original Description:",
+      "id" : "1514676",
+      "title" : "Check TOTP is included in the OTP method list for both user and groups imported/mirrored from LDAP.",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514727" : {
+      "steps" : "  Step3- User should login successfully by using code generated in authenticator app.\n  Step4- User should be able to login.",
+      "initial" : "  Original ID: 053\n  Original Title: Verify TOTP Auth works fine after upgrade from old version; Original Description:",
+      "id" : "1514727",
+      "title" : "Verify TOTP Auth works fine after upgrade from old version;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514725" : {
+      "steps" : "  \n  Step4- User should not be able to login with a timing mismatch.",
+      "initial" : "  Original ID: 051\n  Original Title: Verify TOTP Auth when authenticator client has incorrect system time;\n  Original Description:",
+      "id" : "1514725",
+      "title" : "Verify TOTP Auth when authenticator client has incorrect system time;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514678" : {
+      "steps" : "  1) In step 3, user 'test' can be successfully created;\n  2) In step 5, FW will accept user 'test', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are display on the page;\n  3) In step 6, authenticator apps will accept the QR code and user 'test' can successfully login by using the PIN code;\n  4) In step 7, user can update its password;",
+      "initial" : "  Original ID: 004\n  Original Title: Add a local user with 'User must change password' checked, select TOTP as its OTP method;\n  Original Description:",
+      "id" : "1514678",
+      "title" : "Add a local user with 'User must change password' checked, select TOTP as its OTP method;",
+      "result" : "  Please install Google Authenticator, DUO Mobile related authenticator apps on your smart phone before executing this case."
+   },
+   "1514675" : {
+      "steps" : "  \"TOTP\" item exists in the \"one-time passwords method\" drop list in step 2;",
+      "initial" : "  Original ID: 001\n  Original Title: Check TOTP is included in the OTP method list for both Local Users and Local Groups;",
+      "id" : "1514675",
+      "title" : "Check TOTP is included in the OTP method list for both Local Users and Local Groups;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514683" : {
+      "steps" : "  Domain group should successfully added as a member of TOTP local user group- GROUP12.",
+      "initial" : "  Original ID: 009\n  Original Title: Add a local group with domain configured, set it as a member of a TOTP local group;",
+      "id" : "1514683",
+      "title" : "Add a local group with domain configured, set it as a member of a TOTP local group;",
+      "result" : "  Please install Google Authenticator, DUO Mobile related authenticator apps on your smart phone before executing this case."
+   },
+   "2451310" : {
+      "steps" : "  Using accent characters in username should must leads to MFA for TOTP",
+      "initial" : "  Using accent characters(ex: \u00e4, \u00eb, \u00ef, \u00f6, \u00fc, \u00ff) in username should must leads to MFA for TOTP",
+      "id" : "2451310",
+      "title" : "Duplication of Local/AD user leads to MFA for TOTP",
+      "result" : "  Download any authenticator app in mobile to bind the TOTP"
+   },
+   "1514697" : {
+      "steps" : "  Step4- User should login successfully by using code generated in authenticator app.\n  Step6- New authentication page should prompt with new QR code and details.\n  - Login successfully with the code generated in App after binding the App by scanning QR code.",
+      "initial" : "  Original ID: 023\n  Original Title: Delete an TOTP user, then create the same user account, verify TOTP Auth process;\n  Original Description:",
+      "id" : "1514697",
+      "title" : "Delete an TOTP user, then create the same user account, verify TOTP Auth process;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514703" : {
+      "steps" : "  Step4- User should login successfully by using code generated in authenticator app.\n  Step6- User should login successfully without any OTP/TOTP authentication.",
+      "initial" : "  Original ID: 029\n  Original Title: Modify a user, change OTP method from 'TOTP' to 'Disabled';\n  Original Description:",
+      "id" : "1514703",
+      "title" : "Modify a user, change OTP method from 'TOTP' to 'Disabled';",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514685" : {
+      "steps" : "  In step 5, FW will accept user 'test', and a subsequent TOTP auth page will display, Qr code including the share key info should be displayed in GUI on the first login.",
+      "initial" : "  Original ID: 011\n  Original Title: Qr code including the share key info should be displayed in GUI on the first login;",
+      "id" : "1514685",
+      "title" : "Qrcode including the share key info should be displayed in GUI on the first login;",
+      "result" : "  Please install Google Authenticator, DUO Mobile related authenticator apps on your smart phone before executing this case."
+   },
+   "1514730" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 056\n  Original Title: GMS management for TOTP user/group;\n  Original Description:",
+      "id" : "1514730",
+      "title" : "GMS management for TOTP user/group;",
+      "result" : "  TBD"
+   },
+   "1514701" : {
+      "steps" : "  1) In step 3, user 'test' can login FW successfully;\n  2) In step 4, user 'test' can be modified successfully;\n  3) In step 5, FW will accept user 'test', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  4) In step 6, authenticator apps will accept the QR code and user 'test' can successfully login by using the PIN code;",
+      "initial" : "  Original ID: 027\n  Original Title: Modify a user, change OTP method from 'Disabled' to 'TOTP', verify TOTP Auth works fine;\n  Original Description:",
+      "id" : "1514701",
+      "title" : "Modify a user, change OTP method from 'Disabled' to 'TOTP', verify TOTP Auth works fine;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514726" : {
+      "steps" : "  Step3- User should login successfully by using code generated in authenticator app.\n  Step4- User should be able to login.",
+      "initial" : "  Original ID: 052\n  Original Title: Verify TOTP Auth after rebooting the FW;\n  Original Description:",
+      "id" : "1514726",
+      "title" : "Verify TOTP Auth after rebooting the FW;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514728" : {
+      "steps" : "  Step3- User should login successfully by using code generated in authenticator app.\n  Step4- User should be able to login.",
+      "initial" : "  Original ID: 054\n  Original Title: Verify TOTP Auth works fine during HA failover/failback;\n  Original Description:",
+      "id" : "1514728",
+      "title" : "Verify TOTP Auth works fine during HA failover/failback;",
+      "result" : "  - Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)\n  - Configure HA firewalls."
+   },
+   "1514680" : {
+      "steps" : "  1) User authentication should be triggered, Login with domain user 2) Subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3) Authenticator apps will accept the QR code and user 'local@local.al' can successfully login by using the PIN code;",
+      "initial" : "  Original ID: 006\n  Original Title: Add a local user with domain configured, select TOTP as its OTP method, verify TOTP Auth works;\n  Original Description:",
+      "id" : "1514680",
+      "title" : "Add a local user with domain configured, select TOTP as its OTP method, verify TOTP Auth works;",
+      "result" : "  Please install Google Authenticator, DUO Mobile related authenticator apps on your smart phone before executing this case."
+   },
+   "1514710" : {
+      "steps" : "  Step5- FW will accept user 's1', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  Step6- Differ users can connect to FW from different zones with TOTP auth configured.",
+      "initial" : "  Original ID: 036\n  Original Title: TOTP auth support SSLVPN users login from web portol;\n  Original Description:",
+      "id" : "1514710",
+      "title" : "TOTP auth support SSLVPN users login from web portal from LAN Zone;",
+      "result" : "  TBD"
+   },
+   "1514691" : {
+      "steps" : "  Step4- User should login by using emergency scratch code for one time.\n  Step5- User should not be able to login by using emergency scratch code for second time.",
+      "initial" : "  Original ID: 017\n  Original Title: User can login by using emergency scratch code for only one time;\n  Original Description:",
+      "id" : "1514691",
+      "title" : "User can login by using emergency scratch code for only one time;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514719" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 045\n  Original Title: Verify user authenticate when only nested father user group has TOTP auth;\n  Original Description:",
+      "id" : "1514719",
+      "title" : "Verify user authenticate when only nested father user group has TOTP auth;",
+      "result" : "  TBD"
+   },
+   "1514689" : {
+      "steps" : "  1) In step 6, PIN code generated on Google Authenticator apps can be successfully verified by FW;\n  2) Re-login will always succeed;\n  3) All the TOTP users can login successfully;",
+      "initial" : "  Original ID: 015\n  Original Title: User can login by using correct 2FA code generated by Google Authenticator;\n  Original Description:",
+      "id" : "1514689",
+      "title" : "User can login by using correct 2FA code generated by Google Authenticator;",
+      "result" : "  Please install Google Authenticator app on your smartphone before executing this case."
+   },
+   "1514681" : {
+      "steps" : "  1) TOTP group with \"Any Domain\" can be created successfully;\n  2)TOTP group with certain domain name can be created successfully;",
+      "initial" : "  Original ID: 007\n  Original Title: Add a local user group, select TOTP as its OTP method;",
+      "id" : "1514681",
+      "title" : "Add a locl user group, select TOTP as its OTP method;",
+      "result" : "  Please install Google Authenticator, DUO Mobile related authenticator apps on your smart phone before executing this case."
+   },
+   "1514732" : {
+      "steps" : "  1\uff09In step 3, a TOTP user should login through portal page for the first time;\n  2\uff09In step 4,FW will accept TOTP user, and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3\uff09In step 5, a subsequent TOTP auth pop-up window will promptafter clicking 'Connect' button, TOTP auth works fine and NX client can connect to FW;\n  4) In step 6 and step 7, after unbind operation, the whole TOTP process works fine.",
+      "initial" : "  Original ID: 058\n  Original Title: A domain user object for the user in any domain.\n  Original Description:",
+      "id" : "1514732",
+      "title" : "A domain user  object for the user in any domain.",
+      "result" : "  1. Authenticator apps has been installed on the smart phone, such as Google Authenticator, DUO Mobile.\n  2. Configure 'LDAP + Local Users' for User authentication method, and do proper settings for LDAP Server Settings, make sure users can be successfully authenticated on LDAP domain server.\n  3.SSLVPN Service is enabled, NetExtender client is installed on client PCs or mobile devices."
+   },
+   "2682754" : {
+      "steps" : "  1\uff09In step 5, a TOTP user should login through portal page for the first time;\n  2\uff09In step 6,FW will accept user 's2', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3\uff09In step 7, a subsequent TOTP auth pop-up window will prompt after clicking 'Connect' button, TOTP auth works fine and NX client can connect to FW;\n  4) NX clients can connect to FW from different zones with TOTP auth configured;",
+      "initial" : "  TBD",
+      "id" : "2682754",
+      "title" : "TOTP auth support SSLVPN users login from WAN Zone NetExtender",
+      "result" : "  SSLVPN Service is enabled, NetExtender client is installed on client PCs or mobile devices."
+   },
+   "1514702" : {
+      "steps" : "  1) In step 3, user 'test' can login FW successfully;\n  2) In step 4, user 'test' can be modified successfully;\n  3) In step 5, FW will accept user 'test', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  4) In step 6, authenticator apps will accept the QR code and user 'test' can successfully login by using the PIN code;",
+      "initial" : "  Original ID: 028\n  Original Title: Modify a user, change OTP method from 'OTP via Mail' to 'TOTP', verify TOTP Auth works fine;\n  Original Description:",
+      "id" : "1514702",
+      "title" : "Modify a user, change OTP method from 'OTP via Mail' to 'TOTP', verify TOTP Auth works fine;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514718" : {
+      "steps" : "  Step4- User should login successfully by using code generated in authenticator app.",
+      "initial" : "  Original ID: 044\n  Original Title: Guest user authenticate when TOTP Auth for Guest Service group is enabled;\n  Original Description:",
+      "id" : "1514718",
+      "title" : "Guest user authenticate when TOTP Auth for Guest Service group is enabled;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514722" : {
+      "steps" : "  Step3- User should login successfully by using code generated in authenticator app.\n  Step4- User should login.",
+      "initial" : "  Original ID: 048\n  Original Title: Export/Import exp file from a FW to another one, verify TOTP Auth;\n  Original Description:",
+      "id" : "1514722",
+      "title" : "Export/Import exp file from a FW to another one, verify TOTP Auth;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "2622907" : {
+      "steps" : "  After binding firewall wan ip and firewall serial number shouldn't be shown",
+      "initial" : "  GEN7-47545: Authenticator app displays Firewall WAN IP and Serial Number when using TOTP with Virtual Office Portal",
+      "id" : "2622907",
+      "title" : "GEN7-47545: Authenticator app displays Firewall WAN IP and Serial Number when using TOTP with Virtual Office Portal",
+      "result" : "  Configure SSLVPN in the firewall and follow the steps"
+   },
+   "1514717" : {
+      "steps" : "  TBD",
+      "initial" : "  Original ID: 043\n  Original Title: LDAP user authenticate from TOTP group with 'Allow only users listed locally' checked;\n  Original Description:",
+      "id" : "1514717",
+      "title" : "LDAP user authenticate from TOTP group with 'Allow only users listed locally' checked;",
+      "result" : "  TBD"
+   },
+   "1514704" : {
+      "steps" : "  Step4- User should login successfully by using code generated in authenticator app.\n  Step6- User should login successfully with OTP via Mail authentication.",
+      "initial" : "  Original ID: 030\n  Original Title: Modify a user, change OTP method from 'TOTP' to 'OTP via Mail';\n  Original Description:",
+      "id" : "1514704",
+      "title" : "Modify a user, change OTP method from 'TOTP' to 'OTP via Mail';",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514709" : {
+      "steps" : "  1\uff09In step 5, a TOTP user should login through portal page for the first time;\n  2\uff09In step 6,FW will accept user 's1', and a subsequent TOTP auth page will display, QR code together with emergency scratch code are displayed on the page;\n  3\uff09In step 7, a subsequent TOTP auth pop-up window will prompt after clicking 'Connect' button, TOTP auth works fine and NX client can connect to FW;\n  4) NX clients can connect to FW from different zones with TOTP auth configured;",
+      "initial" : "  Original ID: 035\n  Original Title: TOTP auth support SSLVPN users login from NetExtender;\n  Original Description:",
+      "id" : "1514709",
+      "title" : "TOTP auth support SSLVPN users login from LAN Zone NetExtender;",
+      "result" : "  SSLVPN Service is enabled, NetExtender client is installed on client PCs or mobile devices."
+   },
+   "1514694" : {
+      "steps" : "  User should not be able to login by using incorrect length code.",
+      "initial" : "  Original ID: 020\n  Original Title: FW should not accept 2FA code with incorrect length;\n  Original Description:",
+      "id" : "1514694",
+      "title" : "FW should not accept 2FA code with incorrect length;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)"
+   },
+   "1514716" : {
+      "steps" : "  Step5- User should login successfully by using code generated in authenticator app.",
+      "initial" : "  Original ID: 042\n  Original Title: LDAP user authenticate from TOTP group;\n  Original Description:",
+      "id" : "1514716",
+      "title" : "LDAP user authenticate from TOTP group;",
+      "result" : "  Please install authenticator app on your smartphone before executing this case (Ex- Google Authenticator/DUO Mobile)\n  Select User authentication method as LDAP"
+   },
+   "1514735" : {
+      "steps" : "  1) In step 3, TOTP works fine for domain user;\n  2) In step 4, local user login works fine and there's no TOTP procedure will appear;\n  3)In step 6, TOTP works fine for local user, domain user login works fine and there's no TOTP procedure will appear;",
+      "initial" : "  Original ID: 061\n  Original Title: TOTP mechanism for domain user imported from LDAP server works fine while there is a same name local user.\n  Original Description: Scenarios:\n  LDAP + Local Users\tDomain user TOTP + Local user non TOTP\n  Domain user non TOTP + Local user TOTP\n  Radius + Local Users\tDomain user TOTP + Local user non TOTP\n  Domain user non TOTP + Local user TOTP",
+      "id" : "1514735",
+      "title" : "TOTP mechanism for domain user imported from LDAP server works fine while there is a same name local user.",
+      "result" : "  1. Authenticator apps has been installed on the smart phone, such as Google Authenticator, DUO Mobile.\n  2. Configure 'LDAP + Local Users' for User authentication method, and do proper settings for LDAP Server Settings, make sure users can be successfully authenticated on LDAP domain server."
+   }
+}

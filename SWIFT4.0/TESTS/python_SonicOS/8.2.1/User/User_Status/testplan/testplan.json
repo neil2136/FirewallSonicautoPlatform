@@ -1,0 +1,16 @@
+{
+   "1" : {
+      "steps" : "USER Management GET settings",
+      "initial" : "Original ID: 1\n  Original Title: USER Management  GET settings",
+      "id" : "1",
+      "title" : "USER Management GET settings",
+      "result" : "User status management settings  should be displayed"
+   },
+   "2" : {
+      "steps" : "PUT User management settings",
+      "initial" : "Original ID: 2\n  Original Title: PUT User management settings",
+      "id" : "2",
+      "title" : "PUT User management settings",
+      "result" : "Config change should be taken and displayed , functionality of the User status management settings  should change accordingly."
+   }
+}

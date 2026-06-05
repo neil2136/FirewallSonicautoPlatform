@@ -1,0 +1,282 @@
+{
+   "33" : {
+      "steps" : "  TBD",
+      "initial" : "  Smoke",
+      "id" : "33",
+      "title" : "Reboot firewall and verify ISATAP settings are intact",
+      "result" : "  1. Add an ISATAP tunnel interface, zone LAN, bound to interface X0, IPv6 prefix 2400::/64;\n  2. Reboot FW;"
+   },
+   "32" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "32",
+      "title" : "TSR support",
+      "result" : "  1. Add an ISATAP tunnel interface, zone LAN, bound to interface X0, IPv6 prefix 2400::/64;\n  2. Download the TSR."
+   },
+   "21" : {
+      "steps" : "  PC1(WIN7)---(X0)FW\n  PC1 ip:192.168.168.10\n  FW X0 ip:192.168.168.1",
+      "initial" : "  Smoke",
+      "id" : "21",
+      "title" : "Verify the ISATAP host can acquire IPv6 address with the subnet prefix configured in the ISATAP tunnel interface",
+      "result" : "  1.Go to Firewall Settings >Advanced,check Enable NetBIOS name query response for ISATAP,click Accept.\n  2.Add ISATAP Tunnel Interface (Zone: LAN,Tunnel Type: ISATAP Tunnel Interface, Bound to IPv4 Address of: X0,IPv6 Subnet Prefix :create new address object 2001:100::/64).\n  3.Go to PC1 host,Input \"netsh interface isatap set state enabled\" command."
+   },
+   "05" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "05",
+      "title" : "Boundary test about the length of the tunnel name",
+      "result" : "  1. Add an ISATAP tunnel interface;\n  2. Input a name length =0;\n  3. Input a name length =1;\n  4. Input a name length =25;\n  5. Input a name length =26;"
+   },
+   "26" : {
+      "steps" : "  [IMAGE]\n  Figure 2 The delivery of ISATAP host traffic between hosts on different logical ISATAP subnets",
+      "initial" : "  Smoke",
+      "id" : "26",
+      "title" : "Communication among ISATAP hosts on different logical subnets",
+      "result" : "  PC1---(LAN,192.168.10.168)X0 FW1 X2(LAN,10::1)-------(LAN,10::2)X2 FW2 X0(LAN,10.10.10.10)---PC2\n  PC1:2001:100::5efe:192.168.10.10\n  PC2:2001:200::5efe:10.10.10.245\n  1.Go to Firewall Settings >Advanced on FW1 and FW2,check Enable NetBIOS name query response for ISATAP,click Accept.\n  2.On FW1,add ISATAP Tunnel Interface (Zone: LAN,Tunnel Type: ISATAP Tunnel Interface, Bound to IPv4 Address of: X0,IPv6 Subnet Prefix :create new address object 2001:100::/64).\n  3.On FW1,Go to Network >Routing,add a IPv6 route policy(Source:Any,Destination:2001:200::/64,Service:Any,Gateway:10::2/128,Interface:X2)\n  4.On FW2,add ISATAP Tunnel Interface (Zone: LAN,Tunnel Type: ISATAP Tunnel Interface, Bound to IPv4 Address of: X0,IPv6 Subnet Prefix :create new address object 2001:200::/64).\n  5.On FW2,Go to Network >Routing,add a IPv6 route policy(Source:Any,Destination:2001:100::/64,Service:Any,Gateway:10::1/128,Interface:X2)"
+   },
+   "17" : {
+      "steps" : "  TBD",
+      "initial" : "  Sanity",
+      "id" : "17",
+      "title" : "Enable/Disable NetBIOS name query response for ISATAP",
+      "result" : "  1. Add an ISATAP tunnel interface, bound to X0;\n  2. Enable NetBIOS name query response for ISATAP in Firewall Settings page;\n  3. Connect PC to X0, enable ISATAP, ping ISATAP;\n  4. Disable NetBIOS name query response for ISATAP in Firewall Settings page;\n  5. Run ping ISATAP on LAN PC."
+   },
+   "04" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "04",
+      "title" : "Select different zones for the tunnel, like WAN/LAN/DMZ/WLAN",
+      "result" : "  Add ISATAP tunnel interface and select different zones for it."
+   },
+   "02" : {
+      "steps" : "  TBD",
+      "initial" : "  Sanity",
+      "id" : "02",
+      "title" : "Zone type should support Unassigned",
+      "result" : "  1. Add an ISATAP tunnel interface;\n  2. Leave the zone type as unassigned."
+   },
+   "18" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "18",
+      "title" : "Verify Resolved name ISATAP valid time can only be configured when \u00a1\u00b0NetBIOS name query response for ISATAP\u00a1\u00b1 is enabled",
+      "result" : "  1. Disable \u00a1\u00b0NetBIOS name query response for ISATAP\u00a1\u00b1, check Resolved name ISATAP valid time option;\n  2. Enable \u00a1\u00b0NetBIOS name query response for ISATAP\u00a1\u00b1, check Resolved name ISATAP valid time option;"
+   },
+   "03" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "03",
+      "title" : "Can create a new zone and apply it successfully from the Zone drop-down list when adding an ISATAP tunnel interface",
+      "result" : "  1. Add an ISATAP tunnel interface;\n  2. Create new zone for the tunnel;"
+   },
+   "30" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "30",
+      "title" : "Filter by ISATAP interface name in packet capture",
+      "result" : "  1. Configure an ISATAP tunnel interface on FW, zone LAN, IPv6 prefix 2400::/64, bound to interface X0, X0 IPv4 address is 192.168.168.168;\n  2. Connect host A to X0 subnet, host A got IPv4 address 192.168.168.1, and there is a host B in the IPv6 site, B's IPv6 address is 2001:db8:1::1.\n  3. Enable ISATAP service on host A;\n  4. Host A should perform an RS/RA exchange that is serviced by \u00a1\u00afFW\u00a1\u00af, then uses SLAAC to autoconfigure the address 2400::5efe:192.168.168.1 and a default IPv6 route with next-hop address fe80::5efe:192.168.168.168;\n  5. Ping IPv6 host in IPv6-capable network on host A, enable packet monitor and use ISATAP interface name as the filter interface. "
+   },
+   "16" : {
+      "steps" : "  TBD",
+      "initial" : "  Sanity",
+      "id" : "16",
+      "title" : "Modify the \u00a1\u00b0IPv6 Subnet Prefix\u00a1\u00b1 AO, verify that this change is reflected on the ISATAP tunnel",
+      "result" : "  1. Add an ISATAP tunnel interface, configure IPv6 subnet prefix 2323::/64;\n  2. Navigate to Address Object page, modify AO \"ISATAP IPv6 Primary Static Address Subnet\", change the value to 4545::/64;\n  3. Check the ISATAP tunnel interface."
+   },
+   "27" : {
+      "steps" : "  [IMAGE]\n  Figure 3 The delivery of packets between ISATAP hosts and hosts on an IPv6-capable network",
+      "initial" : "  Smoke",
+      "id" : "27",
+      "title" : "Communication between ISATAP hosts and hosts on an IPv6-Capable network",
+      "result" : "  1. Configure an ISATAP tunnel interface on FW, zone LAN, IPv6 prefix 2400::/64, bound to interface X0, X0 IPv4 address is 192.168.168.168;\n  2. Connect host A to X0 subnet, host A got IPv4 address 192.168.168.1, and there is a host B in the IPv6 site, B's IPv6 address is 2001:db8:1::1.\n  3. Enable ISATAP service on host A;\n  4. Host A should perform an RS/RA exchange that is serviced by \u00a1\u00afFW\u00a1\u00af, then uses SLAAC to autoconfigure the address 2400::5efe:192.168.168.1 and a default IPv6 route with next-hop address fe80::5efe:192.168.168.168;\n  5. Ping IPv6 host in IPv6-capable network on host A, and do packet capture on host A and FW."
+   },
+   "25" : {
+      "steps" : "  [IMAGE]\n  Figure 1 The delivery of ISATAP traffic between ISATAP hosts on the same logical ISATAP subnet",
+      "initial" : "  Smoke",
+      "id" : "25",
+      "title" : "Communication among ISATAP hosts within the same logical subnet",
+      "result" : "  1. Configure an ISATAP tunnel interface, zone LAN, bound to interface X0, IPv6 prefix 2400::/64, X0 ipv4 address 192.168.168.168;\n  2. Connect 3 hosts to X0 subnet;\n  3. Host A got IP address 192.168.168.1, host B got IP address 192.168.168.2, host C got IP address 192.168.168.3;\n  4. Enable ISATAP services on the 3 hosts;\n  5. Make sure the 3 hosts perform an RS/RA exchange that is serviced by \u00a1\u00afB\u00a1\u00af, then uses SLAAC to autoconfigure the address 2400::5efe:192.168.168.1/2/3 and a default IPv6 route with next-hop address fe80::5efe:192.168.168.168;\n  6. Run \"ping 2400::5efe:192.168.168.1\" on host B and host C, and do packet capture on 3 hosts and FW."
+   },
+   "28" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "28",
+      "title" : "Verify ISATAP tunnel is correctly displayed in AppFlow Monitor/Real-Time Monitor",
+      "result" : "  1. Add an ISATAP tunnel, zone LAN, IPv6 prefix 2400::/64, bound to X0, enable netbios for ISATAP;\n  2. Connect PC to X0 subnet, enable ISATAP service on PC, and PC auto-configured its IPv6 address with prefix 2400::/64;\n  3. Run IPv6 traffic on PC, check the AppFlow Monitor and real-time monitor;"
+   },
+   "01" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "01",
+      "title" : "1. The \u00a1\u00b0ISATAP Tunnel Interface\u00a1\u00b1 should be listed as one of the Tunnel types when adding an IPv6 tunnel interface",
+      "result" : "  1. Go to IPv6 interface page;\n  2. Add a tunnel interface;\n  3. Check the drop-down list of tunnel type."
+   },
+   "40" : {
+      "steps" : "  1.Create an ISATAP tunnel, bound to X0 interface.\n  2. On Firewall Settings /Advanced page, check \"Enable NetBIOS name query response for ISATAP\".\n  3. Setup an ISATAP host like a WIN7 pc bebind X0. Enable ISATAP on it by running following command:\n  netsh interface isatap set state enabled\n  4. After the ISATAP host gets ipv6 address, run following command on it:\n  ping www.facebook.com -l 65500 -t",
+      "initial" : "  Full",
+      "id" : "40",
+      "title" : "Send large IPv6 packet through the ISATAP tunnel",
+      "result" : "  1.Create an ISATAP tunnel, bound to X0 interface.\n  2. On Firewall Settings /Advanced page, check \"Enable NetBIOS name query response for ISATAP\".\n  3. Setup an ISATAP host like a WIN7 pc bebind X0. Enable ISATAP on it by running following command:\n  netsh interface isatap set state enabled\n  4. After the ISATAP host gets ipv6 address, run following command on it:\n  ping www.facebook.com -l 65500 -t"
+   },
+   "20" : {
+      "steps" : "  TBD",
+      "initial" : "  Smoke",
+      "id" : "20",
+      "title" : "Delete the ISATAP tunnel interface also removes the default AO, routing policy and auto-added Access Rule",
+      "result" : "  1. Add an ISATAP tunnel;\n  2. Check AO, ACLs, PBR, all related AO, ACLs, PBR are auto-added;\n  3. Delete this tunnel;\n  4. Check AO, ACLs, PBR."
+   },
+   "14" : {
+      "steps" : "  TBD",
+      "initial" : "  Smoke",
+      "id" : "14",
+      "title" : "Check the default routing policy automatically added together with an ISATAP tunnel",
+      "result" : "  1. Add an ISATAP tunnel interface, configure IPv6 subnet prefix 2323::/64;\n  2. Check the routing table, a route policy will be auto-added;"
+   },
+   "07" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "07",
+      "title" : "Verify creation of the IPv6 Subnet only allows IPv6 network type AO with Prefix length 64",
+      "result" : "  1. Add an ISATAP tunnel interface;\n  2. Create new address object for IPv6 subnet prefix;"
+   },
+   "24" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "24",
+      "title" : "Login with a local user to the tunnel interface from the host by both HTTP and HTTPS",
+      "result" : "  tbd"
+   },
+   "10" : {
+      "steps" : "  TBD",
+      "initial" : "  Sanity",
+      "id" : "10",
+      "title" : "Make sure the \"IPv6 Subnet Prefix\" AO should not overlap with IPv6 tunnel",
+      "result" : "  1. Add a 6rd tunnel interface, tunnel interface IPv6 address 3434::3434/64;\n  2. Add an ISATAP tunnel interface, create IPv6 subnet prefix 3434::/64, click OK button;"
+   },
+   "31" : {
+      "steps" : "  TBD",
+      "initial" : "  Smoke",
+      "id" : "31",
+      "title" : "Export and Re-import prefs and verify ISATAP settings",
+      "result" : "  1. Add an ISATAP tunnel interface, zone LAN, bound to interface X0, IPv6 prefix 2400::/64;\n  2. Export the prefs;\n  3. Delete the tunnel interface;\n  4. Import the prefs;"
+   },
+   "35" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "35",
+      "title" : "SNMP support",
+      "result" : "  1. Add an ISATAP tunnel interface, zone LAN, bound to interface X0, IPv6 prefix 2400::/64, enable SNMP management, X0 IPv4 address is 192.168.168.168;\n  2. Connect host A to X0 subnet, host A got IPv4 address 192.168.168.1, and there is a host B in the IPv6 site, B's IPv6 address is 2001:db8:1::1.\n  3. Enable ISATAP service on host A;\n  4. Host A should perform an RS/RA exchange that is serviced by \u00a1\u00afFW\u00a1\u00af, then uses SLAAC to autoconfigure the address 2400::5efe:192.168.168.1 and a default IPv6 route with next-hop address fe80::5efe:192.168.168.168;\n  5. Load MIB to host A, and run MIB, send GET REQUEST to ISATAP tunnel interface IP."
+   },
+   "11" : {
+      "steps" : "  TBD",
+      "initial" : "  Sanity",
+      "id" : "11",
+      "title" : "Verify if all parameters are shown correct after adding an ISATAP tunnel",
+      "result" : "  Including ISATAP interface name, type, IP, comment and management options. In addition, the ISATAP type IPv6 address in this page is displayed in the format that the last four octets of the address are shown in IPv4 format."
+   },
+   "22" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "22",
+      "title" : "Verify HTTPS management of the tunnel interface from the ISATAP host",
+      "result" : "  1. Add an ISATAP tunnel bound to X0;\n  2. Connect PC to X0, PC support ISATAP;\n  3. After PC get IPv6 address from ISATAP router(FW), try https manage FW on PC."
+   },
+   "08" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "08",
+      "title" : "Make sure the type and prefix length of the IPv6 Address Object in use by an ISATAP tunnel is not allowed to change",
+      "result" : "  1. Add an ISATAP tunnel interface;\n  2. Create a IPv6 subnet prefix e.g. 2323::/64;\n  3. Navigate to Address Object page, edit this AO, try to modify the prefix length and the type."
+   },
+   "13" : {
+      "steps" : "  TBD",
+      "initial" : "  Smoke",
+      "id" : "13",
+      "title" : "Check the default Access Rule automatically added together with an ISATAP tunnel",
+      "result" : "  E.g If the tunnel is bound to X0 ipv4 interface, tunnel is assigned to DMZ zone, and Management and User Login options are all checked, following Access rules will be added automatically:\n  (1) LAN>LAN, IPv4 Version\n  Any\n  X0 IP\n  6over4\n  Allow\n  All\n  None\n  (2) DMZ>DMZ, IPv6 Version\n  Any\n  TUNNEL_NAME Management IPv6 Addresses\n  SNMP\n  Allow\n  All\n  None\n  Any\n  TUNNEL_NAME Management IPv6 Addresses\n  Ping6\n  Allow\n  All\n  None\n  Any\n  TUNNEL_NAME Management IPv6 Addresses\n  HTTPS\n  Allow\n  All\n  None\n  Any\n  TUNNEL_NAME Management IPv6 Addresses\n  HTTP\n  Allow\n  All\n  None"
+   },
+   "23" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "23",
+      "title" : "Verify SNMP management of the tunnel interface from the ISATAP host",
+      "result" : "  1. Add an ISATAP tunnel, bound to X0;\n  2. Connect a SNMP manager (PC) to X0, PC connect to ISATAP router (FW);\n  3. Enable SNMP on tunnel interface and enable SNMP in FW;\n  4. Use ISATAP tunnel interface ipv6 address as the host IP to get info from FW on SNMP manager PC."
+   },
+   "29" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "29",
+      "title" : "Verify ISATAP tunnel is correctly displayed in Connection Monitor",
+      "result" : "  1. Configure an ISATAP tunnel interface on FW, zone LAN, IPv6 prefix 2400::/64, bound to interface X0, X0 IPv4 address is 192.168.168.168;\n  2. Connect host A to X0 subnet, host A got IPv4 address 192.168.168.1, and there is a host B in the IPv6 site, B's IPv6 address is 2001:db8:1::1.\n  3. Enable ISATAP service on host A;\n  4. Host A should perform an RS/RA exchange that is serviced by \u00a1\u00afFW\u00a1\u00af, then uses SLAAC to autoconfigure the address 2400::5efe:192.168.168.1 and a default IPv6 route with next-hop address fe80::5efe:192.168.168.168;\n  5. Ping IPv6 host in IPv6-capable network on host A, and check the connection monitor page."
+   },
+   "6" : {
+      "steps" : "  TBD",
+      "initial" : "  Sanity",
+      "id" : "6",
+      "title" : "Verify that one IPv4 interface can only be bound to one IPv6 tunnel (6rd or ISATAP)",
+      "result" : "  Once an IPv4 interface is bound to an IPv6 tunnel (6rd or ISATAP), it should not appear in the \"Bound to IPv4 Address of\" list for adding new IPv6 tunnel interfaces(6rd or ISATAP)."
+   },
+   "39" : {
+      "steps" : "  FW A-----FWB in HA deployment",
+      "initial" : "  Full",
+      "id" : "39",
+      "title" : "Verify ISATAP works fine when firewall is in HA deployment and failover/failback occurs",
+      "result" : "  1. Configure an ISATAP tunnel interface on FW A, zone LAN, IPv6 prefix 2400::/64, bound to interface X0, X0 IPv4 address is 192.168.168.168, FW A and FW B are in HA deployment and ;\n  2. Connect host A to X0 subnet, host A got IPv4 address 192.168.168.1, and there is a host B in the IPv6 site, B's IPv6 address is 2001:db8:1::1.\n  3. Enable ISATAP service on host A;\n  4. Host A should perform an RS/RA exchange that is serviced by \u00a1\u00afFW\u00a1\u00af, then uses SLAAC to autoconfigure the address 2400::5efe:192.168.168.1 and a default IPv6 route with next-hop address fe80::5efe:192.168.168.168;\n  5. Ping IPv6 host in IPv6-capable network on host A and run FTP traffic between host A and IPv6 host.\n  6. Trigger a failover/failback, check traffic flows between host A and IPv6 host."
+   },
+   "36" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "36",
+      "title" : "Log support",
+      "result" : "  log is not supported for ISATAP."
+   },
+   "12" : {
+      "steps" : "  TBD",
+      "initial" : "  Smoke",
+      "id" : "12",
+      "title" : "Check the default Address Object automatically added together with an ISATAP tunnel",
+      "result" : "  Following two IPv6 address objects are automatically added together with an ISATAP tunnel:\n  TUNNEL _NAME IPv6 Primary Static Address\n  TUNNEL _NAME IPv6 Primary Static Address Subnet"
+   },
+   "15" : {
+      "steps" : "  TBD",
+      "initial" : "  Smoke",
+      "id" : "15",
+      "title" : "Modify the IPv4 address of the bound interface, verify that this change is reflected on the ISATAP tunnel",
+      "result" : "  The change should trigger an update of the ISATAP tunnel interface address, default ISATAP interface AO and policy to allow \"6over4\" traffic from bound IPv4 interface's zone, any source to bound IPv4 interface's IP."
+   },
+   "38" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "38",
+      "title" : "Delete an ISATAP tunnel interface",
+      "result" : "  1. Add an ISATAP tunnel;\n  2. Delete this ISATAP tunnel."
+   },
+   "34" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "34",
+      "title" : "Verify ISATAP interface works fine when it is bound to VLAN subinterface",
+      "result" : "  1. Configure an ISATAP tunnel interface on FW, zone LAN, IPv6 prefix 2400::/64, bound to interface X0:V100, X0:V100 IPv4 address is 192.168.168.168;\n  2. Connect host A to X0 subnet, host A got IPv4 address 192.168.168.1, and there is a host B in the IPv6 site, B's IPv6 address is 2001:db8:1::1.\n  3. Enable ISATAP service on host A;\n  4. Host A should perform an RS/RA exchange that is serviced by \u00a1\u00afFW\u00a1\u00af, then uses SLAAC to autoconfigure the address 2400::5efe:192.168.168.1 and a default IPv6 route with next-hop address fe80::5efe:192.168.168.168;\n  5. Ping IPv6 host in IPv6-capable network on host A."
+   },
+   "37" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "37",
+      "title" : "SYSLOG support",
+      "result" : "  syslog is not supported for ISATAP."
+   },
+   "19" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "19",
+      "title" : "Boundary test of the Resolved name ISATAP valid time",
+      "result" : "  This option has been removed from UTM by Hui Ling."
+   },
+   "09" : {
+      "steps" : "  TBD",
+      "initial" : "  Full",
+      "id" : "09",
+      "title" : "Boundary test of MTU when adding or editing an ISATAP tunnel interface",
+      "result" : "  edit ISATAP tunnel interface's MTU\n  1. set it as 1279;\n  2. set it as 1280;\n  3. set it as 1281;\n  4. set is as 65534;\n  5. set it as 65535;\n  6. set it as 65536;"
+   }
+}

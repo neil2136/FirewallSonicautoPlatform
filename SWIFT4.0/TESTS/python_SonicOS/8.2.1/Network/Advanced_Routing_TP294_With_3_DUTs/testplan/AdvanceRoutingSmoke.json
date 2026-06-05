@@ -1,0 +1,177 @@
+{
+   "104" : {
+      "steps" : "  1. Configure interface X3, zone LAN, static IP address 28.1.1.46, enable OSPF on interface X3, connect to a router, router's IP 28.1.1.28, enable OSPF on router too, both in area 0, turned off check box \"Originate Default Route\";\n  2. Sonicwall and router can established neighbor with each other;\n  3. Check the router's ospf routing table, route 0.0.0.0/0 does not appear in the OSPF route database on router.",
+      "initial" : "  Smoke",
+      "id" : "104",
+      "title" : "Verify that 0.0.0.0/0 route doesnt appear in the OSPF route database on SonicWALLs neighbours when the Originate Default Route check box is turned off",
+      "result" : "  in step 2, check the OSPF LED status on interface X3, it turns to GREEN;\n  in step 3, use command \"show ip ospf route\" to check neighbor router's OSPF routing table, in the External Route List, it does not include a route 0.0.0.0/0."
+   },
+   "67" : {
+      "steps" : "  1. Configure RIP for the 28.1.1.0/24 network on the Router A.\n  2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n  3. Click the Configure RIP icon for X2 (DMZ) interface.\n  4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.\n  5. Enable OSPFv2 on X3, connect to another router B, redistribute static routes on this router;\n  6. Check FW's routing table, it learned static routes from router B, via OSPF, metric is 110;\n  7. Check the Redistribute OSPF Routes checkbox . Save.\n  8. Use the command \"show ip rip database\" on the Cisco router A.",
+      "initial" : "  Smoke",
+      "id" : "67",
+      "title" : "Verify that OSPF routes are redistributed to RIP when the Redistribute OSPF Routes check box is turned on.",
+      "result" : "  in step 8, the static routes learned via OSPF in FW should appear in cisco router A rip database."
+   },
+   "63" : {
+      "steps" : "  1. Configure RIP for the 28.1.1.0/24 network on the Router.\n  2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n  3. Click the Configure RIP icon for X2 (DMZ) interface.\n  4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.\n  5. Check the Redistribute Connected Networks checkbox . Save.\n  6. Use the command \"show ip rip database\" on the Cisco router",
+      "initial" : "  Smoke",
+      "id" : "63",
+      "title" : "Verify that connected networks are advertised in RIP RTUs when the Redistribute Connected Networks check box is turned on.",
+      "result" : "  in step 6, all connected routes on FW should appear in the Cisco router rip database."
+   },
+   "142" : {
+      "steps" : "  1) Configure a new interface in DUT, enable OSPF on this interface, and make sure it can build neighbor with a router; 2) Enable \"Originate Default Route\" and some other options like \"redistributed connected route\" or static route in global OSPF configuration; 3) Check OSPF database in DUT and a default route was generated,and connected routes or static routes are included in database; 4) Input \"clear ip ospf process\" in CLI, after a moment , check OSPF database in DUT again, make sure it is the same as before.",
+      "initial" : "  Smoke",
+      "id" : "142",
+      "title" : "Check OSPF database after clear ospf process in CLI.(refer to DTS#139934)",
+      "result" : "  in step 4) Input \"clear ip ospf process\" in CLI, after a moment , check OSPF database in DUT again, make sure it is the same as before."
+   },
+   "78" : {
+      "steps" : "  1. Configure RIP for the 28.1.1.0/24 network on the Router. Redistribute static routes.\n  2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n  3. Click the Configure RIP icon for X2:V100 (DMZ) interface.\n  4. In the Interface X2:V100 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2. Check \"Redistribute static routes\" checkbox. Save.\n  5. Check routing table in FW.\n  6. Use command show ip rip database in cisco router.",
+      "initial" : "  Smoke",
+      "id" : "78",
+      "title" : "RIP: Verify correct behavior with vlan interfaces",
+      "result" : "  in step 5, FW can lean static routes from cisco route, metric 120.\n  in step 6, static routes in FW appear in cisco router rip database."
+   },
+   "143" : {
+      "steps" : "  1) Enable OSPFv2 in DUT, and do some configurations, like redistribute static routes , change hello interval, change router ID, change mode to passive etc.\n  2) Reboot DUT, check the configurations. ",
+      "initial" : "  Smoke",
+      "id" : "143",
+      "title" : "Reboot DUT, check all configurations are the same as before.",
+      "result" : "  After rebooting DUT, all the configurations should be the same as before."
+   },
+   "116" : {
+      "steps" : "  1. Prepare 3 routers, sonicwall , router 1 , router 2;\n  2. Configure sonicwall interface X5, zone LAN, static IP 5.5.5.1, connect to router 1, router 1 has static IP 5.5.5.5, enable RIPv2 on sonicwall X5 and router 1, router 1 has a static route 80.1.1.0/24, enable \"redistribute static routes\" on router 1;\n  3. Configure sonicwall interface X3, zone LAN, static IP 28.1.1.46, connect to router 2, router 2 has static ip 28.1.1.28, enable OSPF on them and in area 0;\n  4. Turn on check box \"Redistribute RIP Routes\" ;\n  5. Check sonicwall's routing table, it can learn static route 80.1.1.0/24 from RIP via X5;\n  6. Check the OSPF status between sonicwall and router 2, the status from Loading to FULL;\n  7. Use command \"show ip ospf route\" on router 2 to show the ospf routes, the static route 80.1.1.0/24 must appear.",
+      "initial" : "  Smoke",
+      "id" : "116",
+      "title" : "Verify that RIP routes are redistributed to OSPF when the Redistribute RIP Routes check box is turned on",
+      "result" : "  in step 5, sonicwall has the route 80.1.1.0/24 in its routing table;\n  in step 6, the OSPF LED status becomes GREEN;\n  in step 7, when use command \"show ip ospf route\" on router 2 to show the ospf routes, the static route 80.1.1.0/24 must appear.\n  E.g,\n  *> 80.1.1.0/24, Ext2, cost 20, tag 0\n  via 28.1.1.46, GigabitEthernet0/0"
+   },
+   "46" : {
+      "steps" : "  1. Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n  2. Enable packet monitor in sonicwall;\n  3. Check the packets in sonicwall.",
+      "initial" : "  Smoke",
+      "id" : "46",
+      "title" : "Verify that SonicWALL doesn't advertise any RTUs when the RIP feature is disabled.",
+      "result" : "  in step 3, when RIP is disabled in sonicwall, sonicwall must not send any rip message."
+   },
+   "105" : {
+      "steps" : "  1. Configure interface X3, zone LAN, static IP address 28.1.1.46, enable OSPF on interface X3, connect to a router, router's IP 28.1.1.28, enable OSPF on router too, both in area 0, turned on check box \"Originate Default Route\";\n  2. Sonicwall and router can established neighbor with each other;\n  3. Check the router's ospf routing table, route 0.0.0.0/0 must appear in the OSPF route database on router.",
+      "initial" : "  Smoke",
+      "id" : "105",
+      "title" : "Verify that 0.0.0.0/0 route appears in the OSPF route database on SonicWALLs neighbours when the Originate Default Route check box is turned on",
+      "result" : "  in step 2, check the OSPF LED status on interface X3, it turns to GREEN;\n  in step 3, use command \"show ip ospf route\" to check neighbor router's OSPF routing table, in the External Route List, a route 0.0.0.0/0 will appear.\n  E.g.\n  External Route List\n  * 0.0.0.0/0, Ext2, cost 1, tag 0\n  via 28.1.1.46, GigabitEthernet0/0"
+   },
+   "82" : {
+      "steps" : "  1. Configure RIP for the 28.1.1.0/24 network on the Router, redistribute static routes.\n  2. Add three static route on cisco router, 80.1.1.0/24, 80.1.2.0/24,80.1.3.0/24;\n  3. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n  4. Click the Configure RIP icon for X2 (DMZ) interface.\n  5. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2. Save.\n  6. Check FW's routing table.\n  7. Add a new static route 80.1.4.0/24 in cisco router;\n  8. Check packets on FW and check FW's routing table.",
+      "initial" : "  Smoke",
+      "id" : "82",
+      "title" : "RIP: Verify that SonicWALL updates its routing table after receiving a triggered update with static RTEs.",
+      "result" : "  in step 6, routes 80.1.1.0/24,80.1.2.0/24,80.1.30./24 appeared in FW's routing table.\n  In step 8, FW received a triggered RIP update message from cisco router, in this triggered RIP update message, only include one RTE, 80.1.4.0/24.\n  Then check FW's routing table, route 80.1.4.0/24 appeared in FW's routing table."
+   },
+   "110" : {
+      "steps" : "  1. Add a static route, dst to 1.1.1.0/24, with reachable gateway and outgoing interface;\n  2. Configure interface X3, zone LAN, static IP address 28.1.1.85, enable OSPF on interface X3, connect to a router, router's IP 28.1.1.28, enable OSPF on router too, both in area 0;\n  3. Turned off check box \"Redistribute Static Routes\" on sonicwall X3;\n  4. Check if sonicwall and router established the neighborhood;\n  5. Check the router's ospf routing table, the static route dst to 1.1.1.0/24 does not appear in router's ospf routing table.",
+      "initial" : "  Smoke",
+      "id" : "110",
+      "title" : "Verify that a static route doesnt appear in the OSPF route database on SonicWALLs neighbours when the Redistribute Static Routes check box is turned off",
+      "result" : "  in step 4, check the OSPF LED status on interface X3, it turns to GREEN;\n  in step 5, use command \"show ip ospf route\" to check neighbor router's OSPF routing table, the route dst to 1.1.1.0/24 does not appear."
+   },
+   "85" : {
+      "steps" : "  1. Configure RIP for the 28.1.1.0/24 network on the Router. Redistribute static route 67.67.67.0/24.\n  2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n  3. Click the Configure RIP icon for X2 (DMZ) interface.\n  4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2. Save.\n  5. Check FW's routing table.\n  6. Delete static route 67.67.67.0/24 in cisco router.\n  7. Check the packets in FW;\n  8. Check FW's routing table.",
+      "initial" : "  Smoke",
+      "id" : "85",
+      "title" : "RIP: Verify that SonicWALL deletes an entry from its routing table after receiving an infinite route with a metric of 16.",
+      "result" : "  in step 5. route 67.67.67.0/24 appeared in FW's routing table;\n  in step 7, FW received triggered update messge about route 67.67.67.0 from cisco router. This route's metric is set as infinity, 16 in RIP update message.\n  In step 8, route 67.67.67.0/24 disappeared in FW's routing table."
+   },
+   "120" : {
+      "steps" : "  1. Prepare 3 routers, sonicwall 1, sonicwall 2 , router 1, sonicwall 2 acts as ABR,it must advertise a default route into the stub area via summary-LSAs;;\n  2. Configure sonicwall 2 interface X5, zone LAN, static IP 5.5.5.1, connect to sonicwall 1 X5, sonicwall 1 X5 has static IP 5.5.5.5, enable OSPF on sonicwall 1 X5 and sonicwall 2 X5,area 2, area type: Stub Area;\n  3. Configure sonicwall 2 interface X3, zone LAN, static IP 28.1.1.46, connect to router 1, router 1 has static ip 28.1.1.28, enable OSPF on them , area 0, area type: Normal ;\n  4. Use command \"redistribute static subnets\" on router 1, to redistribute the static route on router 1, and router 1 has static route 20.1.1.0/24;\n  5. Check the OSPF status of sonicwall 1, sonicwall 2 and router 1, all the status change from Loading to FULL;\n  6. Use command \"show ip ospf database external\" on sonicwall 2, check the external LSA, it has received Type5 LSAs from router 1;\n  7. Use command \"show ip ospf database external\" on sonicwall 1, check the external LSA, there's no Type5 LSAs on Sonicwall 1.\n  8. Use command \"show ip ospf database summary\" to check if sonicwall 2 has correct behavior as a stub area ABR, it must advertise a default route to all routers belongs to this stub area.",
+      "initial" : "  Smoke",
+      "id" : "120",
+      "title" : "Correct behavior when configured as Stub area: block Type5 LSAs, block external routes from coming in",
+      "result" : "  in step 5, the OSPF status LED turns to GREEN.\n  In step 6, sonicwall 2 received type5 LSAs from router 1, e.g.\n  AS External Link States\n  LS age: 550\n  Options: 0x20 (-|-|DC|-|-|-|-|-)\n  LS Type: AS-external-LSA\n  Link State ID: 20.1.1.0 (External Network Number)\n  Advertising Router: 28.1.1.28\n  LS Seq Number: 80000001\n  Checksum: 0x73bd\n  Length: 36\n  Network Mask: /24\n  Metric Type: 2 (Larger than any link state path)\n  TOS: 0\n  Metric: 20\n  Forward Address: 28.1.1.1\n  External Route Tag: 0\n  in step 7, there's no type5 LSAs on Sonicwall 1, cause it is a internal router of stub area.\n  in step 8, sonicwall 2 acts as ABR, it advertise a default route to sonicwall 1 in summary LSAs. e.g.\n  Summary Link States (Area 0.0.0.2 [Stub])\n  LS age: 549\n  Options: 0x0 (-|-|-|-|-|-|-|-)\n  LS Type: summary-LSA\n  Link State ID: 0.0.0.0 (summary Network Number)\n  Advertising Router: 28.1.1.46\n  LS Seq Number: 80000002\n  Checksum: 0x70a0\n  Length: 28\n  Network Mask: /0\n  TOS: 0 Metric: 1"
+   },
+   "57" : {
+      "steps" : "  1. Configure RIP for the 28.1.1.0/24 network on the Router and redistribute static route.\n  2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n  3. Click the Configure RIP icon for X2 (DMZ) interface.\n  4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2. Enable redistribute static route. Save.\n  5. Check packets on FW.\n  6. Check sonicwall and router's routing table.\ufffd",
+      "initial" : "  Smoke",
+      "id" : "57",
+      "title" : "Verify the correct RIP packets. Send and Receive. Receive RIPv2, Send RIPv2.",
+      "result" : "  in step 5, The RIP packets sent from 28.1.1.0/24 and specify version number 2 in the Version field of the RIP header. The RIPv2 advertisement is contained in a UDP packet with the source and destination ports 520 and the destination IP address is the reserved RIPv2 multicast address 224.0.0.9.\n  in step 6, router can learn static routes from sonicwall via RIP and sonicwall can learn static routes from router via RIP.\ufffd"
+   },
+   "61" : {
+      "steps" : "  1. Configure RIP for the 28.1.1.0/24 network on the Router.\n  2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n  3. Click the Configure RIP icon for X2 (DMZ) interface.\n  4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.\n  5. Check the Redistribute Static Routes checkbox . Save.\n  6. Use the command \"show ip rip database\" on the Cisco router",
+      "initial" : "  Smoke",
+      "id" : "61",
+      "title" : "Verify that the RIP advertisements include all statis RTEs when the Advertise Static Routes check box is turned on.",
+      "result" : "  in step 6, all static routes on FW should appear in the Cisco router rip database."
+   },
+   "111" : {
+      "steps" : "  1. Add a static route, dst to 1.1.1.0/24, with reachable gateway and outgoing interface;\n  2. Configure interface X3, zone LAN, static IP address 28.1.1.85, enable OSPF on interface X3, connect to a router, router's IP 28.1.1.28, enable OSPF on router too, both in area 0;\n  3. Turned on check box \"Redistribute Static Routes\" on sonicwall X3;\n  4. Check if sonicwall and router established the neighborhood;\n  5. Check the router's ospf routing table, the static route dst to 1.1.1.0/24 must appear in router's ospf routing table.",
+      "initial" : "  Smoke",
+      "id" : "111",
+      "title" : "Verify that the OSPF route database on SonicWALLs neighbours is populated with a static route when the Redistribute Static Routes check box is turned on",
+      "result" : "  in step 4, check the OSPF LED status on interface X3, it turns to GREEN;\n  in step 5, use command \"show ip ospf route\" to check neighbor router's OSPF routing table, the route dst to 1.1.1.0/24 does appear."
+   },
+   "114" : {
+      "steps" : "  1. Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n  2. Configure interface X2 in sonicwall, zone LAN, static IP address 20.1.1.20/24;\n  3. Enable OSPF in X3 in sonicwall, enable OSPF on router, area 0, enable redistribute connected network in sonicwall;\n  4. Wait and check sonicwall and router can reach FULL state;\n  5. Use command \"show ip ospf database external\" in router, see router could learn route 20.1.1.0/24 from sonicwall;\n  6. Shutdown interface X2 in sonicwall, check the neighbor router's external database, the database has been updated, the route 20.1.1.0/24 was disappeared;\n  7. Link UP interface X2 in sonicwall, check the neighbor router's external database, the database has been updated, the route 20.1.1.0/24 appeared;\n  8. Change interface X2's ip subnet mask, change to 20.1.1.20/20, check the neighbor router's external database, the database has been updated, the route has been changed to 20.1.0.0/20.\n  9. Change interface X2's IP address to 200.1.1.1/24, check the neighbor router's external database, the database has been updated, the route has been changed to 200.1.1.0/24.",
+      "initial" : "  Smoke",
+      "id" : "114",
+      "title" : "Verify that the OSPF route database on SonicWALLs neighbours is updated when a link is disabled/enabled on SWs connected interfaces or IP address/subnet mask is changed",
+      "result" : "  in step 4, the OSPF status LED turns to GREEN.\n  In step 6, after the connected interface X2 is shutdown, the neighbor router will update its OSPF database, route 20.1.1.0/24 will disappear;\n  in step 7, after the connected interface X2 is link up, the neighbor router will update its OSPF database, route 20.1.1.0/24 will appear;\n  in step 8, after the connected interface X2's subnet mask was changed, the neighbor router will update its OSPF database, route 20.1.1.0/24 will change to 20.1.1.0/20.\n  in step 9, after the connected interface X2's ip address was changed, the new connected route will be advertised, route 200.1.1.0/24 will appear on neighbor router' s OSPF database.\ufffd"
+   },
+   "153" : {
+      "steps" : "  1. Establishe ospf between DUT and peer router, and enable restribute static route in DUT\n  2. Add a static route, destination 81.1.1.0/24, interface X1, gw X1 default gateway, check DUT nsm and peer router\n  3. Change destination by select another AO(network/host) in Routing page, check DUT nsm and peer router\n  4. Change destination by edit AO(network/netmask) in AO page, check DUT nsm and peer router\n  5. Repeat step3~5 for change gateway AO, check DUT nsm and peer router\n  6. Change the interface, check DUT nsm and peer router\n  Note, make sure the static route is active in nsm, inactive route can't be redistribute to router",
+      "initial" : "  Smoke",
+      "id" : "153",
+      "title" : "Verify the PBR's parameter(gateway/destination/interface) changes can be updated to nsm and can be restributed to the neighbor",
+      "result" : "  in step2, 81.1.1.0 should be shown in DUT nsm and peer router routing table\n  in step3,4,5,6, the updated route show in DUT nsm and peer router."
+   },
+   "81" : {
+      "steps" : "  1. Configure RIP for the 28.1.1.0/24 network on the Router, redistribute static routes.\n  2. Add three static route on cisco router, 80.1.1.0/24, 80.1.2.0/24,80.1.3.0/24;\n  3. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n  4. Click the Configure RIP icon for X2 (DMZ) interface.\n  5. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2. Save.\n  6. Check FW's routing table.\n  7. Shutdown interface X2;\n  8. Add a new static route 80.1.4.0/24 in cisco router;\n  9. No shutdown interface X2.\n  10. Check packets on FW and check FW's routing table.1",
+      "initial" : "  Smoke",
+      "id" : "81",
+      "title" : "Verify that SonicWALL updates its routing table after receiving a periodic RTU with new RTEs.",
+      "result" : "  in step 6, routes 80.1.1.0/24,80.1.2.0/24,80.1.30./24 appeared in FW's routing table.\n  In step 10, FW received a periodic RIP update message from cisco router, in this periodic RIP update message, include all RTEs, 80.1.1.0/24,80.1.2.0/24,80.1.3.0/24,80.1.4.0/24.\n  Then check FW's routing table, route 80.1.4.0/24 appeared in FW's routing table."
+   },
+   "59" : {
+      "steps" : "  1. Configure RIP for the 28.1.1.0/24 network on the Router.\n  2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n  3. Click the Configure RIP icon for X2 (DMZ) interface.\n  4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.\n  5. Check the Originate Default Route checkbox. Save.\n  6. Use the command \"show ip rip database\" on the Cisco router.",
+      "initial" : "  Smoke",
+      "id" : "59",
+      "title" : "Verify that default route is advertised in RIP RTUs when the Originate Default Route check box is turned on.",
+      "result" : "  in step 6, The 0.0.0.0/0 route should appear in the Cisco router rip database."
+   },
+   "112" : {
+      "steps" : "  1. Configure interface X3, zone LAN, static IP address 28.1.1.85, make X0 link up, X0's subnet is 192.168.168.0/24;\n  2. Enable OSPF on interface X3, connect to a router, router's IP 28.1.1.28, enable OSPF on router too, both in area 0;\n  3. Turned off check box \"Redistribute Connected Networks\" on sonicwall X3;\n  4. Check if sonicwall and router established the neighborhood;\n  5. Check the router's ospf routing table, X0's connected route 192.168.168.0/24 does not appear in router's ospf routing table.",
+      "initial" : "  Smoke",
+      "id" : "112",
+      "title" : "Verify that connected routes dont appear in the OSPF route database on SonicWALLs neighbours when the Redistribute Connected Networks check box is turned off",
+      "result" : "  in step 4, check the OSPF LED status on interface X3, it turns to GREEN;\n  in step 5, use command \"show ip ospf route\" to check neighbor router's OSPF routing table, X0's connected route 192.168.168.0/24 does not appear."
+   },
+   "103" : {
+      "steps" : "  1. Configure interface X3, zone LAN, static IP address 28.1.1.85, enable OSPF on interface X3, connect to a router1, router1's IP 28.1.1.28, enable OSPF on router too, both in area 0;\n  2. Configure interface X2, zone LAN, static IP 20.1.1.1/24, enable OSPF on X2, area 0, passive mode, connect to router 2, enable ospf on router 2;\n  3. Check the router 1's ospf routing table, it can learn network of sonicwall's interface X2 via OSPF from X3;\n  4. Check the packet monitor on sonicwall, verify that there is no OSPF message send from interface X2.\n  5. Use command \"show ip ospf neighbor\" on router2, verify that router2 can not establishe neighbor with sonicwall interface X2 cause this is a passive interface;\n  \ufffd",
+      "initial" : "  Smoke",
+      "id" : "103",
+      "title" : "Advertisement of passive OSPF networks",
+      "result" : "  in step 3, when set X2 in OSPF passive mode, another interface which enabled OSPF e.g. X3 will advertise this passive network, check neighbor's routing table, it can learned passive network 20.1.1.0/24 from X3 via OSPF.\n  in step 4, interface X2 must not send any OSPF message ;\n  in step 5, interface X2 can not establish neighbor with router 2, this step is to verify that interface X2 won't process the OSPF message received on it.\ufffd"
+   },
+   "76" : {
+      "steps" : "  1. Configure RIP for the 28.1.1.0/24 network on the Router.\n  2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n  3. Click the Configure RIP icon for X2 (DMZ) interface.\n  4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.Save, connect to router 1.\n  5. Click the Configure RIP icon for X3 (DMZ) interface. 30.1.1.1/24, connect to router 2, router 2 enable RIPv2 and redistribute static routes;\n  6. In the Interface X3 (DMZ) RIP Configuration window, select Passive. Save;\n  7. Check the packet monitor on sonicwall;\n  8. Use command show ip rip database in cisco router 1;\n  9. Check sonicwall's routing table. ",
+      "initial" : "  Smoke",
+      "id" : "76",
+      "title" : "Advertisement of passive networks",
+      "result" : "  in step 7,interface X3 must not send any RIP message; in step 8,route 30.1.1.0/24 appeared in cisco router rip database;\n  in step 9,check sonicwall's routing table, there is no static route learned from RIP via X3. "
+   },
+   "117" : {
+      "steps" : "  1. Add a vlan sub-interface, parent interface X3, zone LAN, vlan id 100, static IP 67.67.67.2/24, connect to a router g0/0.100, router g0/0.100 has static IP 67.67.67.1/24;\n  2. Enable OSPF on sonicwall X3:V100 and router g0/0.100, area 0, enable redistribute static routes on both sonicwall and router;\n  3. Verify that OSPF status between sonicwall and router 2, the status from Loading to FULL;\n  4. Check Sonicwall's routing table, it can learn static routes from router via X3:V100;\n  5. Use command \"show ip ospf route\" on router to check the router's ospf routing table, it can learn static routes from Sonicwall via g0/0.100.",
+      "initial" : "  Smoke",
+      "id" : "117",
+      "title" : "OSPF: Verify correct behavior with vlan interfaces",
+      "result" : "  in step 3, the OSPF LED status becomes GREEN;\n  in step 4, check the sonicwall's routing table, the static routes learned from router via X3:V100 appeared on the routing table;\n  in step 5, router can learn static routes from Sonicwall via the vlan interface."
+   },
+   "113" : {
+      "steps" : "  1. Configure interface X3, zone LAN, static IP address 28.1.1.85, make X0 link up, X0's subnet is 192.168.168.0/24;\n  2. Enable OSPF on interface X3, connect to a router, router's IP 28.1.1.28, enable OSPF on router too, both in area 0;\n  3. Turned on check box \"Redistribute Connected Networks\" on sonicwall X3;\n  4. Check if sonicwall and router established the neighborhood;\n  5. Check the router's ospf routing table, X0's connected route 192.168.168.0/24 must appear in router's ospf routing table.",
+      "initial" : "  Smoke",
+      "id" : "113",
+      "title" : "Verify that connected routes appear in the OSPF route database on SonicWALLs neighbours when the Redistribute Connected Networks check box is turned on",
+      "result" : "  in step 4, check the OSPF LED status on interface X3, it turns to GREEN;\n  in step 5, use command \"show ip ospf route\" to check neighbor router's OSPF routing table, X0's connected route 192.168.168.0/24 appeared."
+   }
+}

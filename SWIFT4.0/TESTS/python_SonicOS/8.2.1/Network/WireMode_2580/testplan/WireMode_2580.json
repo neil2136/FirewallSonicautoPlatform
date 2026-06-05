@@ -1,0 +1,702 @@
+{
+   "1511482" : {
+      "steps" : "  1. Click to edit the interface that was used to setup the pair. 2. Set the IP Assignment to Static IP. 3. Set the interface to Unassigned. 4. Click OK.",
+      "priority" : "Full_Regression",
+      "atm_id" : "a474297e-a248-4747-9267-4c79830c6b80",
+      "initial" : "  Two interfaces configured in Wire Mode Pair",
+      "id" : "1511482",
+      "title" : "GUI - Initial interface can be Unassigned when in wire mode.",
+      "description" : "Original ID: 6\nOriginal Title: GUI - Initial interface can be Unassigned when in wire mode.\nOriginal Description: Verify that the original interface selected for wiremode can be set to Unassigned.",
+      "result" : "  Both interfaces now are Unassigned there are no comments about the Wire Mode."
+   },
+   "1511447" : {
+      "steps" : "  1. In firewall to configure X2, X3 as secure wire mode, zone selection is LAN-LAN.\n  2. Configure RIPv2 (multicast mode) in both router 1 and router 2 and redistribute connected route, check if both router can learn routers from peer.\n  3. Configure OSPF in both router 1 and router 2 and redistribute connected route, check if both router can establish OSPF neighbor and learn routes properly. 4. Configure BGP in both router1 and router 2 and redistribute connected route, check if both router can establish BGP neighbor and learn routes properly.\n  5. Configure EIGRP in both router 1 and router 2 and redistribute connected routes, check if both router can establish EIGRP neighbor and learn routes properly. 6. Enable IP multicast in both router (command: \"ip multicast-routing\" in global configuration mode), configure IP PIM dense mode in both router's interface (command: \"ip pim dense-mode\" under interface configuration mode), check if both router can establish PIM neighbor properly (command: \"show ip pim neighbor\"). 7. Repeat step 1~6 with other zone combination: LAN-WAN, DMZ-WAN, LAN-DMZ.",
+      "priority" : "Sanity",
+      "atm_id" : "dbc965cd-35ad-47c4-a2b7-7aea30e9712f",
+      "initial" : "  Cisco Router 1 -----(X2)DUT(X3)-----Cisco Router 2",
+      "id" : "1511447",
+      "title" : "Routing protocol traffic pass through Wire Mode Secure",
+      "description" : "Original ID: 113\nOriginal Title: Routing protocol traffic pass through Wire Mode Secure\nOriginal Description: Test routing protocols (RIP,OSPF, BGP, EIGRP, PIM, etc) can pass through secure wire mode successfully.",
+      "result" : "  Step 2. Both router 1 and router 2 can learn routes properly from peer.\n  Step 3. OSPF neighbor could be established (status is FULL), and can learn routes properly from peer.\n  Step 4. BGP neighbor could be established, and can learn routes properly from peer.\n  Step 5. EIGRP neighbor could be established, and can learn routes properly from peer.\n  Step 6. PIM neighbor could be established.\n  Step 7. Same as above results."
+   },
+   "1511444" : {
+      "steps" : "  1. set 10G interface X16 , zone LAN, wiremode bypass mode, pair interface X17, zone LAN, X17 is also a 10G port;\n  2. Enable link state propagation;\n  3. Connect X16 to switch A g0/10, connect X17 to switch b G0/11;\n  4. Shutdown g0/10 on sw A, observe the state of g0/11 on SW B, the link state of interface X16 ,X17;\n  5. no shutdown g0/10 on SW A, observe the state of g0/10 and g0/11, the link state of interface X16 ,X17;\n  6. shutdown g0/11 on SW B, observe the state of g0/10 on SW A, the link state of interface X16 ,X17;\n  7. no shutdown g0/11 on SW B,observe the state of g0/10 and g0/11, the link state of interface X16 ,X17;",
+      "priority" : "Smoke",
+      "atm_id" : "db1bc562-d026-442b-91d6-6299fa13528f",
+      "initial" : "  TBD",
+      "id" : "1511444",
+      "title" : "Test link state propagation on 10G port.",
+      "description" : "Original ID: 106\nOriginal Title: Test link state propagation on 10G port.\nOriginal Description: Test link state propagation on 10G port.",
+      "result" : "  in step 4, g0/10 change to down, g0/11 change to down, X16 and X17 are \"no link\";\n  in step 5, g0/10 change to UP, g0/11 change to UP too, X16 and X17 are link up;\n  in step 6, g0/11 change to down, g0/10 change to down, X16 and X17 are \"no link\";\n  in step 7, g0/11 change to UP, g0/10 change to UP too, X16 and X17 are link up;"
+   },
+   "1511501" : {
+      "steps" : "  1. Enable Link State propogation on the wiremode interfaces. 2. Unplug the primary interface on the primary unit. 3. Unplug the paired interface on the idle unit. 4. Reboot the primary unit.",
+      "priority" : "Sanity",
+      "atm_id" : "ae0258ab-9bee-48b7-bd0c-980e6331ac73",
+      "initial" : "  Stateful Failover configured. Interfaces configured in Wire Mode Interfaces connected to switch which is connected to PC.",
+      "id" : "1511501",
+      "title" : "Enable Link State Propogation Stateful Failover with primary down on active unit and paried interface down on idle unit",
+      "description" : "Original ID: 89\nOriginal Title: Enable Link State Propogation Stateful Failover with primary down on active unit and paried interface down on idle unit\nOriginal Description: Verify with Link State Propogation enabled with interfaces switching link connection upon Stateful Failover that the correct link state is shown on both interfaces.",
+      "result" : "  Link state is propogated to the other interface and both interfaces show down. Upon failover the linkstate should show that both interfaces are down."
+   },
+   "1511477" : {
+      "steps" : "  1. On other SonicWALL enable Multicast (Require IGMP Membership reports for multicast data forwarding) and enable Multicast on Ports. 2. On other SonicWALL enable Access rule allow Multicast through. 3. Run multicast of movie using VLC on Server. 4. Open VLC stream on Client to Multicast address.",
+      "priority" : "Smoke",
+      "atm_id" : "1d242eec-96c5-4375-b0fb-67878b6cf020",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. PC on one interface. Other interface connect to another SonicWALL which is connected to Server. VLC server on Server and Client.",
+      "id" : "1511477",
+      "title" : "Multicast traffic Wire Mode",
+      "description" : "Original ID: 50\nOriginal Title: Multicast traffic Wire Mode\nOriginal Description: Verify Multicast traffic Wire Mode",
+      "result" : "  Able to see VLC stream on Client. IGMP entry shows up in the IGMP State Table of the other SonicWALL but not the DUT."
+   },
+   "1511475" : {
+      "steps" : "  1. Run various traffics between PC and Server. 2. Run Packet Capture on device.",
+      "priority" : "Sanity",
+      "atm_id" : "99ef7ad3-a24a-4ec6-9acb-24791c6cda3c",
+      "initial" : "  Device connected to another device that the actual traffic will be going through. Interface of other device connected to PC Other interface of other device connect to Server or to router which is connected to Server. Traffic is mirrored to the DUT interface configured in Tap mode.",
+      "id" : "1511475",
+      "title" : "Packet monitor Tap Mode",
+      "description" : "Original ID: 48\nOriginal Title: Packet monitor Tap Mode\nOriginal Description: Verify Packet monitor Tap Mode",
+      "result" : "  Packet capture should include the Mirrored traffic."
+   },
+   "1511493" : {
+      "steps" : "  1. Click to edit an Unassigned interface. 2. Set interface to LAN Zone. 3. Select Wire Mode from IP Assignment Box 4. Select Inspect from the Type Box. 5. Select another Unassigned interface for the pair. 6. Click OK 7. Run traffic over the Wiremode pair. 7. Look at these interface configuration using the UI on primary and backup.",
+      "priority" : "Smoke",
+      "atm_id" : "476e8399-428e-4915-82c2-2d2419166b4d",
+      "initial" : "  Stateful Failover configured with monitoring IP addresses on an interface not being used for Wire Mode.",
+      "id" : "1511493",
+      "title" : "Stateful Failover configured and traffic with Wiremode - Inspect",
+      "description" : "Original ID: 74\nOriginal Title: Stateful Failover configured and traffic with Wiremode - Inspect\nOriginal Description: Verify traffic through Stateful pair configured with Wiremode - Inspect",
+      "result" : "  Traffic succeeds. No broadcast storms result."
+   },
+   "1511470" : {
+      "steps" : "  1. Run various traffics between PC and Server. 2. Observe App Flow Monitor Pages",
+      "priority" : "Sanity",
+      "atm_id" : "19ad3896-6662-4a47-84ea-f37863192586",
+      "initial" : "  Interfaces configured in Wiremode- Bypass. PC on one interface. Other interface connect to Server or to router which is connected to Server. Security Services licensed. Flow Reporting enabled.",
+      "id" : "1511470",
+      "title" : "Flow report enabled and Wire Mode - Bypass",
+      "description" : "Original ID: 40\nOriginal Title: Flow report enabled and Wire Mode - Bypass\nOriginal Description: Verify Flow report enabled and Wire Mode - Bypass",
+      "result" : "  Traffic succeeds. No traffic is observed on the pages."
+   },
+   "1511464" : {
+      "steps" : "  1. Run FTP traffic download matching the rule.",
+      "priority" : "Smoke",
+      "atm_id" : "ff598e69-ccb6-448f-8e2e-7a79b79942c0",
+      "initial" : "  Device connected to another device that the actual traffic will be going through. Interface of other device connected to PC Other interface of other device connect to Server or to router which is connected to Server. Traffic is mirrored to the DUT interface configured in Tap mode.\n  Security Services licensed. App rules enabled. Rule configured denying file extension download through ftp.",
+      "id" : "1511464",
+      "title" : "Denied traffic Tap Mode",
+      "description" : "Original ID: 35\nOriginal Title: Denied traffic Tap Mode\nOriginal Description: Verify denied traffic Tap Mode",
+      "result" : "  Traffic succeeds. Log identifies traffic as matching rule."
+   },
+   "1511450" : {
+      "steps" : "  1. Click to edit an Unassigned interface. 2. Set interface to LAN Zone. 3. Select Wire Mode from IP Assignment Box 4. Select Bypass from the Type Box. 5. Select another Unassigned interface for the pair. 6. Click OK 7. Reboot the device 8. Repeat steps for other types of Wire Mode and Tap Mode.",
+      "priority" : "Smoke",
+      "atm_id" : "86df200f-d688-4bd4-9c9a-13a7c3dce366",
+      "initial" : "  Default",
+      "id" : "1511450",
+      "title" : "Reboot with Wire Mode / Tap Mode settings",
+      "description" : "Original ID: 20\nOriginal Title: Reboot with Wire Mode / Tap Mode settings\nOriginal Description: Verify Wiremode Settings are retained after reboot",
+      "result" : "  Wiremode Settings are retained after reboot"
+   },
+   "1511463" : {
+      "steps" : "  1. Run traffic FTP traffic download matching the rule.",
+      "priority" : "Smoke",
+      "atm_id" : "0e133d5a-e1e4-4af7-85b0-a5814597f1f9",
+      "initial" : "  Interfaces configured in Wiremode- Secure PC on one interface. Other interface connect to Server or to router which is connected to Server.&#160;\n  Security Services licensed. App rules enabled. Rule configured denying file extension download through ftp.",
+      "id" : "1511463",
+      "title" : "Denied traffic Wire Mode- Secure",
+      "description" : "Original ID: 34\nOriginal Title: Denied traffic Wire Mode- Secure\nOriginal Description: Verify denied traffic Wire Mode - Secure",
+      "result" : "  Traffic is blocked. Log identifies traffic as matching rule."
+   },
+   "1511461" : {
+      "steps" : "  1. Run traffic FTP traffic download matching the rule.",
+      "priority" : "Smoke",
+      "atm_id" : "0189e0a5-89a8-4373-ace7-3c65579d5935",
+      "initial" : "  Interfaces configured in Wiremode- Bypass. PC on one interface. Other interface connect to Server or to router which is connected to Server.&#160;\n  Security Services licensed. App rules enabled. Rule configured denying file extension download through ftp.",
+      "id" : "1511461",
+      "title" : "Denied traffic Wire Mode- Bypass",
+      "description" : "Original ID: 32\nOriginal Title: Denied traffic Wire Mode- Bypass\nOriginal Description: Verify denied traffic Wire Mode - Bypass",
+      "result" : "  Traffic succeeds. No logs identifying the traffic as undesirable."
+   },
+   "1511496" : {
+      "steps" : "  1. Run continous ping from between two interfaces. 2. Use ftp to verify virus / app rule violation 3. Reboot the device. 4. While the device is booting try to ftp a virus / app rule violation across the wiremode interfaces.",
+      "priority" : "Sanity",
+      "atm_id" : "25edc5d0-b578-4706-8073-9403ac587458",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. Bypass when SonicOS is restarting or down is unchecked. PC on one interface. Other interface connect to Server or to router which is connected to Server. Security Services licensed. App rules enabled GAV enabled",
+      "id" : "1511496",
+      "title" : "Wiremode - Secure: Bypass when SonicOS is restarting or down unchecked",
+      "description" : "Original ID: 77\nOriginal Title: Wiremode - Secure: Bypass when SonicOS is restarting or down unchecked\nOriginal Description: Verify traffic can pass through the box when Wiremode - Secure is used with Bypass when SonicOS is restarting or down is checked.<br /><br />Note: Currently only available for Supermassive 10X00",
+      "result" : "  All traffic fails while device is rebooting."
+   },
+   "1511511" : {
+      "steps" : "  1. Ping between the PCs 2. Verify that the VPN is setup between UTMs",
+      "priority" : "Smoke",
+      "atm_id" : "dbb349b0-f7cf-4b75-bd9a-591bfda3f460",
+      "initial" : "  Interfaces configured in Wire Mode - Bypass PC --- UTM --- DUT ---- UTM ----PC VPN configuration setup between two UTMs",
+      "id" : "1511511",
+      "title" : "IPSEC VPN traffic through Wire Mode Bypass",
+      "description" : "Original ID: 99\nOriginal Title: IPSEC VPN traffic through Wire Mode Bypass\nOriginal Description: Verify IPSEC VPN traffic through Wire Mode Bypass",
+      "result" : "  VPN tunnel is established between UTMs"
+   },
+   "1511497" : {
+      "steps" : "  1. Run continous ping from between two interfaces. 2. Use ftp to verify virus / app rule violation 3. Reboot the device. 4. While the device is booting try to ftp a virus / app rule violation across the wiremode interfaces.",
+      "priority" : "Sanity",
+      "atm_id" : "40d661d1-e27b-45e5-91fe-1d795219d191",
+      "initial" : "  Interfaces configured in Wire Mode- Bypass PC on one interface. Other interface connect to Server or to router which is connected to Server. Security Services licensed. App rules enabled GAV enabled",
+      "id" : "1511497",
+      "title" : "Wiremode- Bypass when SonicOS is restarting or down",
+      "description" : "Original ID: 78\nOriginal Title: Wiremode- Bypass when SonicOS is restarting or down\nOriginal Description: Verify traffic can pass through the box when Wiremode - Bypass and device is rebooting.<br /><br />Note: Currently only available for Supermassive 10X00",
+      "result" : "  Pings succeed while devices is rebooting, except where bootloader is loading. Can successfully download virus etc. while OS is booting."
+   },
+   "1511486" : {
+      "steps" : "  1. Start Packet capture. 2. Run traffic from client to server - tagged traffic should be from PC to other SonicWALL interface.",
+      "priority" : "Smoke",
+      "atm_id" : "fcca7a7a-55d8-461a-9b17-4a4694f3e4b4",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. PC is connected to interface on the DUT. PC is configured for VLAN tagged traffic. Other interface of DUT is connect to another SonicWALL which is connected to a server. Tagged VLAN is configured on the SonicWALL.",
+      "id" : "1511486",
+      "title" : "VLAN tagged traffic through Wire Mode Paired interfaces",
+      "description" : "Original ID: 64\nOriginal Title: VLAN tagged traffic through Wire Mode Paired interfaces\nOriginal Description: Verify VLAN tagged traffic through Wire Mode Paired interfaces",
+      "result" : "  Tagged traffic traverses the DUT wire mode interfaces with no issues."
+   },
+   "1511453" : {
+      "steps" : "  1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.\n  2.&#160; Run packet capture",
+      "priority" : "Full_Regression",
+      "atm_id" : "43ba8c43-4c00-4969-8ee1-a5189b40690d",
+      "initial" : "  Interfaces configured in Wire Mode - Secure. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1511453",
+      "title" : "Basic traffic Secure Mode",
+      "description" : "Original ID: 24\nOriginal Title: Basic traffic Secure Mode\nOriginal Description: Verify basic traffic with Secure Mode",
+      "result" : "  Packet capture should include that traversing the Wire Mode interfaces."
+   },
+   "1511446" : {
+      "steps" : "  1. In firewall to configure X2, X3 as inspect wire mode, zone selection is LAN-LAN.\n  2. Configure RIPv2 (multicast mode) in both router 1 and router 2 and redistribute connected route, check if both router can learn routers from peer.\n  3. Configure OSPF in both router 1 and router 2 and redistribute connected route, check if both router can establish OSPF neighbor and learn routes properly. 4. Configure BGP in both router1 and router 2 and redistribute connected route, check if both router can establish BGP neighbor and learn routes properly.\n  5. Configure EIGRP in both router 1 and router 2 and redistribute connected routes, check if both router can establish EIGRP neighbor and learn routes properly. 6. Enable IP multicast in both router (command: \"ip multicast-routing\" in global configuration mode), configure IP PIM dense mode in both router's interface (command: \"ip pim dense-mode\" under interface configuration mode), check if both router can establish PIM neighbor properly (command: \"show ip pim neighbor\"). 7. Repeat step 1~6 with other zone combination: LAN-WAN, DMZ-WAN, LAN-DMZ.",
+      "priority" : "Sanity",
+      "atm_id" : "420cf1c6-763f-4297-8651-e00ddcc20d9b",
+      "initial" : "  Cisco Router 1 -----(X2)DUT(X3)-----Cisco Router 2",
+      "id" : "1511446",
+      "title" : "Routing protocol traffic pass through Wire Mode Inspect",
+      "description" : "Original ID: 112\nOriginal Title: Routing protocol traffic pass through Wire Mode Inspect\nOriginal Description: Test routing protocols (RIP,OSPF, BGP, EIGRP, PIM, etc) can pass through inspect wire mode successfully.",
+      "result" : "  Step 2. Both router 1 and router 2 can learn routes properly from peer.\n  Step 3. OSPF neighbor could be established (status is FULL), and can learn routes properly from peer.\n  Step 4. BGP neighbor could be established, and can learn routes properly from peer.\n  Step 5. EIGRP neighbor could be established, and can learn routes properly from peer.\n  Step 6. PIM neighbor could be established.\n  Step 7. Same as above results."
+   },
+   "1511468" : {
+      "steps" : "  1. FTP a virus from the server to the PC",
+      "priority" : "Smoke",
+      "atm_id" : "3c38c288-1df6-4e85-9192-ce3f0bdd5277",
+      "initial" : "  Device connected to another device that the actual traffic will be going through. Interface of other device connected to PC Other interface of other device connect to Server or to router which is connected to Server. Traffic is mirrored to the DUT interface configured in Tap mode.\n  Security Services licensed. GAV enabled.",
+      "id" : "1511468",
+      "title" : "Virus traffic Tap Mode",
+      "description" : "Original ID: 39\nOriginal Title: Virus traffic Tap Mode\nOriginal Description: Verify Virus traffic Tap Mode",
+      "result" : "  Download succeeds. Log identifies traffic as containing virus."
+   },
+   "1511462" : {
+      "steps" : "  1. Run FTP traffic download matching the rule.",
+      "priority" : "Smoke",
+      "atm_id" : "f8a03e9c-f3ce-490e-92a0-67a6527c4386",
+      "initial" : "  Interfaces configured in Wiremode- Inspect PC on one interface. Other interface connect to Server or to router which is connected to Server.&#160; Security Services licensed.\n  App rules enabled. Rule configured denying file extension download through ftp.",
+      "id" : "1511462",
+      "title" : "Denied traffic Wire Mode- Inspect",
+      "description" : "Original ID: 33\nOriginal Title: Denied traffic Wire Mode- Inspect\nOriginal Description: Verify denied traffic Wire Mode - Inspect",
+      "result" : "  Traffic succeeds. Log identifies traffic as matching rule."
+   },
+   "1511492" : {
+      "steps" : "  1. Click to edit an Unassigned interface. 2. Set interface to LAN Zone. 3. Select Wire Mode from IP Assignment Box 4. Select Bypass from the Type Box. 5. Select another Unassigned interface for the pair. 6. Click OK 7. Run traffic over the Wiremode pair. 8. Look at these interface configuration using the UI on primary and backup.",
+      "priority" : "Smoke",
+      "atm_id" : "9d511c06-35b9-4444-bddc-3f78877e287b",
+      "initial" : "  Stateful Failover configured with monitoring IP addresses on an interface not being used for Wire Mode.",
+      "id" : "1511492",
+      "title" : "Stateful Failover configured and traffic with Wiremode - Bypass",
+      "description" : "Original ID: 73\nOriginal Title: Stateful Failover configured and traffic with Wiremode - Bypass\nOriginal Description: Verify traffic through Stateful pair configured with Wiremode - Bypass",
+      "result" : "  Traffic succeeds. No broadcast storms result."
+   },
+   "1511480" : {
+      "steps" : "  1. Click to edit an Unassigned interface. 2. Set interface to LAN Zone. 3. Select Wire Mode from IP Assignment Box 4. Select Secure from the Type Box. 5. Select another Unassigned interface for the pair. 6. Click OK 7. Look at these interface configuration using the UI on primary and backup.",
+      "priority" : "Full_Regression",
+      "atm_id" : "afe3bc85-b72b-4a65-884d-8f15fd41d24d",
+      "initial" : "  Stateful Failover configured with monitoring IP addresses on an interface not being used for Wire Mode.",
+      "id" : "1511480",
+      "title" : "Stateful Failover configured with WireMode",
+      "description" : "Original ID: 58\nOriginal Title: Stateful Failover configured with WireMode\nOriginal Description: Verify Stateful Failover configured with WireMode",
+      "result" : "  Both interfaces show what mode they are in for the comment in the interface table. Zone cannot be edited/ Both interfaces can be edited on primary."
+   },
+   "1511491" : {
+      "steps" : "  1. Run various traffics between PC and Server. 2. Run packet capture on device.",
+      "priority" : "Sanity",
+      "atm_id" : "8a0290ae-4d83-4c22-b52a-992524428132",
+      "initial" : "  Interfaces configured in Wiremode- Inspect: Restrict Analysis at Resource Limit unchecked. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1511491",
+      "title" : "Packet monitor Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.",
+      "description" : "Original ID: 72\nOriginal Title: Packet monitor Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.\nOriginal Description: Verify Packet monitor Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.",
+      "result" : "  Packet capture should include that traversing the Wire Mode interfaces."
+   },
+   "1511467" : {
+      "steps" : "  1. FTP a virus from the server to the PC",
+      "priority" : "Smoke",
+      "atm_id" : "4d536e4a-0424-4366-bb7d-18feceb3160a",
+      "initial" : "  Interfaces configured in Wiremode- Secure PC on one interface. Other interface connect to Server or to router which is connected to Server.\n  Security Services licensed. GAV enabled",
+      "id" : "1511467",
+      "title" : "Virus traffic Wire Mode - Secure",
+      "description" : "Original ID: 38\nOriginal Title: Virus traffic Wire Mode - Secure\nOriginal Description: Verify virus traffic Wire Mode - Secure",
+      "result" : "  Virus is blocked. Log identifies traffic as containing virus."
+   },
+   "1511479" : {
+      "steps" : "  1. Run packet capture. 2. Attempt to ping IP address of the other resource from PC on the Wire Mode interface.",
+      "priority" : "Smoke",
+      "atm_id" : "bd384c71-ab89-4685-884a-0d3f318a7f6e",
+      "initial" : "  Pair of interfaces configured in Wire mode - secure. Interface configured with management enabled. PC on one interface. Other interface connect to Server or to router which is connected to Server. Another resource is on another configured interface.",
+      "id" : "1511479",
+      "title" : "Traffic through Wiremode interfaces when ARP entry of destination traffic MAC is on different interface",
+      "description" : "Original ID: 56\nOriginal Title: Traffic through Wiremode interfaces when ARP entry of destination traffic MAC is on different interface\nOriginal Description: Verify Traffic through Wiremode interfaces when ARP entry of destination traffic MAC is on different interface",
+      "result" : "  ARP and possibly ping is sent through the Wire Mode interfaces. It is not sent to the other resource through the interface it is connected to."
+   },
+   "1511455" : {
+      "steps" : "  1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.\n  2. Change Type to Inspect. 3. Change type to Secure.",
+      "priority" : "Sanity",
+      "atm_id" : "97a14c1c-4fd5-4b90-98f3-5355a97c3ad5",
+      "initial" : "  Interfaces configured in Wiremode- Bypass. PC on one interface. Other interface connect to router which is connected to Server.",
+      "id" : "1511455",
+      "title" : "Changing between different Wire modes",
+      "description" : "Original ID: 26\nOriginal Title: Changing between different Wire modes\nOriginal Description: Verify basic traffic switching between wire modes.",
+      "result" : "  Traffic succeeds."
+   },
+   "1511472" : {
+      "steps" : "  1. Run various traffics between PC and Server. 2. Run packet capture on device.",
+      "priority" : "Sanity",
+      "atm_id" : "8d70e377-c0be-46c5-b297-a963c6554b6a",
+      "initial" : "  Interfaces configured in Wiremode- Bypass. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1511472",
+      "title" : "Packet monitor Wire Mode - Bypass",
+      "description" : "Original ID: 45\nOriginal Title: Packet monitor Wire Mode - Bypass\nOriginal Description: Verify Packet monitor Wire Mode - Bypass",
+      "result" : "  Packet capture shouldn't include traffic traversing the Wire Mode interfaces."
+   },
+   "1511506" : {
+      "steps" : "  1. Try to ftp down a virus file over wiremode pair 2. FTP down a large file over wiremode pair 3. Power down the primary unit 4. Try to ftp down a virus file over wiremode pair",
+      "priority" : "Sanity",
+      "atm_id" : "b845b706-0329-4c81-9cb3-4d56191b2c07",
+      "initial" : "  Stateful Failover configured with monitoring IP addresses on an interface not being used for Wire Mode Wiremode - Bypass interfaces setup GAV Enabled",
+      "id" : "1511506",
+      "title" : "Hardware Stateful Failover Occurs  Wiremode - Bypass",
+      "description" : "Original ID: 94\nOriginal Title: Hardware Stateful Failover Occurs  Wiremode - Bypass\nOriginal Description: Verify Hardware Stateful Failover with pair configured with Wiremode - Bypass",
+      "result" : "  Traffic succeeds and continues after failover. Virus is not blocked nor logged before and after failover. No broadcast storms result."
+   },
+   "1511473" : {
+      "steps" : "  1. Run various traffics between PC and Server. 2. Run packet capture on device.",
+      "priority" : "Sanity",
+      "atm_id" : "40a62b3a-0c34-4ca6-8f53-4d2579899551",
+      "initial" : "  Interfaces configured in Wiremode- Inspect. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1511473",
+      "title" : "Packet monitor Wire Mode - Inspect",
+      "description" : "Original ID: 46\nOriginal Title: Packet monitor Wire Mode - Inspect\nOriginal Description: Verify Packet monitor Wire Mode - Inspect",
+      "result" : "  Packet capture should include that traversing the Wire Mode interfaces."
+   },
+   "1511442" : {
+      "steps" : "  1. Click to edit an Unassigned interface. 2. Set interface to LAN Zone. 3. Select Wire Mode from IP Assignment Box 4. Select Bypass from the Type Box 5. Select another Unassigned interface for the pair. 6. Click OK 7. Click to edit both interfaces",
+      "priority" : "Full_Regression",
+      "atm_id" : "02e5d2e3-b4bf-4aca-84dd-e56582b25c11",
+      "initial" : "  Default",
+      "id" : "1511442",
+      "title" : "GUI - Configure interface in Wire Mode - Bypass mode",
+      "description" : "Original ID: 1\nOriginal Title: GUI - Configure interface in Wire Mode - Bypass mode\nOriginal Description: Verify can configure interface in Wire Mode - Bypass mode",
+      "result" : "  Both interfaces show what mode they are in for the comment in the interface table. Both interfaces can be edited. Cannot override MAC address."
+   },
+   "1511458" : {
+      "steps" : "  1. Click to edit an Unassigned interface. 2. Set interface to LAN Zone. 3. Select Wire Mode from IP Assignment Box 4. Select Secure from the Type Box. 5. Select another Unassigned interface for the pair. 6. Click OK 7. Click to edit both interfaces.",
+      "priority" : "Full_Regression",
+      "atm_id" : "3547b6ba-0448-49e2-ad1f-04817cb57af9",
+      "initial" : "  Default",
+      "id" : "1511458",
+      "title" : "GUI - Configure interface in Wire Mode - Secure Mode",
+      "description" : "Original ID: 3\nOriginal Title: GUI - Configure interface in Wire Mode - Secure Mode\nOriginal Description: Verify configuring interface in Wire Mode - Type Secure",
+      "result" : "  Both interfaces show what mode they are in for the comment in the interface table. Both interfaces can be edited. Cannot override MAC address."
+   },
+   "1511474" : {
+      "steps" : "  1. Run various traffics between PC and Server. 2. Run packet capture on device.",
+      "priority" : "Smoke",
+      "atm_id" : "60366be8-6083-4c43-84eb-e985ea8c50cd",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1511474",
+      "title" : "Packet monitor Wire Mode - Secure",
+      "description" : "Original ID: 47\nOriginal Title: Packet monitor Wire Mode - Secure\nOriginal Description: Verify Packet monitor Wire Mode - Secure",
+      "result" : "  Packet capture should include that traversing the Wire Mode interfaces."
+   },
+   "1511481" : {
+      "steps" : "  1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.\n  2. Cause failover by rebooting the primary.",
+      "priority" : "Sanity",
+      "atm_id" : "4c063f07-902f-49d4-90b0-859aab7481cb",
+      "initial" : "  Two devices configured in stateful failoover with management set on an interface not being used for Wire Mode. Interfaces configured in Wire Mode - Secure. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1511481",
+      "title" : "Failover occurs with Wiremode",
+      "description" : "Original ID: 59\nOriginal Title: Failover occurs with Wiremode\nOriginal Description: Verify Failover with Wiremode",
+      "result" : "  Traffic continues after failover - no broadcast storms should result."
+   },
+   "1511445" : {
+      "steps" : "  1. In firewall to configure X2, X3 as bypass wire mode, zone selection is LAN-LAN.\n  2. Configure RIPv2 (multicast mode) in both router 1 and router 2 and redistribute connected route, check if both router can learn routers from peer.\n  3. Configure OSPF in both router 1 and router 2 and redistribute connected route, check if both router can establish OSPF neighbor and learn routes properly. &#160;\n  4. Configure BGP in both router1 and router 2 and redistribute connected route, check if both router can establish BGP neighbor and learn routes properly.\n  5. Configure EIGRP in both router 1 and router 2 and redistribute connected routes, check if both router can establish EIGRP neighbor and learn routes properly. &#160;\n  6. Enable IP multicast in both router (command: \"ip multicast-routing\" in global configuration mode), configure IP PIM dense mode in both router's interface (command: \"ip pim dense-mode\" under interface configuration mode), check if both router can establish PIM neighbor properly (command: \"show ip pim neighbor\"). &#160;\n  7. Repeat step 1~6 with other zone combination: LAN-WAN, DMZ-WAN, LAN-DMZ.&#160;",
+      "priority" : "Sanity",
+      "atm_id" : "0b9e5fab-a080-4668-b49d-8e4cb85d997f",
+      "initial" : "  Cisco Router 1 -----(X2)DUT(X3)-----Cisco Router 2\n  &#160;&#160;",
+      "id" : "1511445",
+      "title" : "Routing protocol traffic pass through Wire Mode Bypass",
+      "description" : "Original ID: 111\nOriginal Title: Routing protocol traffic pass through Wire Mode Bypass\nOriginal Description: Test routing protocols (RIP,OSPF, BGP, EIGRP, PIM, etc) can pass through bypass wire mode successfully.",
+      "result" : "  Step 2. Both router 1 and router 2 can learn routes properly from peer.\n  Step 3. OSPF neighbor could be established (status is FULL), and can&#160;learn routes properly from peer.\n  Step 4.&#160;BGP neighbor could be established, and can&#160;learn routes properly from peer.\n  Step 5. EIGRP neighbor could be established, and can&#160;learn routes properly from peer.\n  Step 6. PIM neighbor could be established.\n  Step 7. Same as above results.&#160;"
+   },
+   "1511504" : {
+      "steps" : "  1. Try to ftp down a virus file over wiremode pair 2. FTP down a large file over wiremode pair 3. Power down the primary unit 4. Try to ftp down a virus file over wiremode pair",
+      "priority" : "Sanity",
+      "atm_id" : "61e94bd8-d0db-463c-8faf-2da2d17afa82",
+      "initial" : "  Stateful Failover configured with monitoring IP addresses on an interface not being used for Wire Mode Wiremode - Inspect interfaces setup GAV Enabled",
+      "id" : "1511504",
+      "title" : "Hardware Stateful Failover Occurs  Wiremode - Inspect",
+      "description" : "Original ID: 92\nOriginal Title: Hardware Stateful Failover Occurs  Wiremode - Inspect\nOriginal Description: Verify Hardware Stateful Failover with pair configured with Wiremode - Inspect",
+      "result" : "  Traffic succeeds and continues after failover. Virus is detected before and after failover but is not blocked. No broadcast storms result."
+   },
+   "1511448" : {
+      "steps" : "  1. Assign a couple pair of interfaces in Wire mode. 2. Export the configuration. 3. Import the configuration.",
+      "priority" : "Sanity",
+      "atm_id" : "378a3d21-2c07-4077-8053-02e8862ffb93",
+      "initial" : "  Default.",
+      "id" : "1511448",
+      "title" : "Prefs import / export with Wiremode configuration present",
+      "description" : "Original ID: 17\nOriginal Title: Prefs import / export with Wiremode configuration present\nOriginal Description: Verify Prefs import / export with Wiremode configuration present",
+      "result" : "  Wiremode configuration can be exported / imported. Configuration is correct after import."
+   },
+   "1511507" : {
+      "steps" : "  1. Run continuous ping 2. Power up primary unit",
+      "priority" : "Sanity",
+      "atm_id" : "3c9c18c0-3010-4764-87f6-a3e424fe647a",
+      "initial" : "  Stateful Failover configured with monitoring IP addresses on an interface not being used for Wire Mode Wiremode - Bypass interfaces setup GAV Enabled Primary unit initially powered down.",
+      "id" : "1511507",
+      "title" : "Primary comes backup up after Hardware Stateful Failover Wiremode - Bypass",
+      "description" : "Original ID: 95\nOriginal Title: Primary comes backup up after Hardware Stateful Failover Wiremode - Bypass\nOriginal Description: Verify what happens when primary comes backup up after Hardware Stateful Failover Wiremode  with Wiremode - Bypass",
+      "result" : "  Traffic succeeds. No broadcast storms result while Primary is booting or after booted."
+   },
+   "1511465" : {
+      "steps" : "  1. FTP a virus from the server to the PC",
+      "priority" : "Smoke",
+      "atm_id" : "d1012f7f-74e5-45a3-ae1f-d6be6fe0d3f7",
+      "initial" : "  Interfaces configured in Wiremode- Bypass. PC on one interface. Other interface connect to Server or to router which is connected to Server.\n  Security Services licensed. GAV licensed and enabled.",
+      "id" : "1511465",
+      "title" : "Virus traffic Wire Mode - Bypass",
+      "description" : "Original ID: 36\nOriginal Title: Virus traffic Wire Mode - Bypass\nOriginal Description: Verify Virus traffic Wire Mode - Bypass",
+      "result" : "  Virus download succeeds without logs."
+   },
+   "1511500" : {
+      "steps" : "  Plug in the primary interface",
+      "priority" : "Smoke",
+      "atm_id" : "4d02b54d-24b3-4fa0-b4a5-71352309ef27",
+      "initial" : "  Interfaces configured in Wire Mode Enable Link State propogation on the wiremode interfaces. Interfaces connected to switch which is connected to PC. Primary interface intially unplugged.",
+      "id" : "1511500",
+      "title" : "Enable Link State Propogation with primary interface coming back online",
+      "description" : "Original ID: 82\nOriginal Title: Enable Link State Propogation with primary interface coming back online\nOriginal Description: Verify with Link State Propogation enabled with primary interface coming back online that the other interface shows will show up as well.",
+      "result" : "  Link state is propogated to the other interface and does shows link to the connected switch."
+   },
+   "1511456" : {
+      "steps" : "  1. Run traffic between PC and Server that does not match rule - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Smoke",
+      "atm_id" : "dbbfc8dd-504a-4c72-ac9d-1f8d8bb90ae0",
+      "initial" : "  Interfaces configured in Wiremode- Bypass. PC on one interface. Other interface connect to Server or to router which is connected to Server.\n  Security Services licensed. App rules enabled.",
+      "id" : "1511456",
+      "title" : "Allowed traffic Wire Mode - Bypass",
+      "description" : "Original ID: 28\nOriginal Title: Allowed traffic Wire Mode - Bypass\nOriginal Description: Verify Allowed traffic Wire Mode - Bypass",
+      "result" : "  Traffic succeeds. No logs identifying the traffic as undesirable."
+   },
+   "1511466" : {
+      "steps" : "  1. FTP a virus from the server to the PC",
+      "priority" : "Smoke",
+      "atm_id" : "dbcf8882-6261-4954-a847-5ab80b51deca",
+      "initial" : "  Interfaces configured in Wiremode- Inspect PC on one interface. Other interface connect to Server or to router which is connected to Server.\n  Security Services licensed. GAV enabled.",
+      "id" : "1511466",
+      "title" : "Virus traffic Wire Mode - Inspect",
+      "description" : "Original ID: 37\nOriginal Title: Virus traffic Wire Mode - Inspect\nOriginal Description: Verify virus traffic Wire Mode - Inspect",
+      "result" : "  Download succeeds. Log identifies traffic as containing virus."
+   },
+   "1511494" : {
+      "steps" : "  1. Click to edit an Unassigned interface. 2. Set interface to LAN Zone. 3. Select Wire Mode from IP Assignment Box 4. Select Secure from the Type Box. 5. Select another Unassigned interface for the pair. 6. Click OK 7. Run traffic over the Wiremode pair. 8. Look at these interface configuration using the UI on primary and backup.",
+      "priority" : "Smoke",
+      "atm_id" : "296aece1-7389-477b-9aca-ca694ee2cc31",
+      "initial" : "  Stateful Failover configured with monitoring IP addresses on an interface not being used for Wire Mode. Bypass when SonicOS is restarting or down is not checked",
+      "id" : "1511494",
+      "title" : "Stateful Failover configured and traffic with Wiremode - Secure",
+      "description" : "Original ID: 75\nOriginal Title: Stateful Failover configured and traffic with Wiremode - Secure\nOriginal Description: Verify traffic through Stateful pair configured with Wiremode - Secure",
+      "result" : "  Traffic succeeds. No broadcast storms result."
+   },
+   "1511451" : {
+      "steps" : "  1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Full_Regression",
+      "atm_id" : "0d2fe2f6-52a4-4d34-8cdd-b9d855be54d0",
+      "initial" : "  Interfaces configured in Wiremode- Bypass. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1511451",
+      "title" : "Basic traffic Bypass Mode",
+      "description" : "Original ID: 22\nOriginal Title: Basic traffic Bypass Mode\nOriginal Description: Verify basic traffic with Bypass Mode",
+      "result" : "  Traffic succeeds."
+   },
+   "1511469" : {
+      "steps" : "  1. Click to edit an Unassigned interface. 2. Set interface to LAN Zone. 3. Select Tap Mode from IP Assignment Box 4. Click OK 5. Click to edit both interfaces.",
+      "priority" : "Full_Regression",
+      "atm_id" : "81fee3f3-ea36-4820-b6bc-259baba0cb75",
+      "initial" : "  Default",
+      "id" : "1511469",
+      "title" : "GUI - Configure interface in Tap Mode",
+      "description" : "Original ID: 4\nOriginal Title: GUI - Configure interface in Tap Mode\nOriginal Description: Verify configuring interface in Tap Mode",
+      "result" : "  Interfaces shows what mode it is in the interface table. Interface can be edited. Cannot override MAC address."
+   },
+   "1511503" : {
+      "steps" : "  1. Run continuous ping 2. Power up primary unit",
+      "priority" : "Sanity",
+      "atm_id" : "ab51683c-8541-4fec-98c3-743436a647a6",
+      "initial" : "  Stateful Failover configured with monitoring IP addresses on an interface not being used for Wire Mode Wiremode - Secure interfaces setup Bypass when SonicOS is restarting or down is checked GAV Enabled Primary unit initially powered down.",
+      "id" : "1511503",
+      "title" : "Primary comes backup up after Hardware Stateful Failover Wiremode - Secure - Bypass on Reboot",
+      "description" : "Original ID: 91\nOriginal Title: Primary comes backup up after Hardware Stateful Failover Wiremode - Secure - Bypass on Reboot\nOriginal Description: Verify what happens when primary comes backup up after Hardware Stateful Failover Wiremode with Wiremode - Secure Bypass when SonicOS is restarting or down is checked<br /><br />Note: Currently Bypass on Reboot is only available for Supermassive 10X00. Just verify the other parts.",
+      "result" : "  Traffic succeeds. No broadcast storms result while Primary is booting or after booted."
+   },
+   "1511505" : {
+      "steps" : "  1. Run continuous ping 2. Power up primary unit",
+      "priority" : "Sanity",
+      "atm_id" : "11845887-e33b-498e-bb2b-52899a2d2a6c",
+      "initial" : "  Stateful Failover configured with monitoring IP addresses on an interface not being used for Wire Mode Wiremode - Inspect interfaces setup GAV Enabled Primary unit initially powered down.",
+      "id" : "1511505",
+      "title" : "Primary comes backup up after Hardware Stateful Failover Wiremode - Inspect",
+      "description" : "Original ID: 93\nOriginal Title: Primary comes backup up after Hardware Stateful Failover Wiremode - Inspect\nOriginal Description: Verify what happens when primary comes backup up after Hardware Stateful Failover Wiremode  with Wiremode - Inspect",
+      "result" : "  Traffic succeeds. No broadcast storms result while Primary is booting or after booted."
+   },
+   "1511488" : {
+      "steps" : "  1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc",
+      "priority" : "Sanity",
+      "atm_id" : "5b039231-d991-44a2-8c96-20818a2dcf21",
+      "initial" : "  Interfaces configured in Wiremode - Inspect: Restrict Analysis at Resource Limit unchecked. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1511488",
+      "title" : "Basic traffic Inspect: Restrict Analysis at Resource Limit unchecked.",
+      "description" : "Original ID: 67\nOriginal Title: Basic traffic Inspect: Restrict Analysis at Resource Limit unchecked.\nOriginal Description: Verify basic traffic with Inspect: Restrict Analysis at Resource Limit unchecked.",
+      "result" : "  Traffic succeeds."
+   },
+   "1511502" : {
+      "steps" : "  1. Try to ftp down a virus file over wiremode pair 2. FTP down a large file over wiremode pair 3. Power down the primary unit 4. Try to ftp down a virus file over wiremode pair",
+      "priority" : "Smoke",
+      "atm_id" : "6029db1d-7f74-4121-bbc2-763199600b0b",
+      "initial" : "  Stateful Failover configured with monitoring IP addresses on an interface not being used for Wire Mode Wiremode - Secure interfaces setup Bypass when SonicOS is restarting or down is checked GAV Enabled",
+      "id" : "1511502",
+      "title" : "Hardware Stateful Failover Occurs  Wiremode - Secure - Bypass on Reboot",
+      "description" : "Original ID: 90\nOriginal Title: Hardware Stateful Failover Occurs  Wiremode - Secure - Bypass on Reboot\nOriginal Description: Verify Hardware Stateful Failover with pair configured with Wiremode - Secure Bypass when SonicOS is restarting or down is checked<br /><br />Note: Currently Bypass on Reboot is only available for Supermassive 10X00. Just verify the other parts.",
+      "result" : "  Traffic succeeds and continues after failover. Virus is blocked before and after failover. No broadcast storms result."
+   },
+   "1511495" : {
+      "steps" : "  1. Run continous ping from between two interfaces. 2. Use ftp to verify virus / app rule violation 3. Reboot the device.\n  4. While the device is booting try to ftp a virus / app rule violation across the wiremode interfaces.",
+      "priority" : "Smoke",
+      "atm_id" : "856d0b99-6a5d-4070-9585-4c65d8992e3d",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. Bypass when SonicOS is restarting or down is checked. PC on one interface. Other interface connect to Server or to router which is connected to Server. Security Services licensed. App rules enabled GAV enabled",
+      "id" : "1511495",
+      "title" : "Wiremode - Secure: Bypass when SonicOS is restarting or down checked",
+      "description" : "Original ID: 76\nOriginal Title: Wiremode - Secure: Bypass when SonicOS is restarting or down checked\nOriginal Description: Verify traffic can pass through the box when Wiremode - Secure is used with Bypass when SonicOS is restarting or down is checked.<br /><br />Note: Currently only available for Supermassive 10X00",
+      "result" : "  Pings succeed while devices is rebooting, except where bootloader is loading. Can successfully download virus etc. while OS is booting."
+   },
+   "1511498" : {
+      "steps" : "  1. Run continous ping from between two interfaces. 2. Use ftp to verify virus / app rule violation 3. Reboot the device. 4. While the device is booting try to ftp a virus / app rule violation across the wiremode interfaces.",
+      "priority" : "Sanity",
+      "atm_id" : "f80ef800-161b-4465-b0a9-dfcfcb8ced97",
+      "initial" : "  Interfaces configured in Wire Mode- Inspect PC on one interface. Other interface connect to Server or to router which is connected to Server. Security Services licensed. App rules enabled GAV enabled",
+      "id" : "1511498",
+      "title" : "Wiremode- Inspect when SonicOS is restarting or down",
+      "description" : "Original ID: 79\nOriginal Title: Wiremode- Inspect when SonicOS is restarting or down\nOriginal Description: Verify traffic can pass through the box when Wiremode - Inspect and device is rebooting.<br /><br />Note: Currently only available for Supermassive 10X00",
+      "result" : "  Pings succeed while devices is rebooting, except where bootloader is loading. Can successfully download virus etc. while OS is booting."
+   },
+   "1511508" : {
+      "steps" : "  1. Enable DHCP on PC 2. Verify PC obtains DHCP lease",
+      "priority" : "Smoke",
+      "atm_id" : "35e3460e-5121-4a66-a261-8e067d64bddb",
+      "initial" : "  Interfaces configured in Wire Mode - Bypass PC connected to DUT Other interface of DUT is connect to DHCP Server",
+      "id" : "1511508",
+      "title" : "DHCP traffic through Wire Mode Bypass",
+      "description" : "Original ID: 96\nOriginal Title: DHCP traffic through Wire Mode Bypass\nOriginal Description: Verify DHCP traffic through Wire Mode Bypass",
+      "result" : "  PC obtains DHCP lease"
+   },
+   "1511454" : {
+      "steps" : "  1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.\n  2. Observe logs on device 3. Do packet capture",
+      "priority" : "Full_Regression",
+      "atm_id" : "f67dc506-e76e-450c-b87d-d33651be7456",
+      "initial" : "  Interface configured in Tap Mode Device connected to another device that the actual traffic will be going through. Interface of other device connected to PC Other interface of other device connect to Server or to router which is connected to Server. Traffic is mirrored to the DUT.",
+      "id" : "1511454",
+      "title" : "Basic traffic Tap Mode",
+      "description" : "Original ID: 25\nOriginal Title: Basic traffic Tap Mode\nOriginal Description: Verify basic traffic with Tap Mode",
+      "result" : "  DUT does not attempt to forward on traffic."
+   },
+   "1511459" : {
+      "steps" : "  1. Run traffic between PC and Server that does not match rule - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Smoke",
+      "atm_id" : "b018225e-18d5-4442-a30a-7335d529e4d4",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. PC on one interface. Other interface connect to Server or to router which is connected to Server.&#160;\n  Security Services licensed. App rules enabled.",
+      "id" : "1511459",
+      "title" : "Allowed traffic  Wire Mode - Secure",
+      "description" : "Original ID: 30\nOriginal Title: Allowed traffic  Wire Mode - Secure\nOriginal Description: Verify Allowed traffic Wire Mode - Secure",
+      "result" : "  Traffic succeeds. No logs identifying the traffic as undesirable."
+   },
+   "1511485" : {
+      "steps" : "  1. Start Packet capture. 2. On other SonicWALL configure WAN for PPPoE. 3. Verify can access to the internet from the PC.",
+      "priority" : "Smoke",
+      "atm_id" : "1d13bf03-f3ed-48af-adf0-1b9bcde37ac5",
+      "initial" : "  Interfaces configured in Wire Mode- Secure.\n  PC connected to another SonicWALL which is connected to the DUT. Other interface of DUT is connect to PPPoE Server and internet.",
+      "id" : "1511485",
+      "title" : "PPPoE traffic through Wire Mode Paired interfaces",
+      "description" : "Original ID: 63\nOriginal Title: PPPoE traffic through Wire Mode Paired interfaces\nOriginal Description: Verify PPPoE traffic through Wire Mode Paired interfaces",
+      "result" : "  PPPoE commnication happens through WireMode interfaces and sets up WAN of other SonicWALL. Traffic is able to be passed through the PPPoE connection."
+   },
+   "1511483" : {
+      "steps" : "  1. Attempt HTTP traffic to trigger the App rule.",
+      "priority" : "Sanity",
+      "atm_id" : "fb352e35-8860-43c7-b156-85d42874e892",
+      "initial" : "  Two devices configured in Stateful Failover with management set on an interface not being used for Wire Mode. Active-Active DPI enabled with interface selected and connected. Pair of interfaces configured in Wire Mode - Secure. PC on one interface. Other interface connect to Server or to router which is connected to Server. GAV, App Rules Enabled. App rule configured that will block certain HTTP traffic.",
+      "id" : "1511483",
+      "title" : "Active-Active DPI configured, Wiremode - Secure with denied traffic",
+      "description" : "Original ID: 61\nOriginal Title: Active-Active DPI configured, Wiremode - Secure with denied traffic\nOriginal Description: Verify Active-Active DPI configured, Wire Mode - Secure with denied traffic",
+      "result" : "  Traffic is blocked. Log describing the event is observed."
+   },
+   "1511449" : {
+      "steps" : "  1. Click to edit an Unassigned interface. 2. Set interface to LAN Zone. 3. Select Wire Mode from IP Assignment Box 4. Select Inspect from the Type Box 5. Select another Unassigned interface for the pair. 6. Click OK 7. Click to edit both interfaces.",
+      "priority" : "Full_Regression",
+      "atm_id" : "52d0f158-544e-4670-8260-f5ed3e7ffe76",
+      "initial" : "  Default",
+      "id" : "1511449",
+      "title" : "GUI - Configure interface in Wire Mode - Inspect",
+      "description" : "Original ID: 2\nOriginal Title: GUI - Configure interface in Wire Mode - Inspect\nOriginal Description: Verify configuring interface in Wire Mode - Inspect",
+      "result" : "  Both interfaces show what mode they are in for the comment in the interface table. Both interfaces can be edited. Cannot override MAC address."
+   },
+   "1511484" : {
+      "steps" : "  1. Attempt to download a virus on PC from Server.",
+      "priority" : "Smoke",
+      "atm_id" : "e22e3609-559c-4ecd-896f-cad8b999bd73",
+      "initial" : "  Two devices configured in Stateful Failoover with management set on an interface not being used for Wire Mode. Active-Active DPI enabled with interface selected and connected. Pair of interfaces configured in Wire Mode - Secure. PC on one interface. Other interface connect to Server or to router which is connected to Server. GAV, App Rules Enabled.",
+      "id" : "1511484",
+      "title" : "Active-Active UTM configured, Wiremode with Secure Mode traffic with virus",
+      "description" : "Original ID: 62\nOriginal Title: Active-Active UTM configured, Wiremode with Secure Mode traffic with virus\nOriginal Description: Verify Active-Active UTM configured, Wiremode with Secure Mode traffic with virus",
+      "result" : "  Traffic is blocked. Log describing the event is observed."
+   },
+   "1511443" : {
+      "steps" : "  1. Ping between the PCs 2. Verify that the VPN is setup between UTMs",
+      "priority" : "Sanity",
+      "atm_id" : "b6e8f1d9-1af0-488a-b4fa-9cff26f3428c",
+      "initial" : "  Interfaces configured in Wire Mode - Secure PC --- UTM --- DUT ---- UTM ----PC VPN configuration setup between two UTMs",
+      "id" : "1511443",
+      "title" : "IPSEC VPN traffic through Wire Mode Secure",
+      "description" : "Original ID: 101\nOriginal Title: IPSEC VPN traffic through Wire Mode Secure\nOriginal Description: Verify IPSEC VPN traffic through Wire Mode Secure",
+      "result" : "  VPN tunnel is established between UTMs"
+   },
+   "1511452" : {
+      "steps" : "  1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Full_Regression",
+      "atm_id" : "7b185d6e-1823-4a96-bc6e-658b48a5c1f0",
+      "initial" : "  Interfaces configured in Wiremode - Inspect. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1511452",
+      "title" : "Basic traffic Inspect Mode",
+      "description" : "Original ID: 23\nOriginal Title: Basic traffic Inspect Mode\nOriginal Description: Verify basic traffic with Inspect Mode",
+      "result" : "  Traffic succeeds."
+   },
+   "1511478" : {
+      "steps" : "  1. Verify can access interface with management. 2. Edit the interface 3. Select Wire Mode from IP Assignment Box 4. Select Bypass from the Type Box 5. Select another Unassigned interface for the pair. 6. Click OK 7. Attempt to access UI using previous IP. 8. Configure IP addresses on PCs to be able to communicate. 9. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Smoke",
+      "atm_id" : "da4eddd5-2e17-4e46-b178-b32e4badd649",
+      "initial" : "  Interface configured on LAN with Static IP and management enabled. PC on one interface. Other interface connect to Server or to router which is connected to Server.",
+      "id" : "1511478",
+      "title" : "Switching from configured interface to Wiremode",
+      "description" : "Original ID: 53\nOriginal Title: Switching from configured interface to Wiremode\nOriginal Description: Verify Switching from configured interface to Wiremode",
+      "result" : "  Management is not possible. Traffic between the PCs succeeds."
+   },
+   "1511509" : {
+      "steps" : "  1. Enable DHCP on PC 2. Verify PC obtains DHCP lease",
+      "priority" : "Smoke",
+      "atm_id" : "fa17134b-813d-477d-a25e-3af53522d88e",
+      "initial" : "  Interfaces configured in Wire Mode - Inspect PC connected to DUT Other interface of DUT is connect to DHCP Server",
+      "id" : "1511509",
+      "title" : "DHCP traffic through Wire Mode Inspect",
+      "description" : "Original ID: 97\nOriginal Title: DHCP traffic through Wire Mode Inspect\nOriginal Description: Verify DHCP traffic through Wire Mode Inspect",
+      "result" : "  PC obtains DHCP lease"
+   },
+   "1511510" : {
+      "steps" : "  1. Enable DHCP on PC 2. Verify PC obtains DHCP lease",
+      "priority" : "Smoke",
+      "atm_id" : "55aa26f7-48bd-42f1-b94b-9cf6c7d07138",
+      "initial" : "  Interfaces configured in Wire Mode - Secure PC connected to DUT Other interface of DUT is connect to DHCP Server",
+      "id" : "1511510",
+      "title" : "DHCP traffic through Wire Mode Secure",
+      "description" : "Original ID: 98\nOriginal Title: DHCP traffic through Wire Mode Secure\nOriginal Description: Verify DHCP traffic through Wire Mode Secure",
+      "result" : "  PC obtains DHCP lease"
+   },
+   "1511457" : {
+      "steps" : "  1. Run traffic between PC and Server that does not match rule - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Smoke",
+      "atm_id" : "b2f599fa-65e7-4e5f-974d-9c8b0bee18cc",
+      "initial" : "  Interfaces configured in Wiremode- Inspect. PC on one interface. Other interface connect to Server or to router which is connected to Server.&#160;\n  Security Services licensed. App rules enabled.",
+      "id" : "1511457",
+      "title" : "Allowed traffic Wire Mode -Inspect",
+      "description" : "Original ID: 29\nOriginal Title: Allowed traffic Wire Mode -Inspect\nOriginal Description: Verify Allowed traffic Wire Mode - Inspect",
+      "result" : "  Traffic succeeds. No logs identifying the traffic as undesirable."
+   },
+   "1511487" : {
+      "steps" : "  1. Click to edit an Unassigned interface. 2. Set interface to LAN Zone. 3. Select Wire Mode from IP Assignment Box 4. Select Inspect from the Type Box and uncheck Restrict Analysis at Resource Limit. 5. Select another Unassigned interface for the pair. 6. Click OK 7. Click to edit both interfaces.",
+      "priority" : "Full_Regression",
+      "atm_id" : "c6e16e49-ee78-4e96-a193-2e98e396eaf0",
+      "initial" : "  Default",
+      "id" : "1511487",
+      "title" : "GUI - Configure interface in Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.",
+      "description" : "Original ID: 66\nOriginal Title: GUI - Configure interface in Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.\nOriginal Description: Verify configuring interface in Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.",
+      "result" : "  Both interfaces show what mode they are in for the comment in the interface table. Zone cannot be edited. Both interfaces can be edited. Cannot override MAC address."
+   },
+   "1511471" : {
+      "steps" : "  1. Run various traffics between PC and Server. 2. Observe App Flow Monitor Pages",
+      "priority" : "Sanity",
+      "atm_id" : "33ad479f-0f4c-4a0f-9dcd-e468e855910d",
+      "initial" : "  Interfaces configured in Wire Mode- Secure. PC on one interface. Other interface connect to Server or to router which is connected to Server. Security Services licensed. Flow Reporting Enabled.",
+      "id" : "1511471",
+      "title" : "Flow report enabled and Wire Mode - Secure",
+      "description" : "Original ID: 42\nOriginal Title: Flow report enabled and Wire Mode - Secure\nOriginal Description: Verify Flow report enabled and Wire Mode - Secure",
+      "result" : "  Traffic succeeds. Pages display is consistent with the traffic traversing the interfaces."
+   },
+   "1511460" : {
+      "steps" : "  1. Run traffic between PC and Server that does not match rule - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Smoke",
+      "atm_id" : "af152237-618a-4bab-abf2-39c1c0f95f4c",
+      "initial" : "  Device connected to another device that the actual traffic will be going through.\n  Interface of other device connected to PC Other interface of other device connect to Server or to router which is connected to Server. Traffic is mirrored to the DUT interface configured in Tap mode.\n  Security Services licensed. App rules enabled.",
+      "id" : "1511460",
+      "title" : "Allowed traffic Tap Mode",
+      "description" : "Original ID: 31\nOriginal Title: Allowed traffic Tap Mode\nOriginal Description: Verify Allowed traffic Tap Mode",
+      "result" : "  Traffic succeeds. No logs identifying the traffic as undesirable."
+   },
+   "1511490" : {
+      "steps" : "  1. Run FTP traffic download matching the rule.",
+      "priority" : "Smoke",
+      "atm_id" : "a193f063-5ffc-47d5-a478-edebb1d6932f",
+      "initial" : "  Interfaces configured in Wiremode- Inspect: Restrict Analysis at Resource Limit unchecked. PC on one interface. Other interface connect to Server or to router which is connected to Server.&#160;\n  Security Services licensed. App rules enabled. Rule configured denying file extension download through ftp.",
+      "id" : "1511490",
+      "title" : "Denied traffic Wire Mode- Inspect: Restrict Analysis at Resource Limit unchecked.",
+      "description" : "Original ID: 69\nOriginal Title: Denied traffic Wire Mode- Inspect: Restrict Analysis at Resource Limit unchecked.\nOriginal Description: Verify denied traffic Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.",
+      "result" : "  Traffic succeeds. Log identifies traffic as matching rule."
+   },
+   "1511476" : {
+      "steps" : "  1. Click to edit one of the interfaces. 2. Verify that the drop downs are available. 3. Repeat on the other interface.",
+      "priority" : "Sanity",
+      "atm_id" : "f0cfd8a2-f61b-449e-adfd-65f867699d4f",
+      "initial" : "  Two interfaces configured in Wire Mode Pair",
+      "id" : "1511476",
+      "title" : "GUI - Can edit both interfaces when in Wire Mode",
+      "description" : "Original ID: 5\nOriginal Title: GUI - Can edit both interfaces when in Wire Mode\nOriginal Description: Verify can edit both interfaces that have been paired in Wire Mode",
+      "result" : "  Both interfaces are editable, same options should be available."
+   },
+   "1511489" : {
+      "steps" : "  1. Run traffic between PC and Server that does not match rule - FTP%2c HTTP%2c Ping%2c etc.",
+      "priority" : "Smoke",
+      "atm_id" : "81b267f5-88c3-408c-88d6-0acc549ccfdb",
+      "initial" : "  Interfaces configured in Wiremode- Inspect: Restrict Analysis at Resource Limit unchecked. PC on one interface. Other interface connect to Server or to router which is connected to Server.&#160;\n  Security Services licensed. App rules enabled.",
+      "id" : "1511489",
+      "title" : "Allowed traffic Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.",
+      "description" : "Original ID: 68\nOriginal Title: Allowed traffic Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.\nOriginal Description: Verify Allowed traffic Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.",
+      "result" : "  Traffic succeeds. No logs identifying the traffic as undesirable."
+   },
+   "1511499" : {
+      "steps" : "  1. Enable Link State propogation on the wiremode interfaces. 2. Unplug the primary interface",
+      "priority" : "Smoke",
+      "atm_id" : "f4e4d8c2-f9a1-4226-9fe3-ab198f2b2dd9",
+      "initial" : "  Interfaces configured in Wire Mode\n  Interfaces connected to switch which is connected to PC.",
+      "id" : "1511499",
+      "title" : "Enable Link State Propogation with primary interface down",
+      "description" : "Original ID: 80\nOriginal Title: Enable Link State Propogation with primary interface down\nOriginal Description: Verify with Link State Propogation enabled with primary interface down that the other interface shows down as well.",
+      "result" : "  Link state is propogated to the other interface and does not show link to the connected switch."
+   }
+}

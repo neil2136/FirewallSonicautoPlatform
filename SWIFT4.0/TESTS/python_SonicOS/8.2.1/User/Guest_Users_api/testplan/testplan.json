@@ -1,0 +1,51 @@
+{
+   "18" : {
+      "steps" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "18",
+      "title" : "Attempt POST with duplicate guest account",
+      "result" : "  1. Create guest profile using post\n  2. Repeat the POST object with same name:\n  Endpoint:\n  https://192.168.168.168/spi/sonicos/user/guest/profiles\n  POST:\n  {\n  \"user\": {\n  \"guest\": {\n  \"profile\": [\n  {\n  \"name\": \"testduplicate\",\n  \"generate\": {\n  \"name\": true,\n  \"password\": true\n  },\n  \"name_prefix\": {\n  \"prefix\": \"dup\"\n  },\n  \"comment\": {\n  \"commentString\": \"comment\"\n  }\n  }\n  ]\n  }\n  }"
+   },
+   "01" : {
+      "steps" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "01",
+      "title" : "USER-GUEST GET settings",
+      "result" : "  1. Login: curl -k -I -u \"admin:password\" -X POST \"https://x.x.x.x/api/sonicos/auth\"\n  2. GET the schema curl -k -i -H \"Content-Type: application/json\" -X GET https://x.x.x.x/api/sonicos/user/guest/settings Ensure the above command returns Success = true"
+   },
+   "10" : {
+      "steps" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage--&gt;Appliance--&gt;Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "10",
+      "title" : "PUT User guest account using name",
+      "result" : "  Procedure i. curl -k -i -H \"Content-Type: application/json\" -X PUT -d @datafile.json https://x.x.x.x/api/sonicos/user/guest/user/name/xxx( Note: Edit someparameters from the json file used in testcases 1-2) ii. Ensure the above command returns Success = true iii. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending iv. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n  v. Verify commit is successful, verify the commited configuration via GUI vi. Login with the edited user guest account settings and verify the functionality for the newly edited service /object/policy"
+   },
+   "06" : {
+      "steps" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "06",
+      "title" : "POST User guest account",
+      "result" : "  1. curl -k -i -H \"Content-Type: application/json\" -X POST -d @datafile.json https://x.x.x.x/api/sonicos/user/guest/name/namexxx\n  2. Ensure the above command returns Success = true\n  3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n  4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n  5. Verify commit is successful, verify the commited configuration via GUI"
+   },
+   "17" : {
+      "steps" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "17",
+      "title" : "Attempt POST with duplicate guest profile",
+      "result" : "  1. Create guest profile using post\n  2. Repeat the POST object with same name:\n  Endpoint:\n  https://192.168.168.168/spi/sonicos/user/guest/profiles\n  POST:\n  {\n  \"user\": {\n  \"guest\": {\n  \"profile\": [\n  {\n  \"name\": \"testduplicate\",\n  \"generate\": {\n  \"name\": true,\n  \"password\": true\n  },\n  \"name_prefix\": {\n  \"prefix\": \"dup\"\n  },\n  \"comment\": {\n  \"commentString\": \"comment\"\n  }\n  }\n  ]\n  }\n  }"
+   },
+   "04" : {
+      "steps" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "04",
+      "title" : "PUT User guest profile",
+      "result" : "  1. curl -k -i -H \"Content-Type: application/json\" -X PUT -d @datafile.json https://x.x.x.x/api/sonicos/user/guest/profiles( Note: Edit someparameters from the json file used in testcase 2.\n  2. Ensure the above command returns Success = true i\n  3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n  4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n  5. Verify commit is successful, verify the commited configuration via GUI."
+   },
+   "02" : {
+      "steps" : "  1.Load the firmware under test\n  2. Configure necessary LAN and WAN interfaces and Register the FW\n  3. Go to Manage-->Appliance-->Enable SonicOS API ( Use basic authentication with \"Enable RFC-2617 HTTP Basic Access authentication\" Note: All other checkboxes disabled)\n  4. Using Curl on linux or POSTMAN on windows",
+      "initial" : "  TBD",
+      "id" : "02",
+      "title" : "POST User guest profile",
+      "result" : "  1. curl -k -i -H \"Content-Type: application/json\" -X POST -d @datafile.json https://x.x.x.x/api/sonicos/user/guest/profiles\n  2. Ensure the above command returns Success = true i\n  3. Retrieve the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X GET https://x.x.x.x/api/sonicos/config/pending\n  4. Commit pending config: Commit the pending config: curl -k -i -H \"Content-Type: application/json\" -H \"Accept: application/json\" -X POST https://x.x.x.x/api/sonicos/config/pending\n  5.. Verify commit is successful, verify the commited configuration via GUI Using POSTMAN:\n  POST URL: https://ip-address/api/sonicos/user/guest/profiles/\n  JSON file:\n  {\n  \"user\": {\n  \"guest\": {\n  \"show_guest_status_window\": true,\n  \"profile\": [\n  {\n  \"name\": \"test123\",\n  \"generate\": {\n  \"name\": true,\n  \"password\": true\n  },\n  \"name_prefix\": {\n  \"prefix\": \"guest\"\n  },\n  \"comment\": {\n  \"commentString\": \"Auto-Generated\"\n  },\n  \"enable\": true,\n  \"activate_on_login\": false,\n  \"login_uniqueness\": true,\n  \"prune_on_expiry\": true,\n  \"account_lifetime\": {\n  \"lifetime\": 7,\n  \"days\": true\n  },\n  \"quota_cycle\": {},\n  \"session_lifetime\": {\n  \"lifetime\": 1,\n  \"hours\": true\n  },\n  \"idle_timeout\": {\n  \"idle_time\": 10,\n  \"minutes\": true\n  },\n  \"limit\": {\n  \"receive\": {},\n  \"transmit\": {}\n  }\n  }\n  ]\n  }\n  }\n  }"
+   }
+}

@@ -1,0 +1,58 @@
+{
+   "01" : {
+      "steps" : "1) ????? Login to management interface through a web browser 2) ????? Go to Network/Interface page 3) ????? Click LAN (X0) Configure button to pop up Edit Interface - X0 windows 4) ????? Select Transparent Mode from IP Assignment pulldown list 5) ????? Create or select an Address Object for its Transparent range 6) ????? Click OK button to save this setting without errors 7) ????? Check if the Transparent Mode is set on LAN (X0) interface from Network/Interface page 8) ????? Repeat Step 3) to Step 7) above to set Transparent Mode for other interfaces defined in LAN, DMZ or custom zone ? ",
+      "initial" : "Firmware setting is restored to Factory Default Settings ",
+      "id" : "01",
+      "title" : "This test case is designed to make sure that a Transparent mode can be set through User Interface. ",
+      "result" : "All steps in Test Excution section above are passed without errors."
+   },
+   "04" : {
+      "steps" : "1) Login to management interface through a web browser\n\n2) Go to Network/Address Object page\n\n3) Create an address object (host) called as IP1\n\n4) Create an address object (range) called as Range1\n\n5) Create an address Group object called as Tansparent Group1 including IP1 and Range1\n\n6) Configure an interface as Transparent Mo de using Transparent Group1 as transparent range for this interface from Network/Interface page\n\n7) Click OK button to save change\n\n8) Repeat Step 3 to Step 15 in TC-3 above to modify IP1 or Range1\n\n9) Repeat the steps above for other Interfaces defined in LAN, DMZ or custome zone",
+      "initial" : "",
+      "id" : "04",
+      "title" : "User Interface: Configuration - Modifying a Group object attached to interface",
+      "result" : "The modification for this tansparent range is only allowed within WAN subnet (WAN IP excluded) , otherwise, it will be denied with an proper error message."
+   },
+   "15" : {
+      "steps" : "1) Login to management interface through a web browser 2) Go to Network/Interface page 3) Configure an interface ( Custome Zone withTrusted or Public type) in Transparent mode 4) Make sure it is functional.",
+      "initial" : "",
+      "id" : "15",
+      "title" : "Function: Zone and Interface - Custom zone",
+      "result" : "The interface within LAN, DMZ or Custom zone (Trusted or Public) is able to be configured in Transparent mode."
+   },
+   "34" : {
+      "steps" : "1)  Configure a host with an IP address in X0 Transparent range\n\n2)  Conn ect this host to X0 interface\n\n3)  ping the management interface with successful result, there is a log message such as ICMP packet allowed.\n\n4) Configure a host with an IP address out of X0 Transparent range\n\n5) ping the management interface with failed result,since the firewall will not reply ARP message, there is a log message such broadcast dropped message using Windows PC or no such message if using Linux PC.Note by JLian:\n\nTest gen7,if PC's IP is in or out x0 transparent range,no log message such as ICMP packet allowed or broadcast dropped message printed.\n\nWhen PC's IP is is out of x0 transparent range,fw will drop arp request directly with drop reason\n\n\" Drop Code: 56(ARP unexpected link ip), Module Id: 47(ARP), (Ref.Id: _678_iboemfJodpnjohBsqSfrvftu) 1:1)\"",
+      "initial" : "",
+      "id" : "34",
+      "title" : "Function: Log",
+      "result" : "Please check the detail info in Test steps "
+   },
+   "58" : {
+      "steps" : "1. Make sure there are multiple WAN interfaces configured(at least two WAN interfaces configured, eg. X3 is the primary WAN), and X1 is non primary WAN;\n\n2. Add proper address objects of host type and range type, also add group object with several address objects included as its members;\n\n3. Select another interface, configure it as Transparent mode member interface;\n\n4. Run some basic traffic(eg, http(s)/ping/FTP, and mail related), make sure WAN side users can visit services deployed in Transparent range servers;\n\n5. Retest 'step 4', initiate similar traffic from X1 WAN subnet hosts(make sure proper NAT policy already added)",
+      "initial" : "",
+      "id" : "58",
+      "title" : "Configuring Transparnent mode with primary WAN interface not the default WAN X1.",
+      "result" : "1. In step 3, Transparent mode member interface can be configured, all the proper address objects and group object(s) are shown up in the Transparent Range list;\n\n2. In step 4, WAN side users can visit services deployed in Transparent range servers;"
+   },
+   "63" : {
+      "steps" : "1. Navigate to Match Objects/Addresses page, create two Address Object(eg. named 'DMZ Host 1', 'DMZ Host 2') with DMZ selected for 'Zone Assignment', fill in proper IP address belonged to WAN subnet;\n2. Create an Address Object(eg. named 'DMZ Range') with DMZ selected for 'Zone Assignment', fill in proper IP address range belonged to WAN subnet;\n3. Create an Address Group(eg. named 'DMZ Host Group'), add 'DMZ Host 1' and 'DMZ Host 2' to In Group list;\n4. Navigate to System/Interfaces page, select an unassigned interface(eg. X3) by clicking Edit icon button, select 'DMZ' for Zone type, 'Transparent IP Mode(Splice L3 Subnet)' for Mode/IP assignment, verify all the address object/group created in Step 1 ~ Step 3, select one of them for 'Transparent Range' and save the settings;\n5. Set 'Zone Assignment' as LAN/WAN/Custom type, retest above steps;",
+      "initial" : "",
+      "id" : "63",
+      "title" : "[GEN7-22007]Verify 'Transparent Range' list can display Address Object/Group with non WAN zone type(eg. DMZ type) address object/group.",
+      "result" : "1. In Step 1 ~ Step 3, all the Address Object/Group can be created successfully;\n\n2. In Step 4 ~ Step 5, all the Address Object/Group are listed in 'Transparent Range' list, and Transparent IP Mode interface can be created successfully;"
+   },
+   "67" : {
+      "steps" : "1. Configure primary WAN interface with non-24 subnet(eg. 10.61.134.125/255.255.255.248), add several host/range AO belong to this subnet, add a group AO with these host/range AOs included;\n\n2. Add several host/range AO out of this subnet, add a group AO with these host/range AOs included;\n\n3. Clear settings in above steps, retest with 28 bit network length configured;\n\n4. Clear settings in above steps, retest with 30 bit network length configured;",
+      "initial" : "",
+      "id" : "67",
+      "title" : "Verify Transparent mode host interface support non-24 subnet(e.g. /28 /30)",
+      "result" : "1. In step 1 ~ step 2, proper host/range AOs and group AO can be displayed in Transparent Range list, those host/range AOs out of primary WAN subnet(group AO with all the members out of primary WAN subnet) should not be displayed in Transparent Range list; For group AO with partial member(s) in primary WAN subnet and partial member(s) out of primary WAN subnet can still be listed in Transparent Range list, but FW will prompt error message with this kind of group AO configured for a Transparent interface;\n\n2. For test step 3 ~ step 4, similar behavior will be seen as described in above Expected Results step 1;"
+   },
+   "GEN7-28861" : {
+      "steps" : "1. Unassign default WAN interface X1;\n\n2. Select another interface(eg. interface X18 for X86 platform), configure it as WAN interface with static IP, proper subnet mask(proper DNS server IPs are also needed);\n\n3. Add several host object/range object and group object belonged to DMZ zone, make sure they are in the same subnet of WAN interface(eg. X18);\n\n4. Select another interface, configure it as DMZ zone/transparent mode, select one of the address objects/groups created in step 3 as Transparent Range and save the settings;\n\n5. Connect a PC to the interface configured in step 4, with proper IP address configured, pass through traffic from DMZ<--->WAN, LAN--->DMZ;\n\n6. Reassign X1 as static WAN mode, retest test step 3 to add Adress Objects/Groups in X1's subnet, verify Transparent Range drop-down list;",
+      "initial" : "",
+      "id" : "GEN7-28861",
+      "title" : "Transparent mode supported with default X1 unassigned and another interface configured as primary WAN.",
+      "result" : "1. In step 4, FW can show up all the address objects/groups created in step 3 in Transparent Range list;\n\n2. Traffic can pass through in step 5;\n\n3. In step 6, Transparent Range drop-down list contains all the Address Objects/Groups belonged to X1/X18."
+   }
+}

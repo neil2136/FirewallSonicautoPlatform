@@ -1,0 +1,194 @@
+{
+  "1514522": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514522",
+    "title": " [GUI]Enable syslog server connection monitor",
+    "description": "",
+    "result": "The option \"Enable syslog server connection monitor\" can be turned on successfully without error."
+  },
+  "1514523": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn off the option \"Enable syslog server connection monitor\".\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514523",
+    "title": "[GUI]Disable syslog server connection monitor",
+    "description": "",
+    "result": "The option \"Enable syslog server connection monitor\" can be turned off successfully without error."
+  },
+  "1514524": {
+    "steps": "\n\n    Load the firmware under test\n\n    Login from CLI\n\n    (config-syslog)# connection-monitor\n\n    (config-syslog)# commit\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514524",
+    "title": "[CLI]Enable syslog server connection monitor",
+    "description": "",
+    "result": "The option \"Enable syslog server connection monitor\" can be turned on successfully without error."
+  },
+  "1514525": {
+    "steps": "\n\n    Load the firmware under test\n\n    Login from CLI\n\n    (config-syslog)# no connection-monitor\n\n    (config-syslog)# commit\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514525",
+    "title": "[CLI]Disable syslog server connection monitor",
+    "description": "",
+    "result": "The option \"Enable syslog server connection monitor\" can be turned off successfully without error."
+  },
+  "1514528": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a syslog server(UDP).\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Check network monitor page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514528",
+    "title": " Enable syslog server connection monitor after syslog server(UDP) is added",
+    "description": "",
+    "result": "1.Syslog server can be added and the option \"Enable syslog server connection monitor\" can be turned on successfully without error.\n2.Network policy of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" is added automatically and can not be deleted manually."
+  },
+  "1514529": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a syslog server(UDP).\n\n    4.Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn off the option \"Enable syslog server connection monitor\".\n\n    5.Check network monitor page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514529",
+    "title": "Disable syslog server connection monitor when syslog server(UDP) is added",
+    "description": "",
+    "result": "Network policy of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" is added and then deleted automatically."
+  },
+  "1514530": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a syslog server(TCP).\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Check network monitor page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514530",
+    "title": "Enable syslog server connection monitor after syslog server(TCP) is added",
+    "description": "",
+    "result": "Syslog server can be added and the option \"Enable syslog server connection monitor\" can be turned on successfully without error.\n2.Network policy of type tcp with name\"tcp_Syslog_{syslog server name}\" is added automatically and can not be deleted manually."
+  },
+  "1514531": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a syslog server(TCP).\n\n    4.Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn off the option \"Enable syslog server connection monitor\".\n\n    5.Check network monitor page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514531",
+    "title": "Disable syslog server connection monitor when syslog server(TCP) is added",
+    "description": "",
+    "result": "Network policy of type tcp with name\"tcp_Syslog_{syslog server name}\" is added and then deleted automatically."
+  },
+  "1514532": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add maximun numbers of syslog servers.\n\n    Check network monitor page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514532",
+    "title": "Add maximun numbers of syslog servers(up to 168) when option \"Enable syslog server connection monitor\" is enabled",
+    "description": "",
+    "result": "\n\n1.Syslog servers can be added successfully.\n\n2.Network policies of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" are added automatically and can not be deleted manually.\n"
+  },
+  "1514533": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add maximun numbers of syslog servers.\n\n    Check network monitor page.\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and delete all syslog servers.\n\n    Check network monitor page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514533",
+    "title": "Delete all syslog servers when option \"Enable syslog server connection monitor\" is enabled",
+    "description": "",
+    "result": "\n\n1.Syslog servers can be added and deleted successfully.\n\n2.Network policies of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" are added automatically and can not be deleted manually after syslog servers are added.\n\n3.All network policies of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" are deleted automatically after all syslog servers are deleted.\n"
+  },
+  "1514534": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add maximun numbers of syslog servers.\n\n    Check network monitor page.\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn off the option \"Enable syslog server connection monitor\".\n\n    Check network monitor page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514534",
+    "title": "Disable syslog server connection monitor when maximun numbers of syslog servers(up to 168) are added",
+    "description": "",
+    "result": ".Syslog servers can be added successfully.\n\n2.Network policies of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" are added automatically and can not be deleted manually after syslog servers are added.\n\n3.All network policies of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" are deleted automatically after the option \"Enable syslog server connection monitor\" is turned off."
+  },
+  "1514535": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add maximun numbers of syslog servers.\n\n    Check network monitor page.\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn off the option \"Enable syslog server connection monitor\".\n\n    Check network monitor page.\n\n    Repeat step 2 and 4 for many times manually or by script.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514535",
+    "title": "Enable/Disable syslog server connection monitor repeatedly when maximun numbers of syslog servers(up to 168) are added",
+    "description": "",
+    "result": "\n\n1.Syslog servers can be added successfully.\n\n2.Network policies of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" are added automatically and can not be deleted manually after syslog servers are added.\n\n3.All network policies of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" are deleted automatically after the option \"Enable syslog server connection monitor\" is turned off.\n\n4.System should not crash after repeated commitions.\n"
+  },
+  "1514536": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a syslog server with reachable ip address.\n\n    Check network monitor page.\n\n    5.Check system logs on MONITOR->Log->System Logs page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514536",
+    "title": " Enable syslog server connection monitor when syslog server(using host) is reachable",
+    "description": "",
+    "result": "1.Syslog server can be added successfully."
+  },
+  "1514537": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a syslog server with unreachable ip address.\n\n    Check network monitor page.\n\n    5.Check system logs on MONITOR->Log->System Logs page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514537",
+    "title": "Enable syslog server connection monitor when syslog server(using host) is unreachable",
+    "description": "",
+    "result": "\n\n1.Syslog server can be added successfully.\n\n2.Network policy of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" is added automatically and status turns red after few seconds.\n\n3.Message with ID 706 is displayed as \"Network Monitor: Host {syslog server ip} (Policy:ping_Syslog_{syslog server name}) is offline\".\n\n4.Message with ID 1101 is displayed as \"Network Monitor: Policy ping_Syslog_{syslog server name} status is DOWN\".\n\n5.Message with ID 657 is displayed as\"Syslog Server cannot be reached\".\n"
+  },
+  "1514538": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a syslog server with reachable FQDN.\n\n    Check network monitor page.\n\n    5.Check system logs on MONITOR->Log->System Logs page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514538",
+    "title": "Enable syslog server connection monitor when syslog server(using FQDN) is reachable",
+    "description": "",
+    "result": "\n\n1.Syslog server can be added successfully.\n\n2.Network policy of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" is added automatically and status turns green after few seconds.\n\n3.Message with ID 707 is displayed as \"Network Monitor: Host {syslog server ip} (Policy:ping_Syslog_{syslog server name}) is online\".\n\n4.Message with ID 1100 is displayed as \"Network Monitor: Policy ping_Syslog_{syslog server name} status is UP\".\n"
+  },
+  "1514539": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a syslog server with unreachable FQDN.\n\n    Check network monitor page.\n\n    5.Check system logs on MONITOR->Log->System Logs page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514539",
+    "title": " Enable syslog server connection monitor when syslog server(using FQDN) is unreachable",
+    "description": "",
+    "result": "\n\n1.Syslog server can be added successfully.\n\n2.Network policy of type ping(icmp) with name\"ping_Syslog_{syslog server name}\" is added automatically and status turns red after few seconds.\n\n3.Message with ID 706 is displayed as \"Network Monitor: Host {syslog server ip} (Policy:ping_Syslog_{syslog server name}) is offline\".\n\n4.Message with ID 1101 is displayed as \"Network Monitor: Policy ping_Syslog_{syslog server name} status is DOWN\".\n\n5.Message with ID 657 is displayed as\"Syslog Server cannot be reached\".\n"
+  },
+  "1514542": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a syslog server(TCP).\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Check network monitor page.\n\n    Modify port of syslog server to non default value such as \"123\".\n\n    Check network monitor page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514542",
+    "title": " Enable syslog server connection monitor when syslog server is using non default TCP port",
+    "description": "",
+    "result": "\n\n1.Syslog server can be added and the option \"Enable syslog server connection monitor\" can be turned on successfully without error.\n2.Network policy of type TCP with name\"tcp_Syslog_{syslog server name}\" is added automatically and can not be deleted manually.\n\n3.Port of network policy of type TCP with name\"tcp_Syslog_{syslog server name}\" is displayed as \"123\".\n"
+  },
+  "1514543": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a reachable syslog server(UDP).\n\n    Check network monitor page.\n\n    Check syslog packets sent on MONITOR->Packet Monitor page.\n\n    Disconnect syslog server and repeat steps 5-6.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514543",
+    "title": "DUT start/stop sending syslog messages whensyslog server(UDP) is reachable/unreachable",
+    "description": "\n\n1.Syslog server can be added successfully.\n\n2.Network policy of type Ping (ICMP) with name\"ping_Syslog_{syslog server name}\" is added automatically and status turns green(red if unreachable) after few seconds.\n\n    DUT will start/stop sending Syslog packets when syslog server is reachable/unreachable.\n\n",
+    "result": ""
+  },
+  "1514544": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a reachable syslog server(TCP).\n\n    Check network monitor page.\n\n    Check syslog packets sent on MONITOR->Packet Monitor page.\n\n    Disconnect syslog server and repeat steps 5-6.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514544",
+    "title": "DUT start/stop sending syslog messages whensyslog server(TCP) is reachable/unreachable",
+    "description": "",
+    "result": "\n\n1.Syslog server can be added successfully.\n\n2.Network policy of type Ping (ICMP) with name\"ping_Syslog_{syslog server name}\" is added automatically and status turns green(red if unreachable) after few seconds.\n\n    DUT will start/stop sending Syslog packets when syslog server is reachable/unreachable.\n\n"
+  },
+  "1514545": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a reachable syslog server.\n\n    Go to DEVICE-->Log-->Settings page and add email address on \"Send Alerts to E-mail Address\" option for ID 657(Syslog Server Unreachable),make sure Event Priority is \"alert\".\n\n    Go to DEVICE-->Log-->Automation page and configure correct Mail Server Settings .\n\n    Disconnect syslog server to make it unreachable.\n\n    Check the email address inbox.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514545",
+    "title": " Send email whensyslog server is reachable/unreachable",
+    "description": "",
+    "result": "\n\n1.Syslog server can be added successfully.\n\n2.Email for message of ID 657(Syslog Server Unreachable) can be received at inbox of the mail address.\n"
+  },
+  "1514546": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add a syslog server.\n\n    Modify syslog server options such as \"Name or IP Address\" and \"Port\" and \"protocol\".\n\n    Check network monitor page.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514546",
+    "title": "Modify syslog server whenoption \"Enable syslog server connection monitor\" is enabled",
+    "description": "",
+    "result": "syslog server can be modified successfully and network policy will change accordingly."
+  },
+  "1514547": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add several syslog servers.\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Download TSR file and check.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514547",
+    "title": "Check TSR file after enable syslog server connection monitor",
+    "description": "",
+    "result": "The option \"Enable syslog server connection monitor\" is enable and corresponding network monitor policies are displayed on TSR file."
+  },
+  "1514548": {
+    "steps": "\n\n    Load the firmware under test\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Servers tab, and add several syslog servers.\n\n    Go to DEVICE-->Log-->Syslog page and Syslog Settings tab, and turn on the option \"Enable syslog server connection monitor\".\n\n    Reboot DUT.\n\n",
+    "initial": "Load the firmware under test",
+    "id": "1514548",
+    "title": "Reboot DUT after enable syslog server connection monitor",
+    "description": "",
+    "result": "The option \"Enable syslog server connection monitor\" is enable and corresponding network monitor policies remain intact after reboot."
+  },
+  "1514550": {
+    "steps": "1. Load the firmware under test 2. Go to DEVICE-->Log-->Settings page and filter for ID 657(<span>Syslog Server Unreachable)</span>. 3. Open edit dialog window and check frequency parameters",
+    "initial": "Load the firmware under test",
+    "id": "1514550",
+    "title": "Check frequncy for syslog event 657 on log settings",
+    "description": "",
+    "result": "1.Frequency for<span>Send Events as Email Alerts is 900.</span>\n<span>2.Frequency for<span>Report Events via Syslog is 60.</span></span>"
+  }
+}

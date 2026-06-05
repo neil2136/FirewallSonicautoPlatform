@@ -1,0 +1,380 @@
+{
+   "33" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "33",
+      "title" : "TBD",
+      "result" : "  Verify the function to probe an IPv6 link-local address"
+   },
+   "32" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "32",
+      "title" : "TBD",
+      "result" : "  Set Outbound Interface as a L2 Bidged interface"
+   },
+   "21" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "21",
+      "title" : "TBD",
+      "result" : "  Set Local IP Address as Local Interface IPv6 Address"
+   },
+   "7" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as Ping(ICMP),set probe target as 1::1 and add a proper name,leave other options as default,then save.\n  3. from packet captured,check if have ICMPV6 traffic send from default wan to 1::1\u00810\u00842",
+      "initial" : "  TBD",
+      "id" : "7",
+      "title" : "TBD",
+      "result" : "  Test Probe Type-Ping(ICMP)"
+   },
+   "26" : {
+      "steps" : "  Step 1 Configure the static route.\n  Step 2 In the Probe pull-down menu select the appropriate Network Monitor object or select Create\u00810\u00842New Network Monitor object... to dynamically create a new object.\n  Step 3 Typical configurations will not check the Disable route when probe succeeds checkbox,because typically administrators will want to disable a route when a probe to the route\u00a1\u00afs\u00810\u00842destination fails. This option is provided to give administrators added flexibility for defining\u00810\u00842routes and probes.\n  Step 4 Select the Probe default state is UP to have the route consider the probe to be successful (i.e.\u00810\u00842in the \u00a1\u00b0UP\u00a1\u00b1 state) when the attached Network Monitor policy is in the \u00a1\u00b0UNKNOWN\u00a1\u00b1 state. This\u00810\u00842is useful to control the probe-based behavior when a unit of a High Availability pair transitions\u00810\u00842from \u00a1\u00b0IDLE\u00a1\u00b1 to \u00a1\u00b0ACTIVE,\u00a1\u00b1 because this transition sets all Network Monitor policy states to\u00810\u00842\u00a1\u00b0UNKNOWN.\u00a1\u00b1\n  Step 5 Click OK to apply the configuration",
+      "initial" : "  When a Network Monitor policy is used, the static route is dynamically disabled or\u00810\u00842enabled, based on the state of the probe for the policy",
+      "id" : "26",
+      "title" : "TBD",
+      "result" : "  Test IPv6 Probe using in PBR policy"
+   },
+   "2" : {
+      "steps" : "  1.On Network->Network Monitor page, click ipv6 only button,add a IPV6 network monitor.\n  2. set name as test_ipv6,and from probe target drop list ,choose or create one ipv6 address,and \u00810\u00842probe type is Ping(ICMP),and save.\n  3. check policy test_ipv6 is shown on the ipv6 only table and\u00810\u00842IPv4 and IPv6 table.",
+      "initial" : "  TBD",
+      "id" : "2",
+      "title" : "TBD",
+      "result" : "  Add an IPv6 Network Monitor policy"
+   },
+   "17" : {
+      "steps" : "  1.add a vlan interface X2:V143,set it as wan auto.\n  2.add a ipv6 network monitor policy from only ipv6 page.\n  3. set probe type as Ping(ICMP)-Explicit Route,set probe target as 4::4, set next Hop Gateway as fe80::1,set outbound interface as \u00810\u00842sub vlan interface\u00810\u00842X2:V143,and add a proper name,leave other options as default,then save.\n  4. from packet captured,check if have ICMPv6 traffic send from X2:V143 to 4::4\u00810\u00842",
+      "initial" : "  TBD",
+      "id" : "17",
+      "title" : "TBD",
+      "result" : "  Set Outbound Interface as a sub vlan interface"
+   },
+   "1" : {
+      "steps" : "  1.On Network->Network Monitor page, make sure that all buttons and boxes are available, and their functions work, including IPv6 only view and IPv4/v6 mixed view",
+      "initial" : "  TBD",
+      "id" : "1",
+      "title" : "N/A",
+      "result" : "  GUI check"
+   },
+   "18" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "18",
+      "title" : "TBD",
+      "result" : "  Set Outbound Interface as an IPv6 tunnel interface"
+   },
+   "30" : {
+      "steps" : "  1 Go to Network /Network Monitor page.\u00810\u00842\n  2 add some ipv6 and ipv4 network monitor policies and configure related settings.\u00810\u00842\n  3 Wait until the status is stable\n  4 Export TSR.\u00810\u00842",
+      "initial" : "  TBD",
+      "id" : "30",
+      "title" : "TBD",
+      "result" : "  Check TSR"
+   },
+   "16" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as Ping(ICMP)-Explicit Route,set probe target as 4::4, set next Hop Gateway as fe80::1,set outbound interface as physical interface\u00810\u00842X2,and add a proper name,leave other options as default,then save.\n  3. from packet captured,check if have ICMPv6 traffic send from x2 to 4::4\u00810\u00842",
+      "initial" : "  TBD",
+      "id" : "16",
+      "title" : "TBD",
+      "result" : "  Set Outbound Interface as a physical interface"
+   },
+   "44" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as Ping(ICMP)-Explicit Route,set probe target as the pc's ipv6 address which connected to interface x0, set next Hop Gateway as fe80::1,set outbound interface as X0,and add a proper name,leave other options as default,then save.\n  3. wait for a while,the monitor status change to UP .\n  4. \u00810\u00842power off\u00810\u00842the pc,wait for a while,check the\u00810\u00842monitor status .\n  5. \u00810\u00842power on the pc,wait for a while,check the\u00810\u00842monitor status .",
+      "initial" : "  TBD",
+      "id" : "44",
+      "title" : "TBD",
+      "result" : "  Verify the monitor status change from Down to UP when the probe target come back"
+   },
+   "27" : {
+      "steps" : "  1. configure X1 as wan dhcp mode,and add a ipv6 AO named x0 range which includes the PCs' IP connected to x0 interface .\n  network -> nat,add a ipv6 nat policy,set source original any,source translated any,destination original \"\u00810\u00842X1 IPv6 Primary\u00810\u00842Dynamic Address\",destination translated \"x0 range\", and save.\n  3.Click the Advanced tab,\u00810\u00842enable probing ,and set probe type to Ping,\u00810\u00842Set NAT method to Round Robin,and click OK.\n  4.network->network monitor,check if \u00810\u00842a ipv6 network monitor added, and check its status.",
+      "initial" : "  TBD",
+      "id" : "27",
+      "title" : "TBD",
+      "result" : "  Test IPv6 Probe using in NAT policy"
+   },
+   "25" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as Ping(ICMP),set probe target as 1::1 and add a proper name,leave other options as default.\n  3.\u00810\u00842enter a descriptive comment about the policy in the Comment field.\n  4. test if can be saved.\n  5. test the boundary of the comment field.",
+      "initial" : "  TBD",
+      "id" : "25",
+      "title" : "TBD",
+      "result" : "  Test Comment"
+   },
+   "28" : {
+      "steps" : "  1 Go to Network /Network Monitor page.\u00810\u00842\n  2 add some ipv6 and ipv4 network monitor policies(cover Host, Range and FQDN AO) and configure related settings.\u00810\u00842\n  3 Wait until the status is stable\n  4 restart FW.\u00810\u00842",
+      "initial" : "  TBD",
+      "id" : "28",
+      "title" : "TBD",
+      "result" : "  All IPv6 Network Monitor related settings are intact after FW restart"
+   },
+   "40" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "40",
+      "title" : "TBD",
+      "result" : "  Verify the probe function when outbound interface in IPv6 static mode"
+   },
+   "14" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as Ping(ICMP),set probe target as 1::1 which can not be probe and add a proper name,leave other options as default,then save.\n  3. check the status light.\n  4. edit the policy,change the probe target to google's ipv6 address which can be probe.\n  5.\u00810\u00842check the status light.",
+      "initial" : "   * Green indicates that the policy status is UP. * Red indicates that the policy status is DOWN. * Yellow indicates that the policy status is UNKNOWN",
+      "id" : "14",
+      "title" : "TBD",
+      "result" : "  Test check"
+   },
+   "20" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "20",
+      "title" : "TBD",
+      "result" : "  Set Outbound Interface as an IPv6 VPN tunnel interface(currently not supported)"
+   },
+   "49" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "49",
+      "title" : "TBD",
+      "result" : "  CLI configuration tset"
+   },
+   "24" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as Ping(ICMP)-Explicit Route,set probe target as 4::4, set next Hop Gateway as fe80::1,set outbound interface as X2,and add a proper name,leave other options as default,then save.\n  3. from packet captured,check if have ICMPv6 traffic send from x2 to 4::4\u00810\u00842",
+      "initial" : "  Manually specifies the next hop that is used from the\u00810\u00842outbound interface to reach the probe target.\n  This option must be configured for\u00810\u00842Explicit Route policies.\n  For non-Explicit Route policies, the probe uses the\u00810\u00842appliance\u00a1\u00afs route table to determine the egress interface to reach the probe target",
+      "id" : "24",
+      "title" : "TBD",
+      "result" : "  Set Next Hop Gateway as an IPv6 Address"
+   },
+   "10" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as TCP-Explicit Route,set probe target as 4::4, set next Hop Gateway as fe80::1,set outbound interface as X2,probe port 80 and add a proper name,leave other options as default,then save.\n  3. from packet captured,check if have TCP traffic with port 80 send from x2 to 4::4\u00810\u00842",
+      "initial" : "  TBD",
+      "id" : "10",
+      "title" : "TBD",
+      "result" : "  Test Probe Type-TCP-Explicit Route"
+   },
+   "31" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "31",
+      "title" : "TBD",
+      "result" : "  Check Log"
+   },
+   "35" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "35",
+      "title" : "TBD",
+      "result" : "  Verify the function to probe an IPv6 multicast address"
+   },
+   "11" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as Ping(ICMP),set probe target as group which contains one dest can be reach and one can't be reach and check option \"All Hosts Must Respond\",\u00810\u00842and add a proper name,,then save.\n  3. wait for a while ,check the\u00810\u00842Probe state.\n  4. edit the policy,uncheck the option\u00810\u00842\"All Hosts Must Respond\".\n  5.wait for a while ,check the\u00810\u00842Probe state.",
+      "initial" : "  TBD",
+      "id" : "11",
+      "title" : "TBD",
+      "result" : "  Test option All Hosts Must Respond"
+   },
+   "53" : {
+      "steps" : "  1.Add a Network Monitor policy, probe target is unresolved FQDN\n  2.Check Network Monitor policy status, move mouse on led and FQDN name\n  3.Edit this policy any option, click OK\n  4.Repeat step2",
+      "initial" : "  TBD",
+      "id" : "53",
+      "title" : "TBD",
+      "result" : "  Verify NM policy status after edit unresolved FQDN"
+   },
+   "48" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "48",
+      "title" : "TBD",
+      "result" : "  Verify the maximum IPv6 NM policy numbers"
+   },
+   "42" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "42",
+      "title" : "TBD",
+      "result" : "  Verify the probe function when outbound interface in DHCPv6 mode"
+   },
+   "22" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "22",
+      "title" : "TBD",
+      "result" : "  Set Local IP Address as invalid IPv6 Address"
+   },
+   "46" : {
+      "steps" : "  1. set X2 is wiremode to X3\n  2. add a ipv6 network monitor,check if X2 and X3 in the droplist of\u00810\u00842outbound interface.\n  3. set x2 is static ipv6 mode,and in advance page,add LAG member port X3,X4.\n  4.\u00810\u00842add a ipv6 network monitor,check if LAG member port X3 and X4 in the droplist of\u00810\u00842outbound interface.\n  5.\u00810\u00842set x2 is static ipv6 mode,and set X3 portshield to X2\n  6. add a ipv6 network monitor,check if LAG portshield\u00810\u00842port X3 in the droplist of\u00810\u00842outbound interface.\n  7.",
+      "initial" : "  TBD",
+      "id" : "46",
+      "title" : "TBD",
+      "result" : "  Verify the special ports (wiremode,LAG, Portshield, Trunk, Port mirror, ) should not be allow to set as the outbound interface."
+   },
+   "13" : {
+      "steps" : "  Probe hosts intervals\n  Reply time out\n  Probe state set to DOWN intervals\n  Probe state set to UP intervals\n  Check the boundary of the timers and make sure FW send probe based on the timers",
+      "initial" : "  TBD",
+      "id" : "13",
+      "title" : "TBD",
+      "result" : "  Test the 4 timers"
+   },
+   "23" : {
+      "steps" : "  1.set X2 as wan interface,set ip as 4::1,and set connected interface as 4::4\n  2.add a ipv6 network monitor policy from only ipv6 page.\n  3. set probe type as Ping(ICMP)-Explicit Route,set probe target as 4::4, set next Hop Gateway as none,set outbound interface as X2,and add a proper name,leave other options as default,then save.\n  4. from packet captured,check if have ICMPv6 traffic send from x2 to 4::4\u00810\u00842",
+      "initial" : "  If a Next Hop Gateway is not specified, the\u00810\u00842probe assumes that the targets are directly connected to the Outbound Interface's\u00810\u00842network.",
+      "id" : "23",
+      "title" : "DUT1----X2(4::4)----(4::1)X2----DUT2",
+      "result" : "  Set Next Hop Gateway as None"
+   },
+   "29" : {
+      "steps" : "  1 Go to Network /Network Monitor page.\u00810\u00842\n  2 add some ipv6 and ipv4 network monitor policies and configure related settings.\u00810\u00842\n  3 export prefs file\n  4 delete some monitor policies\n  5.import the prefs file exported before.",
+      "initial" : "  TBD",
+      "id" : "29",
+      "title" : "TBD",
+      "result" : "  All IPv6 Network Monitor related settings are intact after import prefs file"
+   },
+   "6" : {
+      "steps" : "  1.click the edit button behind the ipv6 network monitor policy\n  2.change its name or probe type,then save.",
+      "initial" : "  TBD",
+      "id" : "6",
+      "title" : "TBD",
+      "result" : "  Edit an IPv6 Network Monitor policy"
+   },
+   "50" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "50",
+      "title" : "TBD",
+      "result" : "  IPv4 and IPv6 elements mixed test"
+   },
+   "39" : {
+      "steps" : "  1.set x0 as ipv6 static mode,and\u00810\u00842connect some pcs to interface X0.\n  2. add ipv6 group name X0 group ,add some hosts AO which are the pcs' ipv6 address to\u00810\u00842X0 group\n  3. set probe type as Ping(ICMP)-Explicit Route,set probe target as X0 RANGE,\u00810\u00842set next Hop Gateway as none,set outbound interface as X0,and add a proper name,leave other options as default,then save.\n  4. check if\u00810\u00842\u00810\u00842IPv6 group can be set as probe target.\n  5. check how it probe ipv6 group.",
+      "initial" : "  TBD",
+      "id" : "39",
+      "title" : "TBD",
+      "result" : "  Verify the function to probe an IPv6 AO group"
+   },
+   "3" : {
+      "steps" : "  1.add one ipv6 network monitor policies.\n  2.click the button behind this entry,and delete this entry.",
+      "initial" : "  TBD",
+      "id" : "3",
+      "title" : "TBD",
+      "result" : "  Delete an IPv6 Network Monitor policy"
+   },
+   "36" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as Ping(ICMP)-Explicit Route,set probe target as the pc's ipv6 address which connected to interface x0, set next Hop Gateway as none,set outbound interface as X0,and add a proper name,leave other options as default,then save.\n  3. check if\u00810\u00842\u00810\u00842IPv6 host can be set as probe target.\n  4. check how it probe ipv6 host.",
+      "initial" : "  TBD",
+      "id" : "36",
+      "title" : "TBD",
+      "result" : "  Verify the function to probe an IPv6 host"
+   },
+   "9" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as\u00810\u00842TCP,and port is 80 set probe target as 2::2, and add a proper name,leave other options as default,then save.\n  3. from packet captured,check if have tcp traffic with port 80 send from default wan to 2::2\u00810\u00842",
+      "initial" : "  TBD",
+      "id" : "9",
+      "title" : "TBD",
+      "result" : "  Test Probe Type-TCP"
+   },
+   "51" : {
+      "steps" : "  1.Add a Network Monitor policy, probe target is resolved FQDN\n  2.Make solved FQDN change to unresolved(e.g. change the domain or make FW DNS unavailable)\n  3.Check Network Monitor policy status, move mouse on led and FQDN name",
+      "initial" : "  TBD",
+      "id" : "51",
+      "title" : "TBD",
+      "result" : "  Verify NM policy status after resolved FQDN change to unresolved"
+   },
+   "41" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "41",
+      "title" : "TBD",
+      "result" : "  Verify the probe function when outbound interface in IPv6 auto mode"
+   },
+   "12" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as TCP and port as 443,set probe target as WAN IP of a FW which disable https management and check option \"RST Response Counts As Miss\",\u00810\u00842and add a proper name, then save.\n  3. wait for a while ,check the\u00810\u00842Probe state.\n  4. edit the policy, uncheck the option\u00810\u00842\"RST Response Counts As Miss\".\n  5. wait for a while ,check the\u00810\u00842Probe state.",
+      "initial" : "  TBD",
+      "id" : "12",
+      "title" : "TBD",
+      "result" : "  Test option RST Response Counts As Miss"
+   },
+   "47" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "47",
+      "title" : "TBD",
+      "result" : "  HA test for IPv6 network monitor"
+   },
+   "15" : {
+      "steps" : "  1. add a ipv6 network monitor policy\n  2.hover mouse over status light to check statistics.\n  3.click \"clear statistics\" button,then check\u00810\u00842statistics.",
+      "initial" : "  You can view details of the probe status by hovering your mouse over the green, red, or yellow\u00810\u00842light for a policy\n  The following information is displayed in the probe status:\n  \u00816\u00a61 The percent of successful probes.\n  \u00816\u00a61 The number of resolved probe targets.\n  \u00816\u00a61 The total number of probes sent.\n  \u00816\u00a61 The total number of successful probe responses received.\n  \u00816\u00a61 A list of resolved probe targets, and their status.",
+      "id" : "15",
+      "title" : "TBD",
+      "result" : "  Check/clear Statistics"
+   },
+   "8" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as Ping(ICMP)-Explicit Route,set probe target as 4::4, set next Hop Gateway as fe80::1,set outbound interface as X2,and add a proper name,leave other options as default,then save.\n  3. from packet captured,check if have ICMPv6 traffic send from x2 to 4::4\u00810\u00842",
+      "initial" : "  TBD",
+      "id" : "8",
+      "title" : "TBD",
+      "result" : "  Test Probe Type-Ping(ICMP)-Explicit Route"
+   },
+   "52" : {
+      "steps" : "  1.Add a Network Monitor policy, probe target is unresolved FQDN\n  2.Check Network Monitor policy status, move mouse on led and FQDN name\n  3.Make unsolved FQDN change to resolved(refer to 52)\n  4.Repeat step2",
+      "initial" : "  TBD",
+      "id" : "52",
+      "title" : "TBD",
+      "result" : "  Verify NM policy status after unresolved FQDN change to resolved"
+   },
+   "38" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "38",
+      "title" : "TBD",
+      "result" : "  Verify the function to probe an IPv6 network(not support)"
+   },
+   "4" : {
+      "steps" : "  1.add some ipv6 network monitor\n  2 select 2 of them,and click \"delete\" button.",
+      "initial" : "  TBD",
+      "id" : "4",
+      "title" : "TBD",
+      "result" : "  Delete selected IPv6 Network Monitor policies"
+   },
+   "34" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "34",
+      "title" : "TBD",
+      "result" : "  Verify the function to probe an IPv6 global address"
+   },
+   "45" : {
+      "steps" : "  1. add a ipv6 network monitor policy from only ipv6 page.\n  2. set probe type as Ping(ICMP)-Explicit Route,set probe target as the pc's ipv6 address which connected to interface x0, set next Hop Gateway as fe80::1,set outbound interface as X0,and add a proper name,leave other options as default,then save.\n  3. wait for a while,the monitor status change to UP .\n  4. \u00810\u00842power off\u00810\u00842the pc,wait for a while,check the\u00810\u00842monitor status .",
+      "initial" : "  TBD",
+      "id" : "45",
+      "title" : "TBD",
+      "result" : "  Verify the monitor status change from UP to Down when the probe target is become unavailable."
+   },
+   "37" : {
+      "steps" : "  1.set x0 as ipv6 static mode,and set ip as 123::1,and add related dhcpv6 server 123::100-123::102.\n  2. connect three pcs to interface X0,get the ips set in dhcpv6 server.\n  3. add ipv6 range name X0 RANGE ,SET\u00810\u00842123::100-123::102.\n  4.add a ipv6 network monitor policy from only ipv6 page.\n  5. set probe type as Ping(ICMP)-Explicit Route,set probe target as X0 RANGE,\u00810\u00842set next Hop Gateway as none,set outbound interface as X0,and add a proper name,leave other options as default,then save.\n  6. check if\u00810\u00842\u00810\u00842IPv6 range can be set as probe target.\n  7. check how it probe ipv6 range.",
+      "initial" : "  TBD",
+      "id" : "37",
+      "title" : "TBD",
+      "result" : "  Verify the function to probe an IPv6 range"
+   },
+   "43" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "43",
+      "title" : "TBD",
+      "result" : "  Verify the probe function when outbound interface have multiple IPV6 address (automatic, DHCPv6, static) at same time"
+   },
+   "19" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "19",
+      "title" : "TBD",
+      "result" : "  Set Local IP Address as None"
+   },
+   "54" : {
+      "steps" : "  1.Add a Network Monitor policy, probe target is resolved FQDN\n  2.Check Network Monitor policy status, move mouse on led and FQDN name\n  3.Make solved FQDN content changed, e.g. host's IP change or have more or less hosts' IP\n  4.Repeat step2",
+      "initial" : "  TBD",
+      "id" : "54",
+      "title" : "TBD",
+      "result" : "  Verify NM policy status after FQDN content changed"
+   },
+   "5" : {
+      "steps" : "  1.add some ipv6 network monitor policies\n  2. click \"delete all \"button on ipv6 only page,check if it work.\n  3.\u00810\u00842add some ipv4 and ipv6 network monitor policies\n  4.\u00810\u00842click \"delete all \"button on ipv4 and ipv6 page,check if it work.",
+      "initial" : "  TBD",
+      "id" : "5",
+      "title" : "TBD",
+      "result" : "  Delete all IPv6 Network Monitor policies"
+   }
+}

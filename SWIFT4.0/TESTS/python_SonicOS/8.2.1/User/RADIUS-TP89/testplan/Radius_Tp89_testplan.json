@@ -1,0 +1,107 @@
+{
+   "2345588" : {
+      "steps" : "  1 Set up radius server on LAN",
+      "initial" : "  user can browser the website successfully",
+      "id" : "2345588",
+      "title" : "Verify radius authentication function work correctly.",
+      "result" : "  1 set user authentication to radius\n  2 input radius ip and shared secret\n  3 set the default group for radius user to everyone\n  4 set the LAN to WAN default allow all service all users to allow all service everyone\n  5 add LAN to WAN allow DNS service to allow all users\n  6 enable user login from X0\n  7 from a LAN pc under X0. try to visit a WAN web site, like baidu\n  8 user will be redirect to login page, login as a radius user"
+   },
+   "2329347" : {
+      "steps" : "  1. Firewall with Testing Firmware.\n  2. RSA Server with Authentication Token.\n  3. RSA Client for token code generation.",
+      "initial" : "  1. Pin Set Prompt should come up.\n  2. Then after that one more prompt with \"SecureID Token + Pin\" Should come up.\n  3. After both the steps connection should establish and when we see in RSA Server we should see Pin-Set option as Set.",
+      "id" : "2329347",
+      "title" : "Verify Setting up Pin using RSA SecureID.",
+      "result" : "  1. Cofnigure SSLVPN in the Firewall.\n  2. Then in the RSA Server select SetPin opiton.\n  3. Now try to connect using the Net-Extender.\n  4. Observe the prompts and Result."
+   },
+   "1509029" : {
+      "steps" : "  1 create a user a1, a2 in server in group1\n  2 create a user a3 in server in group2\n  &#65533;",
+      "initial" : "  only a1 is allowed to access the website and a2 and a3 will be blocked.",
+      "id" : "1509029",
+      "title" : "Allow only users listed locally, select Use LDAP to retrieve user group imformation",
+      "result" : "  1 create a local user name a1 and a3 on firewall\n  2 import group \"group1\" and \"group2\" from ldap server or just create the two groups on firewall\n  3 on access rule .add policy from lan to wan allow DNS service for all users\n  4 change the default lan to wan allow all service all user to allow all service for group1\n  5 set authentciation method to only Radius,input correct radius server ip and shared secret\n  6 enable allow only users listed locally and select user ldap to retrive user group info\n  7 enable user login for any LAN interface\n  8 login from LAN PC with user a1 and try to visit a WAN website\n  9login from LAN PC with user a2 and try to visit a WAN website\n  10 login from LAN PC with user a3 and try to visit a WAN website\n  &#65533;\n  &#65533;"
+   },
+   "1509026" : {
+      "steps" : "  1 create a user a1 in server in group1\n  2 create a user a2 in server in group2",
+      "initial" : "  <input class=\"button\" id=\"EDIT-output\" onclick=\"toggleEditor(this);\" type=\"button\" value=\"Open Editor\" />\n  <div class=\"wysiwyg2_on\">\n  only a1 is allowed to access the website and a2&#65533; will be blocked.\n  </div>",
+      "id" : "1509026",
+      "title" : "Use LDAP to retrieve user group information",
+      "result" : "  1import group \"group1\" and \"group2\" from ldap server or just create the two groups on firewall\n  2 on access rule .add policy from lan to wan allow DNS service for all users\n  3change the default lan to wan allow all service all user to allow all service for group1\n  4set authentciation method to only Radius,input correct radius server ip and shared secret\n  5 &nbsp;select user ldap to retrive user group info\n  6&nbsp; enable user login for any LAN interface\n  7login from LAN PC with user a1 and try to visit a WAN website\n  &#65533;8login from LAN PC with user a2 and try to visit a WAN website"
+   },
+   "1768347" : {
+      "steps" : "  TBD",
+      "initial" : "   Firewall should not crash and Radius user is able to login with different methods SSLVPN, GVC and simple login.",
+      "id" : "1768347",
+      "title" : "GEN7-41906 - Clone:[HOTFIX] NSa6700 truncates the state variable length from 94 bytes to 66 bytes for RSA Authentication Manager SecureID PIN challenge response causing 'XAuth failed' for GVC User Authentication (Softeon India Pvt. Ltd.)",
+      "result" : "  1. Configure RSA Server.\n  2. Create a user in RSA and Create a Softtoken and attach that token to that user.\n  3. Now Congiure Radius in Firewall.\n  4. Try to login using Various methods by SSLVPN, GVC, Simple Login and observe firewall status.\n  5. Then change the State variable length in RSA Server for user in different bytes.\n  6. Verify the Firewall status by login with the Radius user."
+   },
+   "1509025" : {
+      "steps" : "  IAS --- X0 SonicWALL X2 --- PC",
+      "initial" : "  Qatest RADIUS user (as the member of group1) is logged in to the firewall and can access the Internet.<br />\n  Qalab RADIUS user (as the member of group2) is not allowed to log in. \"User login denied\" log message is shown on the Log&gt;View page of the firewall.",
+      "id" : "1509025",
+      "title" : "Use RADIUS, RADIUS Filter-ID attribute on RADIUS server",
+      "result" : "  1) Load the firmware on the firewall and boot with default settings.\n  2) Configure X0 (LAN), X1 (WAN), and X2 (DMZ) interfaces.\n  3) Have RADIUS server connected on the LAN interface (IAS is used in this test case). Have a PC connected to the DMZ. Make sure that a user on the DMZ can access the Internet.\n  4) On the Users&gt;Settings page, select RADIUS as Authentication Method. Click the Configure button.\n  5) Enter valid data in the Name or IP Address, Port Number, and Shared Secret fields on the Settings tab of the RADIUS Configuration window.\n  6) Select Use RADIUS Filter-ID attribute on RADIUS server on the RADIUS Users tab. Apply and click OK.\n  7) Configure RADIUS server. Create user groups group1 and group2 in Active Directory. Create a user qatest and make it a member of group1. Create a user qalab and make it a member of group2. Make sure that Allow Access on the Dial-in tab is selected in the users' Properties.\n  8) Add a new access policy in IAS. Name it group1. Edit properties for group1 policy. Click Add to specify the condition to match. Select Windows-Groups and add group1. Click Edit Profile in group1 Properties. Click the Advanced tab, and then ckick Add. Select Filter-ID parameter in the list and double-click it. Click Add in Multivalued Attribute Information dialog. Select String in Enter the attribute value in and type group1. Click OK, and then click OK again to return to Multivaluated Attribute Information dialog. Save the changes in the profile and click OK in group1 Properties.\n  9) Add a new access policy in IAS. Name it group2. Configure this policy the same way as described for group1 but set type to group2.\n  10) On the Users&gt;Local Groups page, add group1.\n  11) On the Firewall&gt;Access Rules page, modify the DMZ&gt;WAN access rule. Select group1 in the Users Allowed field. Add DNS allow rule for All users.\n  12) Access the Internet from the DMZ. When the LoginRedirect window is displayed, click on the link to access the auth.html window. Login as qatest. Attempt to login as qalab."
+   },
+   "1509022" : {
+      "steps" : "  1 set up two radius servers which stores the same user info",
+      "initial" : "  firewall will try to connect to secondary server and user can login successfully",
+      "id" : "1509022",
+      "title" : "Secondary Server",
+      "result" : "  1 set user authentication to radius\n  2 input primary radius server ip and shared sceret, test to make sure connected corretly\n  3 input the secondary radius server ip and shared scecrt, test to make sure connected corretly\n  4 put radius user's default group to sonicwall administrators\n  5 enable user management for X0\n  6 login to firewall with radius user\n  7 disconnect theNIC cardfor primary radius server\n  8 login to firewall with the same radius user again"
+   },
+   "1509021" : {
+      "steps" : "  1 Set up radius server on WAN",
+      "initial" : "  User can login to firewall successfully",
+      "id" : "1509021",
+      "title" : "RADIUS on the WAN",
+      "result" : "  1 set user authentication to radius\n  2 input the correct radius ip on wan zone and shared secret\n  3 set default radius user to group sonicwall limited administrators\n  4 enable user managment in X0\n  5 login from PC connect to X0 with radius user"
+   },
+   "1509030" : {
+      "steps" : "  IAS --- X0 SonicWALL X2 --- PC",
+      "initial" : "  Qatest RADIUS user (as the member of group1) is logged in to the firewall and can access the Internet.<br />\n  User1 local user is logged in to the firewall and can access the Internet.",
+      "id" : "1509030",
+      "title" : "Use RADIUS + Local Users",
+      "result" : "  1) Load the firmware on the firewall and boot with default settings.<br /> 2) Configure X0 (LAN), X1 (WAN), and X2 (DMZ) interfaces.<br /> 3) Have RADIUS server connected on the LAN interface (IAS is used in this test case). Have a PC connected to the DMZ. Make sure that a user on the DMZ can access the Internet.<br /> 4) On the Users&gt;Settings page, select RADIUS as Authentication Method. Click the Configure button.<br /> 5) Enter valid data in the Name or IP Address, Port Number, and Shared Secret fields on the Settings tab of the RADIUS Configuration window.<br /> 6) Select Use RADIUS Filter-ID attribute on RADIUS server on the RADIUS Users tab and also use the same filter ID in \"<span>Default user group to which all RADIUS users belong\" for authentication to work</span>. Apply and click OK.<br /> 7) On the Firewall&gt;Access Rules page, modify the DMZ&gt;WAN access rule. Select Everyone in the Users Allowed field. Add DNS allow rule for All users.<br /> 8) Configure RADIUS server. Create a user group group1 in Active Directory. Create a user qatest and make it a member of group1. Make sure that Allow Access on the Dial-in tab is selected in the user's Properties. <br /> 9) Add a new access policy in IAS. Name it group1. Edit properties for group1 policy. Click Add to specify the condition to match. Select Windows-Groups and add group1. Click Edit Profile in group1 Properties. Click the Advanced tab, and then ckick Add. Select Filter-ID parameter in the list and double-click it. Click Add in Multivalued Attribute Information dialog. Select String in Enter the attribute value in and type group1. Click OK, and then click OK again to return to Multivaluated Attribute Information dialog. Save the changes in the profile and click OK in group1 Properties. <br /> 10) On the Users&gt;Local Users page of the SonicWALL, add a new user user1.<br /> 11) Access the Internet from the DMZ. When the LoginRedirect window is displayed, click on the link to access the auth.html window. Login as qatest and user1."
+   },
+   "1509027" : {
+      "steps" : "  IAS --- X0 SonicWALL",
+      "initial" : "  Qatest1 RADIUS user (as the member of group1 with Limited Admin privilege defined on the RADIUS server and the user listed in the SonicWALL's local database) is allowed to log in and access the Internet. The Manage button is displayed in the User Login Status window.<br />\n  Test1 RADIUS user (as the member of grouptest defined on the SonicWALL) is allowed to login and access the Internet.<br />\n  Qatest2 RADIUS user is not allowed to login to the SonicWALL since he is not listed in the local database.<br />\n  Test2 RADIUS user is not allowed to login to the SonicWALL since he is not the member of the grouptest group and not listed in the local database.",
+      "id" : "1509027",
+      "title" : "SonicWALL vendor-specific attribute on RADIUS server. Memberships can be set locally by duplicating RADIUS user names. Allow only users listed locally.",
+      "result" : "  1) Load the firmware on the firewall and boot with default settings.<br />\n  2) Configure X0 (LAN) and X1 (WAN) interfaces.<br />\n  3) Have a PC with the RADIUS server connected on the LAN interface (IAS is used in this test case). Make sure that a user on the LAN can access the Internet.<br />\n  4) On the Users&gt;Settings page, select RADIUS as Authentication Method. Click the Configure button.<br />\n  5) Enter valid data in the Name or IP Address, Port Number, and Shared Secret fields on the Settings tab of the RADIUS Configuration window.<br />\n  6) Select Use SonicWALL vendor-specific attribute on RADIUS server on the RADIUS Users tab. Check the Memberships can be set locally by duplicating RADIUS user names check box. Check the Allow only users listed locally check box. Apply and click OK.<br />\n  7) On the Users&gt;Local groups page, add a new group. Name it grouptest. Add Limited Administrators default group to the grouptest.<br />\n  8) On the Users&gt;Local Users page, add a user test1. Add test1 to the group grouptest.<br />\n  9) On the Users&gt;Local Users page, add a user qatest1.<br />\n  10) On the Firewall&gt;Access Rules page, modify the LAN&gt;WAN access rule. Select grouptest in the Users Allowed field. Add DNS allow rule for All users.<br />\n  11) Configure RADIUS server. Create user groups group1 and group2 in Active Directory. Create users qatest1 and qatest2 and make them members of group1. Create users test1 and test2 and make them members of group2. Make sure that Allow Access on the Dial-in tab is selected in the users' Properties.<br />\n  12) Add a new access policy in IAS. Name it group1. Edit properties for group1 policy. Click Add to specify the condition to match. Select Windows-Groups and add group1. Click Edit Profile in group1 Properties. Click the Advanced tab, and then ckick Add. Select Vendor-Specific parameter in the list and double-click it. Click Add in Multivalued Attribute Information dialog. In the Vendor-Specific Attribute Information window, select the Enter Vendor Code. Type vendor code 8741 (for SonicWALL). Select Yes. It conforms. Click the Configure Attribute button. In the Configure VSA window, enter Vendor-assigned attribute nubmer - 1, Attribute Format - Decimal, Attribute value - 5 (Limited Management). Click OK, and then click OK again to return to Multivaluated Attribute Information dialog. Save the changes in the profile and click OK in group1 Properties. <br />\n  13) Add a new access policy in IAS. Name it group2. Configure this policy the same way as described for group1 but set Attribute value to 2 (Bypass Filters).<br />\n  14) Log out from the SonicWALL. Access the Internet from the LAN. When the LoginRedirect window is displayed, click on the link to access the auth.html window. Login as qatest1 and test1. Attempt to login as qatest2 and test2."
+   },
+   "2345590" : {
+      "steps" : "  TBD",
+      "initial" : "  1 user name ip, session time remaining time, inacitive time,type and settings are all displayed correctly",
+      "id" : "2345590",
+      "title" : "user status page-check user status for logged users",
+      "result" : "  1 set user authentication to radius\n  2 input radius ip and shared secret\n  3 set the default group for radius user to everyone\n  4 set the LAN to WAN default allow all service all users to allow all service everyone\n  5 add LAN to WAN allow DNS service to allow all users\n  6 enable user login from X0\n  7 from a LAN pc under X0. try to visit a WAN web site, like baidu\n  8 user will be redirect to login page, login as a radius user . 9. go to user status page and check user status "
+   },
+   "1509024" : {
+      "steps" : "  PC/RADIUS server --- X0 SonicWALL",
+      "initial" : "  \"Authentication successful\" message is displayed in the Test tab window.",
+      "id" : "1509024",
+      "title" : "Client test, use valid data",
+      "result" : "  1) Load the firmware on the firewall and boot with default settings.<br />\n  2) Configure X0 (LAN)and X1 (WAN) interfaces. <br />\n  3) Have RADIUS server connected on the LAN interface (IAS is used in this test case). <br />\n  4) On the Users&gt;Settings page, select RADIUS as Authentication Method. Click the Configure button.<br />\n  5) Enter valid data in the Name or IP Address, Port Number, and Shared Secret fields on the Settings tab of the RADIUS Configuration window.<br />\n  6) Select Use RADIUS Filter-ID attribute on RADIUS server on the RADIUS Users tab. Apply.<br />\n  7) Configure RADIUS server. Create a user group \"group1\" in Active Directory. Create a user \"qatest\" and make it a member of group1. Make sure that Allow Access on the Dial-in tab is selected in the users' Properties. <br />\n  8) Add a new access policy in IAS. Name it group1. Edit properties for group1 policy. Click Add to specify the condition to match. Select Windows-Groups and add group1. Click Edit Profile in group1 Properties. Click the Advanced tab, and then ckick Add. Select Filter-ID parameter in the list and double-click it. Click Add in Multivalued Attribute Information dialog. Select String in Enter the attribute value in and type group1. Click OK, and then click OK again to return to Multivaluated Attribute Information dialog. Save the changes in the profile and click OK in group1 Properties. <br />\n  9) In the Test tab of the RADIUS Configuration window, enter \"qatest\" user name and a valid password of the \"qatest\" user. Click the Test button."
+   },
+   "1509023" : {
+      "steps" : "  N/A",
+      "initial" : "  user can browser the website successfully",
+      "id" : "1509023",
+      "title" : "Default user group is Everyone",
+      "result" : "  1 set user authentication to radius\n  2 input radius ip and shared secret\n  3 set the default group for radius user to everyone\n  4 set the LAN to WAN default allow all service all users to allow all service everyone\n  5 add LAN to WAN allow DNS service to allow all users\n  6 enable user login from X0\n  7 from a LAN pc under X0. try to visit a WAN web site, like baidu\n  8 user will be redirect to login page, login as a radius user"
+   },
+   "1509028" : {
+      "steps" : "  TBD",
+      "initial" : "  na",
+      "id" : "1509028",
+      "title" : "Set user name format to simple name",
+      "result" : "  na"
+   },
+   "2956924" : {
+      "steps" : "  TBD",
+      "initial" : "  Authentication method should change successfully and no any error occurs.",
+      "id" : "2956924",
+      "title" : "Switch authentication method to Local User from Radius",
+      "result" : "  1. Go to User&gt;Settings page of Firewall\n  2. Configure authentication method to Radius.\n  3. Now change it to Local User."
+   }
+}

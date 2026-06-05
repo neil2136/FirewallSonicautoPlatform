@@ -1,0 +1,284 @@
+{
+    "GUI_TC01": {
+        "steps": "Navigate to Network-> Routing page, check the Routing mode default value is Simple RIP Advertisement",
+        "initial": "",
+        "id": "GUI_TC01",
+        "title": "Verify the default routing mode is Simple RIP Advertisement (In Gen6 it is \"Advanced Routing\" by default)",
+        "result": "<span>//Note: in the Gen6 6.1/6.2 release the default routing mode has been changed to \"Advanced Routing\".</span>\n<span></span>\n<span>Verify the default routing mode is Simple RIP Advertisement. The Route Advertisement header is displayed and only RIP Advertisement is configurab</span>"
+    },
+    "GUI_TC02": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC02",
+        "title": "in version 5.9 and all gen 6, FW  no longer need to restart when use advanced routing mode.",
+        "result": "Verify that the SonicWALL requires restart when the Use Advanced Routing check box gets turned on"
+    },
+    "GUI_TC03": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC03",
+        "title": "GUI: Verify when use advanced routing mode, RIP and OSPF are configurable.",
+        "result": ""
+    },
+    "GUI_TC05": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC05",
+        "title": "GUI: Verify that the RIP feature is disabled by default on all configured interfaces.",
+        "result": ""
+    },
+    "GUI_TC06": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC06",
+        "title": "GUI: Verify the RIP drop-down list's content.",
+        "result": ""
+    },
+    "GUI_TC07": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC07",
+        "title": "GUI: Verify that the Use Password check box is not available with RIPv1 selection.",
+        "result": ""
+    },
+    "GUI_TC08": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC08",
+        "title": "GUI: Verify that the Global RIP Configuration section is not available when Receive Only mode is used.",
+        "result": ""
+    },
+    "GUI_TC09": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC09",
+        "title": "Verify that the Poisoned Reverse check box is not availabe if Split Horizon is turned off.",
+        "result": ""
+    },
+    "GUI_TC10": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC10",
+        "title": "GUI: The Default Metric field boudary.",
+        "result": "The default metric boundary is (1 - 16777214)"
+    },
+    "GUI_TC11": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC11",
+        "title": "GUI: The Administrative Distance field boundaries.",
+        "result": "GUI: The Administrative Distance field boundaries(1~255)"
+    },
+    "GUI_TC12": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC12",
+        "title": "GUI: The boundaries for Advertise Static Routes Metric_RIP.",
+        "result": "GUI: The boundaries for Advertise Static Routes Metric (1~15), all of them are available, and input unavailable values will result in an error message."
+    },
+    "GUI_TC13": {
+        "steps": "Enable OSPFv2;\nCheck the checkbox \"advertise connected networks\";\nModify the metric to 0,1,2,16777213, 16777214, 16777215;",
+        "initial": "",
+        "id": "GUI_TC13",
+        "title": "GUI: The boundaries for Advertise Connected Networks Metric.",
+        "result": "in step 3, when the metric is 0, <span>16777215</span>, click OK button, GUI will prompt error message; when the metric is 1,2,<span>16777213, 16777214</span>, click OK button , the configuration will be accepted; "
+    },
+    "GUI_TC14": {
+        "steps": "Enable RIP;\nCheck the checkbox \"Redistribute OSPF Routes\";\nModify the metric to 0,1,2,15,16;",
+        "initial": "",
+        "id": "GUI_TC14",
+        "title": "GUI: The boundaries for Redistribute OSPF Routes Metric.",
+        "result": "<span>in step 3, when the metric is 0,</span><span>16</span><span>, click OK button, GUI will prompt error message; when the metric is 1,2,</span><span>15</span><span>, click OK button , the configuration will be accepted;</span>"
+    },
+    "GUI_TC16": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC16",
+        "title": "GUI: Verify that the OSPF feature is disabled by default on all configured interfaces.",
+        "result": ""
+    },
+    "GUI_TC17": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC17",
+        "title": "GUI: Verify the OSPFv2 drop-down list's content.",
+        "result": ""
+    },
+    "GUI_TC18": {
+        "steps": "<span>1. Enable OSPFv2;</span>\n<span>2. Modify the Dead Interval to 0,1,2, 65534, 65535, 65536.</span>",
+        "initial": "",
+        "id": "GUI_TC18",
+        "title": "GUI: The Dead Interval field boundaries.",
+        "result": "in step 2, When modify the dead interval to <span>0, <span>65536, click OK button, GUI must prompt error message; </span></span>\n<span><span>in step 2, When modify the dead interval to <span>1,2, 65534, 65535, click OK button, the config should be accepted.</span></span></span>"
+    },
+    "GUI_TC19": {
+        "steps": "<span>1. Enable OSPFv2;</span>\n<span>2. Unchecked the checkbox \"Auto\" in Interface Cost;</span>\n<span>3. Modify the interface cost value to 0, 1,2, 65534, 65535, 65536;</span>",
+        "initial": "",
+        "id": "GUI_TC19",
+        "title": "GUI: The Interface Cost field boundaries.",
+        "result": "in step 3, when modify the interface cost to 0, 65536, click OK button, GUI should prompt error message; when modify the interface cost value to <span>1,2, 65534, 65535, click OK button, the config should be accepted.</span>"
+    },
+    "GUI_TC20": {
+        "steps": "Enable OSPFv2;\nCheck the drop-down list content of authentication;",
+        "initial": "",
+        "id": "GUI_TC20",
+        "title": "GUI: Verify the Authentication drop-down list's content.",
+        "result": "in step 2, the drop-down list should contain three items: \"Disabled\" \"Simple Password\" \"Message Digest\""
+    },
+    "GUI_TC21": {
+        "steps": "Enable OSPFv2;\nConfigure the <span>OSPF area ID as a decimal value:<span><0-4294967295></span></span>\n<span>3.<span>OSPF area ID in IP address format:A.B.C.D</span></span>",
+        "initial": "",
+        "id": "GUI_TC21",
+        "title": "GUI: Configure OSPF Area field and its boundaries.",
+        "result": "in step 2 and 3, the area ID could be configured refer to the two type:\n<0-4294967295> OSPF area ID as a decimal value<br />A.B.C.D OSPF area ID in IP address format"
+    },
+    "GUI_TC22": {
+        "steps": "Enable OSPFv2;\nModify the hello interval value.",
+        "initial": "",
+        "id": "GUI_TC22",
+        "title": "GUI: The Hello Interval field boundaries.",
+        "result": "in step 2, when modify the hello interval to 0,65536, GUI should prompt error; when modify the hello interval to1,2,65534,65535, the config should be accepted."
+    },
+    "GUI_TC23": {
+        "steps": "Enable OSPFv2;\nModify the Router Priority.",
+        "initial": "",
+        "id": "GUI_TC23",
+        "title": "GUI: The Router Priority field boundaries.",
+        "result": "in step 2, when modify the router priority to -1, 256, the GUI should prompt error ; when modify the router priority to 0, 1, 254, 255, the config should be accepted."
+    },
+    "GUI_TC24": {
+        "steps": "Enable OSPFv2;\nType OSPF Router-ID in IP address format.",
+        "initial": "",
+        "id": "GUI_TC24",
+        "title": "GUI: Verify the format of data in the OSPF Router-ID field.",
+        "result": "in step 2, modify router-id to 0.0.0.0 or other invalid IP address, GUI should prompt error message; modify router-id to a valid ip address, the config should be accepted."
+    },
+    "GUI_TC25": {
+        "steps": "enable OSPFv2;\nCheck the drop-down list of ABR type.",
+        "initial": "",
+        "id": "GUI_TC25",
+        "title": "GUI: Verify the ABR Type drop-down list's content.",
+        "result": "in step 2, The drop-down list's content of ABR Type should contain below four items:\nstandard, cisco, ibm, shortcut."
+    },
+    "GUI_TC26": {
+        "steps": "Enable OSPFv2;\nModify the default metric value.",
+        "initial": "",
+        "id": "GUI_TC26",
+        "title": "GUI: The Default Metric field boundaries.",
+        "result": "in step 2, the range of default metric value is<span> (1 - 16777214), when modify default metric to 0, 16777215, GUI should prompt error message; when modify default metric to 1,2,16777213,16777214, the config should be accepted.</span>"
+    },
+    "GUI_TC27": {
+        "steps": "Load a firmware and boot with factory default settings.\nConfigure LAN and WAN interfaces.\nOn the Network>Routing page, select Advanced Routing in the Routing mode drop-down box. Click OK in the message.\nClick the Configure OSPF icon for X0 (LAN) interface.\nIn the Interface X0 (LAN) OSPFv2 Configuration window, select Enabled and verify that Originate Default Route has Never default setting, and the Metric and Metric Type fields are greyed out with that selection.\nSelect Always in the Originate Default Route drop-down box.",
+        "initial": "",
+        "id": "GUI_TC27",
+        "title": "GUI: Verify that the Metric and Metric Type become available when the Original Default Route is set to other than Never.",
+        "result": "The Metric and Metric Type become available to configure."
+    },
+    "GUI_TC28": {
+        "steps": "Enable OSPFv2;\nEnable default route originate;\nModify the metric of original default route.",
+        "initial": "",
+        "id": "GUI_TC28",
+        "title": "GUI: The boundaries of the Metric for Original Default Route.",
+        "result": "in step 3, <span>the range of the metric is</span><span> (1 - 16777214), when modify metric to 0, 16777215, GUI should prompt error message; when modify metric to 1,2,16777213,16777214, the config should be accepted.</span>"
+    },
+    "GUI_TC29": {
+        "steps": "Enable OSPFv2;\n2. Verify the Metric Type drop-down list's content when the Original Default Route is used.",
+        "initial": "",
+        "id": "GUI_TC29",
+        "title": "GUI: Verify the Metric Type drop-down list's content when the Original Default Route is used.",
+        "result": "in step 2, there are two metric type, external type 1 and external type 2."
+    },
+    "GUI_TC30": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC30",
+        "title": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Static Routes check box is turned on.",
+        "result": ""
+    },
+    "GUI_TC31": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC31",
+        "title": " GUI: The boundaries of the Metric for Advertise Static Routes.",
+        "result": ""
+    },
+    "GUI_TC32": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC32",
+        "title": "GUI: The boundaries of the Tag for Advertise Static Routes.",
+        "result": ""
+    },
+    "GUI_TC33": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC33",
+        "title": "GUI: Verify the Metric Type drop-down list's content when the Advertise Static Routes is used.",
+        "result": ""
+    },
+    "GUI_TC34": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC34",
+        "title": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Connected Networks check box is turned on.",
+        "result": ""
+    },
+    "GUI_TC35": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC35",
+        "title": "GUI: The boundaries of the Metric for Advertise Connected Networks.",
+        "result": ""
+    },
+    "GUI_TC36": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC36",
+        "title": "GUI: The boundaries of the Tag for Advertise Connected Networks.",
+        "result": ""
+    },
+    "GUI_TC37": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC37",
+        "title": "GUI: Verify the Metric Type drop-down list's content when the Advertise Connected Networks is used.",
+        "result": ""
+    },
+    "GUI_TC38": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC38",
+        "title": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Redistribute RIP Routes check box is turned on.",
+        "result": ""
+    },
+    "GUI_TC39": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC39",
+        "title": "GUI: The boundaries of the Metric for Redistribute RIP Routes.",
+        "result": ""
+    },
+    "GUI_TC40": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC40",
+        "title": "GUI: The boundaries of the Tag for Redistribute RIP Routes.",
+        "result": ""
+    },
+    "GUI_TC41": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC41",
+        "title": "Verify the Metric Type drop-down list's content when the Redistribute RIP Routes is used.",
+        "result": ""
+    },
+    "GUI_TC42": {
+        "steps": "",
+        "initial": "",
+        "id": "GUI_TC42",
+        "title": "GUI: Verify that the Metric, Tag, and Metric Type become available when the Advertise Remote VPN Networks check box is turned on.",
+        "result": ""
+    }
+
+
+}

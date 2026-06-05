@@ -1,0 +1,290 @@
+{
+  "3258933": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n5-1 Create a DNS Proxy policy, Source: LAN, Service: DNS\n5-2 Enable option \"Enforce DNS Proxy For All DNS Requests\" and \"Enable DNS Proxy Cache\" on the NETWORK-DNS-DNS Proxy\n6 From LAN client to web access a website with HTTPS",
+    "id": "3258933",
+    "title": "Verify the LAN-WAN traffic include a SAML user",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "Client will be redirect to the IdP user authentication, once the user was authenticated, the client click 'Continue' to redirect the website resource"
+  },
+  "3258934": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, exclude the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS\n\n",
+    "id": "3258934",
+    "title": "Verify the LAN-WAN traffic exclude a SAML user",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "When the client finishes the user authenticate, UI report the user has no privilege login from here"
+  },
+  "3258935": {
+    "steps": "1 Create a SAML Profile which incluVerify the CFS exclude a SAML userde a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS\n7 To download the TSR, check the ULA with SAML user could be saved into TSR\n\n",
+    "id": "3258935",
+    "title": "Verify the LAN-WAN Access rule include SAML user info was saved in the TSR ",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, once the user was authenticated, the client click 'Continue' to redirect the website resource\n7 All SAML user info should be saved into TSR"
+  },
+  "3258936": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication\n7 Create LAN-WAN CFS policy to include this SAML user\n8 From client to access the website to match the CFS policy",
+    "id": "3258936",
+    "title": "Verify the CFS include a SAML user",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, once the user was authenticated, the client click 'Continue' to redirect the website resource\n8 The CFS policy take effect."
+  },
+  "3258937": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication\n7 Create LAN-WAN CFS policy to exclude this SAML user\n8 From client to access the website to match the CFS policy\n\n",
+    "id": "3258937",
+    "title": "Verify the CFS exclude a SAML user",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, once the user was authenticated, the client click 'Continue' to redirect the website resource\n8 The client bypasses the CFS"
+  },
+  "3258938": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 Change theÂ User authentication method to LDAP\n7 From LAN client to web access a website with HTTPS to trigger the user authentication",
+    "id": "3258938",
+    "title": "Verify the SAML user activity when the user auth type is LDAP",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "TBA"
+  },
+  "3258939": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 Enable SSO and enable the enforcement on the LSAN zone\n7 From LAN client to web access a website with HTTPS to trigger the user authentication\n\n",
+    "id": "3258939",
+    "title": "Verify the SAML user activity when SSO is enabled",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "TBA"
+  },
+  "3258940": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication\n7 To logout the SAML user from User Status window\n8 Retest step6",
+    "id": "3258940",
+    "title": "Verify the SLO action in the SAML Profile",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, once the user was authenticated, the client click 'Continue' to redirect the website resource\n8 Client need input the username and password again to authenticate the SAML user"
+  },
+  "3258941": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 To change theÂ HTTPS Port to a custom port\n7 From LAN client to web access a website with HTTPS to trigger the user authentication",
+    "id": "3258941",
+    "title": "Verify the SAML user activity with custom HTTPS port",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, once the user was authenticated, the client click 'Continue' to redirect the website resource"
+  },
+  "3258942": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication\n7 Do not to get user authenticated, just keep refreshing the SAML user login window",
+    "id": "3258942",
+    "title": "Check the CPU usage when initiate background traffic which hits an ACL with SAML enabled but did not complete the login",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "The CPU usage should be in a normal state"
+  },
+  "3258943": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 To cut off the connectivity between the SP and IdP\n7 From LAN client to web access a website with HTTPS to trigger the user authentication\n8 Do not to get user authenticated, just keep refreshing the SAML user login window",
+    "id": "3258943",
+    "title": "Verify the activity when the IdP unreachable, the client is keep refreshing",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "Since the IdP the not reachable, the authentication should be failed"
+  },
+  "3258944": {
+    "steps": "",
+    "id": "3258944",
+    "title": "To hijack the ACS replay, check the FW behavior",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "The SAML user authentication should be failed since the ACS was hijacked\n\n"
+  },
+  "3258945": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication",
+    "id": "3258945",
+    "title": "Verify the LAN-WAN traffic include a SAML user when the IdP enable 2FA",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, input the username/password, verify the 2FA, the client click 'Continue' to redirect the website resource"
+  },
+  "3258946": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local user whose username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication\n\n",
+    "id": "3258946",
+    "title": "",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, input the username/password, verify the 2FA, the client click 'Continue' to redirect the website resource"
+  },
+  "3258947": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Import a local user from LDAP server with domain, username is the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication",
+    "id": "3258947",
+    "title": "Verify the ULA case with SAML user if the Local user is imported from LDAP server",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, input the username/password, the client click 'Continue' to redirect the website resource"
+  },
+  "3258948": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local domain user, the username should be the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication",
+    "id": "3258948",
+    "title": "Verify the ULA case with SAML user if the Local user is a domain user",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, input the username/password, the client click 'Continue' to redirect the website resource\n\n"
+  },
+  "3258949": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local user, the username should be the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 Enable the Guest Service on the LAN zone\n7 From LAN client to web access a website with HTTPS to trigger the user authentication\n\n",
+    "id": "3258949",
+    "title": "Verify the ULA case with SAML user when the Guest User is enabled on the client",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "Traffic meets the ULA of Guest service"
+  },
+  "3258950": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local user, the username should be the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 Enable the 'On redirecting unauthenticated users, redirect to an external login page' from Users-Settings-Web Login\n7 From LAN client to web access a website with HTTPS to trigger the user authentication",
+    "id": "3258950",
+    "title": "Verify the SAML user override the option 'On redirecting unauthenticated users, redirect to an external login page",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, input the username/password, the client click 'Continue' to redirect the website resource, and the SAML user setting will override the option '"
+  },
+  "3258951": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local user, the username should be the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 Enable the 'Redirect non-admin users from HTTPS to HTTP on completion of login' from Users-Settings-Web Login\n7 From LAN client to web access a website with HTTPS to trigger the user authentication",
+    "id": "3258951",
+    "title": "Verify the SAML user override the option 'Redirect non-admin users from HTTPS to HTTP on completion of login",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, input the username/password, the client click 'Continue' to redirect the website resource, and the SAML user setting will override the option '"
+  },
+  "3258952": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local user, the username should be the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication",
+    "id": "3258952",
+    "title": "Check the SAML user type/mode in the user-status table",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, input the username/password, the client click 'Continue' to redirect the website and UI show the user was login via SAML in the user status table"
+  },
+  "3258953": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local user, the username should be the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication\n7 Reboot the SonicOS then to retest step6",
+    "id": "3258953",
+    "title": "Verify the LAN-WAN traffic include a SAML user after FW reboot",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, input the username/password, the client click 'Continue' to redirect the website\n7 The client no need to input the username/password again, the client could access the website once the authentication is successful\n\n"
+  },
+  "3258954": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local user, the username should be the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication\n7 To export the Prefs\n8 Import the Prefs and import the CA of IdP again\n9 Retest the Step6 again",
+    "id": "3258954",
+    "title": "Verify the LAN-WAN traffic include a SAML user after Prefs export/import",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, input the username/password, the client click 'Continue' to redirect the website\n9 After import the CA again, the result should be tha same as step6"
+  },
+  "3258955": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local user, the username should be the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client to web access a website with HTTPS to trigger the user authentication\n7 To logout/login the SAML user for many times to check if there is a memory leak",
+    "id": "3258955",
+    "title": "Verify if there is a memory leak after long time SAML user login/logout",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 Client will be redirect to the IdP user authentication, input the username/password, the client click 'Continue' to redirect the website\n7 There should be no memory leak"
+  },
+  "3258956": {
+    "steps": "1 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n2 Create a local user, the username should be the same as it on the IdP\n3 Create a LAN-WAN access rule to pass the DNS traffic\n4 Create a any-WAN traffic to pass the traffic to IdP whitelist\n5 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n6 From LAN client1 to web access a website with HTTPS to trigger the user authentication\n7 From LAN client2 to web access a website with HTTPS to trigger the user authentication\n8 Logout the SAML user from client1, to check the SAML user on the client2\n\n",
+    "id": "3258956",
+    "title": "Verify the SLO activity from different clients if one client logout",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "6 -7 Client will be redirect to the IdP user authentication, input the username/password, the client click 'Continue' to redirect the website\n8 The user logout from client1 will not affect the same user on the client2\n\n"
+  },
+  "3258957": {
+    "steps": "1 Deploy the AWS image on the different regions\n2 Create a SAML Profile which include a HTTPS service and bind to x0 IP, the SAML user enabled the 2FA\n3 Create a local user, the username should be the same as it on the IdP\n4 Create a LAN-WAN access rule to pass the DNS traffic\n5 Create a any-WAN traffic to pass the traffic to IdP whitelist\n6 Create a LAN-WAN HTTPS access rule, include the local user just created and enable the 'Authenticate via SAML', select the SAML profile just created\n7 From AWS LAN client on the different regions, to web access a website with HTTPS to trigger the user authentication",
+    "id": "3258957",
+    "title": "Verify the LAN-WAN traffic include a SAML user from different AWS regions to ensure the IdP is reachable",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": "7 Client on the different AWS region will be redirect to the IdP user authentication, input the username/password, the client click 'Continue' to redirect the website"
+  },
+  "3318761": {
+    "steps": "",
+    "id": "3318761",
+    "title": "Verify the SMAL log 'ID:1765 User Authenticated by SAML'",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": ""
+  },
+  "3318769": {
+    "steps": "",
+    "id": "3318769",
+    "title": "Verify the SMAL log 'ID: 1771 Invalid SAML Request ",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": ""
+  },
+  "3318771": {
+    "steps": "",
+    "id": "3318771",
+    "title": "Verify the SMAL log 'ID: 1773 SAML Authentication Start",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": ""
+  },
+  "3318772": {
+    "steps": "",
+    "id": "3318772",
+    "title": "Verify the SMAL log 'ID: 1774 SAML Assertion Received",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": ""
+  },
+  "3318773": {
+    "steps": "",
+    "id": "3318773",
+    "title": "Verify the SMAL log 'ID: 1775 SAML Single Lougout request Received ",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": ""
+  },
+  "3392670": {
+    "steps": "",
+    "id": "3392670",
+    "title": "Verify the LAN-WAN traffic include a SAML user for group mapping with SAML user-group identification",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": ""
+  },
+  "3392671": {
+    "steps": "",
+    "id": "3392671",
+    "title": "Check the SSLVPN service profile should not listed into the LAN-WAN Access Rule SAML profile",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": ""
+  },
+  "3392672": {
+    "steps": "",
+    "id": "33392672",
+    "title": "Verify the LAN-WAN traffic include a SAML user when the IdP enable 2FA via email",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": ""
+  },
+  "3765188": {
+    "steps": "",
+    "id": "3765188",
+    "title": "Verify in-used SAML Profile should be not allowed to change its service type",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": ""
+  },
+  "3765189": {
+    "steps": "",
+    "id": "3765189",
+    "title": "Verify changing of SAML Profile name should not be affected the in ULA Policy",
+    "description": "",
+    "initial": "1 User is created on your IdP",
+    "result": ""
+  },
+  "3914082": {
+    "steps": "1 Login the SAML user from ULA client without user quota\n2 Check the user session time\n3 Login the SAML user from ULA client with user quota\n4 Check the user session time",
+    "id": "3914082",
+    "title": "Verify the SAML user session time",
+    "description": "",
+    "initial": "",
+    "result": "2 The user session time should be the default 60 mins （This depends on the IdP configuration）\n4 The user session time should be the minimum of the user quota and IdP configuration"
+  }
+}

@@ -1,0 +1,122 @@
+{
+    "OSPF_TC88": {
+        "steps": "Enable packet monitor on Sonicwall;\n2. Configure interface X3, zone LAN, static IP, connect to router, enable OSPF on sonicwall and router, area 0;\n3. Check the packets transmits between sonicwall and router, sonicwall send all types of OSPF messages, e.g. hello, DD, LSR, LSU...\n4. Disable OSPF on X3, check the packets transmits between sonicwall and router, sonicwall must not send any OSPF messages.",
+        "initial": "",
+        "id": "OSPF_TC88",
+        "title": "Verify that SonicWALL doesn't send any OSPF packets when the OSPF feature is disabled.",
+        "result": "in step 4, after disable OSPF on sonicwall, it must not send any OSPF messages."
+    },
+    "Interval_TC89": {
+        "steps": "1. Configure OSPF for the 172.30.30.2/24 network on the Cisco router that is connected to the hub\n1. Configure OSPF for the 192.168.200.2/24 network on the Cisco router that is connected to the hub2.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Configure OSPF for X0 (LAN) and X2 (DMZ) interfaces. Select the following: OSPFv2:Enabled, Area:0, Area Type:Normal, Router ID:10.0.0.\nHave a Hello Interval set to 10 seconds. Capture OSPF packets on LAN and DMZ using Ethereal.\n4. Edit OSPF for X0. Change Hello Interval to 25 seconds. Capture OSPF packets on sonicwall.",
+        "initial": "",
+        "id": "Interval_TC89",
+        "title": "Verify that Hello packets are sent every Hello Interval seconds to the IP multicast address (224.0.0.5).",
+        "result": "in step 3, Verify that at step3 SonicWALL sends Hello packets from 192.168.200.1 and 172.30.30.1 interfaces every 10 seconds.<br />in step 4, At step4 SonicWALL sends Hello packets every 25 seconds."
+    },
+    "Declare_TC90": {
+        "steps": "Enable packet monitor on Sonicwall;\n2. Configure interface X3, zone LAN, static IP, connect to router, enable OSPF on sonicwall area 0;\n3. Enable OSPF on router, area 0;\n4. Check the packets transmits between sonicwall and router, in the first 40 seconds, sonicwall send hello message and does not declare DR or BDR in the hello message, wait for 40 seconds, it start declare itself as the DR in its hello message",
+        "initial": "",
+        "id": "Declare_TC90",
+        "title": "Verify that SonicWALL doesn't declare a DR or DBR in its Hello packets before the Wait timer reaches Dead Interval.",
+        "result": "in step 4, sonicwall won't declare DR or BDR untill the timer reaches Dead Interval."
+    },
+    "DeadInterval_TC91": {
+        "steps": "Configure interface X3, zone LAN, static IP, connect to router, enable OSPF on sonicwall and router, area 0;\n2. Verify sonicwall and router can establish neighbor with each other;\n3. Use command \"show ip ospf neighbor\" on sonicwall to check the neighbor list on sonicwall;\n4. Disable OSPF on router, wait about 40, use command \"show ip ospf neighbor\" on sonicwall to check the neighbor list on sonicwall;",
+        "initial": "",
+        "id": "DeadInterval_TC91",
+        "title": "Verify that disabled router disappears from SonicWALLs neighbour list after Dead Interval expires",
+        "result": "in step 3, the OSPF neighbor list include router in sonicwall;\nin step 4, disable OSPF on router, wait about 40 seconds, which is the dead interval, the router disappeared on neighbor list in sonicwall."
+    },
+    "RouterPrior_TC93": {
+        "steps": "Prepare two routers, sonicwall and router;\n2. Connect sonicwall X3 to router;\n3. Configure sonicwall X3, zone LAN, static IP 28.1.1.46;\n4. Enable packet monitor on sonicwall;\n5. Enable OSPF on X3 , router priority is 0, enable OSPF on router too, router priority is 0, router is 28.1.1.55, area 0;\n6. Wait about 1 min, check the packets transmit between sonicwall and router, sonicwall send hello packet every 10 seconds, but at last, neither doesn't declare it as DR nor BDR;\n7, Use command \"show ip ospf neighbor\" in CLI in sonicwall, the sonicwall and router's OSPF status stay in 2-way state.",
+        "initial": "",
+        "id": "RouterPrior_TC93",
+        "title": "Verify that if a Router Priority is set to 0, the SonicWALL is not eligible to become a DR.",
+        "result": "in step 6, sonicwall must not declare itself as DR or BDR in the hello message it transmits to neighbor router;\nin step 7, as there is no DR or BDR, sonicwall and router can not reach to FULL state, the OSPF status between them will stay in 2-Way.<br />e.g.<br />OSPF process 0:<br />Neighbor ID Pri State Dead Time Address Interface<br />28.1.1.55 0 2-Way/DROther 00:00:40 28.1.1.55 X3"
+    },
+    "HelloMismatch_TC96": {
+        "steps": "Prepare 2 routers, sonicwall , router;\n2. Configure interface X3 on sonicwall, zone LAN, static IP 28.1.1.46, connect to router, router has static IP 28.1.1.55;\n3. Enable packet monitor on sonicwall;\n4. Enable OSPF on sonicwall X3, area 0, keep other settings as default;\n5. Enable OSPF on router , set hello-interval to 5 seconds, area 0;\n6. Check the packets received and send sonicwall X3, sonicwall received hello message send from router, the hello-interval is 5 seconds, but sonicwall does not accept router as its active neighbor in its hello message;\n7. Use command \"show ip ospf neighbor\" in CLI in sonicwall, check the neighbor list is blank.",
+        "initial": "",
+        "id": "HelloMismatch_TC96",
+        "title": "Verify that the Hello packet is dropped and a sender is not accepted as a neighbor if there is Hello mismatch.",
+        "result": "in step 6, sonicwall received mismatch hello message from router, but it does not accept router as its active neighbor in its hello message;\nin step 7, the neighbor list is blank on sonicwall."
+    },
+    "DiffIP_TC97": {
+        "steps": "Configure sonicwall interface X3, zone LAN, static IP 28.1.1.46/24, connect to a router , router has static IP 55.1.1.1/24;\n2. Enable OSPF on interface X3 in sonicwall, area 0;\n3. Enable OSPF on router, area 0;\n4. Enable packet monitor on sonicwall;\n5. Check the packets received and send on sonicwall, sonicwall received hello message from router, but it does not add the router into its active neighbor in the hello message send by sonicwall;\n6. Use command \"show ip ospf neighbor\" in CLI in sonicwall, check the neighbor list is blank.",
+        "initial": "",
+        "id": "DiffIP_TC97",
+        "title": "Verify that if an incoming OSPF packet is not from a local network, SonicWALL should not list a sender as a neighbor in its Hello packets.",
+        "result": "in step 5, when sonicwall received hello packets from 55.1.1.1, it does not add this router into its active neighbor list in its own hello message;\nin step 6, the neighbor list is blank on sonicwall."
+    },
+    "EBit_TC98": {
+        "steps": "Configure sonicwall interface X3, zone LAN, static IP 28.1.1.46/24, connect to a router , router has static IP 28.1.1.28/24;\n2. Enable OSPF on interface X3 in sonicwall, area 0, normal area type;\n3. Enable packet monitor on sonicwall;\n4. Check the hello packet send from sonicwall, the E bit of the Options field in a Hello packet must be set to match this area's ExternalRoutingCapability;\n5. Change OSPF area type from normal to stub in sonicwall, check the hello packets again, the E-bit must be clear in sended Hello Packets.",
+        "initial": "",
+        "id": "EBit_TC98",
+        "title": "Verify that the E bit of the Options field in a Hello packet is set if the attached area is not a stub area.",
+        "result": "in step 4, when the area type is normal, the E bit of option field in Hello packet must be set;\nin step 5, when the area type is stub, the E bit must be cleared."
+    },
+    "MasterSlave_TC101": {
+        "steps": "Configure interface X3, zone LAN, static IP address 28.1.1.85, enable OSPF on interface X3, connect to a router, router's IP 28.1.1.28, enable OSPF on router too, both in area 0;\n2. Change sonicwall ospf router-id to 28.1.1.5, other router's router-id is 28.1.1.28, clear ip ospf process on sonicwall and router, meanwhile, enable packet monitor on sonicwall;\n3. Check the packets transmit between sonicwall and router, check packet of DB Description, at first, sonicwall and router send DB Description packet to each other and set the M/S bit to 1, with different DD sequence numbers, e.g. sonicwall use DD sequence number 100, router use DD sequence number 200;\n4. Then sonicwall send another DB Description, respond to router's DB Description, with DD sequence number 200, and set M/S bit to 0.",
+        "initial": "",
+        "id": "MasterSlave_TC101",
+        "title": "Verify that Master/Slave is properly negotiated if SonicWALL has a lower Router ID than the other router.",
+        "result": "in step 3, sonicwall and router exchange the DB Description message with different DD sequence number and both of them set the M/S bit to 1;<br />in step 4, the sonicwall with lower router-id send the second DB Description , respond to router's DB Description with router's DD sequence number, and set the M/S bit to 0, it means router becomes master and sonicwall becomes slave;"
+    },
+    "MasterSlave_TC102": {
+        "steps": "Configure interface X3, zone LAN, static IP address 28.1.1.85, enable OSPF on interface X3, connect to a router, router's IP 28.1.1.28, enable OSPF on router too, both in area 0;\n2. Change sonicwall ospf router-id to 28.1.1.85, other router's router-id is 28.1.1.28, clear ip ospf process on sonicwall and router, meanwhile, enable packet monitor on sonicwall;\n3. Check the packets transmit between sonicwall and router, check packet of DB Description, at first, sonicwall and router send DB Description packet to each other and set the M/S bit to 1, with different DD sequence numbers, e.g. sonicwall use DD sequence number 100, router use DD sequence number 200;\n4. Then router send another DB Description, respond to sonicwall's DB Description, with DD sequence number 100, and set M/S bit to 0.",
+        "initial": "",
+        "id": "MasterSlave_TC102",
+        "title": "Verify that Master/Slave is properly negotiated if SonicWALL has a higher Router ID than the other router.",
+        "result": "in step 3, sonicwall and router exchange the DB Description message with different DD sequence number and both of them set the M/S bit to 1;<br />in step 4, the router with lower router-id send the second DB Description , respond to sonicwall's DB Description with sonicwall's DD sequence number, and set the M/S bit to 0, it means sonicwall becomes master and other router becomes slave;"
+    },
+    "VLAN_TC117": {
+        "steps": "Add a vlan sub-interface, parent interface X3, zone LAN, vlan id 100, static IP 67.67.67.2/24, connect to a router g0/0.100, router g0/0.100 has static IP 67.67.67.1/24;\n2. Enable OSPF on sonicwall X3:V100 and router g0/0.100, area 0, enable redistribute static routes on both sonicwall and router;\n3. Verify that OSPF status between sonicwall and router 2, the status from Loading to FULL;\n4. Check Sonicwall's routing table, it can learn static routes from router via X3:V100;\n5. Use command \"show ip ospf route\" on router to check the router's ospf routing table, it can learn static routes from Sonicwall via g0/0.100.",
+        "initial": "",
+        "id": "VLAN_TC117",
+        "title": "OSPF: Verify correct behavior with vlan interfaces",
+        "result": "in step 3, the OSPF LED status becomes GREEN;\nin step 4, check the sonicwall's routing table, the static routes learned from router via X3:V100 appeared on the routing table;\nin step 5, router can learn static routes from Sonicwall via the vlan interface."
+    },
+    "VLAN_TC118": {
+        "steps": "Add a vlan sub-interface, parent interface X3, zone LAN, vlan id 100, static IP 67.67.67.2/24, connect to a router g0/0.100, router g0/0.100 has static IP 67.67.67.1/24;\n2. Enable OSPF on sonicwall X3:V100 and router g0/0.100, area 0, enable redistribute static routes on both sonicwall and router;\n3. Verify that OSPF status between sonicwall and router 2, the status from Loading to FULL;\n4. Check Sonicwall's routing table, it can learn static routes from router via X3:V100;\n5. Use command \"show ip ospf route\" on router to check the router's ospf routing table, it can learn static routes from Sonicwall via g0/0.100;\n6. Back to interface page, attempt to delete this newly added vlan sub-interface X3:V100, it must failed, GUI prompt error message \"Index of the interface.: Interface is in use by OSPF \";\n7, Disable OSPF on interface X3:V100, attempt to delete this interface again, it will be succeed.",
+        "initial": "",
+        "id": "VLAN_TC118",
+        "title": "OSPF: Verify correct behavior when vlan interfaces are added and deleted",
+        "result": "in step 3, the OSPF LED status becomes GREEN;\nin step 4, check the sonicwall's routing table, the static routes learned from router via X3:V100 appeared on the routing table;\nin step 5, router can learn static routes from Sonicwall via the vlan interface.\nin step 6, this added vlan sub-interface can not be deleted when OSPF is enabled on it, GUI should prompt \"Error: Index of the interface.: Interface is in use by OSPF \";\nin step 7, after OSPF is disabled on this vlan sub-interface, then this vlan sub-interface could be succeed to be deleted."
+    },
+    "OSPF_TC119": {
+        "steps": "Add a static route, dst to 202.55.12.0/24, with reachable gateway and outgoing interface;\n2. Configure interface X3, zone LAN, static IP address 28.1.1.46, enable OSPF on interface X3, connect to a router, router's IP 28.1.1.28, enable OSPF on router too, both in area 0;\n3. Turned on check box \"Redistribute Static Routes\" on sonicwall X3, with metric 4646, tag 4600;\n4. Verify Sonicwall and router established OSPF neighborhood, OSPF status change from Loading to FULL;\n5. Use command \"show ip ospf route\" to check the router's ospf routing table, the static route dst to 202.55.12.0/24 must appear in router's ospf routing table with correct metric and tag.",
+        "initial": "",
+        "id": "OSPF_TC119",
+        "title": "Correct inclusion of custom metric and tags for redistributed routes",
+        "result": "in step 4, the OSPF status LED turns to GREEN.\nIn step 5, the neighbor router can learn static route from sonicwall and the metric and tag is same as configured on sonicwall.<br />e.g. <br />*> 202.55.12.0/24, Ext2, cost 4646, tag 4600<br /> via 28.1.1.46, GigabitEthernet0/0"
+    },
+    "ALLRouting_TC124": {
+        "steps": "when routing mode is advanced mode, enable RIP , OSPF, BGP on sonicwall, and connect sonicwall to router;\n2. Make sure sonicwall can establish RIP , OSPF, BGP neighborhood with router;\n3. Transit to simple routing mode, and transit back to advanced routing mode;\n4. After transition, all RIP, OSPF , BGP configurations are keep intact, sonicwall will rebuild RIP and OSPF neighborhood with router, the BGP will be disabled after transtion, so enable BGP on GUI, verify Sonicwall can establish neighbor with router again.",
+        "initial": "",
+        "id": "ALLRouting_TC124",
+        "title": "Verify the ability to transition between Advanced and non-Advanced routing",
+        "result": "in step 4, after transtion, RIP , OSPF can automatically rebuild neighbor with router, BGP need to manually enbaled on GUI, and then it can establish neighbor with router."
+    },
+    "TransMode_TC125": {
+        "steps": "Configure interface X1, zone WAN, static mode, ip 10.8.153.153/24;\n2. Configure interface X5, zone LAN, transparent mode, transparent range 10.8.153.200-10.8.153.230;\n3. Navigate to Network->Routing, click edit button of X5's RIP and OSPF, all of them can not be enabled on X5, it is gray and prompt it is a transparent I/F.",
+        "initial": "",
+        "id": "TransMode_TC125",
+        "title": "Verify that the interfaces involved in Transparent mode do not allow RIP or OSPF to be enabled",
+        "result": "in step 3, after configure interface to be transparent mode, routing protocols e.g. RIP and OSPF are not allowed to be enabled on this interface."
+    },
+    "VPN_TC152": {
+        "steps": "Add site to site VPN policy on local and remote FW, and use an AO Group as the local and remote network;\nEnable OSPF/RIP on DUT, redistribute the remote VPN network;\nUse command \"show ip route ospf\" on router;\nDisable site to site VPN policy, check router \"show ip route ospf\".",
+        "initial": "",
+        "id": "VPN_TC152",
+        "title": "AO Group used in site to site VPN",
+        "result": "in step 1, make sure the VPN policy is established;\nin step 2, make sure OSPF neighbor established;\nin step 3, make sure router learned the remote VPN network from DUT;\nin step 4, make sure when the VPN is down, the remote VPN network routes disappeared on router."
+    },
+    "NSM_TC153": {
+        "steps": "Establishe ospf between DUT and peer router, and enable restribute static route in DUT\n2. Add a static route, destination 81.1.1.0/24, interface X1, gw X1 default gateway, check DUT nsm and peer router\n3. Change destination by select another AO(network/host) in Routing page, check DUT nsm and peer router\n4. Change destination by edit AO(network/netmask) in AO page, check DUT nsm and peer router\n5. Repeat step3~5 for change gateway AO, check DUT nsm and peer router\n6. Change the interface, check DUT nsm and peer router\nNote, make sure the static route is active in nsm, inactive route can't be redistribute to router",
+        "initial": "",
+        "id": "NSM_TC153",
+        "title": "Verify the PBR's parameter(gateway/destination/interface) changes can be updated to nsm and can be restributed to the neighbor",
+        "result": "in step2, 81.1.1.0 should be shown in DUT nsm and peer router routing table<br />in step3,4,5,6, the updated route show in DUT nsm and peer router."
+    }
+
+}

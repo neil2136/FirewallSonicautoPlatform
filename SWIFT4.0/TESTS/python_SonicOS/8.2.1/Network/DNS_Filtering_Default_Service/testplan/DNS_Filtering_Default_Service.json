@@ -1,0 +1,15 @@
+{
+   "001" : {
+      "steps" : "1. Factory Default;\n 2. Network - DNS - Settings;\n 3. Check the settings tab;\n 4.  Navigate to System - Diagnostics - Tech Support Report, export TSR, check the \"DNS Settings\".\n5. From CLI, input \"show dns base\".",
+      "id" : "001",
+      "title" : "Verify the default status of the DNS Server settings is manual and the server ip is Neustar IP in GUI, TSR and CLI.",
+      "result" : "1.In step 3, the option \"Specify DNS Servers Manually\"  is selected, and the Server IP is configurable and set to 156.154.54.200,156.154.55.200, 8.8.8.8;\n2.In step 4, the following shows:\n#Network : DNS_START\nDNS Settings: Specify DNS Servers Manually\nDNS Server 1: 156.154.54.200\nDNS Server 2: 156.154.55.200\nDNS Server 3: 8.8.8.8\n3.In step 5, dns settings are \"no dns server inherit\"\nserver: 156.154.54.200,156.154.55.200, 8.8.8.8"
+   },
+   "002" : {
+      "steps" : "1. Rules and Policies - DNS Policy, enable a DNS Policy : Action-Filter, Interface-X0, Profile-DefaultProfile;\n2. PC connected to X0, set dns server as X0 IP, do dig www.baidu.com;\n3. Do packet capture on DUT, export packets;\n4. Check DNS query..",
+      "initial" : "PC---(X0)DUT(X1)---WAN DNS Server",
+      "id" : "002",
+      "title" : "[FUNC] Verify when enable DNS Filtering, the DNS query is send to Neustar DNS Server.",
+      "result" : "In step 4, the DNS query sent from DUT is send to Neustar DNS Server (156.154.54/55.200)."
+   }
+}

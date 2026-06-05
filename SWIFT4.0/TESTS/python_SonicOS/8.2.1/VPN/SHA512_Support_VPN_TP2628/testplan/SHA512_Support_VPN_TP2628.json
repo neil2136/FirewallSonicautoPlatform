@@ -1,0 +1,52 @@
+{
+   "1531194" : {
+      "steps" : "  1) Go to Network/IPSec VPN/Rules and Settings, add a S2S Preshared policy with SHA384 as Phase2 authentication algorithm, Exchange: Main Mode. 2) On Peer FW, add the matched S2S VPN policy. 3) Run VPN traffic. 4) Change the Phase2 authentication algorithm to SHA512 on local FW and peer FW, Run VPN traffic. 4) Repeat steps 1-4 for Aggressive Mode. 5) Repeat steps 1-4 for IKEv2 Mode.",
+      "priority" : "Smoke",
+      "atm_id" : "589263d7-ee5f-4eb9-8a4b-f1a2662577c1",
+      "initial" : "  TBD",
+      "id" : "1531194",
+      "title" : "S2S Preshared policy with SHA384 and SHA512 as Phase2 authentication algorithm, try main, aggressive, ikev2, test tunnel negotiation and traffic",
+      "description" : "Original ID: 10\r\nOriginal Title: S2S Preshared policy with SHA384 and SHA512 as Phase2 authentication algorithm, try main, aggressive, ikev2, test tunnel negotiation and traffic \r\nOriginal Description:",
+      "result" : "  S2S Preshared policy with SHA384 and SHA512 as Phase2 authentication algorithm, Main/Aggressive/IKEv2 Mode, VPN tunnel can up and VPN traffic works."
+   },
+   "1531196" : {
+      "steps" : "  1) Go to Network/IPSec VPN/Rules and Settings, add a TI Manual Key VPN policy, SHA384 as IPSEC SA authentication algorithm. 2) On Peer FW, add the matched TI VPN policy. 3) Run VPN traffic. 4) Repeat steps 1-3 for SHA512 as IPSEC SA authentication algorithm. 5) Go to Network/IPSec VPN/Rules and Settings, add a TI Preshared VPN policy, Exchange: Main Mode, SHA384 as Phase1 authentication algorithm and SHA512 as Phase 2 authentication algorithm. 6) On Peer FW, add the matched TI VPN policy. 7) Run VPN traffic. 8) Change Exchange mode to Aggressive Mode on local FW and peer FW, Run VPN traffic. 9) Change Exchange mode to IKEv2 Mode on local FW and peer FW, Run VPN traffic. 10) Repeat steps 5-9 for 3rd Authentication Method. ",
+      "priority" : "Smoke",
+      "atm_id" : "9781fcd2-e6e6-42a9-a94d-c00fafa5742e",
+      "initial" : "  TBD",
+      "id" : "1531196",
+      "title" : "TI policy with SHA384 or SHA512, Preshared/3rd/Manual Key, main/aggressive/ikev2",
+      "description" : "Original ID: 17\r\nOriginal Title: TI policy with SHA384 or SHA512, Preshared/3rd/Manual Key, main/aggressive/ikev2 \r\nOriginal Description:",
+      "result" : "  Preshared/3rd/Manual Key, Main/Aggressive/IKEv2 Mode, VPN tunnel can up and VPN traffic works."
+   },
+   "1531193" : {
+      "steps" : "  1) Go to Network/IPSec VPN/Rules and Settings, add/edit a S2S/TI policy. 2) Go to Proposal tab, click Authentication method drop-down box in Phase1 and Phase 2. ",
+      "priority" : "Smoke",
+      "atm_id" : "a2e4a771-e662-420c-b368-4d91635561b8",
+      "initial" : "  TBD",
+      "id" : "1531193",
+      "title" : "GUI: make sure SHA512 and SHA384 appear in Phase1 and Phase 2 authentication method for S2S and TI policy",
+      "description" : "Original ID: 1\r\nOriginal Title: GUI: make sure SHA512 and SHA384 appear in Phase1 and Phase 2 authentication method for S2S and TI policy \r\nOriginal Description:",
+      "result" : "  SHA512 and SHA384 appear in Phase1 and Phase 2 authentication method."
+   },
+   "1531195" : {
+      "steps" : "  1) Go to Network/IPSec VPN/Rules and Settings, add a S2S 3rd policy with SHA384 as Phase2 authentication algorithm, Exchange: Main Mode. 2) On Peer FW, add the matched S2S VPN policy. 3) Run VPN traffic. 4) Change the Phase2 authentication algorithm to SHA512 on local FW and peer FW, Run VPN traffic. 4) Repeat steps 1-4 for Aggressive Mode. 5) Repeat steps 1-4 for IKEv2 Mode.",
+      "priority" : "Smoke",
+      "atm_id" : "1afb0c27-6d65-4516-bd2a-f479cac167a5",
+      "initial" : "  TBD",
+      "id" : "1531195",
+      "title" : "S2S 3rd policy with SHA384 and SHA512 as Phase2 authentication algorithm, try main, aggressive, ikev2, test tunnel negotiation and traffic",
+      "description" : "Original ID: 13\r\nOriginal Title: S2S 3rd policy with SHA384 and SHA512 as Phase2 authentication algorithm, try main, aggressive, ikev2, test tunnel negotiation and traffic \r\nOriginal Description:",
+      "result" : "  S2S 3rd policy with SHA384 and SHA512 as Phase2 authentication algorithm, Main/Aggressive/IKEv2 Mode, VPN tunnel can up and VPN traffic works."
+   },
+   "1531197" : {
+      "steps" : "  1) Go to Network/IPSec VPN/Rules and Settings, edit WAN GroupVPN policy. 2) Go to Proposal tab, click Authentication method drop-down box in Phase1 and Phase 2. ",
+      "priority" : "Smoke",
+      "atm_id" : "89ef12f5-8bcc-4d2f-8987-0174bd4ac3f5",
+      "initial" : "  TBD",
+      "id" : "1531197",
+      "title" : "GUI: make sure SHA512 and SHA384 also appear in Phase1 and Phase 2 authentication method for GroupVPN policy",
+      "description" : "Original ID: 2\r\nOriginal Title: GUI: make sure SHA512 and SHA384 also appear in Phase1 and Phase 2 authentication method for GroupVPN policy \r\nOriginal Description:",
+      "result" : "  SHA512 and SHA384 appear in Phase1 and Phase 2 authentication method."
+   }
+}

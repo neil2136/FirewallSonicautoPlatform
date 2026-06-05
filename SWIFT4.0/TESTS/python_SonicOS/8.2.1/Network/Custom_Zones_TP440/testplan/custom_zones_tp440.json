@@ -1,0 +1,254 @@
+{
+   "SOSAIOT-TC-57832" : {
+      "steps" : "",
+      "initial" : "",
+      "id" : "SOSAIOT-TC-57832",
+      "title" : "[nagetive test]add a exist default zone",
+      "result" : ""
+   },
+   "SOSAIOT-TC-57833" : {
+      "steps" : "",
+      "initial" : "",
+      "id" : "SOSAIOT-TC-57833",
+      "title" : "[nagetive test]add a exist custom zone",
+      "result" : ""
+   },
+   "33" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0, go to the Network > Zones page and click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) Verify that traffic is passed in both directions between PC on X0 and the PC on X2.\n  7) On the Network > Zones page, click the Notepad icon for the Test1 zone.\n  8) In the Edit Zone dialog change the Security Type from Trusted to Public. Click on the OK button. (it needs to remove x2 from Test1 zone and then it is allowed to change the security type)\n  9) Send traffic between the PCs on X0 and X2.",
+      "initial" : "  PC --- X0-SonicWALL\n  PC --- X2/",
+      "id" : "33",
+      "title" : "Trusted Custom Zone is modified to Public",
+      "result" : "  After step 9, traffic from the host on X2 to the host on X0 is dropped. Access rule for Test1>LAN auto-changed to have Deny action."
+   },
+   "32" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0, go to the Network > Zones page and click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Public in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog for X2, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) On the Network > Zones page and click the Add button.\n  7) In the Add Zone dialog enter Test2 in the Name field. Select Public in the Security Type drop-down list. Click the OK button.\n  8) On the Network > Interfaces page, click the Notepad icon for X3 interface.\n  9) In the Edit Interface dialog for X3, select Test2 in the Zones drop-down list. Enter IP address and click the OK button.\n  10) Send traffic in both directions between PCs on X2 and X3.",
+      "initial" : "  PC --- X0\n  PC --- X2-SonicWALL\n  PC --- X3/",
+      "id" : "32",
+      "title" : "Traffic between two Public Custom Zones",
+      "result" : "  Traffic is passed from the host on X2 to the host on X3.\n  Traffic is passed from the host on X3 to the host on X2.\n  Access rules for Test1>Test2 and Test2>Test1 have Allow action."
+   },
+   "11" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Address Objects Page, click the Add button under the Address Objects table.\n  5) In the Add Address Objects dialog, type TestObject in the Name field, select Test1 in the Zone Assignment drop-down list, select Host type, and type 1.1.1.1 in the IP address field. Save.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "11",
+      "title" : "Add Address Object to a zone",
+      "result" : "  The TestObject is shown in the Address Objects table with Test1 in the Zone column."
+   },
+   "21" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Address Objects Page, click the Add button under the Address Objects table.\n  5) In the Add Address Objects dialog, type TestObject in the Name field, select Test1 in the Zone Assignment drop-down list, select Host type, and type 1.1.1.1 in the IP address field. Save.\n  6) On the Network > Zones page, click the Trash can icon for the Test1 zone.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "21",
+      "title" : "Attempt to delete a zone with Address Object",
+      "result" : "  \"Error: Object is in use by an Address Object\" message is displayed on the status bar. The Test1 zone is not deleted."
+   },
+   "07" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Interfaces page, click on the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog, select Test1 in the Zones drop-down list.\n  6) Enter IP address and click on the OK button.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "07",
+      "title" : "Add an interface to a zone",
+      "result" : "  The Interface Settings table shows Test1 in the Zone column for X2 interface. IP Address shows the address that was entered in the Edit Interface dialog.\n  The Zone Settings table on the Network > Zones page shows X2 in the Members column for the Test1 zone.\n  The Test1 Subnets address object in the Address Groups table on the Network > Address Objects page shows X2 subnet address when the view is expanded.\n  X2 Subnet is displayed in the Address Objects table with Test1 in the Zones column."
+   },
+   "26" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0 and go to the Network > Zones page. Click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog for X2, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) On the Network > Interfaces page, click the Notepad icon for X3 interface.\n  7) In the Edit Interface dialog for X3, select DMZ in the Zones drop-down list. Enter IP address and click the OK button.\n  8) Send traffic from the host on X2 to the host on X3.\n  9) Send traffic from the host on X3 to the host on X2.",
+      "initial" : "  PC --- X0\n  PC --- X2-SonicWALL\n  PC --- X3/",
+      "id" : "26",
+      "title" : "Traffic between DMZ and Trusted Custom Zone",
+      "result" : "  Traffic is passed from the host on X2 to the host on X3.\n  Traffic is dropped from the host on X3 to the host on X2.\n  Access rule for Test1>DMZ has Allow action. Access rule for DMZ>Test1 has Deny action."
+   },
+   "02" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test2 in the Name field. Select Public in the Security Type drop-down list. Click on the OK button.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "02",
+      "title" : "Add a zone with Public Security Type",
+      "result" : "  A new zone Test2 is displayed in the Zone Settings table on the Network > Zones page. Security Type shows Public. The Interface Trust check mark is shown.\n  A new address object Test2 Subnets for entire zone is created within Address Groups on the Network > Address Objects page.\n  The Test2 is added to the Zone Assignment drop-down list in the Add Address Object dialog.\n  The Test2 is added to the Zone drop-down list in the Edit Interface dialog."
+   },
+   "17" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Zones page, click the Add button. In the Add Zone dialog enter Test2 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  5) Verify that Test1 and Test2 zones are shown in the Zone Settings Table on the Network > Zones page.\n  6) Turn on check boxes next to Test1 and Test2 in the Zones Settings table and click the Delete button.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "17",
+      "title" : "Delete multiple empty zones. Use the Delete button",
+      "result" : "  Test1 and Test2 zones are deleted."
+   },
+   "22" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) From the PC on X0, login as admin and go to the Network > Zones page. Click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, and click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) On the Network > Interfaces page, click the Notepad icon for X3 interface.\n  7) In the Edit Interface dialog select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  8) Verify that X2 and X3 are shown as members of Test1 zone in the Zone Settings Table on the Network > Zones page and Allow Interface Trust check mark is displayed for Test1.\n  9) Send traffic between hosts on X2 and X3 interfaces.",
+      "initial" : "  PC --- X0\n  PC --- X2- SonicWALL\n  PC --- X3/",
+      "id" : "22",
+      "title" : "Traffic is sent between interfaces within a custom zone",
+      "result" : "Traffic is passed between hosts on X2 and X3 interfaces."
+   },
+   "01" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "01",
+      "title" : "Add a zone with Trusted Security Type",
+      "result" : "  A new zone Test1 is displayed in the Zone Settings table on the Network > Zones page. Security Type shows Trusted. The Interface Trust check mark is shown.\n  A new address object Test1 Subnets for entire zone is created within Address Groups on the Network > Address Objects page.\n  The Test1 is added to the Zone Assignment drop-down list in the Add Address Object dialog.\n  The Test1 is added to the Zone drop-down list in the Edit Interface dialog."
+   },
+   "18" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Interfaces page, and click on the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog select Test1 in the Zones drop-down list. Enter IP address and click on the OK button. Verify that X2 is shown as Test1 zone member in the Zone Settings table.\n  6) Open the Edit Interface dialog for X2 and select Unassigned in the Zones drop-down list. Save. In the Zone Settings table, verify that the Test1 zone doesn't have members.\n  7) On the Network > Zones page click the Trashcan icon next to the Test1 zone.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "18",
+      "title" : "Delete a zone after removing interface from it",
+      "result" : "  After step 8 the Test1 zone is deleted from the Zones Settings table."
+   },
+   "30" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0, go to the Network > Zones page and click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog for X2, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) On the Network > Zones page, click the Add button.\n  7) In the Add Zone dialog enter Test2 in the Name field. Select Public in the Security Type drop-down list. Click the OK button.\n  8) On the Network > Interfaces page, click the Notepad icon for X3 interface.\n  9) In the Edit Interface dialog for X3, select Test2 in the Zones drop-down list. Enter IP address and click the OK button.\n  10) Send traffic in both directions between PCs on X2 and X3.",
+      "initial" : "  PC --- X0\n  PC --- X2-SonicWALL\n  PC --- X3/",
+      "id" : "30",
+      "title" : "Traffic between Trusted and Public Custom Zones",
+      "result" : "  Traffic is passed from the host on X2 to the host on X3.\n  Traffic is dropped from the host on X3 to the host on X2.\n  Access rule for Test1>Test2 has Allow action. Access rule for Test2>Test1 has Deny action."
+   },
+   "23" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) From the PC on X0, login as admin and go to the Network > Zones page. Click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list and uncheck the Allow Interface Trust check box. Click the OK button.\n  4) On the Network > Interfaces page, and click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) On the Network > Interfaces page, click the Notepad icon for X3 interface.\n  7) In the Edit Interface dialog select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  8) Verify that X2 and X3 are shown as members of Test1 zone in the Zone Settings Table on the Network > Zones page and Allow Interface Trust check mark is not displayed for Test1.\n  9) Send traffic between hosts on X2 and X3 interfaces.",
+      "initial" : "  PC --- X0\n  PC --- X2- SonicWALL\n  PC --- X3/",
+      "id" : "23",
+      "title" : "Traffic is dropped between interfaces within a custom zone",
+      "result" : "  Traffic is dropped between hosts on X2 and X3 interfaces."
+   },
+   "13" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Interfaces page, click on the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog, select Test1 in the Zones drop-down list.\n  6) Enter IP address and click on the OK button. Verify that X2 is shown as Test1 zone member in the Zone Settings Table.\n  7) On the Network > Zones page, click the Add button. In the Add Zone dialog enter Test2 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  8) On the Network > Interfaces page, open the Edit Interface dialog for X2 and change the selection in Zones drop-down list. Select Test2. Save.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "13",
+      "title" : "Move an interface from one zone to another",
+      "result" : "  The Interface Settings table shows Test2 in the Zone column for X2 interface.\n  The Zone Settings table on the Network > Zones page shows X2 in the Members column for the Test2 zone. Test1 zone doesn't show X2.\n  The Test2 Subnets address object in the Address Groups table on the Network > Address Objects page shows X2 subnet address when the view is expanded.\n  The Test1 Subnets address object doesn't show X2 subnet. X2 Subnet is displayed in the Address Objects table with Test2 in the Zones column."
+   },
+   "16" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) In the Zone Settings Table on the Network > Zones page, turn on a check box next to the Test1 and click the Delete button.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "16",
+      "title" : "Delete an empty zone. Use the Delete button",
+      "result" : "  The Test1 zone is deleted."
+   },
+   "29" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0 and go to the Network > Zones page. Click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Public in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog for X2, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) On the Network > Interfaces page, click the Notepad icon for X3 interface.\n  7) In the Edit Interface dialog for X3, select DMZ in the Zones drop-down list. Enter IP address and click the OK button.\n  8) Send traffic from the host on X2 to the host on X3.\n  9) Send traffic from the host on X3 to the host on X2.",
+      "initial" : "  PC --- X0\n  PC --- X2-SonicWALL\n  PC --- X3/",
+      "id" : "29",
+      "title" : "Traffic between DMZ and Public Custom Zone",
+      "result" : "  Traffic is passed from the host on X2 to the host on X3.\n  Traffic is passed from the host on X3 to the host on X2.\n  Access rules for DMZ>Test1 and Test1>DMZ have Allow action."
+   },
+   "06" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Zones page, click on the Notepad icon for the Test1 zone.\n  5) In the Edit Zone dialog, check the Anti-Virus check box. Click on the OK button. View the Zone Settings Table.\n  6) Click on the Notepad icon for the Test1 zone.\n  7) In the Edit Zone dialog, uncheck the Anti-Virus check box. Click on the OK button. View the Zone Settings Table.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "06",
+      "title" : "Edit a zone. Change Anti-Virus",
+      "result" : "  After step 5 the Anti-Virus check mark is shown in the Zone Settings table for the Test1 zone.\n  After step 7 the Anti-Virus check mark is not shown in the Zone Settings table for the Test1 zone."
+   },
+   "27" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0, go to the Network > Zones page and click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Public in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) Send traffic in both directions between PCs on X0 and X2.",
+      "initial" : "  PC --- X0-SonicWALL\n  PC --- X2/",
+      "id" : "27",
+      "title" : "Traffic between LAN and Public Custom Zone",
+      "result" : "  Traffic is passed from the host on X0 to the host on X2.\n  Traffic is dropped from the host on X2 to the host on X0.\n  Access rule for LAN>Test1 has Allow action. Access rule for Test1>LAN has Deny action."
+   },
+   "25" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0 and go to the Network > Zones page. Click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) Send traffic from the host on X1 (Primary WAN subnet) to the host on X2. 7) Send traffic from the host on X2 to the host on X1.",
+      "initial" : "  PC --- X0\n  PC --- X1- SonicWALL\n  PC --- X2/",
+      "id" : "25",
+      "title" : "Traffic between WAN and Trusted Custom Zone",
+      "result" : "  Traffic is dropped from the host on X1 to the host on X2. Traffic is passed from the host on X2 to the host on X1. Access rule for Test1>WAN has Allow action. Access rule for WAN>Test1 has Deny action."
+   },
+   "28" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0 and go to the Network > Zones page. Click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Public in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) Send traffic from the host on X1 (Primary WAN subnet) to the host on X2.\n  7) Send traffic from the host on X2 to the host on X1.",
+      "initial" : "  PC --- X0 PC --- X1-SonicWALL\n  PC --- X2/",
+      "id" : "28",
+      "title" : "Traffic between WAN and Public Custom Zone",
+      "result" : "  Traffic is passed from the host on X2 to the host on X1(WAN).\n  Traffic is denied from the host on X1(WAN) to the host on X2.\n  Access rule for WAN>Test1 has Deny action and for Test1>WAN has Allow action"
+   },
+   "03" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Zones page, click on the Add button. In the Add Zone dialog enter Test2 in the Name field. Select Public in the Security Type drop-down list. Click on the OK button.\n  5) Click on the Notepad icon for the Test1 zone.\n  6) In the Edit Zone dialog change the Security Type from Trusted to Public. Click on the OK button.\n  7) Click on the Notepad icon for the Test2 zone.\n  8) In the Edit Zone dialog change the Security type from Public to Trusted. Click on the OK button.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "03",
+      "title" : "Edit Zone. Change Security Type",
+      "result" : "  The Security Type for the Test1 zone in the Zone Settings table now shows Public.\n  The Security Type for the Test2 zone shows Trusted."
+   },
+   "09" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Interfaces page, and click on the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog select Test1 in the Zones drop-down list. Enter IP address and click on the OK button. View the Zone Settings table.\n  6) Open the Edit Interface dialog for X2 and select Unassigned in the Zones drop-down list. Save. View the Zone Settings table.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "09",
+      "title" : "Remove an interface from a zone",
+      "result" : "  After step 5 the Zone Settings table on the Network > Zones page shows X2 interface in the Members column for the Test1 zone .\n  After step 6 the Zone Settings table on the Network > Zones page doesn't show X2 interface in the Members column for the Test1 zone.\n  The Test1 Subnets address object in the Address Groups table on the Network > Address Objects page doesn't show X2 interface subnet."
+   },
+   "12" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Address Objects Page, click the Add button under the Address Objects table.\n  5) In the Add Address Objects dialog, type TestObject in the Name field, select Test1 in the Zone Assignment drop-down list, select Host type, and type 1.1.1.1 in the IP address field. Save.\n  6) On the Network > Address Objects Page turn on a check box next to TestObject name in the Address Objects table and push the Delete button.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "12",
+      "title" : "Remove Address Object from a zone",
+      "result" : "  The TestObject with Test1 zone assignment is removed from the Address Objects table."
+   },
+   "14" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Address Objects Page, click the Add button under the Address Objects table.\n  5) In the Add Address Objects dialog, type TestObject in the Name field, select Test1 in the Zone Assignment drop-down list, select Host type, and type 1.1.1.1 in the IP address field. Save.\n  6) Verify that TestObject is shown in the Address Objects table with Test1 zone assignment.\n  7) On the Network > Zones page, click the Add button. In the Add Zone dialog enter Test2 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  8) On the Network > Address Objects Page, open the Edit Address Object dialog for TestObject and change the selection in the Zone Assignment drop-down list. Select Test2. Save.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "14",
+      "title" : "Move Address Object from one zone to another",
+      "result" : "  TestObject is shown in the Address Objects table with Test2 zone assignment."
+   },
+   "15" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) In the Zones Settings table on the Network > Zones page, click the Trashcan icon next to the Test1 zone.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "15",
+      "title" : "Delete an empty zone. Use the trash can icon",
+      "result" : "  The Test1 zone is deleted."
+   },
+   "20" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Interfaces page, click on the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog, select Test1 in the Zones drop-down list. Enter IP address and click on the OK button.\n  6) Verify that X2 is shown in the Member column for the Test1 in the Zones Settings table.\n  7) Click the Trashcan icon for the Test1 zone.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "20",
+      "title" : "Attempt to delete a zone with an interface",
+      "result" : "  \"The Errors: View List\" message is displayed on the status bar. Clisk on the View List link - the Error Log shows: Object is in use by an Address Object, Object is in use by an interface. The Test1 zone is not deleted."
+   },
+   "08" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Interfaces page, and click on the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog select Test1 in the Zones drop-down list. Enter IP address and click on the OK button.\n  6) On the Network > Interfaces page, click on the Notepad icon for X3 interface.\n  7) In the Edit Interface dialog select Test1 in the Zones drop-down list. Enter IP address and click on the OK button.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "08",
+      "title" : "Add multiple interfaces to a zone",
+      "result" : "  The Interface Settings table shows Test1 in the Zone column for X2 and X3 interfaces. IP Address column shows the addresses that were entered in the Edit Interface dialog for X2 and X3.\n  The Zone Settings table on the Network > Zones page shows X2 and X3 in the Members column for the Test1 zone.\n  The Test1 Subnets address object in the Address Groups table on the Network > Address Objects page shows X2 and X3 subnet addresses when the view is expanded.\n  X2 Subnet and X3 Subnet objects are displayed in the Address Objects table with Test1 in the Zones column."
+   },
+   "04" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Zones page, click on the Notepad icon for the Test1 zone.\n  5) In the Edit Zone dialog, uncheck the Allow Interface Trust check box. Click on the OK button. View the Zone Settings Table.\n  6) Click on the Notepad icon for the Test1 zone.\n  7) In the Edit Zone dialog, check the Allow Interface Trust check box. Click on the OK button. View the Zone Settings Table.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "04",
+      "title" : "Edit a zone. Change Interface Trust",
+      "result" : "  After step 5 the Interface Trust check mark is not shown in the Zone Settings table for the Test1 zone.\n  After step 7 the Interface Trust check mark is shown in the Zone Settings table for the Test1 zone."
+   },
+   "34" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0, go to the Network > Zones page and click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Public in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) Verify that traffic is passed from the PC on X0 to the PC on X2 and dropped from the PC on X2 to the PC on X0.\n  7) On the Network > Zones page, click the Notepad icon for the Test1 zone.\n  8) In the Edit Zone dialog change the Security Type from Public to Trusted. Click on the OK button.(it needs to remove x2 from Test1 zone and then it is allowed to change the security type)\n  9) Send traffic between the PCs on X0 and X2.",
+      "initial" : "  PC --- X0-SonicWALL\n  PC --- X2/",
+      "id" : "34",
+      "title" : "Public Custom Zone is modified to Trusted",
+      "result" : "  Traffic is passed from the host on X2 to the host on X0.\n  Access rule for Test1>LAN is auto-changed to have Allow action."
+   },
+   "24" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0, go to the Network > Zones page and click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) Send traffic in both directions between PCs on X0 and X2.",
+      "initial" : "  PC --- X0 - SonicWALL\n  PC --- X2 /",
+      "id" : "24",
+      "title" : "Traffic between LAN and Trusted Custom Zone",
+      "result" : "  Traffic is passed from the host on X0 to the host on X2. Traffic is passed from the host on X2 to the host on X0. Access rules for LAN>Test1 and Test1>LAN have Allow action."
+   },
+   "10" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On the Network > Interfaces page, and click on the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog select Test1 in the Zones drop-down list. Enter IP address and click on the OK button.\n  6) On the Network > Interfaces page, click on the Notepad icon for X3 interface.\n  7) In the Edit Interface dialog select Test1 in the Zones drop-down list. Enter IP address and click on the OK button.\n  8) In the Zone Settings Table on the Network > Zones page, verify that X2 and X3 interfaces are in Test1 zone.\n  9) On the Network > Interfaces page, open the Edit Interface dialog for X2 and select Unassigned in the Zones drop-down list. Save.\n  10) On the Network > Interfaces page, open the Edit Interface dialog for X3 and select Unassigned in the Zones drop-down list. Save.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "10",
+      "title" : "Remove all interfaces from a zone",
+      "result" : "  The Zone Settings table on the Network > Zones page doesn't show any interfaces in the Members column for the Test1 zone.\n  The Test1 Subnets address object in the Address Groups table on the Network > Address Objects page doesn't show any subnets."
+   },
+   "19" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Address Objects Page, click the Add button under the Address Objects table.\n  5) In the Add Address Objects dialog, type TestObject in the Name field, select Test1 in the Zone Assignment drop-down list, select Host type, and type 1.1.1.1 in the IP address field. Save.\n  6) On the Network > Address Objects Page turn on a check box next to TestObject name in the Address Objects table and click the Delete button.\n  7) On the Network > Zones page, and click the Trash can icon next to the Test1 zone.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "19",
+      "title" : "Delete a zone after removing Address Object from it",
+      "result" : "  After step 8 the Test1 zone is deleted from the Zones Settings table."
+   },
+   "31" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin from the PC on X0, go to the Network > Zones page and click the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click the OK button.\n  4) On the Network > Interfaces page, click the Notepad icon for X2 interface.\n  5) In the Edit Interface dialog for X2, select Test1 in the Zones drop-down list. Enter IP address and click the OK button.\n  6) On the Network > Zones page and click the Add button.\n  7) In the Add Zone dialog enter Test2 in the Name field. Select Trusted in the Security Type drop-down list. Click the OK button.\n  8) On the Network > Interfaces page, click the Notepad icon for X3 interface.\n  9) In the Edit Interface dialog for X3, select Test2 in the Zones drop-down list. Enter IP address and click the OK button.\n  10) Send traffic in both directions between PCs on X2 and X3.",
+      "initial" : "  PC --- X0\n  PC --- X2-SonicWALL\n  PC --- X3/",
+      "id" : "31",
+      "title" : "Traffic between two Trusted Custom Zones",
+      "result" : "  Traffic is passed from the host on X2 to the host on X3.\n  Traffic is passed from the host on X3 to the host on X2.\n  Access rules for Test1>Test2 and Test2>Test1 have Allow action."
+   },
+   "05" : {
+      "steps" : "  1) From the Safe Mode, load a firmware and boot with default settings.\n  2) Login as admin, go to the Network > Zones page and click on the Add button.\n  3) In the Add Zone dialog enter Test1 in the Name field. Select Trusted in the Security Type drop-down list. Click on the OK button.\n  4) On to the Network > Zones page, click on the Notepad icon for the Test1 zone.\n  5) In the Edit Zone dialog, check the Content Filtering check box. Click on the OK button. View the Zone Settings Table.\n  6) Click on the Notepad icon for the Test1 zone.\n  7) In the Edit Zone dialog, uncheck the Content Filtering check box. Click on the OK button. View the Zone Settings Table.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "05",
+      "title" : "Edit a zone. Change Content Filtering",
+      "result" : "  After step 5 the Content Filtering check mark is shown in the Zone Settings table for the Test1 zone.\n  After step 7 the Content Filtering check mark is not shown in the Zone Settings table for the Test1 zone."
+   }
+}

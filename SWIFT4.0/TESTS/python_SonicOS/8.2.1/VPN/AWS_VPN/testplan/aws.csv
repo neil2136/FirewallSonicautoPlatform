@@ -1,0 +1,274 @@
+﻿id,title,description,result,steps
+C1524387,AWS Config: Enter correct credentials and verify setup with TLS,"Original ID: 1
+Original Title: AWS Config: Enter correct credentials and verify setup with TLS
+Original Description: This test case verifies that AWS can be setup on the firewall with TLS option enabled.","Verify that for Step4, the firewall should accept and save the values entered for'AccessKeyID', 'SecretAccessKey', 'Confirm Key' and 'Region'.
+Verify that for Step6, the firewall should display if the AWS connection was successful or not.","1. Go to 'Networking -&gt; AWS Configuration' page.
+2. Enter the details for fields 'AccessKeyID', 'SecretAccessKey' and 'Confirm Key' (these were generated when creating an IAM user on the AWSConsole)
+3. Set the 'Region' to 'US West N.California'.
+4. Click the 'Accept' button
+5. Enable the 'TLS' checkbox.
+6. Click the 'Test Connection' button"
+C1524388,AWS Config: Boundary check for Confirm Key,"Original ID: 11
+Original Title: AWS Config: Boundary check for Confirm Key
+Original Description: AWS Config: Boundary check for Confirm Key",N/A,N/A
+C1524394,AWS Config: Enter correct credentials and verify setup without TLS,"Original ID: 2
+Original Title: AWS Config: Enter correct credentials and verify setup without TLS
+Original Description: <span>This test case verifies that AWS can be setup on the firewall and the connection can be established to AWS without TLS option enabled.</span>","Verify that for Step4, the firewall should accept and save the values entered for'AccessKeyID', 'SecretAccessKey', 'Confirm Key' and 'Region'.
+Verify that for Step5, the firewall should display if the AWS connection was successful or not.","1. Go to 'Networking -&gt; AWS Configuration' page.
+2. Enter the details for fields 'AccessKeyID', 'SecretAccessKey' and 'Confirm Key' (these were generated when creating an IAM user on the AWSConsole)
+3. Set the 'Region' to 'US West N.California'.
+4. Click the 'Accept' button
+5. Click the 'Test Connection' button"
+C1524398,AWS Logs: Reset Counts button,"Original ID: 26
+Original Title: AWS Logs: Reset Counts button
+Original Description: This testcase verifies that on clicking the 'Rest Counts' button, all the values for push requests, log messages sent and bytes sent should be deleted.","<span>1. Verify that the counters for 'Push Requests', 'Log Messages Sent' and 'Bytes Sent' will be increasing. In case of any failures, 'Connections Failed' value will be set to zero</span>",<span>1. Go to 'Logs -&gt; AWSLogs' page and click the 'Reset Count' button.</span>
+C1524400,AWS VPN: Verify that VPCs show up on the firewall GUI only if configured on AWSConsole,"Original ID: 29
+Original Title: AWS VPN: Verify that VPCs show up on the firewall GUI only if configured on AWSConsole
+Original Description: This test case verifies that AWSVPN page displays VPCs only if they are configured on AWSConsole","1. Verify that for Step1, the AWSVPN page should not display any VPCs when the VPCs are not configured on AWSConsole.
+2. Verify that after Step3, the firewall GUI will display the VPC which was created on AWSConsole
+- VPC Status = Available (with a green button)
+- VPN Connection = Not Available (grayed out button)
+- No Subnet information will be populated in the VPC
+3. Verify that for Step4, the VPC will display the 'Subnet' and the 'RouteTable' information
+<table border=""0"" cellpadding=""0"" cellspacing=""0"" class=""wxaTable"" id=""avVpcTable"" summary=""AWS Virtual Private Clouds"">
+<tbody>
+<tr class=""wxaTableEvenRow routeBorder"" data-vpc-row-region=""us-west-1"" data-vpc-row-vpc=""vpc-b919fade""></tr>
+<tr class=""wxaTableEvenRow"" data-vpc-row-region=""us-west-1"" data-vpc-row-vpc=""vpc-b919fade"">
+<td><strong>Route Table:</strong>rtb-19d1577e</td>
+<td></td>
+<td></td>
+<td><input disabled=""disabled"" title=""Enable or disable propagation of ALL VPN Connections to the subnets of this route table"" type=""checkbox"" /><span class=""label"">Propagate Connection</span></td>
+<td></td>
+<td></td>
+<td id=""avMsgCell_1_0""></td>
+</tr>
+<tr class=""wxaTableEvenRow routeBorder"" data-vpc-row-region=""us-west-1"" data-vpc-row-vpc=""vpc-b919fade"">
+<td></td>
+<td><strong>Subnet:</strong>subnet-ccb436ab</td>
+<td>172.30.1.0/24</td>
+<td><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/green_led.png"" />available<br /><br /></td>
+</tr>
+</tbody>
+</table>
+4. The 'i' button (information) will display the following
+<h3>AWS</h3>
+<table cellpadding=""0"" cellspacing=""0"" class=""wxaOpenTable"" summary=""VPN Connection Details: AWS"">
+<tbody>
+<tr>
+<td class=""label"">Virtual Private Cloud (VPC):</td>
+<td id=""avDetailsVpc"">vpc-b919fade</td>
+<td id=""avDetailsVpcState""><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/green_led.png"" />available</td>
+<td id=""avDetailsVpcAddrObj""></td>
+</tr>
+<tr>
+<td class=""label"">Region:</td>
+<td colspan=""3"" id=""avDetailsRegion"">US West (N. California) (us-west-1)<br /><br /></td>
+</tr>
+</tbody>
+</table>","<span>1. Go to 'VPN-&gt; AWSVPN' page and do not create any VPC.</span>
+<span>2. Go to AWSConsole to create a VPC - VPC-&gt;Your VPC -&gt;Create VPC.</span>
+<span>3. Enter the details for 'NameTag', IPV4CIDR block = 172.30.0.0/16 and click 'Create'.</span>
+<span>4. Add a subnet on the AWSConsole - VPC-&gt;Subnets'. Enter the details for NameTag, check if the VPC created in Step2/3 is associated and shows up in the dropdown menu and IPv4CIDR block = 172.30.1.0/24 and click 'Create'.</span>
+<span></span>"
+C1524401,"AWS Config: Click on ""Test Details"" result tab","Original ID: 3
+Original Title: AWS Config: Click on ""Test Details"" result tab
+Original Description: This test case verifies that on clicking the 'Test Details' button, the detailed results of the connection establishment (success/fail) are displayed.","Verify that the AWS test details will display the various stages of connection and the status of success/failure for all stages
+Test AWS Cloudwatch capability<span></span><img class=""clickable expanded"" id=""itemBtn_1"" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_0"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Connect<span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_1"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Connect<span></span><img class=""clickable expanded"" id=""itemBtn_3"" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_1"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Write Logs<span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_3"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Batch Logs<span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_3"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Sign Batch<span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_3"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Transmit Batch<span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_3"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Receive PutLogEvents Response","1. Once the firewall is configured withAccessKey, SecretAccessKey and Region details, click the 'Test Connection' button.
+2. On the popup of the results, click the 'Test Details' button."
+C1524402,AWSVPN: Create VPN Connection with 'Propagation Connections' checkbox checked,"Original ID: 30
+Original Title: AWSVPN: Create VPN Connection with 'Propagation Connections' checkbox checked
+Original Description: This testcase verifies that a VPN connection is created along with routes and tunnel interfaces after clicking the 'Create VPN Connection' on the VPN-&gt;AWSVPN page, with the 'Propagate Connections' checkbox checked.","1. Verify that 'Create VPN Connection' button is displayed next to the VPC created
+2. After clicking the 'Create VPN Connection' button, the tab should show multiple actions being performed.
+VPN policies, route policies, tunnel interfaces will be created.","1. Click the 'Create VPN Connection' button which is available next to the available VPC.
+2. Go to ' VPN-&gt; Settings' page to check if VPN policies were created
+3. Go to 'Network -&gt; Interfaces' page to check if tunnel interfaces were created
+4. Go to 'Network -&gt; Routing' page to check if routes are created/populated"
+C1524405,AWSVPN: Delete VPN Connection on VPC - one customer gateway,"Original ID: 35
+Original Title: AWSVPN: Delete VPN Connection on VPC - one customer gateway
+Original Description: This test case verifies that on clicking the 'Delete VPN Connection' button, the vpn policies tunnel interfaces and route policies which were created earlier will be deleted","1. Verify that when the 'Delete VPN Connection' button is clicked, various actions occur.
+VPN policies, tunnel interfaces and route policies which were auto-populated will be deleted.","1. Go to 'VPN-&gt; AWSVPN' and click on the 'Delete VPN Connection' button, next to the VPC."
+C1524408,AWS Config: Enter wrong credentials for Access Key ID,"Original ID: 4
+Original Title: AWS Config: Enter wrong credentials for Access Key ID
+Original Description: This test case verifies that the AWS setup is not successful when an incorrect 'Access Key ID' is entered","Verify that for Step4 , the firewall should accept and save the values entered for 'AccessKeyID', 'SecretAccessKey', 'Confirm Key' and 'Region'.
+Verify that for Step5, an error should be displayed '<span>Error: Incorrect AWS Credentials Entered. Configuration not saved'</span>","1. Go to 'Networking -&gt; AWS Configuration' page.
+2. Enter wrong details for fields 'AccessKeyID'.
+3. Enter the correct details for 'SecretAccessKey' and 'Confirm Key' (these were generated when creating an IAM user on the AWSConsole)
+4. Set the 'Region' to 'US West N.California'.
+5. Click the 'Accept' button."
+C1524411,AWSVPN: Delete subnet on AWSConsole,"Original ID: 44
+Original Title: AWSVPN: Delete subnet on AWSConsole 
+Original Description: This test case verifies that subnets can be deleted from the AWSConsole",TBD,TBD
+C1524416,AWSObjects: Add new EC2 instances with no mapping and verify if new objects are created for the new instances,"Original ID: 49
+Original Title: AWSObjects: Add new EC2 instances with no mapping and verify if new objects are created for the new instances
+Original Description: This test case verifies that address objects are created when new instances are added",TBD,TBD
+C1524417,AWSObjects: Create â€˜New Mappingâ€™ of type â€˜Instance IDâ€™,"Original ID: 50
+Original Title: AWSObjects: Create â€˜New Mappingâ€™ of type â€˜Instance IDâ€™
+Original Description: This test case verifies that traffic to an Instance ID of value defined in a mapping is dropped when applied to an access rule",TBD,TBD
+C1524419,AWSObjects: Create â€˜New Mappingâ€™ of type Subnet ID,"Original ID: 52
+Original Title: AWSObjects: Create â€˜New Mappingâ€™ of type Subnet ID
+Original Description: <span>This test case verifies that traffic to an SubnetID of value defined in a mapping is dropped when applied to an access rule</span>",TBD,TBD
+C1524423,AWSObjects: Create â€˜New Mappingâ€™ of type Custom Tag,"Original ID: 60
+Original Title: AWSObjects: Create â€˜New Mappingâ€™ of type Custom Tag
+Original Description: <span>This test case verifies that traffic to Type:CustomTag of value defined in a mapping is dropped when applied to an access rule</span>",TBD,TBD
+C1524424,AWSObjects: Subnet ID and VPC ID,"Original ID: 62
+Original Title: AWSObjects: Subnet ID and VPC ID
+Original Description: <span>This test case verifies that traffic to an SubnetID and VPCID of value defined in a mapping is dropped when applied to an access rule</span>",TBD,TBD
+C1524426,Editing an existing mapping: Add more conditions,"Original ID: 67
+Original Title: Editing an existing mapping: Add more conditions
+Original Description: This test case verifies that more conditions can be added to an existing mapping",TBD,TBD
+C1524428,AWS Config: Enter wrong region,"Original ID: 7
+Original Title: AWS Config: Enter wrong region
+Original Description: This test case verifies that AWS setup is not successful when an incorrect region is configured.","<span>Verify that for Step4, the firewall should accept and save the values entered for 'AccessKeyID', 'SecretAccessKey', 'Confirm Key' and 'Region'.</span>
+Verify that for Step5, an error should be displayed as follows:
+<div class=""ui-dialog-content ui-widget-content"" id=""awsTestConnectionDlg"">
+<div id=""awsTestConnectionContentDiv"">
+<table cellpadding=""0"" cellspacing=""0"" class=""wxaOpenTable"" id=""awsTestResultsTable"" summary=""Test Connection Results"">
+<tbody>
+<tr>
+<td>Receive LogSequenceToken Response</td>
+</tr>
+<tr data-control=""itemBtn_0"">
+<td></td>
+<td class=""label"">Error:</td>
+<td>ResourceNotFoundException</td>
+</tr>
+<tr data-control=""itemBtn_0"">
+<td></td>
+<td class=""label"">Remedy:</td>
+<td>Fix logGroup</td>
+</tr>
+<tr>
+<td><img class=""clickable expanded"" id=""itemBtn_1"" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" /></td>
+<td><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" /></td>
+<td>Receive LogSequenceToken Response</td>
+</tr>
+<tr data-control=""itemBtn_1"">
+<td></td>
+<td class=""label"">Error:</td>
+<td>ResourceNotFoundException</td>
+</tr>
+<tr data-control=""itemBtn_1"">
+<td></td>
+<td class=""label"">Remedy:</td>
+<td>Fix logGroup</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class=""ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"">
+<div class=""ui-dialog-buttonset""><button class=""ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"" id=""awsTestConnectionDlgDetailsBtn"" type=""button""></button></div>
+<div class=""ui-dialog-buttonset""></div>
+<div class=""ui-dialog-buttonset"">Verify that for Step6, the details of the failure should be displayed as follows:</div>
+<div class=""ui-dialog-buttonset""><br />
+<div class=""ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix""><span class=""ui-dialog-title"" id=""ui-id-8"">AWS Test Connection</span><button class=""ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close"" title=""close""><span class=""ui-button-text""><br /></span></button></div>
+<div class=""ui-dialog-content ui-widget-content"" id=""awsTestConnectionDlg"">
+<div id=""awsTestConnectionContentDiv"">
+<table cellpadding=""0"" cellspacing=""0"" class=""wxaOpenTable"" id=""awsTestResultsTable"" summary=""Test Connection Results"">
+<tbody>
+<tr>
+<td><span></span><img class=""clickable expanded"" id=""itemBtn_0"" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Test AWS Cloudwatch capability</td>
+</tr>
+<tr data-control=""itemBtn_0"">
+<td><span></span><img class=""clickable expanded"" id=""itemBtn_1"" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_0"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Connect</td>
+</tr>
+<tr data-control=""itemBtn_1"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_1"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Connect</td>
+</tr>
+<tr data-control=""itemBtn_1"">
+<td><span></span><img class=""clickable expanded"" id=""itemBtn_3"" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_1"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Write Logs</td>
+</tr>
+<tr data-control=""itemBtn_3"">
+<td><span></span><img class=""clickable expanded"" id=""itemBtn_4"" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_3"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Renew LogSequenceToken</td>
+</tr>
+<tr data-control=""itemBtn_4"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_4"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Sign Request</td>
+</tr>
+<tr data-control=""itemBtn_4"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_4"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Transmit LogSequenceToken Request</td>
+</tr>
+<tr data-control=""itemBtn_4"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_4"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Receive LogSequenceToken Response<button class=""ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only"" title=""Show error details for the selected task"" type=""button""><span class=""ui-button-icon-primary ui-icon wxa-icon-info""></span><span class=""ui-button-text"">ERROR DETAILS</span></button></td>
+</tr>
+<tr data-control=""itemBtn_3"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_3"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Batch Logs</td>
+</tr>
+<tr data-control=""itemBtn_3"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_3"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Sign Batch</td>
+</tr>
+<tr data-control=""itemBtn_3"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_3"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Transmit Batch</td>
+</tr>
+<tr data-control=""itemBtn_3"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_3"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Receive PutLogEvents Response</td>
+</tr>
+<tr data-control=""itemBtn_0"">
+<td><span></span><img class=""clickable expanded"" id=""itemBtn_12"" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_0"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Connect</td>
+</tr>
+<tr data-control=""itemBtn_12"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_12"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Connect</td>
+</tr>
+<tr data-control=""itemBtn_12"">
+<td><span></span><img class=""clickable expanded"" id=""itemBtn_14"" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_12"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Write Logs</td>
+</tr>
+<tr data-control=""itemBtn_14"">
+<td><span></span><img class=""clickable expanded"" id=""itemBtn_15"" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_14"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Renew LogSequenceToken</td>
+</tr>
+<tr data-control=""itemBtn_15"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_15"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Sign Request</td>
+</tr>
+<tr data-control=""itemBtn_15"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_15"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Transmit LogSequenceToken Request</td>
+</tr>
+<tr data-control=""itemBtn_15"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_15"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Receive LogSequenceToken Response<button class=""ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only"" title=""Show error details for the selected task"" type=""button""><span class=""ui-button-icon-primary ui-icon wxa-icon-info""></span><span class=""ui-button-text"">ERROR DETAILS</span></button></td>
+</tr>
+<tr data-control=""itemBtn_14"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_14"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Batch Logs</td>
+</tr>
+<tr data-control=""itemBtn_14"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_14"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Sign Batch</td>
+</tr>
+<tr data-control=""itemBtn_14"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_14"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/checkMark.png"" />Transmit Batch</td>
+</tr>
+<tr data-control=""itemBtn_14"">
+<td><span></span><img class=""clickable expanded"" id="""" src=""https://10.202.52.37/arrow_down.gif"" title=""Collapse this entry"" data-control=""itemBtn_14"" /><img align=""bottom"" alt="""" border=""0"" src=""https://10.202.52.37/interface_down.png"" />Receive PutLogEvents Response</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>","1. Go to 'Networking -&gt; AWS Configuration' page.
+2. Enter the correct details for fields 'AccessKeyID','SecretAccessKey' and 'Confirm Key' (these were generated when creating an IAM user on the AWSConsole)
+3. Set the 'Region' to 'US West Oregon'.
+4. Click the 'Accept' button.
+5. Click the 'Test Connection' button.
+6. Click the 'Test Details' button."
+C1524437,AWS Config: Check/uncheck mask key checkbox,"Original ID: 8
+Original Title: AWS Config: Check/uncheck mask key checkbox
+Original Description: This test verifies that when the 'Mask key' checkbox is checked, it displays the characters of the 'Secret key'","Verify that for Step3,the key is displayed in clear text for the field 'Secret Access Key'.","1. Go to 'Networking -&gt; AWS Configuration' page.
+2. Enter the correct details for fields 'AccessKeyID' and 'SecretAccessKey' (these were generated when creating an IAM user on the AWSConsole)
+3. Uncheck the checkbox 'Mask Key' next to the Secret Access key field."
+C1524441,AWSGeneric: Prefs import/export to the same firewall,"Original ID: 84
+Original Title: AWSGeneric: Prefs import/export to the same firewall
+Original Description: This test case verifies that the prefs are successfully imported onto the firewall and traffic goes through",TBD,TBD
+C1524442,AWSGeneric: Reboot the firewall,"Original ID: 86
+Original Title: AWSGeneric: Reboot the firewall
+Original Description: This test case verifies that traffic is not affected when the firewall is rebooted.",TBD,TBD
+C1524444,AWS Config: Boundary check for Access Key ID,"Original ID: 9
+Original Title: AWS Config: Boundary check for Access Key ID
+Original Description: This test case verifies that an error is displayed when the Access Key ID exceeds 32 characters.","Verify that for Step5, an error message should be displayed stating ""<span>Error: Amazon Web Services: Access Key ID: Data out of bounds (min = 0, max = 32).""</span>","1. Go to 'Networking -&gt; AWS Configuration' page.
+2. Enter 33 characters for the field 'AccessKeyID'
+3. Enter the correct details for 'SecretAccessKey' and 'Confirm Key' (these were generated when creating an IAM user on the AWSConsole)
+4. Set the 'Region' to 'US West N.California'.
+5. Click the 'Accept' button."
+C2750276,GEN7-48990: AWS Integration- IP octets reversed in the auto created Address objects.,GEN7-48990: AWS Integration- IP octets reversed in the auto created Address objects.,IP octets should not be reversed in the auto created address objects.,"When mapping auto-scaled EC2 instances to address groups. Instance name and IPs are correctly identified in the Profile Objects AWS page, but the created address objects have the IP octets reversed.
+
+-AWS address object mapping is getting mapped successfully
+-The objects were getting incorrectly populated.
+-If a public IP assigned to an EC2 instance is 18.223.211.159, the corresponding address object in SonicWall shows it as 159.211.223.18.
+-This reversed order applies to both public and private IPs associated with the instances.
+-This incorrect order prevents proper network access for the auto-scaled EC2 instances.
+-Manually correcting the IP order within the address object allows successful access to local network resources."

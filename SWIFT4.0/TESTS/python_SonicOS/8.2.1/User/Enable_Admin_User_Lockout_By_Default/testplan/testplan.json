@@ -1,0 +1,58 @@
+{
+    "3928628": {
+        "id": "3928628",
+        "title": "Verify that Admin/User lockout is enabled by default on booting the FW with factory defaults with 3 failed attempts, 1-minute interval, 5-minute lockout period and 3 login attempts for CLI.",
+        "result": "Verify that Admin/User lockout is enabled by default on booting the FW with factory defaults with 3 failed attempts, 1-minute interval, 5-minute lockout period and 3 login attempts for CLI.",
+        "initial": "",
+        "steps": "Verify that Admin/User lockout is enabled by default on booting the FW with factory defaults with 3 failed attempts, 1-minute interval, 5-minute lockout period and 3 login attempts for CLI."
+    },
+    "3928629": {
+        "id": "3928629",
+        "title": "Verify when the User tries to disable \"\"Enable Admin/User lockout\"\", a warning about not being recommended setting appear.",
+        "result": "Verify when the User tries to disable \"\"Enable Admin/User lockout\"\", a warning about not being recommended setting appear.",
+        "initial": "",
+        "steps": "Verify when the User tries to disable \"\"Enable Admin/User lockout\"\", a warning about not being recommended setting appear."
+    },
+    "3928630": {
+        "id": "3928630",
+        "title": "Verify that the configuration with respect to Admin/user lockout remain intact for existing customers during upgrade/rollback, config export/import/reimport, config backup/recovery, settings export/import",
+        "result": "Verify that the configuration with respect to Admin/user lockout remain intact for existing customers during upgrade/rollback, config export/import/reimport, config backup/recovery, settings export/import",
+        "initial": "",
+        "steps": "Verify that the configuration with respect to Admin/user lockout remain intact for existing customers during upgrade/rollback, config export/import/reimport, config backup/recovery, settings export/import"
+    },
+    "3928631": {
+        "id": "3928631",
+        "title": "Verify that with Admin/User lockout disabled, when the user logs in, a pop-up strongly recommending that they enable Admin/User Lockout using SonicWALL's recommended settings is displayed. The pop-up also includes a link to a knowledge base article d",
+        "result": "Verify that with Admin/User lockout disabled, when the user logs in, a pop-up strongly recommending that they enable Admin/User Lockout using SonicWALL's recommended settings is displayed. The pop-up also includes a link to a knowledge base article detailing the new default configuration.",
+        "initial": "",
+        "steps": "Verify that with Admin/User lockout disabled, when the user logs in, a pop-up strongly recommending that they enable Admin/User Lockout using SonicWALL's recommended settings is displayed. The pop-up also includes a link to a knowledge base article detailing the new default configuration."
+    },
+    "3928632": {
+        "id": "3928632",
+        "title": "Verify default Admin user lockout functionality when enabled/disabled",
+        "result": "Verify default Admin user lockout functionality when enabled/disabled",
+        "initial": "",
+        "steps": "Verify default Admin user lockout functionality when enabled/disabled"
+    },
+    "3928633": {
+        "id": "3928633",
+        "title": "Verify other 7 Admin users lockout functionality when enabled/disabled",
+        "result": "Verify other 7 Admin users lockout functionality when enabled/disabled",
+        "initial": "",
+        "steps": "Verify other 7 Admin users lockout functionality when enabled/disabled"
+    },
+    "3928634": {
+        "id": "3928634",
+        "title": "Verify Local/AD/TACACs/RADIUS users lockout functionality when enabled/disabled using FW management/ULA/SSLVPN portal/NX/GVC",
+        "result": "Verify Local/AD/TACACs/RADIUS users lockout functionality when enabled/disabled using FW management/ULA/SSLVPN portal/NX/GVC",
+        "initial": "",
+        "steps": "Verify Local/AD/TACACs/RADIUS users lockout functionality when enabled/disabled using FW management/ULA/SSLVPN portal/NX/GVC"
+    },
+    "3928635": {
+        "id": "3928635",
+        "title": "Verify Max login attempts through CLI functionality",
+        "result": "Verify Max login attempts through CLI functionality",
+        "initial": "",
+        "steps": "Verify Max login attempts through CLI functionality"
+    }
+}

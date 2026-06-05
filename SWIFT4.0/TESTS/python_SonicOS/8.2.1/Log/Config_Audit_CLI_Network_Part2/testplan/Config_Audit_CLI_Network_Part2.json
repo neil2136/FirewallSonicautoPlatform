@@ -1,0 +1,114 @@
+{
+    "IPHelper_TC01": {
+        "id": "IPHelper_TC01",
+        "title": "IP Helper - Enable/Disable IP Helper",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful IP Helper Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, disable/enable IP Helper. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1..........\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "IPHelper_TC03": {
+        "id": "IPHelper_TC03",
+        "title": "IP Helper - Add a Relay Protocol",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful IP Helper Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, add a Relay Protocol. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "IPHelper_TC06": {
+        "id": "IPHelper_TC06",
+        "title": "IP Helper - Add a policy",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful IP Helper Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, add an IP helper policy . Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "IPHelper_TC08": {
+        "id": "IPHelper_TC08",
+        "title": "IP Helper - Edit policies",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful IP Helper Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, edit IP helper policies. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "WebProxy_TC13": {
+        "id": "WebProxy_TC13",
+        "title": "Web Proxy - Configure Automatic Proxy Forwarding (Web Only)",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful Web proxy Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI,configure Automatic Proxy Forwarding of Web Proxy. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "WebProxy_TC15": {
+        "id": "WebProxy_TC15",
+        "title": "Web Proxy - Edit User Proxy Servers",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful Web proxy Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, edit User Proxy Servers of Web Proxy. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "DDNS_TC20": {
+        "id": "DDNS_TC20",
+        "title": "Dynamic DNS - Add a DDNS profile - dyn.com",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DDNS Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, add a DDNS profile with provider dyn.com. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "DDNS_TC24": {
+        "id": "DDNS_TC24",
+        "title": "Dynamic DNS - Edit DDNS profiles - Advanced",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DDNS Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, edit Advanced Settings of DDNS. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "DDNS_TC27": {
+        "id": "DDNS_TC27",
+        "title": "Dynamic DNS - Edit DDNS profiles - Profiles Settings - IPv6",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful DDNS Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, edit Profiles Settings of an IPv6 DDNS profile. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "NetworkMonitor_TC36": {
+        "id": "NetworkMonitor_TC36",
+        "title": "Network Monitor - Add a policy - Ping(ICMP)",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful Network Monitor Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, add a Network Monitor policy with Probe type Ping(ICMP). Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "NetworkMonitor_TC43": {
+        "id": "NetworkMonitor_TC43",
+        "title": "Network Monitor - Edit a policy - TCP-Explicit Route",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful Network Monitor Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, edit a Network Monitor policy with Probe type TCP-Explicit Route. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "NetworkMonitor_TC46": {
+        "id": "NetworkMonitor_TC46",
+        "title": "Network Monitor - Add a policy - IPv6 - TCP",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful Network Monitor Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, add an IPv6 Network Monitor policy with Probe type TCP. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "NetworkMonitor_TC52": {
+        "id": "NetworkMonitor_TC52",
+        "title": "Network Monitor - Delete one/multiple policies",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful Network Monitor Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, delete one or multiple Network Monitor policies. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "MatchObjectsDynamicGroup_TC63": {
+        "id": "MatchObjectsDynamicGroup_TC63",
+        "title": "Dynamic External Objects - Add an Address Group - FTP",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful Dynamic External Objects Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, add an Address Group for Dynamic External Objects with Protocol FTP . Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "MatchObjectsDynamicGroup_TC64": {
+        "id": "MatchObjectsDynamicGroup_TC64",
+        "title": "Dynamic External Objects - Add an Address Group - HTTPS",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful Dynamic External Objects Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, add an Address Group for Dynamic External Objects with Protocol HTTPS . Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    },
+    "MatchObjectsDynamicGroup_TC65": {
+        "id": "MatchObjectsDynamicGroup_TC67",
+        "title": "Dynamic External Objects - Download the entry manually",
+        "result": "Result 1: syslog message m=1382 is received on the server. And the message is correctly displayed.\nResult 2:  Configuration succeeds is reported on Log Settings/ Auditing Records page.\nResult 3:  Log message related with successful Dynamic External Objects Settings is correctly displayed.\nResult 4: Successful configuration changes trigger a SNMP trap and trap number for succeeded Audit Event is defined as 5609",
+        "initial": "1.The option 'Enable Configuration Auditing' is checked on diag page.........\n2. SNMP tool is available and ready to use..........\n3. SNMP management is enabled on X1, and properly configured in Appliance/SNMP page. Trap Community Name and Host 1 are configured..........\n4. A syslog server is added on the firewall...........\n5. In Log/Settings, Set the priority for Configuration Change Failed and \tConfiguration Change Succeeded to Alert",
+        "steps": "1. Login from CLI, Click the Download icon for an Address Group of Dynamic External Objects. Accept.\n2. Go to Syslog server, check the corresponding syslog message. Result 1.\n3. Go to Log Settings/ Auditing Records page, check the records. Result 2..........\n4.  Go to Event Logs page, check the corresponding logs. Result 3..........\n5. Go to SNMP tool, check if there is SNMP trap sent."
+    }
+}

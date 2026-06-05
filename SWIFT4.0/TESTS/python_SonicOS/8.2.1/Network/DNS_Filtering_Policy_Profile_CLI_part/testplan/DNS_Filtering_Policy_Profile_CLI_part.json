@@ -1,0 +1,86 @@
+{
+    "1521138": {
+        "steps": "1. From CLI, enter configure mode; <br />2. Input: <br />#dns-security <br />#dns-filtering <br />#profile test<br />#commit\r\n3.change test profile name:<br />#name Default\\ Profile <br />#commit",
+        "initial": "",
+        "id": "1521138",
+        "title": "[CLI] Verify when the profile name is a duplicate name, the Edit action failed via CLI Commends.",
+        "result": "In step 2, changes can not be saved with ERROR:The profile Default Profile already existed."
+    },
+    "1521141": {
+        "steps": "1. Add valid profiles test; <br />2. Edit a profile, change the name to 'test_c' and change the actions; <br />3. From CLI, input \"show dns-security dns-filtering profile test_c\"; <br />4. delete a profile; <br />5. From CLI, input \"show dns-security dns-filtering profiles\".",
+        "initial": "",
+        "id": "1521141",
+        "title": "[CLI] Verify the CLI commands to show DNS Filtering profiles work.",
+        "result": "In step 3, the profile is correctly shown, and same as GUI.\nIn step 5,all profiles are correctly shown, and same as GUI."
+    },
+    "1521111": {
+        "steps": "1. From CLI, enter configure mode;\n2. Input: \n# dns-policy name TestProxy\n# action proxy \n# proxy-mode ipv4-ipv6\n# comment TestProxy\n# from LAN\n# commit",
+        "initial": "",
+        "id": "1521111",
+        "title": "[CLI]  Verify the CLI commands to add a DNS Proxy policy work.",
+        "result": "Changes made correctly, and the DNS Policy shows correctly on GUI."
+    },
+    "1521112": {
+        "steps": "1. From CLI, enter configure mode; 2. Input: # dns-policy name TestFilter # action filter-profile Default\\ Profile # priority manual 1 # source address name X0\\ Subnet # commit",
+        "initial": "",
+        "id": "1521112",
+        "title": "[CLI]  Verify the CLI commands to add a DNS Filter policy work.",
+        "result": "Changes made correctly, and the DNS Policy shows correctly on GUI."
+    },
+    "1521114": {
+        "steps": "1. From CLI, enter configure mode;\n2. Input: \n# dns-policy name TestBypass\n# commit\n3. Change some items of DNS Policies:\n# dns-policy name TestBypass\n# name EditBypass\n# priority end\n# schedule name Work\\ Hours \n# commit",
+        "initial": "",
+        "id": "1521114",
+        "title": "[CLI]  Verify the CLI commands to edit a DNS policy work.",
+        "result": "Changes made correctly, and the DNS Policy changes correctly on GUI."
+    },
+    "1521115": {
+        "steps": "1. From CLI, enter configure mode;\n2. Input: \n# dns-policy name TestFilter\n# enable\n# commit",
+        "initial": "",
+        "id": "1521115",
+        "title": "[CLI] Verify the CLI commands to enable DNS policy work.",
+        "result": "Changes made correctly, and the DNS Policy is enabled on GUI."
+    },
+    "1521116": {
+        "steps": "1. From CLI, enter configure mode;\n2. Input: \n# dns-policy name TestFilter\n# no enable\n# commit",
+        "initial": "",
+        "id": "1521116",
+        "title": "[CLI] Verify the CLI commands to disable DNS policy work.",
+        "result": "Changes made correctly, and the DNS Policy is disabled on GUI."
+    },
+    "1521117": {
+        "steps": "1. From CLI, enter configure mode;\n2. Add a DNS Policy named TestFilter;\n3. Input: \n# no dns-policy name TestFilter\n# commit",
+        "initial": "",
+        "id": "1521117",
+        "title": "[CLI] Verify the CLI commands to delete a DNS policy work.",
+        "result": "Changes made correctly, and the DNS Policy is deleted on GUI."
+    },
+    "1521118": {
+        "steps": "1. From CLI, enter configure mode;\n2. Add some DNS Policies(over 3);\n3. Input: \n# no dns-policies\n# commit",
+        "initial": "",
+        "id": "1521118",
+        "title": "[CLI] Verify the CLI commands to delete all  DNS policies work.",
+        "result": "Changes made correctly, and the DNS Policies are deleted on GUI."
+    },
+    "1521119": {
+        "steps": "1. From CLI, enter configure mode;\n2. Add a DNS Policy named TestC;\n3. Input: \n# dns-policy name TestC\n# connection-limit source enable\n# connection-limit source threshold 999\n# max-connections 50\n# commit",
+        "initial": "",
+        "id": "1521119",
+        "title": "[CLI] Verify the CLI commands to change the connection settings of the DNS policy work.",
+        "result": "Changes made correctly, and the settings display correctly in GUI."
+    },
+    "1521120": {
+        "steps": "1. Add a DNS Policy named TestClone;\n2. From CLI, enter configure mode;\n3. Input: \n# clone dns-policy TestClone new-name Testnew location before\n# commit",
+        "initial": "",
+        "id": "1521120",
+        "title": "[CLI] Verify the CLI commands to clone DNS policies work.",
+        "result": "Changes made correctly.\nA DNS policy named Testnew displays up the TestClone with the same configurations"
+    },
+    "1521121": {
+        "steps": "1. From CLI, enter configure mode;\n2. Add some DNS Policies, one of them named TestFilter;\n3. Input: \n# show dns-policy name TestFilter\n4. Input: \n# show dns-policies",
+        "initial": "",
+        "id": "1521121",
+        "title": "[CLI] Verify the CLI commands to show DNS policies work.",
+        "result": "The status of DNS Policies is correct and the same as GUI."
+    }
+}

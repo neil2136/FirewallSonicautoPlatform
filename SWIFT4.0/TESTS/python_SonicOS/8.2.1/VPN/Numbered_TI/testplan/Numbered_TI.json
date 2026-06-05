@@ -1,0 +1,794 @@
+{
+   "32" : {
+      "steps" : "  Numbered_tunnel_interface advance configuration should works fine.",
+      "initial" : "  . Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Go to Network > Interfaces page, open the configuration window of 'Ni', switch to 'Advanced' tab, check 'Enable Multicast' for example, then execute test case #38.\n  4. Repeat step3 for other advanced settings, such as ' Enable flow reporting', 'Enable Asymmetric Route Support', 'Enable Fragmented Packet Handling'.",
+      "id" : "32",
+      "title" : "Numbered_tunnel_interface advance configuration should works fine",
+      "result" : ""
+   },
+   "33" : {
+      "steps" : "  Numbered_tunnel_interface MTU info can be displayed on configuration page.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092\n  4.Reopen configuration window of 'Ni' on DUT1, check Interface MTU to see if 'Configured automatically: 1446' is displayed",
+      "id" : "33",
+      "title" : "Numbered_tunnel_interface MTU info should display on configuration page",
+      "result" : ""
+   },
+   "21" : {
+      "steps" : "  Numbered_tunnel_interface is included in log filter view select interface list",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. Go to Dashboard > Log Monitor page, click '+' button besides 'Filter View', check the Source/Destination Interface drop down list.",
+      "id" : "21",
+      "title" : "Numbered_tunnel_interface should included in log filter view select interface list",
+      "result" : ""
+   },
+   "63" : {
+      "steps" : "  see steps",
+      "initial" : "  1. add a tunnel interface vpn policy\n  2. add a 'VPN tunnel interface' named 'Ni' on network->interface page, bind it to the policy added in step 1\n  3. add a static route and bound to 'Ni'\n  4. make traffic matching the static route to pass through vpn tunnel, verify it fails because of acl not added\n  5. manually add access rule related to the static route\n  6. repeat step 4, verify traffic works fine this time.",
+      "id" : "63",
+      "title" : "ACL bound to Numbered_tunnel_interface should works fine",
+      "result" : ""
+   },
+   "71" : {
+      "steps" : "  The VPN Policy drop-down list doesn\u0092t show any policies.",
+      "initial" : "  2. Don\u0092t have Tunnel Interface VPN policies on the firewall. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. View the options in the VPN Policy drop-down list.",
+      "id" : "71",
+      "title" : "Add Tunnel Interface window: VPN Policy drop-down list is empty if no VPN policies of Tunnel Interface type are added on the firewall",
+      "result" : ""
+   },
+   "7" : {
+      "steps" : "  Numbered tunnel interface can be edit.",
+      "initial" : "  1. Go to page VPN->Settings, add a Tunnel interface 'test' with IPsec gateway,shared secret,IKE proposal, IPsec proposal etc.\n  2. Go to Network->Interfaces, add a VPN tunnel interface named 'Ni', choose VPN policy 'test', input name, IP address, subnet mask etc.then click button 'OK' to save it.\n  3. Open the configuration window of 'Ni', try to edit it, such as change IP address, management, or User login selections. Then click 'OK'.\n  4. Reopen the the configuration window of 'Ni', make sure changes take effect.",
+      "id" : "07",
+      "title" : "Edit Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "26" : {
+      "steps" : "  Numbered_tunnel_interface is not in Diagnostic Tools-->link monitor interface list",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. Go to System > Diagnostics page, select Link Monitor in Diagnostic Tool drop down list, then check interface name.",
+      "id" : "26",
+      "title" : "Numbered_tunnel_interface should not in Diagnostic Tools-->link monitor interface list",
+      "result" : ""
+   },
+   "80" : {
+      "steps" : "  The TI (VPN) interface is not displayed on the Network > Routing page along with physical interfaces. ",
+      "initial" : "  2. On the VPN > Settings page, add a VPN policy of Tunnel Interface type. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. Select the Tunnel Interface policy name in the VPN Policy drop-down list. Assign IP address and subnet mask. Click OK to save the configured interface. 5. Make sure that the TIn (VPN) interface is shown on the Network > Routing page when Advanced Routing mode is selected. 6. On the Network > Interfaces page, click the \u0093Delete\u0094 icon for the TIn interface. Click OK in the \u0093Do you want to delete this interface?\u0094 message. 7. View the Network > Routing page. ",
+      "id" : "80",
+      "title" : "Deleting Tunnel Interface on the Network >Interfaces page - tunnel interface is deleted from the list of interfaces on the Network > Routing page in advanced Routing mode",
+      "result" : ""
+   },
+   "02" : {
+      "steps" : "  For step 8: Ping succeeded. Check on Network > Routing page of DUT1, find a route with 'src: any Dst: 192.168.2.0 Interface: Ni' has been added automatically.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, go to Network > Routing page, select \u0091Advanced Routing\u0092, then click the \u0091configure RIP\u0092 icon of interface \u0091Ni\u0092, RIP: Send and Receive, Receive: RIPv2, Send: RIPv2, and enable all the checkboxes of global RIP configuration.\n  5. On DUT1, go to Firewall > Access Rules page, add access rules for LAN > VPN and VPN > LAN between Local X0 subnet and remote X0 subnet.\n  6. Repeat Step 4 and 5 on DUT2.\n  7. Make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  8. Ping between Host1 and Host2, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X/192.168.11.X.\n  9. Repeat above steps using RIPv1.",
+      "id" : "02",
+      "title" : "Numbered_tunnel_interface works fine on RIP",
+      "result" : ""
+   },
+   "18" : {
+      "steps" : "  Packets only pass through Numbered_tunnel_interface can be displayed in Packet Monitor.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. From Host1, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X\n  7. Go to System > Packet Monitor page, open packet monitor configuration window, switch to Monitor Filter, try to input Ni interface as filter, then click OK. Check captured packets in packet monitor.",
+      "id" : "18",
+      "title" : "Numbered_tunnel_interface should config as monitor filter",
+      "result" : ""
+   },
+   "03" : {
+      "steps" : "  For step 8: Ping succeeded. Check DUT1 on Network > Routing page, find a route with 'src: any Dst: 192.168.2.0 Interface: Ni' has been added automatically.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, go to Network > Routing page, select \u0091Advanced Routing\u0092, then click the \u0091configure OSPF\u0092 icon of interface \u0091Ni\u0092, OSPFv2: Enabled, and enable all the checkboxes of global OSPFv2 configuration.\n  5. On DUT1, go to Firewall > Access Rules page, add access rules for LAN > VPN and VPN > LAN between Local X0 subnet and remote X0 subnet.\n  6. Repeat Step 4 and 5 on DUT2.\n  7. Make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  8. Ping between Host1 and Host2, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X/192.168.11.X.\n  9. Repeat above steps using RIPv3 if supports..",
+      "id" : "03",
+      "title" : "Numbered_tunnel_interface works fine on OSPF",
+      "result" : ""
+   },
+   "72" : {
+      "steps" : "  The name of the Tunnel Interface VPN policy in the Edit Interface TIn dialog box is grayed out and cannot be modified. ",
+      "initial" : "  2. On the VPN > Settings page, add a VPN policy of Tunnel Interface type. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. Select the Tunnel Interface policy name in the VPN Policy drop-down list. Assign IP address and subnet mask. Click OK to save the configured interface. The TIn interface is shown on the Network > Interfaces page. 5. Click the Edit icon in the TIn interface entry that was added in step 4. The Edit Interface TIn dialog box will be opened. 6. View the VPN Policy drop-down list. ",
+      "id" : "72",
+      "title" : "VPN policy selection cannot be changed once the tunnel interface configuration is saved.",
+      "result" : ""
+   },
+   "16" : {
+      "steps" : "  Connection Monitor can display Numbered_tunnel_interface on cache monitor table ",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. From Host1, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X\n  7. Go to Dashboard > Connection Monitor, check if Numbered_tunnel_interface can be displayed on cache monitor table ",
+      "id" : "16",
+      "title" : "Connection Monitor should display Numbered_tunnel_interface on cache monitor table",
+      "result" : ""
+   },
+   "44" : {
+      "steps" : "  verify that Numbered_tunnel_interface configuration does not effected IPV6 interface configuration.",
+      "initial" : "  1. add IPv4 TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. On network->Interface, switch to IPv6 view, verify that Numbered_tunnel_interface configuration does not effected IPV6 interface configuration",
+      "id" : "44",
+      "title" : "Numbered_tunnel_interface configuration should not effected IPV6 interface configuration",
+      "result" : ""
+   },
+   "55" : {
+      "steps" : "  see step 3",
+      "initial" : "  1. add a TI vpn policy\n  2. add a 'VPN tunnel interface' named 'Ni' on network->interface, bind it to TI vpn policy added in step 1\n  3. on network->neighbour discovery, click 'Add' button, and check interface list, verify that 'Ni' is not in the listbox",
+      "id" : "55",
+      "title" : "Numbered_tunnel_interface should not in add NDP entry interface list",
+      "result" : ""
+   },
+   "74" : {
+      "steps" : "  GUI should not allow using same IP address for two numbered tunnel interfaces. Configuration of the second tunnel interface (bound to VPN policy test2) is not saved. ",
+      "initial" : "  2. On the VPN > Settings page, add two VPN policies of Tunnel Interface type with names test1 and test2. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. Select test1 in the VPN Policy drop-down list. Set IP address to 172.10.10.1 and subnet mask to 255.255.255.0. Click OK to save the configured interface. The TIn interface is shown on the Network > Interfaces page. 5. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list to add a new interface. The Add Tunnel Interface dialog box will be opened. 6. Select test2 in the VPN Policy drop-down list. Set IP address to 172.10.10.1 and subnet mask to 255.255.255.0 (same IP address that was set in the tunnel interface in step 4) and click OK. ",
+      "id" : "74",
+      "title" : "Same IP address cannot be used for another tunnel interface",
+      "result" : ""
+   },
+   "27" : {
+      "steps" : "  Numbered_tunnel_interface is not in Diagnostic Tools-->packet size monitor interface list",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. Go to System > Diagnostics page, select Packet Size Monitor in Diagnostic Tool drop down list, then check interface name.",
+      "id" : "27",
+      "title" : "Numbered_tunnel_interface should not in Diagnostic Tools-->packet size monitor interface list",
+      "result" : ""
+   },
+   "01" : {
+      "steps" : "  VPN tunnel interface can be added.",
+      "initial" : "  1. Go to page VPN->Settings, add a Tunnel interface 'test' with IPsec gateway,shared secret,IKE proposal, IPsec proposal etc.\n  2. Go to Network->Interfaces, add a VPN tunnel interface with name, choose VPN policy 'test', input name, IP address, subnet mask etc.\n  then click button 'OK' to save it.",
+      "id" : "01",
+      "title" : "Add a Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "57" : {
+      "steps" : "  see step 3",
+      "initial" : "  1. add a TI vpn policy\n  2. add a 'VPN Tunnel Interface' named 'Ni' on network->interface\uff0c bind it to TI vpn policy added in step 1\n  3. go to network->mac-ip Anti-Spoof\uff0c check interface list, verify that 'Ni' is not listed there.",
+      "id" : "57",
+      "title" : "Numbered_tunnel_interface should not in MAC-IP Anti-spoof interface list",
+      "result" : ""
+   },
+   "61" : {
+      "steps" : "  see step 3",
+      "initial" : "  1. add tunnel interface vpn policy\n  2. on network->interfaces, add a 'VPN tunnel interface' named 'Ni', bind it to the vpn policy added in step 1\n  3. go to network->DDNS, click 'add' button ,check interface list, verify 'Ni' is not listed there.",
+      "id" : "61",
+      "title" : "Numbered_tunnel_interface should not in DDNS interface list",
+      "result" : ""
+   },
+   "20" : {
+      "steps" : "  Mirror interface list does not include Numbered_tunnel_interface.",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. Go to System > Packet Monitor page, click 'Configure', switch to Mirror tab, check the all the drop down list, such as 'Mirror filtered packets to Interface' and 'Send received remote mirrored packets to Interface'. ",
+      "id" : "20",
+      "title" : "Numbered_tunnel_interface should not include in mirror interface list",
+      "result" : ""
+   },
+   "10" : {
+      "steps" : "  For step 7: SSH works fine on Numbered_tunnel_interface",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, check SSH management, then click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. On DUT2, go to Firewall > Access Rules page, add an access rule for LAN > VPN with \u0091src: X0_Subnet dst: Ni Subnet Sevice:SSH\u0092.\n  7. From Host2, try to visit Ni interface IP address (1.1.1.2) of DUT1 using SSH.",
+      "id" : "10",
+      "title" : "SSH works fine on Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "31" : {
+      "steps" : "  Numbered tunnel interface name can only be changed during the first creation period, its name could not be changed once created.",
+      "initial" : "  1. On VPN->Settings, Add a TI policy\n  2. On Network->Interface, add a 'VPN Tunnel Interface', bind it to TI policy added in step 1, set 'Name' to 'Ni', and 'IP Address' to '1.1.1.1', click OK to apply configuration.\n  3. Reopen the configuration of 'Ni', check the name field to see if it can be changed.",
+      "id" : "31",
+      "title" : "Numbered_tunnel_interface name should be config on NI configuration page",
+      "result" : ""
+   },
+   "35" : {
+      "steps" : "  Numbered_tunnel_interface can not be deleted when this interface enable advance route, corresponding error would be given on status bar.",
+      "initial" : "  1. On VPN->Settings, Add a TI policy\n  2. On Network->Interface, add a 'VPN Tunnel Interface', bind it to TI policy added in step 1, set 'Name' to 'Ni', and 'IP Address' to '1.1.1.1', click OK to apply configuration\n  3. On network->Routings, select 'Advanced Routing', then enable ospf/rip on the newly added number interface 'Ni'.\n  4. Go to Network->Interfaces, try to delete 'Ni'.",
+      "id" : "35",
+      "title" : "Numbered_tunnel_interface should not delete when this interface enable advance route",
+      "result" : ""
+   },
+   "11" : {
+      "steps" : "  This test case is to verify SNMP works fine on Numbered tunnel interface",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, check SNMP management, then click \u0091OK\u0092.\n  3. On DUT1, go to System > SNMP page, check 'Enable SNMP' checkbox, click 'Accept'.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  6. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  7. On DUT2, go to Firewall > Access Rules page, add an access rule for LAN > VPN with \u0091src: X0_Subnet dst: Ni Subnet Sevice: SNMP\u0092.\n  8. From Host2, use an SNMP monitor to retrieve the system information from Ni interface IP address (1.1.1.2) of DUT1.",
+      "id" : "11",
+      "title" : "SNMP works fine on Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "78" : {
+      "steps" : "  The numbered tunnel interface's ip is not shown in the list of IP addresses of \u0093All Interface IP\u0094 address object. ",
+      "initial" : "  2. On the VPN > Settings page, add a VPN policy of Tunnel Interface type. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. Select the Tunnel Interface policy name in the VPN Policy drop-down list. Assign IP address and subnet mask. Click OK to save the configured interface. The TIn interface is shown on the Network > Interfaces page. 5. Go to the Network > Address Objects page and expand the view of the \u0093All Interface IP\u0094 address object. ",
+      "id" : "78",
+      "title" : "Adding Tunnel Interface on the Network >Interfaces page - tunnel interface should not be added in the \u0093All Interface IP\u0094 address object.",
+      "result" : ""
+   },
+   "48" : {
+      "steps" : "  see step 3",
+      "initial" : "  1. add a tunnel interface vpn policy\n  2. add a 'vpn tunnel interface' named 'Ni' on network->interface, bind it to TI policy added in step 1\n  3. on network->address object, check 'Ni' related Address Object, verify that it displays correct AO",
+      "id" : "48",
+      "title" : "Numbered_tunnel_interface address objects should correctly",
+      "result" : ""
+   },
+   "87" : {
+      "steps" : "  1.The TI which bound with policy became down 2.The route policies for this TI became grey",
+      "initial" : "  1.Disable the vpn policy on vpn page or make this policy inactive\n  2.View the Route Policies table on the Network > Routing page ",
+      "id" : "87",
+      "title" : "routes policy for numbered tunnel interface will grey if TI is down",
+      "result" : ""
+   },
+   "77" : {
+      "steps" : "  Related ping/https/ssh/snmp management rules are auto added",
+      "initial" : "  1. On the Network > Interfaces page, open edit page of a tunnel interface 2. Enable HTTPS/PING/SSH/SNMP of management.\n  3.Go to access rules to check vpn->vpn policies.",
+      "id" : "77",
+      "title" : "Enable management option of TI will add related access rule for vpn->vpn",
+      "result" : ""
+   },
+   "08" : {
+      "steps" : "  For step 7: Ping succeeded.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, check Ping management, then click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. On DUT2, go to Firewall > Access Rules page, add an access rule for LAN > VPN with \u0091src: X0_Subnet dst: Ni Subnet Sevice: Ping\u0092.\n  7. From Host2, try to ping Ni interface IP address (1.1.1.2) of DUT1. ",
+      "id" : "08",
+      "title" : "Ping works fine on Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "65" : {
+      "steps" : "  verify tunnel interface vpn policy used by numbered interface cannot be deleted, error as following will prompt:\n  'Status: Unable to delete VPN Policy used by VPN tunnel interface '",
+      "initial" : "  1. add a tunnel interface vpn policy named 'TI' on vpn->settings page\n  2. go to network->interface, add a 'vpn tunnel interface' and bind it to TI\n  3. go back to vpn->settings, try to delete 'ti' vpn policy",
+      "id" : "65",
+      "title" : "VPN tunnel policy should not deleted when policy bound to Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "29" : {
+      "steps" : "  Make sure Ni MTU of both FW should be updated to the same and always according to the smaller MTU",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Continue to configure WAN interface, change Interface MTU to 1400 on 'Advanced' tab for exmaple, click 'OK'. 4. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  5. Go to VPN > Settings page, disable/enable tunnel vpn policy, wait for tunnel vpn finished establishment.\n  6. Go to Network > Interface page, open Ni's configuration window to check MTU on both DUT1 and DUT2.",
+      "id" : "29",
+      "title" : "Numbered_tunnel_interface-->PMTU should works fine thru Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "50" : {
+      "steps" : "  see step 3",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' named 'Ni' on network->interface, bind it to TI policy added in step 1\n  3. on network->routings, add a static route, set its interface to 'Ni', check the 'Auto-Add access rule ', verify it is displayed and be enabled by default",
+      "id" : "50",
+      "title" : "add static route bound to Numbered_tunnel_interface should enable auto-add ACL checkbox by default",
+      "result" : ""
+   },
+   "39" : {
+      "steps" : "  see steps",
+      "initial" : "  1. Create a tunnel interface vpn policy named 'Ti1', bind it to X1 interface on both DUT\n  2. Create a second tunnel interface vpn policy named 'Ti2', bind it to X2 interface on both DUT\n  3. Create a 'VPN tunnel Interface' named 'Ni1' on Network->Interface page on both DUT, bind it to 'Ti1'\n  4. Create a 'VPN tunnel Interface' named 'Ni2' on Network->Interface page on both DUT, bind it to 'Ti2'\n  5. On DUT1, add a static route with src: DUT1_X0_Subnet (192.168.11.0/24), Dst: DUT2_X0_Subnet (192.168.12.0/24), bind it to 'Ni1', enable 'auto-add access rule'\n  6. On DUT2, add a static route with src: DUT2_X0_Subnet (192.168.12.0/24), Src: DUT1_X0_Subnet (192.168.11.0/24), bind it to 'Ni2', enable 'auto-add access rule'\n  7. On DUT2->Network->Interface, edit 'Ni1' interface, enable Asymmetric Route Support\n  8. On DUT1->Network->Interface, edit 'Ni2' interface, disable 'enable Asymmetric Route Support'\n  9. From Host1, ping Host2, verify that the ICMP traffic fails, check packet capture, you will find that ICMP reply packet is dropped by 'IP Spoof check fails'\n  10. On DUT1->Network->Interface, edit \u0091Ni2\u0092 interface, enable Asymmetric Route Support, and repeat step 9, verify that ICMP traffic succeed this time.",
+      "id" : "39",
+      "title" : "Numbered_tunnel_interface Enable Asymmetric Route Support",
+      "result" : ""
+   },
+   "64" : {
+      "steps" : "  see step 3",
+      "initial" : "  1. add a tunnel interface vpn policy\n  2. add a 'VPN tunnel interface' named 'Ni' on network->interface, bind it to the policy added in step 1\n  3. On Firewall Settings->BWM, enable Global BWM\n  4. On network->interface page, edit 'Ni', check 'advanced' tab. verify BWM option is not displayed on the configuration window.\n  5. Go back to Firewall->settings, enable Advanced BWM, check Ni interface configuration window, verify BWM option is not displayed.",
+      "id" : "64",
+      "title" : "Numbered_tunnel_interface can't support BWM",
+      "result" : ""
+   },
+   "12" : {
+      "steps" : "  Numbered_tunnel_interface is not included in Real-Time Monitor.",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. Go to Dashboard > Real-Time Monitor, check interfaces info in all the tables, such as click 'Legends' and \u0091All Interfaces Rate/Size\u0092.",
+      "id" : "12",
+      "title" : "Real-Time Monitor should not display Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "41" : {
+      "steps" : "  see steps",
+      "initial" : "  1. Add tunnel interface vpn policy named 'TI' on both DUT, make it up\n  2. on network->interface, add a 'VPN tunnel interface' named 'Ni', bind it to \"TI\" vpn policy\n  3. add static route between DUT1_X0_Subnet and DUT2_X0_Subnet on both DUT, enable 'auto-add access rule'\n  4. ping from host1 to host2, make sure traffic works fine\n  5. on DUT1->Network->interface page, edit 'Ni' interface, enable 'Enable Fragmented Packet Handling' and 'Ignore Don't Fragment (DF) bit'\n  6. from host1, run 'cmd.exe' and type 'ping 192.168.12.2 -l 1460 -f', make sure 'Ni' interface will ignore the DF tag and fragment the ICMP traffic , then put traffic into vpn tunnel, ICMP traffic still works fine.\n  7. on DUT1->Network->interface page, edit 'Ni' interface, disable 'Ignore Don't Fragment (DF) bit'\n  8. repeat step 6, 'Ni' interface cannot fragment ICMP traffic because DF is set, so ICMP traffic will fail",
+      "id" : "41",
+      "title" : "Numbered_tunnel_interface can Ignore Don't Fragment (DF) Bit",
+      "result" : ""
+   },
+   "58" : {
+      "steps" : "  see step3",
+      "initial" : "  1. add a TI vpn policy\n  2. add a 'VPN Tunnel Interface' named 'Ni' on network->interface, bind it to TI vpn policy added in step 1\n  3. go to network->dhcp Server, click on add static/dynamic button, on dhcp server configuration window, enable 'Interface Pre-Populate', check interface list, verify that 'Ni' is not in the interface list",
+      "id" : "58",
+      "title" : "DHCP server should not bound to Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "15" : {
+      "steps" : "  AppFlow Monitor can display Numbered_tunnel_interface traffic info",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. From Host1, try to ping Host2, make sure traffic succeeds.\n  7. Go to Dashboard > App Flow Reports page, check the IP tab.",
+      "id" : "15",
+      "title" : "AppFlow Reports should display Numbered_tunnel_interface IP session info",
+      "result" : ""
+   },
+   "52" : {
+      "steps" : "  see steps",
+      "initial" : "  1. add a tunnel interface vpn policy named 'TI' on both DUT\n  2. add a 'VPN Tunnel Interface' named 'Ni'. bind it to 'TI' on both DUT\n  3. make sure tunnel is up\n  4. On DUT1, add a static route with src: DUT1_X0_Subnet , Dst: 192.168.12.0/24 , Interface: 'Ni' , enable auto-add access rule\n  5. On DUT1, add a NAT policy as following: Original_SRC: Any, Translated_SRC: Original, Original_DST: 192.168.6.0/24, Translated_DST: 192.168.12.0/24, Original_Service: Any, Translated_Service: Original , enable \u0091 Create a reflexive policy\u0092\n  6. Add a LAN->VPN access rule from DUT1_X0_Subnet to 192.168.6.0/24 allow All\n  7. on DUT2, add matching static route and access rule\n  8. from host1, ping host2 with cmd 'ping 192.168.6.2', check packet capture, verify that ICMP traffic is NATed into 192.168.2.2, then enter vpn tunnel, verify that ping succeed.",
+      "id" : "52",
+      "title" : "Nat policy about Numbered_tunnel_interface should works fine",
+      "result" : ""
+   },
+   "81" : {
+      "steps" : "  Default route for the TI interface is deleted from the Route Policies table on the Network > Routing page. ",
+      "initial" : "  2. On the VPN > Settings page, add a VPN policy of Tunnel Interface type. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. Select the Tunnel Interface policy name in the VPN Policy drop-down list. Assign IP address and subnet mask. Click OK to save the configured interface. The TIn interface is shown on the Network > Interfaces page. 5. Make sure that default route for the TI interface is shown in the Route Policies table on the Network > Routing page. 6. On the Network > Interfaces page, click the \u0093Delete\u0094 icon for the TIn interface. Click OK in the \u0093Do you want to delete this interface?\u0094 message. 7. View the Network > Routing page. ",
+      "id" : "81",
+      "title" : "Deleting Tunnel Interface on the Network >Interfaces page - default route for the tunnel interface is deleted from the Route Policies table on the Network > Routing page",
+      "result" : ""
+   },
+   "60" : {
+      "steps" : "  see step 9",
+      "initial" : "  1. On DUT1 , add a TI vpn policy, enable 'Enable Windows Networking (NetBIOS) Broadcast' on advanced tab\n  2. On DUT1 -> Network -> Interface, add a 'VPN tunnel interface' named 'Ni' and bind it to TI vpn policy added step 1, assign IP address 1.1.1.2\n  3. On DUT1 -> Network ->Static routing, add a static route with src: DUT1_X0_Subnet, dst: DUT2_X0_Subnet, interface: Ni, enable 'auto-add access rule'\n  4. On DUT1 -> Network -> IP Helper, enable IP Helper, enable Netbios, then add a Netbios policy with src: DUT1_X0_Subnet dst: DUT2_X0_Subnet\n  5. On DUT2, add matching TI vpn policy, add 'VPN tunnel interface' named 'Ni', assign IP address: 1.1.1.1\n  6. On DUT2 ->Netowork->Routing, add static routing with SRC: DUT2_X0_Subnet, Dst: DUT1_X0_Subnet, Interface: Ni, enable 'auto-add access rule'\n  7. On DUT2->Netowork->Routing, add another static routing with SRC: DUT2_X0_Subnet, Dst: 1.1.1.2, Interface: Ni, enable 'auto-add access rule'\n  8. make sure TI tunnel is up\n  9. from host1 PC, click on windows start button and type '\\\\AAAAA' to trigger netbios query for \u0091AAAAA\u0092, do packet capture to verify that netbios forwarding correctly on DUT2 and only on DUT2.",
+      "id" : "60",
+      "title" : "IP helper thru Numbered_tunnel_interface should works fine",
+      "result" : ""
+   },
+   "56" : {
+      "steps" : "  see step3",
+      "initial" : "  1. add a TI vpn policy\n  2. add a 'VPN tunnel interface' named 'Ni' on network->interface, bind it to TI vpn policy added in step 1\n  3. on network->neighbour discovery, check NDP cache, verify that 'Ni' is not in the table",
+      "id" : "56",
+      "title" : "Numbered_tunnel_interface should not in NDP cache table",
+      "result" : ""
+   },
+   "45" : {
+      "steps" : "  verify that Numbered_tunnel_interface should not be included in L2B/wiremode/portshield peer interface list",
+      "initial" : "  1. add IPv4 TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. edit an unassigned interface, assign it to LAN zone, check the interface list of L2B/wiremode/portshield mode, verify that nummbered interface is not included.",
+      "id" : "45",
+      "title" : "Numbered_tunnel_interface should not be included in L2B/wiremode/portshield peer interface list",
+      "result" : ""
+   },
+   "66" : {
+      "steps" : "  verify that 'Ni' and static route configuration is still correct, and can work fine.",
+      "initial" : "  1. add a tunnel interface vpn policy named 'TI'\n  2. add a 'VPN tunnel interface' named 'Ni', bind it to 'TI'\n  3. add a static route and bind it to 'Ni'\n  4. edit 'TI' vpn policy, make some change, and check 'Ni' and related static route",
+      "id" : "66",
+      "title" : "Verify that editing tunnel policy after it is bound to Numbered_tunnel_interface does not cause issue",
+      "result" : ""
+   },
+   "73" : {
+      "steps" : "  The VPN Policy drop-down list shows test2 and doesn\u0092t show test1, which is already used in existing TI interface. ",
+      "initial" : "  2. On the VPN > Settings page, add two VPN policies of Tunnel Interface type with names test1 and test2. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. View the VPN Policy drop-down list. test1 and test2 are shown in the list. Select test1 in the VPN Policy drop-down list. Assign IP address and subnet mask. Click OK to save the configured interface. The TIn interface is shown on the Network > Interfaces page. 5. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list to add a new interface. The Add Tunnel Interface dialog box will be opened. 6. View the options in the VPN Policy drop-down list. ",
+      "id" : "73",
+      "title" : "Same tunnel interface VPN policy cannot be used for another tunnel interface.",
+      "result" : ""
+   },
+   "19" : {
+      "steps" : "  Packets only pass through Numbered_tunnel_interface can be displayed in Packet Monitor.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. From Host1, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X\n  7. Go to System > Packet Monitor page, open packet monitor configuration window, switch to Display Filter, try to input Ni interface as filter, then click OK. Check captured packets in packet monitor.",
+      "id" : "19",
+      "title" : "Numbered_tunnel_interface should config as display filter on packet capture",
+      "result" : ""
+   },
+   "76" : {
+      "steps" : "  Default route for the TI interface is auto-added in the Route Policies table on the Network > Routing page. ",
+      "initial" : "  2. On the VPN > Settings page, add a VPN policy of Tunnel Interface type. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. Select the Tunnel Interface policy name in the VPN Policy drop-down list. Assign IP address and subnet mask. Click OK to save the configured interface. The TIn interface is shown on the Network > Interfaces page. 5. Go to the Network > Routing page and view the Route Policies table. ",
+      "id" : "76",
+      "title" : "Adding Tunnel Interface on the Network >Interfaces page - default route for the tunnel interface is added in the Route Policies table on the Network > Routing page.",
+      "result" : ""
+   },
+   "86" : {
+      "steps" : "  TI will become 'Interface Down' ",
+      "initial" : "  1.Disable the vpn policy or change vpn settings to make it inactive\n  2.Check the status of TI which bound to the policy",
+      "id" : "86",
+      "title" : "TI will become 'Interface Down' when vpn policy is disabled or inactive",
+      "result" : ""
+   },
+   "09" : {
+      "steps" : "  For step7: HTTPS work fine on Numbered tunnel interface",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, check HTTPS management, then click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0 Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. On DUT2, go to Firewall > Access Rules page, add an access rule for LAN > VPN with \u0091src: X0 Subnet dst: Ni Subnet Sevice: HTTPS\u0092.\n  7. From Host2, try to visit Ni interface IP address (https://1.1.1.2) of DUT1 using browser.",
+      "id" : "09",
+      "title" : "HTTPS works fine on Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "62" : {
+      "steps" : "  verify network monitor bound to numbered interface can work fine.",
+      "initial" : "  1. add a tunnel interface vpn policy\n  2. go to network->interface, add a 'VPN tunnel interface' named 'Ni', bind it to numbered TI\n  3. go to network-> network monitor, add a 'Ping(ICMP) - Explicit Route' or 'TCP - Explicit Route', set outbound Interface to 'Ni', properly configure Probe target",
+      "id" : "62",
+      "title" : "network monitor bound to Numbered_tunnel_interface should works fine",
+      "result" : ""
+   },
+   "54" : {
+      "steps" : "  see step3",
+      "initial" : "  1. add a TI vpn policy\n  2. add a 'VPN tunnel interface' named 'Ni' on network->interface, bind it to TI vpn policy added in step 1\n  3. on network->arp, check arp cache list, verify that Numbered_tunnel_interface is not in arp cache list",
+      "id" : "54",
+      "title" : "Numbered_tunnel_interface should not in arp cache list",
+      "result" : ""
+   },
+   "67" : {
+      "steps" : "  verfiy https/http/snmp/ssh on numbered interface work fine.",
+      "initial" : "  1. add tunnel interface vpn policy named 'TI' between DUT1 and DUT2\n  2. add 'VPN Tunnel Interface' named 'Ni', bind it to 'TI', assign Ni IP with '1.1.1.1' on DUT1 and '1.1.1.2' on DUT2, enable HTTPS/HTTP/SNMP/SSH mgmt and HTTP/HTTPS user logon\n  3. On DUT1, add static route from Any to DUT2_Ni_IP (1.1.1.2), bind it to 'Ni', enable 'Auto-add access rule'\n  4. On DUT2, add static route from Andy to DUT1_Ni_IP (1.1.1.1), bind it to 'Ni', enable 'Auto-add access rule'\n  5. from host2, try https/http/snmp/ssh mgmt on DUT1 via DUT1_Ni_IP, verfiy https/http/snmp/ssh work fine.",
+      "id" : "67",
+      "title" : "poliy management remove from policy to Numbered_tunnel_interface /HTTP/HTTPS/SNMP/SSH",
+      "result" : ""
+   },
+   "05" : {
+      "steps" : "  Numbered tunnel interface can be deleted.",
+      "initial" : "  1. Go to page VPN->Settings, add a Tunnel interface 'test' with IPsec gateway,shared secret,IKE proposal, IPsec proposal etc.\n  2. Go to Network->Interfaces, add a VPN tunnel interface with name, choose VPN policy 'test', input name, IP address, subnet mask etc.then click button 'OK' to save it.\n  3. Go to Network->Interfaces, try to delete the newly added VPN tunnel interface.",
+      "id" : "05",
+      "title" : "Delete Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "70" : {
+      "steps" : "  see steps",
+      "initial" : "  1. Stateful HA is enabled and working fine\n  2. Add tunnel interface vpn policy\n  3. add numbered interface, bind it to tunnel interface vpn policy added in step 1\n  4. add static route, bind it to numbered interface, enable 'auto-add access rule'\n  5. make continuous ICMP traffic match the static route so that it will pass through numbered interface and enter vpn tunnel\n  6. verify that vpn tunnel is properly synced to backup DUT\n  7. Do HA failover and HA failback, verify that vpn traffic still works fine.",
+      "id" : "70",
+      "title" : "Numbered_tunnel_interface works fine in HA environment",
+      "result" : ""
+   },
+   "68" : {
+      "steps" : "  see steps",
+      "initial" : "  1. add a tunnel interface vpn policy named 'Ti'\n  2. add a 'VPN Tunnel interface' named 'Ni' on network->interface named 'Ni'\n  3. On network->interface, switch to IPv6 view, verify 'Ni' is not listed on IPv6 view\n  4. Go to network->Static route, add a IPv6 static route and try to bind it to 'Ni', verify 'Error: IPv6 PBR Object ID: IP version mismatch.' will prompt",
+      "id" : "68",
+      "title" : "Numbered TI does not support IPv6",
+      "result" : ""
+   },
+   "04" : {
+      "steps" : "  For step 9: Ping succeeded. Check BGP Status on Network->Routing page, connection status is established and there is a route policy with metric 200 auto-learnt.",
+      "initial" : "  1. Create Tunnel interface VPN policy between DUT1 and DUT2, make sure tunnel is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 2.2.2.3, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 2.2.2.5, click \u0091OK\u0092.\n  4. Enable BGP on Network Routing page on DUT1 and DUT2\n  5. On DUT1 and DUT2, go to Firewall > Access Rules page, add access rules for LAN > VPN and VPN > LAN between Local X0 subnet and remote X0 subnet.\n  6. Enter DUT1's CLI, configure BGP as following: config(C0EAE42CB236)# routing (config-routing)# bgp ZebOS version 7.7.0 IPIRouter 7/2009 ARS BGP>configure t ARS BGP(config)>router bgp 2 ARS BGP(config-router)>network 192.168.11.0/24 ARS BGP(config-router)>neighbor 2.2.2.5 remote-as 2 ARS BGP(config-router)>neighbor 2.2.2.5 update-source 2.2.2.3 ARS BGP(config-router)>end ARS BGP>exit (config-routing)# end config(C0EAE42CB236)# end Uncommitted changes found. Commit them now before exiting(yes/no/cancel)? [cancel]: yes \u00a0% Applying changes... \u00a0% Status returned processing command: end \u00a0% No changes made.\n  7. Enter DUT2's CLI and configure matching BGP settings\n  8. Ping between Host1 and Host2, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X/192.168.11.X.",
+      "id" : "04",
+      "title" : "Numbered_tunnel_interface works fine on BGP",
+      "result" : ""
+   },
+   "17" : {
+      "steps" : "  Connection monitor fileter can work fine when select Numbered_tunnel_interface as filtered",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. From Host1, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X\n  7. Go to Dashboard > Connection Monitor page, click 'Filters' icon, select 'Ni' as Dst Interface in the pop up window, for example. Click Apply.",
+      "id" : "17",
+      "title" : "connection monitor fileter should works fine when select Numbered_tunnel_interface as filtered",
+      "result" : ""
+   },
+   "2" : {
+      "steps" : "  For step 8: Ping succeeded. Check on Network > Routing page of DUT1, find a route with 'src: any Dst: 192.168.2.0 Interface: Ni' has been added automatically.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, go to Network > Routing page, select \u0091Advanced Routing\u0092, then click the \u0091configure RIP\u0092 icon of interface \u0091Ni\u0092, RIP: Send and Receive, Receive: RIPv2, Send: RIPv2, and enable all the checkboxes of global RIP configuration.\n  5. On DUT1, go to Firewall > Access Rules page, add access rules for LAN > VPN and VPN > LAN between Local X0 subnet and remote X0 subnet.\n  6. Repeat Step 4 and 5 on DUT2.\n  7. Make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  8. Ping between Host1 and Host2, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X/192.168.11.X.\n  9. Repeat above steps using RIPv1.",
+      "id" : "02",
+      "title" : "Numbered_tunnel_interface works fine on RIP",
+      "result" : ""
+   },
+   "1" : {
+      "steps" : "  VPN tunnel interface can be added.",
+      "initial" : "  1. Go to page VPN->Settings, add a Tunnel interface 'test' with IPsec gateway,shared secret,IKE proposal, IPsec proposal etc.\n  2. Go to Network->Interfaces, add a VPN tunnel interface with name, choose VPN policy 'test', input name, IP address, subnet mask etc.\n  then click button 'OK' to save it.",
+      "id" : "01",
+      "title" : "Add a Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "88" : {
+      "steps" : "  Maximum 64 numbered tunnel interfaces can be added",
+      "initial" : "  Maximum 64 numbered tunnel interfaces can be added",
+      "id" : "88",
+      "title" : "Maximum number of numbered tunnel interfaces",
+      "result" : ""
+   },
+   "30" : {
+      "steps" : "  Diagnotic tool--Traceroute works fine thru Numbered_tunnel_interface.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, check Ping management, then click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. On DUT1, go to System > Diagnostics page, select TraceRoute in the Diagnostics Tool drop down list, fill the IP address of Host2, click 'Go'.",
+      "id" : "30",
+      "title" : "diagnotic tool--Traceroute should work fine thru Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "06" : {
+      "steps" : "  Verify that the ICMP traffic works fine, it is encrypted and pass through vpn tunnel",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2\n  2. Logon DUT1, go to network->interface, add 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2\n  3. Logon DUT2, go to network->interface, add 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. Make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  7. From Host1, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X",
+      "id" : "06",
+      "title" : "Add route entry bound to Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "25" : {
+      "steps" : "  Numbered_tunnel_interface configuration should completed in prefs file",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. Export prefs file, then change the newly added vpn policy, such as delete/edit it.\n  4. Import prefs file to check if original tunnel vpn policy still exists",
+      "id" : "25",
+      "title" : "Numbered_tunnel_interface configuration should completed in prefs file",
+      "result" : ""
+   },
+   "28" : {
+      "steps" : "  Diagnotic tool--ping can work when ping NI peer IP address",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, check Ping management, then click \u0091OK\u0092.\n  4. On DUT1, go to System > Diagnostics page, select Ping in the Diagnostic Tool drop down list, try to ping NI peer IP address, such as 1.1.1.1",
+      "id" : "28",
+      "title" : "diagnotic tool--ping should works fine when ping NI peer IP address",
+      "result" : ""
+   },
+   "83" : {
+      "steps" : "  The Tunnel Interface should not be deleted in the Network > Interfaces page. The error message \u0093Interface is in use by RIP (Advanced Routing)\u0094 should be displayed. (This test case should be run with OSPF and BGP as well). ",
+      "initial" : "  2. On the VPN > Settings page, add a VPN policy of Tunnel Interface type. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. Select the Tunnel Interface policy name in the VPN Policy drop-down list. Set IP address to 172.10.10.1 and subnet mask to 255.255.255.0. Click OK to save the configured interface. 5. Go to the Network > Routing page and select Advanced Routing mode. Enable RIP on TIn (VPN). In the RIP Configuration window, select \u0093Send and Receive\u0094 in the RIP drop-down list. Enable \u0093Redistribute Connected Networks\u0094 check box. Click OK in the RIP Configuration window. 6. On the remote firewall, add matching VPN policy of Tunnel Interface type. On the Network > Interfaces page, add Tunnel Interface. Set IP address to 172.10.10.2 and subnet mask to 255.255.255.0. Select Advanced Routing on the Network > Routing page, and enable RIP. In the RIP Configuration window, select \u0093Send and Receive\u0094 in the RIP drop-down list. Enable \u0093Redistribute Connected Networks\u0094 check box. Save the configuration. 7. Make sure that Route Policies table on DUT and remote firewall show routes for advertised network prefixes. 8. Add LAN>VPN and VPN>LAN access rules on both firewalls for connection between 192.168.168.0/24 and 8.8.8.0/24 networks. Send ping from a PC on X0 of the DUT to a PC on X0 of the remote firewall. Make sure that traffic flows between X0 subnets of the DUT and remote firewall. 9. On the Network > Interfaces page of the DUT, attempt to delete the entry of the tunnel interface TI that was created in step 4. ",
+      "id" : "83",
+      "title" : "Tunnel Interface on the Network >Interfaces page cannot be deleted if routing protocols on tunnel interface are enabled",
+      "result" : ""
+   },
+   "75" : {
+      "steps" : "  The TI (VPN) interface is shown on the Network > Routing page along with physical interfaces",
+      "initial" : "  2. On the VPN > Settings page, add a VPN policy of Tunnel Interface type. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. Select the Tunnel Interface policy name in the VPN Policy drop-down list. Assign IP address and subnet mask. Click OK to save the configured interface. The TIn interface is shown on the Network > Interfaces page. 5. Go to the Network > Routing page and select Advanced Routing mode. View the list of interfaces in the Routing Protocols table.",
+      "id" : "75",
+      "title" : "Adding Tunnel Interface on the Network >Interfaces page - tunnel interface is added in the list of interfaces on the Network > Routing page in Advanced Routing mode",
+      "result" : ""
+   },
+   "40" : {
+      "steps" : "  see steps",
+      "initial" : "  1. Add tunnel interface vpn policy named 'TI' on both DUT, make it up\n  2. on network->interface, add a 'VPN tunnel interface' named 'Ni', bind it to \"TI\" vpn policy\n  3. add static route between DUT1_X0_Subnet and DUT2_X0_Subnet on both DUT, enable 'auto-add access rule'\n  4. ping from host1 to host2, make sure traffic works fine\n  5. on DUT1->Network->interface page, edit 'Ni' interface, enable 'Enable Fragmented Packet Handling'\n  6. from host1, run 'cmd.exe' and type 'ping 192.168.12.2 -l 1460', make sure ICMP traffic will be fragemented by 'Ni' interface then put into vpn tunnel, ICMP traffic still works fine.\n  7. on DUT1->Network->interface page, edit 'Ni' interface, disable 'Enable Fragmented Packet Handling'\n  8. repeat step 6, this time 'Ni' interface can handle the ICMP traffic, and this ICMP traffic can be able to pass through VPN tunnel since it exceed 'Ni' MTU 1446.",
+      "id" : "40",
+      "title" : "Numbered_tunnel_interface Enable Fragmented Packet Handling",
+      "result" : ""
+   },
+   "14" : {
+      "steps" : "  AppFlow Monitor can display Numbered_tunnel_interface traffic info",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. From Host1, try to ping Host2, make sure traffic succeeds.\n  7. Go to Dashboard > AppFlow Monitor, check VPN tab (Make sure AppFlow is enabled).",
+      "id" : "14",
+      "title" : "AppFlow Monitor should display Numbered_tunnel_interface traffic info",
+      "result" : ""
+   },
+   "07" : {
+      "steps" : "  Numbered tunnel interface can be edit.",
+      "initial" : "  1. Go to page VPN->Settings, add a Tunnel interface 'test' with IPsec gateway,shared secret,IKE proposal, IPsec proposal etc.\n  2. Go to Network->Interfaces, add a VPN tunnel interface named 'Ni', choose VPN policy 'test', input name, IP address, subnet mask etc.then click button 'OK' to save it.\n  3. Open the configuration window of 'Ni', try to edit it, such as change IP address, management, or User login selections. Then click 'OK'.\n  4. Reopen the the configuration window of 'Ni', make sure changes take effect.",
+      "id" : "07",
+      "title" : "Edit Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "69" : {
+      "steps" : "  see step",
+      "initial" : "  1. add a tunnel interface vpn policy\n  2. add a 'VPN tunnel interface' named 'Ni' on network->interface, bind it to the policy added in step 1\n  3. go to High Availability -> Settings, check interface list for Active/Stand By and AA Clustering, verify \u0091Ni\u0092 is not listed in HA interface listbox.",
+      "id" : "69",
+      "title" : "Numbered TI could NOT be configured as HA interface",
+      "result" : ""
+   },
+   "59" : {
+      "steps" : "  verify that the ip helper policy bound to numbed TI can be add successfully.",
+      "initial" : "  1. On DUT1 , add a TI vpn policy, enable 'Enable Windows Networking (NetBIOS) Broadcast' on advanced tab\n  2. On DUT1 -> Network -> Interface, add a 'VPN tunnel interface' named 'Ni' and bind it to TI vpn policy added step 1, assign IP address 1.1.1.2\n  3. On DUT1 -> Network ->Static routing, add a static route with src: DUT1_X0_Subnet, dst: DUT2_X0_Subnet, interface: Ni, enable 'auto-add access rule'\n  4. On DUT1 -> Network -> IP Helper, add a Netbios policy with src: DUT1_X0_Subnet dst: DUT2_X0_Subnet, verify policy could be added successfully\n  5. On DUT1 -> Network -> IP Helper, add a DHCP policy with src: X0_IP, Dst: Ni_IP, verify policy could be added successfully.",
+      "id" : "59",
+      "title" : "IP helper policy bound to Numbered_tunnel_interface should add successful",
+      "result" : ""
+   },
+   "49" : {
+      "steps" : "  Verify that the ICMP traffic works fine, it is encrypted and pass through vpn tunnel",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2\n  2. Logon DUT1, go to network->interface, add 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2\n  3. Logon DUT2, go to network->interface, add 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. Make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  7. From Host1, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X",
+      "id" : "49",
+      "title" : "add static route should works fine when bound Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "24" : {
+      "steps" : "  Numbered_tunnel_interface info is included in SNMP MIBS.",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. Go to System > SNMP page, check 'Enable SNMP' checkbox, click 'Accept'.\n  4. Go to Network > Interfaces page, configure WAN interface, check SNMP.\n  5. Use SNMP monitor such as Foglight, use SNMP Walk Tool, fill Device IP with WAN IP, enter OID = .1.3.6.1.2.1.31.1.1 or select mib-2.interfaces, then click 'Get'.",
+      "id" : "24",
+      "title" : "Numbered_tunnel_interface info should included in SNMP MIBS",
+      "result" : ""
+   },
+   "53" : {
+      "steps" : "  see step3",
+      "initial" : "  1. add a TI vpn policy\n  2. add a 'VPN tunnel interface' named 'Ni' on network->interface, bind it to TI vpn policy added in step 1\n  3. on network->arp, click 'Add' button, and check interface list, verify that 'Ni' is not in the listbox",
+      "id" : "53",
+      "title" : "Numbered_tunnel_interface should not included in add arp entry interface list",
+      "result" : ""
+   },
+   "79" : {
+      "steps" : "  The TI interface with VPN zone, 172.20.20.1 IP address and 255.255.255.240 subnet mask is shown on the Network > Interfaces page. ",
+      "initial" : "  2. On the VPN > Settings page, add a VPN policy of Tunnel Interface type. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. Select the Tunnel Interface policy name in the VPN Policy drop-down list. Set IP address to 172.10.10.1 and subnet mask to 255.255.255.0. Click OK to save the configured interface. The TIn interface with VPN zone, 172.10.10.1 IP address and 255.255.255.0 subnet mask is shown on the Network > Interfaces page. 5. Click the Edit icon in the TIn interface entry that was added in step 4. The Edit Interface TIn dialog box will be opened. 6. Change IP address to 172.20.20.1 and subnet mask to 255.255.255.240. Click OK to save changes. ",
+      "id" : "79",
+      "title" : "Updating Tunnel Interface on the Network >Interfaces page - only IP Address and Subnet Mask,comment,Management,User login fields can be changed.",
+      "result" : ""
+   },
+   "42" : {
+      "steps" : "  See step 4.",
+      "initial" : "  1. on vpn->settings, add a TI vpn policy\n  2. on network->interface, add a 'vpn tunnel interface' named 'Ni' and bind it to TI policy, click ok to apply configuration\n  3. make sure Ni interface is added on Network->Interface page\n  4. check Interface traffic statistic, verify that 'Ni' interface is not included.",
+      "id" : "42",
+      "title" : "Numbered_tunnel_interface should not include in Interface Traffic Statistic",
+      "result" : ""
+   },
+   "22" : {
+      "steps" : "  Logs containing Numbered_tunnel_interface can be filtered.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. From Host1, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X\n  7. Go to Log > Log Monitor page, click '+' besides filter view, then select 'Ni' in the Source/Destination Interface, then click Apply",
+      "id" : "22",
+      "title" : "Numbered_tunnel_interface should work fine on log view filter",
+      "result" : ""
+   },
+   "46" : {
+      "steps" : "  verify that nummbered interface is not included in WLB option.",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. check WLB group, verify that nummbered interface is not included in WLB option.",
+      "id" : "46",
+      "title" : "Numbered_tunnel_interface should not in WLB group",
+      "result" : ""
+   },
+   "13" : {
+      "steps" : "  AppFlow Dash can display Numbered_tunnel_interface Flow Statistics",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, check Ping management, then click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. From Host1, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X\n  7. Go to Dashboard > AppFlow Dash, to check if Numbered_tunnel_interface Flow Statistics are displayed.",
+      "id" : "13",
+      "title" : "AppFlow Dash should display Numbered_tunnel_interface Flow Statistics",
+      "result" : ""
+   },
+   "23" : {
+      "steps" : "  SNMP monitor can get Numbered_tunnel_interface info using SNMPV3. ",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1.\n  3. Go to Network > Interfaces page, open the configuration window of WAN interface, check SNMP.\n  4. Go to System > SNMP page, check 'Enable SNMP' checkbox, click 'Accept'.\n  5. Add a group 'g1', then an snmp user, select 'g1' as group, name should be the same as on Foglight credential\u0092s user name(If use Foglight as SNMP monitor).\n  6. Add an snmp access with root as Read View, 'g1' as group.\n  7. Then from SNMP server, add corresponding credential and device, the click GET to receive info using SNMP walk tool.",
+      "id" : "23",
+      "title" : "Numbered_tunnel_interface should support SNMPV3",
+      "result" : ""
+   },
+   "6" : {
+      "steps" : "  Verify that the ICMP traffic works fine, it is encrypted and pass through vpn tunnel",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2\n  2. Logon DUT1, go to network->interface, add 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2\n  3. Logon DUT2, go to network->interface, add 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. Make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  7. From Host1, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X",
+      "id" : "06",
+      "title" : "Add route entry bound to Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "85" : {
+      "steps" : "  The Tunnel Interface should not be deleted in the Network > Interfaces page. The error message \u0093Interface is in use by static route\u0094 should be displayed. ",
+      "initial" : "  2. On the VPN > Settings page, add a VPN policy of Tunnel Interface type. 3. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 4. Select the Tunnel Interface policy name in the VPN Policy drop-down list. Set IP address to 172.10.10.1 and subnet mask to 255.255.255.0. Click OK to save the configured interface. 5. Go to the Network > Routing page and click the Add button in the Route Policies table. The Add Route Policy dialog box will be opened. 6. Select X0 Subnet in the Source drop-down list. Select \u0093Create new address object\u0094 in the Destination drop-down list. The New Address Object dialog box will be opened. Set Name to remote_net, Zone to VPN, Type to Network, Network to 8.8.8.0, Netmask to 255.255.255.0. Click OK. The remote-net object is selected in the Destination drop-down list. Select Any service. Select TIn that was created in step 4 in the Interface drop-down list of the Add Route Policy dialog box. Click OK in the Add Route Policy dialog box. 7. On the Network > Interfaces page, attempt to delete the entry of the tunnel interface TIn that was created in step 4. ",
+      "id" : "85",
+      "title" : "Tunnel Interface on the Network >Interfaces page cannot be deleted if static route for numbered interface exists",
+      "result" : ""
+   },
+   "3" : {
+      "steps" : "  For step 8: Ping succeeded. Check DUT1 on Network > Routing page, find a route with 'src: any Dst: 192.168.2.0 Interface: Ni' has been added automatically.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, go to Network > Routing page, select \u0091Advanced Routing\u0092, then click the \u0091configure OSPF\u0092 icon of interface \u0091Ni\u0092, OSPFv2: Enabled, and enable all the checkboxes of global OSPFv2 configuration.\n  5. On DUT1, go to Firewall > Access Rules page, add access rules for LAN > VPN and VPN > LAN between Local X0 subnet and remote X0 subnet.\n  6. Repeat Step 4 and 5 on DUT2.\n  7. Make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  8. Ping between Host1 and Host2, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X/192.168.11.X.\n  9. Repeat above steps using RIPv3 if supports..",
+      "id" : "03",
+      "title" : "Numbered_tunnel_interface works fine on OSPF",
+      "result" : ""
+   },
+   "36" : {
+      "steps" : "  Verify that 'Error: Interface is in use by OSPF' is prompted.",
+      "initial" : "  1. On VPN->Settings, Add a TI policy\n  2. On Network->Interface, add a 'VPN Tunnel Interface', bind it to TI policy added in step 1, set 'Name' to 'Ni', and 'IP Address' to '1.1.1.1', click OK to apply configuration\n  3. On network->Routings, enable ospf on the newly added number interface 'Ni'\n  4. Go back to network->interface, edit 'Ni' interface, change IP address from '1.1.1.1' to '2.2.2.2'",
+      "id" : "36",
+      "title" : "UI display error when NI enable ospf and edit NI ip address is not same network compared old one",
+      "result" : ""
+   },
+   "51" : {
+      "steps" : "  Verify Nat policy bound to numbered interface can be added.",
+      "initial" : "  1. add a tunnel interface vpn policy named 'TI'\n  2. add a 'VPN Tunnel interface' named 'Ni' on network->interface page\n  3. add a nat policy, bind Inbound interface to 'Ni', apply configuration",
+      "id" : "51",
+      "title" : "add nat policy bonud to Numbered_tunnel_interface should works fine",
+      "result" : ""
+   },
+   "9" : {
+      "steps" : "  For step7: HTTPS work fine on Numbered tunnel interface",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, check HTTPS management, then click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0 Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. On DUT2, go to Firewall > Access Rules page, add an access rule for LAN > VPN with \u0091src: X0 Subnet dst: Ni Subnet Sevice: HTTPS\u0092.\n  7. From Host2, try to visit Ni interface IP address (https://1.1.1.2) of DUT1 using browser.",
+      "id" : "09",
+      "title" : "HTTPS works fine on Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "38" : {
+      "steps" : "  see steps",
+      "initial" : "  1. Create vpn tunnel policy between DUT1 and DUT2\n  2. Create 'VPN Tunnel Interface' on both DUT, bind it to the policy added in step 1, enable multicast support on advanced tab\n  3. Go to Firewall Settings->multicast, enable Multicast and Enable reception of all multicast addresses on both DUT\n  4. Enable multicast on X0 interface on both DUT.\n  5. make sure VPN tunnel is up and traffic between Host1 and Host2 work fine\n  6. On host1, start sending multicast traffic, on Host2, start receiving multicast traffic, verify that the multicast traffic can cross numbered interface\n  7. Edit Numbered interface added in step 2, disable 'Enable multicast support', and repeat step 5, verify that multicast traffic will fail to cross numbered interface.",
+      "id" : "38",
+      "title" : "Numbered_tunnel_interface enable multicast support",
+      "result" : ""
+   },
+   "8" : {
+      "steps" : "  For step 7: Ping succeeded.",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2, check Ping management, then click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, click \u0091OK\u0092.\n  4. On DUT1, add a static routing with 'src: X0_Subnet Dst: 192.168.12.0/24 Interface: Ni', enable 'Auto-add Access Rules'\n  5. On DUT2, add static routing with 'src: X0_Subnet Dst: 192.168.11.0/24 Interface: Ni', enable Auto-add Access Rule\n  6. On DUT2, go to Firewall > Access Rules page, add an access rule for LAN > VPN with \u0091src: X0_Subnet dst: Ni Subnet Sevice: Ping\u0092.\n  7. From Host2, try to ping Ni interface IP address (1.1.1.2) of DUT1. ",
+      "id" : "08",
+      "title" : "Ping works fine on Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "4" : {
+      "steps" : "  For step 9: Ping succeeded. Check BGP Status on Network->Routing page, connection status is established and there is a route policy with metric 200 auto-learnt.",
+      "initial" : "  1. Create Tunnel interface VPN policy between DUT1 and DUT2, make sure tunnel is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 2.2.2.3, click \u0091OK\u0092.\n  3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 2.2.2.5, click \u0091OK\u0092.\n  4. Enable BGP on Network Routing page on DUT1 and DUT2\n  5. On DUT1 and DUT2, go to Firewall > Access Rules page, add access rules for LAN > VPN and VPN > LAN between Local X0 subnet and remote X0 subnet.\n  6. Enter DUT1's CLI, configure BGP as following: config(C0EAE42CB236)# routing (config-routing)# bgp ZebOS version 7.7.0 IPIRouter 7/2009 ARS BGP>configure t ARS BGP(config)>router bgp 2 ARS BGP(config-router)>network 192.168.11.0/24 ARS BGP(config-router)>neighbor 2.2.2.5 remote-as 2 ARS BGP(config-router)>neighbor 2.2.2.5 update-source 2.2.2.3 ARS BGP(config-router)>end ARS BGP>exit (config-routing)# end config(C0EAE42CB236)# end Uncommitted changes found. Commit them now before exiting(yes/no/cancel)? [cancel]: yes \u00a0% Applying changes... \u00a0% Status returned processing command: end \u00a0% No changes made.\n  7. Enter DUT2's CLI and configure matching BGP settings\n  8. Ping between Host1 and Host2, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X/192.168.11.X.",
+      "id" : "04",
+      "title" : "Numbered_tunnel_interface works fine on BGP",
+      "result" : ""
+   },
+   "34" : {
+      "steps" : "  Numbered_tunnel_interface status can record VPN tunnel status",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2.\n  3. Check 'Ni'to make sure its status was 'Tunnel Up'.\n  4. Go to VPN > Settings page, disable the TI vpn policy.\n  5. Go to Network > Interfaces page, check NI to see if it would become 'Interface Down'.\n  6. Go back to VPN > Settings page, enable the TI vpn policy, make sure VPN status becomes green.\n  7. Then go to Network > Interfaces page, check NI to see if it would become 'Interface Up'.",
+      "id" : "34",
+      "title" : "Numbered_tunnel_interface status should according VPN tunnel status",
+      "result" : ""
+   },
+   "37" : {
+      "steps" : "  see step 9",
+      "initial" : "  1. Create TI VPN policy between DUT1 and DUT2\n  2. Logon DUT1, go to network->interface, add 'VPN Tunnel Interface' named \u0091Ni\u0092, bind it to TI policy and assign it ip address 1.1.1.2\n  3. Logon DUT2, go to network->interface, add 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 1.1.1.1, enable https/Ping MGMT on this interface\n  4. On DUT1, go to AppFlow->Flow Reporting,Enable AppFlow To Local Collector, then restart DUT as required\n  5. On DUT1, add a static routing with 'src: any Dst: 1.1.1.1 Interface: Ni', enable 'Auto-add Access Rules'\n  6. On DUT2, add static routing with 'src: any Dst: 1.1.1.2 Interface: Ni', enable Auto-add Access Rule\n  7. Make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  8. From Host1, make some traffic crossing TI tunnel, like continuously ping 1.1.1.1, or https://1.1.1.1\n  9. Check DUT1->Dashboard->AppFlow Monitor\uff0c verify that ICMP/HTTPS traffic crossing Ni interface displays there (Check results on Responders tab may be easier for testing this case.)",
+      "id" : "37",
+      "title" : "Numbered_tunnel_interface should support flow report",
+      "result" : ""
+   },
+   "43" : {
+      "steps" : "  verify that Numbered_tunnel_interface should not in virtual interface parent interface or source interface list.",
+      "initial" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network->interface, bind it to TI policy added in step 1\n  3. Checked parent interface on VLAN configuration window",
+      "id" : "43",
+      "title" : "Numbered_tunnel_interface should not in virtual interface parent interface or source interface list",
+      "result" : ""
+   },
+   "5" : {
+      "steps" : "  Numbered tunnel interface can be deleted.",
+      "initial" : "  1. Go to page VPN->Settings, add a Tunnel interface 'test' with IPsec gateway,shared secret,IKE proposal, IPsec proposal etc.\n  2. Go to Network->Interfaces, add a VPN tunnel interface with name, choose VPN policy 'test', input name, IP address, subnet mask etc.then click button 'OK' to save it.\n  3. Go to Network->Interfaces, try to delete the newly added VPN tunnel interface.",
+      "id" : "05",
+      "title" : "Delete Numbered_tunnel_interface",
+      "result" : ""
+   },
+   "82" : {
+      "steps" : "  Numbered tunnel interface can not be deleted.",
+      "initial" : "1. On the VPN > Settings page, add a VPN policy of Tunnel Interface type. 2. On the Network > Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The Add Tunnel Interface dialog box will be opened. 3. Select the Tunnel Interface policy name in the VPN Policy drop-down list. Set IP address to 172.10.10.1 and subnet mask to 255.255.255.0. Click OK to save the configured interface. 4. Go to the Network > Routing page and select Advanced Routing mode. Enable OSPF on TIn (VPN). In the OSPFv2 Configuration window, Configre OSPF Area:0, Dead Interval (1 - 65535):40, OSPFv2 Area Type:  Normal, Hello Interval (1 - 65535):10, Router Priority: (0 - 255): . Enable “Redistribute Connected Networks” check box. Click OK in the OSPFv2 Configuration window. 5. On the remote firewall, add matching VPN policy of Tunnel Interface type. On the Network > Interfaces page, add Tunnel Interface. Set IP address to 172.10.10.2 and subnet mask to 255.255.255.0. Select Advanced Routing on the Network > Routing page, Enable OSPF on TIn (VPN). In the OSPFv2 Configuration window, Configre OSPF Area:0, Dead Interval (1 - 65535):40, OSPFv2 Area Type:  Normal, Hello Interval (1 - 65535):10, Router Priority: (0 - 255): . Enable “Redistribute Connected Networks” check box. Click OK in the OSPFv2 Configuration window. Enable “Redistribute Connected Networks” check box. Save the configuration. 6. Make sure that Route Policies table on DUT and remote firewall show routes for advertised network prefixes. 7. Add LAN>VPN and VPN>LAN access rules on both firewalls for connection between 192.168.168.0/24 and 8.8.8.0/24 networks. Send ping from a PC on X0 of the DUT to a PC on X0 of the remote firewall. Make sure that traffic flows between X0 subnets of the DUT and remote firewall. 8. On the Network > Interfaces page of the DUT, attempt to delete the entry of the tunnel interface TI that was created in step 4. ",
+      "id" : "82",
+      "title" : "Tunnel Interface on the Network >Interfaces page cannot be deleted if routing protocols(OSPF) on tunnel interface are enabled",
+      "result" : "It returned: 'Status: Error: Index of the interface.: Interface is in use by OSPF'  ,Tunnel Interface on the Network >Interfaces page cannot be deleted if routing protocols(OSPF) on tunnel interface are enabled."
+   },
+   "84" : {
+      "steps" : "  Tunnel Interface on the Network >Interfaces page cannot be deleted if routing protocols(BGP) on tunnel interface are enabled..",
+      "initial" : " Create Tunnel interface VPN policy between DUT1 and DUT2, make sure tunnel is up 2. Logon DUT1, go to Network > Interfaces page,  add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 2.2.2.3, click ‘OK’. 3. Logon DUT2, go to Network > Interfaces page, add a 'VPN Tunnel Interface' named 'Ni', bind it to TI policy and assign it IP address 2.2.2.5, click ‘OK’. 4. Enable BGP on Network Routing page on DUT1 and DUT2 5. On DUT1 and DUT2, go to Firewall > Access Rules page, add access rules for LAN > VPN and VPN > LAN between Local X0 subnet and remote X0 subnet.6. Enter DUT1's CLI, configure BGP as following:config(C0EAE42CB236)# routing ,(config-routing)# bgp ,ZebOS version 7.7.0 IPIRouter 7/2009 ,ARS BGP>configure t,ARS BGP(config)>router bgp 2,ARS BGP(config-router)>network 192.168.11.0/24,ARS BGP(config-router)>neighbor 2.2.2.5 remote-as 2,ARS BGP(config-router)>neighbor 2.2.2.5 update-source 2.2.2.3,ARS BGP(config-router)>end,ARS BGP>exit,(config-routing)# end,config(C0EAE42CB236)# end,Uncommitted changes found. Commit them now,before exiting(yes/no/cancel)?,[cancel]: yes,% Applying changes...,% Status returned processing command:end ,% No changes made.7. Enter DUT2's CLI and configure matching BGP settings.8. Ping between Host1 and Host2, make some traffic crossing TI tunnel, like continuously ping 192.168.12.X/192.168.11.X.9. On the Network > Interfaces page of the DUT, attempt to delete the entry of the tunnel interface 'Ni' ",
+      "id" : "84",
+      "title" : "Tunnel Interface on the Network >Interfaces page cannot be deleted if routing protocols(BGP) on tunnel interface are enabled",
+      "result" : "It returned: Status: Index of the interface.:Tunnel Interface is in use by Route Policy "
+   },
+   "1513081" : {
+      "steps" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network &gt; Interfaces page, add a 'VPN Tunnel Interface' named \u00e2\u0080\u0098Ni\u00e2\u0080\u0099, bind it to TI policy and assign it ip address ",
+      "priority" : "Sanity",
+      "atm_id" : "631c10ba-5e05-417f-8a47-03d27ad50b01",
+      "initial" : "  Host1 --- (X0: LAN) DUT1 (X1)---(X1) DUT2 (X0: LAN)---Host2\n  DUT1_X0_Subnet:192.168.11.0/24\n  DUT2_X0_Subnet: 192.168.12.0/24",
+      "id" : "1513081",
+      "title" : "AppFlow Dash should display Numbered_tunnel_interface Flow Statistics",
+      "description" : "Original ID: 13\nOriginal Title: AppFlow Dash should display Numbered_tunnel_interface Flow Statistics\nOriginal Description: This test is designed to verify thatAppFlow Dash should display Numbered_tunnel_interface Flow Statistics",
+      "result" : "  AppFlow Dash can display Numbered_tunnel_interface Flow Statistics"
+   },
+   "1513082" : {
+      "steps" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network &gt; Interfaces page, add a 'VPN Tunnel Interface' named \u00e2\u0080\u0098Ni\u00e2\u0080\u0099, bind it to TI policy and assign it ip address ",
+      "priority" : "Sanity",
+      "atm_id" : "d196fca2-0c5e-48d1-be27-7d80536c2989",
+      "initial" : "  Host1 --- (X0: LAN) DUT1 (X1)---(X1) DUT2 (X0: LAN)---Host2\n  DUT1_X0_Subnet:192.168.11.0/24\n  DUT2_X0_Subnet: 192.168.12.0/24",
+      "id" : "1513082",
+      "title" : "AppFlow Monitor should display Numbered_tunnel_interface traffic info",
+      "description" : "Original ID: 14\nOriginal Title: AppFlow Monitor should display Numbered_tunnel_interface traffic info\nOriginal Description: <span>This case is designed to verify thatAppFlow Monitor should display Numbered_tunnel_interface traffic info</span>",
+      "result" : "  AppFlow Monitor can display Numbered_tunnel_interface traffic info"
+   },
+   "1513083" : {
+      "steps" : "  1. Create TI VPN policy between DUT1 and DUT2, make sure Tunnel interface VPN policy between DUT1 and DUT2 is up\n  2. Logon DUT1, go to Network &gt; Interfaces page, add a 'VPN Tunnel Interface' named \u00e2\u0080\u0098Ni\u00e2\u0080\u0099, bind it to TI policy and assign it ip address ",
+      "priority" : "Sanity",
+      "atm_id" : "44e02b50-a7e0-4221-98fc-48828e551cdb",
+      "initial" : "  Host1 --- (X0: LAN) DUT1 (X1)---(X1) DUT2 (X0: LAN)---Host2\n  DUT1_X0_Subnet:192.168.11.0/24\n  DUT2_X0_Subnet: 192.168.12.0/24",
+      "id" : "1513083",
+      "title" : "AppFlow Reports should display Numbered_tunnel_interface IP session info",
+      "description" : "Original ID: 15\nOriginal Title: AppFlow Reports should display Numbered_tunnel_interface IP session info\nOriginal Description: <span>This case is designed to verify thatAppFlow Monitor should display Numbered_tunnel_interface traffic info</span>",
+      "result" : "  AppFlow Monitor can display Numbered_tunnel_interface traffic info"
+   },
+   "1513091" : {
+      "steps" : "  1. add TI vpn policy\n  2. add 'VPN Tunnel Interface' on network-&gt;interface, bind it to TI policy added in step 1\n  3. Export prefs file, then change the newly added vpn policy, such as delete/edit it.\n  4. Import prefs file to check if original tunnel vpn po",
+      "priority" : "Full_Regression",
+      "atm_id" : "f20e8252-4992-4ce3-b473-56ea595745b2",
+      "initial" : "  N/A",
+      "id" : "1513091",
+      "title" : "Numbered_tunnel_interface configuration should completed in prefs file",
+      "description" : "Original ID: 25\nOriginal Title: Numbered_tunnel_interface configuration should completed in prefs file\nOriginal Description: This test is to verity that Numbered_tunnel_interface configuration should completed in prefs file",
+      "result" : "  Numbered_tunnel_interface configuration should completed in prefs file"
+   },
+   "1513093" : {
+      "steps" : "  1. Create TI VPN policy between DUT1 and DUT2\n  2. Logon DUT1, go to network-&gt;interface, add 'VPN Tunnel Interface' named \u00e2\u0080\u0098Ni\u00e2\u0080\u0099, bind it to TI policy and assign it ip address 1.1.1.2\n  3. Logon DUT2, go to network-&gt;interface, add 'VPN Tunnel Interfac",
+      "priority" : "Smoke",
+      "atm_id" : "32c4a2c8-9493-4130-9138-8999503959ba",
+      "initial" : "  Host1 -- (X0: LAN) DUT1 (X1)---(X1) DUT2 (X0: LAN)",
+      "id" : "1513093",
+      "title" : "Numbered_tunnel_interface should support flow report",
+      "description" : "Original ID: 37\nOriginal Title: Numbered_tunnel_interface should support flow report\nOriginal Description: This case is designed to verify that numered interface support App flow report.",
+      "result" : "  see step 9"
+   },
+   "1513095" : {
+      "steps" : "  1. Create a tunnel interface vpn policy named 'Ti1', bind it to X1 interface on both DUT\n  2. Create a second tunnel interface vpn policy named 'Ti2', bind it to X2 interface on both DUT\n  3. Create a 'VPN tunnel Interface' named 'Ni1' on Network-&gt;Interfac",
+      "priority" : "Full_Regression",
+      "atm_id" : "b3a5e14c-d989-4e51-bdc8-a19e03c952e4",
+      "initial" : "  Host1 ---(X0) DUT1 (X1) ----(X1) DUT2 (X0)----Host2 |(X2) -----------(X2)|\n  X1,X2 is WAN interface\n  DUT1_X0: 192.168.11.0/24\n  DUT2_X0: 192.168.12.0/24",
+      "id" : "1513095",
+      "title" : "Numbered_tunnel_interface Enable Asymmetric Route Support",
+      "description" : "Original ID: 39\nOriginal Title: Numbered_tunnel_interface Enable Asymmetric Route Support\nOriginal Description: Asymmetric routing is when the flow of packets in one direction passes through a different interface than that used for the return path. This c",
+      "result" : "  see steps"
+   },
+   "1513112" : {
+      "steps" : "  1. add tunnel interface vpn policy named 'TI' between DUT1 and DUT2\n  2. add 'VPN Tunnel Interface' named 'Ni', bind it to 'TI', assign Ni IP with '1.1.1.1' on DUT1 and '1.1.1.2' on DUT2, enable HTTPS/HTTP/SNMP/SSH mgmt and HTTP/HTTPS user logon\n  3. On DUT1,",
+      "priority" : "Full_Regression",
+      "atm_id" : "fd2548fc-50f0-4510-80d8-cbb2af924b98",
+      "initial" : "  Host1---(X0)DUT1(X1)----(X2)DUT2(X0) --- host2\n  DUT1_Ni_IP: 1.1.1.1\n  DIT2_Ni_IP: 1.1.1.2\n  DUT1_X0: 192.168.1.0/24\n  DUT2_X0: 192.168.2.0/24",
+      "id" : "1513112",
+      "title" : "poliy management remove from policy to Numbered_tunnel_interface  /HTTP/HTTPS/SNMP/SSH",
+      "description" : "Original ID: 67\nOriginal Title: poliy management remove from policy to Numbered_tunnel_interface  /HTTP/HTTPS/SNMP/SSH\nOriginal Description: This case is designed to test HTTPS/HTTP/SNMP/SSH MGMT on numbered interface",
+      "result" : "  <span style=\"color: #000000; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: start; text-indent: 0px; text-transform"
+   },
+   "1513113" : {
+      "steps" : "  1. add a tunnel interface vpn policy named 'Ti'\n  2. add a 'VPN Tunnel interface' named 'Ni' on network-&gt;interface named 'Ni'\n  3. On network-&gt;interface, switch to IPv6 view, verify 'Ni' is not listed on IPv6 view\n  4. Go to network-&gt;Static route, add ",
+      "priority" : "Full_Regression",
+      "atm_id" : "1dc77bc9-04fc-40e9-a4b7-4be3241df981",
+      "initial" : "  n/a",
+      "id" : "1513113",
+      "title" : "Numbered TI does not support IPv6",
+      "description" : "Original ID: 68\nOriginal Title: Numbered TI does not support IPv6 \nOriginal Description: This case is designed to verify that numbered TI does not support IPv6.",
+      "result" : "  see steps"
+   },
+   "1513116" : {
+      "steps" : "  1. Stateful HA is enabled and working fine\n  2. Add tunnel interface vpn policy\n  3. add numbered interface, bind it to tunnel interface vpn policy added in step 1\n  4. add static route, bind it to numbered interface, enable 'auto-add access rule'\n  5. make conti",
+      "priority" : "Smoke",
+      "atm_id" : "3a36c96e-cc0b-495f-809b-ae0e76647a06",
+      "initial" : "  HA environment is set up and stateful HA is enabled",
+      "id" : "1513116",
+      "title" : "Numbered_tunnel_interface works fine in HA environment",
+      "description" : "Original ID: 70\nOriginal Title: Numbered_tunnel_interface works fine in HA environment\nOriginal Description: This case is designed to verify Numbered interface works fine is ha",
+      "result" : "  see steps"
+   },
+   "1513127" : {
+      "steps" : "  1.<a name=\"57\"></a>Disable the vpn policy on vpn page or make this policy inactive\n  2.View the Route Policies table on the Network &gt; Routing page",
+      "priority" : "Sanity",
+      "atm_id" : "df2ae948-e261-483e-9c3a-a387d03e2f76",
+      "initial" : "  TBD",
+      "id" : "1513127",
+      "title" : "routes policy for numbered tunnel interface will grey if TI is down",
+      "description" : "Original ID: 87\nOriginal Title: routes policy for numbered tunnel interface will grey if TI is down\nOriginal Description:",
+      "result" : "  1.The TI which bound with policy became down\n  2.The route policies for this TI became grey"
+   },
+   "1945878" : {
+      "steps" : "  1.Add a TI vpn policy 'test1' and add a tunnel interface 't1' bound to it; 2.Disable the TI vpn policy 'test1'; 3.Restart FW; 4.After it's up, delete the vpn tunnel interface 't1', then delete the TI vpn policy 'test1'. ",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1945878",
+      "title" : "Tunnel VPN policy can be deleted after disable and FW restarted(GEN7-42956)",
+      "description" : "TBD",
+      "result" : "   TI vpn policy 'test1' can be deleted."
+   },
+   "1527667" : {
+      "steps" : "  1. Load 5.9.0.0 firmware on the DUT. 2. On the VPN &gt; Settings page, add two VPN policies of Tunnel Interface type with names test1 and test2. 3. On the Network &gt; Interfaces page, select Tunnel Interface from the Add Interface drop-down list. The A",
+      "priority" : "Full_Regression",
+      "atm_id" : "de11f244-39fd-4c9f-98c6-93d02193a8dd",
+      "initial" : "  TBD",
+      "id" : "1527667",
+      "title" : "Same tunnel interface VPN policy cannot be used for another tunnel interface.",
+      "description" : "Original ID: 10\nOriginal Title: Same tunnel interface VPN policy cannot be used for another tunnel interface.\nOriginal Description: This test verifies that a VPN policy name is not shown in the VPN Policy drop-down list of the Add Tunnel Interface dialog ",
+      "result" : "  The VPN Policy drop-down list shows test2 and doesn\u00e2\u0080\u0099t show test1, which is already used in existing TI interface."
+   }
+}

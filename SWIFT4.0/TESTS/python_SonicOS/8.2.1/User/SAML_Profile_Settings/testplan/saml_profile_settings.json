@@ -1,0 +1,443 @@
+{
+  "3258958": {
+    "steps": "1 Download the certificate from IdP and import it to the FW.\n2 Goto the 'SAML Identification Provider', click 'Configure'\n3 Click 'Add', fill the proper Name\n4 Fill the 'SAML IDP Server ID' with 'AD Identifier' from IdP\n5 Fill the 'Authentication Service URL' with 'Login URL' from IdP\n6 Fill the 'Logout service URL' with 'Logout URL' from IdP\n7 Fill the proper 'User Name Attribute' and 'Group Name Attribute'\n8 Select the certificate just imported, save the configuration",
+    "initial": "User is created on the IdP",
+    "id": "3258958",
+    "title": "Verify the IdP profile could be created manually ",
+    "result": "The IdP profile should be created successfully"
+  },
+  "3258959": {
+    "steps": "1 Download the XML Metadata from Microsoft Entra IdP\n2 Import this XML file via 'Import from File'\n3Â Fill the proper 'User Name Attribute' and 'Group Name Attribute' which from IdP\n4 Save the configuration",
+    "initial": "User is created on the IdP",
+    "id": "3258959",
+    "title": "Verify the IdP profile could be created via importing the Metadata ",
+    "result": "The IdP profile should be created successfully"
+  },
+  "3258960": {
+    "steps": "1 Download the XML Metadata from Microsoft Entra IdP\n2 To modifyÂ SingleSignOnServiceÂ tag to an invalid value in the xml file\n3 Import this XML file via 'Import from File'\n4 Fill the proper 'User Name Attribute' and 'Group Name Attribute' which from IdP\n5 Then tried to Save the configuration",
+    "initial": "User is created on the IdP",
+    "id": "3258960",
+    "title": "Verify the IdP profile via importing the Metadata with invalidÂ Authentication Service URL",
+    "result": "Proper error reported"
+  },
+  "3258961": {
+    "steps": "1 Download the XML Metadata from Microsoft Entra IdP\n2 To modify EntityDescriptor tag to an invalid value in the xml file\n3 Import this XML file via 'Import from File'\n4 Fill the proper 'User Name Attribute' and 'Group Name Attribute' which from IdP\n5 Then tried to Save the configuration",
+    "initial": "User is created on the IdP",
+    "id": "3258961",
+    "title": "Verify the IdP profile via importing the Metadata with invalidÂ SAML IDP Server ID",
+    "result": "Proper error reported"
+  },
+  "3258962": {
+    "steps": "1 Download the XML Metadata from Microsoft Entra IdP\n2 To modifyÂ SingleSignOnServiceÂ tag to an invalid value in the xml file\n3 Import this XML file via 'Import from File'\n4 Fill the proper 'User Name Attribute' and 'Group Name Attribute' which from IdP\n5 Then tried to Save the configuration",
+    "initial": "User is created on the IdP",
+    "id": "3258962",
+    "title": "Verify the IdP profile via importing the Metadata with invalidÂ Logout service URL",
+    "result": "Proper error reported"
+  },
+  "3258963": {
+    "steps": "1 Download the XML Metadata from Microsoft Entra IdP\n2 To modify X509Certificate tag to an invalid value in the xml file\n3 Import this XML file via 'Import from File'\n4 Fill the proper 'User Name Attribute' and 'Group Name Attribute' which from IdP\n5 Then tried to Save the configuration",
+    "initial": "User is created on the IdP",
+    "id": "3258963",
+    "title": "Verify the IdP profile via importing the Metadata with invalidÂ Trusted Certificates",
+    "result": "Proper error reported"
+  },
+  "3258964": {
+    "steps": "1 Create the IdP profile manual\n2 Create the IdP profile via importing the xml file\n3 To check the IdP server icon is correctly displayed.",
+    "initial": "User is created on the IdP",
+    "id": "3258964",
+    "title": "Verify the IdP server icon could be displayed correctly",
+    "result": ""
+  },
+  "3258965": {
+    "steps": "1 Create the IdP profile manual\n2 Leave theÂ 'User Name Attribute' blank\n3Â Create the IdP profile via import XML Metadata\n4Â Leave theÂ 'User Name Attribute' blank",
+    "initial": "User is created on the IdP",
+    "id": "3258965",
+    "title": "To add an IdP profile without 'User Name Attribute'",
+    "result": "Proper error reported since the 'User Name Attribute' is mandatory for an IdP profile"
+  },
+  "3258966": {
+    "steps": "1 Create the IdP profile manual\n2 Leave theÂ 'Group Name Attribute' blank\n3Â Create the IdP profile via import XML Metadata\n4Â Leave theÂ 'Group Name Attribute' blank",
+    "initial": "User is created on the IdP",
+    "id": "3258966",
+    "title": "To add an IdP profile without Group Name Attribute",
+    "result": "Group Name Attribute' is optional for an IdP profile, no error reported"
+  },
+  "3258967": {
+    "steps": "1 Create 16 IdP profiles\n2 Then to create one more IdP profile",
+    "initial": "User is created on the IdP",
+    "id": "3258967",
+    "title": "To verify the Max entries of the IdP profiles",
+    "result": "The max 16 IdP profiles is supported, proper error reported when the profiles exceed the maximum"
+  },
+  "3258968": {
+    "steps": "1 Fill the IdP profile name with more than 64 bytes",
+    "initial": "User is created on the IdP",
+    "id": "3258968",
+    "title": "Verify the boundary of the IdP profile name",
+    "result": "Â Proper error report if the name exceeds 64 bytes"
+  },
+  "3258969": {
+    "steps": "1 Fill theÂ SAML IDP Server ID of the IdP profile with more than 255 bytes",
+    "initial": "User is created on the IdP",
+    "id": "3258969",
+    "title": "Verify the boundary of the IdP profile SAML IDP Server ID",
+    "result": "Proper error report if the name exceeds 255bytes"
+  },
+  "3258970": {
+    "steps": "1 Fill the Authentication Service URL of the IdP profile with more than 255 bytes",
+    "initial": "User is created on the IdP",
+    "id": "3258970",
+    "title": " Verify the boundary of the IdP profile Authentication Service URL",
+    "result": "Proper error report if the name exceeds 255 bytes"
+  },
+  "3258971": {
+    "steps": "1 Fill theÂ Logout service URL of the IdP profile with more than 255 bytes",
+    "initial": "User is created on the IdP",
+    "id": "3258971",
+    "title": "Verify the boundary of the IdP profile Logout service URL",
+    "result": "Proper error report if the name exceeds 255 bytes"
+  },
+  "3258972": {
+    "steps": "1 Fill the User Name Attribute of the IdP profile with more than 255 bytes",
+    "initial": "User is created on the IdP",
+    "id": "3258972",
+    "title": " Verify the boundary of the IdP profile User Name Attribute ",
+    "result": "Proper error report if the name exceeds 255 bytes"
+  },
+  "3258973": {
+    "steps": "1 Fill theÂ Group Name Attribute of the IdP profile with more than 255 bytes",
+    "initial": "User is created on the IdP",
+    "id": "3258973",
+    "title": "Verify the boundary of the IdP profile Group Name Attribute",
+    "result": "Proper error report if the name exceeds 64 bytes"
+  },
+  "3258974": {
+    "steps": "1 Create the IdP profile manual\n2 Create the IdP profile via import XML Metadata\n3Â To delete these profiles via 'Delete' button",
+    "initial": "User is created on the IdP",
+    "id": "3258974",
+    "title": " Verify the SAML IdP profile could be deleted via 'Delete' button ",
+    "result": "The profiles should be deleted"
+  },
+  "3258975": {
+    "steps": "1 Create the IdP profile manual or viaÂ import XML Metadata\n2 Goto Device-Settings-Certificate\n3 Tried to delete the certificate that was used by an IdP profile",
+    "initial": "User is created on the IdP",
+    "id": "3258975",
+    "title": "Verify the activity when to delete a CA Certificate which was used by an IdP",
+    "result": "3 Proper error reported hint that the certificate is in-used by an IdP profile"
+  },
+  "3258976": {
+    "steps": "1 Create the IdP profile manual or viaÂ import XML Metadata\n2 Goto Device-Settings-Certificate\n3 To import a local certificate into the FW and IDP\n4 Select this certificate in the IdP 'Trusted Certificates'\n5 Then tried to delete this certificate in the Device-Settings-Certificate",
+    "initial": "User is created on the IdP",
+    "id": "3258976",
+    "title": " Verify the activity when to delete a Local Certificate which was used by an IdP ",
+    "result": "The Delete action should be rejected"
+  },
+  "3258977": {
+    "steps": "1 Create the IdP profile manual or viaÂ import XML Metadata\n2 Goto Device-Settings-Certificate\n3 To import a CA certificate into the FW and IDP\n4 To sign a downstream certÂ by using this CA\n5 To import downstream CA into the FW\n6 Select this downstream CA in the IdP 'Trusted Certificates'\n7 Then tried to delete Root CA in the Device-Settings-Certificate",
+    "initial": "User is created on the IdP",
+    "id": "3258977",
+    "title": "Verify the activity when to delete a CA CertificateÂ whose downstream certsÂ was used by an IdP",
+    "result": "The Delete action is permitted"
+  },
+  "3258978": {
+    "steps": "1 Create the IdP profile manual\n2 Create the IdP profile via import XML Metadata\n3 To download the TSR and check the IdP configuration in the TSR",
+    "initial": "User is created on your IdP",
+    "id": "3258978",
+    "title": "Verify the IdP configuration in the TSR",
+    "result": "3 All IdP configuration info should be present in the TSR"
+  },
+  "3258979": {
+    "steps": "1 Create the IdP profile manual orÂ via import XML Metadata\n2 To select this profile and delete it via 'Delete Selected'",
+    "initial": "User is created on your IdP",
+    "id": "3258979",
+    "title": "Verify the SAML IdP profile could be deleted via 'Delete Selected' button",
+    "result": "3 The profile could be deleted"
+  },
+  "3258980": {
+    "steps": "1 Create the IdP profile manual\n2 Create the IdP profile via import XML Metadata\n3 To select these two profiles and delete them via 'Delete Selected'",
+    "initial": "User is created on your IdP",
+    "id": "3258980",
+    "title": " To delete multiple SAML IdP profiles via 'Delete Selected' button ",
+    "result": "3 The profile could be deleted"
+  },
+  "3258981": {
+    "steps": "1 Create the IdP profile manual or via import XML Metadata\n2 To change theÂ NameÂ User Name Attribute,Â Group Name Attribute....",
+    "initial": "User is created on your IdP",
+    "id": "3258981",
+    "title": "Verify the IdP profile could be edited",
+    "result": "2 The changing should take effect"
+  },
+  "3258982": {
+    "steps": "1 Create the IdP profile manual orÂ via import XML Metadata\n2 To bind this IdP profile to a SAML profile\n3 Then tried to delete this IdP profile",
+    "initial": "User is created on your IdP",
+    "id": "3258982",
+    "title": "Verify the activity when to delete an in-used IdP profile",
+    "result": "3 The delete should be failed since the IdP profile is in-use"
+  },
+  "3258983": {
+    "steps": "1 Configuration saml commands\nuser saml --- enter to saml mode\nÂ  Â  identity-provider google-idpÂ  ---- add/edit a new identity-provider\nÂ  Â Â Â  Â Â [no] name google-idp\nÂ  Â Â Â  Â Â [no] server-id xxxx\nÂ  Â Â Â  Â Â [no] authentication-url xxxx\nÂ  Â Â Â  Â Â [no] logout-url xxxx\nÂ  Â Â Â  Â Â [no] trusted-certificate xxxx\nÂ  Â Â Â  Â Â [no] user-name-attribute xxxx\nÂ  Â Â Â  Â Â [no] group-name-attribute xxx\nÂ  Â Â Â  Â Â exit\n2 no identity-providersÂ\n3Â no identity-provider xxxxÂ Â ",
+    "initial": "",
+    "id": "3258983",
+    "title": "CLI support for the IdP configuration",
+    "result": "1 All settings via CLI should take effect\n2 Delete all identity providers\n3 Delete a specific identity providerÂ "
+  },
+  "3258984": {
+    "steps": "1 Create an oneLogin IdP profile manual orÂ via import XML Metadata\n2 Create two Servicer Provider profile: x0_ip and x2_ip with HTTPS service\n3 Create 2 SAML Profiles with the same IdP profile and the SP profiles in step2",
+    "initial": "User is created on your IdP",
+    "id": "3258984",
+    "title": "Verify one SP could be bounded to two IdP in two SAML profiles",
+    "result": "3 The configuration should be successful"
+  },
+  "3258985": {
+    "steps": "1 Goto 'SAML Service Provider', click 'Configure'\n2 To add a SAML Service Provider\n3 Fill the Proper Name\n4 Select Type to IP\n5 Specify an Address Object\n6 Select the Service to HTTPS Management, then save the configuration",
+    "initial": "",
+    "id": "3258985",
+    "title": "Verify the SP could be created with type of IP and HTTPS service",
+    "result": "The SAML Provider could be created"
+  },
+  "3258986": {
+    "steps": "1 Goto 'SAML Service Provider', click 'Configure'\n2 To add a SAML Service Provider\n3 Fill the Proper Name\n4 Select Type to Domain\n5 Specify the properÂ Domain Name\n6 Select the Service to HTTPS Management, then save the configuration",
+    "initial": "",
+    "id": "3258986",
+    "title": "Verify the SP could be created with type of Domain and HTTPS service",
+    "result": "The SAML Provider could be created"
+  },
+  "3258987": {
+    "steps": "1 Goto 'SAML Service Provider', click 'Configure'\n2 To add a SAML Service Provider\n3 Fill the Proper Name\n4 Select Type to IP\n5 Specify an Address Object\n6 Select the Service to SSLVPN, then save the configuration",
+    "initial": "",
+    "id": "3258987",
+    "title": "Verify the SP could be created with type of IP and SSLVPN service",
+    "result": "The SAML Provider could be created"
+  },
+  "3258988": {
+    "steps": "1 Goto 'SAML Service Provider', click 'Configure'\n2 To add a SAML Service Provider\n3 Fill the Proper Name\n4 Select Type to Domain\n5 Specify the properÂ Domain Name\n6 Select the Service to SSLVPN, then save the configuration",
+    "initial": "",
+    "id": "3258988",
+    "title": " Verify the SP could be created with type of Domain and SSLVPN service ",
+    "result": "The SAML Provider could be created"
+  },
+  "3258989": {
+    "steps": "1 To create SAML SP profile with IP type\n2 To check the SP info in the TSR\n3 To create SAML SP profile with IP type\n4 To check the SP in in the TSR",
+    "initial": "",
+    "id": "3258989",
+    "title": " Check the SP configuration in the TSR ",
+    "result": "2-4 All SP info should be saved in the TSR"
+  },
+  "3258990": {
+    "steps": "1 Goto 'SAML Service Provider', click 'Configure'\n2 To add a SAML Service Provider\n3 Fill the Proper Name\n4 Select Type to IP\n5 Specify an IPv6 Address ObjectÂ\n6 Select the Service to SSLVPN, then save the configuration",
+    "initial": "",
+    "id": "3258990",
+    "title": "Verify the SP could be created and associated to a IPv6 address object",
+    "result": "The SAML Provider could be created"
+  },
+  "3258991": {
+    "steps": "1 To create 20Â SAML SP profiles\n2 Then tried to create one moreÂ SAML SP profil",
+    "initial": "",
+    "id": "3258991",
+    "title": " Verify the Max entries of the SAML SP profiles ",
+    "result": "1 Successful\n2 UI report the error, the maximum is 20"
+  },
+  "3258992": {
+    "steps": "1 To create an IP type, HTTPS service SP profile, then to bind it to a SAML Profile\n2 Tried to delete this SAML Service Provider Profile\n3 To create a Domain type, SSLVPN service SP profile, then to bind it to a SAML Profile\n4 Tried to delete this SP profile",
+    "initial": "",
+    "id": "3258992",
+    "title": "Verify the activity when to delete a SP profile which was in use",
+    "result": "The SAML Service Provider profile could not be deleted if it was in use"
+  },
+  "3258993": {
+    "steps": "1 Fill the name with more than 64 bytes",
+    "initial": "",
+    "id": "3258993",
+    "title": " Check the SAML SP profile name boundary ",
+    "result": "1 Proper error report if the name exceeds 64 bytes"
+  },
+  "3258994": {
+    "steps": "1Â Â service-provider google-on-sonicwall ---- add/edit a new service-provider\nÂ  Â Â Â  Â Â [no] name google-on-sonicwall\nÂ  Â Â Â  Â Â type interface-ip | fqdn\nÂ  Â Â Â  Â Â [no] fqdn xxxx\nÂ  Â Â Â  Â Â [no] address-object xxxx\nÂ  Â Â Â  Â Â [no]Â service https|sslvpn\nÂ  Â Â Â  Â Â exit\n2Â no service-providers\n3Â no service-provider xxx",
+    "initial": "",
+    "id": "3258994",
+    "title": "CLI support for the SAML SP configuration",
+    "result": "1 All settings via CLI should take effect\n2 Delete all service providers\n3 Delete a specific service providerÂ Â "
+  },
+  "3258995": {
+    "steps": "1 Create a SAML SP profile\n2 To delete this profile via 'Delete' button",
+    "initial": "",
+    "id": "3258995",
+    "title": "Verify the SAML Profile could be deleted via the 'Delete ' button ",
+    "result": "Â The SAML SP profile could be deleted"
+  },
+  "3258996": {
+    "steps": "1 Create a few the SAML SP profiles\n2 Select one profile, then to delete this profile via 'Delete Selected' button",
+    "initial": "",
+    "id": "3258996",
+    "title": " Verify the SAML SP Profile could be deleted via the 'Delete Selected ' button ",
+    "result": "The SAML SP profile could be deleted"
+  },
+  "3258997": {
+    "steps": "1 Create a few the SAML SP profiles\n2 Select all profiles, then to delete these profiles via 'Delete Selected' button",
+    "initial": "",
+    "id": "3258997",
+    "title": "Verify to delete multiple SAML SP Profiles via the 'Delete Selected ' button ",
+    "result": "The SAML SP profile could be deleted"
+  },
+  "3258998": {
+    "steps": "1 Create an IP HTTPS SP profileÂ\n2Â To change theÂ Name,Â Address Object, Service....\n3 Create a Domain SSLVPN SP Profile\n4 To change theÂ Name,Â Address Object, Service....",
+    "initial": "",
+    "id": "3258998",
+    "title": " Verify the SAML SP Profile could be edited via the 'Edit ' button ",
+    "result": "2-4 The changing should take effect"
+  },
+  "3258999": {
+    "steps": "1 Goto SAML Profile, click 'Configure'\n2 Specify a Name for the Profile\n3 Select an IdP profile\n4 Select a SP profile\n5 Keep other in default, save the configuration",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3258999",
+    "title": "Verify the SAML Profile could be created",
+    "result": "The SAML profile could be create"
+  },
+  "3259000": {
+    "steps": "1 Create a SAML Profile\n2 Tried to delete it via 'Delete This Entry'",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259000",
+    "title": " Verify the SAML Profile could be deleted via the 'Delete ' button ",
+    "result": "The SAML profile should be deleted"
+  },
+  "3259001": {
+    "steps": "1 Create a SAML Profile\n2 Select this profile\n2 Tried to delete it via 'Delete Selected Profile'",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259001",
+    "title": " Verify the SAML Profile could be deleted via the 'Delete Selected ' button ",
+    "result": "The selected SAML profile should be deleted"
+  },
+  "3259002": {
+    "steps": "1 Create a SAML profile\n2 To edit this profile\n3 Tried to specify the new name of the Profile\n4 Replace the IdP/SP profile\n5 Enable 'Use a certificate to sign SP request'\n6 Enable 'Enable Single Logout'",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259002",
+    "title": "Verify the SAML Profile could be edited via the 'Edit ' button",
+    "result": "The new settings should take effect"
+  },
+  "3259003": {
+    "steps": "1 Create a SAML profile\n2 Export this profile via 'export profile'",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259003",
+    "title": "Verify the SAML Profile could be exported ",
+    "result": "The profile should be exported as xml file"
+  },
+  "3259004": {
+    "steps": "1 Create 16 SAML profiles\n2 Tried to create the 17th profile",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259004",
+    "title": "Verify the Max SAML Profiles",
+    "result": "The Maximum of the profiles is 16, the creating of the 17th should be rejected"
+  },
+  "3259005": {
+    "steps": "1 Create a SAML profile with full configuration\n2 To download the TSR\n3 Check the profile info was saved into TSR",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259005",
+    "title": " Verify the SAML profile configuration in the TSR ",
+    "result": "All SAML profile info should be saved into TSR"
+  },
+  "3259006": {
+    "steps": "1 Create a SAML profile with HTTPS and bind it to x0 ip\n2 Apply this profile into a LAN-WAN access rule\n3 The tried to delete this SAML profile",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259006",
+    "title": "Verify the activity to delete a SAML profile when it was used",
+    "result": "The delete action should be rejected"
+  },
+  "3259007": {
+    "steps": "1 Create a SAML profile\n2 Export this profile via 'export profile'\n3 Then to upload this profile to your Microsoft Azure IdP",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259007",
+    "title": "To export the SP profile and upload into the MicroSoft Azure IdP",
+    "result": "The uploading should be work"
+  },
+  "3259008": {
+    "steps": "1 Import a local certificate from Settingâ€“Certificates\n2 Create a SAML profile and enable 'Use a certificate to sign SP request'\n3 Select the certificate just imported\n4 Save the configuration",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259008",
+    "title": "To Use a certificate to sign SP request in the SAML Profile",
+    "result": "The profile with 'Use a certificate to sign SP request' enabled should be created"
+  },
+  "3259009": {
+    "steps": "1 Tried to create SAML profile\n2 To enable 'Enable Single Logout' in the profile, save the configuration\n3 To disable 'Enable Single Logout' in the profile, save the configuration",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259009",
+    "title": "Verify the 'Enable Single Logout' option could be enable/disable in the SAML profile",
+    "result": "The option 'Enable Single Logout' could be enabled/disabled"
+  },
+  "3259010": {
+    "steps": "1 Tried to create SAML profile\n2 To select a SP with HTTPS service\n3 Tried to enabled/disable 'Enable on this profile for Management' option",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259010",
+    "title": "Verify the 'Enable on this profile for Management' option could be enable/disable",
+    "result": "The option 'Enable Single Logout' could be enabled/disabled"
+  },
+  "3259011": {
+    "steps": "1 Tried to create SAML profile\n2 To select a SP with SSL VPN service\n3 Tried to enabled/disable 'Enable on this profile for SSL VPN' option",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259011",
+    "title": "Verify the 'Enable on this profile for SSL VPN' option could be enable/disable in the SAML profile",
+    "result": "The option could be enabled/disabled"
+  },
+  "3259012": {
+    "steps": "1 Tried to create SAML profile\n2 To select a SP with SSL VPN service\n3 Tried to enabled/disable 'Enable on this profile for SSL VPN' option\n4 To delete this profile",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259012",
+    "title": "Verify the SAML Profile could be deleted via the 'Delete ' button",
+    "result": "The profile could be deleted"
+  },
+  "3259013": {
+    "steps": "1 Create a SAML profile with HTTPS Service\n2 Create a SAML profile with SSLVPN Service\n3 Enable management on the HTTPS SAML profile\n4 Apply the SSL VPN SAML profile on the SSLVPN\n5 To download the systemlog to check the SAML debug log was included",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259013",
+    "title": "To check the SAML Debug log via system log",
+    "result": "SAML debug log was dumped into system log"
+  },
+  "3259014": {
+    "steps": "Â 1Â profile test-profile ---- add/edit a new profile\nÂ  Â Â Â  Â Â [no] name xxxx\nÂ  Â Â Â  Â Â [no] identity-provider xxxx\nÂ  Â Â Â  Â Â [no] service-provider xxxx\nÂ  Â Â Â  Â Â [no] use-certificate-sign-sp-request\nÂ  Â Â Â  Â Â [no] certificate xxxx\nÂ  Â Â Â  Â Â [no] single-sign-off\nÂ  Â Â Â  Â Â [no] management\nÂ  Â Â Â  Â Â [no] sslvpn\nÂ 2Â no profiles --- delete all authentication profiles\nÂ 3Â no profile xxx --- delete a specific profile",
+    "initial": "1 SAML IdP profile is created\n2 SAML SP profile is created",
+    "id": "3259014",
+    "title": "CLI support for the SAML Profile configuration",
+    "result": "1 All settings via CLI should take effect\n2 Delete all SAML profiles\n3 Delete a specific SAML profile"
+  },
+  "3857938": {
+    "steps": "Refer to GEN7-52770.\n\n1) Download the XML Metadata from IdP\n2) Import this XML file via 'Import from File'\n3) Fill the proper 'User Name Attribute' and 'Group Name Attribute' which from IdP\n4) Save the configuration",
+    "initial": "",
+    "id": "3857938",
+    "title": "Restart will be required after importing the IDP XML file",
+    "result": "Restart Required!\nThis importing contains certificate, restarting is required since DPI-SSL is active."
+  },
+  "3840206": {
+    "steps": "1 Create a SP with IP type and HTTPS management service\n2 To export this SP Metadata, and specify the name of the SAML\nProfile which you need to bind later",
+    "initial": "",
+    "id": "3840206",
+    "title": "To export the Service Provider with IP and HTTPS management service ",
+    "result": "The export should be successful"
+  },
+   "3840207": {
+    "steps": "1 Create a SP with IP type and SSLVPN service\n2 To export this SP Metadata, and specify the name of the SAML\nProfile which you need to bind later",
+    "initial": "",
+    "id": "3840207",
+    "title": "To export the Service Provider with IP and SSLVPN service ",
+    "result": "The export should be successful"
+  },
+   "3840208": {
+    "steps": "1 Create a SP with Domain type and HTTPS management service\n2 To export this SP Metadata, and specify the name of the SAML\nProfile which you need to bind later",
+    "initial": "",
+    "id": "3840208",
+    "title": "To export the Service Provider with Domain and HTTPS management service",
+    "result": "The export should be successful"
+  },
+   "3840209": {
+    "steps": "1 Create a SP with Domain type and SSLVPN service\n2 To export this SP Metadata, and specify the name of the SAML\nProfile which you need to bind later",
+    "initial": "",
+    "id": "3840209",
+    "title": "To export the Service Provider with Domain and SSLVPN service",
+    "result": "The export should be successful"
+  },
+   "3842546": {
+    "steps": "1 To add a SP with IP type and HTTPS managemnt Service\n2 To add a SP with domain type and SSLVPN Service\n3 To change the HTTPS port to 4438\n4 To change the SSLVPN port to 44333\n5 To export the SP Metadata in step 1-2 and check the service port",
+    "initial": "",
+    "id": "3842546",
+    "title": "To export the Service Provider with custom HTTPS/SSLVPN port",
+    "result": "It should be 4438/44333"
+  }
+}

@@ -1,0 +1,296 @@
+{
+    "1503228": {
+        "steps": "Download tsr",
+        "initial": "",
+        "id": "1503228",
+        "title": "Verify all sinkhole configuration info included in tsr",
+        "result": "Verify all sinkhole configuration info included in tsr"
+    },
+    "1503229": {
+        "steps": "Both DNS proxy and cache enabled, query domain B, B has been cached, before cache expired, add B into custom malicious domain list, query B again",
+        "initial": "",
+        "id": "1503229",
+        "title": "Both DNS proxy and cache enabled, query domain B, B has been cached, before cache expired, add B into custom malicious domain list, query B again",
+        "result": "FW will drop the DNS query and log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed"
+    },
+    "1503230": {
+        "steps": "1.Go to Network/DNS Security, enable DNS Sinkhole\n2.On LAN pc, try to nslookup or ping some domains which in DNS sinkhole database, like nordvpn.com.<br /><br />-----Edit by Celia-----<br />If you need to check the log, before step2:<br />Go to Log/ Settings, find '<span>Drop Hit DNS Sinkhole Malicious Database Packets' log on Network/DNS Security, enable it on GUI, set the priority to Alert, then Accept.</span>",
+        "initial": "",
+        "id": "1503230",
+        "title": "Verify packet will be dropped if dns query a malicious domain",
+        "result": "2. FW will drop the DNS query and log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed"
+    },
+    "1503231": {
+        "steps": "1.Go to Network/DNS Security, enable DNS Sinkhole\r\n2.On LAN pc, try to nslookup or ping some normal domains which not in databse",
+        "initial": "",
+        "id": "1503231",
+        "title": "Verify DNS sinkhole has no effect on normal dns query",
+        "result": "DNS query and response normally"
+    },
+    "1503232": {
+        "steps": "1.Go to Network/DNS Security, enable DNS Sinkhole\n2.On LAN pc, do IPV4dns query some domains which in DNS sinkhole database\n3.doIPV6dns query some domains which in DNS sinkhole database",
+        "initial": "",
+        "id": "1503232",
+        "title": "Verify DNS sinkhole can work for both IPV4 and IPV6 DNS query(A and AAAA)",
+        "result": "FW will drop the DNS query and log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed"
+    },
+    "1503233": {
+        "steps": "1.Go to Network/DNS Security, enable DNS Sinkhole\n2.Write script to go through all domains inmalicious database.",
+        "initial": "",
+        "id": "1503233",
+        "title": "Test build-in malicious database, dns querying for the domains in database will be dropped",
+        "result": "FW will drop the DNS query and log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed"
+    },
+    "1503234": {
+        "steps": "1.Go to Network/DNS Security, enable DNS Sinkhole\n2.On LAN pc, do DNS flooding.",
+        "initial": "",
+        "id": "1503234",
+        "title": "Verify FW can be managed normally and CUP utilization is normal if DNS flood happened",
+        "result": "Verify FW can be managed normally and CUP utilization is normal .No crash happened."
+    },
+    "1503235": {
+        "steps": "1.Go to Network/DNS Security, enable DNS Sinkhole\n2.On LAN pc, try to nslookup or ping some domains which in DNS sinkhole database, make the DNS query packets fragment",
+        "initial": "",
+        "id": "1503235",
+        "title": "Verify DNS sinkhole works fine for fragment packets",
+        "result": "FW will drop the DNS query and log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed"
+    },
+    "1503236": {
+        "steps": "1.Add aSplit DNS domain\n2.Add this domain to DNS Sinkhole's custom malicious domain list\n3.On LAN pc, try to nslookup or ping this domain",
+        "initial": "",
+        "id": "1503236",
+        "title": "DNS sinkhole can work well when have Split DNS configured",
+        "result": "FW will drop the DNS query and log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed"
+    },
+    "1503237": {
+        "steps": "1.Go to Network/DNS Security, enable DNS Sinkhole\r\n2.Go to system/Diagnostic Tools, select 'DNS Name Lookup', try to DNS query some domains which in DNS sinkhole database, like nordvpn.com.\r\n3.Add a FQDN domains(which in DNS sinkhole database) on Address object page\r\n\r\n-----Edited by Celia-----\r\nIf you need to check the log, before step2:\r\nGo to Log/ Settings,find 'Drop Hit DNS Sinkhole Malicious Database Packets' log on Network/DNS Security, enable it on GUI, set the priority to Alert, then Accept.\r\n",
+        "initial": "",
+        "id": "1503237",
+        "title": "Verify the DNS query that initiated by firewall itself (e.g. FQDN AO, or diagnostic DNS lookup)",
+        "result": "2,3FW will drop the DNS query and log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed"
+    },
+    "1503238": {
+        "steps": "Go to Network/DNS Security page, check the dropdown list of Action",
+        "initial": "",
+        "id": "1503238",
+        "title": "[GUI]Three options can be selected under Action drop-down list",
+        "result": "VerifyThree options can be selected under Action drop-down list"
+    },
+    "1503239": {
+        "steps": "Restart FW",
+        "initial": "",
+        "id": "1503239",
+        "title": "Verify the settings keep intact after restart FW",
+        "result": "Verify the settings keep intact after restart FW"
+    },
+    "1503240": {
+        "steps": "1.Select 'Reply with Forged IP' from Action dropdown list.",
+        "initial": "",
+        "id": "1503240",
+        "title": "[GUI]IPV4 and IPV6 addresses can be set for Reply with Forged IP",
+        "result": "VerifyIPV4 and IPV6 addresses can be set for Reply with Forged IP"
+    },
+    "1503241": {
+        "steps": "<span>1.Select 'Reply with Forged IP' from Action dropdown list</span>",
+        "initial": "",
+        "id": "1503241",
+        "title": "Verify the default IPV4 address for Forged IP is 127.0.0.1,and IPV6 is ::1",
+        "result": "Verify the default IPV4 address for Forged IP is 127.0.0.1,and IPV6 is ::1"
+    },
+    "1503242": {
+        "steps": "<span>1.Select 'Reply with Forged IP' from Action dropdown list.</span>\r\n<span>2.Input invalidIP address(IPV4 and IPV6) toForged IP.</span>",
+        "initial": "",
+        "id": "1503242",
+        "title": "Verify invalid IP address can't be set for Forged IP, error message will be printed",
+        "result": "Error message will be printed"
+    },
+    "1503243": {
+        "steps": "<span>1.Select 'Log' from Action dropdown list.</span>\n<span>2.On LAN pc, try to nslookup or ping some domains which in DNS sinkhole database, like <span>nordvpn.com</span>.<br /><br /><span>-----Edit by Celia-----</span><br /><span>If you need to check the log, before step2:</span><br /><span>Go to Log/ Settings, find '</span><span>Drop Hit DNS Sinkhole Malicious Database Packets' log on Network/DNS Security, enable it on GUI, set the priority to Alert, then Accept.</span><br /></span>",
+        "initial": "",
+        "id": "1503243",
+        "title": "Log only:FW will drop the DNS query and log only",
+        "result": "FW will drop the DNS query and log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed"
+    },
+    "1503244": {
+        "steps": "<span>1.Select 'Negative Reply' from Action dropdown list.</span>\n<span><span>2.On LAN pc, try to nslookup or ping some domains which in DNS sinkhole database, like nordvpn.com.<br /><br /><span>-----Edit by Celia-----</span><br /><span>If you need to check the log, before step2:</span><br /><span>Go to Log/ Settings, find '</span><span>Drop Hit DNS Sinkhole Malicious Database Packets' log on Network/DNS Security, enable it on GUI, set the priority to Alert, then Accept.</span><br /></span></span>",
+        "initial": "",
+        "id": "1503244",
+        "title": "Negative Reply:FW will log and send DNS reply with negative answer",
+        "result": "FW will reply a dns response with server error,<span>log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed</span>"
+    },
+    "1503245": {
+        "steps": "1.Select 'Reply with Forged IP' from Action dropdown list, set 11.11.11.11 to forged<span>IPv4 Address.</span>\n2.On LAN pc, try to nslookup or ping some domains which in DNS sinkhole database for A query, like nordvpn.com.<br /><br /><span>-----Edit by Celia-----</span><br /><span>If you need to check the log, before step2:</span><br /><span>Go to Log/ Settings, find '</span><span>Drop Hit DNS Sinkhole Malicious Database Packets' log on Network/DNS Security, enable it on GUI, set the priority to Alert, then Accept.</span>",
+        "initial": "",
+        "id": "1503245",
+        "title": "Reply with Forged IP:FW will log and send DNS reply with fake IPV4 address for A query",
+        "result": "<span>FW will reply a dns response with 11.11.11.11,<span>log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed</span></span>"
+    },
+    "1503246": {
+        "steps": "1.Select 'Reply with Forged IP' from Action dropdown list, set 11::11 to forgedIPv6 Address.\n2.On LAN pc, try to nslookup or ping some domains which in DNS sinkhole database for AAAA query.<br /><br /><span>-----Edit by Celia-----</span><br /><span>If you need to check the log, before step2:</span><br /><span>Go to Log/ Settings, find '</span><span>Drop Hit DNS Sinkhole Malicious Database Packets' log on Network/DNS Security, enable it on GUI, set the priority to Alert, then Accept.</span>",
+        "initial": "",
+        "id": "1503246",
+        "title": "Reply with Forged IP:FW will log and send DNS reply with fake IPV6 address for AAAA query",
+        "result": "<span>FW will reply a dns response with 11::11,</span><span>log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed</span>"
+    },
+    "1503247": {
+        "steps": "1.Select 'Reply with Forged IP' from Action dropdown list, set 11.11.11.11 to forgedIPv4 Address.\n2.On LAN pc, ping some domains which in DNS sinkhole database , like nordvpn.com.<br /><br /><span>-----Edit by Celia-----</span><br /><span>If you need to check the log, before step2:</span><br /><span>Go to Log/ Settings, find '<span>Drop DNS Sinkhole Forged IP Packets</span></span><span>' log on Network/DNS Security, enable it on GUI, set the priority to Alert, then Accept.</span>",
+        "initial": "",
+        "id": "1503247",
+        "title": "Verify log can record the infected host's IP who try to connect to forged IP",
+        "result": "<span>FW will reply a dns response with 11.11.11.11,</span><span>log '<span>Drop DNS Sinkhole Forged IP Packets</span>' displayed</span>"
+    },
+    "1503248": {
+        "steps": "<span>1.Select 'Reply with Forged IP' from Action dropdown list,</span>\n<span>2.From LAN pc,Query malicious domains with types : CNAME, TXT, MX, NS</span>",
+        "initial": "",
+        "id": "1503248",
+        "title": "Query malicious domains with types : CNAME, TXT, MX, NS with action 3 (Reply with Forged IP), forged IP takes effect only when type is A and AAAA",
+        "result": "Verify thatforged IP takes effect only when type is A and AAAA"
+    },
+    "1503249": {
+        "steps": "1.<span>Select 'Negative Reply' 'from Action dropdown list.</span>\n<span>2.Query malicious domains with types : CNAME, TXT, MX, NS</span>\n<span>3.Select 'Log only' from Action dropdown list</span>\n<span>4.Repeate step2</span>",
+        "initial": "",
+        "id": "1503249",
+        "title": "Query malicious domains with types : CNAME, TXT, MX, NS with action 2 and 1 as it only cares domain not types.",
+        "result": "2.<span>FW will reply a dns response with server error,</span><span>log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed</span>\n4.<span>FW will drop the DNS query and log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed</span>"
+    },
+    "1503250": {
+        "steps": "Export then import exp file",
+        "initial": "",
+        "id": "1503250",
+        "title": "Verify settings keep intack after exp export/import",
+        "result": "Verify settings keep intack after exp export/import"
+    },
+    "1503251": {
+        "steps": "1.Go to Network/DNS Security\n2Add/Delete/Delete All custom malicious domains",
+        "initial": "",
+        "id": "1503251",
+        "title": "[GUI]Add/Delete custom malicious domains",
+        "result": "Verifycustom malicious domains can be added/deleted/delete all"
+    },
+    "1503252": {
+        "steps": "1.Go to Network/DNS Security\n2Add acustom malicious domain like 'aaa.com','bbb.com'\n3.<span>On LAN pc, ping these domains</span>",
+        "initial": "",
+        "id": "1503252",
+        "title": "Verify packet will be dropped if dns query a custom malicious domain",
+        "result": "<span>FW will drop the DNS query and log 'Drop Hit DNS Sinkhole Malicious Database Packets' displayed</span>"
+    },
+    "1503253": {
+        "steps": "1.Go to Network/DNS Security\n2Add acustom malicious domain like 'aaa.com','bbb.com'\n3.On LAN pc, ping these domains\n4.Delete these domains\n5.Repeate step3",
+        "initial": "",
+        "id": "1503253",
+        "title": "Verify packet will not be dropped if custom malicious domain removed",
+        "result": "Verify dns query will not be dropped if custom malicious domain removed"
+    },
+    "1503254": {
+        "steps": "1.Go to Network/DNS Security\n2 Add a custom malicious domain like 'aaa.com'\n3.Try to added a dupicate domain",
+        "initial": "",
+        "id": "1503254",
+        "title": "Duplicatedmaliciousdomain can't be allowed to be added",
+        "result": "Duplicated malicious domain can't be allowed to be added"
+    },
+    "1503255": {
+        "steps": "1.Go to Network/DNS Security\n2 Add multiple custom malicious domains",
+        "initial": "",
+        "id": "1503255",
+        "title": "Max 128 custom malicious domains can be added",
+        "result": "Verify max 128 custom malicious domains can be added"
+    },
+    "1503256": {
+        "steps": "1.Go to Network/DNS Security\n2Add/Delete/Delete Alldomains to white list",
+        "initial": "",
+        "id": "1503256",
+        "title": "[GUI]Add/Delete domain name in white list",
+        "result": "Verify whit domains can be Add/Delete/Delete All"
+    },
+    "1503257": {
+        "steps": "1.Go to Network/DNS Security\n2Add domains which in malicious database to white list\n3.On LAN pc, ping these domains",
+        "initial": "",
+        "id": "1503257",
+        "title": "Verify packet will not be dropped if dns query a malicious domain which is in white list",
+        "result": "Verify packet will not be dropped if dns query a malicious domain which is in white list"
+    },
+    "1503258": {
+        "steps": "1.Go to Network/DNS Security\n2Add domains which in malicious database to white list\n3.On LAN pc, ping these domains\n4.Delete these domains\n5.Repeate step 3",
+        "initial": "",
+        "id": "1503258",
+        "title": "Verify packet will be dropped if the malicious domain being removed from white list",
+        "result": "Verify packet will be dropped if the malicious domain being removed from white list"
+    },
+    "1503259": {
+        "steps": "1.Go to Network/DNS Security\n2Add domain to white list\n3.Add duplicate domain to white list",
+        "initial": "",
+        "id": "1503259",
+        "title": "Duplicatedwhitedomain can't be allowed to be added",
+        "result": "VerifyDuplicated white domain can't be allowed to be added,error will reported"
+    },
+    "1503260": {
+        "steps": "1.Go to Network/DNS Security\n2Add multiple domains to white list",
+        "initial": "",
+        "id": "1503260",
+        "title": "Max 128 white lists can be added",
+        "result": "Max 128 white lists can be added"
+    },
+    "1503262": {
+        "steps": "1.Add same domain to both custom malicious list and white list.\n2.From LAN PC, try to dns query this domain",
+        "initial": "",
+        "id": "1503262",
+        "title": "If same domian added in both malicious and white list, white list has higher priority",
+        "result": "Verifywhite list has higher priority, dns packet will not be dropped."
+    },
+    "1503263": {
+        "steps": "Setup HA environment",
+        "initial": "",
+        "id": "1503263",
+        "title": "Verify HA support for DNS Sinkhole",
+        "result": "Verify HA support for DNS Sinkhole"
+    },
+    "1503264": {
+        "steps": "Configure DNS sinkhole from CLI",
+        "initial": "",
+        "id": "1503264",
+        "title": "Verify CLI support for DNS Sinkhole",
+        "result": "Verify CLI support for DNS Sinkhole"
+    },
+    "1503265": {
+        "steps": "<span>1.Go to Network/DNS Security</span>",
+        "initial": "",
+        "id": "1503265",
+        "title": "VerifyMalicious Domain Name Total Number displayed correctly(include custom and build-in database)on GUI",
+        "result": "Verify Malicious Domain Name Total Number displayed correctly(include custom and build-in database) on GUI"
+    },
+    "1503268": {
+        "steps": "<span>1.Go to Network/DNS Security</span>",
+        "initial": "",
+        "id": "1503268",
+        "title": "Verifycurrent detection displayed correctly on GUI",
+        "result": "Verify current detection displayed correctly on GUI"
+    },
+    "1503269": {
+        "steps": "1.Go to Network /DNS Security\n2.Move mouse to 'Current Detection'",
+        "initial": "",
+        "id": "1503269",
+        "title": "Verify tooltips displayed correctly for this text field",
+        "result": "The tooltips displayed 'For more DNS attack information,please enable relative log:Log-&gt;Setting-&gt;DNS Security-&gt;Drop Hit DNS Sinkhole Malicious Database Packets.'"
+    },
+    "1503271": {
+        "steps": "Go to Network/DNS Security",
+        "initial": "",
+        "id": "1503271",
+        "title": "Verify'Enable DNS Sinkhole' is disabled by default",
+        "result": "Verify the checkbox 'Enable DNS Sinkhole' is disabled by default"
+    },
+    "1503272": {
+        "steps": "1.Enable 'Enable DNS Sinkhole'\n2.Disable'Enable DNS Sinkhole'",
+        "initial": "",
+        "id": "1503272",
+        "title": "Enable/Disable 'Enable DNS Sinkhole'",
+        "result": "Verified'Enable DNS Sinkhole' can be enabled and disabled"
+    },
+    "1503274": {
+        "steps": "1.Go to Network/DNS Security, enable DNS Sinkhole\r\n2.Go to Network/DNS proxy,enable DNS proxy\r\n3.On LAN pc, set the DNS server to X0 IP\r\n4.On LAN pc, try to nslookup or ping some domains which in DNS sinkhole database, likehoumani-lb.com,tonyyeo.com..",
+        "initial": "",
+        "id": "1503274",
+        "title": "Verfify DNS sinkhole will work will if DNS proxy enabled",
+        "result": "4.<span>FW will drop the DNS query and log '<span>Drop Hit DNS Sinkhole Malicious Database Packets</span>' displayed</span>"
+    }
+}

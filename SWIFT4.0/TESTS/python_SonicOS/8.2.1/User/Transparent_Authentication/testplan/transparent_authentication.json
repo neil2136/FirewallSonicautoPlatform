@@ -1,0 +1,695 @@
+{
+   "1825246" : {
+      "steps" : "  1.When 1 or 1001 is entered in the Max Rqsts field, the status bar shows an error message Retries. Data out of bounds (min=2, max=1000). 2. The values 2, 500, and 1000 are accepted and saved in the Sonicwall SSO Agent Configuration.",
+      "initial" : "  TBD",
+      "id" : "1825246",
+      "title" : "Max Rqsts boundaries test",
+      "result" : "  Original ID: TP_Auth_014_UI_14 Original Title: Max Rqsts boundaries test Original Description: Max Rqsts boundaries test"
+   },
+   "1825211" : {
+      "steps" : "  1. RADIUS/LDAP Server in parent/sub partition can work.",
+      "initial" : "  TBD",
+      "id" : "1825211",
+      "title" : "Mixed configuration with RADIUS/LDAP Server in parent/sub partition",
+      "result" : "  Original ID: TP_Auth_073_Func_42\n  Original Title: Mixed configuration with RADIUS/LDAP Server in parent/sub partition\n  Original Description: Mixed configuration with RADIUS/LDAP Server in parent/sub partition"
+   },
+   "1825220" : {
+      "steps" : "  1. No user display in [Users] - [Status] page.",
+      "initial" : "  TBD",
+      "id" : "1825220",
+      "title" : "SSO agents enabled/disabled on the appliance in one partition",
+      "result" : "  Original ID: TP_Auth_084_Func_53 Original Title: SSO agents enabled/disabled on the appliance in one partition Original Description: SSO agents enabled/disabled on the appliance in one partition"
+   },
+   "1825243" : {
+      "steps" : "  The characters #, %, and n are not accepted in the Timeout field. The status bar shows an error message: Timeout.Data is incorrectly formatted.",
+      "initial" : "  TBD",
+      "id" : "1825243",
+      "title" : "Incorrectly formatted data in the Timeout (seconds) field",
+      "result" : "  Original ID: TP_Auth_006_UI_06 Original Title: Incorrectly formatted data in the Timeout (seconds) field Original Description: Incorrectly formatted data in the Timeout (seconds) field"
+   },
+   "1825199" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work.",
+      "initial" : "  TBD",
+      "id" : "1825199",
+      "title" : "Verify multiple partitions in different interfaces(same zone) mixed can work well with SSO agent/TS agent/Radius client",
+      "result" : "  Original ID: TP_Auth_054_Func_23\n  Original Title: Verify multiple partitions in different interfaces(same zone) mixed can work well with SSO agent/TS agent/Radius client\n  Original Description: Verify multiple partitions in different interfaces(same zone) mixed can work well with SSO agent/TS agent/Radius client"
+   },
+   "1506985" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work.",
+      "initial" : "  TBD",
+      "id" : "1506985",
+      "title" : "Verify partition selection policy by different IPs work with SSO agent/TS agent/Radius client",
+      "result" : "  Original ID: TP_Auth_059_Func_28\n  Original Title: Verify partition selection policy by different IPs work with SSO agent/TS agent/Radius client\n  Original Description: Verify partition selection policy by different IPs work with SSO agent/TS agent/Radius client"
+   },
+   "1825222" : {
+      "steps" : "  1. Agents can share load when multiple requests generate at same time.",
+      "initial" : "  TBD",
+      "id" : "1825222",
+      "title" : "Verify SSO agents load-sharing work for parent/secondary partition",
+      "result" : "  Original ID: TP_Auth_086_Func_55\n  Original Title: Verify SSO agents load-sharing work for parent/secondary partition\n  Original Description: Verify SSO agents load-sharing work for parent/secondary partition"
+   },
+   "1825188" : {
+      "steps" : "  1. The client PC can access the internet authenticated by SSO agent.E.g. SHCDPQA130\\user1 is authenticated by agent '192.168.57.130',SHCDPQA110\\user1 is authenticated by agent '57.1.1.110'.2. The users authenticated are displayed on [User] - [Status] page of the appliance.3. The log prints the message as the user login allowed.",
+      "initial" : "  TBD",
+      "id" : "1825188",
+      "title" : "the same parent domain user name can be authenticated by different SSO agents in different partitions",
+      "result" : "  Original ID: TP_Auth_037_Func_06\n  Original Title: the same parent domain user name can be authenticated by different SSO agents in different partitions\n  Original Description: Verify the same parent domain user name can be authenticated by different SSO agents in different partitions"
+   },
+   "1825251" : {
+      "steps" : "  1. It can saved successfully.",
+      "initial" : "  TBD",
+      "id" : "1825251",
+      "title" : "Host Name Maxium length Check",
+      "result" : "  Original ID: TP_Auth_011_UI_11 Original Title: Host Name Maxium length Check Original Description: Host Name Maxium length Check"
+   },
+   "1825229" : {
+      "steps" : "  1. 'sub1\\test1' is authenticated by SSO and displayed on [User] - [Status]page marked in 'Default' partition.2. The client PC can access the internet.3. There is the log message in Log Monitor.",
+      "initial" : "  TBD",
+      "id" : "1825229",
+      "title" : "User Authentication with LDAP user groups mirrored to local in one partition(parent/child domain)",
+      "result" : "  Original ID: TP_Auth_093_Func_62\n  Original Title: User Authentication with LDAP user groups mirrored to local in one partition(parent/child domain)\n  Original Description: User Authentication with LDAP user groups mirrored to local in one partition(parent/child domain)"
+   },
+   "1825228" : {
+      "steps" : "  1. 'SHCDPQA130\\user1' is authenticated by SSO and displayed on [User] - [Status]page marked in 'Default' partition.2. The client PC can access the internet.3. There is the log message in Log Monitor.",
+      "initial" : "  TBD",
+      "id" : "1825228",
+      "title" : "User Authentication with LDAP user groups mirrored to local in one partition(parent domain)",
+      "result" : "  Original ID: TP_Auth_092_Func_61\n  Original Title: User Authentication with LDAP user groups mirrored to local in one partition(parent domain)\n  Original Description: User Authentication with LDAP user groups mirrored to local in one partition(parent domain)"
+   },
+   "1825219" : {
+      "steps" : "  1. Remove windows user name, click apply should work fine on the appliance and the change should be updated to the agent.",
+      "initial" : "  TBD",
+      "id" : "1825219",
+      "title" : "Remove windows services user name",
+      "result" : "  Original ID: TP_Auth_083_Func_52\n  Original Title: Remove windows services user name\n  Original Description: Remove windows services user name"
+   },
+   "1825206" : {
+      "steps" : "  1. User autheticated successfully with sub-partition",
+      "initial" : "  TBD",
+      "id" : "1825206",
+      "title" : "Verify SSO agent assigned to sub-partition work when sub-partition is  sub domain",
+      "result" : "  Original ID: TP_Auth_068_Func_37\n  Original Title: Verify SSO agent assigned to sub-partition work when sub-partition is sub domain\n  Original Description: Verify SSO agent assigned to sub-partition work when sub-partition is sub domain"
+   },
+   "1825194" : {
+      "steps" : "  1. 'SHCDPQA110\\user1' is authenticated by SSO and displayed on [User] - [Status]page in step[4].<br />2. 'SHCDPQA110\\user1' change to 'SHCDPQA110\\user2' displayed on [User] - [Status]page in step[5].",
+      "initial" : "  TBD",
+      "id" : "1825194",
+      "title" : "Switch domain user in one sub-partition(parent domain)",
+      "result" : "  Original ID: TP_Auth_046_Func_15\n  Original Title: Switch domain user in one sub-partition(parent domain)\n  Original Description: Switch domain user in one sub-partition(parent domain)"
+   },
+   "1825226" : {
+      "steps" : "  1. The user is allowed to access the Internet without logging in to the SonicWALL. 2. The firewall prints a log message User login allowed. The user's name in the log message is shown in the / format.",
+      "initial" : "  Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.The other PC is a workstation where a domain user should log in to the domain.",
+      "id" : "1825226",
+      "title" : "User groups configured locally. Use a full user name including the domain component.",
+      "result" : "  Original ID: TP_Auth_090_Func_59\n  Original Title: User groups configured locally. Use a full user name including the domain component.\n  Original Description: User groups configured locally. Use a full user name including the domain component."
+   },
+   "1506987" : {
+      "steps" : "  1. User autheticated successfully with sub-partition.2. Check with 'Users and Hosts',identify Method is DSL(DC Security Log Subscription /Polling, Server Session).",
+      "initial" : "  TBD",
+      "id" : "1506987",
+      "title" : "Verify SSO agent assigned to sub-partition work by DSL firstly(DC Security Log Subscription /Polling, Server Session)",
+      "result" : "  Original ID: TP_Auth_063_Func_32\n  Original Title: Verify SSO agent assigned to sub-partition work by DSL firstly(DC Security Log Subscription /Polling, Server Session)\n  Original Description: Verify SSO agent assigned to sub-partition work by DSL firstly(DC Security Log Subscription /Polling, Server Session)"
+   },
+   "1825266" : {
+      "steps" : "  1. When 0 or 65536 is entered in the Hold time(minutes) after error field, the status bar shows an error message Retries. Data out of bounds (min=1,max=65535). 2. The values 1, 30000, and 65535 are accepted and saved in the Sonicwall SSO Agent Configuration.",
+      "initial" : "  TBD",
+      "id" : "1825266",
+      "title" : "User tab: Hold time(minutes) after error field boudaries test",
+      "result" : "  Original ID: TP_Auth_028_UI_28 Original Title: User tab: Hold time(minutes) after error field boudaries test Original Description: User tab: Hold time(minutes) after error field boudaries test"
+   },
+   "1825245" : {
+      "steps" : "  1. It can saved successfully.",
+      "initial" : "  TBD",
+      "id" : "1825245",
+      "title" : "Host Name with special  character Check",
+      "result" : "  Original ID: TP_Auth_012_UI_12 Original Title: Host Name with special character Check Original Description: Host Name with special character Check(like IP address, MAC address, java script, SQL clause, etc)"
+   },
+   "1825189" : {
+      "steps" : "  1. The client PC can access the internet authenticated by SSO agent.E.g. SHCDPQA110\\user1 is authenticated by agent '57.1.1.110',SHCDPQA120\\test1 is authenticated by agent '57.1.1.120'.2. The users authenticated are displayed on [User] - [Status] page of the appliance with the correct partition.3. The log prints the message as the user login allowed.",
+      "initial" : "  TBD",
+      "id" : "1825189",
+      "title" : "one partition including multiple domains can work with different SSO agents(One Forest Two Domain Trees)",
+      "result" : "  Original ID: TP_Auth_039_Func_08\n  Original Title: one partition including multiple domains can work with different SSO agents(One Forest Two Domain Trees)\n  Original Description: Verify one partition including multiple domains can work with different SSO agents(One Forest Two Domain Trees)"
+   },
+   "1825261" : {
+      "steps" : "  1. The Configure button in the Users tab is not dimmed.",
+      "initial" : "  TBD",
+      "id" : "1825261",
+      "title" : "User tab: LDAP Configuration window is available when LDAP is selected for setting user group memberships",
+      "result" : "  Original ID: TP_Auth_022_UI_22 Original Title: User tab: LDAP Configuration window is available when LDAP is selected for setting user group memberships Original Description: User tab: LDAP Configuration window is available when LDAP is selected for setting user group memberships"
+   },
+   "1825254" : {
+      "steps" : "  1. The illegal characters are not allowed and the message prompts the error.",
+      "initial" : "  TBD",
+      "id" : "1825254",
+      "title" : "Incorrectly formatted data in the Max Rqsts field",
+      "result" : "  Original ID: TP_Auth_015_UI_15 Original Title: Incorrectly formatted data in the Max Rqsts field Original Description: Incorrectly formatted data in the Max Rqsts field"
+   },
+   "1825191" : {
+      "steps" : "  1. The client PC can access the internet authenticated by SSO agent.E.g. sub1\\user1 is authenticated by agent '57.1.1.110',sub1\\test1 is authenticated by agent '57.1.1.120'.2. The users authenticated are displayed on [User] - [Status] page of the appliance with the correct partition.3. The log prints the message as the user login allowed.",
+      "initial" : "  TBD",
+      "id" : "1825191",
+      "title" : "Verify one partition including multiple parent/child domains can work with different SSO agents(One Forest Two Domain Trees with Sub-Domains)",
+      "result" : "  Original ID: TP_Auth_041_Func_10\n  Original Title: Verify one partition including multiple parent/child domains can work with different SSO agents(One Forest Two Domain Trees with Sub-Domains)\n  Original Description: Verify one partition including multiple parent/child domains can work with different SSO agents(One Forest Two Domain Trees with Sub-Domains)"
+   },
+   "1825209" : {
+      "steps" : "  1. User autheticated successfully.",
+      "initial" : "  TBD",
+      "id" : "1825209",
+      "title" : "Verify  SSO agent installed in one parent-partition  subnet assigned to other parent-partiton can work(may by NETAPI/WMI)",
+      "result" : "  Original ID: TP_Auth_071_Func_40\n  Original Title: Verify SSO agent installed in one parent-partition subnet assigned to other parent-partiton can work(may by NETAPI/WMI)\n  Original Description: Verify SSO agent installed in one parent-partition subnet assigned to other parent-partiton can work(may by NETAPI/WMI)"
+   },
+   "1825260" : {
+      "steps" : "  1. The Allow only users listed locally check box is enabled.",
+      "initial" : "  TBD",
+      "id" : "1825260",
+      "title" : "User tab: Enable the Allow only users listed locally check box",
+      "result" : "  Original ID: TP_Auth_020_UI_20 Original Title: User tab: Enable the Allow only users listed locally check box Original Description: User tab: Enable the Allow only users listed locally check box"
+   },
+   "1825231" : {
+      "steps" : "  The user qatest2 is allowed to access the Internet. The firewall prints the log message Local user login allowed. The other domain user is presented with Authentication Required page when trying to access the Internet. The firewall prints the log message User login denied - not found locally.",
+      "initial" : "  Configure a domain QALAB on the LAN of SonicWALL. Add a user with the name qatest2 in Active Directory of the domain. On a workstation that is joined the domain, install a Sonicwall SSO Agent. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.Use the other workstation to log users in the domain.",
+      "id" : "1825231",
+      "title" : "Use LDAP to retrieve user group information. Allow only users listed locally.",
+      "result" : "  Original ID: TP_Auth_096_Func_65\n  Original Title: Use LDAP to retrieve user group information. Allow only users listed locally.\n  Original Description: This test verifies that only a user whose full name (including the domain component) is listed in the SonicWALL local database and who is logged in to the domain will be recognized as authenticated by the SonicWALL. The SonicWALL will print the full user name in the log."
+   },
+   "1825269" : {
+      "steps" : "  1. When 0 or 11 is entered in the Retries field, the status bar shows an error message Retries. Data out of bounds (min=1, max=10). 2. The values 1, 5, and 10 are accepted and saved in the Sonicwall SSO Agent Configuration.",
+      "initial" : "  TBD",
+      "id" : "1825269",
+      "title" : "Retries field boundaries test",
+      "result" : "  Original ID: TP_Auth_007_UI_07 Original Title: Retries field boundaries test Original Description: Retries field boundaries test"
+   },
+   "1506980" : {
+      "steps" : "  1.The user logoff and will not display in [Users] - [Status] page.2. The log prints the message about user logoff.",
+      "initial" : "  Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties. The other PC is a workstation where a domain user should log in to the domain.",
+      "id" : "1506980",
+      "title" : "User Logged Out response from SSO agent in one parent partition(parent domain)",
+      "result" : "  Original ID: TP_Auth_048_Func_17\n  Original Title: User Logged Out response from SSO agent in one parent partition(parent domain)\n  Original Description: User Logged Out response from SSO agent in one partition(parent domain)"
+   },
+   "1825242" : {
+      "steps" : "  1. When 0 or 301 is entered in the Timeout (seconds) field, the status bar shows an error message Retries. Data out of bounds (min=1, max=300). 2. The values 1, 150, and 300 are accepted and saved in the Sonicwall SSO Agent Configuration.",
+      "initial" : "  TBD",
+      "id" : "1825242",
+      "title" : "Timeout (seconds) field boudaries test",
+      "result" : "  Original ID: TP_Auth_005_UI_05 Original Title: Timeout (seconds) field boudaries test Original Description: Timeout (seconds) field boudaries test"
+   },
+   "1825267" : {
+      "steps" : "  1. Value 0~99 with Polling rate(minutes) can be saved.. 2. It not allowed to enter a value>=100",
+      "initial" : "  TBD",
+      "id" : "1825267",
+      "title" : "User tab: Polling rate(minutes) field boudaries test",
+      "result" : "  Original ID: TP_Auth_026_UI_26 Original Title: User tab: Polling rate(minutes) field boudaries test Original Description: User tab: Polling rate(minutes) field boudaries test"
+   },
+   "1825215" : {
+      "steps" : "  1. Test is successful .",
+      "initial" : "  TBD",
+      "id" : "1825215",
+      "title" : "Connection test after port change of the SSO Agent",
+      "result" : "  Original ID: TP_Auth_079_Func_48\n  Original Title: Connection test after port change of the SSO Agent\n  Original Description: Connection test after port change of the SSO Agent"
+   },
+   "1825195" : {
+      "steps" : "  1. 'sub1\\test1' is authenticated by SSO and displayed on [User] - [Status]page.<br />2. 'sub1\\test1' change to 'sub1\\test2' displayed on [User] - [Status]page in step[4].",
+      "initial" : "  TBD",
+      "id" : "1825195",
+      "title" : "Switch domain user in one sub-partition(parent/child domain)",
+      "result" : "  Original ID: TP_Auth_047_Func_16\n  Original Title: Switch domain user in one sub-partition(parent/child domain)\n  Original Description: Switch domain user in one sub-partition(parent/child domain)"
+   },
+   "1825185" : {
+      "steps" : "  1.LDAP window can be closed without saving.",
+      "initial" : "  TBD",
+      "id" : "1825185",
+      "title" : "Check SSO agent window can be closed without saving",
+      "result" : "  Original ID: TP_Auth_018_UI_18\n  Original Title: Check SSO agent window can be closed without saving\n  Original Description: Check SSO agent window can be closed without saving"
+   },
+   "1825196" : {
+      "steps" : "  1. The user logoff and will not display in [Users] - [Status] page.<br />2. The log prints the message about user logoff.",
+      "initial" : "  Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties. The other PC is a workstation where a domain user should log in to the domain.",
+      "id" : "1825196",
+      "title" : "User Logged Out response from SSO agent(domian user/non-domain user) in sub partition",
+      "result" : "  Original ID: TP_Auth_050_Func_19\n  Original Title: User Logged Out response from SSO agent(domian user/non-domain user) in sub partition\n  Original Description: User Logged Out response from SSO agent(domian user/non-domain user) in sub partition"
+   },
+   "1825256" : {
+      "steps" : "  1. The illegal characters are not allowed and the message prompts the error.",
+      "initial" : "  TBD",
+      "id" : "1825256",
+      "title" : "User tab: Incorrectly formatted data in the Hold time(minutes) after finding no user field",
+      "result" : "  Original ID: TP_Auth_031_UI_31 Original Title: User tab: Incorrectly formatted data in the Hold time(minutes) after finding no user field Original Description: User tab: Incorrectly formatted data in the Hold time(minutes) after finding no user field"
+   },
+   "1506984" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work.",
+      "initial" : "  TBD",
+      "id" : "1506984",
+      "title" : "Verify partition selection policy by different interfaces work with SSO agent/TS agent/Radius client",
+      "result" : "  Original ID: TP_Auth_056_Func_25\n  Original Title: Verify partition selection policy by different interfaces work with SSO agent/TS agent/Radius client\n  Original Description: Verify partition selection policy by different interfaces work with SSO agent/TS agent/Radius client"
+   },
+   "1825208" : {
+      "steps" : "  TBD",
+      "initial" : "  TBD",
+      "id" : "1825208",
+      "title" : "Verify user login to domain from other partition's  will be identify via its own partition with NETAPI/WMI method",
+      "result" : "  Original ID: TP_Auth_070_Func_39\n  Original Title: Verify user login to domain from other partition's will be identify via its own partition with NETAPI/WMI method\n  Original Description: Verify user login to domain from other partition's will be identify via its own partition with NETAPI/WMI method"
+   },
+   "1506991" : {
+      "steps" : "  1. The packets trace on the agent shows the request from the SonicWALL and response from the agent. 2. The Test Status on the SonicWALL returns the user name in the / format.",
+      "initial" : "  TBD",
+      "id" : "1506991",
+      "title" : "Check user test with SSO Agent",
+      "result" : "  Original ID: TP_Auth_078_Func_47\n  Original Title: Check user test with SSO Agent\n  Original Description: Check user test with SSO Agent"
+   },
+   "1825259" : {
+      "steps" : "  1.Empty input is not allowed and tip/error msg display.",
+      "initial" : "  TBD",
+      "id" : "1825259",
+      "title" : "Empty input check",
+      "result" : "  Original ID: TP_Auth_017_UI_17 Original Title: Empty input check Original Description: Empty input check"
+   },
+   "1506986" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work.",
+      "initial" : "  TBD",
+      "id" : "1506986",
+      "title" : "Verify policy configured for specified parent/sub partition can work with SSO agent/TS agent/Radius client",
+      "result" : "  Original ID: TP_Auth_061_Func_30\n  Original Title: Verify policy configured for specified parent/sub partition can work with SSO agent/TS agent/Radius client\n  Original Description: Verify policy configured for specified parent/sub partition can work with SSO agent/TS agent/Radius client"
+   },
+   "1825198" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work.",
+      "initial" : "  TBD",
+      "id" : "1825198",
+      "title" : "Verify multiple partitions in different zones mixed can work with SSO agent/TS agent/Radius client",
+      "result" : "  Original ID: TP_Auth_053_Func_22\n  Original Title: Verify multiple partitions in different zones mixed can work with SSO agent/TS agent/Radius client\n  Original Description: Verify multiple partitions in different zones mixed can work with SSO agent/TS agent/Radius client"
+   },
+   "1506975" : {
+      "steps" : "  1. 'sub1\\test1' is authenticated by SSO and displayed on [User] - [Status]page marked in 'Default' partition.2. The client PC can access the internet.3. There is the log message in Log Monitor.",
+      "initial" : "  TBD",
+      "id" : "1506975",
+      "title" : "Default' partition can work with SSO in a parent/child domain",
+      "result" : "  Original ID: TP_Auth_033_Func_02\n  Original Title: Default' partition can work with SSO in a parent/child domain\n  Original Description: Verify 'Default' partition can work with SSO in a parent/child domain"
+   },
+   "1825262" : {
+      "steps" : "  1.Error displays and client cannot add.",
+      "initial" : "  TBD",
+      "id" : "1825262",
+      "title" : "Check Shared Secret not match",
+      "result" : "  Original ID: TP_Auth_019_UI_19 Original Title: Check Shared Secret not match Original Description: Check Shared Secret not match"
+   },
+   "1825234" : {
+      "steps" : "  The packet trace on the agent shows 3 request messages sent from the SonicWALL when running the connectivity test first time.When the connectivity test is running second time, The SonicWALL sends 6 request messages to the agent.",
+      "initial" : "  Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the other PC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.",
+      "id" : "1825234",
+      "title" : "Retry timed-out requests to the agent.",
+      "result" : "  Original ID: TP_Auth_099_Func_68\n  Original Title: Retry timed-out requests to the agent.\n  Original Description: This test verifies that the number of request messages that the firewall sends to the Sonicwall SSO Agent in case of timed out connection will be the one defined in the Retries field."
+   },
+   "1825205" : {
+      "steps" : "  1. User can not be autheticated with sub-partition.",
+      "initial" : "  TBD",
+      "id" : "1825205",
+      "title" : "Verify authentication of sub-partition user not work when no agent assigned to sub-partition with NETAPI or WMI enabled if fails above",
+      "result" : "  Original ID: TP_Auth_067_Func_36\n  Original Title: Verify authentication of sub-partition user not work when no agent assigned to sub-partition with NETAPI or WMI enabled if fails above\n  Original Description: Verify authentication of sub-partition user not work when no agent assigned to sub-partition with NETAPI or WMI enabled if fails above"
+   },
+   "1825192" : {
+      "steps" : "  1. The client PC can access the internet authenticated by SSO agent.E.g. 'part-57.1.1.x': sub1\\user1 is authenticated by agent '57.1.1.110',sub1\\test1 is authenticated by agent '57.1.1.120'. 'part-192.168.57.x': sub1\\user1 is authenticated by agent '192.168.57.130',sub1\\test1 is authenticated by agent '192.168.57.140'.2. The users authenticated are displayed on [User] - [Status] page of the appliance with the correct partition.3. The log prints the message as the user login allowed.",
+      "initial" : "  TBD",
+      "id" : "1825192",
+      "title" : "multiple partitions including multiple parent/child domains can work with different SSO agents(One Forest Two Domain Trees with Sub-Domains)",
+      "result" : "  Original ID: TP_Auth_042_Func_11\n  Original Title: multiple partitions including multiple parent/child domains can work with different SSO agents(One Forest Two Domain Trees with Sub-Domains)\n  Original Description: Verify multiple partitions including multiple parent/child domains can work with different SSO agents(One Forest Two Domain Trees with Sub-Domains)"
+   },
+   "1825257" : {
+      "steps" : "  1. The illegal characters are not allowed and the message prompts the error.",
+      "initial" : "  TBD",
+      "id" : "1825257",
+      "title" : "User tab: Incorrectly formatted data in the Hold time(minutes) after error field",
+      "result" : "  Original ID: TP_Auth_029_UI_29 Original Title: User tab: Incorrectly formatted data in the Hold time(minutes) after error field Original Description: User tab: Incorrectly formatted data in the Hold time(minutes) after error field"
+   },
+   "1825240" : {
+      "steps" : "  1. 163.com Webmail Application can not be visited.2. Users Status display authenticated user by SSO.",
+      "initial" : "  TBD",
+      "id" : "1825240",
+      "title" : "Application firewall trigger SSO authentication",
+      "result" : "  Original ID: TP_Auth_105_Func_74 Original Title: Application firewall trigger SSO authentication Original Description: Application firewall trigger SSO authentication"
+   },
+   "1825239" : {
+      "steps" : "  User display in [Users] - [Status] page.",
+      "initial" : "  TBD",
+      "id" : "1825239",
+      "title" : "Anti-spyware trigger SSO authentication",
+      "result" : "  Original ID: TP_Auth_104_Func_73\n  Original Title: Anti-spyware trigger SSO authentication\n  Original Description: Anti-spyware trigger SSO authentication"
+   },
+   "1825187" : {
+      "steps" : "  1. The client PC can access the internet authenticated by SSO agent.E.g. SHCDPQA130\\user1 is authenticated by agent '192.168.57.130',SHCDPQA110\\test1 is authenticated by agent '57.1.1.110'.2. The users authenticated are displayed on [User] - [Status] page of the appliance with the correct partition.3. The log prints the message as the user login allowed.",
+      "initial" : "  TBD",
+      "id" : "1825187",
+      "title" : "different partitions can work with different SSO agents in parent domains",
+      "result" : "  Original ID: TP_Auth_036_Func_05\n  Original Title: different partitions can work with different SSO agents in parent domains\n  Original Description: Verify different partitions can work with different SSO agents in parent domains"
+   },
+   "1825264" : {
+      "steps" : "  1. When 0 or 65536 is entered in the Probe timeout field, the status bar shows an error message Retries. Data out of bounds (min=1,max=65535). 2. The values 1, 5, and 65535 are accepted and saved in the Sonicwall SSO Agent Configuration.",
+      "initial" : "  TBD",
+      "id" : "1825264",
+      "title" : "User tab: Probe timeout(seconds) field boudaries test",
+      "result" : "  Original ID: TP_Auth_024_UI_24 Original Title: User tab: Probe timeout(seconds) field boudaries test Original Description: User tab: Probe timeout(seconds) field boudaries test"
+   },
+   "1825212" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work for the partition.",
+      "initial" : "  TBD",
+      "id" : "1825212",
+      "title" : "SSO agent/TS agent/Radius client all can work when all configured with one partition",
+      "result" : "  Original ID: TP_Auth_074_Func_43\n  Original Title: SSO agent/TS agent/Radius client all can work when all configured with one partition\n  Original Description: SSO agent/TS agent/Radius client all can work when all configured with one partition"
+   },
+   "1825213" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work for sub-partition.",
+      "initial" : "  TBD",
+      "id" : "1825213",
+      "title" : "SSO agent/TS agent/Radius client all can work when all configured with sub partition",
+      "result" : "  Original ID: TP_Auth_075_Func_44\n  Original Title: SSO agent/TS agent/Radius client all can work when all configured with sub partition\n  Original Description: SSO agent/TS agent/Radius client all can work when all configured with sub partition"
+   },
+   "1506992" : {
+      "steps" : "  When the user is accessing the Internet first time, packet trace on Ethereal shows that the search is made from the top of the directory tree (elenaqa domain). First Search Request uses Base DN=dc=elenaqa,dc=com. Next Search Request uses Base DN=DC=qalab,DC=elenaqa,DC=com. The user is located in the sub-domain. The message Search Entry, 1 Result returns Attribute memberOf with value CN=test1,CN=Users,DC=qalab,DC=elenaqa,DC=com, and Attribute sAMAccountName with value qatest2.CLI shows Cached domain DNs: QALAB: DC=qalab,DC=elenaqa,DC=com. When the user is accessing the Internet second time (step 12), packet trace on Ethereal shows that the search is made from the sub-directory (qalab sub-domain). Search Request uses Base DN=DC=qalab,DC=elenaqa,DC=com. The message Search Result doesn't return any attributes. The user is presented with Access Barred page. When the user attampts to access the Internet third time, the the search is made from the top of the directory tree (elenaqa domain). First Search Request uses Base DN=dc=elenaqa,dc=com. Next Search Request uses Base DN=DC=qalab,DC=elenaqa,DC=com. No attributes returned in the Search Result. The firewall shows log messages User group membership retrieval failed and User login denied - not allowed by policy rule.",
+      "initial" : "  Configure a parent domain and a child domain on the LAN of SonicWALL. Install a Sonicwall SSO Agent on one of the workstations that is joined to the parent domain. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.Have another workstation (joined to the domain) where a domain user should log in to the network.In the Active Directory of the sub-domain controller, add a user qatest2.",
+      "id" : "1506992",
+      "title" : "Use LDAP to retrieve user group information. Domain object is found.",
+      "result" : "  Original ID: TP_Auth_095_Func_64\n  Original Title: Use LDAP to retrieve user group information. Domain object is found.\n  Original Description: This test verifies that once a domain object has been found, the information from it will be saved to avoid repeatedly searching for the same object."
+   },
+   "1825190" : {
+      "steps" : "  1. The client PC can access the internet authenticated by SSO agent.E.g. SHCDPQA110\\user1 is authenticated by agent '57.1.1.110', SHCDPQA120\\test1 is authenticated by agent '57.1.1.120'. SHCDPQA130\\user1 is authenticated by agent '192.168.57.130',SHCDPQA140\\test1 is authenticated by agent '192.168.57.140'.2. The users authenticated are displayed on [User] - [Status] page of the appliance with the correct partition.3. The log prints the message as the user login allowed.",
+      "initial" : "  TBD",
+      "id" : "1825190",
+      "title" : "multiple partitions including multiple domains can work with different SSO agents(One Forest Two Domain Trees)",
+      "result" : "  Original ID: TP_Auth_040_Func_09\n  Original Title: multiple partitions including multiple domains can work with different SSO agents(One Forest Two Domain Trees)\n  Original Description: Verify multiple partitions including multiple domains can work with different SSO agents(One Forest Two Domain Trees)"
+   },
+   "1825216" : {
+      "steps" : "  1. user name should be successfully added and displayed, and it should be successfully pushed to the agent.",
+      "initial" : "  TBD",
+      "id" : "1825216",
+      "title" : "Add Windows services user name",
+      "result" : "  Original ID: TP_Auth_080_Func_49\n  Original Title: Add Windows services user name\n  Original Description: Add Windows services user name"
+   },
+   "1825238" : {
+      "steps" : "  1. User display in [Users] - [Status] page.",
+      "initial" : "  TBD",
+      "id" : "1825238",
+      "title" : "IPS trigger SSO authentication",
+      "result" : "  Original ID: TP_Auth_103_Func_72\n  Original Title: IPS trigger SSO authentication\n  Original Description: IPS trigger SSO authentication"
+   },
+   "1825201" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work.",
+      "initial" : "  TBD",
+      "id" : "1825201",
+      "title" : "Verify partition selection policy by different IP range work with SSO agent/TS agent/Radius client",
+      "result" : "  Original ID: TP_Auth_058_Func_27\n  Original Title: Verify partition selection policy by different IP range work with SSO agent/TS agent/Radius client\n  Original Description: Verify partition selection policy by different IP range work with SSO agent/TS agent/Radius client"
+   },
+   "1825263" : {
+      "steps" : "  1. The illegal characters are not allowed and the message prompts the error.",
+      "initial" : "  TBD",
+      "id" : "1825263",
+      "title" : "User tab: Incorrectly formatted data in the Polling rate(minutes)  field",
+      "result" : "  Original ID: TP_Auth_027_UI_27 Original Title: User tab: Incorrectly formatted data in the Polling rate(minutes) field Original Description: User tab: Incorrectly formatted data in the Polling rate(minutes) field"
+   },
+   "1825252" : {
+      "steps" : "  1. The illegal characters are not allowed and the message prompts the error.",
+      "initial" : "  TBD",
+      "id" : "1825252",
+      "title" : "Illegal character check for Host name",
+      "result" : "  Original ID: TP_Auth_013_UI_13 Original Title: Illegal character check for Host name Original Description: Illegal character check for Host name"
+   },
+   "1506983" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work.",
+      "initial" : "  TBD",
+      "id" : "1506983",
+      "title" : "Verify partition selection policy by LAN/DMZ work with SSO agent/TS agent/Radius client",
+      "result" : "  Original ID: TP_Auth_055_Func_24\n  Original Title: Verify partition selection policy by LAN/DMZ work with SSO agent/TS agent/Radius client\n  Original Description: Verify partition selection policy by LAN/DMZ work with SSO agent/TS agent/Radius client"
+   },
+   "1825200" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work.",
+      "initial" : "  TBD",
+      "id" : "1825200",
+      "title" : "Verify partition selection policy by different subnets work with SSO agent/TS agent/Radius client",
+      "result" : "  Original ID: TP_Auth_057_Func_26\n  Original Title: Verify partition selection policy by different subnets work with SSO agent/TS agent/Radius client\n  Original Description: Verify partition selection policy by different subnets work with SSO agent/TS agent/Radius client"
+   },
+   "1825203" : {
+      "steps" : "  1. priority with policy for Default/specified partition can work.",
+      "initial" : "  TBD",
+      "id" : "1825203",
+      "title" : "Verify priority with policy for Default/specified partition can take effect",
+      "result" : "  Original ID: TP_Auth_062_Func_31\n  Original Title: Verify priority with policy for Default/specified partition can take effect\n  Original Description: Verify priority with policy for Default/specified partition can take effect"
+   },
+   "1506974" : {
+      "steps" : "  1. 'SHCDPQA130\\user1' is authenticated by SSO and displayed on [User] - [Status]page marked in 'Default' partition.2. The client PC can access the internet.3. There is the log message in Log Monitor.",
+      "initial" : "  TBD",
+      "id" : "1506974",
+      "title" : "Default' partition can work with SSO in a parent domain",
+      "result" : "  Original ID: TP_Auth_032_Func_01\n  Original Title: Default' partition can work with SSO in a parent domain\n  Original Description: Verify 'Default' partition can work with SSO in a parent domain"
+   },
+   "1506982" : {
+      "steps" : "  1.The user that is not logged in to the domain is not allowed to access the Internet. 2. The firewall prints a log message Access is denied by policy. The user is presented with a page prompting to log in to the network.",
+      "initial" : "  Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties. The other PC is a workstation where a domain user should log in to the domain.",
+      "id" : "1506982",
+      "title" : "A user is not logged in to a domain and accessing resources within the network in one partition",
+      "result" : "  Original ID: TP_Auth_052_Func_21\n  Original Title: A user is not logged in to a domain and accessing resources within the network in one partition\n  Original Description: A user is not logged in to a domain and accessing resources within the network in one partition"
+   },
+   "1825250" : {
+      "steps" : "  1. It can saved successfully.",
+      "initial" : "  TBD",
+      "id" : "1825250",
+      "title" : "Special ip address check with RADIUS client",
+      "result" : "  Original ID: TP_Auth_010_UI_10 Original Title: Special ip address check with RADIUS client Original Description: Special ip address check with RADIUS client"
+   },
+   "1825236" : {
+      "steps" : "  The user inactivity remaining is counted down in the Active User Session table on the Users > Status page. The session is terminated in 5 minutes. The firewall prints the log message User logged out - inactivity time exceeded.",
+      "initial" : "  Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.The other PC is a workstation where a domain user should log in to the domain.",
+      "id" : "1825236",
+      "title" : "User session is terminated by inactivity time expiry.",
+      "result" : "  Original ID: TP_Auth_101_Func_70 Original Title: User session is terminated by inactivity time expiry. Original Description: This test verifies that the user session will be terminated upon the Inactivity time expiry."
+   },
+   "1825268" : {
+      "steps" : "  1. When 0 or 65536 is entered in the Hold time(minutes) after finding no user field, the status bar shows an error message Retries. Data out of bounds (min=1,max=65535). 2. The values 1, 30000, and 65535 are accepted and saved in the Sonicwall SSO Agent Configuration.",
+      "initial" : "  TBD",
+      "id" : "1825268",
+      "title" : "User tab: Hold time(minutes) after finding no user field boudaries test",
+      "result" : "  Original ID: TP_Auth_030_UI_30 Original Title: User tab: Hold time(minutes) after finding no user field boudaries test Original Description: User tab: Hold time(minutes) after finding no user field boudaries test"
+   },
+   "1506981" : {
+      "steps" : "  1.The user logoff and will not display in [Users] - [Status] page.2. The log prints the message about user logoff.",
+      "initial" : "  Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties. The other PC is a workstation where a domain user should log in to the domain.",
+      "id" : "1506981",
+      "title" : "User Logged Out response from SSO agent in one parent partition(parent/child domain)",
+      "result" : "  Original ID: TP_Auth_049_Func_18\n  Original Title: User Logged Out response from SSO agent in one parent partition(parent/child domain)\n  Original Description: User Logged Out response from SSO agent in one partition(parent/child domain)"
+   },
+   "1506978" : {
+      "steps" : "  1. 'SHCDPQA110\\user1' is authenticated by SSO and displayed on [User] - [Status]page in step[4].2. 'SHCDPQA110\\user1' change to 'SHCDPQA110\\user2' displayed on [User] - [Status]page in step[5].",
+      "initial" : "  TBD",
+      "id" : "1506978",
+      "title" : "Switch domain user in one partition(parent domain)",
+      "result" : "  Original ID: TP_Auth_044_Func_13\n  Original Title: Switch domain user in one partition(parent domain)\n  Original Description: Switch domain user in one partition(parent domain)"
+   },
+   "1825244" : {
+      "steps" : "  1. The characters #, %, and n are not accepted in the Retries field. The status bar shows an error message: Retries.Data is incorrectly formatted.",
+      "initial" : "  TBD",
+      "id" : "1825244",
+      "title" : "Incorrectly formatted data in the Retries field",
+      "result" : "  Original ID: TP_Auth_008_UI_08 Original Title: Incorrectly formatted data in the Retries field Original Description: Incorrectly formatted data in the Retries field"
+   },
+   "1825241" : {
+      "steps" : "  1. The invalid ip address is not allowed and the message prompts the error.",
+      "initial" : "  TBD",
+      "id" : "1825241",
+      "title" : "Invalid IP address check",
+      "result" : "  Original ID: TP_Auth_009_UI_09 Original Title: Invalid IP address check Original Description: Invalid IP address check"
+   },
+   "1825223" : {
+      "steps" : "  1. If agent used is down,other agents in partition can work replace of it.",
+      "initial" : "  TBD",
+      "id" : "1825223",
+      "title" : "Verify SSO agents redundancy work for parent/secondary partition",
+      "result" : "  Original ID: TP_Auth_087_Func_56\n  Original Title: Verify SSO agents redundancy work for parent/secondary partition\n  Original Description: Verify SSO agents redundancy work for parent/secondary partition"
+   },
+   "1825237" : {
+      "steps" : "  1. CFS policy can trigger SSO authentication, www.baidu.com can be blocked successfully.2. Users Status display authenticated user by SSO.",
+      "initial" : "  TBD",
+      "id" : "1825237",
+      "title" : "CFS policy trigger SSO authentication",
+      "result" : "  Original ID: TP_Auth_102_Func_71 Original Title: CFS policy trigger SSO authentication Original Description: CFS policy trigger SSO authentication"
+   },
+   "1825204" : {
+      "steps" : "  1. User can not be autheticated with parent-partition.",
+      "initial" : "  TBD",
+      "id" : "1825204",
+      "title" : "Verify SSO agent assigned to parent-partition not work by NETAPI/WMI if fails above",
+      "result" : "  Original ID: TP_Auth_066_Func_35\n  Original Title: Verify SSO agent assigned to parent-partition not work by NETAPI/WMI if fails above\n  Original Description: Verify SSO agent assigned to parent-partition not work by NETAPI/WMI if fails above"
+   },
+   "1825217" : {
+      "steps" : "  1. Add windows services user name should works fine and the change should be updated to the agent.",
+      "initial" : "  TBD",
+      "id" : "1825217",
+      "title" : "Add special Windows services user name",
+      "result" : "  Original ID: TP_Auth_081_Func_50\n  Original Title: Add special Windows services user name\n  Original Description: This case verifies add speical user names such as 'yili\\test' which contain '\\' character works fine"
+   },
+   "1825207" : {
+      "steps" : "  1. User autheticated successfully with sub-partition",
+      "initial" : "  TBD",
+      "id" : "1825207",
+      "title" : "Verify SSO agent assigned to sub-partition work when sub-partition is not sub domain",
+      "result" : "  Original ID: TP_Auth_069_Func_38\n  Original Title: Verify SSO agent assigned to sub-partition work when sub-partition is not sub domain\n  Original Description: Verify SSO agent assigned to sub-partition work when sub-partition is not sub domain"
+   },
+   "1825218" : {
+      "steps" : "  1. Edit windows services user name should works fine and the change should be updated to the agent.",
+      "initial" : "  TBD",
+      "id" : "1825218",
+      "title" : "Edit Windows services user names",
+      "result" : "  Original ID: TP_Auth_082_Func_51\n  Original Title: Edit Windows services user names\n  Original Description: Edit Windows services user names"
+   },
+   "1825227" : {
+      "steps" : "  1. The SonicWALL allows accessing the Internet to the first user and denies the second one. 2. The users' names are printed in the log messages in the / format.",
+      "initial" : "  Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.The other PC is a workstation where a domain user should log in to the domain.",
+      "id" : "1825227",
+      "title" : "User groups configured locally. Use a full user name including the domain component. Allow only users listed locally.",
+      "result" : "  Original ID: TP_Auth_091_Func_60\n  Original Title: User groups configured locally. Use a full user name including the domain component. Allow only users listed locally.\n  Original Description: User groups configured locally. Use a full user name including the domain component. Allow only users listed locally."
+   },
+   "1825221" : {
+      "steps" : "  1. No user display in [Users] - [Status] page.",
+      "initial" : "  TBD",
+      "id" : "1825221",
+      "title" : "Verify 'Enable SSO agent authentication' can work",
+      "result" : "  Original ID: TP_Auth_085_Func_54 Original Title: Verify 'Enable SSO agent authentication' can work Original Description: Verify 'Enable SSO agent authentication' can work"
+   },
+   "1825197" : {
+      "steps" : "  1.The user that is logged in to the domain is allowed to access the Internet without logging in to the SonicWALL. 2. The firewall prints a log message User login allowed. The user is shown on the [Users] - [Settings] page of the SonicWALL.",
+      "initial" : "  Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties. The other PC is a workstation where a domain user should log in to the domain.",
+      "id" : "1825197",
+      "title" : "A user is logged in to a domain and accessing resources within the network in one partion",
+      "result" : "  Original ID: TP_Auth_051_Func_20 Original Title: A user is logged in to a domain and accessing resources within the network in one partion Original Description: A user is logged in to a domain and accessing resources within the network in one partion"
+   },
+   "1825248" : {
+      "steps" : "  The characters #, %, and n are not accepted in the Timeout field. The status bar shows an error message: Port number.Data is incorrectly formatted.",
+      "initial" : "  TBD",
+      "id" : "1825248",
+      "title" : "Incorrectly formatted data with Port number test",
+      "result" : "  Original ID: TP_Auth_003_UI_03 Original Title: Incorrectly formatted data with Port number test Original Description: Incorrectly formatted data with Port number test"
+   },
+   "1825253" : {
+      "steps" : "  1. When 0 or 65536 is entered in the Port number field, the status bar shows an error message Retries. Data out of bounds (min=1, max=65535). 2. The values 1, 5, and 65535 are accepted and saved in the Sonicwall SSO Agent Configuration.",
+      "initial" : "  TBD",
+      "id" : "1825253",
+      "title" : "Port number boundary test with SSO agent",
+      "result" : "  Original ID: TP_Auth_002_UI_02 Original Title: Port number boundary test with SSO agent Original Description: Port number boundary test with SSO agent"
+   },
+   "1825186" : {
+      "steps" : "  1. 'SHCDPQA110\\user1' is authenticated by SSO and displayed on [User] - [Status]page marked in 'Default' partition.2. The client PC can access the internet.3. There is the log message in Log Monitor.",
+      "initial" : "  TBD",
+      "id" : "1825186",
+      "title" : "a specific partition can work with SSO in a parent domain",
+      "result" : "  Original ID: TP_Auth_034_Func_03 Original Title: a specific partition can work with SSO in a parent domain Original Description: Verify a specific partition can work with SSO in a parent domain"
+   },
+   "1825202" : {
+      "steps" : "  1. SSO agent/TS agent/Radius client all can work.",
+      "initial" : "  TBD",
+      "id" : "1825202",
+      "title" : "Verify default policy for Default partition can work with SSO agent/TS agent/Radius client",
+      "result" : "  Original ID: TP_Auth_060_Func_29 Original Title: Verify default policy for Default partition can work with SSO agent/TS agent/Radius client Original Description: Verify default policy for Default partition can work with SSO agent/TS agent/Radius client"
+   },
+   "1825210" : {
+      "steps" : "  1. User autheticated successfully.",
+      "initial" : "  TBD",
+      "id" : "1825210",
+      "title" : "Verify  SSO agent installed in one sub-partition assigned to other sub-partiton can work(both belong to same parent-partition)",
+      "result" : "  Original ID: TP_Auth_072_Func_41\n  Original Title: Verify SSO agent installed in one sub-partition assigned to other sub-partiton can work(both belong to same parent-partition)\n  Original Description: Verify SSO agent installed in one sub-partition assigned to other sub-partiton can work(both belong to same parent-partition)"
+   },
+   "1825233" : {
+      "steps" : "  The configured parameters in the Settings and Users tabs of the Sonicwall SSO Agent Configuration window are intact after the firmware upgrade.",
+      "initial" : "  TBD",
+      "id" : "1825233",
+      "title" : "Sonicwall SSO Agent Authentication configuration stays intact after firmware upgrade.",
+      "result" : "  Original ID: TP_Auth_098_Func_67 Original Title: Sonicwall SSO Agent Authentication configuration stays intact after firmware upgrade. Original Description: This test verifies that settings configured in the Sonicwall SSO Agent window are saved after the firmware upgrade."
+   },
+   "1825255" : {
+      "steps" : "  1. The Configure button in the Users tab is dimmed.",
+      "initial" : "  TBD",
+      "id" : "1825255",
+      "title" : "User tab:  LDAP Configuration window is not available when local configuration is selected for setting user group memberships",
+      "result" : "  Original ID: TP_Auth_023_UI_23 Original Title: User tab: LDAP Configuration window is not available when local configuration is selected for setting user group memberships Original Description: User tab: LDAP Configuration window is not available when local configuration is selected for setting user group memberships"
+   },
+   "1506979" : {
+      "steps" : "  1. 'sub1\\test1' is authenticated by SSO and displayed on [User] - [Status]page.2. 'sub1\\test1' change to 'sub1\\test2' displayed on [User] - [Status]page in step[5].",
+      "initial" : "  TBD",
+      "id" : "1506979",
+      "title" : "Switch sub domain user in one partition(parent/child domain)",
+      "result" : "  Original ID: TP_Auth_045_Func_14\n  Original Title: Switch sub domain user in one partition(parent/child domain)\n  Original Description: Switch sub domain user in one partition(parent/child domain)"
+   },
+   "1825193" : {
+      "steps" : "  1. The client PC can access the internet authenticated by SSO agent.E.g. sub1\\user1 is authenticated by agent '192.168.57.130',sub1\\user1 is authenticated by agent '57.1.1.110'.2. The users authenticated are displayed on [User] - [Status] page of the appliance.3. The log prints the message as the user login allowed.",
+      "initial" : "  TBD",
+      "id" : "1825193",
+      "title" : "the same child domain user name can be authenticated by different SSO agents in different partitions",
+      "result" : "  Original ID: TP_Auth_043_Func_12\n  Original Title: the same child domain user name can be authenticated by different SSO agents in different partitions\n  Original Description: Verify the same child domain user name can be authenticated by different SSO agents in different partitions"
+   },
+   "1506990" : {
+      "steps" : "  1. The packets trace on the agent's PC shows a request from the SonicWALL and response from the agent. 2. The test status in the Test tab of the Sonicwall SSO Agent Configuration window returns Agent is ready message.",
+      "initial" : "  TBD",
+      "id" : "1506990",
+      "title" : "Check agent Connectivity test.",
+      "result" : "  Original ID: TP_Auth_076_Func_45\n  Original Title: Check agent Connectivity test.\n  Original Description: Check agent Connectivity test."
+   },
+   "1506989" : {
+      "steps" : "  1. User autheticated successfully with sub partition.2. Check with 'Users and Hosts',identify Method is NETAPI/WMI.",
+      "initial" : "  TBD",
+      "id" : "1506989",
+      "title" : "Verify SSO agent assigned to sub-partition work by NETAPI/WMI if fails above",
+      "result" : "  Original ID: TP_Auth_065_Func_34\n  Original Title: Verify SSO agent assigned to sub-partition work by NETAPI/WMI if fails above\n  Original Description: Verify SSO agent assigned to sub-partition work by NETAPI/WMI if fails above"
+   },
+   "1825247" : {
+      "steps" : "  1. The appliance can only configure even number of characters of the shared keys, and less than 16 characters with hexadecimal format.",
+      "initial" : "  TBD",
+      "id" : "1825247",
+      "title" : "Different length of shared key",
+      "result" : "  Original ID: TP_Auth_004_UI_04 Original Title: Different length of shared key Original Description: Different length of shared key"
+   },
+   "1825235" : {
+      "steps" : "  describled in step 8",
+      "initial" : "  Have two PCs on the LAN of SonicWALL joined the domain. One PC should be a domain controller with Domain users and groups configured on it. Install a Sonicwall SSO Agent on the DC. Set a shared key on the Sonicwall SSO Agent and enter SonicWALL's LAN IP address in the agent's properties.The other PC is a workstation where a domain user should log in to the domain.",
+      "id" : "1825235",
+      "title" : "User session is terminated by session time expiry.",
+      "result" : "  Original ID: TP_Auth_100_Func_69 Original Title: User session is terminated by session time expiry. Original Description: This test verifies that Single sign on users is not subject to the login session limit"
+   },
+   "1825232" : {
+      "steps" : "  The configured parameters in the Settings and Users tabs of the Sonicwall SSO Agent Configuration window are intact after export/import preferences.",
+      "initial" : "  TBD",
+      "id" : "1825232",
+      "title" : "Sonicwall SSO Agent Authentication configuration is saved in a preference file.",
+      "result" : "  Original ID: TP_Auth_097_Func_66\n  Original Title: Sonicwall SSO Agent Authentication configuration is saved in a preference file.\n  Original Description: This test verifies that settings configured in the Sonicwall SSO Agent window are saved in a preference file."
+   },
+   "1825258" : {
+      "steps" : "  1. The illegal characters are not allowed and the message prompts the error.",
+      "initial" : "  TBD",
+      "id" : "1825258",
+      "title" : "User tab: Incorrectly formatted data in the Probe timeout(seconds)  field",
+      "result" : "  Original ID: TP_Auth_025_UI_25 Original Title: User tab: Incorrectly formatted data in the Probe timeout(seconds) field Original Description: User tab: Incorrectly formatted data in the Probe timeout(seconds) field"
+   },
+   "1506988" : {
+      "steps" : "  1. User autheticated successfully with parent partition.2. Check with 'Users and Hosts',identify Method is DSL(DC Security Log Subscription /Polling, Server Session).",
+      "initial" : "  TBD",
+      "id" : "1506988",
+      "title" : "Verify SSO agent assigned to parent-partition work by DSL if fails above",
+      "result" : "  Original ID: TP_Auth_064_Func_33\n  Original Title: Verify SSO agent assigned to parent-partition work by DSL if fails above\n  Original Description: Verify SSO agent assigned to parent-partition work by DSL if fails above"
+   },
+   "1506976" : {
+      "steps" : "  1. 'sub1\\test1' is authenticated by SSO and displayed on [User] - [Status]page marked in 'SHCDPQA110' partition.2. The client PC can access the internet.3. There is the log message in Log Monitor.",
+      "initial" : "  TBD",
+      "id" : "1506976",
+      "title" : "a specific partition can work with SSO in a parent/child domain",
+      "result" : "  Original ID: TP_Auth_035_Func_04\n  Original Title: a specific partition can work with SSO in a parent/child domain\n  Original Description: Verify a specific partition can work with SSO in a parent/child domain"
+   },
+   "1825249" : {
+      "steps" : "  The Shared Key field accepts maximum 16 characters.",
+      "initial" : "  TBD",
+      "id" : "1825249",
+      "title" : "The Shared Key field boundaries.",
+      "result" : "  Original ID: TP_Auth_001_UI_01 Original Title: The Shared Key field boundaries. Original Description: The Shared Key field boundaries."
+   },
+   "1506977" : {
+      "steps" : "  1. The client PC can access the internet authenticated by SSO agent.E.g. sub1\\user1 is authenticated by agent '192.168.57.130',sub1\\test1 is authenticated by agent '57.1.1.110'.2. The users authenticated are displayed on [User] - [Status] page of the appliance with the correct partition.3. The log prints the message as the user login allowed.",
+      "initial" : "  TBD",
+      "id" : "1506977",
+      "title" : "different partitions can work with different SSO agents in parent/child domains",
+      "result" : "  Original ID: TP_Auth_038_Func_07\n  Original Title: different partitions can work with different SSO agents in parent/child domains\n  Original Description: Verify different partitions can work with different SSO agents in parent/child domains"
+   }
+}

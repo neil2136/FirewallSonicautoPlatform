@@ -1,0 +1,66 @@
+{
+  "3259015": {
+    "steps": "Go to Network/SSL VPN/Server Settings, click Authentication Type drop-down box.\nSelect SAML for Authentication Type, click Accept.\n",
+    "id": "3259015",
+    "title": "SAML authentication type can be selected for SSLVPN server Authentication Type",
+    "description": "",
+    "initial": "Older version than 10.3.0 can't support SAML Login for NX.\nIDP settings refer:\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\nUser is created on the IDP.\nSSLVPN service SAML profiles have been added.",
+    "result": "There are three options in Authentication Type drop-down box: Password, Certificate, SAML.\nSAML authentication type can be saved."
+  },
+  "3259016": {
+    "steps": "Go to Network/SSL VPN/Server Settings, click Authentication Type drop-down box, select SAML for Authentication Type, click Accept.\nClick SAML profile configure button of SAML profile to open SAML profiles for SSLVPN window.",
+    "id": "3259016",
+    "title": "On SAML profiles for SSLVPN, only SSL VPN related SAML profiles will be shown",
+    "description": "",
+    "initial": "Older version than 10.3.0 can't support SAML Login for NX.\nIDP settings refer:\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\nUser is created on the IDP.\nSSLVPN service SAML profiles have been added.",
+    "result": "Only SSL VPN related SAML profiles will be shown."
+  },
+  "3259017": {
+    "steps": "Go to Network/SSL VPN/Server Settings, click Authentication Type drop-down box, select SAML for Authentication Type, click Accept.\nClick SAML profile configure button to open SAML profiles for SSLVPN window.\nClick the expanding triangle.",
+    "id": "3259017",
+    "title": "The details of SAML Profiles can be expanded",
+    "description": "",
+    "initial": "Older version than 10.3.0 can't support SAML Login for NX.\nIDP settings refer:\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\nUser is created on the IDP.\nSSLVPN service SAML profiles have been added.",
+    "result": "SP configuration and IDP configuration can be displayed correctly."
+  },
+  "3259018": {
+    "steps": "Go to Network/SSL VPN/Server Settings, click Authentication Type drop-down box, select SAML for Authentication Type, click Accept.\nClick SAML profile configure button to open SAML profiles for SSLVPN window.\nEnable/disable SAML Profiles for SSLVPN.",
+    "id": "3259018",
+    "title": "SSLVPN SAML Profiles can be enabled/disabled",
+    "description": "",
+    "initial": "Older version than 10.3.0 can't support SAML Login for NX.\nIDP settings refer:\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\nUser is created on the IDP.\nSSLVPN service SAML profiles have been added.",
+    "result": "SSLVPN SAML Profiles can be enabled/disabled."
+  },
+  "3259019": {
+    "steps": "Go to Network/SSL VPN/Server Settings, click Authentication Type drop-down box, select SAML for Authentication Type, click Accept.\nClick SAML profile configure button to open SAML profiles for SSLVPN window.\nClick \"go to create more profiles\" button.",
+    "id": "3259019",
+    "title": "go to create more profiles\" button can work",
+    "description": "",
+    "initial": "Older version than 10.3.0 can't support SAML Login for NX.\nIDP settings refer:\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\nUser is created on the IDP.\nSSLVPN service SAML profiles have been added.",
+    "result": "SAML profiles window will open."
+  },
+  "3259020": {
+    "steps": "Go to Network/SSL VPN/Server Settings, click Authentication Type drop-down box, select SAML for Authentication Type, click Accept.\nOpen SSLVPN virtual office login portal page.",
+    "id": "3259020",
+    "title": "When the Auth type on SSLVPN server settings is set to \"SAML\", the virtual office login portal should show login button via SAML.",
+    "description": "",
+    "initial": "Older version than 10.3.0 can't support SAML Login for NX.\nIDP settings refer:\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\nUser is created on the IDP.\nSSLVPN service SAML profiles have been added.",
+    "result": "The login button will be shown for SAML."
+  },
+  "3259021": {
+    "steps": "Go to Network/SSL VPN/Server Settings, click Authentication Type drop-down box, select SAML for Authentication Type, click Accept.\nLogin NX via SAML.",
+    "id": "3259021",
+    "title": "When the Auth type on SSLVPN server settings is set to \"SAML\", the NX client Domain can show SAMLDomain",
+    "description": "",
+    "initial": "Older version than 10.3.0 can't support SAML Login for NX.\nIDP settings refer:\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\nUser is created on the IDP.\nSSLVPN service SAML profiles have been added.",
+    "result": "The NX client Domain can show SAMLDomain."
+  },
+  "3259022": {
+    "steps": "Go to Network/SSL VPN/Server Settings, click Authentication Type drop-down box, select SAML for Authentication Type, click Accept.\nOpen SSLVPN virtual office login portal page.\nClick \"LOG IN\".",
+    "id": "3259022",
+    "title": "On SSLVPN login portal page, clicking on the \"LOG IN\" option should initiate the SAML login flow and redirect the user to the IDP login page",
+    "description": "",
+    "initial": "Older version than 10.3.0 can't support SAML Login for NX.\nIDP settings refer:\nhttps://sonicwall.atlassian.net/wiki/spaces/SQ/pages/501907894/SAML+Test+Tips\nUser is created on the IDP.\nSSLVPN service SAML profiles have been added.",
+    "result": "The browser will should initiate the SAML login flow and redirect the user to the IDP login page."
+  }
+}

@@ -1,0 +1,359 @@
+{
+   "33" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"yahoo.com\"\n  and the FQDN hostname yahoo.com.\n  4. Move a mouse over the FQDN object and make sure that it displays resolved addresses.\n  5. In the Edit Interface X1 window, change DNS address to 0.0.0.0.\n  6. Move a mouse over the FQDN object.",
+      "initial" : "  TBD",
+      "id" : "33",
+      "title" : "Refresh attempt on FQDN AO fails",
+      "result" : "  The mouse-over displays the previously resolved address."
+   },
+   "32" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the DNS server, add a couple of hosts.\n  4. On the Network > Address Objects page, add two FQDN AOs with the FQDN hostnames that have been added on the DNS server.\n  5. Move a mouse over the Address Detail column of the two FQDN AOs\n  and make sure that the IP values corresponding to the FQDN hostnames are displayed.\n  6. On the DNS server, modify IP addresses of the hosts. Use nslookup command to make sure that IP addresses are updated.\n  7. On the Network > Address Objects page of the firewall, click tha Refresh All button.",
+      "initial" : "  TBD",
+      "id" : "32",
+      "title" : "Refresh the resolution cache for all FQDN AOs",
+      "result" : "  The page is refreshed and a mouse-over the Address Detail of the two FQDN AOs\n  displays new IP values."
+   },
+   "21" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. Create a MAC object with the MAC address of the host accessing the firewall.\n  4. Verify using the mouse over that the IP bound to the MAC object matches that of the host.\n  5. Edit the MAC object, change the MAC address to a value which is not contained in the ARP table.\n  6. Move the mouse over the MAC object.",
+      "initial" : "  TBD",
+      "id" : "21",
+      "title" : "Hosts bound to a MAC AO are cleared",
+      "result" : "  The mouse-over shows the MAC object is unresolved."
+   },
+   "FQDN_05" : {
+      "steps" : "  1. Configure your IPv6 DNS server as DUT system DNS;\n  2. Check option \"Prefer IPv6 DNS Servers\" ;\n  3. Add FQDN AO \"split.s20.com\", enable packet capture on DUT;\n  4. Check DNS packets, here test three different cases:\n  DUT send query, IPv6 DNS server send response, case A: when Reply code: No error (0), Authority RRs:1, check the Minimum TTL value in Authoritative nameservers segment of the response message, maybe 900s =15 mins\n  case B: when Reply code: No such name (3), Authority RRs:1, check the Minimum TTL value in Authoritative nameservers segment of the response message, maybe 900s =15 mins\n  case C: when Reply code: No such name (3), Authority RRs:0\n  check the interval of the next query sent out from DUT",
+      "initial" : "  Please use a debug firmware to implement this case LAN PC----X0 DUT X1-----DNS Server I suggest to use a private DNS server and configure domains on your private server to test this case In my setup, I configured a domain on my own DNS server, domain: split.s20.com, I will use this domain to write the test steps.",
+      "id" : "FQDN_05",
+      "title" : "Verify FQDN got the reply code correctly from DNS when the option \"Prefer IPv6 DNS Servers\" is chosen",
+      "result" : "  in step 4, case A, this situation will be treated as SOA type, check the interval between the first query and the next query message sent from DUT, if the minimum TTL < 12 mins, then the interval should be 12 mins, if the minimum TTL > 12 mins, the interval should be the minimum TTL value included in SOA response message, FW will keep sending queries to server in this interval until the max retry threshold time have been reached.\n  case B, this situation will also be treated as SOA type, check the interval between the first query and the next query message sent from DUT, if the minimum TTL < 12 mins, then the interval should be 12 mins, if the minimum TTL > 12 mins, the interval should be the minimum TTL value included in SOA response message, FW will keep sending queries to server in this interval until the max retry threshold time have been reached.\n  case C, in this situation, FW will send the second and third query to server in soon, and after three times, FW will send queries in an interval = 300s (5mins) until the max retry threshold have been reached."
+   },
+   "7" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\" LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. On the Firewall > Access Rules page, add an Ping deny rule for LAN > WAN. Select the DAO \"test\" as a source.\n  5. From the PC on the LAN that has the Ethernet address specified in the DAO \"test\", ping www.baidu.com.",
+      "initial" : "  TBD",
+      "id" : "7",
+      "title" : "Verify Access Rule that references resolved MAC AO",
+      "result" : "  The access rule that references the DAO \"test\" is enabled."
+   },
+   "26" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify all DNS servers. Use fake addresses.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  WAN zone assignment and yahoo.com FQDN hostname.\n  4. Move a mouse over the Address Detail column of the FQDN DAO \"fqdn test\".",
+      "initial" : "  TBD",
+      "id" : "26",
+      "title" : "All DNS servers fail to resolve IP address",
+      "result" : "  The mouse-over displays Unresolved."
+   },
+   "FQDN_04" : {
+      "steps" : "  1. Add a FQDN AO name \"duplicate test 1\" , domain: \"ywei.com\";\n  2. Add FQDN AO name \"duplicate test 2\" , domain: \"ywei.com\", add FQDN AO name \"duplicate test 3\" , domain: \"ywei.com\", add FQDN AO name \"duplicate test 4\" , domain: \"ywei.com\";\n  3. Run traffic to this domain on LAN PC, check console;",
+      "initial" : "  Please use a debug firmware to implement this case LAN PC----X0 DUT X1-----DNS Server I suggest to use a private DNS server and configure domains on your private server to test this case In my setup, I configured a domain on my own DNS server, domain: ywei.com, I will use this domain to write the test steps.",
+      "id" : "FQDN_04",
+      "title" : "Verify the process of duplicate FQDN object",
+      "result" : "  in step 2. all FQDN AOs should be resolved successfully;\n  in step 3, when run traffic to this domain, no tracelog printed in console."
+   },
+   "2" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  and LAN zone assignment.\n  4. Make sure that ARP cache doesn't have an entry that references the Ethernet address specified in the DAO \"test\".\n  5. Move the mouse over the Address Detail column for the DAO \"test\"\n  in the Address Objects table on the Network > Address Objects page.",
+      "initial" : "  TBD",
+      "id" : "2",
+      "title" : "Verify mouse-over in the Address Detail column for unresolved MAC AO",
+      "result" : "  The mouse-over displays Unresolved."
+   },
+   "17" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add a couple of MAC AOs with LAN zone\n  assignment and Ethernet addresses of PCs on the LAN\n  4. Ping the PCs on the LAN (type netObjMjr_debug=10 in the debug console; and it should display \"Received message MSG_BIND_MAC_OBJ\" when ARP entries are added).\n  5. Move the mouse over the Address Detail column of the MAC AOs and make sure it displays Unresolved.\n  6. Click the Refresh All button.",
+      "initial" : "  TBD",
+      "id" : "17",
+      "title" : "Refresh the resolution cache for all MAC AOs",
+      "result" : "  The Network > Address Objects page gets refreshed and a mouse-over the MAC AOs displays IP values."
+   },
+   "FQDN_02" : {
+      "steps" : "  1. Use your own DNS server as DUT system DNS server and now stop DNS service on this DNS server;\n  2. Enter vxshell in cli, type command \"gMaxRetryThreshold=3\";\n  3. Add an FQDN AO, say \"split.s20.com\";\n  4. Do packet capture on DUT, capture DNS packets, and wait a while, check Alerts message on system/status page;\n  5. Go to diag page, enable option \"Enable unlimited queries to resolve FQDN objects\";\n  6. Check packet capture, and system status page.",
+      "initial" : "  Please use a debug firmware to implement this case\n  LAN PC----X0 DUT X1-----DNS Server\n  I suggest to use a private DNS server and configure domains on your private server to test this case\n  In my setup, I configured a domain on my own DNS server, domain: split.s20.com, I will use this domain to write the test steps.",
+      "id" : "FQDN_02",
+      "title" : "Enable option \"Enable unlimited queries to resolve FQDN objects\" when AOs have reached the \"Stop Query\" state",
+      "result" : "  in step 4, when FW tried to query domain split.s20.com for 3 times and failed to resolve this domain, there will print an alert on the top of system/status page, \" * Few FQDN address objects have stopped DNS query after maximum retries. Please check DNS Server settings and network connectivity. Then, refresh the affected address objects from Network/Address Objects page.\n  \"\n  in step 6, DUT keep sending DNS query to DNS server and previous alert message disappeared on system/status page."
+   },
+   "1" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, click the Add button at the bottom of the Address Objects table.\n  4. Enter \"test\" as a name, select LAN zone assignment, MAC type, and enter the Ethernet address of a PC connected to the LAN. Click OK.",
+      "initial" : "  TBD",
+      "id" : "1",
+      "title" : "MAC Address Object added in the GUI",
+      "result" : "  The address object \"test\" is listed in the Address Objects table"
+   },
+   "18" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. From the PC on the LAN that has the Ethernet address specified\n  in the DAO \"test\", ping the LAN IP address of the firewall. Make sure that\n  a mouse-over in the Address Detail column for the DAO \"test\" shows IP value.\n  5. Download a TSR and view the Network Objects section.",
+      "initial" : "  TBD",
+      "id" : "18",
+      "title" : "MAC AO entry in TSR",
+      "result" : "  The MAC AO \"test\" is listed in the Address Objects table of the TSR."
+   },
+   "FQDN_03" : {
+      "steps" : "  1. Go to Log/Settings, configure log event \"Failed to Resolve Dynamic Address Object\" under category \"Network/Dynamic Address Objects\", priority Alert, Display Events in Log Monitor;\n  2. Add a FQDN AO name: \"fail log test\", domain: \"jewfiojaojfoi.cjofiwjaoi.orfg\";\n  3. Wait a minute, check log monitor, a log generated.",
+      "initial" : "  TBD",
+      "id" : "FQDN_03",
+      "title" : "[Log] Verify log event \"Unable to resolve dynamic address object\" include both FQDN name and object's domain",
+      "result" : "  Log displayed as below:\n  ID: 880\n  Category: Network\n  Priority: Alert\n  Message: Unable o resolve dynamic address object\n  Notes: Object=fail log test FQDN=jewfiojaojfoi.cjofiwjaoi.orfg; No Results"
+   },
+   "30" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  WAN zone assignment and yahoo.com FQDN hostname.\n  4. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  5. On the Firewall > Access Rules page, add a deny rule for LAN > WAN.\n  Select the MAC AO \"test\" as a source and FQDN AO \"fqdn test\" as a destination.\n  6. From the PC on the LAN, attempt to establish an HTTP connection to the domain yahoo.com.",
+      "initial" : "  TBD",
+      "id" : "30",
+      "title" : "Functional test for deny Access Rule that references FQDN AO",
+      "result" : "  The HTTP connection is dropped. The log message \"Web access request dropped\" with the source and resolved yahoo IP address as destination is recorded.\n  notes:need open the log setting which id=524 (Log Settings: Network>Network Access> Web Access Drop)."
+   },
+   "16" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings. 2. Configure LAN and WAN interfaces. 3. On the Network > Address Objects page, add MAC AO with the name \"test\" LAN zone assignment, and the Ethernet address of the PC connected to the LAN. 4. Move the mouse over the Address Detail column for the DAO \"test\" and make sure it displays Unresolved. 5. From the PC on the LAN, ping the LAN IP of the firewall. 6. Check the check box next to the DAO \"test\" and click the Refresh button.\n  ##edit by chan\n  6.click the resolve button not refresh botton",
+      "initial" : "  TBD",
+      "id" : "16",
+      "title" : "Refresh the resolution cache for individual MAC AO",
+      "result" : "  The Network > Address Objects page gets refreshed and a mouse-over the DAO \"test\" displays IP value."
+   },
+   "44" : {
+      "steps" : "  1.Add one FQDN AO named \"google.com\",WAN zone,Type :FQDN , FQDN Hostname:google.com\n  2.Go to Firewall-->Access Rules page,under view IP version IPv4,add one deny access rule from LAN to WAN with FQDN AO \"google.com\" selected as dest\n  3.Check if this access rule is listed in IPv4 version page\n  4.Check if this access rule is listed in IPv6 version page\n  5.Check if this access rule is listed in IPv4 & IPv6 version page",
+      "initial" : "  TBD",
+      "id" : "44",
+      "title" : "Verify ipv4 access rule added with FQDN AO is listed under View IP Version IPv4 and View IP Version IPv4 &IPv6",
+      "result" : "  1.In step 3,this access rule with FQDN AO selected is listed in IPv4 version page\n  2.In step 4,this access rule with FQDN AO selected is not listed in IPv6 version page\n  3.In step 5,this access rule with FQDN AO selected is listed in IPV4 & IPv6 version page"
+   },
+   "27" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify only a primary DNS server. Use a fake address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  WAN zone assignment and yahoo.com FQDN hostname.\n  4. On the Firewall > Access Rules page, add a deny rule for LAN > WAN.\n  Select a host on the LAN as a source and \"fqdn test' address object as a destination.",
+      "initial" : "  TBD",
+      "id" : "27",
+      "title" : "Verify Access Rule that references unresolved FQDN AO",
+      "result" : "  the access rule is enabled; the DAO \"fqdn test\" in the rule is displayed as Unresolved when you move the mouse over it."
+   },
+   "25" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify primary and secondary DNS servers. Use fake addresses.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  WAN zone assignment and yahoo.com FQDN hostname.\n  4. Move a mouse over the Address Detail column of the FQDN DAO \"fqdn test\" and make sure that it displays Unresolved.\n  5. In the Edit Interface - WAN window, enter DNS Server 3 address. Use a valid address.\n  6. Move a mouse over the Address Detail column of the FQDN DAO \"fqdn test\".",
+      "initial" : "  TBD",
+      "id" : "25",
+      "title" : "Primary and secondary DNS servers fail to resolve IP address",
+      "result" : "  The mouse-over displays resolved IP addresses along with TTL values."
+   },
+   "FQDN_01" : {
+      "steps" : "  1. Use your own DNS server as DUT system DNS server and now stop DNS service on this DNS server;\n  2. Enter vxshell in cli, type command \"gMaxRetryThreshold=3\";\n  3. Add an FQDN AO, say \"split.s20.com\";\n  4. Do packet capture on DUT, capture DNS packets, and wait a while, check Alerts message on system/status page.",
+      "initial" : "  Please use a debug firmware to implement this case\n  LAN PC----X0 DUT X1-----DNS Server\n  I suggest to use a private DNS server and configure domains on your private server to test this case\n  In my setup, I configured a domain on my own DNS server, domain: split.s20.com, I will use this domain to write the test steps.",
+      "id" : "FQDN_01",
+      "title" : "Verify if the Network Object alert message is seen on the Status page when AOs have reached the \"Stop Query\" state",
+      "result" : "  in step 4, when FW tried to query domain split.s20.com for 3 times and failed to resolve this domain, there will print an alert on the top of system/status page, \" * Few FQDN address objects have stopped DNS query after maximum retries. Please check DNS Server settings and network connectivity. Then, refresh the affected address objects from Network/Address Objects page.\n  \""
+   },
+   "28" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  WAN zone assignment and yahoo.com FQDN hostname.\n  4. View the Log page on the firewall.",
+      "initial" : "  TBD",
+      "id" : "28",
+      "title" : "A Log event upon FQDN AO resolution",
+      "result" : "  The log message \"Added host entry to dynamic address object\" is recorded.\n  The FQDN, TTL value, and host IP address are shown in the Notes column."
+   },
+   "40" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. Create a FQDN object using 'www.yahoo.com'\n  4. Verify using the mouse over that there are hosts bound to the FQDN object created. 5. Edit the FQDN object, change the FQDN to www.invaliddomain123456.com 6. Move the mouse over the FQDN object.",
+      "initial" : "  TBD",
+      "id" : "40",
+      "title" : "Hosts bound to a FQDN AO are cleared",
+      "result" : "  The mouse-over shows that the FQDN object is unresolved."
+   },
+   "14" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. Have the Multihomed host check box enabled in the Add Address Object window.\n  5. From the PC on the LAN that has the Ethernet address specified\n  in the DAO \"test\", ping the LAN IP address of the firewall. Make sure that\n  the ARP entry appears in the ARP cache.\n  6. Modify the IP address on the PC and ping the LAN IP address of the firewall.\n  7. Repeat the previous step 32 times.",
+      "initial" : "  TBD",
+      "id" : "14",
+      "title" : "The limit of resolved addresses displayed in the Address Detail for MAC AO",
+      "result" : "  A mouse-over the Address Detail of the DAO \"test\" displays 32 IP values.(GUI can only display the content as much as possible,Other shows ellipsis)"
+   },
+   "20" : {
+      "steps" : "  1. Load the debuggable firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. From the PC on the LAN that has the Ethernet address specified\n  in the DAO \"test\", ping the LAN IP address of the firewall. Make sure that\n  a mouse-over in the Address Detail column for the DAO \"test\" shows IP value.\n  5. Type netObjMgr_debug=10 in the debug console.\n  6. Let ARP cache entry timeout.",
+      "initial" : "  TBD",
+      "id" : "20",
+      "title" : "Prunung task for MAC AO",
+      "result" : "  Received message MSG_UNBIND_MAC_OBJ is printed in the debug console."
+   },
+   "24" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify only a primary DNS server. Use a fake address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  WAN zone assignment and yahoo.com FQDN hostname.\n  4. Move a mouse over the Address Detail column of the FQDN DAO \"fqdn test\" and make sure that it displays Unresolved.\n  5. In the Edit Interface - WAN window, enter DNS Server 2 address. Use a valid address.\n  6. Move a mouse over the Address Detail column of the FQDN DAO \"fqdn test\".",
+      "initial" : "  TBD",
+      "id" : "24",
+      "title" : "Primary DNS fails to resolve IP address",
+      "result" : "  The mouse-over displays resolved IP addresses along with TTL values."
+   },
+   "10" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. From the PC on the LAN that has the Ethernet address specified\n  in the DAO \"test\", ping the LAN IP address of the firewall. Make sure that\n  the ARP entry appears in the ARP cache.\n  5. Let the ARP cache entry timeout. View the Log page on the firewall.",
+      "initial" : "  TBD",
+      "id" : "10",
+      "title" : "A Log upon event of a timeout",
+      "result" : "  The log message \"Removed host entry from dynamic address object\" is recorded.\n  The MAC address and Host IP address are shown in the Notes column."
+   },
+   "31" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the DNS server, add a host.\n  4. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  and the FQDN hostname that was defined in the previous step.\n  5. Move a mouse over the Address Detail column of the FQDN DAO \"fqdn test\"\n  and make sure that the IP value corresponding to the FQDN hostname is displayed.\n  6. On the DNS server, modify IP address of the host. Use nslookup command to make sure that IP address is updated.\n  7. On the Network > Address Objects page of the firewall, check the check box next to the \"fqdn test\" AO and click the Refresh button.",
+      "initial" : "  TBD",
+      "id" : "31",
+      "title" : "Refresh the resolution cache for individual FQDN AO",
+      "result" : "  The page is refreshed and a mouse-over the Address Detail of the \"fqdn test\"\n  displays a new IP value."
+   },
+   "35" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  and WAN zone assignment. Enter *.yahoo.com FQDN hostname.\n  4. From the PC on the LAN, access different subdomains of yahoo.com.\n  5. Refresh \"fqdn test\" address object after accessing each subdomain and\n  move a mouse over the Address Detail column of the FQDN DAO \"fqdn test\".",
+      "initial" : "  TBD",
+      "id" : "35",
+      "title" : "Wildcard support for FQDN AO",
+      "result" : "  A new resolved IP address gets added in the Address Properties list after access to each subdomain."
+   },
+   "11" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. On the Network > ARP page, add a static ARP entry with IP address and Ethernet address of the PC on the LAN. 5. Make sure that a mouse-over in the Address Detail column for the DAO \"test\"\n  shows the IP address.\n  6. Delete the entry from the Static ARP table.",
+      "initial" : "  TBD",
+      "id" : "11",
+      "title" : "The entry is deleted from Static ARP",
+      "result" : "  A mouse-over the Address Detail of the MAC AO \"test\" displays Unresolved."
+   },
+   "42" : {
+      "steps" : "  1, Load the firmware on the firewall and boot with default settings.\n  2, network->address objects page, create a test IPV4 FQDN address object via CLI\n  config(C0EAE45C942E)# address-object fqdn \"zzz.isca.com\"\n  (add-fqdn-address-object[zzz.isca.com])# domain ftp.isca.com\n  (add-fqdn-address-object[zzz.isca.com])# zone WAN\n  (add-fqdn-address-object[zzz.isca.com])# end\n  config(C0EAE45C942E)# commit\n  3, create a testgroup address object group\n  config(C0EAE45C942E)# address-group ipv4 \"testgroup\"\n  add-ipv4-address-group[test])# address-object fqdn zzz.isca.com\n  (add-ipv4-address-group[test])# commit\n  4, place the FQDN Address Object into that group\n  5, show list of the address object groups in GUI and TSR",
+      "initial" : "  N/A",
+      "id" : "42",
+      "title" : ": Network Address Object groups contains FQDN Address Object (both created via CLI) should be shown up in GUI and TSR",
+      "result" : "  1, the FQDN IPv4 address objects and the Address group can be created success\n  2, The address object added \u0093test\u0094 is listed in the \u0093testgroup\u0094"
+   },
+   "22" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  WAN zone assignment and yahoo.com FQDN hostname.",
+      "initial" : "  TBD",
+      "id" : "22",
+      "title" : "FQDN Address Object added in the GUI",
+      "result" : "  The address object \"fqdn test\" is listed in the Address Objects table."
+   },
+   "46" : {
+      "steps" : "  1.Network->Address Objects,add a wildcard FQDN AO,eg:*.mma.com; 2.From lan pc,ping the subdomain matching the added wildcard FQDN AO,eg:1.mma.com,2.mma.com,.......256.mma.com,257.mma.com,when ping the 257th subdomain,check if console prints out stack trace",
+      "initial" : "  TBD",
+      "id" : "46",
+      "title" : "Verify console no exceptional log printed out when the number of subdomains matching a wildcard FQDN AO reach a big value such as 256",
+      "result" : "  In step 2,no no exceptional log printed out in console"
+   },
+   "13" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. Have the Multihomed host check box enabled in the Add Address Object window.\n  5. From the PC on the LAN that has the Ethernet address specified\n  in the DAO \"test\", ping the LAN IP address of the firewall. Make sure that\n  the ARP entry appears in the ARP cache.\n  6. Modify the IP address on the PC.\n  7. From the PC on the LAN, ping the LAN IP address of the firewall.",
+      "initial" : "  TBD",
+      "id" : "13",
+      "title" : "MAC-to-IP correlation changes. Multihomed host is enabled",
+      "result" : "  A mouse-over the Address Detail of the DAO \"test\" displays old and new IP values."
+   },
+   "23" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify only a primary DNS server. Use a valid address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  WAN zone assignment and yahoo.com FQDN hostname.\n  4. Move a mouse over the Address Detail column of the FQDN DAO \"fqdn test\".",
+      "initial" : "  TBD",
+      "id" : "23",
+      "title" : "Resolution attempts to use the primary DNS server",
+      "result" : "  The mouse-over displays resolved IP addresses along with TTL values."
+   },
+   "29" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  WAN zone assignment and yahoo.com FQDN hostname.\n  4. On the Firewall > Access Rules page, add a deny rule for LAN > WAN.\n  Select a host on the LAN as a source and \"fqdn test' address object as a destination.",
+      "initial" : "  TBD",
+      "id" : "29",
+      "title" : "Verify Access Rule that references resolved FQDN AO",
+      "result" : "  The access rule that references the DAO \"fqdn test\" is enabled."
+   },
+   "6" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. From the PC on the LAN that has the Ethernet address specified\n  in the DAO \"test\", ping the LAN IP address of the firewall. 5. View the Log page on the firewall.",
+      "initial" : "  TBD",
+      "id" : "6",
+      "title" : "A Log event upon MAC AO resolution",
+      "result" : "  The log message \"Added host entry to dynamic address object\" is recorded.\n  The MAC address and Host IP address are shown in the Notes column."
+   },
+   "39" : {
+      "steps" : "  1. Load the debuggable firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the DNS server, add a host. Set TTL to 3 minutes.\n  4. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  and the FQDN hostname that was defined in the previous step.\n  5. Move a mouse over the Address Detail column of the FQDN DAO \"fqdn test\"\n  and make sure that the IP value corresponding to the FQDN hostname is displayed.\n  6. Type netObjMgr_debug=10 in the debug console.\n  7. On the DNS server, modify IP address of the host.",
+      "initial" : "  TBD",
+      "id" : "39",
+      "title" : "Pruning task for FQDN AO",
+      "result" : "  In 3 minutes the log message \"Removing host from FQDN is printed on the debug console."
+   },
+   "3" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  and LAN zone assignment.\n  4. Make sure that ARP cache doesn't have an entry that references the Ethernet address specified in the DAO \"test\".\n  5. On the Firewall > Access Rules page, add a deny rule for LAN > WAN.\n  Select the DAO \"test\" as a source.",
+      "initial" : "  TBD",
+      "id" : "3",
+      "title" : "Verify Access Rule that references unresolved MAC AO",
+      "result" : "  the access rule is enabled; the DAO in the rule is displayed as Unresolved when you move the mouse over it."
+   },
+   "36" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\"\n  and WAN zone assignment. Enter *.yahoo.com FQDN hostname.\n  4. From the PC on the LAN, access different subdomains of yahoo.com.\n  5. Refresh \"fqdn test\" address object and move a mouse over the Address Detail column.",
+      "initial" : "  TBD",
+      "id" : "36",
+      "title" : "The limit of resolved addresses displayed in the Address Detail for FQDN AO",
+      "result" : "  The mouse-over should display no more than 256 resolved addresses.((GUI can only display the content as much as possible,Other shows ellipsis))"
+   },
+   "9" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. From the PC on the LAN that has the Ethernet address specified\n  in the DAO \"test\", ping the LAN IP address of the firewall. Make sure that\n  the ARP entry appears in the ARP cache and a mouse-over in the Address\n  Detail column for the DAO \"test\" shows the IP address.\n  5. Let the ARP cache entry timeout.",
+      "initial" : "  TBD",
+      "id" : "9",
+      "title" : "The ARP cache entry timeout",
+      "result" : "  A mouse-over the Address Detail of the MAC AO \"test\" displays Unresolved."
+   },
+   "41" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. Add MAC and FQDN address objects on the Network > Address Objects page until the number of DAOs reaches the limit.",
+      "initial" : "  TBD",
+      "id" : "41",
+      "title" : "A maximum number of dynamic address objects",
+      "result" : "  256 DAOs can be added on the PRO2040/4060/5060 and 100 on PRO1260 and TZ boxes."
+   },
+   "12" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. On the Network > ARP page, add a static ARP entry with IP address and Ethernet address of the PC on the LAN. 5. Make sure that a mouse-over in the Address Detail column for the DAO \"test\"\n  shows the IP address.\n  6. Modify the static ARP entry. Change the IP address.\n  7. Move the mouse over the Address Detail column for the DAO \"test\"\n  in the Address Objects table on the Network > Address Objects page.",
+      "initial" : "  TBD",
+      "id" : "12",
+      "title" : "The IP address has been modified in the Static ARP entry",
+      "result" : "  A mouse-over the Address Detail of the DAO \"test\" displays a new IP value."
+   },
+   "15" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. Disable the Multihomed host check box in the Add Address Object window.\n  5. From the PC on the LAN that has the Ethernet address specified\n  in the DAO \"test\", ping the LAN IP address of the firewall. Make sure that\n  the ARP entry appears in the ARP cache.\n  6. Modify the IP address on the PC.\n  7. From the PC on the LAN, ping the LAN IP address of the firewall.",
+      "initial" : "  TBD",
+      "id" : "15",
+      "title" : "MAC-to-IP correlation changes. Multihomed host is disabled",
+      "result" : "  A mouse-over the Address Detail of the DAO \"test\" displays a new IP value."
+   },
+   "8" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\" LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. On the Firewall > Access Rules page, add an HTTP deny rule for LAN > WAN. Select the DAO \"test\" as a source. Select Any destination.\n  5. From the PC on the LAN, attempt to establish an HTTP conection to a web site.",
+      "initial" : "  TBD",
+      "id" : "8",
+      "title" : "Functional test for deny Access Rule that references MAC AO",
+      "result" : "  The HTTP connection is dropped. The log message \"Web access request dropped\" with the source is recorded."
+   },
+   "38" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\",\n  WAN zone assignment, and yahoo.com FQDN hostname.\n  4. Make sure that a mouse-over in the Address Detail column of \"fqdn test\" shows IP value.\n  5. Restart the firewall. Bring down the connection to a DNS server during a restart.\n  6. Move the mouse over the Address Detail column of \"fqdn test\" object.",
+      "initial" : "  TBD",
+      "id" : "38",
+      "title" : "FQDN AO after reboot",
+      "result" : "  A mouse-over the Address Detail column of the FQDN AO \"fqdn test\" displays Unresolved after reboot."
+   },
+   "4" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  and LAN zone assignment.\n  4. From the PC on the LAN that has the Ethernet address specified\n  in the DAO \"test\", ping the LAN IP address of the firewall. Make sure that\n  the entry appears in the ARP cache.\n  5. Move the mouse over the Address Detail column for the DAO \"test\"\n  in the Address Objects table on the Network > Address Objects page.",
+      "initial" : "  TBD",
+      "id" : "4",
+      "title" : "Verify mouse-over in the Address Detail column. The entry appears in the ARP cache.",
+      "result" : "  The mouse-over displays the IP address of the PC."
+   },
+   "34" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"yahoo.com\"\n  and the FQDN hostname yahoo.com.\n  4. Move a mouse over the FQDN address object and make sure that it displays resolved addresses.\n  5. In the Edit Interface X1 window, change DNS address to 0.0.0.0.\n  6. Refresh the FQDN address object\n  7. View the Log page on the firewall.",
+      "initial" : "  TBD",
+      "id" : "34",
+      "title" : "A Log event upon a failure to refresh FQDN AO",
+      "result" : "  The log message \"Unable to resolve dynamic address object\" is shown on the Log page of the firewall."
+   },
+   "45" : {
+      "steps" : "  1.Add one MAC AO named \"test\",LAN zone,Type :MAC , MAC Address:11:22:33:44:55:66\n  2.Go to Firewall-->Access Rules page,under view IP version IPv4,add one deny access rule from LAN to WAN with MAC AO \"test\" selected as source\n  3.Check if this access rule is listed in IPv4 version page\n  4.Check if this access rule is listed in IPv6 version page\n  5.Check if this access rule is listed in IPv4 & IPv6 version page",
+      "initial" : "  TBD",
+      "id" : "45",
+      "title" : "Verify ipv4 access rule added with MAC AO is listed under View IP Version IPv4 and View IP Version IPv4 &IPv6",
+      "result" : "  1.In step 3,this access rule with MAC AO selected is listed in IPv4 version page\n  2.In step 4,this access rule with MAC AO selected is not listed in IPv6 version page\n  3.In step 5,this access rule with MAC AO selected is listed in IPV4 & IPv6 version page"
+   },
+   "37" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces. Specify a valid DNS server address.\n  3. On the Network > Address Objects page, add FQDN AO with the name \"fqdn test\",\n  WAN zone assignment, and yahoo.com FQDN hostname.\n  4. Make sure that a mouse-over in the Address Detail column of \"fqdn test\" shows IP value.\n  5. Download a TSR and view the Network Objects section.",
+      "initial" : "  TBD",
+      "id" : "37",
+      "title" : "FQDN AO entry in TSR",
+      "result" : "  The FQDN AO \"fqdn test\" is listed in the Address Objects table of the TSR."
+   },
+   "43" : {
+      "steps" : "  1, Load the firmware on the firewall and boot with default settings.\n  2, network->address objects page, create a test IPV4 MAC address object via CLI\n  config(C0EAE45C942E)# address-object mac \"testmac\"\n  (add-mac-address-object[testmac])# zone LAN\n  (add-mac-address-object[testmac])# address 00:01:02:02:06:63\n  (add-mac-address-object[testmac])# commit\n  3, create a testgroup address object group\n  config(C0EAE45C942E)# address-group ipv4 \"testgroup\"\n  add-ipv4-address-group[test])# address-object mac testmac\n  (add-ipv4-address-group[test])# commit\n  4, place the MAC Address Object into that group\n  5, show list of the address object groups in GUI and TSR",
+      "initial" : "  N/A",
+      "id" : "43",
+      "title" : "Network Address Object groups contains MAC Address Object (both created via CLI) should be shown up in GUI and TSR",
+      "result" : "  1, the MAC IPv4 address objects and the Address group can be created success\n  2, The address object added \u0093test\u0094 is listed in the \u0093testgroup\u0094"
+   },
+   "19" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. From the PC on the LAN that has the Ethernet address specified\n  in the DAO \"test\", ping the LAN IP address of the firewall. Make sure that\n  a mouse-over in the Address Detail column for the DAO \"test\" shows IP value.\n  5. Restart the firewall. 6. Move the mouse over the Address Detail column of \"test\" object.",
+      "initial" : "  TBD",
+      "id" : "19",
+      "title" : "MAC AO after reboot",
+      "result" : "  The mouse-over the Address Detail column of the MAC AO \"test\" displays Unresolved after reboot."
+   },
+   "5" : {
+      "steps" : "  1. Load the firmware on the firewall and boot with default settings.\n  2. Configure LAN and WAN interfaces.\n  3. On the Network > Address Objects page, add MAC AO with the name \"test\"\n  LAN zone assignment, and the Ethernet address of the PC connected to the LAN.\n  4. On the Network > ARP page, add a static ARP entry. In the Add Static ARP window, enter IP address and Ethernet address of the PC that is connected to the LAN. Click OK.\n  5. Move the mouse over the Address Detail column for the DAO \"test\"\n  in the Address Objects table on the Network > Address Objects page.",
+      "initial" : "  TBD",
+      "id" : "5",
+      "title" : "Verify mouse-over in the Address Detail column. The entry is added in the Static ARP table.",
+      "result" : "  The mouse-over displays the IP address of the PC."
+   }
+}

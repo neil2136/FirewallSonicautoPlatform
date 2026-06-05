@@ -1,0 +1,142 @@
+{
+    "1": {
+        "steps": "1. Click to edit an Unassigned interface.\n2. Set interface to LAN Zone.\n3. Select Wire Mode from IP Assignment Box\n4. Select Bypass from the Type Box\n5. Select another Unassigned interface for the pair.\n6. Click OK\n7. Click to edit both interfaces",
+        "initial": "",
+        "id": "1",
+        "title": "GUI - Configure interface in Wire Mode - Bypass mode",
+        "result": "Both interfaces show what mode they are in for the comment in the interface table. Both interfaces can be edited. Cannot override MAC address. "
+    },
+    "2": {
+        "steps": "1. Click to edit an Unassigned interface.\n2. Set interface to LAN Zone.\n3. Select Wire Mode from IP Assignment Box\n4. Select Inspect from the Type Box\n5. Select another Unassigned interface for the pair.\n6. Click OK\n7. Click to edit both interfaces",
+        "initial": "",
+        "id": "2",
+        "title": "GUI - Configure interface in Wire Mode - Inspect",
+        "result": "Both interfaces show what mode they are in for the comment in the interface table. Both interfaces can be edited. Cannot override MAC address. "
+    },
+    "3": {
+        "steps": "1. Click to edit an Unassigned interface.\n2. Set interface to LAN Zone.\n3. Select Wire Mode from IP Assignment Box\n4. Select Secure from the Type Box.\n5. Select another Unassigned interface for the pair.\n6. Click OK\n7. Click to edit both interfaces.",
+        "initial": "",
+        "id": "3",
+        "title": "GUI - Configure interface in Wire Mode - Secure Mode",
+        "result": "Both interfaces show what mode they are in for the comment in the interface table. Both interfaces can be edited. Cannot override MAC address. "
+    },
+    "4": {
+        "steps": "1. Click to edit an Unassigned interface.\n2. Set interface to LAN Zone.\n3. Select Tap Mode from IP Assignment Box\n4. Click OK\n5. Click to edit both interfaces.",
+        "initial": "",
+        "id": "4",
+        "title": "GUI - Configure interface in Tap Mode",
+        "result": "Interfaces shows what mode it is in the interface table. Interface can be edited. Cannot override MAC address."
+    },
+    "20": {
+        "steps": "1. Click to edit an Unassigned interface.\n2. Set interface to LAN Zone.\n3. Select Wire Mode from IP Assignment Box\n4. Select Bypass from the Type Box.\n5. Select another Unassigned interface for the pair.\n6. Click OK\n7. Reboot the device\n8. Repeat steps for other types of Wire Mode and Tap Mode.",
+        "initial": "",
+        "id": "20",
+        "title": "Reboot with Wire Mode / Tap Mode settings",
+        "result": "Wiremode Settings are retained after reboot"
+    },
+    "22": {
+        "steps": "1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.",
+        "initial": "Interfaces configured in Wiremode- Bypass.\nPC on one interface.\nOther interface connect to Server or to router which is connected to Server.",
+        "id": "22",
+        "title": " Basic traffic Bypass Mode",
+        "result": "Traffic succeeds."
+    },
+    "23": {
+        "steps": "1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.",
+        "initial": "Interfaces configured in Wiremode - Inspect.\nPC on one interface.\nOther interface connect to Server or to router which is connected to Server.",
+        "id": "23",
+        "title": "Basic traffic Inspect Mode",
+        "result": "Traffic succeeds."
+    },
+    "24": {
+        "steps": "1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.",
+        "initial": "Interfaces configured in Wiremode - Secure.\nPC on one interface.\nOther interface connect to Server or to router which is connected to Server.",
+        "id": "24",
+        "title": "Basic traffic Secure Mode",
+        "result": "Traffic succeeds."
+    },
+    "25": {
+        "steps": "1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc.\n2. Observe logs on device\n3. Do packet capture",
+        "initial": "Interface configured in Tap Mode Device connected to another device that the actual traffic will be going through.\nInterface of other device connected to PC\nOther interface of other device connect to Server or to router which is connected to Server.\nTraffic is mirrored to the DUT.",
+        "id": "25",
+        "title": " Basic traffic Tap Mode",
+        "result": "DUT does not attempt to forward on traffic."
+    },
+    "33": {
+        "steps": "1. Run FTP traffic download matching the rule.",
+        "initial": "Interfaces configured in Wiremode- Inspect PC on one interface.\nOther interface connect to Server or to router which is connected to Server. \nSecurity Services licensed.\nApp rules enabled.\nRule configured denying file extension download through ftp.",
+        "id": "33",
+        "title": "Denied traffic Wire Mode- Inspect",
+        "result": "Traffic succeeds. Log identifies traffic as matching rule. "
+    },
+    "38": {
+        "steps": "  (1) download the virus from the testing web server\n  (2) click the \"Refresh\" button after the blank page (\"Page can not be displayed\") on the browser.",
+        "initial": "  Register the firewall;\n  Enable GAV/Enable Anti-Spyware on the firewall;\n  Enable HTTP inbound inspection.\n  Setting up a web server, put viruses and spywares on the server",
+        "id": "38",
+        "title": "notification page is showing up in the browser when a virus/spyware was detected",
+        "result": "  After clicking on the \"Refresh\" button on the browser, something like \"Virus found, HTTP request blocked\" should be displayed in the browser."
+    },
+    "66": {
+        "steps": "1. Click to edit an Unassigned interface.\n2. Set interface to LAN Zone.\n3. Select Wire Mode from IP Assignment Box\n4. Select Inspect from the Type Box and uncheck Restrict Analysis at Resource Limit.\n5. Select another Unassigned interface for the pair.\n6. Click OK\n7. Click to edit both interfaces.",
+        "initial": "",
+        "id": "66",
+        "title": "GUI - Configure interface in Wire Mode - Inspect: Restrict Analysis at Resource Limit unchecked.",
+        "result": "Both interfaces show what mode they are in for the comment in the interface table. Zone cannot be edited. Both interfaces can be edited. Cannot override MAC address."
+    },
+    "67": {
+        "steps": "1. Run traffic between PC and Server - FTP%2c HTTP%2c Ping%2c etc",
+        "initial": "",
+        "id": "67",
+        "title": "Basic traffic Inspect: Restrict Analysis at Resource Limit unchecked.",
+        "result": "Traffic succeeds."
+    },
+    "76": {
+        "steps": "1. Run continous ping from between two interfaces.\n2. Use ftp to verify virus / app rule violation\n3. Reboot the device.\n4. While the device is booting try to ftp a virus / app rule violation across the wiremode interfaces.",
+        "initial": "Interfaces configured in Wire Mode- Secure.\nBypass when SonicOS is restarting or down is checked. PC on one interface.\nOther interface connect to Server or to router which is connected to Server.\nSecurity Services licensed.\nApp rules enabled GAV enabled",
+        "id": "76",
+        "title": "Wiremode - Secure: Bypass when SonicOS is restarting or down checked",
+        "result": "Pings succeed while devices is rebooting, except where bootloader is loading. Can successfully download virus etc. while OS is booting. "
+    },
+    "80": {
+        "steps": "1. Enable Link State propogation on the wiremode interfaces.\n2. Unplug the primary interface",
+        "initial": "Interfaces configured in Wire Mode Interfaces connected to switch which is connected to PC. ",
+        "id": "80",
+        "title": "Enable Link State Propogation with primary interface down",
+        "result": "Link state is propogated to the other interface and does not show link to the connected switch. "
+    },
+    "82": {
+        "steps": "Plug in the primary interface ",
+        "initial": "Interfaces configured in Wire Mode Enable Link State propogation on the wiremode interfaces.\nInterfaces connected to switch which is connected to PC.\nPrimary interface intially unplugged.",
+        "id": "82",
+        "title": "Enable Link State Propogation with primary interface coming back online",
+        "result": "Link state is propogated to the other interface and does shows link to the connected switch. "
+    },
+    "enh12": {
+        "steps": "1. Try sending ftp, http, ping , virus between PC1 and PC2 from both the directions. Also run ftp traffic matching the app rule ",
+        "initial": "PC1 ----------------- X2(LAN) DUT X3(DMZ)-----PC2 1. Two interfaces configured in LAN-DMZ-wiremode-Inspect mode 2. PC1 connected to one interface and PC2 connected to another 3. Security (GAV) services enabled, app rules enabled , rule configured denying file extension download through ftp. ",
+        "id": "enh12",
+        "title": "Wiremode-Inspect test between LAN-DMZ.",
+        "result": "1. The traffic should be successful from both the directions with log generated for traffic matching the app rule and virus."
+    },
+    "enh27": {
+        "steps": "1. Try sending ftp , http, ping , virus between PC1 and PC2",
+        "initial": "PC1 ----------------- X2(LAN) DUT X3(Custom,Public, GAV enabled)-----PC2 1. Two interfaces configured in LAN-Custom(Public-GAV)-wiremode-secure mode 2. PC1 connected to one interface and PC2 connected to another",
+        "id": "enh27",
+        "title": "Wiremode-Inspect test between LAN- Custom(Public,GAV enabled).",
+        "result": "1. The traffic should be successful from PC1 to PC2 and blocked PC2 to PC1.� Virus should not be blocked."
+    },
+    "enh47": {
+        "steps": "1. Run http, ftp and ping traffic between PC1 and PC2. 2. Run ftp traffic download matching the rule configured between PC1 and PC2. 3. Run ftp traffic downloading virus between PC1 and PC2.",
+        "initial": "PC1 ----------------- X2(Trust) DUT X3(WAN)-----PC2 1. Two interfaces configured in Trust-WAN-wiremode-secure mode 2. PC1 connected to one interface and PC2 connected to another 3. Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp. 4. The default deny access rule for WAN>Trust disabled",
+        "id": "enh47",
+        "title": "Wiremode-Inspect test between LAN- Custom(Public,GAV enabled).",
+        "result": "1. For PC1 to PC2 and PC2 to PC1, the traffic should be denied for steps 2 and 3 and there should be a log identifying the app rule matching traffic and for the download of the virus. For step 1, traffic should be allowed. "
+    },
+    "enh72": {
+        "steps": "1. Click the edit button of X3 and change the zone interface to public , paired interface zone to LAN and wiremode type to inspect. 2. Run http, ftp and ping traffic between PC1 and PC2. 3. Run ftp traffic download matching the rule configured between PC1 and PC2. 4. Run ftp traffic downloading virus between PC1 and PC2.",
+        "initial": "PC1 ----- X2(WAN) DUT X3(Trust)-----PC2 1. Two interfaces configured in WAN-Trust-wiremode-secure mode 2. PC1 connected to one interface and PC2 connected to another 3. Security (GAV) services enabled, app rules enabled, rule configured denying file extension download through ftp. 4. The default deny access rule for Public>LAN disabled.",
+        "id": "enh72",
+        "title": "Changing wiremode type from WAN-trust secure mode to LAN-Public inspect mode",
+        "result": "1. For PC1 to PC2 and PC2 to PC1, all the traffic should be allowed and there should be a log identifying the app rule matching traffic and for the download of the virus for steps 2 and 3.  "
+    }
+}

@@ -1,0 +1,205 @@
+{
+   "1514483" : {
+      "steps" : "  Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Read-Only Admins group with password change",
+      "initial" : "  Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Read-Only Admins group with password change",
+      "id" : "1514483",
+      "title" : "Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Read-Only Admins group with password change",
+      "result" : "  S15"
+   },
+   "1514475" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN NX Login using RADIUS User",
+      "initial" : "  Verify OTP via Mail for SSLVPN NX Login using RADIUS User",
+      "id" : "1514475",
+      "title" : "Verify OTP via Mail for SSLVPN NX Login using RADIUS User",
+      "result" : "  S15"
+   },
+   "1514472" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN Web Portal Login using RADIUS User",
+      "initial" : "  Verify OTP via Mail for SSLVPN Web Portal Login using RADIUS User",
+      "id" : "1514472",
+      "title" : "Verify OTP via Mail for SSLVPN Web Portal Login using RADIUS User",
+      "result" : "  S15"
+   },
+   "1514485" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN Web Portal Login using Local User with password change",
+      "initial" : "  Verify OTP via Mail for SSLVPN Web Portal Login using Local User with password change",
+      "id" : "1514485",
+      "title" : "Verify OTP via Mail for SSLVPN Web Portal Login using Local User with password change",
+      "result" : "  S15"
+   },
+   "1514474" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN NX Login using AD/LDAP User",
+      "initial" : "  Verify OTP via Mail for SSLVPN NX Login using AD/LDAP User",
+      "id" : "1514474",
+      "title" : "Verify OTP via Mail for SSLVPN NX Login using AD/LDAP User",
+      "result" : "  S15"
+   },
+   "1514482" : {
+      "steps" : "  Verify OTP via Mail for FW Login using Local User belonging to Limited Administrators group with password change",
+      "initial" : "  Verify OTP via Mail for FW Login using Local User belonging to Limited Administrators group with password change",
+      "id" : "1514482",
+      "title" : "Verify OTP via Mail for FW Login using Local User belonging to Limited Administrators group with password change",
+      "result" : "  S15"
+   },
+   "1514477" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN MC Login using AD/LDAP User",
+      "initial" : "  Verify OTP via Mail for SSLVPN MC Login using AD/LDAP User",
+      "id" : "1514477",
+      "title" : "Verify OTP via Mail for SSLVPN MC Login using AD/LDAP User",
+      "result" : "  S15"
+   },
+   "1514469" : {
+      "steps" : "  Verify OTP via Mail for FW Login using Local User belonging to Guest Administrators group",
+      "initial" : "  Verify OTP via Mail for FW Login using Local User belonging to Guest Administrators group",
+      "id" : "1514469",
+      "title" : "Verify OTP via Mail for FW Login using Local User belonging to Guest Administrators group",
+      "result" : "  S15"
+   },
+   "1514488" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN NX Login using AD/LDAP User with password change",
+      "initial" : "  Verify OTP via Mail for SSLVPN NX Login using AD/LDAP User with password change",
+      "id" : "1514488",
+      "title" : "Verify OTP via Mail for SSLVPN NX Login using AD/LDAP User with password change",
+      "result" : "  S15"
+   },
+   "1514471" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN Web Portal Login using AD/LDAP User",
+      "initial" : "  Verify OTP via Mail for SSLVPN Web Portal Login using AD/LDAP User",
+      "id" : "1514471",
+      "title" : "Verify OTP via Mail for SSLVPN Web Portal Login using AD/LDAP User",
+      "result" : "  S15"
+   },
+   "1514487" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN NX Login using Local User with password change",
+      "initial" : "  Verify OTP via Mail for SSLVPN NX Login using Local User with password change",
+      "id" : "1514487",
+      "title" : "Verify OTP via Mail for SSLVPN NX Login using Local User with password change",
+      "result" : "  S15"
+   },
+   "1514480" : {
+      "steps" : "  Verify OTP via Mail for ULA AD/LDAP User with password change",
+      "initial" : "  Verify OTP via Mail for ULA AD/LDAP User with password change",
+      "id" : "1514480",
+      "title" : "Verify OTP via Mail for ULA AD/LDAP User with password change",
+      "result" : "  S15"
+   },
+   "1514463" : {
+      "steps" : "  Verify OTP via Mail for ULA AD/LDAP User",
+      "initial" : "  Verify OTP via Mail for ULA AD/LDAP User",
+      "id" : "1514463",
+      "title" : "Verify OTP via Mail for ULA AD/LDAP User",
+      "result" : "  S15"
+   },
+   "1514473" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN NX Login using Local User",
+      "initial" : "  Verify OTP via Mail for SSLVPN NX Login using Local User",
+      "id" : "1514473",
+      "title" : "Verify OTP via Mail for SSLVPN NX Login using Local User",
+      "result" : "  S15"
+   },
+   "2424387" : {
+      "steps" : "  1.Configure LDAP in the firewall. 2.Create an user in AD server and configure a email address for the user in the server itself but don't enable OTP. 3.Import the user in the firewall, configure OTP via mail with a different mail address. 4.Login to the network with the user LDAP user imported in the firewall.",
+      "initial" : "  User should receive the OTP for the email address configured in the firewall, not to the email configured in the AD server. ",
+      "id" : "2424387",
+      "title" : "User should receive the OTP for the email address that is configured in the firewall, Not on AD server",
+      "result" : "  S15"
+   },
+   "1514467" : {
+      "steps" : "  Verify OTP via Mail for FW Login using Local User belonging to Limited Administrators group",
+      "initial" : "  Verify OTP via Mail for FW Login using Local User belonging to Limited Administrators group",
+      "id" : "1514467",
+      "title" : "Verify OTP via Mail for FW Login using Local User belonging to Limited Administrators group",
+      "result" : "  S15"
+   },
+   "1514470" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN Web Portal Login using Local User",
+      "initial" : "  Verify OTP via Mail for SSLVPN Web Portal Login using Local User",
+      "id" : "1514470",
+      "title" : "Verify OTP via Mail for SSLVPN Web Portal Login using Local User",
+      "result" : "  S15"
+   },
+   "1514478" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN MC Login using RADIUS User",
+      "initial" : "  Verify OTP via Mail for SSLVPN MC Login using RADIUS User",
+      "id" : "1514478",
+      "title" : "Verify OTP via Mail for SSLVPN MC Login using RADIUS User",
+      "result" : "  S15"
+   },
+   "1514489" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN MC Login using Local User with password change",
+      "initial" : "  Verify OTP via Mail for SSLVPN MC Login using Local User with password change",
+      "id" : "1514489",
+      "title" : "Verify OTP via Mail for SSLVPN MC Login using Local User with password change",
+      "result" : "  S15"
+   },
+   "1514490" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN MC Login using AD/LDAP User with password change",
+      "initial" : "  Verify OTP via Mail for SSLVPN MC Login using AD/LDAP User with password change",
+      "id" : "1514490",
+      "title" : "Verify OTP via Mail for SSLVPN MC Login using AD/LDAP User with password change",
+      "result" : "  S15"
+   },
+   "1514464" : {
+      "steps" : "  Verify OTP via Mail for ULA RADIUS User",
+      "initial" : "  Verify OTP via Mail for ULA RADIUS User",
+      "id" : "1514464",
+      "title" : "Verify OTP via Mail for ULA RADIUS User",
+      "result" : "  S15"
+   },
+   "1514466" : {
+      "steps" : "  Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Administrators group",
+      "initial" : "  Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Administrators group",
+      "id" : "1514466",
+      "title" : "Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Administrators group",
+      "result" : "  S15"
+   },
+   "1514481" : {
+      "steps" : "  Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Administrators group with password change",
+      "initial" : "  Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Administrators group with password change",
+      "id" : "1514481",
+      "title" : "Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Administrators group with password change",
+      "result" : "  S15"
+   },
+   "1514479" : {
+      "steps" : "  Verify OTP via Mail for ULA Local User with password change",
+      "initial" : "  Verify OTP via Mail for ULA Local User with password change",
+      "id" : "1514479",
+      "title" : "Verify OTP via Mail for ULA Local User with password change",
+      "result" : "  S15"
+   },
+   "1514486" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN Web Portal Login using AD/LDAP User with password change",
+      "initial" : "  Verify OTP via Mail for SSLVPN Web Portal Login using AD/LDAP User with password change",
+      "id" : "1514486",
+      "title" : "Verify OTP via Mail for SSLVPN Web Portal Login using AD/LDAP User with password change",
+      "result" : "  S15"
+   },
+   "1514484" : {
+      "steps" : "  Verify OTP via Mail for FW Login using Local User belonging to Guest Administrators group with password change",
+      "initial" : "  Verify OTP via Mail for FW Login using Local User belonging to Guest Administrators group with password change",
+      "id" : "1514484",
+      "title" : "Verify OTP via Mail for FW Login using Local User belonging to Guest Administrators group with password change",
+      "result" : "  S15"
+   },
+   "1514468" : {
+      "steps" : "  Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Read-Only Admins group",
+      "initial" : "  Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Read-Only Admins group",
+      "id" : "1514468",
+      "title" : "Verify OTP via Mail for FW Login using Local User belonging to SonicWALL Read-Only Admins group",
+      "result" : "  S15"
+   },
+   "1514462" : {
+      "steps" : "  Verify OTP via Mail for ULA Local User",
+      "initial" : "  Verify OTP via Mail for ULA Local User",
+      "id" : "1514462",
+      "title" : "Verify OTP via Mail for ULA Local User",
+      "result" : "  S15"
+   },
+   "1514476" : {
+      "steps" : "  Verify OTP via Mail for SSLVPN MC Login using Local User",
+      "initial" : "  Verify OTP via Mail for SSLVPN MC Login using Local User",
+      "id" : "1514476",
+      "title" : "Verify OTP via Mail for SSLVPN MC Login using Local User",
+      "result" : "  S15"
+   }
+}

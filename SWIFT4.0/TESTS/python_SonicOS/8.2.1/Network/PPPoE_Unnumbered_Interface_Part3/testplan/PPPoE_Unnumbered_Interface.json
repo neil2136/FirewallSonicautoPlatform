@@ -1,0 +1,82 @@
+{
+    "02": {
+        "_caseid": "1518529",
+        "steps": "1. Add a vlan/trunk vlan interface\n2. Re-edit physical/vlan/trunk vlan interface, choose 'IP Unnumbered' option is in 'Mode /IP Assignment'",
+        "initial": "",
+        "id": "02",
+        "title": "GUI: Both physical interface and VLAN ,Trunk VLAN interface can be configured as unnumbered interface",
+        "result": "All settings show as expected and can be saved"
+    },
+    "17": {
+        "_caseid": "1518534",
+        "steps": "1. Config X2 as unnumbered interface, PC1 connect to X2; config X3 as normal LAN/DNZ zone, PC3 connect X3\n2. Config WAN X1 as PPPoE unnumbered interface and unnumber to X2, make sure X1 get connected\n3. PC3 ping PC2, visit PC2 IP via HTTPS and download file via FTP\n4. PC2 ping PC3, visit PC3 IP via HTTPS and download file via FTP\n5. Check capture packet",
+        "initial": "",
+        "id": "17",
+        "title": "Verify after  the PPPoE unnumbered interface get connected, the traffic (ping/FTP/HTTPS) from normal LAN/DMZ host to WAN host should be successful, the data flow should do NAT",
+        "result": "In step3&4, all traffic go through success\nIn step5, the data flow do not NAT"
+    },
+    "21": {
+        "_caseid": "1518538",
+        "steps": "1. Create vlan interface X2:V953, config X2:V953 as unnumbered interface, enable Management(ping/https/snmp/ssh)\n2. Config WAN X1 as PPPoE unnumbered interface and unnumber to X2:V953\n3. Enable SNMP in System->SNMP page\n4. PC connect to X2:V953, PC ping X2:V953 IP and visit X2:V953 IP using Explorer and secureCRT, using MIB to get info",
+        "initial": "",
+        "id": "21",
+        "title": "Management (ping/https/snmp/ssh) from LAN/DMZ PC  (connected to the unnumbered VLAN interface) to the unnumbered VLAN interface",
+        "result": "In step4, all function work well"
+    },
+    "24": {
+        "_caseid": "1518541",
+        "steps": "1.Config X2 as unnumbered interface\n2.Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3.Set Allow WAN -> LAN/DMZ policy\n4.PC connect to normal LAN/DMZ interface X2, WAN host ping PC",
+        "initial": "",
+        "id": "24",
+        "title": "Set allow WAN -> LAN/DMZ policy. Verify WAN host can visit the unnumbered interface host directly",
+        "result": "In step4, PING traffic go through success"
+    },
+    "37": {
+        "_caseid": "1518547",
+        "steps": "1. Create a vlan interface X2:V953 and config X2:V953 as unnumbered interface\n2. Config WAN X1 as PPPoE unnumbered interface and unnumber to X2:V953, make sure X1 get connected\n3. Try to unassign unnumbered interface X2:V953",
+        "initial": "",
+        "id": "37",
+        "title": "After configured a PPPoE unnumbered interface (unnumbered a VLAN interface), try to delete or unassigned the unnumbered VLAN interface, verify the interface can't be deleted/unassign",
+        "result": "In step3, it cann't unassign unnumbered interface"
+    },
+    "39": {
+        "_caseid": "1518548",
+        "steps": "1. Config LAN unnumbered interface with PC connected, add available DHCP server scope for this interface\n2. Config WAN PPPoE unnumbered interface, unnumber to LAN unnumbered interface\n3. PC visit Internet website using Ping traffic, capture packet and check Ping traffic\n4. Change WAN to PPPoE auto mode, change LAN unnumber interface IP, repeat step3\n5. Change WAN back to PPPoE unnumbered interface, change LAN unnumber interface IP back, repeat step3\nNotice: After change LAN unnumberded interface IP in step 4 & 5, PC should do release/renew. And in step 5, check DHCP server scope and make sure it's available",
+        "initial": "",
+        "id": "39",
+        "title": "If PPPoE unnumbered interface change from unnumbered interface to another mode(Specify Ip address/Obtiain Ip address), the auto added two NAT policies should be deleted, the data flow from unnumbered interface host to WAN host should do NAT",
+        "result": "In step 3, Ping traffic doesn't do NAT\nIn step 4, Ping traffic do NAT\nIn step 5, Ping traffic doesn't do NAT"
+    },
+    "41": {
+        "_caseid": "1518550",
+        "steps": "1. Config X2 as LAN unnumbered interface, PC1 connect X2; config X3 as LAN normal interface, PC2 connect X3\n2. Config WAN X1 as PPPoE unnumbered interface and unnumber to X2, make sure X1 get connected\n3. Allow ACL WAN->LAN\n4. Create inbound NAT policy: Any Orignal X1 IP PC1 IP Any Orignal WAN interface Any\n5. WAN PC ping X1 IP, capture packet\n6. Change inbound NAT policy: Any Orignal X1 IP PC2 IP Any Orignal WAN interface Any\n7. Repeat step5\nNotice: Change the priority of user-defined NAT policies in step4&6, they should be higher than the auto-added NATs in case 15",
+        "initial": "",
+        "id": "41",
+        "title": "WAN to LAN NAT test, create inbound NAT policy to translate DST IP from PPPoE unnumbered interface IP to LAN host IP",
+        "result": "In step5&7, the packet show the data flow destination IP was translated"
+    },
+    "43": {
+        "_caseid": "1518551",
+        "steps": "1. Config X2 as unnumbered interface\n2. Config WAN X1 as PPPoE unnumbered interface and unnumber to X2\n3. Shutdown/no shut X1, check X1 status",
+        "initial": "",
+        "id": "43",
+        "title": "Link down/up test for unnumbered PPPoE interface: after link up, it will reconnect and function is back",
+        "result": "In step2&3, X1 can get IP"
+    },
+    "50": {
+        "_caseid": "1518554",
+        "steps": "1. Config LAN unnumbered interface X3\n2. Add a DHCP server scope and choose 'Interface Pre-Populate:' X3, or fill the available address in X3 subnet directly\n3. PC connect X3\n4. Config WAN PPPoE unnumbered interface X1, unnumber to X3\n5. Ping traffic from PC to Internet website",
+        "initial": "",
+        "id": "50",
+        "title": "Verify the DHCP scope can be enabled in the unnumbered interface, check dhcp client can get ip  and traffic is OK",
+        "result": "In step3, PC can get IP\nIn step5, ping traffic still go through success"
+    },
+    "51": {
+        "_caseid": "1518555",
+        "steps": "1. Config LAN unnumbered interface X3, add a DHCP server scope for X3\n2. PC connect X3 and can get IP\n3. Disconnect PPPoE unnumbered interface, PC release/renew\n4. Reconnect PPPoE unnumbered interface, PC release/renew",
+        "initial": "",
+        "id": "51",
+        "title": "Add dhcp server for the unnumbered interface, disconnect and reconnect the PPPoE unnumbered interface, veirfy DHCP server still work",
+        "result": "In step3&4, PC can get IP"
+    }
+}

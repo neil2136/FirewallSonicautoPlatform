@@ -1,0 +1,32 @@
+# # This file contains all various endpoint URLs that are used across.
+
+from inputs.constants import fw_eth0_ip
+
+fw_base_path = "https://" + fw_eth0_ip + '/api/sonicos'
+
+auth_url = fw_base_path + '/auth'
+firewall_details = fw_base_path + '/version'
+configure_interface_url = fw_base_path + '/interfaces/ipv4'
+admin_config_url = fw_base_path + '/administration/global'
+auth_method_url = fw_base_path + '/user/authentication/methods'
+config_pending_url = fw_base_path + '/config/pending'
+local_user_url = ldap_user_url = radius_user_url = tacacs_user_url = fw_base_path + '/user/local/users'
+local_groups_url = fw_base_path + '/user/local/groups'
+radius_auth_url = fw_base_path + '/user/radius/servers'
+ldap_auth_url = fw_base_path + '/user/ldap/servers'
+tacacs_auth_url = fw_base_path + '/user/tacacs/servers'
+default_admin_unbind_totp_key_url = fw_base_path + '/administration/unbind-totp-key'
+local_user_unbind_totp_key_url = fw_base_path + '/user/local/unbind-totp-key/{}'
+domain_user_unbind_totp_key_url = fw_base_path + '/user/local/unbind-totp-key/{}/domain/{}'
+mail_server_settings_url = fw_base_path + '/log/automation'
+access_rule_ipv4_url = fw_base_path + '/access-rules/ipv4'
+access_rule_ipv4_from_src_to_dest_url = fw_base_path + '/reporting/access-rules-ipv4/from/{}/to/{}'
+address_object_ipv4_url = fw_base_path + '/address-objects/ipv4'
+address_object_fqdn_url = fw_base_path + '/address-objects/fqdn'
+ssl_vpn_server_access_url = fw_base_path + '/ssl-vpn/server/accesses'
+ssl_vpn_server_base_url = fw_base_path + '/ssl-vpn/server/base'
+ssl_vpn_default_device_profile_url = fw_base_path + '/ssl-vpn/device-profiles'
+wan_group_vpn_policy_url = fw_base_path + '/vpn/policies/ipv4/group-vpn/name/{}'
+dhcp_over_vpn_central_gateway_url = fw_base_path + '/vpn/dhcp-over-vpn/base/central'
+l2tp_server_settings_url = fw_base_path + '/vpn/l2tp-server/base'
+enable_ntp_service_url = fw_base_path + '/time/base'

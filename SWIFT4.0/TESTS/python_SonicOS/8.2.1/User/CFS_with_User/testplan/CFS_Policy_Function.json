@@ -1,0 +1,74 @@
+{
+    "199": {
+        "_case_id": "1529611",
+        "id": "199",
+        "result": "Policy should be enforced properly on the client machine. Should not enforce YouTube Restrict Mode.",
+        "steps": "1. Go to Security Services  Content Filter\n2. In the CFS Policy, select a CFS Action in which YouTube Restrict Mode is disabled.\n3. Enforce the policy on the client",
+        "title": "Make sure CFS enforces correct policy on the clients when YouTube Restrict Mode is disabled."
+    },
+    "145": {
+        "_case_id": "1529639",
+        "id": "145",
+        "result": "Policy should be enforced properly on the client machine. Should not enforce YouTube Restrict Mode.",
+        "steps": "1. Go to Security Services  Content Filter\n2. In the CFS Policy, select a CFS Action in which YouTube Restrict Mode is disabled.\n3. Enforce the policy on the client",
+        "title": "Make sure CFS enforces correct policy on the clients when YouTube Restrict Mode is disabled."
+    },
+    "149": {
+        "_case_id": "1529640",
+        "id": "149",
+        "result": "Policy should be enforced properly on the client.",
+        "steps": "1. Go to Security Services  Content Filter\n2. In the CFS Policy, disable Wipe Cookies, Safe Search Enforcement, YouTube Restrict Modeand Flow Reporting\n3. Enforce the policy on the client",
+        "title": "Make sure CFS enforces correct policy on the clients when Wipe Cookies, Safe Search enforcement, YouTube Restrict Mode and Flow Reporting are disabled."
+    },
+     "198": {
+        "_case_id": "1529615",
+        "id": "198",
+        "result": "User should get Confirm page for all the URLs specified in the URL List Objects",
+        "steps": "1. Login to UTM which supports CFS4.0\n2. Go to Firewall > Conetnt Filter Objects\n3. Click either Add or Configure button\n4. Provide some urls in the list and save the settings\n5. provide the same 'URL List Objects' in the 'Forbidden URL List:' of the CFS Profile Objects and select the operation as Confirm\n5. 6. Assign it to current CFS policies\n6. 7. Goto the Client PC and try to browse the same url in that pc",
+        "title": "Make sure admin can enforce Confirm page on the URL List Objects which are specified as Forbidden URL List when Confirm operation is selected"
+    },
+    "197": {
+        "_case_id": "1523419",
+        "id": "197",
+        "result": "User should get Confirm page for all the URLs specified in the URL List Objects",
+        "steps": "1. Login to UTM which supports CFS4.0\n2. Go to Firewall > Conetnt Filter Objects\n3. Click either Add or Configure button\n4. Provide some urls in the list and save the settings\n5. provide the same 'URL List Objects' in the 'Forbidden URL List:' of the CFS Profile Objects and select the operation as Confirm\n5. 6. Assign it to current CFS policies\n6. 7. Goto the Client PC and try to browse the same url in that pc",
+        "title": "Make sure admin can enforce Confirm page on the URL List Objects which are specified as Forbidden URL List when Confirm operation is selected"
+    },
+
+    "200": {
+        "_case_id": "1529636",
+        "id": "200",
+        "result": "1. 1.User should not be able to browse the web-site\n2. User should get the block page in the Browser\n",
+        "steps": "1. Login to UTM which supports CFS4.0\n2. Go to Firewall > Conetnt Filter Objects\n3. Click either Add or Configure button\n4. Provide some urls in the list and save the settings \n5. provide the same 'URL List Objects' in the 'Forbidden URL List:' of the CFS Profile Objects\n6. Select the 'URL Searching Order as Allowed First' in out CFS Profile\n7. Assign it to current CFS policies\n8. Goto the Client PC and try to browse the same url in that pc",
+        "title": "Verify whether users are able to Block web-sites based on the 'URL List Objects' which we specify in the 'Allowed URL List' even though when we select the 'URL Searching Order as Allowed First' in ou"
+    },
+    "201": {
+        "_case_id": "1529637",
+        "id": "201",
+        "result": "1. 1.User should not be able to browse the web-site\n2. User should get the block page in the Browser\n",
+        "steps": "1. Login to UTM which supports CFS4.0\n2. Go to Firewall > Conetnt Filter Objects\n3. Click either Add or Configure button\n4. Provide some urls in the list and save the settings\n5. provide the same 'URL List Objects' in the 'ForbiddenURL List:' of the CFS Profile Objects\n6. Select the 'URL Searching Order as Forbidden First' in out CFS Profile\n7. Assign it to current CFS policies\n8. Goto the Client PC and try to browse the same url in that pc",
+        "title": "Verify whether users are able to block web-sites based on the 'URL List Objects' which we specify in the 'Allowed URL List' even though when we select the 'URL Searching Order as Forbideen First' in"
+    },
+    "203": {
+        "_case_id": "1529612",
+        "id": "203",
+        "result": "1.User should be able to browse the web-site\n2.User should not get the block or confirm page in the Browser",
+        "steps": "1. Login to UTM which supports CFS4.0\n2. Go to Firewall > Conetnt Filter Objects\n3. Click either Add or Configure button\n4. Provide some urls in the list and save the settings\n5. provide the same 'URL List Objects' in the 'Allowed URL List:' of the CFS Profile Objects\n6. Block the web site in the categories in our policy\n7. Assign it to current CFS policies\n8. Goto the Client PC and try to browse the same url in that pc",
+        "title": "Verify whether users are able to allow the web-sites based on the 'URL List Objects' which we specify in the 'Allowed URL List' even though if we block the domain category in our policy"
+    },
+    "204": {
+        "_case_id": "1529613",
+        "id": "204",
+        "result": "1.User should be able to browse the web-site\n2.User should not get the block or confirm page in the Browser",
+        "steps": "1. Login to UTM which supports CFS4.0\n2. Go to Firewall > Conetnt Filter Objects\n3. Click either Add or Configure button\n4. Provide some urls in the in the 'domain name.co.in' and save the settings eg:ind.co.in,sj.co.uk\n5. provide the same 'URL List Objects' in the 'Allowed URL List:' of the CFS Profile Objects\n6. Block the web site in the categories in our policy\n7. Assign it to current CFS policies\n8. Goto the Client PC and try to browse the same url in that pc",
+        "title": "Verify whether users are able to access the '2nd level domain or multi level domain' by providing in the 'URL List Objects' which we specify in the 'Allowed URL List'"
+    },
+    "205": {
+        "_case_id": "1529638",
+        "id": "205",
+        "result": "1. 1.User should not be able to browse the web-site\n2.User should get the block page in the Browser\n",
+        "steps": "1. Login to UTM which supports CFS4.0\n2. Go to Firewall > Conetnt Filter Objects\n3. Click either Add or Configure button\n4. Provide some urls in the in the 'domain name.co.in' and save the settings\n5. eg:ind.co.in,sj.co.uk\n6. provide the same 'URL List Objects' in the 'Allowed URL List:' of the CFS Profile Objects\n7. Block the web site in the categories in our policy\n8. Assign it to current CFS policies\n9. Goto the Client PC and try to browse the same url in that pc",
+        "title": "Verify whether users are able to block the '2nd level domain or multi level domain' by providing in the 'URL List Objects' which we specify in the 'Forbidden URL List'"
+    },
+
+}

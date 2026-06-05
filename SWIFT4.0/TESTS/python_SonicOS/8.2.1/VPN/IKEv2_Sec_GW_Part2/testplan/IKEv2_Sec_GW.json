@@ -1,0 +1,163 @@
+{
+   "1513008" : {
+      "steps" : "  Yes",
+      "initial" : "  BEF8CE04-0464-11DE-860E-445A00F93527",
+      "id" : "1513008",
+      "title" : "Non-zero IPSec gateway on a head end.  Both primary and secondary gateways are not available.",
+      "result" : "  Original ID: 18\n  Original Title: Non-zero IPSec gateway on a head end. Both primary and secondary gateways are not available.\n  Original Description: This test verifies that if both primary and secondary gateways are not available, the remote keeps trying IKE negotiation using in turn primary and secondary IPSec gateways untill it successfully negotiate IKE and IPSec SAs."
+   },
+   "1513010" : {
+      "steps" : "  Yes",
+      "initial" : "  BF310670-0464-11DE-860E-445A00F93527",
+      "id" : "1513010",
+      "title" : "Secondary Gateway is configured as FQDN",
+      "result" : "  Original ID: 2\n  Original Title: Secondary Gateway is configured as FQDN\n  Original Description: This test verifies that the Secondary IPSec Gateway input field allows adding an FQDN."
+   },
+   "1513018" : {
+      "steps" : "  Yes",
+      "initial" : "  BF488C46-0464-11DE-860E-445A00F93527",
+      "id" : "1513018",
+      "title" : "Continuous Ping From a Remote Firewall",
+      "result" : "  Original ID: 4\n  Original Title: Continuous Ping From a Remote Firewall\n  Original Description: This test verifies that the Secondary IPSec Gateway will be used to establish a tunnel with a peer if a Primary Gateway is unreachable."
+   },
+   "1513011" : {
+      "steps" : "  Yes",
+      "initial" : "  BF4F94A0-0464-11DE-860E-445A00F93527",
+      "id" : "1513011",
+      "title" : "Zero IPSec gateway on a head end. Switch over upon IKE SA expiry time. Negotiation started by traffic.",
+      "result" : "  Original ID: 22\n  Original Title: Zero IPSec gateway on a head end. Switch over upon IKE SA expiry time. Negotiation started by traffic.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, it tries to discover status of the primary gateway at IKE SA expiry time with secondary gateway and establish tunnel to the primary."
+   },
+   "1513022" : {
+      "steps" : "  Yes",
+      "initial" : "  BF127CAA-0464-11DE-860E-445A00F93527",
+      "id" : "1513022",
+      "title" : "Secondary Gateway Preemption is disabled.",
+      "result" : "  Original ID: 52\n  Original Title: Secondary Gateway Preemption is disabled.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, it never tries to discover status of the primary gateway and renegotiates IKE and IPSec SAs with the secondary."
+   },
+   "1766310" : {
+      "steps" : "  Yes",
+      "initial" : "  BF4D36CE-0464-11DE-860E-445A00F93527",
+      "id" : "1766310",
+      "title" : "Keep Alive is enabled on a Remote Firewall",
+      "result" : "  Original ID: 5 Original Title: Keep Alive is enabled on a Remote Firewall Original Description: This test verifies that the Secondary IPSec Gateway will be used to establish a tunnel with a peer if a Primary Gateway is unreachable."
+   },
+   "1513007" : {
+      "steps" : "  Yes",
+      "initial" : "  BF3CAFD4-0464-11DE-860E-445A00F93527",
+      "id" : "1513007",
+      "title" : "Non-zero IPSec gateway on a head end.  Switch over fails. Keep Alive is enabled.",
+      "result" : "  Original ID: 15\n  Original Title: Non-zero IPSec gateway on a head end. Switch over fails. Keep Alive is enabled.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, it tries to discover status of the primary gateway at IKE SA expiry time with secondary gateway, and if the switch over fails, it again establishes tunnel with secondary."
+   },
+   "1513009" : {
+      "steps" : "  Yes",
+      "initial" : "  BF0DCC82-0464-11DE-860E-445A00F93527",
+      "id" : "1513009",
+      "title" : "WAN failover on the head end.",
+      "result" : "  Original ID: 19\n  Original Title: WAN failover on the head end.\n  Original Description: This test verifies that a head end gateway initiates IKE negotiation to the remote site and establishes the IKE and IPSec SAs after a failover to a secondary WAN interface occurs and traffic goes from its internal network to a remote VPN destination."
+   },
+   "1513013" : {
+      "steps" : "  Yes",
+      "initial" : "  BF022CE2-0464-11DE-860E-445A00F93527",
+      "id" : "1513013",
+      "title" : "Zero IPSec gateway on a head end.  Primary gateway is not available.",
+      "result" : "  Original ID: 24\n  Original Title: Zero IPSec gateway on a head end. Primary gateway is not available.\n  Original Description: This test verifies that if the primary gateway is not available at all, the tunnel is established with secondary gateway, such that tunnel to primary is not established first."
+   },
+   "1513021" : {
+      "steps" : "  Yes",
+      "initial" : "  BF1981A8-0464-11DE-860E-445A00F93527",
+      "id" : "1513021",
+      "title" : "Primary gateway detection interval is less than Phase1 life time. Negotiation started by traffic.",
+      "result" : "  Original ID: 49\n  Original Title: Primary gateway detection interval is less than Phase1 life time. Negotiation started by traffic.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, it tries to discover status of the primary gateway at the time interval specified in primary gateway detection interval and establish tunnel to the primary."
+   },
+   "1513016" : {
+      "steps" : "  No",
+      "initial" : "  BF674096-0464-11DE-860E-445A00F93527",
+      "id" : "1513016",
+      "title" : "Remote site is behind a NAT device. Switch over upon IKE SA expiry time. Negotiation started by traffic.",
+      "result" : "  Original ID: 31\n  Original Title: Remote site is behind a NAT device. Switch over upon IKE SA expiry time. Negotiation started by traffic.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, it tries to discover status of the primary gateway at IKE SA expiry time with secondary gateway and establish tunnel to the primary."
+   },
+   "1766311" : {
+      "steps" : "  Yes",
+      "initial" : "  BF6C0126-0464-11DE-860E-445A00F93527",
+      "id" : "1766311",
+      "title" : "IKEv2 VPN policy with Secondary IPSec Gateway. Reboot a firewall.",
+      "result" : "  Original ID: 7 Original Title: IKEv2 VPN policy with Secondary IPSec Gateway. Reboot a firewall. Original Description: This test verifies that a secondary IPSec gateway configured in IKEv2 VPN policy stays intact after reboot."
+   },
+   "1513015" : {
+      "steps" : "  Yes",
+      "initial" : "  BEF6836A-0464-11DE-860E-445A00F93527",
+      "id" : "1513015",
+      "title" : "Primary gateway is set to zero or left blank and Secondary gateway is configured",
+      "result" : "  Original ID: 3\n  Original Title: Primary gateway is set to zero or left blank and Secondary gateway is configured\n  Original Description: This test verifies that if the Primary IPSec gateway is set to zero or left blank and Secondary IPSec gateway is configured, an error is displayed in the status bar."
+   },
+   "1766319" : {
+      "steps" : "  Yes",
+      "initial" : "  BF56B848-0464-11DE-860E-445A00F93527",
+      "id" : "1766319",
+      "title" : "IKEv2 VPN policy with Secondary IPSec Gateway. Export and import a preference file.",
+      "result" : "  Original ID: 8 Original Title: IKEv2 VPN policy with Secondary IPSec Gateway. Export and import a preference file. Original Description: This test verifies that a secondary IPSec gateway configured in IKEv2 VPN policy is saved in a preference file. "
+   },
+   "1513020" : {
+      "steps" : "  No",
+      "initial" : "  BEFD89DA-0464-11DE-860E-445A00F93527",
+      "id" : "1513020",
+      "title" : "Two devices act as primary and secondary gateway. Switch over upon IKE SA expiry time. Negotiation started by Keep Alive.",
+      "result" : "  Original ID: 44\n  Original Title: Two devices act as primary and secondary gateway. Switch over upon IKE SA expiry time. Negotiation started by Keep Alive.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, it tries to discover status of the primary gateway at IKE SA expiry time with secondary gateway and establish tunnel to the primary."
+   },
+   "1513006" : {
+      "steps" : "  Yes",
+      "initial" : "  BF69A048-0464-11DE-860E-445A00F93527",
+      "id" : "1513006",
+      "title" : "Non-zero IPSec gateway on a head end.  Primary gateway becomes available after SA lifetime expiry.",
+      "result" : "  Original ID: 13\n  Original Title: Non-zero IPSec gateway on a head end. Primary gateway becomes available after SA lifetime expiry.\n  Original Description: This test verifies that if the primary gateway is not available at all, the tunnel is established with secondary gateway, such that tunnel to primary is not established first. Then the remote tries to discover status of the primary gateway at IKE SA expiry time with secondary gateway and establish tunnel to the primary."
+   },
+   "1513014" : {
+      "steps" : "  Yes",
+      "initial" : "  BF06D148-0464-11DE-860E-445A00F93527",
+      "id" : "1513014",
+      "title" : "Zero IPSec gateway on a head end.  Primary gateway is not available. Keep Alive is enabled.",
+      "result" : "  Original ID: 28\n  Original Title: Zero IPSec gateway on a head end. Primary gateway is not available. Keep Alive is enabled.\n  Original Description: This test verifies that if the primary gateway is not available at all, the tunnel is established with secondary gateway, such that tunnel to primary is not established first."
+   },
+   "1513012" : {
+      "steps" : "  Yes",
+      "initial" : "  BF4631D0-0464-11DE-860E-445A00F93527",
+      "id" : "1513012",
+      "title" : "Zero IPSec gateway on a head end.  Switch over fails.",
+      "result" : "  Original ID: 23\n  Original Title: Zero IPSec gateway on a head end. Switch over fails.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, it tries to discover status of the primary gateway at IKE SA expiry time with secondary gateway, and if the switch over fails, it again establishes tunnel with secondary."
+   },
+   "1513005" : {
+      "steps" : "  Yes",
+      "initial" : "  BF5B6884-0464-11DE-860E-445A00F93527",
+      "id" : "1513005",
+      "title" : "Non-zero IPSec gateway on a head end.  Switch over fails.",
+      "result" : "  Original ID: 11\n  Original Title: Non-zero IPSec gateway on a head end. Switch over fails.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, it tries to discover status of the primary gateway at IKE SA expiry time with secondary gateway, and if the switch over fails, it again establishes tunnel with secondary."
+   },
+   "1513004" : {
+      "steps" : "  Yes",
+      "initial" : "  BF5DC11A-0464-11DE-860E-445A00F93527",
+      "id" : "1513004",
+      "title" : "Non-zero IPSec gateway on a head end. Switch over upon IKE SA expiry time. Negotiation started by traffic.",
+      "result" : "  Original ID: 10\n  Original Title: Non-zero IPSec gateway on a head end. Switch over upon IKE SA expiry time. Negotiation started by traffic.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, it tries to discover status of the primary gateway at IKE SA expiry time with secondary gateway and establish tunnel to the primary."
+   },
+   "1513019" : {
+      "steps" : "  No",
+      "initial" : "  BF2790E0-0464-11DE-860E-445A00F93527",
+      "id" : "1513019",
+      "title" : "Two devices act as primary and secondary gateway. Switch over upon IKE SA expiry time. Negotiation started by traffic.",
+      "result" : "  Original ID: 40\n  Original Title: Two devices act as primary and secondary gateway. Switch over upon IKE SA expiry time. Negotiation started by traffic.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, it tries to discover status of the primary gateway at IKE SA expiry time with secondary gateway and establish tunnel to the primary."
+   },
+   "1513017" : {
+      "steps" : "  No",
+      "initial" : "  BF59085A-0464-11DE-860E-445A00F93527",
+      "id" : "1513017",
+      "title" : "Remote site is behind a NAT device. Primary gateway becomes available after SA lifetime expiry.",
+      "result" : "  Original ID: 34\n  Original Title: Remote site is behind a NAT device. Primary gateway becomes available after SA lifetime expiry.\n  Original Description: This test verifies that if the remote has established tunnel with the secondary, such that tunnel to primary is not established first, it tries to discover status of the primary gateway at IKE SA expiry time with secondary gateway and establish tunnel to the primary."
+   },
+   "1513003" : {
+      "steps" : "  Yes",
+      "initial" : "  BF3A64E0-0464-11DE-860E-445A00F93527",
+      "id" : "1513003",
+      "title" : "Secondary Gateway is configured as IP Address",
+      "result" : "  Original ID: 1\n  Original Title: Secondary Gateway is configured as IP Address\n  Original Description: This test verifies that the Secondary IPSec Gateway input field allows adding an IP address."
+   }
+}

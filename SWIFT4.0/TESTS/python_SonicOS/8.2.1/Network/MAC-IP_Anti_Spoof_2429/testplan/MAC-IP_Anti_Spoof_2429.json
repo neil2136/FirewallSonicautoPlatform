@@ -1,0 +1,359 @@
+{
+   "33" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof Enforce Anti-spoof option.\n  3 Make sure host2 not in the anti-spoof entry. 4 Start non-ip traffic from host 2 to host 1",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "33",
+      "title" : "Non-IP traffic is bypassed for MAC-IP Anti-spoof",
+      "result" : "  Non-IP packets are bypassed even though MAC-IP anti-spoof feature is enabled."
+   },
+   "32" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof Enforce Anti-spoof option.\n  3 Ping from host2 to host1 ping should fail. Check if an entry exists in the spoof-detected list.\n  4 Double click that entry and it should open up a popup window to add this entry into the cache, select blacklist and click OK.\n  5 Ping from host2 to host1 again, it still failed",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "32",
+      "title" : "Add an entry from spoof detected list to blacklist",
+      "result" : "  Able to add entry from spoof detected list to anti-spoof cache with blacklist. After that, it should delete this entry from spoof detected list"
+   },
+   "21" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof and spoof detection list option.\n  3 Disable spoof detection list option",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "21",
+      "title" : "Spoof Detection List",
+      "result" : "  1 After a while, there would be some entries in the spoof detection list.\n  2 For spoof detection list option disabled interface, failed packets wont be listed."
+   },
+   "7" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Delete a static MAC-IP spoof entry by clicking delete icon next to the entry.\n  3 Delete a static MAC-IP spoof entry by selecting the checkbox and clicking delete button.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "7",
+      "title" : "GUI: Interface Anti-Spoof Cache: Delete entry",
+      "result" : "  1 Auto added MAC-IP spoof entry cant be deleted.\n  2 Static MAC-IP spoof entries can be deleted."
+   },
+   "26" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof, static ARP, DHCP Server, DHCP relay and Enforce Anti-spoof option\n  3 Go to Network /ARP page, add a static ARP Entry for host2, IP Address - A.100 with Host2 MAC address on interface X2. Enable bind-MAC option\n  4 Start ping from host 2 to host 1. Delete this static ARP entry and start ping again.\n  5 Go to Network / DHCP page to enable DHCP for X2 interface. Host 2 gets IP from firewall.\n  6 Start ping from host 2 to host 1. Disable the DHCP server and configure another IP in X2 subnet manually. Start ping again.\n  7 Configure DHCP scope on external DHCP server. Go to Network / IP Helper page to enable IP helper policy for DHCP relay. Host 2 gets IP from external DHCP server.\n  8 Start ping from host 2 to host 1. Disable the DHCP server and configure another IP in X2 subnet manually. Start ping again.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "26",
+      "title" : "Auto-added entry in Anti-Spoof cache",
+      "result" : "  Auto-added entry by static ARP/DHCP Server/DHCP in anti-spoof cache works fine."
+   },
+   "2" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Choose an interface for Interface Settings for Anti-Spoof.\n  3 Choose ALL for Interface Settings for Anti-Spoof.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "2",
+      "title" : "GUI: Interface Settings for Anti-Spoof: setting displaying",
+      "result" : "  1 For step 2,only the chosen interface's setting info is shown.Make sure the displaying is correctly.\n  2 All the interfaces are listed. Settings info for each interface is shown correclty."
+   },
+   "17" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable DHCP Server option.\n  3 Go to Network / DHCP page to enable DHCP for X2 interface.\n  4 Host 2 and Router A gets IP from X2.\n  5 Disable DHCP server option",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "17",
+      "title" : "Enable/Disable DHCP server for MAC-IP anti-spoof",
+      "result" : "  1 When DHCP server option enabled, MAC-IP anti-spoof cache shows the entry of host 2 and router A for X2 correctly.\n  2 After disable DHCP server option, no DHCP server lease related entries should be displayed."
+   },
+   "1" : {
+      "steps" : "  1 Set Static/DHCP/L2TP/PPPoE mode for interface X1.\n  2 Set Portshied/L2Bridge mode for interface X2.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "1",
+      "title" : "GUI: Interface Settings for Anti-Spoof: Interface choosing drop-down menu",
+      "result" : "  1 Choice All is listed in drop-down menu.\n  2 For step 1,interface X1 should be in drop-down menu.\n  3 For step 2,interface X2 should not be in drop-down menu."
+   },
+   "18" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable DHCP Server option.\n  3 Configure DHCP scope on external DHCP server\n  4 Go to Network / IP Helper page to enable IP helper policy for DHCP relay\n  5 Host 2 and Router A gets IP from external DHCP server.\n  6 Disable DHCP server option",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "18",
+      "title" : "Enable/Disable DHCP Relay for MAC-IP anti-spoof",
+      "result" : "  1 When DHCP relay option enabled, MAC-IP anti-spoof cache shows the entry of host 2 and router A for X2 correctly.\n  2 After disable DHCP relay option, no DHCP relay lease related entries should be displayed."
+   },
+   "30" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof Enforce Anti-spoof option.\n  3 Add entries in anti-spoof cache manually or automatically, including one entry for host 2.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "30",
+      "title" : "Maximum Anti-Spoof cache entry suppor",
+      "result" : "  1 It can support entries in anti-spoof cache as many as designed.\n  2 Only entries in cache could pass through traffic."
+   },
+   "16" : {
+      "steps" : "  1 Go to Network /ARP page, add a static ARP Entry for host2, IP Address - A.100 with Host2 MAC address on interface X2. Enable bind-MAC option.\n  2 Go to Network / MAC-IP Anti-spoofing page.\n  3 Open configuration page for interface X2 and enable Static ARP option.\n  4 Disable Static ARP option.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW\n  Host 1 and DHCP server connects to Route B",
+      "id" : "16",
+      "title" : "Enable/Disable static ARP for MAC-IP anti-spoof",
+      "result" : "  1 For step 3, MAC-IP anti-spoof cache shows the entry for X2 correctly.\n  2 After disable Static ARP option, no static ARP related entries should be displayed."
+   },
+   "44" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on interfaces and configure related settings.\n  3 Add some entries in MAC-IP Anti-spoof cache manually and automatically.\n  4 Restart firewall",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "44",
+      "title" : "MAC-IP Anti-spoof settings are intact after FW reboot",
+      "result" : "  MAC-IP Anti-spoof settings are intact after FW reboot."
+   },
+   "27" : {
+      "steps" : "  1 Configure route policy correctly on Router A and firewall makes traffic can pass through from host 3 to host 1.\n  2 Go to Network / MAC-IP Anti-spoofing page.\n  3 Open configuration page for interface X2 and enable MAC-IP Anti-spoof and Enforce Anti-spoof option.\n  4 Add static entries about Router A\u00a1\u00afs MAC-IP in anti-spoof cache.\n  5 Start ping from host 3 to host 1.\n  6 Disable A Router option. Restart ping from host 3 to host 1",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "27",
+      "title" : "Router mode for Anti-Spoof cache entry",
+      "result" : "  In step 5,when router mode enabled, it allows all traffic coming from behind this device,ping success.\n  In step 6,when router mode disabled,only traffic from the device can pass through,ping failed."
+   },
+   "25" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof and Enforce Anti-spoof option.\n  3 Add a static MAC-IP Anti-spoof Entry for Host 2: Fill in host 2s MAC address and choose interface X2.Empty IP address field.\n  4 Modify host 2s IP address and ping host 1.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "25",
+      "title" : "User created static entry with Any IP in Anti-Spoof cache",
+      "result" : "  1 When IP address field is empty, massage box pops up to clew ass an ANY IP anti-spoof entry for the MAC.\n  2 Different IP address should be accepted. Ping success."
+   },
+   "28" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof and Enforce Anti-spoof option.\n  3 Add an entry with host 2s MAC and IP manually or auto. Blacklist option checked.\n  4 Start ping from host 2 to host 1\n  5 Disable blacklist checkbox and ping from host 2 to host 1 again",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "28",
+      "title" : "Blacklist for MAC-IP Anti-spoof Entry",
+      "result" : "  Device with blacklist checked is not allowed to pass traffic all the time while enforce anti-spoof enabled."
+   },
+   "40" : {
+      "steps" : "  1. Login the active unit, configure MAC-IP anti-spoof related settings.\n  2. Trigger a Hardware failover to let the previous inactive unit becomes active.\n  3. Login the current active unit to verify the related MAC-IP anti-spoof settings.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B\n  HA has been enabled and correctly configured on two connected identical units.",
+      "id" : "40",
+      "title" : "HA support for MAC-IP Anti-spoof",
+      "result" : "  1 All configurations will be synchronized, including leases from DHCP server and DHCP relay\n  2 Anti-spoof failed list will not be synced and re-built when idle becomes active."
+   },
+   "14" : {
+      "steps" : "  1 Go to System / Administration page to set default table size.\n  2 Go to Network / MAC-IP Anti-spoofing page.\n  3 Enable MAC-IP anti-spoof on interfaces and wait there are some entries on Anti-Spoof",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "14",
+      "title" : "GUI: Table page size",
+      "result" : "  Items displaying (Items X to X (of X)) should match table page size."
+   },
+   "20" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof and Enforce Anti-spoof option.\n  3 Add static entries about host 2s MAC-IP in anti-spoof cache.\n  4 Start ping from host 2 to host 1\n  5 Delete host 2s MAC-IP entry in anti-spoof cache then start ping from host 2 to host 1.\n  6 Disable Anti-spoof option then start ping from host 2 to host 1.\n  7 Repeat steps 2 to 6 for DHCP server/DHCP relay situation.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "20",
+      "title" : "Enforce Anti-spoof",
+      "result" : "  1 When Enforce Anti-spoof option enabled, it will drop packets not matching MAC-IP anti-spoof cache.\n  2 When MAC-IP Anti-spoof enabled but Enforce Anti-spoof option disabled, firewall works in listen mode. Anti-spoof cache will be build but not drop mismatched packets."
+   },
+   "49" : {
+      "steps" : "  1 Go to Network /ARP page, add a static ARP Entry for host2, enter host 2s MAC, enable bind MAC Address update IP Address Dynamically.\n  2 Go to Network / MAC-IP Anti-spoofing page.\n  3 Open configuration page for interface X2 and enable Static ARP option.\n  4 Disable Static ARP option.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "49",
+      "title" : "Static ARP with IP Address Dynamically Update entry",
+      "result" : "  1 For step 3, MAC-IP anti-spoof cache shows the entry for X2 correctly. When host 2s IP changes, it can update accordingly\n  2 After disable Static ARP option, no static ARP related entries should be displayed"
+   },
+   "24" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof and Enforce Anti-spoof option.\n  3 Add three static entries for host 2 MAC with IP1, IP2 and IP3 each in anti-spoof cache.\n  4 Start ping from host 2 with IP1/IP2/IP3 to host 1\n  5 Change host 2s IP to IP4 and start ping to host 1.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "24",
+      "title" : "Multiple entries with different IP for one MAC in Anti-Spoof cache table",
+      "result" : "  1 It is allowed to add multiple static entries with different IP for same MAC.\n  2 Entries in anti-spoof cache can pass though. Other IP failed."
+   },
+   "10" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on an interface.\n  3 After there are some entries in spoof detected list, click flush button.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "10",
+      "title" : "GUI: Interface Spoof Detected List: Flush",
+      "result" : "  All the entries in spoof detected list are re-learned after clicking flush button."
+   },
+   "31" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof Enforce Anti-spoof option.\n  3 Ping from host2 to host1 ping should fail. Check if an entry exists in the spoof-detected list.\n  4 Double click that entry and it should open up a popup window to add this entry into the cache, select OK.\n  5 Ping from host2 to host1 again, it passed.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "31",
+      "title" : "Add an entry from spoof detected list to Anti-Spoof Cache",
+      "result" : "  Able to add entry from spoof detected list to anti-spoof cache. After that, it should delete this entry from spoof detected list."
+   },
+   "35" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof Enforce Anti-spoof option.\n  3 Make sure host2 not in the anti-spoof entry.\n  4 Host 2 connects to firewall as GVC client or SSLVPN clients\n  5 Traffic pass from host 2 to VPN accesses allowed network.\n  //Note: updated by Amelie, after confirm with Dev (Yanjun, Gump), now the VPN traffic is regarded as same as other traffic so it won't be by passed by MAC-IP anti-spoof module.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "35",
+      "title" : "[Obsolete] VPN traffic is bypassed for MAC-IP Anti-spoof",
+      "result" : "  VPN traffic is bypassed even though MAC-IP anti-spoof feature is enabled\n  //Note: updated by Amelie, after confirm with Dev (Yanjun, Gump), now the VPN traffic is regarded as same as other traffic so it won't be by passed by MAC-IP anti-spoof module."
+   },
+   "11" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on an interface.\n  3 After there are some entries in spoof detected list, click resolve button.\n  4 Modify name of PC and re-click resolve button.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "11",
+      "title" : "GUI: Interface Spoof Detected List: Resolving",
+      "result" : "  Name of device will be re-learned after clicking resolving button."
+   },
+   "48" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof, ARP lock and Enforce Anti-spoof option.\n  3 Add an entry for Host 2s MAC and IP in the anti-spoof cache 3 Host 2 works as the victim. Host\u00810\u008424 works as an attacker for ARP poisoning.\n  4 Start traffic from Host 2 to Host 1",
+      "initial" : "  Host 3 Connects to Router A\n  Router A , Host 2, Host 4 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "48",
+      "title" : "Negative: ARP poisoning",
+      "result" : "  Entry for host 2 is added to the firewalls ARP cache as permanent entry. Fake or spoofed ARP messages wont take effect."
+   },
+   "42" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on interfaces and configure related settings.\n  3 Add some entries in MAC-IP Anti-spoof cache manually and automatically.\n  4 Upgrade/Downgrade build",
+      "initial" : "  Host 3 Connects to Router A \u00810\u00842\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "42",
+      "title" : "Upgrade/Downgrade support for MAC-IP Anti-spoof",
+      "result" : "  MAC-IP Anti-spoof configuration is intact after upgrade/downgrade"
+   },
+   "22" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof, All Management and Enforce Anti-spoof option.\n  3 Make sure host2 is not in anti-spoof cache. Try to management firewall from host 2.\n  4 Disable Allow Management option",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "22",
+      "title" : "Allow Management",
+      "result" : "  1 When allow management option enabled, host 2 can manage firewall even if host 2 is not in anti-spoof cache.\n  2 When allow management option disabled, host 2 cant manage firewall if it is not in anti-spoof cache."
+   },
+   "46" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Make sure MAC-IP anti-spoof is not enabled for X2 interface.\n  3 Try to add a static cache entry for X2 interface.\n  4 Try to modify existed entry to X2 interface.\n  5 Static ARP/DHCP Server/DHCP relay for X2",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "46",
+      "title" : "Negative: add entries for anti-spoof disabled interface",
+      "result" : "  Anti-spoof entry is only allowed to add for anti-spoof enabled interface manually or automatically."
+   },
+   "13" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on interfaces and wait there are some entries on Anti-Spoof Cache and Interface Spoof Detected List\n  3 Set filter criteria then click filter button.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "13",
+      "title" : "GUI: Filter",
+      "result" : "  All entries with matching filter criteria will be listed."
+   },
+   "23" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof and Enforce Anti-spoof option.\n  3 Add a static entry for host 2 MAC with IP1 in anti-spoof cache.\n  4 Start ping from host 2 to host 1\n  5 Change host 2s IP and start ping to host 1.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "23",
+      "title" : "User created static entry with fixed IP in Anti-Spoof cache",
+      "result" : "  1 User can manually create static entries for fixed IP and MAC in anti-spoof cache.\n  2 Only matched both IP and MAC in anti-spoof cache can pass though."
+   },
+   "29" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof, static ARP, DHCP Server, DHCP relay and Enforce Anti-spoof option\n  3 Go to Network /ARP page, add a static ARP Entry for host2, IP Address - A.100 with Host2 MAC address on interface X2. Enable bind-MAC option\n  4 Verify there is related entry in anti-spoof cache. Then modify or delete this static ARP and recheck the entry update in anti-spoof cache.\n  5 Go to Network / DHCP page to enable DHCP for X2 interface. Host 2 gets IP from firewall.\n  6 Verify there is related entry in anti-spoof cache. Then modify or delete this DHCP lease and recheck the entry update in anti-spoof cache.\n  7 Configure a DHCP scope on external DHCP server. Go to Network / IP Helper page to enable IP helper policy for DHCP relay. Host 2 gets IP from external DHCP server.\n  8 Verify there is related entry in anti-spoof cache. Then modify or delete this DHCP relay release and recheck the entry update in anti-spoof cache.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "29",
+      "title" : "Cache entry update with related static ARP/ DHCP lease / DHCP relay item deleted",
+      "result" : "  When static ARP/DHCP Server lease/DHCP relay lease table changes, the auto added entries based on them in anti-spoof cache should change accordingly."
+   },
+   "6" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Click add button to add a new anti-spoof entry.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "6",
+      "title" : "GUI: Interface Anti-Spoof Cache: Add entry",
+      "result" : "  1 New entry can be added with required IP Address, interface, MAC address, A Router and A blacklisted device settings.\n  2 Wrong format of IP Address/ MAC address will not be accepted."
+   },
+   "50" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable DHCP Server option.\n  3 Configure DHCP scope on external DHCP server\n  4 Go to Network / IP Helper page to enable IP helper policy for DHCP relay\n  5 Host 2 and Router A gets IP from external DHCP server.\n  6 Change DHCP server scope to lease another IP to Host 2 and Router A",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "50",
+      "title" : "DHCP relay lease different IP to same MAC",
+      "result" : "  When DHCP relay lease different IP to same MAC, anti-spoof cache will update accordingly"
+   },
+   "39" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on interfaces and configure related settings.\n  3 Add some static entries in MAC-IP Anti-spoof cache.\n  4 Export preferences file and re-import on another device.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "39",
+      "title" : "Preference support for MAC-IP Anti-spoof",
+      "result" : "  1 Export and import is validated.\n  2 Configuration keeps intact."
+   },
+   "3" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Click configure item for an interface.\n  3 Modify various MAC-IP Spoof settings.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "3",
+      "title" : "GUI: Interface Settings for Anti-Spoof: Edit interface settings",
+      "result" : "  1 Configuration page can be opened for every interface.\n  2 Name of interface shows correctly on configuration page.\n  3 Settings items name keeps consistent with setting diplaying page.\n  4 Setting can be modified and saved."
+   },
+   "36" : {
+      "steps" : "  1 Configure X2 as static mode, X3 as L2bridge mode and X4 as Portshield mode\n  2 Go to Network / MAC-IP Anti-spoofing page.\n  3 Open configuration page for interface X2 and enable MAC-IP Anti-spoof Enforce Anti-spoof option.\n  4 Add X2 related items in anti-spoof cache manually or automatically.\n  5 Make X2 related entry appears in detected list.\n  6 Change X2 to L2bridge or Portshield mode",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2\n  of FW Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "36",
+      "title" : "Unsupported interface type: L2bridge/Portshield",
+      "result" : "  1 Interface X3 and X4 doesnt appear in interface dropdown list.\n  2 MAC-IP anti-spoof related setting and items will be removed when changing interface type to L2bridge or Portshield mode."
+   },
+   "9" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on an interface.\n  3 Choose that interface from interface list.\n  4 Choose ALL for interface list.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "9",
+      "title" : "GUI: Interface Spoof Detected List: Displaying",
+      "result" : "  1 All devices failing to pass anti-spoof cache are logged and can be correctly shown.\n  2 When not choosing ALL, make sure only entries for the specific interface are shown."
+   },
+   "51" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof and Enforce Anti-spoof option.\n  3 Configure X5 portshield to X2.\n  4 Add static entries about host 2s MAC-IP in anti-spoof cache.\n  5 Start ping from host 2 to host 1\n  6 Delete host 2s MAC-IP entry in anti-spoof cache then start ping from host 2 to host 1.\n  7 Repeat steps 2 to 6 for DHCP server/DHCP relay situation.",
+      "initial" : "  Host 3 Connects to Router A\n  Host 2 Connects to X5 of FW X5 portshield to X2\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "51",
+      "title" : "Traffic between portshield interface and non-portshield interface",
+      "result" : "  When Enforce Anti-spoof option enabled, it will drop packets not matching MAC-IP anti-spoof cache."
+   },
+   "41" : {
+      "steps" : "  1 Enable GMS on the firewall.\n  2 Configure correctly on GMS server to let host 1 can manage firewall via GMS.\n  3 Configure MAC-IP Anti-spoof related settings via GMS.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "41",
+      "title" : "GMS support for MAC-IP Anti-spoof",
+      "result" : "  MAC-IP Anti-spoof related configuration can be configured via GMS."
+   },
+   "12" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on an interface.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "12",
+      "title" : "GUI: Refresh",
+      "result" : "  Info will be updated after click refresh button."
+   },
+   "47" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface both X0 / X2 and enable MAC-IP Anti-spoof and Enforce Anti-spoof option.\n  3 Add a static entry for host 2s MAC and IP with interface X2. 3 Ping from host 2 to host 1 passed.\n  4 Re-connect host 2 to X0 port of firewall, start ping from host 2 to host 1 again",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "47",
+      "title" : "Negative: Right MAC and IP client with Wrong interface",
+      "result" : "  1 Ping successes when host 2 connects to X2 interface.\n  2 Ping failed when host 2 connects to X0 interface."
+   },
+   "15" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP anti-spoof option.\n  3 Disable MAC-IP anti-spoof option for X2.\n  4 Repeat steps 2 and 3 for other interface.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "15",
+      "title" : "Enable/Disable MAC-IP based anti-spoofing",
+      "result" : "  1 MAC-IP anti-spoof can be enabled/disabled for each interface in drop-down list.\n  2 When MAC-IP anti-spoofing enabled for interface, entries for DHCP/ARP/IP Helper will be auto added into anti-spoof cache. User can also add static entries for anti-spoof cache for the interface.\n  3 When MAC-IP anti-spoof disabled for interface, there should be no auto added entries or manually added entries for this interface."
+   },
+   "8" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Mouse over statistics icon for each entry.\n  3 Click clear statistics button and re-check.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "8",
+      "title" : "GUI: Interface Anti-Spoof Cache: Statistics",
+      "result" : "  1 For step 2, each entrys statistics is correctly displayed.\n  2 After clicking clear statistics button, old statistics is deleted and new statistics starts to count."
+   },
+   "38" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on interfaces and configure related settings.\n  3 Generate some auto added static entries and manually add entries in MAC-IP Anti-spoof cache.\n  4 Wait until there are some entries in spoof detected list. 5 Export TSR.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "38",
+      "title" : "TSR support for MAC-IP Anti-spoof",
+      "result" : "  Info is correct and integrated in TSR for MAC-IP anti-spoof feature."
+   },
+   "4" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Choose an interface and type for Interface Anti-Spoof Cache of TYPE.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "4",
+      "title" : "GUI: Interface Anti-Spoof Cache: Displaying",
+      "result" : "  1 Entries for the chosen interface is only show.\n  2 Entries belonging to the interface of selected types are shown."
+   },
+   "34" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2 and enable MAC-IP Anti-spoof Enforce Anti-spoof option.\n  3 Configure DHCP scope on external DHCP server\n  4 Go to Network / IP Helper page to enable IP helper policy for DHCP relay\n  5 Send DHCP request from host 2 to host 1",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "34",
+      "title" : "DHCP packs with source IP as 0 is bypassed for MAC-IP Anti-spoof",
+      "result" : "  DHCP packs with source IP as 0 are bypassed even though MAC-IP anti-spoof feature is enabled"
+   },
+   "45" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on interfaces and configure related settings.\n  3 Add some entries in MAC-IP Anti-spoof cache manually and automatically.\n  4 Try to add a duplicated entry.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "45",
+      "title" : "Negative: add duplicated entries",
+      "result" : "  Message shows it is not allowed to add duplicated entries."
+   },
+   "37" : {
+      "steps" : "  1 Mac-IP anti-spoof cache blacklisted device\n  2 Mac-IP anti-spoof cache not router\n  3 Mac-IP anti-spoof cache not found for router\n  4 Mac-IP anti-spoof cache enforced for hosts",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "37",
+      "title" : "Log support for support for MAC-IP Anti-spoof",
+      "result" : "  There are such four kinds of log for related operation in MAC-IP Anti-spoof feature."
+   },
+   "43" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Enable MAC-IP anti-spoof on interfaces and configure related settings.\n  3 Add some entries in MAC-IP Anti-spoof cache manually and automatically.\n  4 Click Current Firmware with Factory Default Settings icon\n  5 Repeat steps 1 to 3 with Restore command from CLI",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "43",
+      "title" : "Factory default/Restore support for MAC-IP Anti-spoof",
+      "result" : "  MAC-IP Anti-spoof configuration is cleared after factory default or restore from CLI."
+   },
+   "19" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Open configuration page for interface X2.Enable MAC-IP Anti-spoof and enable ARP lock option.\n  3 Add a static MAC-IP Anti-spoof Entry for Host2.\n  4 Start Ping from host 2 to host 1\n  5 Change Router As interface IP to Host 2s IP.\n  6 Ping from router A to host 1\n  7 Disable ARP watch to repeat step 3 to 6.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1\n  and DHCP server connects to Route B",
+      "id" : "19",
+      "title" : "ARP Lock",
+      "result" : "  1 MAC-IP anti-spoof cache shows an entry for X2.\n  2 When ARP lock enabled, after ping from host 2 to host 1, ARP cache shows host 2s IP address.\n  \u00810\u00842 \u00810\u00842 The following ping from Router A will fail.\n  \u00810\u00842 \u00810\u00842 In ARP cache, it still shows host 2s MAC address for the IP.\n  3 When ARP lock disabled, the following ping from Router A will success.\n  \u00810\u00842 \u00810\u00842 In ARP cache, it updated to Router As MAC address."
+   },
+   "5" : {
+      "steps" : "  1 Go to Network / MAC-IP Anti-spoofing page.\n  2 Click configure item for static MAC-IP spoof entry.\n  3 Modify various MAC-IP Spoof settings, including IP Address, interface, MAC address, A Router and A blacklisted device.",
+      "initial" : "  Host 3 Connects to Router A\n  Router A and Host 2 Connects to X2 of FW\n  Router B connects to X3 of FW Host 1 and DHCP server connects to Route B",
+      "id" : "5",
+      "title" : "GUI: Interface Anti-Spoof Cache: Edit entry",
+      "result" : "  1 Only user created static entries can be edited currently. Entries auto added by ARP/DHCP/IP Helper are unable to edit.\n  2 If change from a specific IP address to any IP address, it will show ANY IP for this entry.\n  3 Entry properties can be edited and saved."
+   }
+}

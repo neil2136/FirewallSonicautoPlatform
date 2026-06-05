@@ -1,0 +1,163 @@
+{
+   "11" : {
+      "steps" : "  \u00810\u008421. Go to the Network>Settings\n  2. Click the Configure icon on the WAN interface\n  3. In the pop-up window, click PPTP tab\n  4. Go to CLI mode, TZ 190 Enhanced> show interface WAN",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The PPTP is configured and works fine\u00810\u00842",
+      "id" : "11",
+      "title" : "Check PPTP settings under CLI",
+      "result" : "  The behavior should work as design."
+   },
+   "21" : {
+      "steps" : "  step 1. Terminate the current PPP session using LCP Terminate\n  step 2. Verify PPTP client closes current PPTP control session\n  step 3. Contrinue to send data from LAN to WAN\n  step 4. Reject any PAP or CHAP authentication attempts\n  step 5. Wait 60 seconds, continuing to reject PPP authentication\n  step\u00810\u008426. Accept PPP authentication after 60 seconds\n  step 7. Verify PPP link is reestablished in 120 seconds\n  Note:\n  This test supports PAP and CHAP authentication.",
+      "initial" : "  TBD",
+      "id" : "21",
+      "title" : "CDR: PPTP/PPP restarts if PPP authentication fails",
+      "result" : "  x"
+   },
+   "7" : {
+      "steps" : "  1. Go to the Network>Interfaces page\n  2. Click the Disconnect button and then Connect button",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The PPTP is configured and work fine",
+      "id" : "7",
+      "title" : "Connect button check",
+      "result" : "  The WAN IP address and Gateway IP address can be acquired from PPTP server"
+   },
+   "2" : {
+      "steps" : "  1. Go to the Network>Settings>Interfaces\n  2. Click the Configure icon on the WAN interface\n  3. In the pop-up window, select Obtain an IP address Automatically\n  4. Click the OK button",
+      "initial" : "  1. The WAN interface operational mode is selected as NAT with PPTP Client\n  2. A DHCP server is set up on the WAN interface area",
+      "id" : "2",
+      "title" : "Configuration DHCP (General)",
+      "result" : "  An IP address assigned from DHCP server can be displayed on WAN IP(NAT Public) Address and WAN Gateway (Router) Address."
+   },
+   "17" : {
+      "steps" : "  step 1. Initiate TCP close on PPTP control session by sending TCP FIN\n  step 2. Verify WAN PPTP client closes PPTP TCP connection\n  step 3. Continue to send data from LAN to WAN to initiate new connection\n  step 4. Verify PPTP client establishes new PPTP control session\n  step 5. Verify PPTP client establishes new PPTP outbound call session\n  step 6. Verify LAN side can reach WAN using new PPTP call id\n  NOTE:\n  The behavior of the router when the PPTP TCP control session is lost is not well defined by RFC 2637.\n  On some implementations, this causes the PPTP client to restart its control session.\n  In the worst case, the PPTP client should detect a dead connection through PPTP Echo Request failires. At this point, the PPTP control session should be restarted.",
+      "initial" : "  TBD",
+      "id" : "17",
+      "title" : "CDR: PPTP client restarts PPTP connection when TCP Control session closed",
+      "result" : "  x"
+   },
+   "22" : {
+      "steps" : "  step 1. Send out LCP config request to PPP peer\n  step 2. Verify peer resends LCP configuration\n  step 3. Verify the configuration is the same\n  step 4. Verify ping succeeds from LAN to WAN\n  NOTE:\n  Renegotiating LCP has can cause some PPP implementations to terminate the PPP link or the PPTP link. This test does not fail the DUT if this happens, but it does issue a warning if the PPTP session is restarted.",
+      "initial" : "  TBD",
+      "id" : "22",
+      "title" : "CDR: PPTP/PPP can recover if LCP renegotiation is attempted",
+      "result" : "  x"
+   },
+   "1" : {
+      "steps" : "  1. Go to the Network>Settings>Interfaces\n  2. Click the Configure icon on the WAN interface\n  3. In the pop-up window, click the radio button of Use the following IP Address\n  4. Type in the IP address 10.10.100.2/24 for WAN IP(NAT Public)Address\n  5. Tpye in the IP address 10.10.100.1 for WAN Gateway(Router) Address\n  6. Click the PPTP tab\n  7. Type in user name and password and PPTP Server IP Address\n  8. Click the OK button\n  9. Click the Connect button at the WAN interface",
+      "initial" : "  1. The box is running in the operational mode of NAT with PPTP Client at WAN interface\n  2. The PPTP server is configured on the Windows2000/2003 or Cisco Router.",
+      "id" : "1",
+      "title" : "Configuration StaticIP (General)",
+      "result" : "  The IP address from PPTP server is assigned to the WAN interface in NAT with PPTP client mode."
+   },
+   "18" : {
+      "steps" : "  \u00810\u00842step 1. Send TCP RST for PPTP control session\n  step 2. Continue to send data from LAN to WAN to initiate new connection\n  step 3. Verify PPTP client establishes new PPTP control session\n  step 4. Verify PPTP client establishes new PPTP outbound call session\n  step 5. Verify LAN side can reach WAN using new PPTP call id Reference: RFC 2637 Section 3.1.4 Keep Alives and Timers\n  NOTE: The behavior of the router when the PPTP TCP control session is lost is not well defined by RFC 2637. On some implementations, this causes the PPTP client to restart its control session. In the worst case, the PPTP client should detect a dead connection through PPTP Echo Request failires. At this point, the PPTP control session should be restarted.",
+      "initial" : "  TBD",
+      "id" : "18",
+      "title" : "CDR: PPTP client restarts PPTP connection when TCP Control session reset",
+      "result" : "  x"
+   },
+   "23" : {
+      "steps" : "  step 1. Send out LCP echo request with length 4096, but no data\n  step 2. Peer may respond or drop LCP echo request\n  step 3. Verify PPP is still functioning using ICMP echo\n  NOTE:\n  This test checks that the device under test behaves gracefully when it receives PPP options with a bad length. Some devices may still respond to the LCP echo, but its not considered a failure if the device does not respond.",
+      "initial" : "  TBD",
+      "id" : "23",
+      "title" : "CDR: PPTP/PPP can recover if LCP echo request contains bad length D",
+      "result" : "  x"
+   },
+   "13" : {
+      "steps" : "  1. Go to the Network >Interfaces page\n  2. Click drop-down list to select the NAT with PPTP Client\n  3. Click the Restart button",
+      "initial" : "  The box is restored to the factory default settings ",
+      "id" : "13",
+      "title" : "Change the interface operation mode from NAT Enabled to NAT with PPTP Client",
+      "result" : "  The switch from NAT Enabled to NAT with PPTP Client works fine without any errors"
+   },
+   "16" : {
+      "steps" : "  step 1. Terminate the current PPP session using LCP Terminate\n  step 2. Verify WAN PPTP client closes PPTP TCP session\n  step 3. Continue to send data from LAN to WAN to initiate new connection\n  step 4. Verify PPTP client establishes new PPTP control session\n  step 5. Verify PPTP client establishes new PPTP outbound call session\n  step 6. Verify LAN side can reach WAN using new PPTP call id",
+      "initial" : "  TBD",
+      "id" : "16",
+      "title" : "CRD: PPTP client restarts PPTP connection when PPP LCP terminates PPP link",
+      "result" : "  x"
+   },
+   "6" : {
+      "steps" : "  1. Go to the System>Diagnostics>Tech Support Report\n  2. Click Download Report button\n  3. Save the TSR file into the local machine",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The PPTP configuration is set up and work fine",
+      "id" : "6",
+      "title" : "Verify the TSR",
+      "result" : "  Look up the TSR, the PPTP configuration info is shown in the report"
+   },
+   "3" : {
+      "steps" : "  1. Go to the Network>Settings\n  2. Click the Configure icon on the WAN interface\n  3. In the pop-up window and the General pane, select Use the following IP Address\n  4. Type in the static IP address 10.100.100.1 and subnet mask 255.255.255.0 for SonicWall WAN IP(NAT Public) Address and WAN Subnet Mask\n  5. Type in the static IP address 10.100.100.2 for the WAN Gateway(Router) Address\n  6. Click the PPTP tab.\n  7. Type in the user name and password and PPTP Server IP Address 10.100.100.2\n  8. Click OK button\n  9. Click the Refresh button",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The PPTP server is configured on Windows 2003 or Cisco Router and located in WAN area",
+      "id" : "3",
+      "title" : "GUI: Setting modifications",
+      "result" : "  The assigned IP address will be displayed on the WAN interface"
+   },
+   "9" : {
+      "steps" : "  1. Go to the System>Settings page.\n  2. Click export settings button\n  3. Save the exp file into the local machine",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The PPTP configuration is set up and work fine ",
+      "id" : "9",
+      "title" : "Verify the settings file (pref's file)",
+      "result" : "  After convertion, look up the exp file, the PPTP configuration info is shown in the list.\n  Comment by Kelly Du:\n  Imported the pref's file exported earlier and when the unit came up ,and check PPTP configuration info"
+   },
+   "12" : {
+      "steps" : "  1. Go to the Network>Settings\n  2. Click the Configure icon and in the pop-up windows to click PPTP tab\n  3. Check the check box of Inactivity Disconnect(minutes)\n  4. Change the default value 10 into 2\n  5. Click the OK button\n  6. Use the ethereal tool to grab the traffic",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The PPTP server is configured on Windows server 2003 or Cisco Router and put in the WAN area\n  3. Followed the test case 4",
+      "id" : "12",
+      "title" : "Inactivity Disconnect",
+      "result" : "  The test steps in the Test Execution section are passed without any errors"
+   },
+   "14" : {
+      "steps" : "  1. Go to the Network>Settings\n  2. Click the Configure icon on the WAN interface\n  3. In the pop-up window, click Protocol tab",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The PPTP is configured and works fine ",
+      "id" : "14",
+      "title" : "Checking DNS Settings Acquired via PPTP",
+      "result" : "  The DNS Server1 and DNS Server2 should be displayed in that section."
+   },
+   "15" : {
+      "steps" : "  \u00810\u00842step 1. Turn off PPTP Echo-Responses on PPTP server\n  step\u00810\u008422. Verify WAN PPTP client closes PPTP TCP connection (wait upto 5 minutes for PPTP to failover)\n  step 3. Continue to send data from LAN to WAN to initiate new connection\n  step\u00810\u008424. Verify PPTP client establishes new PPTP control session\n  step\u00810\u008425. Verify PPTP client establishes new PPTP outbound call session\n  step\u00810\u008426. Verify LAN side can reach WAN using new PPTP call id",
+      "initial" : "  TBD",
+      "id" : "15",
+      "title" : "CDR: PPTP client restarts PPTP connection when PPTP Echo-Requests Fail",
+      "result" : "  x"
+   },
+   "20" : {
+      "steps" : "  step 1. Send 5 LCP echo requests\n  step 2. Verify LCP echo replys are received\n  step 3. Verify LCP echo request data is echoed back in reply",
+      "initial" : "  TBD",
+      "id" : "20",
+      "title" : "CDR: PPTP PPP client replys to LCP echo requests",
+      "result" : "  x"
+   },
+   "8" : {
+      "steps" : "  1. Go to the Network >Interfaces page\n  2. Click the Disconnect button\n  3. Click the Configure icon and then click PPTP tab",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The WAN interface is configured as NAT with PPTP client and PPTP server was set up to work very well ",
+      "id" : "8",
+      "title" : "Disconnect button check",
+      "result" : "  The previous WAN IP address will be flushed out from NAT with PPTP Client mode and WAN IP address become into 0.0.0.0, all info in Settings Acquired via PPTP become into 0.0.0.0 too"
+   },
+   "4" : {
+      "steps" : "  1. Go to the Network>Settings>Interfaces\n  2. Click the Configure icon on WAN interface\n  3. In the pop-up window, do the error checks on the IP address format, User Name format, User Password format, check the check box and uncheck the check box.",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The PPTP configuration is set up and works fine",
+      "id" : "4",
+      "title" : "Error and wrong inputs",
+      "result" : "  The test steps in the Test Execution section are passed without any errors"
+   },
+   "10" : {
+      "steps" : "  1. Go to the Log>View page.\n  2. Click refresh button.\n  3. View log in real time.",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The PPTP configuration is set up and work fine",
+      "id" : "10",
+      "title" : "Verify the log",
+      "result" : "  Look up the log message, the PPTP connection info is shown in the list."
+   },
+   "19" : {
+      "steps" : "  step 1. Send Call-Disconnect-Notify for existing Call ID\n  step 2. Continue to send data from LAN to WAN to initiate new call\n  step 3. Verify PPTP client establishes new PPTP outbound call\n  step 4. Verify LAN side can reach WAN using new PPTP call id\n  NOTE:\n  Some implementations may close the PPTP control session is the PPTP call is disconnected. This test does not consider this a failure as long as a valid PPTP outbound call is restablished. Reference: RFC 2637",
+      "initial" : "  TBD",
+      "id" : "19",
+      "title" : "CDR: PPTP client initiates new PPTP Call after Call-Disconnect-Notify",
+      "result" : "  x"
+   },
+   "5" : {
+      "steps" : "  1. Go to the Network>Settings\n  2. Click the Configure icon on the WAN interface\n  3. In the pop-up window, click PPTP tab",
+      "initial" : "  1. The box is restored to the factory default settings\n  2. The PPTP is configured and works fine ",
+      "id" : "5",
+      "title" : "Check the Settings Acquired via PPTP",
+      "result" : "  The WAN IP address and Gateway IP address, DNS Server1 and DNS Server2 IP addresses are displayed in that section"
+   }
+}

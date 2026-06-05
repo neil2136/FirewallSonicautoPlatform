@@ -1,0 +1,156 @@
+{
+   "11" : {
+      "steps" : "  N/A",
+      "initial" : "  Full",
+      "id" : "11",
+      "title" : "Hybrid Scan with a minimum of Two Firewalls",
+      "result" : "  1.) With Nmap, configure the command line with nmap -vv -sS [WAN IP Address(es)]\n  2.) Send the scan to at least two different firewalls.\n  3.) Verify the firewall logs display a message that the scan was dropped and contains the correct TCP type that was sent.\n  4.) Verify that an initial connection is not established."
+   },
+   "21" : {
+      "steps" : "  N/A",
+      "initial" : "  TBD",
+      "id" : "21",
+      "title" : "FTP Bounce Attack",
+      "result" : "  1.) Configure a FTP Public Server using the firewall Public Server Wizard on the LAN of the firewall, with a public address of the WAN IP Address of the firewall. Make sure that the FTP Server allows anonymous login.\n  2.) Using Nmap configure the command line with nmap -vv -b anonymous:anon@[WAN IP Address of the firewall] [LAN IP Address of the FTP Server, or any other LAN IP Address).\n  3.) Send the scan to the firewall.\n  4.) Verify the log displays a message that the packets were dropped and contains the correct information for FTP: PORT bounce attack dropped.\n  5.) Verify that an initial connection is established through FTP, but no further traffic is passed and the FTP bounce attack will time out after three tries."
+   },
+   "7" : {
+      "steps" : "  Either nmap, or nemesis can be used to send the packets. In the case of nemesis there is only one packet being sent and this may not be enough traffic to set off the port scan feature of the firewall. When using nemesis you may have to repeatedly send the same packet 3-6 times before you see the appropriate message.\n  For nemesis type nemesis tcp -v -f[flag] -D[WAN IP Address] The following flags can be used: E = NULL Stealth Scan C = NULL Stealth Scan F = FIN Stealth Scan FPU = XMAS Stealth Scan\n  For nmap type nmap -vv -s[flag] [WAN IP Address] The following flags can be used: N = NULL Stealth Scan F = FIN Stealth Scan X = XMAS Stealth Scan",
+      "initial" : "  Smoke",
+      "id" : "7",
+      "title" : "Invalid TCP Flags with Steath Scan",
+      "result" : "  1.) One at a time, create a packet with the following TCP flag(s): _ - (NULL: Stealth Scan) FIN (FIN: Stealth Scan) FIN-PSH-URG (XMAS: Stealth Scan)\n  2.) Send the packet to the firewall.\n  3.) Verify the log displays a message that the packet was dropped and contains the correct TCP flag type that was sent. 4.) Verify that an initial connection is not established."
+   },
+   "2" : {
+      "steps" : "  Either nmap, or nemesis can be used to send the packets. In the case of nemesis there is only one packet being sent and this may not be enough traffic to set off the port scan feature of the firewall. When using nemesis you may have to repeatedly send the same packet 3-6 times before you see the appropriate message.\n  For nemesis type nemesis tcp -v -f[flag] -D[WAN IP Address] The following flags can be used, either singly or together: S = SYN A = ACK R = RST P = PSH F = FIN U = URG E = NULL C = NULL\n  For nmap type nmap -vv --scanflags [flag] [WAN IP Address] The following flags can be used, either singly or together: SYN ACK RST PSH FIN URG NULL, use nmap -vv -sN [WAN IP Address]",
+      "initial" : "  Smoke",
+      "id" : "2",
+      "title" : "Invalid TCP Flags",
+      "result" : "  1.) One at a time, create a packet with the following TCP flag(s): _ - (NULL: Stealth Scan) ACK-URG FIN (FIN: Stealth Scan) FIN-PSH FIN-URG FIN-PSH-URG (XMAS: Stealth Scan) FIN-RST FIN-RST-URG FIN-RST-PSH-URG SYN-RST SYN-FIN SYN-FIN-RST SYN-FIN-PSH SYN-FIN-RST-PSH SYN-FIN-RST-PSH-ACK SYN-FIN-RST-PSH-ACK-URG 2.) Send the packet to the firewall. 3.) Verify the log displays a message that the packet was dropped and contains the correct TCP flag type that was sent. 4.) Verify that an initial connection is not established."
+   },
+   "17" : {
+      "steps" : "  N/A",
+      "initial" : "  Sanity",
+      "id" : "17",
+      "title" : "ACK Scan",
+      "result" : "  1.) Using Nmap configure the command line with nmap -vv -sA --version_trace [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages that the packets were dropped and contains the correct information for Possible and Probable port scan dropped.\n  4.) Verify that an initial connection is not established."
+   },
+   "22" : {
+      "steps" : "  N/A",
+      "initial" : "  Full",
+      "id" : "22",
+      "title" : "OS Fingerprinting Scan",
+      "result" : "  1.) Using Nmap configure the command line with nmap -vv -O --osscan_guess [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages that the packets were dropped and contains the correct information for Possible and Probable port scan dropped.\n  4.) Verify that an initial connection is not established."
+   },
+   "1" : {
+      "steps" : "  Either nmap, or nemesis can be used to send the packets. In the case of nemesis there is only one packet being sent and this may not be enough traffic to set off the port scan feature of the firewall. When using nemesis you may have to repeatedly send the same packet 3-6 times before you see the appropriate message.\n  For nemesis type nemesis tcp -v -f[flag] -D[WAN IP Address] The following flags can be used, either singly or together: S = SYN A = ACK R = RST P = PSH F = FIN U = URG E = NULL C = NULL\n  For nmap type nmap -vv --scanflags [flag] [WAN IP Address] The following flags can be used, either singly or together: SYN ACK RST PSH FIN URG NULL, use nmap -vv -sN [WAN IP Address]",
+      "initial" : "  Smoke",
+      "id" : "1",
+      "title" : "Invalid TCP Flags with Valid Connection Aready Established",
+      "result" : "  1.) Create an FTP Public Server using the Public Server Wizard in the firewall. 2.) Verify that the FTP Public Server wizard created the appropriate rules to allow traffic to access the server within the private network. 3.) From a client PC on the WAN, login to the FTP Server behind the firewall. 4.) One at a time, create a packet with the following TCP flag(s): _ - (NULL: Stealth Scan) ACK-URG FIN (FIN: Stealth Scan) FIN-PSH FIN-URG FIN-PSH-URG (XMAS: Stealth Scan) FIN-RST FIN-RST-URG FIN-RST-PSH-URG SYN-RST SYN-FIN SYN-FIN-RST SYN-FIN-PSH SYN-FIN-RST-PSH SYN-FIN-RST-PSH-ACK SYN-FIN-RST-PSH-ACK-URG 5.) Send the packet to the firewall. 6.) Verify the log displays a message that the packet was dropped and contains the correct TCP flag type that was sent. 4.) Verify that the initial connection is still established."
+   },
+   "18" : {
+      "steps" : "  N/A",
+      "initial" : "  Smoke",
+      "id" : "18",
+      "title" : "Window Scan",
+      "result" : "  1.) Using Nmap configure the command line with nmap -vv -sW [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages that the packets were dropped and contains the correct information for Possible and Probable port scan dropped.\n  4.) Verify that an initial connection is not established."
+   },
+   "13" : {
+      "steps" : "  N/A",
+      "initial" : "  Full",
+      "id" : "13",
+      "title" : "Verify Registered Server Ports (1024-49151) Are Detected",
+      "result" : "  Select several ports from the range 1024-49151 randomly."
+   },
+   "16" : {
+      "steps" : "  Should this test be performed with a router or switch included and EGP, IGP, or BGP set and configured?",
+      "initial" : "  Smoke",
+      "id" : "16",
+      "title" : "IP Protocol Scan",
+      "result" : "  1.) Using Nmap configure the command line with nmap -vv -sO --version_trace [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages that the packets were dropped and contains the correct information for Possible and Probable port scan dropped.\n  4.) Verify that an initial connection is not established."
+   },
+   "6" : {
+      "steps" : "  N/A",
+      "initial" : "  Full",
+      "id" : "6",
+      "title" : "Firewall will reply with RST to Invalid TCP Packets while NOT in STEALTH Mode",
+      "result" : "  1.) In the Firewall - Advanced Rule Options page, disable Stealth Mode.\n  2.) On the remote computer, enable a packet trace utility such as Ethereal, or EtherPeek and set it to capture all traffic from the firewall in both directions.\n  3.) From a remote computer, send an invalid TCP recieved out-of-state packet. Use the Nemesis tool from the command line and type nemesis tcp -v -fSA -D[WAN IP Address] This will send a SYN-ACK without first sending a SYN."
+   },
+   "3" : {
+      "steps" : "  As an example, allow HTTPS Mangement login on the WAN of the firewall. From a PC on the WAN and not behind the firewall, log in as admin using https. Then from the same PC, start a port scan on port 443. You can also use, ping on port 8, HTTP Management on port 80, or FTP on port 21.",
+      "initial" : "  Full",
+      "id" : "3",
+      "title" : "Verify Well Known Server Ports (0-1023) Are Detected",
+      "result" : "  Select several ports from the range 0-1023 randomly. After initiating some traffic on the selected port to the firewall, start a port scan by typing either of the following: nmap -vv -sN -p[port number] [WAN IP Address] nmap -vv -sX -p[port number] [WAN IP Address]\n  The above two scans most consistently produced an alert message. Sometimes the scan must be done more than once to produce enough traffic to generate the message."
+   },
+   "9" : {
+      "steps" : "  N/A",
+      "initial" : "  Smoke",
+      "id" : "9",
+      "title" : "TCP SYN Scan",
+      "result" : "  1.) Using Nmap configure the command line with nmap -vv -sT [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages that the packets were dropped and contains the correct information for Possible and Probable port scan dropped.\n  4.) Verify that an initial connection is not established."
+   },
+   "12" : {
+      "steps" : "  N/A",
+      "initial" : "  Smoke",
+      "id" : "12",
+      "title" : "Fragmentation Scan",
+      "result" : "  1.) Using Nmap, type at the command line nmap -vv -sS -f [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the firewall logs display a message that the scan was dropped and contains the correct TCP type that was sent.\n  4.) Verify that an initial connection is not established."
+   },
+   "14" : {
+      "steps" : "  N/A",
+      "initial" : "  Full",
+      "id" : "14",
+      "title" : "Verify Dynamic and/or Private Server Ports (49152-65535) Are Detected",
+      "result" : "  Select several ports from the range 49152-65535 randomly. Attach a service to the selected ports."
+   },
+   "15" : {
+      "steps" : "  N/A",
+      "initial" : "  Smoke",
+      "id" : "15",
+      "title" : "Version Detection Scan",
+      "result" : "  1.) From a command line window of a remote PC on the WAN, type nmap -vv -sV --version_trace [WAN IP Address of the firewall].\n  2.) Send the scan to the firewall.\n  3.) Verfiy the firewall log messages.\n  4.) Verify that a connection is not allowed with the PC."
+   },
+   "20" : {
+      "steps" : "  There are two important requirements associated with the idle (zombie) station:\n  The unsuspecting zombie station must be idle (thus the name \"idlescan\"). The idlescan needs an idle zombie workstation to ensure that the IP identification frames will remain consistent throughout the duration of the scan. The zombie station must provide consistent and predictable IP identification (IPID) values. If the operating system of the zombie does not provide predictable IPIDs, nmap will provide an warning before the scan begins: WARNING: Idlescan has erroneously detected phantom ports -- is the proxy 192.168.0.7 (192.168.0.7) really idle? If the scan cannot complete because of too many inconsistencies, nmap provides a final error message: Idlescan is unable to obtain meaningful results from proxy 192.168.0.7 (192.168.0.7). I'm sorry it didn't work out. QUITTING!",
+      "initial" : "  TBD",
+      "id" : "20",
+      "title" : "Idlescan",
+      "result" : "  1.) Using Nmap configure the command line with nmap -vv -sI [Idle (zombie) station] [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages that the packets were dropped and contains the correct information for Possible and Probable port scan dropped.\n  4.) Verify that an initial connection is not established"
+   },
+   "8" : {
+      "steps" : "  Sometimes the scan must be done more than once to produce enough traffic to generate the message.",
+      "initial" : "  Full",
+      "id" : "8",
+      "title" : "Horizontal Scan with a minimum of Two Firewalls",
+      "result" : "  1.) One at a time, create a SYN scan to the following port(s): 80 21 3389 Using the Nmap tool, type at the command line nmap -vv -sS -p[port number] [WAN IP Address of the firewall]\n  2.) Send the scan to at least two different firewalls.\n  3.) Verify the firewall logs display a message that the scan was dropped and contains the correct TCP type that was sent.\n  4.) Verify that an initial connection is not established."
+   },
+   "4" : {
+      "steps" : "  This test could also be run with a FTP, TFTP, or Telnet server instead of a web server.",
+      "initial" : "  Sanity",
+      "id" : "4",
+      "title" : "Valid TCP RST Messages Should Not Cause the Firewall To Report a Port Scan",
+      "result" : "  Establish multiple HTTP connections to a web server.\n  Reboot the server.\n  Once the web server is restarted, connect the multiple HTTP sessions again.\n  The web server will send TCP RST messages to each HTTP client."
+   },
+   "10" : {
+      "steps" : "  N/A",
+      "initial" : "  Sanity",
+      "id" : "10",
+      "title" : "UDP Scan",
+      "result" : "  1.) Configure Nmap command line with nmap -vv -sU [WAN IP Address of the firewall]. 2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages for Possible and Probable port scan dropped, and contains the correct UDP scanned port list.\n  4.) Verify that an initial connection is not established."
+   },
+   "19" : {
+      "steps" : "  Need to setup a telnet server, or other RPC application, and make sure it's running?",
+      "initial" : "  Full",
+      "id" : "19",
+      "title" : "RPC Scan",
+      "result" : "  1.) Using Nmap configure the command line with nmap -vv -sR [WAN IP Address of the firewall]\n  2.) Send the scan to the firewall.\n  3.) Verify the log displays two messages that the packets were dropped and contains the correct information for Possible and Probable port scan dropped.\n  4.) Verify that an initial connection is not established."
+   },
+   "5" : {
+      "steps" : "  N/A",
+      "initial" : "  Smoke",
+      "id" : "5",
+      "title" : "Firewall will not reply with RST to Invalid TCP Packets while in STEALTH Mode",
+      "result" : "  1.) In the Firewall - Advanced Rule Options page, enable Stealth Mode.\n  2.) On the remote computer, enable a packet trace utility such as Ethereal, or EtherPeek and set it to capture all traffic from the firewall in both directions.\n  3.) From a remote computer, send an invalid TCP recieved out-of-state packet. Use the Nemesis tool from the command line and type nemesis tcp -v -fSA -D[WAN IP Address] This will send a SYN-ACK without first sending a SYN."
+   }
+}

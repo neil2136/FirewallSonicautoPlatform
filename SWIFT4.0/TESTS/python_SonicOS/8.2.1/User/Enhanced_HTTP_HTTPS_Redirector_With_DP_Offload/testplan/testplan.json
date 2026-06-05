@@ -1,0 +1,9 @@
+{
+  "1510621": {
+    "title": "Check default settings on diag page\n",
+    "result": "All the three options are available in diag page\n\n",
+    "initial": "1.Firewall with Testing Firmware.\n\n",
+    "steps": "Navigate to diag page URL: https://Firewall-IP/sonicui/7/m/mgmt/settings/diag\nVerify following option are available in diag page\na)Serve HTTP redirect pages in the DP\nb)Internal TCP port number for redirecting unauthenticated HTTPS connections into the web server\nc)FLUSH CACHED REDIRECT FILES",
+    "id": "1510621"
+  }
+}

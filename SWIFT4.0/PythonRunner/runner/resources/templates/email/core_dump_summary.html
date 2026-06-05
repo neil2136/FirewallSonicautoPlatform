@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreDump Daily Summary</title>
+    <style>
+        body {
+            background-color: #F4F4F4;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-size: 0.9em;
+            table-layout: auto; /* 自适应列宽 */
+        }
+        th, td {
+            border: 1px solid #CCCCCC;
+            padding: 8px;
+            text-align: center; /* 居中对齐 */
+        }
+        th {
+            background-color: #F4F4F4;
+            color: #333333;
+            white-space: nowrap; /* 不换行，保持表头紧凑 */
+        }
+        td.test-suite {
+            word-wrap: break-word; /* 自动换行 */
+            white-space: normal;   /* 自动换行 */
+            max-width: 250px; /* 设定最大宽度，确保列不会撑开 */
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <p style="padding: 10px; color: #555;">
+        Hello all,
+        <br><br>
+        {% if test_res %}
+            There is the CoreDump summary, please check.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Owner</th>
+                    <th>Testsuite Display Name</th>
+                    <th>NJS Job Id</th>
+                    <th>Coredump Generated Time</th>
+                    <th>Software Version</th>
+                    <th>Product Name</th>
+                    <th>Resource ID</th>
+                    <th>Coredump URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for owner, tests in test_res.items() %}
+                    {% for test in tests %}
+                        <tr>
+                            <td>{{ owner }}</td>
+                            <td class="test-suite">{{ test['Testsuite Display Name'] }}</td>
+                            <td>{{ test['NJS Job Id'] }}</td>
+                            <td>{{ test['Coredump Generated Time'] }}</td>
+                            <td>{{ test['Software Version'] }}</td>
+                            <td>{{ test['Product Name'] }}</td>
+                            <td>{{ test['Resource ID'] }}</td>
+                            <td><a href="{{ test['Coredump URL'] }}" target="_blank">Download</a></td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            There is no CoreDump.
+        {% endif %}
+    <p style="padding: 10px; color: #555;">Regards, <br>Automation Team</p>
+</body>
+</html>

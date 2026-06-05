@@ -1,0 +1,875 @@
+{
+     "1714165" : {
+      "steps" : "  1.Configure a SonicWALL FW which running firmware 5.5.0.0 as relay agent use IP Helper V3\n  2.From the client connect to the FW do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714165",
+      "title" : "SonicWALL FW work as Relay Agent use IP Helper V3",
+      "description" : "Original ID: 80\nOriginal Title: SonicWALL FW work as Relay Agent use IP Helper V3\nOriginal Description: This case ensure DHCP Server work with different type of devices as relay agent",
+      "result" : "  Verify the client got DHCP lease"
+   },
+   "1714140" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced button\n  3.Switch to Option Objects tab\n  4.Click the configure button of newly added option object\n  5.In the popup window change some fields info and click OK",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714140",
+      "title" : "Edit Option Objects",
+      "description" : "Original ID: 58\nOriginal Title: Edit Option Objects\nOriginal Description: Verify edit function of option objects works fine",
+      "result" : "  Verify the option object was updated successfully and displayed in the list"
+   },
+   "1714117" : {
+      "steps" : "  1.Configure a remote DHCP lease scope range (say 10.10.10.2 10.10.10.100) for remote VPN subnet.\n  2.Enable VPN policy and active VPN tunnel.\n  3.Do a Renew from DHCP client.",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714117",
+      "title" : "Disable Trust Agent. DHCP server resides in Central Gateway side and assigns lease to VPN DHCP client",
+      "description" : "Original ID: 37\nOriginal Title: Disable Trust Agent. DHCP server resides in Central Gateway side and assigns lease to VPN DHCP client\nOriginal Description: This test ensures that DHCP server resides on Central Gateway side assigns DHCP lease to a DHCP client on remote side.",
+      "result" : "  DHCP client gets an IP lease from DHCP server."
+   },
+   "1714152" : {
+      "steps" : "  1.Login GMS\n  2.Configure DHCP Server Trusted Agent related fields and apply",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714152",
+      "title" : "GMS related parameters check",
+      "description" : "Original ID: 69\nOriginal Title: GMS related parameters check\nOriginal Description: This test case ensures GMS could configure DHCP trust agent related fields",
+      "result" : "  Verify the configuration take effects"
+   },
+   "1714160" : {
+      "steps" : "  1.Configure a HuaWei router as relay agent\n  2.From the client connect to the router do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714160",
+      "title" : "HuaWei router work as Relay Agent",
+      "description" : "Original ID: 76\nOriginal Title: HuaWei router work as Relay Agent\nOriginal Description: This case ensure DHCP Server work with different type of devices as relay agent",
+      "result" : "  Verify the client got DHCP lease"
+   },
+   "1714112" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, disable Trusted Agents List\n  3.Click Add Static\n  4.Uncheck 'Interface Pre-Populate'\n  5.Filled in all the info, click OK\n  6.From the client connect to the relay agent, do DHCP renew",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714112",
+      "title" : "Disable Trust Agent then DHCP server assigns static lease to remote client",
+      "description" : "Original ID: 32\nOriginal Title: Disable Trust Agent then DHCP server assigns static lease to remote client\nOriginal Description: This test ensures that DHCP server assigns static DHCP lease to a remote DHCP client which separated from DHCP server by relay agent.",
+      "result" : "  DHCP client gets an IP lease from DHCP server."
+   },
+   "1714159" : {
+      "steps" : "  1.Configure a Cisco router as relay agent\n  2.From the client connect to the router do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714159",
+      "title" : "Cisco router work as Relay Agent",
+      "description" : "Original ID: 75\nOriginal Title: Cisco router work as Relay Agent\nOriginal Description: This case ensure DHCP Server work with different type of devices as relay agent",
+      "result" : "  Verify the client got DHCP lease"
+   },
+     "1714131" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Configure button to edit Dynamic DHCP Scope\n  3.Verify no interface list showed",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714131",
+      "title" : "GUI: Edit Dynamic DHCP Scope",
+      "description" : "Original ID: 5\nOriginal Title: GUI: Edit Dynamic DHCP Scope\nOriginal Description: Verify no interface list showed",
+      "result" : "  Mentioned in steps"
+   },
+   "1714170" : {
+      "steps" : "  1.Enable DHCP server 2.Configure Advanced 3.Enable Trust Relay Agent List 4.Select Create New Address Object Group from the list 5.In the popup window, verify the range or network type address objects were filterd and not in the list\n  6.Enter the name of 'test relay agent', select an address object into the group. Click OK.\n  7.Open network-Address Objects page, edit the 'test relay agent' group.\n  8.Select a network or group type address object into the group and apply.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714170",
+      "title" : "Verify network or range AO can't be added into the Trust Relay Agent AOG",
+      "description" : "Original ID: 85\nOriginal Title: Verify network or range AO can't be added into the Trust Relay Agent AOG\nOriginal Description: Trust relay agent address object group is not allowed to add range or network type address object.",
+      "result" : "  verify the range or network type address objects can't be added into the address object group."
+   },
+    "1714141" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced button\n  3.Switch to Option Objects tab\n  4.Click the delete icon button of the newly added option object\n  5.Verify the object was deleted successfully\n  6.Select couple option object by check the check box\n  7.Click the Delete button\n  8.Verify the selected option objects were deleted\n  9.Click the Delete All button\n  10.Verify all the option objects were deleted.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714141",
+      "title" : "Delete Option Objects",
+      "description" : "Original ID: 59\nOriginal Title: Delete Option Objects\nOriginal Description: Verify the delete function of option objects works fine",
+      "result" : "  Mentioned in the steps"
+   },
+   "1714099" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click the delete icon to delete the previous added static scope which not bound to any interface",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714099",
+      "title" : "Delete Static scope not bound to interface",
+      "description" : "Original ID: 20\nOriginal Title: Delete Static scope not bound to interface\nOriginal Description: This test ensures that Static Range Configuration UI is working properly.",
+      "result" : "  Verify delete succeed"
+   },
+   "1714146" : {
+      "steps" : "  1.Configure some DHCP scope including both interface related and non-interface related. Also including both static and dynamic scope.\n  2.Configure couple Trusted Relay Agents\n  3.Export the settings\n  4.Import the settings right after the export and verify the DHCP Server related configuration were there\n  5.Boot to factory default and import the settings again.\n  Verify the settings were there.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714146",
+      "title" : "Export/Import perfs work with DHCP Server Configuration",
+      "description" : "Original ID: 63\nOriginal Title: Export/Import perfs work with DHCP Server Configuration\nOriginal Description: Verify export or import perfs with DHCP Server configuration works fine",
+      "result" : "  Mentioned in the steps"
+   },
+   "1714110" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client connect to a not trusted relay agent, do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714110",
+      "title" : "Enable Trust Agent DHCP server wont assign dynamic lease to remote entrusted client",
+      "description" : "Original ID: 30\nOriginal Title: Enable Trust Agent DHCP server wont assign dynamic lease to remote entrusted client\nOriginal Description: This test ensures that DHCP server won't assign dynamic DHCP lease to a remote DHCP client which come from a not trusted relay agent.",
+      "result" : "  DHCP client didn't get an IP lease from DHCP server. A log was recorded."
+   },
+   "1714095" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click the delete icon to delete the previous added dynamic scope which not bound to any interface",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714095",
+      "title" : "Delete Dynamic scope not bound to any interface",
+      "description" : "Original ID: 17\nOriginal Title: Delete Dynamic scope not bound to any interface\nOriginal Description: This test ensures that Static Range Configuration UI is working properly.",
+      "result" : "  Verify delete succeed."
+   },
+   "1714166" : {
+      "steps" : "  1.Configure WAN interface as 10.103.7.24\n  2.Configure a dynamic DHCP lease scope range (say 10.103.7.200-210)",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714166",
+      "title" : "DHCP lease scope not allowed to overlap with WAN subnet",
+      "description" : "Original ID: 81\nOriginal Title: DHCP lease scope not allowed to overlap with WAN subnet\nOriginal Description: This test ensures that DHCP server doesnt allow DHCP lease scope overlap with WAN subnet.",
+      "result" : "  Firewall should not allow this configuration and report an error"
+   },
+   "1714155" : {
+      "steps" : "  1.Simulate numbers of DHCP clients. Make each client renew its DHCP lease.\n  2.Increase the number of DHCP clients, till DHCP server runs out of lease pool.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714155",
+      "title" : "Connect clients to each of the relay agent to reach the max lease",
+      "description" : "Original ID: 71\nOriginal Title: Connect clients to each of the relay agent to reach the max lease\nOriginal Description: This test finds out Maximum number of DHCP lease",
+      "result" : "  All DHCP Clients got its lease from DHCP server until the maximum number is reached"
+   },
+   "1714109" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Add Dynamic\n  3.Verify Interface Pre-Populate is disabled by default\n  4.Check the Interface Pre-Populate Option\n  5.Verify all configured interfaces are in the list\n  6.Select one of the interface\n  7.Verify Default Gateway and Subnet Mask fileds were filled with realted info.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714109",
+      "title" : "GUI: Add Dynamic ->General -> Interface Pre-Populate",
+      "description" : "Original ID: 3\nOriginal Title: GUI: Add Dynamic ->General -> Interface Pre-Populate\nOriginal Description: Verify Interface Pre-Populate Option is on UI",
+      "result" : "  Mentioned in steps"
+   },
+   "1714116" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Delete the DHCP corresponding to the relay agent if exists\n  4.From the client connect to the trusted relay agent, do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714116",
+      "title" : "Enable Trust Agent  then remote trusted client  request IP when match scope not configured",
+      "description" : "Original ID: 36\nOriginal Title: Enable Trust Agent  then remote trusted client  request IP when match scope not configured\nOriginal Description: Verify DHCP server won't assign DHCP lease if corresponding DHCP scope was not configured",
+      "result" : "  DHCP client won't gets an IP lease from DHCP server"
+   },
+   "1714158" : {
+      "steps" : "  1.Configure multiple local and remote scope ranges.\n  2.Start DHCP clients doing Renew/Release.\n  3.Continue the test for at least 48 hours.\n  4.Evaluate the DHCP server response time and memory usage.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714158",
+      "title" : "Run DHCP server on corporate network over 48 hours",
+      "description" : "Original ID: 74\nOriginal Title: Run DHCP server on corporate network over 48 hours\nOriginal Description: This case ensure the performance of DHCP Server",
+      "result" : "  All DHCP Clients should get its lease from DHCP server without error prompt. The response time should be tolerable and memory usage is in an allowable limit."
+   },
+    "1714164" : {
+      "steps" : "  1.Nevigate to Network-Address Objects\n  2.Verify Default Trusted Relay Agent List is in the Address Object Group and no address object in the group",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714164",
+      "title" : "Address Object Group: Default Trusted Relay Agent List",
+      "description" : "Original ID: 8\nOriginal Title: Address Object Group: Default Trusted Relay Agent List\nOriginal Description: Verify Address Object Group 'Default Trusted Relay Agent List' is added by default",
+      "result" : "  Mentioned in the steps"
+   },
+   "1714088" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click to configure the previous added dynamic scope which bound to a interface\n  3.In the popup window, verify the interface option was not on the UI\n  4.Change property fileds such as Start IP or End IP\n  5.Click OK to confirm the change",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714088",
+      "title" : "Edit Dynamic scope bound to interface",
+      "description" : "Original ID: 10\nOriginal Title: Edit Dynamic scope bound to interface\nOriginal Description: This test ensures that Dynamic Range Configuration UI is working properly",
+      "result" : "  Verify changed info was showed in the scopes table"
+   },
+   "1714154" : {
+      "steps" : "  1.Configure multiple local and remote scope ranges/leases up to maximum number + 1 based on product matrix.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714154",
+      "title" : "Add maximum number of DHCP Scopes",
+      "description" : "Original ID: 70\nOriginal Title: Add maximum number of DHCP Scopes\nOriginal Description: This test finds out Maximum number of DHCP scope/lease entries that can be added and leased",
+      "result" : "  Verify the maximum number"
+   },
+   "1714092" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click the delete icon to delete the previous added static scope which bound to a interface",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714092",
+      "title" : "Delete Static scope bound to interface",
+      "description" : "Original ID: 14\nOriginal Title: Delete Static scope bound to interface\nOriginal Description: This test ensures that Static Range Configuration UI is working properly.",
+      "result" : "  Verify delete succeed."
+   },
+   "1714144" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced button\n  3.Switch to Option Groups tab\n  4.Click configure button of the newly added option group\n  5.In the popup window change the name or option objecs and click OK",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714144",
+      "title" : "Edit Option Groups",
+      "description" : "Original ID: 61\nOriginal Title: Edit Option Groups\nOriginal Description: Verify edit option group function works fine",
+      "result" : "  Verify the option group was updated successfully"
+   },
+    "1714145" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced button\n  3.Switch to Option Groups tab\n  4.Click the delete icon button of the newly added option group\n  5.Verify the group was deleted successfully\n  6.Select couple option groups by check the check box\n  7.Click the Delete button\n  8.Verify the selected option groups were deleted\n  9.Click the Delete All button\n  10.Verify all the option groups were deleted.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714145",
+      "title" : "Deleted Option Groups",
+      "description" : "Original ID: 62\nOriginal Title: Deleted Option Groups\nOriginal Description: Verify the delete function of option groups works fine",
+      "result" : "  Mentioned in the steps"
+   },
+     "1714101" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click Advanced button\n  3.In the popup window, switch to Trusted Agents tab\n  4.Enable Trusted DHCP Relay Agent List 5.Verify Default Trusted Relay Agent List is in the dropdown list 6.Select Default Trusted Relay Agent List 6.Click OK to enable it",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714101",
+      "title" : "Configuring Trusted DHCP Relay Agent List",
+      "description" : "Original ID: 22\nOriginal Title: Configuring Trusted DHCP Relay Agent List\nOriginal Description: This test ensures that Trusted Agent UI on Advanced page is working properly",
+      "result" : "  Verify enable succeed."
+   },
+    "1714087" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Verify Advanced button is on the UI\n  3.Click the Advanced button\n  4.Verify Option Objects/Option Groups/Trusted Agents tabs on the UI",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714087",
+      "title" : "GUI: Advanced button",
+      "description" : "Original ID: 1\nOriginal Title: GUI: Advanced button\nOriginal Description: Verify Advanced button is on the Network-DHCP Server page",
+      "result" : "  Mentioned in the steps"
+   },
+   "1714090" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click Add Static\n  3.In the popup window, check the 'Interface Pre-Populate' option\n  4.Select the interface from the dropdown list\n  5.Verify after select the interface the proper info was filled in automatically\n  6.Fill in other requested fields\n  7.Click OK to add the scope",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714090",
+      "title" : "Add Static scope bound to interface",
+      "description" : "Original ID: 12\nOriginal Title: Add Static scope bound to interface\nOriginal Description: This test ensures that Static Range Configuration UI is working properly.",
+      "result" : "  Verify add succeed. The scope was showed in the scopes table."
+   },
+   "1714173" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click Add Dynamic\n  3.In the popup window, check the 'Interface Pre-Populate' option\n  4.Select the interface from the dropdown list\n  5.Verify after select the interface the proper info was filled in automatically\n  6.Click OK to add the scope",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714173",
+      "title" : "Add Dynamic scope bound to interface",
+      "description" : "Original ID: 9\nOriginal Title: Add Dynamic scope bound to interface\nOriginal Description: This test ensures that Dynamic Range Configuration UI is working properly",
+      "result" : "  Verify add succeed. Scope listed in the 'DHCP Server Lease Scopes' table."
+   },
+   "1714098" : {
+      "steps" : "  1.Nevigate to Network-DHCP Server page\n  2.Verify Option Objects and Option Groups button not on UI",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714098",
+      "title" : "GUI: Option Object, Option Groups button removed",
+      "description" : "Original ID: 2\nOriginal Title: GUI: Option Object, Option Groups button removed\nOriginal Description: Verify Option Objects,Option Groups button not on UI",
+      "result" : "  Mentioned in steps"
+   },
+   "1714139" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced button\n  3.Switch to Option Objects tab\n  4.Click Add Option button\n  5.In the popup window filled in required fields and click OK",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714139",
+      "title" : "Add Option Objects",
+      "description" : "Original ID: 57\nOriginal Title: Add Option Objects\nOriginal Description: Verify add option object function works fine",
+      "result" : "  Verify the option object was added successfully and displayed in the list"
+   },
+   "1714119" : {
+      "steps" : "  1.Disable the Trusted Agents\n  2.Configure a DHCP lease scope range (say 192.168.168.1 192.168.168.100) for temporary lease.\n  3.Disable VPN policy and deactivate VPN tunnel.\n  4.Do a Renew from DHCP client.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714119",
+      "title" : "Disable Trust Agent. DHCP server inside Remote Gateway offers temporary lease to VPN DHCP client",
+      "description" : "Original ID: 39\nOriginal Title: Disable Trust Agent. DHCP server inside Remote Gateway offers temporary lease to VPN DHCP client\nOriginal Description: This test ensures that DHCP server inside Remote Gateway offers temporary lease to DHCP client if tunnel is down.",
+      "result" : "  DHCP client gets an IP lease from DHCP server&#160;inside Remote Gateway."
+   },
+   "1714105" : {
+      "steps" : "  1.Navigate to Network-Address Objects page\n  2.Find the address object group added in the previous case\n  3.Click the delete button try to delete the AOG",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714105",
+      "title" : "AOG cant be deleted when used by Trusted Relay Agent List",
+      "description" : "Original ID: 26\nOriginal Title: AOG cant be deleted when used by Trusted Relay Agent List\nOriginal Description: Verify AOG can't be deleted when used as Trusted Relay Agent List",
+      "result" : "  Verify error message appeared 'Error: This Address Object is in use by the Trusted DHCP Relay Agent List.'. The AOG can't be deleted."
+   },
+   "1714138" : {
+      "steps" : "  1.Configure multiple local and remote scope ranges that could supply large amount of DHCP leases (E.g. approaching the maximum number of lease based on product matrix). 2.Simulate corresponding DHCP clients. Make sure each client got the lease.\n  3.Restart the firewall from UI.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714138",
+      "title" : "DHCP Persistence works with large amount of DHCP leases",
+      "description" : "Original ID: 56\nOriginal Title: DHCP Persistence works with large amount of DHCP leases\nOriginal Description: This test ensures that DHCP Persistence feature works when large amount of DHCP leases need to be saved",
+      "result" : "  All the leases that been given out show on the DHCP server page"
+   },
+   "1714168" : {
+      "steps" : "  1.Disable the Trusted Agents\n  2.Configure a DHCP lease scope range (say 192.168.168.1 192.168.168.100) for temporary lease.\n  3.Enable WLANGroupVPN policy.\n  4.Configure DHCP 0ver VPN for central gateway, enable For Global VPN Client.\n  4.Connect GVC client in WLAN zone.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714168",
+      "title" : "Disable Trust Agent. DHCP server inside Central Gateway offers temporary lease to WLAN Zone GVC client",
+      "description" : "Original ID: 83\nOriginal Title: Disable Trust Agent. DHCP server inside Central Gateway offers temporary lease to WLAN Zone GVC client\nOriginal Description: This test ensures that DHCP server inside Central Gateway offers temporary lease to GVC client if tunnel is up.",
+      "result" : "  Verify GVC client gets an IP lease from DHCP server."
+   },
+   "1714103" : {
+      "steps" : "  1.Switch to Network-DHCP Server page\n  2.Click the Advanced button\n  3.Navigate to Trusted Agent tab\n  4.Enable 'Enable Trusted DHCP Relay Agent List' 5.Don't select any Address Object Group\n  6.Click OK",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714103",
+      "title" : "DHCP server not allow NULL Trusted DHCP Relay Agent List handle",
+      "description" : "Original ID: 24\nOriginal Title: DHCP server not allow NULL Trusted DHCP Relay Agent List handle\nOriginal Description: Verify when enable Trusted Agent, one AOG must be selected.",
+      "result" : "  Verify a warning popup said 'Please select a Trusted DHCP Relay Agent List'"
+   },
+    "1714169" : {
+      "steps" : "  1.Enable DHCP server 2.Configure Advanced 3.Enable Trust Relay Agent List 4.Select Create New Address Object Group from the list 5.In the popup window, verify the range or network type address objects were filterd and not in the list",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714169",
+      "title" : "Verify no network or range AO in the list of Trust Relay Agent",
+      "description" : "Original ID: 84\nOriginal Title: Verify no network or range AO in the list of Trust Relay Agent\nOriginal Description: Trust relay agent address object group is not allowed to add range or network type address object.",
+      "result" : "  verify the range or network type address objects were filterd and not in the list"
+   },
+   "1714118" : {
+      "steps" : "  1.Enable Trusted Agent list. Not include the remote VPN relay agent in the trusted agent.\n  2.Configure a remote DHCP lease scope range (say 10.10.10.2 10.10.10.100) for remote VPN subnet.\n  3.Enable VPN policy and active VPN tunnel.\n  4.Do a Renew from DHCP client.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714118",
+      "title" : "Enable Trust Agent. DHCP server resides in Central Gateway side and assigns lease to VPN DHCP client",
+      "description" : "Original ID: 38\nOriginal Title: Enable Trust Agent. DHCP server resides in Central Gateway side and assigns lease to VPN DHCP client\nOriginal Description: This test ensures that DHCP server resides on Central Gateway side assigns DHCP lease to a DHCP client on remote side.",
+      "result" : "  Verify the Trusted Agent won't effect the VPN tunnel DHCP discover. DHCP client gets an IP lease from DHCP server."
+   },
+    "1714171" : {
+      "steps" : "  1.Configure a DHCP lease scope range (say 192.168.168.1 192.168.168.100) for temporary lease of X0.\n  2.Configure X4 as WLAN zone and L2Bridge to X0.\n  3.Connect client to WLAN zone.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714171",
+      "title" : "Local DHCP server offers temporary lease to WLAN L2Bridge mode client",
+      "description" : "Original ID: 86\nOriginal Title: Local DHCP server offers temporary lease to WLAN L2Bridge mode client\nOriginal Description: This test ensures that local DHCP server offers temporary lease to WLAN L2Bridge mode client.",
+      "result" : "  Verify WLAN client gets an IP lease from DHCP server."
+   },
+    "1714153" : {
+      "steps" : "  1.Nevigate to Network-DHCP Server page\n  2.Click the Advanced button\n  3.Switch to Trusted Agents tab\n  4.Verify Enable Trusted DHCP Relay Agent List option is disabled by default\n  5.Check the Enable Trusted DHCP Relay Agent List option\n  6.Verify 'Create new address object group' and 'Default Trusted Relay Agent List' is in the list",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714153",
+      "title" : "GUI: Trusted Agents",
+      "description" : "Original ID: 7\nOriginal Title: GUI: Trusted Agents\nOriginal Description: Verify Truested Agents tab in Advanced window",
+      "result" : "  Mentioned in the steps"
+   },
+   "1714113" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Static\n  4.Uncheck 'Interface Pre-Populate'\n  5.Filled in all the info, click OK\n  6.From the client connect to the trusted relay agent, do DHCP renew",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714113",
+      "title" : "Enable Trust Agent DHCP server assigns static lease to remote trusted client",
+      "description" : "Original ID: 33\nOriginal Title: Enable Trust Agent DHCP server assigns static lease to remote trusted client\nOriginal Description: This test ensures that DHCP server assigns static DHCP lease to a remote DHCP client which separated from DHCP server by relay agent.",
+      "result" : "  DHCP client gets an IP lease from DHCP server."
+   },
+   "1714172" : {
+      "steps" : "  1.Configure a DHCP lease scope range (say 192.168.168.1 192.168.168.100) for temporary lease of X0 on FW1.\n  2.Configure X4 as WLAN zone and L2Bridge to X0.\n  3.Disable local DHCP scope of X0\n  4.Connect client to FW2 WLAN zone.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714172",
+      "title" : "Remote DHCP server offers temporary lease to WLAN L2Bridge mode client",
+      "description" : "Original ID: 87\nOriginal Title: Remote DHCP server offers temporary lease to WLAN L2Bridge mode client\nOriginal Description: This test ensures that remote DHCP server offers temporary lease to WLAN L2Bridge mode client.",
+      "result" : "  Verify WLAN client gets an IP lease from remote DHCP server."
+   },
+   "1714129" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote wireless client connect to a trusted relay agent, do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714129",
+      "title" : "Enable Trust Agent DHCP server assigns dynamic lease to remote trusted wireless client",
+      "description" : "Original ID: 48\nOriginal Title: Enable Trust Agent DHCP server assigns dynamic lease to remote trusted wireless client\nOriginal Description: Verify DHCP server could work with different client",
+      "result" : "  Verify DHCP client gets an IP lease from DHCP server."
+   },
+   "1714091" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click to configure the previous added static scope which bound to a interface\n  3.In the popup window, verify the interface option was not on the UI\n  4.Change property fileds such as IP Address or Ethernet Address\n  5.Click OK to confirm the change",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714091",
+      "title" : "Edit Static scope bound to interface",
+      "description" : "Original ID: 13\nOriginal Title: Edit Static scope bound to interface\nOriginal Description: This test ensures that Static Range Configuration UI is working properly.",
+      "result" : "  Verify change take effects."
+   },
+   "1714097" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click to configure the previous added static scope which not bound to any interface\n  3.In the popup window, verify the interface option was not on the UI\n  4.Change property fileds such as IP Address or Ethernet Address\n  5.Click OK to confirm the change",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714097",
+      "title" : "Edit Static scope not bound to interface",
+      "description" : "Original ID: 19\nOriginal Title: Edit Static scope not bound to interface\nOriginal Description: This test ensures that Static Range Configuration UI is working properly.",
+      "result" : "  Verify change take effects"
+   },
+   "1714104" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced button\n  3.Switch to Trusted Agents tab\n  4.Enable Trusted DHCP Relay Agent List 5.Select 'Create New Address Object Group'\n  6.Verify the 'Add Address Object Group' window popup\n  7.Fill in property AOG information and click OK\n  8.Verify the newly added AOG was selected in the Trusted Relay Agent List\n  9.Click OK\n  10.Navigate to Network-Address Objects\n  11.Verify the newly added AOG was in the list",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714104",
+      "title" : "New AOG can be created from Trusted Relay Agent List",
+      "description" : "Original ID: 25\nOriginal Title: New AOG can be created from Trusted Relay Agent List\nOriginal Description: Verify new AOG can be added from the Trusted Relay Agent List by select Add new AOG",
+      "result" : "  Mentioned in the steps"
+   },
+    "1714133" : {
+      "steps" : "  1.Enable DHCP Persistence on diag page.\n  2.Configure both local and remote scope ranges (dynamic/static).\n  3.Make sure DHCP clients got lease from DHCP server.\n  4.Wait for DHCP Server Persistence Monitoring Interval (default 5mts) + delta (max 5mts).\n  5.Reboot the firewall.\n  6.Do Renew from DHCP clients.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714133",
+      "title" : "DHCP server Persistence works for both local and remote scope ranges",
+      "description" : "Original ID: 51\nOriginal Title: DHCP server Persistence works for both local and remote scope ranges\nOriginal Description: This test ensures that DHCP Dynamic Lease renew with reboot works properly.",
+      "result" : "  1.After rebooting the Firewall, check Current DHCP Leases in the DHCP server page. Verify that the lease information is preserved across reboot.\n  2.After DHCP renew make sure that the client gets the same DHCP lease it got before reboot."
+   },
+     "1714163" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client connect to a not trusted relay agent, do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714163",
+      "title" : "Syslog- When a DHCP message relayed from an entrusted relay agent",
+      "description" : "Original ID: 79\nOriginal Title: Syslog- When a DHCP message relayed from an entrusted relay agent\nOriginal Description: When a DHCP message relayed from an entrusted relay agent would logs a message",
+      "result" : "  Verify a log was sent to syslog agent'DHCP Server: Received DHCP message from untrusted relay agent'"
+   },
+   "1714106" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Add Dynamic\n  3.Check 'Interface Pre-Populate'\n  4.Select an interface\n  5.Verify property info was filled in, click OK\n  6.From the client connect to the interface, do DHCP renew",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714106",
+      "title" : "DHCP server assigns dynamic lease to local client",
+      "description" : "Original ID: 27\nOriginal Title: DHCP server assigns dynamic lease to local client\nOriginal Description: This test ensures that DHCP server assigns dynamic DHCP lease to a local DHCP client which resides on the same subnet with firewalls physical/virtual interface",
+      "result" : "  Verify the client gets an IP lease from the DHCP Server"
+   },
+   "1714093" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click Add Dynamic\n  3.In the popup window, uncheck the 'Interface Pre-Populate' option\n  5.Filled in all requested fields\n  6.Click OK to add the scope",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714093",
+      "title" : "Add Dynamic scope not bound to any interface",
+      "description" : "Original ID: 15\nOriginal Title: Add Dynamic scope not bound to any interface\nOriginal Description: This test ensures that Static Range Configuration UI is working properly.",
+      "result" : "  Verify add succeed. The scope was in the scopes list."
+   },
+   "1714136" : {
+      "steps" : "  1.Disable the static range\n  2.Have remote client to make DHCP request",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714136",
+      "title" : "Disable Static range to remote client",
+      "description" : "Original ID: 54\nOriginal Title: Disable Static range to remote client\nOriginal Description: This test case is to verify after add static scope, disabling the static range works.",
+      "result" : "  Client should not get Static IP; client should still get dynamic IPs."
+   },
+   "1714123" : {
+      "steps" : "  1.In diag.html enable DHCP Server Network Pre-Discovery and apply\n  2.Configure a remote DHCP scope and a local DHCP scope\n  3.Capture the packet on server",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714123",
+      "title" : "DHCP server doesnt enforce Pre-Discovery against remote scope ranges",
+      "description" : "Original ID: 42\nOriginal Title: DHCP server doesnt enforce Pre-Discovery against remote scope ranges\nOriginal Description: Verify DHCP Server Pre-Discovery doesn't work with remote scopes",
+      "result" : "  Verify Pre-Discovery doesn't work with remote scope"
+   },
+   "1714128" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client running MAC OS connect to a trusted relay agent, do DHCP renew",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714128",
+      "title" : "Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client running Mac OS",
+      "description" : "Original ID: 47\nOriginal Title: Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client running Mac OS\nOriginal Description: Verify DHCP server could work with different client",
+      "result" : "  Verify DHCP client gets an IP lease from DHCP server"
+   },
+   "1714134" : {
+      "steps" : "  1.Disable the static range\n  2.Have local client to make DHCP request",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714134",
+      "title" : "Disable Static range to local client",
+      "description" : "Original ID: 52\nOriginal Title: Disable Static range to local client\nOriginal Description: This test case is to verify after add static scope, disabling the static range works.",
+      "result" : "  Client should not get Static IP; client should still get dynamic IPs."
+   },
+   "1714137" : {
+      "steps" : "  1.Disable the dynamic range\n  2.Have remote client to make DHCP request",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714137",
+      "title" : "Disable Dynamic range to remote client",
+      "description" : "Original ID: 55\nOriginal Title: Disable Dynamic range to remote client\nOriginal Description: This test case is to verify after add dynamic scope, disabling the dynamic range works.",
+      "result" : "  Client should not get dynamic IP; client should still get static IPs."
+   },
+   "1714122" : {
+      "steps" : "  1.Configure a remote DHCP scope\n  2.Enable the Confilct Detection\n  3.Capture the packet from the server side\n  4.Do DHCP Renew from remote client",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714122",
+      "title" : "DHCP server doesnt run Conflict Detection against remote scope ranges",
+      "description" : "Original ID: 41\nOriginal Title: DHCP server doesnt run Conflict Detection against remote scope ranges\nOriginal Description: Verify DHCP Server Conflict Detection doesn't work for remote scope ranges",
+      "result" : "  Read the captured packet, verify that the server doesn't do conflict detection"
+   },
+   "1714111" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Add Static\n  3.Check 'Interface Pre-Populate'\n  4.Select an interface\n  5.Filled in all the info, click OK\n  6.From the client connect to the interface, do DHCP renew",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714111",
+      "title" : "DHCP server assigns static lease to local client",
+      "description" : "Original ID: 31\nOriginal Title: DHCP server assigns static lease to local client\nOriginal Description: This test ensures that DHCP server assigns static DHCP lease to a local DHCP client which resides on the same subnet with firewalls physical/virtual interface",
+      "result" : "  DHCP client gets an IP lease from DHCP server."
+   },
+   "1714121" : {
+      "steps" : "  1.Enable Trusted Agent list on the remote side. Not include the local VPN relay agent in the trusted agent.\n  2.Configure a DHCP lease scope range (say 192.168.168.1 192.168.168.100) for temporary lease.\n  3.Enable VPN policy and active VPN tunnel.\n  4.Do a Renew from DHCP client.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714121",
+      "title" : "Enable Trust Agent. DHCP server resides in Remote Gateway side and assigns lease to VPN DHCP client",
+      "description" : "Original ID: 40\nOriginal Title: Enable Trust Agent. DHCP server resides in Remote Gateway side and assigns lease to VPN DHCP client\nOriginal Description: This test ensures that DHCP server inside Remote Gateway offers temporary lease to DHCP client if tunnel is up.",
+      "result" : "  Verify the Trusted Agent won't effect the VPN tunnel DHCP discover. DHCP client gets an IP lease from DHCP server."
+   },
+   "1714102" : {
+      "steps" : "  1.Switch to Network-Address Objects page\n  2.Verify the delete button of Address Object Group 'Default Trusted Relay Agent List' is gray by default",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714102",
+      "title" : "Trusted DHCP Relay Agent List group cant be deleted",
+      "description" : "Original ID: 23\nOriginal Title: Trusted DHCP Relay Agent List group cant be deleted\nOriginal Description: Veify the address object group Default Trusted Relay Agent List can't be deleted",
+      "result" : "  Mentioned in steps"
+   },
+   "1714124" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client running Vista OS connect to a trusted relay agent, do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714124",
+      "title" : "Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client running Vista OS",
+      "description" : "Original ID: 43\nOriginal Title: Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client running Vista OS\nOriginal Description: Verify DHCP server could work with different client",
+      "result" : "  Verify DHCP client gets an IP lease from DHCP server."
+   },
+   "1714125" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client running XP OS connect to a trusted relay agent, do DHCP renew",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714125",
+      "title" : "Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client running XP OS",
+      "description" : "Original ID: 44\nOriginal Title: Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client running XP OS\nOriginal Description: Verify DHCP server could work with different client",
+      "result" : "  Verify DHCP client gets an IP lease from DHCP server."
+   },
+   "1714126" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client running win2003 OS connect to a trusted relay agent, do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714126",
+      "title" : "Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client running windows2003 Server OS",
+      "description" : "Original ID: 45\nOriginal Title: Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client running windows2003 Server OS\nOriginal Description: Verify DHCP server could work with different client",
+      "result" : "  Verify DHCP client gets an IP lease from DHCP server."
+   },
+   "1714127" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client running Linux OS connect to a trusted relay agent, do DHCP renew",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714127",
+      "title" : "Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client running Linux OS",
+      "description" : "Original ID: 46\nOriginal Title: Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client running Linux OS\nOriginal Description: Verify DHCP server could work with different client",
+      "result" : "  Verify DHCP client gets an IP lease from DHCP server."
+   },
+   "1714143" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced button\n  3.Switch to Option Groups tab\n  4.Click Add Option button\n  5.In the popup window filled in name and select option object into the group.\n  Click OK.",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714143",
+      "title" : "Add Option Groups",
+      "description" : "Original ID: 60\nOriginal Title: Add Option Groups\nOriginal Description: Verify add option groups function works fine",
+      "result" : "  Verify the option group was added successfully and displayed in the list"
+   },
+   "1714132" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client which is a firewall connected to a trusted relay agent, do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714132",
+      "title" : "Enable Trust Agent DHCP server assigns dynamic lease to remote trusted FW client",
+      "description" : "Original ID: 50\nOriginal Title: Enable Trust Agent DHCP server assigns dynamic lease to remote trusted FW client\nOriginal Description: Verify DHCP server could work with different client",
+      "result" : "  Verify DHCP client gets an IP lease from DHCP server."
+   },
+   "1714089" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click the delete icon to delete the previous added dynamic scope which bound to a interface",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714089",
+      "title" : "Delete Dynamic scope bound to interface",
+      "description" : "Original ID: 11\nOriginal Title: Delete Dynamic scope bound to interface\nOriginal Description: This test ensures that Dynamic Range Configuration UI is working properly.",
+      "result" : "  Verify the scope was deleted"
+   },
+   "1714120" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Add Static\n  3.Verify Interface Pre-Populate is disabled by default\n  4.Check the Interface Pre-Populate Option\n  5.Verify all configured interfaces are in the list\n  6.Select one of the interface\n  7.Verify Default Gateway and Subnet Mask fileds were filled with realted info.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714120",
+      "title" : "GUI: Add Static ->General -> Interface Pre-Populate",
+      "description" : "Original ID: 4\nOriginal Title: GUI: Add Static ->General -> Interface Pre-Populate\nOriginal Description: Verify Interface Pre-Populate option is on UI",
+      "result" : "  Mentioned in steps"
+   },
+   "1714150" : {
+      "steps" : "  1.Enable Trusted DHCP Relay Agent list and configure the list group.\n  2.Download report on Diagnostics page.",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714150",
+      "title" : "TSR should contain the Trusted Relay Agent info",
+      "description" : "Original ID: 67\nOriginal Title: TSR should contain the Trusted Relay Agent info\nOriginal Description: This test ensures that Trusted DHCP Relay Agent List information could be export to TSR correctly.",
+      "result" : "  Verify there should be a section DHCP Trusted Relay Agent List Info in TSR"
+   },
+   "1714148" : {
+      "steps" : "  1.Configure multiple local scope ranges (dynamic/static).\n  2.Upgrade firmware to the one that involves Multiple Scope feature.\n  3.Check pre-configured lease scopes and default address group.\n  Verify all the configured local scopes should still stay there and a default address group Default Trusted Relay Agent List is added\n  4.Configure multiple remote scope ranges (dynamic/static).\n  5.Enable Trusted DHCP Relay Agent list and configure the list group.\n  6.Downgrade firmware to old version.\n  7.Check pre-configured lease scopes and default address group\n  Verify none of local and remote scopes is removed (the Interface fields of lease scope table for remote scopes should be displayed as Unknown instead N/A), group Default Trusted Relay Agent List shouldnt be cleared.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714148",
+      "title" : "Downgrading/Upgrading firmware doesnt impact DHCP server configuration",
+      "description" : "Original ID: 65\nOriginal Title: Downgrading/Upgrading firmware doesnt impact DHCP server configuration\nOriginal Description: This test ensures that post DHCP scopes/Trusted Relay Agent List configuration has no impact with pre one when downgrade/upgrade firmware",
+      "result" : "  Mentioned in the steps"
+   },
+   "1714096" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click Add Static\n  3.In the popup window, uncheck the 'Interface Pre-Populate' option\n  4.Fill in all requested fields\n  5.Click OK to add the scope",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714096",
+      "title" : "Add Static scope not bound to interface",
+      "description" : "Original ID: 18\nOriginal Title: Add Static scope not bound to interface\nOriginal Description: This test ensures that Static Range Configuration UI is working properly.",
+      "result" : "  Verify add succeed. The scope list in the scopes table."
+   },
+   "1714161" : {
+      "steps" : "  1.Configure a Layer3 switch as relay agent\n  2.From the client connect to the router do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714161",
+      "title" : "Layer3 switch work as Relay Agent",
+      "description" : "Original ID: 77\nOriginal Title: Layer3 switch work as Relay Agent\nOriginal Description: This case ensure DHCP Server work with different type of devices as relay agent",
+      "result" : "  Verify the client got DHCP lease"
+   },
+   "1714157" : {
+      "steps" : "  1.Enable Trusted Agent\n  2.Create new AOG from the list until reache the maximum number",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714157",
+      "title" : "Add Maximum number of Trusted DHCP Relay Agent",
+      "description" : "Original ID: 73\nOriginal Title: Add Maximum number of Trusted DHCP Relay Agent\nOriginal Description: This case verify maximum number trusted relay agent can be added.",
+      "result" : "  Verify all AOG created without any error."
+   },
+   "1714162" : {
+      "steps" : "  1.Configure a SonicWALL FW which running firmware 5.2.0.1 as relay agent use IP Helper V2\n  2.From the client connect to the FW do DHCP renew",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714162",
+      "title" : "SonicWALL FW work as Relay Agent use IP Helper V2",
+      "description" : "Original ID: 78\nOriginal Title: SonicWALL FW work as Relay Agent use IP Helper V2\nOriginal Description: This case ensure DHCP Server work with different type of devices as relay agent",
+      "result" : "  Verify the client got DHCP lease"
+   },
+   "1714156" : {
+      "steps" : "  1.Configure a remote DHCP Scope\n  2.Simulate max number of clients connect to the relay agent and get lease from the server",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714156",
+      "title" : "Connect max number of clients to one remote scope",
+      "description" : "Original ID: 72\nOriginal Title: Connect max number of clients to one remote scope\nOriginal Description: This case verify max number of clients connect to the remote scope and get lease without any error",
+      "result" : "  Verify all the clients get lease without any error."
+   },
+   "1714147" : {
+      "steps" : "  1.Configure some DHCP scopes and Trusted Agent\n  2.Boot FW to factory default",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714147",
+      "title" : "Factory default restores all DHCP server Configuration",
+      "description" : "Original ID: 64\nOriginal Title: Factory default restores all DHCP server Configuration\nOriginal Description: Verify factory default would restore all DHCP server configuration",
+      "result" : "  Verify all the DHCP server configuration was restored."
+   },
+   "1714142" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Configure button to edit Static DHCP Scope\n  3.Verify there was no interface list showed",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714142",
+      "title" : "GUI: Edit Static DHCP Scope",
+      "description" : "Original ID: 6\nOriginal Title: GUI: Edit Static DHCP Scope\nOriginal Description: Verify no interface list showed",
+      "result" : "  Mentioned in steps"
+   },
+   "1714167" : {
+      "steps" : "  1.Disable the Trusted Agents\n  2.Configure a DHCP lease scope range (say 192.168.168.1 192.168.168.100) for temporary lease.\n  3.Enable WANGroupVPN policy.\n  4.Configure DHCP 0ver VPN for central gateway, enable For Global VPN Client.\n  4.Connect GVC client in WAN zone.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714167",
+      "title" : "Disable Trust Agent. DHCP server inside Central Gateway offers temporary lease to WAN Zone GVC client",
+      "description" : "Original ID: 82\nOriginal Title: Disable Trust Agent. DHCP server inside Central Gateway offers temporary lease to WAN Zone GVC client\nOriginal Description: This test ensures that DHCP server inside Central Gateway offers temporary lease to GVC client if tunnel is up.",
+      "result" : "  Verify GVC client gets an IP lease from DHCP server."
+   },
+   "1714149" : {
+      "steps" : "  1.Configure multiple local and remote scope ranges (dynamic/static).\n  2.Enable Trusted DHCP Relay Agent list and configure the list group.\n  3.Do Renew from DHCP clients, making sure Trusted DHCP Relay Agent list takes effect. 4.Failover the firewall.\n  5.Do Release and then Renew from clients.",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714149",
+      "title" : "DHCP server configuration works with the HA deployment",
+      "description" : "Original ID: 66\nOriginal Title: DHCP server configuration works with the HA deployment\nOriginal Description: This test ensures that DHCP server configuration such as remote DHCP lease scopes and trusted relay agent list gets synchronization during HA failover.",
+      "result" : "  Verify DHCP Clients got lease from the Backup Firewall. DHCP lease scopes (both local and remote) and trusted relay agent list configuration shows exactly as in the Primary Firewall."
+   },
+   "1714100" : {
+      "steps" : "  1 Configure a dynamic DHCP lease scope range (say 172.16.1.2 172.16.1.128) 2 Configure another dynamic DHCP lease scope range (say 172.16.1.100 172.16.1.200)",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714100",
+      "title" : "Overlapping DHCP lease scope not allowed",
+      "description" : "Original ID: 21\nOriginal Title: Overlapping DHCP lease scope not allowed\nOriginal Description: This test ensures that DHCP server doesnt allow overlapping DHCP lease scope configuration.",
+      "result" : "  Firewall should not allow this configuration and report an error"
+   },
+   "1714108" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client connect to a trusted relay agent, do DHCP renew",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714108",
+      "title" : "Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client",
+      "description" : "Original ID: 29\nOriginal Title: Enable Trust Agent DHCP server assigns dynamic lease to remote trusted client\nOriginal Description: This test ensures that DHCP server assigns dynamic DHCP lease to a remote DHCP client which separated from DHCP server by relay agent.",
+      "result" : "  DHCP client gets an IP lease from DHCP server."
+   },
+   "1714130" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote VOIP client connect to a trusted relay agent, do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714130",
+      "title" : "Enable Trust Agent DHCP server assigns dynamic lease to remote trusted VOIP client",
+      "description" : "Original ID: 49\nOriginal Title: Enable Trust Agent DHCP server assigns dynamic lease to remote trusted VOIP client\nOriginal Description: Verify DHCP server could work with different client",
+      "result" : "  Verify DHCP client gets an IP lease from DHCP server."
+   },
+    "1714151" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client connect to a not trusted relay agent, do DHCP renew",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714151",
+      "title" : "Log- When a DHCP message relayed from an entrusted relay agent",
+      "description" : "Original ID: 68\nOriginal Title: Log- When a DHCP message relayed from an entrusted relay agent\nOriginal Description: When a DHCP message relayed from an entrusted relay agent would logs a message",
+      "result" : "  Verify a log was recorded 'DHCP Server: Received DHCP message from untrusted relay agent'"
+   },
+   "1714135" : {
+      "steps" : "  1.Disable the dynamic range\n  2.Have multiple client to make DHCP request",
+      "priority" : "Sanity",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714135",
+      "title" : "Disable Dynamic range to local client",
+      "description" : "Original ID: 53\nOriginal Title: Disable Dynamic range to local client\nOriginal Description: This test case is to verify after created dymanic scope, disabling the Dynamic range works.",
+      "result" : "  Client should not get dynamic IP; client should still get static IPs."
+   },
+   "1714115" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, disable Trusted Agents List\n  3.Delete the DHCP corresponding to the relay agent if exists\n  4.From the client connect to the relay agent, do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714115",
+      "title" : "Disable Trust Agent  then remote client  request IP when match scope not configured",
+      "description" : "Original ID: 35\nOriginal Title: Disable Trust Agent  then remote client  request IP when match scope not configured\nOriginal Description: Verify DHCP server won't assign DHCP lease if corresponding DHCP scope was not configured",
+      "result" : "  DHCP client won't gets an IP lease from DHCP server."
+   },
+   "1714094" : {
+      "steps" : "  1.Open Network-DHCP Server page\n  2.Click to configure the previous added dynamic scope which not bound to any interface\n  3.In the popup window, verify the interface option was not on the UI\n  4.Change property fileds such as Start IP or End IP\n  5.Click OK to confirm the change",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714094",
+      "title" : "Edit Dynamic scope not bound to any interface",
+      "description" : "Original ID: 16\nOriginal Title: Edit Dynamic scope not bound to any interface\nOriginal Description: This test ensures that Static Range Configuration UI is working properly.",
+      "result" : "  Verify change take effects."
+   },
+   "1714107" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, disable Trusted Agents List\n  3.Click Add Dynamic\n  4.Uncheck 'Interface Pre-Populate'\n  5.Configure a dynamic DHCP scope corresponding with the relay agent, click OK\n  6.From the remote client connect to the relay agent, do DHCP renew",
+      "priority" : "Smoke",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714107",
+      "title" : "Disable Trust Agent then DHCP server assigns dynamic lease to remote client",
+      "description" : "Original ID: 28\nOriginal Title: Disable Trust Agent then DHCP server assigns dynamic lease to remote client\nOriginal Description: This test ensures that DHCP server assigns dynamic DHCP lease to a remote DHCP client which separated from DHCP server by relay agent",
+      "result" : "  DHCP client gets an IP lease from DHCP server."
+   },
+    "1714114" : {
+      "steps" : "  1.Navigate to Network-DHCP Server page\n  2.Click Advanced, enable Trusted Agents List\n  3.Click Add Static\n  4.Uncheck 'Interface Pre-Populate'\n  5.Filled in all the info, click OK\n  6.From the client connect to the entrusted relay agent, do DHCP renew",
+      "priority" : "Full_Regression",
+      "atm_id" : "TBD",
+      "initial" : "  TBD",
+      "id" : "1714114",
+      "title" : "Enable Trust Agent DHCP server wont assign static lease to remote entrusted client",
+      "description" : "Original ID: 34\nOriginal Title: Enable Trust Agent DHCP server wont assign static lease to remote entrusted client\nOriginal Description: This test ensures that DHCP server won't assign static DHCP lease to a remote DHCP client which separated from DHCP server by entrusted relay agent.",
+      "result" : "  DHCP client won't gets an IP lease from DHCP server."
+   }
+
+
+
+}

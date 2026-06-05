@@ -1,0 +1,275 @@
+{
+   "33" : {
+      "steps" : "  1. Clear the log (post action \"clearLogNow\").\n  3. Issue 10 pings from 10 different LAN-side IP addresses. Verify that encrypted SSO requests for the 10 source IP addresses are generated and reply to them.\n  4. Wait for an SSO poll message after 1 minute. This message contains 10 user IP addresses. Reply to it sending a separate message for each user. Each message contains User IP address/User name.\n  5. Retrieve log.csv and verify that a \"user logged in\" event for each user was logged. Retrieve the TSR and verify that in the Users section under Users currently connected 10 users are reported as logged in.\n  6. Wait for an SSO poll message after 1 minute. Reply to it sending messages for 9 users.\n  7. Repeat step 6. Retrieve the TSR and verify that in the Users section under Users currently connected all 10 users are reported as logged in.\n  8. Wait for next SSO poll message.",
+      "initial" : "  1. Configure SSO with an agent at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "33",
+      "title" : "The order of IP addresses in multi-user request in SSO polling.",
+      "result" : "  The IP address of the user who has not been heard from after several polls comes first in an SSO poll message."
+   },
+   "32" : {
+      "steps" : "  1. Set the \"Maximum users per message when polling\" to 5.\n  2. Clear the log (post action \"clearLogNow\").\n  3. Issue a ping from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated and reply to it.\n  4. Wait for an SSO poll message after 1 minute. Reply to it with the user name.\n  5. Issue 10 pings from 10 different LAN-side IP addresses. Verify that encrypted SSO requests for the 10 source IP addresses are generated and reply to them.\n  6. Wait for an SSO poll message after 1 minute. This should hold the first user IP address only. Reply to it with the user name.\n  7. Wait for next SSO poll message.\n  8. Retrieve log.csv. Download the TSR and view the Users currently connected.",
+      "initial" : "  1. Configure SSO with two agents at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "32",
+      "title" : "Multi-user request in SSO polling.",
+      "result" : "  After a further 15 seconds two more SSO poll messages are sent, one to each agent and each with 5 of the user IP addresses.\n  log.csv shows that a \"user logged in\" event was logged.\n  In the TSR > Users section under Users currently connected the user is reported as logged in."
+   },
+   "21" : {
+      "steps" : "  1. Issue an HTTP get from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated to the SSO agent.\n  2. Return an encrypted reply to the SSO request with user name user1.\n  3. Verify that the HTTP get completes.\n  4. Wait for an SSO poll message after 1 minute and verify it includes the user1 IP address only. Reply to it with user name user1.\n  5. Wait for another SSO poll message after 1 minute and verify it includes the user1 IP address only. Reply to it with no user name.\n  6. Retrieve log.csv. Retrieve the TSR and view the Users > Users currently connected section.",
+      "initial" : "  1. Configure SSO with an agent at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "21",
+      "title" : "User logout.",
+      "result" : "  A \"user1 logged out\" event was logged in the log.csv.\n  User1 is not reported as logged in in the TSR."
+   },
+   "7" : {
+      "steps" : "  1. On the User> Settings page, select \"SonicWALL SSO Agent\" as Single-sign-on method. Click the Configure button next to it. Redirect to HTTPS window opens. Select Yes or No in the window. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the Settings tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab.\n  3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window. \n  4. Repeat the previous step seven more times. Click OK to close the window.\n  5. Open the SonicWALL SSO Agent Authentication Configuration window and view the Settings tab. Attempt to add one more agent entry.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "7",
+      "title" : "Add a maximum number of agents.",
+      "result" : "  8 agent are shown in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window. The attempt to add the 9-th agent entry fails. The error message is shown on the Status bar."
+   },
+   "26" : {
+      "steps" : "  1. Have the 1-st agent flagged as \"down\" (see test case TC-\n  23).\n  2. Wait till an SSO ping request is again transmitted to the 1-st agent. Reply to the SSO ping request.\n  3. Retrieve log.csv. Download the TSR and view the Single Sign On section.\n  4. Issue a ping from a LAN-side IP address to a WAN-side IP address.",
+      "initial" : "  1. Configure SSO with two agents at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "26",
+      "title" : "1st agent transitions up, 2nd agent is in service.",
+      "result" : "  log.csv shows that an \"SSO agent up\" event was logged.\n  The Single Sign On section of the TSR shows that Agent 1 status is reported as \"up\".\n  The encrypted SSO request is sent to the 1-st agent."
+   },
+   "2" : {
+      "steps" : "  1. On the User> Settings page, select \"SonicWALL SSO Agent\" as Single-sign-on method. Click the Configure button next to it. Redirect to HTTPS window opens. Select Yes or No in the window. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the Settings tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab.\n  3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the OK button in the SonicWALL SSO Agent Authentication Configuration window. \n  4. On the Network > Address Objects page, look in the Address Objects and Address Groups tables. Expand the view of the \"SonicWALL SSO Agents\" group object.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "2",
+      "title" : "Address objects are auto-added in the \"SonicWALL SSO Agents\" group as agents are added.",
+      "result" : "  The \"SSO Agent\" address object is displayed in the Address Objects table. The \"SSO Agent\" object is shown as a member of the \"SonicWALL SSO Agents\" group object."
+   },
+   "17" : {
+      "steps" : "  1. Have an agent configured in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click the Edit icon for the agent entry. The View/Edit pane gets displayed.\n  3. In the Advanced tab of View/Edit pane, type 1 in the \"Maximum requests to send at a time\" field. Click Apply in the SSO Agent Authentication Configuration window.\n  4. Repeat the previous step entering 0, 100, 1000, and 1001 in the field.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "17",
+      "title" : "Maximum requests to send at a time ranges from 1 to 1000.",
+      "result" : "  The value 1, 100, and 1000 are accepted in the \"Maximum requests to send at a time\" field. the values 0 and 1001 are not accepted. En error message is displayed."
+   },
+   "1" : {
+      "steps" : "  1. On the User> Settings page, select \"SonicWALL SSO Agent\" as Single-sign-on method. Click the Configure button next to it. Redirect to HTTPS window opens. Select Yes or No in the window. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the Settings tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab.\n  3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window. \n  4. Repeat the previous step typing a host name in the Host Name or IP Address field. Click Apply and close the window.\n  5. Open the SonicWALL SSO Agent Authentication Configuration window and view the Settings and Test tabs.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "1",
+      "title" : "Add an agent. Use IP address or a host name.",
+      "result" : "  Two new agent entries are displayed in the Setting tab of the SonicWALL SSO Agent Authentication Configuration window. The first agent is specified by IP address, the second one by the host name.\n  The two agents are shown in the \"Select agent to test\" drop-down of the Test tab."
+   },
+   "18" : {
+      "steps" : "  1. Have an agent configured in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click the Edit icon for the agent entry. The View/Edit pane gets displayed.\n  3. In the Advanced tab of View/Edit pane, type 2 in the \"Maximum users per message when polling\" field. Click Apply in the SSO Agent Authentication Configuration window.\n  4. Repeat the previous step entering 1, 100, 1018, and 1019 in the field.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "18",
+      "title" : "Maximum users per message when polling ranges from 2 to 1018.",
+      "result" : "  The value 2, 100, and 1018 are accepted in the \"Maximum users per message when polling\" field. the values 1 and 1019 are not accepted. En error message is displayed."
+   },
+   "30" : {
+      "steps" : "  1. Clear the log (post action \"clearLogNow\").\n  2. Issue a ping from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated and reply to it with Error Indication TLV.\n  3. Verify that the SSO request is retransmitted with the following wait times: 1-st retry: wait 1 second; 2-nd retry: wait 2 seconds. Reply after the second retry with a user name.\n  4. Retrieve log.csv. Download the TSR and view the Users currently connected.",
+      "initial" : "  1. Configure SSO with two agents at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 3.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "30",
+      "title" : "Error Indication TLV in reply. User authentication succeeds if one retry succeeds.",
+      "result" : "  log.csv shows that a \"user logged in\" event was logged.\n  In the TSR > Users section under Users currently connected the user is reported as logged in."
+   },
+   "16" : {
+      "steps" : "  1. Have an agent configured in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click on IP address in the agent entry. Change the IP address.\n  3. Modify other settings of the agent the same way. Click OK in the SSO Agent Authentication Configuration window.\n  4. Open the window and look at the agent entry in the Settings tab.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "16",
+      "title" : "Edit agent > edit fields in the list of agents.",
+      "result" : "  The agent antry shows modified IP address port, timeout, retries, and max.requests."
+   },
+   "27" : {
+      "steps" : "  1. Clear the log (post action \"clearLogNow\").\n  2. Issue a ping from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated and reply to it.\n  3. Download the TSR and verify that in the Users section under Users currently connected the user is reported as logged in.\n  4. Wait for an SSO poll message after 1 minute. Reply to it with no user name and an error code and error message.\n  5. Retrieve log.csv. Download the TSR and view the Users currently connected.",
+      "initial" : "  1. Configure SSO with two agents at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "27",
+      "title" : "Agent replies with no user name and an error code/error message.",
+      "result" : "  In the TSR > Users section under Users currently connected the user is still reported as logged in.\n  log.csv shows that an \"SSO agent error\" event was logged with the correct error message."
+   },
+   "25" : {
+      "steps" : "  1. Have the 1-st agent flagged as \"down\" (see test case TC-\n  23).\n  2. Verify that an SSO ping request is transmitted to the 1-st agent.\n  3. Let 1 minute pass.",
+      "initial" : "  1. Configure SSO with two agents at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "25",
+      "title" : "SSO ping request is sent to out-of-service agent.",
+      "result" : "  An SSO ping request is again transmitted to the 1-st agent after 1 minute."
+   },
+   "28" : {
+      "steps" : "  1. Clear the log (post action \"clearLogNow\").\n  2. Issue a ping from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated and reply to it.\n  3. Download the TSR and verify that in the Users section under Users currently connected the user is reported as logged in.\n  4. Wait for an SSO poll message after 1 minute. Reply to it with no user name and no error code.\n  5. Retrieve log.csv. Download the TSR and view the Users currently connected.",
+      "initial" : "  1. Configure SSO with two agents at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "28",
+      "title" : "Agent replies with no user name and no error code.",
+      "result" : "  log.csv shows that a \"user logged out\" event was logged.\n  In the TSR > Users section under Users currently connected the user is not reported as logged in."
+   },
+   "14" : {
+      "steps" : "  1. Have an agent configured in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click the Edit icon for the agent entry. The View/Edit pane gets displayed.\n  3. Make some changes in the Settings tab of View/Edit pane, say modify a port number. Click OK in the SSO Agent Authentication Configuration window.\n  4. Open the window and look at the agent entry.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "14",
+      "title" : "Edit agent > View/Edit pane; edit in the Settings tab.",
+      "result" : "  The agent entry shows modified port number."
+   },
+   "20" : {
+      "steps" : "  1. Clear the log (post action \"clearLogNow\").\n  2. Issue an HTTP get from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated to the SSO agent.\n  3. Return an encrypted reply to the SSO request with user name user1.\n  4. Retrieve log.csv and verify that a \"user1 logged in\" event was logged.\n  5. Issue an HTTP get from a second LAN-side IP address.\n  6. Return an encrypted reply to the SSO request with user name user2. \n  7. Retrieve log.csv and verify that a \"user2 login failed\" event was logged.\n  8. Retrieve the TSR and view the Users section.",
+      "initial" : "  1. Configure SSO with an agent at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "20",
+      "title" : "User login.",
+      "result" : "  The HTTP get completes after step 3.  \n  \"You do not have access\" page is returned after step 6.\n  The Users > Users currently connected section of the TSR shows only user1 as logged in."
+   },
+   "24" : {
+      "steps" : "  1. Have the 1-st agent flagged as \"down\" (see test case TC-\n  23).\n  2. Issue a ping from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated to the 2-nd SSO agent.\n  3. Reply to the request with a user name.",
+      "initial" : "  1. Configure SSO with two agents at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "24",
+      "title" : "1st agent is down, 2nd agent is in service.",
+      "result" : "  An SSO request is sent to the 2-nd agent.\n  A ping reply is returned to the user."
+   },
+   "10" : {
+      "steps" : "  1. Have at least one agent configured in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click x icon (Delete) in the agent entry. Click OK to close the window.\n  3. On the Firewall > Services page, view the Services table and the \"SonicWALL SSO Authentication Agents\" service group.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "10",
+      "title" : "Service objects are auto-deleted from the \"SonicWALL SSO Authentication Agents\" service group as agents with different port numbers are deleted.",
+      "result" : "  The \"SonicWALL SSO Agent\" service that is corresponding to the deleted agent is removed from the Services table and from the \"SonicWALL SSO Authentication Agents\" service group."
+   },
+   "31" : {
+      "steps" : "  1. Open the SonicWALL SSO Agent Authentication Configuration window and disable the agent.\n  2. Issue a ping from a LAN-side IP address to a WAN-side IP address.",
+      "initial" : "  1. Configure SSO with an agent at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "31",
+      "title" : "Firewall doesn't send a request to an agent that is configured and disabled.",
+      "result" : "  An encrypted SSO request is not generated to the SSO agent.\n  A reply is not returned to a ping request."
+   },
+   "35" : {
+      "steps" : "  1. Install the agent on TB18-Server2 and TB18-Server3.\n  2. Configure SSO on the appliance to use these two SSO agents and test it.\n  3. Configure LDAP on the appliance to use the TB18 OpenLDAP server.\n  4. Set the default LAN to WAN policy rule to allow user group Trusted Users.\n  5. On TB18-WinPC and TB18-WinPC2 log into the tb18.local domain as user tb18user1 (note that TB18-Server is the domain controller for this domain).\n  6. Tb18-PC1 through TB18-PC10 run the \"go-sso.sh\" scripts. Note - run that on PC1 first because it runs the ssoSetSoakTest.pl script to place the appliance into its special soak test mode.",
+      "initial" : "  //depot/SQA/systemtest/misc-test-scripts/TB18.vsd",
+      "id" : "35",
+      "title" : "Soak test with large numbers of users.",
+      "result" : "  In Single Sign On section of the TSR under \"SSO authentication statistics\", \"Total user identification attempts, Failures\" should be zero or close to it."
+   },
+   "11" : {
+      "steps" : "  1. Have at least one agent configured for LAN zone in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window (see test case TC-\n  5).\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click x icon (Delete) in the agent entry. Click OK to close the window.\n  3. View the rules on the Network > NAT Policies window.\n  4. On the Firewall > Access Rules, go to the LAN>LAN zone and view the rules.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "11",
+      "title" : "Firewall Access Rule with \"SonicWALL SSO Agents\" address object and \"SonicWALL SSO Authentication Agents\" service is auto-deleted when all SSO agents are deleted.",
+      "result" : "  NAT Policies table doesn't show the policy rule with original source \"SonicWALL SSO Agents\" and original service \"SonicWALL SSO Authentication Agents\" for the LAN zone.\n  Access Rules (LAN>LAN) table doesn't show the rule with source \"SonicWALL SSO Agents\" and service \"SonicWALL SSO Authentication Agents\"."
+   },
+   "22" : {
+      "steps" : "  1. Clear the log (post action \"clearLogNow\").\n  2. Issue a ping from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated to the 1-st SSO agent. Do not reply to it yet.\n  3. Issue a ping from a second LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated to the other SSO agent.\n  4. Return encrypted replies to both SSO requests with user name user1 in both.",
+      "initial" : "  1. Configure SSO with two agents at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "22",
+      "title" : "Two SSO agents are in service.",
+      "result" : "  Replies are returned to both ping reqiests.\n  log.csv shows that a \"user1 logged in\" event was logged."
+   },
+   "13" : {
+      "steps" : "  1. Have an agent configured and disabled in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window (see test case TC-\n  12).\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and enable the agent.\n  3. View the \"Select agent to test\" drop-down in the Test tab.\n  4. Go to the Network > Address Objects page and view the Address Objects table. Expand the view of the \"SonicWALL SSO Agents\" group object.\n  5. Go to the Firewall > Services page and view the Services table. Expand the view of the \"SonicWALL SSO Authentication Agents\" service group.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "13",
+      "title" : "Enable an agent.",
+      "result" : "  The \"Select agent to test\" drop-down in the Test tab of the \"SonicWALL SSO Agent Authentication Configuration window shows the agent that was enabled. \n  The \"SSO Agent\" address object is added in the Address Objects table and the \"SonicWALL SSO Agents\" group object.\n  The \"SonicWALL SSO Agent\" service object is added in the Services table and the \"SonicWALL SSO Authentication Agents\" service group."
+   },
+   "23" : {
+      "steps" : "  1. Clear the log (post action \"clearLogNow\").\n  2. Issue a ping from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated to the 1-st SSO agent. Do not reply to it yet.\n  3. Wait for the SSO request to be retransmitted twice at 5 second intervals to the 1-st agent. Do not reply to it.\n  4. Verify that the SSO request is now retransmitted to the other agent. Reply to it.\n  5. Retrieve log.csv. Download the TSR.",
+      "initial" : "  1. Configure SSO with two agents at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "23",
+      "title" : "1st agent transitions down, 2nd agent is in service.",
+      "result" : "  A ping reply is returned to the user.\n  log.csv shows that \"SSO agent down\" event was logged.\n  In the Single Sign On section of the TSR the Agent 1 status is reported as \"down\"."
+   },
+   "29" : {
+      "steps" : "  1. Clear the log (post action \"clearLogNow\").\n  2. Issue a ping from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated and reply to it with Error Indication TLV.\n  3. Verify that the SSO request is retransmitted 3 times with the following wait times: 1-st retry: wait 1 second; 2-nd retry: wait 2 seconds; 3-rd retry: wait 4 seconds. Do not reply to the retries.\n  4. Retrieve log.csv. Download the TSR and view the Users currently connected.",
+      "initial" : "  1. Configure SSO with two agents at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 3.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "29",
+      "title" : "Error Indication TLV in reply. User authentication fails if all retries fail.",
+      "result" : "  log.csv shows that a \"user login failed\" event was logged with the correct error message.\n  In the TSR > Users section under Users currently connected the user is not reported as logged in."
+   },
+   "6" : {
+      "steps" : "  1. On the User> Settings page, select \"SonicWALL SSO Agent\" as Single-sign-on method. Click the Configure button next to it. Redirect to HTTPS window opens. Select Yes or No in the window. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the Settings tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab.\n  3. Type an IP address of the LAN host in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window. Close the window.\n  4. Repeat the previous step using an IP address of the WAN host. Click OK to close the window.\n  5. View the rules on the Network > NAT Policies window.\n  6. On the Firewall > Access Rules, go to the LAN>LAN and WAN>WAN zones and view the rules.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "6",
+      "title" : "Agents are configured in different zones. NAT Policy and Access Rule are auto-added to each zone.",
+      "result" : "  NAT Policies table shows two auto-added policy rules with original source \"SonicWALL SSO Agents\" and original service \"SonicWALL SSO Authentication Agents\". One rule has destination \"LAN Interface IP\", the other rule has destination \"WAN Interface IP\".\n  Access Rules (LAN>LAN) table shows the auto-added rule with source \"SonicWALL SSO Agents\", service \"SonicWALL SSO Authentication Agents\", and destination \"LAN Interface IP\". Access Rules (WAN>WAN) table shows the auto-added rule with source \"SonicWALL SSO Agents\", service \"SonicWALL SSO Authentication Agents\", and destination \"WAN Interface IP\"."
+   },
+   "39" : {
+      "steps" : "  1. Start with the firmware SonicOS 5.5 and new agent. Verify that SSO authentication works.\n  2. Downgrade the firmware to a version prior to SonicOS 5.5.\n  3. Capture an initial sync message from the firewall to the agent and verify that the header version is set to 1.\n  4. Issue a ping from LAN-side IP addresses to a WAN-side IP address. Verify that encrypted SSO request for that source IP address is generated and reply to it.\n  5. Retrieve the TSR and verify that in the Users section under Users currently connected the user is reported as logged in.\n  6. Logged out the user.\n  7. Issue a ping from LAN-side IP addresses to a WAN-side IP address. Verify that encrypted SSO request for that source IP address is generated.\n  8. Disconnect a network cable on the PC that the ping was sent from.",
+      "initial" : "  TBD",
+      "id" : "39",
+      "title" : "Downgraded firewall doesn't receive the error indication TLV from upgraded agent.",
+      "result" : "  The error Indication TLV is not returned in the reply from the agent to the firewall."
+   },
+   "3" : {
+      "steps" : "  1. On the User> Settings page, select \"SonicWALL SSO Agent\" as Single-sign-on method. Click the Configure button next to it. Redirect to HTTPS window opens. Select Yes or No in the window. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the Settings tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab.\n  3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Keep the default port number (\n  2258) in the Port field. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window. \n  4. Repeat the previous step using 2256 port number. Click OK and close the window.\n  5. On the Firewall > Services page, view Services and Service Groups tables.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "3",
+      "title" : "Service objects are auto-added in the \"SonicWALL SSO Authentication Agents\" service group as agents with different port numbers are added.",
+      "result" : "  Two \"SonicWALL SSO Agent\" services are shown in the Services table. One with port 2258, the other with port 2256. Those service objects are shown in the \"SonicWALL SSO Authentication Agents\" service group when the view is expanded."
+   },
+   "36" : {
+      "steps" : "  1. Issue an HTTP get from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated to the NDConnector Novell agent.\n  2. Return an encrypted reply to the SSO request with a user name.\n  3. Retrieve the TSR and view the Users section.",
+      "initial" : "  The test bed with Novell eDirectory installation.",
+      "id" : "36",
+      "title" : "SSO with Novell users.",
+      "result" : "  The HTTP get from a Novell user completes.  \n  The Users > Users currently connected section of the TSR shows a Novell user as logged in."
+   },
+   "9" : {
+      "steps" : "  1. Have at least one agent configured in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click x icon (Delete) in the agent entry. Click OK to close the window.\n  3. On the Network > Address Objects page, view the Address Objects table and the \"SonicWALL SSO Agents\" address group.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "9",
+      "title" : "Address objects are auto-deleted from the \"SonicWALL SSO Agents\" group as agents are deleted.",
+      "result" : "  The \"SSO Agent\" address object is removed from the Address Objects table. The \"SSO Agent\" object is not displayed in the \"SonicWALL SSO Agents\" group object when its view is expanded."
+   },
+   "12" : {
+      "steps" : "  1. Have at least one agent configured for LAN zone in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window (see test case TC-\n  5).\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and disable the agent.\n  3. View the \"Select agent to test\" drop-down in the Test tab.\n  4. Go to the Network > Address Objects page and view the Address Objects table. Expand the view of the \"SonicWALL SSO Agents\" group object.\n  5. Go to the Firewall > Services page and view the Services table. Expand the view of the \"SonicWALL SSO Authentication Agents\" service group.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "12",
+      "title" : "Disable an agent.",
+      "result" : "  The \"Select agent to test\" drop-down in the Test tab of the \"SonicWALL SSO Agent Authentication Configuration window doesn't show the agent that was disabled. \n  The \"SSO Agent\" address object is deleted from the Address Objects table and the \"SonicWALL SSO Agents\" group object.\n  The \"SonicWALL SSO Agent\" service object is deleted from the Services table and the \"SonicWALL SSO Authentication Agents\" service group."
+   },
+   "15" : {
+      "steps" : "  1. Have an agent configured in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click the Edit icon for the agent entry. The View/Edit pane gets displayed.\n  3. Make some changes in the Advanced tab of View/Edit pane, say modify a value in the \"Maximum requests to send at a time\" field. Click OK in the SSO Agent Authentication Configuration window.\n  4. Open the window, click the Edit icon for the agent and go to the Advanced tab to view the \"Maximum requests to send at a time\" field.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "15",
+      "title" : "Edit agent > View/Edit pane; edit in the Advanced tab.",
+      "result" : "  The \"Maximum requests to send at a time\" field shows the modified value."
+   },
+   "8" : {
+      "steps" : "  1. Have at least one agent configured in the Settings tab of the SonicWALL SSO Agent Authentication Configuration window.\n  2. Open the SonicWALL SSO Agent Authentication Configuration window and click x icon (Delete) in the agent entry. Click OK to close the window.\n  3. Open the SonicWALL SSO Agent Authentication Configuration window and view the Settings and Test tabs.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "8",
+      "title" : "Delete an agent.",
+      "result" : "  The Setting tab doesn't show the agent that was deleted in step3. The \"Select agent to test\" drop-down of the Test tab of the window doesn't show that agent."
+   },
+   "38" : {
+      "steps" : "  1. Start with the firmware SonicOS 5.5 and old agent. Verify that SSO authentication works.\n  2. Upgrade the agent to a new version.\n  3. Capture an initial sync message from the agent and verify that the header version is set to 2.\n  4. In SSO agent Configuration, set the \"Maximum users per message when polling\" to 5.\n  5. Issue pings from several different LAN-side IP addresses to a WAN-side IP address. Verify that encrypted SSO requests for those source IP addresses are generated and reply to them.\n  6. Retrieve the TSR and verify that in the Users section under Users currently connected all users are reported as logged in.\n  7. Wait for an SSO poll message.",
+      "initial" : "  TBD",
+      "id" : "38",
+      "title" : "Upgraded firewall sends the multi-user request to upgraded agent.",
+      "result" : "  SSO poll messages are sent. Each SSO poll message contains 5 user IP addresses."
+   },
+   "4" : {
+      "steps" : "  1. On the User> Settings page, select \"SonicWALL SSO Agent\" as Single-sign-on method. Click the Configure button next to it. Redirect to HTTPS window opens. Select Yes or No in the window. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the Settings tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab.\n  3. Type an IP address in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Keep the default port number (\n  2258) in the Port field. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window. \n  4. Repeat the previous step using the same port number. Click OK and close the window.\n  5. On the Firewall > Services page, view Services and Service Groups tables.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "4",
+      "title" : "Single service object for two or more agents that use the same port number.",
+      "result" : "  One \"SonicWALL SSO Agent\" service with the port number 2258 is shown in the Services table. This service object is shown as a single member service in the \"SonicWALL SSO Authentication Agents\" service group when the view is expanded."
+   },
+   "34" : {
+      "steps" : "  1. Before enabling SSO on the Users > Settings page, verify that the default LAN>WAN access rule doesn't display the \"Don't invoke Single Sign On to Authenticate Users\" checkbox. \n  2. Enable SSO. Verify that the checkbox is displayed in the rule. Don't check the checkbox yet.\n  2. Clear the log (post action \"clearLogNow\").\n  3. Issue an HTTP get from a LAN-side IP address to a WAN-side IP address. Verify that an encrypted SSO request for the source IP address is generated to the SSO agent.\n  4. Return an encrypted reply to the SSO request with user name user1.\n  5. Retrieve log.csv and verify that a \"user1 logged in\" event was logged.\n  6. Log out the user. Check the \"Don't invoke Single Sign On to Authenticate Users\" checkbox in the rule.\n  7. Issue an HTTP get from a LAN-side IP address to a WAN-side IP address.",
+      "initial" : "  1. Configure SSO with an agent at IP address on the LAN.\n  2. Set the SSO agent timeout to 5 seconds and retries to 2.\n  3. Set the mechanism for setting user group memberships to \"local configuration\".\n  4. Set the SSO polling rate and hold time after failure both to 1 minute.\n  5. Create a local user group \"group1\" who is a member of Trusted Users.\n  6. Create a local user \"user1\" who is a member of \"group1\".\n  7. Create a local user \"user2\" who is not a member of \"group1\".\n  8. Set the default LAN>WAN access rule \"Users Allowed\" to \"group1\".",
+      "id" : "34",
+      "title" : "SSO is not attempted for traffic that matches the rule with the \"Don't invoke Single Sign On to Authenticate Users\" checkbox checked.",
+      "result" : "  The firewall doesn't generate an SSO request for the source IP address.\n  The HTTP connection from that IP address gets re-directed to the login page."
+   },
+   "37" : {
+      "steps" : "  1. Start with old firmware and old agent. Verify that SSO authentication works.\n  2. Upgrade the firmware to SonicOS 5.5.\n  3. Capture an initial sync message from the agent and verify that the header version is set to 1 in it.\n  4. Issue pings from several different LAN-side IP addresses to a WAN-side IP address. Verify that encrypted SSO requests for those source IP addresses are generated and reply to them.\n  5. Retrieve the TSR and verify that in the Users section under Users currently connected all users are reported as logged in.\n  6. Wait for an SSO poll message.",
+      "initial" : "  TBD",
+      "id" : "37",
+      "title" : "Upgraded firewall doesn't send the multi-user request to an older agent.",
+      "result" : "  Several SSO poll messages are sent. Each SSO poll message contains one user IP address."
+   },
+   "19" : {
+      "steps" : "  1. In the \"SSO Agent Authentication Configuration\" window, add agents as described in the test case TC-1.\n  2. On the System > Settings page, click the \"Export Settings...\" button. Save the preference file on the local drive.\n  3. On the System > Settings page, click the \"Import Settings...\" button. Navigate to the directory with the preference file. Select the file and import. Click OK in the message \"Are you sure you want to overwrite the existing configuration?\". The firewall will restart after importing the preferences.\n  4. Log in to the firewall after restart and open the \"SSO Agent Authentication Configuration\" window.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "19",
+      "title" : "SSO Agent Authentication Configuration settings are saved in a preference file.",
+      "result" : "  The settings in the the \"SSO Agent Authentication Configuration\" window are intact."
+   },
+   "5" : {
+      "steps" : "  1. On the User> Settings page, select \"SonicWALL SSO Agent\" as Single-sign-on method. Click the Configure button next to it. Redirect to HTTPS window opens. Select Yes or No in the window. The SonicWALL SSO Agent Authentication Configuration opens.\n  2. In the Settings tab of the SonicWALL SSO Agent Authentication Configuration window, click the \"Add...\" button. View/Edit pane gets displayed in the Settings tab.\n  3. Type an IP address of the LAN host in the Host Name or IP Address field. Fill in the Shared Key and Confitm Shared Ket fields. Click the Apply button in the SonicWALL SSO Agent Authentication Configuration window. Close the window.\n  4. View the rules on the Network > NAT Policies window.\n  5. On the Firewall > Access Rules, go to the LAN>LAN zone and view the rules.",
+      "initial" : "  PC --- X0 SonicWALL",
+      "id" : "5",
+      "title" : "NAT Policy and Firewall Access Rule with \"SonicWALL SSO Agents\" address object and \"SonicWALL SSO Authentication Agents\" service is auto-added when SSO agent is configured.",
+      "result" : "  NAT Policies table shows the auto-added policy rule with original source \"SonicWALL SSO Agents\" and original service \"SonicWALL SSO Authentication Agents\".\n  Access Rules (LAN>LAN) table shows the auto-added rule with source \"SonicWALL SSO Agents\" and service \"SonicWALL SSO Authentication Agents\"."
+   }
+}

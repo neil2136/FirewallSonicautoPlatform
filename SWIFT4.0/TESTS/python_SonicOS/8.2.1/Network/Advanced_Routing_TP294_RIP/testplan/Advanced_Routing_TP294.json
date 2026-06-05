@@ -1,0 +1,150 @@
+{
+    "RIP_TC47": {
+        "steps": "Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n2. Enable packet monitor in sonicwall;\n3. Enable RIP Send Only and choose RIPv1 on X3;\n4. Check the packets in sonicwall.",
+        "initial": "",
+        "id": "RIP_TC47",
+        "title": "Verify the correct RIP packets. Send. RIPv1.",
+        "result": "in step 4, FW must send RIP request and response message from interface X3 and specify version number 1 in the Version field of the RIP header, RIPv1 message is contained in a UDP packet with the source and destination ports 520 and the destination IP address is broadcast address, in this case, the dst IP is 28.1.1.255."
+    },
+    "RIP_TC48": {
+        "steps": "Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n2. Enable packet monitor in sonicwall;\n3. Enable RIP Send Only and choose RIPv2 - v1 compatible on X3;\n4. Check the packets in sonicwall.",
+        "initial": "",
+        "id": "RIP_TC48",
+        "title": "Verify the correct RIP packets. Send. RIPv2 - v1 compatible.",
+        "result": "in step 4, FW must send RIP message from interface X3 and specify version number 2 in the Version field of the RIP header, RIPv2 - v1 compatible message is contained in a UDP packet with the source and destination ports 520 and the destination IP address is broadcast address, in this case, the dst IP is 28.1.1.255."
+    },
+    "RIP_TC49": {
+        "steps": "Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n2. Enable packet monitor in sonicwall;\n3. Enable RIP Send Only and choose RIPv2 on X3;\n4. Check the packets in sonicwall.",
+        "initial": "",
+        "id": "RIP_TC49",
+        "title": "Verify the correct RIP packets. Send. RIPv2.",
+        "result": "in step 4, FW must send RIP request and response message from interface X3 and specify version number 2 in the Version field of the RIP header, RIPv2 message is contained in a UDP packet with the source and destination ports 520 and the destination IP address is the reserved RIPv2 multicast address 224.0.0.9."
+    },
+    "RIP_TC50": {
+        "steps": "Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n2. Enable packet monitor in sonicwall;\n3. Enable RIP Receive Only and choose RIPv1 on X3;\n4. Enable RIPv1 on router 28.1.1.28 and redistribute static routes;\n5. Check the packets in sonicwall;\n6. Check FW's routing table, FW learned the static routes from neighbor router 28.1.1.28 , metric is 120.",
+        "initial": "",
+        "id": "RIP_TC50",
+        "title": "Verify the correct RIP packets. Receive. RIPv1.",
+        "result": "in step 5, FW received the RIP request and response message from 28.1.1.28;\nin step 6, FW learned the static routes from neighbor router 28.1.1.28 , metric is 120."
+    },
+    "RIP_TC51": {
+        "steps": "Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n2. Enable packet monitor in sonicwall;\n3. Enable RIP Receive Only and choose RIPv2 on X3;\n4. Enable RIPv2 on router 28.1.1.28 and redistribute static routes;\n5. Check the packets in sonicwall;\n6. Check FW's routing table, FW learned the static routes from neighbor router 28.1.1.28 , metric is 120.",
+        "initial": "",
+        "id": "RIP_TC51",
+        "title": "Verify the correct RIP packets. Receive. RIPv2.",
+        "result": "in step 5, FW received the RIPv2 message from 28.1.1.28;\nin step 6, FW learned the static routes from neighbor router 28.1.1.28 , metric is 120."
+    },
+    "RIP_TC52": {
+        "steps": "Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n2. Enable packet monitor in sonicwall;\n3. Enable RIP Send and Receive and choose RIPv1 on X3;\n4. Enable RIPv1 on router 28.1.1.28 and redistribute static routes;\n5. Check the packets in sonicwall;\n6. Check FW's routing table, FW learned the static routes from neighbor router 28.1.1.28 , metric is 120.",
+        "initial": "",
+        "id": "RIP_TC52",
+        "title": "Verify the correct RIP packets. Send and Receive. Receive RIPv1, Send RIPv1.",
+        "result": "in step 5, FW must send RIP request and response message from interface X3 and specify version number 1 in the Version field of the RIP header, RIPv1 message is contained in a UDP packet with the source and destination ports 520 and the destination IP address is 28.1.1.255\nin step 6, FW learned the static routes from neighbor router 28.1.1.28 , metric is 120."
+    },
+    "RIP_TC53": {
+        "steps": "Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n2. Enable packet monitor in sonicwall;\n3. Enable RIP Send and Receive, receive RIPv1, send RIPv2 - v1 compatible on X3;\n4. Enable RIP on router 28.1.1.28 , send RIPv1, receive RIPv2, and redistribute static routes;\n5. Check the packets in sonicwall.\n6. Check FW's routing table, FW learned the static routes from neighbor router 28.1.1.28 , metric is 120.",
+        "initial": "",
+        "id": "RIP_TC53",
+        "title": "Verify the correct RIP packets. Send and Receive. Receive RIPv1, Send RIPv2 - v1 compatible.",
+        "result": "in step 4, FW must send RIP message from interface X3 and specify version number 2 in the Version field of the RIP header, RIPv2 - v1 compatible message is contained in a UDP packet with the source and destination ports 520 and the destination IP address is broadcast address, in this case, the dst IP is 28.1.1.255.\nin step 6, FW received RIPv1 message from router and learned the static route from router, metric is 120."
+    },
+    "RIP_TC54": {
+        "steps": "Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n2. Enable packet monitor in sonicwall;\n3. Enable RIP Send and Receive, receive RIPv1, send RIPv2 on X3;\n4. Enable RIP on router 28.1.1.28, send RIPv1, receive RIPv2, and redistribute static routes;\n5. Check the packets in sonicwall.\n6. Check FW's routing table, FW learned the static routes from neighbor router 28.1.1.28 , metric is 120.",
+        "initial": "",
+        "id": "RIP_TC54",
+        "title": "Verify the correct RIP packets. Send and Receive. Receive RIPv1, Send RIPv2.",
+        "result": "in step 4, FW must send RIP message from interface X3 and specify version number 2 in the Version field of the RIP header, RIPv2 message is contained in a UDP packet with the source and destination ports 520 and the destination IP address is the reserved RIPv2 multicast address 224.0.0.9.\nin step 6, FW received RIPv1 message from router and learned the static route from router, metric is 120."
+    },
+    "RIP_TC55": {
+        "steps": "Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n2. Enable packet monitor in sonicwall;\n3. Enable RIP Send and Receive, receive RIPv2, send RIPv1 on X3;\n4. Enable RIP on router 28.1.1.28, send RIPv2, receive RIPv1, and redistribute static routes;\n5. Check the packets in sonicwall.\n6. Check FW's routing table, FW learned the static routes from neighbor router 28.1.1.28 , metric is 120.",
+        "initial": "",
+        "id": "RIP_TC55",
+        "title": "Verify the correct RIP packets. Send and Receive. Receive RIPv2, Send RIPv1.",
+        "result": "in step 4, FW must send RIP message from interface X3 and specify version number 1 in the Version field of the RIP header, RIPv1 message is contained in a UDP packet with the source and destination ports 520 and the destination IP address is broadcast 28.1.1.255.\nin step 6, FW received RIPv2 message from router and learned the static route from router, metric is 120."
+    },
+    "RIP_TC56": {
+        "steps": "Configure interface X3 in sonicwall, zone LAN, static IP address 28.1.1.46, connect to router, router has static IP 28.1.1.28;\n2. Enable packet monitor in sonicwall;\n3. Enable RIP Send and Receive, receive RIPv2, send RIPv2 - v1 compatible on X3;\n4. Enable RIP on router 28.1.1.28, send RIPv2, receive RIPv2, and redistribute static routes;\n5. Check the packets in sonicwall.\n6. Check FW's routing table, FW learned the static routes from neighbor router 28.1.1.28 , metric is 120.",
+        "initial": "",
+        "id": "RIP_TC56",
+        "title": "Verify the correct RIP packets. Send and Receive. Receive RIPv2, Send RIPv2 - v1 compatible",
+        "result": "in step 4, FW must send RIP message from interface X3 and specify version number 2 in the Version field of the RIP header, RIPv2 - v1 compatible message is contained in a UDP packet with the source and destination ports 520 and the destination IP address is broadcast address, in this case, the dst IP is 28.1.1.255.\nin step 6, FW received RIPv2 message from router and learned the static route from router, metric is 120."
+    },
+    "RIP_TC58": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2 (DMZ) interface.\n4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.\n5. Do not check the Originate Default Route checkbox . Save.\n6. Use the command \"show ip rip database\" on the Cisco router.",
+        "initial": "",
+        "id": "RIP_TC58",
+        "title": "Verify that default route is not advertised in RIP RTUs when the Originate Default Route check box is turned off.",
+        "result": "in step 6, The 0.0.0.0/0 route must not appear in the Cisco router rip database."
+    },
+    "RIP_TC60": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2 (DMZ) interface.\n4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.\n5. Do not check the Redistribute Static Routes checkbox . Save.\n6. Use the command \"show ip rip database\" on the Cisco router.",
+        "initial": "",
+        "id": "RIP_TC60",
+        "title": "Verify that the RIP advertisements don't include all statis RTEs when the Advertise Static Routes check box is turned off.",
+        "result": "in step 6, all static routes on FW should not appear in the Cisco router rip database."
+    },
+    "RIP_TC62": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2 (DMZ) interface.\n4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.\n5. Do not check the Redistribute Connected Networks checkbox . Save.\n6. Use the command \"show ip rip database\" on the Cisco router.",
+        "initial": "",
+        "id": "RIP_TC62",
+        "title": "Verify that connected networks are not advertised in RIP RTUs when the Redistribute Connected Networks check box is turned off.",
+        "result": "in step 6, all connected routes on FW should not appear in the Cisco router rip database."
+    },
+    "RIP_TC68": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router, redistribute static route.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2 (DMZ) interface.\n4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.\n5. Do not check the Split Horizon checkbox . Save.\n6. Check the RIP packets on FW.\n7. Use the command \"show ip rip database\" on the Cisco router.",
+        "initial": "",
+        "id": "RIP_TC68",
+        "title": "Split Horizon is not used",
+        "result": "\"Split horizon\" is a scheme for avoiding problems caused by including routes in updates sent to the router from which they were learned.\nin step 6, FW learned static routes from cisco router, in the RIP packets send from FW's interface X2, all routes learned from cisco router are included in the RIP update with metric 1.\nin step 7, when Split Horizon is not enabled, in cisco router, duplicate routes will appear in rip database, one is via router , another is via FW's interface X2."
+    },
+    "RIP_TC69": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router, redistribute static route.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2 (DMZ) interface.\n4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.\n5. Check the Split Horizon checkbox, do not check Poisoned Reverse checkbox . Save.\n6. Check the packets in FW;",
+        "initial": "",
+        "id": "RIP_TC69",
+        "title": "Split Horizon is used without Poisoned Reverse",
+        "result": "\"Split horizon\" is a scheme for avoiding problems caused by including routes in updates sent to the router from which they were learned.The \"simple split<br />horizon\" scheme omits routes learned from one neighbor in updates<br />sent to that neighbor.\nIn step 6, in the RIP packets send from FW's interface X2, all routes learned from cisco router are not included in the RIP update message."
+    },
+    "RIP_TC70": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router, redistribute static route.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2 (DMZ) interface.\n4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2.\n5. Check the Split Horizon checkbox, check Poisoned Reverse checkbox . Save.\n6. Check the packets in FW;",
+        "initial": "",
+        "id": "RIP_TC70",
+        "title": "Split Horizon is used with Poisoned Reverse",
+        "result": "\"Split horizon\" is a scheme for avoiding problems caused by including routes in updates sent to the router from which they were learned.\"Split horizon with poisoned reverse\" includes such routes in updates, but sets their metrics to infinity.\nIn step 6, in the RIP packets send from FW's interface X2, all routes learned from cisco router are included in the RIP update message but the metric is set as infinity =16."
+    },
+    "RIP_TC71": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2 (DMZ) interface.\n4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2. check the Redistribute Static Routes checkbox, Save.\n5. Add a static route 36.1.1.0/24, gateway X1's default gateway, outgoing interface X1;\n6. Check packets on FW.\n7. Use command show ip rip database in cisco router.\n8. Delete the static route in FW;\n9. Check packets on FW.",
+        "initial": "",
+        "id": "RIP_TC71",
+        "title": "Verify that SonicWALL advertises an infinite route with a metric of 16 in a periodic RTU when a static RTE is deleted from its routing table.",
+        "result": "in step 6, FW send RIP periodic update message , include all other routes in its database , also involve the static route 36.1.1.0 ,metric 1;\nins tep 7, route 36.1.1.0/24 appear in cisco router rip database.\nIn step 9, after route 36.1.1.0/24 deleted in FW, FW send RIP periodic update message , include all other routes in its database , also include the static route 36.1.1.0 , but set metric infinity =16."
+    },
+    "RIP_TC72": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2 (DMZ) interface.\n4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2. check the Redistribute Static Routes checkbox, Save.\n5. Add a static route 36.1.1.0/24, gateway X1's default gateway, outgoing interface X1;\n6. Check packets on FW.\n7. Use command show ip rip database in cisco router.\n8. Delete the static route in FW;\n9. Check packets on FW.",
+        "initial": "",
+        "id": "RIP_TC72",
+        "title": "Verify that SonicWALL advertises an infinite route with a metric of 16 in a periodic RTU when a static RTE is deleted from its routing table.",
+        "result": "in step 6, FW send RIP update message ,include the static route 36.1.1.0 ,metric= 1;\nins tep 7, route 36.1.1.0/24 appear in cisco router rip database.\nIn step 9, after route 36.1.1.0/24 deleted in FW, FW send RIP triggered update message , only include static route 36.1.1.0 , but set metric infinity =16."
+    },
+    "RIP_TC77": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router, use password \"test\". Redistribute static routes.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2 (DMZ) interface.\n4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2. Check \"Redistribute static routes\" checkbox, Enable password, use password \"test\". Save.\n5. Check routing table in FW.\n6. Use command show ip rip database in cisco router.",
+        "initial": "",
+        "id": "RIP_TC77",
+        "title": "RIP: Verify the authentication capability. Use Pasword.",
+        "result": "in step 5, FW can lean static routes from cisco route, metric 120.\nin step 6, static routes in FW appear in cisco router rip database."
+    },
+    "RIP_TC79": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router. Redistribute static routes.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2:V100 (DMZ) interface.\n4. In the Interface X2:V100 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2. Check \"Redistribute static routes\" checkbox. Save.\n5. Attempt to delete interface X2:V100.",
+        "initial": "",
+        "id": "RIP_TC79",
+        "title": "RIP: Verify correct behavior when vlan interfaces are added and deleted",
+        "result": "in step 5, interface X2:V100 can not be deleted with RIP enabled on it. GUI prompt error message."
+    },
+    "RIP_TC80": {
+        "steps": "Configure RIP for the 28.1.1.0/24 network on the Router.\n2. On the Network>Routing page of the SonicWALL, select Advanced Routing in the Routing Mode drop-down. Click OK in the message.\n3. Click the Configure RIP icon for X2 (DMZ) interface.\n4. In the Interface X2 (DMZ) RIP Configuration window, select Send and Receive, Receive RIPv2, Send RIPv2. Check \"Redistribute static routes\" checkbox. Save.\n5. Add 30 valid PBR on FW;\n6. Check the packets in FW;\n7. Use command show ip rip database in cisco router.",
+        "initial": "",
+        "id": "RIP_TC80",
+        "title": "Verify the maximum number of entries in a RIP message.",
+        "result": "there is a limit of 25 RTEs to a Response; if there are more, send the current Response and start a new one.\nIn step 6, RIP response is devided into two packets, the first one include 25 RTEs, the second one include 5 RTEs.\nIn step 7, all 30 PBR added in FW appeared in cisco router rip database."
+    }
+
+}
